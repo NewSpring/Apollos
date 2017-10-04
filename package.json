@@ -1,0 +1,8 @@
+{
+  "name": "Apollos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NewSpring/Apollos.git",
+  "author": "differential",
+  "license": "MIT"
+}
