@@ -1,8 +1,28 @@
 {
   "name": "Apollos",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/NewSpring/Apollos.git",
   "author": "differential",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "react-native-scripts": "1.5.0",
+    "jest-expo": "^21.0.2",
+    "react-test-renderer": "16.0.0-alpha.12"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "node node_modules/jest/bin/jest.js --watch"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "expo": "^21.0.0",
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.48.4"
+  }
 }
