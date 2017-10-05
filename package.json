@@ -23,8 +23,8 @@
     "web": "BABEL_ENV=webdevelopment react-scripts start",
     "build": "BABEL_ENV=webproduction react-scripts build",
     "test": "node node_modules/jest/bin/jest.js --watch",
-    "storybook-native-start": "storybook start -p 7007",
-    "storybook-web-start": "start-storybook -p 9009 -s public",
+    "storybook-native-start": "storybook start -p 7007 -c .storybookNative",
+    "storybook-web-start": "start-storybook -p 9009 -s public -c .storybookWeb",
     "build-storybook": "build-storybook -s public"
   },
   "jest": {
