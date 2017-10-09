@@ -1,0 +1,52 @@
+{
+  "name": "Apollos",
+  "version": "1.0.0",
+  "repository": "https://github.com/NewSpring/Apollos.git",
+  "author": "differential",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.12",
+    "@storybook/addon-links": "^3.2.12",
+    "@storybook/react": "^3.2.12",
+    "@storybook/react-native": "^3.2.12",
+    "jest-expo": "^21.0.2",
+    "react-native-scripts": "1.5.0",
+    "react-native-storybook-loader": "^1.5.1",
+    "react-scripts": "^1.0.14",
+    "react-test-renderer": "16.0.0-alpha.12"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "web": "BABEL_ENV=webdevelopment react-scripts start",
+    "build": "BABEL_ENV=webproduction react-scripts build",
+    "test": "node node_modules/jest/bin/jest.js --watch",
+    "storybook-native-start": "npm run storybook-load-stories && storybook start -p 7007 -c src/.storybookNative",
+    "storybook-web-start": "npm run storybook-load-stories && start-storybook -p 9009 -s public -c src/.storybookWeb",
+    "storybook-ios": "REACT_NATIVE_IS_STORYBOOK=true react-native-scripts ios",
+    "storybook-android": "REACT_NATIVE_IS_STORYBOOK=true react-native-scripts android",
+    "storybook-load-stories": "rnstl",
+    "build-storybook": "build-storybook -s public"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "testMatch": ["**/__tests__/**/*.js?(x)","**/?(*.)(spec|test|tests).js?(x)"]
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": "./src",
+      "outputFile": "./src/.storybook.js",
+      "pattern": "**/*.stories.js"
+    }
+  },
+  "dependencies": {
+    "expo": "^21.0.0",
+    "react": "16.0.0-alpha.12",
+    "react-dom": "^16.0.0",
+    "react-native": "^0.48.4",
+    "react-native-web": "^0.1.4"
+  }
+}

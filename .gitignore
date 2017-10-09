@@ -1,0 +1,5 @@
+.*.md
+node_modules/
+.expo/
+npm-debug.*
+.storybook.js
