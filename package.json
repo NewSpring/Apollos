@@ -32,7 +32,8 @@
     "build-storybook": "build-storybook -s public"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "testMatch": ["**/__tests__/**/*.js?(x)","**/?(*.)(spec|test|tests).js?(x)"]
   },
   "config": {
     "react-native-storybook-loader": {
