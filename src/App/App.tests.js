@@ -1,10 +1,10 @@
 import React from 'react';
-import App from './index';
 import renderer from 'react-test-renderer';
+import App from './index';
 
 it('renders correctly', () => {
   const tree = renderer.create(
-    <App />
+    <App />,
   );
   expect(tree).toMatchSnapshot();
 });
