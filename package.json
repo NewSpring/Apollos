@@ -29,7 +29,7 @@
     "ios": "react-native-scripts ios",
     "web": "BABEL_ENV=webdevelopment react-scripts start",
     "build": "BABEL_ENV=webproduction react-scripts build",
-    "test": "$(npm bin)/jest",
+    "test": "npm run lint && $(npm bin)/jest",
     "test-watcher": "node node_modules/jest/bin/jest.js --watch",
     "lint": "$(npm bin)/eslint .",
     "storybook-native-start": "npm run storybook-load-stories && storybook start -p 7007 -c src/.storybookNative",
