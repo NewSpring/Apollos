@@ -1,7 +1,7 @@
 module.exports = {
-  "extends": "airbnb",
+  "extends": ["airbnb"],
   "plugins": [
-    "jest"
+    "jest",
   ],
   "rules": {
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
@@ -9,6 +9,8 @@ module.exports = {
     "function-paren-newline": 0,
   },
   "env": {
-    "jest/globals": true
+    "jest/globals": true,
+    "browser": true,
+    "node": true,
   },
 }
