@@ -5,17 +5,17 @@
       "plugins": ["transform-react-jsx-source"]
     },
     "webdevelopment": {
-		  "presets": ["react-native"],
-    	"plugins": [
-		    "react-native-web/babel",
-				"transform-react-jsx-source"
-    	]
+      "presets": ["react-native"],
+      "plugins": [
+        "react-native-web/babel",
+        "transform-react-jsx-source"
+      ]
     },
     "webproduction": {
-		  "presets": ["react-native"],
-    	"plugins": [
-		    "react-native-web/babel"
-    	]
+      "presets": ["react-native"],
+      "plugins": [
+        "react-native-web/babel"
+      ]
     }
   }
 }
