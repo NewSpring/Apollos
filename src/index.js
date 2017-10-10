@@ -1,8 +1,18 @@
+import React from 'react';
 import {
   AppRegistry,
   Platform,
 } from 'react-native';
-import App from './App';
+import { CrossRouter as Router, Route } from './components/Router';
+import * as pages from './pages';
+
+console.log(Router);
+
+const App = () => (
+  <Router>
+    <Route exact path="/" component={pages.Feed} />
+  </Router>
+);
 
 export default App;
 
