@@ -3,10 +3,8 @@ import {
   AppRegistry,
   Platform,
 } from 'react-native';
-import { CrossRouter as Router, Route } from './components/Router';
+import { Router, Route } from './components/NativeWebRouter';
 import * as pages from './pages';
-
-console.log(Router);
 
 const App = () => (
   <Router>
