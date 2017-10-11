@@ -6,15 +6,18 @@ import {
 } from 'react-native';
 import { Router, Route, AndroidBackButton } from './components/NativeWebRouter';
 import * as pages from './pages';
+import ThemeProvider from './components/Junction/ThemeProvider';
 
 const App = () => (
-  <Router>
-    <View>
-      {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-      <Route exact path="/" component={pages.Feed} />
-      <Route exact path="/sections" component={pages.Sections} />
-    </View>
-  </Router>
+  <ThemeProvider>
+    <Router>
+      <View>
+        {Platform.OS === 'android' ? <AndroidBackButton /> : null}
+        <Route exact path="/" component={pages.Feed} />
+        <Route exact path="/sections" component={pages.Sections} />
+      </View>
+    </Router>
+  </ThemeProvider>
 );
 
 export default App;

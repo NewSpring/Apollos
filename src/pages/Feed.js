@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import Header from '../components/Header';
 import FooterNav from '../components/FooterNav';
+import H1 from '../components/Junction/H1';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,6 +18,8 @@ export default class Feed extends PureComponent {
     return (
       <View style={styles.container}>
         <Header titleText="NewSpring Church" />
+        <H1>{'A title'}</H1>
+
         <FooterNav>
           <FooterNav.Link
             to="/sections"
