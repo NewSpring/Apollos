@@ -2,13 +2,17 @@ import React from 'react';
 import {
   AppRegistry,
   Platform,
+  View,
 } from 'react-native';
 import { Router, Route } from './components/NativeWebRouter';
 import * as pages from './pages';
 
 const App = () => (
   <Router>
-    <Route exact path="/" component={pages.Feed} />
+    <View>
+      <Route exact path="/" component={pages.Feed} />
+      <Route exact path="/sections" component={pages.Sections} />
+    </View>
   </Router>
 );
 

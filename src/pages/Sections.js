@@ -12,11 +12,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class Feed extends PureComponent {
+export default class Sections extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <Header titleText="NewSpring Church" />
+        <Header titleText="Sections" />
         <FooterNav>
           <FooterNav.Link
             to="/sections"
