@@ -10,6 +10,8 @@ module.exports = {
     "function-paren-newline": 0,
     "import/no-named-as-default": 0,
     "import/no-named-as-default-member": 0,
+    "import/prefer-default-export": 0,
+    "jsx-a11y/anchor-is-valid": 0,
   },
   "env": {
     "jest/globals": true,
