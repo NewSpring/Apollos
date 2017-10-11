@@ -21,10 +21,12 @@ export default class Sections extends PureComponent {
           <FooterNav.Link
             to="/sections"
             label="sections"
+            activeStyle={{ backgroundColor: 'red' }}
           />
           <FooterNav.Link
             to="/"
             label="feed"
+            activeStyle={{ backgroundColor: 'red' }}
           />
         </FooterNav>
       </View>
