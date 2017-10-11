@@ -32,11 +32,11 @@ export default class FooterNavLink extends PureComponent {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Link to={this.props.to}>
+      <Link to={this.props.to}>
+        <View style={styles.container}>
           <Text style={styles.text}>{this.props.label}</Text>
-        </Link>
-      </View>
+        </View>
+      </Link>
     );
   }
 }
