@@ -3,28 +3,26 @@ import {
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import withTheme from './withTheme';
 
-export default class H1 extends PureComponent {
+class H1 extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
+    primaryColor: PropTypes.string,
   };
 
   static defaultProps = {
     children: null,
-  };
-
-  static contextTypes = {
-    theme: PropTypes.shape({
-      primaryColor: PropTypes.string,
-      secondaryColor: PropTypes.string,
-    }),
+    primaryColor: 'red',
   };
 
   render() {
     return (
-      <Text style={{ color: this.context.theme.primaryColor }}>
+      <Text style={{ color: this.props.primaryColor }}>
         {this.props.children}
       </Text>
     );
   }
 }
+
+export default withTheme()(H1);
