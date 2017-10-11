@@ -4,12 +4,13 @@ import {
   Platform,
   View,
 } from 'react-native';
-import { Router, Route } from './components/NativeWebRouter';
+import { Router, Route, AndroidBackButton } from './components/NativeWebRouter';
 import * as pages from './pages';
 
 const App = () => (
   <Router>
     <View>
+      {Platform.OS === 'android' ? <AndroidBackButton /> : null}
       <Route exact path="/" component={pages.Feed} />
       <Route exact path="/sections" component={pages.Sections} />
     </View>
