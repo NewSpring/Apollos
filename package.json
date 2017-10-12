@@ -62,6 +62,7 @@
     "react-dom": "^16.0.0",
     "react-native": "^0.48.4",
     "react-native-web": "^0.1.4",
-    "react-router": "^4.2.0"
+    "react-router": "^4.2.0",
+    "recompose": "^0.26.0"
   }
 }
