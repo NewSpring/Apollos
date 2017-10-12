@@ -3,8 +3,8 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import Header from '../components/Header';
-import FooterNav from '../components/FooterNav';
+import Header from '../@modules/Header';
+import FooterNav from '../@modules/FooterNav';
 
 const styles = StyleSheet.create({
   container: {

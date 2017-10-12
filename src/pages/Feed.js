@@ -3,9 +3,9 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import Header from '../components/Header';
-import FooterNav from '../components/FooterNav';
-import H1 from '../components/Junction/H1';
+import Header from '../@modules/Header';
+import FooterNav from '../@modules/FooterNav';
+import H1 from '../@primitives/H1';
 
 const styles = StyleSheet.create({
   container: {
