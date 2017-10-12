@@ -1,14 +1,12 @@
 import { PureComponent, Children } from 'react';
 import PropTypes from 'prop-types';
-import { DEFAULT_THEME } from './constants';
+import { DEFAULT_THEME, THEME_PROPS } from './constants';
+
 
 export default class ThemeProvider extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
-    theme: PropTypes.shape({
-      primaryColor: PropTypes.string,
-      secondaryColor: PropTypes.string,
-    }),
+    theme: PropTypes.shape(THEME_PROPS),
   };
 
   static defaultProps = {
@@ -17,10 +15,7 @@ export default class ThemeProvider extends PureComponent {
   };
 
   static childContextTypes = {
-    theme: PropTypes.shape({
-      primaryColor: PropTypes.string,
-      secondaryColor: PropTypes.string,
-    }),
+    theme: PropTypes.shape(THEME_PROPS),
   };
 
   getChildContext = () => ({

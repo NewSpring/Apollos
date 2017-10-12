@@ -8,21 +8,23 @@ import withTheme from './withTheme';
 class H1 extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
-    primaryColor: PropTypes.string,
+    theme: PropTypes.shape({
+      primaryColor: PropTypes.string,
+    }),
   };
 
   static defaultProps = {
     children: null,
-    primaryColor: 'red',
+    theme: {},
   };
 
   render() {
     return (
-      <Text style={{ color: this.props.primaryColor }}>
+      <Text style={{ color: this.props.theme.primaryColor }}>
         {this.props.children}
       </Text>
     );
   }
 }
 
-export default withTheme()(H1);
+export default withTheme(H1);
