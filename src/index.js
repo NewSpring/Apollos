@@ -4,9 +4,9 @@ import {
   Platform,
   View,
 } from 'react-native';
-import { Router, Route, AndroidBackButton } from './components/NativeWebRouter';
+import { Router, Route, AndroidBackButton } from './@modules/NativeWebRouter';
 import * as pages from './pages';
-import ThemeProvider from './components/Junction/ThemeProvider';
+import ThemeProvider from './@primitives/ThemeProvider';
 
 const App = () => (
   <ThemeProvider>
