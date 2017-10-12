@@ -25,4 +25,4 @@ class H1 extends PureComponent {
   }
 }
 
-export default withTheme(H1);
+export default withTheme()(H1);
