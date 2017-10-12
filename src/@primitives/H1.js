@@ -8,19 +8,17 @@ import withTheme from './withTheme';
 class H1 extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
-    theme: PropTypes.shape({
-      primaryColor: PropTypes.string,
-    }),
+    primaryColor: PropTypes.string,
   };
 
   static defaultProps = {
     children: null,
-    theme: {},
+    primaryColor: 'black',
   };
 
   render() {
     return (
-      <Text style={{ color: this.props.theme.primaryColor }}>
+      <Text style={{ color: this.props.primaryColor }}>
         {this.props.children}
       </Text>
     );
