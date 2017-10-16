@@ -1,3 +1,6 @@
 export default [
-  'OpenSans/OpenSans.ttf',
+  {
+    name: 'OpenSans',
+    asset: require('./OpenSans/OpenSans.ttf'),
+  },
 ];

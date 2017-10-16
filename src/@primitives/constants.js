@@ -11,5 +11,3 @@ export const THEME_PROPS = {
   secondaryColor: PropTypes.string,
   primaryFont: PropTypes.string,
 };
-
-export const FONT_DIRECTORY = '../../assets/fonts';

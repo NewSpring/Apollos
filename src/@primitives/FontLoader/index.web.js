@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { FONT_DIRECTORY } from '../constants';
 
 export default class FontLoader extends Component {
   static propTypes = {
@@ -13,7 +12,7 @@ export default class FontLoader extends Component {
 
   constructor() {
     super();
-    import(FONT_DIRECTORY);
+    require('../../assets/fonts');
   }
 
   render() {

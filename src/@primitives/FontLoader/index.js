@@ -1,26 +1,45 @@
 import { Component } from 'react';
 import { Font } from 'expo';
-// import { FONT_DIRECTORY } from '../constants';
-// const FONTS = require(FONT_DIRECTORY);
+import PropTypes from 'prop-types';
 import FONTS from '../../assets/fonts';
 
 export default class FontLoader extends Component {
+  static propTypes = {
+    children: PropTypes.node,
+  };
+
+  static defaultProps = {
+    children: null,
+  };
+
   constructor() {
     super();
 
     this.loadFonts();
   }
 
-  loadFonts() {
-    // const FONTS = require(FONT_DIRECTORY);
-    FONTS.forEach((font) => {
-      Font.loadAsync({
-        [font]: require(`../../assets/fonts/${font}`),
+  state = {
+    isLoading: true,
+  };
+
+  async loadFonts() {
+    try {
+      await Promise.all(FONTS.map(({ name, asset }) => (
+        Font.loadAsync({
+          [name]: asset,
+        })
+      )));
+
+      this.setState({
+        isLoading: false,
       });
-    });
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   render() {
-    return this.props.children;
+    const { isLoading } = this.state;
+    return isLoading ? null : this.props.children;
   }
 }

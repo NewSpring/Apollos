@@ -12,12 +12,13 @@ import FontLoader from './@primitives/FontLoader';
 const App = () => (
   <ThemeProvider>
     <Router>
-      <View>
-        <FontLoader />
-        {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-        <Route exact path="/" component={pages.Feed} />
-        <Route exact path="/sections" component={pages.Sections} />
-      </View>
+      <FontLoader>
+        <View>
+          {Platform.OS === 'android' ? <AndroidBackButton /> : null}
+          <Route exact path="/" component={pages.Feed} />
+          <Route exact path="/sections" component={pages.Sections} />
+        </View>
+      </FontLoader>
     </Router>
   </ThemeProvider>
 );
