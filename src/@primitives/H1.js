@@ -9,16 +9,18 @@ class H1 extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     primaryColor: PropTypes.string,
+    primaryFont: PropTypes.string,
   };
 
   static defaultProps = {
     children: null,
     primaryColor: 'black',
+    primaryFont: 'Arial',
   };
 
   render() {
     return (
-      <Text style={{ color: this.props.primaryColor }}>
+      <Text style={{ color: this.props.primaryColor, fontFamily: this.props.primaryFont }}>
         {this.props.children}
       </Text>
     );
