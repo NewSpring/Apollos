@@ -3,6 +3,7 @@ import {
   Dimensions,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import isNil from 'lodash/isNil';
 
 // LEFT OFF HERE
 export default class MediaQuery extends Component {
@@ -16,6 +17,10 @@ export default class MediaQuery extends Component {
 
   static defaultProps = {
     children: null,
+    minWidth: null,
+    maxWidth: null,
+    minHeight: null,
+    maxHeight: null,
   };
 
   componentWillUnmount() {
@@ -43,7 +48,12 @@ export default class MediaQuery extends Component {
       maxHeight,
     } = this.props;
 
-    return true;
+    const passesMaxWidthRule = isNil(maxWidth) || width <= maxWidth;
+    const passesMinWidthRule = isNil(minWidth) || width >= minWidth;
+    const passesMaxHeightRule = isNil(maxHeight) || height <= maxHeight;
+    const passesMinHeightRule = isNil(minHeight) || height >= minHeight;
+
+    return passesMinWidthRule && passesMaxWidthRule && passesMinHeightRule && passesMaxHeightRule;
   }
 
   // eslint-disable-next-line react/sort-comp

@@ -20,10 +20,10 @@ export default class Feed extends PureComponent {
     return (
       <View style={styles.container}>
         <Header titleText="NewSpring Church" />
-        <MediaQuery maxDeviceWidth={300}>
+        <MediaQuery maxWidth={300}>
           <H1>{'A title'}</H1>
         </MediaQuery>
-        <MediaQuery minDeviceWidth={301}>
+        <MediaQuery minWidth={301}>
           <Umbrella />
         </MediaQuery>
 
