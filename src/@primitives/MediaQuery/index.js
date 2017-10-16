@@ -5,7 +5,9 @@ import {
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 
-// LEFT OFF HERE
+export { default as Mobile } from './Mobile';
+export { default as Desktop } from './Desktop';
+
 export default class MediaQuery extends Component {
   static propTypes = {
     children: PropTypes.node,

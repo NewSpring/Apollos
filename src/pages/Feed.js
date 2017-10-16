@@ -7,7 +7,7 @@ import Header from '../@modules/Header';
 import FooterNav from '../@modules/FooterNav';
 import H1 from '../@primitives/H1';
 import Umbrella from '../@primitives/icons/Umbrella';
-import MediaQuery from '../@primitives/MediaQuery';
+import { Desktop, Mobile } from '../@primitives/MediaQuery';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,12 +20,12 @@ export default class Feed extends PureComponent {
     return (
       <View style={styles.container}>
         <Header titleText="NewSpring Church" />
-        <MediaQuery maxWidth={300}>
+        <Desktop>
           <H1>{'A title'}</H1>
-        </MediaQuery>
-        <MediaQuery minWidth={301}>
+        </Desktop>
+        <Mobile>
           <Umbrella />
-        </MediaQuery>
+        </Mobile>
 
         <FooterNav>
           <FooterNav.Link
