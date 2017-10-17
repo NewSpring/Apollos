@@ -5,26 +5,33 @@ import {
   View,
 } from 'react-native';
 import { Provider as ReduxProvider } from 'react-redux';
+import { ApolloProvider } from 'react-apollo';
 import { Router, Route, AndroidBackButton } from './@modules/NativeWebRouter';
 import * as pages from './pages';
 import ThemeProvider from './@primitives/ThemeProvider';
 import FontLoader from './@primitives/FontLoader';
 import Store from './redux/Store';
+import Client from './apollo/Client';
+
+import getFeed from './apollo/getFeed';
+Client.query({ query: getFeed }).then(console.log).catch(console.error);
 
 const App = () => (
-  <ReduxProvider store={Store}>
-    <ThemeProvider>
-      <Router>
+  <ApolloProvider client={Client}>
+    <ReduxProvider store={Store}>
+      <ThemeProvider>
         <FontLoader>
-          <View>
-            {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-            <Route exact path="/" component={pages.Feed} />
-            <Route exact path="/sections" component={pages.Sections} />
-          </View>
+          <Router>
+            <View>
+              {Platform.OS === 'android' ? <AndroidBackButton /> : null}
+              <Route exact path="/" component={pages.Feed} />
+              <Route exact path="/sections" component={pages.Sections} />
+            </View>
+          </Router>
         </FontLoader>
-      </Router>
-    </ThemeProvider>
-  </ReduxProvider>
+      </ThemeProvider>
+    </ReduxProvider>
+  </ApolloProvider>
 );
 
 export default App;
