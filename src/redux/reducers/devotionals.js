@@ -4,7 +4,7 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, { type, payload } = {}) => {
   switch (type) {
-    case 'FEED/GET':
+    case 'DEVOTIONALS/GET':
       return {
         items: [
           { _id: 1, type: 'article', title: 'An article about stuff 1' },

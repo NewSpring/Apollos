@@ -1,4 +1,4 @@
 export default () => ({
-  type: 'FEED/GET',
+  type: 'DEVOTIONALS/GET',
   payload: {},
 });

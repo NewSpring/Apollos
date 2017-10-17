@@ -13,9 +13,6 @@ import FontLoader from './@primitives/FontLoader';
 import Store from './redux/Store';
 import Client from './apollo/Client';
 
-import getFeed from './apollo/getFeed';
-Client.query({ query: getFeed }).then(console.log).catch(console.error);
-
 const App = () => (
   <ApolloProvider client={Client}>
     <ReduxProvider store={Store}>
