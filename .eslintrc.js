@@ -13,6 +13,7 @@ module.exports = {
     "import/no-named-as-default-member": 0,
     "import/prefer-default-export": 0,
     "jsx-a11y/anchor-is-valid": 0,
+    "global-require": 0,
   },
   "env": {
     "jest/globals": true,

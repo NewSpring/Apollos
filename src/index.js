@@ -7,15 +7,18 @@ import {
 import { Router, Route, AndroidBackButton } from './@modules/NativeWebRouter';
 import * as pages from './pages';
 import ThemeProvider from './@primitives/ThemeProvider';
+import FontLoader from './@primitives/FontLoader';
 
 const App = () => (
   <ThemeProvider>
     <Router>
-      <View>
-        {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-        <Route exact path="/" component={pages.Feed} />
-        <Route exact path="/sections" component={pages.Sections} />
-      </View>
+      <FontLoader>
+        <View>
+          {Platform.OS === 'android' ? <AndroidBackButton /> : null}
+          <Route exact path="/" component={pages.Feed} />
+          <Route exact path="/sections" component={pages.Sections} />
+        </View>
+      </FontLoader>
     </Router>
   </ThemeProvider>
 );
