@@ -62,10 +62,13 @@
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
     "react": "16.0.0-alpha.12",
+    "react-apollo": "^1.4.16",
     "react-dom": "^16.0.0",
     "react-native": "^0.48.4",
     "react-native-web": "^0.1.4",
+    "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
-    "recompose": "^0.26.0"
+    "recompose": "^0.26.0",
+    "redux": "^3.7.2"
   }
 }
