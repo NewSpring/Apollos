@@ -1,1 +1,1 @@
-export { default as getFeed } from './getFeed';
+export { default as feed } from './feed';
