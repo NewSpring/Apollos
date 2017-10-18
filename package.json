@@ -24,12 +24,12 @@
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "npm run create-app-entrypoint && react-native-scripts start",
+    "start": "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts start'",
     "eject": "react-native-scripts eject",
-    "android": "npm run create-app-entrypoint && react-native-scripts android",
-    "ios": "npm run create-app-entrypoint && react-native-scripts ios",
-    "web": "npm run create-app-entrypoint && react-scripts start",
-    "build": "npm run create-app-entrypoint && react-scripts build",
+    "android": "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts android'",
+    "ios": "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts ios'",
+    "web": "npm run create-app-entrypoint && npm run run-with-settings 'react-scripts start'",
+    "build": "npm run create-app-entrypoint && npm run run-with-settings 'react-scripts build'",
     "test": "npm run lint && $(npm bin)/jest",
     "test-watcher": "node node_modules/jest/bin/jest.js --watch",
     "lint": "$(npm bin)/eslint .",
@@ -40,7 +40,8 @@
     "storybook-load-stories": "rnstl",
     "build-storybook": "build-storybook -s public",
     "create-app-entrypoint": "node ./.scripts/create-app-entrypoint.js",
-    "create-storybook-entrypoint": "node ./.scripts/create-storybook-entrypoint.js"
+    "create-storybook-entrypoint": "node ./.scripts/create-storybook-entrypoint.js",
+    "run-with-settings": "node ./.scripts/run-with-settings.js"
   },
   "jest": {
     "preset": "jest-expo",
