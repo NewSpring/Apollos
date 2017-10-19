@@ -4,3 +4,4 @@ node_modules/
 npm-debug.*
 .storybook.js
 App.js
+settings.json
