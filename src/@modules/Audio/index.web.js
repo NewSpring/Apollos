@@ -12,10 +12,16 @@ export default class Audio extends Component {
   static propTypes = {
     source: PropTypes.string.isRequired,
     onReady: PropTypes.func,
+    onError: PropTypes.func,
+    onPlaybackReachedEnd: PropTypes.func,
   };
 
   static defaultProps = {
     onReady() {},
+    onError() {
+      console.error('Failed to load audio file');
+    },
+    onPlaybackReachedEnd() {},
   };
 
   state = {
@@ -29,11 +35,11 @@ export default class Audio extends Component {
     };
 
     this.audioFile.onerror = () => {
-      console.log('error');
+      this.props.onError();
     };
 
     this.audioFile.onended = () => {
-      console.log('ended');
+      this.props.onPlaybackReachedEnd();
     };
     this.createStatusListener();
   }

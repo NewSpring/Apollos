@@ -13,10 +13,16 @@ export default class Audio extends Component {
   static propTypes = {
     source: PropTypes.string.isRequired,
     onReady: PropTypes.func,
+    onError: PropTypes.func,
+    onPlaybackReachedEnd: PropTypes.func,
   };
 
   static defaultProps = {
     onReady() {},
+    onError(err) {
+      console.error(err.message);
+    },
+    onPlaybackReachedEnd() {},
   }
 
   state = {
@@ -55,8 +61,13 @@ export default class Audio extends Component {
   }
 
   loadSource = async () => {
+    const {
+      source,
+      onReady,
+      onError,
+    } = this.props;
+
     try {
-      const { source, onReady } = this.props;
       const soundStatus = await this.Sound.loadAsync({ uri: source });
       this.previousSoundStatus = soundStatus;
       this.duration = soundStatus.durationMillis;
@@ -64,7 +75,7 @@ export default class Audio extends Component {
       this.isReady = true;
       onReady();
     } catch (err) {
-      console.log(err);
+      onError(err);
     }
   }
 
@@ -80,11 +91,11 @@ export default class Audio extends Component {
         const previousIsFinished = this.previousSoundStatus.positionMillis === this.duration;
         if (currentIsFinished && !previousIsFinished) {
           this.pause();
-          console.log('ended');
+          this.props.onPlaybackReachedEnd();
         }
         this.previousSoundStatus = soundStatus;
       } catch (err) {
-        console.log(err);
+        this.props.onError(err);
       }
     }, 200);
   }
