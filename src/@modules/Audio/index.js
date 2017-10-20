@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import {
   View,
   TouchableHighlight,
-  PanResponder,
 } from 'react-native';
-import Play from '../icons/Play';
-import Pause from '../icons/Pause';
+import Play from '../../@primitives/icons/Play';
+import Pause from '../../@primitives/icons/Pause';
+import Seeker from '../../@primitives/Seeker';
 
 export default class Audio extends Component {
   play = () => {
@@ -18,6 +18,10 @@ export default class Audio extends Component {
 
   stop = () => {
     this.audioFile.currentTime = 0;
+  }
+
+  seek = (percentageOfSong) => {
+    this.audioFile.currentTime = this.duration * percentageOfSong;
   }
 
   get duration() {
@@ -81,11 +85,10 @@ export default class Audio extends Component {
           </View>
         </TouchableHighlight>
 
-        <View>
-          <View style={{ backgroundColor: 'gray', height: 20 }} />
-          <View style={{ backgroundColor: 'red', height: 20, position: 'absolute', left: 0, width: `${this.state.progress * 100}%` }} />
-          <View style={{ backgroundColor: 'blue', borderRadius: 9999, position: 'absolute', left: `calc(${this.state.progress * 100}% - 5px)`, height: 10, width: 10 }} />
-        </View>
+        <Seeker
+          progress={this.state.progress}
+          onSeek={this.seek}
+        />
       </View>
     );
   }
