@@ -3,8 +3,33 @@ import {
   View,
   PanResponder,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 export default class Seeker extends Component {
+  static propTypes = {
+    progress: PropTypes.number,
+    onSeek: PropTypes.func,
+    trackHeight: PropTypes.number,
+    trackColor: PropTypes.string,
+    progressHeight: PropTypes.number,
+    progressColor: PropTypes.string,
+    knobColor: PropTypes.string,
+    knobRadius: PropTypes.number,
+    knobSize: PropTypes.number,
+  };
+
+  static defaultProps = {
+    progress: 0,
+    onSeek() {},
+    trackHeight: 20,
+    trackColor: 'gray',
+    progressHeight: 20,
+    progressColor: 'red',
+    knobColor: 'blue',
+    knobRadius: 9999,
+    knobSize: 10,
+  };
+
   state = {
     position: 0,
     offset: 0,
@@ -18,6 +43,10 @@ export default class Seeker extends Component {
         position: progress * this.state.width,
       });
     }
+  }
+
+  get currentProgress() {
+    return this.state.position / this.state.width;
   }
 
   panResponder = PanResponder.create({
@@ -47,16 +76,50 @@ export default class Seeker extends Component {
     });
   };
 
-  get currentProgress() {
-    return this.state.position / this.state.width;
-  }
-
   render() {
+    const {
+      trackHeight,
+      trackColor,
+      progressHeight,
+      progressColor,
+      knobColor,
+      knobRadius,
+      knobSize,
+    } = this.props;
+
+    const {
+      position,
+      offset,
+    } = this.state;
+
     return (
       <View onLayout={this.handleOnLayout}>
-        <View style={{ backgroundColor: 'gray', height: 20 }} />
-        <View style={{ backgroundColor: 'red', height: 20, position: 'absolute', left: 0, width: this.state.position + this.state.offset }} />
-        <View style={{ backgroundColor: 'blue', borderRadius: 9999, position: 'absolute', left: (this.state.position - 5) + this.state.offset, height: 10, width: 10 }} {...this.panResponder.panHandlers} />
+        <View
+          style={{
+            backgroundColor: trackColor,
+            height: trackHeight,
+          }}
+        />
+        <View
+          style={{
+            position: 'absolute',
+            left: 0,
+            backgroundColor: progressColor,
+            height: progressHeight,
+            width: position + offset,
+          }}
+        />
+        <View
+          style={{
+            backgroundColor: knobColor,
+            borderRadius: knobRadius,
+            position: 'absolute',
+            left: (position - (knobSize / 2)) + offset,
+            height: knobSize,
+            width: knobSize,
+          }}
+          {...this.panResponder.panHandlers}
+        />
       </View>
     );
   }

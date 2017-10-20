@@ -3,40 +3,29 @@ import {
   View,
   TouchableHighlight,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import Play from '../../@primitives/icons/Play';
 import Pause from '../../@primitives/icons/Pause';
 import Seeker from '../../@primitives/Seeker';
 
 export default class Audio extends Component {
+  static propTypes = {
+    source: PropTypes.string.isRequired,
+    onReady: PropTypes.func,
+  };
+
+  static defaultProps = {
+    onReady() {},
+  };
+
   state = {
     progress: 0,
   };
 
-  play = () => {
-    this.audioFile.play();
-  }
-
-  pause = () => {
-    this.audioFile.pause();
-  }
-
-  stop = () => {
-    this.audioFile.currentTime = 0;
-  }
-
-  seek = (percentageOfSong) => {
-    this.audioFile.currentTime = this.duration * percentageOfSong;
-  }
-
-  get duration() {
-    return this.audioFile && this.audioFile.duration;
-  }
-
-  positionListener = undefined;
-
   componentDidMount() {
-    this.audioFile.canplaythrough = () => {
-      console.log('is ready');
+    this.audioFile.oncanplaythrough = () => {
+      if (!this.isReady) this.props.onReady();
+      this.isReady = true;
     };
 
     this.audioFile.onerror = () => {
@@ -46,7 +35,38 @@ export default class Audio extends Component {
     this.audioFile.onended = () => {
       console.log('ended');
     };
+    this.createStatusListener();
+  }
 
+  componentWillUnmount() {
+    this.removeStatusListener();
+  }
+
+  get duration() {
+    return this.audioFile && this.audioFile.duration;
+  }
+
+  positionListener = undefined;
+  isReady = false;
+
+  play = () => {
+    if (this.isReady) this.audioFile.play();
+  }
+
+  pause = () => {
+    this.audioFile.pause();
+  }
+
+  stop = () => {
+    this.audioFile.pause();
+    this.audioFile.currentTime = 0;
+  }
+
+  seek = (percentageOfSong) => {
+    this.audioFile.currentTime = this.duration * percentageOfSong;
+  }
+
+  createStatusListener = () => {
     this.positionListener = setInterval(() => {
       this.setState({
         progress: this.audioFile.currentTime / this.duration,
@@ -54,17 +74,20 @@ export default class Audio extends Component {
     }, 200);
   }
 
-  componentWillUnmount() {
-    clearInterval(this.positionListener);
+  removeStatusListener = () => {
+    if (this.positionListener) clearInterval(this.positionListener);
   }
 
   render() {
+    const {
+      source,
+    } = this.props;
     return (
       <View>
         <audio
           ref={(r) => { this.audioFile = r; }}
         >
-          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+          <source src={source} type="audio/mpeg" />
         </audio>
 
         <TouchableHighlight onPress={this.play}>
