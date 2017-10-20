@@ -3,76 +3,78 @@ import {
   View,
   TouchableHighlight,
 } from 'react-native';
+import { Audio as ExpoAudio } from 'expo';
 import Play from '../../@primitives/icons/Play';
 import Pause from '../../@primitives/icons/Pause';
 import Seeker from '../../@primitives/Seeker';
 
 export default class Audio extends Component {
-  play = () => {
-    this.audioFile.play();
-  }
-
-  pause = () => {
-    this.audioFile.pause();
-  }
-
-  stop = () => {
-    this.audioFile.currentTime = 0;
-  }
-
-  seek = (percentageOfSong) => {
-    this.audioFile.currentTime = this.duration * percentageOfSong;
-  }
-
-  get duration() {
-    return this.audioFile && this.audioFile.duration;
+  constructor() {
+    super();
+    this.Sound = new ExpoAudio.Sound();
+    this.loadSource();
   }
 
   state = {
     progress: 0,
   };
 
-  componentDidMount() {
-    this.audioFile.canplaythrough = () => {
+  play = () => {
+    this.Sound.playAsync();
+  }
+
+  pause = () => {
+    this.Sound.pauseAsync();
+  }
+
+  stop = () => {
+    this.Sound.stopAsync();
+  }
+
+  seek = (percentageOfSong) => {
+    this.Sound.setPositionAsync(this.duration * percentageOfSong);
+  }
+
+  duration = 0;
+  positionListener = undefined;
+
+  loadSource = async () => {
+    try {
+      const soundStatus = await this.Sound.loadAsync({ uri: 'https://www.w3schools.com/html/horse.mp3' });
+      console.log(soundStatus);
+      this.duration = soundStatus.durationMillis;
+      this.createStatusListener();
       console.log('is ready');
-    };
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
-    this.audioFile.onerror = () => {
-      console.log('error');
-    };
-
-    this.audioFile.onplay = () => {
-      console.log('play');
-    };
-
-    this.audioFile.onpause = () => {
-      console.log('pause');
-    };
-
-    this.audioFile.onended = () => {
-      console.log('ended');
-    };
-
-    this.positionListener = setInterval(() => {
-      this.setState({
-        progress: this.audioFile.currentTime / this.duration,
-      });
+  createStatusListener = () => {
+    this.positionListener = setInterval(async () => {
+      try {
+        const soundStatus = await this.Sound.getStatusAsync();
+        this.setState({
+          progress: soundStatus.positionMillis / this.duration,
+        });
+        if (soundStatus.positionMillis === this.duration) {
+          this.pause();
+          console.log('ended');
+        }
+      } catch (err) {
+        console.log(err);
+      }
     }, 200);
   }
 
   componentWillUnmount() {
+    this.Sound.unloadAsync();
     clearInterval(this.positionListener);
   }
 
   render() {
     return (
-      <View>
-        <audio
-          ref={(r) => { this.audioFile = r; }}
-        >
-          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
-        </audio>
-
+      <View style={{ height: 100 }}>
         <TouchableHighlight onPress={this.play}>
           <View>
             <Play />
