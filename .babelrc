@@ -1,11 +1,11 @@
 {
-  "presets": ["babel-preset-expo"],
+  "presets": ["babel-preset-expo", "react-native-dotenv"],
   "env": {
     "development": {
       "plugins": ["transform-react-jsx-source"]
     },
     "webdevelopment": {
-      "presets": ["react-native"],
+      "presets": ["react-native", "react-native-dotenv"],
       "plugins": [
         "react-native-web/babel",
         "transform-react-jsx-source"
