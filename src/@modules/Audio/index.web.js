@@ -14,6 +14,10 @@ export default class Audio extends Component {
     onReady: PropTypes.func,
     onError: PropTypes.func,
     onPlaybackReachedEnd: PropTypes.func,
+    onPlay: PropTypes.func,
+    onPause: PropTypes.func,
+    onStop: PropTypes.func,
+    onSeek: PropTypes.func,
   };
 
   static defaultProps = {
@@ -22,6 +26,10 @@ export default class Audio extends Component {
       console.error('Failed to load audio file');
     },
     onPlaybackReachedEnd() {},
+    onPlay() {},
+    onPause() {},
+    onStop() {},
+    onSeek() {},
   };
 
   state = {
@@ -41,6 +49,15 @@ export default class Audio extends Component {
     this.audioFile.onended = () => {
       this.props.onPlaybackReachedEnd();
     };
+
+    this.audioFile.onplay = () => {
+      this.props.onPlay();
+    };
+
+    this.audioFile.onpause = () => {
+      this.props.onPause();
+    };
+
     this.createStatusListener();
   }
 
@@ -66,10 +83,15 @@ export default class Audio extends Component {
   stop = () => {
     this.audioFile.pause();
     this.audioFile.currentTime = 0;
+    this.props.onStop();
   }
 
   seek = (percentageOfSong) => {
-    this.audioFile.currentTime = this.duration * percentageOfSong;
+    const positionInSeconds = this.duration * percentageOfSong;
+    this.audioFile.currentTime = positionInSeconds;
+
+    const positionInMillis = positionInSeconds * 1000;
+    this.props.onSeek(positionInMillis);
   }
 
   createStatusListener = () => {

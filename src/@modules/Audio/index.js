@@ -15,6 +15,10 @@ export default class Audio extends Component {
     onReady: PropTypes.func,
     onError: PropTypes.func,
     onPlaybackReachedEnd: PropTypes.func,
+    onPlay: PropTypes.func,
+    onPause: PropTypes.func,
+    onStop: PropTypes.func,
+    onSeek: PropTypes.func,
   };
 
   static defaultProps = {
@@ -23,7 +27,11 @@ export default class Audio extends Component {
       console.error(err.message);
     },
     onPlaybackReachedEnd() {},
-  }
+    onPlay() {},
+    onPause() {},
+    onStop() {},
+    onSeek() {},
+  };
 
   state = {
     progress: 0,
@@ -46,20 +54,39 @@ export default class Audio extends Component {
   playbackEnded = false;
 
   play = async () => {
-    if (this.playbackEnded) await this.Sound.stopAsync();
-    if (this.isReady) this.Sound.playAsync();
+    try {
+      if (this.playbackEnded) await this.Sound.stopAsync();
+      if (this.isReady) {
+        this.Sound.playAsync();
+        this.props.onPlay();
+      }
+    } catch (err) {
+      this.props.onError(err);
+    }
   }
 
-  pause = () => {
-    this.Sound.pauseAsync();
+  pause = async () => {
+    try {
+      this.Sound.pauseAsync();
+      this.props.onPause();
+    } catch (err) {
+      this.props.onError(err);
+    }
   }
 
-  stop = () => {
-    this.Sound.stopAsync();
+  stop = async () => {
+    try {
+      this.Sound.stopAsync();
+      this.props.onStop();
+    } catch (err) {
+      this.props.onError(err);
+    }
   }
 
   seek = (percentageOfSong) => {
-    this.Sound.setPositionAsync(this.duration * percentageOfSong);
+    const positionInMillis = this.duration * percentageOfSong;
+    this.Sound.setPositionAsync(positionInMillis);
+    this.props.onSeek(positionInMillis);
   }
 
   loadSource = async () => {
