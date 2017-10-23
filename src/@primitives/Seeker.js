@@ -4,8 +4,9 @@ import {
   PanResponder,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import withTheme from './withTheme';
 
-export default class Seeker extends Component {
+export class Seeker extends Component {
   static propTypes = {
     progress: PropTypes.number,
     onSeek: PropTypes.func,
@@ -130,3 +131,10 @@ export default class Seeker extends Component {
     );
   }
 }
+
+export default withTheme(({ theme, ...otherProps } = {}) => ({
+  progressColor: theme.primaryColor,
+  knobColor: theme.secondaryColor,
+  trackColor: theme.darkPrimaryColor,
+  ...otherProps,
+}))(Seeker);
