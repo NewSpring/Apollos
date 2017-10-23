@@ -1,6 +1,6 @@
+/* eslint-disable react/prefer-stateless-function, no-console */
 import React, { PureComponent } from 'react';
 import {
-  StyleSheet,
   View,
 } from 'react-native';
 import Header from '../@modules/Header';
@@ -8,17 +8,12 @@ import FooterNav from '../@modules/FooterNav';
 import H1 from '../@primitives/H1';
 import Umbrella from '../@primitives/icons/Umbrella';
 import { Desktop, Mobile } from '../@primitives/MediaQuery';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+import Audio from '../@modules/Audio';
 
 export default class Feed extends PureComponent {
   render() {
     return (
-      <View style={styles.container}>
+      <View>
         <Header titleText="NewSpring Church" />
         <Desktop>
           <H1>{'A title'}</H1>
@@ -26,6 +21,13 @@ export default class Feed extends PureComponent {
         <Mobile>
           <Umbrella />
         </Mobile>
+
+        <Audio
+          source="https://www.w3schools.com/html/horse.mp3"
+          onReady={() => { console.log('ready'); }}
+          onSeek={console.log}
+          onSeeking={console.log}
+        />
 
         <FooterNav>
           <FooterNav.Link

@@ -25,6 +25,7 @@ export default class Audio extends Component {
   static defaultProps = {
     onReady() {},
     onError(err) {
+      // eslint-disable-next-line no-console
       console.error(err.message);
     },
     onPlaybackReachedEnd() {},
