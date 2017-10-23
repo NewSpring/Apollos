@@ -18,6 +18,7 @@ export default class Audio extends Component {
     onPause: PropTypes.func,
     onStop: PropTypes.func,
     onSeek: PropTypes.func,
+    onSeeking: PropTypes.func,
   };
 
   static defaultProps = {
@@ -30,6 +31,7 @@ export default class Audio extends Component {
     onPause() {},
     onStop() {},
     onSeek() {},
+    onSeeking() {},
   };
 
   state = {
@@ -94,6 +96,12 @@ export default class Audio extends Component {
     this.props.onSeek(positionInMillis);
   }
 
+  handleSeeking = (percentageOfSong) => {
+    const positionInSeconds = this.duration * percentageOfSong;
+    const positionInMillis = positionInSeconds * 1000;
+    this.props.onSeeking(positionInMillis);
+  }
+
   createStatusListener = () => {
     this.positionListener = setInterval(() => {
       this.setState({
@@ -133,6 +141,7 @@ export default class Audio extends Component {
         <Seeker
           progress={this.state.progress}
           onSeek={this.seek}
+          onSeeking={this.handleSeeking}
         />
       </View>
     );

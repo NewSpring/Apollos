@@ -19,6 +19,7 @@ export default class Audio extends Component {
     onPause: PropTypes.func,
     onStop: PropTypes.func,
     onSeek: PropTypes.func,
+    onSeeking: PropTypes.func,
   };
 
   static defaultProps = {
@@ -31,6 +32,7 @@ export default class Audio extends Component {
     onPause() {},
     onStop() {},
     onSeek() {},
+    onSeeking() {},
   };
 
   state = {
@@ -87,6 +89,11 @@ export default class Audio extends Component {
     const positionInMillis = this.duration * percentageOfSong;
     this.Sound.setPositionAsync(positionInMillis);
     this.props.onSeek(positionInMillis);
+  }
+
+  handleSeeking = (percentageOfSong) => {
+    const positionInMillis = this.duration * percentageOfSong;
+    this.props.onSeeking(positionInMillis);
   }
 
   loadSource = async () => {
@@ -157,6 +164,7 @@ export default class Audio extends Component {
         <Seeker
           progress={this.state.progress}
           onSeek={this.seek}
+          onSeeking={this.handleSeeking}
         />
       </View>
     );

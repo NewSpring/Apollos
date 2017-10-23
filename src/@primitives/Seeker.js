@@ -10,6 +10,7 @@ export class Seeker extends Component {
   static propTypes = {
     progress: PropTypes.number,
     onSeek: PropTypes.func,
+    onSeeking: PropTypes.func,
     trackHeight: PropTypes.number,
     trackColor: PropTypes.string,
     progressHeight: PropTypes.number,
@@ -22,6 +23,7 @@ export class Seeker extends Component {
   static defaultProps = {
     progress: 0,
     onSeek() {},
+    onSeeking() {},
     trackHeight: 20,
     trackColor: 'gray',
     progressHeight: 20,
@@ -34,7 +36,6 @@ export class Seeker extends Component {
   state = {
     position: 0,
     offset: 0,
-    isSeeking: false,
     width: 0,
   }
 
@@ -55,14 +56,14 @@ export class Seeker extends Component {
     onPanResponderMove: (e, { dx }) => {
       this.setState({
         offset: dx,
-        isSeeking: true,
       });
+      const { onSeeking } = this.props;
+      onSeeking((this.state.position + dx) / this.state.width);
     },
     onPanResponderRelease: (e, { dx }) => {
       this.setState({
         position: this.state.position + dx,
         offset: 0,
-        isSeeking: false,
       }, () => {
         const { onSeek } = this.props;
         if (onSeek) onSeek(this.currentProgress);
