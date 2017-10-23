@@ -107,6 +107,9 @@ export default class Seeker extends Component {
             backgroundColor: progressColor,
             height: progressHeight,
             width: position + offset,
+            transform: [
+              { translateY: (trackHeight - progressHeight) / 2 },
+            ],
           }}
         />
         <View
