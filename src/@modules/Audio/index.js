@@ -43,8 +43,10 @@ export default class Audio extends Component {
   positionListener = undefined;
   previousSoundStatus = undefined;
   isReady = false;
+  playbackEnded = false;
 
-  play = () => {
+  play = async () => {
+    if (this.playbackEnded) await this.Sound.stopAsync();
     if (this.isReady) this.Sound.playAsync();
   }
 
@@ -94,6 +96,12 @@ export default class Audio extends Component {
           this.props.onPlaybackReachedEnd();
         }
         this.previousSoundStatus = soundStatus;
+
+        if (currentIsFinished) {
+          this.playbackEnded = true;
+        } else {
+          this.playbackEnded = false;
+        }
       } catch (err) {
         this.props.onError(err);
       }
