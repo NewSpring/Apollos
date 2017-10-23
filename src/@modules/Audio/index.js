@@ -148,7 +148,7 @@ export default class Audio extends Component {
 
   render() {
     return (
-      <View style={{ height: 100 }}>
+      <View>
         <TouchableHighlight onPress={this.play}>
           <View>
             <Play />
