@@ -3,6 +3,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
+import { URL } from '../@utils/Settings';
 import Header from '../@modules/Header';
 import FooterNav from '../@modules/FooterNav';
 import H1 from '../@primitives/H1';
@@ -26,6 +27,8 @@ export default class Feed extends PureComponent {
         <Mobile>
           <Umbrella />
         </Mobile>
+
+        <H1>Env: {URL}</H1>
 
         <FooterNav>
           <FooterNav.Link
