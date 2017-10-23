@@ -27,7 +27,7 @@ export default class Seeker extends Component {
     progressColor: 'red',
     knobColor: 'blue',
     knobRadius: 9999,
-    knobSize: 10,
+    knobSize: 30,
   };
 
   state = {
@@ -117,6 +117,9 @@ export default class Seeker extends Component {
             left: (position - (knobSize / 2)) + offset,
             height: knobSize,
             width: knobSize,
+            transform: [
+              { translateY: (trackHeight - knobSize) / 2 },
+            ],
           }}
           {...this.panResponder.panHandlers}
         />
