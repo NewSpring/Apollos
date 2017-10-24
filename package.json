@@ -9,6 +9,7 @@
     "@storybook/addon-links": "^3.2.12",
     "@storybook/react": "^3.2.12",
     "@storybook/react-native": "^3.2.12",
+    "appr": "^1.0.1",
     "babel-eslint": "^8.0.1",
     "dotenv": "^4.0.0",
     "eslint": "4.8.0",
@@ -43,7 +44,8 @@
     "build-storybook": "build-storybook -s public",
     "create-app-entrypoint": "node ./.scripts/create-app-entrypoint.js",
     "create-storybook-entrypoint": "node ./.scripts/create-storybook-entrypoint.js",
-    "run-with-settings": "node ./.scripts/run-with-settings.js"
+    "run-with-settings": "node ./.scripts/run-with-settings.js",
+    "appr": "appr"
   },
   "jest": {
     "preset": "jest-expo",
