@@ -4,7 +4,6 @@ import getDevotionalsQuery from '../../apollo/getDevotionals';
 
 export function* fetchDevotionals() {
   try {
-    console.log('me too');
     const results = yield call(Client.query, {
       query: getDevotionalsQuery,
       variables: {
@@ -12,8 +11,6 @@ export function* fetchDevotionals() {
         skip: 0,
       },
     });
-
-    console.log(results);
 
     yield put({
       type: 'SET_DEVOTIONALS',
@@ -28,6 +25,5 @@ export function* fetchDevotionals() {
 }
 
 export default function* listener() {
-  console.log('I ran');
   yield takeLatest('GET_DEVOTIONALS', fetchDevotionals);
 }
