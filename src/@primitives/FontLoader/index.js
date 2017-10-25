@@ -34,7 +34,7 @@ export default class FontLoader extends Component {
         isLoading: false,
       });
     } catch (err) {
-      console.error(err);
+      throw new Error(err);
     }
   }
 
