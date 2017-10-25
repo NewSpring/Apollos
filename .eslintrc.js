@@ -20,9 +20,5 @@ module.exports = {
     "jest/globals": true,
     "browser": true,
     "node": true,
-  },
-  "ecmaFeatures": {
-    "classes": true,
-    "jsx": true
-  },
+  }
 }
