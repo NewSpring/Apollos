@@ -28,9 +28,6 @@ export default function Feed() {
 
       <Audio
         source="https://www.w3schools.com/html/horse.mp3"
-        onReady={() => { console.log('ready'); }}
-        onSeek={console.log}
-        onSeeking={console.log}
       />
 
       <FooterNav>
