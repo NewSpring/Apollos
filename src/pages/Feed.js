@@ -9,15 +9,9 @@ import Umbrella from '../@primitives/icons/Umbrella';
 import { Desktop, Mobile } from '../@primitives/MediaQuery';
 import Audio from '../@modules/Audio';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
 export default function Feed() {
   return (
-    <View style={styles.container}>
+    <View>
       <Header titleText="NewSpring Church" />
       <Desktop>
         <H1>{'A title'}</H1>
