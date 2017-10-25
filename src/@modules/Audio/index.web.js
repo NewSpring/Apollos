@@ -39,7 +39,9 @@ export default class Audio extends Component {
     progress: 0,
   };
 
-  componentDidMount() {
+  componentWillMount() {
+    this.audioFile = new window.Audio(this.props.source);
+
     this.audioFile.oncanplaythrough = () => {
       if (!this.isReady) this.props.onReady();
       this.isReady = true;
@@ -116,17 +118,8 @@ export default class Audio extends Component {
   }
 
   render() {
-    const {
-      source,
-    } = this.props;
     return (
       <View>
-        <audio
-          ref={(r) => { this.audioFile = r; }}
-        >
-          <source src={source} type="audio/mpeg" />
-        </audio>
-
         <TouchableHighlight onPress={this.play}>
           <View>
             <Play />
