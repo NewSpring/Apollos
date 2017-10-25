@@ -45,7 +45,7 @@
     "create-app-entrypoint": "node ./.scripts/create-app-entrypoint.js",
     "create-storybook-entrypoint": "node ./.scripts/create-storybook-entrypoint.js",
     "run-with-settings": "node ./.scripts/run-with-settings.js",
-    "appr": "appr"
+    "appr": "npm run create-app-entrypoint && appr"
   },
   "jest": {
     "preset": "jest-expo",
