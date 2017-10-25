@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -15,32 +15,29 @@ const styles = StyleSheet.create({
   },
 });
 
-// eslint-disable-next-line react/prefer-stateless-function
-export default class Feed extends PureComponent {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Header titleText="NewSpring Church" />
-        <Desktop>
-          <H1>{'A title'}</H1>
-        </Desktop>
-        <Mobile>
-          <Umbrella />
-        </Mobile>
+export default function Feed() {
+  return (
+    <View style={styles.container}>
+      <Header titleText="NewSpring Church" />
+      <Desktop>
+        <H1>{'A title'}</H1>
+      </Desktop>
+      <Mobile>
+        <Umbrella />
+      </Mobile>
 
-        <FooterNav>
-          <FooterNav.Link
-            to="/sections"
-            label="sections"
-            activeStyle={{ backgroundColor: 'red' }}
-          />
-          <FooterNav.Link
-            to="/"
-            label="feed"
-            activeStyle={{ backgroundColor: 'red' }}
-          />
-        </FooterNav>
-      </View>
-    );
-  }
+      <FooterNav>
+        <FooterNav.Link
+          to="/sections"
+          label="sections"
+          activeStyle={{ backgroundColor: 'red' }}
+        />
+        <FooterNav.Link
+          to="/"
+          label="feed"
+          activeStyle={{ backgroundColor: 'red' }}
+        />
+      </FooterNav>
+    </View>
+  );
 }
