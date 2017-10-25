@@ -1,9 +1,9 @@
 import React, { Component, Children } from 'react';
 import PropTypes from 'prop-types';
+import { View } from 'react-native';
 import AudioPlay from './AudioPlay';
 import AudioPause from './AudioPause';
 import AudioSeeker from './AudioSeeker';
-// import Seeker from '../../@primitives/Seeker';
 
 export default class Audio extends Component {
   static Play = AudioPlay;
@@ -135,11 +135,12 @@ export default class Audio extends Component {
   }
 
   render() {
-    return Children.map(this.props.children, child => (
+    const children = Children.map(this.props.children, child => (
       React.cloneElement(child, {
         progress: this.state.progress,
         seekingHandler: this.handleSeeking,
       })
     ));
+    return <View>{children}</View>;
   }
 }
