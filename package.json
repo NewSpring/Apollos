@@ -9,7 +9,7 @@
     "@storybook/addon-links": "^3.2.12",
     "@storybook/react": "^3.2.12",
     "@storybook/react-native": "^3.2.12",
-    "appr": "^1.0.1",
+    "appr": "conrad-vanl/appr#commit-statuses",
     "babel-eslint": "^8.0.1",
     "babel-preset-react-native-stage-0": "^1.0.1",
     "dotenv": "^4.0.0",
@@ -79,5 +79,7 @@
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0"
   },
-  "engines" : { "node" : ">=8.7.0" }
+  "engines": {
+    "node": ">=8.7.0"
+  }
 }
