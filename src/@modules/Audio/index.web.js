@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import {
-  View,
-  TouchableHighlight,
-} from 'react-native';
+import React, { Component, Children } from 'react';
 import PropTypes from 'prop-types';
-import Play from '../../@primitives/icons/Play';
-import Pause from '../../@primitives/icons/Pause';
-import Seeker from '../../@primitives/Seeker';
+import AudioPlay from './AudioPlay';
+import AudioPause from './AudioPause';
+import AudioSeeker from './AudioSeeker';
+// import Seeker from '../../@primitives/Seeker';
 
 export default class Audio extends Component {
+  static Play = AudioPlay;
+  static Pause = AudioPause;
+  static Seeker = AudioSeeker;
+
   static propTypes = {
     source: PropTypes.string.isRequired,
     onReady: PropTypes.func,
@@ -19,6 +20,7 @@ export default class Audio extends Component {
     onStop: PropTypes.func,
     onSeek: PropTypes.func,
     onSeeking: PropTypes.func,
+    children: PropTypes.node,
   };
 
   static defaultProps = {
@@ -33,11 +35,26 @@ export default class Audio extends Component {
     onStop() {},
     onSeek() {},
     onSeeking() {},
+    children: null,
+  };
+
+  static childContextTypes = {
+    play: PropTypes.func,
+    stop: PropTypes.func,
+    pause: PropTypes.func,
+    seek: PropTypes.func,
   };
 
   state = {
     progress: 0,
   };
+
+  getChildContext = () => ({
+    play: this.play,
+    stop: this.stop,
+    pause: this.pause,
+    seek: this.seek,
+  });
 
   componentWillMount() {
     this.audioFile = new window.Audio(this.props.source);
@@ -118,26 +135,11 @@ export default class Audio extends Component {
   }
 
   render() {
-    return (
-      <View>
-        <TouchableHighlight onPress={this.play}>
-          <View>
-            <Play />
-          </View>
-        </TouchableHighlight>
-
-        <TouchableHighlight onPress={this.pause}>
-          <View>
-            <Pause />
-          </View>
-        </TouchableHighlight>
-
-        <Seeker
-          progress={this.state.progress}
-          onSeek={this.seek}
-          onSeeking={this.handleSeeking}
-        />
-      </View>
-    );
+    return Children.map(this.props.children, child => (
+      React.cloneElement(child, {
+        progress: this.state.progress,
+        seekingHandler: this.handleSeeking,
+      })
+    ));
   }
 }
