@@ -1,3 +1,11 @@
+# Apollos
+
+[![Build Status](https://travis-ci.org/NewSpring/Apollos.svg?branch=master)](https://travis-ci.org/NewSpring/Apollos)
+
+## Getting Started
+
+The Readme below is boilerplate from [Create React Native App](https://github.com/react-community/create-react-native-app). It is helpful to read to learn about `CRNA`, but it is not a readme for Apollos ([#20](https://github.com/NewSpring/Apollos/issues/20))
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
