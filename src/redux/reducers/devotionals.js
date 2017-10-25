@@ -2,7 +2,7 @@ const INITIAL_STATE = {
   items: [],
 };
 
-export default (state = INITIAL_STATE, { type, payload } = {}) => {
+export default (state = INITIAL_STATE, { type } = {}) => {
   switch (type) {
     case 'DEVOTIONALS/GET':
       return {

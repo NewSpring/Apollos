@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   },
 });
 
+// eslint-disable-next-line react/prefer-stateless-function
 export default class Sections extends PureComponent {
   render() {
     return (

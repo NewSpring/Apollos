@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
   },
 });
 
+// eslint-disable-next-line react/prefer-stateless-function
 export default class Feed extends PureComponent {
   render() {
     return (
