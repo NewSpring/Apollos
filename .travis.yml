@@ -6,6 +6,6 @@ jobs:
   include:
     - stage: test
       script: 'yarn run test'
-    - stage: deploy to expo
-      if: type IN (push, pull_request)
+    - # we only want to deploy to expo if in pull request
+      if: type IN (pull_request)
       script: 'yarn appr'
