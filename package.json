@@ -72,5 +72,6 @@
     "react-native-web": "^0.1.4",
     "react-router": "^4.2.0",
     "recompose": "^0.26.0"
-  }
+  },
+  "engines" : { "node" : ">=8.7.0" }
 }
