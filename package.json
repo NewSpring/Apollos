@@ -11,8 +11,9 @@
     "@storybook/react-native": "^3.2.12",
     "appr": "^1.0.1",
     "babel-eslint": "^8.0.1",
+    "babel-preset-react-native-stage-0": "^1.0.1",
     "dotenv": "^4.0.0",
-    "eslint": "4.8.0",
+    "eslint": "4.9.0",
     "eslint-config-airbnb": "16.0.0",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jest": "21.2.0",
@@ -22,7 +23,8 @@
     "react-native-scripts": "1.5.0",
     "react-native-storybook-loader": "^1.5.1",
     "react-scripts": "^1.0.14",
-    "react-test-renderer": "16.0.0-alpha.12"
+    "react-test-renderer": "16.0.0-alpha.12",
+    "remote-redux-devtools": "^0.5.12"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -67,11 +69,15 @@
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
     "react": "16.0.0-alpha.12",
+    "react-apollo": "^1.4.16",
     "react-dom": "^16.0.0",
     "react-native": "^0.48.4",
     "react-native-web": "^0.1.4",
+    "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
-    "recompose": "^0.26.0"
+    "recompose": "^0.26.0",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.16.0"
   },
   "engines" : { "node" : ">=8.7.0" }
 }
