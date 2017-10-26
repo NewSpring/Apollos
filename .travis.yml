@@ -2,6 +2,10 @@ language: node_js
 node_js:
   - "node"
 cache: yarn
-script:
-  - yarn run test
-  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then yarn appr; fi'
+jobs:
+  include:
+    - stage: test
+      script: 'yarn run test'
+    - # we only want to deploy to expo if in pull request
+      if: type IN (pull_request)
+      script: 'yarn appr'
