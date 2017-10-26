@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  StyleSheet,
   View,
 } from 'react-native';
 import Header from '../@modules/Header';
@@ -8,16 +7,13 @@ import FooterNav from '../@modules/FooterNav';
 import H1 from '../@primitives/H1';
 import Umbrella from '../@primitives/icons/Umbrella';
 import { Desktop, Mobile } from '../@primitives/MediaQuery';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+import Audio from '../@modules/Audio';
+import Play from '../@primitives/icons/Play';
+import Pause from '../@primitives/icons/Pause';
 
 export default function Feed() {
   return (
-    <View style={styles.container}>
+    <View>
       <Header titleText="NewSpring Church" />
       <Desktop>
         <H1>{'A title'}</H1>
@@ -25,6 +21,24 @@ export default function Feed() {
       <Mobile>
         <Umbrella />
       </Mobile>
+
+      <Audio
+        source="https://www.w3schools.com/html/horse.mp3"
+      >
+        <Audio.Play>
+          <View>
+            <Play />
+          </View>
+        </Audio.Play>
+
+        <Audio.Pause>
+          <View>
+            <Pause />
+          </View>
+        </Audio.Pause>
+
+        <Audio.Seeker />
+      </Audio>
 
       <FooterNav>
         <FooterNav.Link

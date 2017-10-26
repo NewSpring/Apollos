@@ -19,7 +19,7 @@ const App = () => (
       <ThemeProvider>
         <FontLoader>
           <Router>
-            <View>
+            <View style={{ flex: 1 }}>
               {Platform.OS === 'android' ? <AndroidBackButton /> : null}
               <Route exact path="/" component={pages.Feed} />
               <Route exact path="/sections" component={pages.Sections} />
