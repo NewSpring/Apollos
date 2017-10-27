@@ -5,7 +5,12 @@ cache: yarn
 jobs:
   include:
     - stage: test
-      script: 'yarn run test'
-    - # we only want to deploy to expo if in pull request
-      if: type IN (pull_request)
-      script: 'yarn appr'
+      script: 'yarn run lint'
+    - script: 'yarn run jest'
+deploy:
+  - provider: script
+    sudo: required
+    dist: trusty
+    on:
+      condition: '"$TRAVIS_PULL_REQUEST" != "false"'
+    script: 'sudo sysctl fs.inotify.max_user_watches=524288 && sudo sysctl fs.inotify.max_queued_events=524288 && sudo sysctl -p && yarn appr'
