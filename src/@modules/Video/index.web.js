@@ -45,6 +45,8 @@ export default class Video extends Component {
     stop: PropTypes.func,
     pause: PropTypes.func,
     seek: PropTypes.func,
+    progress: PropTypes.number,
+    seekingHandler: PropTypes.func,
   };
 
   state = {
@@ -56,6 +58,8 @@ export default class Video extends Component {
     stop: this.stop,
     pause: this.pause,
     seek: this.seek,
+    progress: this.state.progress,
+    seekingHandler: this.seekingHandler,
   });
 
   componentDidMount() {
@@ -139,13 +143,6 @@ export default class Video extends Component {
       source,
     } = this.props;
 
-    const children = Children.map(this.props.children, child => (
-      React.cloneElement(child, {
-        progress: this.state.progress,
-        seekingHandler: this.handleSeeking,
-      })
-    ));
-
     return (
       <View>
         <video
@@ -153,7 +150,7 @@ export default class Video extends Component {
         >
           <source src={source} type="video/mp4" />
         </video>
-        {children}
+        {this.props.children}
       </View>
     );
   }
