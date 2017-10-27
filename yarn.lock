@@ -6052,6 +6052,15 @@ jest-expo@^21.0.2:
     jest "^20.0.4"
     react-test-renderer "16.0.0-alpha.12"
 
+"jest-expo@git://github.com/luizribeiro/jest-expo.git#mock-svg":
+  version "21.0.2-SNAPSHOT.d993f41d"
+  resolved "git://github.com/luizribeiro/jest-expo.git#121d89f8668abf0092d73e7eb7fbfda188d358ad"
+  dependencies:
+    babel-jest "^20.0.3"
+    jest "^20.0.4"
+    json5 "^0.5.1"
+    react-test-renderer "16.0.0-alpha.12"
+
 jest-haste-map@20.1.0-chi.1:
   version "20.1.0-chi.1"
   resolved "https://registry.yarnpkg.com/jest-haste-map/-/jest-haste-map-20.1.0-chi.1.tgz#db5f5f31362c76e242b40ea9a3ccfa364719cee3"
