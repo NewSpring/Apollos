@@ -44,6 +44,8 @@ export class AudioSeeker extends PureComponent {
 const enhance = compose(
   getContext({
     seek: PropTypes.func,
+    progress: PropTypes.number,
+    seekingHandler: PropTypes.func,
   }),
 );
 

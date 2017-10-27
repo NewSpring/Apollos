@@ -1,4 +1,4 @@
-import React, { Component, Children } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import AudioPlay from './AudioPlay';
@@ -43,6 +43,8 @@ export default class Audio extends Component {
     stop: PropTypes.func,
     pause: PropTypes.func,
     seek: PropTypes.func,
+    progress: PropTypes.number,
+    seekingHandler: PropTypes.func,
   };
 
   state = {
@@ -54,6 +56,8 @@ export default class Audio extends Component {
     stop: this.stop,
     pause: this.pause,
     seek: this.seek,
+    progress: this.state.progress,
+    seekingHandler: this.handleSeeking,
   });
 
   componentWillMount() {
@@ -135,12 +139,6 @@ export default class Audio extends Component {
   }
 
   render() {
-    const children = Children.map(this.props.children, child => (
-      React.cloneElement(child, {
-        progress: this.state.progress,
-        seekingHandler: this.handleSeeking,
-      })
-    ));
-    return <View>{children}</View>;
+    return <View>{this.props.children}</View>;
   }
 }
