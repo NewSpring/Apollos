@@ -54,6 +54,9 @@
     "testMatch": [
       "**/__tests__/**/*.js?(x)",
       "**/?(*.)(spec|test|tests).js?(x)"
+    ],
+    "setupFiles": [
+      "./.jestrc.js"
     ]
   },
   "config": {
