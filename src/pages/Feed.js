@@ -10,6 +10,8 @@ import { Desktop, Mobile } from '../@primitives/MediaQuery';
 import Audio from '../@modules/Audio';
 import Play from '../@primitives/icons/Play';
 import Pause from '../@primitives/icons/Pause';
+import Video from '../@modules/Video';
+
 
 export default function Feed() {
   return (
@@ -39,6 +41,24 @@ export default function Feed() {
 
         <Audio.Seeker />
       </Audio>
+
+      <Video
+        source="https://www.w3schools.com/html/mov_bbb.mp4"
+      >
+        <Video.Play>
+          <View>
+            <Play />
+          </View>
+        </Video.Play>
+
+        <Video.Pause>
+          <View>
+            <Pause />
+          </View>
+        </Video.Pause>
+
+        <Video.Seeker />
+      </Video>
 
       <FooterNav>
         <FooterNav.Link
