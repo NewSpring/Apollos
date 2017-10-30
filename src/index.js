@@ -10,8 +10,8 @@ import { Router, Route, AndroidBackButton } from './@modules/NativeWebRouter';
 import * as pages from './pages';
 import ThemeProvider from './@primitives/ThemeProvider';
 import FontLoader from './@primitives/FontLoader';
-import Store from './redux/Store';
-import Client from './apollo/Client';
+import Store from './@data/Store';
+import Client from './@data/Client';
 
 const App = () => (
   <ApolloProvider client={Client}>
