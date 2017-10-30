@@ -1,16 +1,14 @@
+sudo: required
 language: node_js
 node_js:
   - "node"
 cache: yarn
+before_install: # fix expo builds:
+  - sudo sysctl fs.inotify.max_user_watches=524288
+  - sudo sysctl fs.inotify.max_queued_events=524288
+  - sudo sysctl -p
 jobs:
   include:
     - stage: test
-      script: 'yarn run lint'
-    - script: 'yarn run jest'
-deploy:
-  - provider: script
-    sudo: required
-    dist: trusty
-    on:
-      condition: '"$TRAVIS_PULL_REQUEST" != "false"'
-    script: 'sudo sysctl fs.inotify.max_user_watches=524288 && sudo sysctl fs.inotify.max_queued_events=524288 && sudo sysctl -p && yarn appr'
+      script: 'yarn run test'
+    - script: 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then yarn appr; fi'

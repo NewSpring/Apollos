@@ -3,6 +3,12 @@
     "sdkVersion": "21.0.0",
     "packagerOpts": {
       "nonPersistent": "--nonPersistent"
+    },
+    "ios": {
+      "bundleIdentifier": "com.newspring.apollos"
+    },
+    "android": {
+      "package": "com.newspring.apollos"
     }
   }
 }
