@@ -1,4 +1,4 @@
-import React, { Component, Children } from 'react';
+import React, { Component } from 'react';
 import { Audio as ExpoAudio } from 'expo';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
