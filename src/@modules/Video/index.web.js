@@ -112,16 +112,16 @@ export default class Video extends Component {
     this.props.onStop();
   }
 
-  seek = (percentageOfSong) => {
-    const positionInSeconds = this.duration * percentageOfSong;
+  seek = (percentageOfVideo) => {
+    const positionInSeconds = this.duration * percentageOfVideo;
     this.videoFile.currentTime = positionInSeconds;
 
     const positionInMillis = positionInSeconds * 1000;
     this.props.onSeek(positionInMillis);
   }
 
-  handleSeeking = (percentageOfSong) => {
-    const positionInSeconds = this.duration * percentageOfSong;
+  handleSeeking = (percentageOfVideo) => {
+    const positionInSeconds = this.duration * percentageOfVideo;
     const positionInMillis = positionInSeconds * 1000;
     this.props.onSeeking(positionInMillis);
   }

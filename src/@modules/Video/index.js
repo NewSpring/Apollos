@@ -65,13 +65,13 @@ export default class Video extends Component {
     seekingHandler: this.handleSeeking,
   });
 
-  // componentWillUnmount() {
-  //   this.removeStatusListener();
-  // }
+  componentWillUnmount() {
+    this.removeStatusListener();
+  }
 
   duration = 0;
   positionListener = undefined;
-  previousSoundStatus = undefined;
+  previousVideoStatus = undefined;
   isReady = false;
   playbackEnded = false;
 
@@ -105,47 +105,48 @@ export default class Video extends Component {
     }
   }
 
-  seek = (percentageOfSong) => {
-    const positionInMillis = this.duration * percentageOfSong;
+  seek = (percentageOfVideo) => {
+    const positionInMillis = this.duration * percentageOfVideo;
+    // NOTE: For some reason this isn't being set (it's being set in increments of 4 seconds only)
     this.Video.setPositionAsync(positionInMillis);
     this.props.onSeek(positionInMillis);
   }
 
-  handleSeeking = (percentageOfSong) => {
-    const positionInMillis = this.duration * percentageOfSong;
+  handleSeeking = (percentageOfVideo) => {
+    const positionInMillis = this.duration * percentageOfVideo;
     this.props.onSeeking(positionInMillis);
   }
 
-  // createStatusListener = () => {
-  //   this.positionListener = setInterval(async () => {
-  //     try {
-  //       const soundStatus = await this.Video.getStatusAsync();
-  //       this.setState({
-  //         progress: soundStatus.positionMillis / this.duration,
-  //       });
+  createStatusListener = () => {
+    this.positionListener = setInterval(async () => {
+      try {
+        const videoStatus = await this.Video.getStatusAsync();
+        this.setState({
+          progress: videoStatus.positionMillis / this.duration,
+        });
 
-  //       const currentIsFinished = soundStatus.positionMillis === this.duration;
-  //       const previousIsFinished = this.previousSoundStatus.positionMillis === this.duration;
-  //       if (currentIsFinished && !previousIsFinished) {
-  //         this.pause();
-  //         this.props.onPlaybackReachedEnd();
-  //       }
-  //       this.previousSoundStatus = soundStatus;
+        const currentIsFinished = videoStatus.positionMillis === this.duration;
+        const previousIsFinished = this.previousVideoStatus.positionMillis === this.duration;
+        if (currentIsFinished && !previousIsFinished) {
+          this.pause();
+          this.props.onPlaybackReachedEnd();
+        }
+        this.previousVideoStatus = videoStatus;
 
-  //       if (currentIsFinished) {
-  //         this.playbackEnded = true;
-  //       } else {
-  //         this.playbackEnded = false;
-  //       }
-  //     } catch (err) {
-  //       this.props.onError(err);
-  //     }
-  //   }, 200);
-  // }
+        if (currentIsFinished) {
+          this.playbackEnded = true;
+        } else {
+          this.playbackEnded = false;
+        }
+      } catch (err) {
+        this.props.onError(err);
+      }
+    }, 200);
+  }
 
-  // removeStatusListener = () => {
-  //   if (this.positionListener) clearInterval(this.positionListener);
-  // }
+  removeStatusListener = () => {
+    if (this.positionListener) clearInterval(this.positionListener);
+  }
 
   identifyVideoDimensions = ({ naturalSize: { height, width } }) => {
     this.setState({
@@ -153,8 +154,22 @@ export default class Video extends Component {
     });
   }
 
-  handleOnLoad = () => {
-    this.isReady = true;
+  handleOnLoad = async () => {
+    const {
+      onReady,
+      onError,
+    } = this.props;
+
+    try {
+      const videoStatus = await this.Video.getStatusAsync();
+      this.previousVideoStatus = videoStatus;
+      this.duration = videoStatus.durationMillis;
+      this.createStatusListener();
+      this.isReady = true;
+      onReady();
+    } catch (err) {
+      onError(err);
+    }
   }
 
   render() {
