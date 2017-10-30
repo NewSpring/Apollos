@@ -11,4 +11,5 @@ jobs:
   include:
     - stage: test
       script: 'yarn run test'
+    - script: yarn danger
     - script: 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then yarn appr; fi'
