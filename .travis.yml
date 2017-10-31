@@ -6,6 +6,8 @@ cache: yarn
 before_install: # fix expo builds:
   - sudo sysctl fs.inotify.max_user_watches=524288
   - sudo sysctl fs.inotify.max_queued_events=524288
+  - sudo sysctl -w kern.maxfiles=10485760
+  - sudo sysctl -w kern.maxfilesperproc=1048576
   - sudo sysctl -p
 jobs:
   include:
