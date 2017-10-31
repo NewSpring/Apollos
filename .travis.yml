@@ -12,7 +12,6 @@ jobs:
       if: type IN (push, pull_request)
       os: osx
       script:
-        - brew install watchman
         - sudo sysctl -w kern.maxfiles=5242880
         - sudo sysctl -w kern.maxfilesperproc=524288
         - yarn run appr
