@@ -39,7 +39,7 @@
     "jest-watcher": "node node_modules/jest/bin/jest.js --watch",
     "lint": "$(npm bin)/eslint .",
     "storybook-native-start": "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybookNative",
-    "storybook-web-start": "npm run create-storybook-entrypoint && npm run storybook-load-stories && start-storybook -p 9009 -s public -c src/.storybookWeb",
+    "storybook-web": "npm run create-storybook-entrypoint && start-storybook -p 9009 -s public -c src/.storybookWeb",
     "storybook-ios": "npm run create-storybook-entrypoint && react-native-scripts ios",
     "storybook-android": "npm run create-storybook-entrypoint && react-native-scripts android",
     "storybook-load-stories": "rnstl",
