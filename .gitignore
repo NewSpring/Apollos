@@ -8,9 +8,10 @@ App.js
 # storybook
 .storybook.js
 
-# npm
+# npm/yarn
 node_modules/
 npm-debug.*
+yarn-error.log
 
 # operating system files
 .DS_Store
