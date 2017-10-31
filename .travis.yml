@@ -9,7 +9,6 @@ jobs:
         - yarn danger
         - yarn run test
     - stage: expo deploy
-      if: type IN (push, pull_request)
       os: osx
       script:
         - sudo sysctl -w kern.maxfiles=5242880
