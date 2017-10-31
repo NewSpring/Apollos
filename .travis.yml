@@ -1,19 +1,21 @@
-sudo: required
 language: node_js
 node_js:
   - "node"
 cache: yarn
-before_install: # fix expo builds:
-  - git clone https://github.com/facebook/watchman.git
-  - cd watchman/
-  - sudo apt-get install -y autoconf automake build-essential python-dev libtool libssl-dev
-  - ./autogen.sh
-  - ./configure
-  - make
-  - sudo make install
 jobs:
   include:
     - stage: test
       script: 'yarn run test'
     - script: yarn danger
-    - script: 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then yarn appr; fi'
+    - stage: deploy
+      if: type IN (push, pull_request)
+      sudo: required
+      script:
+        - git clone https://github.com/facebook/watchman.git
+        - cd watchman/
+        - sudo apt-get install -y autoconf automake build-essential python-dev libtool libssl-dev
+        - ./autogen.sh
+        - ./configure
+        - make
+        - sudo make install
+        - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then yarn appr; fi'
