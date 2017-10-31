@@ -5,7 +5,9 @@ cache: yarn
 jobs:
   include:
     - stage: test
-      script: 'yarn run test & yarn danger'
+      script:
+        - yarn danger
+        - yarn run test
     - stage: expo deploy
       if: type IN (push, pull_request)
       os: osx
@@ -13,4 +15,4 @@ jobs:
         - brew install watchman
         - sudo sysctl -w kern.maxfiles=5242880
         - sudo sysctl -w kern.maxfilesperproc=524288
-        - yarn appr
+        - yarn run appr
