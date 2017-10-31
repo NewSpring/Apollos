@@ -9,13 +9,9 @@ jobs:
     - script: yarn danger
     - stage: deploy
       if: type IN (push, pull_request)
-      sudo: required
+      os: osx
       script:
-        - git clone https://github.com/facebook/watchman.git
-        - cd watchman/
-        - sudo apt-get install -y autoconf automake build-essential python-dev libtool libssl-dev
-        - ./autogen.sh
-        - ./configure
-        - make
-        - sudo make install
-        - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then yarn appr; fi'
+        - brew install watchman
+        - sudo sysctl -w kern.maxfiles=5242880
+        - sudo sysctl -w kern.maxfilesperproc=524288
+        - yarn appr
