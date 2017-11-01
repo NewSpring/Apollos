@@ -7,9 +7,9 @@ jobs:
       script:
         - yarn danger
         - yarn run test
-    - stage: expo test deploy
-      sudo: required
+    - # Run expo build in parallel (same stage)
       if: type IN (push, pull_request)
+      sudo: required
       script:
         - sudo sysctl fs.inotify.max_user_watches=524288
         - sudo sysctl fs.inotify.max_queued_events=524288
