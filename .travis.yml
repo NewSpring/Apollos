@@ -8,9 +8,11 @@ jobs:
       script:
         - yarn danger
         - yarn run test
-    - stage: expo deploy
-      os: osx
+    - stage: expo test deploy
+      sudo: required
+      if: type IN (push, pull_request)
       script:
-        - sudo sysctl -w kern.maxfiles=5242880
-        - sudo sysctl -w kern.maxfilesperproc=524288
+        - sudo sysctl fs.inotify.max_user_watches=524288
+        - sudo sysctl fs.inotify.max_queued_events=524288
+        - sudo sysctl -p
         - yarn run appr
