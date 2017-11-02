@@ -1,11 +1,17 @@
 language: node_js
-node_js:
-  - "node"
+node_js: '8.7.0'
 cache: yarn
 jobs:
   include:
     - stage: test
-      script: 'yarn run test'
-    - # we only want to deploy to expo if in pull request
-      if: type IN (pull_request)
-      script: 'yarn appr'
+      script:
+        - yarn danger
+        - yarn run test
+    - # Run expo build in parallel (same stage)
+      if: type IN (push, pull_request)
+      sudo: required
+      script:
+        - sudo sysctl fs.inotify.max_user_watches=524288
+        - sudo sysctl fs.inotify.max_queued_events=524288
+        - sudo sysctl -p
+        - travis_wait yarn run appr

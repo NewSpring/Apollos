@@ -1,8 +1,11 @@
 {
   "expo": {
-    "sdkVersion": "21.0.0",
-    "packagerOpts": {
-      "nonPersistent": "--nonPersistent"
+    "sdkVersion": "22.0.0",
+    "ios": {
+      "bundleIdentifier": "com.newspring.apollos"
+    },
+    "android": {
+      "package": "com.newspring.apollos"
     }
   }
 }
