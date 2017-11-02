@@ -3,7 +3,7 @@ const FS = require('fs');
 
 const content = `
 // create-react-native-app requires App.js
-import StorybookUI from './src/.storybookNative';
+import StorybookUI from './src/.storybook/native';
 
 export default StorybookUI;
 `;

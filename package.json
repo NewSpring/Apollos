@@ -37,10 +37,10 @@
     "build-storybook": "build-storybook -s public",
     "test": "npm run lint && npm run jest",
     "jest": "node node_modules/jest/bin/jest.js",
+    "storybook-native-start": "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybook/native",
+    "storybook-web": "npm run create-storybook-entrypoint && npm run storybook-load-stories && start-storybook -p 9009 -s public -c src/.storybook/web",
     "jest-watcher": "node node_modules/jest/bin/jest.js --watch",
     "lint": "$(npm bin)/eslint . --ignore-path .gitignore",
-    "storybook-native-start": "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybookNative",
-    "storybook-web": "npm run create-storybook-entrypoint && start-storybook -p 9009 -s public -c src/.storybookWeb",
     "storybook-ios": "npm run create-storybook-entrypoint && react-native-scripts ios",
     "storybook-android": "npm run create-storybook-entrypoint && react-native-scripts android",
     "storybook-load-stories": "rnstl",
@@ -62,7 +62,7 @@
   "config": {
     "react-native-storybook-loader": {
       "searchDir": "./src",
-      "outputFile": "./src/.storybook.js",
+      "outputFile": "./src/.storybook/storyLoader.js",
       "pattern": "**/*.stories.js"
     }
   },
