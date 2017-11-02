@@ -1,0 +1,12 @@
+const ROOT = 'USER';
+
+export const GET_CURRENT_USER = `${ROOT}/GET_CURRENT_USER`;
+export const SET_CURRENT_USER = `${ROOT}/SET_CURRENT_USER`;
+export const LOGIN = `${ROOT}/LOGIN`;
+export const LOGOUT = `${ROOT}/LOGOUT`;
+export const SIGNUP = `${ROOT}/SIGNUP`;
+export const REQUEST_RESET_PASSWORD = `${ROOT}/REQUEST_RESET_PASSWORD`;
+export const GET_USER_PROFILE = `${ROOT}/GET_USER_PROFILE`;
+export const SET_USER_PROFILE = `${ROOT}/SET_USER_PROFILE`;
+export const UPDATE_USER_PROFILE = `${ROOT}/UPDATE_USER_PROFILE`;
+export const CHANGE_PASSWORD = `${ROOT}/CHANGE_PASSWORD`;
