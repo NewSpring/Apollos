@@ -1,8 +1,24 @@
-.*.md
-node_modules/
-.expo/
-npm-debug.*
-.storybook.js
+# create react native app
 App.js
+.expo/
 .env
 .env.*
+.*.md
+
+# storybook
+.storybook.js
+
+# npm/yarn
+node_modules/
+npm-debug.*
+yarn-error.log
+
+# operating system files
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+*.swp
