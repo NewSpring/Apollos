@@ -1,5 +1,5 @@
 import { getStorybookUI, configure } from '@storybook/react-native';
-import { loadStories } from '../.storybook'; // .storybook.js is generated on storybook start
+import { loadStories } from '../storyLoader'; // storyLoader.js is generated on storybook start
 
 // import stories
 configure(() => {

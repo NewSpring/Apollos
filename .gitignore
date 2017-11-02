@@ -6,7 +6,7 @@ App.js
 .*.md
 
 # storybook
-.storybook.js
+storyLoader.js
 
 # npm/yarn
 node_modules/
