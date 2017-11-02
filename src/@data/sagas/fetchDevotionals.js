@@ -1,6 +1,6 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
-import Client from '../../apollo/Client';
-import getDevotionalsQuery from '../../apollo/getDevotionals';
+import Client from '../Client';
+import getDevotionalsQuery from '../queries/getDevotionals';
 
 export function* fetchDevotionals() {
   try {
