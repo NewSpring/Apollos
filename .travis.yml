@@ -15,3 +15,22 @@ jobs:
         - sudo sysctl fs.inotify.max_queued_events=524288
         - sudo sysctl -p
         - travis_wait yarn run appr
+    - stage: deploy
+      if: branch = master
+      # 1: deploy storybook to gh-pages
+      script: yarn run build-storybook
+      deploy: &gh-pages
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: storybook-static
+    - # 2: deploy master to expo
+      if: branch = master
+      script: skip
+      deploy: &expo
+        provider: script
+        script:
+          - sudo sysctl fs.inotify.max_user_watches=524288
+          - sudo sysctl fs.inotify.max_queued_events=524288
+          - sudo sysctl -p
+          - travis_wait yarn run appr
