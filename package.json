@@ -25,7 +25,8 @@
     "react-native-storybook-loader": "^1.5.1",
     "react-scripts": "^1.0.16",
     "react-test-renderer": "^16.0.0",
-    "remote-redux-devtools": "^0.5.12"
+    "remote-redux-devtools": "^0.5.12",
+    "request": "^2.83.0"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {

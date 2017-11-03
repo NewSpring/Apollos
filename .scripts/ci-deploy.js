@@ -13,7 +13,8 @@ const {
   TRAVIS_REPO_SLUG,
   EXPO_PRIVACY,
 } = process.env;
-const exp = '../node_modules/exp/bin/exp.js';
+
+const exp = __dirname + '/../node_modules/exp/bin/exp.js';
 
 const readPackageJSON = () => (
   JSON.parse(fs.readFileSync('./package.json'))
@@ -67,7 +68,9 @@ const status = ({ state = 'pending', description = '', error } = {}) => {
       }
     );
   }
-  if (state === 'error') throw new Error(error || description);
+  if (state === 'error') {
+    throw new Error(error || description);
+  }
 };
 
 const spawn = (task, args, onClose) => {
