@@ -28,12 +28,9 @@ jobs:
         github_token: $GITHUB_TOKEN
         local_dir: storybook-static
     - # 2: deploy master to expo
-      script: skip
       sudo: required
-      deploy:
-        provider: script
-        script:
-          - sudo sysctl fs.inotify.max_user_watches=524288
-          - sudo sysctl fs.inotify.max_queued_events=524288
-          - sudo sysctl -p
-          - travis_wait yarn run appr
+      script:
+        - sudo sysctl fs.inotify.max_user_watches=524288
+        - sudo sysctl fs.inotify.max_queued_events=524288
+        - sudo sysctl -p
+        - travis_wait yarn run appr
