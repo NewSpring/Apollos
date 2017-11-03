@@ -14,7 +14,7 @@ jobs:
     - # Run expo build in parallel (same stage)
       if: type IN (push, pull_request)
       sudo: required
-      script: &expo
+      script:
         - sudo sysctl fs.inotify.max_user_watches=524288
         - sudo sysctl fs.inotify.max_queued_events=524288
         - sudo sysctl -p
@@ -33,4 +33,7 @@ jobs:
       deploy:
         provider: script
         script:
-          <<: *expo
+          - sudo sysctl fs.inotify.max_user_watches=524288
+          - sudo sysctl fs.inotify.max_queued_events=524288
+          - sudo sysctl -p
+          - travis_wait yarn run appr
