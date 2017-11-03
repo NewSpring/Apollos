@@ -14,7 +14,7 @@ const {
   EXPO_PRIVACY,
 } = process.env;
 
-const exp = __dirname + '/../node_modules/exp/bin/exp.js';
+const exp = './node_modules/exp/bin/exp.js';
 
 const readPackageJSON = () => (
   JSON.parse(fs.readFileSync('./package.json'))
@@ -77,6 +77,7 @@ const spawn = (task, args, onClose) => {
   const child = childProcess.spawn(task, args, {
     stdio: 'inherit',
     env: process.env,
+    cwd: __dirname + '/../',
   });
   child.on('error', error => console.log(error));
   child.on('close', code => onClose(code));
