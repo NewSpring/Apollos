@@ -33,4 +33,4 @@ jobs:
         - sudo sysctl fs.inotify.max_user_watches=524288
         - sudo sysctl fs.inotify.max_queued_events=524288
         - sudo sysctl -p
-        - travis_wait yarn run appr
+        - TRAVIS_PULL_REQUEST_BRANCH=master travis_wait yarn run appr
