@@ -73,11 +73,12 @@ const status = ({ state = 'pending', description = '', error } = {}) => {
   }
 };
 
+const cwd = __dirname + '/../';
 const spawn = (task, args, onClose) => {
   const child = childProcess.spawn(task, args, {
     stdio: 'inherit',
     env: process.env,
-    cwd: __dirname + '/../',
+    cwd,
   });
   child.on('error', error => console.log(error));
   child.on('close', code => onClose(code));
