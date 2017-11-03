@@ -29,6 +29,8 @@ jobs:
         local_dir: storybook-static
     - # 2: deploy master to expo
       script: skip
+      sudo: required
       deploy:
         provider: script
-        <<: *expo
+        script:
+          <<: *expo
