@@ -1,16 +1,11 @@
-import React, { Component, Children } from 'react';
+import React, { Component } from 'react';
 import { Audio as ExpoAudio } from 'expo';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import AudioPlay from './AudioPlay';
-import AudioPause from './AudioPause';
+import AudioControls from './AudioControls';
 import AudioSeeker from './AudioSeeker';
 
 export default class Audio extends Component {
-  static Play = AudioPlay;
-  static Pause = AudioPause;
-  static Seeker = AudioSeeker;
-
   static propTypes = {
     source: PropTypes.string.isRequired,
     onReady: PropTypes.func,
@@ -21,7 +16,7 @@ export default class Audio extends Component {
     onStop: PropTypes.func,
     onSeek: PropTypes.func,
     onSeeking: PropTypes.func,
-    children: PropTypes.node,
+    isPlaying: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -36,25 +31,20 @@ export default class Audio extends Component {
     onStop() {},
     onSeek() {},
     onSeeking() {},
-    children: null,
+    isPlaying: false,
   };
 
   static childContextTypes = {
-    play: PropTypes.func,
     stop: PropTypes.func,
-    pause: PropTypes.func,
-    seek: PropTypes.func,
   };
 
   state = {
+    isPlaying: this.props.isPlaying,
     progress: 0,
   };
 
   getChildContext = () => ({
-    play: this.play,
     stop: this.stop,
-    pause: this.pause,
-    seek: this.seek,
   });
 
   componentWillMount() {
@@ -79,6 +69,9 @@ export default class Audio extends Component {
       if (this.isReady) {
         this.Sound.playAsync();
         this.props.onPlay();
+        this.setState({
+          isPlaying: true,
+        });
       }
     } catch (err) {
       this.props.onError(err);
@@ -89,6 +82,9 @@ export default class Audio extends Component {
     try {
       this.Sound.pauseAsync();
       this.props.onPause();
+      this.setState({
+        isPlaying: false,
+      });
     } catch (err) {
       this.props.onError(err);
     }
@@ -165,12 +161,18 @@ export default class Audio extends Component {
   }
 
   render() {
-    const children = Children.map(this.props.children, child => (
-      React.cloneElement(child, {
-        progress: this.state.progress,
-        seekingHandler: this.handleSeeking,
-      })
-    ));
-    return <View>{children}</View>;
+    return (
+      <View>
+        <AudioControls
+          onPlay={this.play}
+          onPause={this.pause}
+          isPlaying={this.state.isPlaying}
+        />
+        <AudioSeeker
+          progress={this.state.progress}
+          seekingHandler={this.handleSeeking}
+        />
+      </View>
+    );
   }
 }
