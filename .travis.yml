@@ -1,6 +1,10 @@
 language: node_js
 node_js: '8.7.0'
 cache: yarn
+stages:
+  - test
+  - name: deploy
+    if: branch = master
 jobs:
   include:
     - stage: test
@@ -10,27 +14,21 @@ jobs:
     - # Run expo build in parallel (same stage)
       if: type IN (push, pull_request)
       sudo: required
-      script:
+      script: &expo
         - sudo sysctl fs.inotify.max_user_watches=524288
         - sudo sysctl fs.inotify.max_queued_events=524288
         - sudo sysctl -p
         - travis_wait yarn run appr
     - stage: deploy
-      if: branch = master
       # 1: deploy storybook to gh-pages
       script: yarn run build-storybook
-      deploy: &gh-pages
+      deploy:
         provider: pages
         skip_cleanup: true
         github_token: $GITHUB_TOKEN
         local_dir: storybook-static
     - # 2: deploy master to expo
-      if: branch = master
       script: skip
-      deploy: &expo
+      deploy:
         provider: script
-        script:
-          - sudo sysctl fs.inotify.max_user_watches=524288
-          - sudo sysctl fs.inotify.max_queued_events=524288
-          - sudo sysctl -p
-          - travis_wait yarn run appr
+        <<: *expo
