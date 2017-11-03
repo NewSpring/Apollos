@@ -2,15 +2,15 @@ import { LOGIN } from '../actionTypes';
 
 export default function login(params = {}) {
   const {
-    email,
-    password,
+    loginToken,
+    id,
   } = params;
 
   return {
     type: LOGIN,
     payload: {
-      email,
-      password,
+      loginToken,
+      id,
     },
   };
 }

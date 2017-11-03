@@ -1,20 +1,58 @@
-// import { takeEvery, call } from 'redux-saga/effects';
-// import {
-//   CATCH_ERROR,
-// } from './actionTypes';
+import { takeLatest, call, put } from 'redux-saga/effects';
+import {
+  CHECK_LOGIN_CREDENTIALS,
+  SIGNUP,
+} from './actionTypes';
+import login from './actionCreators/login';
 
-// export function* notifyErrorService({ payload } = {}) {
-//   const {
-//     id,
-//     timestamp,
-//     message,
-//   } = payload;
+// The side effect of checking credentials is logging in
+export function* authorizeLogin({ payload } = {}) {
+  const {
+    email,
+    password,
+  } = payload;
 
-//   // TODO: Not sure where to send errors
-//   // eslint-disable-next-line
-//   yield call(console.log, { id, timestamp, message });
-// }
+  // TODO: Pending graphQL login
+  // eslint-disable-next-line
+  yield call(console.log, { email, password });
 
-// export default function* () {
-//   yield takeEvery(CATCH_ERROR, notifyErrorService);
-// }
+  // data from graphQL login
+  yield put(login({
+    id: 'userId',
+    loginToken: 'asdf',
+  }));
+}
+
+// The side effect of signing up is logging in
+export function* authorizeSignup({ payload } = {}) {
+  const {
+    email,
+    password,
+    firstName,
+    lastName,
+    agreesOnTOS,
+  } = payload;
+
+  // TODO: Pending graphQL signup
+  // eslint-disable-next-line
+  yield call(console.log, {
+    email,
+    password,
+    firstName,
+    lastName,
+    agreesOnTOS,
+  });
+
+  // data from graphQL login
+  yield put(login({
+    id: 'userId',
+    loginToken: 'asdf',
+  }));
+}
+
+export default function* () {
+  yield [
+    takeLatest(CHECK_LOGIN_CREDENTIALS, authorizeLogin),
+    takeLatest(SIGNUP, authorizeSignup),
+  ];
+}

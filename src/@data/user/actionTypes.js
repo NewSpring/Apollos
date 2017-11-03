@@ -2,6 +2,7 @@ const ROOT = 'USER';
 
 export const GET_CURRENT_USER = `${ROOT}/GET_CURRENT_USER`;
 export const SET_CURRENT_USER = `${ROOT}/SET_CURRENT_USER`;
+export const CHECK_LOGIN_CREDENTIALS = `${ROOT}/CHECK_LOGIN_CREDENTIALS`;
 export const LOGIN = `${ROOT}/LOGIN`;
 export const LOGOUT = `${ROOT}/LOGOUT`;
 export const SIGNUP = `${ROOT}/SIGNUP`;
