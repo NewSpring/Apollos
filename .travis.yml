@@ -1,6 +1,10 @@
 language: node_js
 node_js: '8.7.0'
 cache: yarn
+stages:
+  - test
+  - name: deploy
+    if: branch = master AND NOT (type IN (push, pull_request))
 jobs:
   include:
     - stage: test
@@ -16,7 +20,6 @@ jobs:
         - sudo sysctl -p
         - travis_wait yarn run appr
     - stage: deploy
-      if: branch = master AND NOT (type IN (push, pull_request))
       # 1: deploy storybook to gh-pages
       script: yarn run build-storybook
       deploy:
@@ -25,7 +28,6 @@ jobs:
         github_token: $GITHUB_TOKEN
         local_dir: storybook-static
     - # 2: deploy master to expo
-      if: branch = master AND NOT (type IN (push, pull_request))
       script: skip
       sudo: required
       deploy:
