@@ -7,6 +7,7 @@ export const INITIAL_STATE = {
   id: null,
   following: [],
   profile: {
+    isLoading: true,
     nickname: null,
     firstName: null,
     lastName: null,
@@ -65,6 +66,57 @@ export default (state = INITIAL_STATE, { type, payload } = {}) => {
           ...state.profile,
           firstName,
           lastName,
+          agreesOnTOS,
+        },
+      };
+    }
+    case actionTypes.GET_USER_PROFILE: {
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          isLoading: true,
+        },
+      };
+    }
+    case actionTypes.SET_USER_PROFILE: {
+      const {
+        nickname,
+        firstName,
+        lastName,
+        birthday,
+        campus,
+        address: {
+          city,
+          country,
+          zip,
+          state: addressState,
+          street1,
+          street2,
+        },
+        imageUrl,
+        agreesOnTOS,
+      } = payload;
+
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          isLoading: true,
+          nickname,
+          firstName,
+          lastName,
+          birthday,
+          campus,
+          address: {
+            city,
+            country,
+            zip,
+            state: addressState,
+            street1,
+            street2,
+          },
+          imageUrl,
           agreesOnTOS,
         },
       };
