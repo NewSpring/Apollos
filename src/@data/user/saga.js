@@ -5,9 +5,12 @@ import {
   REQUEST_RESET_PASSWORD,
   CHANGE_PASSWORD,
   GET_USER_PROFILE,
+  GET_CURRENT_USER,
 } from './actionTypes';
 import login from './actionCreators/login';
 import setUserProfile from './actionCreators/setUserProfile';
+import setCurrentUser from './actionCreators/setCurrentUser';
+import { getUser } from './selectors';
 
 // The side effect of checking credentials is logging in
 export function* authorizeLogin({ payload } = {}) {
@@ -103,7 +106,7 @@ export function* changePassword({ payload } = {}) {
 export function* userProfile() {
   const {
     id,
-  } = yield select();
+  } = yield select(getUser);
 
   // TODO: Pending graphQL get user profile (this may already be available)
   // eslint-disable-next-line
@@ -131,6 +134,28 @@ export function* userProfile() {
   });
 }
 
+// The side effect of requesting the current user is
+// setting it
+export function* currentUser() {
+  // TODO: Pending offline storage engine
+  // eslint-disable-next-line
+  const {
+    loginToken,
+    email,
+    id,
+  } = yield call(() => ({
+    loginToken: 'loginToken',
+    email: 'email@email.com',
+    id: 'asdfasdf',
+  }));
+
+  yield put(setCurrentUser, {
+    loginToken,
+    email,
+    id,
+  });
+}
+
 export default function* () {
   yield [
     takeLatest(CHECK_LOGIN_CREDENTIALS, authorizeLogin),
@@ -138,5 +163,6 @@ export default function* () {
     takeLatest(REQUEST_RESET_PASSWORD, sendResetPasswordEmail),
     takeLatest(CHANGE_PASSWORD, changePassword),
     takeLatest(GET_USER_PROFILE, userProfile),
+    takeLatest(GET_CURRENT_USER, currentUser),
   ];
 }

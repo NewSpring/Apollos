@@ -1,6 +1,7 @@
 import actionTypes from './actionTypes';
 
 export const INITIAL_STATE = {
+  isLoading: true,
   isLoggedIn: false,
   loginToken: null,
   email: null,
@@ -119,6 +120,27 @@ export default (state = INITIAL_STATE, { type, payload } = {}) => {
           imageUrl,
           agreesOnTOS,
         },
+      };
+    }
+    case actionTypes.GET_CURRENT_USER: {
+      return {
+        ...state,
+        isLoading: true,
+      };
+    }
+    case actionTypes.SET_CURRENT_USER: {
+      const {
+        loginToken,
+        email,
+        id,
+      } = payload;
+
+      return {
+        ...state,
+        isLoading: false,
+        loginToken,
+        email,
+        id,
       };
     }
     default: {
