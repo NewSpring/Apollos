@@ -1,4 +1,4 @@
-import { takeLatest, call, put, select } from 'redux-saga/effects';
+import { takeLatest, call, put, select, all } from 'redux-saga/effects';
 import {
   CHECK_LOGIN_CREDENTIALS,
   SIGNUP,
@@ -157,12 +157,12 @@ export function* currentUser() {
 }
 
 export default function* () {
-  yield [
+  yield all([
     takeLatest(CHECK_LOGIN_CREDENTIALS, authorizeLogin),
     takeLatest(SIGNUP, authorizeSignup),
     takeLatest(REQUEST_RESET_PASSWORD, sendResetPasswordEmail),
     takeLatest(CHANGE_PASSWORD, changePassword),
     takeLatest(GET_USER_PROFILE, userProfile),
     takeLatest(GET_CURRENT_USER, currentUser),
-  ];
+  ]);
 }
