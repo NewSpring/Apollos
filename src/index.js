@@ -12,13 +12,14 @@ import ThemeProvider from './@primitives/ThemeProvider';
 import FontLoader from './@primitives/FontLoader';
 import Store from './@data/Store';
 import Client from './@data/Client';
+import RouterHistory from './@data/RouterHistory';
 
 const App = () => (
   <ApolloProvider client={Client}>
     <ReduxProvider store={Store}>
       <ThemeProvider>
         <FontLoader>
-          <Router>
+          <Router history={RouterHistory}>
             <View style={{ flex: 1 }}>
               {Platform.OS === 'android' ? <AndroidBackButton /> : null}
               <Route exact path="/" component={pages.Feed} />
