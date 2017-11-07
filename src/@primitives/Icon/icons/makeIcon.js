@@ -1,4 +1,4 @@
-import { compose, withProps, nest } from 'recompose';
+import { withProps, nest } from 'recompose';
 import { View } from 'react-native';
 import withTheme from '../../withTheme';
 
