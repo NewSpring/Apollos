@@ -115,7 +115,7 @@ export function* userProfile() {
   });
 
   // TODO: Pending return graphQL user profile
-  yield put(setUserProfile, {
+  yield put(setUserProfile({
     nickname: 'nickname',
     firstName: 'firstName',
     lastName: 'lastName',
@@ -131,7 +131,7 @@ export function* userProfile() {
     },
     imageUrl: 'http://via.placeholder.com/350x150',
     agreesOnTOS: true,
-  });
+  }));
 }
 
 // The side effect of requesting the current user is
@@ -149,11 +149,11 @@ export function* currentUser() {
     id: 'asdfasdf',
   }));
 
-  yield put(setCurrentUser, {
+  yield put(setCurrentUser({
     loginToken,
     email,
     id,
-  });
+  }));
 }
 
 export default function* () {

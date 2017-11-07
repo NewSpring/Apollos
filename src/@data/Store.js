@@ -28,11 +28,13 @@ const Store = createStore(
   enhancers,
 );
 
+sagaMiddleware.run(combineSagas(sagas));
+
+Store.dispatch(changeRoute(RouterHistory.location));
+
 // History Listener
 RouterHistory.listen((location) => {
   Store.dispatch(changeRoute(location));
 });
-
-sagaMiddleware.run(combineSagas(sagas));
 
 export default Store;
