@@ -4,7 +4,7 @@ cache: yarn
 stages:
   - test
   - name: deploy
-    if: branch = master AND NOT (type IN (push, pull_request))
+    if: branch = master AND NOT (type IN (pull_request))
 jobs:
   include:
     - stage: test
@@ -12,7 +12,7 @@ jobs:
         - yarn danger
         - yarn run test
     - # Run expo build in parallel (same stage)
-      if: type IN (push, pull_request)
+      if: type IN (pull_request)
       sudo: required
       script:
         - sudo sysctl fs.inotify.max_user_watches=524288
@@ -28,12 +28,9 @@ jobs:
         github_token: $GITHUB_TOKEN
         local_dir: storybook-static
     - # 2: deploy master to expo
-      script: skip
       sudo: required
-      deploy:
-        provider: script
-        script:
-          - sudo sysctl fs.inotify.max_user_watches=524288
-          - sudo sysctl fs.inotify.max_queued_events=524288
-          - sudo sysctl -p
-          - travis_wait yarn run appr
+      script:
+        - sudo sysctl fs.inotify.max_user_watches=524288
+        - sudo sysctl fs.inotify.max_queued_events=524288
+        - sudo sysctl -p
+        - TRAVIS_PULL_REQUEST_BRANCH=master travis_wait yarn run appr
