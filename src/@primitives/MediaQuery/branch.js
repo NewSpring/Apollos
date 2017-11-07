@@ -12,7 +12,7 @@ import withTheme from '../withTheme';
 //   ?HigherOrderComponent
 // ): HigherOrderComponent
 const responsiveBranch = ({ min, max }, ...args) => compose(
-  withTheme(({ theme: { breakpoints } }) => ({ breakpoints })),
+  withTheme(({ theme: { breakpoints = {} } = {} }) => ({ breakpoints })),
   withWindow,
   branch(({ breakpoints, window: { width } }) => {
     const minSelector = get(breakpoints, min, 0);

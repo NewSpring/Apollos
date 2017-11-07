@@ -2,8 +2,8 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react-native';
 
-import FooterNav from './';
+import TabBar from './';
 
-storiesOf('FooterNav', module)
-  .add('renders', () => <FooterNav />);
+storiesOf('TabBar', module)
+  .add('renders', () => <TabBar />);
 

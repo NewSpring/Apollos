@@ -30,12 +30,10 @@ exports[`renders correctly 1`] = `
     tvParallaxProperties={undefined}
   >
     <View>
-      <Svg
-        height={32}
+      <View
         name="play"
         style={
           Array [
-            Object {},
             Object {
               "transform": Array [
                 Object {
@@ -45,14 +43,40 @@ exports[`renders correctly 1`] = `
             },
           ]
         }
-        viewBox="0 0 512 512"
-        width={32}
       >
-        <Path
-          d="M125 478l0-441c0-3 1-4 1-4-2 3-5 6-9 8-5 2-9 3-12 2 0 0 1 1 3 2l274 214c5 4 5 5 0 9l-272 202c-2 2-4 2-4 2 3-1 7 0 12 2 4 2 6 5 8 8 0 0-1-1-1-4z m-40 0c0 33 22 44 49 24l272-202c26-19 27-52 1-72l-274-214c-26-21-48-11-48 23z"
-          fill="#6bac43"
-        />
-      </Svg>
+        <Svg
+          height={32}
+          name="play"
+          theme={
+            Object {
+              "alertColor": "#c64f55",
+              "breakpoints": Object {
+                "lg": 1200,
+                "md": 800,
+                "sm": 496,
+                "xs": 320,
+              },
+              "darkPrimaryColor": "#303030",
+              "darkSecondaryColor": "#505050",
+              "darkTertiaryColor": "#858585",
+              "lightPrimaryColor": "#ffffff",
+              "lightSecondaryColor": "#f7f7f7",
+              "lightTertiaryColor": "#dddddd",
+              "primaryColor": "#6bac43",
+              "primaryFont": "OpenSans",
+              "secondaryColor": "#1c683e",
+              "terciaryColor": "#2a4930",
+            }
+          }
+          viewBox="0 0 512 512"
+          width={32}
+        >
+          <Path
+            d="M125 478l0-441c0-3 1-4 1-4-2 3-5 6-9 8-5 2-9 3-12 2 0 0 1 1 3 2l274 214c5 4 5 5 0 9l-272 202c-2 2-4 2-4 2 3-1 7 0 12 2 4 2 6 5 8 8 0 0-1-1-1-4z m-40 0c0 33 22 44 49 24l272-202c26-19 27-52 1-72l-274-214c-26-21-48-11-48 23z"
+            fill="#6bac43"
+          />
+        </Svg>
+      </View>
     </View>
   </View>
   <View
@@ -83,12 +107,10 @@ exports[`renders correctly 1`] = `
     tvParallaxProperties={undefined}
   >
     <View>
-      <Svg
-        height={32}
+      <View
         name="pause"
         style={
           Array [
-            Object {},
             Object {
               "transform": Array [
                 Object {
@@ -98,14 +120,40 @@ exports[`renders correctly 1`] = `
             },
           ]
         }
-        viewBox="0 0 512 512"
-        width={32}
       >
-        <Path
-          d="M137 512c12 0 22-10 22-23l0-455c0-12-10-23-22-23-13 0-23 11-23 23l0 455c0 13 10 23 23 23z m227 0c13 0 23-10 23-23l0-455c0-12-10-23-23-23-12 0-23 11-23 23l0 455c0 13 11 23 23 23z"
-          fill="#6bac43"
-        />
-      </Svg>
+        <Svg
+          height={32}
+          name="pause"
+          theme={
+            Object {
+              "alertColor": "#c64f55",
+              "breakpoints": Object {
+                "lg": 1200,
+                "md": 800,
+                "sm": 496,
+                "xs": 320,
+              },
+              "darkPrimaryColor": "#303030",
+              "darkSecondaryColor": "#505050",
+              "darkTertiaryColor": "#858585",
+              "lightPrimaryColor": "#ffffff",
+              "lightSecondaryColor": "#f7f7f7",
+              "lightTertiaryColor": "#dddddd",
+              "primaryColor": "#6bac43",
+              "primaryFont": "OpenSans",
+              "secondaryColor": "#1c683e",
+              "terciaryColor": "#2a4930",
+            }
+          }
+          viewBox="0 0 512 512"
+          width={32}
+        >
+          <Path
+            d="M137 512c12 0 22-10 22-23l0-455c0-12-10-23-22-23-13 0-23 11-23 23l0 455c0 13 10 23 23 23z m227 0c13 0 23-10 23-23l0-455c0-12-10-23-23-23-12 0-23 11-23 23l0 455c0 13 11 23 23 23z"
+            fill="#6bac43"
+          />
+        </Svg>
+      </View>
     </View>
   </View>
   <View

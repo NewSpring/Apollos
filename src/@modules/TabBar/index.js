@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import { withProps, renderComponent } from 'recompose';
+import { withProps } from 'recompose';
 import { renderOnLargerScreens } from '../../@primitives/MediaQuery';
 
 export { default as Link } from './TabBarLink';
