@@ -5,7 +5,7 @@ import {
 import Header from '../@modules/Header';
 import FooterNav from '../@modules/FooterNav';
 import H1 from '../@primitives/H1';
-import Umbrella from '../@primitives/icons/Umbrella';
+import Icon from '../@primitives/Icon';
 import { Desktop, Mobile } from '../@primitives/MediaQuery';
 import Audio from '../@modules/Audio';
 import Play from '../@primitives/icons/Play';
@@ -19,7 +19,7 @@ export default function Feed() {
         <H1>{'A title'}</H1>
       </Desktop>
       <Mobile>
-        <Umbrella />
+        <Icon name="umbrella" />
       </Mobile>
 
       <Audio
