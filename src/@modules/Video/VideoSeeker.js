@@ -4,7 +4,7 @@ import compose from 'recompose/compose';
 import PropTypes from 'prop-types';
 import Seeker from '../../@primitives/Seeker';
 
-export class AudioSeeker extends PureComponent {
+export class VideoSeeker extends PureComponent {
   static propTypes = {
     seek: PropTypes.func.isRequired,
     seekingHandler: PropTypes.func,
@@ -49,4 +49,4 @@ const enhance = compose(
   }),
 );
 
-export default enhance(AudioSeeker);
+export default enhance(VideoSeeker);

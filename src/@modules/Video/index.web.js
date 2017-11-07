@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import {
+  View,
+} from 'react-native';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
-import AudioPlay from './AudioPlay';
-import AudioPause from './AudioPause';
-import AudioSeeker from './AudioSeeker';
+import VideoPlay from './VideoPlay';
+import VideoPause from './VideoPause';
+import VideoSeeker from './VideoSeeker';
 
-export default class Audio extends Component {
-  static Play = AudioPlay;
-  static Pause = AudioPause;
-  static Seeker = AudioSeeker;
+export default class Video extends Component {
+  static Play = VideoPlay;
+  static Pause = VideoPause;
+  static Seeker = VideoSeeker;
 
   static propTypes = {
     source: PropTypes.string.isRequired,
@@ -27,7 +29,7 @@ export default class Audio extends Component {
     onReady() {},
     onError() {
       // eslint-disable-next-line no-console
-      console.error('Failed to load audio file');
+      console.error('Failed to load video file');
     },
     onPlaybackReachedEnd() {},
     onPlay() {},
@@ -57,30 +59,28 @@ export default class Audio extends Component {
     pause: this.pause,
     seek: this.seek,
     progress: this.state.progress,
-    seekingHandler: this.handleSeeking,
+    seekingHandler: this.seekingHandler,
   });
 
-  componentWillMount() {
-    this.audioFile = new window.Audio(this.props.source);
-
-    this.audioFile.oncanplaythrough = () => {
+  componentDidMount() {
+    this.videoFile.oncanplaythrough = () => {
       if (!this.isReady) this.props.onReady();
       this.isReady = true;
     };
 
-    this.audioFile.onerror = () => {
+    this.videoFile.onerror = () => {
       this.props.onError();
     };
 
-    this.audioFile.onended = () => {
+    this.videoFile.onended = () => {
       this.props.onPlaybackReachedEnd();
     };
 
-    this.audioFile.onplay = () => {
+    this.videoFile.onplay = () => {
       this.props.onPlay();
     };
 
-    this.audioFile.onpause = () => {
+    this.videoFile.onpause = () => {
       this.props.onPause();
     };
 
@@ -92,36 +92,36 @@ export default class Audio extends Component {
   }
 
   get duration() {
-    return this.audioFile && this.audioFile.duration;
+    return this.videoFile && this.videoFile.duration;
   }
 
   positionListener = undefined;
   isReady = false;
 
   play = () => {
-    if (this.isReady) this.audioFile.play();
+    if (this.isReady) this.videoFile.play();
   }
 
   pause = () => {
-    this.audioFile.pause();
+    this.videoFile.pause();
   }
 
   stop = () => {
-    this.audioFile.pause();
-    this.audioFile.currentTime = 0;
+    this.videoFile.pause();
+    this.videoFile.currentTime = 0;
     this.props.onStop();
   }
 
-  seek = (percentageOfSong) => {
-    const positionInSeconds = this.duration * percentageOfSong;
-    this.audioFile.currentTime = positionInSeconds;
+  seek = (percentageOfVideo) => {
+    const positionInSeconds = this.duration * percentageOfVideo;
+    this.videoFile.currentTime = positionInSeconds;
 
     const positionInMillis = positionInSeconds * 1000;
     this.props.onSeek(positionInMillis);
   }
 
-  handleSeeking = (percentageOfSong) => {
-    const positionInSeconds = this.duration * percentageOfSong;
+  handleSeeking = (percentageOfVideo) => {
+    const positionInSeconds = this.duration * percentageOfVideo;
     const positionInMillis = positionInSeconds * 1000;
     this.props.onSeeking(positionInMillis);
   }
@@ -129,7 +129,7 @@ export default class Audio extends Component {
   createStatusListener = () => {
     this.positionListener = setInterval(() => {
       this.setState({
-        progress: this.audioFile.currentTime / this.duration,
+        progress: this.videoFile.currentTime / this.duration,
       });
     }, 200);
   }
@@ -139,6 +139,19 @@ export default class Audio extends Component {
   }
 
   render() {
-    return <View>{this.props.children}</View>;
+    const {
+      source,
+    } = this.props;
+
+    return (
+      <View>
+        <video
+          ref={(r) => { this.videoFile = r; }}
+        >
+          <source src={source} type="video/mp4" />
+        </video>
+        {this.props.children}
+      </View>
+    );
   }
 }

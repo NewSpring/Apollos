@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { Audio as ExpoAudio } from 'expo';
+import { Video as ExpoVideo } from 'expo';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
-import AudioPlay from './AudioPlay';
-import AudioPause from './AudioPause';
-import AudioSeeker from './AudioSeeker';
+import {
+  View,
+  Dimensions,
+} from 'react-native';
+import VideoPlay from './VideoPlay';
+import VideoPause from './VideoPause';
+import VideoSeeker from './VideoSeeker';
 
-export default class Audio extends Component {
-  static Play = AudioPlay;
-  static Pause = AudioPause;
-  static Seeker = AudioSeeker;
+export default class Video extends Component {
+  static Play = VideoPlay;
+  static Pause = VideoPause;
+  static Seeker = VideoSeeker;
 
   static propTypes = {
     source: PropTypes.string.isRequired,
@@ -50,6 +53,7 @@ export default class Audio extends Component {
 
   state = {
     progress: 0,
+    videoRatio: 1,
   };
 
   getChildContext = () => ({
@@ -61,27 +65,21 @@ export default class Audio extends Component {
     seekingHandler: this.handleSeeking,
   });
 
-  componentWillMount() {
-    this.Sound = new ExpoAudio.Sound();
-    this.loadSource();
-  }
-
   componentWillUnmount() {
-    this.Sound.unloadAsync();
     this.removeStatusListener();
   }
 
   duration = 0;
   positionListener = undefined;
-  previousSoundStatus = undefined;
+  previousVideoStatus = undefined;
   isReady = false;
   playbackEnded = false;
 
   play = async () => {
     try {
-      if (this.playbackEnded) await this.Sound.stopAsync();
+      if (this.playbackEnded) await this.Video.stopAsync();
       if (this.isReady) {
-        this.Sound.playAsync();
+        this.Video.playAsync();
         this.props.onPlay();
       }
     } catch (err) {
@@ -91,7 +89,7 @@ export default class Audio extends Component {
 
   pause = async () => {
     try {
-      this.Sound.pauseAsync();
+      this.Video.pauseAsync();
       this.props.onPause();
     } catch (err) {
       this.props.onError(err);
@@ -100,58 +98,40 @@ export default class Audio extends Component {
 
   stop = async () => {
     try {
-      this.Sound.stopAsync();
+      this.Video.stopAsync();
       this.props.onStop();
     } catch (err) {
       this.props.onError(err);
     }
   }
 
-  seek = (percentageOfSong) => {
-    const positionInMillis = this.duration * percentageOfSong;
-    this.Sound.setPositionAsync(positionInMillis);
+  seek = (percentageOfVideo) => {
+    const positionInMillis = this.duration * percentageOfVideo;
+    // NOTE: For some reason this isn't being set (it's being set in increments of 4 seconds only)
+    this.Video.setPositionAsync(positionInMillis);
     this.props.onSeek(positionInMillis);
   }
 
-  handleSeeking = (percentageOfSong) => {
-    const positionInMillis = this.duration * percentageOfSong;
+  handleSeeking = (percentageOfVideo) => {
+    const positionInMillis = this.duration * percentageOfVideo;
     this.props.onSeeking(positionInMillis);
-  }
-
-  loadSource = async () => {
-    const {
-      source,
-      onReady,
-      onError,
-    } = this.props;
-
-    try {
-      const soundStatus = await this.Sound.loadAsync({ uri: source });
-      this.previousSoundStatus = soundStatus;
-      this.duration = soundStatus.durationMillis;
-      this.createStatusListener();
-      this.isReady = true;
-      onReady();
-    } catch (err) {
-      onError(err);
-    }
   }
 
   createStatusListener = () => {
     this.positionListener = setInterval(async () => {
       try {
-        const soundStatus = await this.Sound.getStatusAsync();
+        const videoStatus = await this.Video.getStatusAsync();
         this.setState({
-          progress: soundStatus.positionMillis / this.duration,
+          progress: videoStatus.positionMillis / this.duration,
         });
 
-        const currentIsFinished = soundStatus.positionMillis === this.duration;
-        const previousIsFinished = this.previousSoundStatus.positionMillis === this.duration;
+        const currentIsFinished = videoStatus.positionMillis === this.duration;
+        const previousIsFinished = this.previousVideoStatus.positionMillis === this.duration;
         if (currentIsFinished && !previousIsFinished) {
           this.pause();
           this.props.onPlaybackReachedEnd();
         }
-        this.previousSoundStatus = soundStatus;
+        this.previousVideoStatus = videoStatus;
 
         if (currentIsFinished) {
           this.playbackEnded = true;
@@ -168,7 +148,53 @@ export default class Audio extends Component {
     if (this.positionListener) clearInterval(this.positionListener);
   }
 
+  identifyVideoDimensions = ({ naturalSize: { height, width } }) => {
+    this.setState({
+      videoRatio: height / width,
+    });
+  }
+
+  handleOnLoad = async () => {
+    const {
+      onReady,
+      onError,
+    } = this.props;
+
+    try {
+      const videoStatus = await this.Video.getStatusAsync();
+      this.previousVideoStatus = videoStatus;
+      this.duration = videoStatus.durationMillis;
+      this.createStatusListener();
+      this.isReady = true;
+      onReady();
+    } catch (err) {
+      onError(err);
+    }
+  }
+
   render() {
-    return <View>{this.props.children}</View>;
+    const {
+      source,
+      children,
+      onError,
+    } = this.props;
+
+    const { width } = Dimensions.get('window');
+    const height = this.state.videoRatio * width;
+
+    return (
+      <View>
+        <ExpoVideo
+          ref={(r) => { this.Video = r; }}
+          source={{ uri: source }}
+          resizeMode="contain"
+          onReadyForDisplay={this.identifyVideoDimensions}
+          style={{ width, height }}
+          onError={onError}
+          onLoad={this.handleOnLoad}
+        />
+        {children}
+      </View>
+    );
   }
 }
