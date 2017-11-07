@@ -4,9 +4,10 @@ exports[`renders correctly 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "green",
+      "backgroundColor": "gray",
       "flexDirection": "row",
       "height": 60,
+      "justifyContent": "space-around",
     }
   }
 />

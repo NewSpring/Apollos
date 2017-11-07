@@ -3,22 +3,21 @@ import {
   View,
 } from 'react-native';
 import Header from '../@modules/Header';
-import FooterNav from '../@modules/FooterNav';
 import H1 from '../@primitives/H1';
 import Icon from '../@primitives/Icon';
-import { Desktop, Mobile } from '../@primitives/MediaQuery';
+import MediaQuery from '../@primitives/MediaQuery';
 import Audio from '../@modules/Audio';
 
 export default function Feed() {
   return (
     <View>
       <Header titleText="NewSpring Church" />
-      <Desktop>
+      <MediaQuery min="md">
         <H1>{'A title'}</H1>
-      </Desktop>
-      <Mobile>
+      </MediaQuery>
+      <MediaQuery max="md">
         <Icon name="umbrella" />
-      </Mobile>
+      </MediaQuery>
 
       <Audio
         source="https://www.w3schools.com/html/horse.mp3"
@@ -37,19 +36,6 @@ export default function Feed() {
 
         <Audio.Seeker />
       </Audio>
-
-      <FooterNav>
-        <FooterNav.Link
-          to="/sections"
-          label="sections"
-          activeStyle={{ backgroundColor: 'red' }}
-        />
-        <FooterNav.Link
-          to="/"
-          label="feed"
-          activeStyle={{ backgroundColor: 'red' }}
-        />
-      </FooterNav>
     </View>
   );
 }
