@@ -11,23 +11,22 @@ import ThemeProvider from '../../@primitives/ThemeProvider';
 import Audio from './';
 
 storiesOf('Audio', module)
-  .add('renders', () => (
-    <ThemeProvider>
-      <Audio source="https://www.w3schools.com/html/horse.mp3">
-        <Audio.Play>
-          <View>
-            <Play />
-          </View>
-        </Audio.Play>
-
-        <Audio.Pause>
-          <View>
-            <Pause />
-          </View>
-        </Audio.Pause>
-
-        <Audio.Seeker />
-      </Audio>
-    </ThemeProvider>
-  ));
-
+  // .add('renders', () => (
+  //   <ThemeProvider>
+  //     <Audio source="https://www.w3schools.com/html/horse.mp3">
+  //       <Audio.Play>
+  //         <View>
+  //           <Play />
+  //         </View>
+  //       </Audio.Play>
+  //
+  //       <Audio.Pause>
+  //         <View>
+  //           <Pause />
+  //         </View>
+  //       </Audio.Pause>
+  //
+  //       <Audio.Seeker />
+  //     </Audio>
+  //   </ThemeProvider>
+  // ));
