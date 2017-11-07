@@ -15,10 +15,18 @@ export const DEFAULT_THEME = {
 
   alertColor: '#c64f55',
   primaryFont: 'OpenSans',
+
+  breakpoints: {
+    xs: 320,
+    sm: 496,
+    md: 800,
+    lg: 1200,
+  },
 };
 
 export const THEME_PROPS = {
   primaryColor: PropTypes.string,
   secondaryColor: PropTypes.string,
   primaryFont: PropTypes.string,
+  breakpoints: PropTypes.shape({}),
 };

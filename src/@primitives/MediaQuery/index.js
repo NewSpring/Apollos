@@ -1,72 +1,56 @@
 import { Component } from 'react';
-import {
-  Dimensions,
-} from 'react-native';
 import PropTypes from 'prop-types';
-import isNil from 'lodash/isNil';
+import { get } from 'lodash';
+import { compose } from 'recompose';
 
-export { default as Mobile } from './Mobile';
-export { default as Desktop } from './Desktop';
+import withTheme from '../withTheme';
+import withWindow from './withWindow';
 
-export default class MediaQuery extends Component {
+export { withWindow };
+export { default as branch, renderOnLargerScreens } from './branch';
+
+// <MediaQuery max="md" min="sm">I render on screens sm to md</MediaQuery>
+// <MediaQuery max="xs">I render only on xs screens</MediaQuery>
+// <MeediaQuery min="md">I render on screens md or above</MediaQuery>
+class MediaQuery extends Component {
   static propTypes = {
+    min: PropTypes.string,
+    max: PropTypes.string,
+    breakpoints: PropTypes.shape({
+      xs: PropTypes.number.isRequired,
+      sm: PropTypes.number.isRequired,
+      md: PropTypes.number.isRequired,
+      lg: PropTypes.number.isRequired,
+    }).isRequired,
+    window: PropTypes.shape({
+      width: PropTypes.number,
+      height: PropTypes.number,
+    }).isRequired,
     children: PropTypes.node,
-    minWidth: PropTypes.number,
-    maxWidth: PropTypes.number,
-    minHeight: PropTypes.number,
-    maxHeight: PropTypes.number,
   };
 
   static defaultProps = {
+    min: null,
+    max: null,
     children: null,
-    minWidth: null,
-    maxWidth: null,
-    minHeight: null,
-    maxHeight: null,
   };
 
-  componentWillUnmount() {
-    Dimensions.removeEventListener('change', this.dimensionTracker);
-  }
-
-  dimensionTracker = Dimensions.addEventListener('change', ({ window: { width, height } }) => {
-    if (this.shouldBeVisible({ width, height })) return this.show();
-    return this.hide();
-  })
-
-  show = () => this.setState({
-    isVisible: true,
-  })
-
-  hide = () => this.setState({
-    isVisible: false,
-  })
-
-  shouldBeVisible = ({ height, width } = {}) => {
+  get shouldBeVisible() {
     const {
-      minWidth,
-      maxWidth,
-      minHeight,
-      maxHeight,
+      breakpoints, min, max, window: { width },
     } = this.props;
-
-    const passesMaxWidthRule = isNil(maxWidth) || width <= maxWidth;
-    const passesMinWidthRule = isNil(minWidth) || width >= minWidth;
-    const passesMaxHeightRule = isNil(maxHeight) || height <= maxHeight;
-    const passesMinHeightRule = isNil(minHeight) || height >= minHeight;
-
-    return passesMinWidthRule && passesMaxWidthRule && passesMinHeightRule && passesMaxHeightRule;
-  }
-
-  // eslint-disable-next-line react/sort-comp
-  state = {
-    isVisible: this.shouldBeVisible({
-      height: Dimensions.get('window').height,
-      width: Dimensions.get('window').width,
-    }),
+    const minSelector = get(breakpoints, min, 0);
+    const maxSelector = get(breakpoints, max, 0);
+    return (minSelector ? width > minSelector : true) &&
+      (maxSelector ? width < maxSelector : true);
   }
 
   render() {
-    return this.state.isVisible ? this.props.children : null;
+    return this.shouldBeVisible ? this.props.children : null;
   }
 }
+
+export default compose(
+  withTheme(({ theme: { breakpoints } }) => ({ breakpoints })),
+  withWindow,
+)(MediaQuery);

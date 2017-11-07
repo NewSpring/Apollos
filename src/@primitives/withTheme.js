@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import getContext from 'recompose/getContext';
 import compose from 'recompose/compose';
-import mapProps from 'recompose/mapProps';
+import withProps from 'recompose/withProps';
 
 const DEFAULT_MAPPER_FN = ({ theme, ...otherProps } = {}) => ({ ...theme, ...otherProps });
 
@@ -13,6 +13,6 @@ export default function (mapperFn = DEFAULT_MAPPER_FN) {
         secondaryColor: PropTypes.string,
       }),
     }),
-    mapProps(mapperFn),
+    withProps(mapperFn),
   );
 }
