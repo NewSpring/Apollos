@@ -2,7 +2,7 @@ import React from 'react';
 import {
   View,
 } from 'react-native';
-import Header from '../@modules/Header';
+import Header from '@modules/Header';
 import FooterNav from '../@modules/FooterNav';
 import H1 from '../@primitives/H1';
 import Umbrella from '../@primitives/icons/Umbrella';
