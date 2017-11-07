@@ -4,13 +4,11 @@ import {
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import Transition from 'react-transition-group/Transition';
 
 const styles = StyleSheet.create({
   default: {
     width: '100%',
-    transform: [{
-      translateX: 0,
-    }],
   },
 });
 
@@ -25,6 +23,20 @@ export class SeekerAnimation extends PureComponent {
     progress: 0,
   };
 
+  constructor(props) {
+    super(props);
+
+    this.progressAnimation = {
+      entering: {
+        transition: `transform ${this.props.duration}ms`,
+        transform: [{ translateX: `${this.getPercetOfProgress()}%` }],
+      },
+      entered: {
+        transform: [{ translateX: 0 }],
+      },
+    };
+  }
+
   getPercetOfProgress() {
     let progressValue = 0;
 
@@ -36,18 +48,19 @@ export class SeekerAnimation extends PureComponent {
   }
 
   render() {
-    // WIP – this doesn't work 😢
-    const progressStyle = [styles.default, {
-      transition: `transform ${this.props.duration}ms`,
-      transform: [{
-        translateX: `${this.getPercetOfProgress()}%`,
-      }],
-    }];
+    console.count();
 
     return (
-      <View style={progressStyle}>
-        {this.props.children}
-      </View>
+      <Transition appear in timeout={300}>
+        {(status) => {
+          console.log(status);
+          return (
+            <View style={{ ...styles.default, ...this.progressAnimation[status] }}>
+              {this.props.children}
+            </View>
+          );
+        }}
+      </Transition>
     );
   }
 }
