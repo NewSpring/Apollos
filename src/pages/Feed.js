@@ -8,8 +8,6 @@ import H1 from '../@primitives/H1';
 import Icon from '../@primitives/Icon';
 import { Desktop, Mobile } from '../@primitives/MediaQuery';
 import Audio from '../@modules/Audio';
-import Play from '../@primitives/icons/Play';
-import Pause from '../@primitives/icons/Pause';
 
 export default function Feed() {
   return (
@@ -27,13 +25,13 @@ export default function Feed() {
       >
         <Audio.Play>
           <View>
-            <Play />
+            <Icon name="play" />
           </View>
         </Audio.Play>
 
         <Audio.Pause>
           <View>
-            <Pause />
+            <Icon name="pause" />
           </View>
         </Audio.Pause>
 
