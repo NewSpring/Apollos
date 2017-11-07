@@ -3,13 +3,13 @@ import {
   View,
 } from 'react-native';
 import Header from '@modules/Header';
-import FooterNav from '../@modules/FooterNav';
-import H1 from '../@primitives/H1';
-import Umbrella from '../@primitives/icons/Umbrella';
-import { Desktop, Mobile } from '../@primitives/MediaQuery';
-import Audio from '../@modules/Audio';
-import Play from '../@primitives/icons/Play';
-import Pause from '../@primitives/icons/Pause';
+import FooterNav from '@modules/FooterNav';
+import H1 from '@primitives/H1';
+import Umbrella from '@primitives/icons/Umbrella';
+import { Desktop, Mobile } from '@primitives/MediaQuery';
+import Audio from '@modules/Audio';
+import Play from '@primitives/icons/Play';
+import Pause from '@primitives/icons/Pause';
 
 export default function Feed() {
   return (
