@@ -81,5 +81,5 @@ export {
   Success,
   Umbrella,
   Volume,
-  Warning
-}
+  Warning,
+};
