@@ -16,7 +16,7 @@ exports[`The ArrowBack icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -42,7 +42,7 @@ exports[`The ArrowDown icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -68,7 +68,7 @@ exports[`The ArrowNext icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -94,7 +94,7 @@ exports[`The ArrowUp icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -120,7 +120,7 @@ exports[`The Calendar icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -146,7 +146,7 @@ exports[`The Camera icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -172,7 +172,7 @@ exports[`The CategoryText icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -198,7 +198,7 @@ exports[`The CategoryVideo icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -224,7 +224,7 @@ exports[`The CheckMark icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -250,7 +250,7 @@ exports[`The Close icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -276,7 +276,7 @@ exports[`The Download icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -302,7 +302,7 @@ exports[`The Failed icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -328,7 +328,7 @@ exports[`The Filter icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -354,7 +354,7 @@ exports[`The Fullscreen icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -380,7 +380,7 @@ exports[`The Groups icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -406,7 +406,7 @@ exports[`The LeafOutline icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -432,7 +432,7 @@ exports[`The LeafSolid icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -458,7 +458,7 @@ exports[`The LeafStriped icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -484,7 +484,7 @@ exports[`The Like icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -510,7 +510,7 @@ exports[`The LikeSolid icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -536,7 +536,7 @@ exports[`The Lock icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -562,7 +562,7 @@ exports[`The Logo icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -588,7 +588,7 @@ exports[`The Mute icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -614,7 +614,7 @@ exports[`The Pause icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -640,7 +640,7 @@ exports[`The Play icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -666,7 +666,7 @@ exports[`The Print icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -692,7 +692,7 @@ exports[`The Profile icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -718,7 +718,7 @@ exports[`The Repeat icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -744,7 +744,7 @@ exports[`The RepeatAll icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -770,7 +770,7 @@ exports[`The RepeatOne icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -796,7 +796,7 @@ exports[`The Search icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -822,7 +822,7 @@ exports[`The Sections icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -848,7 +848,7 @@ exports[`The Settings icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -874,7 +874,7 @@ exports[`The Share icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -900,7 +900,7 @@ exports[`The Shuffle icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -926,7 +926,7 @@ exports[`The SkipNext icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -952,7 +952,7 @@ exports[`The SkipPrevious icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -978,7 +978,7 @@ exports[`The Success icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -992,7 +992,7 @@ exports[`The Umbrella icon renders correctly 1`] = `
 <Svg
   height={32}
   name="umbrella"
-  viewBox=""
+  viewBox="0 0 32 32"
   width={32}
 >
   <Path
@@ -1018,7 +1018,7 @@ exports[`The Volume icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path
@@ -1044,7 +1044,7 @@ exports[`The Warning icon renders correctly 1`] = `
       },
     ]
   }
-  viewBox="0 0 519 512"
+  viewBox="0 0 512 512"
   width={32}
 >
   <Path

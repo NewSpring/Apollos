@@ -45,7 +45,7 @@ exports[`renders correctly 1`] = `
             },
           ]
         }
-        viewBox="0 0 519 512"
+        viewBox="0 0 512 512"
         width={32}
       >
         <Path
@@ -98,7 +98,7 @@ exports[`renders correctly 1`] = `
             },
           ]
         }
-        viewBox="0 0 519 512"
+        viewBox="0 0 512 512"
         width={32}
       >
         <Path
