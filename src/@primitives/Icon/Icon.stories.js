@@ -1,9 +1,13 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react-native';
+import { kebabCase } from 'lodash';
 
 import Icon from './';
+import * as icons from './icons';
 
-storiesOf('Icon', module)
-  .add('Pause', () => <Icon name="pause" />)
-  .add('SkipNext', () => <Icon name="skip-next" fill="green" />);
+const stories = storiesOf('Icon', module);
+
+Object.keys(icons).forEach((iconName) => {
+  stories.add(iconName, () => <Icon name={kebabCase(iconName)} />);
+});
