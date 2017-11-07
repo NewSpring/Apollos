@@ -5,8 +5,7 @@ import {
 } from 'react-native';
 import ThemeProvider from '../../@primitives/ThemeProvider';
 import Audio from './';
-import Play from '../../@primitives/icons/Play';
-import Pause from '../../@primitives/icons/Pause';
+import Icon from '../../@primitives/Icon';
 
 it('renders correctly', () => {
   const tree = renderer.create(
@@ -14,13 +13,13 @@ it('renders correctly', () => {
       <Audio source="https://www.w3schools.com/html/horse.mp3">
         <Audio.Play>
           <View>
-            <Play />
+            <Icon name="play" />
           </View>
         </Audio.Play>
 
         <Audio.Pause>
           <View>
-            <Pause />
+            <Icon name="pause" />
           </View>
         </Audio.Pause>
 
