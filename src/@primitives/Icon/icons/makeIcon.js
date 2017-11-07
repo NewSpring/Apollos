@@ -1,4 +1,5 @@
-import { compose, withProps } from 'recompose';
+import { compose, withProps, nest } from 'recompose';
+import { View } from 'react-native';
 import withTheme from '../../withTheme';
 
 // Currently used to inject default fill color to icons.
@@ -8,12 +9,9 @@ const makeIcon = withTheme(({ theme: { primaryColor = null } = {}, fill, ...othe
   ...otherProps,
 }));
 
-export const iconFromSvgFont = compose(
-  makeIcon,
-  withProps(({ style = {} }) => ({
-    style: [style, { transform: [{ scaleY: -1 }] }],
-    viewBox: '0 0 512 512',
-  })),
+export const iconFromSvgFont = IconComponent => nest(
+  withProps({ style: [{ transform: [{ scaleY: -1 }] }] })(View), // svg fonts have icons flipped across y-axis
+  makeIcon(IconComponent),
 );
 
 export default makeIcon;
