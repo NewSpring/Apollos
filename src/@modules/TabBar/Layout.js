@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import { compose } from 'recompose';
-import { branch as responsiveBranch } from '../../@primitives/MediaQuery';
-import styled from '../../@primitives/styled';
+import { branch as responsiveBranch } from '@primitives/MediaQuery';
+import styled from '@primitives/styled';
 
 const styles = StyleSheet.create({
   common: {

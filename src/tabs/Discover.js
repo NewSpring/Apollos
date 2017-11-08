@@ -3,7 +3,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import Header from '../@modules/Header';
+import Header from '@modules/Header';
 
 const styles = StyleSheet.create({
   container: {

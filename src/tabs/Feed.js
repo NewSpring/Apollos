@@ -2,11 +2,11 @@ import React from 'react';
 import {
   View,
 } from 'react-native';
-import Header from '../@modules/Header';
-import H1 from '../@primitives/H1';
-import Icon from '../@primitives/Icon';
-import MediaQuery from '../@primitives/MediaQuery';
-import Audio from '../@modules/Audio';
+import Header from '@modules/Header';
+import H1 from '@primitives/H1';
+import Icon from '@primitives/Icon';
+import MediaQuery from '@primitives/MediaQuery';
+import Audio from '@modules/Audio';
 
 export default function Feed() {
   return (

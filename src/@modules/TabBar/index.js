@@ -1,8 +1,8 @@
 import { StyleSheet, View } from 'react-native';
 import { compose } from 'recompose';
-import { branch as responsiveBranch } from '../../@primitives/MediaQuery';
-import styled from '../../@primitives/styled';
-import withTheme from '../../@primitives/withTheme';
+import { branch as responsiveBranch } from '@primitives/MediaQuery';
+import styled from '@primitives/styled';
+import withTheme from '@primitives/withTheme';
 
 export { default as Link } from './Link';
 export { default as Layout } from './Layout';
