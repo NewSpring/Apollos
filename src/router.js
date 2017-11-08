@@ -3,10 +3,10 @@ import { View, Platform } from 'react-native';
 import { Router, Route, AndroidBackButton, Switch } from './@modules/NativeWebRouter';
 
 import * as tabs from './tabs';
-import TabBar, { Link as TabBarLink } from './@modules/TabBar';
+import TabBar, { Link as TabBarLink, Layout as TabBarLayout } from './@modules/TabBar';
 
 const Tabs = () => (
-  <View style={{ flex: 1 }}>
+  <TabBarLayout>
     <View style={{ flex: 1 }}>
       <Switch>
         <Route exact path="/" component={tabs.Feed} />
@@ -23,7 +23,7 @@ const Tabs = () => (
       <TabBarLink to="/discover" icon="search" label="Discover" />
       <TabBarLink to="/profile" icon="profile" label="Profile" />
     </TabBar>
-  </View>
+  </TabBarLayout>
 );
 
 export default () => (

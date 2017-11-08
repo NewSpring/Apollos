@@ -3,24 +3,19 @@ import { compose } from 'recompose';
 import { branch as responsiveBranch } from '../../@primitives/MediaQuery';
 import styled from '../../@primitives/styled';
 
-export { default as Link } from './Link';
-export { default as Layout } from './Layout';
-
 const styles = StyleSheet.create({
   common: {
-    backgroundColor: 'gray',
+    flex: 1,
   },
-  horizontal: {
+  mobile: {
     flexDirection: 'column',
-    justifyContent: 'flex-start',
   },
-  vertical: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+  horizontalLayout: {
+    flexDirection: 'row-reverse',
   },
 });
 
 export default compose(
   styled(styles.common),
-  responsiveBranch({ max: 'md' }, styled(styles.vertical), styled(styles.horizontal)),
+  responsiveBranch({ max: 'md' }, styled(styles.mobile), styled(styles.horizontalLayout)),
 )(View);
