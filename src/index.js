@@ -2,10 +2,10 @@ import { AppRegistry, Platform } from 'react-native';
 import { Provider as ReduxProvider } from 'react-redux';
 import { ApolloProvider } from 'react-apollo';
 import { nest, withProps } from 'recompose';
-import ThemeProvider from './@primitives/ThemeProvider';
-import FontLoader from './@primitives/FontLoader';
-import Store from './@data/Store';
-import Client from './@data/Client';
+import ThemeProvider from '@primitives/ThemeProvider';
+import FontLoader from '@primitives/FontLoader';
+import Store from '@data/Store';
+import Client from '@data/Client';
 import Router from './router';
 
 const App = nest(

@@ -1,11 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  View,
-} from 'react-native';
-import ThemeProvider from '../../@primitives/ThemeProvider';
+import { View } from 'react-native';
+import ThemeProvider from '@primitives/ThemeProvider';
+import Icon from '@primitives/Icon';
 import Audio from './';
-import Icon from '../../@primitives/Icon';
 
 it('renders correctly', () => {
   const tree = renderer.create(

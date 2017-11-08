@@ -1,8 +1,16 @@
 {
   "presets": ["react-native-stage-0/decorator-support"],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "extensions": [".android.js", ".ios.js", ".js"]
+    }]
+  ],
   "env": {
     "development": {
-      "plugins": ["transform-react-jsx-source"]
+      "plugins": [
+        "transform-react-jsx-source"
+      ]
     }
   }
 }

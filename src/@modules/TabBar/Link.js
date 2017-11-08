@@ -5,8 +5,8 @@ import {
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import Icon from '../../@primitives/Icon';
-import NavLink from '../NativeWebRouter/NavLink';
+import Icon from '@primitives/Icon';
+import NavLink from '@modules/NativeWebRouter/NavLink';
 
 const styles = StyleSheet.create({
   container: {

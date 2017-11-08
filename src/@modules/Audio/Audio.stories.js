@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react-native';
 import {
   View,
 } from 'react-native';
-import Icon from '../../@primitives/Icon';
+import Icon from '@primitives/Icon';
 
-import ThemeProvider from '../../@primitives/ThemeProvider';
+import ThemeProvider from '@primitives/ThemeProvider';
 import Audio from './';
 
 storiesOf('Audio', module)
@@ -29,4 +29,3 @@ storiesOf('Audio', module)
       </Audio>
     </ThemeProvider>
   ));
-
