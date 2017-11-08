@@ -1,45 +1,42 @@
 import React, { Component } from 'react';
 import {
-  Platform,
-} from 'react-native';
-import {
   Router,
 } from 'react-router';
 import PropTypes from 'prop-types';
-import createBrowserHistory from 'history/createBrowserHistory';
-import createMemoryHistory from 'history/createMemoryHistory';
+import createHistory from './createHistory';
 
 export default class NativeWebRouter extends Component {
   static propTypes = {
+    // eslint-disable-next-line react/no-unused-prop-types
     web: PropTypes.shape({
       basename: PropTypes.string,
       forceRefresh: PropTypes.bool,
       getUserConfirmation: PropTypes.func,
       keyLength: PropTypes.number,
     }),
+    // eslint-disable-next-line react/no-unused-prop-types
     native: PropTypes.shape({
       initialEntries: PropTypes.array,
       initialIndex: PropTypes.number,
       getUserConfirmation: PropTypes.func,
       keyLength: PropTypes.number,
     }),
+    // eslint-disable-next-line react/forbid-prop-types
+    history: PropTypes.any,
     children: PropTypes.node,
   };
 
   static defaultProps = {
     web: {},
     native: {},
+    history: createHistory(this.props),
     children: null,
   }
-
-  createHistory = () => (Platform.OS === 'web' ? createBrowserHistory(this.props.web) : createMemoryHistory(this.props.native));
-
-  history = this.createHistory();
 
   render() {
     return (
       <Router
-        history={this.history}
+        history={this.props.history}
       >
         {this.props.children}
       </Router>

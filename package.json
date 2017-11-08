@@ -83,7 +83,8 @@
     "react-router": "^4.2.0",
     "recompose": "^0.26.0",
     "redux": "^3.7.2",
-    "redux-saga": "^0.16.0"
+    "redux-saga": "^0.16.0",
+    "uuid": "^3.1.0"
   },
   "engines": {
     "node": ">=8.7.0"
