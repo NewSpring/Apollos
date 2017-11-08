@@ -1,8 +1,8 @@
-import { ApolloClient, createNetworkInterface } from 'react-apollo';
+import { ApolloClient } from 'apollo-client';
+import { createHttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
-// TODO: import URI from env
 export default new ApolloClient({
-  networkInterface: createNetworkInterface({
-    uri: 'https://api.newspring.cc/graphql',
-  }),
+  link: createHttpLink({ uri: 'https://api.newspring.cc/graphql' }),
+  cache: new InMemoryCache(),
 });
