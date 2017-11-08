@@ -2,6 +2,7 @@ import React from 'react';
 import {
   View,
 } from 'react-native';
+import { compose, mapProps } from 'recompose';
 import Header from '@modules/Header';
 import FooterNav from '@modules/FooterNav';
 import H1 from '@primitives/H1';
@@ -10,8 +11,9 @@ import { Desktop, Mobile } from '@primitives/MediaQuery';
 import Audio from '@modules/Audio';
 import Play from '@primitives/icons/Play';
 import Pause from '@primitives/icons/Pause';
+import withHomeFeed from '@data/withHomeFeed';
 
-export default function Feed() {
+export function Feed(props) {
   return (
     <View>
       <Header titleText="NewSpring Church" />
@@ -55,3 +57,10 @@ export default function Feed() {
     </View>
   );
 }
+
+const enhance = compose(
+  withHomeFeed,
+  mapProps(({ data: { feed } }) => (feed)),
+);
+
+export default enhance(Feed);
