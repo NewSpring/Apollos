@@ -13,7 +13,7 @@ import Play from '@primitives/icons/Play';
 import Pause from '@primitives/icons/Pause';
 import withHomeFeed from '@data/withHomeFeed';
 
-export function Feed() {
+export function Feed(props) {
   return (
     <View>
       <Header titleText="NewSpring Church" />
@@ -60,7 +60,7 @@ export function Feed() {
 
 const enhance = compose(
   withHomeFeed,
-  mapProps(({ data: { feed } }) => (feed)),
+  mapProps(({ data: { feed } }) => ({ feed })),
 );
 
 export default enhance(Feed);
