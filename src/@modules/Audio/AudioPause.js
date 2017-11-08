@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import {
   TouchableHighlight,
 } from 'react-native';
-import onlyPropTypes from '../../@utils/onlyPropTypes';
+import onlyPropTypes from '@utils/onlyPropTypes';
 
 export class AudioPause extends PureComponent {
   static propTypes = {
