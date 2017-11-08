@@ -13,7 +13,7 @@ import Play from '@primitives/icons/Play';
 import Pause from '@primitives/icons/Pause';
 import withHomeFeed from '@data/withHomeFeed';
 
-export function Feed(props) {
+export function Feed() {
   return (
     <View>
       <Header titleText="NewSpring Church" />
