@@ -3,14 +3,15 @@
 exports[`renders correctly 1`] = `
 <View
   breakpoints={Object {}}
+  darkPrimaryColor={undefined}
   style={
     Array [
       Object {
-        "backgroundColor": "gray",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
       },
       Object {
-        "flexDirection": "column",
-        "justifyContent": "flex-start",
+        "backgroundColor": undefined,
       },
     ]
   }

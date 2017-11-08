@@ -2,25 +2,25 @@ import { StyleSheet, View } from 'react-native';
 import { compose } from 'recompose';
 import { branch as responsiveBranch } from '../../@primitives/MediaQuery';
 import styled from '../../@primitives/styled';
+import withTheme from '../../@primitives/withTheme';
 
 export { default as Link } from './Link';
 export { default as Layout } from './Layout';
 
 const styles = StyleSheet.create({
-  common: {
-    backgroundColor: 'gray',
-  },
-  horizontal: {
+  vertical: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
+    maxWidth: 80, // todo: need to inherit from base unit?
   },
-  vertical: {
+  horizontal: {
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
 });
 
 export default compose(
-  styled(styles.common),
-  responsiveBranch({ max: 'md' }, styled(styles.vertical), styled(styles.horizontal)),
+  withTheme(({ theme: { darkPrimaryColor } = {} }) => ({ darkPrimaryColor })),
+  styled(({ darkPrimaryColor }) => ({ backgroundColor: darkPrimaryColor })),
+  responsiveBranch({ max: 'md' }, styled(styles.horizontal), styled(styles.vertical)),
 )(View);

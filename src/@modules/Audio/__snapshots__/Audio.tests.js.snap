@@ -65,7 +65,7 @@ exports[`renders correctly 1`] = `
               "primaryColor": "#6bac43",
               "primaryFont": "OpenSans",
               "secondaryColor": "#1c683e",
-              "terciaryColor": "#2a4930",
+              "tertiaryColor": "#2a4930",
             }
           }
           viewBox="0 0 512 512"
@@ -142,7 +142,7 @@ exports[`renders correctly 1`] = `
               "primaryColor": "#6bac43",
               "primaryFont": "OpenSans",
               "secondaryColor": "#1c683e",
-              "terciaryColor": "#2a4930",
+              "tertiaryColor": "#2a4930",
             }
           }
           viewBox="0 0 512 512"

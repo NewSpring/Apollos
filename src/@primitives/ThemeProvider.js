@@ -19,7 +19,7 @@ export default class ThemeProvider extends PureComponent {
   };
 
   getChildContext = () => ({
-    theme: this.props.theme,
+    theme: Object.assign({}, DEFAULT_THEME, this.props.theme),
   })
 
   render() {

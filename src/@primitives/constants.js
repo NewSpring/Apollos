@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 
+// Todo: port over values from
+// https://github.com/NewSpring/junction-framework/blob/master/lib/_defaults.scss
 export const DEFAULT_THEME = {
   primaryColor: '#6bac43',
   secondaryColor: '#1c683e',
-  terciaryColor: '#2a4930',
+  tertiaryColor: '#2a4930',
 
   darkPrimaryColor: '#303030',
   darkSecondaryColor: '#505050',
@@ -28,5 +30,10 @@ export const THEME_PROPS = {
   primaryColor: PropTypes.string,
   secondaryColor: PropTypes.string,
   primaryFont: PropTypes.string,
-  breakpoints: PropTypes.shape({}),
+  breakpoints: PropTypes.shape({
+    xs: PropTypes.number,
+    sm: PropTypes.number,
+    md: PropTypes.number,
+    lg: PropTypes.number,
+  }),
 };
