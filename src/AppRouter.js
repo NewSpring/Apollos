@@ -26,7 +26,7 @@ const Tabs = () => (
   </TabBarLayout>
 );
 
-export default () => (
+const AppRouter = () => (
   <Router>
     <View style={{ flex: 1 }}>
       {Platform.OS === 'android' ? <AndroidBackButton /> : null}
@@ -34,3 +34,5 @@ export default () => (
     </View>
   </Router>
 );
+
+export default AppRouter;

@@ -6,14 +6,14 @@ import ThemeProvider from '@primitives/ThemeProvider';
 import FontLoader from '@primitives/FontLoader';
 import Store from '@data/Store';
 import Client from '@data/Client';
-import Router from './router';
+import AppRouter from './app-router';
 
 const App = nest(
   withProps({ client: Client })(ApolloProvider),
   withProps({ store: Store })(ReduxProvider),
   ThemeProvider,
   FontLoader,
-  Router,
+  AppRouter,
 );
 
 export default App;
