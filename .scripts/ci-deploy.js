@@ -99,7 +99,7 @@ spawn(exp, ['login', '-u', EXP_USERNAME, '-p', EXP_PASSWORD], (loginError) => {
   if (loginError) return status({ state: 'error', description: 'Expo Login Failed', error: loginError });
 
   status({ description: 'Publishing project to expo...' });
-  spawn(exp, ['publish'], (publishError) => {
+  spawn(exp, ['publish', '--non-interactive'], (publishError) => {
     if (publishError) return status({ state: 'error', description: 'Expo publish failed', error: publishError });
 
     status({ state: 'success', description: 'Deploy finished!' });
