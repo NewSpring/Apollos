@@ -4,9 +4,11 @@ import {
   Text,
   View,
 } from 'react-native';
+import { compose } from 'recompose';
 import PropTypes from 'prop-types';
 import Icon from '@primitives/Icon';
 import NavLink from '@modules/NativeWebRouter/NavLink';
+import withTheme from '@primitives/withTheme';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,13 +22,14 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class FooterNavLink extends PureComponent {
+class FooterNavLink extends PureComponent {
   static propTypes = {
     label: PropTypes.string,
     icon: PropTypes.string,
     to: NavLink.propTypes.to,
     style: NavLink.propTypes.style,
     activeStyle: NavLink.propTypes.activeStyle,
+    color: PropTypes.string,
   };
 
   static defaultProps = {
@@ -35,22 +38,21 @@ export default class FooterNavLink extends PureComponent {
     icon: null,
     style: null,
     activeStyle: null,
+    color: undefined,
   };
 
   render() {
-    const {
-      to,
-      style,
-      activeStyle,
-    } = this.props;
-
     return (
-      <NavLink to={to} style={style} activeStyle={activeStyle}>
+      <NavLink to={this.props.to} style={this.props.style} activeStyle={this.props.activeStyle}>
         <View style={styles.container}>
-          {this.props.icon ? <Icon name={this.props.icon} fill="white" /> : null}
+          {this.props.icon ? <Icon name={this.props.icon} fill={this.props.color} /> : null}
           {this.props.label ? <Text style={styles.text}>{this.props.label}</Text> : null}
         </View>
       </NavLink>
     );
   }
 }
+
+export default compose(
+  withTheme(({ lightPrimaryColor }) => ({ color: lightPrimaryColor })),
+)(FooterNavLink);
