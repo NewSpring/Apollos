@@ -6,12 +6,9 @@ import Seeker from './';
 
 storiesOf('Primitives/Seeker', module)
   .add('Default', () => {
-    let progressState = 7500;
-    // setTimeout(() => { progressState = 22500 }, 500);
-
     return (
       <ThemeProvider>
-        <Seeker progress={progressState} duration={30000} />
+        <Seeker progress={25000} duration={30000} />
       </ThemeProvider>
     );
   });
