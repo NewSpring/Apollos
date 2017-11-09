@@ -3,10 +3,8 @@ import { find } from 'lodash';
 import withWindow from './withWindow';
 import withTheme from '../withTheme';
 
-// Make it easy to do breakpoint-based component branching, a-la recompose's branch method,
-// except the first argument is an object to test against versus a function.
-// This object mirrors the props supported by <MediaQuery> and the intention would be to
-// use it like a mediaQuery:
+// Make it easy to do breakpoint-based component branching, a-la recompose's branch method.
+// The "test" function should return an object that mirrors what you'd do in a css mediaQuery:
 // import { enhancer as mediaQuery } from 'MediaQuery';
 // mediaQuery(
 //   ({ xs, lg }) => ({ minWidth: xs, maxWidth: lg }),
