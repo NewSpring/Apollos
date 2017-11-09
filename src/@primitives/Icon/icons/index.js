@@ -1,85 +1,41 @@
-import ArrowBack from './ArrowBack';
-import ArrowDown from './ArrowDown';
-import ArrowNext from './ArrowNext';
-import ArrowUp from './ArrowUp';
-import Calendar from './Calendar';
-import Camera from './Camera';
-import CategoryText from './CategoryText';
-import CategoryVideo from './CategoryVideo';
-import CheckMark from './CheckMark';
-import Close from './Close';
-import Download from './Download';
-import Failed from './Failed';
-import Filter from './Filter';
-import Fullscreen from './Fullscreen';
-import Groups from './Groups';
-import LeafOutline from './LeafOutline';
-import LeafSolid from './LeafSolid';
-import LeafStriped from './LeafStriped';
-import Like from './Like';
-import LikeSolid from './LikeSolid';
-import Lock from './Lock';
-import Logo from './Logo';
-import Mute from './Mute';
-import Pause from './Pause';
-import Play from './Play';
-import Print from './Print';
-import Profile from './Profile';
-import Repeat from './Repeat';
-import RepeatAll from './RepeatAll';
-import RepeatOne from './RepeatOne';
-import Search from './Search';
-import Sections from './Sections';
-import Settings from './Settings';
-import Share from './Share';
-import Shuffle from './Shuffle';
-import SkipNext from './SkipNext';
-import SkipPrevious from './SkipPrevious';
-import Success from './Success';
-import Umbrella from './Umbrella';
-import Volume from './Volume';
-import Warning from './Warning';
-
-export {
-  ArrowBack,
-  ArrowDown,
-  ArrowNext,
-  ArrowUp,
-  Calendar,
-  Camera,
-  CategoryText,
-  CategoryVideo,
-  CheckMark,
-  Close,
-  Download,
-  Failed,
-  Filter,
-  Fullscreen,
-  Groups,
-  LeafOutline,
-  LeafSolid,
-  LeafStriped,
-  Like,
-  LikeSolid,
-  Lock,
-  Logo,
-  Mute,
-  Pause,
-  Play,
-  Print,
-  Profile,
-  Repeat,
-  RepeatAll,
-  RepeatOne,
-  Search,
-  Sections,
-  Settings,
-  Share,
-  Shuffle,
-  SkipNext,
-  SkipPrevious,
-  Success,
-  Umbrella,
-  Volume,
-  Warning,
-};
+export { default as ArrowBack } from './ArrowBack';
+export { default as ArrowDown } from './ArrowDown';
+export { default as ArrowNext } from './ArrowNext';
+export { default as ArrowUp } from './ArrowUp';
+export { default as Calendar } from './Calendar';
+export { default as Camera } from './Camera';
+export { default as CategoryText } from './CategoryText';
+export { default as CategoryVideo } from './CategoryVideo';
+export { default as CheckMark } from './CheckMark';
+export { default as Close } from './Close';
+export { default as Download } from './Download';
+export { default as Failed } from './Failed';
+export { default as Filter } from './Filter';
+export { default as Fullscreen } from './Fullscreen';
+export { default as Groups } from './Groups';
+export { default as LeafOutline } from './LeafOutline';
+export { default as LeafSolid } from './LeafSolid';
+export { default as LeafStriped } from './LeafStriped';
+export { default as Like } from './Like';
+export { default as LikeSolid } from './LikeSolid';
+export { default as Lock } from './Lock';
+export { default as Logo } from './Logo';
+export { default as Mute } from './Mute';
+export { default as Pause } from './Pause';
+export { default as Play } from './Play';
+export { default as Print } from './Print';
+export { default as Profile } from './Profile';
+export { default as Repeat } from './Repeat';
+export { default as RepeatAll } from './RepeatAll';
+export { default as RepeatOne } from './RepeatOne';
+export { default as Search } from './Search';
+export { default as Sections } from './Sections';
+export { default as Settings } from './Settings';
+export { default as Share } from './Share';
+export { default as Shuffle } from './Shuffle';
+export { default as SkipNext } from './SkipNext';
+export { default as SkipPrevious } from './SkipPrevious';
+export { default as Success } from './Success';
+export { default as Umbrella } from './Umbrella';
+export { default as Volume } from './Volume';
+export { default as Warning } from './Warning';

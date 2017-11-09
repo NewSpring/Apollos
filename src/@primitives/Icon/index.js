@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { compose, pure, setPropTypes, withProps } from 'recompose';
+import { compose, pure } from 'recompose';
 import { flow, camelCase, upperFirst, kebabCase } from 'lodash';
 
 import * as Icons from './icons';
@@ -13,10 +13,18 @@ const pascalCase = string => flow(camelCase, upperFirst)(string);
 // Can also import the icon directly:
 // import { SkipNext } from 'Icon/icons';
 // <SkipNext />
-export default compose(
+
+const enhance = compose(
   pure,
-  setPropTypes({
-    name: PropTypes.oneOf(Object.keys(Icons).map(kebabCase)).isRequired,
-  }),
-  withProps(({ name }) => ({ IconComponent: Icons[pascalCase(name)] })),
-)(({ IconComponent, ...props }) => <IconComponent {...props} />);
+);
+
+const Icon = enhance(({ name, ...otherProps }) => {
+  const IconComponent = Icons[pascalCase(name)];
+  return (<IconComponent {...otherProps} />);
+});
+
+Icon.propTypes = {
+  name: PropTypes.oneOf(Object.keys(Icons).map(kebabCase)).isRequired,
+};
+
+export default Icon;

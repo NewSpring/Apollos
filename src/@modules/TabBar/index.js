@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import { compose } from 'recompose';
-import { branch as responsiveBranch } from '@primitives/MediaQuery';
+import { enhancer as mediaQuery } from '@primitives/MediaQuery';
 import styled from '@primitives/styled';
 import withTheme from '@primitives/withTheme';
 
@@ -22,5 +22,5 @@ const styles = StyleSheet.create({
 export default compose(
   withTheme(({ theme: { darkPrimaryColor } = {} }) => ({ darkPrimaryColor })),
   styled(({ darkPrimaryColor }) => ({ backgroundColor: darkPrimaryColor })),
-  responsiveBranch({ max: 'md' }, styled(styles.horizontal), styled(styles.vertical)),
+  mediaQuery(({ md }) => ({ maxWidth: md }), styled(styles.horizontal), styled(styles.vertical)),
 )(View);

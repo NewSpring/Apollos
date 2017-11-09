@@ -7,7 +7,7 @@ import withTheme from '../withTheme';
 import withWindow from './withWindow';
 
 export { withWindow };
-export { default as branch, renderOnLargerScreens } from './branch';
+export { default as enhancer } from './enhancer';
 
 // <MediaQuery max="md" min="sm">I render on screens sm to md</MediaQuery>
 // <MediaQuery max="xs">I render only on xs screens</MediaQuery>
@@ -41,8 +41,10 @@ class MediaQuery extends Component {
     } = this.props;
     const minSelector = get(breakpoints, min, 0);
     const maxSelector = get(breakpoints, max, 0);
-    return (minSelector ? width > minSelector : true) &&
-      (maxSelector ? width < maxSelector : true);
+
+    const passesMinWidthRule = minSelector && width > minSelector;
+    const passesMaxWidthRule = maxSelector && width < maxSelector;
+    return passesMaxWidthRule && passesMinWidthRule;
   }
 
   render() {

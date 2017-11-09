@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import { compose } from 'recompose';
-import { branch as responsiveBranch } from '@primitives/MediaQuery';
+import { enhancer as mediaQuery } from '@primitives/MediaQuery';
 import styled from '@primitives/styled';
 
 const styles = StyleSheet.create({
@@ -17,5 +17,8 @@ const styles = StyleSheet.create({
 
 export default compose(
   styled(styles.common),
-  responsiveBranch({ max: 'md' }, styled(styles.mobile), styled(styles.horizontalLayout)),
+  mediaQuery(({ md }) => ({ maxWidth: md }),
+    styled(styles.mobile),
+    styled(styles.horizontalLayout),
+  ),
 )(View);
