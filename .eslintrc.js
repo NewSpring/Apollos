@@ -5,7 +5,7 @@ module.exports = {
     "jest",
   ],
   "rules": {
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-extraneous-dependencies": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-curly-brace-presence": 0,
     "react/prefer-stateless-function": [2, { "ignorePureComponents": true }],
@@ -16,6 +16,11 @@ module.exports = {
     "jsx-a11y/anchor-is-valid": 0,
     "jsx-a11y/media-has-caption": 0,
     "global-require": 0,
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   },
   "env": {
     "jest/globals": true,

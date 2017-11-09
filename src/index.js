@@ -6,12 +6,12 @@ import {
 } from 'react-native';
 import { Provider as ReduxProvider } from 'react-redux';
 import { ApolloProvider } from 'react-apollo';
-import { Router, Route, AndroidBackButton } from './@modules/NativeWebRouter';
-import * as pages from './pages';
-import ThemeProvider from './@primitives/ThemeProvider';
-import FontLoader from './@primitives/FontLoader';
-import Store from './@data/Store';
-import Client from './@data/Client';
+import { Router, Route, AndroidBackButton } from '@modules/NativeWebRouter';
+import * as pages from 'pages';
+import ThemeProvider from '@primitives/ThemeProvider';
+import FontLoader from '@primitives/FontLoader';
+import Store from '@data/Store';
+import Client from '@data/Client';
 
 const App = () => (
   <ApolloProvider client={Client}>
