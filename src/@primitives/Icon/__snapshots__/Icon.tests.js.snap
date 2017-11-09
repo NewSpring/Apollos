@@ -16,7 +16,6 @@ exports[`The ArrowBack icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -44,7 +43,6 @@ exports[`The ArrowDown icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -72,7 +70,6 @@ exports[`The ArrowNext icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -100,7 +97,6 @@ exports[`The ArrowUp icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -128,7 +124,6 @@ exports[`The Calendar icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -156,7 +151,6 @@ exports[`The Camera icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -184,7 +178,6 @@ exports[`The CategoryText icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -212,7 +205,6 @@ exports[`The CategoryVideo icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -240,7 +232,6 @@ exports[`The CheckMark icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -268,7 +259,6 @@ exports[`The Close icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -296,7 +286,6 @@ exports[`The Download icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -324,7 +313,6 @@ exports[`The Failed icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -352,7 +340,6 @@ exports[`The Filter icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -380,7 +367,6 @@ exports[`The Fullscreen icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -408,7 +394,6 @@ exports[`The Groups icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -436,7 +421,6 @@ exports[`The LeafOutline icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -464,7 +448,6 @@ exports[`The LeafSolid icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -492,7 +475,6 @@ exports[`The LeafStriped icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -520,7 +502,6 @@ exports[`The Like icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 514 514"
     width={32}
   >
@@ -548,7 +529,6 @@ exports[`The LikeSolid icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -576,7 +556,6 @@ exports[`The Lock icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -604,7 +583,6 @@ exports[`The Logo icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -632,7 +610,6 @@ exports[`The Mute icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -660,7 +637,6 @@ exports[`The Pause icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -688,7 +664,6 @@ exports[`The Play icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -716,7 +691,6 @@ exports[`The Print icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -744,7 +718,6 @@ exports[`The Profile icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -772,7 +745,6 @@ exports[`The Repeat icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -800,7 +772,6 @@ exports[`The RepeatAll icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -828,7 +799,6 @@ exports[`The RepeatOne icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -856,7 +826,6 @@ exports[`The Search icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -884,7 +853,6 @@ exports[`The Sections icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -912,7 +880,6 @@ exports[`The Settings icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -940,7 +907,6 @@ exports[`The Share icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -968,7 +934,6 @@ exports[`The Shuffle icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -996,7 +961,6 @@ exports[`The SkipNext icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -1024,7 +988,6 @@ exports[`The SkipPrevious icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -1052,7 +1015,6 @@ exports[`The Success icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -1067,7 +1029,6 @@ exports[`The Success icon renders correctly 1`] = `
 exports[`The Umbrella icon renders correctly 1`] = `
 <Svg
   height={32}
-  theme={undefined}
   viewBox="0 0 32 32"
   width={32}
 >
@@ -1094,7 +1055,6 @@ exports[`The Volume icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >
@@ -1122,7 +1082,6 @@ exports[`The Warning icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    theme={undefined}
     viewBox="0 0 512 512"
     width={32}
   >

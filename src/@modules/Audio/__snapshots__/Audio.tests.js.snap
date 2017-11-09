@@ -45,27 +45,6 @@ exports[`renders correctly 1`] = `
       >
         <Svg
           height={32}
-          theme={
-            Object {
-              "alertColor": "#c64f55",
-              "breakpoints": Object {
-                "lg": 1200,
-                "md": 800,
-                "sm": 496,
-                "xs": 320,
-              },
-              "darkPrimaryColor": "#303030",
-              "darkSecondaryColor": "#505050",
-              "darkTertiaryColor": "#858585",
-              "lightPrimaryColor": "#ffffff",
-              "lightSecondaryColor": "#f7f7f7",
-              "lightTertiaryColor": "#dddddd",
-              "primaryColor": "#6bac43",
-              "primaryFont": "OpenSans",
-              "secondaryColor": "#1c683e",
-              "tertiaryColor": "#2a4930",
-            }
-          }
           viewBox="0 0 512 512"
           width={32}
         >
@@ -120,27 +99,6 @@ exports[`renders correctly 1`] = `
       >
         <Svg
           height={32}
-          theme={
-            Object {
-              "alertColor": "#c64f55",
-              "breakpoints": Object {
-                "lg": 1200,
-                "md": 800,
-                "sm": 496,
-                "xs": 320,
-              },
-              "darkPrimaryColor": "#303030",
-              "darkSecondaryColor": "#505050",
-              "darkTertiaryColor": "#858585",
-              "lightPrimaryColor": "#ffffff",
-              "lightSecondaryColor": "#f7f7f7",
-              "lightTertiaryColor": "#dddddd",
-              "primaryColor": "#6bac43",
-              "primaryFont": "OpenSans",
-              "secondaryColor": "#1c683e",
-              "tertiaryColor": "#2a4930",
-            }
-          }
           viewBox="0 0 512 512"
           width={32}
         >
