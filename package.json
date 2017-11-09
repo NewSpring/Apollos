@@ -38,6 +38,7 @@
     "web": "npm run create-app-entrypoint && NODE_PATH=./src npm run run-with-settings 'react-scripts start'",
     "build": "npm run create-app-entrypoint && npm run run-with-settings 'react-scripts build'",
     "build-storybook": "npm run create-storybook-entrypoint && npm run storybook-load-stories && build-storybook -c src/.storybook/web -s public",
+    "ci-deploy": "npm run create-app-entrypoint && NODE_PATH=./src node ./.scripts/ci-deploy.js",
     "test": "npm run lint && npm run jest",
     "jest": "node node_modules/jest/bin/jest.js",
     "storybook-native-start": "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybook/native",
