@@ -2,7 +2,6 @@
 
 exports[`The ArrowBack icon renders correctly 1`] = `
 <View
-  name="arrow-back"
   style={
     Array [
       Object {
@@ -17,7 +16,6 @@ exports[`The ArrowBack icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="arrow-back"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -32,7 +30,6 @@ exports[`The ArrowBack icon renders correctly 1`] = `
 
 exports[`The ArrowDown icon renders correctly 1`] = `
 <View
-  name="arrow-down"
   style={
     Array [
       Object {
@@ -47,7 +44,6 @@ exports[`The ArrowDown icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="arrow-down"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -62,7 +58,6 @@ exports[`The ArrowDown icon renders correctly 1`] = `
 
 exports[`The ArrowNext icon renders correctly 1`] = `
 <View
-  name="arrow-next"
   style={
     Array [
       Object {
@@ -77,7 +72,6 @@ exports[`The ArrowNext icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="arrow-next"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -92,7 +86,6 @@ exports[`The ArrowNext icon renders correctly 1`] = `
 
 exports[`The ArrowUp icon renders correctly 1`] = `
 <View
-  name="arrow-up"
   style={
     Array [
       Object {
@@ -107,7 +100,6 @@ exports[`The ArrowUp icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="arrow-up"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -122,7 +114,6 @@ exports[`The ArrowUp icon renders correctly 1`] = `
 
 exports[`The Calendar icon renders correctly 1`] = `
 <View
-  name="calendar"
   style={
     Array [
       Object {
@@ -137,7 +128,6 @@ exports[`The Calendar icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="calendar"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -152,7 +142,6 @@ exports[`The Calendar icon renders correctly 1`] = `
 
 exports[`The Camera icon renders correctly 1`] = `
 <View
-  name="camera"
   style={
     Array [
       Object {
@@ -167,7 +156,6 @@ exports[`The Camera icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="camera"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -182,7 +170,6 @@ exports[`The Camera icon renders correctly 1`] = `
 
 exports[`The CategoryText icon renders correctly 1`] = `
 <View
-  name="category-text"
   style={
     Array [
       Object {
@@ -197,7 +184,6 @@ exports[`The CategoryText icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="category-text"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -212,7 +198,6 @@ exports[`The CategoryText icon renders correctly 1`] = `
 
 exports[`The CategoryVideo icon renders correctly 1`] = `
 <View
-  name="category-video"
   style={
     Array [
       Object {
@@ -227,7 +212,6 @@ exports[`The CategoryVideo icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="category-video"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -242,7 +226,6 @@ exports[`The CategoryVideo icon renders correctly 1`] = `
 
 exports[`The CheckMark icon renders correctly 1`] = `
 <View
-  name="check-mark"
   style={
     Array [
       Object {
@@ -257,7 +240,6 @@ exports[`The CheckMark icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="check-mark"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -272,7 +254,6 @@ exports[`The CheckMark icon renders correctly 1`] = `
 
 exports[`The Close icon renders correctly 1`] = `
 <View
-  name="close"
   style={
     Array [
       Object {
@@ -287,7 +268,6 @@ exports[`The Close icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="close"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -302,7 +282,6 @@ exports[`The Close icon renders correctly 1`] = `
 
 exports[`The Download icon renders correctly 1`] = `
 <View
-  name="download"
   style={
     Array [
       Object {
@@ -317,7 +296,6 @@ exports[`The Download icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="download"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -332,7 +310,6 @@ exports[`The Download icon renders correctly 1`] = `
 
 exports[`The Failed icon renders correctly 1`] = `
 <View
-  name="failed"
   style={
     Array [
       Object {
@@ -347,7 +324,6 @@ exports[`The Failed icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="failed"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -362,7 +338,6 @@ exports[`The Failed icon renders correctly 1`] = `
 
 exports[`The Filter icon renders correctly 1`] = `
 <View
-  name="filter"
   style={
     Array [
       Object {
@@ -377,7 +352,6 @@ exports[`The Filter icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="filter"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -392,7 +366,6 @@ exports[`The Filter icon renders correctly 1`] = `
 
 exports[`The Fullscreen icon renders correctly 1`] = `
 <View
-  name="fullscreen"
   style={
     Array [
       Object {
@@ -407,7 +380,6 @@ exports[`The Fullscreen icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="fullscreen"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -422,7 +394,6 @@ exports[`The Fullscreen icon renders correctly 1`] = `
 
 exports[`The Groups icon renders correctly 1`] = `
 <View
-  name="groups"
   style={
     Array [
       Object {
@@ -437,7 +408,6 @@ exports[`The Groups icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="groups"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -452,7 +422,6 @@ exports[`The Groups icon renders correctly 1`] = `
 
 exports[`The LeafOutline icon renders correctly 1`] = `
 <View
-  name="leaf-outline"
   style={
     Array [
       Object {
@@ -467,7 +436,6 @@ exports[`The LeafOutline icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="leaf-outline"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -482,7 +450,6 @@ exports[`The LeafOutline icon renders correctly 1`] = `
 
 exports[`The LeafSolid icon renders correctly 1`] = `
 <View
-  name="leaf-solid"
   style={
     Array [
       Object {
@@ -497,7 +464,6 @@ exports[`The LeafSolid icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="leaf-solid"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -512,7 +478,6 @@ exports[`The LeafSolid icon renders correctly 1`] = `
 
 exports[`The LeafStriped icon renders correctly 1`] = `
 <View
-  name="leaf-striped"
   style={
     Array [
       Object {
@@ -527,7 +492,6 @@ exports[`The LeafStriped icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="leaf-striped"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -542,7 +506,6 @@ exports[`The LeafStriped icon renders correctly 1`] = `
 
 exports[`The Like icon renders correctly 1`] = `
 <View
-  name="like"
   style={
     Array [
       Object {
@@ -557,7 +520,6 @@ exports[`The Like icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="like"
     theme={undefined}
     viewBox="0 0 514 514"
     width={32}
@@ -572,7 +534,6 @@ exports[`The Like icon renders correctly 1`] = `
 
 exports[`The LikeSolid icon renders correctly 1`] = `
 <View
-  name="like-solid"
   style={
     Array [
       Object {
@@ -587,7 +548,6 @@ exports[`The LikeSolid icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="like-solid"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -602,7 +562,6 @@ exports[`The LikeSolid icon renders correctly 1`] = `
 
 exports[`The Lock icon renders correctly 1`] = `
 <View
-  name="lock"
   style={
     Array [
       Object {
@@ -617,7 +576,6 @@ exports[`The Lock icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="lock"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -632,7 +590,6 @@ exports[`The Lock icon renders correctly 1`] = `
 
 exports[`The Logo icon renders correctly 1`] = `
 <View
-  name="logo"
   style={
     Array [
       Object {
@@ -647,7 +604,6 @@ exports[`The Logo icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="logo"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -662,7 +618,6 @@ exports[`The Logo icon renders correctly 1`] = `
 
 exports[`The Mute icon renders correctly 1`] = `
 <View
-  name="mute"
   style={
     Array [
       Object {
@@ -677,7 +632,6 @@ exports[`The Mute icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="mute"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -692,7 +646,6 @@ exports[`The Mute icon renders correctly 1`] = `
 
 exports[`The Pause icon renders correctly 1`] = `
 <View
-  name="pause"
   style={
     Array [
       Object {
@@ -707,7 +660,6 @@ exports[`The Pause icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="pause"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -722,7 +674,6 @@ exports[`The Pause icon renders correctly 1`] = `
 
 exports[`The Play icon renders correctly 1`] = `
 <View
-  name="play"
   style={
     Array [
       Object {
@@ -737,7 +688,6 @@ exports[`The Play icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="play"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -752,7 +702,6 @@ exports[`The Play icon renders correctly 1`] = `
 
 exports[`The Print icon renders correctly 1`] = `
 <View
-  name="print"
   style={
     Array [
       Object {
@@ -767,7 +716,6 @@ exports[`The Print icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="print"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -782,7 +730,6 @@ exports[`The Print icon renders correctly 1`] = `
 
 exports[`The Profile icon renders correctly 1`] = `
 <View
-  name="profile"
   style={
     Array [
       Object {
@@ -797,7 +744,6 @@ exports[`The Profile icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="profile"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -812,7 +758,6 @@ exports[`The Profile icon renders correctly 1`] = `
 
 exports[`The Repeat icon renders correctly 1`] = `
 <View
-  name="repeat"
   style={
     Array [
       Object {
@@ -827,7 +772,6 @@ exports[`The Repeat icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="repeat"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -842,7 +786,6 @@ exports[`The Repeat icon renders correctly 1`] = `
 
 exports[`The RepeatAll icon renders correctly 1`] = `
 <View
-  name="repeat-all"
   style={
     Array [
       Object {
@@ -857,7 +800,6 @@ exports[`The RepeatAll icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="repeat-all"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -872,7 +814,6 @@ exports[`The RepeatAll icon renders correctly 1`] = `
 
 exports[`The RepeatOne icon renders correctly 1`] = `
 <View
-  name="repeat-one"
   style={
     Array [
       Object {
@@ -887,7 +828,6 @@ exports[`The RepeatOne icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="repeat-one"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -902,7 +842,6 @@ exports[`The RepeatOne icon renders correctly 1`] = `
 
 exports[`The Search icon renders correctly 1`] = `
 <View
-  name="search"
   style={
     Array [
       Object {
@@ -917,7 +856,6 @@ exports[`The Search icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="search"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -932,7 +870,6 @@ exports[`The Search icon renders correctly 1`] = `
 
 exports[`The Sections icon renders correctly 1`] = `
 <View
-  name="sections"
   style={
     Array [
       Object {
@@ -947,7 +884,6 @@ exports[`The Sections icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="sections"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -962,7 +898,6 @@ exports[`The Sections icon renders correctly 1`] = `
 
 exports[`The Settings icon renders correctly 1`] = `
 <View
-  name="settings"
   style={
     Array [
       Object {
@@ -977,7 +912,6 @@ exports[`The Settings icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="settings"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -992,7 +926,6 @@ exports[`The Settings icon renders correctly 1`] = `
 
 exports[`The Share icon renders correctly 1`] = `
 <View
-  name="share"
   style={
     Array [
       Object {
@@ -1007,7 +940,6 @@ exports[`The Share icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="share"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -1022,7 +954,6 @@ exports[`The Share icon renders correctly 1`] = `
 
 exports[`The Shuffle icon renders correctly 1`] = `
 <View
-  name="shuffle"
   style={
     Array [
       Object {
@@ -1037,7 +968,6 @@ exports[`The Shuffle icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="shuffle"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -1052,7 +982,6 @@ exports[`The Shuffle icon renders correctly 1`] = `
 
 exports[`The SkipNext icon renders correctly 1`] = `
 <View
-  name="skip-next"
   style={
     Array [
       Object {
@@ -1067,7 +996,6 @@ exports[`The SkipNext icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="skip-next"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -1082,7 +1010,6 @@ exports[`The SkipNext icon renders correctly 1`] = `
 
 exports[`The SkipPrevious icon renders correctly 1`] = `
 <View
-  name="skip-previous"
   style={
     Array [
       Object {
@@ -1097,7 +1024,6 @@ exports[`The SkipPrevious icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="skip-previous"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -1112,7 +1038,6 @@ exports[`The SkipPrevious icon renders correctly 1`] = `
 
 exports[`The Success icon renders correctly 1`] = `
 <View
-  name="success"
   style={
     Array [
       Object {
@@ -1127,7 +1052,6 @@ exports[`The Success icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="success"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -1143,7 +1067,6 @@ exports[`The Success icon renders correctly 1`] = `
 exports[`The Umbrella icon renders correctly 1`] = `
 <Svg
   height={32}
-  name="umbrella"
   theme={undefined}
   viewBox="0 0 32 32"
   width={32}
@@ -1157,7 +1080,6 @@ exports[`The Umbrella icon renders correctly 1`] = `
 
 exports[`The Volume icon renders correctly 1`] = `
 <View
-  name="volume"
   style={
     Array [
       Object {
@@ -1172,7 +1094,6 @@ exports[`The Volume icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="volume"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}
@@ -1187,7 +1108,6 @@ exports[`The Volume icon renders correctly 1`] = `
 
 exports[`The Warning icon renders correctly 1`] = `
 <View
-  name="warning"
   style={
     Array [
       Object {
@@ -1202,7 +1122,6 @@ exports[`The Warning icon renders correctly 1`] = `
 >
   <Svg
     height={32}
-    name="warning"
     theme={undefined}
     viewBox="0 0 512 512"
     width={32}

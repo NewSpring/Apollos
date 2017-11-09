@@ -31,7 +31,6 @@ exports[`renders correctly 1`] = `
   >
     <View>
       <View
-        name="play"
         style={
           Array [
             Object {
@@ -46,7 +45,6 @@ exports[`renders correctly 1`] = `
       >
         <Svg
           height={32}
-          name="play"
           theme={
             Object {
               "alertColor": "#c64f55",
@@ -108,7 +106,6 @@ exports[`renders correctly 1`] = `
   >
     <View>
       <View
-        name="pause"
         style={
           Array [
             Object {
@@ -123,7 +120,6 @@ exports[`renders correctly 1`] = `
       >
         <Svg
           height={32}
-          name="pause"
           theme={
             Object {
               "alertColor": "#c64f55",
