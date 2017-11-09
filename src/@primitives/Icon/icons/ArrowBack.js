@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Svg } from '../../Svg';
-import { iconFromSvgFont } from './makeIcon';
+import makeIcon from './makeIcon';
 
-const Icon = iconFromSvgFont(({ size = 32, fill, ...otherProps } = {}) => (
-  <Svg width={size} height={size} viewBox="0 0 512 512" {...otherProps}>
+const Icon = makeIcon(({ size = 32, fill, ...otherProps } = {}) => (
+  <Svg width={size} height={size} viewBox="0 0 24 24" {...otherProps}>
     <Svg.Path
-      d="M355 506l-231-232c-8-8-8-21 0-29 8-8 21-8 29 0l231 232c8 8 8 21 0 29-8 8-21 8-29 0z m-231-264l231-232c8-8 21-8 29 0 8 8 8 21 0 29l-231 231c-8 8-21 8-29 0-8-8-8-20 0-28z"
+      d="M14.35 21L6.2 12.46c-.26-.28-.26-.64 0-.92L14.34 3l1.65.9L8.27 12 16 20.1l-1.65.9z"
       fill={fill}
     />
   </Svg>
