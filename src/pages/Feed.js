@@ -1,6 +1,8 @@
+/* eslint-disable */
 import React from 'react';
 import {
   View,
+  TouchableHighlight,
 } from 'react-native';
 import { compose, mapProps } from 'recompose';
 import Header from '@modules/Header';
@@ -12,8 +14,10 @@ import Audio from '@modules/Audio';
 import Play from '@primitives/icons/Play';
 import Pause from '@primitives/icons/Pause';
 import withHomeFeed from '@data/withHomeFeed';
+import withMediaPlayer from '@data/withMediaPlayer';
 
-export function Feed() {
+export function Feed(props) {
+  console.log(props);
   return (
     <View>
       <Header titleText="NewSpring Church" />
@@ -42,6 +46,19 @@ export function Feed() {
         <Audio.Seeker />
       </Audio>
 
+      <TouchableHighlight onPress={props.play.bind(this, { id: 'someid' })}>
+        <View>
+          <Play />
+        </View>
+      </TouchableHighlight>
+
+      <TouchableHighlight onPress={props.pause}>
+        <View>
+          <Pause />
+        </View>
+      </TouchableHighlight>
+
+
       <FooterNav>
         <FooterNav.Link
           to="/sections"
@@ -61,6 +78,7 @@ export function Feed() {
 const enhance = compose(
   withHomeFeed,
   mapProps(({ data: { feed } }) => ({ feed })),
+  withMediaPlayer,
 );
 
 export default enhance(Feed);
