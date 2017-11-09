@@ -4,10 +4,10 @@ import { storiesOf } from '@storybook/react-native';
 import {
   View,
 } from 'react-native';
-import Play from '../../@primitives/icons/Play';
-import Pause from '../../@primitives/icons/Pause';
+import Play from '@primitives/icons/Play';
+import Pause from '@primitives/icons/Pause';
 
-import ThemeProvider from '../../@primitives/ThemeProvider';
+import ThemeProvider from '@primitives/ThemeProvider';
 import Audio from './';
 
 storiesOf('Audio', module)

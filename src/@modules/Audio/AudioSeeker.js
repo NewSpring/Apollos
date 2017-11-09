@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import getContext from 'recompose/getContext';
 import compose from 'recompose/compose';
 import PropTypes from 'prop-types';
-import Seeker from '../../@primitives/seeker';
+import Seeker from '@primitives/Seeker';
 
 export class AudioSeeker extends PureComponent {
   static propTypes = {

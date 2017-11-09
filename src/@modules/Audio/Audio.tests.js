@@ -3,10 +3,10 @@ import renderer from 'react-test-renderer';
 import {
   View,
 } from 'react-native';
-import ThemeProvider from '../../@primitives/ThemeProvider';
+import ThemeProvider from '@primitives/ThemeProvider';
+import Play from '@primitives/icons/Play';
+import Pause from '@primitives/icons/Pause';
 import Audio from './';
-import Play from '../../@primitives/icons/Play';
-import Pause from '../../@primitives/icons/Pause';
 
 it('renders correctly', () => {
   const tree = renderer.create(

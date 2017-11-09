@@ -5,7 +5,7 @@ import {
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import NavLink from '../NativeWebRouter/NavLink';
+import NavLink from '@modules/NativeWebRouter/NavLink';
 
 const styles = StyleSheet.create({
   container: {

@@ -2,25 +2,23 @@ import React, { PureComponent } from 'react';
 import getContext from 'recompose/getContext';
 import compose from 'recompose/compose';
 import PropTypes from 'prop-types';
-import {
-  TouchableHighlight,
-} from 'react-native';
+import { TouchableHighlight } from 'react-native';
 import onlyPropTypes from '@utils/onlyPropTypes';
 
-export class AudioPause extends PureComponent {
+export class AudioPlay extends PureComponent {
   static propTypes = {
-    pause: PropTypes.func.isRequired,
+    play: PropTypes.func.isRequired,
   };
 
   render() {
     const {
-      pause,
+      play,
       ...otherProps
     } = this.props;
 
     return (
       <TouchableHighlight
-        onPress={pause}
+        onPress={play}
         {...otherProps}
       />
     );
@@ -29,9 +27,9 @@ export class AudioPause extends PureComponent {
 
 const enhance = compose(
   getContext({
-    pause: PropTypes.func,
+    play: PropTypes.func,
   }),
   onlyPropTypes,
 );
 
-export default enhance(AudioPause);
+export default enhance(AudioPlay);

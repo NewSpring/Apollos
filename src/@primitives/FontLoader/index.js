@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Font } from 'expo';
 import PropTypes from 'prop-types';
-import FONTS from '../../assets/fonts';
+import FONTS from 'assets/fonts';
 
 export default class FontLoader extends Component {
   static propTypes = {
