@@ -16,6 +16,9 @@ class MediaQuery extends Component {
   static propTypes = {
     min: PropTypes.string,
     max: PropTypes.string,
+    children: PropTypes.node,
+
+    // These props are passed in through HOCs (withTheme and withWindow)
     breakpoints: PropTypes.shape({
       xs: PropTypes.number.isRequired,
       sm: PropTypes.number.isRequired,
@@ -26,7 +29,6 @@ class MediaQuery extends Component {
       width: PropTypes.number,
       height: PropTypes.number,
     }).isRequired,
-    children: PropTypes.node,
   };
 
   static defaultProps = {
