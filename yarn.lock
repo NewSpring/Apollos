@@ -542,13 +542,6 @@ append-transform@^0.4.0:
   dependencies:
     default-require-extensions "^1.0.0"
 
-appr@conrad-vanl/appr#commit-statuses:
-  version "1.0.1"
-  resolved "https://codeload.github.com/conrad-vanl/appr/tar.gz/402093c70111892e7203b749a5f80139a84cb6a8"
-  dependencies:
-    exp "^45.1.0"
-    request "^2.81.0"
-
 aproba@^1.0.3:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"

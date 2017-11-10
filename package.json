@@ -9,7 +9,6 @@
     "@storybook/addon-links": "^3.2.14",
     "@storybook/react": "^3.2.14",
     "@storybook/react-native": "^3.2.14",
-    "appr": "conrad-vanl/appr#commit-statuses",
     "babel-eslint": "^8.0.1",
     "babel-plugin-module-resolver": "3.0.0-beta.5",
     "babel-preset-react-native-stage-0": "^1.0.1",
@@ -22,11 +21,13 @@
     "eslint-plugin-jest": "21.2.0",
     "eslint-plugin-jsx-a11y": "6.0.2",
     "eslint-plugin-react": "7.4.0",
+    "exp": "^45.1.0",
     "jest-expo": "^22.0.1-SNAPSHOT.2017.10.31",
     "react-native-scripts": "^1.6.0",
     "react-native-storybook-loader": "^1.5.1",
     "react-scripts": "^1.0.16",
-    "react-test-renderer": "^16.0.0"
+    "react-test-renderer": "^16.0.0",
+    "request": "^2.83.0"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -36,6 +37,7 @@
     "web": "npm run create-app-entrypoint && NODE_PATH=./src npm run run-with-settings 'react-scripts start'",
     "build": "npm run create-app-entrypoint && npm run run-with-settings 'react-scripts build'",
     "build-storybook": "npm run create-storybook-entrypoint && npm run storybook-load-stories && build-storybook -c src/.storybook/web -s public",
+    "ci-deploy": "npm run create-app-entrypoint && NODE_PATH=./src node ./.scripts/ci-deploy.js",
     "test": "npm run lint && npm run jest",
     "jest": "node node_modules/jest/bin/jest.js",
     "storybook-native-start": "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybook/native",
@@ -47,8 +49,7 @@
     "storybook-load-stories": "rnstl",
     "create-app-entrypoint": "node ./.scripts/create-app-entrypoint.js",
     "create-storybook-entrypoint": "node ./.scripts/create-storybook-entrypoint.js",
-    "run-with-settings": "node ./.scripts/run-with-settings.js",
-    "appr": "npm run create-app-entrypoint && appr"
+    "run-with-settings": "node ./.scripts/run-with-settings.js"
   },
   "jest": {
     "preset": "jest-expo",
@@ -88,5 +89,6 @@
   },
   "engines": {
     "node": ">=8.7.0"
-  }
+  },
+  "privacy": "unlisted"
 }
