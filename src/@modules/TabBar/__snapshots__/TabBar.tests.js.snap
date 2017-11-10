@@ -2,25 +2,16 @@
 
 exports[`renders correctly 1`] = `
 <View
-  onLayout={[Function]}
+  darkPrimaryColor={undefined}
   style={
     Array [
-      Array [
-        Object {
-          "flexDirection": "column",
-          "justifyContent": "flex-start",
-          "paddingTop": 10,
-          "width": 80,
-        },
-        Object {
-          "backgroundColor": undefined,
-        },
-      ],
       Object {
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 20,
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "maxWidth": 80,
+      },
+      Object {
+        "backgroundColor": undefined,
       },
     ]
   }
