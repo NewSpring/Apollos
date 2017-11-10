@@ -1,30 +1,16 @@
-import React from 'react';
-import {
-  AppRegistry,
-  Platform,
-  View,
-} from 'react-native';
+import { AppRegistry, Platform } from 'react-native';
 import { ApolloProvider } from 'react-apollo';
-import { Router, Route, AndroidBackButton } from '@modules/NativeWebRouter';
-import * as pages from 'pages';
+import { nest, withProps } from 'recompose';
 import ThemeProvider from '@primitives/ThemeProvider';
 import FontLoader from '@primitives/FontLoader';
 import Client from '@data/Client';
+import AppRouter from './AppRouter';
 
-const App = () => (
-  <ApolloProvider client={Client}>
-    <ThemeProvider>
-      <FontLoader>
-        <Router>
-          <View style={{ flex: 1 }}>
-            {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-            <Route exact path="/" component={pages.Feed} />
-            <Route exact path="/sections" component={pages.Sections} />
-          </View>
-        </Router>
-      </FontLoader>
-    </ThemeProvider>
-  </ApolloProvider>
+const App = nest(
+  withProps({ client: Client })(ApolloProvider),
+  ThemeProvider,
+  FontLoader,
+  AppRouter,
 );
 
 export default App;

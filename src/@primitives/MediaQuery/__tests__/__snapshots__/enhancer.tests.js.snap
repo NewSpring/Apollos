@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The mediaQuery enhancer passes in breakpoints to the test function 1`] = `<View />`;
+
+exports[`The mediaQuery enhancer passes in window width and height to the test function 1`] = `<View />`;
+
+exports[`The mediaQuery enhancer uses second HOC when provided with a complex media query that doesnt match 1`] = `<View />`;
+
+exports[`The mediaQuery enhancer uses the first HOC (and renders the root View) with a passing media query 1`] = `<View />`;
+
+exports[`The mediaQuery enhancer uses the second HOC (and renders the root View) with a failing media query 1`] = `<View />`;
+
+exports[`The mediaQuery enhancer works with a complex media query 1`] = `<View />`;
+
+exports[`The mediaQuery enhancer works with a simple media query 1`] = `<View />`;
