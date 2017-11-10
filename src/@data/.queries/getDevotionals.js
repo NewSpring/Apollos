@@ -1,0 +1,28 @@
+import { gql } from 'react-apollo';
+
+export default gql`
+  query getDevotionals($limit: Int!, $skip: Int!) {
+    content(channel: "devotionals", limit: $limit, skip: $skip) {
+      id
+      entryId: id
+      title
+      status
+      channelName
+      meta {
+        urlTitle
+        siteId
+        date
+        channelId
+      }
+      content {
+        body
+        images(sizes: ["large"]) {
+          fileName
+          fileType
+          fileLabel
+          url
+        }
+      }
+    }
+  }
+`;
