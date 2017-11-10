@@ -20,9 +20,9 @@ const supportedMediaQueryTypes = {
   maxDeviceAspectRatio: PropTypes.string,
 };
 
-// <MediaQuery max="md" min="sm">I render on screens sm to md</MediaQuery>
-// <MediaQuery max="xs">I render only on xs screens</MediaQuery>
-// <MeediaQuery min="md">I render on screens md or above</MediaQuery>
+// <MediaQuery maxWidth="md" minWidth="sm">I render on screens sm to md</MediaQuery>
+// <MediaQuery maxWidth="xs">I render only on xs screens</MediaQuery>
+// <MeediaQuery minWidth="md">I render on screens md or above</MediaQuery>
 class MediaQuery extends Component {
   static propTypes = {
     ...supportedMediaQueryTypes,

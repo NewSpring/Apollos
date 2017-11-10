@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { View, Dimensions } from 'react-native';
 import ThemeProvider from '@primitives/ThemeProvider';
+import { DEFAULT_THEME } from '@primitives/constants';
 import enhancer from '../enhancer';
 
 const TestHOC = mock => (Component) => {
@@ -9,12 +10,15 @@ const TestHOC = mock => (Component) => {
   return Component;
 };
 
+const mediaQueryThatPasses = () => true;
+const mediaQueryThatFails = () => false;
+
 describe('The mediaQuery enhancer', () => {
-  it('uses the first HOC when truthful', () => {
+  it('uses the first HOC (and renders the root View) with a passing media query', () => {
     const firstMock = jest.fn();
     const secondMock = jest.fn();
 
-    const Component = enhancer(() => true, TestHOC(firstMock), TestHOC(secondMock))(View);
+    const Component = enhancer(mediaQueryThatPasses, TestHOC(firstMock), TestHOC(secondMock))(View);
     const tree = renderer.create(
       <ThemeProvider>
         <Component />
@@ -24,11 +28,11 @@ describe('The mediaQuery enhancer', () => {
     expect(firstMock.mock.calls.length).toBe(1);
     expect(secondMock.mock.calls.length).toBe(0);
   });
-  it('uses the second HOC when falsey', () => {
+  it('uses the second HOC (and renders the root View) with a failing media query', () => {
     const firstMock = jest.fn();
     const secondMock = jest.fn();
 
-    const Component = enhancer(() => false, TestHOC(firstMock), TestHOC(secondMock))(View);
+    const Component = enhancer(mediaQueryThatFails, TestHOC(firstMock), TestHOC(secondMock))(View);
     const tree = renderer.create(
       <ThemeProvider>
         <Component />
@@ -47,6 +51,7 @@ describe('The mediaQuery enhancer', () => {
       () => ({ maxWidth: testWindow.width + 1 }),
       TestHOC(firstMock),
     )(View);
+
     const tree = renderer.create(
       <ThemeProvider>
         <Component />
@@ -55,6 +60,7 @@ describe('The mediaQuery enhancer', () => {
     expect(tree).toMatchSnapshot();
     expect(firstMock.mock.calls.length).toBe(1);
   });
+
   it('works with a complex media query', () => {
     const firstMock = jest.fn();
 
@@ -69,6 +75,7 @@ describe('The mediaQuery enhancer', () => {
       }),
       TestHOC(firstMock),
     )(View);
+
     const tree = renderer.create(
       <ThemeProvider>
         <Component />
@@ -77,16 +84,64 @@ describe('The mediaQuery enhancer', () => {
     expect(tree).toMatchSnapshot();
     expect(firstMock.mock.calls.length).toBe(1);
   });
+
+  it('uses second HOC when provided with a complex media query that doesnt match', () => {
+    const firstMock = jest.fn();
+    const secondMock = jest.fn();
+
+    const Component = enhancer(
+      () => ({
+        maxWidth: testWindow.width - 1,
+        minWidth: testWindow.width + 1,
+        maxHeight: testWindow.height - 1,
+        minHeight: testWindow.height + 1,
+        minDeviceAspectRatio: (testWindow.width / testWindow.height) + 1,
+        maxDeviceAspectRatio: (testWindow.width / testWindow.height) - 1,
+      }),
+      TestHOC(firstMock),
+      TestHOC(secondMock),
+    )(View);
+
+    const tree = renderer.create(
+      <ThemeProvider>
+        <Component />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+    expect(firstMock.mock.calls.length).toBe(0);
+    expect(secondMock.mock.calls.length).toBe(1);
+  });
+
   it('passes in breakpoints to the test function', () => {
     const firstMock = jest.fn();
 
-    const Component = enhancer(
-      (breakpoints) => {
-        expect(Object.keys(breakpoints)).toEqual(expect.arrayContaining(['xs', 'sm', 'md', 'lg']));
-        return true;
-      },
-      TestHOC(firstMock),
-    )(View);
+    const testFunction = ({ height, width, ...breakpoints }) => {
+      expect(breakpoints).toEqual(DEFAULT_THEME.breakpoints);
+      return true;
+    };
+
+    const Component = enhancer(testFunction, TestHOC(firstMock))(View);
+
+    const tree = renderer.create(
+      <ThemeProvider>
+        <Component />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+    expect(firstMock.mock.calls.length).toBe(1);
+  });
+
+  it('passes in window width and height to the test function', () => {
+    const firstMock = jest.fn();
+
+    const testFunction = ({ height, width }) => {
+      expect(width).toBeGreaterThan(0);
+      expect(height).toBeGreaterThan(0);
+      return true;
+    };
+
+    const Component = enhancer(testFunction, TestHOC(firstMock))(View);
+
     const tree = renderer.create(
       <ThemeProvider>
         <Component />
