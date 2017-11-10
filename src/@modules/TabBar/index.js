@@ -1,6 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import { compose, mapProps } from 'recompose';
-import { omit } from 'lodash';
+import { compose } from 'recompose';
 import { enhancer as mediaQuery } from '@primitives/MediaQuery';
 import styled from '@primitives/styled';
 import withTheme from '@primitives/withTheme';
@@ -12,13 +11,11 @@ const styles = StyleSheet.create({
   vertical: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    width: 80, // todo: need to inherit from base unit?
-    paddingTop: 10,
+    maxWidth: 80, // todo: need to inherit from base unit?
   },
   horizontal: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingHorizontal: 10,
   },
 });
 
