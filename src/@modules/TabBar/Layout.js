@@ -15,10 +15,12 @@ const styles = StyleSheet.create({
   },
 });
 
-export default compose(
+const Layout = compose(
   styled(styles.common),
   mediaQuery(({ md }) => ({ maxWidth: md }),
     styled(styles.mobile),
     styled(styles.horizontalLayout),
   ),
 )(View);
+
+export default Layout;

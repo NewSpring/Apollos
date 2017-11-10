@@ -1,96 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The mediaQuery enhancer passes in breakpoints to the test function 1`] = `
-<View
-  breakpoints={
-    Object {
-      "lg": 1200,
-      "md": 800,
-      "sm": 496,
-      "xs": 320,
-    }
-  }
-  window={
-    Object {
-      "height": 1334,
-      "width": 750,
-    }
-  }
-/>
-`;
+exports[`The mediaQuery enhancer passes in breakpoints to the test function 1`] = `<View />`;
 
-exports[`The mediaQuery enhancer uses the first HOC when truthful 1`] = `
-<View
-  breakpoints={
-    Object {
-      "lg": 1200,
-      "md": 800,
-      "sm": 496,
-      "xs": 320,
-    }
-  }
-  window={
-    Object {
-      "height": 1334,
-      "width": 750,
-    }
-  }
-/>
-`;
+exports[`The mediaQuery enhancer uses the first HOC when truthful 1`] = `<View />`;
 
-exports[`The mediaQuery enhancer uses the second HOC when falsey 1`] = `
-<View
-  breakpoints={
-    Object {
-      "lg": 1200,
-      "md": 800,
-      "sm": 496,
-      "xs": 320,
-    }
-  }
-  window={
-    Object {
-      "height": 1334,
-      "width": 750,
-    }
-  }
-/>
-`;
+exports[`The mediaQuery enhancer uses the second HOC when falsey 1`] = `<View />`;
 
-exports[`The mediaQuery enhancer works with a complex media query 1`] = `
-<View
-  breakpoints={
-    Object {
-      "lg": 1200,
-      "md": 800,
-      "sm": 496,
-      "xs": 320,
-    }
-  }
-  window={
-    Object {
-      "height": 1334,
-      "width": 750,
-    }
-  }
-/>
-`;
+exports[`The mediaQuery enhancer works with a complex media query 1`] = `<View />`;
 
-exports[`The mediaQuery enhancer works with a simple media query 1`] = `
-<View
-  breakpoints={
-    Object {
-      "lg": 1200,
-      "md": 800,
-      "sm": 496,
-      "xs": 320,
-    }
-  }
-  window={
-    Object {
-      "height": 1334,
-      "width": 750,
-    }
-  }
-/>
-`;
+exports[`The mediaQuery enhancer works with a simple media query 1`] = `<View />`;

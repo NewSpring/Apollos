@@ -2,18 +2,18 @@
 
 exports[`renders correctly 1`] = `
 <View
-  breakpoints={Object {}}
+  darkPrimaryColor={undefined}
   style={
-    Object {
-      "flexDirection": "row",
-      "justifyContent": "space-around",
-    }
-  }
-  window={
-    Object {
-      "height": 1334,
-      "width": 750,
-    }
+    Array [
+      Object {
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "maxWidth": 80,
+      },
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
   }
 />
 `;

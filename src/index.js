@@ -6,7 +6,7 @@ import ThemeProvider from '@primitives/ThemeProvider';
 import FontLoader from '@primitives/FontLoader';
 import Store from '@data/Store';
 import Client from '@data/Client';
-import AppRouter from './app-router';
+import AppRouter from './AppRouter';
 
 const App = nest(
   withProps({ client: Client })(ApolloProvider),

@@ -1,7 +1,19 @@
-import { branch, compose } from 'recompose';
-import { find } from 'lodash';
+import { branch, compose, mapProps } from 'recompose';
+import { every } from 'lodash';
 import withWindow from './withWindow';
 import withTheme from '../withTheme';
+
+const queryMatcher = ({ width, height }) => (selector, query) => {
+  switch (query) {
+    case 'maxWidth': return width < selector;
+    case 'minWidth': return width > selector;
+    case 'maxHeight': return height < selector;
+    case 'minHeight': return height > selector;
+    case 'minDeviceAspectRatio': return width / height > selector;
+    case 'maxDeviceAspectRatio': return width / height < selector;
+    default: return true;
+  }
+};
 
 // Make it easy to do breakpoint-based component branching, a-la recompose's branch method.
 // The "test" function should return an object that mirrors what you'd do in a css mediaQuery:
@@ -25,24 +37,9 @@ export default (getMediaQuery, ...args) => compose(
       return !!mediaQuery;
     }
 
-    // This logic is a litle goofy, but here's the intention:
-    // We want to make sure that all terms in the provided media query are true.
-    // Instead of iterating every term, we can exit if we come across a falsey term.
-    // So we use `find` to look for a query that doesn't match the current window.
-    // We then invert the result of `find` and return it.
-    // TODO: refactor so we don't need 5 lines of explanation
-    const mediaQueryMatches = !find(mediaQuery, (selector, query) => {
-      switch (query) {
-        case 'maxWidth': return !(width < selector);
-        case 'minWidth': return !(width > selector);
-        case 'maxHeight': return !(height < selector);
-        case 'minHeight': return !(height > selector);
-        case 'minDeviceAspectRatio': return !(width / height > selector);
-        case 'maxDeviceAspectRatio': return !(width / height < selector);
-        default: return true;
-      }
-    });
-
-    return mediaQueryMatches;
+    return every(mediaQuery, queryMatcher({ width, height }));
   }, ...args),
+
+  // clean up props
+  mapProps(({ breakpoints, window, ...ownProps }) => ownProps),
 );

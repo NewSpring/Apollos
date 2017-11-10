@@ -12,7 +12,7 @@ export default function (mapperFn = DEFAULT_MAPPER_FN) {
     getContext({
       theme: PropTypes.shape(THEME_PROPS),
     }),
-    mapProps(({ theme, otherProps }) => ({
+    mapProps(({ theme, ...otherProps }) => ({
       ...otherProps,
       ...mapperFn({ theme, ...otherProps }),
     })),

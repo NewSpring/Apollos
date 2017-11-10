@@ -13,17 +13,25 @@ import { withProps } from 'recompose';
 // Or using with ReactNative.StyleSheet:
 // const styles = StyleSheet.create({ myStyle: { backgroundColor: 'red' }});
 // StyledView = styled(styles.myStyle)(View)
-const styled = getStyle => withProps((props) => {
-  let style = getStyle;
-  if (typeof getStyle === 'function') style = getStyle(props);
-  if (props.style) {
-    if (Array.isArray(props.style)) {
-      style = [style, ...props.style];
-    } else {
-      style = [style, props.style];
+const styled = (styleInput) => {
+  const hoc = withProps((props) => {
+    let style = styleInput;
+    if (typeof styleInput === 'function') style = styleInput(props);
+
+    if (props.style) {
+      if (!Array.isArray(style)) {
+        style = [style];
+      }
+
+      if (Array.isArray(props.style)) {
+        style = style.concat(props.style);
+      } else {
+        style.push(props.style);
+      }
     }
-  }
-  return { style };
-});
+    return { style };
+  });
+  return hoc;
+};
 
 export default styled;
