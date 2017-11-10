@@ -12,5 +12,8 @@ export default graphql(homeFeedQuery, {
       cache: true,
     },
   }),
+  props: ({ data: { feed } }) => ({
+    feed,
+  }),
 });
 
