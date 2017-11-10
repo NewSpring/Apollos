@@ -7,10 +7,10 @@ const styleSheetRegistry = [];
 const createStyleSheet = (getter) => {
   const reference = {
     getter,
-    value: null,
+    value: { },
   };
   styleSheetRegistry.push(reference);
-  return () => reference.value;
+  return reference.value;
 };
 
 export const StyleSheetsProvider = compose(
@@ -18,7 +18,7 @@ export const StyleSheetsProvider = compose(
   onlyUpdateForKeys(['theme', 'children']),
 )(({ children, theme }) => {
   styleSheetRegistry.forEach((reference) => {
-    reference.value = StyleSheet.create(reference.getter(theme));
+    Object.assign(reference.value, StyleSheet.create(reference.getter(theme)));
   });
   return children || null;
 });

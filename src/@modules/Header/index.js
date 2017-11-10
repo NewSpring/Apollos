@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import createStyleSheet from '@primitives/stylesheet';
 
-const getStyles = createStyleSheet(({ primaryColor }) => ({
+const styles = createStyleSheet(({ primaryColor }) => ({
   container: {
     height: 60,
     backgroundColor: primaryColor,
@@ -30,8 +30,8 @@ export default class Header extends PureComponent {
 
   render() {
     return (
-      <View style={getStyles().container}>
-        <Text style={getStyles().text}>{this.props.titleText}</Text>
+      <View style={styles.container}>
+        <Text style={styles.text}>{this.props.titleText}</Text>
       </View>
     );
   }
