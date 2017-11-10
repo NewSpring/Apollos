@@ -23,7 +23,7 @@ export default (getMediaQuery, ...args) => compose(
     // mediaQuery(({ sm, lg, width }) => width < sm || width > lg, styles)
     // mediaQuery(({ sm }, ownProps) => ownProps.size < sm, styles)
     if (typeof mediaQuery !== 'object') {
-      return !!mediaQuery;
+      return mediaQuery;
     }
 
     return every(mediaQuery, queryMatcher({ width, height }));
