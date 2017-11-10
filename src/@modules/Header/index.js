@@ -1,22 +1,23 @@
 import React, { PureComponent } from 'react';
 import {
-  StyleSheet,
   Text,
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
 
-const styles = StyleSheet.create({
+import createStyleSheet from '@primitives/stylesheet';
+
+const getStyles = createStyleSheet(({ primaryColor }) => ({
   container: {
     height: 60,
-    backgroundColor: 'green',
+    backgroundColor: primaryColor,
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
     color: 'white',
   },
-});
+}));
 
 export default class Header extends PureComponent {
   static propTypes = {
@@ -29,8 +30,8 @@ export default class Header extends PureComponent {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>{this.props.titleText}</Text>
+      <View style={getStyles().container}>
+        <Text style={getStyles().text}>{this.props.titleText}</Text>
       </View>
     );
   }
