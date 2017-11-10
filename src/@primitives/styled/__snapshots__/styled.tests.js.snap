@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the styled HOC passes style literal to the base component 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "red",
+    }
+  }
+/>
+`;
+
+exports[`the styled HOC should accept a function 1`] = `
+<View
+  color="green"
+  style={
+    Object {
+      "backgroundColor": "green",
+    }
+  }
+/>
+`;
+
+exports[`the styled HOC supports multiple styles 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderColor": "green",
+      },
+      Object {
+        "backgroundColor": "red",
+      },
+      Object {
+        "height": 100,
+      },
+    ]
+  }
+/>
+`;
