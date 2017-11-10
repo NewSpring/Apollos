@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
-import getContext from 'recompose/getContext';
-import compose from 'recompose/compose';
-import mapProps from 'recompose/mapProps';
+import { compose, mapProps, getContext } from 'recompose';
 import { THEME_PROPS } from './constants';
 
 
