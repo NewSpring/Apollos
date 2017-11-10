@@ -2,23 +2,26 @@ import React, { PureComponent } from 'react';
 import {
   StyleSheet,
   Text,
-  View,
 } from 'react-native';
 import { compose } from 'recompose';
 import PropTypes from 'prop-types';
 import Icon from '@primitives/Icon';
 import NavLink from '@modules/NativeWebRouter/NavLink';
 import withTheme from '@primitives/withTheme';
+import MediaQuery, { enhancer as mediaQuery } from '@primitives/MediaQuery';
+import styled from '@primitives/styled';
 
 const styles = StyleSheet.create({
   container: {
-    height: 60,
-    width: 60,
     alignItems: 'center',
     justifyContent: 'center',
+    height: 50,
   },
-  text: {
-    color: 'white',
+  activeStyle: {
+    // todo
+  },
+  largeButton: {
+    height: 80,
   },
 });
 
@@ -28,7 +31,6 @@ class FooterNavLink extends PureComponent {
     icon: PropTypes.string,
     to: NavLink.propTypes.to,
     style: NavLink.propTypes.style,
-    activeStyle: NavLink.propTypes.activeStyle,
     color: PropTypes.string,
   };
 
@@ -37,22 +39,24 @@ class FooterNavLink extends PureComponent {
     to: null,
     icon: null,
     style: null,
-    activeStyle: null,
     color: undefined,
   };
 
   render() {
     return (
-      <NavLink to={this.props.to} style={this.props.style} activeStyle={this.props.activeStyle}>
-        <View style={styles.container}>
-          {this.props.icon ? <Icon name={this.props.icon} fill={this.props.color} /> : null}
-          {this.props.label ? <Text style={styles.text}>{this.props.label}</Text> : null}
-        </View>
+      <NavLink
+        to={this.props.to}
+        style={[styles.container, this.props.style]}
+        activeStyle={[styles.container, this.props.style, styles.activeStyle]}
+      >
+        {this.props.icon ? <Icon name={this.props.icon} fill={this.props.color} /> : null}
+        <MediaQuery minWidth="md">{this.props.label ? <Text style={{ color: this.props.color }}>{this.props.label}</Text> : null}</MediaQuery>
       </NavLink>
     );
   }
 }
 
 export default compose(
-  withTheme(({ lightPrimaryColor }) => ({ color: lightPrimaryColor })),
+  withTheme(({ theme: { lightPrimaryColor } }) => ({ color: lightPrimaryColor })),
+  mediaQuery(({ md }) => ({ minWidth: md }), styled(styles.largeButton)),
 )(FooterNavLink);
