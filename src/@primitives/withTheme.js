@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
-import getContext from 'recompose/getContext';
-import compose from 'recompose/compose';
-import mapProps from 'recompose/mapProps';
+import { compose, mapProps, getContext } from 'recompose';
+import { THEME_PROPS } from './constants';
 
-const DEFAULT_MAPPER_FN = ({ theme, ...otherProps } = {}) => ({ ...theme, ...otherProps });
+
+const DEFAULT_MAPPER_FN = ({ theme } = {}) => ({ ...theme });
 
 export default function (mapperFn = DEFAULT_MAPPER_FN) {
   return compose(
     getContext({
-      theme: PropTypes.shape({
-        primaryColor: PropTypes.string,
-        secondaryColor: PropTypes.string,
-      }),
+      theme: PropTypes.shape(THEME_PROPS),
     }),
-    mapProps(mapperFn),
+    mapProps(({ theme, ...otherProps }) => ({
+      ...otherProps,
+      ...mapperFn({ theme, ...otherProps }),
+    })),
   );
 }

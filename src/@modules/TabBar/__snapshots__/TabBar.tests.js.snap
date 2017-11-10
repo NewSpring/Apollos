@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  darkPrimaryColor={undefined}
+  style={
+    Array [
+      Object {
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "maxWidth": 80,
+      },
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
+  }
+/>
+`;

@@ -4,8 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 import {
   View,
 } from 'react-native';
-import Play from '@primitives/icons/Play';
-import Pause from '@primitives/icons/Pause';
+import Icon from '@primitives/Icon';
 
 import ThemeProvider from '@primitives/ThemeProvider';
 import Audio from './';
@@ -16,13 +15,13 @@ storiesOf('Audio', module)
       <Audio source="https://www.w3schools.com/html/horse.mp3">
         <Audio.Play>
           <View>
-            <Play />
+            <Icon name="play" />
           </View>
         </Audio.Play>
 
         <Audio.Pause>
           <View>
-            <Pause />
+            <Icon name="pause" />
           </View>
         </Audio.Pause>
 
@@ -30,4 +29,3 @@ storiesOf('Audio', module)
       </Audio>
     </ThemeProvider>
   ));
-

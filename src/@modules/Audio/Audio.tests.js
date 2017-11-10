@@ -1,11 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 import ThemeProvider from '@primitives/ThemeProvider';
-import Play from '@primitives/icons/Play';
-import Pause from '@primitives/icons/Pause';
+import Icon from '@primitives/Icon';
 import Audio from './';
 
 it('renders correctly', () => {
@@ -14,13 +11,13 @@ it('renders correctly', () => {
       <Audio source="https://www.w3schools.com/html/horse.mp3">
         <Audio.Play>
           <View>
-            <Play />
+            <Icon name="play" />
           </View>
         </Audio.Play>
 
         <Audio.Pause>
           <View>
-            <Pause />
+            <Icon name="pause" />
           </View>
         </Audio.Pause>
 
