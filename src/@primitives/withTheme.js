@@ -3,7 +3,7 @@ import getContext from 'recompose/getContext';
 import compose from 'recompose/compose';
 import mapProps from 'recompose/mapProps';
 
-const DEFAULT_MAPPER_FN = ({ theme, ...otherProps } = {}) => ({ ...theme, ...otherProps });
+const DEFAULT_MAPPER_FN = ({ theme, ...otherProps } = {}) => ({ theme, ...otherProps });
 
 export default function (mapperFn = DEFAULT_MAPPER_FN) {
   return compose(

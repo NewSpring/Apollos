@@ -13,19 +13,23 @@ import FontLoader from '@primitives/FontLoader';
 import Store from '@data/Store';
 import Client from '@data/Client';
 
+import { StyleSheetsProvider } from '@primitives/stylesheet';
+
 const App = () => (
   <ApolloProvider client={Client}>
     <ReduxProvider store={Store}>
       <ThemeProvider>
-        <FontLoader>
-          <Router>
-            <View style={{ flex: 1 }}>
-              {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-              <Route exact path="/" component={pages.Feed} />
-              <Route exact path="/sections" component={pages.Sections} />
-            </View>
-          </Router>
-        </FontLoader>
+        <StyleSheetsProvider>
+          <FontLoader>
+            <Router>
+              <View style={{ flex: 1 }}>
+                {Platform.OS === 'android' ? <AndroidBackButton /> : null}
+                <Route exact path="/" component={pages.Feed} />
+                <Route exact path="/sections" component={pages.Sections} />
+              </View>
+            </Router>
+          </FontLoader>
+        </StyleSheetsProvider>
       </ThemeProvider>
     </ReduxProvider>
   </ApolloProvider>
