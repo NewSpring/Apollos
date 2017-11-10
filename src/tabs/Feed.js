@@ -12,10 +12,10 @@ export default function Feed() {
   return (
     <View>
       <Header titleText="NewSpring Church" />
-      <MediaQuery min="md">
+      <MediaQuery minWidth="md">
         <H1>{'A title'}</H1>
       </MediaQuery>
-      <MediaQuery max="md">
+      <MediaQuery maxWidth="md">
         <Icon name="umbrella" />
       </MediaQuery>
 
