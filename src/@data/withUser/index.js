@@ -24,8 +24,8 @@ const deauthorizeActions = graphql(deauthorizeMutation, {
 });
 
 const user = graphql(personQuery, {
-  props: () => ({
-    user: ({ data: { person } }) => (person),
+  props: ({ data: { person } }) => ({
+    user: person,
   }),
 });
 
