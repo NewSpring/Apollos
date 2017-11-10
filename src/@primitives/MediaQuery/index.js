@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { get, every } from 'lodash';
-import { pick, mapValues, flow, filter } from 'lodash/fp';
+import { pick, mapValues, flow } from 'lodash/fp';
 import { compose } from 'recompose';
 
 import withTheme from '../withTheme';
