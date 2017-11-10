@@ -12,7 +12,7 @@ import queryMatcher from './queryMatcher';
 //   HigherOrderComponent,
 //   ?HigherOrderComponent
 // ): HigherOrderComponent
-export default (getMediaQuery, ...args) => compose(
+const enhancer = (getMediaQuery, ...args) => compose(
   withTheme(({ theme: { breakpoints = {} } = {} }) => ({ breakpoints })),
   withWindow,
   branch(({ breakpoints, window: { width, height }, ...ownProps }) => {
@@ -32,3 +32,5 @@ export default (getMediaQuery, ...args) => compose(
   // clean up props
   mapProps(({ breakpoints, window, ...ownProps }) => ownProps),
 );
+
+export default enhancer;
