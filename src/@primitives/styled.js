@@ -18,17 +18,20 @@ const styled = (styleInput) => {
     let style = styleInput;
     if (typeof styleInput === 'function') style = styleInput(props);
 
-    if (props.style) {
+    // handle existing style prop
+    const existingStyle = props.style;
+    if (existingStyle) {
       if (!Array.isArray(style)) {
         style = [style];
       }
 
-      if (Array.isArray(props.style)) {
-        style = style.concat(props.style);
+      if (Array.isArray(existingStyle)) {
+        style = style.concat(existingStyle);
       } else {
-        style.push(props.style);
+        style.push(existingStyle);
       }
     }
+
     return { style };
   });
   return hoc;
