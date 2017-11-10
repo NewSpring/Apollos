@@ -1,9 +1,10 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { compose, mapProps } from 'recompose';
 import { omit } from 'lodash';
 import { enhancer as mediaQuery } from '@primitives/MediaQuery';
 import styled from '@primitives/styled';
 import withTheme from '@primitives/withTheme';
+import SafeAreaView from '@primitives/SafeAreaView';
 
 export { default as Link } from './Link';
 export { default as Layout } from './Layout';
@@ -26,4 +27,5 @@ export default compose(
   withTheme(({ theme: { darkPrimaryColor } = {} }) => ({ darkPrimaryColor })),
   styled(({ darkPrimaryColor }) => ({ backgroundColor: darkPrimaryColor })),
   mediaQuery(({ md }) => ({ maxWidth: md }), styled(styles.horizontal), styled(styles.vertical)),
-)(View);
+  mapProps(props => omit(props, ['darkPrimaryColor'])),
+)(SafeAreaView);
