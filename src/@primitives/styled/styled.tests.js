@@ -12,7 +12,7 @@ describe('the styled HOC', () => {
     );
     expect(tree).toMatchSnapshot();
   });
-  it('supports multiple styles', () => {
+  it('supports multiple styles, inline styles take precedence over styled()', () => {
     const StyledView = compose(
       styled({ backgroundColor: 'red' }),
       styled({ borderColor: 'green' }),
@@ -22,7 +22,7 @@ describe('the styled HOC', () => {
     );
     expect(tree).toMatchSnapshot();
   });
-  it('should accept a function', () => {
+  it('should accept a function, works with props', () => {
     const StyledView = styled(({ color }) => ({ backgroundColor: color }))(View);
     const tree = renderer.create(
       <StyledView color="green" />,
