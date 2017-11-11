@@ -1,38 +1,42 @@
 import React from 'react';
 import { View, Platform } from 'react-native';
-import { Router, Route, AndroidBackButton, Switch } from './@modules/NativeWebRouter';
-
+import { Router, Route, AndroidBackButton, Switch } from '@modules/NativeWebRouter';
+import CardStack from '@modules/CardStack';
+import H1 from '@primitives/H1';
 import * as tabs from './tabs';
-import TabBar, { Link as TabBarLink, Layout as TabBarLayout } from './@modules/TabBar';
 
-const Tabs = () => (
-  <TabBarLayout>
-    <View style={{ flex: 1 }}>
-      <Switch>
-        <Route exact path="/" component={tabs.Feed} />
-        <Route exact path="/sections" component={tabs.Sections} />
-        <Route exact path="/groups" component={tabs.Groups} />
-        <Route exact path="/discover" component={tabs.Discover} />
-        <Route exact path="/profile" component={tabs.Profile} />
-      </Switch>
-    </View>
-    <TabBar>
-      <TabBarLink to="/" icon="logo" label="Home" />
-      <TabBarLink to="/sections" icon="sections" label="Sections" />
-      <TabBarLink to="/groups" icon="groups" label="Groups" />
-      <TabBarLink to="/discover" icon="search" label="Discover" />
-      <TabBarLink to="/profile" icon="profile" label="Profile" />
-    </TabBar>
-  </TabBarLayout>
-);
+const Tabs = () => {
+  const Root = Platform.OS === 'web' ? Switch : tabs.Layout;
+  return (
+    <Root>
+      <Route exact path="/" component={tabs.Feed} />
+      <Route exact path="/sections" component={tabs.Sections} />
+      <Route exact path="/groups" component={tabs.Groups} />
+      <Route exact path="/discover" component={tabs.Discover} />
+      <Route exact path="/profile" component={tabs.Profile} />
+    </Root>
+  );
+};
 
-const AppRouter = () => (
-  <Router>
-    <View style={{ flex: 1 }}>
-      {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-      <Route component={Tabs} />
-    </View>
-  </Router>
-);
+const AppRouter = () => {
+  const Root = Platform.OS === 'web' ? tabs.Layout : CardStack;
+  return (
+    <Router>
+      <View style={{ flex: 1 }}>
+        {Platform.OS === 'android' ? <AndroidBackButton /> : null}
+        <Root>
+          <Route
+            exact
+            path="/example-card"
+            render={() => (
+              <H1>Example card stack! woot</H1>
+            )}
+          />
+          <Route component={Tabs} />
+        </Root>
+      </View>
+    </Router>
+  );
+};
 
 export default AppRouter;
