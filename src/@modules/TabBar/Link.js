@@ -14,10 +14,9 @@ import styled from '@primitives/styled';
 
 const styles = StyleSheet.create({
   container: {
-    height: 60,
-    width: 60,
     alignItems: 'center',
     justifyContent: 'center',
+    height: 50,
   },
   largeButton: {
     height: 80,
