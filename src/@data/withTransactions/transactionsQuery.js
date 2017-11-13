@@ -2,7 +2,7 @@ import { gql } from 'react-apollo';
 
 export default gql`
   query GetTransactions($limit: Int, $skip: Int, $people: [Int], $start: String, $end: String) {
-    transactions(
+    content: transactions(
       limit: $limit,
       skip: $skip,
       people: $people,

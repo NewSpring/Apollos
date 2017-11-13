@@ -1,8 +1,8 @@
 import { gql } from 'react-apollo';
 
 export default gql`
-  query GetTransaction($transactionId: ID!) {
-    transaction: node(id: $transactionId) {
+  query GetTransaction($id: ID!) {
+    transaction: node(id: $id) {
       id
       ... on Transaction {
         id
