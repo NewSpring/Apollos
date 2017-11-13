@@ -7,7 +7,7 @@ export { Link };
 const SecondaryNav = ({ backButton = true, children }) => (
   <TabBar>
     {backButton ? (
-      <Link pop icon="arrow-back" />
+      <Link pop icon="arrow-back" to={''} />
     ) : null}
     {children}
   </TabBar>
