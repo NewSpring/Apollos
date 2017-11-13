@@ -25,17 +25,18 @@ const AppRouter = () => {
       <View style={{ flex: 1 }}>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         <Root>
-            <Route
-              exact
-              path="/example-card"
-              render={() => (
-                <View style={{ paddingTop: '20%' }}>
-                  <H1>Example card stack! woot</H1>
-                  <Link to="/"><View><Text>Go to home</Text></View></Link>
-                </View>
-              )}
-            />
-            <Route component={Tabs} />
+          <Route
+            exact
+            path="/example-card"
+            render={() => (
+              <View style={{ paddingTop: '20%' }}>
+                <H1>Example card stack! woot</H1>
+                <Link to="/"><View><Text>Go to home by pushing home to stack (BAD!!)</Text></View></Link>
+                <Link to="/" pop><View><Text>Go to home by pop'ing this route from stack (GOOD!!)</Text></View></Link>
+              </View>
+            )}
+          />
+          <Route component={Tabs} />
         </Root>
       </View>
     </Router>

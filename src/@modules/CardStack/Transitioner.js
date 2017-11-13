@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, StyleSheet, View, Easing, PanResponder } from 'react-native';
-import { clamp } from 'lodash';
+import { clamp, get } from 'lodash';
 import interpolator from './interpolator';
 import findFirstMatch from './findFirstMatch';
 
@@ -46,33 +46,30 @@ class Transitioner extends PureComponent {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.key === this.props.location.key) return;
-
-    const childToParent = nextProps.match.isExact && !this.props.match.isExact;
-    const parentToChild = !nextProps.match.isExact && this.props.match.isExact;
-
-    if (childToParent || parentToChild) {
+    if (nextProps.history.action === PUSH || nextProps.history.action === POP) {
       let transition = PUSH;
       let fromPosition = 0;
       let toPosition = 1;
 
-      if (childToParent || nextProps.history.action === POP) {
+      if (nextProps.history.action === POP) {
         transition = POP;
         fromPosition = 1;
         toPosition = 0;
       }
+
+      if (this.locationsfromSameRoute(this.props.location, nextProps.location)) {
+        transition = null;
+      }
+
       this.setState({
-        previousLocation: this.props.location,
+        previouslyRenderedLocation: this.props.location,
         transition,
       }, () => {
-        if (this.isPanning) return;
-
-        // Don't animate on nested routes. We can check for nested routes by comparing
-        // computedMatch.path - both the current and last route will be pointing to the
-        // same "route" === same match)
-        if (this.lastAndCurrentRoute.current.props.computedMatch.path
-          === this.lastAndCurrentRoute.last.props.computedMatch.path
+        if (
+          !transition ||
+          this.isPanning ||
+          (nextProps.history.action === POP && nextProps.history.index < this.startingIndex)
         ) {
-          this.setState({ transition: null });
           return;
         }
 
@@ -100,16 +97,19 @@ class Transitioner extends PureComponent {
     if (this.animation) this.animation.stop();
   }
 
-  get lastAndCurrentRoute() {
-    const current = findFirstMatch(this.props.children, this.props.location);
+  get currentRouteChild() {
+    return findFirstMatch(this.props.children, this.props.location);
+  }
 
-    if (!this.state.previousLocation) {
-      return { current };
-    }
+  get previouslyRenderedRouteChild() {
+    return findFirstMatch(this.props.children, this.state.previouslyRenderedLocation);
+  }
 
-    const last = findFirstMatch(this.props.children, this.state.previousLocation);
-
-    return { current, last };
+  get wouldPopToSameRouteChild() {
+    return this.locationsfromSameRoute(
+      this.props.location,
+      get(this.props.history, `entries[${this.props.history.index - 1}]`),
+    );
   }
 
   startingIndex = this.props.history.index;
@@ -118,6 +118,7 @@ class Transitioner extends PureComponent {
 
   panResponder = PanResponder.create({
     onMoveShouldSetPanResponder: (event, gesture) => (
+      !this.wouldPopToSameRouteChild &&
       this.props.history.index > this.startingIndex &&
       this.props.history.canGo(-1) &&
       event.nativeEvent.pageX < GESTURE_RESPONSE_DISTANCE_HORIZONTAL &&
@@ -172,6 +173,15 @@ class Transitioner extends PureComponent {
     },
   });
 
+  routeChildForLocation(location) {
+    return location && findFirstMatch(this.props.children, location);
+  }
+
+  locationsfromSameRoute(locationA, locationB) {
+    return get(this.routeChildForLocation(locationA), 'props.computedMatch.path') ===
+      get(this.routeChildForLocation(locationB), 'props.computedMatch.path');
+  }
+
   cancelNavigationFromPan = (duration) => {
     this.animation = Animated.timing(this.animatedPosition, {
       toValue: 1,
@@ -203,7 +213,7 @@ class Transitioner extends PureComponent {
     this.isPanning = false;
 
     this.setState({
-      previousLocation: {},
+      previouslyRenderedLocation: {},
       transition: null,
     });
   };
@@ -214,12 +224,12 @@ class Transitioner extends PureComponent {
       screens = [
         this.renderScreenWithAnimation({
           index: 0,
-          screen: this.lastAndCurrentRoute.last,
-          key: this.state.previousLocation.key,
+          screen: this.previouslyRenderedRouteChild,
+          key: this.state.previouslyRenderedLocation.key,
         }),
         this.renderScreenWithAnimation({
           index: 1,
-          screen: this.lastAndCurrentRoute.current,
+          screen: this.currentRouteChild,
           key: this.props.location.key,
         }),
       ];
@@ -227,19 +237,19 @@ class Transitioner extends PureComponent {
       screens = [
         this.renderScreenWithAnimation({
           index: 0,
-          screen: this.lastAndCurrentRoute.current,
+          screen: this.currentRouteChild,
           key: this.props.location.key,
         }),
         this.renderScreenWithAnimation({
           index: 1,
-          screen: this.lastAndCurrentRoute.last,
-          key: this.state.previousLocation.key,
+          screen: this.previouslyRenderedRouteChild,
+          key: this.state.previouslyRenderedLocation.key,
         }),
       ];
     } else {
       screens = [
         <Animated.View key={this.props.location.key} style={[StyleSheet.absoluteFill, { backgroundColor: 'white' }]}>
-          {this.lastAndCurrentRoute.current}
+          {this.currentRouteChild}
         </Animated.View>,
       ];
     }

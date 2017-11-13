@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 import {
   TouchableWithoutFeedback,
 } from 'react-native';
+import { matchPath } from './';
 
 export default class Link extends Component {
   static contextTypes = {
     router: PropTypes.shape({
       history: PropTypes.shape({
+        entries: PropTypes.array.isRequired,
+        index: PropTypes.number.isRequired,
+        go: PropTypes.func.isRequired,
         push: PropTypes.func.isRequired,
         replace: PropTypes.func.isRequired,
       }).isRequired,
@@ -18,6 +22,7 @@ export default class Link extends Component {
     onPress: PropTypes.func,
     component: PropTypes.func,
     replace: PropTypes.bool,
+    pop: PropTypes.bool,
     to: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.object,
@@ -29,15 +34,27 @@ export default class Link extends Component {
     component: TouchableWithoutFeedback,
     replace: false,
     to: null,
+    pop: false,
   };
 
   handlePress = (event) => {
     this.props.onPress(event);
 
     const { history } = this.context.router;
-    const { to, replace } = this.props;
+    const { to, replace, pop } = this.props;
 
-    if (replace && to) {
+    if (pop) {
+      let distance = -1;
+      if (to) {
+        const routeToPopTo = history.entries.findIndex(location =>
+          matchPath(location.pathname, to),
+        );
+        if (routeToPopTo && routeToPopTo < history.index) {
+          distance = routeToPopTo - history.index;
+        }
+      }
+      history.go(distance);
+    } else if (replace && to) {
       history.replace(to);
     } else {
       history.push(to);
