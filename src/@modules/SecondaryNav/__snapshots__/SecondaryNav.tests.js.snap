@@ -2,15 +2,24 @@
 
 exports[`SecondaryNav Component renders correctly with custom links and no back button 1`] = `
 <View
-  darkPrimaryColor="#303030"
+  onLayout={[Function]}
   style={
     Array [
+      Array [
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "paddingHorizontal": 10,
+        },
+        Object {
+          "backgroundColor": "#303030",
+        },
+      ],
       Object {
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-      },
-      Object {
-        "backgroundColor": "#303030",
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 20,
       },
     ]
   }
@@ -32,9 +41,8 @@ exports[`SecondaryNav Component renders correctly with custom links and no back 
     style={
       Object {
         "alignItems": "center",
-        "height": 60,
+        "height": 50,
         "justifyContent": "center",
-        "width": 60,
       }
     }
     testID={undefined}
@@ -67,9 +75,8 @@ exports[`SecondaryNav Component renders correctly with custom links and no back 
     style={
       Object {
         "alignItems": "center",
-        "height": 60,
+        "height": 50,
         "justifyContent": "center",
-        "width": 60,
       }
     }
     testID={undefined}
@@ -90,15 +97,24 @@ exports[`SecondaryNav Component renders correctly with custom links and no back 
 
 exports[`SecondaryNav Component renders correctly with default props 1`] = `
 <View
-  darkPrimaryColor="#303030"
+  onLayout={[Function]}
   style={
     Array [
+      Array [
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "paddingHorizontal": 10,
+        },
+        Object {
+          "backgroundColor": "#303030",
+        },
+      ],
       Object {
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-      },
-      Object {
-        "backgroundColor": "#303030",
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 20,
       },
     ]
   }
@@ -120,9 +136,8 @@ exports[`SecondaryNav Component renders correctly with default props 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "height": 60,
+        "height": 50,
         "justifyContent": "center",
-        "width": 60,
       }
     }
     testID={undefined}
@@ -143,15 +158,24 @@ exports[`SecondaryNav Component renders correctly with default props 1`] = `
 
 exports[`SecondaryNav Component renders with custom links 1`] = `
 <View
-  darkPrimaryColor="#303030"
+  onLayout={[Function]}
   style={
     Array [
+      Array [
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "paddingHorizontal": 10,
+        },
+        Object {
+          "backgroundColor": "#303030",
+        },
+      ],
       Object {
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-      },
-      Object {
-        "backgroundColor": "#303030",
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 20,
       },
     ]
   }
@@ -173,9 +197,8 @@ exports[`SecondaryNav Component renders with custom links 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "height": 60,
+        "height": 50,
         "justifyContent": "center",
-        "width": 60,
       }
     }
     testID={undefined}
@@ -208,9 +231,8 @@ exports[`SecondaryNav Component renders with custom links 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "height": 60,
+        "height": 50,
         "justifyContent": "center",
-        "width": 60,
       }
     }
     testID={undefined}
@@ -243,9 +265,8 @@ exports[`SecondaryNav Component renders with custom links 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "height": 60,
+        "height": 50,
         "justifyContent": "center",
-        "width": 60,
       }
     }
     testID={undefined}
