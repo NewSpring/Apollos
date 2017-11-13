@@ -17,7 +17,6 @@ export default graphql(homeFeedQuery, {
     feed: data.feed,
     isLoading: data.loading,
     fetchMore: fetchMoreResolver({
-      mapTo: 'feed',
       collectionName: 'feed',
       data,
     }),
