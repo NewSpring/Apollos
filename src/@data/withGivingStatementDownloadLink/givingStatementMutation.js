@@ -1,4 +1,4 @@
-import { gql } from 'react-apollo';
+import gql from 'graphql-tag';
 
 // TODO: Not sure why this is a mutation
 export default gql`
