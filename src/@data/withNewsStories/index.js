@@ -1,8 +1,8 @@
 import { graphql } from 'react-apollo';
 import fetchMoreResolver from '@data/utils/fetchMoreResolver';
-import articlesQuery from './articlesQuery';
+import newsStoriesQuery from './newsStoriesQuery';
 
-export default graphql(articlesQuery, {
+export default graphql(newsStoriesQuery, {
   props: ({ data } = {}) => ({
     content: data.content,
     isLoading: data.loading,
