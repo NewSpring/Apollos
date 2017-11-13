@@ -31,8 +31,9 @@ const AppRouter = () => {
             render={() => (
               <View style={{ paddingTop: '20%' }}>
                 <H1>Example card stack! woot</H1>
-                <Link to="/"><View><Text>Go to home by pushing home to stack (BAD!!)</Text></View></Link>
-                <Link to="/" pop><View><Text>Go to home by pop'ing this route from stack (GOOD!!)</Text></View></Link>
+                <Link to="/"><View><Text>Go to home by PUSHing home to stack (BAD!!)</Text></View></Link>
+                <H1>{'\n'}</H1>
+                <Link to="/" pop><View><Text>Go to home by POPing this route from stack (GOOD!!)</Text></View></Link>
               </View>
             )}
           />
