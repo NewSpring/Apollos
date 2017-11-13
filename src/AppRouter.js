@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Platform } from 'react-native';
-import { Router, Route, AndroidBackButton, Switch } from '@modules/NativeWebRouter';
+import { View, Platform, Text } from 'react-native';
+import { Router, Route, AndroidBackButton, Switch, Link } from '@modules/NativeWebRouter';
 import CardStack from '@modules/CardStack';
 import H1 from '@primitives/H1';
 import * as tabs from './tabs';
@@ -25,14 +25,17 @@ const AppRouter = () => {
       <View style={{ flex: 1 }}>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         <Root>
-          <Route
-            exact
-            path="/example-card"
-            render={() => (
-              <H1>Example card stack! woot</H1>
-            )}
-          />
-          <Route component={Tabs} />
+            <Route
+              exact
+              path="/example-card"
+              render={() => (
+                <View style={{ paddingTop: '20%' }}>
+                  <H1>Example card stack! woot</H1>
+                  <Link to="/"><View><Text>Go to home</Text></View></Link>
+                </View>
+              )}
+            />
+            <Route component={Tabs} />
         </Root>
       </View>
     </Router>
