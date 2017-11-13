@@ -13,7 +13,7 @@ export default gql`
     $zip: String
     $schedules: [Int]
   ) {
-    groups(
+    content: groups(
       query: $query
       attributes: $tags
       limit: $limit
