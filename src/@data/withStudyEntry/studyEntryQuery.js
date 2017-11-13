@@ -1,8 +1,8 @@
 import { gql } from 'react-apollo';
 
 export default gql`
-  query GetStudyEntry($studyEntryId: ID!) {
-    content: node(id: $studyEntryId) {
+  query GetStudyEntry($id: ID!) {
+    content: node(id: $id) {
       ... on Content {
         entryId: id
         title
