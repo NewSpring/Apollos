@@ -15,6 +15,10 @@ const POSITION_THRESHOLD = 1 / 2;
 const RESPOND_THRESHOLD = 1;
 const GESTURE_RESPONSE_DISTANCE_HORIZONTAL = 40;
 
+// Transitioner essentially emulates the functionality of a CardStack
+// by pulling out the routes involved in a transition, stacking them,
+// and animating their position. When using this component, it becomes
+// very important to use `.push` and `.goBack` appropriately.
 class Transitioner extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
@@ -52,8 +56,11 @@ class Transitioner extends PureComponent {
     transition: null,
   };
 
+  // In a routing change: set up state to handle the transition and start the animation
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.key === this.props.location.key) return;
+
+    // we only care about PUSH and POP actions. (EX: REPLACE we don't want to animate)
     if (nextProps.history.action === PUSH || nextProps.history.action === POP) {
       let transition = PUSH;
       let fromPosition = 0;
@@ -65,6 +72,9 @@ class Transitioner extends PureComponent {
         toPosition = 0;
       }
 
+      // Since ReactRouter uses a global history state, we need to figure out when we're dealing
+      // with a routing change that happens inside of nested routes, as we don't want this CardStack
+      // to add animation when we're transitioning between two nested routes.
       if (this.locationsfromSameRoute(this.props.location, nextProps.location)) {
         transition = null;
       }
@@ -81,6 +91,9 @@ class Transitioner extends PureComponent {
           return;
         }
 
+        // Below we'll render the two routes we're animating between.
+        // Here we'll animate between the two routes, where this.animatedPosition
+        // refers to the index of the route.
         this.animatedPosition.setValue(fromPosition);
         this.animation = Animated.timing(this.animatedPosition, {
           duration: ANIMATION_DURATION,
@@ -92,7 +105,6 @@ class Transitioner extends PureComponent {
             this.setState({
               transition: null,
             });
-
             this.animatedPosition.setValue(0);
             this.animation = null;
           }
@@ -105,14 +117,18 @@ class Transitioner extends PureComponent {
     if (this.animation) this.animation.stop();
   }
 
+  // Finds the first matching <Route> in children. Works like ReactRouter's <Switch>
   get currentRouteChild() {
     return findFirstMatch(this.props.children, this.props.location);
   }
 
+  // Finds the <Route> that was previously active in children.
   get previouslyRenderedRouteChild() {
     return findFirstMatch(this.props.children, this.state.previouslyRenderedLocation);
   }
 
+  // Determines if the previous location in history points at the same <Route> that's active.
+  // Used to keep us from swiping back on a screen that we shouldn't be able to swipe back from
   get wouldPopToSameRouteChild() {
     return this.locationsfromSameRoute(
       this.props.location,
@@ -122,6 +138,7 @@ class Transitioner extends PureComponent {
 
   startingIndex = this.props.history.index;
 
+  // Points to the index of the current screen rendered in `renderScreens`
   animatedPosition = new Animated.Value(0);
 
   panResponder = PanResponder.create({
@@ -136,14 +153,14 @@ class Transitioner extends PureComponent {
     onPanResponderGrant: () => {
       this.animatedPosition.stopAnimation(() => {
         this.isPanning = true;
-        // this.gestureStartValue = value;
         this.props.history.goBack();
       });
     },
 
     onPanResponderMove: (event, { dx }) => {
-      // Handle the moving touches for our granted responder
-      const startValue = 1; // todo: should we be utilizing gestureStartValue (above) somehow?
+      // current route is always the "second" (index=1) route in the stack (stack size is always 2)
+      const startValue = 1;
+
       const currentValue = startValue + (-dx / this.props.width);
       const value = clamp(0, currentValue, 1);
       this.animatedPosition.setValue(value);
@@ -171,7 +188,7 @@ class Transitioner extends PureComponent {
         }
 
         // Then filter based on the distance the screen was moved. Over a third of the way swiped,
-        // and the back will happen.
+        // and the back transition will will happen.
         if (value <= POSITION_THRESHOLD) {
           this.finishNavigationFromPan(goBackDuration);
         } else {
@@ -181,10 +198,12 @@ class Transitioner extends PureComponent {
     },
   });
 
+  // Finds the first matching <Route> for a given location object in props.children
   routeChildForLocation(location) {
     return location && findFirstMatch(this.props.children, location);
   }
 
+  // Determines if two locations would be driven by the same <Route> in props.children
   locationsfromSameRoute(locationA, locationB) {
     return get(this.routeChildForLocation(locationA), 'props.computedMatch.path') ===
       get(this.routeChildForLocation(locationB), 'props.computedMatch.path');
@@ -228,6 +247,9 @@ class Transitioner extends PureComponent {
 
   renderScreens() {
     let screens = [];
+    // This is how we emulate a CardStack with ReactRouter:
+    // Essentially, our CardStack size during a transition is always 2:
+    // The Screen we're navigating away from, and the Screen we're navigating to.
     if (this.state.transition === PUSH) {
       screens = [
         this.renderScreenWithAnimation({
@@ -256,9 +278,9 @@ class Transitioner extends PureComponent {
       ];
     } else {
       screens = [
-        <Animated.View key={this.props.location.key} style={[StyleSheet.absoluteFill, { backgroundColor: 'white' }]}>
+        <View key={this.props.location.key} style={[StyleSheet.absoluteFill, { backgroundColor: 'white' }]}>
           {this.currentRouteChild}
-        </Animated.View>,
+        </View>,
       ];
     }
     return screens;
@@ -271,7 +293,6 @@ class Transitioner extends PureComponent {
       interpolator({
         ...this.props,
         index,
-        transition: this.state.transition,
         animatedPosition: this.animatedPosition,
       }),
     ];
