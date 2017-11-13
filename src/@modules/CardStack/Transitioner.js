@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, StyleSheet, View, Easing, PanResponder } from 'react-native';
 import { clamp, get } from 'lodash';
+import withTheme from '@primitives/withTheme';
+
 import interpolator from './interpolator';
 import findFirstMatch from './findFirstMatch';
 
@@ -31,6 +33,10 @@ class Transitioner extends PureComponent {
       isExact: PropTypes.bool,
     }),
     width: PropTypes.number.isRequired,
+
+    // from withTheme HOC
+    screenDark: PropTypes.string,
+    screenLight: PropTypes.string,
   };
 
   static defaultProps = {
@@ -38,6 +44,8 @@ class Transitioner extends PureComponent {
     history: null,
     location: null,
     match: null,
+    screenDark: '#000',
+    screenLight: '#fff',
   };
 
   state = {
@@ -259,7 +267,7 @@ class Transitioner extends PureComponent {
   renderScreenWithAnimation = ({ index, key, screen }) => {
     const style = [
       StyleSheet.absoluteFill,
-      { backgroundColor: 'white' }, // todo
+      { backgroundColor: this.props.screenLight },
       interpolator({
         ...this.props,
         index,
@@ -276,11 +284,16 @@ class Transitioner extends PureComponent {
 
   render() {
     return (
-      <View style={[StyleSheet.absoluteFill, { backgroundColor: '#000' }]} {...this.panResponder.panHandlers}>
+      <View
+        style={[StyleSheet.absoluteFill, { backgroundColor: this.props.screenDark }]}
+        {...this.panResponder.panHandlers}
+      >
         {this.renderScreens()}
       </View>
     );
   }
 }
 
-export default Transitioner;
+export default withTheme(({ screenLight, screenDark }) =>
+  ({ screenLight, screenDark }),
+)(Transitioner);
