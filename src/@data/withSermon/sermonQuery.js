@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  query getSermon($sermonId: ID!) {
-    content: node(id: $sermonId) {
+  query getSermon($id: ID!) {
+    content: node(id: $id) {
       ... on Content {
         entryId: id
         title
