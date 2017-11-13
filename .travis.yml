@@ -10,7 +10,6 @@ jobs:
   include:
     - stage: test
       script:
-        - yarn danger
         - yarn run test
         - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
     -
