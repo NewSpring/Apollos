@@ -41,6 +41,10 @@ export default gql`
           role
         }
       }
+      phoneNumbers {
+        number
+        rawNumber
+      }
     }
   }
 `;
