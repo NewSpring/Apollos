@@ -1,37 +1,36 @@
-import React, { PureComponent } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import React from 'react';
+import { Text, View, StatusBar, Platform } from 'react-native';
 import PropTypes from 'prop-types';
+import { compose, setPropTypes, branch, renderNothing } from 'recompose';
+import SafeAreaView from '@primitives/SafeAreaView';
+import withTheme from '@primitives/withTheme';
+import styled from '@primitives/styled';
 
-const styles = StyleSheet.create({
-  container: {
-    height: 60,
-    backgroundColor: 'green',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    color: 'white',
-  },
-});
+const StyledHeaderBar = styled({
+  height: 50,
+  alignItems: 'center',
+  justifyContent: 'center',
+})(View);
 
-export default class Header extends PureComponent {
-  static propTypes = {
+const StyledHeaderText = styled({
+  color: 'white',
+})(Text); // todo: use a different Text component that brings in correct styles
+
+const enhance = compose(
+  branch(() => Platform.OS === 'web', renderNothing), // Header isn't a supported component on web
+  withTheme(({ theme: { primaryColor } = {} }) => ({ primaryColor })),
+  setPropTypes({
     titleText: PropTypes.string,
-  };
+  }),
+);
 
-  static defaultProps = {
-    titleText: '',
-  };
+const Header = enhance(({ titleText, primaryColor }) => (
+  <SafeAreaView style={{ backgroundColor: primaryColor }}>
+    <StatusBar barStyle="light-content" />
+    <StyledHeaderBar>
+      <StyledHeaderText>{titleText}</StyledHeaderText>
+    </StyledHeaderBar>
+  </SafeAreaView>
+));
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>{this.props.titleText}</Text>
-      </View>
-    );
-  }
-}
+export default Header;
