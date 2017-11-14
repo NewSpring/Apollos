@@ -1,58 +1,76 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
   View,
 } from 'react-native';
-import { compose } from 'recompose';
+import { compose, mapProps, setPropTypes, onlyUpdateForPropTypes } from 'recompose';
 import PropTypes from 'prop-types';
 import Icon from '@primitives/Icon';
-import NavLink from '@modules/NativeWebRouter/NavLink';
+import { Link, withRouter, matchLocationToPath } from '@modules/NativeWebRouter';
 import withTheme from '@primitives/withTheme';
+import MediaQuery, { enhancer as mediaQuery } from '@primitives/MediaQuery';
+import styled from '@primitives/styled';
 
 const styles = StyleSheet.create({
   container: {
-    height: 60,
-    width: 60,
     alignItems: 'center',
     justifyContent: 'center',
+    height: 50,
   },
-  text: {
-    color: 'white',
+  largeButton: {
+    height: 80,
   },
 });
 
-class FooterNavLink extends PureComponent {
-  static propTypes = {
+// Styled View to wrap icon and label
+// TODO: should "styled" components like this always go in their own file?
+const LinkContainer = compose(
+  mediaQuery(({ md }) => ({ minWidth: md }), styled(styles.largeButton)),
+  styled(styles.container),
+)(View);
+
+// Determine if link should be considered "active"
+const withActiveRoute = compose(
+  withRouter,
+  mapProps(({
+    match, location, history, ...ownProps
+  }) => ({
+    isActive: matchLocationToPath(ownProps.to, location),
+    ...ownProps,
+  })),
+);
+
+// Get color from active route
+const determineColorFromActiveRoute =
+  withTheme(({ theme: { primaryColor, lightPrimaryColor } = {}, isActive }) => ({
+    color: isActive ? primaryColor : lightPrimaryColor,
+  }));
+
+const enhance = compose(
+  withActiveRoute,
+  determineColorFromActiveRoute,
+  onlyUpdateForPropTypes,
+  setPropTypes({
     label: PropTypes.string,
     icon: PropTypes.string,
-    to: NavLink.propTypes.to,
-    style: NavLink.propTypes.style,
-    activeStyle: NavLink.propTypes.activeStyle,
+    to: Link.propTypes.to,
     color: PropTypes.string,
-  };
+  }),
+);
 
-  static defaultProps = {
-    label: '',
-    to: null,
-    icon: null,
-    style: null,
-    activeStyle: null,
-    color: undefined,
-  };
+const TabBarLink = enhance(({
+  label = null,
+  icon = null,
+  color = null,
+  ...linkProps
+}) => (
+  <Link {...linkProps}>
+    <LinkContainer>
+      {icon ? <Icon name={icon} fill={color} /> : null}
+      <MediaQuery minWidth="md">{label ? <Text style={{ color }}>{label}</Text> : null}</MediaQuery>
+    </LinkContainer>
+  </Link>
+));
 
-  render() {
-    return (
-      <NavLink to={this.props.to} style={this.props.style} activeStyle={this.props.activeStyle}>
-        <View style={styles.container}>
-          {this.props.icon ? <Icon name={this.props.icon} fill={this.props.color} /> : null}
-          {this.props.label ? <Text style={styles.text}>{this.props.label}</Text> : null}
-        </View>
-      </NavLink>
-    );
-  }
-}
-
-export default compose(
-  withTheme(({ lightPrimaryColor }) => ({ color: lightPrimaryColor })),
-)(FooterNavLink);
+export default TabBarLink;

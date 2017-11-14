@@ -12,6 +12,7 @@
     "babel-eslint": "^8.0.1",
     "babel-plugin-module-resolver": "3.0.0-beta.5",
     "babel-preset-react-native-stage-0": "^1.0.1",
+    "coveralls": "^3.0.0",
     "danger": "^2.0.0-alpha.20",
     "dotenv": "^4.0.0",
     "eslint": "^4.10.0",
@@ -39,11 +40,11 @@
     "build-storybook": "npm run create-storybook-entrypoint && npm run storybook-load-stories && build-storybook -c src/.storybook/web -s public",
     "ci-deploy": "npm run create-app-entrypoint && NODE_PATH=./src node ./.scripts/ci-deploy.js",
     "test": "npm run lint && npm run jest",
-    "jest": "node node_modules/jest/bin/jest.js",
+    "jest": "./node_modules/.bin/jest",
     "storybook-native-start": "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybook/native",
     "storybook-web": "npm run create-storybook-entrypoint && npm run storybook-load-stories && start-storybook -p 9009 -s public -c src/.storybook/web",
     "jest-watcher": "node node_modules/jest/bin/jest.js --watch",
-    "lint": "$(npm bin)/eslint . --ignore-path .gitignore",
+    "lint": "./node_modules/.bin/eslint . --ext .js --ignore-path .gitignore",
     "storybook-ios": "npm run create-storybook-entrypoint && react-native-scripts ios",
     "storybook-android": "npm run create-storybook-entrypoint && react-native-scripts android",
     "storybook-load-stories": "rnstl",
@@ -59,7 +60,8 @@
     ],
     "setupFiles": [
       "./.jestrc.js"
-    ]
+    ],
+    "collectCoverage": true
   },
   "config": {
     "react-native-storybook-loader": {

@@ -6,25 +6,29 @@ import H1 from '@primitives/H1';
 import * as tabs from './tabs';
 
 const Tabs = () => {
-  const Root = Platform.OS === 'web' ? Switch : tabs.Layout;
+  // On mobile we render the tab layout at this level so that other <Route>s at
+  // the root level in the router can replace the tabbar
+  const Container = Platform.OS === 'web' ? Switch : tabs.Layout;
   return (
-    <Root>
+    <Container>
       <Route exact path="/" component={tabs.Feed} />
       <Route exact path="/sections" component={tabs.Sections} />
       <Route exact path="/groups" component={tabs.Groups} />
       <Route exact path="/discover" component={tabs.Discover} />
       <Route exact path="/profile" component={tabs.Profile} />
-    </Root>
+    </Container>
   );
 };
 
 const AppRouter = () => {
-  const Root = Platform.OS === 'web' ? tabs.Layout : CardStack;
+  // On Web we render the tab layout at this level as it is always visible.
+  // On mobile, use a CardStack component for animated transitions and swipe to go back.
+  const Container = Platform.OS === 'web' ? tabs.Layout : CardStack;
   return (
     <Router>
       <View style={{ flex: 1 }}>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-        <Root>
+        <Container>
           <Route
             exact
             path="/example-card"
@@ -38,7 +42,7 @@ const AppRouter = () => {
             )}
           />
           <Route component={Tabs} />
-        </Root>
+        </Container>
       </View>
     </Router>
   );

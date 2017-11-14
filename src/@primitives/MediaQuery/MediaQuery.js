@@ -27,11 +27,11 @@ class MediaQuery extends Component {
 
     // These props are passed in through HOCs (withTheme and withWindow)
     breakpoints: PropTypes.shape({
-      xs: PropTypes.number.isRequired,
-      sm: PropTypes.number.isRequired,
-      md: PropTypes.number.isRequired,
-      lg: PropTypes.number.isRequired,
-    }).isRequired,
+      xs: PropTypes.number,
+      sm: PropTypes.number,
+      md: PropTypes.number,
+      lg: PropTypes.number,
+    }),
     window: PropTypes.shape({
       width: PropTypes.number,
       height: PropTypes.number,
@@ -40,6 +40,7 @@ class MediaQuery extends Component {
 
   static defaultProps = {
     ...mapValues(supportedMediaQueryTypes, () => null),
+    breakpoints: {},
   };
 
   get shouldBeVisible() {
@@ -58,6 +59,6 @@ class MediaQuery extends Component {
 }
 
 export default compose(
-  withTheme(({ theme: { breakpoints } }) => ({ breakpoints })),
+  withTheme(({ theme: { breakpoints } = {} } = {}) => ({ breakpoints })),
   withWindow,
 )(MediaQuery);

@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/NewSpring/Apollos.svg?branch=master)](https://travis-ci.org/NewSpring/Apollos)
 
+[![Coverage Status](https://coveralls.io/repos/github/NewSpring/Apollos/badge.svg)](https://coveralls.io/github/NewSpring/Apollos)
+
 ## Getting Started
 
 The Readme below is boilerplate from [Create React Native App](https://github.com/react-community/create-react-native-app). It is helpful to read to learn about `CRNA`, but it is not a readme for Apollos ([#20](https://github.com/NewSpring/Apollos/issues/20))
