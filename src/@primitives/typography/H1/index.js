@@ -3,7 +3,7 @@ import {
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import withTheme from './withTheme';
+import withTheme from '@primitives/withTheme';
 
 class H1 extends PureComponent {
   static propTypes = {
