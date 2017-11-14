@@ -8,6 +8,8 @@ module.exports = {
     "import/no-extraneous-dependencies": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-curly-brace-presence": 0,
+    "react/no-unused-prop-type": 0,
+    "react/require-default-props": 0,
     "react/prefer-stateless-function": [2, { "ignorePureComponents": true }],
     "function-paren-newline": 0,
     "import/no-named-as-default": 0,
