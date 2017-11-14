@@ -1,4 +1,7 @@
-import { withProps } from 'recompose';
+import { StyleSheet } from 'react-native';
+import { withPropsOnChange, compose, mapProps } from 'recompose';
+import { isEqual, flatten, compact } from 'lodash';
+import withTheme from '@primitives/withTheme';
 
 // HOC to make composing component style easy.
 // Use similar to how you'd use `styled` in styled-components:
@@ -50,14 +53,58 @@ const mergeStyles = (...stylesToMerge) => stylesToMerge.reduce((accumulatedStyle
   return style;
 });
 
-const styled = styleInput => withProps((props) => {
-  let style = styleInput;
-  if (typeof styleInput === 'function') style = styleInput(props);
+// const cachedStyles = {};
+// const styleHasher = JSON.stringify; // todo: how bad is this?
 
-  // handle existing style prop
-  if (props.style) style = mergeStyles(style, props.style);
+// Uses cached or generates a new StyleSheet for a given style prop
+const generateStyleSheetForStylesProp = (stylesToGenerate) => {
+  const styles = flatten([stylesToGenerate]);
 
-  return { style };
-});
+  const styleSheet = {};
+  styles.forEach((style, index) => {
+    if (typeof style !== 'object' || !style) return;
+    styleSheet[`generated-${index}`] = style;
+  });
+
+  const generatedStyleSheet = StyleSheet.create(styleSheet);
+
+  let mappedStyles = styles.map((style, index) => {
+    if (typeof style !== 'object') return style;
+    return generatedStyleSheet[`generated-${index}`];
+  });
+
+  mappedStyles = compact(mappedStyles);
+  if (mappedStyles.length === 1) [mappedStyles] = mappedStyles;
+  return mappedStyles;
+};
+
+// Generates a style object from a given styleInput.
+// styleInput is the argument passed to `styled`
+const getStyleLiteralFromInput = (styleInput, { ownProps, theme }) => {
+  let generatedStyle = styleInput;
+  if (typeof generatedStyle === 'function') generatedStyle = generatedStyle(ownProps, theme);
+  return generatedStyle;
+};
+
+const styled = styleInput => compose(
+  mapProps(props => ({ ownProps: props })),
+  withTheme(theme => ({ theme })),
+  withPropsOnChange(
+    // Only re-eval styles if style prop changes, or the generated style from
+    // styleInput is different. Both of these checks should be exteremely cheap.
+    (props, nextProps) => props.ownProps.style !== nextProps.ownProps.style || !isEqual(
+      getStyleLiteralFromInput(styleInput, props), getStyleLiteralFromInput(styleInput, nextProps),
+    ),
+    ({ ownProps, theme }) => {
+      let style = getStyleLiteralFromInput(styleInput, { ownProps, theme });
+      if (ownProps.style) style = mergeStyles(style, ownProps.style);
+
+      style = generateStyleSheetForStylesProp(style);
+
+      return { style };
+    },
+  ),
+  mapProps(({ ownProps, style }) => ({ ...ownProps, style })),
+);
 
 export default styled;
