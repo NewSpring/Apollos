@@ -1,12 +1,14 @@
 import React from 'react';
 import {
   View,
+  Text,
 } from 'react-native';
 import Header from '@modules/Header';
 import H1 from '@primitives/H1';
 import Icon from '@primitives/Icon';
 import MediaQuery from '@primitives/MediaQuery';
 import Audio from '@modules/Audio';
+import { Link } from '@modules/NativeWebRouter';
 
 export default function Feed() {
   return (
@@ -18,6 +20,8 @@ export default function Feed() {
       <MediaQuery maxWidth="md">
         <Icon name="umbrella" />
       </MediaQuery>
+
+      <Link to="/example-card"><Text>Open a new page!</Text></Link>
 
       <Audio
         source="https://www.w3schools.com/html/horse.mp3"
