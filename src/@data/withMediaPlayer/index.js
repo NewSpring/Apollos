@@ -3,6 +3,8 @@ import { compose } from 'recompose';
 import playMutation from './playMutation';
 import pauseMutation from './pauseMutation';
 import mediaPlayerQuery from './mediaPlayerQuery';
+import albumQuery from './albumQuery';
+import albumsQuery from './albumsQuery';
 
 const play = graphql(playMutation, {
   props: ({ mutate }) => ({
@@ -26,8 +28,23 @@ const get = graphql(mediaPlayerQuery, {
   }),
 });
 
+const libraryQuery = graphql(albumsQuery, {
+  props: ({ data: { content } }) => ({
+    library: content,
+  }),
+});
+
+const playlistQuery = graphql(albumQuery, {
+  props: ({ data: { content } }) => ({
+    playlist: content,
+  }),
+});
+
+
 export default compose(
   play,
   pause,
   get,
+  libraryQuery,
+  playlistQuery,
 );

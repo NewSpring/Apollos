@@ -1,5 +1,6 @@
 import { graphql } from 'react-apollo';
 import { FOLLOWABLE_TOPICS } from '@data/constants';
+import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 import homeFeedQuery from './homeFeedQuery';
 
 export default graphql(homeFeedQuery, {
@@ -11,6 +12,14 @@ export default graphql(homeFeedQuery, {
       skip: 0,
       cache: true,
     },
+  }),
+  props: ({ data }) => ({
+    feed: data.feed,
+    isLoading: data.loading,
+    fetchMore: fetchMoreResolver({
+      collectionName: 'feed',
+      data,
+    }),
   }),
 });
 

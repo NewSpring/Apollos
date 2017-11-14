@@ -3,7 +3,6 @@ export function mediaPlayer() {
     __typename: 'MediaPlayer',
     isPlaying: false,
     current: null,
-    playlist: [],
   };
 }
 
