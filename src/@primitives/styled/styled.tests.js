@@ -12,7 +12,7 @@ describe('the styled HOC', () => {
     );
     expect(tree).toMatchSnapshot();
   });
-  it('supports multiple styles, inline styles take precedence over styled()', () => {
+  it('supports multiple styles, and keeps the correct order', () => {
     const StyledView = compose(
       styled({ backgroundColor: 'red' }),
       styled({ borderColor: 'green' }),

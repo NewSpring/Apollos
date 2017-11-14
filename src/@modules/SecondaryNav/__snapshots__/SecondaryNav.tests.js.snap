@@ -5,16 +5,12 @@ exports[`SecondaryNav Component renders correctly with custom links and no back 
   onLayout={[Function]}
   style={
     Array [
-      Array [
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-around",
-          "paddingHorizontal": 10,
-        },
-        Object {
-          "backgroundColor": "#303030",
-        },
-      ],
+      Object {
+        "backgroundColor": "#303030",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "paddingHorizontal": 10,
+      },
       Object {
         "paddingBottom": 0,
         "paddingLeft": 0,
@@ -100,16 +96,12 @@ exports[`SecondaryNav Component renders correctly with default props 1`] = `
   onLayout={[Function]}
   style={
     Array [
-      Array [
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-around",
-          "paddingHorizontal": 10,
-        },
-        Object {
-          "backgroundColor": "#303030",
-        },
-      ],
+      Object {
+        "backgroundColor": "#303030",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "paddingHorizontal": 10,
+      },
       Object {
         "paddingBottom": 0,
         "paddingLeft": 0,
@@ -161,16 +153,12 @@ exports[`SecondaryNav Component renders with custom links 1`] = `
   onLayout={[Function]}
   style={
     Array [
-      Array [
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-around",
-          "paddingHorizontal": 10,
-        },
-        Object {
-          "backgroundColor": "#303030",
-        },
-      ],
+      Object {
+        "backgroundColor": "#303030",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "paddingHorizontal": 10,
+      },
       Object {
         "paddingBottom": 0,
         "paddingLeft": 0,
