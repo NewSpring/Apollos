@@ -2,16 +2,17 @@ language: node_js
 node_js: '8.7.0'
 cache: yarn
 stages:
-  - test
+  - name: test
+    if: (type IN (pull_request)) OR (type IN (push) AND branch = master)
   - name: deploy
     if: branch = master AND NOT (type IN (pull_request))
 jobs:
   include:
     - stage: test
       script:
-        - yarn danger
         - yarn run test
-    - # Run expo build in parallel (same stage)
+        - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+    -
       if: type IN (pull_request)
       sudo: required
       script:

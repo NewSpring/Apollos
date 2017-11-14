@@ -68,9 +68,6 @@ const status = ({ state = 'pending', description = '', error } = {}) => {
       }
     );
   }
-  if (state === 'error') {
-    throw new Error(error || description);
-  }
 };
 
 const cwd = __dirname + '/../';
