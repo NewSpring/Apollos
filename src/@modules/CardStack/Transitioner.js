@@ -310,7 +310,7 @@ class Transitioner extends PureComponent {
       ];
     } else {
       screens = [
-        <View key={this.props.location.key} style={[StyleSheet.absoluteFill, { backgroundColor: 'white' }]}>
+        <View key={this.props.location.key} style={StyleSheet.absoluteFill}>
           {this.currentRouteChild}
         </View>,
       ];
@@ -321,7 +321,6 @@ class Transitioner extends PureComponent {
   renderScreenWithAnimation = ({ index, key, screen }) => {
     const style = [
       StyleSheet.absoluteFill,
-      { backgroundColor: this.props.screenLight },
       interpolator({
         ...this.props,
         direction: this.direction,

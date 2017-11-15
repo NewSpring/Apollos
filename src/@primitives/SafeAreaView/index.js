@@ -115,6 +115,7 @@ class SafeView extends Component {
 
   _onLayout = () => {
     if (!this.view) return;
+    if (this.props.forceInset) return;
 
     const { isLandscape } = this.props;
     const { orientation } = this.state;

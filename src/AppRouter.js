@@ -3,6 +3,7 @@ import { View, Platform, Text } from 'react-native';
 import { Router, Route, AndroidBackButton, Switch, Link } from '@modules/NativeWebRouter';
 import CardStack from '@modules/CardStack';
 import H1 from '@primitives/H1';
+import ModalView from '@primitives/ModalView';
 import * as tabs from './tabs';
 
 const Tabs = () => {
@@ -20,6 +21,17 @@ const Tabs = () => {
   );
 };
 
+// todo: this should be removed as soon as example routes are gone!
+const cardStyle = {
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  bottom: 0,
+  top: 0,
+  paddingTop: '20%',
+  backgroundColor: 'white',
+};
+
 const AppRouter = () => {
   // On Web we render the tab layout at this level as it is always visible.
   // On mobile, use a CardStack component for animated transitions and swipe to go back.
@@ -33,7 +45,7 @@ const AppRouter = () => {
             exact
             path="/example-card"
             render={() => (
-              <View style={{ paddingTop: '20%' }}>
+              <View style={cardStyle}>
                 <H1>Example card stack! woot</H1>
                 <Link to="/"><View><Text>Go to home by PUSHing home to stack (BAD!!)</Text></View></Link>
                 <H1>{'\n'}</H1>
@@ -50,12 +62,12 @@ const AppRouter = () => {
             path="/example-modal"
             cardStackDirection="vertical"
             render={() => (
-              <View style={{ paddingTop: '20%' }}>
+              <ModalView>
                 <H1>Example modal! woot</H1>
                 <Link pop><View><Text>Go back one level in history</Text></View></Link>
                 <H1>{'\n'}</H1>
                 <Link to="/example-card"><View><Text>Go to another page</Text></View></Link>
-              </View>
+              </ModalView>
             )}
           />
           <Route component={Tabs} />

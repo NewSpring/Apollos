@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { compose, mapProps } from 'recompose';
+import { compose, mapProps, withProps } from 'recompose';
 import { omit } from 'lodash';
 import { enhancer as mediaQuery } from '@primitives/MediaQuery';
 import styled from '@primitives/styled';

@@ -47,7 +47,7 @@ const interpolator = ({
 
     style.opacity = animatedPosition.interpolate({
       inputRange: [index, index + 1],
-      outputRange: [1, 0.5],
+      outputRange: [1, 0],
       extrapolateLeft: 'clamp',
     });
   }
