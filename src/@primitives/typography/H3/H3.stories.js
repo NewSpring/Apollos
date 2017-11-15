@@ -8,6 +8,6 @@ import H3 from './';
 storiesOf('@primitives/typography', module)
   .add('H3', () => (
     <ThemeProvider>
-      <H3>{'"What you are is God\'s gift to you, what you become is your gift to God." ― Hans Urs von Balthasar'}</H3>
+      <H3>{'"The Christian shoemaker does his duty not by putting little crosses on the shoes, but by making good shoes, because God is interested in good craftsmanship." ― Martin Luther'}</H3>
     </ThemeProvider>
   ));
