@@ -27,7 +27,7 @@ const enhance = compose(
   }),
 );
 
-const Header = enhance(({ titleText = '' }) => (
+const Header = enhance(({ titleText }) => (
   <StyledSafeAreaView>
     <StatusBar barStyle="light-content" />
     <StyledHeaderBar>
