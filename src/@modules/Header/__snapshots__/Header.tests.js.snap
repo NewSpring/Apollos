@@ -36,7 +36,9 @@ exports[`The Header component should render correctly 1`] = `
           "color": "white",
         }
       }
-    />
+    >
+      
+    </Text>
   </View>
 </View>
 `;
