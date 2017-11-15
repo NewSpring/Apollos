@@ -45,7 +45,7 @@ export default class Link extends Component {
 
     if (pop) {
       let distance = -1;
-      if (to) {
+      if (to && history.entries) {
         const routeToPopTo = history.entries.findIndex(location =>
           matchPath(location.pathname, to),
         );
