@@ -197,7 +197,9 @@ class Transitioner extends PureComponent {
       this.animatedPosition.setValue(value);
     },
 
-    onPanResponderRelease: (event, { dx, vx, dy, vy }) => {
+    onPanResponderRelease: (event, {
+      dx, vx, dy, vy,
+    }) => {
       // Calculate animate duration according to gesture speed and moved distance
       const movedDistance = this.isHorizontal ? dx : dy;
       const gestureVelocity = this.isHorizontal ? vx : vy;
