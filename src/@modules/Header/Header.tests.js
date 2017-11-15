@@ -1,10 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Component from './';
+import ThemeProvider from '@primitives/ThemeProvider';
 
-it('renders correctly', () => {
-  const tree = renderer.create(
-    <Component />,
-  );
-  expect(tree).toMatchSnapshot();
+import Header from './';
+
+describe('The Header component', () => {
+  it('should render correctly', () => {
+    const tree = renderer.create(
+      <ThemeProvider>
+        <Header />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
 });
