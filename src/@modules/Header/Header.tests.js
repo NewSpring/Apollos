@@ -1,10 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Component from './';
+import Header from './';
 
-it('renders correctly', () => {
-  const tree = renderer.create(
-    <Component />,
-  );
-  expect(tree).toMatchSnapshot();
+describe('The Header component', () => {
+  it('should render correctly', () => {
+    const tree = renderer.create(
+      <Header />,
+    );
+    expect(tree).toMatchSnapshot();
+  });
 });
