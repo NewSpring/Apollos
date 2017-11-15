@@ -3,6 +3,7 @@ import { compose } from 'recompose';
 import authenticateMutation from './authenticateMutation';
 import deauthorizeMutation from './deauthorizeMutation';
 import personQuery from './personQuery';
+import hashPassword from './hashPassword';
 
 // TODO: Set login token in local storage
 const authenticateActions = graphql(authenticateMutation, {
@@ -10,7 +11,7 @@ const authenticateActions = graphql(authenticateMutation, {
     login: ({ email, password } = {}) => (mutate({
       variables: {
         email,
-        password,
+        password: hashPassword(password),
       },
     })),
   }),
