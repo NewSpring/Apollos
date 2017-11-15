@@ -1,28 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`The Header component should render correctly 1`] = `
 <View
+  onLayout={[Function]}
   style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "green",
-      "height": 60,
-      "justifyContent": "center",
-    }
+    Array [
+      Object {
+        "backgroundColor": "#6bac43",
+      },
+      Object {
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 20,
+      },
+    ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
+  <View
     style={
       Object {
-        "color": "white",
+        "alignItems": "center",
+        "height": 50,
+        "justifyContent": "center",
       }
     }
   >
-    
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    />
+  </View>
 </View>
 `;
