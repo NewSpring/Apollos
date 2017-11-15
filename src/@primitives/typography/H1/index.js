@@ -1,30 +1,36 @@
-import React, { PureComponent } from 'react';
-import {
-  Text,
-} from 'react-native';
+import React from 'react';
+import { Text } from 'react-native';
+import { compose, pure, setPropTypes } from 'recompose';
 import PropTypes from 'prop-types';
 import withTheme from '@primitives/withTheme';
 
-class H1 extends PureComponent {
-  static propTypes = {
+const enhance = compose(
+  pure,
+  withTheme(({ theme: { primaryColor } }) => ({ primaryColor })),
+  setPropTypes({
     children: PropTypes.node,
-    primaryColor: PropTypes.string,
-    primaryFont: PropTypes.string,
+    style: Text.propTypes.style,
+  }),
+);
+
+const H1 = enhance(({
+  children,
+  style: styleProp = {},
+  primaryColor,
+  ...otherProps
+}) => {
+  const dynamicStyle = { // TODO: replace this with passing theme props into our styled HOC
+    color: primaryColor,
   };
 
-  static defaultProps = {
-    children: null,
-    primaryColor: 'black',
-    primaryFont: 'Arial',
-  };
+  return (
+    <Text
+      style={[dynamicStyle, styleProp]}
+      {...otherProps}
+    >
+      {children}
+    </Text>
+  );
+});
 
-  render() {
-    return (
-      <Text style={{ color: this.props.primaryColor, fontFamily: this.props.primaryFont }}>
-        {this.props.children}
-      </Text>
-    );
-  }
-}
-
-export default withTheme()(H1);
+export default H1;
