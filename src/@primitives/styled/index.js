@@ -11,7 +11,7 @@ import withTheme from '@primitives/withTheme';
 // StyledView = styled((props) => ({ backgroundColor: props.color }))(View)
 //
 // Or theme:
-// StyledView = styled((props, theme) => ({ backgroundColor: theme.primaryColor }))(View)
+// StyledView = styled(({ theme, ...ownProps }) => ({ backgroundColor: theme.primaryColor }))(View)
 //
 // Also allows for style overriding:
 // <StyledView style={{ borderColor: 'red' }} />
@@ -20,8 +20,10 @@ import withTheme from '@primitives/withTheme';
 // const styles = StyleSheet.create({ myStyle: { backgroundColor: 'red' }});
 // StyledView = styled(styles.myStyle)(View)
 //
-// However - `styled` does use ReactNative.StyleSheet under the hood, so no need to create
-// separate stylesheets.
+// However - `styled` uses ReactNative.StyleSheet under the hood, so no need to create
+// separate stylesheets:
+// StyledView = styled((props) => ({ backgroundColor: props.color }))(View)
+// Will create a stylesheet for { backgroundColor: props.color } internally and cache it!
 
 // Merges two or more styles into one style object or array
 const mergeStyles = (...stylesToMerge) => stylesToMerge.reduce((accumulatedStyle, currentStyle) => {
