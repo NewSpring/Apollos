@@ -26,7 +26,9 @@ import withTheme from '@primitives/withTheme';
 // Will create a stylesheet for { backgroundColor: props.color } internally and cache it!
 
 // Merges two or more styles into one style object or array
-const mergeStyles = (...stylesToMerge) => stylesToMerge.reduce((accumulatedStyle, currentStyle) => {
+const mergeStyles = (...stylesToMerge) => flatten(stylesToMerge).reduce((
+  accumulatedStyle, currentStyle,
+) => {
   let style = accumulatedStyle;
   if (!currentStyle && typeof currentStyle !== 'number') return accumulatedStyle;
 
@@ -55,8 +57,8 @@ const mergeStyles = (...stylesToMerge) => stylesToMerge.reduce((accumulatedStyle
   return style;
 });
 
-const cachedStyles = {};
-const styleHasher = JSON.stringify; // todo: how bad is this?
+export const cachedStyles = {};
+export const styleHasher = JSON.stringify; // todo: how bad is this?
 
 // Uses cached or generates a new StyleSheet for a given style prop
 const generateStyleSheetForStylesProp = (stylesToGenerate) => {
