@@ -6,7 +6,7 @@ exports[`The Header component should render correctly 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "#6bac43",
       },
       Object {
         "paddingBottom": 0,
