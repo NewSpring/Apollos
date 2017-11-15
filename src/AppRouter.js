@@ -37,7 +37,24 @@ const AppRouter = () => {
                 <H1>Example card stack! woot</H1>
                 <Link to="/"><View><Text>Go to home by PUSHing home to stack (BAD!!)</Text></View></Link>
                 <H1>{'\n'}</H1>
-                <Link to="/" pop><View><Text>Go to home by POPing this route from stack (GOOD!!)</Text></View></Link>
+                <Link to="/" pop><View><Text>Go straight to home by POPing this route from stack (GOOD!!)</Text></View></Link>
+                <H1>{'\n'}</H1>
+                <Link pop><View><Text>Go back one level in history</Text></View></Link>
+                <H1>{'\n'}</H1>
+                <Link to="/example-modal"><View><Text>Open a modal</Text></View></Link>
+              </View>
+            )}
+          />
+          <Route
+            exact
+            path="/example-modal"
+            cardStackDirection="vertical"
+            render={() => (
+              <View style={{ paddingTop: '20%' }}>
+                <H1>Example modal! woot</H1>
+                <Link pop><View><Text>Go back one level in history</Text></View></Link>
+                <H1>{'\n'}</H1>
+                <Link to="/example-card"><View><Text>Go to another page</Text></View></Link>
               </View>
             )}
           />
