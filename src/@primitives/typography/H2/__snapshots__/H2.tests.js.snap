@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the H2 component should accept additional props 1`] = `
+<Text
+  accessible={false}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#222222",
+      },
+      Object {},
+    ]
+  }
+>
+  "God is most glorified in us when we are most satisfied in Him" ― John Piper
+</Text>
+`;
+
+exports[`the H2 component should accept and render passed in styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#222222",
+      },
+      Object {
+        "color": "salmon",
+      },
+    ]
+  }
+>
+  Salmon text
+</Text>
+`;
+
+exports[`the H2 component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#222222",
+      },
+      Object {},
+    ]
+  }
+>
+  Default H2 text
+</Text>
+`;
