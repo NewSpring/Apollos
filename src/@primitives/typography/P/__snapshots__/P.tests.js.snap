@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the P component should accept additional props 1`] = `
+<Text
+  accessible={false}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#222222",
+      },
+      Object {},
+    ]
+  }
+>
+  "True faith means holding nothing back. It means putting every hope in God's fidelity to His Promises." ― Francis Chan
+</Text>
+`;
+
+exports[`the P component should accept and render passed in styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#222222",
+      },
+      Object {
+        "color": "salmon",
+      },
+    ]
+  }
+>
+  Salmon text
+</Text>
+`;
+
+exports[`the P component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#222222",
+      },
+      Object {},
+    ]
+  }
+>
+  Default P text
+</Text>
+`;
