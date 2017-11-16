@@ -10,12 +10,14 @@ exports[`the H1 component should accept additional props 1`] = `
     Array [
       Object {
         "color": "#6bac43",
+        "fontSize": 52.2,
+        "lineHeight": 54.81,
       },
       Object {},
     ]
   }
 >
-  "Do all the good you can. By all the means you can. In all the ways you can. In all theplaces you can. At all the times you can. To all the people you can. As long as ever you can." ― John Wesley
+  "Do all the good you can. By all the means you can. In all the ways you can. In all the places you can. At all the times you can. To all the people you can. As long as ever you can." ― John Wesley
 </Text>
 `;
 
@@ -29,6 +31,8 @@ exports[`the H1 component should accept and render passed in styles 1`] = `
     Array [
       Object {
         "color": "#6bac43",
+        "fontSize": 52.2,
+        "lineHeight": 54.81,
       },
       Object {
         "color": "salmon",
@@ -50,6 +54,8 @@ exports[`the H1 component should render correctly 1`] = `
     Array [
       Object {
         "color": "#6bac43",
+        "fontSize": 52.2,
+        "lineHeight": 54.81,
       },
       Object {},
     ]
