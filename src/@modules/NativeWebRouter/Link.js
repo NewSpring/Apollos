@@ -9,8 +9,8 @@ export default class Link extends Component {
   static contextTypes = {
     router: PropTypes.shape({
       history: PropTypes.shape({
-        entries: PropTypes.array.isRequired,
-        index: PropTypes.number.isRequired,
+        entries: PropTypes.array,
+        index: PropTypes.number,
         go: PropTypes.func.isRequired,
         push: PropTypes.func.isRequired,
         replace: PropTypes.func.isRequired,
@@ -66,6 +66,7 @@ export default class Link extends Component {
       component: Comp,
       to,
       replace,
+      pop,
       ...rest
     } = this.props;
 
