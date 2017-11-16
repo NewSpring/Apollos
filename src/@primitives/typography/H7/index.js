@@ -15,9 +15,9 @@ const enhance = compose(
 );
 
 const StyledH7 = styled(({ theme }) => ({
-  color: theme.baseFontColor,
   fontSize: rem(0.778),
   lineHeight: verticalRhythm(0.778, 1.02),
+  color: theme.baseFontColor,
 }))(Text);
 
 const H7 = enhance(({

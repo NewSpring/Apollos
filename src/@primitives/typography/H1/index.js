@@ -15,8 +15,9 @@ const enhance = compose(
 );
 
 const StyledH1 = styled(({ theme }) => ({
-  color: theme.primaryColor,
   fontSize: rem(2.9),
+  fontWeight: '700',
+  color: theme.primaryColor,
   ...Platform.select({
     ios: {
       lineHeight: verticalRhythm(2.9, 0.945),
