@@ -9,7 +9,7 @@ exports[`the H4 component should accept additional props 1`] = `
   style={
     Array [
       Object {
-        "color": "#222222",
+        "color": "#505050",
       },
       Object {},
     ]
@@ -28,7 +28,7 @@ exports[`the H4 component should accept and render passed in styles 1`] = `
   style={
     Array [
       Object {
-        "color": "#222222",
+        "color": "#505050",
       },
       Object {
         "color": "salmon",
@@ -49,7 +49,7 @@ exports[`the H4 component should render correctly 1`] = `
   style={
     Array [
       Object {
-        "color": "#222222",
+        "color": "#505050",
       },
       Object {},
     ]

@@ -6,7 +6,7 @@ import withTheme from '@primitives/withTheme';
 
 const enhance = compose(
   pure,
-  withTheme(({ theme: { defaultTextColor } }) => ({ defaultTextColor })),
+  withTheme(({ theme: { baseFontColor } }) => ({ baseFontColor })),
   setPropTypes({
     children: PropTypes.node,
     style: Text.propTypes.style,
@@ -16,11 +16,11 @@ const enhance = compose(
 const H4 = enhance(({
   children,
   style: styleProp = {},
-  defaultTextColor,
+  baseFontColor,
   ...otherProps
 }) => {
   const tempStyle = { // TODO: replace this with passing theme props into our styled HOC
-    color: defaultTextColor,
+    color: baseFontColor,
   };
 
   return (

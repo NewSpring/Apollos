@@ -18,7 +18,7 @@ export const DEFAULT_THEME = {
   alertColor: '#c64f55',
   primaryFont: 'OpenSans',
 
-  defaultTextColor: '#222222',
+  baseFontColor: '#505050',
 
   breakpoints: {
     xs: 320,
