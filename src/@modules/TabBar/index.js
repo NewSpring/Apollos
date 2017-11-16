@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { compose, mapProps } from 'recompose';
+import { compose } from 'recompose';
 import { enhancer as mediaQuery } from '@primitives/MediaQuery';
 import styled from '@primitives/styled';
 import SafeAreaView from '@primitives/SafeAreaView';

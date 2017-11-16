@@ -1,7 +1,9 @@
-import { StyleSheet } from 'react-native';
 import { withPropsOnChange, compose, mapProps } from 'recompose';
-import { isEqual, flatten } from 'lodash';
+import { isEqual } from 'lodash';
 import withTheme from '@primitives/withTheme';
+
+import mergeStyles from './mergeStyles';
+import createStyleSheet from './createStyleSheet';
 
 // HOC to make composing component style easy.
 // Use similar to how you'd use `styled` in styled-components:
@@ -25,79 +27,9 @@ import withTheme from '@primitives/withTheme';
 // StyledView = styled((props) => ({ backgroundColor: props.color }))(View)
 // Will create a stylesheet for { backgroundColor: props.color } internally and cache it!
 
-// Merges two or more styles into one style object or array
-const mergeStyles = (...stylesToMerge) => flatten(stylesToMerge).reduce((
-  accumulatedStyle, currentStyle,
-) => {
-  let style = accumulatedStyle;
-  if (!currentStyle && typeof currentStyle !== 'number') return accumulatedStyle;
-
-  // Case One: both styles are objects, we should turn them into a single object:
-  if (typeof style === 'object' && typeof currentStyle === 'object') {
-    style = Object.assign({}, style, currentStyle);
-
-  // Case two: accumulatedStyle is an array, but the last item is an object and we can merge
-  } else if (typeof currentStyle === 'object' && Array.isArray(style) && style.length > 0 &&
-      typeof style[style.length - 1] === 'object') {
-    style[style.length - 1] = Object.assign({}, style[style.length - 1], currentStyle);
-
-  // Case three: styles can't be merged automatically, result to joining them in an array
-  } else {
-    if (!Array.isArray(style)) {
-      style = [style];
-    }
-
-    if (Array.isArray(currentStyle)) {
-      style = style.concat(currentStyle);
-    } else {
-      style.push(currentStyle);
-    }
-  }
-  return style;
-});
-
-export const cachedStyles = {};
-export const styleHasher = JSON.stringify; // todo: how bad is this?
-
-// Uses cached or generates a new StyleSheet for a given style prop
-const generateStyleSheetForStylesProp = (stylesToGenerate) => {
-  let styles = flatten([stylesToGenerate]); // Need to make sure we're working with a flat array
-  const styleSheet = {}; // passed to StyleSheet.create later
-
-  // Load style from cache or add style to stylesheet
-  styles.forEach((style, index) => {
-    if (typeof style !== 'object' || !style) return;
-    const hash = styleHasher(style);
-    if (cachedStyles[hash]) {
-      styles[index] = cachedStyles[hash];
-    } else {
-      styleSheet[`${index}`] = style;
-    }
-  });
-
-  // Generate the new stylesheet
-  const generatedStyleSheet = StyleSheet.create(styleSheet);
-
-  // Process the generated stylesheet
-  Object.keys(generatedStyleSheet).forEach((key) => {
-    const index = parseInt(key, 0);
-    const generatedStyle = generatedStyleSheet[key];
-    const hash = styleHasher(styles[index]);
-
-    // add generated style to cache
-    cachedStyles[hash] = generatedStyle;
-
-    // swap generated style into result list
-    styles[index] = generatedStyle;
-  });
-
-  if (styles.length === 1) [styles] = styles;
-  return styles;
-};
-
 // Generates a style object from a given styleInput.
 // styleInput is the argument passed to `styled`
-const getStyleLiteralFromInput = (styleInput, { ownProps = {}, theme = {} }) => {
+const getStyleLiteralFromStyledInput = (styleInput, { ownProps = {}, theme = {} }) => {
   let generatedStyle = styleInput;
   if (typeof generatedStyle === 'function') generatedStyle = generatedStyle({ theme, ...ownProps });
   return generatedStyle;
@@ -110,13 +42,14 @@ const styled = styleInput => compose(
     // Only re-eval styles if style prop changes, or the generated style from
     // styleInput is different. Both of these checks should be exteremely cheap.
     (props, nextProps) => props.ownProps.style !== nextProps.ownProps.style || !isEqual(
-      getStyleLiteralFromInput(styleInput, props), getStyleLiteralFromInput(styleInput, nextProps),
+      getStyleLiteralFromStyledInput(styleInput, props),
+      getStyleLiteralFromStyledInput(styleInput, nextProps),
     ),
     ({ ownProps, theme }) => {
-      let style = getStyleLiteralFromInput(styleInput, { ownProps, theme });
+      let style = getStyleLiteralFromStyledInput(styleInput, { ownProps, theme });
       if (ownProps.style) style = mergeStyles(style, ownProps.style);
 
-      style = generateStyleSheetForStylesProp(style);
+      style = createStyleSheet(style);
 
       return { style };
     },

@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { compose } from 'recompose';
 import { View } from 'react-native';
 import ThemeProvider from '@primitives/ThemeProvider';
-import styled from './';
+import styled from '../';
 
 describe('the styled HOC', () => {
   it('passes style literal to the base component', () => {
