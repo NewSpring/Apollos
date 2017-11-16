@@ -3,43 +3,22 @@ import {
   View,
   Text,
 } from 'react-native';
+import { pure, compose } from 'recompose';
 import Header from '@modules/Header';
-import H1 from '@primitives/H1';
-import Icon from '@primitives/Icon';
-import MediaQuery from '@primitives/MediaQuery';
-import Audio from '@modules/Audio';
-import { Link } from '@modules/NativeWebRouter';
+import FeedView from '@primitives/FeedView';
+import withHomeFeed from '@data/withHomeFeed';
 
-export default function Feed() {
-  return (
-    <View>
-      <Header titleText="NewSpring Church" />
-      <MediaQuery minWidth="md">
-        <H1>{'A title'}</H1>
-      </MediaQuery>
-      <MediaQuery maxWidth="md">
-        <Icon name="umbrella" />
-      </MediaQuery>
+const FeedViewWithHomeFeed = withHomeFeed(FeedView);
 
-      <Link to="/example-card"><View><Text>Open a new page!</Text></View></Link>
+const enhance = compose(
+  pure,
+);
 
-      <Audio
-        source="https://www.w3schools.com/html/horse.mp3"
-      >
-        <Audio.Play>
-          <View>
-            <Icon name="play" />
-          </View>
-        </Audio.Play>
+const Feed = enhance(() => (
+  <View style={{ flex: 1 }}>
+    <Header titleText="NewSpring Church" />
+    <FeedViewWithHomeFeed />
+  </View>
+));
 
-        <Audio.Pause>
-          <View>
-            <Icon name="pause" />
-          </View>
-        </Audio.Pause>
-
-        <Audio.Seeker />
-      </Audio>
-    </View>
-  );
-}
+export default Feed;
