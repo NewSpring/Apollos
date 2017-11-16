@@ -62,7 +62,7 @@ export const styleHasher = JSON.stringify; // todo: how bad is this?
 
 // Uses cached or generates a new StyleSheet for a given style prop
 const generateStyleSheetForStylesProp = (stylesToGenerate) => {
-  let styles = flatten([stylesToGenerate]);
+  let styles = flatten([stylesToGenerate]); // Need to make sure we're working with a flat array
   const styleSheet = {}; // passed to StyleSheet.create later
 
   // Load style from cache or add style to stylesheet
