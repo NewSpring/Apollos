@@ -24,7 +24,7 @@ describe('the H4 component', () => {
   it('should accept additional props', () => {
     const tree = renderer.create(
       <ThemeProvider>
-        <H4 accessible={false}>{'"Rejection is an opportunity for your selection." ― Bernard Branson'}</H4>
+        <H4 accessible={false}>{'"What you are is God\'s gift to you, what you become is your gift to God." ― Hans Urs von Balthasar'}</H4>
       </ThemeProvider>,
     );
     expect(tree).toMatchSnapshot();

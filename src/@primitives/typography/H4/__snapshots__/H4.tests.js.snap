@@ -10,12 +10,14 @@ exports[`the H4 component should accept additional props 1`] = `
     Array [
       Object {
         "color": "#505050",
+        "fontSize": 25.2,
+        "lineHeight": 31.28,
       },
       Object {},
     ]
   }
 >
-  "Rejection is an opportunity for your selection." ― Bernard Branson
+  "What you are is God's gift to you, what you become is your gift to God." ― Hans Urs von Balthasar
 </Text>
 `;
 
@@ -29,6 +31,8 @@ exports[`the H4 component should accept and render passed in styles 1`] = `
     Array [
       Object {
         "color": "#505050",
+        "fontSize": 25.2,
+        "lineHeight": 31.28,
       },
       Object {
         "color": "salmon",
@@ -50,6 +54,8 @@ exports[`the H4 component should render correctly 1`] = `
     Array [
       Object {
         "color": "#505050",
+        "fontSize": 25.2,
+        "lineHeight": 31.28,
       },
       Object {},
     ]

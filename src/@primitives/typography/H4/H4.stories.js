@@ -8,6 +8,6 @@ import H4 from './';
 storiesOf('@primitives/typography', module)
   .add('H4', () => (
     <ThemeProvider>
-      <H4>{'"Rejection is an opportunity for your selection." ― Bernard Branson'}</H4>
+      <H4>{'"What you are is God\'s gift to you, what you become is your gift to God." ― Hans Urs von Balthasar'}</H4>
     </ThemeProvider>
   ));
