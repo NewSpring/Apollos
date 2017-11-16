@@ -66,6 +66,7 @@ export default class Link extends Component {
       component: Comp,
       to,
       replace,
+      pop,
       ...rest
     } = this.props;
 
