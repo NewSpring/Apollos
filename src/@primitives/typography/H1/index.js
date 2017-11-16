@@ -23,7 +23,6 @@ const StyledH1 = styled(({ theme }) => ({
 const H1 = enhance(({
   children,
   style: styleProp = {},
-  primaryColor,
   ...otherProps
 }) => (
   <StyledH1

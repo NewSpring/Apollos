@@ -23,7 +23,6 @@ const StyledH2 = styled(({ theme }) => ({
 const H2 = enhance(({
   children,
   style: styleProp = {},
-  baseFontColor,
   ...otherProps
 }) => (
   <StyledH2
