@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, Platform } from 'react-native';
 import { compose, pure, setPropTypes } from 'recompose';
 import PropTypes from 'prop-types';
 import styled from '@primitives/styled';
@@ -17,7 +17,17 @@ const enhance = compose(
 const StyledH1 = styled(({ theme }) => ({
   color: theme.primaryColor,
   fontSize: rem(2.9),
-  lineHeight: verticalRhythm(2.9, 0.945),
+  ...Platform.select({
+    ios: {
+      lineHeight: verticalRhythm(2.9, 0.945),
+    },
+    web: {
+      lineHeight: verticalRhythm(2.9, 0.945),
+    },
+    android: {
+      lineHeight: verticalRhythm(2.9, 1.025),
+    },
+  }),
 }))(Text);
 
 const H1 = enhance(({
