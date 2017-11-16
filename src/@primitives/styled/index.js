@@ -1,4 +1,5 @@
-import { withProps } from 'recompose';
+import { withProps, mapProps, compose } from 'recompose';
+import withTheme from '@primitives/withTheme';
 
 // HOC to make composing component style easy.
 // Use similar to how you'd use `styled` in styled-components:
@@ -13,25 +14,30 @@ import { withProps } from 'recompose';
 // Or using with ReactNative.StyleSheet:
 // const styles = StyleSheet.create({ myStyle: { backgroundColor: 'red' }});
 // StyledView = styled(styles.myStyle)(View)
-const styled = styleInput => withProps((props) => {
-  let style = styleInput;
-  if (typeof styleInput === 'function') style = styleInput(props);
+const styled = styleInput => compose(
+  mapProps(props => ({ ownProps: props })),
+  withTheme(({ theme }) => ({ theme })),
+  withProps(({ ownProps, theme }) => {
+    let style = styleInput;
+    if (typeof styleInput === 'function') style = styleInput({ theme, ...ownProps });
 
-  // handle existing style prop
-  const existingStyle = props.style;
-  if (existingStyle) {
-    if (!Array.isArray(style)) {
-      style = [style];
+    // handle existing style prop
+    const existingStyle = ownProps.style;
+    if (existingStyle) {
+      if (!Array.isArray(style)) {
+        style = [style];
+      }
+
+      if (Array.isArray(existingStyle)) {
+        style = style.concat(existingStyle);
+      } else {
+        style.push(existingStyle);
+      }
     }
 
-    if (Array.isArray(existingStyle)) {
-      style = style.concat(existingStyle);
-    } else {
-      style.push(existingStyle);
-    }
-  }
-
-  return { style };
-});
+    return { style };
+  }),
+  mapProps(({ ownProps, style }) => ({ ...ownProps, style })),
+);
 
 export default styled;
