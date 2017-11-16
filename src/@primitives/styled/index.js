@@ -53,7 +53,6 @@ const mergeStyles = (...stylesToMerge) => flatten(stylesToMerge).reduce((
       style.push(currentStyle);
     }
   }
-
   return style;
 });
 

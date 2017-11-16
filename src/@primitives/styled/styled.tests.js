@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { compose } from 'recompose';
 import { View } from 'react-native';
+import ThemeProvider from '@primitives/ThemeProvider';
 import styled from './';
 
 describe('the styled HOC', () => {
@@ -26,6 +27,13 @@ describe('the styled HOC', () => {
     const StyledView = styled(({ color }) => ({ backgroundColor: color }))(View);
     const tree = renderer.create(
       <StyledView color="green" />,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('provides a theme', () => {
+    const StyledView = styled(({ theme }) => ({ backgroundColor: theme.primaryColor }))(View);
+    const tree = renderer.create(
+      <ThemeProvider><StyledView /></ThemeProvider>,
     );
     expect(tree).toMatchSnapshot();
   });
