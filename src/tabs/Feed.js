@@ -21,7 +21,7 @@ export default function Feed() {
         <Icon name="umbrella" />
       </MediaQuery>
 
-      <Link to="/example-card"><Text>Open a new page!</Text></Link>
+      <Link to="/example-card"><View><Text>Open a new page!</Text></View></Link>
 
       <Audio
         source="https://www.w3schools.com/html/horse.mp3"

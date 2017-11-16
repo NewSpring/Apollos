@@ -66,6 +66,8 @@ const TabBarLink = enhance(({
   label = null,
   icon = null,
   color = null,
+  isActive,
+  staticContext,
   ...linkProps
 }) => (
   <Link {...linkProps}>
