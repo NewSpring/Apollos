@@ -1,9 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { compose, mapProps } from 'recompose';
-import { omit } from 'lodash';
 import { enhancer as mediaQuery } from '@primitives/MediaQuery';
 import styled from '@primitives/styled';
-import withTheme from '@primitives/withTheme';
 import SafeAreaView from '@primitives/SafeAreaView';
 
 export { default as Link } from './Link';
@@ -23,9 +21,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default compose(
-  withTheme(({ theme: { darkPrimaryColor } = {} }) => ({ darkPrimaryColor })),
-  styled(({ darkPrimaryColor }) => ({ backgroundColor: darkPrimaryColor })),
+const TabBar = compose(
+  styled(({ theme }) => ({
+    backgroundColor: theme.darkPrimaryColor,
+  })),
   mediaQuery(({ md }) => ({ maxWidth: md }), styled(styles.horizontal), styled(styles.vertical)),
-  mapProps(props => omit(props, ['darkPrimaryColor'])),
 )(SafeAreaView);
+
+export default TabBar;
