@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+// import grid from '@utils/gridUnit';
 
 // Todo: port over values from
 // https://github.com/NewSpring/junction-framework/blob/master/lib/_defaults.scss
@@ -19,6 +20,8 @@ export const DEFAULT_THEME = {
   primaryFont: 'OpenSans',
 
   baseFontColor: '#505050',
+  baseFontSize: 18,
+  baseLineHeight: 20,
 
   breakpoints: {
     xs: 320,
