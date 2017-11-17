@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-// import grid from '@utils/gridUnit';
+import { Platform } from 'react-native';
 
 // Todo: port over values from
 // https://github.com/NewSpring/junction-framework/blob/master/lib/_defaults.scss
@@ -22,6 +22,9 @@ export const DEFAULT_THEME = {
   baseFontColor: '#505050',
   baseFontSize: 18,
   baseLineHeight: 20,
+
+  fontFamilySans: 'OpenSans',
+  fontFamilySerif: Platform.OS !== 'android' ? 'Georgia' : 'serif',
 
   breakpoints: {
     xs: 320,
