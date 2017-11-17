@@ -4,6 +4,7 @@ import authenticateMutation from './authenticateMutation';
 import deauthorizeMutation from './deauthorizeMutation';
 import personQuery from './personQuery';
 import hashPassword from './hashPassword';
+import signupMutation from './signupMutation';
 
 // TODO: Set login token in local storage
 const authenticateActions = graphql(authenticateMutation, {
@@ -24,6 +25,28 @@ const deauthorizeActions = graphql(deauthorizeMutation, {
   }),
 });
 
+const signupActions = graphql(signupMutation, {
+  props: ({ mutate }) => ({
+    login: (params = {}) => {
+      const {
+        email,
+        password,
+        firstName,
+        lastName,
+      } = params;
+
+      mutate({
+        variables: {
+          email,
+          password,
+          firstName,
+          lastName,
+        },
+      });
+    },
+  }),
+});
+
 const user = graphql(personQuery, {
   props: ({ data: { person } }) => ({
     user: person,
@@ -33,5 +56,6 @@ const user = graphql(personQuery, {
 export default compose(
   authenticateActions,
   deauthorizeActions,
+  signupActions,
   user,
 );
