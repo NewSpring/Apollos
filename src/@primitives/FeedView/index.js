@@ -27,8 +27,6 @@ const enhance = compose(
   branch(({ isLoading, feed }) => isLoading && !feed.length, renderEmptyState),
 );
 
-console.log('FeedList', FeedList);
-
 const FeedView = enhance(({
   isLoading,
   refetch,
