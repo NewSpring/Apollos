@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   View,
-  Text,
 } from 'react-native';
 import { pure, compose } from 'recompose';
 import Header from '@modules/Header';
