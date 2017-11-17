@@ -15,19 +15,19 @@ const enhance = compose(
 );
 
 const StyledH1 = styled(({ theme }) => ({
-  fontSize: rem(2.9),
+  fontSize: rem(2.9, theme),
   fontWeight: 'bold',
   fontFamily: theme.fontFamilySans,
   color: theme.primaryColor,
   ...Platform.select({
     ios: {
-      lineHeight: verticalRhythm(2.9, 0.945),
+      lineHeight: verticalRhythm(2.9, 0.945, theme),
     },
     web: {
-      lineHeight: verticalRhythm(2.9, 0.945),
+      lineHeight: verticalRhythm(2.9, 0.945, theme),
     },
     android: {
-      lineHeight: verticalRhythm(2.9, 1.025),
+      lineHeight: verticalRhythm(2.9, 1.025, theme),
     },
   }),
 }))(Text);

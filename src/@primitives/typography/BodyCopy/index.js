@@ -15,8 +15,8 @@ const enhance = compose(
 );
 
 const StyledBodyCopy = styled(({ theme }) => ({
-  fontSize: rem(1),
-  lineHeight: verticalRhythm(1, 1),
+  fontSize: rem(1, theme),
+  lineHeight: verticalRhythm(1, 1, theme),
   fontFamily: theme.fontFamilySerif,
   color: theme.baseFontColor,
 }))(Text);
