@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the H3 component should accept additional props 1`] = `
+<Text
+  accessible={false}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#505050",
+        "fontFamily": null,
+        "fontSize": 32.4,
+        "fontWeight": "700",
+        "lineHeight": 41.22,
+      },
+      Object {},
+    ]
+  }
+>
+  "The Christian shoemaker does his duty not by putting little crosses on the shoes, but by making good shoes, because God is interested in good craftsmanship." ― Martin Luther
+</Text>
+`;
+
+exports[`the H3 component should accept and render passed in styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#505050",
+        "fontFamily": null,
+        "fontSize": 32.4,
+        "fontWeight": "700",
+        "lineHeight": 41.22,
+      },
+      Object {
+        "color": "salmon",
+      },
+    ]
+  }
+>
+  Salmon text
+</Text>
+`;
+
+exports[`the H3 component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#505050",
+        "fontFamily": null,
+        "fontSize": 32.4,
+        "fontWeight": "700",
+        "lineHeight": 41.22,
+      },
+      Object {},
+    ]
+  }
+>
+  Default H3 text
+</Text>
+`;
