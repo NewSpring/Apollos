@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the H7 component should accept additional props 1`] = `
+<Text
+  accessible={false}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#505050",
+        "fontFamily": null,
+        "fontSize": 14,
+        "lineHeight": 15.87,
+      },
+      Object {},
+    ]
+  }
+>
+  "We may speak about a place where there are no tears, no death, no fear, no night; but those are just the benefits of heaven. The beauty of heaven is seeing God." ― Max Lucado
+</Text>
+`;
+
+exports[`the H7 component should accept and render passed in styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#505050",
+        "fontFamily": null,
+        "fontSize": 14,
+        "lineHeight": 15.87,
+      },
+      Object {
+        "color": "salmon",
+      },
+    ]
+  }
+>
+  Salmon text
+</Text>
+`;
+
+exports[`the H7 component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#505050",
+        "fontFamily": null,
+        "fontSize": 14,
+        "lineHeight": 15.87,
+      },
+      Object {},
+    ]
+  }
+>
+  Default H7 text
+</Text>
+`;
