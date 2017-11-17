@@ -10,6 +10,7 @@ exports[`the H7 component should accept additional props 1`] = `
     Array [
       Object {
         "color": "#505050",
+        "fontFamily": null,
         "fontSize": 14,
         "lineHeight": 15.87,
       },
@@ -31,6 +32,7 @@ exports[`the H7 component should accept and render passed in styles 1`] = `
     Array [
       Object {
         "color": "#505050",
+        "fontFamily": null,
         "fontSize": 14,
         "lineHeight": 15.87,
       },
@@ -54,6 +56,7 @@ exports[`the H7 component should render correctly 1`] = `
     Array [
       Object {
         "color": "#505050",
+        "fontFamily": null,
         "fontSize": 14,
         "lineHeight": 15.87,
       },

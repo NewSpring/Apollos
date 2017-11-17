@@ -10,7 +10,7 @@ exports[`the H1 component should accept additional props 1`] = `
     Array [
       Object {
         "color": "#6bac43",
-        "fontFamily": "OpenSans",
+        "fontFamily": null,
         "fontSize": 52.2,
         "fontWeight": "bold",
         "lineHeight": 54.81,
@@ -33,7 +33,7 @@ exports[`the H1 component should accept and render passed in styles 1`] = `
     Array [
       Object {
         "color": "#6bac43",
-        "fontFamily": "OpenSans",
+        "fontFamily": null,
         "fontSize": 52.2,
         "fontWeight": "bold",
         "lineHeight": 54.81,
@@ -58,7 +58,7 @@ exports[`the H1 component should render correctly 1`] = `
     Array [
       Object {
         "color": "#6bac43",
-        "fontFamily": "OpenSans",
+        "fontFamily": null,
         "fontSize": 52.2,
         "fontWeight": "bold",
         "lineHeight": 54.81,

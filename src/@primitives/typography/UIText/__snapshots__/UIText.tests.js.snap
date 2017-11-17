@@ -10,6 +10,7 @@ exports[`the P component should accept additional props 1`] = `
     Array [
       Object {
         "color": "#505050",
+        "fontFamily": null,
         "fontSize": 18,
         "lineHeight": 20,
       },
@@ -31,6 +32,7 @@ exports[`the P component should accept and render passed in styles 1`] = `
     Array [
       Object {
         "color": "#505050",
+        "fontFamily": null,
         "fontSize": 18,
         "lineHeight": 20,
       },
@@ -54,6 +56,7 @@ exports[`the P component should render correctly 1`] = `
     Array [
       Object {
         "color": "#505050",
+        "fontFamily": null,
         "fontSize": 18,
         "lineHeight": 20,
       },
