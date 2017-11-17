@@ -1,5 +1,8 @@
-import { getStorybookUI, configure } from '@storybook/react-native';
+import { getStorybookUI, configure, addDecorator } from '@storybook/react-native';
 import { loadStories } from '../storyLoader'; // storyLoader.js is generated on storybook start
+import AppContext from '../decorators/AppContext';
+
+addDecorator(AppContext);
 
 // import stories
 configure(() => {

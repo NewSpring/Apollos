@@ -4,7 +4,7 @@ import {
   Text,
 } from 'react-native';
 import Header from '@modules/Header';
-import H1 from '@primitives/H1';
+import { H1 } from '@primitives/typography';
 import Icon from '@primitives/Icon';
 import MediaQuery from '@primitives/MediaQuery';
 import Audio from '@modules/Audio';
@@ -21,7 +21,7 @@ export default function Feed() {
         <Icon name="umbrella" />
       </MediaQuery>
 
-      <Link to="/example-card"><Text>Open a new page!</Text></Link>
+      <Link to="/example-card"><View><Text>Open a new page!</Text></View></Link>
 
       <Audio
         source="https://www.w3schools.com/html/horse.mp3"
