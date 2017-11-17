@@ -17,7 +17,7 @@ export default function AppContent(renderStory) {
   return (
     <ThemeProvider>
       <FontLoader>
-        <View style={styles.main}>{renderStory()}</View>
+        {renderStory()}
       </FontLoader>
     </ThemeProvider>
   );
