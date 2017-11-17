@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Platform } from 'react-native';
 
 // Todo: port over values from
 // https://github.com/NewSpring/junction-framework/blob/master/lib/_defaults.scss
@@ -16,7 +17,13 @@ export const DEFAULT_THEME = {
   lightTertiaryColor: '#dddddd',
 
   alertColor: '#c64f55',
-  primaryFont: 'OpenSans',
+
+  baseFontColor: '#505050',
+  baseFontSize: 18,
+  baseLineHeight: 20,
+
+  fontFamilySans: null, // force default system font
+  fontFamilySerif: Platform.OS !== 'android' ? 'Georgia' : 'serif',
 
   screenLight: '#ffffff',
   screenDark: '#000000',
