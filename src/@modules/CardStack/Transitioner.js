@@ -13,7 +13,8 @@ const ANIMATION_DURATION = 500;
 const ANIMATION_EASING = Easing.bezier(0.2833, 0.99, 0.31833, 0.99);
 const POSITION_THRESHOLD = 1 / 2;
 const RESPOND_THRESHOLD = 1;
-const GESTURE_RESPONSE_DISTANCE_HORIZONTAL = 40;
+const GESTURE_RESPONSE_DISTANCE_HORIZONTAL = 25;
+const GESTURE_RESPONSE_DISTANCE_VERTICAL = 135;
 
 // Transitioner essentially emulates the functionality of a CardStack
 // by pulling out the routes involved in a transition, stacking them,
@@ -37,6 +38,9 @@ class Transitioner extends PureComponent {
       isExact: PropTypes.bool,
     }),
     width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    direction: PropTypes.oneOf(['horizontal', 'vertical']),
+    directionPropNameForChildren: PropTypes.string,
 
     // from withTheme HOC
     screenDark: PropTypes.string,
@@ -50,6 +54,8 @@ class Transitioner extends PureComponent {
     match: null,
     screenDark: '#000',
     screenLight: '#fff',
+    direction: 'horizontal',
+    directionPropNameForChildren: 'cardStackDirection',
   };
 
   state = {
@@ -136,6 +142,20 @@ class Transitioner extends PureComponent {
     );
   }
 
+  get direction() {
+    let child = this.currentRouteChild;
+    if (this.state.transition === POP) child = this.previouslyRenderedRouteChild;
+    return get(child, `props.${this.props.directionPropNameForChildren}`, this.props.direction);
+  }
+
+  get isHorizontal() {
+    return this.direction === 'horizontal';
+  }
+
+  get isVertical() {
+    return this.direction === 'vertical';
+  }
+
   startingIndex = this.props.history.index;
 
   // Points to the index of the current screen rendered in `renderScreens`
@@ -146,8 +166,17 @@ class Transitioner extends PureComponent {
       !this.wouldPopToSameRouteChild &&
       this.props.history.index > this.startingIndex &&
       this.props.history.canGo(-1) &&
-      event.nativeEvent.pageX < GESTURE_RESPONSE_DISTANCE_HORIZONTAL &&
-      gesture.dx > RESPOND_THRESHOLD
+      (
+        (
+          this.isHorizontal &&
+          event.nativeEvent.pageX < GESTURE_RESPONSE_DISTANCE_HORIZONTAL &&
+          gesture.dx > RESPOND_THRESHOLD
+        ) || (
+          this.isVertical &&
+          event.nativeEvent.pageY < GESTURE_RESPONSE_DISTANCE_VERTICAL &&
+          gesture.dy > RESPOND_THRESHOLD
+        )
+      )
     ),
 
     onPanResponderGrant: () => {
@@ -157,23 +186,28 @@ class Transitioner extends PureComponent {
       });
     },
 
-    onPanResponderMove: (event, { dx }) => {
+    onPanResponderMove: (event, { dx, dy }) => {
       // current route is always the "second" (index=1) route in the stack (stack size is always 2)
       const startValue = 1;
+      const dValue = this.isHorizontal ? dx : dy;
+      const size = this.isHorizontal ? this.props.width : this.props.height;
 
-      const currentValue = startValue + (-dx / this.props.width);
+      const currentValue = startValue + (-dValue / size);
       const value = clamp(0, currentValue, 1);
       this.animatedPosition.setValue(value);
     },
 
-    onPanResponderRelease: (event, { dx, vx }) => {
+    onPanResponderRelease: (event, {
+      dx, vx, dy, vy,
+    }) => {
       // Calculate animate duration according to gesture speed and moved distance
-      const movedDistance = dx;
-      const gestureVelocity = vx;
-      const defaultVelocity = this.props.width / ANIMATION_DURATION;
+      const movedDistance = this.isHorizontal ? dx : dy;
+      const gestureVelocity = this.isHorizontal ? vx : vy;
+      const size = this.isHorizontal ? this.props.width : this.props.height;
+      const defaultVelocity = size / ANIMATION_DURATION;
       const velocity = Math.max(Math.abs(gestureVelocity), defaultVelocity);
       const resetDuration = movedDistance / velocity;
-      const goBackDuration = (this.props.width - movedDistance) / velocity;
+      const goBackDuration = (size - movedDistance) / velocity;
 
       // To asyncronously get the current animated value, we need to run stopAnimation:
       this.animatedPosition.stopAnimation((value) => {
@@ -278,7 +312,7 @@ class Transitioner extends PureComponent {
       ];
     } else {
       screens = [
-        <View key={this.props.location.key} style={[StyleSheet.absoluteFill, { backgroundColor: 'white' }]}>
+        <View key={this.props.location.key} style={StyleSheet.absoluteFill}>
           {this.currentRouteChild}
         </View>,
       ];
@@ -289,9 +323,9 @@ class Transitioner extends PureComponent {
   renderScreenWithAnimation = ({ index, key, screen }) => {
     const style = [
       StyleSheet.absoluteFill,
-      { backgroundColor: this.props.screenLight },
       interpolator({
         ...this.props,
+        direction: this.direction,
         index,
         animatedPosition: this.animatedPosition,
       }),
