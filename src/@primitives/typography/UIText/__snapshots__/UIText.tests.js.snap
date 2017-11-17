@@ -7,15 +7,12 @@ exports[`the P component should accept additional props 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 18,
-        "lineHeight": 20,
-      },
-      Object {},
-    ]
+    Object {
+      "color": "#505050",
+      "fontFamily": null,
+      "fontSize": 18,
+      "lineHeight": 20,
+    }
   }
 >
   "True faith means holding nothing back. It means putting every hope in God's fidelity to His Promises." ― Francis Chan
@@ -29,17 +26,12 @@ exports[`the P component should accept and render passed in styles 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 18,
-        "lineHeight": 20,
-      },
-      Object {
-        "color": "salmon",
-      },
-    ]
+    Object {
+      "color": "salmon",
+      "fontFamily": null,
+      "fontSize": 18,
+      "lineHeight": 20,
+    }
   }
 >
   Salmon text
@@ -53,15 +45,12 @@ exports[`the P component should render correctly 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 18,
-        "lineHeight": 20,
-      },
-      Object {},
-    ]
+    Object {
+      "color": "#505050",
+      "fontFamily": null,
+      "fontSize": 18,
+      "lineHeight": 20,
+    }
   }
 >
   Default P text
