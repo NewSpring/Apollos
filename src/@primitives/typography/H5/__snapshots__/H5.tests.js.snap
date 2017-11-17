@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the H5 component should accept additional props 1`] = `
+<Text
+  accessible={false}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#505050",
+        "fontFamily": null,
+        "fontSize": 20.02,
+        "fontWeight": "700",
+        "lineHeight": 25.46,
+      },
+      Object {},
+    ]
+  }
+>
+  "Faith does not eliminate questions. But faith knows where to take them." ― Elisabeth Elliot
+</Text>
+`;
+
+exports[`the H5 component should accept and render passed in styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#505050",
+        "fontFamily": null,
+        "fontSize": 20.02,
+        "fontWeight": "700",
+        "lineHeight": 25.46,
+      },
+      Object {
+        "color": "salmon",
+      },
+    ]
+  }
+>
+  Salmon text
+</Text>
+`;
+
+exports[`the H5 component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#505050",
+        "fontFamily": null,
+        "fontSize": 20.02,
+        "fontWeight": "700",
+        "lineHeight": 25.46,
+      },
+      Object {},
+    ]
+  }
+>
+  Default H5 text
+</Text>
+`;
