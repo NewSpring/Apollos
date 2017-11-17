@@ -4,7 +4,7 @@ import {
   Text,
 } from 'react-native';
 import Header from '@modules/Header';
-import H1 from '@primitives/typography';
+import { H1 } from '@primitives/typography';
 import Icon from '@primitives/Icon';
 import MediaQuery from '@primitives/MediaQuery';
 import Audio from '@modules/Audio';

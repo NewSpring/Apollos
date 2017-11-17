@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
 import ThemeProvider from '@primitives/ThemeProvider';
-import H1 from './';
+import { H1 } from './';
 
 storiesOf('@primitives/typography', module)
   .add('H1', () => (
