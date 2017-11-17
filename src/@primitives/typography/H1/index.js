@@ -16,7 +16,8 @@ const enhance = compose(
 
 const StyledH1 = styled(({ theme }) => ({
   fontSize: rem(2.9),
-  fontWeight: '700',
+  fontWeight: 'bold',
+  fontFamily: theme.fontFamilySans,
   color: theme.primaryColor,
   ...Platform.select({
     ios: {
