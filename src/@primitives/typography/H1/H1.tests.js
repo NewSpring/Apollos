@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import ThemeProvider from '@primitives/ThemeProvider';
-import { H1 } from './';
+import H1 from './';
 
 describe('the H1 component', () => {
   it('should render correctly', () => {
