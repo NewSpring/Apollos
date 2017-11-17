@@ -1,15 +1,51 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { Switch } from '../NativeWebRouter';
+import { withRouter } from '../NativeWebRouter';
 
-const CardStack = ({ children }) => (
-  <Switch>
-    {children}
-  </Switch>
-);
+import Transitioner from './Transitioner';
 
-CardStack.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+class Stack extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+    history: PropTypes.shape({}),
+    location: PropTypes.shape({}),
+    match: PropTypes.shape({}),
+  };
 
-export default CardStack;
+  static defaultProps = {
+    children: null,
+    history: null,
+    location: null,
+    match: null,
+  }
+
+  state = {
+    width: 0,
+    height: 0,
+  };
+
+  onLayout = ({ nativeEvent: { layout: { height, width } } }) => {
+    this.setState({ height, width });
+  };
+
+  render() {
+    const { height, width } = this.state;
+
+    return (
+      <View style={StyleSheet.absoluteFill} onLayout={this.onLayout}>
+        <Transitioner
+          history={this.props.history}
+          location={this.props.location}
+          match={this.props.match}
+          height={height}
+          width={width}
+        >
+          {this.props.children}
+        </Transitioner>
+      </View>
+    );
+  }
+}
+
+export default withRouter(Stack);

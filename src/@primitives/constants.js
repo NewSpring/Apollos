@@ -26,6 +26,9 @@ export const DEFAULT_THEME = {
   fontFamilySans: 'OpenSans',
   fontFamilySerif: Platform.OS !== 'android' ? 'Georgia' : 'serif',
 
+  screenLight: '#ffffff',
+  screenDark: '#000000',
+
   breakpoints: {
     xs: 320,
     sm: 496,
