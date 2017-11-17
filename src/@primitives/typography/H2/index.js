@@ -16,6 +16,7 @@ const enhance = compose(
 
 const StyledH2 = styled(({ theme }) => ({
   fontSize: rem(2.35, theme),
+  fontFamily: theme.fontFamilySans,
   lineHeight: verticalRhythm(2.35, 1.145, theme),
   fontWeight: '700',
   color: theme.baseFontColor,

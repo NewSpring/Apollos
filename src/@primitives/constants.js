@@ -17,13 +17,12 @@ export const DEFAULT_THEME = {
   lightTertiaryColor: '#dddddd',
 
   alertColor: '#c64f55',
-  primaryFont: 'OpenSans',
 
   baseFontColor: '#505050',
   baseFontSize: 18,
   baseLineHeight: 20,
 
-  fontFamilySans: 'OpenSans',
+  fontFamilySans: null, // force default system font
   fontFamilySerif: Platform.OS !== 'android' ? 'Georgia' : 'serif',
 
   screenLight: '#ffffff',
