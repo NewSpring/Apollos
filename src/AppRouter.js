@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Platform, Text } from 'react-native';
 import { Router, Route, AndroidBackButton, Switch, Link } from '@modules/NativeWebRouter';
 import CardStack from '@modules/CardStack';
-import H1 from '@primitives/H1';
 import ModalView from '@primitives/ModalView';
+import { H1 } from '@primitives/typography';
 import * as tabs from './tabs';
 
 const Tabs = () => {
