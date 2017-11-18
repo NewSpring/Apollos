@@ -69,6 +69,7 @@ const TabBarLink = enhance(({
   ...linkProps
 }) => {
   const dynamicLinkStyle = { color };
+
   return (
     <Link {...linkProps}>
       <LinkContainer>
