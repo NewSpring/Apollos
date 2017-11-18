@@ -16,6 +16,7 @@ export default graphql(homeFeedQuery, {
   props: ({ data }) => ({
     feed: data.feed,
     isLoading: data.loading,
+    refetch: data.refetch,
     fetchMore: fetchMoreResolver({
       collectionName: 'feed',
       data,
