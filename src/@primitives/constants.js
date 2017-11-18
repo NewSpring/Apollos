@@ -18,6 +18,8 @@ export const DEFAULT_THEME = {
 
   alertColor: '#c64f55',
 
+  baseUnit: 20,
+
   baseFontColor: '#505050',
   baseFontSize: 18,
   baseLineHeight: 20,
@@ -27,6 +29,8 @@ export const DEFAULT_THEME = {
 
   screenLight: '#ffffff',
   screenDark: '#000000',
+
+  cardBorderRadius: 6,
 
   breakpoints: {
     xs: 320,
