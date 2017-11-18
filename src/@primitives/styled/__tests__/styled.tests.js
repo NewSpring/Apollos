@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { compose } from 'recompose';
 import { View } from 'react-native';
 import ThemeProvider from '@primitives/ThemeProvider';
-import styled from './';
+import styled from '../';
 
 describe('the styled HOC', () => {
   it('passes style literal to the base component', () => {
@@ -13,7 +13,7 @@ describe('the styled HOC', () => {
     );
     expect(tree).toMatchSnapshot();
   });
-  it('supports multiple styles, inline styles take precedence over styled()', () => {
+  it('supports multiple styles, and keeps the correct order', () => {
     const StyledView = compose(
       styled({ backgroundColor: 'red' }),
       styled({ borderColor: 'green' }),

@@ -7,16 +7,13 @@ exports[`the H5 component should accept additional props 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 20.02,
-        "fontWeight": "700",
-        "lineHeight": 25.46,
-      },
-      Object {},
-    ]
+    Object {
+      "color": "#505050",
+      "fontFamily": null,
+      "fontSize": 20.02,
+      "fontWeight": "700",
+      "lineHeight": 25.46,
+    }
   }
 >
   "Faith does not eliminate questions. But faith knows where to take them." ― Elisabeth Elliot
@@ -30,18 +27,13 @@ exports[`the H5 component should accept and render passed in styles 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 20.02,
-        "fontWeight": "700",
-        "lineHeight": 25.46,
-      },
-      Object {
-        "color": "salmon",
-      },
-    ]
+    Object {
+      "color": "salmon",
+      "fontFamily": null,
+      "fontSize": 20.02,
+      "fontWeight": "700",
+      "lineHeight": 25.46,
+    }
   }
 >
   Salmon text
@@ -55,16 +47,13 @@ exports[`the H5 component should render correctly 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 20.02,
-        "fontWeight": "700",
-        "lineHeight": 25.46,
-      },
-      Object {},
-    ]
+    Object {
+      "color": "#505050",
+      "fontFamily": null,
+      "fontSize": 20.02,
+      "fontWeight": "700",
+      "lineHeight": 25.46,
+    }
   }
 >
   Default H5 text

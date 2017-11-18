@@ -31,20 +31,14 @@ exports[`the styled HOC should accept a function, works with props 1`] = `
 />
 `;
 
-exports[`the styled HOC supports multiple styles, inline styles take precedence over styled() 1`] = `
+exports[`the styled HOC supports multiple styles, and keeps the correct order 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderColor": "green",
-      },
-      Object {
-        "backgroundColor": "red",
-      },
-      Object {
-        "height": 100,
-      },
-    ]
+    Object {
+      "backgroundColor": "red",
+      "borderColor": "green",
+      "height": 100,
+    }
   }
 />
 `;
