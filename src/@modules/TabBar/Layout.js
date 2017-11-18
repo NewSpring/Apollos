@@ -2,6 +2,7 @@ import { StyleSheet, View } from 'react-native';
 import { compose } from 'recompose';
 import { enhancer as mediaQuery } from '@primitives/MediaQuery';
 import styled from '@primitives/styled';
+import withTheme from '@primitives/withTheme';
 
 const styles = StyleSheet.create({
   common: {
@@ -17,6 +18,7 @@ const styles = StyleSheet.create({
 
 const Layout = compose(
   styled(styles.common),
+  withTheme(({ theme: { screenLight } = {} }) => ({ backgroundColor: screenLight })),
   mediaQuery(({ md }) => ({ maxWidth: md }),
     styled(styles.mobile),
     styled(styles.horizontalLayout),
