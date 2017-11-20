@@ -33,7 +33,7 @@ const enhance = compose(
 const TileNav = enhance(({ navigation }) => (
   <ScrollView>
     <FlexedChildren>
-      {navigation.map(item => <FlexedChild><NavItem {...item} key={item.link} /></FlexedChild>)}
+      {navigation.map(item => <FlexedChild key={item.link}><NavItem {...item} /></FlexedChild>)}
     </FlexedChildren>
   </ScrollView>
 ));
