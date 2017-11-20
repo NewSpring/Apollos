@@ -1,20 +1,11 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
 import Header from '@modules/Header';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+import FlexedView from '@primitives/FlexedView';
 
 export default function Discover() {
   return (
-    <View style={styles.container}>
+    <FlexedView>
       <Header titleText="Discover" />
-    </View>
+    </FlexedView>
   );
 }
