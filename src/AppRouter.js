@@ -1,80 +1,69 @@
-import React from 'react';
-import { View, Platform, Text } from 'react-native';
-import { Router, Route, AndroidBackButton, Switch, Link } from '@modules/NativeWebRouter';
+import React, { PureComponent } from 'react';
+import { View, Platform } from 'react-native';
+import { compose, withProps, nest } from 'recompose';
+import { enhancer as mediaQuery } from '@primitives/MediaQuery';
+import { Router, Route, AndroidBackButton, Switch, matchPath, withRouter } from '@modules/NativeWebRouter';
 import CardStack from '@modules/CardStack';
-import ModalView from '@primitives/ModalView';
-import { H1 } from '@primitives/typography';
 import * as tabs from './tabs';
 
-const Tabs = () => {
-  // On mobile we render the tab layout at this level so that other <Route>s at
-  // the root level in the router can replace the tabbar
-  const Container = Platform.OS === 'web' ? Switch : tabs.Layout;
-  return (
-    <Container>
-      <Route exact path="/" component={tabs.Feed} />
-      <Route exact path="/sections" component={tabs.Sections} />
-      <Route exact path="/groups" component={tabs.Groups} />
-      <Route exact path="/discover" component={tabs.Discover} />
-      <Route exact path="/profile" component={tabs.Profile} />
-    </Container>
-  );
-};
+class AppRouter extends PureComponent {
+  componentWillUpdate(nextProps) {
+    if (nextProps.history.action !== 'POP' &&
+        (!this.props.location.state || !this.isModal)) {
+      this.previousLocation = this.props.location;
+    }
+  }
 
-// todo: this should be removed as soon as example routes are gone!
-const cardStyle = {
-  position: 'absolute',
-  left: 0,
-  right: 0,
-  bottom: 0,
-  top: 0,
-  paddingTop: '20%',
-  backgroundColor: 'white',
-};
+  get isModal() {
+    return this.props.isLargeScreen &&
+      this.previousLocation &&
+      this.previousLocation !== this.props.location &&
+      this.largeScreenModals.find(route => matchPath(this.props.location.pathname, route.props.path));
+  }
 
-const AppRouter = () => {
-  // On Web we render the tab layout at this level as it is always visible.
-  // On mobile, use a CardStack component for animated transitions and swipe to go back.
-  const Container = Platform.OS === 'web' ? tabs.Layout : CardStack;
-  return (
-    <Router>
+  previousLocation = this.props.location;
+
+  // On large screens we render modals on top of the previous route
+  // These routes should also exist elsewhere in the routing stack -
+  // And are used on fresh page loads or on mobile.
+  largeScreenModals = [
+    <Route exact path="/sections" key="sections-modal" component={tabs.Sections} />,
+  ];
+
+  tabs = () => {
+    // On mobile we render tabs.Layout at this level so that other <Route>s at
+    // the root level in the router can render on top of the tabbar
+    const TabSwitch = Platform.OS === 'web' ? Switch : tabs.Layout;
+    return (
+      <TabSwitch>
+        <Route exact path="/" component={tabs.Feed} />
+        <Route exact path="/sections" component={tabs.Sections} />
+        <Route exact path="/groups" component={tabs.Groups} />
+        <Route exact path="/discover" component={tabs.Discover} />
+        <Route exact path="/profile" component={tabs.Profile} />
+      </TabSwitch>
+    );
+  };
+
+  render() {
+    // On Web we render the tab layout at this level as it is always visible.
+    // On mobile, use a CardStack component for animated transitions and swipe to go back.
+    const AppSwitch = Platform.OS === 'web' ? tabs.Layout : CardStack;
+    return (
       <View style={{ flex: 1 }}>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-        <Container>
-          <Route
-            exact
-            path="/example-card"
-            render={() => (
-              <View style={cardStyle}>
-                <H1>Example card stack! woot</H1>
-                <Link to="/"><View><Text>Go to home by PUSHing home to stack (BAD!!)</Text></View></Link>
-                <H1>{'\n'}</H1>
-                <Link to="/" pop><View><Text>Go straight to home by POPing this route from stack (GOOD!!)</Text></View></Link>
-                <H1>{'\n'}</H1>
-                <Link pop><View><Text>Go back one level in history</Text></View></Link>
-                <H1>{'\n'}</H1>
-                <Link to="/example-modal"><View><Text>Open a modal</Text></View></Link>
-              </View>
-            )}
-          />
-          <Route
-            exact
-            path="/example-modal"
-            cardStackDirection="vertical"
-            render={() => (
-              <ModalView>
-                <H1>Example modal! woot</H1>
-                <Link pop><View><Text>Go back one level in history</Text></View></Link>
-                <H1>{'\n'}</H1>
-                <Link to="/example-card"><View><Text>Go to another page</Text></View></Link>
-              </ModalView>
-            )}
-          />
-          <Route component={Tabs} />
-        </Container>
+        <AppSwitch location={this.isModal ? this.previousLocation : this.props.location}>
+          <Route component={this.tabs} />
+        </AppSwitch>
+        {this.isModal ? this.largeScreenModals : null}
       </View>
-    </Router>
-  );
-};
+    );
+  }
+}
 
-export default AppRouter;
+const enhance = compose(
+  withRouter,
+  mediaQuery(({ md }) => ({ minWidth: md }), withProps(() => ({ isLargeScreen: true }))),
+);
+
+export default nest(Router, enhance(AppRouter));
