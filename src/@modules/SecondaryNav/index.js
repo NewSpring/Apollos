@@ -4,10 +4,10 @@ import TabBar, { Link } from '../TabBar';
 
 export { Link };
 
-const SecondaryNav = ({ backButton = true, children }) => (
+const SecondaryNav = ({ backButton = true, backButtonIcon = 'arrow-back', children }) => (
   <TabBar>
     {backButton ? (
-      <Link pop icon="arrow-back" to={''} />
+      <Link pop icon={backButtonIcon} />
     ) : null}
     {children}
   </TabBar>
@@ -15,6 +15,7 @@ const SecondaryNav = ({ backButton = true, children }) => (
 
 SecondaryNav.propTypes = {
   backButton: PropTypes.bool,
+  backButtonIcon: PropTypes.string,
   children: PropTypes.node,
 };
 

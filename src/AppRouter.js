@@ -1,12 +1,22 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { View, Platform } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
 import { enhancer as mediaQuery } from '@primitives/MediaQuery';
 import { Router, Route, AndroidBackButton, Switch, matchPath, withRouter } from '@modules/NativeWebRouter';
 import CardStack from '@modules/CardStack';
+import { asModal } from '@primitives/ModalView';
 import * as tabs from './tabs';
 
 class AppRouter extends PureComponent {
+  static propTypes = {
+    location: PropTypes.shape({
+      state: PropTypes.any, // eslint-disable-line
+      pathname: PropTypes.string,
+    }),
+    isLargeScreen: PropTypes.bool,
+  }
+
   componentWillUpdate(nextProps) {
     if (nextProps.history.action !== 'POP' &&
         (!this.props.location.state || !this.isModal)) {
@@ -17,17 +27,24 @@ class AppRouter extends PureComponent {
   get isModal() {
     return this.props.isLargeScreen &&
       this.previousLocation &&
-      this.previousLocation !== this.props.location &&
-      this.largeScreenModals.find(route => matchPath(this.props.location.pathname, route.props.path));
+      this.previousLocation.pathname !== this.props.location.pathname &&
+      this.largeScreenModals.find(route =>
+        matchPath(this.props.location.pathname, route.props.path),
+      );
   }
 
   previousLocation = this.props.location;
 
-  // On large screens we render modals on top of the previous route
-  // These routes should also exist elsewhere in the routing stack -
-  // And are used on fresh page loads or on mobile.
+  // On large screens we render modals on top of the previous route.
+  // These routes should also exist elsewhere in the routing stack, which
+  // are used when routed to directly (such as refreshing the page or SSR)
+  // On small screens "modals" can be emulated by just rendering the route in the main
+  // Route list in render() with a cardStackDrection="vertical" prop, to trigger
+  // a vertical modal-style transition and swipe-down to close interaction.
+  // This also allows us to create routes that exist as modals on large screens, but
+  // regular pages on small screens.
   largeScreenModals = [
-    <Route exact path="/sections" key="sections-modal" component={tabs.Sections} />,
+    <Route exact path="/sections" key="sections-modal" component={asModal(tabs.Sections)} />,
   ];
 
   tabs = () => {
@@ -46,7 +63,7 @@ class AppRouter extends PureComponent {
   };
 
   render() {
-    // On Web we render the tab layout at this level as it is always visible.
+    // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
     const AppSwitch = Platform.OS === 'web' ? tabs.Layout : CardStack;
     return (

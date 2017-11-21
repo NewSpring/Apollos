@@ -16,6 +16,8 @@ export const DEFAULT_THEME = {
   lightSecondaryColor: '#f7f7f7',
   lightTertiaryColor: '#dddddd',
 
+  darkOverlayColor: 'rgba(48,48,48,0.8)',
+
   alertColor: '#c64f55',
 
   baseUnit: 20,

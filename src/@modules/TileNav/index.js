@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { compose, pure, branch, renderComponent, mapProps } from 'recompose';
-import { View, ScrollView, ActivityIndicator, StyleSheet } from 'react-native';
+import { compose, pure, branch, renderComponent } from 'recompose';
+import { View, ScrollView } from 'react-native';
+import ActivityIndicator from '@primitives/ActivityIndicator';
 import styled from '@primitives/styled';
 import NavItem from './NavItem';
 
@@ -13,12 +14,6 @@ const FlexedChildren = styled(({ theme }) => ({
   justifyContent: 'space-around',
 }))(View);
 
-const CenteredActivityIndicator = styled({ // todo: change to a better empty/loading state
-  flex: 1,
-  alignSelf: 'center',
-  ...StyleSheet.absolutePositionObject,
-})(ActivityIndicator);
-
 const FlexedChild = styled(({ theme }) => ({
   width: '50%',
   paddingLeft: theme.baseUnit / 2,
@@ -27,7 +22,7 @@ const FlexedChild = styled(({ theme }) => ({
 
 const enhance = compose(
   pure,
-  branch(({ isLoading }) => isLoading, renderComponent(mapProps({}, CenteredActivityIndicator))),
+  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
 );
 
 const TileNav = enhance(({ navigation }) => (
