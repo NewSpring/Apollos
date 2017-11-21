@@ -1,27 +1,19 @@
 import { graphql } from 'react-apollo';
 import { compose } from 'recompose';
 import authenticateMutation from './authenticateMutation';
-import deauthorizeMutation from './deauthorizeMutation';
 import personQuery from './personQuery';
-import hashPassword from './hashPassword';
 import signupMutation from './signupMutation';
 
 // TODO: Set login token in local storage
 const authenticateActions = graphql(authenticateMutation, {
   props: ({ mutate }) => ({
-    login: ({ email, password } = {}) => (mutate({
-      variables: {
+    login: ({ email, password } = {}) => {
+      console.log('set email and password encrypted in local storage, have requests pick up on that for headers', {
         email,
-        password: hashPassword(password),
-      },
-    })),
-  }),
-});
-
-// TODO: Reset store on logout and remove token from local storage
-const deauthorizeActions = graphql(deauthorizeMutation, {
-  props: ({ mutate }) => ({
-    logout: () => (mutate()),
+        password,
+      });
+      return mutate();
+    },
   }),
 });
 
@@ -55,7 +47,6 @@ const user = graphql(personQuery, {
 
 export default compose(
   authenticateActions,
-  deauthorizeActions,
   signupActions,
   user,
 );
