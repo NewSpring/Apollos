@@ -1,25 +1,33 @@
 import { graphql } from 'react-apollo';
 import { compose } from 'recompose';
-import authenticateMutation from './authenticateMutation';
 import personQuery from './personQuery';
-import signupMutation from './signupMutation';
+import loginMutation from './loginMutation';
+import registerMutation from './registerMutation';
+import changePasswordMutation from './changePasswordMutation';
+import forgotPasswordMutation from './forgotPasswordMutation';
+import resetPasswordMutation from './resetPasswordMutation';
 
 // TODO: Set login token in local storage
-const authenticateActions = graphql(authenticateMutation, {
+const loginAction = graphql(loginMutation, {
   props: ({ mutate }) => ({
     login: ({ email, password } = {}) => {
       console.log('set email and password encrypted in local storage, have requests pick up on that for headers', {
         email,
         password,
       });
-      return mutate();
+      return mutate({
+        variables: {
+          email,
+          password,
+        },
+      });
     },
   }),
 });
 
-const signupActions = graphql(signupMutation, {
+const registerAction = graphql(registerMutation, {
   props: ({ mutate }) => ({
-    login: (params = {}) => {
+    register: (params = {}) => {
       const {
         email,
         password,
@@ -39,6 +47,60 @@ const signupActions = graphql(signupMutation, {
   }),
 });
 
+const changePasswordAction = graphql(changePasswordMutation, {
+  props: ({ mutate }) => ({
+    changePassword: (params = {}) => {
+      const {
+        oldPassword,
+        newPassword,
+      } = params;
+
+      mutate({
+        variables: {
+          oldPassword,
+          newPassword,
+        },
+      });
+    },
+  }),
+});
+
+const forgotPasswordAction = graphql(forgotPasswordMutation, {
+  props: ({ mutate }) => ({
+    forgotPassword: (params = {}) => {
+      const {
+        email,
+        sourceURL,
+      } = params;
+
+      mutate({
+        variables: {
+          email,
+          sourceURL,
+        },
+      });
+    },
+  }),
+});
+
+const resetPasswordAction = graphql(resetPasswordMutation, {
+  props: ({ mutate }) => ({
+    resetPassword: (params = {}) => {
+      const {
+        token,
+        newPassword,
+      } = params;
+
+      mutate({
+        variables: {
+          token,
+          newPassword,
+        },
+      });
+    },
+  }),
+});
+
 const user = graphql(personQuery, {
   props: ({ data: { person } }) => ({
     user: person,
@@ -46,7 +108,10 @@ const user = graphql(personQuery, {
 });
 
 export default compose(
-  authenticateActions,
-  signupActions,
+  loginAction,
+  registerAction,
+  changePasswordAction,
+  forgotPasswordAction,
+  resetPasswordAction,
   user,
 );
