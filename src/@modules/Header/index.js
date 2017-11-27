@@ -3,7 +3,6 @@ import { Text, View, StatusBar, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes, branch, renderNothing, pure } from 'recompose';
 import SafeAreaView from '@primitives/SafeAreaView';
-import withTheme from '@primitives/withTheme';
 import styled from '@primitives/styled';
 
 const StyledHeaderBar = styled({
@@ -12,29 +11,29 @@ const StyledHeaderBar = styled({
   justifyContent: 'center',
 })(View);
 
+const StyledSafeAreaView = styled(({ theme }) => ({
+  backgroundColor: theme.primaryColor,
+}))(SafeAreaView);
+
 const StyledHeaderText = styled({
   color: 'white',
 })(Text); // todo: use a different Text component that brings in correct styles
 
 const enhance = compose(
   pure,
-  branch(() => Platform.OS === 'web', renderNothing), // Header isn't a supported component on web
-  withTheme(({ theme: { primaryColor } = {} }) => ({ primaryColor })),
+  branch(() => Platform.OS === 'web', renderNothing),
   setPropTypes({
     titleText: PropTypes.string,
   }),
 );
 
-const Header = enhance(({ titleText, primaryColor }) => {
-  const dynamicBackground = { backgroundColor: primaryColor };
-  return (
-    <SafeAreaView style={dynamicBackground}>
-      <StatusBar barStyle="light-content" />
-      <StyledHeaderBar>
-        <StyledHeaderText>{titleText}</StyledHeaderText>
-      </StyledHeaderBar>
-    </SafeAreaView>
-  );
-});
+const Header = enhance(({ titleText }) => (
+  <StyledSafeAreaView>
+    <StatusBar barStyle="light-content" />
+    <StyledHeaderBar>
+      <StyledHeaderText>{titleText}</StyledHeaderText>
+    </StyledHeaderBar>
+  </StyledSafeAreaView>
+));
 
 export default Header;

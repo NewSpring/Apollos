@@ -24,11 +24,12 @@ const styles = StyleSheet.create({
 });
 
 // Styled View to wrap icon and label
-// TODO: should "styled" components like this always go in their own file?
 const LinkContainer = compose(
-  mediaQuery(({ md }) => ({ minWidth: md }), styled(styles.largeButton)),
   styled(styles.container),
+  mediaQuery(({ md }) => ({ minWidth: md }), styled(styles.largeButton)),
 )(View);
+
+const StyledLinkText = styled({})(Text);
 
 // Determine if link should be considered "active"
 const withActiveRoute = compose(
@@ -66,13 +67,19 @@ const TabBarLink = enhance(({
   isActive,
   staticContext,
   ...linkProps
-}) => (
-  <Link {...linkProps}>
-    <LinkContainer>
-      {icon ? <Icon name={icon} fill={color} /> : null}
-      <MediaQuery minWidth="md">{label ? <Text style={{ color }}>{label}</Text> : null}</MediaQuery>
-    </LinkContainer>
-  </Link>
-));
+}) => {
+  const dynamicLinkStyle = { color };
+
+  return (
+    <Link {...linkProps}>
+      <LinkContainer>
+        {icon ? <Icon name={icon} fill={color} /> : null}
+        <MediaQuery minWidth="md">
+          {label ? <StyledLinkText style={dynamicLinkStyle}>{label}</StyledLinkText> : null}
+        </MediaQuery>
+      </LinkContainer>
+    </Link>
+  );
+});
 
 export default TabBarLink;

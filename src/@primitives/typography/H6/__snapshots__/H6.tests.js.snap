@@ -7,16 +7,13 @@ exports[`the H6 component should accept additional props 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 15.75,
-        "fontWeight": "700",
-        "lineHeight": 17.85,
-      },
-      Object {},
-    ]
+    Object {
+      "color": "#505050",
+      "fontFamily": null,
+      "fontSize": 15.75,
+      "fontWeight": "700",
+      "lineHeight": 17.85,
+    }
   }
 >
   "Radical obedience to Christ is not easy... It's not comfort, not health, not wealth, and not prosperity in this world. Radical obedience to Christ risks losing all these things. But in the end, such risk finds its reward in Christ. And he is more than enough for us." ― David Platt
@@ -30,18 +27,13 @@ exports[`the H6 component should accept and render passed in styles 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 15.75,
-        "fontWeight": "700",
-        "lineHeight": 17.85,
-      },
-      Object {
-        "color": "salmon",
-      },
-    ]
+    Object {
+      "color": "salmon",
+      "fontFamily": null,
+      "fontSize": 15.75,
+      "fontWeight": "700",
+      "lineHeight": 17.85,
+    }
   }
 >
   Salmon text
@@ -55,16 +47,13 @@ exports[`the H6 component should render correctly 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 15.75,
-        "fontWeight": "700",
-        "lineHeight": 17.85,
-      },
-      Object {},
-    ]
+    Object {
+      "color": "#505050",
+      "fontFamily": null,
+      "fontSize": 15.75,
+      "fontWeight": "700",
+      "lineHeight": 17.85,
+    }
   }
 >
   Default H6 text

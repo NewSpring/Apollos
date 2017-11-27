@@ -7,15 +7,12 @@ exports[`the H7 component should accept additional props 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 14,
-        "lineHeight": 15.87,
-      },
-      Object {},
-    ]
+    Object {
+      "color": "#505050",
+      "fontFamily": null,
+      "fontSize": 14,
+      "lineHeight": 15.87,
+    }
   }
 >
   "We may speak about a place where there are no tears, no death, no fear, no night; but those are just the benefits of heaven. The beauty of heaven is seeing God." ― Max Lucado
@@ -29,17 +26,12 @@ exports[`the H7 component should accept and render passed in styles 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 14,
-        "lineHeight": 15.87,
-      },
-      Object {
-        "color": "salmon",
-      },
-    ]
+    Object {
+      "color": "salmon",
+      "fontFamily": null,
+      "fontSize": 14,
+      "lineHeight": 15.87,
+    }
   }
 >
   Salmon text
@@ -53,15 +45,12 @@ exports[`the H7 component should render correctly 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "color": "#505050",
-        "fontFamily": null,
-        "fontSize": 14,
-        "lineHeight": 15.87,
-      },
-      Object {},
-    ]
+    Object {
+      "color": "#505050",
+      "fontFamily": null,
+      "fontSize": 14,
+      "lineHeight": 15.87,
+    }
   }
 >
   Default H7 text
