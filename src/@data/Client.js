@@ -5,6 +5,7 @@ import { withClientState } from 'apollo-link-state';
 
 import * as MediaPlayerQueryResolvers from './withMediaPlayer/queries';
 import * as MediaPlayerMutationResolvers from './withMediaPlayer/mutations';
+import authenticationLink from './withUser/authenticationLink';
 
 const ClientStateLink = withClientState({
   Query: {
@@ -15,9 +16,11 @@ const ClientStateLink = withClientState({
   },
 });
 
+const httpLink = createHttpLink({ uri: 'https://api.newspring.cc/graphql' });
+
 export default new ApolloClient({
   link: ClientStateLink.concat(
-    createHttpLink({ uri: 'https://api.newspring.cc/graphql' }),
+    authenticationLink.concat(httpLink),
   ),
   cache: new InMemoryCache(),
 });
