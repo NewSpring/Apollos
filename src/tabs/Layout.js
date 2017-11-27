@@ -1,13 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import TabBar, { Layout, Link } from '@modules/TabBar';
+import { Switch } from '@modules/NativeWebRouter';
 
-const TabBarLayout = ({ children }) => (
+const TabBarLayout = ({ children, ...switchProps }) => (
   <Layout>
-    <View style={{ flex: 1 }}>
+    <Switch {...switchProps} style={{ flex: 1 }}>
       {children}
-    </View>
+    </Switch>
     <TabBar>
       <Link to="/" icon="logo" label="Home" />
       <Link to="/sections" icon="sections" label="Sections" />

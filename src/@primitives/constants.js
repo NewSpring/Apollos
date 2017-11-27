@@ -16,7 +16,11 @@ export const DEFAULT_THEME = {
   lightSecondaryColor: '#f7f7f7',
   lightTertiaryColor: '#dddddd',
 
+  darkOverlayColor: 'rgba(48,48,48,0.8)',
+
   alertColor: '#c64f55',
+
+  baseUnit: 20,
 
   baseFontColor: '#505050',
   baseFontSize: 18,
@@ -27,6 +31,8 @@ export const DEFAULT_THEME = {
 
   screenLight: '#ffffff',
   screenDark: '#000000',
+
+  cardBorderRadius: 6,
 
   breakpoints: {
     xs: 320,
