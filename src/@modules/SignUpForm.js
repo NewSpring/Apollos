@@ -10,32 +10,43 @@ import FormInput from '@primitives/FormInput';
 import withUser from '@data/withUser';
 
 // TODO: Use @primitives
-export class LoginForm extends Component {
+export class SignUpForm extends Component {
   static propTypes = {
     email: PropTypes.string,
-    onLogin: PropTypes.func,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    onSignup: PropTypes.func,
   };
 
   static defaultProps = {
     email: '',
-    onLogin() {},
+    onSignup() {},
   };
 
   state = {
     email: this.props.email,
     password: '',
+    firstName: this.props.firstName,
+    lastName: this.props.lastName,
   };
 
   handleSubmit = () => {
     const {
       email,
       password,
+      firstName,
+      lastName,
     } = this.state;
     const {
-      onLogin,
+      onSignup,
     } = this.props;
 
-    onLogin({ email, password });
+    onSignup({
+      email,
+      password,
+      firstName,
+      lastName,
+    });
   };
 
   render() {
@@ -52,6 +63,16 @@ export class LoginForm extends Component {
           onChangeText={password => this.setState({ password })}
           value={this.state.password}
           secureTextEntry
+        />
+        <FormInput
+          label="First Name"
+          onChangeText={firstName => this.setState({ firstName })}
+          value={this.state.firstName}
+        />
+        <FormInput
+          label="Last Name"
+          onChangeText={lastName => this.setState({ lastName })}
+          value={this.state.lastName}
         />
 
         <TouchableWithoutFeedback
@@ -74,6 +95,6 @@ export class LoginForm extends Component {
 
 const enhance = compose(
   withUser,
-  mapProps(props => ({ ...props, onLogin: props.login })),
+  mapProps(props => ({ ...props, onSignup: props.register })),
 );
-export default enhance(LoginForm);
+export default enhance(SignUpForm);
