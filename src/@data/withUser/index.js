@@ -1,5 +1,8 @@
 import { graphql } from 'react-apollo';
 import { compose } from 'recompose';
+import {
+  AsyncStorage,
+} from 'react-native';
 import personQuery from './personQuery';
 import loginMutation from './loginMutation';
 import registerMutation from './registerMutation';
@@ -10,17 +13,20 @@ import resetPasswordMutation from './resetPasswordMutation';
 // TODO: Set login token in local storage
 const loginAction = graphql(loginMutation, {
   props: ({ mutate }) => ({
-    login: ({ email, password } = {}) => {
-      console.log('set email and password encrypted in local storage, have requests pick up on that for headers', {
-        email,
-        password,
-      });
-      return mutate({
-        variables: {
-          email,
-          password,
-        },
-      });
+    login: async ({ email, password } = {}) => {
+      try {
+        const result = await mutate({
+          variables: {
+            email,
+            password,
+          },
+        });
+
+        await AsyncStorage.setItem('authToken', `${btoa(email)}::${btoa(password)}`);
+        return result;
+      } catch (err) {
+        throw err;
+      }
     },
   }),
 });
