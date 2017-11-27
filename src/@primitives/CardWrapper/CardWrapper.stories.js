@@ -1,10 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import Card from './';
+import CardWrapper from './';
 
-storiesOf('@primitives/Card', module)
+storiesOf('@primitives/CardWrapper', module)
   .add('Default', () => {
     const centered = {
       justifyContent: 'center',
@@ -20,7 +20,9 @@ storiesOf('@primitives/Card', module)
 
     return (
       <View style={centered}>
-        <Card style={cardDimensions} />
+        <CardWrapper style={cardDimensions}>
+          <Text>Boom!</Text>
+        </CardWrapper>
       </View>
     );
   });

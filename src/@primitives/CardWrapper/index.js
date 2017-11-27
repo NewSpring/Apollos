@@ -31,6 +31,12 @@ const StyledCard = styled(({ theme }) => ({
   }),
 }))(View);
 
+const OverflowFix = styled(({ theme }) => ({
+  flex: 1,
+  borderRadius: theme.cardBorderRadius,
+  overflow: 'hidden',
+}))(View);
+
 const CardWrapper = enhance(({
   children,
   style: styleProp = {},
@@ -40,7 +46,9 @@ const CardWrapper = enhance(({
     style={styleProp}
     {...otherProps}
   >
-    {children}
+    <OverflowFix>
+      {children}
+    </OverflowFix>
   </StyledCard>
 ));
 

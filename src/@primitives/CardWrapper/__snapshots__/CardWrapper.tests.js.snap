@@ -16,7 +16,17 @@ exports[`the Card component should accept additional props 1`] = `
       "shadowRadius": 3,
     }
   }
-/>
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "flex": 1,
+        "overflow": "hidden",
+      }
+    }
+  />
+</View>
 `;
 
 exports[`the Card component should accept and render passed in styles 1`] = `
@@ -36,7 +46,17 @@ exports[`the Card component should accept and render passed in styles 1`] = `
       "width": "92%",
     }
   }
-/>
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "flex": 1,
+        "overflow": "hidden",
+      }
+    }
+  />
+</View>
 `;
 
 exports[`the Card component should render 1`] = `
@@ -54,5 +74,52 @@ exports[`the Card component should render 1`] = `
       "shadowRadius": 3,
     }
   }
-/>
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "flex": 1,
+        "overflow": "hidden",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`the Card component should render children 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
+      "shadowColor": "#dddddd",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "flex": 1,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+    >
+      Boom!
+    </Text>
+  </View>
+</View>
 `;
