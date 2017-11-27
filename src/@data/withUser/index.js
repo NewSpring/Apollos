@@ -10,7 +10,6 @@ import changePasswordMutation from './changePasswordMutation';
 import forgotPasswordMutation from './forgotPasswordMutation';
 import resetPasswordMutation from './resetPasswordMutation';
 
-// TODO: Set login token in local storage
 const loginAction = graphql(loginMutation, {
   props: ({ mutate }) => ({
     login: async ({ email, password } = {}) => {
