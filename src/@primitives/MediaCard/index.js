@@ -1,15 +1,28 @@
 import React from 'react';
-import { Platform, View, Image } from 'react-native';
-import { compose, pure, setPropTypes } from 'recompose';
+import {
+  Platform,
+  View,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import PropTypes from 'prop-types';
+import {
+  compose,
+  pure,
+  setPropTypes,
+} from 'recompose';
 
+import withTheme from '@primitives/withTheme';
 import styled from '@primitives/styled';
 import { H4 } from '@primitives/typography';
+import Icon from '@primitives/Icon';
+import rem from '@utils/remUnit';
 
 import Category from './Category';
 
 const enhance = compose(
   pure,
+  withTheme(),
   setPropTypes({
     title: PropTypes.string.isRequired,
     category: PropTypes.string,
@@ -59,11 +72,19 @@ const CardTitle = styled(({ theme }) => ({
   paddingBottom: theme.baseUnit / 2,
 }))(H4);
 
+const Footer = styled(({ theme }) => ({
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingHorizontal: theme.baseUnit,
+  paddingBottom: theme.baseUnit,
+}))(View);
+
 const MediaCard = enhance(({
   image: imagePath,
   title,
   category,
   style: styleProp = {},
+  theme,
   ...otherProps
 }) => (
   <StyledCard
@@ -75,7 +96,16 @@ const MediaCard = enhance(({
         source={{ uri: imagePath }}
       />
       <CardTitle>{title}</CardTitle>
-      <Category type={category} />
+      <Footer>
+        <Category type={category} />
+        <TouchableOpacity>
+          <Icon
+            name={'like'}
+            size={rem(1.2, theme)}
+            fill={theme.baseFontColor}
+          />
+        </TouchableOpacity>
+      </Footer>
     </OverflowFix>
   </StyledCard>
 ));

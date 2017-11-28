@@ -17,12 +17,11 @@ const enhance = compose(
   }),
 );
 
-const Wrapper = styled(({ theme }) => ({
+const Wrapper = styled({
   flexDirection: 'row',
   alignItems: 'center',
-  paddingHorizontal: theme.baseUnit,
-  paddingBottom: theme.baseUnit,
-}))(View);
+  flex: 1,
+})(View);
 
 const StyledH7 = styled(({ theme }) => ({
   paddingHorizontal: theme.baseUnit / 2,
@@ -33,7 +32,11 @@ const Category = enhance(({
   type,
 }) => (
   <Wrapper>
-    <Icon name={'video'} size={rem(1.2, theme)} fill={theme.baseFontColor} />
+    <Icon
+      name={'video'}
+      size={rem(1.2, theme)}
+      fill={theme.baseFontColor}
+    />
     <StyledH7>{type}</StyledH7>
   </Wrapper>
 ));
