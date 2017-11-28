@@ -24,13 +24,13 @@ const renderEmptyState = renderComponent(componentFromProp('renderEmptyState'));
 
 const enhance = compose(
   pure,
-  branch(({ isLoading, feed }) => isLoading && !feed.length, renderEmptyState),
+  branch(({ isLoading, content }) => isLoading && !content.length, renderEmptyState),
 );
 
 const FeedView = enhance(({
   isLoading,
   refetch,
-  feed,
+  content,
   fetchMore,
   ...otherProps
 }) => (
@@ -39,7 +39,7 @@ const FeedView = enhance(({
     refreshing={isLoading}
     onRefresh={refetch}
     onEndReached={fetchMore}
-    data={feed}
+    data={content}
   />
 ));
 
@@ -47,7 +47,7 @@ FeedView.defaultProps = {
   isLoading: false,
   onEndReachedThreshold: 0.7,
   keyExtractor: item => item.entryId,
-  feed: [],
+  content: [],
   refetch: undefined,
   fetchMore: undefined,
   renderItem: defaultFeedItemRenderer,
@@ -56,7 +56,7 @@ FeedView.defaultProps = {
 
 FeedView.propTypes = {
   isLoading: PropTypes.bool,
-  feed: PropTypes.array, // eslint-disable-line
+  content: PropTypes.array, // eslint-disable-line
   refetch: PropTypes.func,
   fetchMore: PropTypes.func,
   renderItem: PropTypes.func,

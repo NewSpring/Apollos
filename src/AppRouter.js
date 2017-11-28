@@ -8,6 +8,13 @@ import CardStack from '@modules/CardStack';
 import { asModal } from '@primitives/ModalView';
 import * as tabs from './tabs';
 
+import Articles from './articles';
+import Stories from './stories';
+import Series from './series';
+import Studies from './studies';
+import Devotionals from './devotionals';
+import News from './news';
+
 let previousLocation;
 
 class AppRouter extends PureComponent {
@@ -75,6 +82,13 @@ class AppRouter extends PureComponent {
       <View style={{ flex: 1 }}>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         <AppSwitch location={this.isModal ? previousLocation : this.props.location}>
+          <Route exact path="/articles" component={Articles} />
+          <Route exact path="/stories" component={Stories} />
+          <Route exact path="/series" component={Series} />
+          <Route exact path="/sermons" component={Series} />
+          <Route exact path="/devotions" component={Devotionals} />
+          <Route exact path="/studies" component={Studies} />
+          <Route exact path="/news" component={News} />
           <Route component={this.tabs} />
         </AppSwitch>
         {this.isModal ? this.largeScreenModals : null}
