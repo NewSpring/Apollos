@@ -9,9 +9,9 @@ describe('the Card component', () => {
     const tree = renderer.create(
       <ThemeProvider>
         <MediaCard
-          image={'https://picsum.photos/600/400/?random'}
           title={'Boom'}
-          mediaType={'What'}
+          category={'What'}
+          image={'https://picsum.photos/600/400/?random'}
         />
       </ThemeProvider>,
     );

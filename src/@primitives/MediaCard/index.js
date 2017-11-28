@@ -1,15 +1,19 @@
 import React from 'react';
-import { Platform, View, Image, Text } from 'react-native';
+import { Platform, View, Image } from 'react-native';
 import { compose, pure, setPropTypes } from 'recompose';
 import PropTypes from 'prop-types';
+
 import styled from '@primitives/styled';
+import { H4 } from '@primitives/typography';
+
+import Category from './Category';
 
 const enhance = compose(
   pure,
   setPropTypes({
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string,
     image: PropTypes.string,
-    title: PropTypes.string,
-    mediaType: PropTypes.string,
     style: View.propTypes.style,
   }),
 );
@@ -33,6 +37,10 @@ const StyledCard = styled(({ theme }) => ({
   }),
 }))(View);
 
+/*
+ * Overflow on iOS, when declared on the same element as a shadow, clips the shadow so it must live
+ * on a child wrapper. https://github.com/facebook/react-native/issues/449
+ */
 const OverflowFix = styled(({ theme }) => ({
   flex: 1,
   borderRadius: theme.cardBorderRadius,
@@ -43,13 +51,18 @@ const StyledImage = styled(({ theme }) => ({
   flex: 1,
   borderTopRightRadius: theme.cardBorderRadius,
   borderTopLeftRadius: theme.cardBorderRadius,
-  // backgroundColor: 'salmon',
 }))(Image);
+
+const CardTitle = styled(({ theme }) => ({
+  paddingTop: theme.baseUnit,
+  paddingHorizontal: theme.baseUnit,
+  paddingBottom: theme.baseUnit / 2,
+}))(H4);
 
 const MediaCard = enhance(({
   image: imagePath,
   title,
-  mediaType,
+  category,
   style: styleProp = {},
   ...otherProps
 }) => (
@@ -61,8 +74,8 @@ const MediaCard = enhance(({
       <StyledImage
         source={{ uri: imagePath }}
       />
-      <Text>{title}</Text>
-      <Text>{mediaType}</Text>
+      <CardTitle>{title}</CardTitle>
+      <Category type={category} />
     </OverflowFix>
   </StyledCard>
 ));
