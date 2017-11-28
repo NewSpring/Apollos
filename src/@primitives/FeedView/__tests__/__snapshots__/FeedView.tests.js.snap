@@ -2,9 +2,7 @@
 
 exports[`The FeedView component renders correctly 1`] = `
 <RCTScrollView
-  data={Array []}
-  disableVirtualization={false}
-  feed={
+  data={
     Array [
       Object {
         "channelName": "bob",
@@ -18,6 +16,7 @@ exports[`The FeedView component renders correctly 1`] = `
       },
     ]
   }
+  disableVirtualization={false}
   getItem={[Function]}
   getItemCount={[Function]}
   horizontal={false}
@@ -43,7 +42,70 @@ exports[`The FeedView component renders correctly 1`] = `
   updateCellsBatchingPeriod={50}
   windowSize={21}
 >
-  <View />
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0.1)",
+            "height": 250,
+            "margin": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        >
+          hi
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        >
+          bob
+        </Text>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0.1)",
+            "height": 250,
+            "margin": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        >
+          hi 2
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        >
+          bob 2
+        </Text>
+      </View>
+    </View>
+  </View>
 </RCTScrollView>
 `;
 
