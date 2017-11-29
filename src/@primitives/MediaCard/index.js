@@ -11,6 +11,7 @@ import {
   pure,
   setPropTypes,
 } from 'recompose';
+import { startCase, toLower } from 'lodash';
 
 import withTheme from '@primitives/withTheme';
 import styled from '@primitives/styled';
@@ -32,7 +33,15 @@ const enhance = compose(
   }),
 );
 
+const CardWrapper = styled(({ theme }) => ({
+  marginHorizontal: theme.baseUnit / 2,
+  marginVertical: theme.baseUnit / 4,
+}))(View);
+
 const StyledCard = styled(({ theme, cardColor }) => ({
+  width: '100%',
+  minHeight: 400,
+  maxWidth: 420,
   backgroundColor: !cardColor ? theme.lightPrimaryColor : cardColor,
   borderRadius: theme.cardBorderRadius,
   ...Platform.select({
@@ -62,12 +71,16 @@ const OverflowFix = styled(({ theme }) => ({
 }))(View);
 
 const StyledImage = styled(({ theme }) => ({
+  width: undefined,
+  height: undefined,
   flex: 1,
+  resizeMode: 'cover',
   borderTopRightRadius: theme.cardBorderRadius,
   borderTopLeftRadius: theme.cardBorderRadius,
 }))(Image);
 
 const CardTitle = styled(({ theme }) => ({
+  flex: 0,
   paddingTop: theme.baseUnit,
   paddingHorizontal: theme.baseUnit,
 }))(H4);
@@ -91,27 +104,29 @@ const MediaCard = enhance(({
   theme,
   ...otherProps
 }) => (
-  <StyledCard
-    style={styleProp}
-    {...otherProps}
-  >
-    <OverflowFix>
-      <StyledImage source={{ uri: imagePath }} />
+  <CardWrapper>
+    <StyledCard
+      style={styleProp}
+      {...otherProps}
+    >
+      <OverflowFix>
+        <StyledImage source={{ uri: imagePath }} />
 
-      <CardTitle>{title}</CardTitle>
+        <CardTitle>{startCase(toLower(title))}</CardTitle>
 
-      <Footer>
-        <Category type={category} />
-        <LikeButton>
-          <Icon
-            name={'like'}
-            size={rem(1.2, theme)}
-            fill={theme.baseFontColor}
-          />
-        </LikeButton>
-      </Footer>
-    </OverflowFix>
-  </StyledCard>
+        <Footer>
+          <Category type={category} />
+          <LikeButton>
+            <Icon
+              name={'like'}
+              size={rem(1.2, theme)}
+              fill={theme.baseFontColor}
+            />
+          </LikeButton>
+        </Footer>
+      </OverflowFix>
+    </StyledCard>
+  </CardWrapper>
 ));
 
 export default MediaCard;
