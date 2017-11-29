@@ -25,14 +25,15 @@ const enhance = compose(
   withTheme(),
   setPropTypes({
     title: PropTypes.string.isRequired,
-    category: PropTypes.string,
-    image: PropTypes.string,
+    image: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    cardColor: PropTypes.string,
     style: View.propTypes.style,
   }),
 );
 
-const StyledCard = styled(({ theme }) => ({
-  backgroundColor: theme.lightPrimaryColor,
+const StyledCard = styled(({ theme, cardColor }) => ({
+  backgroundColor: !cardColor ? theme.lightPrimaryColor : cardColor,
   borderRadius: theme.cardBorderRadius,
   ...Platform.select({
     ios: {
@@ -69,15 +70,18 @@ const StyledImage = styled(({ theme }) => ({
 const CardTitle = styled(({ theme }) => ({
   paddingTop: theme.baseUnit,
   paddingHorizontal: theme.baseUnit,
-  paddingBottom: theme.baseUnit / 2,
 }))(H4);
 
-const Footer = styled(({ theme }) => ({
+const Footer = styled({
   flexDirection: 'row',
   alignItems: 'center',
+})(View);
+
+const LikeButton = styled(({ theme }) => ({
+  paddingTop: theme.baseUnit / 2,
   paddingHorizontal: theme.baseUnit,
   paddingBottom: theme.baseUnit,
-}))(View);
+}))(TouchableOpacity);
 
 const MediaCard = enhance(({
   image: imagePath,
@@ -92,19 +96,19 @@ const MediaCard = enhance(({
     {...otherProps}
   >
     <OverflowFix>
-      <StyledImage
-        source={{ uri: imagePath }}
-      />
+      <StyledImage source={{ uri: imagePath }} />
+
       <CardTitle>{title}</CardTitle>
+
       <Footer>
         <Category type={category} />
-        <TouchableOpacity>
+        <LikeButton>
           <Icon
             name={'like'}
             size={rem(1.2, theme)}
             fill={theme.baseFontColor}
           />
-        </TouchableOpacity>
+        </LikeButton>
       </Footer>
     </OverflowFix>
   </StyledCard>

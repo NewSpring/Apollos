@@ -5,9 +5,11 @@ exports[`the MediaCard Category component should render 1`] = `
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
       "paddingBottom": 20,
       "paddingHorizontal": 20,
+      "paddingTop": 10,
     }
   }
 >

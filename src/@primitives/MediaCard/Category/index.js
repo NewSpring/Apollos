@@ -17,11 +17,14 @@ const enhance = compose(
   }),
 );
 
-const Wrapper = styled({
+const Wrapper = styled(({ theme }) => ({
   flexDirection: 'row',
   alignItems: 'center',
   flex: 1,
-})(View);
+  paddingTop: theme.baseUnit / 2,
+  paddingHorizontal: theme.baseUnit,
+  paddingBottom: theme.baseUnit,
+}))(View);
 
 const StyledH7 = styled(({ theme }) => ({
   paddingHorizontal: theme.baseUnit / 2,
