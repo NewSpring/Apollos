@@ -14,6 +14,9 @@ import Series from './series';
 import Studies from './studies';
 import Devotionals from './devotionals';
 import News from './news';
+import ArticleSingle from './articles/ArticleSingle';
+import NewsSingle from './news/NewsSingle';
+import StorySingle from './stories/StorySingle';
 
 let previousLocation;
 
@@ -82,6 +85,7 @@ class AppRouter extends PureComponent {
       <View style={{ flex: 1 }}>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         <AppSwitch location={this.isModal ? previousLocation : this.props.location}>
+<<<<<<< HEAD
           <Route exact path="/articles" component={Articles} />
           <Route exact path="/stories" component={Stories} />
           <Route exact path="/series" component={Series} />
@@ -89,6 +93,11 @@ class AppRouter extends PureComponent {
           <Route exact path="/devotions" component={Devotionals} />
           <Route exact path="/studies" component={Studies} />
           <Route exact path="/news" component={News} />
+=======
+          <Route path="/articles/:id" component={ArticleSingle} />
+          <Route path="/stories/:id" component={StorySingle} />
+          <Route path="/news/:id" component={NewsSingle} />
+>>>>>>> 124-content-pages
           <Route component={this.tabs} />
         </AppSwitch>
         {this.isModal ? this.largeScreenModals : null}
