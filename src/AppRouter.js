@@ -7,6 +7,7 @@ import { Router, Route, AndroidBackButton, Switch, matchPath, withRouter } from 
 import CardStack from '@modules/CardStack';
 import { asModal } from '@primitives/ModalView';
 import * as tabs from './tabs';
+import * as give from './give';
 
 let previousLocation;
 
@@ -63,6 +64,14 @@ class AppRouter extends PureComponent {
         <Route exact path="/groups" component={tabs.Groups} />
         <Route exact path="/discover" component={tabs.Discover} />
         <Route exact path="/profile" component={tabs.Profile} />
+        <Route exact path="/give" component={give.Dashboard} />
+        <Route exact path="/give/methods" component={give.PaymentMethods} />
+        <Route exact path="/give/history" component={give.Transactions} />
+        <Route exact path="/give/history/:id" component={give.TransactionDetails} />
+        <Route exact path="/give/now" component={give.Now} />
+        <Route exact path="/give/campaign/:slug" component={give.Campaign} />
+        <Route exact path="/give/schedules/:id" component={give.Schedule} />
+        <Route exact path="/give/thankyou" component={give.ThankYou} />
       </TabSwitch>
     );
   };
