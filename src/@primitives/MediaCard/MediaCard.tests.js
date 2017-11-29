@@ -17,6 +17,19 @@ describe('the Card component', () => {
     );
     expect(tree).toMatchSnapshot();
   });
+  it('should accept a different card color', () => {
+    const tree = renderer.create(
+      <ThemeProvider>
+        <MediaCard
+          title={'Boom'}
+          image={'https://picsum.photos/600/400/?random'}
+          category={'What'}
+          cardColor={'salmon'}
+        />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
   it('should accept and render passed in styles', () => {
     const cardDimensions = {
       height: 400,
@@ -25,7 +38,12 @@ describe('the Card component', () => {
 
     const tree = renderer.create(
       <ThemeProvider>
-        <MediaCard style={cardDimensions} />
+        <MediaCard
+          title={'Boom'}
+          image={'https://picsum.photos/600/400/?random'}
+          category={'What'}
+          style={cardDimensions}
+        />
       </ThemeProvider>,
     );
     expect(tree).toMatchSnapshot();
