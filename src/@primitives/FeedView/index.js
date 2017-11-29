@@ -1,17 +1,34 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import { map } from 'lodash';
+import {
+  Text,
+  View,
+} from 'react-native';
 import PropTypes from 'prop-types';
-import { pure, compose, branch, renderComponent, componentFromProp } from 'recompose';
+import { map } from 'lodash';
+import {
+  pure,
+  compose,
+  branch,
+  renderComponent,
+  componentFromProp,
+} from 'recompose';
+
+import MediaCard from '@primitives/MediaCard';
 import FeedList from './FeedList';
 
-// TODO: replace weith component from #40
-const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
-  <View style={{ height: 250, margin: 10, backgroundColor: 'rgba(0,0,0,0.1)' }}>
-    <Text>{item.title}</Text>
-    <Text>{item.channelName}</Text>
-  </View>
-);
+const defaultFeedItemRenderer = ({ item }) => { // eslint-disable-line
+  return (
+    <MediaCard
+      title={item.title}
+      category={item.channelName}
+      image={item.content.images.length ?
+        `https:${item.content.images[0].url}` :
+        'https://placeholdit.co//i/600x400?text=:`-( No Image In Array!'
+      }
+      cardColor={item.content.colors.length ? `#${item.content.colors[0].value}` : ''}
+    />
+  );
+};
 
 // TODO: replace with component from #115
 const defaultEmptyStateRenderer = () => map([1, 2, 3], key => (
