@@ -10,6 +10,7 @@ import {
   compose,
   pure,
   setPropTypes,
+  defaultProps,
 } from 'recompose';
 import { startCase, toLower } from 'lodash';
 
@@ -24,14 +25,28 @@ import Category from './Category';
 const enhance = compose(
   pure,
   withTheme(),
+  defaultProps({
+    isLight: false,
+  }),
   setPropTypes({
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     cardColor: PropTypes.string,
+    isLight: PropTypes.bool,
     style: View.propTypes.style,
   }),
 );
+
+const getFontColor = (isLight, theme) => {
+  let fontColor = theme.lightPrimaryColor;
+
+  if (isLight) {
+    fontColor = theme.baseFontColor;
+  }
+
+  return fontColor;
+};
 
 const CardWrapper = styled(({ theme }) => ({
   marginHorizontal: theme.baseUnit / 2,
@@ -79,10 +94,11 @@ const StyledImage = styled(({ theme }) => ({
   borderTopLeftRadius: theme.cardBorderRadius,
 }))(Image);
 
-const CardTitle = styled(({ theme }) => ({
+const CardTitle = styled(({ theme, fontColor }) => ({
   flex: 0,
   paddingTop: theme.baseUnit,
   paddingHorizontal: theme.baseUnit,
+  color: fontColor,
 }))(H4);
 
 const Footer = styled({
@@ -100,6 +116,7 @@ const MediaCard = enhance(({
   image: imagePath,
   title,
   category,
+  isLight,
   style: styleProp = {},
   theme,
   ...otherProps
@@ -112,15 +129,15 @@ const MediaCard = enhance(({
       <OverflowFix>
         <StyledImage source={{ uri: imagePath }} />
 
-        <CardTitle>{startCase(toLower(title))}</CardTitle>
+        <CardTitle fontColor={getFontColor(isLight, theme)}>{startCase(toLower(title))}</CardTitle>
 
         <Footer>
-          <Category type={category} />
+          <Category type={category} fontColor={getFontColor(isLight, theme)} />
           <LikeButton>
             <Icon
               name={'like'}
               size={rem(1.2, theme)}
-              fill={theme.baseFontColor}
+              fill={getFontColor(isLight, theme)}
             />
           </LikeButton>
         </Footer>

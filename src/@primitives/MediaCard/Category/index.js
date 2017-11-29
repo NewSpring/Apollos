@@ -14,6 +14,7 @@ const enhance = compose(
   withTheme(),
   setPropTypes({
     type: PropTypes.string,
+    fontColor: PropTypes.string,
   }),
 );
 
@@ -26,19 +27,21 @@ const Wrapper = styled(({ theme }) => ({
   paddingBottom: theme.baseUnit,
 }))(View);
 
-const StyledH7 = styled(({ theme }) => ({
+const StyledH7 = styled(({ theme, fontColor }) => ({
   paddingHorizontal: theme.baseUnit / 2,
+  color: fontColor,
 }))(H7);
 
 const Category = enhance(({
-  theme,
   type,
+  fontColor,
+  theme,
 }) => (
   <Wrapper>
     <Icon
       name={'video'}
       size={rem(1.2, theme)}
-      fill={theme.baseFontColor}
+      fill={fontColor}
     />
     <StyledH7>{type}</StyledH7>
   </Wrapper>

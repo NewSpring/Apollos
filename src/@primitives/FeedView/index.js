@@ -17,6 +17,7 @@ import MediaCard from '@primitives/MediaCard';
 import FeedList from './FeedList';
 
 const defaultFeedItemRenderer = ({ item }) => { // eslint-disable-line
+  console.log(item.content.isLight);
   return (
     <MediaCard
       title={item.title}
@@ -26,6 +27,7 @@ const defaultFeedItemRenderer = ({ item }) => { // eslint-disable-line
         'https://placeholdit.co//i/600x400?text=:`-( No Image In Array!'
       }
       cardColor={item.content.colors.length ? `#${item.content.colors[0].value}` : ''}
+      isLight={item.content.isLight}
     />
   );
 };
