@@ -2,15 +2,18 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { map } from 'lodash';
 import PropTypes from 'prop-types';
+import { Link } from '@modules/NativeWebRouter';
 import { pure, compose, branch, renderComponent, componentFromProp } from 'recompose';
 import FeedList from './FeedList';
 
 // TODO: replace weith component from #40
 const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
-  <View style={{ height: 250, margin: 10, backgroundColor: 'rgba(0,0,0,0.1)' }}>
-    <Text>{item.title}</Text>
-    <Text>{item.channelName}</Text>
-  </View>
+  <Link to={`${item.channelName}/${item.entryId}`}>
+    <View style={{ height: 250, margin: 10, backgroundColor: 'rgba(0,0,0,0.1)' }}>
+      <Text>{item.title}</Text>
+      <Text>{item.channelName}</Text>
+    </View>
+  </Link>
 );
 
 // TODO: replace with component from #115
