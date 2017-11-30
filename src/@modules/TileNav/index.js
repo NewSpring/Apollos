@@ -25,7 +25,7 @@ const enhance = compose(
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
 );
 
-const TileNav = enhance(({ navigation }) => console.log({ navigation }) || (
+const TileNav = enhance(({ navigation }) => (
   <ScrollView>
     <FlexedChildren>
       {navigation.map(item => <FlexedChild key={item.link}><NavItem {...item} /></FlexedChild>)}
