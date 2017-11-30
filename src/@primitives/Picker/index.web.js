@@ -16,7 +16,7 @@ export default class Picker extends Component {
 
   static defaultProps = {
     onValueChange() {},
-    selectedValue: null,
+    selectedValue: '',
     children: null,
   };
 
