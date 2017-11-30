@@ -7,8 +7,8 @@ describe('The FeedView component', () => {
     const tree = renderer.create(
       <FeedView
         feed={[
-          { entryId: '1', title: 'hi', channelName: 'bob' },
-          { entryId: '2', title: 'hi 2', channelName: 'bob 2' },
+          { entryId: '1', title: 'hi', category: 'bob' },
+          { entryId: '2', title: 'hi 2', category: 'bob 2' },
         ]}
       />,
     );

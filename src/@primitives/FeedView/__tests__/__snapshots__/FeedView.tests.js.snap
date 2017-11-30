@@ -5,12 +5,12 @@ exports[`The FeedView component renders correctly 1`] = `
   data={
     Array [
       Object {
-        "channelName": "bob",
+        "category": "bob",
         "entryId": "1",
         "title": "hi",
       },
       Object {
-        "channelName": "bob 2",
+        "category": "bob 2",
         "entryId": "2",
         "title": "hi 2",
       },
