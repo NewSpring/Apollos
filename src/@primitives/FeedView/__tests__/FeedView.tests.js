@@ -6,7 +6,7 @@ describe('The FeedView component', () => {
   it('renders correctly', () => {
     const tree = renderer.create(
       <FeedView
-        feed={[
+        content={[
           { entryId: '1', title: 'hi', category: 'bob' },
           { entryId: '2', title: 'hi 2', category: 'bob 2' },
         ]}
@@ -18,7 +18,7 @@ describe('The FeedView component', () => {
     const tree = renderer.create(
       <FeedView
         isLoading
-        feed={[]}
+        content={[]}
       />,
     );
     expect(tree).toMatchSnapshot();

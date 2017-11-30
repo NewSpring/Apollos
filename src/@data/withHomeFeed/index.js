@@ -17,7 +17,7 @@ export default graphql(homeFeedQuery, {
   props: ({ data }) => ({
     // NOTE: if we need to transform feed with more than one identity function
     // we should use the transducer pattern instead
-    feed: data.feed && data.feed.map(identifyCategory),
+    content: data.feed && data.feed.map(identifyCategory),
     isLoading: data.loading,
     refetch: data.refetch,
     fetchMore: fetchMoreResolver({
@@ -26,4 +26,3 @@ export default graphql(homeFeedQuery, {
     }),
   }),
 });
-

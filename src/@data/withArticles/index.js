@@ -13,6 +13,7 @@ export default graphql(articlesQuery, {
   props: ({ data } = {}) => ({
     content: data.content && data.content.map(identifyCategory),
     isLoading: data.loading,
+    refetch: data.refetch,
     fetchMore: fetchMoreResolver({
       collectionName: 'content',
       data,

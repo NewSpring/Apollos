@@ -55,6 +55,7 @@ const enhance = compose(
   setPropTypes({
     label: PropTypes.string,
     icon: PropTypes.string,
+    iconSize: PropTypes.number,
     to: Link.propTypes.to,
     color: PropTypes.string,
   }),
@@ -63,6 +64,7 @@ const enhance = compose(
 const TabBarLink = enhance(({
   label = null,
   icon = null,
+  iconSize,
   color = null,
   isActive,
   staticContext,
@@ -73,7 +75,7 @@ const TabBarLink = enhance(({
   return (
     <Link {...linkProps}>
       <LinkContainer>
-        {icon ? <Icon name={icon} fill={color} /> : null}
+        {icon ? <Icon name={icon} size={iconSize} fill={color} /> : null}
         <MediaQuery minWidth="md">
           {label ? <StyledLinkText style={dynamicLinkStyle}>{label}</StyledLinkText> : null}
         </MediaQuery>
