@@ -3,11 +3,19 @@ import PropTypes from 'prop-types';
 import { View, Platform } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
 import { enhancer as mediaQuery } from '@primitives/MediaQuery';
-import { Router, Route, AndroidBackButton, Switch, matchPath, withRouter } from '@modules/NativeWebRouter';
+import { Router, Route, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@modules/NativeWebRouter';
 import CardStack from '@modules/CardStack';
 import { asModal } from '@primitives/ModalView';
+import DebugView from '@primitives/DebugView';
+
 import * as tabs from './tabs';
 import * as give from './give';
+
+import Articles, { ArticlesSingle } from './articles';
+import Stories, { StoriesSingle } from './stories';
+import Series from './series';
+import Studies from './studies';
+import News, { NewsSingle } from './news';
 
 let previousLocation;
 
@@ -84,6 +92,32 @@ class AppRouter extends PureComponent {
       <View style={{ flex: 1 }}>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         <AppSwitch location={this.isModal ? previousLocation : this.props.location}>
+          <Redirect from="/sermons" to="/series" />
+          <Route exact path="/series" component={Series} />
+          <Route exact path="/series/:id" component={DebugView} />
+          <Route exact path="/series/:seriesId/sermon/:id" component={DebugView} />
+
+          <Route exact path="/studies" component={Studies} />
+          <Route exact path="/studies/:id" component={DebugView} />
+          <Route exact path="/studies/:seriesId/entry/:id" component={DebugView} />
+
+          <Redirect from="/devotionals" to="/studies" />
+          <Redirect from="/devotions" to="/studies" />
+          <Route exact path="/devotions/:id" component={DebugView} />
+
+          <Route exact path="/music/:id" component={DebugView} />
+
+          <Route exact path="/articles" component={Articles} />
+          <Route exact path="/articles/:id" component={ArticlesSingle} />
+
+          <Route exact path="/stories" component={Stories} />
+          <Route exact path="/stories/:id" component={StoriesSingle} />
+
+          <Route exact path="/news" component={News} />
+          <Route exact path="/news/:id" component={NewsSingle} />
+
+          <Route exact path="/events/:id" component={DebugView} />
+
           <Route component={this.tabs} />
         </AppSwitch>
         {this.isModal ? this.largeScreenModals : null}
