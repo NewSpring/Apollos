@@ -43,7 +43,7 @@ const Category = enhance(({
       size={rem(1.2, theme)}
       fill={fontColor}
     />
-    <StyledH7>{type}</StyledH7>
+    <StyledH7 fontColor={fontColor}>{type}</StyledH7>
   </Wrapper>
 ));
 
