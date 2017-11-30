@@ -20,7 +20,7 @@ const ArticleSingle = enhance(({
     title = '',
     content = {},
   } = { },
-}) => console.log({ content, image: image(content) }) || (
+}) => (
   <FlexedView>
     <ScrollView>
       {image(content) ? <Image style={{ width: '100%', height: 200 }} source={{ uri: image(content) }} /> : null}

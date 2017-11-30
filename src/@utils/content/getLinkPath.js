@@ -1,4 +1,4 @@
-const contentLink = (contentItem) => {
+const getLinkPath = (contentItem) => {
   const entryId = contentItem.entryId || contentItem.id;
   const category = contentItem.channelName;
   const seriesId = contentItem.parent && (contentItem.parent.entryId || contentItem.parent.id);
@@ -29,4 +29,4 @@ const contentLink = (contentItem) => {
   }
 };
 
-export default contentLink;
+export default getLinkPath;

@@ -3,7 +3,8 @@ import { Text } from 'react-native';
 import FlexedView from './FlexedView';
 
 const DebugView = (props) => {
-  console.log('Debug View', props);
+  // Log out props for debugging:
+  console.log('Debug View', props); // eslint-disable-line no-console
   return (
     <FlexedView>
       <Text>

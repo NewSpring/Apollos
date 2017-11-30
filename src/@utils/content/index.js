@@ -1,1 +1,1 @@
-export { default as link } from './link';
+export { default as getLinkPath } from './getLinkPath';
