@@ -3,19 +3,19 @@ import { pure, compose } from 'recompose';
 import Header from '@modules/Header';
 import FeedView from '@primitives/FeedView';
 import FlexedView from '@primitives/FlexedView';
-import withHomeFeed from '@data/withHomeFeed';
+import withStudies from '@data/withStudies';
 
-const FeedViewWithHomeFeed = withHomeFeed(FeedView);
+const StudiesFeed = withStudies(FeedView);
 
 const enhance = compose(
   pure,
 );
 
-const Feed = enhance(() => (
+const Studies = enhance(() => (
   <FlexedView>
-    <Header titleText="NewSpring Church" />
-    <FeedViewWithHomeFeed />
+    <Header backButton titleText="All Studies" />
+    <StudiesFeed />
   </FlexedView>
 ));
 
-export default Feed;
+export default Studies;
