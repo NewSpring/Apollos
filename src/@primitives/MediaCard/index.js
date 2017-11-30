@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Platform,
   View,
   Image,
   TouchableOpacity,
@@ -16,11 +15,17 @@ import { startCase, toLower } from 'lodash';
 
 import withTheme from '@primitives/withTheme';
 import styled from '@primitives/styled';
-import { H4 } from '@primitives/typography';
 import Icon from '@primitives/Icon';
 import rem from '@utils/remUnit';
 
 import Category from './Category';
+import {
+  CardWrapper,
+  Card,
+  OverflowFix,
+  CardTitle,
+  Footer,
+} from './styles';
 
 const enhance = compose(
   pure,
@@ -48,42 +53,6 @@ const getFontColor = (isLight, theme) => {
   return fontColor;
 };
 
-const CardWrapper = styled(({ theme }) => ({
-  marginHorizontal: theme.baseUnit / 2,
-  marginVertical: theme.baseUnit / 4,
-}))(View);
-
-const StyledCard = styled(({ theme, cardColor }) => ({
-  width: '100%',
-  minHeight: 400,
-  maxWidth: 420,
-  backgroundColor: !cardColor ? theme.lightPrimaryColor : cardColor,
-  borderRadius: theme.cardBorderRadius,
-  ...Platform.select({
-    ios: {
-      shadowColor: theme.lightTertiaryColor,
-      shadowOffset: {
-        width: 0,
-        height: 1,
-      },
-      shadowOpacity: 1,
-      shadowRadius: 3,
-    },
-    android: {
-      elevation: 3,
-    },
-  }),
-}))(View);
-
-/*
- * Overflow on iOS, when declared on the same element as a shadow, clips the shadow so it must live
- * on a child wrapper. https://github.com/facebook/react-native/issues/449
- */
-const OverflowFix = styled(({ theme }) => ({
-  flex: 1,
-  borderRadius: theme.cardBorderRadius,
-  overflow: 'hidden',
-}))(View);
 
 const StyledImage = styled(({ theme }) => ({
   width: undefined,
@@ -93,18 +62,6 @@ const StyledImage = styled(({ theme }) => ({
   borderTopRightRadius: theme.cardBorderRadius,
   borderTopLeftRadius: theme.cardBorderRadius,
 }))(Image);
-
-const CardTitle = styled(({ theme, fontColor }) => ({
-  flex: 0,
-  paddingTop: theme.baseUnit,
-  paddingHorizontal: theme.baseUnit,
-  color: fontColor,
-}))(H4);
-
-const Footer = styled({
-  flexDirection: 'row',
-  alignItems: 'center',
-})(View);
 
 const LikeButton = styled(({ theme }) => ({
   paddingTop: theme.baseUnit / 2,
@@ -122,7 +79,7 @@ const MediaCard = enhance(({
   ...otherProps
 }) => (
   <CardWrapper>
-    <StyledCard
+    <Card
       style={styleProp}
       {...otherProps}
     >
@@ -142,7 +99,7 @@ const MediaCard = enhance(({
           </LikeButton>
         </Footer>
       </OverflowFix>
-    </StyledCard>
+    </Card>
   </CardWrapper>
 ));
 
