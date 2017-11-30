@@ -3,13 +3,13 @@ import { Text, View } from 'react-native';
 import { map } from 'lodash';
 import PropTypes from 'prop-types';
 import { Link } from '@modules/NativeWebRouter';
-import { link } from '@utils/content';
+import { getLinkPath } from '@utils/content';
 import { pure, compose, branch, renderComponent, componentFromProp } from 'recompose';
 import FeedList from './FeedList';
 
 // TODO: replace weith component from #40
 const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
-  <Link to={link(item)}>
+  <Link to={getLinkPath(item)}>
     <View style={{ height: 250, margin: 10, backgroundColor: 'rgba(0,0,0,0.1)' }}>
       <Text>{item.title}</Text>
       <Text>{item.channelName}</Text>
