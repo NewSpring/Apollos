@@ -9,11 +9,11 @@ describe('The FeedView component', () => {
     const tree = renderer.create(
       <ThemeProvider>
         <FeedView
-          feed={[
+          content={[
             {
               entryId: '1',
               title: 'hi',
-              channelName: 'bob',
+              category: 'bob',
               content: {
                 images: [{
                   url: 'https://placeholdit.co//i/600x400?text=:`-( No Image In Array!',
@@ -24,7 +24,7 @@ describe('The FeedView component', () => {
             {
               entryId: '2',
               title: 'hi 2',
-              channelName: 'bob 2',
+              category: 'bob 2',
               content: {
                 images: [{
                   url: 'https://placeholdit.co//i/600x400?text=:`-( No Image In Array!',
@@ -44,7 +44,7 @@ describe('The FeedView component', () => {
     const tree = renderer.create(
       <FeedView
         isLoading
-        feed={[]}
+        content={[]}
       />,
     );
     expect(tree).toMatchSnapshot();

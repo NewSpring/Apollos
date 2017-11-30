@@ -5,7 +5,7 @@ exports[`The FeedView component renders correctly 1`] = `
   data={
     Array [
       Object {
-        "channelName": "bob",
+        "category": "bob",
         "content": Object {
           "colors": Array [],
           "images": Array [
@@ -18,7 +18,7 @@ exports[`The FeedView component renders correctly 1`] = `
         "title": "hi",
       },
       Object {
-        "channelName": "bob 2",
+        "category": "bob 2",
         "content": Object {
           "colors": Array [
             Object {
@@ -68,12 +68,26 @@ exports[`The FeedView component renders correctly 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "marginHorizontal": 10,
             "marginVertical": 5,
           }
         }
+        testID={undefined}
       >
         <View
           cardColor=""
@@ -236,12 +250,26 @@ exports[`The FeedView component renders correctly 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "marginHorizontal": 10,
             "marginVertical": 5,
           }
         }
+        testID={undefined}
       >
         <View
           cardColor="#fff"
