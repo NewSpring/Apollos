@@ -12,6 +12,7 @@ export default graphql(newsStoriesQuery, {
   props: ({ data } = {}) => ({
     content: data.content,
     isLoading: data.loading,
+    refetch: data.refetch,
     fetchMore: fetchMoreResolver({
       collectionName: 'content',
       data,
