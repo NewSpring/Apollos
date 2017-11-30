@@ -276,7 +276,7 @@ class Transitioner extends PureComponent {
     this.setState({
       previouslyRenderedLocation: {},
       transition: null,
-    });
+    }, () => this.animatedPosition.setValue(0));
   };
 
   renderScreens() {
@@ -312,9 +312,11 @@ class Transitioner extends PureComponent {
       ];
     } else {
       screens = [
-        <View key={this.props.location.key} style={StyleSheet.absoluteFill}>
-          {this.currentRouteChild}
-        </View>,
+        this.renderScreenWithAnimation({
+          index: 0,
+          screen: this.currentRouteChild,
+          key: this.props.location.key,
+        }),
       ];
     }
     return screens;
