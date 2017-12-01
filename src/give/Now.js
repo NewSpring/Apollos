@@ -7,7 +7,7 @@ export default function Now() {
   return (
     <FlexedView>
       <Header titleText="Give Dashboard" />
-      <ContributionForm />
+      <ContributionForm onSubmit={console.log} />
     </FlexedView>
   );
 }

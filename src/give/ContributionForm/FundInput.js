@@ -32,13 +32,13 @@ export default class FundInput extends Component {
 
   get value() {
     return {
-      // eslint-disable-next-line
       contributionAmount: this.contributionAmount,
       targetFundId: this.targetFundId,
     };
   }
 
   get contributionAmount() {
+    // eslint-disable-next-line
     return parseFloat(this.state.contributionAmount.match(/[\d\.]+/)) || 0;
   }
 
@@ -64,7 +64,6 @@ export default class FundInput extends Component {
   }
 
   render() {
-    console.log(this.value);
     return (
       <View>
         <Text>{this.props.isFirst ? 'I\'d like to give' : 'and give'}</Text>

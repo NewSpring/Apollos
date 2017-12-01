@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
+  TouchableHighlight,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, mapProps } from 'recompose';
@@ -10,6 +11,7 @@ import { H3, BodyCopy as P } from '@primitives/typography';
 import withFinancialAccounts from '@data/withFinancialAccounts';
 import FundInput from './FundInput';
 import FrequencyInput from './FrequencyInput';
+import DateInput from './DateInput';
 
 export class ContributionForm extends Component {
   static propTypes = {
@@ -19,6 +21,7 @@ export class ContributionForm extends Component {
     offlineContactEmail: PropTypes.string,
     offlineMessageBody: PropTypes.string,
     offlineMessageTitle: PropTypes.string,
+    onSubmit: PropTypes.func,
   };
 
   static defaultProps = {
@@ -28,15 +31,24 @@ export class ContributionForm extends Component {
     offlineContactEmail: '',
     offlineMessageTitle: 'Unfortunately our giving service is offline.',
     offlineMessageBody: 'We are working to resolve this as fast as possible. We are sorry for any inconvience this may have caused.',
+    onSubmit() {},
   };
 
   get formValues() {
+    const firstFund = this.firstFundInput.value;
+    const secondFund = this.secondFundInput.value;
+    const frequency = this.frequencyInput.value;
+    const startDate = this.startDateInput.value;
     return {
-      // eslint-disable-next-line
-      contributionAmount: parseFloat(this.state.contributionAmount.match(/[\d\.]+/)),
-      targetFundId: this.state.targetFundId,
-      frequencyId: this.state.frequencyId,
+      firstContributionAmount: firstFund,
+      secondContributionAmount: secondFund,
+      frequencyId: frequency.frequencyId,
+      startDate: startDate.date,
     };
+  }
+
+  handleOnPress = () => {
+    this.props.onSubmit(this.formValues);
   }
 
   renderOfflineMessage() {
@@ -59,11 +71,24 @@ export class ContributionForm extends Component {
         <FundInput
           funds={this.props.funds}
           isFirst
+          ref={(r) => { this.firstFundInput = r; }}
         />
         <FundInput
           funds={this.props.funds}
+          ref={(r) => { this.secondFundInput = r; }}
         />
-        <FrequencyInput />
+        <FrequencyInput
+          ref={(r) => { this.frequencyInput = r; }}
+        />
+        <DateInput
+          ref={(r) => { this.startDateInput = r; }}
+        />
+
+        <TouchableHighlight onPress={this.handleOnPress}>
+          <View style={{ padding: 10 }}>
+            <Text>{'Review Contribution'}</Text>
+          </View>
+        </TouchableHighlight>
       </View>
     );
   }
