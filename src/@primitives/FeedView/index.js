@@ -24,10 +24,7 @@ const defaultFeedItemRenderer = ({ item }) => { // eslint-disable-line
       <FeedItemCard
         title={item.title}
         category={item.category}
-        image={item.content.images.length ?
-          `https:${item.content.images[0].url}` :
-          'https://placeholdit.co//i/600x400?text=:`-( No Image In Array!'
-        }
+        image={item.content.images}
         cardColor={item.content.colors.length ? `#${item.content.colors[0].value}` : ''}
         isLight={item.content.isLight}
       />

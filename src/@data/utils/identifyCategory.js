@@ -30,7 +30,7 @@ export default function identifyCategory(item) {
     default: {
       return {
         ...item,
-        category: category.replace(/(.)(?=.*\1)/g, ''),
+        category,
       };
     }
   }

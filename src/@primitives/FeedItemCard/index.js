@@ -12,7 +12,7 @@ import {
   defaultProps,
 } from 'recompose';
 import { startCase, toLower } from 'lodash';
-
+import ConnectedImage from '@primitives/ConnectedImage';
 import withTheme from '@primitives/withTheme';
 import styled from '@primitives/styled';
 import Icon from '@primitives/Icon';
@@ -38,7 +38,7 @@ const enhance = compose(
   determineFontColorFromProp,
   setPropTypes({
     title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.any,
     category: PropTypes.string.isRequired,
     // isLight is currently only required because without it fontColor wouldn't be set. There is
     // also no way to set a default based off of a theme value.
@@ -56,7 +56,7 @@ const StyledImage = styled(({ theme }) => ({
   resizeMode: 'cover',
   borderTopRightRadius: theme.cardBorderRadius,
   borderTopLeftRadius: theme.cardBorderRadius,
-}))(Image);
+}))(ConnectedImage);
 
 const LikeButton = styled(({ theme }) => ({
   paddingTop: theme.baseUnit / 2,
@@ -65,7 +65,7 @@ const LikeButton = styled(({ theme }) => ({
 }))(TouchableOpacity);
 
 const FeedItemCard = enhance(({
-  image: imagePath,
+  image: imageSource,
   title,
   category,
   fontColor,
@@ -79,7 +79,7 @@ const FeedItemCard = enhance(({
       {...otherProps}
     >
       <OverflowFix>
-        <StyledImage source={{ uri: imagePath }} />
+        <StyledImage source={imageSource} />
 
         <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
 
