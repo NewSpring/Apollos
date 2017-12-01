@@ -9,7 +9,6 @@ import {
   compose,
   pure,
   setPropTypes,
-  defaultProps,
 } from 'recompose';
 import { startCase, toLower } from 'lodash';
 
@@ -40,6 +39,7 @@ const enhance = compose(
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    isLiked: PropTypes.bool,
     // isLight is currently only required because without it fontColor wouldn't be set. There is
     // also no way to set a default based off of a theme value.
     isLight: PropTypes.bool.isRequired,
@@ -68,6 +68,7 @@ const MediaCard = enhance(({
   image: imagePath,
   title,
   category,
+  isLiked,
   fontColor,
   style: styleProp = {},
   theme,
@@ -87,7 +88,7 @@ const MediaCard = enhance(({
           <Category type={category} color={fontColor} />
           <LikeButton>
             <Icon
-              name={'like'}
+              name={isLiked ? 'like-solid' : 'like'}
               size={rem(1.2, theme)}
               fill={fontColor}
             />
