@@ -12,7 +12,7 @@ const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
     <View style={{ height: 250, margin: 10, backgroundColor: 'rgba(0,0,0,0.1)' }}>
       <Text>{item.title}</Text>
-      <Text>{item.channelName}</Text>
+      <Text>{item.category}</Text>
     </View>
   </Link>
 );

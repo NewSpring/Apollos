@@ -1,5 +1,6 @@
 import { graphql } from 'react-apollo';
 import fetchMoreResolver from '@data/utils/fetchMoreResolver';
+import identifyCategory from '@data/utils/identifyCategory';
 import devotionalsQuery from './devotionalsQuery';
 
 export default graphql(devotionalsQuery, {
@@ -10,7 +11,7 @@ export default graphql(devotionalsQuery, {
     },
   }),
   props: ({ data } = {}) => ({
-    content: data.content,
+    content: data.content && data.content.map(identifyCategory),
     isLoading: data.loading,
     refetch: data.refetch,
     fetchMore: fetchMoreResolver({
