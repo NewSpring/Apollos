@@ -64,7 +64,7 @@ const LikeButton = styled(({ theme }) => ({
   paddingBottom: theme.baseUnit,
 }))(TouchableOpacity);
 
-const MediaCard = enhance(({
+const FeedItemCard = enhance(({
   image: imagePath,
   title,
   category,
@@ -98,4 +98,4 @@ const MediaCard = enhance(({
   </CardWrapper>
 ));
 
-export default MediaCard;
+export default FeedItemCard;

@@ -15,13 +15,13 @@ import { map } from 'lodash';
 
 import { Link } from '@modules/NativeWebRouter';
 import { getLinkPath } from '@utils/content';
-import MediaCard from '@primitives/MediaCard';
+import FeedItemCard from '@primitives/FeedItemCard';
 import FeedList from './FeedList';
 
 const defaultFeedItemRenderer = ({ item }) => { // eslint-disable-line
   return (
     <Link to={getLinkPath(item)}>
-      <MediaCard
+      <FeedItemCard
         title={item.title}
         category={item.category}
         image={item.content.images.length ?

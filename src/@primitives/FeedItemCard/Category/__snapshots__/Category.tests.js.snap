@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the MediaCard Category component should render 1`] = `
+exports[`the FeedItemCard Category component should render 1`] = `
 <View
   style={
     Object {

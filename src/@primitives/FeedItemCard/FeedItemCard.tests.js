@@ -2,13 +2,13 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import ThemeProvider from '@primitives/ThemeProvider';
-import MediaCard from './';
+import FeedItemCard from './';
 
-describe('the Card component', () => {
+describe('the FeedItemCard component', () => {
   it('should render', () => {
     const tree = renderer.create(
       <ThemeProvider>
-        <MediaCard
+        <FeedItemCard
           title={'Boom'}
           image={'https://picsum.photos/600/400/?random'}
           category={'What'}
@@ -21,7 +21,7 @@ describe('the Card component', () => {
   it('should accept a different card color', () => {
     const tree = renderer.create(
       <ThemeProvider>
-        <MediaCard
+        <FeedItemCard
           title={'Boom'}
           image={'https://picsum.photos/600/400/?random'}
           category={'What'}
@@ -40,7 +40,7 @@ describe('the Card component', () => {
 
     const tree = renderer.create(
       <ThemeProvider>
-        <MediaCard
+        <FeedItemCard
           title={'Boom'}
           image={'https://picsum.photos/600/400/?random'}
           category={'What'}

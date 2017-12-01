@@ -2,9 +2,9 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import Category from './';
+import FeedItemCard from './';
 
-storiesOf('@primitives/MediaCard/Category', module)
+storiesOf('@primitives/FeedItemCard/Component', module)
   .add('Default', () => {
     const centered = {
       justifyContent: 'center',
@@ -13,9 +13,19 @@ storiesOf('@primitives/MediaCard/Category', module)
       backgroundColor: '#f7f7f7',
     };
 
+    const cardDimensions = {
+      height: 400,
+      width: '92%',
+    };
+
     return (
       <View style={centered}>
-        <Category type={'Series'} />
+        <FeedItemCard
+          style={cardDimensions}
+          title={'Promised Land'}
+          category={'Series'}
+          image={'https://picsum.photos/600/400'}
+        />
       </View>
     );
   });
