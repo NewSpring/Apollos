@@ -43,7 +43,7 @@ const OverflowFix = styled(({ theme }) => ({
   overflow: 'hidden',
 }))(View);
 
-const CardTitle = styled(({ theme, fontColor }) => ({
+const CardTitle = styled(({ theme, color: fontColor }) => ({
   flex: 0,
   paddingTop: theme.baseUnit,
   paddingHorizontal: theme.baseUnit,

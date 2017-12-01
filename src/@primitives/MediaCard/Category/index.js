@@ -14,7 +14,7 @@ const enhance = compose(
   withTheme(),
   setPropTypes({
     type: PropTypes.string,
-    fontColor: PropTypes.string,
+    color: PropTypes.string,
   }),
 );
 
@@ -34,16 +34,16 @@ const StyledH7 = styled(({ theme, fontColor }) => ({
 
 const Category = enhance(({
   type,
-  fontColor,
+  color,
   theme,
 }) => (
   <Wrapper>
     <Icon
       name={'video'}
       size={rem(1.2, theme)}
-      fill={fontColor}
+      fill={color}
     />
-    <StyledH7 fontColor={fontColor}>{type}</StyledH7>
+    <StyledH7 fontColor={color}>{type}</StyledH7>
   </Wrapper>
 ));
 

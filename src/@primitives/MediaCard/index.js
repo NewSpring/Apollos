@@ -27,32 +27,27 @@ import {
   Footer,
 } from './styles';
 
+// Set font color based on isLight prop
+const determineFontColorFromProp =
+  withTheme(({ theme: { baseFontColor, lightPrimaryColor } = {}, isLight }) => ({
+    fontColor: isLight ? baseFontColor : lightPrimaryColor,
+  }));
+
 const enhance = compose(
   pure,
-  withTheme(),
-  defaultProps({
-    isLight: false,
-  }),
+  determineFontColorFromProp,
   setPropTypes({
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    // isLight is currently only required because without it fontColor wouldn't be set. There is
+    // also no way to set a default based off of a theme value.
+    isLight: PropTypes.bool.isRequired,
     cardColor: PropTypes.string,
-    isLight: PropTypes.bool,
+    fontColor: PropTypes.string,
     style: View.propTypes.style,
   }),
 );
-
-const getFontColor = (isLight, theme) => {
-  let fontColor = theme.lightPrimaryColor;
-
-  if (isLight) {
-    fontColor = theme.baseFontColor;
-  }
-
-  return fontColor;
-};
-
 
 const StyledImage = styled(({ theme }) => ({
   width: undefined,
@@ -73,7 +68,7 @@ const MediaCard = enhance(({
   image: imagePath,
   title,
   category,
-  isLight,
+  fontColor,
   style: styleProp = {},
   theme,
   ...otherProps
@@ -86,15 +81,15 @@ const MediaCard = enhance(({
       <OverflowFix>
         <StyledImage source={{ uri: imagePath }} />
 
-        <CardTitle fontColor={getFontColor(isLight, theme)}>{startCase(toLower(title))}</CardTitle>
+        <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
 
         <Footer>
-          <Category type={category} fontColor={getFontColor(isLight, theme)} />
+          <Category type={category} color={fontColor} />
           <LikeButton>
             <Icon
               name={'like'}
               size={rem(1.2, theme)}
-              fill={getFontColor(isLight, theme)}
+              fill={fontColor}
             />
           </LikeButton>
         </Footer>

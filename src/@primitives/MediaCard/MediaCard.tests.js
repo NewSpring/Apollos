@@ -12,6 +12,7 @@ describe('the Card component', () => {
           title={'Boom'}
           image={'https://picsum.photos/600/400/?random'}
           category={'What'}
+          isLight
         />
       </ThemeProvider>,
     );
@@ -25,6 +26,7 @@ describe('the Card component', () => {
           image={'https://picsum.photos/600/400/?random'}
           category={'What'}
           cardColor={'salmon'}
+          isLight={false}
         />
       </ThemeProvider>,
     );
@@ -43,6 +45,7 @@ describe('the Card component', () => {
           image={'https://picsum.photos/600/400/?random'}
           category={'What'}
           style={cardDimensions}
+          isLight
         />
       </ThemeProvider>,
     );

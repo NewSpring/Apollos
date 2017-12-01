@@ -20,7 +20,7 @@ exports[`the MediaCard Category component should render 1`] = `
   >
     <Path
       d="M3.8182 5.7778v12.4444H14.2V5.7778H3.8182zM16 6v12c0 1.1046-.8954 2-2 2H4c-1.1046 0-2-.8954-2-2V6c0-1.1046.8954-2 2-2h10c1.1046 0 2 .8954 2 2zm4.1818 2.6952L16 11.8084v.3832l4.1818 3.251V8.695zM16 14.4957V9.4253l6-4.2178v13.585l-6-4.2968z"
-      fill="#505050"
+      fill="#6bac43"
     />
   </Svg>
   <Text
@@ -28,9 +28,10 @@ exports[`the MediaCard Category component should render 1`] = `
     allowFontScaling={true}
     disabled={false}
     ellipsizeMode="tail"
+    fontColor={undefined}
     style={
       Object {
-        "color": "#505050",
+        "color": undefined,
         "fontFamily": null,
         "fontSize": 14,
         "lineHeight": 15.87,
