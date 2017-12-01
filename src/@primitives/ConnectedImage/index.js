@@ -33,7 +33,7 @@ class ConnectedImage extends PureComponent {
     source: PropTypes.oneOfType([
       PropTypes.arrayOf(ImageSourceType), ImageSourceType,
     ]),
-    ImageComponent: PropTypes.oneOfType([PropTypes.function, PropTypes.object]),
+    ImageComponent: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   }
 
   static defaultProps = {

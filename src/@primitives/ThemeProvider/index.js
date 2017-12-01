@@ -1,7 +1,7 @@
 import { PureComponent, Children } from 'react';
 import PropTypes from 'prop-types';
-import { DEFAULT_THEME, THEME_PROPS } from './constants';
-
+import { DEFAULT_THEME, THEME_PROPS } from '@primitives/constants';
+export { default as withThemeProvider } from './withThemeProvider';
 
 export default class ThemeProvider extends PureComponent {
   static propTypes = {

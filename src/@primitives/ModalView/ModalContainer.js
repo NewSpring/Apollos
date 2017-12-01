@@ -5,7 +5,7 @@ import styled from '@primitives/styled';
 
 const narrow = styled(({ theme }) => ({
   flex: 1,
-  backgroundColor: theme.screenLight,
+  backgroundColor: theme.screenLightColor,
   overflow: 'hidden',
 }));
 
@@ -13,7 +13,7 @@ const wide = styled(({ theme }) => ({
   flex: 1,
   flexDirection: 'row-reverse',
   maxWidth: theme.breakpoints.sm,
-  backgroundColor: theme.screenLight,
+  backgroundColor: theme.screenLightColor,
   overflow: 'hidden',
 }));
 

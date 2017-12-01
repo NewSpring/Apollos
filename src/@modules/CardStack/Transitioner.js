@@ -43,8 +43,8 @@ class Transitioner extends PureComponent {
     directionPropNameForChildren: PropTypes.string,
 
     // from withTheme HOC
-    screenDark: PropTypes.string,
-    screenLight: PropTypes.string,
+    screenDarkColor: PropTypes.string,
+    screenLightColor: PropTypes.string,
   };
 
   static defaultProps = {
@@ -52,8 +52,8 @@ class Transitioner extends PureComponent {
     history: null,
     location: null,
     match: null,
-    screenDark: '#000',
-    screenLight: '#fff',
+    screenDarkColor: '#000',
+    screenLightColor: '#fff',
     direction: 'horizontal',
     directionPropNameForChildren: 'cardStackDirection',
   };
@@ -342,7 +342,7 @@ class Transitioner extends PureComponent {
   render() {
     return (
       <View
-        style={[StyleSheet.absoluteFill, { backgroundColor: this.props.screenDark }]}
+        style={[StyleSheet.absoluteFill, { backgroundColor: this.props.screenDarkColor }]}
         {...this.panResponder.panHandlers}
       >
         {this.renderScreens()}
@@ -351,6 +351,6 @@ class Transitioner extends PureComponent {
   }
 }
 
-export default withTheme(({ screenLight, screenDark }) =>
-  ({ screenLight, screenDark }),
+export default withTheme(({ screenLightColor, screenDarkColor }) =>
+  ({ screenLightColor, screenDarkColor }),
 )(Transitioner);

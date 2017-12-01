@@ -43,11 +43,10 @@ const OverflowFix = styled(({ theme }) => ({
   overflow: 'hidden',
 }))(View);
 
-const CardTitle = styled(({ theme, color: fontColor }) => ({
+const CardTitle = styled(({ theme }) => ({
   flex: 0,
   paddingTop: theme.baseUnit,
   paddingHorizontal: theme.baseUnit,
-  color: fontColor,
 }))(H4);
 
 const Footer = styled({

@@ -24,8 +24,8 @@ const defaultFeedItemRenderer = ({ item }) => { // eslint-disable-line
       <FeedItemCard
         title={item.title}
         category={item.category}
-        image={item.content.images}
-        cardColor={item.content.colors.length ? `#${item.content.colors[0].value}` : ''}
+        images={item.content.images}
+        colors={item.content.colors}
         isLight={item.content.isLight}
       />
     </Link>
