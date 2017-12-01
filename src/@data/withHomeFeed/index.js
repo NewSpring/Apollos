@@ -1,6 +1,7 @@
 import { graphql } from 'react-apollo';
 import { FOLLOWABLE_TOPICS } from '@data/constants';
 import fetchMoreResolver from '@data/utils/fetchMoreResolver';
+import identifyCategory from '@data/utils/identifyCategory';
 import homeFeedQuery from './homeFeedQuery';
 
 export default graphql(homeFeedQuery, {
@@ -14,7 +15,9 @@ export default graphql(homeFeedQuery, {
     },
   }),
   props: ({ data }) => ({
-    content: data.feed,
+    // NOTE: if we need to transform feed with more than one identity function
+    // we should use the transducer pattern instead
+    content: data.feed && data.feed.map(identifyCategory),
     isLoading: data.loading,
     refetch: data.refetch,
     fetchMore: fetchMoreResolver({
@@ -23,4 +26,3 @@ export default graphql(homeFeedQuery, {
     }),
   }),
 });
-
