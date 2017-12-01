@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, mapProps } from 'recompose';
+import get from 'lodash/get';
 import ActivityIndicator from '@primitives/ActivityIndicator';
 import { H3, BodyCopy as P } from '@primitives/typography';
 import withFinancialAccounts from '@data/withFinancialAccounts';
@@ -34,21 +35,57 @@ export class ContributionForm extends Component {
     onSubmit() {},
   };
 
-  get formValues() {
-    const firstFund = this.firstFundInput.value;
-    const secondFund = this.secondFundInput.value;
-    const frequency = this.frequencyInput.value;
-    const startDate = this.startDateInput.value;
+  state = {
+    secondFundVisible: false,
+    recurringPaymentOptionsVisible: false,
+    reviewContributionButtonEnabled: false,
+  };
+
+  get value() {
+    const firstFund = get(this.firstFundInput, 'value', {});
+    const secondFund = get(this.secondFundInput, 'value', {});
+    const frequency = get(this.frequencyInput, 'value', {});
+    const startDate = get(this.startDateInput, 'value', {});
     return {
-      firstContributionAmount: firstFund,
-      secondContributionAmount: secondFund,
+      firstContribution: firstFund,
+      secondContribution: secondFund,
       frequencyId: frequency.frequencyId,
       startDate: startDate.date,
     };
   }
 
-  handleOnPress = () => {
-    this.props.onSubmit(this.formValues);
+  get totalContribution() {
+    const firstContribution = get(this.firstFundInput, 'value.amount', 0);
+    const secondContribution = get(this.secondFundInput, 'value.amount', 0);
+    return firstContribution + secondContribution;
+  }
+
+  get remainingFunds() {
+    const firstFundId = get(this.firstFundInput, 'value.id');
+    const isNotFirstFund = fund => fund.id !== firstFundId;
+    return this.props.funds.filter(isNotFirstFund);
+  }
+
+  handleSubmit = () => {
+    this.props.onSubmit(this.value);
+  }
+
+  handleToggleSecondFund = () => {
+    this.setState({
+      secondFundVisible: !this.state.secondFundVisible,
+    });
+  }
+
+  handleToggleRecurringPaymentOptionsVisibility = () => {
+    this.setState({
+      recurringPaymentOptionsVisible: !this.state.recurringPaymentOptionsVisible,
+    });
+  }
+
+  handleChangeFundInput = () => {
+    this.setState({
+      reviewContributionButtonEnabled: this.totalContribution > 0,
+    });
   }
 
   renderOfflineMessage() {
@@ -72,19 +109,42 @@ export class ContributionForm extends Component {
           funds={this.props.funds}
           isFirst
           ref={(r) => { this.firstFundInput = r; }}
+          onChange={this.handleChangeFundInput}
         />
-        <FundInput
-          funds={this.props.funds}
-          ref={(r) => { this.secondFundInput = r; }}
-        />
-        <FrequencyInput
-          ref={(r) => { this.frequencyInput = r; }}
-        />
-        <DateInput
-          ref={(r) => { this.startDateInput = r; }}
-        />
+        {this.state.secondFundVisible &&
+          <FundInput
+            funds={this.remainingFunds}
+            ref={(r) => { this.secondFundInput = r; }}
+            onChange={this.handleChangeFundInput}
+          />
+        }
 
-        <TouchableHighlight onPress={this.handleOnPress}>
+        <TouchableHighlight onPress={this.handleToggleSecondFund}>
+          <View style={{ padding: 10 }}>
+            <Text>{this.state.secondFundVisible ? 'Remove Fund' : 'Add Another Fund'}</Text>
+          </View>
+        </TouchableHighlight>
+
+        <TouchableHighlight onPress={this.handleToggleRecurringPaymentOptionsVisibility}>
+          <View style={{ padding: 10 }}>
+            <Text>{this.state.recurringPaymentOptionsVisible ? '[x] Schedule Contribution' : '[ ] Schedule Contribution'}</Text>
+          </View>
+        </TouchableHighlight>
+
+        {this.state.recurringPaymentOptionsVisible &&
+          <View>
+            <FrequencyInput
+              ref={(r) => { this.frequencyInput = r; }}
+            />
+            <DateInput
+              ref={(r) => { this.startDateInput = r; }}
+            />
+          </View>
+        }
+
+        <TouchableHighlight
+          onPress={this.state.reviewContributionButtonEnabled ? this.handleSubmit : null}
+        >
           <View style={{ padding: 10 }}>
             <Text>{'Review Contribution'}</Text>
           </View>

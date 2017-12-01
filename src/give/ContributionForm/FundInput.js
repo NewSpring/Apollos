@@ -18,49 +18,55 @@ export default class FundInput extends Component {
       ]),
     })),
     isFirst: PropTypes.bool,
+    onChange: PropTypes.func,
   };
 
   static defaultProps = {
     funds: [],
     isFirst: false,
+    onChange() {},
   };
 
   state = {
-    targetFundId: '',
-    contributionAmount: '',
+    id: '',
+    amount: '',
   };
 
   get value() {
     return {
-      contributionAmount: this.contributionAmount,
-      targetFundId: this.targetFundId,
+      amount: this.amount,
+      id: this.id,
     };
   }
 
-  get contributionAmount() {
+  get amount() {
     // eslint-disable-next-line
-    return parseFloat(this.state.contributionAmount.match(/[\d\.]+/)) || 0;
+    return parseFloat(this.state.amount.match(/[\d\.]+/)) || 0;
   }
 
-  get targetFundId() {
+  get id() {
     const {
-      targetFundId,
+      id,
     } = this.state;
 
-    return isBlank(targetFundId) ? this.props.funds[0].id : targetFundId;
+    return isBlank(id) ? this.props.funds[0].id : id;
   }
 
   setContributionAmount = (value) => {
-    const contributionAmount = value.replace(/[^0-9.]/g, '');
+    const amount = value.replace(/[^0-9.]/g, '');
 
     this.setState({
-      contributionAmount,
+      amount,
+    }, () => {
+      this.props.onChange(this.value);
     });
   }
 
-  setTargetFund = (targetFundId, idx) => {
-    const { id } = this.props.funds[idx];
-    this.setState({ targetFundId: id });
+  setTargetFund = (id, idx) => {
+    const { id: fundId } = this.props.funds[idx];
+    this.setState({ id: fundId }, () => {
+      this.props.onChange(this.value);
+    });
   }
 
   render() {
@@ -70,12 +76,12 @@ export default class FundInput extends Component {
         <TextInput
           placeholder="0.00"
           onChangeText={this.setContributionAmount}
-          value={this.state.contributionAmount}
+          value={this.state.amount}
         />
         <Text>{'to'}</Text>
         <Picker
           onValueChange={this.setTargetFund}
-          selectedValue={this.state.targetFundId}
+          selectedValue={this.state.id}
         >
           {this.props.funds.map(({ name, id }) => (
             <Picker.Item label={name} value={id} key={id} />

@@ -4,9 +4,18 @@ import {
   Text,
   TextInput,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 export default class DateInput extends Component {
+  static propTypes = {
+    onChange: PropTypes.func,
+  };
+
+  static defaultProps = {
+    onChange() {},
+  };
+
   state = {
     value: moment().format('MM/DD/YYYY'),
   };
@@ -21,6 +30,8 @@ export default class DateInput extends Component {
   setValue = (value) => {
     this.setState({
       value,
+    }, () => {
+      this.props.onChange(this.value);
     });
   }
 

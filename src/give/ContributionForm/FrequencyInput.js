@@ -22,10 +22,12 @@ export default class FrequencyInput extends Component {
         PropTypes.number,
       ]),
     })),
+    onChange: PropTypes.func,
   };
 
   static defaultProps = {
     scheduleFrequencies: FREQUENCY_IDS,
+    onChange() {},
   };
 
   state = {
@@ -39,7 +41,9 @@ export default class FrequencyInput extends Component {
   }
 
   setFrequency = (frequencyId) => {
-    this.setState({ frequencyId });
+    this.setState({ frequencyId }, () => {
+      this.props.onChange(this.value);
+    });
   }
 
   render() {
