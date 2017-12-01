@@ -13,6 +13,7 @@ exports[`The FeedView component renders correctly 1`] = `
               "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
             },
           ],
+          "isLight": true,
         },
         "entryId": "1",
         "title": "hi",
@@ -22,7 +23,7 @@ exports[`The FeedView component renders correctly 1`] = `
         "content": Object {
           "colors": Array [
             Object {
-              "value": "fff",
+              "value": "584068",
             },
           ],
           "images": Array [
@@ -30,6 +31,7 @@ exports[`The FeedView component renders correctly 1`] = `
               "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
             },
           ],
+          "isLight": true,
         },
         "entryId": "2",
         "title": "hi 2",
@@ -68,29 +70,29 @@ exports[`The FeedView component renders correctly 1`] = `
       style={null}
     >
       <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "marginHorizontal": 10,
             "marginVertical": 5,
           }
         }
-        testID={undefined}
       >
         <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
           cardColor=""
+          hitSlop={undefined}
+          isLight={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
               "backgroundColor": "#ffffff",
@@ -107,6 +109,7 @@ exports[`The FeedView component renders correctly 1`] = `
               "width": "100%",
             }
           }
+          testID={undefined}
         >
           <View
             style={
@@ -137,6 +140,7 @@ exports[`The FeedView component renders correctly 1`] = `
             <Text
               accessible={true}
               allowFontScaling={true}
+              color="#505050"
               disabled={false}
               ellipsizeMode="tail"
               style={
@@ -189,6 +193,7 @@ exports[`The FeedView component renders correctly 1`] = `
                   allowFontScaling={true}
                   disabled={false}
                   ellipsizeMode="tail"
+                  fontColor="#505050"
                   style={
                     Object {
                       "color": "#505050",
@@ -250,32 +255,32 @@ exports[`The FeedView component renders correctly 1`] = `
       style={null}
     >
       <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "marginHorizontal": 10,
             "marginVertical": 5,
           }
         }
-        testID={undefined}
       >
         <View
-          cardColor="#fff"
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          cardColor="#584068"
+          hitSlop={undefined}
+          isLight={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "backgroundColor": "#fff",
+              "backgroundColor": "#584068",
               "borderRadius": 6,
               "maxWidth": 420,
               "minHeight": 400,
@@ -289,6 +294,7 @@ exports[`The FeedView component renders correctly 1`] = `
               "width": "100%",
             }
           }
+          testID={undefined}
         >
           <View
             style={
@@ -319,6 +325,7 @@ exports[`The FeedView component renders correctly 1`] = `
             <Text
               accessible={true}
               allowFontScaling={true}
+              color="#505050"
               disabled={false}
               ellipsizeMode="tail"
               style={
@@ -371,6 +378,7 @@ exports[`The FeedView component renders correctly 1`] = `
                   allowFontScaling={true}
                   disabled={false}
                   ellipsizeMode="tail"
+                  fontColor="#505050"
                   style={
                     Object {
                       "color": "#505050",

@@ -1,7 +1,15 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
+<<<<<<< HEAD:src/@primitives/FeedItemCard/index.js
 import { compose, pure, setPropTypes } from 'recompose';
+=======
+import {
+  compose,
+  pure,
+  setPropTypes,
+} from 'recompose';
+>>>>>>> origin/40-media-card-component:src/@primitives/MediaCard/index.js
 import { startCase, toLower } from 'lodash';
 import ConnectedImage from '@primitives/ConnectedImage';
 import { withThemeProvider } from '@primitives/ThemeProvider';

@@ -18,6 +18,19 @@ describe('the FeedItemCard component', () => {
     );
     expect(tree).toMatchSnapshot();
   });
+  it('should render with inverted font colors', () => {
+    const tree = renderer.create(
+      <ThemeProvider>
+        <FeedItemCard
+          title={'Boom'}
+          image={'https://picsum.photos/600/400/?random'}
+          category={'What'}
+          isLight={false}
+        />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
   it('should accept a different card color', () => {
     const tree = renderer.create(
       <ThemeProvider>
@@ -27,6 +40,20 @@ describe('the FeedItemCard component', () => {
           category={'What'}
           cardColor={'salmon'}
           isLight={false}
+        />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render as liked', () => {
+    const tree = renderer.create(
+      <ThemeProvider>
+        <FeedItemCard
+          title={'Boom'}
+          image={'https://picsum.photos/600/400/?random'}
+          category={'What'}
+          isLight
+          isLiked
         />
       </ThemeProvider>,
     );
