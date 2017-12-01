@@ -19,6 +19,7 @@ describe('The FeedView component', () => {
                   url: 'https://placeholdit.co//i/600x400?text=:`-( No Image In Array!',
                 }],
                 colors: [],
+                isLight: true,
               },
             },
             {
@@ -30,8 +31,9 @@ describe('The FeedView component', () => {
                   url: 'https://placeholdit.co//i/600x400?text=:`-( No Image In Array!',
                 }],
                 colors: [{
-                  value: 'fff',
+                  value: '584068',
                 }],
+                isLight: true,
               },
             },
           ]}
