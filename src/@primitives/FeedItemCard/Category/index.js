@@ -32,6 +32,19 @@ const StyledH7 = styled(({ theme, fontColor }) => ({
   color: fontColor,
 }))(H7);
 
+// TODO: Ideally this should take an the current category and map it against an array of all the
+// categories in Heighliner
+const getIconName = (type) => {
+  switch (type) {
+    case 'Series':
+      return 'video';
+    case 'Albums':
+      return 'audio';
+    default:
+      return 'text';
+  }
+};
+
 const Category = enhance(({
   type,
   color,
@@ -39,7 +52,7 @@ const Category = enhance(({
 }) => (
   <Wrapper>
     <Icon
-      name={'video'}
+      name={getIconName(type)}
       size={rem(1.2, theme)}
       fill={color}
     />
