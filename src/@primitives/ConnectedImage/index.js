@@ -65,13 +65,21 @@ class ConnectedImage extends PureComponent {
   }
 
   render() {
+    let { source } = this.state;
     // Android can't currently render an image source without a width/height specified, and then
     // re-render that source with width/height. So render null until width and height is set:
-    if (Platform.OS === 'android' && !every(this.state.source, source => source.width && source.height)) return null;
+    if (Platform.OS === 'android') {
+      if (!Array.isArray(source)) source = [source];
+      if (!every(this.state.source, image => image.width && image.height)) return null;
+    }
 
-    let { ImageComponent } = this.props;
-    if (!ImageComponent) ImageComponent = Image;
-    return <ImageComponent {...this.props} source={this.state.source} />;
+    // react-native-web currently doesn't support array-based Image sources
+    if (Platform.OS === 'web' && Array.isArray(source)) {
+      [source] = source;
+    }
+
+    const { ImageComponent = Image, ...otherProps } = this.props;
+    return <ImageComponent {...otherProps} source={source} />;
   }
 }
 
