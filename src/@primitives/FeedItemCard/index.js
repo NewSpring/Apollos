@@ -65,7 +65,7 @@ const FeedItemCard = enhance(({
         <CardTitle>{startCase(toLower(title))}</CardTitle>
 
         <Footer>
-          <Category type={category} />
+          <Category type={startCase(toLower(category))} />
           <LikeButton>
             <Icon name={'like'} size={rem(1.2, theme)} />
           </LikeButton>
