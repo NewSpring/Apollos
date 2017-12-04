@@ -1,4 +1,5 @@
 import { mapProps, withContext, compose } from 'recompose';
+import PropTypes from 'prop-types';
 import { THEME_PROPS } from '@primitives/constants';
 import withTheme from '@primitives/withTheme';
 
@@ -8,7 +9,7 @@ import withTheme from '@primitives/withTheme';
 const withThemeProvider = themeInput => compose(
   mapProps(props => ({ ownProps: props })),
   withTheme(),
-  withContext({ theme: THEME_PROPS }, ({ theme, ownProps }) => {
+  withContext({ theme: PropTypes.shape(THEME_PROPS) }, ({ theme, ownProps }) => {
     let composedTheme = Object.assign({}, theme, ownProps.theme || {});
 
     let themeInputAsObject = themeInput;

@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import { Platform } from 'react-native';
+import { every } from 'lodash';
 import PropTypes from 'prop-types';
 import { Image } from 'react-native';
 
@@ -63,6 +65,10 @@ class ConnectedImage extends PureComponent {
   }
 
   render() {
+    // Android can't currently render an image source without a width/height specified, and then
+    // re-render that source with width/height. So render null until width and height is set:
+    if (Platform.OS === 'android' && !every(this.state.source, source => source.width && source.height)) return null;
+
     let { ImageComponent } = this.props;
     if (!ImageComponent) ImageComponent = Image;
     return <ImageComponent {...this.props} source={this.state.source} />;
