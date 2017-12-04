@@ -44,13 +44,13 @@ export class ContributionForm extends Component {
   get value() {
     const firstFund = get(this.firstFundInput, 'value', {});
     const secondFund = get(this.secondFundInput, 'value', {});
-    const frequency = get(this.frequencyInput, 'value', {});
-    const startDate = get(this.startDateInput, 'value', {});
+    const frequencyId = get(this.frequencyInput, 'value.frequencyId', 'One-Time');
+    const startDate = get(this.startDateInput, 'value.date', new Date());
     return {
       firstContribution: firstFund,
       secondContribution: secondFund,
-      frequencyId: frequency.frequencyId,
-      startDate: startDate.date,
+      frequencyId,
+      startDate,
     };
   }
 
@@ -141,6 +141,8 @@ export class ContributionForm extends Component {
             />
           </View>
         }
+
+        <Text>{`my total is ${this.totalContribution}`}</Text>
 
         <TouchableHighlight
           onPress={this.state.reviewContributionButtonEnabled ? this.handleSubmit : null}
