@@ -30,6 +30,9 @@ const Card = styled(({ theme, cardColor }) => ({
     android: {
       elevation: 3,
     },
+    web: {
+      boxShadow: `0 1px 4px ${theme.lightTertiaryColor}`,
+    },
   }),
 }))(View);
 
