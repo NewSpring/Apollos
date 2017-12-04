@@ -19,13 +19,14 @@ import FeedItemCard from '@primitives/FeedItemCard';
 import FeedList from './FeedList';
 
 const defaultFeedItemRenderer = ({ item }) => { // eslint-disable-line
+  // console.log(item.content.colors.length ? item.content.colors : null);
   return (
     <Link to={getLinkPath(item)}>
       <FeedItemCard
         title={item.title}
         category={item.category}
         images={item.content.images}
-        colors={item.content.colors}
+        backgroundColor={item.content.colors.length ? `#${item.content.colors[0].value}` : null}
         isLight={item.content.isLight}
       />
     </Link>

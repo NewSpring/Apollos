@@ -15,7 +15,7 @@ const Card = styled(({ theme, cardColor }) => ({
   width: '100%',
   minHeight: 400,
   maxWidth: 420,
-  backgroundColor: !cardColor ? theme.lightPrimaryColor : cardColor,
+  backgroundColor: cardColor || theme.lightPrimaryColor,
   borderRadius: theme.cardBorderRadius,
   ...Platform.select({
     ios: {
@@ -43,10 +43,11 @@ const OverflowFix = styled(({ theme }) => ({
   overflow: 'hidden',
 }))(View);
 
-const CardTitle = styled(({ theme }) => ({
+const CardTitle = styled(({ theme, color: fontColor }) => ({
   flex: 0,
   paddingTop: theme.baseUnit,
   paddingHorizontal: theme.baseUnit,
+  color: fontColor || theme.baseFontColor,
 }))(H4);
 
 const Footer = styled({

@@ -44,10 +44,12 @@ describe('The FeedView component', () => {
   });
   it('renders empty state', () => {
     const tree = renderer.create(
-      <FeedView
-        isLoading
-        content={[]}
-      />,
+      <ThemeProvider>
+        <FeedView
+          isLoading
+          content={[]}
+        />
+      </ThemeProvider>,
     );
     expect(tree).toMatchSnapshot();
   });

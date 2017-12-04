@@ -11,7 +11,10 @@ import rem from '@utils/remUnit';
 
 const enhance = compose(
   pure,
-  withTheme(),
+  withTheme(({ theme, color }) => ({
+    color: color || theme.lightPrimaryColor,
+    theme,
+  })),
   setPropTypes({
     type: PropTypes.string,
     color: PropTypes.string,
@@ -27,7 +30,7 @@ const Wrapper = styled(({ theme }) => ({
   paddingBottom: theme.baseUnit,
 }))(View);
 
-const StyledH7 = styled(({ theme, fontColor }) => ({
+const StyledH7 = styled(({ color: fontColor, theme }) => ({
   paddingHorizontal: theme.baseUnit / 2,
   color: fontColor,
 }))(H7);
@@ -47,16 +50,16 @@ const getIconName = (type) => {
 
 const Category = enhance(({
   type,
-  color,
+  color: fontColor,
   theme,
 }) => (
   <Wrapper>
     <Icon
       name={getIconName(type)}
       size={rem(1.2, theme)}
-      fill={color}
+      fill={fontColor}
     />
-    <StyledH7 fontColor={color}>{type}</StyledH7>
+    <StyledH7 color={fontColor}>{type}</StyledH7>
   </Wrapper>
 ));
 

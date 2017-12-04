@@ -3,13 +3,12 @@ import { View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import { startCase, toLower } from 'lodash';
+
 import ConnectedImage from '@primitives/ConnectedImage';
-import { withThemeProvider } from '@primitives/ThemeProvider';
 import withTheme from '@primitives/withTheme';
 import styled from '@primitives/styled';
 import Icon from '@primitives/Icon';
 import rem from '@utils/remUnit';
-import { getThemeOverrides } from '@utils/content';
 
 import Category from './Category';
 import {
@@ -22,15 +21,18 @@ import {
 
 const enhance = compose(
   pure,
-  withThemeProvider(getThemeOverrides),
-  withTheme(),
+  withTheme(({ theme, isLight }) => ({
+    fontColor: isLight ? theme.baseFontColor : theme.lightPrimaryColor,
+    theme,
+  })),
   setPropTypes({
     title: PropTypes.string.isRequired,
     images: PropTypes.any,
     category: PropTypes.string.isRequired,
     isLight: PropTypes.bool.isRequired,
-    colors: PropTypes.array,
+    color: PropTypes.string,
     fontColor: PropTypes.string,
+    backgroundColor: PropTypes.string,
     style: View.propTypes.style,
   }),
 );
@@ -54,20 +56,22 @@ const FeedItemCard = enhance(({
   images: imageSource,
   title,
   category,
+  fontColor,
+  backgroundColor,
   theme,
   ...otherProps
 }) => (
   <CardWrapper>
-    <Card {...otherProps}>
+    <Card cardColor={backgroundColor} {...otherProps}>
       <OverflowFix>
         <StyledImage source={imageSource} />
 
-        <CardTitle>{startCase(toLower(title))}</CardTitle>
+        <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
 
         <Footer>
-          <Category type={startCase(toLower(category))} />
+          <Category type={startCase(toLower(category))} color={fontColor} />
           <LikeButton>
-            <Icon name={'like'} size={rem(1.2, theme)} />
+            <Icon name={'like'} size={rem(1.2, theme)} fill={fontColor} />
           </LikeButton>
         </Footer>
       </OverflowFix>
