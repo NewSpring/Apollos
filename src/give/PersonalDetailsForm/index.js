@@ -6,7 +6,8 @@ import {
   TextInput,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose } from 'recompose';
+import { compose, mapProps } from 'recompose';
+import get from 'lodash/get';
 import withCheckout from '@data/withCheckout';
 import Picker from '@primitives/Picker';
 import ActivityIndicator from '@primitives/ActivityIndicator';
@@ -23,46 +24,82 @@ export class PersonalDetailsForm extends Component {
       ]),
       label: PropTypes.string,
     })),
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    email: PropTypes.string,
   };
 
   static defaultProps = {
     isLoading: true,
     onSubmit() {},
     campuses: [],
+    firstName: '',
+    lastName: '',
+    email: '',
   };
 
   state = {
-    campusId: this.props.campuses[0] && this.props.campuses[0].id,
+    firstName: '',
+    lastName: '',
+    email: '',
+    campusId: '',
   };
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      firstName: nextProps.firstName,
+      lastName: nextProps.lastName,
+      email: nextProps.email,
+    });
+
+    const isInitialRender = this.props.isLoading && !nextProps.isLoading;
+    if (isInitialRender) {
+      this.setState({
+        campusId: nextProps.campuses[0] && nextProps.campuses[0].id,
+      });
+    }
+  }
+
+  get value() {
+    return {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      campusId: this.state.campusId,
+    };
+  }
 
   setCampus = (id, idx) => {
     const { id: campusId } = this.props.campuses[idx];
-    this.setState({ campusId }, () => {
-      // this.props.onChange(this.value);
-    });
+    this.setState({ campusId });
   }
 
   handleSubmit = () => {
-    console.log(this);
-    this.props.onSubmit();
+    this.props.onSubmit(this.value);
   }
 
   render() {
-    console.log(this.props);
     if (this.props.isLoading) return <ActivityIndicator />;
 
     return (
       <View>
+        <Text>{'First Name'}</Text>
         <TextInput
-          ref={(r) => { this.firstName = r; }}
+          onChangeText={(firstName) => { this.setState({ firstName }); }}
+          value={this.state.firstName}
         />
+        <Text>{'Last Name'}</Text>
         <TextInput
-          ref={(r) => { this.lastName = r; }}
+          onChangeText={(lastName) => { this.setState({ lastName }); }}
+          value={this.state.lastName}
         />
+        <Text>{'Email'}</Text>
         <TextInput
-          ref={(r) => { this.email = r; }}
+          onChangeText={(email) => { this.setState({ email }); }}
+          value={this.state.email}
         />
 
+        <Text>{'Campus'}</Text>
         <Picker
           onValueChange={this.setCampus}
           selectedValue={this.state.campusId}
@@ -86,6 +123,12 @@ export class PersonalDetailsForm extends Component {
 
 const enhance = compose(
   withCheckout,
+  mapProps(props => ({
+    ...props,
+    firstName: get(props, 'person.firstName', ''),
+    lastName: get(props, 'person.lastName', ''),
+    email: get(props, 'person.email', ''),
+  })),
 );
 
 export default enhance(PersonalDetailsForm);
