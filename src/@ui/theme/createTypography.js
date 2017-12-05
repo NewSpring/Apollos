@@ -19,7 +19,12 @@ const verticalRhythm = ({ baseLineHeight, baseFontSize }) => (fontSize, relative
   return rem({ baseFontSize })(verticalRatio * (fontSize * relativeValue));
 };
 
-const createTypography = (colors, typographyInput = {}) => {
+/**
+ * @param {*} typographyInput: custom type styles. See "common" above for values you can set.
+ * @param {*} baseTypography: the base styles to use. This prop is used by ThemeMixin, and is used
+ * to set what the base typography theme is.
+ */
+const createTypography = (typographyInput = {}) => {
   // todo: add styles for different typography styles, like H1
   const typography = merge(common, typographyInput);
 

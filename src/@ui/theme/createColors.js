@@ -1,7 +1,7 @@
 import { merge } from 'lodash';
 import PropTypes from 'prop-types';
 
-export const common = {
+export const baseCommon = {
   primary: '#6bac43',
   secondary: '#1c683e',
   tertiary: '#2a4930',
@@ -20,7 +20,7 @@ export const common = {
   error: '#c64f55',
 };
 
-export const light = {
+export const light = ({ common }) => ({
   text: {
     primary: common.darkSecondary, // TODO: should this be darkPrimary?
     secondary: common.darkSecondary,
@@ -37,9 +37,9 @@ export const light = {
   action: {
     // todo
   },
-};
+});
 
-export const dark = {
+export const dark = ({ common }) => ({
   text: {
     primary: common.lightPrimary,
     secondary: common.lightSecondary,
@@ -56,23 +56,32 @@ export const dark = {
   action: {
     // todo
   },
-};
+});
 
+/**
+ * @param {*} custom colors to use. See COLOR_PROPS below for shape
+ * @param {*} the base color theme to inherit from. ThemeMixin uses this.
+ */
 const createColors = ({
-  type = 'light',
+  palette = 'light',
+  common: commonInput = {},
   ...other
-}) => {
-  const shades = { dark, light };
-  if (!shades[type]) throw new Error(`The colors type ${type} is not supported`);
+} = {}) => {
+  const common = merge(baseCommon, commonInput);
+  const palettes = {
+    light: light({ common }),
+    dark: dark({ common }),
+  };
+  if (!palettes[palette]) throw new Error(`The colors palette ${palette} is not supported`);
 
   return merge({
     common,
-    shades,
-    ...shades[type],
+    palettes,
+    ...palettes[palette],
   }, other);
 };
 
-const COLORS_SHADES_PROPS = {
+const COLORS_PALETTE_PROPS = {
   text: PropTypes.shape({
     primary: PropTypes.string,
     secondary: PropTypes.string,
@@ -90,10 +99,10 @@ export const COLORS_PROPS = {
   white: PropTypes.string,
   transparent: PropTypes.string,
   error: PropTypes.string,
-  ...COLORS_SHADES_PROPS,
-  shades: PropTypes.shape({
-    light: PropTypes.shape(COLORS_SHADES_PROPS),
-    dark: PropTypes.shape(COLORS_SHADES_PROPS),
+  ...COLORS_PALETTE_PROPS,
+  palettes: PropTypes.shape({
+    light: PropTypes.shape(COLORS_PALETTE_PROPS),
+    dark: PropTypes.shape(COLORS_PALETTE_PROPS),
   }),
 };
 

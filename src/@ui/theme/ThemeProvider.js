@@ -6,20 +6,22 @@ import createTheme, { THEME_PROPS } from './createTheme';
 export default class ThemeProvider extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
-    theme: PropTypes.shape(THEME_PROPS),
+    themeInput: PropTypes.shape(THEME_PROPS),
   };
 
   static defaultProps = {
     children: null,
-    theme: createTheme(),
+    themeInput: {},
   };
 
   static childContextTypes = {
     theme: PropTypes.shape(THEME_PROPS),
+    themeInput: PropTypes.shape(THEME_PROPS),
   };
 
   getChildContext = () => ({
-    theme: this.props.theme,
+    theme: createTheme(this.props.themeInput),
+    themeInput: this.props.themeInput,
   })
 
   render() {

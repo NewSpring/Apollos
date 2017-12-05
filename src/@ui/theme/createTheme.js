@@ -15,23 +15,24 @@ const sizing = {
   borderRadius: 6,
 };
 
+/**
+ *
+ * @param {*} theme settings
+ * @param {*} existing theme, will compose/extend the existing theme instead of defaults
+ */
 const createTheme = ({
   colors: colorsInput = {},
   typography: typographyInput = {},
   ...other
-} = {}) => {
-  const colors = createColors(colorsInput);
-
-  return {
-    colors,
-    typography: createTypography(colors, typographyInput),
+} = {}) => ({
+  colors: createColors(colorsInput),
+  typography: createTypography(typographyInput),
+  breakpoints,
+  ...merge({
     breakpoints,
-    ...merge({
-      breakpoints,
-      sizing,
-    }, other),
-  };
-};
+    sizing,
+  }, other),
+});
 
 export const THEME_PROPS = {
   colors: PropTypes.shape(COLORS_PROPS),
