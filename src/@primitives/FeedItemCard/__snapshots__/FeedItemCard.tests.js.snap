@@ -39,20 +39,25 @@ exports[`the FeedItemCard component should accept a different card color 1`] = `
         }
       }
     >
-      <Image
-        ImageComponent={[Function]}
-        source={Array []}
+      <View
         style={
           Object {
-            "borderTopLeftRadius": 6,
-            "borderTopRightRadius": 6,
             "flex": 1,
-            "height": undefined,
-            "resizeMode": "cover",
-            "width": undefined,
           }
         }
-      />
+      >
+        <Image
+          source={Array []}
+          style={
+            Object {
+              "flex": 1,
+              "height": undefined,
+              "resizeMode": "cover",
+              "width": undefined,
+            }
+          }
+        />
+      </View>
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -207,20 +212,25 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
         }
       }
     >
-      <Image
-        ImageComponent={[Function]}
-        source={Array []}
+      <View
         style={
           Object {
-            "borderTopLeftRadius": 6,
-            "borderTopRightRadius": 6,
             "flex": 1,
-            "height": undefined,
-            "resizeMode": "cover",
-            "width": undefined,
           }
         }
-      />
+      >
+        <Image
+          source={Array []}
+          style={
+            Object {
+              "flex": 1,
+              "height": undefined,
+              "resizeMode": "cover",
+              "width": undefined,
+            }
+          }
+        />
+      </View>
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -374,20 +384,25 @@ exports[`the FeedItemCard component should render 1`] = `
         }
       }
     >
-      <Image
-        ImageComponent={[Function]}
-        source={Array []}
+      <View
         style={
           Object {
-            "borderTopLeftRadius": 6,
-            "borderTopRightRadius": 6,
             "flex": 1,
-            "height": undefined,
-            "resizeMode": "cover",
-            "width": undefined,
           }
         }
-      />
+      >
+        <Image
+          source={Array []}
+          style={
+            Object {
+              "flex": 1,
+              "height": undefined,
+              "resizeMode": "cover",
+              "width": undefined,
+            }
+          }
+        />
+      </View>
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -542,20 +557,25 @@ exports[`the FeedItemCard component should render as liked 1`] = `
         }
       }
     >
-      <Image
-        ImageComponent={[Function]}
-        source={Array []}
+      <View
         style={
           Object {
-            "borderTopLeftRadius": 6,
-            "borderTopRightRadius": 6,
             "flex": 1,
-            "height": undefined,
-            "resizeMode": "cover",
-            "width": undefined,
           }
         }
-      />
+      >
+        <Image
+          source={Array []}
+          style={
+            Object {
+              "flex": 1,
+              "height": undefined,
+              "resizeMode": "cover",
+              "width": undefined,
+            }
+          }
+        />
+      </View>
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -709,20 +729,25 @@ exports[`the FeedItemCard component should render with inverted font colors 1`] 
         }
       }
     >
-      <Image
-        ImageComponent={[Function]}
-        source={Array []}
+      <View
         style={
           Object {
-            "borderTopLeftRadius": 6,
-            "borderTopRightRadius": 6,
             "flex": 1,
-            "height": undefined,
-            "resizeMode": "cover",
-            "width": undefined,
           }
         }
-      />
+      >
+        <Image
+          source={Array []}
+          style={
+            Object {
+              "flex": 1,
+              "height": undefined,
+              "resizeMode": "cover",
+              "width": undefined,
+            }
+          }
+        />
+      </View>
       <Text
         accessible={true}
         allowFontScaling={true}

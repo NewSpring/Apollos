@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import { startCase, toLower } from 'lodash';
 
-import ConnectedImage from '@primitives/ConnectedImage';
 import withTheme from '@primitives/withTheme';
 import styled from '@primitives/styled';
 import Icon from '@primitives/Icon';
 import rem from '@utils/remUnit';
 
 import Category from './Category';
+import CardImage from './CardImage';
 import {
   CardWrapper,
   Card,
@@ -27,7 +27,14 @@ const enhance = compose(
   })),
   setPropTypes({
     title: PropTypes.string.isRequired,
-    images: PropTypes.any,
+    images: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        value: PropTypes.string,
+        description: PropTypes.string,
+      })),
+      PropTypes.string,
+    ]),
     category: PropTypes.string.isRequired,
     isLight: PropTypes.bool.isRequired,
     color: PropTypes.string,
@@ -37,15 +44,6 @@ const enhance = compose(
   }),
 );
 
-const StyledImage = styled(({ theme }) => ({
-  width: undefined,
-  height: undefined,
-  flex: 1,
-  resizeMode: 'cover',
-  borderTopRightRadius: theme.cardBorderRadius,
-  borderTopLeftRadius: theme.cardBorderRadius,
-}))(ConnectedImage);
-
 const LikeButton = styled(({ theme }) => ({
   paddingTop: theme.baseUnit / 2,
   paddingHorizontal: theme.baseUnit,
@@ -53,7 +51,7 @@ const LikeButton = styled(({ theme }) => ({
 }))(TouchableOpacity);
 
 const FeedItemCard = enhance(({
-  images: imageSource,
+  images,
   title,
   category,
   fontColor,
@@ -64,8 +62,7 @@ const FeedItemCard = enhance(({
   <CardWrapper>
     <Card cardColor={backgroundColor} {...otherProps}>
       <OverflowFix>
-        <StyledImage source={imageSource} />
-
+        <CardImage source={images} overlayColor={backgroundColor} />
         <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
 
         <Footer>

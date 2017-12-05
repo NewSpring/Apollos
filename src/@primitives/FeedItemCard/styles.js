@@ -37,8 +37,8 @@ const Card = styled(({ theme, cardColor }) => ({
 }))(View);
 
 /*
- * Overflow on iOS, when declared on the same element as a shadow, clips the shadow so it must live
- * on a child wrapper. https://github.com/facebook/react-native/issues/449
+ * Overflow on iOS, when declared on the same element as a shadow, clips the shadow so overflow must
+ * live on a child wrapper. https://github.com/facebook/react-native/issues/449
  */
 const OverflowFix = styled(({ theme }) => ({
   flex: 1,
