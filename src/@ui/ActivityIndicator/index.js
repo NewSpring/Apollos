@@ -8,7 +8,7 @@ const ActivityIndicator = compose(
     flex: 1,
     ...StyleSheet.absoluteFillObject,
     alignSelf: 'center',
-  }),
+  }, 'ActivityIndicator'),
 )(NativeActivityIndicator);
 
 export default ActivityIndicator;

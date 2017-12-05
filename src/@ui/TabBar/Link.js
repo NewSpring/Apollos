@@ -25,11 +25,11 @@ const styles = StyleSheet.create({
 
 // Styled View to wrap icon and label
 const LinkContainer = compose(
-  styled(styles.container),
-  mediaQuery(({ md }) => ({ minWidth: md }), styled(styles.largeButton)),
+  styled(styles.container, 'TabBar.Link.Container'),
+  mediaQuery(({ md }) => ({ minWidth: md }), styled(styles.largeButton, 'TabBar.Link.Container@large')),
 )(View);
 
-const StyledLinkText = styled({})(Text);
+const StyledLinkText = styled({}, 'TabBar.Link.Text')(Text);
 
 // Determine if link should be considered "active"
 const withActiveRoute = compose(

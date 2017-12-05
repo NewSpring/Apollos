@@ -8,7 +8,7 @@ const Container = styled({
   left: 4,
   top: 0,
   bottom: 0,
-})(View);
+}, 'BackButton.Container')(View);
 
 const BackButton = () => (
   <Container>
