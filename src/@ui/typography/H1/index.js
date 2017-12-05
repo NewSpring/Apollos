@@ -3,8 +3,6 @@ import { Text, Platform } from 'react-native';
 import { compose, pure, setPropTypes } from 'recompose';
 import PropTypes from 'prop-types';
 import styled from '@ui/styled';
-import rem from '@utils/remUnit';
-import verticalRhythm from '@utils/verticalRhythm';
 
 const enhance = compose(
   pure,
@@ -15,22 +13,22 @@ const enhance = compose(
 );
 
 const StyledH1 = styled(({ theme }) => ({
-  fontSize: rem(2.9, theme),
+  fontSize: theme.typography.rem(2.9),
   fontWeight: 'bold',
-  fontFamily: theme.fontFamilySans,
-  color: theme.primaryColor,
+  fontFamily: theme.typography.fontFamilySans,
+  color: theme.palette.primary,
   ...Platform.select({
     ios: {
-      lineHeight: verticalRhythm(2.9, 0.945, theme),
+      lineHeight: theme.typography.verticalRhythm(2.9, 0.945),
     },
     web: {
-      lineHeight: verticalRhythm(2.9, 0.945, theme),
+      lineHeight: theme.typography.verticalRhythm(2.9, 0.945),
     },
     android: {
-      lineHeight: verticalRhythm(2.9, 1.025, theme),
+      lineHeight: theme.typography.verticalRhythm(2.9, 1.025),
     },
   }),
-}))(Text);
+}), 'H1')(Text);
 
 const H1 = enhance(({
   children,

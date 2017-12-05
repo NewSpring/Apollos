@@ -3,8 +3,6 @@ import { Text } from 'react-native';
 import { compose, pure, setPropTypes } from 'recompose';
 import PropTypes from 'prop-types';
 import styled from '@ui/styled';
-import rem from '@utils/remUnit';
-import verticalRhythm from '@utils/verticalRhythm';
 
 const enhance = compose(
   pure,
@@ -15,11 +13,11 @@ const enhance = compose(
 );
 
 const StyledBodyCopy = styled(({ theme }) => ({
-  fontSize: rem(1, theme),
-  lineHeight: verticalRhythm(1, 1, theme),
-  fontFamily: theme.fontFamilySerif,
-  color: theme.baseFontColor,
-}))(Text);
+  fontSize: theme.typography.rem(1),
+  lineHeight: theme.typography.rem(1, 1),
+  fontFamily: theme.typography.fontFamilySerif,
+  color: theme.palette.text.primary,
+}), 'BodyCopy')(Text);
 
 const BodyCopy = enhance(({
   children,

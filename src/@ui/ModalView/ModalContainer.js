@@ -5,22 +5,22 @@ import styled from '@ui/styled';
 
 const narrow = styled(({ theme }) => ({
   flex: 1,
-  backgroundColor: theme.screenLight,
+  backgroundColor: theme.palette.background.default,
   overflow: 'hidden',
-}));
+}), 'ModalContainer@narrow');
 
 const wide = styled(({ theme }) => ({
   flex: 1,
   flexDirection: 'row-reverse',
   maxWidth: theme.breakpoints.sm,
-  backgroundColor: theme.screenLight,
+  backgroundColor: theme.palette.background.default,
   overflow: 'hidden',
-}));
+}), 'ModalContainer@wide');
 
 const BackgroundOverlay = styled(({ theme }) => ({
   ...StyleSheet.absoluteFillObject,
-  backgroundColor: theme.darkOverlayColor,
-}))(View);
+  backgroundColor: theme.palette.background.overlay,
+}), 'ModalContainer.BackgroundOverlay')(View);
 
 const ModalContainer = compose(
   mediaQuery(({ md }) => ({ minWidth: md }), modal => nest(BackgroundOverlay, modal)),

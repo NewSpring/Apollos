@@ -6,11 +6,10 @@ exports[`renders correctly 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": undefined,
-        "flexDirection": "column",
-        "justifyContent": "flex-start",
-        "paddingTop": 10,
-        "width": 80,
+        "backgroundColor": "#303030",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "paddingHorizontal": 10,
       },
       Object {
         "paddingBottom": 0,

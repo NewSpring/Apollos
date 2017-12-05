@@ -1,6 +1,6 @@
 import { PureComponent, Children } from 'react';
 import PropTypes from 'prop-types';
-import { DEFAULT_THEME, THEME_PROPS } from '../constants';
+import createTheme, { THEME_PROPS } from './createTheme';
 
 
 export default class ThemeProvider extends PureComponent {
@@ -11,7 +11,7 @@ export default class ThemeProvider extends PureComponent {
 
   static defaultProps = {
     children: null,
-    theme: DEFAULT_THEME,
+    theme: createTheme(),
   };
 
   static childContextTypes = {
@@ -19,7 +19,7 @@ export default class ThemeProvider extends PureComponent {
   };
 
   getChildContext = () => ({
-    theme: Object.assign({}, DEFAULT_THEME, this.props.theme),
+    theme: this.props.theme,
   })
 
   render() {

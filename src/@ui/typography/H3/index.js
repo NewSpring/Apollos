@@ -3,8 +3,6 @@ import { Text } from 'react-native';
 import { compose, pure, setPropTypes } from 'recompose';
 import PropTypes from 'prop-types';
 import styled from '@ui/styled';
-import rem from '@utils/remUnit';
-import verticalRhythm from '@utils/verticalRhythm';
 
 const enhance = compose(
   pure,
@@ -15,12 +13,12 @@ const enhance = compose(
 );
 
 const StyledH3 = styled(({ theme }) => ({
-  fontSize: rem(1.8, theme),
-  fontFamily: theme.fontFamilySans,
-  lineHeight: verticalRhythm(1.8, 1.145, theme),
+  fontSize: theme.typography.rem(1.8),
+  fontFamily: theme.typography.fontFamilySans,
+  lineHeight: theme.typography.verticalRhythm(1.8, 1.145),
   fontWeight: '700',
-  color: theme.baseFontColor,
-}))(Text);
+  color: theme.palette.text.primary,
+}), 'H3')(Text);
 
 const H3 = enhance(({
   children,

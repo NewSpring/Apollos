@@ -13,13 +13,13 @@ const styles = StyleSheet.create({
 });
 
 const Layout = compose(
-  styled(({ theme: { screenLight } = {} }) => ({
+  styled(({ theme }) => ({
     flex: 1,
-    backgroundColor: screenLight,
-  })),
+    backgroundColor: theme.palette.background.default,
+  }), 'TabBar.Layout'),
   mediaQuery(({ md }) => ({ maxWidth: md }),
-    styled(styles.mobile),
-    styled(styles.horizontalLayout),
+    styled(styles.mobile, 'TabBar@narrow'),
+    styled(styles.horizontalLayout, 'TabBar@wide'),
   ),
 )(View);
 

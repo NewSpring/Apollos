@@ -12,15 +12,15 @@ const StyledHeaderBar = styled({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
-})(View);
+}, 'Header.Bar')(View);
 
-const StyledSafeAreaView = styled(({ theme }) => ({
-  backgroundColor: theme.primaryColor,
-}))(SafeAreaView);
+const HeaderContainer = styled(({ theme }) => ({
+  backgroundColor: theme.palette.primary,
+}), 'Header.Container')(SafeAreaView);
 
 const StyledHeaderText = styled({
   color: 'white',
-})(Text); // todo: use a different Text component that brings in correct styles
+}, 'Header.Text')(Text); // todo: use a different Text component that brings in correct styles
 
 const enhance = compose(
   pure,
@@ -32,13 +32,13 @@ const enhance = compose(
 );
 
 const Header = enhance(({ titleText, backButton = false }) => (
-  <StyledSafeAreaView>
+  <HeaderContainer>
     <StatusBar barStyle="light-content" />
     <StyledHeaderBar>
       {backButton ? <BackButton /> : null}
       <StyledHeaderText>{titleText}</StyledHeaderText>
     </StyledHeaderBar>
-  </StyledSafeAreaView>
+  </HeaderContainer>
 ));
 
 export default Header;

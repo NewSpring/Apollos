@@ -23,9 +23,12 @@ const styles = StyleSheet.create({
 
 const TabBar = compose(
   styled(({ theme }) => ({
-    backgroundColor: theme.darkPrimaryColor,
-  })),
-  mediaQuery(({ md }) => ({ maxWidth: md }), styled(styles.horizontal), styled(styles.vertical)),
+    backgroundColor: theme.palette.darkPrimary,
+  }), 'TabBar'),
+  mediaQuery(({ md }) => ({ maxWidth: md }),
+    styled(styles.horizontal, 'TabBar@narrow'),
+    styled(styles.vertical, 'TabBar@wide'),
+  ),
 )(SafeAreaView);
 
 export default TabBar;

@@ -11,7 +11,7 @@ exports[`the P component should accept additional props 1`] = `
       "color": "#505050",
       "fontFamily": "Georgia",
       "fontSize": 18,
-      "lineHeight": 20,
+      "lineHeight": 18,
     }
   }
 >
@@ -30,7 +30,7 @@ exports[`the P component should accept and render passed in styles 1`] = `
       "color": "salmon",
       "fontFamily": "Georgia",
       "fontSize": 18,
-      "lineHeight": 20,
+      "lineHeight": 18,
     }
   }
 >
@@ -49,7 +49,7 @@ exports[`the P component should render correctly 1`] = `
       "color": "#505050",
       "fontFamily": "Georgia",
       "fontSize": 18,
-      "lineHeight": 20,
+      "lineHeight": 18,
     }
   }
 >

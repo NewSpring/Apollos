@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, StyleSheet, View, Easing, PanResponder } from 'react-native';
 import { clamp, get } from 'lodash';
-import { withTheme } from '@ui/theme';
+import styled from '@ui/styled';
 
 import interpolator from './interpolator';
 import findFirstMatch from './findFirstMatch';
@@ -41,10 +41,7 @@ class Transitioner extends PureComponent {
     height: PropTypes.number.isRequired,
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     directionPropNameForChildren: PropTypes.string,
-
-    // from withTheme HOC
-    screenDark: PropTypes.string,
-    screenLight: PropTypes.string,
+    style: PropTypes.any, // eslint-disable-line
   };
 
   static defaultProps = {
@@ -52,10 +49,9 @@ class Transitioner extends PureComponent {
     history: null,
     location: null,
     match: null,
-    screenDark: '#000',
-    screenLight: '#fff',
     direction: 'horizontal',
     directionPropNameForChildren: 'cardStackDirection',
+    style: undefined,
   };
 
   state = {
@@ -342,7 +338,7 @@ class Transitioner extends PureComponent {
   render() {
     return (
       <View
-        style={[StyleSheet.absoluteFill, { backgroundColor: this.props.screenDark }]}
+        style={this.props.style}
         {...this.panResponder.panHandlers}
       >
         {this.renderScreens()}
@@ -351,6 +347,7 @@ class Transitioner extends PureComponent {
   }
 }
 
-export default withTheme(({ screenLight, screenDark }) =>
-  ({ screenLight, screenDark }),
-)(Transitioner);
+export default styled(({ theme }) => ({
+  backgroundColor: theme.palette.black,
+  ...StyleSheet.absoluteFillObject,
+}), 'CardStack.Transitioner')(Transitioner);

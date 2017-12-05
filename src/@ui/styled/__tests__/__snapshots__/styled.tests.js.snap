@@ -24,7 +24,7 @@ exports[`the styled HOC provides a theme 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#6bac43",
+      "backgroundColor": undefined,
     }
   }
 />
