@@ -41,7 +41,7 @@ describe('the styled HOC', () => {
     const StyledView = styled(() => ({ backgroundColor: 'red' }), 'StyledView')(View);
     const overrides = { StyledView: { backgroundColor: 'green' } };
     const tree = renderer.create(
-      <ThemeProvider theme={{ overrides }}>
+      <ThemeProvider themeInput={{ overrides }}>
         <StyledView />
       </ThemeProvider>,
     );
