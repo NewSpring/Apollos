@@ -8,8 +8,8 @@ import withTheme from '@primitives/withTheme';
 import styled from '@primitives/styled';
 import Icon from '@primitives/Icon';
 import rem from '@utils/remUnit';
+import CategoryLabel from '@primitives/CategoryLabel';
 
-import Category from './Category';
 import CardImage from './CardImage';
 import {
   CardWrapper,
@@ -66,7 +66,7 @@ const FeedItemCard = enhance(({
         <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
 
         <Footer>
-          <Category type={startCase(toLower(category))} color={fontColor} />
+          <CategoryLabel type={startCase(toLower(category))} color={fontColor} />
           <LikeButton>
             <Icon name={'like'} size={rem(1.2, theme)} fill={fontColor} />
           </LikeButton>

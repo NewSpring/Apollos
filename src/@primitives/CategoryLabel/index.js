@@ -48,7 +48,7 @@ const getIconName = (type) => {
   }
 };
 
-const Category = enhance(({
+const CategoryLabel = enhance(({
   type,
   color: fontColor,
   theme,
@@ -63,4 +63,4 @@ const Category = enhance(({
   </Wrapper>
 ));
 
-export default Category;
+export default CategoryLabel;
