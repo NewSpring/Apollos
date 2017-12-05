@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 
 const TabBar = compose(
   styled(({ theme }) => ({
-    backgroundColor: theme.colors.darkPrimary,
+    backgroundColor: theme.colors.common.darkPrimary,
   }), 'TabBar'),
   mediaQuery(({ md }) => ({ maxWidth: md }),
     styled(styles.horizontal, 'TabBar@narrow'),

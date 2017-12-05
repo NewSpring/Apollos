@@ -10,7 +10,7 @@ const breakpoints = {
   lg: 1200,
 };
 
-const spacing = {
+const sizing = {
   baseUnit: 20,
   borderRadius: 6,
 };
@@ -28,7 +28,7 @@ const createTheme = ({
     breakpoints,
     ...merge({
       breakpoints,
-      spacing,
+      sizing,
     }, other),
   };
 };
@@ -42,7 +42,7 @@ export const THEME_PROPS = {
     md: PropTypes.number,
     lg: PropTypes.number,
   }),
-  spacing: PropTypes.shape({
+  sizing: PropTypes.shape({
     baseUnit: PropTypes.number,
   }),
   overrides: PropTypes.object,

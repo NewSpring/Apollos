@@ -22,11 +22,9 @@ export const common = {
 
 export const light = {
   text: {
-    primary: '#505050',
+    primary: common.darkSecondary, // TODO: should this be darkPrimary?
     secondary: common.darkSecondary,
     tertiary: common.darkTertiary,
-    // disabled: 'rgba(0, 0, 0, 0.38)',
-    // icon: 'rgba(0, 0, 0, 0.38)',
   },
   background: {
     default: common.white,
@@ -46,8 +44,6 @@ export const dark = {
     primary: common.lightPrimary,
     secondary: common.lightSecondary,
     tertiary: common.lightTertiary,
-    // disabled: 'rgba(255, 255, 255, 0.5)',
-    // icon: 'rgba(255, 255, 255, 0.5)',
   },
   background: {
     default: common.darkPrimary,
@@ -70,7 +66,7 @@ const createColors = ({
   if (!shades[type]) throw new Error(`The colors type ${type} is not supported`);
 
   return merge({
-    ...common,
+    common,
     shades,
     ...shades[type],
   }, other);

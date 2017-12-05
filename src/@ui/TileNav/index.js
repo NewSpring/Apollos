@@ -7,8 +7,8 @@ import styled from '@ui/styled';
 import NavItem from './NavItem';
 
 const FlexedChildren = styled(({ theme }) => ({
-  paddingRight: theme.spacing.baseUnit / 2,
-  paddingBottom: theme.spacing.baseUnit / 2,
+  paddingRight: theme.sizing.baseUnit / 2,
+  paddingBottom: theme.sizing.baseUnit / 2,
   flexDirection: 'row',
   flexWrap: 'wrap',
   justifyContent: 'space-around',
@@ -16,8 +16,8 @@ const FlexedChildren = styled(({ theme }) => ({
 
 const FlexedChild = styled(({ theme }) => ({
   width: '50%',
-  paddingLeft: theme.spacing.baseUnit / 2,
-  paddingTop: theme.spacing.baseUnit / 2,
+  paddingLeft: theme.sizing.baseUnit / 2,
+  paddingTop: theme.sizing.baseUnit / 2,
 }), 'TileNav.Child')(View);
 
 const enhance = compose(

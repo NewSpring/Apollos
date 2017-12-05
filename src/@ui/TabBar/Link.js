@@ -44,7 +44,7 @@ const withActiveRoute = compose(
 
 // Get color from active route
 const determineColorFromActiveRoute =
-  withTheme(({ theme: { colors: { primary, lightPrimary } } = {}, isActive }) => ({
+  withTheme(({ theme: { colors: { common: { primary, lightPrimary } } } = {}, isActive }) => ({
     color: isActive ? primary : lightPrimary,
   }));
 

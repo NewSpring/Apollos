@@ -9,16 +9,16 @@ import LinearGradient from '@ui/LinearGradient';
 import NavItemImage from './NavItemImage';
 
 const CardView = styled(({ theme }) => ({
-  borderRadius: theme.spacing.borderRadius,
+  borderRadius: theme.sizing.borderRadius,
   overflow: 'hidden',
 }), 'TileNav.NavItem')(View);
 
 const NavItemText = styled(({ theme }) => ({
   position: 'absolute',
-  bottom: theme.spacing.baseUnit,
-  left: theme.spacing.baseUnit,
+  bottom: theme.sizing.baseUnit,
+  left: theme.sizing.baseUnit,
   backgroundColor: 'transparent',
-  color: theme.colors.lightPrimary,
+  color: theme.colors.common.lightPrimary,
 }), 'TileNav.NavItem.Text')(H6);
 
 const enhance = compose(
