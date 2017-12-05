@@ -125,27 +125,32 @@ exports[`The FeedView component renders correctly 1`] = `
               }
             }
           >
-            <Image
-              ImageComponent={[Function]}
-              source={
-                Array [
-                  Object {
-                    "uri": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
-                    "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
-                  },
-                ]
-              }
+            <View
               style={
                 Object {
-                  "borderTopLeftRadius": 6,
-                  "borderTopRightRadius": 6,
                   "flex": 1,
-                  "height": undefined,
-                  "resizeMode": "cover",
-                  "width": undefined,
                 }
               }
-            />
+            >
+              <Image
+                source={
+                  Array [
+                    Object {
+                      "uri": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
+                      "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
+                    },
+                  ]
+                }
+                style={
+                  Object {
+                    "flex": 1,
+                    "height": undefined,
+                    "resizeMode": "cover",
+                    "width": undefined,
+                  }
+                }
+              />
+            </View>
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -314,27 +319,67 @@ exports[`The FeedView component renders correctly 1`] = `
               }
             }
           >
-            <Image
-              ImageComponent={[Function]}
-              source={
-                Array [
-                  Object {
-                    "uri": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
-                    "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
-                  },
-                ]
-              }
+            <View
               style={
                 Object {
-                  "borderTopLeftRadius": 6,
-                  "borderTopRightRadius": 6,
                   "flex": 1,
-                  "height": undefined,
-                  "resizeMode": "cover",
-                  "width": undefined,
                 }
               }
-            />
+            >
+              <Image
+                source={
+                  Array [
+                    Object {
+                      "uri": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
+                      "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
+                    },
+                  ]
+                }
+                style={
+                  Object {
+                    "flex": 1,
+                    "height": undefined,
+                    "resizeMode": "cover",
+                    "width": undefined,
+                  }
+                }
+              />
+              <ExponentLinearGradient
+                colors={
+                  Array [
+                    5783656,
+                    4283973736,
+                  ]
+                }
+                end={
+                  Array [
+                    0,
+                    1,
+                  ]
+                }
+                locations={
+                  Array [
+                    0.3,
+                    1,
+                  ]
+                }
+                start={
+                  Array [
+                    0,
+                    0,
+                  ]
+                }
+                style={
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              />
+            </View>
             <Text
               accessible={true}
               allowFontScaling={true}
