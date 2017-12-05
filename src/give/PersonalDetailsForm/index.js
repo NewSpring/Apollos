@@ -124,10 +124,10 @@ export class PersonalDetailsForm extends Component {
 const enhance = compose(
   withCheckout,
   mapProps(props => ({
-    ...props,
     firstName: get(props, 'person.firstName', ''),
     lastName: get(props, 'person.lastName', ''),
     email: get(props, 'person.email', ''),
+    ...props,
   })),
 );
 

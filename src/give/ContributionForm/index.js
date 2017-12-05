@@ -159,9 +159,9 @@ export class ContributionForm extends Component {
 const enhance = compose(
   withFinancialAccounts,
   mapProps(props => ({
-    ...props,
     funds: props.accounts,
     isLoading: props.isLoading,
+    ...props,
   })),
 );
 
