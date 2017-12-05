@@ -16,7 +16,7 @@ const StyledUIText = styled(({ theme }) => ({
   fontSize: theme.typography.rem(1),
   fontFamily: theme.typography.fontFamilySans,
   lineHeight: theme.typography.verticalRhythm(1, 1),
-  color: theme.palette.text.primary,
+  color: theme.colors.text.primary,
 }), 'UIText')(Text);
 
 const UIText = enhance(({

@@ -1,15 +1,15 @@
 import createTheme from './createTheme';
 
 describe('createTheme', () => {
-  it('has a palette', () => {
+  it('has a colors', () => {
     const theme = createTheme();
-    expect(theme).toHaveProperty('palette');
+    expect(theme).toHaveProperty('colors');
   });
 
-  it('has a custom palette', () => {
-    const customPalette = { primary: 'red', otherColor: 'green' };
-    const theme = createTheme({ palette: customPalette });
-    expect(theme.palette).toEqual(expect.objectContaining(customPalette));
+  it('has a custom colors', () => {
+    const customColors = { primary: 'red', otherColor: 'green' };
+    const theme = createTheme({ colors: customColors });
+    expect(theme.colors).toEqual(expect.objectContaining(customColors));
   });
 
   it('has typography', () => {

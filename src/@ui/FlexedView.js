@@ -3,7 +3,7 @@ import styled from '@ui/styled';
 
 const FlexedView = styled(({ theme }) => ({
   flex: 1,
-  backgroundColor: theme.palette.background.default,
+  backgroundColor: theme.colors.background.default,
 }), 'FlexedView')(View);
 
 export default FlexedView;

@@ -5,7 +5,7 @@ import styled from '@ui/styled';
 
 const narrow = styled(({ theme }) => ({
   flex: 1,
-  backgroundColor: theme.palette.background.default,
+  backgroundColor: theme.colors.background.default,
   overflow: 'hidden',
 }), 'ModalContainer@narrow');
 
@@ -13,13 +13,13 @@ const wide = styled(({ theme }) => ({
   flex: 1,
   flexDirection: 'row-reverse',
   maxWidth: theme.breakpoints.sm,
-  backgroundColor: theme.palette.background.default,
+  backgroundColor: theme.colors.background.default,
   overflow: 'hidden',
 }), 'ModalContainer@wide');
 
 const BackgroundOverlay = styled(({ theme }) => ({
   ...StyleSheet.absoluteFillObject,
-  backgroundColor: theme.palette.background.overlay,
+  backgroundColor: theme.colors.background.overlay,
 }), 'ModalContainer.BackgroundOverlay')(View);
 
 const ModalContainer = compose(

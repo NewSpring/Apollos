@@ -1,6 +1,6 @@
 import { merge } from 'lodash';
 import PropTypes from 'prop-types';
-import createPalette, { PALETTE_PROPS } from './createPalette';
+import createColors, { COLORS_PROPS } from './createColors';
 import createTypography, { TYPOGRAPHY_PROPS } from './createTypography';
 
 const breakpoints = {
@@ -16,15 +16,15 @@ const spacing = {
 };
 
 const createTheme = ({
-  palette: paletteInput = {},
+  colors: colorsInput = {},
   typography: typographyInput = {},
   ...other
 } = {}) => {
-  const palette = createPalette(paletteInput);
+  const colors = createColors(colorsInput);
 
   return {
-    palette,
-    typography: createTypography(palette, typographyInput),
+    colors,
+    typography: createTypography(colors, typographyInput),
     breakpoints,
     ...merge({
       breakpoints,
@@ -34,7 +34,7 @@ const createTheme = ({
 };
 
 export const THEME_PROPS = {
-  palette: PropTypes.shape(PALETTE_PROPS),
+  colors: PropTypes.shape(COLORS_PROPS),
   typography: PropTypes.shape(TYPOGRAPHY_PROPS),
   breakpoints: PropTypes.shape({
     xs: PropTypes.number,

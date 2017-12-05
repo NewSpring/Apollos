@@ -134,8 +134,8 @@ export class Seeker extends Component {
 }
 
 export default withTheme(({ theme, ...otherProps } = {}) => ({
-  progressColor: theme.palette.primary,
-  knobColor: theme.palette.secondary,
-  trackColor: theme.palette.darkPrimary,
+  progressColor: theme.colors.primary,
+  knobColor: theme.colors.secondary,
+  trackColor: theme.colors.darkPrimary,
   ...otherProps,
 }))(Seeker);

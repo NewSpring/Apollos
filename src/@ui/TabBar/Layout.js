@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 const Layout = compose(
   styled(({ theme }) => ({
     flex: 1,
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: theme.colors.background.default,
   }), 'TabBar.Layout'),
   mediaQuery(({ md }) => ({ maxWidth: md }),
     styled(styles.mobile, 'TabBar@narrow'),

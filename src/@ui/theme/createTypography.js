@@ -19,7 +19,7 @@ const verticalRhythm = ({ baseLineHeight, baseFontSize }) => (fontSize, relative
   return rem({ baseFontSize })(verticalRatio * (fontSize * relativeValue));
 };
 
-const createTypography = (palette, typographyInput = {}) => {
+const createTypography = (colors, typographyInput = {}) => {
   // todo: add styles for different typography styles, like H1
   const typography = merge(common, typographyInput);
 

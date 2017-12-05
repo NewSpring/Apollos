@@ -17,7 +17,7 @@ const StyledH6 = styled(({ theme }) => ({
   fontFamily: theme.typography.fontFamilySans,
   lineHeight: theme.typography.verticalRhythm(0.875, 1.02),
   fontWeight: '700',
-  color: theme.palette.text.primary,
+  color: theme.colors.text.primary,
 }), 'H6')(Text);
 
 const H6 = enhance(({

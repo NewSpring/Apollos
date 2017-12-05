@@ -62,12 +62,12 @@ export const dark = {
   },
 };
 
-const createPalette = ({
+const createColors = ({
   type = 'light',
   ...other
 }) => {
   const shades = { dark, light };
-  if (!shades[type]) throw new Error(`The palette type ${type} is not supported`);
+  if (!shades[type]) throw new Error(`The colors type ${type} is not supported`);
 
   return merge({
     ...common,
@@ -76,7 +76,7 @@ const createPalette = ({
   }, other);
 };
 
-const PALETTE_SHADES_PROPS = {
+const COLORS_SHADES_PROPS = {
   text: PropTypes.shape({
     primary: PropTypes.string,
     secondary: PropTypes.string,
@@ -86,7 +86,7 @@ const PALETTE_SHADES_PROPS = {
   }),
 };
 
-export const PALETTE_PROPS = {
+export const COLORS_PROPS = {
   primary: PropTypes.string,
   secondary: PropTypes.string,
   tertiary: PropTypes.string,
@@ -94,11 +94,11 @@ export const PALETTE_PROPS = {
   white: PropTypes.string,
   transparent: PropTypes.string,
   error: PropTypes.string,
-  ...PALETTE_SHADES_PROPS,
+  ...COLORS_SHADES_PROPS,
   shades: PropTypes.shape({
-    light: PropTypes.shape(PALETTE_SHADES_PROPS),
-    dark: PropTypes.shape(PALETTE_SHADES_PROPS),
+    light: PropTypes.shape(COLORS_SHADES_PROPS),
+    dark: PropTypes.shape(COLORS_SHADES_PROPS),
   }),
 };
 
-export default createPalette;
+export default createColors;

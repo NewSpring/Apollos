@@ -16,7 +16,7 @@ const StyledH1 = styled(({ theme }) => ({
   fontSize: theme.typography.rem(2.9),
   fontWeight: 'bold',
   fontFamily: theme.typography.fontFamilySans,
-  color: theme.palette.primary,
+  color: theme.colors.primary,
   ...Platform.select({
     ios: {
       lineHeight: theme.typography.verticalRhythm(2.9, 0.945),

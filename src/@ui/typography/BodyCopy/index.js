@@ -16,7 +16,7 @@ const StyledBodyCopy = styled(({ theme }) => ({
   fontSize: theme.typography.rem(1),
   lineHeight: theme.typography.rem(1, 1),
   fontFamily: theme.typography.fontFamilySerif,
-  color: theme.palette.text.primary,
+  color: theme.colors.text.primary,
 }), 'BodyCopy')(Text);
 
 const BodyCopy = enhance(({
