@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`the styled HOC allows a theme to supply overrides 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "green",
+    }
+  }
+/>
+`;
+
 exports[`the styled HOC passes style literal to the base component 1`] = `
 <View
   style={

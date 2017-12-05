@@ -37,4 +37,14 @@ describe('the styled HOC', () => {
     );
     expect(tree).toMatchSnapshot();
   });
+  it('allows a theme to supply overrides', () => {
+    const StyledView = styled(() => ({ backgroundColor: 'red' }), 'StyledView')(View);
+    const overrides = { StyledView: { backgroundColor: 'green' } };
+    const tree = renderer.create(
+      <ThemeProvider theme={{ overrides }}>
+        <StyledView />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
 });

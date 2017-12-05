@@ -1,5 +1,5 @@
 import { withPropsOnChange, compose, mapProps } from 'recompose';
-import { isEqual } from 'lodash';
+import { isEqual, get } from 'lodash';
 import withTheme from '@primitives/withTheme';
 
 import mergeStyles from './mergeStyles';
@@ -35,7 +35,7 @@ const getStyleLiteralFromStyledInput = (styleInput, { ownProps = {}, theme = {} 
   return generatedStyle;
 };
 
-const styled = styleInput => compose(
+const styled = (styleInput, fqn) => compose(
   mapProps(props => ({ ownProps: props })),
   withTheme(({ theme }) => ({ theme })),
   withPropsOnChange(
@@ -47,8 +47,11 @@ const styled = styleInput => compose(
     ),
     ({ ownProps, theme }) => {
       let style = getStyleLiteralFromStyledInput(styleInput, { ownProps, theme });
-      if (ownProps.style) style = mergeStyles(style, ownProps.style);
 
+      const themeOverrides = fqn ? get(theme, `overrides.${fqn}`, {}) : {};
+      const { style: ownPropsStyle = {} } = ownProps;
+
+      style = mergeStyles(style, themeOverrides, ownPropsStyle);
       style = createStyleSheet(style);
 
       return { style };
