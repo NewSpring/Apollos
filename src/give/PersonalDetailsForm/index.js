@@ -24,6 +24,10 @@ export class PersonalDetailsForm extends Component {
       ]),
       label: PropTypes.string,
     })),
+    campusId: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     email: PropTypes.string,
@@ -33,6 +37,7 @@ export class PersonalDetailsForm extends Component {
     isLoading: true,
     onSubmit() {},
     campuses: [],
+    campusId: '',
     firstName: '',
     lastName: '',
     email: '',
@@ -50,14 +55,8 @@ export class PersonalDetailsForm extends Component {
       firstName: nextProps.firstName,
       lastName: nextProps.lastName,
       email: nextProps.email,
+      campusId: nextProps.campusId,
     });
-
-    const isInitialRender = this.props.isLoading && !nextProps.isLoading;
-    if (isInitialRender) {
-      this.setState({
-        campusId: nextProps.campuses[0] && nextProps.campuses[0].id,
-      });
-    }
   }
 
   get value() {
@@ -127,6 +126,7 @@ const enhance = compose(
     firstName: get(props, 'person.firstName', ''),
     lastName: get(props, 'person.lastName', ''),
     email: get(props, 'person.email', ''),
+    campusId: get(props, 'person.campus.id') || get(props, 'campuses.0.id'),
     ...props,
   })),
 );
