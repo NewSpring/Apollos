@@ -1,5 +1,6 @@
 import { graphql } from 'react-apollo';
 import fetchMoreResolver from '@data/utils/fetchMoreResolver';
+import identifyCategory from '@data/utils/identifyCategory';
 import storiesQuery from './storiesQuery';
 
 export default graphql(storiesQuery, {
@@ -10,7 +11,7 @@ export default graphql(storiesQuery, {
     },
   }),
   props: ({ data } = {}) => ({
-    content: data.content,
+    content: data.content && data.content.map(identifyCategory),
     isLoading: data.loading,
     refetch: data.refetch,
     fetchMore: fetchMoreResolver({
