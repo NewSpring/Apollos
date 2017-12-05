@@ -1,7 +1,7 @@
 import { AppRegistry, Platform } from 'react-native';
 import { ApolloProvider } from 'react-apollo';
 import { nest, withProps } from 'recompose';
-import ThemeProvider from '@ui/ThemeProvider';
+import { ThemeProvider } from '@ui/theme';
 import FontLoader from '@ui/FontLoader';
 import Client from '@data/Client';
 import AppRouter from './AppRouter';

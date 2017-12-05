@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ThemeProvider from '@ui/ThemeProvider';
+import { ThemeProvider } from '@ui/theme';
 import H5 from './';
 
 describe('the H5 component', () => {

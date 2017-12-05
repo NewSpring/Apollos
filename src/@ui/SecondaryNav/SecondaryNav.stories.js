@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react-native';
 
-import ThemeProvider from '@ui/ThemeProvider';
+import { ThemeProvider } from '@ui/theme';
 import { Router } from '../NativeWebRouter';
 import SecondaryNav, { Link } from './';
 

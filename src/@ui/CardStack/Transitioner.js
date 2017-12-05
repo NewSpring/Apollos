@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, StyleSheet, View, Easing, PanResponder } from 'react-native';
 import { clamp, get } from 'lodash';
-import withTheme from '@ui/withTheme';
+import { withTheme } from '@ui/theme';
 
 import interpolator from './interpolator';
 import findFirstMatch from './findFirstMatch';

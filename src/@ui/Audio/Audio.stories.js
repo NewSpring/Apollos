@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import Icon from '@ui/Icon';
 
-import ThemeProvider from '@ui/ThemeProvider';
+import { ThemeProvider } from '@ui/theme';
 import Audio from './';
 
 storiesOf('Audio', module)

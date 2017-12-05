@@ -1,6 +1,6 @@
 import { withPropsOnChange, compose, mapProps } from 'recompose';
 import { isEqual, get } from 'lodash';
-import withTheme from '@ui/withTheme';
+import { withTheme } from '@ui/theme';
 
 import mergeStyles from './mergeStyles';
 import createStyleSheet from './createStyleSheet';

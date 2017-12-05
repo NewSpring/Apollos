@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { View, Dimensions } from 'react-native';
-import ThemeProvider from '@ui/ThemeProvider';
+import { ThemeProvider } from '@ui/theme';
 import { DEFAULT_THEME } from '@ui/constants';
 import enhancer from '../enhancer';
 

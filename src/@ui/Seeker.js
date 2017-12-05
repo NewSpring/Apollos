@@ -4,7 +4,7 @@ import {
   PanResponder,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import withTheme from './withTheme';
+import { withTheme } from '@ui/theme';
 
 export class Seeker extends Component {
   static propTypes = {

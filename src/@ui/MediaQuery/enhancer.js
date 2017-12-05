@@ -1,7 +1,8 @@
 import { branch, compose, mapProps } from 'recompose';
 import { every } from 'lodash';
+import { withTheme } from '@ui/theme';
+
 import withWindow from './withWindow';
-import withTheme from '../withTheme';
 import queryMatcher from './queryMatcher';
 
 // Make it easy to do breakpoint-based component branching, a-la recompose's branch method.

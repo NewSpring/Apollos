@@ -4,7 +4,7 @@ import { get, every } from 'lodash';
 import { pick, mapValues, flow } from 'lodash/fp';
 import { compose } from 'recompose';
 
-import withTheme from '../withTheme';
+import { withTheme } from '@ui/theme';
 import withWindow from './withWindow';
 import queryMatcher from './queryMatcher';
 

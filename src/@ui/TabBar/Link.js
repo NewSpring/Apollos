@@ -8,7 +8,7 @@ import { compose, mapProps, setPropTypes, onlyUpdateForPropTypes } from 'recompo
 import PropTypes from 'prop-types';
 import Icon from '@ui/Icon';
 import { Link, withRouter, matchLocationToPath } from '@ui/NativeWebRouter';
-import withTheme from '@ui/withTheme';
+import { withTheme } from '@ui/theme';
 import MediaQuery, { enhancer as mediaQuery } from '@ui/MediaQuery';
 import styled from '@ui/styled';
 

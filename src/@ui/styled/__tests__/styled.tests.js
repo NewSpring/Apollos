@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { compose } from 'recompose';
 import { View } from 'react-native';
-import ThemeProvider from '@ui/ThemeProvider';
+import { ThemeProvider } from '@ui/theme';
 import styled from '../';
 
 describe('the styled HOC', () => {

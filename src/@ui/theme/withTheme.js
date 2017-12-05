@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { compose, mapProps, getContext } from 'recompose';
-import { THEME_PROPS } from './constants';
+import { THEME_PROPS } from '../constants';
 
 
 const DEFAULT_MAPPER_FN = ({ theme } = {}) => ({ ...theme });
