@@ -21,7 +21,6 @@ const contentFragment = gql`
       }
       isLight
       colors {
-        id
         value
         description
       }
