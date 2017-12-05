@@ -8,14 +8,18 @@ export default graphql(checkoutQuery, {
       campuses = [],
       countries = [],
       states = [],
+      person,
+      savedPayments,
       loading,
     } = data;
 
     return ({
       isLoading: loading,
-      campuses: campuses.map(x => ({ label: x.name, value: x.id })),
-      countries: countries.map(x => ({ label: x.name, value: x.value })),
-      states: states.map(x => ({ label: x.name, value: x.value })),
+      campuses: campuses.map(x => ({ label: x.name, id: x.id })),
+      countries: countries.map(x => ({ label: x.name, id: x.value })),
+      states: states.map(x => ({ label: x.name, id: x.value })),
+      person,
+      savedPayments,
     });
   },
 });

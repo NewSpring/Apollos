@@ -6,6 +6,7 @@ import Header from '@modules/Header';
 import FlexedView from '@primitives/FlexedView';
 import withGive from '@data/withGive';
 import ContributionForm from './ContributionForm';
+import PersonalDetailsForm from './PersonalDetailsForm';
 
 export class Now extends Component {
   static propTypes = {
@@ -17,13 +18,13 @@ export class Now extends Component {
   };
 
   render() {
-    console.log('props', this.props);
     return (
       <FlexedView>
         <Header titleText="Give Dashboard" />
         <ContributionForm
           onSubmit={this.props.onSubmit}
         />
+        <PersonalDetailsForm />
       </FlexedView>
     );
   }
