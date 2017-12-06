@@ -1,12 +1,14 @@
 import gql from 'graphql-tag';
 
+// TODO: The states query is returning both US states
+// and Canadian Territories
 export default gql`
   query GetCheckoutData($state: Int!, $country: Int!) {
     states: definedValues(id: $state, all: true) {
-      name: description, value, id, _id
+      label: description, id: value
     }
     countries: definedValues(id: $country, all: true) {
-      name: description, value, id, _id
+      label: description, id: value
     }
     person: currentPerson {
       firstName
@@ -20,6 +22,6 @@ export default gql`
       name, id: entityId, date,
       payment { accountNumber, paymentType }
     }
-    campuses { name, id: entityId }
+    campuses { label: name, id: entityId }
   }
 `;
