@@ -480,8 +480,8 @@ analytics-node@^2.1.0:
     superagent-retry "^0.6.0"
 
 animated@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/animated/-/animated-0.2.0.tgz#1a0e96f097b3fbc5b64d7eddc723bcc0a6f97633"
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/animated/-/animated-0.2.1.tgz#c3e19c60207597493e0b93f9f009b1b7bc603c41"
   dependencies:
     invariant "^2.2.0"
     normalize-css-color "^1.0.1"
@@ -8394,8 +8394,8 @@ react-native-vector-icons@4.1.1:
     yargs "^6.3.0"
 
 react-native-web@^0.1.13:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.1.13.tgz#9a24fab792a81d8c462c7576e949ec8ebed60303"
+  version "0.1.16"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.1.16.tgz#e0d1a43b3b59a8371cdb538c11088d206b29f2b1"
   dependencies:
     animated "^0.2.0"
     array-find-index "^1.0.2"

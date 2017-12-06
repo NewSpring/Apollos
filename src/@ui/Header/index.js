@@ -31,12 +31,12 @@ const enhance = compose(
   }),
 );
 
-const Header = enhance(({ titleText, backButton = false }) => (
-  <HeaderContainer>
+const Header = enhance(({ titleText, backButton = false, backgroundColor, textColor }) => (
+  <HeaderContainer style={backgroundColor ? { backgroundColor } : null}>
     <StatusBar barStyle="light-content" />
     <StyledHeaderBar>
       {backButton ? <BackButton /> : null}
-      <StyledHeaderText>{titleText}</StyledHeaderText>
+      <StyledHeaderText style={textColor ? { color: textColor } : null}>{titleText}</StyledHeaderText>
     </StyledHeaderBar>
   </HeaderContainer>
 ));

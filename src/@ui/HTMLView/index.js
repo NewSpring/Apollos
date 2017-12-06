@@ -1,17 +1,19 @@
 import React, { PureComponent, cloneElement } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, Linking, TouchableOpacity, Image } from 'react-native';
+import { View, Text, Linking, Image } from 'react-native';
 import { Parser, DomHandler } from 'htmlparser2';
 import { decodeHTML } from 'entities';
 import { BodyCopy, H1, H2, H3, H4, H5, H6, H7 } from '@ui/typography';
+import Paragraph from '@ui/Paragraph';
+import { Link } from './styles';
 
 const LINE_BREAK = '\n';
 
 export const defaultRenderer = (node, { children }) => {
   if (node.type === 'text' && node.data && node.data.trim()) return <Text>{decodeHTML(node.data)}</Text>;
   switch (node.name) {
-    case 'p': return <BodyCopy>{children}</BodyCopy>;
-    case 'span': return <Text>{children}</Text>;
+    case 'p': return <Paragraph>{children}</Paragraph>;
+    case 'span': return <BodyCopy>{children}</BodyCopy>;
     case 'h1': return <H1>{children}</H1>;
     case 'h2': return <H2>{children}</H2>;
     case 'h3': return <H3>{children}</H3>;
@@ -23,7 +25,7 @@ export const defaultRenderer = (node, { children }) => {
       const url = node.attribs && node.attribs.href;
       const onPress = () => Linking.openURL(decodeHTML(url));
       if (url) {
-        return <TouchableOpacity onPress={onPress}>{children}</TouchableOpacity>;
+        return (<Link onPress={onPress}>{children}</Link>);
       }
     }
     // ignoring fallthrough above (the conditional return) to
