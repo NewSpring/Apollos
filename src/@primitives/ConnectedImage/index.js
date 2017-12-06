@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
-import { Platform } from 'react-native';
+import { Platform, Image } from 'react-native';
 import { every } from 'lodash';
 import PropTypes from 'prop-types';
-import { Image } from 'react-native';
 
 // This mirrors the File resource we get from Heighliner:
 const ImageSourceType = PropTypes.oneOfType([
