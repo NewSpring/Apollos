@@ -5,6 +5,7 @@ import resetContributionsMutation from './resetContributionsMutation';
 import setContributionFrequencyMutation from './setContributionFrequencyMutation';
 import setContributionStartDateMutation from './setContributionStartDateMutation';
 import setBillingPersonMutation from './setBillingPersonMutation';
+import setBillingAddressMutation from './setBillingAddressMutation';
 import contributionsQuery from './contributionsQuery';
 
 const addContribution = graphql(addContributionMutation, {
@@ -52,6 +53,21 @@ const setBillingPerson = graphql(setBillingPersonMutation, {
   }),
 });
 
+const setBillingAddress = graphql(setBillingAddressMutation, {
+  props: ({ mutate }) => ({
+    setBillingAddress: props => (mutate({
+      variables: {
+        street1: props.street1,
+        street2: props.street2,
+        countryId: props.countryId,
+        city: props.city,
+        stateId: props.stateId,
+        zipCode: props.zipCode,
+      },
+    })),
+  }),
+});
+
 const get = graphql(contributionsQuery, {
   props({ data: { contributions } }) {
     if (!contributions) return { contributions };
@@ -70,5 +86,6 @@ export default compose(
   setContributionFrequency,
   setContributionStartDate,
   setBillingPerson,
+  setBillingAddress,
   get,
 );

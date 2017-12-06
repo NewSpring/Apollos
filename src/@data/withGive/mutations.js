@@ -104,3 +104,30 @@ export function setBillingPerson(result, variables, { cache }) {
 
   return null;
 }
+
+export function setBillingAddress(result, variables, { cache }) {
+  const { contributions: state } = cache.readQuery({
+    query: contributionsQuery,
+    variables,
+  });
+
+  cache.writeQuery({
+    query: contributionsQuery,
+    variables,
+    data: {
+      contributions: {
+        ...state,
+        ...pick(variables, [
+          'street1',
+          'street2',
+          'countryId',
+          'city',
+          'stateId',
+          'zipCode',
+        ]),
+      },
+    },
+  });
+
+  return null;
+}

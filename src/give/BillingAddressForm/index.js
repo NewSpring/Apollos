@@ -37,6 +37,10 @@ export class BillingAddressForm extends Component {
       PropTypes.string,
       PropTypes.number,
     ]),
+    street1: PropTypes.string,
+    street2: PropTypes.string,
+    city: PropTypes.string,
+    zipCode: PropTypes.string,
   };
 
   static defaultProps = {
@@ -44,19 +48,31 @@ export class BillingAddressForm extends Component {
     onSubmit() {},
     countries: [],
     states: [],
+    street1: '',
+    street2: '',
     countryId: 'US',
+    city: '',
     stateId: 'SC',
+    zipCode: '',
   };
 
   state = {
+    street1: '',
+    street2: '',
     countryId: 'US',
+    city: '',
     stateId: 'SC',
+    zipCode: '',
   };
 
   componentWillReceiveProps(nextProps) {
     this.setState({
+      street1: nextProps.street1,
+      street2: nextProps.street2,
       countryId: nextProps.countryId,
+      city: nextProps.city,
       stateId: nextProps.stateId,
+      zipCode: nextProps.zipCode,
     });
   }
 

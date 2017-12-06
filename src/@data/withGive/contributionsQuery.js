@@ -10,6 +10,12 @@ export default gql`
       lastName
       email
       campusId
+      street1
+      street2
+      countryId
+      city
+      stateId
+      zipCode
     }
   }
 `;

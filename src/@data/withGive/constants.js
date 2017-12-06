@@ -6,4 +6,10 @@ export const INITIAL_STATE = {
   lastName: '',
   email: '',
   campusId: '',
+  street1: '',
+  street2: '',
+  countryId: 'US',
+  city: '',
+  stateId: 'SC',
+  zipCode: '',
 };
