@@ -5,10 +5,10 @@ import gql from 'graphql-tag';
 export default gql`
   query GetCheckoutData($state: Int!, $country: Int!) {
     states: definedValues(id: $state, all: true) {
-      label: description, id: value
+      description, id, _id, value
     }
     countries: definedValues(id: $country, all: true) {
-      label: description, id: value
+      description, id, _id, value
     }
     person: currentPerson {
       firstName

@@ -21,8 +21,8 @@ export const withCheckoutQuery = graphql(checkoutQuery, {
     return ({
       isLoading: loading,
       campuses,
-      countries,
-      states,
+      countries: countries.map(c => ({ label: c.description, id: c.value })),
+      states: states.map(s => ({ label: s.description, id: s.value })),
       person,
       savedPayments,
     });
