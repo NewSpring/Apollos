@@ -10,12 +10,14 @@ import {
   branch,
   renderComponent,
   componentFromProp,
+  withProps,
 } from 'recompose';
 import { map } from 'lodash';
 
 import { Link } from '@modules/NativeWebRouter';
 import { getLinkPath } from '@utils/content';
 import FeedItemCard from '@primitives/FeedItemCard';
+import { enhancer as mediaQuery } from '@primitives/MediaQuery';
 import FeedList from './FeedList';
 
 const defaultFeedItemRenderer = ({ item }) => { // eslint-disable-line
@@ -45,6 +47,9 @@ const renderEmptyState = renderComponent(componentFromProp('renderEmptyState'));
 const enhance = compose(
   pure,
   branch(({ isLoading, content }) => isLoading && !content.length, renderEmptyState),
+  mediaQuery(({ md }) => ({ maxWidth: md }), withProps({ numColumns: 1 })),
+  mediaQuery(({ md, lg }) => ({ minWidth: md, maxWidth: lg }), withProps({ numColumns: 2 })),
+  mediaQuery(({ lg }) => ({ minWidth: lg }), withProps({ numColumns: 3 })),
 );
 
 const FeedView = enhance(({
@@ -52,6 +57,7 @@ const FeedView = enhance(({
   refetch,
   content,
   fetchMore,
+  numColumns,
   ...otherProps
 }) => (
   <FeedList
@@ -59,6 +65,7 @@ const FeedView = enhance(({
     refreshing={isLoading}
     onRefresh={refetch}
     onEndReached={fetchMore}
+    numColumns={numColumns}
     data={content}
   />
 ));
@@ -72,6 +79,7 @@ FeedView.defaultProps = {
   fetchMore: undefined,
   renderItem: defaultFeedItemRenderer,
   renderEmptyState: defaultEmptyStateRenderer,
+  numColumns: 1,
 };
 
 FeedView.propTypes = {
@@ -81,6 +89,7 @@ FeedView.propTypes = {
   fetchMore: PropTypes.func,
   renderItem: PropTypes.func,
   renderEmptyState: PropTypes.func,
+  numColumns: PropTypes.number,
 };
 
 export default FeedView;

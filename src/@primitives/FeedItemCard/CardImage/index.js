@@ -37,14 +37,19 @@ const Wrapper = styled(({ theme }) => ({
 }))(View);
 
 const StyledImage = styled(({ theme }) => ({
-  width: undefined,
-  height: undefined,
+  width: '100%',
   flex: 1,
+  aspectRatio: 1,
   resizeMode: 'cover',
   ...Platform.select({
     android: { // fixes android borderRadius overflow display issue
       borderTopRightRadius: theme.cardBorderRadius,
       borderTopLeftRadius: theme.cardBorderRadius,
+    },
+    web: {
+      // web doesn't support aspectRatio, this hacks it:
+      height: 0,
+      paddingTop: '100%',
     },
   }),
 }))(ConnectedImage);

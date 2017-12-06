@@ -64,7 +64,6 @@ const FeedItemCard = enhance(({
       <OverflowFix>
         <CardImage source={images} overlayColor={backgroundColor} />
         <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
-
         <Footer>
           <CategoryLabel type={startCase(toLower(category))} color={fontColor} />
           <LikeButton>

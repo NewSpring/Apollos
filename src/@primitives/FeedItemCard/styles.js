@@ -14,7 +14,6 @@ const CardWrapper = styled(({ theme }) => ({
 const Card = styled(({ theme, cardColor }) => ({
   width: '100%',
   minHeight: 400,
-  maxWidth: 420,
   backgroundColor: cardColor || theme.lightPrimaryColor,
   borderRadius: theme.cardBorderRadius,
   ...Platform.select({
