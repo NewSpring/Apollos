@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Platform, Dimensions } from 'react-native';
+import { StyleSheet, View, Platform } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, pure, setPropTypes, withState } from 'recompose';
+import { compose, pure, setPropTypes } from 'recompose';
 import Color from 'color';
 
 import withTheme from '@primitives/withTheme';

@@ -17,7 +17,6 @@ exports[`the FeedItemCard component should accept a different card color 1`] = `
       Object {
         "backgroundColor": "salmon",
         "borderRadius": 6,
-        "maxWidth": 420,
         "minHeight": 400,
         "shadowColor": "#dddddd",
         "shadowOffset": Object {
@@ -50,10 +49,10 @@ exports[`the FeedItemCard component should accept a different card color 1`] = `
           source={Array []}
           style={
             Object {
+              "aspectRatio": 1,
               "flex": 1,
-              "height": undefined,
               "resizeMode": "cover",
-              "width": undefined,
+              "width": "100%",
             }
           }
         />
@@ -190,7 +189,6 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
         "backgroundColor": "#ffffff",
         "borderRadius": 6,
         "height": 400,
-        "maxWidth": 420,
         "minHeight": 400,
         "shadowColor": "#dddddd",
         "shadowOffset": Object {
@@ -223,10 +221,10 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
           source={Array []}
           style={
             Object {
+              "aspectRatio": 1,
               "flex": 1,
-              "height": undefined,
               "resizeMode": "cover",
-              "width": undefined,
+              "width": "100%",
             }
           }
         />
@@ -362,7 +360,6 @@ exports[`the FeedItemCard component should render 1`] = `
       Object {
         "backgroundColor": "#ffffff",
         "borderRadius": 6,
-        "maxWidth": 420,
         "minHeight": 400,
         "shadowColor": "#dddddd",
         "shadowOffset": Object {
@@ -395,10 +392,10 @@ exports[`the FeedItemCard component should render 1`] = `
           source={Array []}
           style={
             Object {
+              "aspectRatio": 1,
               "flex": 1,
-              "height": undefined,
               "resizeMode": "cover",
-              "width": undefined,
+              "width": "100%",
             }
           }
         />
@@ -535,7 +532,6 @@ exports[`the FeedItemCard component should render as liked 1`] = `
       Object {
         "backgroundColor": "#ffffff",
         "borderRadius": 6,
-        "maxWidth": 420,
         "minHeight": 400,
         "shadowColor": "#dddddd",
         "shadowOffset": Object {
@@ -568,10 +564,10 @@ exports[`the FeedItemCard component should render as liked 1`] = `
           source={Array []}
           style={
             Object {
+              "aspectRatio": 1,
               "flex": 1,
-              "height": undefined,
               "resizeMode": "cover",
-              "width": undefined,
+              "width": "100%",
             }
           }
         />
@@ -707,7 +703,6 @@ exports[`the FeedItemCard component should render with inverted font colors 1`] 
       Object {
         "backgroundColor": "#ffffff",
         "borderRadius": 6,
-        "maxWidth": 420,
         "minHeight": 400,
         "shadowColor": "#dddddd",
         "shadowOffset": Object {
@@ -740,10 +735,10 @@ exports[`the FeedItemCard component should render with inverted font colors 1`] 
           source={Array []}
           style={
             Object {
+              "aspectRatio": 1,
               "flex": 1,
-              "height": undefined,
               "resizeMode": "cover",
-              "width": undefined,
+              "width": "100%",
             }
           }
         />
