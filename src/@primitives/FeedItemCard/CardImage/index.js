@@ -8,7 +8,6 @@ import withTheme from '@primitives/withTheme';
 import styled from '@primitives/styled';
 import ConnectedImage from '@primitives/ConnectedImage';
 import LinearGradient from '@primitives/LinearGradient';
-// import FlexedView from '@primitives/FlexedView';
 
 const enhance = compose(
   pure,
