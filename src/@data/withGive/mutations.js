@@ -79,3 +79,28 @@ export function setContributionStartDate(result, variables, { cache }) {
   });
   return null;
 }
+
+export function setBillingPerson(result, variables, { cache }) {
+  const { contributions: state } = cache.readQuery({
+    query: contributionsQuery,
+    variables,
+  });
+
+  cache.writeQuery({
+    query: contributionsQuery,
+    variables,
+    data: {
+      contributions: {
+        ...state,
+        ...pick(variables, [
+          'firstName',
+          'lastName',
+          'email',
+          'campusId',
+        ]),
+      },
+    },
+  });
+
+  return null;
+}

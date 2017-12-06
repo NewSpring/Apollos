@@ -4,6 +4,7 @@ import addContributionMutation from './addContributionMutation';
 import resetContributionsMutation from './resetContributionsMutation';
 import setContributionFrequencyMutation from './setContributionFrequencyMutation';
 import setContributionStartDateMutation from './setContributionStartDateMutation';
+import setBillingPersonMutation from './setBillingPersonMutation';
 import contributionsQuery from './contributionsQuery';
 
 const addContribution = graphql(addContributionMutation, {
@@ -38,6 +39,19 @@ const setContributionStartDate = graphql(setContributionStartDateMutation, {
   }),
 });
 
+const setBillingPerson = graphql(setBillingPersonMutation, {
+  props: ({ mutate }) => ({
+    setBillingPerson: props => (mutate({
+      variables: {
+        firstName: props.firstName,
+        lastName: props.lastName,
+        email: props.email,
+        campusId: props.campusId,
+      },
+    })),
+  }),
+});
+
 const get = graphql(contributionsQuery, {
   props({ data: { contributions } }) {
     if (!contributions) return { contributions };
@@ -55,5 +69,6 @@ export default compose(
   resetContributions,
   setContributionFrequency,
   setContributionStartDate,
+  setBillingPerson,
   get,
 );

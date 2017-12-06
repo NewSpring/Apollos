@@ -6,6 +6,10 @@ export default gql`
       contributions
       frequencyId
       startDate
+      firstName
+      lastName
+      email
+      campusId
     }
   }
 `;
