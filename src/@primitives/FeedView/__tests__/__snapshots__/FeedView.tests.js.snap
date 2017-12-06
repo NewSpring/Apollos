@@ -102,7 +102,6 @@ exports[`The FeedView component renders correctly 1`] = `
             Object {
               "backgroundColor": "#ffffff",
               "borderRadius": 6,
-              "maxWidth": 420,
               "minHeight": 400,
               "shadowColor": "#dddddd",
               "shadowOffset": Object {
@@ -143,10 +142,10 @@ exports[`The FeedView component renders correctly 1`] = `
                 }
                 style={
                   Object {
+                    "aspectRatio": 1,
                     "flex": 1,
-                    "height": undefined,
                     "resizeMode": "cover",
-                    "width": undefined,
+                    "width": "100%",
                   }
                 }
               />
@@ -296,7 +295,6 @@ exports[`The FeedView component renders correctly 1`] = `
             Object {
               "backgroundColor": "#584068",
               "borderRadius": 6,
-              "maxWidth": 420,
               "minHeight": 400,
               "shadowColor": "#dddddd",
               "shadowOffset": Object {
@@ -337,10 +335,10 @@ exports[`The FeedView component renders correctly 1`] = `
                 }
                 style={
                   Object {
+                    "aspectRatio": 1,
                     "flex": 1,
-                    "height": undefined,
                     "resizeMode": "cover",
-                    "width": undefined,
+                    "width": "100%",
                   }
                 }
               />

@@ -19,10 +19,10 @@ exports[`the FeedItemCard Category component should render 1`] = `
     }
     style={
       Object {
+        "aspectRatio": 1,
         "flex": 1,
-        "height": undefined,
         "resizeMode": "cover",
-        "width": undefined,
+        "width": "100%",
       }
     }
   />
