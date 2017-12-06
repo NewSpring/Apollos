@@ -3,7 +3,7 @@ import styled from '@primitives/styled';
 
 const FlexedView = styled(({ theme }) => ({
   flex: 1,
-  backgroundColor: theme.screenLight,
+  backgroundColor: theme.screenLightColor,
 }))(View);
 
 export default FlexedView;

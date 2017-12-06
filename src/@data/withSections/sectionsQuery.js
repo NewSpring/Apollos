@@ -6,6 +6,7 @@ export default gql`
       images(sizes: ["medium"]) {
         url
         label
+        size
       }
     }
   }

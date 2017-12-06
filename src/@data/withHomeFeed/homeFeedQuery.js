@@ -17,10 +17,10 @@ const contentFragment = gql`
         fileType
         fileLabel
         url
+        size
       }
       isLight
       colors {
-        id
         value
         description
       }
