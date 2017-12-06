@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Platform } from 'react-native';
+import { StyleSheet, View, Platform, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, pure, setPropTypes } from 'recompose';
+import { compose, pure, setPropTypes, withState } from 'recompose';
 import Color from 'color';
 
 import withTheme from '@primitives/withTheme';
@@ -37,14 +37,19 @@ const Wrapper = styled(({ theme }) => ({
 }))(View);
 
 const StyledImage = styled(({ theme }) => ({
-  width: undefined,
-  height: undefined,
+  width: '100%',
   flex: 1,
+  aspectRatio: 1,
   resizeMode: 'cover',
   ...Platform.select({
     android: { // fixes android borderRadius overflow display issue
       borderTopRightRadius: theme.cardBorderRadius,
       borderTopLeftRadius: theme.cardBorderRadius,
+    },
+    web: {
+      // web doesn't support aspectRatio, this hacks it:
+      height: 0,
+      paddingTop: '100%',
     },
   }),
 }))(ConnectedImage);
