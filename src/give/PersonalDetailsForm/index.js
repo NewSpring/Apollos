@@ -11,7 +11,6 @@ import get from 'lodash/get';
 import withCheckout from '@data/withCheckout';
 import Picker from '@primitives/Picker';
 import ActivityIndicator from '@primitives/ActivityIndicator';
-// import { H3, BodyCopy as P } from '@primitives/typography';
 
 export class PersonalDetailsForm extends Component {
   static propTypes = {
@@ -123,9 +122,9 @@ export class PersonalDetailsForm extends Component {
 const enhance = compose(
   withCheckout,
   mapProps(props => ({
-    firstName: get(props, 'person.firstName', ''),
-    lastName: get(props, 'person.lastName', ''),
-    email: get(props, 'person.email', ''),
+    firstName: get(props, 'person.firstName'),
+    lastName: get(props, 'person.lastName'),
+    email: get(props, 'person.email'),
     campusId: get(props, 'person.campus.id') || get(props, 'campuses.0.id'),
     ...props,
   })),
