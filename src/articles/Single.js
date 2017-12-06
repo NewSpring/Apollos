@@ -20,12 +20,12 @@ const ArticleSingle = enhance(({
     title = '',
     content = {},
   } = { },
-}) => (
+}) => console.log({ content }) || (
   <FlexedView>
     <ScrollView>
       {image(content) ? <Image style={{ width: '100%', height: 200 }} source={{ uri: image(content) }} /> : null}
       <H1>{title}</H1>
-      {authors.length ? <H7>By: {authors.join(', ')}</H7> : null}
+      {authors && authors.length ? <H7>By: {authors.join(', ')}</H7> : null}
       <ContentView body={content.body} />
     </ScrollView>
   </FlexedView>

@@ -12,8 +12,8 @@ import * as tabs from './tabs';
 
 import Articles, { ArticlesSingle } from './articles';
 import Stories, { StoriesSingle } from './stories';
-import Series from './series';
-import Studies from './studies';
+import Series, { Sermon, SeriesSingle } from './series';
+import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 
 let previousLocation;
@@ -85,12 +85,12 @@ class AppRouter extends PureComponent {
         <AppSwitch location={this.isModal ? previousLocation : this.props.location}>
           <Redirect from="/sermons" to="/series" />
           <Route exact path="/series" component={Series} />
-          <Route exact path="/series/:id" component={DebugView} />
-          <Route exact path="/series/:seriesId/sermon/:id" component={DebugView} />
+          <Route exact path="/series/:id" component={SeriesSingle} />
+          <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
 
           <Route exact path="/studies" component={Studies} />
-          <Route exact path="/studies/:id" component={DebugView} />
-          <Route exact path="/studies/:seriesId/entry/:id" component={DebugView} />
+          <Route exact path="/studies/:id" component={StudiesSingle} />
+          <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
 
           <Redirect from="/devotionals" to="/studies" />
           <Redirect from="/devotions" to="/studies" />
