@@ -1,0 +1,315 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#505050",
+          "fontFamily": null,
+          "fontSize": 32.4,
+          "fontWeight": "700",
+          "lineHeight": 41.22,
+        }
+      }
+    >
+      Hi there!
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#6bac43",
+          "fontFamily": null,
+          "fontSize": 14,
+          "lineHeight": 15.87,
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet.
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#505050",
+          "fontFamily": "Georgia",
+          "fontSize": 18,
+          "lineHeight": 18,
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales sit amet ante eu lobortis. In vitae faucibus lectus, at interdum nibh. Fusce suscipit tincidunt justo, vitae cursus mi fermentum eget.
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#303030",
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": null,
+          "fontSize": 32.4,
+          "fontWeight": "700",
+          "lineHeight": 41.22,
+        }
+      }
+    >
+      Hi there!
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#6bac43",
+          "fontFamily": null,
+          "fontSize": 14,
+          "lineHeight": 15.87,
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet.
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "Georgia",
+          "fontSize": 18,
+          "lineHeight": 18,
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales sit amet ante eu lobortis. In vitae faucibus lectus, at interdum nibh. Fusce suscipit tincidunt justo, vitae cursus mi fermentum eget.
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#505050",
+          "fontFamily": null,
+          "fontSize": 32.4,
+          "fontWeight": "700",
+          "lineHeight": 41.22,
+        }
+      }
+    >
+      Hi there!
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#6bac43",
+          "fontFamily": null,
+          "fontSize": 14,
+          "lineHeight": 15.87,
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet.
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#505050",
+          "fontFamily": "Georgia",
+          "fontSize": 18,
+          "lineHeight": 18,
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales sit amet ante eu lobortis. In vitae faucibus lectus, at interdum nibh. Fusce suscipit tincidunt justo, vitae cursus mi fermentum eget.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`withThemeMixin works with dynamic props 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#505050",
+          "fontFamily": null,
+          "fontSize": 32.4,
+          "fontWeight": "700",
+          "lineHeight": 41.22,
+        }
+      }
+    >
+      Hi there!
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "red",
+          "fontFamily": null,
+          "fontSize": 14,
+          "lineHeight": 15.87,
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet.
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#505050",
+          "fontFamily": "Georgia",
+          "fontSize": 18,
+          "lineHeight": 18,
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales sit amet ante eu lobortis. In vitae faucibus lectus, at interdum nibh. Fusce suscipit tincidunt justo, vitae cursus mi fermentum eget.
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#303030",
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": null,
+          "fontSize": 32.4,
+          "fontWeight": "700",
+          "lineHeight": 41.22,
+        }
+      }
+    >
+      Hi there!
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "blue",
+          "fontFamily": null,
+          "fontSize": 14,
+          "lineHeight": 15.87,
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet.
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "Georgia",
+          "fontSize": 18,
+          "lineHeight": 18,
+        }
+      }
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales sit amet ante eu lobortis. In vitae faucibus lectus, at interdum nibh. Fusce suscipit tincidunt justo, vitae cursus mi fermentum eget.
+    </Text>
+  </View>
+</View>
+`;

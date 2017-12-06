@@ -1,4 +1,4 @@
-import { DEFAULT_THEME } from '@primitives/constants';
+import { DEFAULT_THEME } from '@ui/constants';
 import rem from '@utils/remUnit';
 
 function verticalRhythm(fontSize, relativeValue, theme = DEFAULT_THEME) {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { ScrollView, Image } from 'react-native';
 import { compose, mapProps, pure } from 'recompose';
-import { H1, H7 } from '@primitives/typography';
-import FlexedView from '@primitives/FlexedView';
-import ContentView from '@primitives/ContentView';
+import { H1, H7 } from '@ui/typography';
+import FlexedView from '@ui/FlexedView';
+import ContentView from '@ui/ContentView';
 import withArticle from '@data/withArticle';
 
 const enhance = compose(

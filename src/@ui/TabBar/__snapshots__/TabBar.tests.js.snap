@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#303030",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "paddingHorizontal": 10,
+      },
+      Object {
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 20,
+      },
+    ]
+  }
+/>
+`;
