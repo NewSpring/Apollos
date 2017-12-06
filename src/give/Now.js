@@ -23,6 +23,7 @@ export class Now extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <FlexedView>
         <Header titleText="Give Dashboard" />
@@ -62,7 +63,7 @@ const enhance = compose(
       props.setContributionStartDate(formValues.startDate);
     },
     onSubmitPersonalDetailsForm(formValues) {
-      console.log(formValues);
+      props.setBillingPerson(formValues);
     },
   })),
 );
