@@ -23,7 +23,6 @@ export default gql`
         }
         isLight
         colors {
-          id
           value
           description
         }

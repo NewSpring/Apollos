@@ -27,7 +27,6 @@ export default gql`
           }
           ooyalaId
           colors {
-            id
             value
             description
           }

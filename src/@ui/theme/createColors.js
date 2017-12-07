@@ -31,6 +31,9 @@ export const light = ({ common }) => ({
     overlay: 'rgba(48,48,48,0.8)',
     // todo
   },
+  shadows: {
+    default: common.lightTertiary,
+  },
   input: {
     // todo
   },
@@ -49,6 +52,9 @@ export const dark = ({ common }) => ({
     default: common.darkPrimary,
     overlay: 'rgba(48,48,48,0.8)',
     // todo
+  },
+  shadows: {
+    default: common.black,
   },
   input: {
     // todo
