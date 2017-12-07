@@ -1,11 +1,16 @@
 import React, { PureComponent } from 'react';
 import { View, StyleSheet, Dimensions, Animated } from 'react-native';
+import ConnectedImage from '@primitives/ConnectedImage';
 
 const styles = StyleSheet.create({
   container: { width: '100%' },
 });
 
 class NavItemImage extends PureComponent {
+  static propTypes = {
+    source: ConnectedImage.propTypes.source,
+  }
+
   get imageStyle() {
     return {
       width: this.width,
@@ -22,8 +27,9 @@ class NavItemImage extends PureComponent {
   render() {
     return (
       <View style={styles.container} onLayout={this.handleLayout}>
-        <Animated.Image
+        <ConnectedImage
           {...this.props}
+          ImageComponent={Animated.Image}
           style={this.imageStyle}
         />
       </View>

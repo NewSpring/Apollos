@@ -3,7 +3,7 @@ import { compose, mapProps, getContext } from 'recompose';
 import { THEME_PROPS } from './constants';
 
 
-const DEFAULT_MAPPER_FN = ({ theme } = {}) => ({ ...theme });
+const DEFAULT_MAPPER_FN = ({ theme } = {}) => ({ theme });
 
 export default function (mapperFn = DEFAULT_MAPPER_FN) {
   return compose(
