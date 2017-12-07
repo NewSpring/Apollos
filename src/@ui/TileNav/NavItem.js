@@ -18,7 +18,7 @@ const NavItemText = styled(({ theme }) => ({
   bottom: theme.sizing.baseUnit,
   left: theme.sizing.baseUnit,
   backgroundColor: 'transparent',
-  color: theme.colors.common.lightPrimary,
+  color: theme.colors.lightPrimary,
 }), 'TileNav.NavItem.Text')(H6);
 
 const enhance = compose(

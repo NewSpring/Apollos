@@ -21,7 +21,7 @@ import {
 const enhance = compose(
   pure,
   withTheme(({ theme, isLight }) => ({
-    fontColor: isLight ? theme.colors.text.primary : theme.colors.common.lightPrimary,
+    fontColor: isLight ? theme.colors.text.primary : theme.colors.lightPrimary,
     theme,
   })),
   setPropTypes({
@@ -66,7 +66,7 @@ const FeedItemCard = enhance(({
         <Footer>
           <CategoryLabel type={startCase(toLower(category))} color={fontColor} />
           <LikeButton>
-            <Icon name={'like'} size={theme.typography.rem(1.2)} fill={fontColor} />
+            <Icon name={'like'} size={theme.helpers.rem(1.2)} fill={fontColor} />
           </LikeButton>
         </Footer>
       </OverflowFix>

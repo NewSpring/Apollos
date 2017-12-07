@@ -11,7 +11,7 @@ import Icon from '@ui/Icon';
 const enhance = compose(
   pure,
   withTheme(({ theme, color }) => ({
-    color: color || theme.colors.common.lightPrimary,
+    color: color || theme.colors.lightPrimary,
     theme,
   })),
   setPropTypes({
@@ -55,7 +55,7 @@ const CategoryLabel = enhance(({
   <Wrapper>
     <Icon
       name={getIconName(type)}
-      size={theme.typography.rem(1.2)}
+      size={theme.helpers.rem(1.2)}
       fill={fontColor}
     />
     <StyledH7 color={fontColor}>{type}</StyledH7>

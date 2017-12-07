@@ -20,15 +20,13 @@ const TypeExample = () => (
 );
 
 const DarkTypeExample = withThemeMixin({
-  colors: { palette: 'dark' },
+  type: 'dark',
 })(TypeExample);
 
 const TypeExampleWithProps = withThemeMixin(({ color, isLight = true }) => ({
+  type: isLight ? 'light' : 'dark',
   colors: {
-    palette: isLight ? 'light' : 'dark',
-    common: {
-      primary: color,
-    },
+    primary: color,
   },
 }))(TypeExample);
 

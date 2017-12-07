@@ -13,9 +13,9 @@ const enhance = compose(
 );
 
 const StyledUIText = styled(({ theme }) => ({
-  fontSize: theme.typography.rem(1),
+  fontSize: theme.helpers.rem(1),
   fontFamily: theme.typography.fontFamilySans,
-  lineHeight: theme.typography.verticalRhythm(1, 1),
+  lineHeight: theme.helpers.verticalRhythm(1, 1),
   color: theme.colors.text.primary,
 }), 'UIText')(Text);
 

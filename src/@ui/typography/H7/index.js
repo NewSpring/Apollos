@@ -13,10 +13,10 @@ const enhance = compose(
 );
 
 const StyledH7 = styled(({ theme }) => ({
-  fontSize: theme.typography.rem(0.778),
+  fontSize: theme.helpers.rem(0.778),
   fontFamily: theme.typography.fontFamilySans,
-  lineHeight: theme.typography.verticalRhythm(0.778, 1.02),
-  color: theme.colors.common.primary,
+  lineHeight: theme.helpers.verticalRhythm(0.778, 1.02),
+  color: theme.colors.primary,
 }), 'H7')(Text);
 
 const H7 = enhance(({

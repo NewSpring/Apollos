@@ -14,11 +14,11 @@ const CardWrapper = styled(({ theme }) => ({
 const Card = styled(({ theme, cardColor }) => ({
   width: '100%',
   minHeight: 400,
-  backgroundColor: cardColor || theme.colors.common.lightPrimary,
+  backgroundColor: cardColor || theme.colors.lightPrimary,
   borderRadius: theme.sizing.borderRadius,
   ...Platform.select({
     ios: {
-      shadowColor: theme.colors.common.lightTertiary,
+      shadowColor: theme.colors.lightTertiary,
       shadowOffset: {
         width: 0,
         height: 1,
@@ -30,7 +30,7 @@ const Card = styled(({ theme, cardColor }) => ({
       elevation: 3,
     },
     web: {
-      boxShadow: `0 1px 4px ${theme.colors.common.lightTertiary}`,
+      boxShadow: `0 1px 4px ${theme.colors.lightTertiary}`,
     },
   }),
 }))(View);

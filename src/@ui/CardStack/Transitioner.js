@@ -348,6 +348,6 @@ class Transitioner extends PureComponent {
 }
 
 export default styled(({ theme }) => ({
-  backgroundColor: theme.colors.common.black,
+  backgroundColor: theme.colors.black,
   ...StyleSheet.absoluteFillObject,
 }), 'CardStack.Transitioner')(Transitioner);
