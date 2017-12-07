@@ -29,8 +29,8 @@ export const DEFAULT_THEME = {
   fontFamilySans: null, // force default system font
   fontFamilySerif: Platform.OS !== 'android' ? 'Georgia' : 'serif',
 
-  screenLight: '#ffffff',
-  screenDark: '#000000',
+  screenLightColor: '#ffffff',
+  screenDarkColor: '#000000',
 
   cardBorderRadius: 6,
 

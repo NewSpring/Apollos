@@ -1,20 +1,26 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { mapProps } from 'recompose';
+import { mapProps, compose } from 'recompose';
 import ReactList from 'react-list';
 import { ScrollView, View } from 'react-native';
+import styled from '@primitives/styled';
 
-const itemRenderer = ({ data, renderItem }) => (index, key) => (
-  <View key={key}>
+const Item = compose(
+  styled(({ numColumns }) => ({ flex: 1, display: 'inline-block', width: `${(1 / numColumns) * 100}%` })),
+)(View);
+
+const itemRenderer = ({ data, renderItem, numColumns }) => (index, key) => (
+  <Item key={key} numColumns={numColumns}>
     {renderItem({ index, item: data[index] })}
-  </View>
+  </Item>
 );
 
 const MappedReactList = mapProps(({
   data,
   renderItem,
+  numColumns,
 }) => ({
-  itemRenderer: itemRenderer({ data, renderItem }),
+  itemRenderer: itemRenderer({ data, renderItem, numColumns }),
   length: data.length,
 }))(ReactList);
 
@@ -29,8 +35,9 @@ class FeedList extends PureComponent {
     refreshing: PropTypes.bool,
   };
 
-  handleLayout = ({ nativeEvent: { layout: { height } } }) => {
+  handleLayout = ({ nativeEvent: { layout: { height, width } } }) => {
     this.layoutHeight = height;
+    this.layoutWidth = width;
   }
 
   handleScroll = ({ nativeEvent: { contentOffset, contentSize } }) => {

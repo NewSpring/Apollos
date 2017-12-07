@@ -13,9 +13,9 @@ const styles = StyleSheet.create({
 });
 
 const Layout = compose(
-  styled(({ theme: { screenLight } = {} }) => ({
+  styled(({ theme: { screenLightColor } = {} }) => ({
     flex: 1,
-    backgroundColor: screenLight,
+    backgroundColor: screenLightColor,
   })),
   mediaQuery(({ md }) => ({ maxWidth: md }),
     styled(styles.mobile),
