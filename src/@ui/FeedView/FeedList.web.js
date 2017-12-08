@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react';
+import { ScrollView, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { mapProps, compose } from 'recompose';
 import ReactList from 'react-list';
-import { ScrollView, View } from 'react-native';
 import styled from '@ui/styled';
+
+const StyledScrollView = styled(({ theme }) => ({
+  paddingVertical: theme.sizing.baseUnit / 4,
+}))(ScrollView);
 
 const Item = compose(
   styled(({ numColumns }) => ({ flex: 1, display: 'inline-block', width: `${(1 / numColumns) * 100}%` })),
@@ -23,7 +27,6 @@ const MappedReactList = mapProps(({
   itemRenderer: itemRenderer({ data, renderItem, numColumns }),
   length: data.length,
 }))(ReactList);
-
 
 class FeedList extends PureComponent {
   static propTypes = {
@@ -50,13 +53,13 @@ class FeedList extends PureComponent {
 
   render() {
     return (
-      <ScrollView
+      <StyledScrollView
         onLayout={this.handleLayout}
         scrollEventThrottle={250}
         onScroll={this.handleScroll}
       >
         <MappedReactList {...this.props} />
-      </ScrollView>
+      </StyledScrollView>
     );
   }
 }
