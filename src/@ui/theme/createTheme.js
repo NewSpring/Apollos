@@ -42,7 +42,8 @@ const createTheme = ({
   merge(theme, getDynamicThemePart({ types: typesInput }, theme));
   const availableTypes = theme.types;
   if (!availableTypes[theme.type]) throw new Error(`The theme type ${theme.type} is not supported`);
-  merge(theme, availableTypes[typeInput]);
+  merge(theme, availableTypes[typeInput], { colors: colorsInput });
+
 
   // mixin other theme defaults (that might depend on base theme)
   merge(theme, getDynamicThemePart(otherThemeDefaults, theme));

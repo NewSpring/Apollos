@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import * as baseTypes from './types';
+import * as types from './types';
 
 /**
  * There are two parts to a theme:
@@ -91,7 +91,7 @@ export const alpha = {
 // base colors above. For example, notice below how `shadows` gets the shadowColor from
 // `colors.shadows`, which is provided by the active theme type.
 export const type = 'light';
-export const types = baseTypes;
+export { types };
 
 export const shadows = ({ colors: themeColors }) => ({
   default: {
