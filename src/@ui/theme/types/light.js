@@ -6,7 +6,6 @@ const light = ({ colors, alpha }) => ({
       primary: colors.darkPrimary,
       secondary: colors.darkSecondary,
       tertiary: colors.darkTertiary,
-      appHeader: colors.lightPrimary,
     },
     background: {
       default: colors.white,

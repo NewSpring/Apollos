@@ -37,9 +37,9 @@ const ContentView = enhance(({
   body = null,
 }) => (
   <View>
-    <ImageHeader source={images} />
+    {(images && images.length) ? <ImageHeader source={images} /> : null}
     <ContentWrapper>
-      <H2>{title}</H2>
+      {title ? <H2>{title}</H2> : null}
       <ByLine authors={authors} />
       <ContentHTMLView>
         {body}

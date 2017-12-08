@@ -1,19 +1,19 @@
 import React, { PureComponent, cloneElement } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, Linking, Image } from 'react-native';
+import { View, Text, Linking } from 'react-native';
 import { Parser, DomHandler } from 'htmlparser2';
 import { decodeHTML } from 'entities';
 import { BodyCopy, H1, H2, H3, H4, H5, H6, H7 } from '@ui/typography';
+import ConnectedImage from '@ui/ConnectedImage';
 import Paragraph from '@ui/Paragraph';
 import { Link } from './styles';
 
 const LINE_BREAK = '\n';
 
 export const defaultRenderer = (node, { children }) => {
-  if (node.type === 'text' && node.data && node.data.trim()) return <Text>{decodeHTML(node.data)}</Text>;
+  if (node.type === 'text' && node.data && node.data.trim()) return <BodyCopy>{decodeHTML(node.data)}</BodyCopy>;
   switch (node.name) {
     case 'p': return <Paragraph>{children}</Paragraph>;
-    case 'span': return <BodyCopy>{children}</BodyCopy>;
     case 'h1': return <H1>{children}</H1>;
     case 'h2': return <H2>{children}</H2>;
     case 'h3': return <H3>{children}</H3>;
@@ -21,6 +21,8 @@ export const defaultRenderer = (node, { children }) => {
     case 'h5': return <H5>{children}</H5>;
     case 'h6': return <H6>{children}</H6>;
     case 'h7': return <H7>{children}</H7>;
+    case 'ul': return children; // todo
+    case 'li': return <BodyCopy>• {children}{LINE_BREAK}</BodyCopy>; // todo
     case 'a': {
       const url = node.attribs && node.attribs.href;
       const onPress = () => Linking.openURL(decodeHTML(url));
@@ -28,24 +30,25 @@ export const defaultRenderer = (node, { children }) => {
         return (<Link onPress={onPress}>{children}</Link>);
       }
     }
-    // ignoring fallthrough above (the conditional return) to
-    // handle the edge-case of an <a> tag used w/o href
+    // ignoring fallthrough on the next line because of the conditional return above,
+    // so we handle the edge-case of an <a> tag used w/o a href
     case 'img': { // eslint-disable-line no-fallthrough
-      const imgWidth = node.attribs.width || +node.attribs['data-width'] || 0;
-      const imgHeight = node.attribs.height || +node.attribs['data-height'] || 0;
-
-      const imgStyle = {
-        width: imgWidth,
-        height: imgHeight,
-      };
+      const imgWidth = node.attribs.width || +node.attribs['data-width'];
+      const imgHeight = node.attribs.height || +node.attribs['data-height'];
 
       const source = {
-        uri: node.attribs.src,
-        width: imgWidth,
-        height: imgHeight,
+        url: node.attribs.src,
       };
 
-      return <Image source={source} style={imgStyle} />;
+      if (imgWidth) source.width = imgWidth;
+      if (imgHeight) source.height = imgHeight;
+
+      const imgStyles = {
+        resizeMode: 'contain',
+        width: '100%',
+      };
+
+      return <ConnectedImage maintainAspectRatio source={source} style={imgStyles} />;
     }
     case 'br':
       return <Text>{LINE_BREAK}</Text>;

@@ -1,11 +1,9 @@
 import React from 'react';
 import { compose, mapProps, pure } from 'recompose';
-import { get } from 'lodash';
 import { ScrollView } from 'react-native';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import ContentView from '@ui/ContentView';
-import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import withSeriesContent from '@data/withSeriesContent';
 import { withThemeMixin } from '@ui/theme';
@@ -16,14 +14,16 @@ const enhance = compose(
   withSeriesContent,
   withThemeMixin(({ content: { content = {} } = {} } = {}) => {
     const theme = {
-      colors: {
-        palette: content.isLight ? 'light' : 'dark',
-      },
+      type: content.isLight ? 'light' : 'dark',
     };
     if (content.colors && content.colors.length) {
       const primary = `#${content.colors[0].value}`;
-      // theme.colors.common = { primary };
-      theme.colors.background = { default: primary };
+      theme.colors = {
+        primary,
+        background: {
+          default: primary,
+        },
+      };
     }
     return theme;
   }),
@@ -32,22 +32,21 @@ const enhance = compose(
 const SeriesSingle = enhance(({
   content: {
     content: {
+      isLight = true,
       images = [],
       description,
     } = {},
   } = { },
 }) => (
   <FlexedView>
-    <Header titleText="News" backButton />
+    <Header titleText="Series" backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
     <ScrollView>
       <ContentView images={images} body={description} />
     </ScrollView>
-    <MediaQuery maxWidth="md">
-      <SecondaryNav>
-        <Link icon="share" />
-        <Link icon="like" />
-      </SecondaryNav>
-    </MediaQuery>
+    <SecondaryNav>
+      <Link icon="share" />
+      <Link icon="like" />
+    </SecondaryNav>
   </FlexedView>
 ));
 export default SeriesSingle;

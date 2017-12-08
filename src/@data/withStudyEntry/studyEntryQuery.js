@@ -15,12 +15,27 @@ export default gql`
           actualDate
           channelId
         }
+        parent {
+          content {
+            isLight
+            colors {
+              value
+              description
+            }
+            images(sizes: ["large", "medium"]) {
+              fileName
+              fileType
+              fileLabel
+              url
+            }
+          }
+        }
         content {
           audio {
             duration
             file: s3
           }
-          images(sizes: ["large", "medium", "small"]) {
+          images(sizes: ["large", "medium"]) {
             fileName
             fileType
             fileLabel

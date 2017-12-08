@@ -35,10 +35,13 @@ class ConnectedImage extends PureComponent {
       PropTypes.arrayOf(ImageSourceType), ImageSourceType,
     ]),
     ImageComponent: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    maintainAspectRatio: PropTypes.bool,
+    style: PropTypes.any, // eslint-disable-line
   }
 
   static defaultProps = {
     ImageComponent: Image,
+    maintainAspectRatio: false,
   }
 
   state = {
@@ -47,6 +50,21 @@ class ConnectedImage extends PureComponent {
 
   componentWillMount() { this.updateCache(this.props.source); }
   componentWillReceiveProps(newProps) { this.updateCache(newProps.source); }
+
+  get aspectRatio() {
+    const style = {};
+    if (this.props.maintainAspectRatio) {
+      const firstSource = this.state.source[0];
+      if (firstSource && firstSource.width && firstSource.height) {
+        style.aspectRatio = firstSource.width / firstSource.height;
+        if (Platform.OS === 'web') {
+          style.height = 0;
+          style.paddingTop = `${style.aspectRatio * 100}%`;
+        }
+      }
+    }
+    return style;
+  }
 
   async updateCache(sources) {
     await Promise.all(getCachedSources(sources).map((source) => {
@@ -77,8 +95,8 @@ class ConnectedImage extends PureComponent {
       [source] = source;
     }
 
-    const { ImageComponent = Image, ...otherProps } = this.props;
-    return <ImageComponent {...otherProps} source={source} />;
+    const { ImageComponent = Image, style, ...otherProps } = this.props;
+    return <ImageComponent {...otherProps} source={source} style={[this.aspectRatio, style]} />;
   }
 }
 

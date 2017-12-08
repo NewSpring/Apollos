@@ -26,7 +26,7 @@ const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
       title={item.title}
       category={item.category}
       images={item.content.images}
-      backgroundColor={item.content.colors.length ? `#${item.content.colors[0].value}` : null}
+      backgroundColor={(item.content.colors && item.content.colors.length) ? `#${item.content.colors[0].value}` : null}
       isLight={item.content.isLight}
     />
   </Link>

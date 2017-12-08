@@ -1,8 +1,8 @@
-import { BodyCopy } from '@ui/typography';
+import { View } from 'react-native';
 import styled from '@ui/styled';
 
 const Paragraph = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 2,
-}))(BodyCopy);
+}))(View);
 
 export default Paragraph;
