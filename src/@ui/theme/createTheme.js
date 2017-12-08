@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import * as defaultTheme from './defaultTheme';
 
 const {
-  colors, typography, breakpoints, sizing, type, types, ...otherThemeDefaults
+  colors, typography, breakpoints, sizing, type, types, alpha, ...otherThemeDefaults
 } = defaultTheme;
 
 // Some parts of the theme are stored as functions (such as `shadows` and `helpers`),
@@ -24,6 +24,7 @@ const createTheme = ({
   sizing: sizingInput = {},
   type: typeInput = type,
   types: typesInput = {},
+  alpha: alphaInput = {},
   ...other
 } = {}) => {
   // compose base theme
@@ -32,15 +33,15 @@ const createTheme = ({
     typography: merge({}, typography, typographyInput),
     breakpoints: merge({}, breakpoints, breakpointsInput),
     sizing: merge({}, sizing, sizingInput),
+    alpha: merge({}, alpha, alphaInput),
+    type: typeInput,
   };
 
   // inject theme type
   merge(theme, getDynamicThemePart({ types }, theme));
   merge(theme, getDynamicThemePart({ types: typesInput }, theme));
-  // console.log('theme', theme);
-  // console.log('types', { types, output: getDynamicThemePart({ types }, theme) });
   const availableTypes = theme.types;
-  if (!availableTypes[typeInput]) throw new Error(`The theme type ${typeInput} is not supported`);
+  if (!availableTypes[theme.type]) throw new Error(`The theme type ${theme.type} is not supported`);
   merge(theme, availableTypes[typeInput]);
 
   // mixin other theme defaults (that might depend on base theme)

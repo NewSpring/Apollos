@@ -1,14 +1,16 @@
-const dark = ({ colors }) => ({
+import Color from 'color';
+
+const dark = ({ colors, alpha }) => ({
   colors: {
     text: {
       primary: colors.lightPrimary,
       secondary: colors.lightSecondary,
       tertiary: colors.lightTertiary,
+      appHeader: colors.darkPrimary,
     },
     background: {
       default: colors.darkPrimary,
-      overlay: 'rgba(48,48,48,0.8)',
-      // todo
+      overlay: Color(colors.darkTertiary).fade(alpha.high),
     },
     shadows: {
       default: colors.black,

@@ -68,6 +68,12 @@ export const sizing = {
   borderRadius: 6,
 };
 
+export const alpha = {
+  high: 0.9,
+  medium: 0.7,
+  low: 0.4,
+};
+
 /**
  * Dynamic theme parts
  * The sections below define some of the dynamic
