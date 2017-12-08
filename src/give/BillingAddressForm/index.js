@@ -6,7 +6,8 @@ import {
   TextInput,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose } from 'recompose';
+import { compose, mapProps } from 'recompose';
+import get from 'lodash/get';
 import withCheckout from '@data/withCheckout';
 import Picker from '@primitives/Picker';
 import ActivityIndicator from '@primitives/ActivityIndicator';
@@ -165,6 +166,16 @@ export class BillingAddressForm extends Component {
 
 const enhance = compose(
   withCheckout,
+  mapProps(props => ({
+    street1: get(props, 'person.home.street1'),
+    street2: get(props, 'person.home.street2'),
+    city: get(props, 'person.home.city'),
+    zipCode: get(props, 'person.home.zip'),
+    // Not sure about these yet
+    // countryId: get(props, 'person.home.country'),
+    // stateId: get(props, 'person.home.state'),
+    ...props,
+  })),
 );
 
 export default enhance(BillingAddressForm);
