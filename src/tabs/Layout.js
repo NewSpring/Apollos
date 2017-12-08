@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TabBar, { Layout, Link } from '@modules/TabBar';
-import { Switch } from '@modules/NativeWebRouter';
+import TabBar, { Layout, Link } from '@ui/TabBar';
+import { Switch } from '@ui/NativeWebRouter';
 
 const TabBarLayout = ({ children, ...switchProps }) => (
   <Layout>
