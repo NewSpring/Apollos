@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 export default gql`
   query getAlbum($id: ID!) {
-    content: node(id: $id) {
+    playlist: node(id: $id) {
       id
       ... on Content {
         entryId: id
