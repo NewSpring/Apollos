@@ -6,11 +6,14 @@ import {
 import PropTypes from 'prop-types';
 import Picker from '@primitives/Picker';
 
+// NOTE: Id's are resolved to frequencies for
+// NMI at withGive
 const FREQUENCY_IDS = [
-  { label: 'one time', id: 'One-Time' },
-  { label: 'every week', id: 'Weekly' },
-  { label: 'every two weeks', id: 'Bi-Weekly' },
-  { label: 'once a month', id: 'Monthly' },
+  // { label: 'one time', id: 'once' },
+  { label: 'every year', id: 'yearly' },
+  { label: 'every week', id: 'weekly' },
+  { label: 'every two weeks', id: 'biweekly' },
+  { label: 'once a month', id: 'monthly' },
 ];
 
 export default class FrequencyInput extends Component {

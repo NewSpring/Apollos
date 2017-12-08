@@ -70,7 +70,10 @@ const enhance = compose(
       props.setContributionStartDate(formValues.startDate);
     },
     onSubmitPersonalDetailsForm: props.setBillingPerson,
-    onSubmitBillingAddressForm: props.setBillingAddress,
+    onSubmitBillingAddressForm(formValues) {
+      props.setBillingAddress(formValues);
+      props.createOrder();
+    },
   })),
 );
 

@@ -1,5 +1,6 @@
 import { graphql } from 'react-apollo';
 import { compose } from 'recompose';
+import Client from '@data/Client';
 import addContributionMutation from './addContributionMutation';
 import resetContributionsMutation from './resetContributionsMutation';
 import setContributionFrequencyMutation from './setContributionFrequencyMutation';
@@ -7,6 +8,8 @@ import setContributionStartDateMutation from './setContributionStartDateMutation
 import setBillingPersonMutation from './setBillingPersonMutation';
 import setBillingAddressMutation from './setBillingAddressMutation';
 import contributionsQuery from './contributionsQuery';
+import formatPersonDetails from './formatPersonDetails';
+import createOrderMutation from './createOrderMutation';
 
 const addContribution = graphql(addContributionMutation, {
   props: ({ mutate }) => ({
@@ -68,6 +71,26 @@ const setBillingAddress = graphql(setBillingAddressMutation, {
   }),
 });
 
+// NOTE: They create order after capturing a billing address
+const createOrder = graphql(createOrderMutation, {
+  props: ({ mutate }) => ({
+    createOrder() {
+      const { contributions: state } = Client.readQuery({
+        query: contributionsQuery,
+      });
+      formatPersonDetails(state);
+      // mutate({
+      //   variables: {
+      //     data: JSON.stringify(formatPersonDetails(state)),
+      //     id: null,
+      //     instant: false,
+      //   },
+      // });
+    },
+  }),
+});
+
+
 const get = graphql(contributionsQuery, {
   props({ data: { contributions } }) {
     if (!contributions) return { contributions };
@@ -87,5 +110,6 @@ export default compose(
   setContributionStartDate,
   setBillingPerson,
   setBillingAddress,
+  createOrder,
   get,
 );
