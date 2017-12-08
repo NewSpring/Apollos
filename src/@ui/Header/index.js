@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { compose, setPropTypes, branch, renderNothing, pure } from 'recompose';
 import SafeAreaView from '@ui/SafeAreaView';
 import styled from '@ui/styled';
-import { UIText } from '@ui/typography';
+import { H6 } from '@ui/typography';
 
 import BackButton from './BackButton';
 
@@ -21,7 +21,7 @@ const HeaderContainer = styled(({ theme }) => ({
 
 const StyledHeaderText = styled(({ theme }) => ({
   color: theme.colors.text.appHeader,
-}), 'Header.Text')(UIText);
+}), 'Header.Text')(H6);
 
 const enhance = compose(
   pure,
