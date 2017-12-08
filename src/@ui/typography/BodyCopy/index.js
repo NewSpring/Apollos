@@ -13,8 +13,8 @@ const enhance = compose(
 );
 
 const StyledBodyCopy = styled(({ theme }) => ({
-  fontSize: theme.typography.rem(1),
-  lineHeight: theme.typography.rem(1, 1),
+  fontSize: theme.helpers.rem(1),
+  lineHeight: theme.helpers.rem(1, 1),
   fontFamily: theme.typography.fontFamilySerif,
   color: theme.colors.text.primary,
 }), 'BodyCopy')(Text);

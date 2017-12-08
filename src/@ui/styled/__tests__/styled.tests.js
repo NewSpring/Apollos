@@ -31,7 +31,7 @@ describe('the styled HOC', () => {
     expect(tree).toMatchSnapshot();
   });
   it('provides a theme', () => {
-    const StyledView = styled(({ theme }) => ({ backgroundColor: theme.primaryColor }))(View);
+    const StyledView = styled(({ theme }) => ({ backgroundColor: theme.colors.primary }))(View);
     const tree = renderer.create(
       <ThemeProvider><StyledView /></ThemeProvider>,
     );

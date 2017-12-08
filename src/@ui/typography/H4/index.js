@@ -13,9 +13,9 @@ const enhance = compose(
 );
 
 const StyledH4 = styled(({ theme }) => ({
-  fontSize: theme.typography.rem(1.4),
+  fontSize: theme.helpers.rem(1.4),
   fontFamily: theme.typography.fontFamilySans,
-  lineHeight: theme.typography.verticalRhythm(1.4, 1.117),
+  lineHeight: theme.helpers.verticalRhythm(1.4, 1.117),
   fontWeight: '700',
   color: theme.colors.text.primary,
 }), 'H4')(Text);

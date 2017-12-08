@@ -18,7 +18,7 @@ const NavItemText = styled(({ theme }) => ({
   bottom: theme.sizing.baseUnit,
   left: theme.sizing.baseUnit,
   backgroundColor: 'transparent',
-  color: theme.colors.common.lightPrimary,
+  color: theme.colors.lightPrimary,
 }), 'TileNav.NavItem.Text')(H6);
 
 const enhance = compose(
@@ -32,7 +32,7 @@ const NavItem = enhance(({
 }) => (
   <Link to={link}>
     <CardView>
-      <NavItemImage source={{ uri: image }}>
+      <NavItemImage source={image}>
         <LinearGradient
           colors={['rgba(0,0,0,0)', 'rgba(0,0,0,1)']}
           locations={[0.3, 1]}
@@ -46,7 +46,7 @@ const NavItem = enhance(({
 ));
 
 NavItem.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: NavItemImage.propTypes.source,
   link: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
 };

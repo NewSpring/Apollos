@@ -1,19 +1,34 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import { map } from 'lodash';
+import {
+  Text,
+  View,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import { Link } from '@ui/NativeWebRouter';
+import {
+  pure,
+  compose,
+  branch,
+  renderComponent,
+  componentFromProp,
+  withProps,
+} from 'recompose';
+import { map } from 'lodash';
+
 import { getLinkPath } from '@utils/content';
-import { pure, compose, branch, renderComponent, componentFromProp } from 'recompose';
+import FeedItemCard from '@ui/FeedItemCard';
+import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import FeedList from './FeedList';
 
-// TODO: replace weith component from #40
 const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
-    <View style={{ height: 250, margin: 10, backgroundColor: 'rgba(0,0,0,0.1)' }}>
-      <Text>{item.title}</Text>
-      <Text>{item.category}</Text>
-    </View>
+    <FeedItemCard
+      title={item.title}
+      category={item.category}
+      images={item.content.images}
+      backgroundColor={item.content.colors.length ? `#${item.content.colors[0].value}` : null}
+      isLight={item.content.isLight}
+    />
   </Link>
 );
 
@@ -29,6 +44,9 @@ const renderEmptyState = renderComponent(componentFromProp('renderEmptyState'));
 const enhance = compose(
   pure,
   branch(({ isLoading, content }) => isLoading && !content.length, renderEmptyState),
+  mediaQuery(({ md }) => ({ maxWidth: md }), withProps({ numColumns: 1 })),
+  mediaQuery(({ md, lg }) => ({ minWidth: md, maxWidth: lg }), withProps({ numColumns: 2 })),
+  mediaQuery(({ lg }) => ({ minWidth: lg }), withProps({ numColumns: 3 })),
 );
 
 const FeedView = enhance(({
@@ -36,6 +54,7 @@ const FeedView = enhance(({
   refetch,
   content,
   fetchMore,
+  numColumns,
   ...otherProps
 }) => (
   <FeedList
@@ -43,6 +62,7 @@ const FeedView = enhance(({
     refreshing={isLoading}
     onRefresh={refetch}
     onEndReached={fetchMore}
+    numColumns={numColumns}
     data={content}
   />
 ));
@@ -56,6 +76,7 @@ FeedView.defaultProps = {
   fetchMore: undefined,
   renderItem: defaultFeedItemRenderer,
   renderEmptyState: defaultEmptyStateRenderer,
+  numColumns: 1,
 };
 
 FeedView.propTypes = {
@@ -65,6 +86,7 @@ FeedView.propTypes = {
   fetchMore: PropTypes.func,
   renderItem: PropTypes.func,
   renderEmptyState: PropTypes.func,
+  numColumns: PropTypes.number,
 };
 
 export default FeedView;

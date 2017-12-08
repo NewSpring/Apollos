@@ -8,7 +8,7 @@ exports[`the P component should accept additional props 1`] = `
   ellipsizeMode="tail"
   style={
     Object {
-      "color": "#505050",
+      "color": "#303030",
       "fontFamily": null,
       "fontSize": 18,
       "lineHeight": 20,
@@ -46,7 +46,7 @@ exports[`the P component should render correctly 1`] = `
   ellipsizeMode="tail"
   style={
     Object {
-      "color": "#505050",
+      "color": "#303030",
       "fontFamily": null,
       "fontSize": 18,
       "lineHeight": 20,

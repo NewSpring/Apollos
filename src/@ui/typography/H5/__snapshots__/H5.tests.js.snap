@@ -8,7 +8,7 @@ exports[`the H5 component should accept additional props 1`] = `
   ellipsizeMode="tail"
   style={
     Object {
-      "color": "#505050",
+      "color": "#303030",
       "fontFamily": null,
       "fontSize": 20.02,
       "fontWeight": "700",
@@ -48,7 +48,7 @@ exports[`the H5 component should render correctly 1`] = `
   ellipsizeMode="tail"
   style={
     Object {
-      "color": "#505050",
+      "color": "#303030",
       "fontFamily": null,
       "fontSize": 20.02,
       "fontWeight": "700",

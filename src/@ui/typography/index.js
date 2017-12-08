@@ -6,3 +6,4 @@ export { default as H5 } from './H5';
 export { default as H6 } from './H6';
 export { default as H7 } from './H7';
 export { default as BodyCopy } from './BodyCopy';
+export { default as UIText } from './UIText';

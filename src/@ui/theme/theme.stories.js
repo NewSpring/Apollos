@@ -19,15 +19,13 @@ const TypeExample = () => (
 );
 
 const DarkTypeExample = withThemeMixin({
-  colors: { palette: 'dark' },
+  type: 'dark',
 })(TypeExample);
 
 const TypeExampleWithProps = withThemeMixin(({ color, isLight = true }) => ({
+  type: isLight ? 'light' : 'dark',
   colors: {
-    palette: isLight ? 'light' : 'dark',
-    common: {
-      primary: color,
-    },
+    primary: color,
   },
 }))(TypeExample);
 
@@ -40,9 +38,7 @@ storiesOf('Theming', module)
   .add('ThemeProvider - dark theme', () => (
     <ThemeProvider
       themeInput={{
-        colors: {
-          palette: 'dark',
-        },
+        type: 'dark',
       }}
     >
       <TypeExample />
@@ -52,7 +48,7 @@ storiesOf('Theming', module)
     <ThemeProvider>
       <FlexedView>
         <TypeExample />
-        <ThemeMixin mixin={{ colors: { palette: 'dark' } }}>
+        <ThemeMixin mixin={{ type: 'dark' }}>
           <TypeExample />
         </ThemeMixin>
       </FlexedView>

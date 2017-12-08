@@ -13,19 +13,19 @@ const enhance = compose(
 );
 
 const StyledH1 = styled(({ theme }) => ({
-  fontSize: theme.typography.rem(2.9),
+  fontSize: theme.helpers.rem(2.9),
   fontWeight: 'bold',
   fontFamily: theme.typography.fontFamilySans,
-  color: theme.colors.common.primary,
+  color: theme.colors.primary,
   ...Platform.select({
     ios: {
-      lineHeight: theme.typography.verticalRhythm(2.9, 0.945),
+      lineHeight: theme.helpers.verticalRhythm(2.9, 0.945),
     },
     web: {
-      lineHeight: theme.typography.verticalRhythm(2.9, 0.945),
+      lineHeight: theme.helpers.verticalRhythm(2.9, 0.945),
     },
     android: {
-      lineHeight: theme.typography.verticalRhythm(2.9, 1.025),
+      lineHeight: theme.helpers.verticalRhythm(2.9, 1.025),
     },
   }),
 }), 'H1')(Text);

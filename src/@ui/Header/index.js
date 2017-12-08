@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, View, StatusBar, Platform } from 'react-native';
+import { View, StatusBar, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes, branch, renderNothing, pure } from 'recompose';
 import SafeAreaView from '@ui/SafeAreaView';
 import styled from '@ui/styled';
+import { H6 } from '@ui/typography';
 
 import BackButton from './BackButton';
 
@@ -15,12 +16,12 @@ const StyledHeaderBar = styled({
 }, 'Header.Bar')(View);
 
 const HeaderContainer = styled(({ theme }) => ({
-  backgroundColor: theme.colors.common.primary,
+  backgroundColor: theme.colors.primary,
 }), 'Header.Container')(SafeAreaView);
 
-const StyledHeaderText = styled({
-  color: 'white',
-}, 'Header.Text')(Text); // todo: use a different Text component that brings in correct styles
+const StyledHeaderText = styled(({ theme }) => ({
+  color: theme.colors.text.appHeader,
+}), 'Header.Text')(H6);
 
 const enhance = compose(
   pure,
