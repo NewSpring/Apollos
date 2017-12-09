@@ -1,4 +1,4 @@
-import React, { PureComponent, cloneElement } from 'react';
+import React, { PureComponent, cloneElement, Children } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, Linking } from 'react-native';
 import { Parser, DomHandler } from 'htmlparser2';
@@ -10,10 +10,35 @@ import { Link } from './styles';
 
 const LINE_BREAK = '\n';
 
+const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyCopy, Link];
+const wrapTextChildren = (children) => {
+  const newChildren = [];
+  let currentTextChildren = [];
+  Children.forEach(children, (child) => {
+    if (TEXT_TYPES_THAT_SHOULD_WRAP.includes(child.type)) {
+      currentTextChildren.push(child);
+    } else {
+      if (currentTextChildren.length) {
+        newChildren.push(<Text>{currentTextChildren}</Text>);
+        currentTextChildren = [];
+      }
+      newChildren.push(child);
+    }
+  });
+  if (currentTextChildren.length) newChildren.push(<BodyCopy>{currentTextChildren}</BodyCopy>);
+  return newChildren;
+};
+
 export const defaultRenderer = (node, { children }) => {
-  if (node.type === 'text' && node.data && node.data.trim()) return <BodyCopy>{decodeHTML(node.data)}</BodyCopy>;
+  if (node.type === 'text' && node.data && node.data.trim()) {
+    // todo: the color style is needed here to keep color inherited from the parent element
+    // example: <a>text</a> gets rendered like <Link><BodyCopy>text</BodyCopy></Link>
+    return <BodyCopy style={{ color: undefined }}>{decodeHTML(node.data)}</BodyCopy>;
+  }
+
   switch (node.name) {
-    case 'p': return <Paragraph>{children}</Paragraph>;
+    case 'p': return <Paragraph>{wrapTextChildren(children)}</Paragraph>;
+    case 'blockquote': return <Paragraph style={{ paddingHorizontal: 20 }}>{children}</Paragraph>; // todo
     case 'h1': return <H1>{children}</H1>;
     case 'h2': return <H2>{children}</H2>;
     case 'h3': return <H3>{children}</H3>;

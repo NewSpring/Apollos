@@ -35,7 +35,7 @@ const ContentView = enhance(({
   images = [],
   authors = [],
   body = null,
-}) => (
+}) => console.log('contentView', { body }) || (
   <View>
     {(images && images.length) ? <ImageHeader source={images} /> : null}
     <ContentWrapper>

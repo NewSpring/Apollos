@@ -13,7 +13,7 @@ const enhance = compose(
 );
 
 const StyledCard = styled(({ theme }) => ({
-  backgroundColor: theme.colors.background.default,
+  backgroundColor: theme.colors.background.screen,
   borderRadius: theme.sizing.borderRadius,
   ...Platform.select({
     ios: {

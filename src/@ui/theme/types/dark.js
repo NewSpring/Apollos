@@ -6,9 +6,11 @@ const dark = ({ colors, alpha }) => ({
       primary: colors.lightPrimary,
       secondary: colors.lightSecondary,
       tertiary: colors.lightTertiary,
+      link: colors.primary,
     },
     background: {
-      default: colors.darkPrimary,
+      screen: colors.darkPrimary,
+      primary: colors.primary,
       overlay: Color(colors.darkTertiary).fade(alpha.high),
     },
     shadows: {

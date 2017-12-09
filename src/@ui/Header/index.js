@@ -17,7 +17,7 @@ const StyledHeaderBar = styled({
 }, 'Header.Bar')(View);
 
 const HeaderContainer = styled(({ theme }) => ({
-  backgroundColor: theme.colors.primary,
+  backgroundColor: theme.colors.background.primary,
 }), 'Header.Container')(SafeAreaView);
 
 const StyledHeaderText = styled(({ theme, barStyle }) => ({
