@@ -32,10 +32,9 @@ const enhance = compose(
 const Study = enhance(({
   content: {
     title,
+    parent: { content: { isLight = true } = {} } = {},
     content: {
-      isLight = true,
       images = [],
-      // scripture = [],
       body,
     } = {},
   } = {},
