@@ -1,9 +1,9 @@
 import React from 'react';
 import { pure, compose } from 'recompose';
-import Header from '@modules/Header';
-import TileNav from '@modules/TileNav';
+import Header from '@ui/Header';
+import TileNav from '@ui/TileNav';
 import withSections from '@data/withSections';
-import FlexedView from '@primitives/FlexedView';
+import FlexedView from '@ui/FlexedView';
 
 const TileNavWithSections = withSections(TileNav);
 

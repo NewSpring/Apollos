@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '@modules/Header';
-import FlexedView from '@primitives/FlexedView';
+import Header from '@ui/Header';
+import FlexedView from '@ui/FlexedView';
 
 export default function Groups() {
   return (

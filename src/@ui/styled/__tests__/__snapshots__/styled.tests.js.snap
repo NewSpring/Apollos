@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the styled HOC allows a theme to supply overrides 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "green",
+    }
+  }
+/>
+`;
+
+exports[`the styled HOC passes style literal to the base component 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "red",
+    }
+  }
+/>
+`;
+
+exports[`the styled HOC provides a theme 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#6bac43",
+    }
+  }
+/>
+`;
+
+exports[`the styled HOC should accept a function, works with props 1`] = `
+<View
+  color="green"
+  style={
+    Object {
+      "backgroundColor": "green",
+    }
+  }
+/>
+`;
+
+exports[`the styled HOC supports multiple styles, and keeps the correct order 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "red",
+      "borderColor": "green",
+      "height": 100,
+    }
+  }
+/>
+`;

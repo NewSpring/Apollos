@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { View, Platform } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
-import { enhancer as mediaQuery } from '@primitives/MediaQuery';
-import { Router, Route, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@modules/NativeWebRouter';
-import CardStack from '@modules/CardStack';
-import { asModal } from '@primitives/ModalView';
-import DebugView from '@primitives/DebugView';
+import { enhancer as mediaQuery } from '@ui/MediaQuery';
+import { Router, Route, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@ui/NativeWebRouter';
+import CardStack from '@ui/CardStack';
+import { asModal } from '@ui/ModalView';
+import DebugView from '@ui/DebugView';
 
 import * as tabs from './tabs';
 import * as give from './give';

@@ -1,5 +1,5 @@
 import { compose, mapProps, pure } from 'recompose';
-import DebugView from '@primitives/DebugView';
+import DebugView from '@ui/DebugView';
 import withArticle from '@data/withArticle';
 
 const ArticleSingle = compose(

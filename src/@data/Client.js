@@ -3,8 +3,8 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { withClientState } from 'apollo-link-state';
 
-import * as MediaPlayerQueryResolvers from './withMediaPlayer/queries';
-import * as MediaPlayerMutationResolvers from './withMediaPlayer/mutations';
+import * as MediaPlayerQueryResolvers from './mediaPlayer/queries';
+import * as MediaPlayerMutationResolvers from './mediaPlayer/mutations';
 
 import * as GiveQueryResolvers from './withGive/queries';
 import * as GiveMutationResolvers from './withGive/mutations';
