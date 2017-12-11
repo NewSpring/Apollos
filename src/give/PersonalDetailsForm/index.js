@@ -50,12 +50,14 @@ export class PersonalDetailsForm extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      firstName: nextProps.firstName,
-      lastName: nextProps.lastName,
-      email: nextProps.email,
-      campusId: nextProps.campusId,
-    });
+    if (this.props.isLoading) {
+      this.setState({
+        firstName: nextProps.firstName,
+        lastName: nextProps.lastName,
+        email: nextProps.email,
+        campusId: nextProps.campusId,
+      });
+    }
   }
 
   get value() {

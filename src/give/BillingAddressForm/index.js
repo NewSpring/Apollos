@@ -67,14 +67,16 @@ export class BillingAddressForm extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      street1: nextProps.street1,
-      street2: nextProps.street2,
-      countryId: nextProps.countryId,
-      city: nextProps.city,
-      stateId: nextProps.stateId,
-      zipCode: nextProps.zipCode,
-    });
+    if (this.props.isLoading) {
+      this.setState({
+        street1: nextProps.street1,
+        street2: nextProps.street2,
+        countryId: nextProps.countryId,
+        city: nextProps.city,
+        stateId: nextProps.stateId,
+        zipCode: nextProps.zipCode,
+      });
+    }
   }
 
   get value() {
