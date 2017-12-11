@@ -7,8 +7,8 @@ import {
 import PropTypes from 'prop-types';
 import { compose, mapProps } from 'recompose';
 import get from 'lodash/get';
-import ActivityIndicator from '@primitives/ActivityIndicator';
-import { H3, BodyCopy as P } from '@primitives/typography';
+import ActivityIndicator from '@ui/ActivityIndicator';
+import { H3, BodyCopy as P } from '@ui/typography';
 import withFinancialAccounts from '@data/withFinancialAccounts';
 import FundInput from './FundInput';
 import FrequencyInput from './FrequencyInput';

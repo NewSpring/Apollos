@@ -4,7 +4,7 @@ import {
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import Picker from '@primitives/Picker';
+import Picker from '@ui/Picker';
 
 // NOTE: Id's are resolved to frequencies for
 // NMI at withGive

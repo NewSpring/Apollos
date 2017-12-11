@@ -9,8 +9,8 @@ import PropTypes from 'prop-types';
 import { compose, mapProps } from 'recompose';
 import get from 'lodash/get';
 import withCheckout from '@data/withCheckout';
-import Picker from '@primitives/Picker';
-import ActivityIndicator from '@primitives/ActivityIndicator';
+import Picker from '@ui/Picker';
+import ActivityIndicator from '@ui/ActivityIndicator';
 
 export class BillingAddressForm extends Component {
   static propTypes = {

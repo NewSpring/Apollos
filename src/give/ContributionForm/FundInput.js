@@ -4,7 +4,7 @@ import {
   Text,
   TextInput,
 } from 'react-native';
-import Picker from '@primitives/Picker';
+import Picker from '@ui/Picker';
 import PropTypes from 'prop-types';
 import isBlank from '@utils/isBlank';
 
