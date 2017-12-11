@@ -12,6 +12,7 @@ import withGive from '@data/withGive';
 import ContributionForm from './ContributionForm';
 import PersonalDetailsForm from './PersonalDetailsForm';
 import BillingAddressForm from './BillingAddressForm';
+import PaymentForm from './PaymentForm';
 
 export class Now extends Component {
   static propTypes = {
@@ -47,6 +48,10 @@ export class Now extends Component {
         />
 
         <Text>Step 4 - Payment Details (CC or ACH)</Text>
+        <PaymentForm
+          onSubmitCC={console.log}
+          onSubmitBA={console.log}
+        />
         <Text>Step 5 - Confirmation</Text>
         <Text>Step 6 - Thank you</Text>
 
