@@ -86,10 +86,12 @@ class ConnectedImage extends PureComponent {
       });
     }));
 
-    this.setState({ source: getCachedSources(sources) });
+    this.setState({ source: getCachedSources(sources), cached: true });
   }
 
   render() {
+    if (!this.state.cached) return null; // todo: could render a loading image instead!
+
     let { source } = this.state;
     // Android can't currently render an image source without a width/height specified, and then
     // re-render that source with width/height. So render null until width and height is set:
