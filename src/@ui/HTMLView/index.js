@@ -14,18 +14,22 @@ const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyCopy, Link];
 const wrapTextChildren = (children) => {
   const newChildren = [];
   let currentTextChildren = [];
-  Children.forEach(children, (child) => {
+  Children.toArray(children).forEach((child) => {
     if (TEXT_TYPES_THAT_SHOULD_WRAP.includes(child.type)) {
       currentTextChildren.push(child);
     } else {
       if (currentTextChildren.length) {
-        newChildren.push(<Text>{currentTextChildren}</Text>);
+        newChildren.push(currentTextChildren);
         currentTextChildren = [];
       }
       newChildren.push(child);
     }
   });
-  if (currentTextChildren.length) newChildren.push(<BodyCopy>{currentTextChildren}</BodyCopy>);
+  if (currentTextChildren.length) {
+    newChildren.push(
+      <BodyCopy key="composed-children">{currentTextChildren}</BodyCopy>,
+    );
+  }
   return newChildren;
 };
 
@@ -33,7 +37,7 @@ export const defaultRenderer = (node, { children }) => {
   if (node.type === 'text' && node.data && node.data.trim()) {
     // todo: the color style is needed here to keep color inherited from the parent element
     // example: <a>text</a> gets rendered like <Link><BodyCopy>text</BodyCopy></Link>
-    return <BodyCopy style={{ color: undefined }}>{decodeHTML(node.data)}</BodyCopy>;
+    return <BodyCopy style={{ color: undefined }}>{decodeHTML(node.data.trim())}</BodyCopy>;
   }
 
   switch (node.name) {
