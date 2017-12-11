@@ -37,7 +37,7 @@ export const defaultRenderer = (node, { children }) => {
   if (node.type === 'text' && node.data && node.data.trim()) {
     // todo: the color style is needed here to keep color inherited from the parent element
     // example: <a>text</a> gets rendered like <Link><BodyCopy>text</BodyCopy></Link>
-    return <BodyCopy style={{ color: undefined }}>{decodeHTML(node.data.trim())}</BodyCopy>;
+    return <BodyCopy style={{ color: undefined }}>{decodeHTML(node.data)}</BodyCopy>;
   }
 
   switch (node.name) {
