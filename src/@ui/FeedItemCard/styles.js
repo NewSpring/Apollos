@@ -13,7 +13,6 @@ const CardWrapper = styled(({ theme }) => ({
 
 const Card = styled(({ theme, cardColor }) => ({
   width: '100%',
-  minHeight: 400,
   backgroundColor: cardColor || theme.colors.lightPrimary,
   borderRadius: theme.sizing.borderRadius,
   ...Platform.select({
@@ -40,13 +39,11 @@ const Card = styled(({ theme, cardColor }) => ({
  * live on a child wrapper. https://github.com/facebook/react-native/issues/449
  */
 const OverflowFix = styled(({ theme }) => ({
-  flex: 1,
   borderRadius: theme.sizing.borderRadius,
   overflow: 'hidden',
 }))(View);
 
 const CardTitle = styled(({ theme, color: fontColor }) => ({
-  flex: 0,
   paddingTop: theme.sizing.baseUnit,
   paddingHorizontal: theme.sizing.baseUnit,
   color: fontColor || theme.colors.text.primary,

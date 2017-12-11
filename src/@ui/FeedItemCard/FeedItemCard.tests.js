@@ -10,7 +10,7 @@ describe('the FeedItemCard component', () => {
       <ThemeProvider>
         <FeedItemCard
           title={'Boom'}
-          image={'https://picsum.photos/600/400/?random'}
+          images={'https://picsum.photos/600/400/?random'}
           category={'What'}
           isLight
         />
@@ -23,7 +23,7 @@ describe('the FeedItemCard component', () => {
       <ThemeProvider>
         <FeedItemCard
           title={'Boom'}
-          image={'https://picsum.photos/600/400/?random'}
+          images={'https://picsum.photos/600/400/?random'}
           category={'What'}
           isLight={false}
         />
@@ -36,7 +36,7 @@ describe('the FeedItemCard component', () => {
       <ThemeProvider>
         <FeedItemCard
           title={'Boom'}
-          image={'https://picsum.photos/600/400/?random'}
+          images={'https://picsum.photos/600/400/?random'}
           category={'What'}
           cardColor={'salmon'}
           isLight={false}
@@ -50,7 +50,7 @@ describe('the FeedItemCard component', () => {
       <ThemeProvider>
         <FeedItemCard
           title={'Boom'}
-          image={'https://picsum.photos/600/400/?random'}
+          images={'https://picsum.photos/600/400/?random'}
           category={'What'}
           isLight
           isLiked
@@ -69,7 +69,7 @@ describe('the FeedItemCard component', () => {
       <ThemeProvider>
         <FeedItemCard
           title={'Boom'}
-          image={'https://picsum.photos/600/400/?random'}
+          images={'https://picsum.photos/600/400/?random'}
           category={'What'}
           style={cardDimensions}
           isLight

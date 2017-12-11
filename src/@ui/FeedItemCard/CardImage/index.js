@@ -26,7 +26,6 @@ const enhance = compose(
 );
 
 const Wrapper = styled(({ theme }) => ({
-  flex: 1,
   ...Platform.select({
     android: { // fixes android borderRadius overflow display issue
       borderTopRightRadius: theme.sizing.borderRadius,
@@ -37,7 +36,6 @@ const Wrapper = styled(({ theme }) => ({
 
 const StyledImage = styled(({ theme }) => ({
   width: '100%',
-  flex: 1,
   aspectRatio: 1,
   resizeMode: 'cover',
   ...Platform.select({
