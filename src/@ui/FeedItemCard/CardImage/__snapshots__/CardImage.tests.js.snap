@@ -8,28 +8,6 @@ exports[`the FeedItemCard Category component should render 1`] = `
     }
   }
 >
-  <Image
-    maintainAspectRatio={false}
-    source={
-      Array [
-        Object {
-          "uri": "https://picsum.photos/600/400/?random",
-          "url": "https://picsum.photos/600/400/?random",
-        },
-      ]
-    }
-    style={
-      Array [
-        Object {},
-        Object {
-          "aspectRatio": 1,
-          "flex": 1,
-          "resizeMode": "cover",
-          "width": "100%",
-        },
-      ]
-    }
-  />
   <ExponentLinearGradient
     colors={
       Array [

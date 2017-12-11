@@ -130,30 +130,7 @@ exports[`The FeedView component renders correctly 1`] = `
                   "flex": 1,
                 }
               }
-            >
-              <Image
-                maintainAspectRatio={false}
-                source={
-                  Array [
-                    Object {
-                      "uri": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
-                      "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
-                    },
-                  ]
-                }
-                style={
-                  Array [
-                    Object {},
-                    Object {
-                      "aspectRatio": 1,
-                      "flex": 1,
-                      "resizeMode": "cover",
-                      "width": "100%",
-                    },
-                  ]
-                }
-              />
-            </View>
+            />
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -328,28 +305,6 @@ exports[`The FeedView component renders correctly 1`] = `
                 }
               }
             >
-              <Image
-                maintainAspectRatio={false}
-                source={
-                  Array [
-                    Object {
-                      "uri": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
-                      "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
-                    },
-                  ]
-                }
-                style={
-                  Array [
-                    Object {},
-                    Object {
-                      "aspectRatio": 1,
-                      "flex": 1,
-                      "resizeMode": "cover",
-                      "width": "100%",
-                    },
-                  ]
-                }
-              />
               <ExponentLinearGradient
                 colors={
                   Array [
