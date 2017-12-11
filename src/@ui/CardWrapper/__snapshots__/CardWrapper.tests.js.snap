@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the Card component should accept additional props 1`] = `
+exports[`the Card component should accept a backgroundColor 1`] = `
 <View
-  accessible={false}
+  cardColor="salmon"
   style={
     Object {
-      "backgroundColor": "#fff",
+      "backgroundColor": "salmon",
       "borderRadius": 6,
       "shadowColor": "#dddddd",
       "shadowOffset": Object {
@@ -14,6 +14,47 @@ exports[`the Card component should accept additional props 1`] = `
       },
       "shadowOpacity": 1,
       "shadowRadius": 3,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "flex": 1,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+    >
+      Boom!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`the Card component should accept additional props 1`] = `
+<View
+  accessible={false}
+  cardColor={undefined}
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
+      "shadowColor": "#dddddd",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
+      "width": "100%",
     }
   }
 >
@@ -31,9 +72,10 @@ exports[`the Card component should accept additional props 1`] = `
 
 exports[`the Card component should accept and render passed in styles 1`] = `
 <View
+  cardColor={undefined}
   style={
     Object {
-      "backgroundColor": "#fff",
+      "backgroundColor": "#ffffff",
       "borderRadius": 6,
       "height": 400,
       "shadowColor": "#dddddd",
@@ -61,9 +103,10 @@ exports[`the Card component should accept and render passed in styles 1`] = `
 
 exports[`the Card component should render 1`] = `
 <View
+  cardColor={undefined}
   style={
     Object {
-      "backgroundColor": "#fff",
+      "backgroundColor": "#ffffff",
       "borderRadius": 6,
       "shadowColor": "#dddddd",
       "shadowOffset": Object {
@@ -72,6 +115,7 @@ exports[`the Card component should render 1`] = `
       },
       "shadowOpacity": 1,
       "shadowRadius": 3,
+      "width": "100%",
     }
   }
 >
@@ -89,9 +133,10 @@ exports[`the Card component should render 1`] = `
 
 exports[`the Card component should render children 1`] = `
 <View
+  cardColor={undefined}
   style={
     Object {
-      "backgroundColor": "#fff",
+      "backgroundColor": "#ffffff",
       "borderRadius": 6,
       "shadowColor": "#dddddd",
       "shadowOffset": Object {
@@ -100,6 +145,7 @@ exports[`the Card component should render children 1`] = `
       },
       "shadowOpacity": 1,
       "shadowRadius": 3,
+      "width": "100%",
     }
   }
 >

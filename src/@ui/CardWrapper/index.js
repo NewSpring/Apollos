@@ -7,17 +7,19 @@ import styled from '@ui/styled';
 const enhance = compose(
   pure,
   setPropTypes({
+    backgroundColor: PropTypes.string,
     children: PropTypes.node,
     style: PropTypes.any, // eslint-disable-line
   }),
 );
 
-const StyledCard = styled(({ theme }) => ({
-  backgroundColor: theme.colors.background.default,
+const StyledCard = styled(({ theme, cardColor }) => ({
+  width: '100%',
+  backgroundColor: cardColor || theme.colors.lightPrimary,
   borderRadius: theme.sizing.borderRadius,
   ...Platform.select({
     ios: {
-      shadowColor: theme.colors.shadows.default,
+      shadowColor: theme.colors.lightTertiary,
       shadowOffset: {
         width: 0,
         height: 1,
@@ -26,7 +28,10 @@ const StyledCard = styled(({ theme }) => ({
       shadowRadius: 3,
     },
     android: {
-      elevation: 1,
+      elevation: 3,
+    },
+    web: {
+      boxShadow: `0 1px 4px ${theme.colors.lightTertiary}`,
     },
   }),
 }))(View);
@@ -39,10 +44,12 @@ const OverflowFix = styled(({ theme }) => ({
 
 const CardWrapper = enhance(({
   children,
+  backgroundColor,
   style: styleProp = {},
   ...otherProps
 }) => (
   <StyledCard
+    cardColor={backgroundColor}
     style={styleProp}
     {...otherProps}
   >

@@ -11,7 +11,7 @@ import Icon from '@ui/Icon';
 const enhance = compose(
   pure,
   withTheme(({ theme, color }) => ({
-    color: color || theme.colors.lightPrimary,
+    color: color || theme.colors.text.primary,
     theme,
   })),
   setPropTypes({
