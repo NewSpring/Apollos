@@ -15,6 +15,7 @@ import Stories, { StoriesSingle } from './stories';
 import Series, { Sermon, SeriesSingle } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
+import Music, { Playlist } from './music';
 
 let previousLocation;
 
@@ -96,7 +97,8 @@ class AppRouter extends PureComponent {
           <Redirect from="/devotions" to="/studies" />
           <Route exact path="/devotions/:id" component={DebugView} />
 
-          <Route exact path="/music/:id" component={DebugView} />
+          <Route exact path="/music" component={Music} />
+          <Route exact path="/music/:id" component={Playlist} />
 
           <Route exact path="/articles" component={Articles} />
           <Route exact path="/articles/:id" component={ArticlesSingle} />
