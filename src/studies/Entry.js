@@ -13,9 +13,7 @@ const enhance = compose(
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withStudyEntry,
   withThemeMixin(({ content: { parent: { content = {} } = {} } = {} } = {}) => {
-    const theme = {
-      type: content.isLight ? 'light' : 'dark',
-    };
+    const theme = { };
     if (content.colors && content.colors.length) {
       const primary = `#${content.colors[0].value}`;
       theme.colors = {
