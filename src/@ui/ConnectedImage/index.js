@@ -14,6 +14,13 @@ const ImageSourceType = PropTypes.oneOfType([
 
 const sizeCache = {};
 
+const getCacheKey = (source) => {
+  if (source.size && source.fileLabel) return `${source.size}-${source.fileLabel}`;
+  if (source.url) return source.url;
+  if (source.uri) return source.uri;
+  return undefined;
+};
+
 const getCachedSources = (_sources = []) => {
   let sources = _sources;
   if (!Array.isArray(sources)) sources = [sources];
@@ -25,7 +32,7 @@ const getCachedSources = (_sources = []) => {
   return sources.map(source => ({
     uri: (source.url || '').replace(/^http:\/\/|^\/\//i, 'https://'),
     ...source,
-    ...(sizeCache[source.size] || {}),
+    ...(sizeCache[getCacheKey(source)] || {}),
   }));
 };
 
@@ -68,13 +75,14 @@ class ConnectedImage extends PureComponent {
 
   async updateCache(sources) {
     await Promise.all(getCachedSources(sources).map((source) => {
-      if (sizeCache[source.size]) return Promise.resolve(source);
+      const key = getCacheKey(source);
+      if (sizeCache[key] || !key) return Promise.resolve(source);
       return (new Promise((resolve, reject) => {
         Image.getSize(source.uri, (width, height) => resolve({
           width, height,
         }), reject);
       })).then((sizeForCache) => {
-        sizeCache[source.size] = sizeForCache;
+        if (key) sizeCache[key] = sizeForCache;
       });
     }));
 

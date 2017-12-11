@@ -58,15 +58,9 @@ export const defaultRenderer = (node, { children }) => {
     // ignoring fallthrough on the next line because of the conditional return above,
     // so we handle the edge-case of an <a> tag used w/o a href
     case 'img': { // eslint-disable-line no-fallthrough
-      const imgWidth = node.attribs.width || +node.attribs['data-width'];
-      const imgHeight = node.attribs.height || +node.attribs['data-height'];
-
       const source = {
         url: node.attribs.src,
       };
-
-      if (imgWidth) source.width = imgWidth;
-      if (imgHeight) source.height = imgHeight;
 
       const imgStyles = {
         resizeMode: 'contain',
