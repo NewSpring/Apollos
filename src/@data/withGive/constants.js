@@ -1,6 +1,6 @@
 export const INITIAL_STATE = {
   contributions: [],
-  frequencyId: 'once',
+  frequencyId: 'today',
   startDate: (new Date()).toJSON(),
   firstName: '',
   lastName: '',

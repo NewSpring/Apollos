@@ -36,6 +36,7 @@ export default class FundInput extends Component {
     return {
       amount: this.amount,
       id: this.id,
+      name: this.name,
     };
   }
 
@@ -50,6 +51,14 @@ export default class FundInput extends Component {
     } = this.state;
 
     return isBlank(id) ? this.props.funds[0].id : id;
+  }
+
+  get selectedFund() {
+    return this.props.funds.find(({ id }) => (id === this.id));
+  }
+
+  get name() {
+    return this.selectedFund.name;
   }
 
   setContributionAmount = (value) => {

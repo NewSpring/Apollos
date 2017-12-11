@@ -15,7 +15,7 @@ export function addContribution(result, variables, { cache }) {
         ...state,
         contributions: [
           ...state.contributions,
-          pick(variables, ['id', 'amount']),
+          pick(variables, ['id', 'amount', 'name']),
         ],
       },
     },

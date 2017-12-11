@@ -44,7 +44,7 @@ export class ContributionForm extends Component {
   get value() {
     const firstFund = get(this.firstFundInput, 'value', {});
     const secondFund = get(this.secondFundInput, 'value', {});
-    const frequencyId = get(this.frequencyInput, 'value.frequencyId', 'once');
+    const frequencyId = get(this.frequencyInput, 'value.frequencyId', 'today');
     const startDate = get(this.startDateInput, 'value.date', new Date());
     return {
       firstContribution: firstFund,

@@ -9,8 +9,7 @@ import Picker from '@primitives/Picker';
 // NOTE: Id's are resolved to frequencies for
 // NMI at withGive
 const FREQUENCY_IDS = [
-  // { label: 'one time', id: 'once' },
-  { label: 'every year', id: 'yearly' },
+  { label: 'one time', id: 'once' },
   { label: 'every week', id: 'weekly' },
   { label: 'every two weeks', id: 'biweekly' },
   { label: 'once a month', id: 'monthly' },
