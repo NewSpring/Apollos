@@ -8,7 +8,7 @@ import setContributionStartDateMutation from './setContributionStartDateMutation
 import setBillingPersonMutation from './setBillingPersonMutation';
 import setBillingAddressMutation from './setBillingAddressMutation';
 import contributionsQuery from './contributionsQuery';
-import formatPersonDetails from './formatPersonDetails';
+import selectOrderDetails from './selectOrderDetails';
 import createOrderMutation from './createOrderMutation';
 
 const addContribution = graphql(addContributionMutation, {
@@ -78,10 +78,11 @@ const createOrder = graphql(createOrderMutation, {
       const { contributions: state } = Client.readQuery({
         query: contributionsQuery,
       });
-      formatPersonDetails(state);
+      const orderDetails = selectOrderDetails(state);
+      console.log(orderDetails);
       // mutate({
       //   variables: {
-      //     data: JSON.stringify(formatPersonDetails(state)),
+      //     data: JSON.stringify(selectOrderDetails(state)),
       //     id: null,
       //     instant: false,
       //   },
