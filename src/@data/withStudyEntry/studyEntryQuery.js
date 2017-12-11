@@ -16,6 +16,7 @@ export default gql`
           channelId
         }
         parent {
+          title
           content {
             isLight
             colors {

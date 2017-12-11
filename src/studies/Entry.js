@@ -29,7 +29,7 @@ const enhance = compose(
 const Study = enhance(({
   content: {
     title,
-    parent: { content: { isLight = true } = {} } = {},
+    parent: { title: parentTitle, content: { isLight = true } = {} } = {},
     content: {
       images = [],
       body,
@@ -37,7 +37,7 @@ const Study = enhance(({
   } = {},
 }) => (
   <FlexedView>
-    <Header titleText={title} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
+    <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
     <ScrollView>
       <ContentView images={images} body={body} title={title} />
     </ScrollView>
