@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import CardImage from './';
 
-storiesOf('@primitives/FeedItemCard/CardImage', module)
+storiesOf('@ui/FeedItemCard/CardImage', module)
   .add('Default', () => {
     const centered = {
       justifyContent: 'center',
