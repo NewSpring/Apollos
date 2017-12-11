@@ -16,6 +16,8 @@ export default gql`
       city
       stateId
       zipCode
+      isLoadingOrderUrl
+      orderPaymentUrl
     }
   }
 `;

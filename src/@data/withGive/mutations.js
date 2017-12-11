@@ -131,3 +131,23 @@ export function setBillingAddress(result, variables, { cache }) {
 
   return null;
 }
+
+export function setOrder(result, variables, { cache }) {
+  const { contributions: state } = cache.readQuery({
+    query: contributionsQuery,
+    variables,
+  });
+
+  cache.writeQuery({
+    query: contributionsQuery,
+    variables,
+    data: {
+      contributions: {
+        ...state,
+        orderPaymentUrl: variables.url,
+        isLoadingOrderUrl: false,
+      },
+    },
+  });
+  return null;
+}

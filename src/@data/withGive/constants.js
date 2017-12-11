@@ -1,4 +1,5 @@
 export const INITIAL_STATE = {
+  // Create Order Forms
   contributions: [],
   frequencyId: 'today',
   startDate: (new Date()).toJSON(),
@@ -12,4 +13,8 @@ export const INITIAL_STATE = {
   city: '',
   stateId: 'SC',
   zipCode: '',
+
+  // Make payment
+  isLoadingOrderUrl: false,
+  orderPaymentUrl: '',
 };

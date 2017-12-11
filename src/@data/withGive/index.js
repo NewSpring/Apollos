@@ -10,6 +10,7 @@ import setBillingAddressMutation from './setBillingAddressMutation';
 import contributionsQuery from './contributionsQuery';
 import selectOrderDetails from './selectOrderDetails';
 import createOrderMutation from './createOrderMutation';
+import setOrderMutation from './setOrderMutation';
 
 const addContribution = graphql(addContributionMutation, {
   props: ({ mutate }) => ({
@@ -72,6 +73,7 @@ const setBillingAddress = graphql(setBillingAddressMutation, {
 });
 
 // NOTE: They create order after capturing a billing address
+// Works kind of like a thunk
 const createOrder = graphql(createOrderMutation, {
   props: ({ mutate }) => ({
     createOrder() {
@@ -79,15 +81,35 @@ const createOrder = graphql(createOrderMutation, {
         query: contributionsQuery,
       });
       const orderDetails = selectOrderDetails(state);
-      console.log(orderDetails);
-      // mutate({
-      //   variables: {
-      //     data: JSON.stringify(selectOrderDetails(state)),
-      //     id: null,
-      //     instant: false,
-      //   },
-      // });
+      Client.writeQuery({
+        query: contributionsQuery,
+        data: {
+          contributions: {
+            ...state,
+            isLoadingOrderUrl: true,
+          },
+        },
+      });
+
+      return mutate({
+        variables: {
+          data: JSON.stringify(orderDetails),
+          id: null,
+          instant: false,
+        },
+      });
     },
+  }),
+});
+
+// NOTE: Payment info is sent to the URL
+const setOrder = graphql(setOrderMutation, {
+  props: ({ mutate }) => ({
+    setOrder: props => (mutate({
+      variables: {
+        url: props.url,
+      },
+    })),
   }),
 });
 
@@ -112,5 +134,6 @@ export default compose(
   setBillingPerson,
   setBillingAddress,
   createOrder,
+  setOrder,
   get,
 );

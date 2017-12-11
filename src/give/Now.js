@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import { mapProps, compose } from 'recompose';
 import PropTypes from 'prop-types';
+import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import Header from '@modules/Header';
 import FlexedView from '@primitives/FlexedView';
@@ -59,7 +60,6 @@ const enhance = compose(
   mapProps(props => ({
     ...props,
     onSubmitContributionForm(formValues) {
-      // Should this be just one setter? This is the business logic
       props.resetContributions();
       props.addContribution(formValues.firstContribution);
 
@@ -70,9 +70,17 @@ const enhance = compose(
       props.setContributionStartDate(formValues.startDate);
     },
     onSubmitPersonalDetailsForm: props.setBillingPerson,
-    onSubmitBillingAddressForm(formValues) {
-      props.setBillingAddress(formValues);
-      props.createOrder();
+    onSubmitBillingAddressForm: async (formValues) => {
+      try {
+        props.setBillingAddress(formValues);
+        const createOrderResponse = await props.createOrder();
+        const order = get(createOrderResponse, 'data.order', {});
+        props.setOrder({
+          url: order.url,
+        });
+      } catch (err) {
+        throw err;
+      }
     },
   })),
 );
