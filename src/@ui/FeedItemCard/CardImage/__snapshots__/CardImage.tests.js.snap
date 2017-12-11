@@ -9,6 +9,7 @@ exports[`the FeedItemCard Category component should render 1`] = `
   }
 >
   <Image
+    maintainAspectRatio={false}
     source={
       Array [
         Object {
@@ -18,12 +19,15 @@ exports[`the FeedItemCard Category component should render 1`] = `
       ]
     }
     style={
-      Object {
-        "aspectRatio": 1,
-        "flex": 1,
-        "resizeMode": "cover",
-        "width": "100%",
-      }
+      Array [
+        Object {},
+        Object {
+          "aspectRatio": 1,
+          "flex": 1,
+          "resizeMode": "cover",
+          "width": "100%",
+        },
+      ]
     }
   />
   <ExponentLinearGradient

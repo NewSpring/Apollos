@@ -34,7 +34,7 @@ exports[`The Header component should render correctly 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#ffffff",
+          "color": undefined,
           "fontFamily": null,
           "fontSize": 15.75,
           "fontWeight": "700",
@@ -125,7 +125,7 @@ exports[`The Header component should render with a back button correctly 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#ffffff",
+          "color": undefined,
           "fontFamily": null,
           "fontSize": 15.75,
           "fontWeight": "700",

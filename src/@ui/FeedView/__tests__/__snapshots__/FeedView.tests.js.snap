@@ -132,6 +132,7 @@ exports[`The FeedView component renders correctly 1`] = `
               }
             >
               <Image
+                maintainAspectRatio={false}
                 source={
                   Array [
                     Object {
@@ -141,12 +142,15 @@ exports[`The FeedView component renders correctly 1`] = `
                   ]
                 }
                 style={
-                  Object {
-                    "aspectRatio": 1,
-                    "flex": 1,
-                    "resizeMode": "cover",
-                    "width": "100%",
-                  }
+                  Array [
+                    Object {},
+                    Object {
+                      "aspectRatio": 1,
+                      "flex": 1,
+                      "resizeMode": "cover",
+                      "width": "100%",
+                    },
+                  ]
                 }
               />
             </View>
@@ -325,6 +329,7 @@ exports[`The FeedView component renders correctly 1`] = `
               }
             >
               <Image
+                maintainAspectRatio={false}
                 source={
                   Array [
                     Object {
@@ -334,12 +339,15 @@ exports[`The FeedView component renders correctly 1`] = `
                   ]
                 }
                 style={
-                  Object {
-                    "aspectRatio": 1,
-                    "flex": 1,
-                    "resizeMode": "cover",
-                    "width": "100%",
-                  }
+                  Array [
+                    Object {},
+                    Object {
+                      "aspectRatio": 1,
+                      "flex": 1,
+                      "resizeMode": "cover",
+                      "width": "100%",
+                    },
+                  ]
                 }
               />
               <ExponentLinearGradient

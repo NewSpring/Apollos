@@ -57,7 +57,7 @@ exports[`TabBar Link renders with basic props 1`] = `
   >
     <Path
       d="M14.35 21L6.2 12.46c-.26-.28-.26-.64 0-.92L14.34 3l1.65.9L8.27 12 16 20.1l-1.65.9z"
-      fill="#ffffff"
+      fill="red"
     />
   </Svg>
 </View>

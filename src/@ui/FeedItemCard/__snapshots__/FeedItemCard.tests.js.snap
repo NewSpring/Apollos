@@ -46,14 +46,18 @@ exports[`the FeedItemCard component should accept a different card color 1`] = `
         }
       >
         <Image
+          maintainAspectRatio={false}
           source={Array []}
           style={
-            Object {
-              "aspectRatio": 1,
-              "flex": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            }
+            Array [
+              Object {},
+              Object {
+                "aspectRatio": 1,
+                "flex": 1,
+                "resizeMode": "cover",
+                "width": "100%",
+              },
+            ]
           }
         />
       </View>
@@ -218,14 +222,18 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
         }
       >
         <Image
+          maintainAspectRatio={false}
           source={Array []}
           style={
-            Object {
-              "aspectRatio": 1,
-              "flex": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            }
+            Array [
+              Object {},
+              Object {
+                "aspectRatio": 1,
+                "flex": 1,
+                "resizeMode": "cover",
+                "width": "100%",
+              },
+            ]
           }
         />
       </View>
@@ -389,14 +397,18 @@ exports[`the FeedItemCard component should render 1`] = `
         }
       >
         <Image
+          maintainAspectRatio={false}
           source={Array []}
           style={
-            Object {
-              "aspectRatio": 1,
-              "flex": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            }
+            Array [
+              Object {},
+              Object {
+                "aspectRatio": 1,
+                "flex": 1,
+                "resizeMode": "cover",
+                "width": "100%",
+              },
+            ]
           }
         />
       </View>
@@ -561,14 +573,18 @@ exports[`the FeedItemCard component should render as liked 1`] = `
         }
       >
         <Image
+          maintainAspectRatio={false}
           source={Array []}
           style={
-            Object {
-              "aspectRatio": 1,
-              "flex": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            }
+            Array [
+              Object {},
+              Object {
+                "aspectRatio": 1,
+                "flex": 1,
+                "resizeMode": "cover",
+                "width": "100%",
+              },
+            ]
           }
         />
       </View>
@@ -732,14 +748,18 @@ exports[`the FeedItemCard component should render with inverted font colors 1`] 
         }
       >
         <Image
+          maintainAspectRatio={false}
           source={Array []}
           style={
-            Object {
-              "aspectRatio": 1,
-              "flex": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            }
+            Array [
+              Object {},
+              Object {
+                "aspectRatio": 1,
+                "flex": 1,
+                "resizeMode": "cover",
+                "width": "100%",
+              },
+            ]
           }
         />
       </View>
