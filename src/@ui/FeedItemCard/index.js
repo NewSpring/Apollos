@@ -7,13 +7,12 @@ import { startCase, toLower } from 'lodash';
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 import Icon from '@ui/Icon';
+import Card from '@ui/CardWrapper';
 import CategoryLabel from '@ui/CategoryLabel';
 
 import CardImage from './CardImage';
 import {
   CardWrapper,
-  Card,
-  OverflowFix,
   CardTitle,
   Footer,
 } from './styles';
@@ -63,21 +62,19 @@ const FeedItemCard = enhance(({
   ...otherProps
 }) => (
   <CardWrapper>
-    <Card cardColor={backgroundColor} {...otherProps}>
-      <OverflowFix>
-        <CardImage source={images} overlayColor={backgroundColor} />
-        <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
-        <Footer>
-          <CategoryLabel type={startCase(toLower(category))} color={fontColor} />
-          <LikeButton>
-            <Icon
-              name={isLiked ? 'like-solid' : 'like'}
-              size={theme.helpers.rem(1.2)}
-              fill={fontColor}
-            />
-          </LikeButton>
-        </Footer>
-      </OverflowFix>
+    <Card backgroundColor={backgroundColor} {...otherProps}>
+      <CardImage source={images} overlayColor={backgroundColor} />
+      <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
+      <Footer>
+        <CategoryLabel type={startCase(toLower(category))} color={fontColor} />
+        <LikeButton>
+          <Icon
+            name={isLiked ? 'like-solid' : 'like'}
+            size={theme.helpers.rem(1.2)}
+            fill={fontColor}
+          />
+        </LikeButton>
+      </Footer>
     </Card>
   </CardWrapper>
 ));

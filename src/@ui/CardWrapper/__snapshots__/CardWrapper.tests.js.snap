@@ -22,7 +22,6 @@ exports[`the Card component should accept a backgroundColor 1`] = `
     style={
       Object {
         "borderRadius": 6,
-        "flex": 1,
         "overflow": "hidden",
       }
     }
@@ -62,7 +61,6 @@ exports[`the Card component should accept additional props 1`] = `
     style={
       Object {
         "borderRadius": 6,
-        "flex": 1,
         "overflow": "hidden",
       }
     }
@@ -93,7 +91,6 @@ exports[`the Card component should accept and render passed in styles 1`] = `
     style={
       Object {
         "borderRadius": 6,
-        "flex": 1,
         "overflow": "hidden",
       }
     }
@@ -123,7 +120,6 @@ exports[`the Card component should render 1`] = `
     style={
       Object {
         "borderRadius": 6,
-        "flex": 1,
         "overflow": "hidden",
       }
     }
@@ -153,7 +149,6 @@ exports[`the Card component should render children 1`] = `
     style={
       Object {
         "borderRadius": 6,
-        "flex": 1,
         "overflow": "hidden",
       }
     }
