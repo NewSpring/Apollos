@@ -1,7 +1,7 @@
+/* eslint-disable */
 // TODO:
 // This Picker was copy-pasta'd from react-native-web#master.
 // We need to remove this and upgrade to the newest version of RNWeb when it is released.
-/* eslint-disable */
 
 /**
  * Copyright (c) 2017-present, Nicolas Gallagher.
@@ -54,15 +54,15 @@ class Picker extends Component {
     return createElement('select', {
       children,
       disabled: enabled === false ? true : undefined,
-      onChange: this._handleChange,
-      style: [styles.initial, style],
+      onChange: this._handleChange, // eslint-disable-line
+      style: [styles.initial, style], // eslint-disable-line
       testID,
-      value: selectedValue
+      value: selectedValue // eslint-disable-line
     });
   }
 
   _handleChange = (e: Object) => {
-    const { onValueChange } = this.props;
+    const { onValueChange } = this.props; // eslint-disable-line
     const { selectedIndex, value } = e.target;
     if (onValueChange) {
       onValueChange(value, selectedIndex);

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
-import { Animated, Switch, View } from 'react-native';
+import { Switch, View } from 'react-native';
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 

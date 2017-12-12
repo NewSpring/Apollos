@@ -61,6 +61,6 @@ class PickerList extends PureComponent {
       </Animated.View>
     );
   }
-};
+}
 
 export default PickerList;
