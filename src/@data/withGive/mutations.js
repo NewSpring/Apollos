@@ -220,3 +220,50 @@ export function setPaymentMethod(result, variables, { cache }) {
   return null;
 }
 
+export async function postPayment(result, variables, { cache }) {
+  try {
+    const { contributions: state } = cache.readQuery({
+      query: contributionsQuery,
+      variables,
+    });
+
+    const formData = new FormData();
+    switch (state.paymentMethod) {
+      case 'bankAccount':
+        formData.append('billing-account-number', state.bankAccount.accountNumber);
+        formData.append('billing-routing-number', state.bankAccount.routingNumber);
+        formData.append('billing-account-name', state.bankAccount.accountName);
+        formData.append('billing-account-type', state.bankAccount.accountType);
+        formData.append('billing-entity-type', 'personal');
+        break;
+      case 'creditCard':
+        formData.append('billing-cc-number', state.creditCard.cardNumber);
+        formData.append('billing-cc-exp', state.creditCard.expirationDate);
+        formData.append('billing-cvv', state.creditCard.cvv);
+        break;
+      default:
+        break;
+    }
+
+    await fetch(state.orderPaymentUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData,
+    });
+
+    cache.writeQuery({
+      query: contributionsQuery,
+      variables,
+      data: {
+        contributions: {
+          ...state,
+          isPostingPayment: false,
+        },
+      },
+    });
+
+    return res;
+  } catch (err) {
+    throw err;
+  }
+}

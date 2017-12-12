@@ -28,7 +28,8 @@ export const INITIAL_STATE = {
     accountNumber: '',
     routingNumber: '',
     accountName: '',
-    accountType: '',
+    accountType: 'checking',
   },
   paymentMethod: 'creditCard',
+  isPostingPayment: false,
 };

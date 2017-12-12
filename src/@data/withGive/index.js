@@ -14,6 +14,7 @@ import setOrderMutation from './setOrderMutation';
 import setCreditCardMutation from './setCreditCardMutation';
 import setBankAccountMutation from './setBankAccountMutation';
 import setPaymentMethodMutation from './setPaymentMethodMutation';
+import postPaymentMutation from './postPaymentMutation';
 
 const addContribution = graphql(addContributionMutation, {
   props: ({ mutate }) => ({
@@ -156,10 +157,32 @@ const setPaymentMethod = graphql(setPaymentMethodMutation, {
   }),
 });
 
+const postPayment = graphql(postPaymentMutation, {
+  props: ({ mutate }) => ({
+    postPayment: () => {
+      const { contributions: state } = Client.readQuery({
+        query: contributionsQuery,
+      });
+      Client.writeQuery({
+        query: contributionsQuery,
+        data: {
+          contributions: {
+            ...state,
+            isPostingPayment: true,
+          },
+        },
+      });
+
+      return mutate();
+    },
+  }),
+});
+
 const get = graphql(contributionsQuery, {
-  props({ data: { contributions } }) {
-    if (!contributions) return { contributions };
+  props({ data: { contributions, loading } }) {
+    if (!contributions) return { contributions, isLoading: loading };
     return {
+      isLoading: loading,
       contributions: {
         ...contributions,
         startDate: contributions && new Date(contributions.startDate),
@@ -180,5 +203,6 @@ export default compose(
   setCreditCard,
   setBankAccount,
   setPaymentMethod,
+  postPayment,
   get,
 );

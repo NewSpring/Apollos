@@ -30,6 +30,7 @@ export default gql`
         accountType
       }
       paymentMethod
+      isPostingPayment
     }
   }
 `;
