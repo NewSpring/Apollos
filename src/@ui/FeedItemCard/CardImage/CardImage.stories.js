@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
@@ -30,4 +30,30 @@ storiesOf('@ui/FeedItemCard/CardImage', module)
         <CardImage source={'https://picsum.photos/600/400/?random'} overlayColor={'salmon'} />
       </View>
     );
-  });
+  })
+  .add('isLoading', () => React.createElement(class CardImageLoading extends Component {
+    constructor() {
+      super();
+      this.state = { isLoading: true };
+    }
+
+    componentDidMount() {
+      setTimeout(() => {
+        this.setState({ isLoading: false });
+      }, 4000);
+    }
+
+    render() {
+      const centered = {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+      };
+
+      return (
+        <View style={centered}>
+          <CardImage isLoading={this.state.isLoading} source={'https://picsum.photos/600/400/?random'} />
+        </View>
+      );
+    }
+  }));
