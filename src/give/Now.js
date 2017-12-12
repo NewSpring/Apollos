@@ -13,18 +13,29 @@ import ContributionForm from './ContributionForm';
 import PersonalDetailsForm from './PersonalDetailsForm';
 import BillingAddressForm from './BillingAddressForm';
 import PaymentForm from './PaymentForm';
+import PaymentConfirmationForm from './PaymentConfirmationForm';
 
 export class Now extends Component {
   static propTypes = {
     onSubmitContributionForm: PropTypes.func,
     onSubmitPersonalDetailsForm: PropTypes.func,
     onSubmitBillingAddressForm: PropTypes.func,
+    onSubmitCCInformation: PropTypes.func,
+    onSubmitBAInformation: PropTypes.func,
+    onSelectCC: PropTypes.func,
+    onSelectBA: PropTypes.func,
+    onSubmitPaymentConfirmation: PropTypes.func,
   };
 
   static defaultProps = {
     onSubmitContributionForm() {},
     onSubmitPersonalDetailsForm() {},
     onSubmitBillingAddressForm() {},
+    onSubmitCCInformation() {},
+    onSubmitBAInformation() {},
+    onSelectCC() {},
+    onSelectBA() {},
+    onSubmitPaymentConfirmation() {},
   };
 
   render() {
@@ -49,11 +60,17 @@ export class Now extends Component {
 
         <Text>Step 4 - Payment Details (CC or ACH)</Text>
         <PaymentForm
-          onSubmitCC={console.log}
-          onSubmitBA={console.log}
+          onSelectCC={this.props.onSelectCC}
+          onSelectBA={this.props.onSelectBA}
+          onSubmitCC={this.props.onSubmitCCInformation}
+          onSubmitBA={this.props.onSubmitBAInformation}
         />
         <Text>Step 5 - Confirmation</Text>
-        <Text>Step 6 - Thank you</Text>
+        <PaymentConfirmationForm
+          onSubmit={this.props.onSubmitPaymentConfirmation}
+        />
+
+        <Text>Step 6 - Thank you OR Failure</Text>
 
       </FlexedView>
     );
@@ -63,7 +80,6 @@ export class Now extends Component {
 const enhance = compose(
   withGive,
   mapProps(props => ({
-    ...props,
     onSubmitContributionForm(formValues) {
       props.resetContributions();
       props.addContribution(formValues.firstContribution);
@@ -87,6 +103,19 @@ const enhance = compose(
         throw err;
       }
     },
+    onSubmitCCInformation: props.setCreditCard,
+    onSubmitBAInformation: props.setBankAccount,
+    onSelectCC: props.isPayingWithCreditCard,
+    onSelectBA: props.isPayingWithBankAccount,
+    onSubmitPaymentConfirmation: async () => {
+      try {
+        const payment = await props.postPayment();
+        return payment;
+      } catch (err) {
+        throw err;
+      }
+    },
+    ...props,
   })),
 );
 
