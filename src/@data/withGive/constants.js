@@ -17,4 +17,17 @@ export const INITIAL_STATE = {
   // Make payment
   isLoadingOrderUrl: false,
   orderPaymentUrl: '',
+  creditCard: {
+    __typename: 'CreditCard',
+    cardNumber: '',
+    expirationDate: '',
+    cvv: '',
+  },
+  bankAccount: {
+    __typename: 'BankAccount',
+    accountNumber: '',
+    routingNumber: '',
+    accountName: '',
+    accountType: '',
+  },
 };

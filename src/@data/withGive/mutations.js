@@ -151,3 +151,53 @@ export function setOrder(result, variables, { cache }) {
   });
   return null;
 }
+
+export function setCreditCard(result, variables, { cache }) {
+  const { contributions: state } = cache.readQuery({
+    query: contributionsQuery,
+    variables,
+  });
+
+  cache.writeQuery({
+    query: contributionsQuery,
+    variables,
+    data: {
+      contributions: {
+        ...state,
+        creditCard: {
+          ...state.creditCard,
+          cardNumber: variables.cardNumber,
+          expirationDate: variables.expirationDate,
+          cvv: variables.cvv,
+        },
+      },
+    },
+  });
+  return null;
+}
+
+export function setBankAccount(result, variables, { cache }) {
+  const { contributions: state } = cache.readQuery({
+    query: contributionsQuery,
+    variables,
+  });
+
+  cache.writeQuery({
+    query: contributionsQuery,
+    variables,
+    data: {
+      contributions: {
+        ...state,
+        bankAccount: {
+          ...state.bankAccount,
+          accountNumber: variables.accountNumber,
+          routingNumber: variables.routingNumber,
+          accountName: variables.accountName,
+          accountType: variables.accountType,
+        },
+      },
+    },
+  });
+  return null;
+}
+

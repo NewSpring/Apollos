@@ -11,6 +11,8 @@ import contributionsQuery from './contributionsQuery';
 import selectOrderDetails from './selectOrderDetails';
 import createOrderMutation from './createOrderMutation';
 import setOrderMutation from './setOrderMutation';
+import setCreditCardMutation from './setCreditCardMutation';
+import setBankAccountMutation from './setBankAccountMutation';
 
 const addContribution = graphql(addContributionMutation, {
   props: ({ mutate }) => ({
@@ -113,6 +115,30 @@ const setOrder = graphql(setOrderMutation, {
   }),
 });
 
+const setCreditCard = graphql(setCreditCardMutation, {
+  props: ({ mutate }) => ({
+    setCreditCard: props => (mutate({
+      variables: {
+        cardNumber: props.cardNumber,
+        expirationDate: props.expirationDate,
+        cvv: props.cvv,
+      },
+    })),
+  }),
+});
+
+const setBankAccount = graphql(setBankAccountMutation, {
+  props: ({ mutate }) => ({
+    setBankAccount: props => (mutate({
+      variables: {
+        accountNumber: props.accountNumber,
+        routingNumber: props.routingNumber,
+        accountName: props.accountName,
+        accountType: props.accountType,
+      },
+    })),
+  }),
+});
 
 const get = graphql(contributionsQuery, {
   props({ data: { contributions } }) {
@@ -135,5 +161,7 @@ export default compose(
   setBillingAddress,
   createOrder,
   setOrder,
+  setCreditCard,
+  setBankAccount,
   get,
 );

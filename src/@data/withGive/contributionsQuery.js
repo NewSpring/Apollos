@@ -18,6 +18,17 @@ export default gql`
       zipCode
       isLoadingOrderUrl
       orderPaymentUrl
+      creditCard {
+        cardNumber
+        expirationDate
+        cvv
+      }
+      bankAccount {
+        accountNumber
+        routingNumber
+        accountName
+        accountType
+      }
     }
   }
 `;
