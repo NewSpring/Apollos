@@ -262,7 +262,7 @@ export async function postPayment(result, variables, { cache }) {
       },
     });
 
-    return res;
+    return null;
   } catch (err) {
     throw err;
   }
