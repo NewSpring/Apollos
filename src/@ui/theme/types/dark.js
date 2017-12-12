@@ -22,7 +22,10 @@ const dark = ({ colors, alpha }) => ({
       placeholder: colors.lightTertiary,
     },
     action: {
-      // todo
+      default: colors.darkTertiary,
+      primary: colors.primary,
+      secondary: colors.secondary,
+      tertiary: colors.tertiary,
     },
   },
 });
