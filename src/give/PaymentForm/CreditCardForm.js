@@ -6,27 +6,54 @@ import {
   TextInput,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import {
+  isEqual,
+  pick,
+} from 'lodash';
 
 export default class CreditCardForm extends Component {
   static propTypes = {
     onSubmit: PropTypes.func,
+    cardNumber: PropTypes.string,
+    expirationDate: PropTypes.string,
+    cvv: PropTypes.string,
   };
 
   static defaultProps = {
     onSubmit() {},
+    cardNumber: '',
+    expirationDate: '',
+    cvv: '',
   };
 
   state = {
-    cardNumber: '',
-    expirationDate: '',
-    ccv: '',
+    cardNumber: this.props.cardNumber,
+    expirationDate: this.props.expirationDate,
+    cvv: this.props.cvv,
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const propTypeKeys = [
+      'cardNumber',
+      'expirationDate',
+      'cvv',
+    ];
+
+    const didChange = !isEqual(pick(nextProps, propTypeKeys), pick(this.props, propTypeKeys));
+    if (didChange) {
+      this.setState({
+        cardNumber: nextProps.cardNumber,
+        expirationDate: nextProps.expirationDate,
+        cvv: nextProps.cvv,
+      });
+    }
   }
 
   get value() {
     return {
       cardNumber: this.state.cardNumber,
       expirationDate: this.state.expirationDate,
-      ccv: this.state.ccv,
+      cvv: this.state.cvv,
     };
   }
 
@@ -50,10 +77,10 @@ export default class CreditCardForm extends Component {
           value={this.state.expirationDate}
         />
 
-        <Text>{'CCV'}</Text>
+        <Text>{'CVV'}</Text>
         <TextInput
-          onChangeText={(ccv) => { this.setState({ ccv }); }}
-          value={this.state.ccv}
+          onChangeText={(cvv) => { this.setState({ cvv }); }}
+          value={this.state.cvv}
         />
 
         <TouchableHighlight
