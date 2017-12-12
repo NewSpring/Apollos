@@ -6,4 +6,10 @@ const InputAddon = styled({
   alignItems: 'center',
 }, 'InputAddon')(View);
 
+export const AddonRow = styled({
+  flexDirection: 'row',
+  justifyContent: 'center',
+}, 'InputWrapper.Row')(View);
+
+
 export default InputAddon;

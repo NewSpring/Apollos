@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const InputUnderline = ({ animation }) => {
+const InputUnderline = ({ animation = new Animated.Value(0) }) => {
   const transform = [
     { scaleX: animation.interpolate({ inputRange: [0, 1], outputRange: [0.0001, 1] }) },
   ];

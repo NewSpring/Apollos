@@ -19,6 +19,7 @@ const dark = ({ colors, alpha }) => ({
     },
     input: {
       // todo
+      placeholder: colors.lightTertiary,
     },
     action: {
       // todo
