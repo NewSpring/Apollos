@@ -12,11 +12,15 @@ export default class PaymentForm extends Component {
   static propTypes = {
     onSubmitCC: PropTypes.func,
     onSubmitBA: PropTypes.func,
+    onSelectCC: PropTypes.func,
+    onSelectBA: PropTypes.func,
   };
 
   static defaultProps = {
     onSubmitCC() {},
     onSubmitBA() {},
+    onSelectCC() {},
+    onSelectBA() {},
   };
 
   state = {
@@ -26,13 +30,13 @@ export default class PaymentForm extends Component {
   showCCForm = () => {
     this.setState({
       ccFormVisible: true,
-    });
+    }, this.props.onSelectCC);
   }
 
   showBAForm = () => {
     this.setState({
       ccFormVisible: false,
-    });
+    }, this.props.onSelectBA);
   }
 
   render() {

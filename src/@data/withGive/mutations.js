@@ -201,3 +201,22 @@ export function setBankAccount(result, variables, { cache }) {
   return null;
 }
 
+export function setPaymentMethod(result, variables, { cache }) {
+  const { contributions: state } = cache.readQuery({
+    query: contributionsQuery,
+    variables,
+  });
+
+  cache.writeQuery({
+    query: contributionsQuery,
+    variables,
+    data: {
+      contributions: {
+        ...state,
+        paymentMethod: variables.method,
+      },
+    },
+  });
+  return null;
+}
+

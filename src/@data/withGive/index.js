@@ -13,6 +13,7 @@ import createOrderMutation from './createOrderMutation';
 import setOrderMutation from './setOrderMutation';
 import setCreditCardMutation from './setCreditCardMutation';
 import setBankAccountMutation from './setBankAccountMutation';
+import setPaymentMethodMutation from './setPaymentMethodMutation';
 
 const addContribution = graphql(addContributionMutation, {
   props: ({ mutate }) => ({
@@ -140,6 +141,21 @@ const setBankAccount = graphql(setBankAccountMutation, {
   }),
 });
 
+const setPaymentMethod = graphql(setPaymentMethodMutation, {
+  props: ({ mutate }) => ({
+    isPayingWithCreditCard: () => (mutate({
+      variables: {
+        method: 'creditCard',
+      },
+    })),
+    isPayingWithBankAccount: () => (mutate({
+      variables: {
+        method: 'bankAccount',
+      },
+    })),
+  }),
+});
+
 const get = graphql(contributionsQuery, {
   props({ data: { contributions } }) {
     if (!contributions) return { contributions };
@@ -163,5 +179,6 @@ export default compose(
   setOrder,
   setCreditCard,
   setBankAccount,
+  setPaymentMethod,
   get,
 );

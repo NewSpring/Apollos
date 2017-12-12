@@ -30,4 +30,5 @@ export const INITIAL_STATE = {
     accountName: '',
     accountType: '',
   },
+  paymentMethod: 'creditCard',
 };
