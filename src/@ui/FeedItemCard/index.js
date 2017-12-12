@@ -7,13 +7,12 @@ import { startCase, toLower } from 'lodash';
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 import Icon from '@ui/Icon';
+import Card from '@ui/CardWrapper';
 import CategoryLabel from '@ui/CategoryLabel';
 
 import CardImage from './CardImage';
 import {
   CardWrapper,
-  Card,
-  OverflowFix,
   CardTitle,
   Footer,
 } from './styles';
@@ -21,7 +20,9 @@ import {
 const enhance = compose(
   pure,
   withTheme(({ theme, isLight }) => ({
-    fontColor: isLight ? theme.colors.text.primary : theme.colors.lightPrimary,
+    fontColor: (isLight || typeof isLight === 'undefined') ?
+      theme.colors.text.primary :
+      theme.colors.lightPrimary,
     theme,
   })),
   setPropTypes({
@@ -35,7 +36,8 @@ const enhance = compose(
       PropTypes.string,
     ]),
     category: PropTypes.string.isRequired,
-    isLight: PropTypes.bool.isRequired,
+    isLiked: PropTypes.bool,
+    isLight: PropTypes.bool,
     color: PropTypes.string,
     fontColor: PropTypes.string,
     backgroundColor: PropTypes.string,
@@ -53,23 +55,26 @@ const FeedItemCard = enhance(({
   images,
   title,
   category,
+  isLiked,
   fontColor,
   backgroundColor,
   theme,
   ...otherProps
 }) => (
   <CardWrapper>
-    <Card cardColor={backgroundColor} {...otherProps}>
-      <OverflowFix>
-        <CardImage source={images} overlayColor={backgroundColor} />
-        <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
-        <Footer>
-          <CategoryLabel type={startCase(toLower(category))} color={fontColor} />
-          <LikeButton>
-            <Icon name={'like'} size={theme.helpers.rem(1.2)} fill={fontColor} />
-          </LikeButton>
-        </Footer>
-      </OverflowFix>
+    <Card backgroundColor={backgroundColor} {...otherProps}>
+      <CardImage source={images} overlayColor={backgroundColor} />
+      <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
+      <Footer>
+        <CategoryLabel type={startCase(toLower(category))} color={fontColor} />
+        <LikeButton>
+          <Icon
+            name={isLiked ? 'like-solid' : 'like'}
+            size={theme.helpers.rem(1.2)}
+            fill={fontColor}
+          />
+        </LikeButton>
+      </Footer>
     </Card>
   </CardWrapper>
 ));
