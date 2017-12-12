@@ -10,6 +10,8 @@ const light = ({ colors, alpha }) => ({
     },
     background: {
       default: colors.white,
+      primary: colors.primary,
+      inactive: colors.lightTertiary,
       overlay: Color(colors.darkTertiary).fade(alpha.high),
       // todo
     },
