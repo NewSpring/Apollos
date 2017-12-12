@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
+import Placeholder from 'rn-placeholder';
 
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
@@ -17,6 +18,7 @@ const enhance = compose(
   setPropTypes({
     type: PropTypes.string,
     color: PropTypes.string,
+    isLoading: PropTypes.bool,
   }),
 );
 
@@ -50,15 +52,25 @@ const getIconName = (type) => {
 const CategoryLabel = enhance(({
   type,
   color: fontColor,
+  isLoading,
   theme,
 }) => (
   <Wrapper>
-    <Icon
-      name={getIconName(type)}
+    <Placeholder.ImageContent
+      lastLineWidth={'40%'}
+      textSize={theme.helpers.rem(1.2)}
+      lineNumber={1}
       size={theme.helpers.rem(1.2)}
-      fill={fontColor}
-    />
-    <StyledH7 color={fontColor}>{type}</StyledH7>
+      hasRadius
+      onReady={!isLoading}
+    >
+      <Icon
+        name={getIconName(type)}
+        size={theme.helpers.rem(1.2)}
+        fill={fontColor}
+      />
+      <StyledH7 color={fontColor}>{type}</StyledH7>
+    </Placeholder.ImageContent>
   </Wrapper>
 ));
 
