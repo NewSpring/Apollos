@@ -3,12 +3,8 @@ import { Animated, Easing } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import FloatingLabel from './FloatingLabel';
-import InputUnderline from './InputUnderline';
-import InputWrapper from './InputWrapper';
-
 // helper HOC to wrap an Input in a floating label and animated underline
-const createInput = Component => (
+const withFocusAnimation = Component => (
   class WrappedInput extends PureComponent {
     static propTypes = {
       label: PropTypes.string.isRequired,
@@ -55,19 +51,15 @@ const createInput = Component => (
 
     render() {
       return (
-        <InputWrapper>
-          <Component
-            {...this.props}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            focusAnimation={this.focusAnimation}
-          />
-          <FloatingLabel animation={this.focusAnimation}>{this.props.label}</FloatingLabel>
-          <InputUnderline animation={this.focusAnimation} />
-        </InputWrapper>
+        <Component
+          {...this.props}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+          focusAnimation={this.focusAnimation}
+        />
       );
     }
   }
 );
 
-export default createInput;
+export default withFocusAnimation;

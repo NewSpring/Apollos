@@ -4,7 +4,7 @@ import { Animated, StyleSheet } from 'react-native';
 import { UIText } from '@ui/typography';
 import styled from '@ui/styled';
 
-const LabelText = styled(({ theme }) => ({
+export const LabelText = styled(({ theme }) => ({
   backgroundColor: 'transparent',
   paddingVertical: theme.sizing.baseUnit / 4,
 }), 'FloatingLabel.LabelText')(UIText);

@@ -4,7 +4,11 @@ import { get } from 'lodash';
 import { compose, withProps, pure } from 'recompose';
 import { TextInput, Animated } from 'react-native';
 
-import createInput from '../createInput';
+import FloatingLabel from '../FloatingLabel';
+import InputUnderline from '../InputUnderline';
+import InputWrapper from '../InputWrapper';
+
+import withFocusAnimation from '../withFocusAnimation';
 import InputAddon, { AddonRow } from '../InputAddon';
 import withInputControlStyles from '../withInputControlStyles';
 
@@ -31,7 +35,7 @@ const propsForInputType = {
 
 const enhance = compose(
   pure,
-  createInput,
+  withFocusAnimation,
   withProps(({ type, ...props }) => ({
     ...get(propsForInputType, type, {}),
     ...props,
@@ -39,23 +43,30 @@ const enhance = compose(
 );
 
 const Text = enhance(({
+  label,
   prefix,
   suffix,
-  focusAnimation, // from createInput
+  focusAnimation, // from withFocusAnimation
   ...textInputProps
 }) => (
-  <AddonRow>
-    <InputAddon>{prefix}</InputAddon>
-    <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
-      <StyledTextInput {...textInputProps} />
-    </Animated.View>
-    <InputAddon>{suffix}</InputAddon>
-  </AddonRow>
+  <InputWrapper>
+    <AddonRow>
+      <InputAddon>{prefix}</InputAddon>
+      <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
+        <StyledTextInput {...textInputProps} />
+      </Animated.View>
+      <InputAddon>{suffix}</InputAddon>
+    </AddonRow>
+
+    <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
+    <InputUnderline animation={focusAnimation} />
+  </InputWrapper>
 ));
 
 Text.propTypes = {
   prefix: PropTypes.node,
   suffix: PropTypes.node,
+  label: PropTypes.string,
 };
 
 export default Text;

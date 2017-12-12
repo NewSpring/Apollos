@@ -1,11 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { View, Animated, Picker as NativePicker, TouchableOpacity } from 'react-native';
+import { Animated, Picker as NativePicker, TouchableOpacity } from 'react-native';
 import styled from '@ui/styled';
 
 import { UIText } from '@ui/typography';
 import Icon from '@ui/Icon';
-import createInput from '../createInput';
+
+import FloatingLabel from '../FloatingLabel';
+import InputUnderline from '../InputUnderline';
+import InputWrapper from '../InputWrapper';
+import withFocusAnimation from '../withFocusAnimation';
+
 import InputAddon, { AddonRow } from '../InputAddon';
 import withInputControlStyles from '../withInputControlStyles';
 
@@ -25,6 +30,7 @@ class Picker extends PureComponent {
     suffix: PropTypes.node,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
+    label: PropTypes.string,
   };
 
   state = {
@@ -47,6 +53,7 @@ class Picker extends PureComponent {
       displayValue,
       focusAnimation, // from createInput
       placeholder,
+      label,
       ...pickerProps
     } = this.props;
     const rotate = focusAnimation.interpolate({
@@ -54,7 +61,7 @@ class Picker extends PureComponent {
       outputRange: ['0deg', '180deg'],
     });
     return (
-      <View>
+      <InputWrapper>
         <TouchableOpacity onPress={this.toggle}>
           <AddonRow>
             <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
@@ -70,10 +77,13 @@ class Picker extends PureComponent {
           </AddonRow>
         </TouchableOpacity>
         <PickerList {...pickerProps} focusAnimation={focusAnimation} />
-      </View>
+
+        <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
+        <InputUnderline animation={focusAnimation} />
+      </InputWrapper>
     );
   }
 }
 
-export default createInput(Picker);
+export default withFocusAnimation(Picker);
 export const { Item } = NativePicker;
