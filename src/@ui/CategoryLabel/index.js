@@ -27,8 +27,7 @@ const Wrapper = styled(({ theme }) => ({
   alignItems: 'center',
   flex: 1,
   paddingTop: theme.sizing.baseUnit / 2,
-  paddingHorizontal: theme.sizing.baseUnit,
-  paddingBottom: theme.sizing.baseUnit,
+  paddingRight: theme.sizing.baseUnit,
 }))(View);
 
 const StyledH7 = styled(({ color: fontColor, theme }) => ({

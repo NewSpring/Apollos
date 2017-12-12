@@ -3,6 +3,7 @@ import { TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import { startCase, toLower } from 'lodash';
+import Placeholder from 'rn-placeholder';
 
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
@@ -48,8 +49,6 @@ const enhance = compose(
 
 const LikeButton = styled(({ theme }) => ({
   paddingTop: theme.sizing.baseUnit / 2,
-  paddingHorizontal: theme.sizing.baseUnit,
-  paddingBottom: theme.sizing.baseUnit,
 }))(TouchableOpacity);
 
 const FeedItemCard = enhance(({
@@ -66,8 +65,14 @@ const FeedItemCard = enhance(({
   <CardWrapper>
     <Card backgroundColor={backgroundColor} {...otherProps}>
       <CardImage source={images} overlayColor={backgroundColor} isLoading={loadingState} />
-      <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
       <Footer>
+        <Placeholder.Line
+          width={'100%'}
+          textSize={theme.helpers.rem(1.4)}
+          onReady={!loadingState}
+        >
+          <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
+        </Placeholder.Line>
         <CategoryLabel
           type={startCase(toLower(category))}
           color={fontColor}
@@ -78,6 +83,7 @@ const FeedItemCard = enhance(({
             name={isLiked ? 'like-solid' : 'like'}
             size={theme.helpers.rem(1.2)}
             fill={fontColor}
+            isLoading={loadingState}
           />
         </LikeButton>
       </Footer>
