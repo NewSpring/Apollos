@@ -145,6 +145,7 @@ export function setOrder(result, variables, { cache }) {
       contributions: {
         ...state,
         orderPaymentUrl: variables.url,
+        orderPaymentToken: variables.url.split('/').pop(),
         isLoadingOrderUrl: false,
       },
     },

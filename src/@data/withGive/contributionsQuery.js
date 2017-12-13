@@ -18,6 +18,7 @@ export default gql`
       zipCode
       isLoadingOrderUrl
       orderPaymentUrl
+      orderPaymentToken
       creditCard {
         cardNumber
         expirationDate
