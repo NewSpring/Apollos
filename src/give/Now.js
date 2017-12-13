@@ -14,6 +14,7 @@ import PersonalDetailsForm from './PersonalDetailsForm';
 import BillingAddressForm from './BillingAddressForm';
 import PaymentForm from './PaymentForm';
 import PaymentConfirmationForm from './PaymentConfirmationForm';
+import PaymentComplete from './PaymentComplete';
 
 export class Now extends Component {
   static propTypes = {
@@ -71,7 +72,10 @@ export class Now extends Component {
         />
 
         <Text>Step 6 - Thank you OR Failure</Text>
-
+        <PaymentComplete
+          onPressTryAgain={console.log}
+          onPressContinue={console.log}
+        />
       </FlexedView>
     );
   }
@@ -110,6 +114,12 @@ const enhance = compose(
     onSubmitPaymentConfirmation: async () => {
       try {
         const payment = await props.postPayment();
+        if (props.paymentMethod === 'creditCard') {
+          const { error } = await props.validateSingleCardTransaction(props.orderPaymentToken);
+          if (error) return console.log(error);
+          // TODO: Left off here, need to keep reading through the code to understand what id and name are for
+          return props.completeOrder(props.orderPaymentToken);
+        }
         return payment;
       } catch (err) {
         throw err;
