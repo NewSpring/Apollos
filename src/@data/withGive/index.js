@@ -15,6 +15,8 @@ import setCreditCardMutation from './setCreditCardMutation';
 import setBankAccountMutation from './setBankAccountMutation';
 import setPaymentMethodMutation from './setPaymentMethodMutation';
 import postPaymentMutation from './postPaymentMutation';
+import validateSingleCardTransactionMutation from './validateSingleCardTransactionMutation';
+import completeOrderMutation from './completeOrderMutation';
 
 const addContribution = graphql(addContributionMutation, {
   props: ({ mutate }) => ({
@@ -178,6 +180,27 @@ const postPayment = graphql(postPaymentMutation, {
   }),
 });
 
+// For non-saved CC only
+const validateSingleCardTransaction = graphql(validateSingleCardTransactionMutation, {
+  props: ({ mutate }) => ({
+    validateSingleCardTransaction: token => (mutate({
+      variables: {
+        token,
+      },
+    })),
+  }),
+});
+
+const completeOrder = graphql(completeOrderMutation, {
+  props: ({ mutate }) => ({
+    completeOrder: token => (mutate({
+      variables: {
+        token,
+      },
+    })),
+  }),
+});
+
 const get = graphql(contributionsQuery, {
   props({ data: { contributions, loading } }) {
     if (!contributions) return { contributions, isLoading: loading };
@@ -204,5 +227,7 @@ export default compose(
   setBankAccount,
   setPaymentMethod,
   postPayment,
+  validateSingleCardTransaction,
+  completeOrder,
   get,
 );
