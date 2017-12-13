@@ -1,12 +1,15 @@
 import React, { PureComponent } from 'react';
 import { Platform, Image } from 'react-native';
 import PropTypes from 'prop-types';
+import { every } from 'lodash';
 
 // This mirrors the File resource we get from Heighliner:
 const ImageSourceType = PropTypes.oneOfType([
   PropTypes.shape({
-    url: PropTypes.string,
+    uri: PropTypes.string,
     label: PropTypes.string,
+    width: PropTypes.number,
+    height: PropTypes.number,
   }),
   PropTypes.string,
 ]);
@@ -38,7 +41,8 @@ const getCachedSources = (_sources = []) => {
 class ConnectedImage extends PureComponent {
   static propTypes = {
     source: PropTypes.oneOfType([
-      PropTypes.arrayOf(ImageSourceType), ImageSourceType,
+      PropTypes.arrayOf(ImageSourceType),
+      ImageSourceType,
     ]),
     ImageComponent: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     maintainAspectRatio: PropTypes.bool,
@@ -85,12 +89,13 @@ class ConnectedImage extends PureComponent {
       });
     }));
 
-    this.setState({ source: getCachedSources(sources), cached: true });
+    this.setState({ source: getCachedSources(sources) });
   }
 
   render() {
-    if (!this.state.cached) return null; // todo: could render a loading image instead?
     let { source } = this.state;
+    if (!Array.isArray(source)) source = [source]; // TODO: could render a loading image instead?
+    if (!every(this.state.source, image => image.width && image.height)) return null;
 
     // react-native-web currently doesn't support array-based Image sources
     if (Platform.OS === 'web' && Array.isArray(source)) {

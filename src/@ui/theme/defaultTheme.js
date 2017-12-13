@@ -38,8 +38,8 @@ export const colors = {
   lightSecondary: '#f7f7f7',
   lightTertiary: '#dddddd',
   // Statics
-  black: '#000',
-  white: '#fff',
+  black: '#000000',
+  white: '#ffffff',
   transparent: 'transparent',
 };
 
