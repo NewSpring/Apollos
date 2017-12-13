@@ -1,18 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the FeedItemCard Category component should render 1`] = `
+exports[`the FeedItemCard CardImage component should render 1`] = `
 <View
-  style={
-    Object {
-      "flex": 1,
-    }
-  }
+  style={Object {}}
 >
+  <Image
+    source={
+      Array [
+        Object {
+          "uri": "https://picsum.photos/600/400/?random",
+          "url": "https://picsum.photos/600/400/?random",
+        },
+      ]
+    }
+    style={
+      Object {
+        "aspectRatio": 1,
+        "resizeMode": "cover",
+        "width": "100%",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`the FeedItemCard CardImage component should render with an overlayColor 1`] = `
+<View
+  style={Object {}}
+>
+  <Image
+    source={
+      Array [
+        Object {
+          "uri": "https://picsum.photos/600/400/?random",
+          "url": "https://picsum.photos/600/400/?random",
+        },
+      ]
+    }
+    style={
+      Object {
+        "aspectRatio": 1,
+        "resizeMode": "cover",
+        "width": "100%",
+      }
+    }
+  />
   <ExponentLinearGradient
     colors={
       Array [
-        16777215,
-        4294967295,
+        16416882,
+        4294606962,
       ]
     }
     end={
