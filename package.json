@@ -53,15 +53,7 @@
     "run-with-settings": "node ./.scripts/run-with-settings.js"
   },
   "jest": {
-    "preset": "jest-expo",
-    "testMatch": [
-      "**/__tests__/**/*.js?(x)",
-      "**/?(*.)(spec|test|tests).js?(x)"
-    ],
-    "setupFiles": [
-      "./.jestrc.js"
-    ],
-    "collectCoverage": true
+
   },
   "config": {
     "react-native-storybook-loader": {
