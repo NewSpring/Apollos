@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '@modules/Header';
-import FlexedView from '@primitives/FlexedView';
-import LoginForm from '@modules/LoginForm';
-import SignUpForm from '@modules/SignUpForm';
+import LoginForm from '@ui/forms/LoginForm';
+import SignUpForm from '@ui/forms/SignUpForm';
+import Header from '@ui/Header';
+import FlexedView from '@ui/FlexedView';
 
 export default function Profile() {
   return (
