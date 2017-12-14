@@ -1,0 +1,8 @@
+config
+config/*
+scripts
+scripts/*
+node_modules
+.expo/
+.env
+coverage
