@@ -23,6 +23,16 @@ describe('the Card component', () => {
     );
     expect(tree).toMatchSnapshot();
   });
+  it('should accept a backgroundColor', () => {
+    const tree = renderer.create(
+      <ThemeProvider>
+        <CardWrapper backgroundColor={'salmon'}>
+          <Text>Boom!</Text>
+        </CardWrapper>
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
   it('should accept and render passed in styles', () => {
     const cardDimensions = {
       height: 400,
