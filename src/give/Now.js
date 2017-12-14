@@ -40,7 +40,6 @@ export class Now extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <FlexedView>
         <Header titleText="Give Dashboard" />
@@ -72,10 +71,7 @@ export class Now extends Component {
         />
 
         <Text>Step 6 - Thank you OR Failure</Text>
-        <PaymentComplete
-          onPressTryAgain={console.log}
-          onPressContinue={console.log}
-        />
+        <PaymentComplete />
       </FlexedView>
     );
   }

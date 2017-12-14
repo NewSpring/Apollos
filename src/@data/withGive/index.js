@@ -28,7 +28,7 @@ const addContribution = graphql(addContributionMutation, {
 
 const resetContributions = graphql(resetContributionsMutation, {
   props: ({ mutate }) => ({
-    resetContributions: variables => (mutate({ variables })),
+    resetContributions: () => (mutate()),
   }),
 });
 
