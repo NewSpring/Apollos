@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Platform } from 'react-native';
-import { compose, pure } from 'recompose';
+import { compose, pure, setPropTypes } from 'recompose';
 import { H2 } from '@ui/typography';
 import ConnectedImage from '@ui/ConnectedImage';
 import styled from '@ui/styled';
@@ -11,6 +11,14 @@ import ByLine from './ByLine';
 
 const enhance = compose(
   pure,
+  setPropTypes({
+    authors: PropTypes.arrayOf(PropTypes.string),
+    title: PropTypes.string,
+    body: PropTypes.string,
+    images: PropTypes.arrayOf(PropTypes.shape({
+      url: PropTypes.string,
+    })),
+  }),
 );
 
 const ImageHeader = styled({
@@ -46,14 +54,5 @@ const ContentView = enhance(({
     </ContentWrapper>
   </View>
 ));
-
-ContentView.propTypes = {
-  authors: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string,
-  body: PropTypes.string,
-  images: PropTypes.arrayOf(PropTypes.shape({
-    url: PropTypes.string,
-  })),
-};
 
 export default ContentView;
