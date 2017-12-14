@@ -146,10 +146,13 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            include: ([
+              paths.appSrc
+            ]).concat(nodeModulesToCompile),
             loader: require.resolve('babel-loader'),
             options: {
-
+              babelrc: false,
+              presets: [require.resolve('babel-preset-react-native')],
               compact: true,
             },
           },
