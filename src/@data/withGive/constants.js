@@ -33,4 +33,7 @@ export const INITIAL_STATE = {
   },
   paymentMethod: 'creditCard',
   isPostingPayment: false,
+  paymentFailed: false,
+  paymentFailedMessage: '',
+  paymentSuccessful: false,
 };

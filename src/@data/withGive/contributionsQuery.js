@@ -32,6 +32,9 @@ export default gql`
       }
       paymentMethod
       isPostingPayment
+      paymentFailed
+      paymentFailedMessage
+      paymentSuccessful
     }
   }
 `;

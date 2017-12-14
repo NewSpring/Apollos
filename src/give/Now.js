@@ -114,15 +114,29 @@ const enhance = compose(
     onSubmitPaymentConfirmation: async () => {
       try {
         const payment = await props.postPayment();
-        if (props.paymentMethod === 'creditCard') {
-          const { error } = await props.validateSingleCardTransaction(props.orderPaymentToken);
-          if (error) return console.log(error);
-          // TODO: Left off here, need to keep reading through the code to understand what id and name are for
-          return props.completeOrder(props.orderPaymentToken);
+        if (props.contributions.paymentMethod === 'creditCard') {
+          const validateCardRes = await props.validateSingleCardTransaction(
+            props.contributions.orderPaymentToken,
+          );
+          const invalidCardError = get(validateCardRes, 'data.response.error');
+          if (invalidCardError) throw new Error(invalidCardError);
         }
+
+        // NOTE: Need to keep reading through
+        // the code to understand what id and name are for
+        const completeOrderRes = await props.completeOrder(props.contributions.orderPaymentToken);
+        const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
+        if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
+
+        props.setPaymentResult({
+          success: true,
+        });
         return payment;
       } catch (err) {
-        throw err;
+        props.setPaymentResult({
+          error: err.message,
+        });
+        return null;
       }
     },
     ...props,

@@ -17,6 +17,7 @@ import setPaymentMethodMutation from './setPaymentMethodMutation';
 import postPaymentMutation from './postPaymentMutation';
 import validateSingleCardTransactionMutation from './validateSingleCardTransactionMutation';
 import completeOrderMutation from './completeOrderMutation';
+import setPaymentResultMutation from './setPaymentResultMutation';
 
 const addContribution = graphql(addContributionMutation, {
   props: ({ mutate }) => ({
@@ -201,6 +202,17 @@ const completeOrder = graphql(completeOrderMutation, {
   }),
 });
 
+const setPaymentResult = graphql(setPaymentResultMutation, {
+  props: ({ mutate }) => ({
+    setPaymentResult: props => (mutate({
+      variables: {
+        error: props.error,
+        success: props.success,
+      },
+    })),
+  }),
+});
+
 const get = graphql(contributionsQuery, {
   props({ data: { contributions, loading } }) {
     if (!contributions) return { contributions, isLoading: loading };
@@ -229,5 +241,6 @@ export default compose(
   postPayment,
   validateSingleCardTransaction,
   completeOrder,
+  setPaymentResult,
   get,
 );

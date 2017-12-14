@@ -268,3 +268,29 @@ export async function postPayment(result, variables, { cache }) {
     throw err;
   }
 }
+
+export async function setPaymentResult(result, variables, { cache }) {
+  try {
+    const { contributions: state } = cache.readQuery({
+      query: contributionsQuery,
+      variables,
+    });
+
+    cache.writeQuery({
+      query: contributionsQuery,
+      variables,
+      data: {
+        contributions: {
+          ...state,
+          paymentFailed: !!variables.error,
+          paymentFailedMessage: variables.error || '',
+          paymentSuccessful: !!variables.success,
+        },
+      },
+    });
+
+    return null;
+  } catch (err) {
+    throw err;
+  }
+}
