@@ -32,7 +32,7 @@ export const INITIAL_STATE = {
     accountType: 'checking',
   },
   paymentMethod: 'creditCard',
-  isPostingPayment: false,
+  isPaying: false,
   paymentFailed: false,
   paymentFailedMessage: '',
   paymentSuccessful: false,

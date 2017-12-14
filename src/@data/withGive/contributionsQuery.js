@@ -31,7 +31,7 @@ export default gql`
         accountType
       }
       paymentMethod
-      isPostingPayment
+      isPaying
       paymentFailed
       paymentFailedMessage
       paymentSuccessful

@@ -113,6 +113,7 @@ const enhance = compose(
     onSelectBA: props.isPayingWithBankAccount,
     onSubmitPaymentConfirmation: async () => {
       try {
+        props.isPaying(true);
         const payment = await props.postPayment();
         if (props.contributions.paymentMethod === 'creditCard') {
           const validateCardRes = await props.validateSingleCardTransaction(
@@ -137,6 +138,8 @@ const enhance = compose(
           error: err.message,
         });
         return null;
+      } finally {
+        props.isPaying(false);
       }
     },
     ...props,

@@ -18,6 +18,7 @@ import postPaymentMutation from './postPaymentMutation';
 import validateSingleCardTransactionMutation from './validateSingleCardTransactionMutation';
 import completeOrderMutation from './completeOrderMutation';
 import setPaymentResultMutation from './setPaymentResultMutation';
+import isPayingMutation from './isPayingMutation';
 
 const addContribution = graphql(addContributionMutation, {
   props: ({ mutate }) => ({
@@ -160,24 +161,19 @@ const setPaymentMethod = graphql(setPaymentMethodMutation, {
   }),
 });
 
+const setIsPaying = graphql(isPayingMutation, {
+  props: ({ mutate }) => ({
+    isPaying: isPaying => (mutate({
+      variables: {
+        isPaying,
+      },
+    })),
+  }),
+});
+
 const postPayment = graphql(postPaymentMutation, {
   props: ({ mutate }) => ({
-    postPayment: () => {
-      const { contributions: state } = Client.readQuery({
-        query: contributionsQuery,
-      });
-      Client.writeQuery({
-        query: contributionsQuery,
-        data: {
-          contributions: {
-            ...state,
-            isPostingPayment: true,
-          },
-        },
-      });
-
-      return mutate();
-    },
+    postPayment: () => (mutate()),
   }),
 });
 
@@ -242,5 +238,6 @@ export default compose(
   validateSingleCardTransaction,
   completeOrder,
   setPaymentResult,
+  setIsPaying,
   get,
 );

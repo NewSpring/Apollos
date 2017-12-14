@@ -252,17 +252,6 @@ export async function postPayment(result, variables, { cache }) {
       body: formData,
     });
 
-    cache.writeQuery({
-      query: contributionsQuery,
-      variables,
-      data: {
-        contributions: {
-          ...state,
-          isPostingPayment: false,
-        },
-      },
-    });
-
     return null;
   } catch (err) {
     throw err;
@@ -285,6 +274,30 @@ export async function setPaymentResult(result, variables, { cache }) {
           paymentFailed: !!variables.error,
           paymentFailedMessage: variables.error || '',
           paymentSuccessful: !!variables.success,
+        },
+      },
+    });
+
+    return null;
+  } catch (err) {
+    throw err;
+  }
+}
+
+export async function isPaying(result, variables, { cache }) {
+  try {
+    const { contributions: state } = cache.readQuery({
+      query: contributionsQuery,
+      variables,
+    });
+
+    cache.writeQuery({
+      query: contributionsQuery,
+      variables,
+      data: {
+        contributions: {
+          ...state,
+          isPaying: variables.isPaying,
         },
       },
     });
