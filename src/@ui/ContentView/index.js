@@ -14,7 +14,6 @@ const enhance = compose(
 );
 
 const ImageHeader = styled({
-  flex: 1,
   width: '100%',
   aspectRatio: 1,
   resizeMode: 'cover',
