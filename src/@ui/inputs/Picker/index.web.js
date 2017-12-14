@@ -16,6 +16,7 @@ const StyledNativePicker = compose(
     background: 'none',
     border: 'none',
     borderRadius: 0,
+    outline: 'none',
   }),
 )(NativePicker);
 
