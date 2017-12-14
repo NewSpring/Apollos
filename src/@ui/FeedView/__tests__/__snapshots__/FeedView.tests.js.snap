@@ -497,57 +497,57 @@ exports[`The FeedView component renders empty state 1`] = `
 Array [
   <View
     style={
-        Object {
-            "backgroundColor": "rgba(0,0,0,0.1)",
-            "height": 250,
-            "margin": 10,
-          }
+      Object {
+        "backgroundColor": "rgba(0,0,0,0.1)",
+        "height": 250,
+        "margin": 10,
+      }
     }
->
+  >
     <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
     >
-        ...
+      ...
     </Text>
-</View>,
+  </View>,
   <View
     style={
-        Object {
-            "backgroundColor": "rgba(0,0,0,0.1)",
-            "height": 250,
-            "margin": 10,
-          }
+      Object {
+        "backgroundColor": "rgba(0,0,0,0.1)",
+        "height": 250,
+        "margin": 10,
+      }
     }
->
+  >
     <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
     >
-        ...
+      ...
     </Text>
-</View>,
+  </View>,
   <View
     style={
-        Object {
-            "backgroundColor": "rgba(0,0,0,0.1)",
-            "height": 250,
-            "margin": 10,
-          }
+      Object {
+        "backgroundColor": "rgba(0,0,0,0.1)",
+        "height": 250,
+        "margin": 10,
+      }
     }
->
+  >
     <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
     >
-        ...
+      ...
     </Text>
-</View>,
+  </View>,
 ]
 `;
