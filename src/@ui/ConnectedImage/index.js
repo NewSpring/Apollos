@@ -14,16 +14,16 @@ const ImageSourceType = PropTypes.oneOfType([
   PropTypes.string,
 ]);
 
-const sizeCache = {};
+export const sizeCache = {};
 
-const getCacheKey = (source) => {
+export const getCacheKey = (source) => {
   if (source.size && source.fileLabel) return `${source.size}-${source.fileLabel}`;
   if (source.url) return source.url;
   if (source.uri) return source.uri;
   return undefined;
 };
 
-const getCachedSources = (_sources = []) => {
+export const getCachedSources = (_sources = []) => {
   let sources = _sources;
   if (!Array.isArray(sources)) sources = [sources];
   sources = sources.map((source) => {
@@ -37,6 +37,18 @@ const getCachedSources = (_sources = []) => {
     ...(sizeCache[getCacheKey(source)] || {}),
   }));
 };
+
+export const updateCache = sources => Promise.all(getCachedSources(sources).map((source) => {
+  const key = getCacheKey(source);
+  if (sizeCache[key] || !key) return Promise.resolve(source);
+  return (new Promise((resolve, reject) => {
+    Image.getSize(source.uri, (width, height) => resolve({
+      width, height,
+    }), reject);
+  })).then((sizeForCache) => {
+    if (key) sizeCache[key] = sizeForCache;
+  });
+}));
 
 class ConnectedImage extends PureComponent {
   static propTypes = {
@@ -77,18 +89,7 @@ class ConnectedImage extends PureComponent {
   }
 
   async updateCache(sources) {
-    await Promise.all(getCachedSources(sources).map((source) => {
-      const key = getCacheKey(source);
-      if (sizeCache[key] || !key) return Promise.resolve(source);
-      return (new Promise((resolve, reject) => {
-        Image.getSize(source.uri, (width, height) => resolve({
-          width, height,
-        }), reject);
-      })).then((sizeForCache) => {
-        if (key) sizeCache[key] = sizeForCache;
-      });
-    }));
-
+    await updateCache(sources);
     this.setState({ source: getCachedSources(sources) });
   }
 
