@@ -1,5 +1,6 @@
 /* eslint-disable */
 module.exports = (storybookBaseConfig) => {
+  storybookBaseConfig.entry.preview.unshift('babel-polyfill');
   storybookBaseConfig.resolve = {
     modules: ['node_modules'],
     extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
