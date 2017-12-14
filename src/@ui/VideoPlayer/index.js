@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Video } from 'expo';
 import styled from '@ui/styled';
+import Video from './Video';
 
 const StyledVideo = styled({
   flex: 1,

@@ -1,6 +1,6 @@
 import React from 'react';
+import { Platform, View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
-import { View } from 'react-native';
 
 import EmbeddedVideoPlayer from './';
 
@@ -8,7 +8,18 @@ const embedUrl = 'https://player.ooyala.com/static/v4/production/latest/skin-plu
 
 storiesOf('EmbeddedVideoPlayer', module)
   .add('Default', () => (
-    <View style={{ width: '100%', aspectRatio: 16 / 9 }}>
+    <View
+      style={{
+        width: '100%',
+        aspectRatio: 16 / 9,
+        ...Platform.select({
+          web: {
+            width: '100vw',
+            height: `${(9 / 16) * 100}vw`,
+          },
+        }),
+      }}
+    >
       <EmbeddedVideoPlayer
         src={embedUrl}
       />
