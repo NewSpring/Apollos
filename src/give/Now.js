@@ -8,6 +8,7 @@ import { withRouter } from '@ui/NativeWebRouter';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import Header from '@ui/Header';
 import FlexedView from '@ui/FlexedView';
+import PaddedView from '@ui/PaddedView';
 import withGive from '@data/withGive';
 import withFinancialAccounts from '@data/withFinancialAccounts';
 import { ContributionForm } from '@ui/forms';
@@ -39,13 +40,13 @@ const Contribution = compose(
 
       props.resetContributions();
       props.addContribution(result.firstContribution);
-
       if (!isEmpty(result.secondContribution)) {
         props.addContribution(result.secondContribution);
       }
 
       props.setContributionFrequency(result.frequencyId);
       props.setContributionStartDate(result.startDate);
+
       props.history.push('/give/checkout');
     },
   }),
@@ -55,7 +56,9 @@ const Now = () => (
   <FlexedView>
     <Header titleText="Give Dashboard" />
     <ScrollView>
-      <Contribution />
+      <PaddedView>
+        <Contribution />
+      </PaddedView>
     </ScrollView>
   </FlexedView>
 );

@@ -7,9 +7,10 @@ import {
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import ActivityIndicator from '@ui/ActivityIndicator';
-import { H3, BodyCopy as P } from '@ui/typography';
+import { H3, H2, BodyCopy as P } from '@ui/typography';
 import Button from '@ui/Button';
 import * as Inputs from '@ui/inputs';
+import PaddedView from '@ui/PaddedView';
 
 import FundInput from './FundInput';
 import FrequencyInput, { FREQUENCY_IDS } from './FrequencyInput';
@@ -146,7 +147,9 @@ export class ContributionForm extends Component {
           </View>
         }
 
-        <Text>{`my total is ${this.totalContribution}`}</Text>
+        <PaddedView horizontal={false}>
+          <H3>my total is $<H2>{`${parseFloat(this.totalContribution).toFixed(2)}`}</H2></H3>
+        </PaddedView>
 
         <Button
           onPress={this.props.handleSubmit}
