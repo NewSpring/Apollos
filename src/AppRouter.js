@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { View, Platform } from 'react-native';
+import { Platform } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import { Router, Route, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@ui/NativeWebRouter';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
+import FlexedView from '@ui/FlexedView';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -33,7 +34,8 @@ class AppRouter extends PureComponent {
   }
 
   componentWillUpdate(nextProps) {
-    if (nextProps.history.action !== 'POP' &&
+    if ((nextProps.history.action !== 'POP' &&
+        nextProps.history.action !== 'REPLACE') &&
         (!this.props.location.state || !this.isModal)
     ) {
       previousLocation = this.props.location;
@@ -59,6 +61,7 @@ class AppRouter extends PureComponent {
   // regular pages on small screens.
   largeScreenModals = [
     <Route exact path="/sections" key="sections-modal" component={asModal(tabs.Sections)} />,
+    <Route path="/give/checkout" key="give-checkout" component={asModal(give.Checkout)} />,
   ];
 
   tabs = () => {
@@ -72,6 +75,7 @@ class AppRouter extends PureComponent {
         <Route exact path="/groups" component={tabs.Groups} />
         <Route exact path="/discover" component={tabs.Discover} />
         <Route exact path="/profile" component={tabs.Profile} />
+
         <Route exact path="/give" component={give.Dashboard} />
         <Route exact path="/give/methods" component={give.PaymentMethods} />
         <Route exact path="/give/history" component={give.Transactions} />
@@ -89,7 +93,7 @@ class AppRouter extends PureComponent {
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
     const AppSwitch = Platform.OS === 'web' ? tabs.Layout : CardStack;
     return (
-      <View style={{ flex: 1 }}>
+      <FlexedView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         <AppSwitch location={this.isModal ? previousLocation : this.props.location}>
           <Redirect from="/sermons" to="/series" />
@@ -118,10 +122,12 @@ class AppRouter extends PureComponent {
 
           <Route exact path="/events/:id" component={DebugView} />
 
+          <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
+
           <Route component={this.tabs} />
         </AppSwitch>
         {this.isModal ? this.largeScreenModals : null}
-      </View>
+      </FlexedView>
     );
   }
 }
