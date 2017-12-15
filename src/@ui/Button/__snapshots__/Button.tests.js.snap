@@ -60,7 +60,7 @@ exports[`The Button component should render a primary button 1`] = `
     ellipsizeMode="tail"
     style={
       Object {
-        "color": "#fff",
+        "color": "#ffffff",
         "fontFamily": null,
         "fontSize": 18,
         "lineHeight": 20,

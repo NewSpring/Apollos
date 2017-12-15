@@ -20,7 +20,7 @@ const enhance = compose(
       const primary = `#${content.colors[0].value}`;
       theme.colors = {
         background: {
-          screen: primary,
+          default: primary,
           primary,
         },
       };

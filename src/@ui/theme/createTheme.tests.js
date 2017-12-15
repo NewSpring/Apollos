@@ -45,7 +45,7 @@ describe('createTheme', () => {
     expect(theme).toEqual(expect.objectContaining({
       colors: expect.objectContaining({
         background: expect.objectContaining({
-          screen: defaultTheme.colors.darkPrimary,
+          default: defaultTheme.colors.darkPrimary,
         }),
       }),
     }));

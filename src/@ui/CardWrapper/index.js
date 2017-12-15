@@ -15,7 +15,7 @@ const enhance = compose(
 
 const StyledCard = styled(({ theme, cardColor }) => ({
   width: '100%',
-  backgroundColor: cardColor || theme.colors.background.screen,
+  backgroundColor: cardColor || theme.colors.background.default,
   borderRadius: theme.sizing.borderRadius,
   ...Platform.select(theme.shadows.default),
 }))(View);
