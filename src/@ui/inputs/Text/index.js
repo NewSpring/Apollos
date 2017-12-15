@@ -31,6 +31,10 @@ const propsForInputType = {
   phone: {
     keyboardType: 'phone-pad',
   },
+  date: {
+    keyboardType: 'numeric',
+    type: 'date', // for web
+  },
 };
 
 const enhance = compose(
@@ -46,27 +50,32 @@ const Text = enhance(({
   label,
   prefix,
   suffix,
-  focusAnimation, // from withFocusAnimation
+  value,
+  focusAnimation: focusAnimationInput, // from withFocusAnimation
   ...textInputProps
-}) => (
-  <InputWrapper>
-    <AddonRow>
-      <InputAddon>{prefix}</InputAddon>
-      <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
-        <StyledTextInput {...textInputProps} />
-      </Animated.View>
-      <InputAddon>{suffix}</InputAddon>
-    </AddonRow>
+}) => {
+  const focusAnimation = value ? new Animated.Value(1) : focusAnimationInput;
+  return (
+    <InputWrapper>
+      <AddonRow>
+        <InputAddon>{prefix}</InputAddon>
+        <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
+          <StyledTextInput {...textInputProps} value={`${value || ''}`} />
+        </Animated.View>
+        <InputAddon>{suffix}</InputAddon>
+      </AddonRow>
 
-    <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
-    <InputUnderline animation={focusAnimation} />
-  </InputWrapper>
-));
+      <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
+      <InputUnderline animation={focusAnimation} />
+    </InputWrapper>
+  );
+});
 
 Text.propTypes = {
   prefix: PropTypes.node,
   suffix: PropTypes.node,
   label: PropTypes.string,
+  value: PropTypes.any, // eslint-disable-line
 };
 
 export default Text;
