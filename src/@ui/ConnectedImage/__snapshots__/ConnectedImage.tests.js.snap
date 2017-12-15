@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`the ConnectedImage component should maintain aspect ratio 1`] = `
+<Image
+  maintainAspectRatio={true}
+  source={
+    Array [
+      Object {
+        "height": 150,
+        "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
+        "width": 150,
+      },
+    ]
+  }
+  style={
+    Array [
+      Object {
+        "aspectRatio": 1,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
 exports[`the ConnectedImage component should render immediately with a network image with a known width and height 1`] = `
 <Image
   maintainAspectRatio={false}

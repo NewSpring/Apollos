@@ -19,6 +19,19 @@ describe('the ConnectedImage component', () => {
     );
     expect(tree).toMatchSnapshot();
   });
+  it('should maintain aspect ratio', () => {
+    const tree = renderer.create(
+      <ConnectedImage
+        source={{
+          uri: 'https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084',
+          width: 150,
+          height: 150,
+        }}
+        maintainAspectRatio
+      />,
+    );
+    expect(tree).toMatchSnapshot();
+  });
   describe('updateCache', () => {
     it('updates cache with image uri and sizes', async () => {
       const source = {
