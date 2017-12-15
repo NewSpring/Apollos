@@ -44,8 +44,8 @@ const withActiveRoute = compose(
 
 // Get color from active route
 const determineColorFromActiveRoute =
-  withTheme(({ theme: { colors: { primary, lightPrimary } } = {}, isActive }) => ({
-    color: isActive ? primary : lightPrimary,
+  withTheme(({ color, theme: { colors: { primary, lightPrimary } } = {}, isActive }) => ({
+    color: color || (isActive ? primary : lightPrimary),
   }));
 
 const enhance = compose(
@@ -71,7 +71,6 @@ const TabBarLink = enhance(({
   ...linkProps
 }) => {
   const dynamicLinkStyle = { color };
-
   return (
     <Link {...linkProps}>
       <LinkContainer>

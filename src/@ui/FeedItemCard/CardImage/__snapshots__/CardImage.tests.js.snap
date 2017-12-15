@@ -5,20 +5,25 @@ exports[`the FeedItemCard CardImage component should render 1`] = `
   style={Object {}}
 >
   <Image
+    maintainAspectRatio={false}
     source={
       Array [
         Object {
+          "height": 400,
           "uri": "https://picsum.photos/600/400/?random",
-          "url": "https://picsum.photos/600/400/?random",
+          "width": 600,
         },
       ]
     }
     style={
-      Object {
-        "aspectRatio": 1,
-        "resizeMode": "cover",
-        "width": "100%",
-      }
+      Array [
+        Object {},
+        Object {
+          "aspectRatio": 1,
+          "resizeMode": "cover",
+          "width": "100%",
+        },
+      ]
     }
   />
 </View>
@@ -29,20 +34,25 @@ exports[`the FeedItemCard CardImage component should render with an overlayColor
   style={Object {}}
 >
   <Image
+    maintainAspectRatio={false}
     source={
       Array [
         Object {
+          "height": 400,
           "uri": "https://picsum.photos/600/400/?random",
-          "url": "https://picsum.photos/600/400/?random",
+          "width": 600,
         },
       ]
     }
     style={
-      Object {
-        "aspectRatio": 1,
-        "resizeMode": "cover",
-        "width": "100%",
-      }
+      Array [
+        Object {},
+        Object {
+          "aspectRatio": 1,
+          "resizeMode": "cover",
+          "width": "100%",
+        },
+      ]
     }
   />
   <ExponentLinearGradient
