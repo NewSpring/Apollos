@@ -23,7 +23,7 @@ const StyledPicker = styled(({ theme }) => ({
 
 class PickerList extends PureComponent {
   static propTypes = {
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     children: PropTypes.node,
     focusAnimation: PropTypes.shape({
       interpolate: PropTypes.func,

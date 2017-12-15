@@ -37,7 +37,7 @@ const PaymentConfirmation = compose(
         return null;
       } finally {
         props.isPaying(false);
-        props.history.push('complete');
+        props.history.replace('complete');
       }
     },
   })),
