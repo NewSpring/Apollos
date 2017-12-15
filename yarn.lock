@@ -8773,7 +8773,7 @@ react-native-vector-icons@4.4.2:
     prop-types "^15.5.10"
     yargs "^8.0.2"
 
-react-native-web@^0.1.13:
+react-native-web@^0.1.16:
   version "0.1.16"
   resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.1.16.tgz#e0d1a43b3b59a8371cdb538c11088d206b29f2b1"
   dependencies:

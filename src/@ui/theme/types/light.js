@@ -9,8 +9,9 @@ const light = ({ colors, alpha }) => ({
       link: colors.primary,
     },
     background: {
-      screen: colors.white,
+      default: colors.white,
       primary: colors.primary,
+      inactive: colors.lightTertiary,
       overlay: Color(colors.darkTertiary).fade(alpha.high),
       // todo
     },
@@ -19,9 +20,13 @@ const light = ({ colors, alpha }) => ({
     },
     input: {
       // todo
+      placeholder: colors.darkTertiary,
     },
     action: {
-      // todo
+      default: colors.lightTertiary,
+      primary: colors.primary,
+      secondary: colors.secondary,
+      tertiary: colors.tertiary,
     },
   },
 });

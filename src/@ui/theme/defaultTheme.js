@@ -113,6 +113,25 @@ export const shadows = ({ colors: themeColors }) => ({
   },
 });
 
+export const buttons = ({ colors: themeColors }) => ({
+  default: {
+    fill: themeColors.action.default,
+    accent: themeColors.text.primary,
+  },
+  primary: {
+    fill: themeColors.action.primary,
+    accent: themeColors.white,
+  },
+  secondary: {
+    fill: themeColors.action.secondary,
+    accent: themeColors.white,
+  },
+  tertiary: {
+    fill: themeColors.action.tertiary,
+    accent: themeColors.white,
+  },
+});
+
 // Helpers make it easy to expose simple utils in your theme that rely on the current
 // theme to compute its value. They should be a function that takes a single argument -
 // the current theme, and returns a function that gets injected into the theme.

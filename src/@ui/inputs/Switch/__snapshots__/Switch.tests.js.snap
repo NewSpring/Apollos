@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Picker Input component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 40,
+        "justifyContent": "space-between",
+        "paddingVertical": 5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+          "paddingVertical": 5,
+        }
+      }
+    >
+      Some label text
+    </Text>
+    <RCTSwitch
+      disabled={false}
+      onChange={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onTintColor="#6bac43"
+      style={
+        Array [
+          Object {
+            "height": 31,
+            "width": 51,
+          },
+          undefined,
+        ]
+      }
+      value={false}
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#dddddd",
+          "bottom": -0.5,
+          "height": 0.5,
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+          "transform": Array [
+            Object {
+              "scaleX": 0.0001,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#6bac43",
+            "bottom": 0,
+            "height": 0.5,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,748 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Text Input component should render as a numeric field 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 0,
+        }
+      }
+    >
+      <TextInput
+        editable={true}
+        focusAnimationDuration={450}
+        focusAnimationEasing={[Function]}
+        keyboardType="numeric"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        placeholder="Some placeholder"
+        style={
+          Object {
+            "height": 40,
+            "paddingVertical": 5,
+          }
+        }
+        type="numeric"
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </View>
+  <View
+    collapsable={undefined}
+    onLayout={[Function]}
+    pointerEvents="none"
+    style={
+      Object {
+        "justifyContent": "center",
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "scale": 1,
+          },
+          Object {
+            "translateX": 0,
+          },
+          Object {
+            "translateY": 0,
+          },
+        ],
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+          "paddingVertical": 5,
+        }
+      }
+    >
+      Numeric
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#dddddd",
+          "bottom": -0.5,
+          "height": 0.5,
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+          "transform": Array [
+            Object {
+              "scaleX": 0.0001,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#6bac43",
+            "bottom": 0,
+            "height": 0.5,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`The Text Input component should render as a password field with an icon 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 0,
+        }
+      }
+    >
+      <TextInput
+        autoCapitalize="none"
+        autoCorrect={false}
+        editable={true}
+        focusAnimationDuration={450}
+        focusAnimationEasing={[Function]}
+        onBlur={[Function]}
+        onFocus={[Function]}
+        placeholder="Some placeholder"
+        secureTextEntry={true}
+        style={
+          Object {
+            "height": 40,
+            "paddingVertical": 5,
+          }
+        }
+        type="password"
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Svg
+        height={18}
+        viewBox="0 0 24 24"
+        width={18}
+      >
+        <Path
+          d="M9 11.18h6.4V8.73c0-.9-.3-1.68-.94-2.32-.62-.6-1.38-.9-2.26-.9-.88 0-1.64.3-2.26.97C9.3 7.1 9 7.87 9 8.77v2.45zm10.4 1.23v7.4c0 .37-.12.66-.35.9-.23.24-.52.36-.85.36h-12c-.33 0-.62-.1-.85-.35-.23-.24-.35-.53-.35-.87v-7.4c0-.32.12-.6.35-.85.23-.24.52-.36.85-.36h.4V8.74c0-1.57.55-2.92 1.65-4.04C9.35 3.5 10.67 3 12.2 3c1.53 0 2.85.56 3.95 1.7 1.1 1.1 1.65 2.46 1.65 4.03v2.45h.4c.33 0 .62.12.85.36.23.24.35.53.35.87z"
+          fill="#6bac43"
+        />
+      </Svg>
+    </View>
+  </View>
+  <View
+    collapsable={undefined}
+    onLayout={[Function]}
+    pointerEvents="none"
+    style={
+      Object {
+        "justifyContent": "center",
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "scale": 1,
+          },
+          Object {
+            "translateX": 0,
+          },
+          Object {
+            "translateY": 0,
+          },
+        ],
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+          "paddingVertical": 5,
+        }
+      }
+    >
+      Password
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#dddddd",
+          "bottom": -0.5,
+          "height": 0.5,
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+          "transform": Array [
+            Object {
+              "scaleX": 0.0001,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#6bac43",
+            "bottom": 0,
+            "height": 0.5,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`The Text Input component should render as a phone number field 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 0,
+        }
+      }
+    >
+      <TextInput
+        focusAnimationDuration={450}
+        focusAnimationEasing={[Function]}
+        keyboardType="phone-pad"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        placeholder="Some placeholder"
+        style={
+          Object {
+            "height": 40,
+            "paddingVertical": 5,
+          }
+        }
+        type="phone"
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </View>
+  <View
+    collapsable={undefined}
+    onLayout={[Function]}
+    pointerEvents="none"
+    style={
+      Object {
+        "justifyContent": "center",
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "scale": 1,
+          },
+          Object {
+            "translateX": 0,
+          },
+          Object {
+            "translateY": 0,
+          },
+        ],
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+          "paddingVertical": 5,
+        }
+      }
+    >
+      Phone Number
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#dddddd",
+          "bottom": -0.5,
+          "height": 0.5,
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+          "transform": Array [
+            Object {
+              "scaleX": 0.0001,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#6bac43",
+            "bottom": 0,
+            "height": 0.5,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`The Text Input component should render as an email field 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 0,
+        }
+      }
+    >
+      <TextInput
+        autoCapitalize="none"
+        autoCorrect={false}
+        editable={true}
+        focusAnimationDuration={450}
+        focusAnimationEasing={[Function]}
+        keyboardType="email-address"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        placeholder="Some placeholder"
+        style={
+          Object {
+            "height": 40,
+            "paddingVertical": 5,
+          }
+        }
+        type="email"
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </View>
+  <View
+    collapsable={undefined}
+    onLayout={[Function]}
+    pointerEvents="none"
+    style={
+      Object {
+        "justifyContent": "center",
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "scale": 1,
+          },
+          Object {
+            "translateX": 0,
+          },
+          Object {
+            "translateY": 0,
+          },
+        ],
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+          "paddingVertical": 5,
+        }
+      }
+    >
+      Email
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#dddddd",
+          "bottom": -0.5,
+          "height": 0.5,
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+          "transform": Array [
+            Object {
+              "scaleX": 0.0001,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#6bac43",
+            "bottom": 0,
+            "height": 0.5,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`The Text Input component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 0,
+        }
+      }
+    >
+      <TextInput
+        editable={true}
+        focusAnimationDuration={450}
+        focusAnimationEasing={[Function]}
+        onBlur={[Function]}
+        onFocus={[Function]}
+        placeholder="Some placeholder"
+        style={
+          Object {
+            "height": 40,
+            "paddingVertical": 5,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </View>
+  <View
+    collapsable={undefined}
+    onLayout={[Function]}
+    pointerEvents="none"
+    style={
+      Object {
+        "justifyContent": "center",
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "scale": 1,
+          },
+          Object {
+            "translateX": 0,
+          },
+          Object {
+            "translateY": 0,
+          },
+        ],
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+          "paddingVertical": 5,
+        }
+      }
+    >
+      Some label text
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#dddddd",
+          "bottom": -0.5,
+          "height": 0.5,
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+          "transform": Array [
+            Object {
+              "scaleX": 0.0001,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#6bac43",
+            "bottom": 0,
+            "height": 0.5,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
