@@ -7,6 +7,17 @@ import { H3 } from '@ui/typography';
 import * as Inputs from '@ui/inputs';
 import styled from '@ui/styled';
 
+const StyledTextInput = styled(({ theme }) => ({
+  fontSize: theme.helpers.rem(1.8),
+  fontWeight: '700',
+}), 'FundInput.TextInput')(Inputs.Text);
+
+const StyledPicker = styled(({ theme }) => ({
+  fontSize: theme.helpers.rem(1.8),
+  fontWeight: '700',
+  color: theme.colors.primary,
+}), 'FundInput.Picker')(Inputs.Picker);
+
 const FundInputWrapper = styled(({ theme }) => ({
   flexDirection: 'row',
   flexWrap: 'wrap',
@@ -20,26 +31,27 @@ const FundInput = (({
   onChange,
 }) => (
   <FundInputWrapper>
-    <H3>{isFirst ? 'I\'d like to give' : 'and give'}</H3>
-    <View style={{ width: '50%' }}>
-      <Inputs.Text
+    <H3>{isFirst ? 'I\'d like to give ' : 'and give '}</H3>
+    <View style={{ width: 150 }}>
+      <StyledTextInput
         placeholder="0.00"
         onChangeText={amount => onChange(Object.assign({}, value, { amount }))}
         value={get(value, 'amount')}
-        style={{ width: 300 }}
+        wrapperStyle={{ marginTop: 2 }}
       />
     </View>
-    <H3>{'to'}</H3>
-    <View style={{ width: '100%' }}>
-      <Inputs.Picker
+    <H3>{'to '}</H3>
+    <View style={{ width: 325, maxWidth: '100%' }}>
+      <StyledPicker
         onValueChange={id => onChange(Object.assign({}, value, funds.find(fund => fund.id === id)))}
         value={get(value, 'id')}
         displayValue={get(value, 'name')}
+        wrapperStyle={{ marginTop: 6 }}
       >
         {funds.map(({ name, id }) => (
           <Inputs.PickerItem label={name} value={id} key={id} />
         ))}
-      </Inputs.Picker>
+      </StyledPicker>
     </View>
   </FundInputWrapper>
 ));

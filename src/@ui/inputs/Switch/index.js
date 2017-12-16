@@ -6,7 +6,6 @@ import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 
 import { LabelText } from '../FloatingLabel';
-import InputUnderline from '../InputUnderline';
 import InputWrapper from '../InputWrapper';
 import withInputControlStyles from '../withInputControlStyles';
 
@@ -35,7 +34,6 @@ const Text = enhance(({
       <LabelText>{label}</LabelText>
       <Switch {...switchProps} />
     </ControlWrapper>
-    <InputUnderline />
   </InputWrapper>
 ));
 

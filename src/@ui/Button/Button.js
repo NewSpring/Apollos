@@ -1,4 +1,5 @@
 import React from 'react';
+import Color from 'color';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
@@ -9,16 +10,22 @@ import Touchable from '@ui/Touchable';
 import { UIText } from '@ui/typography';
 
 
-const ButtonStyles = styled(({ theme, disabled }) => ({
+const ButtonStyles = styled(({ theme, disabled, bordered }) => ({
   elevation: 4,
   padding: theme.sizing.baseUnit / 2,
   overflow: 'hidden',
-  backgroundColor: theme.colors.background.default,
   borderRadius: theme.sizing.borderRadius,
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
   opacity: disabled ? 0.5 : 1,
+  ...(bordered ? {
+    backgroundColor: theme.colors.transparent,
+    borderWidth: 2,
+    borderColor: theme.colors.primary,
+  } : {
+    backgroundColor: theme.colors.background.default,
+  }),
 }), 'Button')(View);
 
 const enhance = compose(
@@ -27,10 +34,10 @@ const enhance = compose(
     accent: get(theme, `buttons.${type}.accent`, theme.colors.text.primary),
   })),
   // makes non-text children inherit button styles by default :-D
-  withThemeMixin(({ fill, accent }) => ({
+  withThemeMixin(({ fill, accent, bordered }) => ({
     colors: {
-      primary: accent,
-      text: { primary: accent },
+      primary: bordered ? fill : accent,
+      text: { primary: bordered ? Color(fill).darken(0.2) : accent },
       background: { default: fill, screen: fill },
     },
   })),
@@ -45,13 +52,14 @@ const Button = enhance(({
   title,
   onPress,
   style,
+  bordered,
   ...touchableProps
 }) => {
   const accessibilityTraits = ['button'];
   if (disabled) accessibilityTraits.push('disabled');
 
   const buttonContent = (
-    <ButtonStyles style={style} disabled={disabled}>
+    <ButtonStyles style={style} disabled={disabled} bordered={bordered}>
       {children || (<UIText>{title}</UIText>)}
     </ButtonStyles>
   );
@@ -74,6 +82,7 @@ const Button = enhance(({
 
 Button.defaultProps = {
   disabled: false,
+  bordered: false,
   title: '',
   accessibilityComponentType: 'button',
 };
@@ -82,6 +91,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   children: PropTypes.node,
   title: PropTypes.string,
+  bordered: PropTypes.bool,
   type: PropTypes.oneOf(['default', 'primary', 'secondary', 'tertiary']), // keys in theme.colors.action
   ...Touchable.propTypes,
 };

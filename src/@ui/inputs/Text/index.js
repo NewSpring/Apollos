@@ -51,12 +51,13 @@ const Text = enhance(({
   prefix,
   suffix,
   value,
+  wrapperStyle,
   focusAnimation: focusAnimationInput, // from withFocusAnimation
   ...textInputProps
 }) => {
   const focusAnimation = value || !label ? new Animated.Value(1) : focusAnimationInput;
   return (
-    <InputWrapper>
+    <InputWrapper style={wrapperStyle}>
       <AddonRow>
         <InputAddon>{prefix}</InputAddon>
         <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
@@ -76,6 +77,7 @@ Text.propTypes = {
   suffix: PropTypes.node,
   label: PropTypes.string,
   value: PropTypes.any, // eslint-disable-line
+  wrapperStyle: PropTypes.any, // eslint-disable-line
 };
 
 export default Text;

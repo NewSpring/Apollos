@@ -32,6 +32,8 @@ class Picker extends PureComponent {
     onBlur: PropTypes.func,
     label: PropTypes.string,
     value: PropTypes.any, // eslint-disable-line
+    wrapperStyle: PropTypes.any, // eslint-disable-line
+    style: PropTypes.any, // eslint-disable-line
   };
 
   state = {
@@ -56,6 +58,8 @@ class Picker extends PureComponent {
       placeholder,
       label,
       value,
+      style,
+      wrapperStyle,
       ...pickerProps
     } = this.props;
     const rotate = focusAnimation.interpolate({
@@ -64,11 +68,11 @@ class Picker extends PureComponent {
     });
     const labelAnimation = value ? new Animated.Value(1) : focusAnimation;
     return (
-      <InputWrapper>
+      <InputWrapper style={wrapperStyle}>
         <TouchableOpacity onPress={this.toggle}>
           <AddonRow>
             <Animated.View style={{ opacity: labelAnimation, flex: 1 }}>
-              <StyledUIText>
+              <StyledUIText style={style}>
                 {displayValue || (<Placeholder>{placeholder}</Placeholder>)}
               </StyledUIText>
             </Animated.View>
@@ -79,7 +83,13 @@ class Picker extends PureComponent {
             </InputAddon>
           </AddonRow>
         </TouchableOpacity>
-        <PickerList {...pickerProps} value={value} focused={this.state.focused} onRequestClose={this.toggle} />
+
+        <PickerList
+          {...pickerProps}
+          value={value}
+          focused={this.state.focused}
+          onRequestClose={this.toggle}
+        />
 
         <FloatingLabel animation={labelAnimation}>{label}</FloatingLabel>
         <InputUnderline animation={focusAnimation} />

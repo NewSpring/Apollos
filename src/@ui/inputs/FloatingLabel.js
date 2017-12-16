@@ -23,11 +23,13 @@ class FloatingLabel extends PureComponent {
       interpolate: PropTypes.func,
     }),
     scaleSize: PropTypes.number, // how much smaller to make label when focused
+    floatingOpacity: PropTypes.number,
   };
 
   static defaultProps = {
     animation: new Animated.Value(0),
     scaleSize: 0.8,
+    floatingOpacity: 0.8,
   };
 
   state = {
@@ -49,6 +51,10 @@ class FloatingLabel extends PureComponent {
       inputRange: [0, 1],
       outputRange: [1, this.props.scaleSize],
     });
+    const opacity = this.props.animation.interpolate({
+      inputRange: [0, 1],
+      outputRange: [1, this.props.floatingOpacity],
+    });
     const translateY = this.props.animation.interpolate({
       inputRange: [0, 1],
       outputRange: [0, -this.state.labelHeight],
@@ -59,6 +65,7 @@ class FloatingLabel extends PureComponent {
     });
     const wrapperStyles = {
       transform: [{ scale }, { translateX }, { translateY }],
+      opacity,
     };
 
     return (

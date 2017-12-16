@@ -125,6 +125,7 @@ export class ContributionForm extends Component {
 
         <Button
           onPress={this.handleToggleSecondFund}
+          bordered
           title={this.state.secondFundVisible ? 'Remove Fund' : 'Add Another Fund'}
         />
 
@@ -155,6 +156,7 @@ export class ContributionForm extends Component {
           onPress={this.props.handleSubmit}
           disabled={!(this.totalContribution > 0)}
           title="Review Contribution"
+          type="primary"
         />
       </View>
     );
