@@ -1,66 +1,57 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, Picker as NativePicker, Animated } from 'react-native';
+import { Modal, StyleSheet, View, Picker as NativePicker } from 'react-native';
 import styled from '@ui/styled';
-
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    overflow: 'hidden',
-  },
-  pickerPositionReset: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-  },
-});
+import { ButtonLink } from '@ui/Button';
 
 const StyledPicker = styled(({ theme }) => ({
   borderTopWidth: StyleSheet.hairlineWidth,
   borderTopColor: theme.colors.background.inactive,
 }), 'Inputs.Picker.List')(NativePicker);
 
-class PickerList extends PureComponent {
-  static propTypes = {
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    children: PropTypes.node,
-    focusAnimation: PropTypes.shape({
-      interpolate: PropTypes.func,
-    }),
-    mode: PropTypes.string,
-  }
+const PickerKeyboardView = styled(({ theme }) => ({
+  backgroundColor: theme.colors.background.default,
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  right: 0,
+  borderTopColor: theme.colors.shadows.default,
+  borderTopWidth: StyleSheet.hairlineWidth,
+}), 'Inputs.Picker.List.Keyboard')(View);
 
-  static defaultProps = {
-    mode: 'dropdown',
-  }
+const Toolbar = styled(({ theme }) => ({
+  alignItems: 'flex-end',
+  padding: theme.sizing.baseUnit / 2,
+  backgroundColor: theme.colors.background.accent,
+}), 'Inputs.Picker.List.Toolbar')(View);
 
-  state = {
-    pickerHeight: 0,
-  };
+const PickerList = ({
+  focused,
+  onRequestClose,
+  value,
+  ...pickerProps
+}) => (
+  <Modal
+    visible={focused}
+    onRequestClose={onRequestClose}
+    animationType="slide"
+    transparent
+  >
+    <PickerKeyboardView>
+      <Toolbar>
+        <ButtonLink onPress={onRequestClose}>Done</ButtonLink>
+      </Toolbar>
+      <StyledPicker selectedValue={value} {...pickerProps} />
+    </PickerKeyboardView>
+  </Modal>
+);
 
-  handleLayout = ({ nativeEvent: { layout } }) => {
-    this.setState({ pickerHeight: layout.height });
-  };
-
-  render() {
-    const {
-      focusAnimation,
-      value,
-      ...pickerProps
-    } = this.props;
-    const height = this.props.focusAnimation.interpolate({
-      inputRange: [0, 1],
-      outputRange: [0, this.state.pickerHeight],
-    });
-    return (
-      <Animated.View style={[styles.container, { height }]}>
-        <View style={styles.pickerPositionReset} onLayout={this.handleLayout}>
-          <StyledPicker selectedValue={this.props.value} {...pickerProps} />
-        </View>
-      </Animated.View>
-    );
-  }
-}
+PickerList.propTypes = {
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  children: PropTypes.node,
+  focused: PropTypes.bool,
+  onRequestClose: PropTypes.func,
+  mode: PropTypes.string,
+};
 
 export default PickerList;

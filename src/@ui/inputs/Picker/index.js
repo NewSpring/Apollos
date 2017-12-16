@@ -79,7 +79,7 @@ class Picker extends PureComponent {
             </InputAddon>
           </AddonRow>
         </TouchableOpacity>
-        <PickerList {...pickerProps} value={value} focusAnimation={focusAnimation} />
+        <PickerList {...pickerProps} value={value} focused={this.state.focused} onRequestClose={this.toggle} />
 
         <FloatingLabel animation={labelAnimation}>{label}</FloatingLabel>
         <InputUnderline animation={focusAnimation} />
