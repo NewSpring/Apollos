@@ -3,7 +3,6 @@ import { StyleSheet, View, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import Color from 'color';
-import Placeholder from 'rn-placeholder';
 
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
@@ -24,7 +23,6 @@ const enhance = compose(
       PropTypes.string,
     ]),
     overlayColor: PropTypes.string,
-    isLoading: PropTypes.bool,
   }),
 );
 
@@ -67,19 +65,10 @@ const Overlay = styled(({ theme }) => ({
 const CardImage = enhance(({
   source: imageSource,
   overlayColor,
-  isLoading,
 }) => (
   <Wrapper>
-    <Placeholder.Media
-      size={320}
-      animate={'fade'}
-      onReady={!isLoading}
-    >
-      <View>
-        <StyledImage source={imageSource} />
-        {overlayColor ? <Overlay colors={[`${Color(overlayColor).fade(1)}`, overlayColor]} start={[0, 0]} end={[0, 1]} locations={[0.3, 1]} /> : null}
-      </View>
-    </Placeholder.Media>
+    <StyledImage source={imageSource} />
+    {overlayColor ? <Overlay colors={[`${Color(overlayColor).fade(1)}`, overlayColor]} start={[0, 0]} end={[0, 1]} locations={[0.3, 1]} /> : null}
   </Wrapper>
 ));
 

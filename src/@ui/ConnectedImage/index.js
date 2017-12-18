@@ -3,6 +3,8 @@ import { Platform, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { every } from 'lodash';
 
+import SkeletonImage from './SkeletonImage';
+
 // This mirrors the File resource we get from Heighliner:
 const ImageSourceType = PropTypes.oneOfType([
   PropTypes.shape({
@@ -66,9 +68,14 @@ class ConnectedImage extends PureComponent {
     maintainAspectRatio: false,
   }
 
-  state = {
-    source: getCachedSources(this.props.source),
-  };
+  constructor(props) {
+    super(props);
+
+    this.isLoading = true;
+    this.state = {
+      source: getCachedSources(this.props.source),
+    };
+  }
 
   componentWillMount() { this.updateCache(this.props.source); }
   componentWillReceiveProps(newProps) { this.updateCache(newProps.source); }
@@ -95,8 +102,10 @@ class ConnectedImage extends PureComponent {
 
   render() {
     let { source } = this.state;
-    if (!Array.isArray(source)) source = [source]; // TODO: could render a loading image instead?
-    if (!every(this.state.source, image => image.width && image.height)) return null;
+    if (!Array.isArray(source)) source = [source];
+    if (every(this.state.source, image => image.width && image.height)) {
+      this.isLoading = false;
+    }
 
     // react-native-web currently doesn't support array-based Image sources
     if (Platform.OS === 'web' && Array.isArray(source)) {
@@ -104,7 +113,11 @@ class ConnectedImage extends PureComponent {
     }
 
     const { ImageComponent = Image, style, ...otherProps } = this.props;
-    return <ImageComponent {...otherProps} source={source} style={[this.aspectRatio, style]} />;
+    return (
+      <SkeletonImage onReady={!this.isLoading} animate={'fade'}>
+        <ImageComponent {...otherProps} source={source} style={[this.aspectRatio, style]} />
+      </SkeletonImage>
+    );
   }
 }
 
