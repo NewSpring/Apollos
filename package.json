@@ -60,6 +60,9 @@
       "./.jestrc.js",
       "<rootDir>/config/polyfills.js"
     ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(rn-.*?\\.js$))"
+    ],
     "collectCoverage": true,
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
