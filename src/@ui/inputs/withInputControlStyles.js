@@ -1,10 +1,17 @@
 import styled from '@ui/styled';
 
-const withInputControlStyles = styled(({ theme }) => ({
+const baseStyle = ({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 4,
   height: 30 + (theme.sizing.baseUnit / 2),
+});
+
+const textStyle = ({ theme }) => ({
+  ...baseStyle({ theme }),
   lineHeight: 30,
   fontFamily: theme.typography.fontFamilySans,
-}), 'Input.Control');
+});
 
-export default withInputControlStyles;
+export const withInputControlViewStyles = styled(baseStyle);
+export const withInputControlTextStyles = styled(textStyle, 'Input.Control');
+
+export default withInputControlTextStyles;

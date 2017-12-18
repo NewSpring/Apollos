@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { H3 } from '@ui/typography';
+import { H3, H4 } from '@ui/typography';
 import * as Inputs from '@ui/inputs';
 import styled from '@ui/styled';
 
@@ -22,7 +22,11 @@ const FundInputWrapper = styled(({ theme }) => ({
   flexDirection: 'row',
   flexWrap: 'wrap',
   paddingVertical: theme.sizing.baseUnit,
-}), 'FindInput.Wrapper')(View);
+}), 'FundInput.Wrapper')(View);
+
+const CurrencyLabel = styled(({ amount }) => ({
+  opacity: amount > 0 ? 1 : 0.5,
+}), 'FundInput.CurrencyLabel')(H4);
 
 const FundInput = (({
   isFirst = false,
@@ -36,8 +40,10 @@ const FundInput = (({
       <StyledTextInput
         placeholder="0.00"
         onChangeText={amount => onChange(Object.assign({}, value, { amount }))}
+        type="numeric"
+        prefix={<CurrencyLabel amount={get(value, 'amount')}>$</CurrencyLabel>}
         value={get(value, 'amount')}
-        wrapperStyle={{ marginTop: 2 }}
+        wrapperStyle={{ marginTop: 2, marginBottom: 0 }}
       />
     </View>
     <H3>{'to '}</H3>
@@ -46,7 +52,7 @@ const FundInput = (({
         onValueChange={id => onChange(Object.assign({}, value, funds.find(fund => fund.id === id)))}
         value={get(value, 'id')}
         displayValue={get(value, 'name')}
-        wrapperStyle={{ marginTop: 6 }}
+        wrapperStyle={{ marginTop: 6, marginBottom: 0 }}
       >
         {funds.map(({ name, id }) => (
           <Inputs.PickerItem label={name} value={id} key={id} />

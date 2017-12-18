@@ -60,7 +60,7 @@ export class ContributionForm extends Component {
 
   state = {
     secondFundVisible: get(this.props.values, 'secondContribution.id'),
-    recurringPaymentOptionsVisible: get(this.props.values, 'frequencyId'),
+    recurringPaymentOptionsVisible: get(this.props.values, 'frequencyId') !== 'today',
   }
 
   get totalContribution() {
@@ -88,7 +88,14 @@ export class ContributionForm extends Component {
   handleToggleRecurringPaymentOptionsVisibility = () => {
     const recurringPaymentOptionsVisible = !this.state.recurringPaymentOptionsVisible;
 
-    this.props.setFieldValue('frequencyId', FREQUENCY_IDS[0].id);
+    let frequencyId = FREQUENCY_IDS[0].id;
+    if (recurringPaymentOptionsVisible) {
+      this.initialFrequencyId = this.props.values.frequencyId;
+    } else {
+      frequencyId = this.initialFrequencyId || 'today';
+    }
+
+    this.props.setFieldValue('frequencyId', frequencyId);
     this.setState({ recurringPaymentOptionsVisible });
   }
 
@@ -130,7 +137,7 @@ export class ContributionForm extends Component {
         />
 
         <Inputs.Switch
-          value={this.state.recurringPaymentOptionsVisible}
+          value={!!this.state.recurringPaymentOptionsVisible}
           onValueChange={this.handleToggleRecurringPaymentOptionsVisibility}
           label="Schedule Contribution"
         />
@@ -149,7 +156,7 @@ export class ContributionForm extends Component {
         }
 
         <PaddedView horizontal={false}>
-          <H3>my total is $<H2>{`${parseFloat(this.totalContribution).toFixed(2)}`}</H2></H3>
+          <H3>my total is $<H2>{`${parseFloat(this.totalContribution || 0).toFixed(2) || 0}`}</H2></H3>
         </PaddedView>
 
         <Button

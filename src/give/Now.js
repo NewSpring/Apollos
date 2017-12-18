@@ -25,6 +25,7 @@ const Contribution = compose(
         id: props.funds && props.funds[0] && props.funds[0].id,
         name: props.funds && props.funds[0] && props.funds[0].name,
       },
+      frequencyId: 'today',
       secondContribution: null,
       startDate: new Date(),
     }),

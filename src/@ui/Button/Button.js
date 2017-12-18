@@ -19,12 +19,13 @@ const ButtonStyles = styled(({ theme, disabled, bordered }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   opacity: disabled ? 0.5 : 1,
+  borderWidth: 2,
   ...(bordered ? {
     backgroundColor: theme.colors.transparent,
-    borderWidth: 2,
     borderColor: theme.colors.primary,
   } : {
     backgroundColor: theme.colors.background.default,
+    borderColor: theme.colors.background.default,
   }),
 }), 'Button')(View);
 
@@ -85,6 +86,7 @@ Button.defaultProps = {
   bordered: false,
   title: '',
   accessibilityComponentType: 'button',
+  type: 'primary',
 };
 
 Button.propTypes = {

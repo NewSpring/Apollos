@@ -7,15 +7,15 @@ import styled from '@ui/styled';
 
 import { LabelText } from '../FloatingLabel';
 import InputWrapper from '../InputWrapper';
-import withInputControlStyles from '../withInputControlStyles';
+import { withInputControlViewStyles } from '../withInputControlStyles';
 
 const ControlWrapper = compose(
+  withInputControlViewStyles,
   styled({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   }),
-  withInputControlStyles,
 )(View);
 
 const enhance = compose(
