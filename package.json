@@ -61,7 +61,7 @@
       "<rootDir>/config/polyfills.js"
     ],
     "transformIgnorePatterns": [
-      "/node_modules/(?!(rn-.*?\\.js$))"
+      "node_modules/(?!(jest-)?react-native|rn-*|react-clone-referenced-element|expo|@expo/*|exponent|@exponent/*|react-navigation|@maintained-repos/*|static-container/*)"
     ],
     "collectCoverage": true,
     "testMatch": [
