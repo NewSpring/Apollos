@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StatusBar, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes, branch, renderNothing, pure } from 'recompose';
+import { withTheme } from '@ui/theme';
 import SafeAreaView from '@ui/SafeAreaView';
 import styled from '@ui/styled';
 import { H6 } from '@ui/typography';
@@ -16,28 +17,36 @@ const StyledHeaderBar = styled({
 }, 'Header.Bar')(View);
 
 const HeaderContainer = styled(({ theme }) => ({
-  backgroundColor: theme.colors.primary,
+  backgroundColor: theme.colors.background.primary,
 }), 'Header.Container')(SafeAreaView);
 
-const StyledHeaderText = styled(({ theme }) => ({
-  color: theme.colors.text.appHeader,
+const StyledHeaderText = styled(({ theme, barStyle }) => ({
+  color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
 }), 'Header.Text')(H6);
 
 const enhance = compose(
+  withTheme(),
   pure,
   branch(() => Platform.OS === 'web', renderNothing),
   setPropTypes({
     titleText: PropTypes.string,
     backButton: PropTypes.bool,
+    barStyle: PropTypes.oneOf(['light-content', 'dark-content']),
   }),
 );
 
-const Header = enhance(({ titleText, backButton = false }) => (
-  <HeaderContainer>
-    <StatusBar barStyle="light-content" />
+const Header = enhance(({
+  titleText,
+  backButton = false,
+  backgroundColor,
+  barStyle = 'light-content',
+  theme,
+}) => (
+  <HeaderContainer style={backgroundColor ? { backgroundColor } : null}>
+    <StatusBar barStyle={barStyle} />
     <StyledHeaderBar>
-      {backButton ? <BackButton /> : null}
-      <StyledHeaderText>{titleText}</StyledHeaderText>
+      {backButton ? <BackButton color={barStyle === 'dark-content' ? theme.colors.darkPrimary : undefined} /> : null}
+      <StyledHeaderText barStyle={barStyle}>{titleText}</StyledHeaderText>
     </StyledHeaderBar>
   </HeaderContainer>
 ));

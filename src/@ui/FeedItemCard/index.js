@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, pure, setPropTypes } from 'recompose';
+import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { startCase, toLower } from 'lodash';
 import Placeholder from 'rn-placeholder';
 
@@ -20,6 +20,9 @@ import {
 
 const enhance = compose(
   pure,
+  defaultProps({
+    isLight: true,
+  }),
   withTheme(({ theme, isLight }) => ({
     fontColor: (isLight || typeof isLight === 'undefined') ?
       theme.colors.text.primary :

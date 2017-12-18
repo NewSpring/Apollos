@@ -12,6 +12,19 @@ export default gql`
           channelName
           parent {
             entryId: id
+            content {
+              isLight
+              colors {
+                value
+                description
+              }
+              images(sizes: ["large", "medium"]) {
+                fileName
+                fileType
+                fileLabel
+                url
+              }
+            }
           }
           meta {
             urlTitle

@@ -110,42 +110,7 @@ exports[`SecondaryNav Component renders correctly with default props 1`] = `
       },
     ]
   }
->
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }
-    testID={undefined}
-  >
-    <Svg
-      height={32}
-      viewBox="0 0 24 24"
-      width={32}
-    >
-      <Path
-        d="M14.35 21L6.2 12.46c-.26-.28-.26-.64 0-.92L14.34 3l1.65.9L8.27 12 16 20.1l-1.65.9z"
-        fill="#ffffff"
-      />
-    </Svg>
-  </View>
-</View>
+/>
 `;
 
 exports[`SecondaryNav Component renders with custom links 1`] = `
@@ -168,40 +133,6 @@ exports[`SecondaryNav Component renders with custom links 1`] = `
     ]
   }
 >
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }
-    testID={undefined}
-  >
-    <Svg
-      height={32}
-      viewBox="0 0 24 24"
-      width={32}
-    >
-      <Path
-        d="M14.35 21L6.2 12.46c-.26-.28-.26-.64 0-.92L14.34 3l1.65.9L8.27 12 16 20.1l-1.65.9z"
-        fill="#ffffff"
-      />
-    </Svg>
-  </View>
   <View
     accessibilityComponentType={undefined}
     accessibilityLabel={undefined}

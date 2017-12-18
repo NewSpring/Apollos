@@ -1,20 +1,29 @@
 import React, { PureComponent } from 'react';
 import { Platform, Image } from 'react-native';
-import { every } from 'lodash';
 import PropTypes from 'prop-types';
+import { every } from 'lodash';
 
 // This mirrors the File resource we get from Heighliner:
 const ImageSourceType = PropTypes.oneOfType([
   PropTypes.shape({
-    url: PropTypes.string,
+    uri: PropTypes.string,
     label: PropTypes.string,
+    width: PropTypes.number,
+    height: PropTypes.number,
   }),
   PropTypes.string,
 ]);
 
-const sizeCache = {};
+export const sizeCache = {};
 
-const getCachedSources = (_sources = []) => {
+export const getCacheKey = (source) => {
+  if (source.size && source.fileLabel) return `${source.size}-${source.fileLabel}`;
+  if (source.url) return source.url;
+  if (source.uri) return source.uri;
+  return undefined;
+};
+
+export const getCachedSources = (_sources = []) => {
   let sources = _sources;
   if (!Array.isArray(sources)) sources = [sources];
   sources = sources.map((source) => {
@@ -25,20 +34,36 @@ const getCachedSources = (_sources = []) => {
   return sources.map(source => ({
     uri: (source.url || '').replace(/^http:\/\/|^\/\//i, 'https://'),
     ...source,
-    ...(sizeCache[source.size] || {}),
+    ...(sizeCache[getCacheKey(source)] || {}),
   }));
 };
+
+export const updateCache = sources => Promise.all(getCachedSources(sources).map((source) => {
+  const key = getCacheKey(source);
+  if (sizeCache[key] || !key) return Promise.resolve(source);
+  return (new Promise((resolve, reject) => {
+    Image.getSize(source.uri, (width, height) => resolve({
+      width, height,
+    }), reject);
+  })).then((sizeForCache) => {
+    if (key) sizeCache[key] = sizeForCache;
+  });
+}));
 
 class ConnectedImage extends PureComponent {
   static propTypes = {
     source: PropTypes.oneOfType([
-      PropTypes.arrayOf(ImageSourceType), ImageSourceType,
+      PropTypes.arrayOf(ImageSourceType),
+      ImageSourceType,
     ]),
     ImageComponent: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    maintainAspectRatio: PropTypes.bool,
+    style: PropTypes.any, // eslint-disable-line
   }
 
   static defaultProps = {
     ImageComponent: Image,
+    maintainAspectRatio: false,
   }
 
   state = {
@@ -48,37 +73,38 @@ class ConnectedImage extends PureComponent {
   componentWillMount() { this.updateCache(this.props.source); }
   componentWillReceiveProps(newProps) { this.updateCache(newProps.source); }
 
-  async updateCache(sources) {
-    await Promise.all(getCachedSources(sources).map((source) => {
-      if (sizeCache[source.size]) return Promise.resolve(source);
-      return (new Promise((resolve, reject) => {
-        Image.getSize(source.uri, (width, height) => resolve({
-          width, height,
-        }), reject);
-      })).then((sizeForCache) => {
-        sizeCache[source.size] = sizeForCache;
-      });
-    }));
+  get aspectRatio() {
+    const style = {};
+    if (this.props.maintainAspectRatio) {
+      const firstSource = this.state.source[0];
+      if (firstSource && firstSource.width && firstSource.height) {
+        style.aspectRatio = firstSource.width / firstSource.height;
+        if (Platform.OS === 'web') {
+          style.height = 0;
+          style.paddingTop = `${style.aspectRatio * 100}%`;
+        }
+      }
+    }
+    return style;
+  }
 
+  async updateCache(sources) {
+    await updateCache(sources);
     this.setState({ source: getCachedSources(sources) });
   }
 
   render() {
     let { source } = this.state;
-    // Android can't currently render an image source without a width/height specified, and then
-    // re-render that source with width/height. So render null until width and height is set:
-    if (Platform.OS === 'android') {
-      if (!Array.isArray(source)) source = [source];
-      if (!every(this.state.source, image => image.width && image.height)) return null;
-    }
+    if (!Array.isArray(source)) source = [source]; // TODO: could render a loading image instead?
+    if (!every(this.state.source, image => image.width && image.height)) return null;
 
     // react-native-web currently doesn't support array-based Image sources
     if (Platform.OS === 'web' && Array.isArray(source)) {
       [source] = source;
     }
 
-    const { ImageComponent = Image, ...otherProps } = this.props;
-    return <ImageComponent {...otherProps} source={source} />;
+    const { ImageComponent = Image, style, ...otherProps } = this.props;
+    return <ImageComponent {...otherProps} source={source} style={[this.aspectRatio, style]} />;
   }
 }
 
