@@ -6,29 +6,23 @@ import Header from '@ui/Header';
 import ContentView from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
-import withNewsStory from '@data/withNewsStory';
+import { withPlaylist } from '@data/mediaPlayer';
 
 const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
-  withNewsStory,
+  withPlaylist,
 );
 
-const NewsSingle = enhance(({
+const Playlist = enhance(({
   content: {
-    authors = [],
-    title = '',
     content = {},
   } = { },
 }) => (
   <FlexedView>
-    <Header titleText="News" backButton />
+    <Header titleText="Music" backButton />
     <ScrollView>
-      <ContentView
-        title={title}
-        authors={authors}
-        {...content}
-      />
+      <ContentView {...content} />
     </ScrollView>
     <MediaQuery maxWidth="md">
       <SecondaryNav>
@@ -38,5 +32,4 @@ const NewsSingle = enhance(({
     </MediaQuery>
   </FlexedView>
 ));
-
-export default NewsSingle;
+export default Playlist;

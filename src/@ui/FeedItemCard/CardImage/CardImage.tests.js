@@ -8,7 +8,12 @@ describe('the FeedItemCard CardImage component', () => {
   it('should render', () => {
     const tree = renderer.create(
       <ThemeProvider>
-        <CardImage source={'https://picsum.photos/600/400/?random'} />
+        <CardImage source={[{
+            uri: 'https://picsum.photos/600/400/?random',
+            width: 600,
+            height: 400,
+          }]}
+        />
       </ThemeProvider>,
     );
     expect(tree).toMatchSnapshot();
@@ -16,7 +21,14 @@ describe('the FeedItemCard CardImage component', () => {
   it('should render with an overlayColor', () => {
     const tree = renderer.create(
       <ThemeProvider>
-        <CardImage source={'https://picsum.photos/600/400/?random'} overlayColor={'salmon'} />
+        <CardImage
+          source={[{
+            uri: 'https://picsum.photos/600/400/?random',
+            width: 600,
+            height: 400,
+          }]}
+          overlayColor={'salmon'}
+        />
       </ThemeProvider>,
     );
     expect(tree).toMatchSnapshot();

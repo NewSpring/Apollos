@@ -11,6 +11,7 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
 >
   <View
     cardColor="salmon"
+    isLight={true}
     style={
       Object {
         "backgroundColor": "salmon",
@@ -38,20 +39,25 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
         style={Object {}}
       >
         <Image
+          maintainAspectRatio={false}
           source={
             Array [
               Object {
+                "height": 400,
                 "uri": "https://picsum.photos/600/400/?random",
-                "url": "https://picsum.photos/600/400/?random",
+                "width": 600,
               },
             ]
           }
           style={
-            Object {
-              "aspectRatio": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            }
+            Array [
+              Object {},
+              Object {
+                "aspectRatio": 1,
+                "resizeMode": "cover",
+                "width": "100%",
+              },
+            ]
           }
         />
         <ExponentLinearGradient
@@ -214,6 +220,7 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
 >
   <View
     cardColor={undefined}
+    isLight={true}
     style={
       Object {
         "backgroundColor": "#ffffff",
@@ -242,20 +249,25 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
         style={Object {}}
       >
         <Image
+          maintainAspectRatio={false}
           source={
             Array [
               Object {
+                "height": 400,
                 "uri": "https://picsum.photos/600/400/?random",
-                "url": "https://picsum.photos/600/400/?random",
+                "width": 600,
               },
             ]
           }
           style={
-            Object {
-              "aspectRatio": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            }
+            Array [
+              Object {},
+              Object {
+                "aspectRatio": 1,
+                "resizeMode": "cover",
+                "width": "100%",
+              },
+            ]
           }
         />
       </View>
@@ -383,6 +395,7 @@ exports[`the FeedItemCard component should render 1`] = `
 >
   <View
     cardColor={undefined}
+    isLight={true}
     style={
       Object {
         "backgroundColor": "#ffffff",
@@ -410,20 +423,25 @@ exports[`the FeedItemCard component should render 1`] = `
         style={Object {}}
       >
         <Image
+          maintainAspectRatio={false}
           source={
             Array [
               Object {
+                "height": 400,
                 "uri": "https://picsum.photos/600/400/?random",
-                "url": "https://picsum.photos/600/400/?random",
+                "width": 600,
               },
             ]
           }
           style={
-            Object {
-              "aspectRatio": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            }
+            Array [
+              Object {},
+              Object {
+                "aspectRatio": 1,
+                "resizeMode": "cover",
+                "width": "100%",
+              },
+            ]
           }
         />
       </View>
@@ -551,6 +569,7 @@ exports[`the FeedItemCard component should render as liked 1`] = `
 >
   <View
     cardColor={undefined}
+    isLight={true}
     style={
       Object {
         "backgroundColor": "#ffffff",
@@ -578,20 +597,25 @@ exports[`the FeedItemCard component should render as liked 1`] = `
         style={Object {}}
       >
         <Image
+          maintainAspectRatio={false}
           source={
             Array [
               Object {
+                "height": 400,
                 "uri": "https://picsum.photos/600/400/?random",
-                "url": "https://picsum.photos/600/400/?random",
+                "width": 600,
               },
             ]
           }
           style={
-            Object {
-              "aspectRatio": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            }
+            Array [
+              Object {},
+              Object {
+                "aspectRatio": 1,
+                "resizeMode": "cover",
+                "width": "100%",
+              },
+            ]
           }
         />
       </View>
@@ -747,20 +771,25 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
         style={Object {}}
       >
         <Image
+          maintainAspectRatio={false}
           source={
             Array [
               Object {
+                "height": 400,
                 "uri": "https://picsum.photos/600/400/?random",
-                "url": "https://picsum.photos/600/400/?random",
+                "width": 600,
               },
             ]
           }
           style={
-            Object {
-              "aspectRatio": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            }
+            Array [
+              Object {},
+              Object {
+                "aspectRatio": 1,
+                "resizeMode": "cover",
+                "width": "100%",
+              },
+            ]
           }
         />
       </View>
@@ -916,20 +945,25 @@ exports[`the FeedItemCard component should render with inverted (light) font col
         style={Object {}}
       >
         <Image
+          maintainAspectRatio={false}
           source={
             Array [
               Object {
+                "height": 400,
                 "uri": "https://picsum.photos/600/400/?random",
-                "url": "https://picsum.photos/600/400/?random",
+                "width": 600,
               },
             ]
           }
           style={
-            Object {
-              "aspectRatio": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            }
+            Array [
+              Object {},
+              Object {
+                "aspectRatio": 1,
+                "resizeMode": "cover",
+                "width": "100%",
+              },
+            ]
           }
         />
       </View>

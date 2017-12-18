@@ -25,7 +25,7 @@ exports[`The Chip component should be selected 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "color": "#fff",
+        "color": "#ffffff",
         "flexGrow": 1,
         "fontFamily": null,
         "fontSize": 18,

@@ -15,9 +15,10 @@ const enhance = compose(
   setPropTypes({
     source: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number,
-        value: PropTypes.string,
-        description: PropTypes.string,
+        uri: PropTypes.string,
+        label: PropTypes.string,
+        width: PropTypes.number,
+        height: PropTypes.number,
       })),
       PropTypes.string,
     ]),

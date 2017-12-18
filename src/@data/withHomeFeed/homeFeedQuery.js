@@ -11,6 +11,16 @@ const contentFragment = gql`
       date
       channelId
     }
+    parent {
+      entryId: id
+      content {
+        isLight
+        colors {
+          value
+          description
+        }
+      }
+    }
     content {
       images(sizes: ["large"]) {
         fileName
