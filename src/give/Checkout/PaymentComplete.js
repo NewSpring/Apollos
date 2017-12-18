@@ -1,63 +1,34 @@
-import React, { Component } from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, mapProps } from 'recompose';
+import { compose, withProps, setPropTypes, defaultProps, branch, renderComponent } from 'recompose';
 import get from 'lodash/get';
 import withGive from '@data/withGive';
 import ActivityIndicator from '@ui/ActivityIndicator';
 
-export class PaymentComplete extends Component {
-  static propTypes = {
+import Success from './Success';
+import Failure from './Failure';
+
+const PaymentComplete = compose(
+  setPropTypes({
     isLoading: PropTypes.bool,
-    paymentDidFail: PropTypes.bool,
-    paymentDidFailMessage: PropTypes.string,
-    paymentDidSucceed: PropTypes.bool,
-  };
-
-  static defaultProps = {
+    paymentFailed: PropTypes.bool,
+    paymentFailedMessage: PropTypes.string,
+    paymentSuccessful: PropTypes.bool,
+  }),
+  defaultProps({
     isLoading: true,
-    paymentDidFail: false,
-    paymentDidFailMessage: '',
-    paymentDidSucceed: false,
-  };
-
-  render() {
-    if (this.props.isLoading) return <ActivityIndicator />;
-
-    if (this.props.paymentDidFail) {
-      return (
-        <View>
-          <Text>{this.props.paymentDidFailMessage}</Text>
-        </View>
-      );
-    }
-    if (this.props.paymentDidSucceed) {
-      return (
-        <View>
-          <Text>{'Yay!'}</Text>
-        </View>
-      );
-    }
-
-    return (
-      <View>
-        <Text>{'Awaiting Payment'}</Text>
-      </View>
-    );
-  }
-}
-
-const enhance = compose(
+    paymentFailed: false,
+    paymentFailedMessage: '',
+    paymentSuccessful: false,
+  }),
   withGive,
-  mapProps(props => ({
-    paymentDidFail: get(props, 'contributions.paymentFailed'),
-    paymentDidFailMessage: get(props, 'contributions.paymentFailedMessage'),
-    paymentDidSucceed: get(props, 'contributions.paymentSuccessful'),
-    ...props,
+  withProps(props => ({
+    ...get(props, 'contributions') || {},
   })),
-);
+  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
+  branch(
+    ({ paymentFailed, paymentSuccessful }) => paymentFailed || !paymentSuccessful,
+    renderComponent(Failure),
+  ),
+)(Success);
 
-export default enhance(PaymentComplete);
+export default PaymentComplete;

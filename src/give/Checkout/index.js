@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Switch, Route, Redirect, withRouter } from '@ui/NativeWebRouter';
 import Header from '@ui/Header';
 import FlexedView from '@ui/FlexedView';
@@ -23,7 +23,7 @@ const progressForLocation = ({ pathname }) => {
 
 const Checkout = withRouter(({ match, location }) => (
   <FlexedView>
-    <Header titleText="My Giving" />
+    <Header titleText="My Giving" backButton />
     <Progress progress={progressForLocation(location)} />
     <KeyboardAwareScrollView>
       <Switch>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, View } from 'react-native';
-import { compose, pure, setPropTypes } from 'recompose';
+import { compose, pure, setPropTypes, mapProps } from 'recompose';
 import PropTypes from 'prop-types';
 import styled from '@ui/styled';
 
@@ -13,12 +13,15 @@ const enhance = compose(
   }),
 );
 
-const StyledCard = styled(({ theme, cardColor }) => ({
-  width: '100%',
-  backgroundColor: cardColor || theme.colors.background.default,
-  borderRadius: theme.sizing.borderRadius,
-  ...Platform.select(theme.shadows.default),
-}))(View);
+const StyledCard = compose(
+  styled(({ theme, cardColor }) => ({
+    width: '100%',
+    backgroundColor: cardColor || theme.colors.background.default,
+    borderRadius: theme.sizing.borderRadius,
+    ...Platform.select(theme.shadows.default),
+  })),
+  mapProps(({ style, cardColor, ...otherProps }) => ({ style, ...otherProps })),
+)(View);
 
 /*
  * Overflow on iOS, when declared on the same element as a shadow, clips the shadow so overflow must
