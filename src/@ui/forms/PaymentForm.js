@@ -5,10 +5,14 @@ import {
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import { withFormik } from 'formik';
+import { formatCardNumber, formatCardExpiry, parseCardExpiry } from 'creditcardutils';
+import get from 'lodash/get';
+import moment from 'moment';
 
 import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
 import { withRouter } from '@ui/NativeWebRouter';
+import Icon from '@ui/Icon';
 
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
@@ -21,30 +25,33 @@ export const PaymentFormWithoutData = ({
   <View>
     <Inputs.Picker
       label="Payment Method"
-      value={values.method}
-      displayValue={values.method === 'creditCard' ? 'Credit Card' : 'Bank Account'}
-      onValueChange={value => setFieldValue('method', value)}
+      value={values.paymentMethod}
+      displayValue={values.paymentMethod === 'creditCard' ? 'Credit Card' : 'Bank Account'}
+      onValueChange={value => setFieldValue('paymentMethod', value)}
     >
       <Inputs.PickerItem label="Credit Card" value={'creditCard'} />
       <Inputs.PickerItem label="Bank Account" value={'bankAccount'} />
     </Inputs.Picker>
 
-    {values.method === 'creditCard' ? (
+    {values.paymentMethod === 'creditCard' ? (
       <View>
         <Inputs.Text
+          suffix={<Icon name="credit" />}
           label="Card Number"
           type="numeric"
           value={values.cardNumber}
-          onChangeText={text => setFieldValue('cardNumber', text)}
+          onChangeText={text => setFieldValue('cardNumber', formatCardNumber(text))}
         />
         <Inputs.Text
           label="Expiration Date"
           placeholder="mm/yy"
+          type="numeric"
           value={values.expirationDate}
-          onChangeText={text => setFieldValue('expirationDate', text)}
+          onChangeText={text => setFieldValue('expirationDate', formatCardExpiry(text))}
         />
         <Inputs.Text
           label="CVV"
+          type="numeric"
           value={values.cvv}
           onChangeText={text => setFieldValue('cvv', text)}
         />
@@ -59,11 +66,13 @@ export const PaymentFormWithoutData = ({
         <Inputs.Text
           label="Routing Number"
           value={values.routingNumber}
+          type="numeric"
           onChangeText={text => setFieldValue('routingNumber', text)}
         />
         <Inputs.Text
           label="Account Number"
           value={values.accountNumber}
+          type="numeric"
           onChangeText={text => setFieldValue('accountNumber', text)}
         />
         <Inputs.Picker
@@ -86,7 +95,7 @@ PaymentFormWithoutData.propTypes = {
   setFieldValue: PropTypes.func,
   handleSubmit: PropTypes.func,
   values: PropTypes.shape({
-    method: PropTypes.oneOf(['creditCard', 'bankAccount']),
+    paymentMethod: PropTypes.oneOf(['creditCard', 'bankAccount']),
     routingNumber: PropTypes.string,
     accountNumber: PropTypes.string,
     accountType: PropTypes.oneOf(['checking', 'savings']),
@@ -102,13 +111,25 @@ const PaymentForm = compose(
   withCheckout,
   withRouter,
   withFormik({
-    mapPropsToValues: () => ({
-      method: 'creditCard',
+    mapPropsToValues: props => ({
+      paymentMethod: get(props, 'contributions.paymentMethod') || 'creditCard',
+      ...get(props, 'contributions.bankAccount', {}),
+      ...get(props, 'contributions.creditCard', {}),
     }),
     handleSubmit: (values, { props }) => {
-      const setter = values.method === 'bankAccount' ? props.setBankAccount : props.setCreditCard;
-      setter(values);
-      if (props.navigateToOnComplete) props.history.replace(props.navigateToOnComplete);
+      const formattedValues = { ...values };
+      const selectPaymentType = values.paymentMethod === 'bankAccount' ? props.isPayingWithBankAccount : props.isPayingWithCreditCard;
+      selectPaymentType();
+
+      if (formattedValues.cardNumber) formattedValues.cardNumber = formattedValues.cardNumber.replace(/\D/g, '');
+      if (formattedValues.expirationDate) {
+        const { month, year } = parseCardExpiry(formattedValues.expirationDate);
+        formattedValues.expirationDate = moment().set('month', month).set('year', year).format('MM/YY');
+      }
+
+      const setAccountDetails = values.paymentMethod === 'bankAccount' ? props.setBankAccount : props.setCreditCard;
+      setAccountDetails(formattedValues);
+      if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
     },
   }),
 )(PaymentFormWithoutData);

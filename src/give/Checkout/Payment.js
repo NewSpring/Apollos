@@ -7,7 +7,7 @@ const Payment = () => (
   <PaddedView>
     <H4>Billing Address</H4>
     <H6>Step 3 of 4</H6>
-    <PaymentForm navigateToOnComplete="confirm" navigateToOnBack="address" />
+    <PaymentForm navigateToOnComplete="confirm" />
   </PaddedView>
 );
 

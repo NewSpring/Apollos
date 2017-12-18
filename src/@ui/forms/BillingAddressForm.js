@@ -116,12 +116,12 @@ const BillingAddressForm = compose(
   withRouter,
   withFormik({
     mapPropsToValues: props => ({
-      street1: get(props, 'person.home.street1', ''),
-      street2: get(props, 'person.home.street2', ''),
-      city: get(props, 'person.home.city', ''),
-      stateId: get(props, 'person.home.state') || 'SC',
-      countryId: get(props, 'person.home.country') || 'US',
-      zipCode: get(props, 'person.home.zip', ''),
+      street1: get(props, 'contributions.street1') || get(props, 'person.home.street1', ''),
+      street2: get(props, 'contributions.street2') || get(props, 'person.home.street2', ''),
+      city: get(props, 'contributions.city') || get(props, 'person.home.city', ''),
+      stateId: get(props, 'contributions.stateId') || get(props, 'person.home.state') || 'SC',
+      countryId: get(props, 'contributions.countryId') || get(props, 'person.home.country') || 'US',
+      zipCode: get(props, 'contributions.zipCode') || get(props, 'person.home.zip', ''),
     }),
     handleSubmit: async (formValues, { props }) => {
       try {
@@ -131,7 +131,7 @@ const BillingAddressForm = compose(
         props.setOrder({
           url: order.url,
         });
-        if (props.navigateToOnComplete) props.history.replace(props.navigateToOnComplete);
+        if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
       } catch (e) {
         // todo: If there's an error, we want to stay on this page and display it.
       }

@@ -77,14 +77,14 @@ const PersonalDetailsForm = compose(
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
   withFormik({
     mapPropsToValues: props => ({
-      firstName: get(props, 'person.firstName'),
-      lastName: get(props, 'person.lastName'),
-      email: get(props, 'person.email'),
-      campusId: get(props, 'person.campus.id') || get(props, 'campuses.0.id'),
+      firstName: get(props, 'contributions.firstName') || get(props, 'person.firstName'),
+      lastName: get(props, 'contributions.lastName') || get(props, 'person.lastName'),
+      email: get(props, 'contributions.email') || get(props, 'person.email'),
+      campusId: get(props, 'contributions.campusId') || get(props, 'person.campus.id') || get(props, 'campuses.0.id'),
     }),
-    handleSubmit: (values, { props }) => {
-      if (props.navigateToOnComplete) props.history.replace(props.navigateToOnComplete);
-    },
+    handleSubmit: (values, { props }) => props.setBillingPerson(values).then(() => {
+      if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
+    }),
   }),
 )(PersonalDetailsFormWithoutData);
 

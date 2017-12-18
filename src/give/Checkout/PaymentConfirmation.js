@@ -5,9 +5,9 @@ import { PaymentConfirmationForm } from '@ui/forms';
 
 const PaymentConfirmation = () => (
   <PaddedView>
-    <H4>Payment Confirmation</H4>
+    <H4>Review Contribution</H4>
     <H6>Step 4 of 4</H6>
-    <PaymentConfirmationForm navigateToOnComplete="complete" navigateToOnBack="payment" />
+    <PaymentConfirmationForm navigateToOnComplete="complete" />
   </PaddedView>
 );
 

@@ -37,7 +37,7 @@ class AppRouter extends PureComponent {
   componentWillUpdate(nextProps) {
     if ((nextProps.history.action !== 'POP' &&
         nextProps.history.action !== 'REPLACE') &&
-        (!this.props.location.state || !this.isModal)
+        !this.isModal
     ) {
       previousLocation = this.props.location;
     }

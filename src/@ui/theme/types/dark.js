@@ -14,6 +14,7 @@ const dark = ({ colors, alpha }) => ({
       accent: Color(colors.darkTertiary).fade(alpha.high),
       inactive: colors.darkTertiary,
       overlay: Color(colors.darkTertiary).fade(alpha.high),
+      darkOverlay: Color(colors.darkTertiary).fade(alpha.low),
     },
     shadows: {
       default: colors.black,
