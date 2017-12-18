@@ -56,6 +56,8 @@ const CategoryLabel = enhance(({
 }) => (
   <Wrapper>
     <Placeholder.ImageContent
+      firstLineWidth={'40%'}
+      width={'40%'}
       lastLineWidth={'40%'}
       textSize={theme.helpers.rem(1.2)}
       lineNumber={1}
