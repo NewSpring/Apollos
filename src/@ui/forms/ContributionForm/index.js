@@ -6,6 +6,14 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
+import { compose, withProps, branch, renderComponent, setPropTypes } from 'recompose';
+import { isEmpty } from 'lodash';
+import { withFormik } from 'formik';
+
+import { withRouter } from '@ui/NativeWebRouter';
+
+import withGive from '@data/withGive';
+import withFinancialAccounts from '@data/withFinancialAccounts';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { H3, H2, BodyCopy as P } from '@ui/typography';
 import Button from '@ui/Button';
@@ -29,9 +37,8 @@ const FundContributionType = {
   name: PropTypes.string,
 };
 
-export class ContributionForm extends Component {
+export class ContributionFormWithoutData extends Component {
   static propTypes = {
-    isLoading: PropTypes.bool,
     isOffline: PropTypes.bool,
     funds: FundInput.propTypes.funds,
     offlineContactEmail: PropTypes.string,
@@ -51,7 +58,6 @@ export class ContributionForm extends Component {
 
   static defaultProps = {
     funds: [],
-    isLoading: true,
     isOffline: false,
     offlineContactEmail: '',
     offlineMessageTitle: 'Unfortunately our giving service is offline.',
@@ -110,7 +116,6 @@ export class ContributionForm extends Component {
   }
 
   render() {
-    if (this.props.isLoading) return <ActivityIndicator />;
     if (this.props.funds.length === 0) return <Text>{'There are no funds to contribute to!'}</Text>;
     if (this.props.isOffline) return this.renderOfflineMessage();
 
@@ -169,5 +174,48 @@ export class ContributionForm extends Component {
     );
   }
 }
+
+const ContributionForm = compose(
+  setPropTypes({
+    navigateToOnComplete: PropTypes.string,
+  }),
+  withGive,
+  withRouter,
+  withFinancialAccounts,
+  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
+  withProps(({ accounts }) => ({ funds: accounts })),
+  withFormik({
+    mapPropsToValues: props => ({
+      firstContribution: {
+        id: props.funds && props.funds[0] && props.funds[0].id,
+        name: props.funds && props.funds[0] && props.funds[0].name,
+      },
+      frequencyId: 'today',
+      secondContribution: null,
+      startDate: new Date(),
+    }),
+    handleSubmit(values, { props }) {
+      const result = { ...values };
+      if (get(result, 'firstContribution.amount')) {
+        result.firstContribution.amount = parseFloat(result.firstContribution.amount);
+      }
+
+      if (get(result, 'secondContribution.amount')) {
+        result.secondContribution.amount = parseFloat(result.secondContribution.amount);
+      }
+
+      props.resetContributions();
+      props.addContribution(result.firstContribution);
+      if (!isEmpty(result.secondContribution)) {
+        props.addContribution(result.secondContribution);
+      }
+
+      props.setContributionFrequency(result.frequencyId);
+      props.setContributionStartDate(result.startDate);
+
+      if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
+    },
+  }),
+)(ContributionFormWithoutData);
 
 export default ContributionForm;

@@ -5,13 +5,15 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, mapProps } from 'recompose';
+import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
+
+import { withRouter } from '@ui/NativeWebRouter';
 import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
 
-export class PaymentConfirmationForm extends Component {
+export class PaymentConfirmationFormWithoutData extends Component {
   static propTypes = {
     isLoading: PropTypes.bool,
     campus: PropTypes.oneOfType([
@@ -63,15 +65,15 @@ export class PaymentConfirmationForm extends Component {
   }
 }
 
-const enhance = compose(
+const PaymentConfirmationForm = compose(
   withGive,
-  mapProps(props => ({
-    ...props,
+  withRouter,
+  withProps(props => ({
     contributions: get(props, 'contributions.contributions', []),
     campusId: get(props, 'contributions.campusId'),
   })),
   withCheckout,
-  mapProps((props) => {
+  withProps((props) => {
     const campus = props.campuses && props.campuses
       .find(c => (c.id === props.campusId));
 
@@ -80,6 +82,40 @@ const enhance = compose(
       ...props,
     });
   }),
-);
+  withProps(props => ({
+    onSubmit: async () => {
+      try {
+        props.isPaying(true);
+        const payment = await props.postPayment();
+        if (props.contributions.paymentMethod === 'creditCard') {
+          const validateCardRes = await props.validateSingleCardTransaction(
+            props.contributions.orderPaymentToken,
+          );
+          const invalidCardError = get(validateCardRes, 'data.response.error');
+          if (invalidCardError) throw new Error(invalidCardError);
+        }
 
-export default enhance(PaymentConfirmationForm);
+        // NOTE: Need to keep reading through
+        // the code to understand what id and name are for
+        const completeOrderRes = await props.completeOrder(props.contributions.orderPaymentToken);
+        const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
+        if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
+
+        props.setPaymentResult({
+          success: true,
+        });
+        return payment;
+      } catch (err) {
+        props.setPaymentResult({
+          error: err.message,
+        });
+        return null;
+      } finally {
+        props.isPaying(false);
+        if (props.navigateToOnComplete) props.history.replace(props.navigateToOnComplete);
+      }
+    },
+  })),
+)(PaymentConfirmationFormWithoutData);
+
+export default PaymentConfirmationForm;

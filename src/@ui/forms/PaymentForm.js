@@ -3,29 +3,17 @@ import {
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, setPropTypes } from 'recompose';
+import { compose } from 'recompose';
+import { withFormik } from 'formik';
+
+import withGive from '@data/withGive';
+import withCheckout from '@data/withCheckout';
+import { withRouter } from '@ui/NativeWebRouter';
 
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
 
-const enhance = compose(
-  setPropTypes({
-    setFieldValue: PropTypes.func,
-    handleSubmit: PropTypes.func,
-    values: PropTypes.shape({
-      method: PropTypes.oneOf(['creditCard', 'bankAccount']),
-      routingNumber: PropTypes.string,
-      accountNumber: PropTypes.string,
-      accountType: PropTypes.oneOf(['checking', 'savings']),
-      accountName: PropTypes.string,
-      cardNumber: PropTypes.string,
-      expirationDate: PropTypes.string,
-      cvv: PropTypes.string,
-    }),
-  }),
-);
-
-const PaymentForm = enhance(({
+export const PaymentFormWithoutData = ({
   setFieldValue,
   handleSubmit,
   values,
@@ -45,6 +33,7 @@ const PaymentForm = enhance(({
       <View>
         <Inputs.Text
           label="Card Number"
+          type="numeric"
           value={values.cardNumber}
           onChangeText={text => setFieldValue('cardNumber', text)}
         />
@@ -91,6 +80,37 @@ const PaymentForm = enhance(({
 
     <Button onPress={handleSubmit} title="Next" />
   </View>
-));
+);
+
+PaymentFormWithoutData.propTypes = {
+  setFieldValue: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  values: PropTypes.shape({
+    method: PropTypes.oneOf(['creditCard', 'bankAccount']),
+    routingNumber: PropTypes.string,
+    accountNumber: PropTypes.string,
+    accountType: PropTypes.oneOf(['checking', 'savings']),
+    accountName: PropTypes.string,
+    cardNumber: PropTypes.string,
+    expirationDate: PropTypes.string,
+    cvv: PropTypes.string,
+  }),
+};
+
+const PaymentForm = compose(
+  withGive,
+  withCheckout,
+  withRouter,
+  withFormik({
+    mapPropsToValues: () => ({
+      method: 'creditCard',
+    }),
+    handleSubmit: (values, { props }) => {
+      const setter = values.method === 'bankAccount' ? props.setBankAccount : props.setCreditCard;
+      setter(values);
+      if (props.navigateToOnComplete) props.history.replace(props.navigateToOnComplete);
+    },
+  }),
+)(PaymentFormWithoutData);
 
 export default PaymentForm;

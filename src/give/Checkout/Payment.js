@@ -1,24 +1,14 @@
-import { compose } from 'recompose';
-import { withFormik } from 'formik';
-import withGive from '@data/withGive';
-import withCheckout from '@data/withCheckout';
+import React from 'react';
+import PaddedView from '@ui/PaddedView';
+import { H4, H6 } from '@ui/typography';
 import { PaymentForm } from '@ui/forms';
-import { withRouter } from '@ui/NativeWebRouter';
 
-const Payment = compose(
-  withGive,
-  withCheckout,
-  withRouter,
-  withFormik({
-    mapPropsToValues: () => ({
-      method: 'creditCard',
-    }),
-    handleSubmit: (values, { props }) => {
-      const setter = values.method === 'bankAccount' ? props.setBankAccount : props.setCreditCard;
-      setter(values);
-      props.history.replace('confirm');
-    },
-  }),
-)(PaymentForm);
+const Payment = () => (
+  <PaddedView>
+    <H4>Billing Address</H4>
+    <H6>Step 3 of 4</H6>
+    <PaymentForm navigateToOnComplete="confirm" navigateToOnBack="address" />
+  </PaddedView>
+);
 
 export default Payment;
