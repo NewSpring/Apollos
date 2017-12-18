@@ -6,4 +6,4 @@ export { default as Now } from './Now';
 export { default as Campaign } from './Campaign';
 export { default as Schedule } from './Schedule';
 export { default as ThankYou } from './ThankYou';
-
+export { default as Checkout } from './Checkout';

@@ -16,7 +16,9 @@ describe('The FeedView component', () => {
               category: 'bob',
               content: {
                 images: [{
-                  url: 'https://placeholdit.co//i/600x400?text=:`-( No Image In Array!',
+                  uri: 'https://picsum.photos/600/400/?random',
+                  width: 600,
+                  height: 400,
                 }],
                 colors: [],
                 isLight: true,
@@ -28,7 +30,9 @@ describe('The FeedView component', () => {
               category: 'bob 2',
               content: {
                 images: [{
-                  url: 'https://placeholdit.co//i/600x400?text=:`-( No Image In Array!',
+                  uri: 'https://picsum.photos/600/400/?random',
+                  width: 600,
+                  height: 400,
                 }],
                 colors: [{
                   value: '584068',

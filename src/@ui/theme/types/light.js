@@ -6,13 +6,15 @@ const light = ({ colors, alpha }) => ({
       primary: colors.darkPrimary,
       secondary: colors.darkSecondary,
       tertiary: colors.darkTertiary,
-      appHeader: colors.lightPrimary,
+      link: colors.primary,
     },
     background: {
       default: colors.white,
       primary: colors.primary,
+      accent: Color(colors.lightTertiary).fade(alpha.high),
       inactive: colors.lightTertiary,
       overlay: Color(colors.darkTertiary).fade(alpha.high),
+      darkOverlay: Color(colors.darkTertiary).fade(alpha.low),
       // todo
     },
     shadows: {

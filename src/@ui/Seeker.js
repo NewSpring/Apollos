@@ -52,7 +52,7 @@ export class Seeker extends Component {
   }
 
   panResponder = PanResponder.create({
-    onStartShouldSetPanResponder: () => (true),
+    onStartShouldSetPanResponder: () => !!this.props.onSeeking,
     onPanResponderMove: (e, { dx }) => {
       this.setState({
         offset: dx,

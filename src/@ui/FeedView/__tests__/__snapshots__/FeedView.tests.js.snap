@@ -10,7 +10,9 @@ exports[`The FeedView component renders correctly 1`] = `
           "colors": Array [],
           "images": Array [
             Object {
-              "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
+              "height": 400,
+              "uri": "https://picsum.photos/600/400/?random",
+              "width": 600,
             },
           ],
           "isLight": true,
@@ -28,7 +30,9 @@ exports[`The FeedView component renders correctly 1`] = `
           ],
           "images": Array [
             Object {
-              "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
+              "height": 400,
+              "uri": "https://picsum.photos/600/400/?random",
+              "width": 600,
             },
           ],
           "isLight": true,
@@ -126,20 +130,25 @@ exports[`The FeedView component renders correctly 1`] = `
               style={Object {}}
             >
               <Image
+                maintainAspectRatio={false}
                 source={
                   Array [
                     Object {
-                      "uri": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
-                      "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
+                      "height": 400,
+                      "uri": "https://picsum.photos/600/400/?random",
+                      "width": 600,
                     },
                   ]
                 }
                 style={
-                  Object {
-                    "aspectRatio": 1,
-                    "resizeMode": "cover",
-                    "width": "100%",
-                  }
+                  Array [
+                    Object {},
+                    Object {
+                      "aspectRatio": 1,
+                      "resizeMode": "cover",
+                      "width": "100%",
+                    },
+                  ]
                 }
               />
             </View>
@@ -311,20 +320,25 @@ exports[`The FeedView component renders correctly 1`] = `
               style={Object {}}
             >
               <Image
+                maintainAspectRatio={false}
                 source={
                   Array [
                     Object {
-                      "uri": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
-                      "url": "https://placeholdit.co//i/600x400?text=:\`-( No Image In Array!",
+                      "height": 400,
+                      "uri": "https://picsum.photos/600/400/?random",
+                      "width": 600,
                     },
                   ]
                 }
                 style={
-                  Object {
-                    "aspectRatio": 1,
-                    "resizeMode": "cover",
-                    "width": "100%",
-                  }
+                  Array [
+                    Object {},
+                    Object {
+                      "aspectRatio": 1,
+                      "resizeMode": "cover",
+                      "width": "100%",
+                    },
+                  ]
                 }
               />
               <ExponentLinearGradient

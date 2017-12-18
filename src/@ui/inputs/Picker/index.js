@@ -24,13 +24,16 @@ const Placeholder = styled(({ theme }) => ({
 class Picker extends PureComponent {
   static propTypes = {
     placeholder: PropTypes.string,
-    displayValue: PropTypes.string,
+    displayValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     focusAnimation: PropTypes.any, // eslint-disable-line
     prefix: PropTypes.node,
     suffix: PropTypes.node,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
     label: PropTypes.string,
+    value: PropTypes.any, // eslint-disable-line
+    wrapperStyle: PropTypes.any, // eslint-disable-line
+    style: PropTypes.any, // eslint-disable-line
   };
 
   state = {
@@ -54,18 +57,22 @@ class Picker extends PureComponent {
       focusAnimation, // from createInput
       placeholder,
       label,
+      value,
+      style,
+      wrapperStyle,
       ...pickerProps
     } = this.props;
     const rotate = focusAnimation.interpolate({
       inputRange: [0, 1],
       outputRange: ['0deg', '180deg'],
     });
+    const labelAnimation = value ? new Animated.Value(1) : focusAnimation;
     return (
-      <InputWrapper>
+      <InputWrapper style={wrapperStyle}>
         <TouchableOpacity onPress={this.toggle}>
           <AddonRow>
-            <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
-              <StyledUIText>
+            <Animated.View style={{ opacity: labelAnimation, flex: 1 }}>
+              <StyledUIText style={style}>
                 {displayValue || (<Placeholder>{placeholder}</Placeholder>)}
               </StyledUIText>
             </Animated.View>
@@ -76,9 +83,15 @@ class Picker extends PureComponent {
             </InputAddon>
           </AddonRow>
         </TouchableOpacity>
-        <PickerList {...pickerProps} focusAnimation={focusAnimation} />
 
-        <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
+        <PickerList
+          {...pickerProps}
+          value={value}
+          focused={this.state.focused}
+          onRequestClose={this.toggle}
+        />
+
+        <FloatingLabel animation={labelAnimation}>{label}</FloatingLabel>
         <InputUnderline animation={focusAnimation} />
       </InputWrapper>
     );

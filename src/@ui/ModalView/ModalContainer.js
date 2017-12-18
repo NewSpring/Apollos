@@ -19,7 +19,7 @@ const wide = styled(({ theme }) => ({
 
 const BackgroundOverlay = styled(({ theme }) => ({
   ...StyleSheet.absoluteFillObject,
-  backgroundColor: theme.colors.background.overlay,
+  backgroundColor: theme.colors.background.darkOverlay,
 }), 'ModalContainer.BackgroundOverlay')(View);
 
 const ModalContainer = compose(
