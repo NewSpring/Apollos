@@ -1,9 +1,9 @@
 import moment from 'moment';
+import getOrderTotal from './getOrderTotal';
 
 // TODO: Saved payment methods
-export default function selectOrderDetails(state) {
-  const total = state.contributions
-    .reduce((runningTotal, contribution) => (runningTotal + contribution.amount), 0);
+export default function getOrderDetails(state) {
+  const total = getOrderTotal(state);
 
   // here we format data for the NMI processing
   const joinedData = {

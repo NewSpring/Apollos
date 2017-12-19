@@ -116,14 +116,14 @@ const PaymentConfirmationForm = compose(
     onSubmit: async () => {
       try {
         props.isPaying(true);
-        const payment = await props.postPayment();
-        if (props.contributions.paymentMethod === 'creditCard') {
-          const validateCardRes = await props.validateSingleCardTransaction(
-            props.contributions.orderPaymentToken,
-          );
-          const invalidCardError = get(validateCardRes, 'data.response.error');
-          if (invalidCardError) throw new Error(invalidCardError);
-        }
+        // if (props.contributions.paymentMethod === 'creditCard') {
+        //   const validateCardRes = await props.validateSingleCardTransaction(
+        //     props.contributions.orderPaymentToken,
+        //   );
+        //   const invalidCardError = get(validateCardRes, 'data.response.error');
+        //   if (invalidCardError) throw new Error(invalidCardError);
+        // }
+        await props.postPayment();
 
         // NOTE: Need to keep reading through
         // the code to understand what id and name are for
@@ -134,7 +134,7 @@ const PaymentConfirmationForm = compose(
         props.setPaymentResult({
           success: true,
         });
-        return payment;
+        return true;
       } catch (err) {
         console.log('err', err);
         props.setPaymentResult({
