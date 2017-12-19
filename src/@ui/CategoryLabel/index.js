@@ -65,12 +65,17 @@ const CategoryLabel = enhance(({
       hasRadius
       onReady={!isLoading}
     >
-      <Icon
-        name={getIconName(type)}
-        size={theme.helpers.rem(1.2)}
-        fill={fontColor}
-      />
-      <StyledH7 color={fontColor}>{type}</StyledH7>
+      {/* unecessary view but removes warning from console about children. Consider refactoring this
+        * whole thing to use isLoading prop on Icon
+        */ }
+      <View>
+        <Icon
+          name={getIconName(type)}
+          size={theme.helpers.rem(1.2)}
+          fill={fontColor}
+        />
+        <StyledH7 color={fontColor}>{type}</StyledH7>
+      </View>
     </Placeholder.ImageContent>
   </Wrapper>
 ));

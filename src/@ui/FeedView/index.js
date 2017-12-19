@@ -1,16 +1,10 @@
 import React from 'react';
-// import {
-//   Text,
-//   View,
-// } from 'react-native';
 import PropTypes from 'prop-types';
 import { Link } from '@ui/NativeWebRouter';
 import {
   pure,
   compose,
   branch,
-  // renderComponent,
-  // componentFromProp,
   withProps,
 } from 'recompose';
 import { get } from 'lodash';
@@ -55,19 +49,6 @@ const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
     />
   </Link>
 );
-
-// TODO: replace with component from #115
-// const defaultEmptyStateRenderer = () => map([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], key => (
-//   <FeedItemCard
-//     title={''}
-//     category={''}
-//     images={''}
-//     isLoading
-//     key={key}
-//   />
-// ));
-
-// const renderEmptyState = renderComponent(componentFromProp('renderEmptyState'));
 
 const generateLoadingStateData = (numberOfItems = 1) => {
   const itemData = () => ({
@@ -128,7 +109,6 @@ FeedView.defaultProps = {
   refetch: undefined,
   fetchMore: undefined,
   renderItem: defaultFeedItemRenderer,
-  // renderEmptyState: defaultEmptyStateRenderer,
   numColumns: 1,
 };
 
