@@ -9,6 +9,7 @@ import get from 'lodash/get';
 import { compose, withProps, branch, renderComponent, setPropTypes } from 'recompose';
 import { isEmpty } from 'lodash';
 import { withFormik } from 'formik';
+import Yup from 'yup';
 
 import { withRouter } from '@ui/NativeWebRouter';
 
@@ -119,6 +120,10 @@ export class ContributionFormWithoutData extends Component {
     if (this.props.funds.length === 0) return <Text>{'There are no funds to contribute to!'}</Text>;
     if (this.props.isOffline) return this.renderOfflineMessage();
 
+    const total = (parseFloat(this.totalContribution || 0) || 0).toFixed(2);
+
+    const { touched, errors } = this.props;
+
     return (
       <View>
         <FundInput
@@ -126,12 +131,16 @@ export class ContributionFormWithoutData extends Component {
           isFirst
           value={this.props.values.firstContribution}
           onChange={value => this.props.setFieldValue('firstContribution', value)}
+          onBlur={() => this.props.setFieldTouched('firstContribution', true)}
+          error={Boolean(touched.firstContribution && errors.firstContribution)}
         />
         {this.state.secondFundVisible &&
           <FundInput
             funds={this.remainingFunds}
             value={this.props.values.secondContribution}
             onChange={value => this.props.setFieldValue('secondContribution', value)}
+            onBlur={() => this.props.setFieldTouched('secondContribution', true)}
+            error={Boolean(touched.secondContribution && errors.secondContribution)}
           />
         }
 
@@ -152,16 +161,20 @@ export class ContributionFormWithoutData extends Component {
             <FrequencyInput
               value={this.props.values.frequencyId}
               onChange={value => this.props.setFieldValue('frequencyId', value)}
+              onBlur={() => this.props.setFieldTouched('frequencyId', true)}
+              error={Boolean(touched.frequencyId && errors.frequencyId)}
             />
             <DateInput
               value={this.props.values.startDate}
               onChange={value => this.props.setFieldValue('startDate', value)}
+              onBlur={() => this.props.setFieldTouched('startDate', true)}
+              error={Boolean(touched.startDate && errors.startDate)}
             />
           </View>
         }
 
         <PaddedView horizontal={false}>
-          <H3>my total is $<H2>{`${parseFloat(this.totalContribution || 0).toFixed(2) || 0}`}</H2></H3>
+          <H3>my total is $<H2>{total.split('.')[0]}</H2>.{total.split('.')[1]}</H3>
         </PaddedView>
 
         <Button
@@ -193,6 +206,20 @@ const ContributionForm = compose(
       frequencyId: 'today',
       secondContribution: null,
       startDate: new Date(),
+    }),
+    validationSchema: Yup.object().shape({
+      firstContribution: Yup.object().shape({
+        id: Yup.string(),
+        name: Yup.string(),
+        amount: Yup.number().required(),
+      }).required(),
+      frequencyId: Yup.string().oneOf(['today', ...FREQUENCY_IDS.map(f => f.id)]),
+      secondContribution: Yup.object().shape({
+        id: Yup.string(),
+        name: Yup.string(),
+        amount: Yup.number().required(),
+      }),
+      startDate: Yup.date().min(new Date()),
     }),
     handleSubmit(values, { props }) {
       const result = { ...values };

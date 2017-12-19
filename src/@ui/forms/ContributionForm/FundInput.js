@@ -39,6 +39,7 @@ const FundInput = (({
   funds = [],
   value = {},
   onChange,
+  ...textInputProps
 }) => (
   <FundInputWrapper>
     <H3>{isFirst ? 'I\'d like to give ' : 'and give '}</H3>
@@ -50,6 +51,7 @@ const FundInput = (({
         prefix={<CurrencyLabel amount={get(value, 'amount')}>$</CurrencyLabel>}
         value={get(value, 'amount')}
         wrapperStyle={textWrapperStyle}
+        {...textInputProps}
       />
     </View>
     <H3>{'to '}</H3>

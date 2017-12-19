@@ -16,12 +16,14 @@ const FrequencyInput = (({
   scheduleFrequencies = FREQUENCY_IDS,
   onChange,
   value,
+  ...pickerProps
 }) => (
   <Inputs.Picker
     label="Frequency"
     onValueChange={onChange}
     value={value}
     displayValue={get(scheduleFrequencies.find(f => f.id === value), 'label')}
+    {...pickerProps}
   >
     {scheduleFrequencies.map(({ label, id }) => (
       <Inputs.PickerItem label={label} value={id} key={id} />

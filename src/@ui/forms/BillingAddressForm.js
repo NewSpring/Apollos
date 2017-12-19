@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { branch, renderComponent, compose, setPropTypes } from 'recompose';
 import get from 'lodash/get';
 import { withFormik } from 'formik';
+import Yup from 'yup';
 import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
 import { withRouter } from '@ui/NativeWebRouter';
@@ -58,6 +59,11 @@ export const BillingAddressFormWithoutData = enhance(({
   values,
   countries,
   states,
+  setFieldTouched,
+  touched,
+  errors,
+  isSubmitting,
+  isValid,
 }) => {
   const isUSOrCanada = values.countryId === 'US' || values.countryId === 'CA';
   return (
@@ -66,17 +72,22 @@ export const BillingAddressFormWithoutData = enhance(({
         label="Street Address"
         value={values.street1}
         onChangeText={text => setFieldValue('street1', text)}
+        onBlur={() => setFieldTouched('street1', true)}
+        error={Boolean(touched.street1 && errors.street1)}
       />
       <Inputs.Text
         label="Street Address (optional)"
         value={values.street2}
         onChangeText={text => setFieldValue('street2', text)}
+        onBlur={() => setFieldTouched('street2', true)}
+        error={Boolean(touched.street2 && errors.street2)}
       />
       <Inputs.Picker
         label="Country"
         value={values.countryId}
         displayValue={get(countries.find(country => country.id === values.countryId), 'label')}
         onValueChange={value => setFieldValue('countryId', value)}
+        error={Boolean(touched.countryId && errors.countryId)}
       >
         {countries.map(({ label, id }) => (
           <Inputs.PickerItem label={label} value={id} key={id} />
@@ -86,6 +97,7 @@ export const BillingAddressFormWithoutData = enhance(({
         label="City"
         value={values.city}
         onChangeText={text => setFieldValue('city', text)}
+        error={Boolean(touched.city && errors.city)}
       />
       {isUSOrCanada &&
         <Inputs.Picker
@@ -93,6 +105,7 @@ export const BillingAddressFormWithoutData = enhance(({
           value={values.stateId}
           displayValue={get(states.find(state => state.id === values.stateId), 'label')}
           onValueChange={value => setFieldValue('stateId', value)}
+          error={Boolean(touched.stateId && errors.stateId)}
         >
           {states.map(({ label, id }) => (
             <Inputs.PickerItem label={label} value={id} key={id} />
@@ -104,8 +117,9 @@ export const BillingAddressFormWithoutData = enhance(({
         type="numeric"
         value={values.zipCode}
         onChangeText={text => setFieldValue('zipCode', text)}
+        error={Boolean(touched.zipCode && errors.zipCode)}
       />
-      <Button onPress={handleSubmit} title="Next" />
+      <Button onPress={handleSubmit} title="Next" disabled={!isValid} loading={isSubmitting} />
     </View>
   );
 });
@@ -122,6 +136,14 @@ const BillingAddressForm = compose(
       stateId: get(props, 'contributions.stateId') || get(props, 'person.home.state') || 'SC',
       countryId: get(props, 'contributions.countryId') || get(props, 'person.home.country') || 'US',
       zipCode: get(props, 'contributions.zipCode') || get(props, 'person.home.zip', ''),
+    }),
+    validationSchema: Yup.object().shape({
+      street1: Yup.string().required(),
+      street2: Yup.string(),
+      city: Yup.string().required(),
+      stateId: Yup.string(),
+      countryId: Yup.string().required(),
+      zipCode: Yup.string().required(),
     }),
     handleSubmit: async (formValues, { props }) => {
       try {

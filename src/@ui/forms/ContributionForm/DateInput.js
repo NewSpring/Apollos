@@ -25,11 +25,13 @@ class DateInput extends PureComponent {
   parseValue = value => new Date(value);
 
   render() {
+    const { value, onChange, ...textInputProps } = this.props;
     return (
       <TextInput
         label="Start Date"
         placeholder="MM/DD/YYYY"
         type="date"
+        {...textInputProps}
         value={this.state.internalDateValue}
         onChangeText={this.handleChange}
       />

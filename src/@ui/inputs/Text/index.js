@@ -7,6 +7,7 @@ import { TextInput, Animated } from 'react-native';
 import FloatingLabel from '../FloatingLabel';
 import InputUnderline from '../InputUnderline';
 import InputWrapper from '../InputWrapper';
+import ErrorText from '../ErrorText';
 
 import withFocusAnimation from '../withFocusAnimation';
 import InputAddon, { AddonRow } from '../InputAddon';
@@ -52,6 +53,7 @@ const Text = enhance(({
   suffix,
   value,
   wrapperStyle,
+  error,
   focusAnimation: focusAnimationInput, // from withFocusAnimation
   ...textInputProps
 }) => {
@@ -67,7 +69,9 @@ const Text = enhance(({
       </AddonRow>
 
       <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
-      <InputUnderline animation={focusAnimation} />
+      <InputUnderline animation={focusAnimation} hasError={error} />
+
+      {(error && typeof error === 'string') ? <ErrorText>{error}</ErrorText> : null}
     </InputWrapper>
   );
 });
@@ -78,6 +82,7 @@ Text.propTypes = {
   label: PropTypes.string,
   value: PropTypes.any, // eslint-disable-line
   wrapperStyle: PropTypes.any, // eslint-disable-line
+  error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 export default Text;

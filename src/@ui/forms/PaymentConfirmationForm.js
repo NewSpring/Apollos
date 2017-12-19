@@ -36,6 +36,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
         name: PropTypes.string,
         amount: PropTypes.number,
       })),
+      isPaying: PropTypes.bool,
     }),
     onSubmit: PropTypes.func,
   };
@@ -45,6 +46,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
     campus: '',
     contributions: {
       contributions: [],
+      isPaying: false,
     },
     onSubmit() {},
   };
@@ -91,7 +93,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
           <H5>$<H4>{this.total.toFixed(2).split('.')[0]}</H4>.{this.total.toFixed(2).split('.')[1]}</H5>
         </Row>
 
-        <Button onPress={this.props.onSubmit} title="Complete" />
+        <Button onPress={this.props.onSubmit} title="Complete" loading={this.props.contributions.isPaying} />
       </View>
     );
   }

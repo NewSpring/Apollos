@@ -8,7 +8,7 @@ import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import Touchable from '@ui/Touchable';
 import { UIText } from '@ui/typography';
-
+import { InlineActivityIndicator } from '@ui/ActivityIndicator';
 
 const ButtonStyles = styled(({ theme, disabled, bordered }) => ({
   elevation: 4,
@@ -54,14 +54,20 @@ const Button = enhance(({
   onPress,
   style,
   bordered,
+  loading,
+  accent,
   ...touchableProps
 }) => {
   const accessibilityTraits = ['button'];
-  if (disabled) accessibilityTraits.push('disabled');
+  if (disabled || loading) accessibilityTraits.push('disabled');
 
   const buttonContent = (
     <ButtonStyles style={style} disabled={disabled} bordered={bordered}>
-      {children || (<UIText>{title}</UIText>)}
+      {loading ? (
+        <InlineActivityIndicator color={accent} />
+      ) : (
+        children || (<UIText>{title}</UIText>)
+      )}
     </ButtonStyles>
   );
 
@@ -69,7 +75,7 @@ const Button = enhance(({
     return (
       <Touchable
         onPress={onPress}
-        disabled={disabled}
+        disabled={disabled || loading}
         accessibilityTraits={accessibilityTraits}
         {...touchableProps}
       >
