@@ -103,7 +103,7 @@ class ConnectedImage extends PureComponent {
   render() {
     let { source } = this.state;
     if (!Array.isArray(source)) source = [source];
-    if (every(this.state.source, image => image.width && image.height)) {
+    if (every(source, image => image.width && image.height)) {
       this.isLoading = false;
     }
 

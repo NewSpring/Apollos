@@ -16,13 +16,11 @@ const StyledView = styled({
   ...Platform.select({
     web: {
       // web doesn't support aspectRatio, this hacks it:
-      // height: 0,
-      // paddingTop: '100%',
+      height: 0,
+      paddingTop: '100%',
     },
   }),
 })(View);
-
-// const handleLayout = ({ nativeEvent: { layout: { width } } }) => (width);
 
 const SkeletonImage = enhance(() => (
   <StyledView />
