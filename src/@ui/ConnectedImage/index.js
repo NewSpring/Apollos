@@ -68,14 +68,9 @@ class ConnectedImage extends PureComponent {
     maintainAspectRatio: false,
   }
 
-  constructor(props) {
-    super(props);
-
-    this.isLoading = true;
-    this.state = {
-      source: getCachedSources(this.props.source),
-    };
-  }
+  state = {
+    source: getCachedSources(this.props.source),
+  };
 
   componentWillMount() { this.updateCache(this.props.source); }
   componentWillReceiveProps(newProps) { this.updateCache(newProps.source); }
@@ -95,6 +90,10 @@ class ConnectedImage extends PureComponent {
     return style;
   }
 
+  get isLoading() {
+    return !every(this.state.source, image => image.width && image.height);
+  }
+
   async updateCache(sources) {
     await updateCache(sources);
     this.setState({ source: getCachedSources(sources) });
@@ -103,9 +102,6 @@ class ConnectedImage extends PureComponent {
   render() {
     let { source } = this.state;
     if (!Array.isArray(source)) source = [source];
-    if (every(source, image => image.width && image.height)) {
-      this.isLoading = false;
-    }
 
     // react-native-web currently doesn't support array-based Image sources
     if (Platform.OS === 'web' && Array.isArray(source)) {
