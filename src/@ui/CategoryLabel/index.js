@@ -35,6 +35,11 @@ const StyledH7 = styled(({ color: fontColor, theme }) => ({
   color: fontColor,
 }))(H7);
 
+const StyledView = styled({
+  flexDirection: 'row',
+  alignItems: 'center',
+})(View);
+
 // TODO: Ideally this should take an the current category and map it against an array of all the
 // categories in Heighliner
 const getIconName = (type) => {
@@ -66,16 +71,16 @@ const CategoryLabel = enhance(({
       onReady={!isLoading}
     >
       {/* unecessary view but removes warning from console about children. Consider refactoring this
-        * whole thing to use isLoading prop on Icon
+        whole thing to use isLoading prop on Icon
         */ }
-      <View>
+      <StyledView>
         <Icon
           name={getIconName(type)}
           size={theme.helpers.rem(1.2)}
           fill={fontColor}
         />
         <StyledH7 color={fontColor}>{type}</StyledH7>
-      </View>
+      </StyledView>
     </Placeholder.ImageContent>
   </Wrapper>
 ));
