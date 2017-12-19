@@ -76,8 +76,10 @@ const generateLoadingStateData = (numberOfItems = 1) => {
 
 const enhance = compose(
   pure,
-  branch(({ isLoading, content }) => isLoading && !content.length,
-    withProps({ content: generateLoadingStateData(10) })),
+  branch(({ isLoading, content }) => isLoading && !content.length, withProps({
+    content: generateLoadingStateData(10),
+    fetchMore: false,
+  })),
   mediaQuery(({ md }) => ({ maxWidth: md }), withProps({ numColumns: 1 })),
   mediaQuery(({ md, lg }) => ({ minWidth: md, maxWidth: lg }), withProps({ numColumns: 2 })),
   mediaQuery(({ lg }) => ({ minWidth: lg }), withProps({ numColumns: 3 })),
