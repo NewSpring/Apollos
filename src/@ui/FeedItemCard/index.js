@@ -67,7 +67,7 @@ const FeedItemCard = enhance(({
 }) => (
   <CardWrapper>
     <Card backgroundColor={backgroundColor} {...otherProps}>
-      <CardImage source={images} overlayColor={backgroundColor} isLoading={loadingState} />
+      <CardImage source={images} overlayColor={backgroundColor} />
       <Footer>
         <Placeholder.Line
           width={'100%'}

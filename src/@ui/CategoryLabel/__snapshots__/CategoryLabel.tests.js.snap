@@ -7,8 +7,7 @@ exports[`the FeedItemCard Category component should render 1`] = `
       "alignItems": "center",
       "flex": 1,
       "flexDirection": "row",
-      "paddingBottom": 20,
-      "paddingHorizontal": 20,
+      "paddingRight": 20,
       "paddingTop": 10,
     }
   }
@@ -51,8 +50,7 @@ exports[`the FeedItemCard Category component should render as Albums 1`] = `
       "alignItems": "center",
       "flex": 1,
       "flexDirection": "row",
-      "paddingBottom": 20,
-      "paddingHorizontal": 20,
+      "paddingRight": 20,
       "paddingTop": 10,
     }
   }
@@ -95,8 +93,7 @@ exports[`the FeedItemCard Category component should render as a Series 1`] = `
       "alignItems": "center",
       "flex": 1,
       "flexDirection": "row",
-      "paddingBottom": 20,
-      "paddingHorizontal": 20,
+      "paddingRight": 20,
       "paddingTop": 10,
     }
   }

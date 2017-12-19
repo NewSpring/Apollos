@@ -152,42 +152,42 @@ exports[`The FeedView component renders correctly 1`] = `
                 }
               />
             </View>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              color="#303030"
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#303030",
-                  "fontFamily": null,
-                  "fontSize": 25.2,
-                  "fontWeight": "700",
-                  "lineHeight": 31.28,
-                  "paddingHorizontal": 20,
-                  "paddingTop": 20,
-                }
-              }
-            >
-              Hi
-            </Text>
             <View
               style={
                 Object {
                   "alignItems": "center",
                   "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "padding": 20,
                 }
               }
             >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                color="#303030"
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": null,
+                    "fontSize": 25.2,
+                    "fontWeight": "700",
+                    "lineHeight": 31.28,
+                    "width": "100%",
+                  }
+                }
+              >
+                Hi
+              </Text>
               <View
                 style={
                   Object {
                     "alignItems": "center",
                     "flex": 1,
                     "flexDirection": "row",
-                    "paddingBottom": 20,
-                    "paddingHorizontal": 20,
+                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
@@ -240,8 +240,6 @@ exports[`The FeedView component renders correctly 1`] = `
                 style={
                   Object {
                     "opacity": 1,
-                    "paddingBottom": 20,
-                    "paddingHorizontal": 20,
                     "paddingTop": 10,
                   }
                 }
@@ -377,42 +375,42 @@ exports[`The FeedView component renders correctly 1`] = `
                 }
               />
             </View>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              color="#303030"
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#303030",
-                  "fontFamily": null,
-                  "fontSize": 25.2,
-                  "fontWeight": "700",
-                  "lineHeight": 31.28,
-                  "paddingHorizontal": 20,
-                  "paddingTop": 20,
-                }
-              }
-            >
-              Hi 2
-            </Text>
             <View
               style={
                 Object {
                   "alignItems": "center",
                   "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "padding": 20,
                 }
               }
             >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                color="#303030"
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": null,
+                    "fontSize": 25.2,
+                    "fontWeight": "700",
+                    "lineHeight": 31.28,
+                    "width": "100%",
+                  }
+                }
+              >
+                Hi 2
+              </Text>
               <View
                 style={
                   Object {
                     "alignItems": "center",
                     "flex": 1,
                     "flexDirection": "row",
-                    "paddingBottom": 20,
-                    "paddingHorizontal": 20,
+                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
@@ -465,8 +463,6 @@ exports[`The FeedView component renders correctly 1`] = `
                 style={
                   Object {
                     "opacity": 1,
-                    "paddingBottom": 20,
-                    "paddingHorizontal": 20,
                     "paddingTop": 10,
                   }
                 }
