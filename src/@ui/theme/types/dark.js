@@ -11,10 +11,10 @@ const dark = ({ colors, alpha }) => ({
     background: {
       default: colors.darkPrimary,
       primary: colors.primary,
-      accent: Color(colors.darkTertiary).fade(alpha.high),
+      accent: Color(colors.darkTertiary).fade(alpha.high).string(),
       inactive: colors.darkTertiary,
-      overlay: Color(colors.darkTertiary).fade(alpha.high),
-      darkOverlay: Color(colors.darkTertiary).fade(alpha.low),
+      overlay: Color(colors.darkTertiary).fade(alpha.high).string(),
+      darkOverlay: Color(colors.darkTertiary).fade(alpha.low).string(),
     },
     shadows: {
       default: colors.black,

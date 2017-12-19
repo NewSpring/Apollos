@@ -38,7 +38,7 @@ const enhance = compose(
   withThemeMixin(({ fill, accent, bordered }) => ({
     colors: {
       primary: bordered ? fill : accent,
-      text: { primary: bordered ? Color(fill).darken(0.2) : accent },
+      text: { primary: bordered ? Color(fill).darken(0.2).string() : accent },
       background: { default: fill, screen: fill },
     },
   })),
