@@ -17,7 +17,9 @@ export default gql`
         }
         content {
           body
-          ooyalaId
+          video {
+            embedUrl
+          }
           tags
           images(sizes: ["large"]) {
             fileName

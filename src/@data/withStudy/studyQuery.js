@@ -28,7 +28,9 @@ export default gql`
             fileLabel
             url
           }
-          ooyalaId
+          video {
+            embedUrl
+          }
           colors {
             value
             description

@@ -3,7 +3,7 @@ import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
-import ContentView from '@ui/ContentView';
+import ContentView, { HTMLView } from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import withSeriesContent from '@data/withSeriesContent';
 import { withThemeMixin } from '@ui/theme';
@@ -32,16 +32,19 @@ const enhance = compose(
 const SeriesSingle = enhance(({
   content: {
     content: {
+      video,
       isLight = true,
-      images = [],
       description,
+      ...otherContentProps
     } = {},
   } = { },
 }) => (
   <FlexedView>
     <Header titleText="Series" backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
     <ScrollView>
-      <ContentView images={images} body={description} />
+      <ContentView {...otherContentProps}>
+        <HTMLView>{description}</HTMLView>
+      </ContentView>
     </ScrollView>
     <SecondaryNav>
       <Link icon="share" />

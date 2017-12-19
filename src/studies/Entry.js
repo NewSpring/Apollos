@@ -3,7 +3,7 @@ import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
-import ContentView from '@ui/ContentView';
+import ContentView, { Title, HTMLView } from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import withStudyEntry from '@data/withStudyEntry';
 import { withThemeMixin } from '@ui/theme';
@@ -31,15 +31,18 @@ const Study = enhance(({
     title,
     parent: { title: parentTitle, content: { isLight = true } = {} } = {},
     content: {
-      images = [],
       body,
+      ...otherContentProps
     } = {},
   } = {},
 }) => (
   <FlexedView>
     <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
     <ScrollView>
-      <ContentView images={images} body={body} title={title} />
+      <ContentView {...otherContentProps}>
+        <Title>{title}</Title>
+        <HTMLView>{body}</HTMLView>
+      </ContentView>
     </ScrollView>
     <SecondaryNav>
       <Link icon="share" />

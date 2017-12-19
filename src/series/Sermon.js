@@ -3,10 +3,9 @@ import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
-import HTMLView from '@ui/HTMLView';
+import ContentView, { Title, SubHeading, HTMLView } from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import withSermon from '@data/withSermon';
-import { H2, H4 } from '@ui/typography';
 import { withThemeMixin } from '@ui/theme';
 
 const enhance = compose(
@@ -34,15 +33,18 @@ const Sermon = enhance(({
     content: {
       speaker,
       description,
+      ...otherContentProps
     } = {},
   } = {},
 }) => (
   <FlexedView>
     <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
     <ScrollView>
-      <H2>{title}</H2>
-      <H4>{speaker}</H4>
-      <HTMLView>{description}</HTMLView>
+      <ContentView {...otherContentProps}>
+        <Title>{title}</Title>
+        <SubHeading>{speaker}</SubHeading>
+        <HTMLView>{description}</HTMLView>
+      </ContentView>
     </ScrollView>
     <SecondaryNav>
       <Link icon="share" />

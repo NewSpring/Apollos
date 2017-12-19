@@ -3,7 +3,7 @@ import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
-import ContentView from '@ui/ContentView';
+import ContentView, { Title, ByLine, HTMLView } from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import withNewsStory from '@data/withNewsStory';
@@ -18,17 +18,20 @@ const NewsSingle = enhance(({
   content: {
     authors = [],
     title = '',
-    content = {},
+    content: {
+      body,
+      ...otherContentProps
+    } = {},
   } = { },
 }) => (
   <FlexedView>
     <Header titleText="News" backButton />
     <ScrollView>
-      <ContentView
-        title={title}
-        authors={authors}
-        {...content}
-      />
+      <ContentView {...otherContentProps}>
+        <Title>{title}</Title>
+        <ByLine authors={authors} />
+        <HTMLView>{body}</HTMLView>
+      </ContentView>
     </ScrollView>
     <MediaQuery maxWidth="md">
       <SecondaryNav>
