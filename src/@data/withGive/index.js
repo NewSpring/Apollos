@@ -1,5 +1,6 @@
 import { graphql } from 'react-apollo';
-import { compose } from 'recompose';
+import { compose, withProps } from 'recompose';
+import get from 'lodash/get';
 import Client from '@data/Client';
 import addContributionMutation from './addContributionMutation';
 import resetContributionsMutation from './resetContributionsMutation';
@@ -15,7 +16,7 @@ import setCreditCardMutation from './setCreditCardMutation';
 import setBankAccountMutation from './setBankAccountMutation';
 import setPaymentMethodMutation from './setPaymentMethodMutation';
 import postPaymentMutation from './postPaymentMutation';
-import validateSingleCardTransactionMutation from './validateSingleCardTransactionMutation';
+import validateCardMutation from './validateCardMutation';
 import completeOrderMutation from './completeOrderMutation';
 import setPaymentResultMutation from './setPaymentResultMutation';
 import isPayingMutation from './isPayingMutation';
@@ -177,8 +178,8 @@ const postPayment = graphql(postPaymentMutation, {
   }),
 });
 
-// For non-saved CC only
-const validateSingleCardTransaction = graphql(validateSingleCardTransactionMutation, {
+// For non-saved CC only START
+const validateCard = graphql(validateCardMutation, {
   props: ({ mutate }) => ({
     validateSingleCardTransaction: token => (mutate({
       variables: {
@@ -187,6 +188,64 @@ const validateSingleCardTransaction = graphql(validateSingleCardTransactionMutat
     })),
   }),
 });
+
+const createValidationOrder = graphql(createOrderMutation, {
+  props: ({ mutate }) => ({
+    createValidationOrder() {
+      const { contributions: state } = Client.readQuery({
+        query: contributionsQuery,
+      });
+      const orderDetails = getOrderDetails(state);
+      orderDetails.amount = 0;
+
+      return mutate({
+        variables: {
+          data: JSON.stringify(orderDetails),
+          id: null,
+          instant: false,
+        },
+      });
+    },
+  }),
+});
+
+const validateSingleCardTransaction = compose(
+  createValidationOrder,
+  validateCard,
+  withProps(props => ({
+    async validateSingleCardTransaction() {
+      try {
+        const { contributions: state } = Client.readQuery({
+          query: contributionsQuery,
+        });
+
+        const r = await props.createValidationOrder();
+        const order = get(r, 'data.order', {});
+
+        const formData = new FormData();
+        formData.append('billing-cc-number', state.creditCard.cardNumber);
+        formData.append('billing-cc-exp', state.creditCard.expirationDate);
+        formData.append('billing-cvv', state.creditCard.cvv);
+
+        await fetch(order.url, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formData,
+        });
+
+        const token = order.url.split('/').pop();
+        const validationRes = await props.validateSingleCardTransaction(token);
+        const invalidCardError = get(validationRes, 'data.response.error');
+        if (invalidCardError) throw new Error(invalidCardError);
+
+        return true;
+      } catch (err) {
+        throw err;
+      }
+    },
+  })),
+);
+// For non-saved CC only END
 
 const completeOrder = graphql(completeOrderMutation, {
   props: ({ mutate }) => ({
@@ -209,7 +268,7 @@ const setPaymentResult = graphql(setPaymentResultMutation, {
   }),
 });
 
-const get = graphql(contributionsQuery, {
+const getGive = graphql(contributionsQuery, {
   props({ data: { contributions, loading } }) {
     if (!contributions) return { contributions, isLoading: loading };
     return {
@@ -239,5 +298,5 @@ export default compose(
   completeOrder,
   setPaymentResult,
   setIsPaying,
-  get,
+  getGive,
 );
