@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Platform } from 'react-native';
+import { Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import ConnectedImage from '@ui/ConnectedImage';
 import EmbeddedVideoPlayer from '@ui/EmbeddedVideoPlayer';
@@ -43,11 +43,8 @@ const ContentMedia = ({
     );
   }
 
-  return (
-    <View>
-      {visual}
-    </View>
-  );
+  // TODO: later this should support audio button below player
+  return visual;
 };
 
 ContentMedia.propTypes = {
