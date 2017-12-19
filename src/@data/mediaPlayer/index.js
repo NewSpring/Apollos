@@ -32,9 +32,9 @@ const get = graphql(mediaPlayerQuery, {
 export const withLibrary = graphql(albumsQuery, {
   options: { variables: { limit: 20, skip: 0 } },
   props: ({ data }) => ({
-    library: data.library,
-    libraryIsLoading: data.loading,
-    refetchLibrary: data.refetch,
+    content: data.library,
+    isLoading: data.loading,
+    refetch: data.refetch,
     fetchMore: fetchMoreResolver({
       collectionName: 'library',
       data,
@@ -49,7 +49,7 @@ export const withPlaylist = graphql(albumQuery, {
     },
   }),
   props: ({ data: { playlist } }) => ({
-    playlist,
+    content: playlist,
   }),
 });
 

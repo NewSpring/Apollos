@@ -6,10 +6,12 @@ const light = ({ colors, alpha }) => ({
       primary: colors.darkPrimary,
       secondary: colors.darkSecondary,
       tertiary: colors.darkTertiary,
-      appHeader: colors.lightPrimary,
+      link: colors.primary,
     },
     background: {
       default: colors.white,
+      primary: colors.primary,
+      inactive: colors.lightTertiary,
       overlay: Color(colors.darkTertiary).fade(alpha.high),
       // todo
     },
@@ -18,9 +20,13 @@ const light = ({ colors, alpha }) => ({
     },
     input: {
       // todo
+      placeholder: colors.darkTertiary,
     },
     action: {
-      // todo
+      default: colors.lightTertiary,
+      primary: colors.primary,
+      secondary: colors.secondary,
+      tertiary: colors.tertiary,
     },
   },
 });

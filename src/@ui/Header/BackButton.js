@@ -10,9 +10,9 @@ const Container = styled({
   bottom: 0,
 }, 'BackButton.Container')(View);
 
-const BackButton = () => (
+const BackButton = props => (
   <Container>
-    <Link pop icon="arrow-back" iconSize={24} />
+    <Link pop icon="arrow-back" iconSize={24} {...props} />
   </Container>
 );
 

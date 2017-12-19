@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the ContentView component renders 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "padding": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 42.3,
+          "fontWeight": "700",
+          "lineHeight": 53.82,
+        }
+      }
+    >
+      The great escape
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 15.75,
+          "fontWeight": "700",
+          "lineHeight": 17.85,
+        }
+      }
+    >
+      By: 
+      Mike Douglas
+    </Text>
+    <View>
+      <View
+        style={
+          Object {
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            Yo yo
+          </Text>
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            this is some cool html
+          </Text>
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
