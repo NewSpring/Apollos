@@ -52,7 +52,7 @@ export const PaymentFormWithoutData = ({
         <Inputs.Text
           suffix={<Icon name="credit" />}
           label="Card Number"
-          type="numeric"
+          type="numericKeyboard"
           value={values.cardNumber}
           onChangeText={text => setFieldValue('cardNumber', formatCardNumber(text))}
           onBlur={() => setFieldTouched('cardNumber', true)}
@@ -61,7 +61,7 @@ export const PaymentFormWithoutData = ({
         <Inputs.Text
           label="Expiration Date"
           placeholder="mm/yy"
-          type="numeric"
+          type="numericKeyboard"
           value={values.expirationDate}
           onChangeText={text => setFieldValue('expirationDate', formatCardExpiry(text))}
           onBlur={() => setFieldTouched('expirationDate', true)}
@@ -69,7 +69,7 @@ export const PaymentFormWithoutData = ({
         />
         <Inputs.Text
           label="CVV"
-          type="numeric"
+          type="numericKeyboard"
           value={values.cvv}
           onChangeText={text => setFieldValue('cvv', text)}
           onBlur={() => setFieldTouched('cvv', true)}

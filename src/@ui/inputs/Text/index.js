@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import { compose, withProps, pure } from 'recompose';
-import { TextInput, Animated } from 'react-native';
+import { Platform, TextInput, Animated } from 'react-native';
 
 import FloatingLabel from '../FloatingLabel';
 import InputUnderline from '../InputUnderline';
@@ -29,12 +29,22 @@ const propsForInputType = {
   numeric: {
     keyboardType: 'numeric',
   },
+  numericKeyboard: {
+    ...Platform.select({
+      ios: { keyboardType: 'numeric' },
+      android: { keyboardType: 'numeric' },
+      web: { type: 'text' },
+    }),
+  },
   phone: {
     keyboardType: 'phone-pad',
   },
   date: {
-    keyboardType: 'numeric',
-    type: 'date', // for web
+    ...Platform.select({
+      ios: { keyboardType: 'numeric' },
+      android: { keyboardType: 'numeric' },
+      web: { type: 'date' },
+    }),
   },
 };
 

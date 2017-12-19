@@ -55,6 +55,23 @@ export class ContributionFormWithoutData extends Component {
       frequencyId: PropTypes.string,
       startDate: PropTypes.object,
     }),
+    touched: PropTypes.shape({
+      secondFundVisible: PropTypes.bool,
+      firstContribution: PropTypes.bool,
+      secondContribution: PropTypes.bool,
+      frequencyId: PropTypes.bool,
+      startDate: PropTypes.bool,
+    }),
+    errors: PropTypes.shape({
+      secondFundVisible: PropTypes.string,
+      firstContribution: PropTypes.string,
+      secondContribution: PropTypes.string,
+      frequencyId: PropTypes.string,
+      startDate: PropTypes.string,
+    }),
+    setFieldTouched: PropTypes.func,
+    isSubmitting: PropTypes.bool,
+    isValid: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -179,7 +196,8 @@ export class ContributionFormWithoutData extends Component {
 
         <Button
           onPress={this.props.handleSubmit}
-          disabled={!(this.totalContribution > 0)}
+          disabled={!(this.totalContribution > 0) || !this.props.isValid}
+          loading={this.props.isSubmitting}
           title="Review Contribution"
           type="primary"
         />
@@ -214,14 +232,14 @@ const ContributionForm = compose(
         amount: Yup.number().required(),
       }).required(),
       frequencyId: Yup.string().oneOf(['today', ...FREQUENCY_IDS.map(f => f.id)]),
-      secondContribution: Yup.object().shape({
+      secondContribution: Yup.object().nullable().shape({
         id: Yup.string(),
         name: Yup.string(),
         amount: Yup.number().required(),
       }),
       startDate: Yup.date().min(new Date()),
     }),
-    handleSubmit(values, { props }) {
+    handleSubmit(values, { props, setSubmitting }) {
       const result = { ...values };
       if (get(result, 'firstContribution.amount')) {
         result.firstContribution.amount = parseFloat(result.firstContribution.amount);
@@ -241,6 +259,7 @@ const ContributionForm = compose(
       props.setContributionStartDate(result.startDate);
 
       if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
+      setSubmitting(false);
     },
   }),
 )(ContributionFormWithoutData);
