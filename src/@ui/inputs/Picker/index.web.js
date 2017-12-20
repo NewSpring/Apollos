@@ -20,9 +20,9 @@ const StyledNativePicker = compose(
   }),
 )(NativePicker);
 
-const Picker = ({ wrapperStyle, ...props }) => (
+const Picker = ({ wrapperStyle, value, ...props }) => (
   <InputWrapper style={wrapperStyle}>
-    <StyledNativePicker {...props} prompt={props.placeholder} />
+    <StyledNativePicker {...props} selectedValue={value} prompt={props.placeholder} />
     <FloatingLabel animation={new Animated.Value(1)}>{props.label}</FloatingLabel>
     <InputUnderline />
   </InputWrapper>
@@ -32,6 +32,7 @@ Picker.propTypes = {
   label: PropTypes.string,
   placeholder: PropTypes.string,
   wrapperStyle: PropTypes.any, // eslint-disable-line
+  value: PropTypes.any, // eslint-disable-line
 };
 
 export default Picker;
