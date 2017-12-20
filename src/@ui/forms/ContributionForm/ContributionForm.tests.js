@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import moment from 'moment';
 import { ThemeProvider } from '@ui/theme';
 
 import { ContributionFormWithoutData } from './index';
@@ -20,7 +21,7 @@ const createTestData = () => ({
     },
     secondContribution: null,
     frequencyId: 'today',
-    startDate: new Date(),
+    startDate: moment('12/19/2017').toDate(),
   },
   touched: {
     secondFundVisible: false,
