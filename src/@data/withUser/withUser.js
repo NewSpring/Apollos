@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
 
-export default gql`
+export const QUERY = gql`
   query GetPersonData {
     person: currentPerson {
       id
@@ -48,3 +49,9 @@ export default gql`
     }
   }
 `;
+
+export default graphql(QUERY, {
+  props: ({ data: { person } }) => ({
+    user: person,
+  }),
+});
