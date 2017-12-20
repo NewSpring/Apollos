@@ -7,6 +7,7 @@ import LoginForm from '@ui/forms/LoginForm';
 import SignUpForm from '@ui/forms/SignUpForm';
 import ChangePasswordForm from '@ui/forms/ChangePasswordForm';
 import ForgotPasswordForm from '@ui/forms/ForgotPasswordForm';
+import ResetPasswordForm from '@ui/forms/ResetPasswordForm';
 import LogoutButton from '@ui/forms/LogoutButton';
 import FlexedView from '@ui/FlexedView';
 
@@ -25,6 +26,9 @@ export default function Profile() {
 
         <Text>{'forgot password'}</Text>
         <ForgotPasswordForm />
+
+        <Text>{'reset password'}</Text>
+        <ResetPasswordForm />
 
         <Text>{'logout'}</Text>
         <LogoutButton />
