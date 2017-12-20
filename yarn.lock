@@ -9462,6 +9462,12 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^2.0.0"
     inherits "^2.0.1"
 
+rn-placeholder@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/rn-placeholder/-/rn-placeholder-1.1.0.tgz#bc45521fcc2b5d4d0821ed2349fae73460aab7a2"
+  dependencies:
+    prop-types "^15.5.10"
+
 rndm@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/rndm/-/rndm-1.2.0.tgz#f33fe9cfb52bbfd520aa18323bc65db110a1b76c"

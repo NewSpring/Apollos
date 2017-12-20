@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
+import Placeholder from 'rn-placeholder';
 
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
@@ -17,6 +18,7 @@ const enhance = compose(
   setPropTypes({
     type: PropTypes.string,
     color: PropTypes.string,
+    isLoading: PropTypes.bool,
   }),
 );
 
@@ -25,14 +27,18 @@ const Wrapper = styled(({ theme }) => ({
   alignItems: 'center',
   flex: 1,
   paddingTop: theme.sizing.baseUnit / 2,
-  paddingHorizontal: theme.sizing.baseUnit,
-  paddingBottom: theme.sizing.baseUnit,
+  paddingRight: theme.sizing.baseUnit,
 }))(View);
 
 const StyledH7 = styled(({ color: fontColor, theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit / 2,
   color: fontColor,
 }))(H7);
+
+const StyledView = styled({
+  flexDirection: 'row',
+  alignItems: 'center',
+})(View);
 
 // TODO: Ideally this should take an the current category and map it against an array of all the
 // categories in Heighliner
@@ -50,15 +56,32 @@ const getIconName = (type) => {
 const CategoryLabel = enhance(({
   type,
   color: fontColor,
+  isLoading,
   theme,
 }) => (
   <Wrapper>
-    <Icon
-      name={getIconName(type)}
+    <Placeholder.ImageContent
+      firstLineWidth={'40%'}
+      width={'40%'}
+      lastLineWidth={'40%'}
+      textSize={theme.helpers.rem(1.2)}
+      lineNumber={1}
       size={theme.helpers.rem(1.2)}
-      fill={fontColor}
-    />
-    <StyledH7 color={fontColor}>{type}</StyledH7>
+      hasRadius
+      onReady={!isLoading}
+    >
+      {/* unecessary view but removes warning from console about children. Consider refactoring this
+        whole thing to use isLoading prop on Icon
+        */ }
+      <StyledView>
+        <Icon
+          name={getIconName(type)}
+          size={theme.helpers.rem(1.2)}
+          fill={fontColor}
+        />
+        <StyledH7 color={fontColor}>{type}</StyledH7>
+      </StyledView>
+    </Placeholder.ImageContent>
   </Wrapper>
 ));
 
