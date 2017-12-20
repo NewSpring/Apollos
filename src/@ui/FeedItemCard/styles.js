@@ -11,15 +11,16 @@ const CardWrapper = styled(({ theme }) => ({
 }))(View);
 
 const CardTitle = styled(({ theme, color: fontColor }) => ({
-  paddingTop: theme.sizing.baseUnit,
-  paddingHorizontal: theme.sizing.baseUnit,
+  width: '100%',
   color: fontColor || theme.colors.text.primary,
 }))(H4);
 
-const Footer = styled({
+const Footer = styled(({ theme }) => ({
+  flexWrap: 'wrap',
   flexDirection: 'row',
   alignItems: 'center',
-})(View);
+  padding: theme.sizing.baseUnit,
+}))(View);
 
 export {
   CardWrapper,

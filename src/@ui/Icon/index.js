@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { compose, pure } from 'recompose';
+import { compose, pure, setPropTypes } from 'recompose';
 import { flow, camelCase, upperFirst, kebabCase } from 'lodash';
+import Placeholder from 'rn-placeholder';
 
 import * as Icons from './icons';
 
@@ -16,15 +17,30 @@ const pascalCase = string => flow(camelCase, upperFirst)(string);
 
 const enhance = compose(
   pure,
+  setPropTypes({
+    name: PropTypes.oneOf(Object.keys(Icons).map(kebabCase)).isRequired,
+    size: PropTypes.number,
+    fill: PropTypes.string,
+    isLoading: PropTypes.bool,
+  }),
 );
 
-const Icon = enhance(({ name, ...otherProps }) => {
+const Icon = enhance(({
+  name,
+  size,
+  isLoading = false,
+  ...otherProps
+}) => {
   const IconComponent = Icons[pascalCase(name)];
-  return (<IconComponent {...otherProps} />);
+  return (
+    <Placeholder.Media
+      size={size}
+      hasRadius
+      onReady={!isLoading}
+    >
+      <IconComponent size={size} {...otherProps} />
+    </Placeholder.Media>
+  );
 });
-
-Icon.propTypes = {
-  name: PropTypes.oneOf(Object.keys(Icons).map(kebabCase)).isRequired,
-};
 
 export default Icon;

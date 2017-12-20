@@ -1,19 +1,13 @@
 import React from 'react';
-import {
-  Text,
-  View,
-} from 'react-native';
 import PropTypes from 'prop-types';
 import { Link } from '@ui/NativeWebRouter';
 import {
   pure,
   compose,
   branch,
-  renderComponent,
-  componentFromProp,
   withProps,
 } from 'recompose';
-import { map, get } from 'lodash';
+import { get } from 'lodash';
 
 import { getLinkPath } from '@utils/content';
 import FeedItemCard from '@ui/FeedItemCard';
@@ -29,7 +23,7 @@ const getItemBgColor = (item) => {
 
 const getItemImages = (item) => {
   let images = get(item, 'content.images');
-  if (!images.length) images = get(item, 'parent.content.images');
+  if (!images.length) images = get(item, 'parent.content.images', []);
   return images;
 };
 
@@ -51,22 +45,41 @@ const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
       images={getItemImages(item)}
       backgroundColor={getItemBgColor(item)}
       isLight={getItemIsLight(item)}
+      isLoading={item.isLoading}
     />
   </Link>
 );
 
-// TODO: replace with component from #115
-const defaultEmptyStateRenderer = () => map([1, 2, 3], key => (
-  <View key={key} style={{ height: 250, margin: 10, backgroundColor: 'rgba(0,0,0,0.1)' }}>
-    <Text>...</Text>
-  </View>
-));
+const generateLoadingStateData = (numberOfItems = 1) => {
+  const itemData = () => ({
+    title: '',
+    category: '',
+    content: {
+      images: [],
+      backgroundColor: null,
+      isLight: null,
+    },
+    isLoading: true,
+    entryId: 'fakeId0',
+  });
 
-const renderEmptyState = renderComponent(componentFromProp('renderEmptyState'));
+  const loadingStateData = [itemData()];
+
+  while (loadingStateData.length < numberOfItems) {
+    const newData = itemData();
+    newData.entryId = `fakeId${loadingStateData.length}`;
+    loadingStateData.push(newData);
+  }
+
+  return loadingStateData;
+};
 
 const enhance = compose(
   pure,
-  branch(({ isLoading, content }) => isLoading && !content.length, renderEmptyState),
+  branch(({ isLoading, content }) => isLoading && !content.length, withProps({
+    content: generateLoadingStateData(10),
+    fetchMore: false,
+  })),
   mediaQuery(({ md }) => ({ maxWidth: md }), withProps({ numColumns: 1 })),
   mediaQuery(({ md, lg }) => ({ minWidth: md, maxWidth: lg }), withProps({ numColumns: 2 })),
   mediaQuery(({ lg }) => ({ minWidth: lg }), withProps({ numColumns: 3 })),
@@ -98,7 +111,6 @@ FeedView.defaultProps = {
   refetch: undefined,
   fetchMore: undefined,
   renderItem: defaultFeedItemRenderer,
-  renderEmptyState: defaultEmptyStateRenderer,
   numColumns: 1,
 };
 
