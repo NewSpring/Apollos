@@ -15,9 +15,10 @@ const enhance = compose(
   setPropTypes({
     source: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number,
-        value: PropTypes.string,
-        description: PropTypes.string,
+        uri: PropTypes.string,
+        label: PropTypes.string,
+        width: PropTypes.number,
+        height: PropTypes.number,
       })),
       PropTypes.string,
     ]),
@@ -67,7 +68,7 @@ const CardImage = enhance(({
 }) => (
   <Wrapper>
     <StyledImage source={imageSource} />
-    {overlayColor ? <Overlay colors={[`${Color(overlayColor).fade(1)}`, overlayColor]} start={[0, 0]} end={[0, 1]} locations={[0.3, 1]} /> : null}
+    {overlayColor ? <Overlay colors={[`${Color(overlayColor).fade(1).string()}`, overlayColor]} start={[0, 0]} end={[0, 1]} locations={[0.3, 1]} /> : null}
   </Wrapper>
 ));
 

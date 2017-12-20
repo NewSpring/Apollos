@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Button component should render a disabled button 1`] = `
+<View
+  bordered={false}
+  disabled={true}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#6bac43",
+      "borderColor": "#6bac43",
+      "borderRadius": 6,
+      "borderWidth": 2,
+      "elevation": 4,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 0.5,
+      "overflow": "hidden",
+      "padding": 10,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#ffffff",
+        "fontFamily": null,
+        "fontSize": 18,
+        "lineHeight": 20,
+      }
+    }
+  >
+    My Button!
+  </Text>
+</View>
+`;
+
+exports[`The Button component should render a primary button 1`] = `
+<View
+  bordered={false}
+  disabled={false}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#6bac43",
+      "borderColor": "#6bac43",
+      "borderRadius": 6,
+      "borderWidth": 2,
+      "elevation": 4,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 1,
+      "overflow": "hidden",
+      "padding": 10,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#ffffff",
+        "fontFamily": null,
+        "fontSize": 18,
+        "lineHeight": 20,
+      }
+    }
+  >
+    My Button!
+  </Text>
+</View>
+`;
+
+exports[`The Button component should render correctly 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel={undefined}
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    bordered={false}
+    disabled={false}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#6bac43",
+        "borderColor": "#6bac43",
+        "borderRadius": 6,
+        "borderWidth": 2,
+        "elevation": 4,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "padding": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+        }
+      }
+    >
+      My Button!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render with children 1`] = `
+<View
+  bordered={false}
+  disabled={false}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#6bac43",
+      "borderColor": "#6bac43",
+      "borderRadius": 6,
+      "borderWidth": 2,
+      "elevation": 4,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 1,
+      "overflow": "hidden",
+      "padding": 10,
+    }
+  }
+>
+  <View />
+</View>
+`;

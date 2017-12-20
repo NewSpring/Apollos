@@ -4,7 +4,7 @@ import TabBar, { Link } from '../TabBar';
 
 export { Link };
 
-const SecondaryNav = ({ backButton = true, backButtonIcon = 'arrow-back', children }) => (
+const SecondaryNav = ({ backButton = false, backButtonIcon = 'arrow-back', children }) => (
   <TabBar>
     {backButton ? (
       <Link pop icon={backButtonIcon} />

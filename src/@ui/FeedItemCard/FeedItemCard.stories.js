@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
@@ -22,6 +22,55 @@ storiesOf('@ui/FeedItemCard/Component', module)
       </View>
     );
   })
+  .add('Skeleton', () => {
+    const centered = {
+      justifyContent: 'center',
+      flex: 1,
+      backgroundColor: '#f7f7f7',
+    };
+
+    return (
+      <View style={centered}>
+        <FeedItemCard
+          title={'Promised Land'}
+          category={'Series'}
+          images={'https://picsum.photos/600/400/?random'}
+          isLoading
+        />
+      </View>
+    );
+  })
+  .add('isLoading', () => React.createElement(class CardImageLoading extends Component {
+    constructor() {
+      super();
+      this.state = { isLoading: true };
+    }
+
+    componentDidMount() {
+      setTimeout(() => {
+        this.setState({ isLoading: false });
+      }, 4000);
+    }
+
+    render() {
+      const centered = {
+        justifyContent: 'center',
+        flex: 1,
+        backgroundColor: '#f7f7f7',
+      };
+
+      return (
+        <View style={centered}>
+          <FeedItemCard
+            title={'Promised Land'}
+            category={'Series'}
+            images={'https://picsum.photos/600/400/?random'}
+            isLoading={this.state.isLoading}
+          />
+        </View>
+      );
+    }
+  }))
   .add('With dark backgroundColor', () => {
     const centered = {
       justifyContent: 'center',

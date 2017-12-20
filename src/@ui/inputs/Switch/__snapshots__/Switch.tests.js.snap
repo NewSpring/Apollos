@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Picker Input component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "marginVertical": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 40,
+        "justifyContent": "space-between",
+        "paddingVertical": 5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+          "paddingVertical": 5,
+        }
+      }
+    >
+      Some label text
+    </Text>
+    <RCTSwitch
+      disabled={false}
+      onChange={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onTintColor="#6bac43"
+      style={
+        Array [
+          Object {
+            "height": 31,
+            "width": 51,
+          },
+          undefined,
+        ]
+      }
+      value={false}
+    />
+  </View>
+</View>
+`;

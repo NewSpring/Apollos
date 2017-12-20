@@ -8,6 +8,23 @@ export default gql`
         title
         status
         channelName
+        parent {
+          entryId: id
+          title
+          content {
+            isLight
+            colors {
+              value
+              description
+            }
+            images(sizes: ["large", "medium"]) {
+              fileName
+              fileType
+              fileLabel
+              url
+            }
+          }
+        }
         meta {
           urlTitle
           siteId

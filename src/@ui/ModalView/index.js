@@ -11,7 +11,7 @@ const ModalView = ({ children }) => (
   <SafeAreaView style={StyleSheet.absoluteFill} forceInset={{ vertical: 'always', horizontal: 'always' }}>
     <ModalContainer>
       {children}
-      <SecondaryNav />
+      <SecondaryNav backButton />
     </ModalContainer>
   </SafeAreaView>
 );

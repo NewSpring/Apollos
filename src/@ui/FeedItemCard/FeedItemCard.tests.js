@@ -11,7 +11,11 @@ describe('the FeedItemCard component', () => {
         <FeedItemCard
           title={'Boom'}
           category={'What'}
-          images={'https://picsum.photos/600/400/?random'}
+          images={[{
+            uri: 'https://picsum.photos/600/400/?random',
+            width: 600,
+            height: 400,
+          }]}
         />
       </ThemeProvider>,
     );
@@ -23,7 +27,11 @@ describe('the FeedItemCard component', () => {
         <FeedItemCard
           title={'Boom'}
           category={'What'}
-          images={'https://picsum.photos/600/400/?random'}
+          images={[{
+            uri: 'https://picsum.photos/600/400/?random',
+            width: 600,
+            height: 400,
+          }]}
           isLight={false}
         />
       </ThemeProvider>,
@@ -36,7 +44,11 @@ describe('the FeedItemCard component', () => {
         <FeedItemCard
           title={'Boom'}
           category={'What'}
-          images={'https://picsum.photos/600/400/?random'}
+          images={[{
+            uri: 'https://picsum.photos/600/400/?random',
+            width: 600,
+            height: 400,
+          }]}
           backgroundColor={'salmon'}
         />
       </ThemeProvider>,
@@ -49,7 +61,11 @@ describe('the FeedItemCard component', () => {
         <FeedItemCard
           title={'Boom'}
           category={'What'}
-          images={'https://picsum.photos/600/400/?random'}
+          images={[{
+            uri: 'https://picsum.photos/600/400/?random',
+            width: 600,
+            height: 400,
+          }]}
           isLight
         />
       </ThemeProvider>,
@@ -62,7 +78,11 @@ describe('the FeedItemCard component', () => {
         <FeedItemCard
           title={'Boom'}
           category={'What'}
-          images={'https://picsum.photos/600/400/?random'}
+          images={[{
+            uri: 'https://picsum.photos/600/400/?random',
+            width: 600,
+            height: 400,
+          }]}
           isLiked
         />
       </ThemeProvider>,
@@ -80,7 +100,11 @@ describe('the FeedItemCard component', () => {
         <FeedItemCard
           title={'Boom'}
           category={'What'}
-          images={'https://picsum.photos/600/400/?random'}
+          images={[{
+            uri: 'https://picsum.photos/600/400/?random',
+            width: 600,
+            height: 400,
+          }]}
           style={cardDimensions}
         />
       </ThemeProvider>,

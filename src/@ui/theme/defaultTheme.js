@@ -38,9 +38,11 @@ export const colors = {
   lightSecondary: '#f7f7f7',
   lightTertiary: '#dddddd',
   // Statics
-  black: '#000',
-  white: '#fff',
+  black: '#000000',
+  white: '#ffffff',
   transparent: 'transparent',
+
+  alert: '#c64f55',
 };
 
 // Base Typography sizing and fonts.
@@ -110,6 +112,25 @@ export const shadows = ({ colors: themeColors }) => ({
     web: {
       boxShadow: `0 1px 4px ${themeColors.shadows.default}`,
     },
+  },
+});
+
+export const buttons = ({ colors: themeColors }) => ({
+  default: {
+    fill: themeColors.action.default,
+    accent: themeColors.text.primary,
+  },
+  primary: {
+    fill: themeColors.action.primary,
+    accent: themeColors.white,
+  },
+  secondary: {
+    fill: themeColors.action.secondary,
+    accent: themeColors.white,
+  },
+  tertiary: {
+    fill: themeColors.action.tertiary,
+    accent: themeColors.white,
   },
 });
 

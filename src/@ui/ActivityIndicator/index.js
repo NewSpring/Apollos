@@ -11,4 +11,6 @@ const ActivityIndicator = compose(
   }, 'ActivityIndicator'),
 )(NativeActivityIndicator);
 
+export const InlineActivityIndicator = NativeActivityIndicator;
+
 export default ActivityIndicator;
