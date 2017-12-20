@@ -6,7 +6,9 @@ import {
 
 export const MUTATION = gql`
   mutation logoutUser {
-    logoutUser @client
+    logoutUser {
+      id
+    }
   }
 `;
 
@@ -14,9 +16,9 @@ export default graphql(MUTATION, {
   props: ({ mutate }) => ({
     logout: async () => {
       try {
+        const r = await mutate();
         await AsyncStorage.removeItem('authToken');
-
-        return mutate();
+        return r;
       } catch (err) {
         throw err;
       }
