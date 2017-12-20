@@ -3,7 +3,9 @@ import { graphql } from 'react-apollo';
 
 export const MUTATION = gql`
   mutation changeUserPassword($oldPassword: String!, $newPassword: String!) {
-    changeUserPassword(oldPassword: $oldPassword, newPassword: $newPassword)
+    changeUserPassword(oldPassword: $oldPassword, newPassword: $newPassword) {
+      id
+    }
   }
 `;
 
