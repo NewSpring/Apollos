@@ -20,22 +20,19 @@ export class ChangePasswordForm extends Component {
   };
 
   state = {
-    oldPassword: '',
-    newPassword: '',
+    email: '',
   };
 
   handleSubmit = () => {
     const {
-      oldPassword,
-      newPassword,
+      email,
     } = this.state;
     const {
       onSubmit,
     } = this.props;
 
     onSubmit({
-      oldPassword,
-      newPassword,
+      email,
     });
   };
 
@@ -43,17 +40,9 @@ export class ChangePasswordForm extends Component {
     return (
       <View>
         <FormInput
-          label="Old Password"
-          onChangeText={oldPassword => this.setState({ oldPassword })}
-          value={this.state.oldPassword}
-          secureTextEntry
-        />
-
-        <FormInput
-          label="New Password"
-          onChangeText={newPassword => this.setState({ newPassword })}
-          value={this.state.newPassword}
-          secureTextEntry
+          label="Email"
+          onChangeText={email => this.setState({ email })}
+          value={this.state.email}
         />
 
         <TouchableWithoutFeedback
@@ -76,6 +65,6 @@ export class ChangePasswordForm extends Component {
 
 const enhance = compose(
   withUser,
-  mapProps(props => ({ ...props, onSubmit: props.changePassword })),
+  mapProps(props => ({ ...props, onSubmit: props.forgotPassword })),
 );
 export default enhance(ChangePasswordForm);
