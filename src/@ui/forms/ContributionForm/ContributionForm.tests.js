@@ -1,0 +1,111 @@
+import React from 'react';
+import renderer from 'react-test-renderer';
+import { ThemeProvider } from '@ui/theme';
+
+import { ContributionFormWithoutData } from './index';
+
+const createTestData = () => ({
+  isOffline: false,
+  funds: [{ id: 'one', name: 'sterling' }, { id: 'two', name: 'platinum' }],
+  offlineContactEmail: 'offline@contact.email',
+  offlineMessageBody: 'offline message body',
+  offlineMessageTitle: 'offline message title',
+  setFieldValue: jest.fn(),
+  handleSubmit: jest.fn(),
+  values: {
+    secondFundVisible: false,
+    firstContribution: {
+      id: 'one',
+      amount: 14,
+    },
+    secondContribution: null,
+    frequencyId: 'today',
+    startDate: new Date(),
+  },
+  touched: {
+    secondFundVisible: false,
+    firstContribution: false,
+    secondContribution: false,
+    frequencyId: false,
+    startDate: false,
+  },
+  errors: {
+    secondFundVisible: null,
+    firstContribution: null,
+    secondContribution: null,
+    frequencyId: null,
+    startDate: null,
+  },
+  setFieldTouched: jest.fn(),
+  isSubmitting: false,
+  isValid: false,
+});
+
+describe('The ContributionForm component', () => {
+  it('renders correctly', () => {
+    const tree = renderer.create(
+      <ThemeProvider>
+        <ContributionFormWithoutData {...createTestData()} />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('shows the second fund', () => {
+    const data = createTestData();
+    data.values.secondFundVisible = true;
+
+    const tree = renderer.create(
+      <ThemeProvider>
+        <ContributionFormWithoutData {...data} />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('shows the offline message', () => {
+    const data = createTestData();
+    data.isOffline = true;
+
+    const tree = renderer.create(
+      <ThemeProvider>
+        <ContributionFormWithoutData {...data} />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('shows the recurring options', () => {
+    const data = createTestData();
+    data.values.frequencyId = 'monthly';
+
+    const tree = renderer.create(
+      <ThemeProvider>
+        <ContributionFormWithoutData {...data} />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('shows a second contribution', () => {
+    const data = createTestData();
+    data.values.secondContribution = {
+      id: 'two',
+      amount: 23,
+    };
+
+    const tree = renderer.create(
+      <ThemeProvider>
+        <ContributionFormWithoutData {...data} />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('shows an error with no funds', () => {
+    const data = createTestData();
+    data.values.funds = [];
+
+    const tree = renderer.create(
+      <ThemeProvider>
+        <ContributionFormWithoutData {...data} />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+});
