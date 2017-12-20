@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import { compose, withProps, pure } from 'recompose';
-import { TextInput, Animated } from 'react-native';
+import { Platform, TextInput, Animated } from 'react-native';
 
 import FloatingLabel from '../FloatingLabel';
 import InputUnderline from '../InputUnderline';
 import InputWrapper from '../InputWrapper';
+import ErrorText from '../ErrorText';
 
 import withFocusAnimation from '../withFocusAnimation';
 import InputAddon, { AddonRow } from '../InputAddon';
@@ -28,8 +29,22 @@ const propsForInputType = {
   numeric: {
     keyboardType: 'numeric',
   },
+  numericKeyboard: {
+    ...Platform.select({
+      ios: { keyboardType: 'numeric' },
+      android: { keyboardType: 'numeric' },
+      web: { type: 'text' },
+    }),
+  },
   phone: {
     keyboardType: 'phone-pad',
+  },
+  date: {
+    ...Platform.select({
+      ios: { keyboardType: 'numeric' },
+      android: { keyboardType: 'numeric' },
+      web: { type: 'date' },
+    }),
   },
 };
 
@@ -46,27 +61,38 @@ const Text = enhance(({
   label,
   prefix,
   suffix,
-  focusAnimation, // from withFocusAnimation
+  value,
+  wrapperStyle,
+  error,
+  focusAnimation: focusAnimationInput, // from withFocusAnimation
   ...textInputProps
-}) => (
-  <InputWrapper>
-    <AddonRow>
-      <InputAddon>{prefix}</InputAddon>
-      <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
-        <StyledTextInput {...textInputProps} />
-      </Animated.View>
-      <InputAddon>{suffix}</InputAddon>
-    </AddonRow>
+}) => {
+  const focusAnimation = value || !label ? new Animated.Value(1) : focusAnimationInput;
+  return (
+    <InputWrapper style={wrapperStyle}>
+      <AddonRow>
+        <InputAddon>{prefix}</InputAddon>
+        <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
+          <StyledTextInput {...textInputProps} value={`${value || ''}`} />
+        </Animated.View>
+        <InputAddon>{suffix}</InputAddon>
+      </AddonRow>
 
-    <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
-    <InputUnderline animation={focusAnimation} />
-  </InputWrapper>
-));
+      <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
+      <InputUnderline animation={focusAnimation} hasError={error} />
+
+      {(error && typeof error === 'string') ? <ErrorText>{error}</ErrorText> : null}
+    </InputWrapper>
+  );
+});
 
 Text.propTypes = {
   prefix: PropTypes.node,
   suffix: PropTypes.node,
   label: PropTypes.string,
+  value: PropTypes.any, // eslint-disable-line
+  wrapperStyle: PropTypes.any, // eslint-disable-line
+  error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 export default Text;

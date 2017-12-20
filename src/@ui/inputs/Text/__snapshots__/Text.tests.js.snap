@@ -4,7 +4,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
 <View
   style={
     Object {
-      "marginTop": 20,
+      "marginVertical": 20,
     }
   }
 >
@@ -43,11 +43,14 @@ exports[`The Text Input component should render as a numeric field 1`] = `
         placeholder="Some placeholder"
         style={
           Object {
+            "fontFamily": null,
             "height": 40,
+            "lineHeight": 30,
             "paddingVertical": 5,
           }
         }
         type="numeric"
+        value=""
       />
     </View>
     <View
@@ -66,6 +69,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
     style={
       Object {
         "justifyContent": "center",
+        "opacity": 1,
         "position": "absolute",
         "transform": Array [
           Object {
@@ -134,6 +138,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
       }
     >
       <View
+        hasError={false}
         style={
           Object {
             "backgroundColor": "#6bac43",
@@ -151,7 +156,7 @@ exports[`The Text Input component should render as a password field with an icon
 <View
   style={
     Object {
-      "marginTop": 20,
+      "marginVertical": 20,
     }
   }
 >
@@ -192,11 +197,14 @@ exports[`The Text Input component should render as a password field with an icon
         secureTextEntry={true}
         style={
           Object {
+            "fontFamily": null,
             "height": 40,
+            "lineHeight": 30,
             "paddingVertical": 5,
           }
         }
         type="password"
+        value=""
       />
     </View>
     <View
@@ -226,6 +234,7 @@ exports[`The Text Input component should render as a password field with an icon
     style={
       Object {
         "justifyContent": "center",
+        "opacity": 1,
         "position": "absolute",
         "transform": Array [
           Object {
@@ -294,6 +303,7 @@ exports[`The Text Input component should render as a password field with an icon
       }
     >
       <View
+        hasError={false}
         style={
           Object {
             "backgroundColor": "#6bac43",
@@ -311,7 +321,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
 <View
   style={
     Object {
-      "marginTop": 20,
+      "marginVertical": 20,
     }
   }
 >
@@ -349,11 +359,14 @@ exports[`The Text Input component should render as a phone number field 1`] = `
         placeholder="Some placeholder"
         style={
           Object {
+            "fontFamily": null,
             "height": 40,
+            "lineHeight": 30,
             "paddingVertical": 5,
           }
         }
         type="phone"
+        value=""
       />
     </View>
     <View
@@ -372,6 +385,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
     style={
       Object {
         "justifyContent": "center",
+        "opacity": 1,
         "position": "absolute",
         "transform": Array [
           Object {
@@ -440,6 +454,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
       }
     >
       <View
+        hasError={false}
         style={
           Object {
             "backgroundColor": "#6bac43",
@@ -457,7 +472,7 @@ exports[`The Text Input component should render as an email field 1`] = `
 <View
   style={
     Object {
-      "marginTop": 20,
+      "marginVertical": 20,
     }
   }
 >
@@ -498,11 +513,14 @@ exports[`The Text Input component should render as an email field 1`] = `
         placeholder="Some placeholder"
         style={
           Object {
+            "fontFamily": null,
             "height": 40,
+            "lineHeight": 30,
             "paddingVertical": 5,
           }
         }
         type="email"
+        value=""
       />
     </View>
     <View
@@ -521,6 +539,7 @@ exports[`The Text Input component should render as an email field 1`] = `
     style={
       Object {
         "justifyContent": "center",
+        "opacity": 1,
         "position": "absolute",
         "transform": Array [
           Object {
@@ -589,6 +608,7 @@ exports[`The Text Input component should render as an email field 1`] = `
       }
     >
       <View
+        hasError={false}
         style={
           Object {
             "backgroundColor": "#6bac43",
@@ -606,7 +626,7 @@ exports[`The Text Input component should render correctly 1`] = `
 <View
   style={
     Object {
-      "marginTop": 20,
+      "marginVertical": 20,
     }
   }
 >
@@ -644,10 +664,13 @@ exports[`The Text Input component should render correctly 1`] = `
         placeholder="Some placeholder"
         style={
           Object {
+            "fontFamily": null,
             "height": 40,
+            "lineHeight": 30,
             "paddingVertical": 5,
           }
         }
+        value=""
       />
     </View>
     <View
@@ -666,6 +689,7 @@ exports[`The Text Input component should render correctly 1`] = `
     style={
       Object {
         "justifyContent": "center",
+        "opacity": 1,
         "position": "absolute",
         "transform": Array [
           Object {
@@ -734,6 +758,7 @@ exports[`The Text Input component should render correctly 1`] = `
       }
     >
       <View
+        hasError={false}
         style={
           Object {
             "backgroundColor": "#6bac43",

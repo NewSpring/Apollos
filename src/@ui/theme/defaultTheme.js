@@ -41,6 +41,8 @@ export const colors = {
   black: '#000000',
   white: '#ffffff',
   transparent: 'transparent',
+
+  alert: '#c64f55',
 };
 
 // Base Typography sizing and fonts.

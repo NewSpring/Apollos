@@ -2,12 +2,15 @@
 
 exports[`The Chip component should be selected 1`] = `
 <View
+  bordered={false}
   disabled={false}
   style={
     Object {
       "alignItems": "center",
       "backgroundColor": "#6bac43",
+      "borderColor": "#6bac43",
       "borderRadius": 6,
+      "borderWidth": 2,
       "elevation": 4,
       "flexDirection": "row",
       "justifyContent": "flex-end",
@@ -43,12 +46,15 @@ exports[`The Chip component should be selected 1`] = `
 
 exports[`The Chip component should render an icon 1`] = `
 <View
+  bordered={false}
   disabled={false}
   style={
     Object {
       "alignItems": "center",
       "backgroundColor": "#dddddd",
+      "borderColor": "#dddddd",
       "borderRadius": 6,
+      "borderWidth": 2,
       "elevation": 4,
       "flexDirection": "row",
       "justifyContent": "flex-end",
@@ -123,12 +129,15 @@ exports[`The Chip component should render correctly 1`] = `
   tvParallaxProperties={undefined}
 >
   <View
+    bordered={false}
     disabled={false}
     style={
       Object {
         "alignItems": "center",
         "backgroundColor": "#dddddd",
+        "borderColor": "#dddddd",
         "borderRadius": 6,
+        "borderWidth": 2,
         "elevation": 4,
         "flexDirection": "row",
         "justifyContent": "flex-end",
