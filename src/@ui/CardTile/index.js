@@ -2,12 +2,12 @@ import React from 'react';
 import { Platform, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, renderNothing } from 'recompose';
+import Placeholder from 'rn-placeholder';
 
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 import { H4, H6, H7 } from '@ui/typography';
-import Placeholder from 'rn-placeholder';
-import Icon from '@ui/Icon';
+import CategoryLabel from '@ui/CategoryLabel';
 import relativeTime from '@utils/relativeTime';
 
 const enhance = compose(
@@ -62,17 +62,6 @@ const TileNumber = styled(({ theme, size }) => ({
   backgroundColor: theme.colors.background.default,
 }))(View);
 
-const ByLineWrapper = styled(({ theme }) => ({
-  flexDirection: 'row',
-  alignItems: 'center',
-  paddingTop: theme.sizing.baseUnit / 2,
-}))(View);
-
-const PlaceholderWrapper = styled(({ theme }) => ({
-  flex: 1,
-  paddingHorizontal: theme.sizing.baseUnit / 2,
-}))(View);
-
 const CardTile = enhance(({
   number,
   title,
@@ -109,22 +98,11 @@ const CardTile = enhance(({
         <H4>{title}</H4>
       </Placeholder.Line>
 
-      <ByLineWrapper>
-        <Icon
-          name={'video'}
-          size={theme.helpers.rem(1)}
-          fill={theme.colors.text.primary}
-          isLoading={isLoading}
-        />
-        <PlaceholderWrapper>
-          <Placeholder.Line
-            width={'40%'}
-            textSize={theme.helpers.rem(1)}
-            onReady={!isLoading}
-          >
-            <H7>{byLine}</H7>
-          </Placeholder.Line>
-        </PlaceholderWrapper>
+      <CategoryLabel
+        label={byLine}
+        icon={'video'}
+        isLoading={isLoading}
+      >
         <Placeholder.Line
           width={'10%'}
           textSize={theme.helpers.rem(1)}
@@ -132,7 +110,7 @@ const CardTile = enhance(({
         >
           <H7>{relativeTime(date)}</H7>
         </Placeholder.Line>
-      </ByLineWrapper>
+      </CategoryLabel>
     </WebAspectRatioFix>
   </Tile>
 ));
