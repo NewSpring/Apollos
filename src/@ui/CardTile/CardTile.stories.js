@@ -19,7 +19,7 @@ storiesOf('@ui/CardTile', module)
           number={7}
           title={'Sermon Title'}
           byLine={'Marty McFly'}
-          date={'3mo'}
+          date={'10/30/2017'}
         />
       </View>
     );
@@ -38,7 +38,7 @@ storiesOf('@ui/CardTile', module)
           number={7}
           title={'Sermon Title'}
           byLine={'Marty McFly'}
-          date={'3mo'}
+          date={'10/30/2017'}
           isLoading
         />
       </View>

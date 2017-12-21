@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, View } from 'react-native';
+import { Platform, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, renderNothing } from 'recompose';
 
@@ -8,6 +8,7 @@ import styled from '@ui/styled';
 import { H4, H6, H7 } from '@ui/typography';
 import Placeholder from 'rn-placeholder';
 import Icon from '@ui/Icon';
+import relativeTime from '@utils/relativeTime';
 
 const enhance = compose(
   pure,
@@ -23,20 +24,25 @@ const enhance = compose(
 );
 
 const Tile = styled(({ theme }) => ({
-  width: '80%',
+  width: '100%',
   aspectRatio: 1,
-  justifyContent: 'center',
-  paddingHorizontal: theme.sizing.baseUnit,
   borderRadius: theme.sizing.borderRadius,
   overflow: 'hidden',
   backgroundColor: theme.colors.lightTertiary, // TODO: sort out correct theme var for this color
   ...Platform.select({
     web: {
       position: 'relative',
+      // height: '80vw',
       height: '0',
-      paddingTop: '80%',
+      paddingTop: '100%',
     },
   }),
+}))(View);
+
+const WebAspectRatioFix = styled(({ theme }) => ({
+  justifyContent: 'center',
+  paddingHorizontal: theme.sizing.baseUnit,
+  ...StyleSheet.absoluteFillObject,
 }))(View);
 
 const TileNumber = styled(({ theme, size }) => ({
@@ -78,51 +84,56 @@ const CardTile = enhance(({
   ...otherProps
 }) => (
   <Tile style={styleProp} {...otherProps}>
-    {typeof number !== 'undefined' ? (
-      <TileNumber size={number.toString().length}>
-        <Placeholder.Media
-          size={theme.helpers.rem(1.025 * (number.toString().length < 2 ? 2 : number.toString().length))}
-          onReady={!isLoading}
-        >
-          <View>
-            <H6>{number}</H6>
-          </View>
-        </Placeholder.Media>
-      </TileNumber>
-    ) : renderNothing()}
+    <WebAspectRatioFix>
+      {typeof number !== 'undefined' ? (
+        <TileNumber size={number.toString().length}>
+          <Placeholder.Media
+            /* placeholder size is calculated the same as TileNumber width and height but slightly
+             * bigger to cover it's corners completely
+             */// eslint-disable-next-line max-len
+            size={theme.helpers.rem(1.25 * (number.toString().length < 2 ? 2 : number.toString().length))}
+            onReady={!isLoading}
+          >
+            <View>
+              <H6>{number}</H6>
+            </View>
+          </Placeholder.Media>
+        </TileNumber>
+      ) : renderNothing()}
 
-    <Placeholder.Line
-      width={'75%'}
-      textSize={theme.helpers.rem(1.4)}
-      onReady={!isLoading}
-    >
-      <H4>{title}</H4>
-    </Placeholder.Line>
+      <Placeholder.Line
+        width={'75%'}
+        textSize={theme.helpers.rem(1.4)}
+        onReady={!isLoading}
+      >
+        <H4>{title}</H4>
+      </Placeholder.Line>
 
-    <ByLineWrapper>
-      <Icon
-        name={'video'}
-        size={theme.helpers.rem(1)}
-        fill={theme.colors.text.primary}
-        isLoading={isLoading}
-      />
-      <PlaceholderWrapper>
+      <ByLineWrapper>
+        <Icon
+          name={'video'}
+          size={theme.helpers.rem(1)}
+          fill={theme.colors.text.primary}
+          isLoading={isLoading}
+        />
+        <PlaceholderWrapper>
+          <Placeholder.Line
+            width={'40%'}
+            textSize={theme.helpers.rem(1)}
+            onReady={!isLoading}
+          >
+            <H7>{byLine}</H7>
+          </Placeholder.Line>
+        </PlaceholderWrapper>
         <Placeholder.Line
-          width={'40%'}
+          width={'10%'}
           textSize={theme.helpers.rem(1)}
           onReady={!isLoading}
         >
-          <H7>{byLine}</H7>
+          <H7>{relativeTime(date)}</H7>
         </Placeholder.Line>
-      </PlaceholderWrapper>
-      <Placeholder.Line
-        width={'10%'}
-        textSize={theme.helpers.rem(1)}
-        onReady={!isLoading}
-      >
-        <H7>{date}</H7>
-      </Placeholder.Line>
-    </ByLineWrapper>
+      </ByLineWrapper>
+    </WebAspectRatioFix>
   </Tile>
 ));
 
