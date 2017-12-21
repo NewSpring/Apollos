@@ -6,9 +6,7 @@ import {
 
 export const MUTATION = gql`
   mutation logoutUser {
-    logoutUser {
-      id
-    }
+    logoutUser
   }
 `;
 

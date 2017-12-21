@@ -3,9 +3,7 @@ import { graphql } from 'react-apollo';
 
 export const MUTATION = gql`
   mutation forgotUserPassword($email: String!, $sourceURL: String) {
-    forgotUserPassword(email: $email, sourceURL: $sourceURL) {
-      id
-    }
+    forgotUserPassword(email: $email, sourceURL: $sourceURL)
   }
 `;
 
