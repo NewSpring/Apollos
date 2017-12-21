@@ -1,11 +1,11 @@
 import React from 'react';
 import { Platform, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, pure, setPropTypes, defaultProps } from 'recompose';
+import { compose, pure, setPropTypes, renderNothing } from 'recompose';
 
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
-import { H4, H6, H7, UIText } from '@ui/typography';
+import { H4, H6, H7 } from '@ui/typography';
 import Placeholder from 'rn-placeholder';
 import Icon from '@ui/Icon';
 
@@ -13,19 +13,12 @@ const enhance = compose(
   pure,
   withTheme(),
   setPropTypes({
-    number: PropTypes.number.isRequired,
+    number: PropTypes.number,
     title: PropTypes.string,
     byLine: PropTypes.string,
     date: PropTypes.string,
     style: PropTypes.any, // eslint-disable-line
     isLoading: PropTypes.bool,
-  }),
-  defaultProps({
-    number: 1,
-    title: 'Sermon Title',
-    byLine: 'Marty McFly',
-    date: '3mo',
-    isLoading: false,
   }),
 );
 
@@ -85,11 +78,18 @@ const CardTile = enhance(({
   ...otherProps
 }) => (
   <Tile style={styleProp} {...otherProps}>
-    <TileNumber size={number.toString().length}>
-      <View>
-        <H6>{number}</H6>
-      </View>
-    </TileNumber>
+    {typeof number !== 'undefined' ? (
+      <TileNumber size={number.toString().length}>
+        <Placeholder.Media
+          size={theme.helpers.rem(1.025 * (number.toString().length < 2 ? 2 : number.toString().length))}
+          onReady={!isLoading}
+        >
+          <View>
+            <H6>{number}</H6>
+          </View>
+        </Placeholder.Media>
+      </TileNumber>
+    ) : renderNothing()}
 
     <Placeholder.Line
       width={'75%'}
