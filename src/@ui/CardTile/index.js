@@ -93,6 +93,7 @@ const CardTile = enhance(({
       <Placeholder.Line
         width={'75%'}
         textSize={theme.helpers.rem(1.4)}
+        animate={'fade'}
         onReady={!isLoading}
       >
         <H4>{title}</H4>
