@@ -154,9 +154,6 @@ exports[`The FeedView component renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -184,31 +181,29 @@ exports[`The FeedView component renders correctly 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
               >
+                <Svg
+                  height={21.6}
+                  viewBox="0 0 24 24"
+                  width={21.6}
+                >
+                  <Path
+                    d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
+                    fill="#303030"
+                  />
+                </Svg>
                 <View
                   style={
                     Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
+                      "flex": 1,
+                      "paddingHorizontal": 10,
                     }
                   }
                 >
-                  <Svg
-                    height={21.6}
-                    viewBox="0 0 24 24"
-                    width={21.6}
-                  >
-                    <Path
-                      d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
-                      fill="#303030"
-                    />
-                  </Svg>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -221,49 +216,48 @@ exports[`The FeedView component renders correctly 1`] = `
                         "fontFamily": null,
                         "fontSize": 14,
                         "lineHeight": 15.87,
-                        "paddingHorizontal": 10,
                       }
                     }
                   >
                     Bob
                   </Text>
                 </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
                   }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
-              >
-                <Svg
-                  height={21.6}
-                  viewBox="0 0 24 24"
-                  width={21.6}
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
                 >
-                  <Path
-                    d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
-                    fill="#303030"
-                  />
-                </Svg>
+                  <Svg
+                    height={21.6}
+                    viewBox="0 0 24 24"
+                    width={21.6}
+                  >
+                    <Path
+                      d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
+                      fill="#303030"
+                    />
+                  </Svg>
+                </View>
               </View>
             </View>
           </View>
@@ -386,9 +380,6 @@ exports[`The FeedView component renders correctly 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -416,31 +407,29 @@ exports[`The FeedView component renders correctly 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
               >
+                <Svg
+                  height={21.6}
+                  viewBox="0 0 24 24"
+                  width={21.6}
+                >
+                  <Path
+                    d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
+                    fill="#303030"
+                  />
+                </Svg>
                 <View
                   style={
                     Object {
-                      "alignItems": "center",
-                      "flexDirection": "row",
+                      "flex": 1,
+                      "paddingHorizontal": 10,
                     }
                   }
                 >
-                  <Svg
-                    height={21.6}
-                    viewBox="0 0 24 24"
-                    width={21.6}
-                  >
-                    <Path
-                      d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
-                      fill="#303030"
-                    />
-                  </Svg>
                   <Text
                     accessible={true}
                     allowFontScaling={true}
@@ -453,49 +442,48 @@ exports[`The FeedView component renders correctly 1`] = `
                         "fontFamily": null,
                         "fontSize": 14,
                         "lineHeight": 15.87,
-                        "paddingHorizontal": 10,
                       }
                     }
                   >
                     Bob 2
                   </Text>
                 </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
                   }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
-              >
-                <Svg
-                  height={21.6}
-                  viewBox="0 0 24 24"
-                  width={21.6}
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
                 >
-                  <Path
-                    d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
-                    fill="#303030"
-                  />
-                </Svg>
+                  <Svg
+                    height={21.6}
+                    viewBox="0 0 24 24"
+                    width={21.6}
+                  >
+                    <Path
+                      d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
+                      fill="#303030"
+                    />
+                  </Svg>
+                </View>
               </View>
             </View>
           </View>
@@ -726,9 +714,6 @@ exports[`The FeedView component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -740,7 +725,7 @@ exports[`The FeedView component renders empty state 1`] = `
                     "backgroundColor": "#efefef",
                     "borderRadius": 6.3,
                     "height": 25.2,
-                    "width": "100%",
+                    "width": "75%",
                   }
                 }
               />
@@ -748,89 +733,10 @@ exports[`The FeedView component renders empty state 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "flexDirection": "column",
-                        "justifyContent": "center",
-                        "marginRight": 21.6,
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#efefef",
-                          "borderRadius": 10.8,
-                          "height": 21.6,
-                          "width": 21.6,
-                        }
-                      }
-                    />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
-                  >
-                    <View>
-                      <View>
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "stretch",
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 5.4,
-                              "height": 21.6,
-                              "width": "40%",
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
               >
                 <View
                   style={
@@ -842,6 +748,62 @@ exports[`The FeedView component renders empty state 1`] = `
                     }
                   }
                 />
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "paddingHorizontal": 10,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "stretch",
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 4.5,
+                        "height": 18,
+                        "width": "40%",
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
+                  }
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 10.8,
+                        "height": 21.6,
+                        "width": 21.6,
+                      }
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -921,9 +883,6 @@ exports[`The FeedView component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -935,7 +894,7 @@ exports[`The FeedView component renders empty state 1`] = `
                     "backgroundColor": "#efefef",
                     "borderRadius": 6.3,
                     "height": 25.2,
-                    "width": "100%",
+                    "width": "75%",
                   }
                 }
               />
@@ -943,89 +902,10 @@ exports[`The FeedView component renders empty state 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "flexDirection": "column",
-                        "justifyContent": "center",
-                        "marginRight": 21.6,
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#efefef",
-                          "borderRadius": 10.8,
-                          "height": 21.6,
-                          "width": 21.6,
-                        }
-                      }
-                    />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
-                  >
-                    <View>
-                      <View>
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "stretch",
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 5.4,
-                              "height": 21.6,
-                              "width": "40%",
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
               >
                 <View
                   style={
@@ -1037,6 +917,62 @@ exports[`The FeedView component renders empty state 1`] = `
                     }
                   }
                 />
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "paddingHorizontal": 10,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "stretch",
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 4.5,
+                        "height": 18,
+                        "width": "40%",
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
+                  }
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 10.8,
+                        "height": 21.6,
+                        "width": 21.6,
+                      }
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -1116,9 +1052,6 @@ exports[`The FeedView component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -1130,7 +1063,7 @@ exports[`The FeedView component renders empty state 1`] = `
                     "backgroundColor": "#efefef",
                     "borderRadius": 6.3,
                     "height": 25.2,
-                    "width": "100%",
+                    "width": "75%",
                   }
                 }
               />
@@ -1138,89 +1071,10 @@ exports[`The FeedView component renders empty state 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "flexDirection": "column",
-                        "justifyContent": "center",
-                        "marginRight": 21.6,
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#efefef",
-                          "borderRadius": 10.8,
-                          "height": 21.6,
-                          "width": 21.6,
-                        }
-                      }
-                    />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
-                  >
-                    <View>
-                      <View>
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "stretch",
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 5.4,
-                              "height": 21.6,
-                              "width": "40%",
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
               >
                 <View
                   style={
@@ -1232,6 +1086,62 @@ exports[`The FeedView component renders empty state 1`] = `
                     }
                   }
                 />
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "paddingHorizontal": 10,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "stretch",
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 4.5,
+                        "height": 18,
+                        "width": "40%",
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
+                  }
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 10.8,
+                        "height": 21.6,
+                        "width": 21.6,
+                      }
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -1311,9 +1221,6 @@ exports[`The FeedView component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -1325,7 +1232,7 @@ exports[`The FeedView component renders empty state 1`] = `
                     "backgroundColor": "#efefef",
                     "borderRadius": 6.3,
                     "height": 25.2,
-                    "width": "100%",
+                    "width": "75%",
                   }
                 }
               />
@@ -1333,89 +1240,10 @@ exports[`The FeedView component renders empty state 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "flexDirection": "column",
-                        "justifyContent": "center",
-                        "marginRight": 21.6,
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#efefef",
-                          "borderRadius": 10.8,
-                          "height": 21.6,
-                          "width": 21.6,
-                        }
-                      }
-                    />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
-                  >
-                    <View>
-                      <View>
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "stretch",
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 5.4,
-                              "height": 21.6,
-                              "width": "40%",
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
               >
                 <View
                   style={
@@ -1427,6 +1255,62 @@ exports[`The FeedView component renders empty state 1`] = `
                     }
                   }
                 />
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "paddingHorizontal": 10,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "stretch",
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 4.5,
+                        "height": 18,
+                        "width": "40%",
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
+                  }
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 10.8,
+                        "height": 21.6,
+                        "width": 21.6,
+                      }
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -1506,9 +1390,6 @@ exports[`The FeedView component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -1520,7 +1401,7 @@ exports[`The FeedView component renders empty state 1`] = `
                     "backgroundColor": "#efefef",
                     "borderRadius": 6.3,
                     "height": 25.2,
-                    "width": "100%",
+                    "width": "75%",
                   }
                 }
               />
@@ -1528,89 +1409,10 @@ exports[`The FeedView component renders empty state 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "flexDirection": "column",
-                        "justifyContent": "center",
-                        "marginRight": 21.6,
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#efefef",
-                          "borderRadius": 10.8,
-                          "height": 21.6,
-                          "width": 21.6,
-                        }
-                      }
-                    />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
-                  >
-                    <View>
-                      <View>
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "stretch",
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 5.4,
-                              "height": 21.6,
-                              "width": "40%",
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
               >
                 <View
                   style={
@@ -1622,6 +1424,62 @@ exports[`The FeedView component renders empty state 1`] = `
                     }
                   }
                 />
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "paddingHorizontal": 10,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "stretch",
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 4.5,
+                        "height": 18,
+                        "width": "40%",
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
+                  }
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 10.8,
+                        "height": 21.6,
+                        "width": 21.6,
+                      }
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -1701,9 +1559,6 @@ exports[`The FeedView component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -1715,7 +1570,7 @@ exports[`The FeedView component renders empty state 1`] = `
                     "backgroundColor": "#efefef",
                     "borderRadius": 6.3,
                     "height": 25.2,
-                    "width": "100%",
+                    "width": "75%",
                   }
                 }
               />
@@ -1723,89 +1578,10 @@ exports[`The FeedView component renders empty state 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "flexDirection": "column",
-                        "justifyContent": "center",
-                        "marginRight": 21.6,
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#efefef",
-                          "borderRadius": 10.8,
-                          "height": 21.6,
-                          "width": 21.6,
-                        }
-                      }
-                    />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
-                  >
-                    <View>
-                      <View>
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "stretch",
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 5.4,
-                              "height": 21.6,
-                              "width": "40%",
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
               >
                 <View
                   style={
@@ -1817,6 +1593,62 @@ exports[`The FeedView component renders empty state 1`] = `
                     }
                   }
                 />
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "paddingHorizontal": 10,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "stretch",
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 4.5,
+                        "height": 18,
+                        "width": "40%",
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
+                  }
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 10.8,
+                        "height": 21.6,
+                        "width": 21.6,
+                      }
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -1896,9 +1728,6 @@ exports[`The FeedView component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -1910,7 +1739,7 @@ exports[`The FeedView component renders empty state 1`] = `
                     "backgroundColor": "#efefef",
                     "borderRadius": 6.3,
                     "height": 25.2,
-                    "width": "100%",
+                    "width": "75%",
                   }
                 }
               />
@@ -1918,89 +1747,10 @@ exports[`The FeedView component renders empty state 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "flexDirection": "column",
-                        "justifyContent": "center",
-                        "marginRight": 21.6,
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#efefef",
-                          "borderRadius": 10.8,
-                          "height": 21.6,
-                          "width": 21.6,
-                        }
-                      }
-                    />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
-                  >
-                    <View>
-                      <View>
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "stretch",
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 5.4,
-                              "height": 21.6,
-                              "width": "40%",
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
               >
                 <View
                   style={
@@ -2012,6 +1762,62 @@ exports[`The FeedView component renders empty state 1`] = `
                     }
                   }
                 />
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "paddingHorizontal": 10,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "stretch",
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 4.5,
+                        "height": 18,
+                        "width": "40%",
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
+                  }
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 10.8,
+                        "height": 21.6,
+                        "width": 21.6,
+                      }
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -2091,9 +1897,6 @@ exports[`The FeedView component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -2105,7 +1908,7 @@ exports[`The FeedView component renders empty state 1`] = `
                     "backgroundColor": "#efefef",
                     "borderRadius": 6.3,
                     "height": 25.2,
-                    "width": "100%",
+                    "width": "75%",
                   }
                 }
               />
@@ -2113,89 +1916,10 @@ exports[`The FeedView component renders empty state 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "flexDirection": "column",
-                        "justifyContent": "center",
-                        "marginRight": 21.6,
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#efefef",
-                          "borderRadius": 10.8,
-                          "height": 21.6,
-                          "width": 21.6,
-                        }
-                      }
-                    />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
-                  >
-                    <View>
-                      <View>
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "stretch",
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 5.4,
-                              "height": 21.6,
-                              "width": "40%",
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
               >
                 <View
                   style={
@@ -2207,6 +1931,62 @@ exports[`The FeedView component renders empty state 1`] = `
                     }
                   }
                 />
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "paddingHorizontal": 10,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "stretch",
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 4.5,
+                        "height": 18,
+                        "width": "40%",
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
+                  }
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 10.8,
+                        "height": 21.6,
+                        "width": 21.6,
+                      }
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -2286,9 +2066,6 @@ exports[`The FeedView component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -2300,7 +2077,7 @@ exports[`The FeedView component renders empty state 1`] = `
                     "backgroundColor": "#efefef",
                     "borderRadius": 6.3,
                     "height": 25.2,
-                    "width": "100%",
+                    "width": "75%",
                   }
                 }
               />
@@ -2308,89 +2085,10 @@ exports[`The FeedView component renders empty state 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "flexDirection": "column",
-                        "justifyContent": "center",
-                        "marginRight": 21.6,
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#efefef",
-                          "borderRadius": 10.8,
-                          "height": 21.6,
-                          "width": 21.6,
-                        }
-                      }
-                    />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
-                  >
-                    <View>
-                      <View>
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "stretch",
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 5.4,
-                              "height": 21.6,
-                              "width": "40%",
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
               >
                 <View
                   style={
@@ -2402,6 +2100,62 @@ exports[`The FeedView component renders empty state 1`] = `
                     }
                   }
                 />
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "paddingHorizontal": 10,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "stretch",
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 4.5,
+                        "height": 18,
+                        "width": "40%",
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
+                  }
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 10.8,
+                        "height": 21.6,
+                        "width": 21.6,
+                      }
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -2481,9 +2235,6 @@ exports[`The FeedView component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "flexWrap": "wrap",
                   "padding": 20,
                 }
               }
@@ -2495,7 +2246,7 @@ exports[`The FeedView component renders empty state 1`] = `
                     "backgroundColor": "#efefef",
                     "borderRadius": 6.3,
                     "height": 25.2,
-                    "width": "100%",
+                    "width": "75%",
                   }
                 }
               />
@@ -2503,89 +2254,10 @@ exports[`The FeedView component renders empty state 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
-                    "paddingRight": 20,
                     "paddingTop": 10,
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "flexDirection": "row",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "flexDirection": "column",
-                        "justifyContent": "center",
-                        "marginRight": 21.6,
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#efefef",
-                          "borderRadius": 10.8,
-                          "height": 21.6,
-                          "width": 21.6,
-                        }
-                      }
-                    />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "flex": 1,
-                      }
-                    }
-                  >
-                    <View>
-                      <View>
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "stretch",
-                              "backgroundColor": "#efefef",
-                              "borderRadius": 5.4,
-                              "height": 21.6,
-                              "width": "40%",
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                nativeID={undefined}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                    "paddingTop": 10,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
               >
                 <View
                   style={
@@ -2597,6 +2269,62 @@ exports[`The FeedView component renders empty state 1`] = `
                     }
                   }
                 />
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                      "paddingHorizontal": 10,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "stretch",
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 4.5,
+                        "height": 18,
+                        "width": "40%",
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  accessibilityComponentType={undefined}
+                  accessibilityLabel={undefined}
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  collapsable={undefined}
+                  hitSlop={undefined}
+                  isTVSelectable={true}
+                  nativeID={undefined}
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                      "paddingTop": 10,
+                    }
+                  }
+                  testID={undefined}
+                  tvParallaxProperties={undefined}
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#efefef",
+                        "borderRadius": 10.8,
+                        "height": 21.6,
+                        "width": 21.6,
+                      }
+                    }
+                  />
+                </View>
               </View>
             </View>
           </View>

@@ -58,7 +58,7 @@ const FeedItemCard = enhance(({
   images,
   title,
   category,
-  isLoading: loadingState,
+  isLoading,
   isLiked,
   fontColor,
   backgroundColor,
@@ -68,27 +68,30 @@ const FeedItemCard = enhance(({
   <CardWrapper>
     <Card backgroundColor={backgroundColor} {...otherProps}>
       <CardImage source={images} overlayColor={backgroundColor} />
+
       <Footer>
         <Placeholder.Line
-          width={'100%'}
+          width={'75%'}
           textSize={theme.helpers.rem(1.4)}
-          onReady={!loadingState}
+          onReady={!isLoading}
         >
           <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
         </Placeholder.Line>
+
         <CategoryLabel
-          type={startCase(toLower(category))}
+          label={startCase(toLower(category))}
           color={fontColor}
-          isLoading={loadingState}
-        />
-        <LikeButton>
-          <Icon
-            name={isLiked ? 'like-solid' : 'like'}
-            size={theme.helpers.rem(1.2)}
-            fill={fontColor}
-            isLoading={loadingState}
-          />
-        </LikeButton>
+          isLoading={isLoading}
+        >
+          <LikeButton>
+            <Icon
+              name={isLiked ? 'like-solid' : 'like'}
+              size={theme.helpers.rem(1.2)}
+              fill={fontColor}
+              isLoading={isLoading}
+            />
+          </LikeButton>
+        </CategoryLabel>
       </Footer>
     </Card>
   </CardWrapper>
