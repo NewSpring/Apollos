@@ -89,9 +89,9 @@ exports[`the Card component number box should grow elegantly with larger numbers
       }
     >
       <Svg
-        height={18}
+        height={21.6}
         viewBox="0 0 24 24"
-        width={18}
+        width={21.6}
       >
         <Path
           d="M3.8182 5.7778v12.4444H14.2V5.7778H3.8182zM16 6v12c0 1.1046-.8954 2-2 2H4c-1.1046 0-2-.8954-2-2V6c0-1.1046.8954-2 2-2h10c1.1046 0 2 .8954 2 2zm4.1818 2.6952L16 11.8084v.3832l4.1818 3.251V8.695zM16 14.4957V9.4253l6-4.2178v13.585l-6-4.2968z"
@@ -109,6 +109,7 @@ exports[`the Card component number box should grow elegantly with larger numbers
         <Text
           accessible={true}
           allowFontScaling={true}
+          color="#303030"
           disabled={false}
           ellipsizeMode="tail"
           style={
@@ -233,9 +234,9 @@ exports[`the Card component should render 1`] = `
       }
     >
       <Svg
-        height={18}
+        height={21.6}
         viewBox="0 0 24 24"
-        width={18}
+        width={21.6}
       >
         <Path
           d="M3.8182 5.7778v12.4444H14.2V5.7778H3.8182zM16 6v12c0 1.1046-.8954 2-2 2H4c-1.1046 0-2-.8954-2-2V6c0-1.1046.8954-2 2-2h10c1.1046 0 2 .8954 2 2zm4.1818 2.6952L16 11.8084v.3832l4.1818 3.251V8.695zM16 14.4957V9.4253l6-4.2178v13.585l-6-4.2968z"
@@ -253,6 +254,7 @@ exports[`the Card component should render 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          color="#303030"
           disabled={false}
           ellipsizeMode="tail"
           style={
