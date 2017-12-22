@@ -12,6 +12,7 @@ export default gql`
           entryId: id
           title
           content {
+            hasLike
             isLight
             colors {
               value
@@ -33,6 +34,7 @@ export default gql`
           channelId
         }
         content {
+          hasLike
           audio {
             duration
             file: s3

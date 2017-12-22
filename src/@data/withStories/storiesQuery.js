@@ -15,6 +15,7 @@ export default gql`
         channelId
       }
       content {
+        hasLike
         body
         images(sizes: ["large"]) {
           fileName

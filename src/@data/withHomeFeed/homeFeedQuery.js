@@ -22,6 +22,7 @@ const contentFragment = gql`
       }
     }
     content {
+      hasLike
       images(sizes: ["large"]) {
         fileName
         fileType
