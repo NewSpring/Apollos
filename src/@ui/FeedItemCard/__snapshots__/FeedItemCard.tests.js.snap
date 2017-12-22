@@ -178,6 +178,7 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
           accessibilityTraits={undefined}
           accessible={true}
           collapsable={undefined}
+          hasTVPreferredFocus={undefined}
           hitSlop={undefined}
           isTVSelectable={true}
           nativeID={undefined}
@@ -358,6 +359,7 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
           accessibilityTraits={undefined}
           accessible={true}
           collapsable={undefined}
+          hasTVPreferredFocus={undefined}
           hitSlop={undefined}
           isTVSelectable={true}
           nativeID={undefined}
@@ -537,6 +539,7 @@ exports[`the FeedItemCard component should render 1`] = `
           accessibilityTraits={undefined}
           accessible={true}
           collapsable={undefined}
+          hasTVPreferredFocus={undefined}
           hitSlop={undefined}
           isTVSelectable={true}
           nativeID={undefined}
@@ -716,6 +719,7 @@ exports[`the FeedItemCard component should render as liked 1`] = `
           accessibilityTraits={undefined}
           accessible={true}
           collapsable={undefined}
+          hasTVPreferredFocus={undefined}
           hitSlop={undefined}
           isTVSelectable={true}
           nativeID={undefined}
@@ -895,6 +899,7 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
           accessibilityTraits={undefined}
           accessible={true}
           collapsable={undefined}
+          hasTVPreferredFocus={undefined}
           hitSlop={undefined}
           isTVSelectable={true}
           nativeID={undefined}
@@ -1074,6 +1079,7 @@ exports[`the FeedItemCard component should render with inverted (light) font col
           accessibilityTraits={undefined}
           accessible={true}
           collapsable={undefined}
+          hasTVPreferredFocus={undefined}
           hitSlop={undefined}
           isTVSelectable={true}
           nativeID={undefined}

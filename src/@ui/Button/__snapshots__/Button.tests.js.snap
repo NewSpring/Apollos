@@ -87,6 +87,7 @@ exports[`The Button component should render correctly 1`] = `
   }
   accessible={true}
   collapsable={undefined}
+  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
   isTVSelectable={true}
   nativeID={undefined}
