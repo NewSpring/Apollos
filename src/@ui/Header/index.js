@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, StatusBar, Platform } from 'react-native';
+import { SafeAreaView, View, StatusBar, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes, branch, renderNothing, pure } from 'recompose';
 import { withTheme } from '@ui/theme';
-import SafeAreaView from '@ui/SafeAreaView';
 import styled from '@ui/styled';
 import { H6 } from '@ui/typography';
 
