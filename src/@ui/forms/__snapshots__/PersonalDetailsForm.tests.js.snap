@@ -3,6 +3,7 @@
 exports[`The PaymentForm component renders correctly 1`] = `
 <View>
   <View
+    disabled={false}
     style={
       Object {
         "marginVertical": 20,
@@ -35,6 +36,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
         }
       >
         <TextInput
+          editable={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           onBlur={[Function]}
@@ -149,6 +151,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
     </View>
   </View>
   <View
+    disabled={false}
     style={
       Object {
         "marginVertical": 20,
@@ -181,6 +184,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
         }
       >
         <TextInput
+          editable={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           onBlur={[Function]}
@@ -295,6 +299,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
     </View>
   </View>
   <View
+    disabled={false}
     style={
       Object {
         "marginVertical": 20,
@@ -329,6 +334,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
         <TextInput
           autoCapitalize="none"
           autoCorrect={false}
+          editable={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           keyboardType="email-address"
@@ -789,6 +795,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
 exports[`The PaymentForm component shows a submitting state 1`] = `
 <View>
   <View
+    disabled={false}
     style={
       Object {
         "marginVertical": 20,
@@ -821,6 +828,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         }
       >
         <TextInput
+          editable={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           onBlur={[Function]}
@@ -935,6 +943,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
     </View>
   </View>
   <View
+    disabled={false}
     style={
       Object {
         "marginVertical": 20,
@@ -967,6 +976,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         }
       >
         <TextInput
+          editable={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           onBlur={[Function]}
@@ -1081,6 +1091,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
     </View>
   </View>
   <View
+    disabled={false}
     style={
       Object {
         "marginVertical": 20,
@@ -1115,6 +1126,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         <TextInput
           autoCapitalize="none"
           autoCorrect={false}
+          editable={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           keyboardType="email-address"

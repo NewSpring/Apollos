@@ -36,6 +36,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
       }
     >
       <View
+        disabled={false}
         style={
           Object {
             "marginBottom": 0,
@@ -90,6 +91,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
             }
           >
             <TextInput
+              editable={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"
@@ -798,6 +800,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
       }
     >
       <View
+        disabled={false}
         style={
           Object {
             "marginBottom": 0,
@@ -852,6 +855,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
             }
           >
             <TextInput
+              editable={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"
@@ -1322,6 +1326,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
       }
     >
       <View
+        disabled={false}
         style={
           Object {
             "marginBottom": 0,
@@ -1376,6 +1381,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
             }
           >
             <TextInput
+              editable={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"
@@ -2079,6 +2085,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
       }
     >
       <View
+        disabled={false}
         style={
           Object {
             "marginBottom": 0,
@@ -2133,6 +2140,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
             }
           >
             <TextInput
+              editable={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"
@@ -2895,6 +2903,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
       }
     >
       <View
+        disabled={false}
         style={
           Object {
             "marginBottom": 0,
@@ -2949,6 +2958,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
             }
           >
             <TextInput
+              editable={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"
@@ -3796,6 +3806,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
       </View>
     </View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -3828,6 +3839,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
           }
         >
           <TextInput
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -4096,6 +4108,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
       }
     >
       <View
+        disabled={false}
         style={
           Object {
             "marginBottom": 0,
@@ -4150,6 +4163,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
             }
           >
             <TextInput
+              editable={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"

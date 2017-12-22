@@ -2,6 +2,7 @@
 
 exports[`The Text Input component should render as a numeric field 1`] = `
 <View
+  disabled={false}
   style={
     Object {
       "marginVertical": 20,
@@ -154,6 +155,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
 
 exports[`The Text Input component should render as a password field with an icon 1`] = `
 <View
+  disabled={false}
   style={
     Object {
       "marginVertical": 20,
@@ -319,6 +321,7 @@ exports[`The Text Input component should render as a password field with an icon
 
 exports[`The Text Input component should render as a phone number field 1`] = `
 <View
+  disabled={false}
   style={
     Object {
       "marginVertical": 20,
@@ -351,6 +354,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
       }
     >
       <TextInput
+        editable={true}
         focusAnimationDuration={450}
         focusAnimationEasing={[Function]}
         keyboardType="phone-pad"
@@ -470,6 +474,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
 
 exports[`The Text Input component should render as an email field 1`] = `
 <View
+  disabled={false}
   style={
     Object {
       "marginVertical": 20,
@@ -624,6 +629,7 @@ exports[`The Text Input component should render as an email field 1`] = `
 
 exports[`The Text Input component should render correctly 1`] = `
 <View
+  disabled={false}
   style={
     Object {
       "marginVertical": 20,

@@ -35,6 +35,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
     }
   >
     <View
+      disabled={false}
       style={
         Object {
           "marginBottom": 0,
@@ -89,6 +90,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
           }
         >
           <TextInput
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -562,6 +564,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
     }
   >
     <View
+      disabled={false}
       style={
         Object {
           "marginBottom": 0,
@@ -616,6 +619,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
           }
         >
           <TextInput
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -1089,6 +1093,7 @@ exports[`The FrequencyInput component should render correctly with initial state
     }
   >
     <View
+      disabled={false}
       style={
         Object {
           "marginBottom": 0,
@@ -1143,6 +1148,7 @@ exports[`The FrequencyInput component should render correctly with initial state
           }
         >
           <TextInput
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
