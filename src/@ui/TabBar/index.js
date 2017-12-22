@@ -1,4 +1,5 @@
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import SafeAreaView from '@ui/SafeAreaView';
 import { compose } from 'recompose';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import styled from '@ui/styled';

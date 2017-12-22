@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import SafeAreaView from '@ui/SafeAreaView';
 import SecondaryNav from '@ui/SecondaryNav';
 import { nest } from 'recompose';
 
