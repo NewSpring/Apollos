@@ -132,7 +132,7 @@ const PaymentConfirmationForm = compose(
         });
         return true;
       } catch (err) {
-        console.log('err', err);
+        console.log('err', err); // eslint-disable-line no-console
         props.setPaymentResult({
           error: err.message,
         });
