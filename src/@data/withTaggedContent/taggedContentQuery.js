@@ -17,6 +17,7 @@ export default gql`
         urlTitle
       }
       content {
+        isLiked
         images(sizes: ["large"]) {
           fileName
           fileType

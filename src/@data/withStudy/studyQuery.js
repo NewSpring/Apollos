@@ -19,6 +19,7 @@ export default gql`
           channelId
         }
         content {
+          isLiked
           description
           tags
           isLight

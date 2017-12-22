@@ -16,6 +16,7 @@ export default gql`
           channelId
         }
         content {
+          isLiked
           body
           video {
             embedUrl
