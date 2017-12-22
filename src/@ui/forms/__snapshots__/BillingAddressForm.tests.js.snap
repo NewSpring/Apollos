@@ -35,6 +35,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
         }
       >
         <TextInput
+          allowFontScaling={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           onBlur={[Function]}
@@ -86,7 +87,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -181,6 +181,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
         }
       >
         <TextInput
+          allowFontScaling={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           onBlur={[Function]}
@@ -232,7 +233,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -307,6 +307,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
       accessibilityTraits={undefined}
       accessible={true}
       collapsable={undefined}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
       isTVSelectable={true}
       nativeID={undefined}
@@ -345,7 +346,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -427,7 +427,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             onPress={[Function]}
             style={
@@ -510,7 +509,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -605,6 +603,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
         }
       >
         <TextInput
+          allowFontScaling={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           onBlur={[Function]}
@@ -656,7 +655,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -751,6 +749,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
         }
       >
         <TextInput
+          allowFontScaling={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           keyboardType="numeric"
@@ -804,7 +803,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -888,7 +886,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -960,6 +957,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
         }
       >
         <TextInput
+          allowFontScaling={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           onBlur={[Function]}
@@ -1011,7 +1009,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -1106,6 +1103,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
         }
       >
         <TextInput
+          allowFontScaling={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           onBlur={[Function]}
@@ -1157,7 +1155,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -1232,6 +1229,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
       accessibilityTraits={undefined}
       accessible={true}
       collapsable={undefined}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
       isTVSelectable={true}
       nativeID={undefined}
@@ -1270,7 +1268,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -1352,7 +1349,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             onPress={[Function]}
             style={
@@ -1435,7 +1431,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -1530,6 +1525,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
         }
       >
         <TextInput
+          allowFontScaling={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           onBlur={[Function]}
@@ -1581,7 +1577,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -1656,6 +1651,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
       accessibilityTraits={undefined}
       accessible={true}
       collapsable={undefined}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
       isTVSelectable={true}
       nativeID={undefined}
@@ -1694,7 +1690,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -1710,7 +1705,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
             <Text
               accessible={true}
               allowFontScaling={true}
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -1789,7 +1783,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             onPress={[Function]}
             style={
@@ -1867,7 +1860,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -1962,6 +1954,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
         }
       >
         <TextInput
+          allowFontScaling={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
           keyboardType="numeric"
@@ -2015,7 +2008,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -2099,7 +2091,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {

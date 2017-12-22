@@ -4,7 +4,6 @@ exports[`the H2 component should accept additional props 1`] = `
 <Text
   accessible={false}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Object {
@@ -24,7 +23,6 @@ exports[`the H2 component should accept and render passed in styles 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Object {
@@ -44,7 +42,6 @@ exports[`the H2 component should render correctly 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Object {

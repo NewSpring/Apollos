@@ -62,7 +62,7 @@ exports[`the FeedItemCard CardImage component should render with an overlayColor
         4294606962,
       ]
     }
-    end={
+    endPoint={
       Array [
         0,
         1,
@@ -74,7 +74,7 @@ exports[`the FeedItemCard CardImage component should render with an overlayColor
         1,
       ]
     }
-    start={
+    startPoint={
       Array [
         0,
         0,
