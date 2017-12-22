@@ -1,20 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The Header component should render correctly 1`] = `
-<View
-  onLayout={[Function]}
+<RCTSafeAreaView
   style={
-    Array [
-      Object {
-        "backgroundColor": "#6bac43",
-      },
-      Object {
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 20,
-      },
-    ]
+    Object {
+      "backgroundColor": "#6bac43",
+    }
   }
 >
   <View
@@ -31,7 +22,6 @@ exports[`The Header component should render correctly 1`] = `
       accessible={true}
       allowFontScaling={true}
       barStyle="light-content"
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -44,24 +34,15 @@ exports[`The Header component should render correctly 1`] = `
       }
     />
   </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`The Header component should render with a back button correctly 1`] = `
-<View
-  onLayout={[Function]}
+<RCTSafeAreaView
   style={
-    Array [
-      Object {
-        "backgroundColor": "#6bac43",
-      },
-      Object {
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 20,
-      },
-    ]
+    Object {
+      "backgroundColor": "#6bac43",
+    }
   }
 >
   <View
@@ -123,7 +104,6 @@ exports[`The Header component should render with a back button correctly 1`] = `
       accessible={true}
       allowFontScaling={true}
       barStyle="light-content"
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -136,5 +116,5 @@ exports[`The Header component should render with a back button correctly 1`] = `
       }
     />
   </View>
-</View>
+</RCTSafeAreaView>
 `;

@@ -67,7 +67,7 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
               4294606962,
             ]
           }
-          end={
+          endPoint={
             Array [
               0,
               1,
@@ -79,7 +79,7 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
               1,
             ]
           }
-          start={
+          startPoint={
             Array [
               0,
               0,
@@ -107,7 +107,6 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
           accessible={true}
           allowFontScaling={true}
           color="#303030"
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -153,7 +152,6 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
               accessible={true}
               allowFontScaling={true}
               color="#303030"
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -173,6 +171,7 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
             accessibilityTraits={undefined}
             accessible={true}
             collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
             isTVSelectable={true}
             nativeID={undefined}
@@ -283,7 +282,6 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
           accessible={true}
           allowFontScaling={true}
           color="#303030"
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -329,7 +327,6 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
               accessible={true}
               allowFontScaling={true}
               color="#303030"
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -349,6 +346,7 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
             accessibilityTraits={undefined}
             accessible={true}
             collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
             isTVSelectable={true}
             nativeID={undefined}
@@ -458,7 +456,6 @@ exports[`the FeedItemCard component should render 1`] = `
           accessible={true}
           allowFontScaling={true}
           color="#303030"
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -504,7 +501,6 @@ exports[`the FeedItemCard component should render 1`] = `
               accessible={true}
               allowFontScaling={true}
               color="#303030"
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -524,6 +520,7 @@ exports[`the FeedItemCard component should render 1`] = `
             accessibilityTraits={undefined}
             accessible={true}
             collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
             isTVSelectable={true}
             nativeID={undefined}
@@ -633,7 +630,6 @@ exports[`the FeedItemCard component should render as liked 1`] = `
           accessible={true}
           allowFontScaling={true}
           color="#303030"
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -679,7 +675,6 @@ exports[`the FeedItemCard component should render as liked 1`] = `
               accessible={true}
               allowFontScaling={true}
               color="#303030"
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -699,6 +694,7 @@ exports[`the FeedItemCard component should render as liked 1`] = `
             accessibilityTraits={undefined}
             accessible={true}
             collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
             isTVSelectable={true}
             nativeID={undefined}
@@ -808,7 +804,6 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
           accessible={true}
           allowFontScaling={true}
           color="#303030"
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -854,7 +849,6 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
               accessible={true}
               allowFontScaling={true}
               color="#303030"
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -874,6 +868,7 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
             accessibilityTraits={undefined}
             accessible={true}
             collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
             isTVSelectable={true}
             nativeID={undefined}
@@ -983,7 +978,6 @@ exports[`the FeedItemCard component should render with inverted (light) font col
           accessible={true}
           allowFontScaling={true}
           color="#ffffff"
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -1029,7 +1023,6 @@ exports[`the FeedItemCard component should render with inverted (light) font col
               accessible={true}
               allowFontScaling={true}
               color="#ffffff"
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -1049,6 +1042,7 @@ exports[`the FeedItemCard component should render with inverted (light) font col
             accessibilityTraits={undefined}
             accessible={true}
             collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
             isTVSelectable={true}
             nativeID={undefined}
