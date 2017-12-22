@@ -46,6 +46,7 @@ const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
       backgroundColor={getItemBgColor(item)}
       isLight={getItemIsLight(item)}
       isLoading={item.isLoading}
+      isLiked={item.hasLike}
     />
   </Link>
 );
