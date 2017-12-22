@@ -14,7 +14,7 @@ export default gql`
         channelId
       }
       content {
-        hasLike
+        isLiked
         body
         scripture {
           book

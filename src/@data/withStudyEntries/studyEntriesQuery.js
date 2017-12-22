@@ -13,7 +13,7 @@ export default gql`
           parent {
             entryId: id
             content {
-              hasLike
+              isLiked
               isLight
               colors {
                 value
@@ -34,7 +34,7 @@ export default gql`
             channelId
           }
           content {
-            hasLike
+            isLiked
             speaker
           }
         }

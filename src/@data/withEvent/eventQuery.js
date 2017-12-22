@@ -16,7 +16,7 @@ export default gql`
           channelId
         }
         content {
-          hasLike
+          isLiked
           body
           ooyalaId
           tags

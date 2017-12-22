@@ -18,7 +18,7 @@ export default gql`
         parent {
           title
           content {
-            hasLike
+            isLiked
             isLight
             colors {
               value
@@ -33,7 +33,7 @@ export default gql`
           }
         }
         content {
-          hasLike
+          isLiked
           audio {
             duration
             file: s3
