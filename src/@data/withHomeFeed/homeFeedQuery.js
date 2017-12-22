@@ -22,6 +22,7 @@ const contentFragment = gql`
       }
     }
     content {
+      isLiked
       images(sizes: ["large"]) {
         fileName
         fileType
