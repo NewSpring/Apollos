@@ -55,7 +55,7 @@ const CenteredView = styled({
 //   </UIText>
 // );
 
-const Success = props => console.log({ props }) || (
+const Success = () => (
   <CenteredView>
     <Icon name="check" />
     <H3>Success!</H3>
