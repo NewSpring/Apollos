@@ -36,7 +36,6 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -52,7 +51,6 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -80,7 +78,6 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -97,7 +94,6 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -113,7 +109,6 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -145,7 +140,6 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -162,7 +156,6 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -178,7 +171,6 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -206,6 +198,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
     }
     accessible={true}
     collapsable={undefined}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
     isTVSelectable={true}
     nativeID={undefined}
@@ -246,7 +239,6 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -280,7 +272,6 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -296,7 +287,6 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -324,7 +314,6 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -341,7 +330,6 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -357,7 +345,6 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -389,7 +376,6 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -406,7 +392,6 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -422,7 +407,6 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -451,6 +435,7 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
     }
     accessible={true}
     collapsable={undefined}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
     isTVSelectable={true}
     nativeID={undefined}
@@ -515,7 +500,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -531,7 +515,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -559,7 +542,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -576,7 +558,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -592,7 +573,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -625,7 +605,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -642,7 +621,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -659,7 +637,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -689,7 +666,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -706,7 +682,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -722,7 +697,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -750,6 +724,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
     }
     accessible={true}
     collapsable={undefined}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
     isTVSelectable={true}
     nativeID={undefined}
@@ -790,7 +765,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {

@@ -59,7 +59,6 @@ exports[`The FeedView component renders correctly 1`] = `
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
-  onViewableItemsChanged={undefined}
   refreshing={false}
   renderItem={[Function]}
   scrollEventThrottle={50}
@@ -70,6 +69,7 @@ exports[`The FeedView component renders correctly 1`] = `
     }
   }
   updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
   windowSize={21}
 >
   <View>
@@ -165,7 +165,6 @@ exports[`The FeedView component renders correctly 1`] = `
                 accessible={true}
                 allowFontScaling={true}
                 color="#303030"
-                disabled={false}
                 ellipsizeMode="tail"
                 style={
                   Object {
@@ -213,7 +212,6 @@ exports[`The FeedView component renders correctly 1`] = `
                     accessible={true}
                     allowFontScaling={true}
                     color="#303030"
-                    disabled={false}
                     ellipsizeMode="tail"
                     style={
                       Object {
@@ -235,6 +233,7 @@ exports[`The FeedView component renders correctly 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}
@@ -354,7 +353,7 @@ exports[`The FeedView component renders correctly 1`] = `
                     4283973736,
                   ]
                 }
-                end={
+                endPoint={
                   Array [
                     0,
                     1,
@@ -366,7 +365,7 @@ exports[`The FeedView component renders correctly 1`] = `
                     1,
                   ]
                 }
-                start={
+                startPoint={
                   Array [
                     0,
                     0,
@@ -397,7 +396,6 @@ exports[`The FeedView component renders correctly 1`] = `
                 accessible={true}
                 allowFontScaling={true}
                 color="#303030"
-                disabled={false}
                 ellipsizeMode="tail"
                 style={
                   Object {
@@ -445,7 +443,6 @@ exports[`The FeedView component renders correctly 1`] = `
                     accessible={true}
                     allowFontScaling={true}
                     color="#303030"
-                    disabled={false}
                     ellipsizeMode="tail"
                     style={
                       Object {
@@ -467,6 +464,7 @@ exports[`The FeedView component renders correctly 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}
@@ -639,7 +637,6 @@ exports[`The FeedView component renders empty state 1`] = `
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
-  onViewableItemsChanged={undefined}
   refreshing={true}
   renderItem={[Function]}
   scrollEventThrottle={50}
@@ -650,6 +647,7 @@ exports[`The FeedView component renders empty state 1`] = `
     }
   }
   updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
   windowSize={21}
 >
   <View>
@@ -813,6 +811,7 @@ exports[`The FeedView component renders empty state 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}
@@ -1008,6 +1007,7 @@ exports[`The FeedView component renders empty state 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}
@@ -1203,6 +1203,7 @@ exports[`The FeedView component renders empty state 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}
@@ -1398,6 +1399,7 @@ exports[`The FeedView component renders empty state 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}
@@ -1593,6 +1595,7 @@ exports[`The FeedView component renders empty state 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}
@@ -1788,6 +1791,7 @@ exports[`The FeedView component renders empty state 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}
@@ -1983,6 +1987,7 @@ exports[`The FeedView component renders empty state 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}
@@ -2178,6 +2183,7 @@ exports[`The FeedView component renders empty state 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}
@@ -2373,6 +2379,7 @@ exports[`The FeedView component renders empty state 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}
@@ -2568,6 +2575,7 @@ exports[`The FeedView component renders empty state 1`] = `
                 accessibilityTraits={undefined}
                 accessible={true}
                 collapsable={undefined}
+                hasTVPreferredFocus={undefined}
                 hitSlop={undefined}
                 isTVSelectable={true}
                 nativeID={undefined}

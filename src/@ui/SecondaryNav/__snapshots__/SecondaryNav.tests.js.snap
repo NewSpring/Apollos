@@ -1,23 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SecondaryNav Component renders correctly with custom links and no back button 1`] = `
-<View
-  onLayout={[Function]}
+<RCTSafeAreaView
   style={
-    Array [
-      Object {
-        "backgroundColor": "#303030",
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-        "paddingHorizontal": 10,
-      },
-      Object {
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 20,
-      },
-    ]
+    Object {
+      "backgroundColor": "#303030",
+      "flexDirection": "row",
+      "justifyContent": "space-around",
+      "paddingHorizontal": 10,
+    }
   }
 >
   <View
@@ -88,49 +79,31 @@ exports[`SecondaryNav Component renders correctly with custom links and no back 
       />
     </Svg>
   </View>
-</View>
+</RCTSafeAreaView>
 `;
 
 exports[`SecondaryNav Component renders correctly with default props 1`] = `
-<View
-  onLayout={[Function]}
+<RCTSafeAreaView
   style={
-    Array [
-      Object {
-        "backgroundColor": "#303030",
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-        "paddingHorizontal": 10,
-      },
-      Object {
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 20,
-      },
-    ]
+    Object {
+      "backgroundColor": "#303030",
+      "flexDirection": "row",
+      "justifyContent": "space-around",
+      "paddingHorizontal": 10,
+    }
   }
 />
 `;
 
 exports[`SecondaryNav Component renders with custom links 1`] = `
-<View
-  onLayout={[Function]}
+<RCTSafeAreaView
   style={
-    Array [
-      Object {
-        "backgroundColor": "#303030",
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-        "paddingHorizontal": 10,
-      },
-      Object {
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 20,
-      },
-    ]
+    Object {
+      "backgroundColor": "#303030",
+      "flexDirection": "row",
+      "justifyContent": "space-around",
+      "paddingHorizontal": 10,
+    }
   }
 >
   <View
@@ -201,5 +174,5 @@ exports[`SecondaryNav Component renders with custom links 1`] = `
       />
     </Svg>
   </View>
-</View>
+</RCTSafeAreaView>
 `;
