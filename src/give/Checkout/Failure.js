@@ -26,7 +26,7 @@ const CenteredText = styled({
   textAlign: 'center',
 })(UIText);
 
-const Failure = props => console.log({ props }) || (
+const Failure = () => (
   <CenteredView>
     <Icon name="warning" />
     <CenteredH3>Uh Oh!</CenteredH3>

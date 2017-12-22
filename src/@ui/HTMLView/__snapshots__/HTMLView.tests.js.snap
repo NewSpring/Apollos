@@ -12,7 +12,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -26,7 +25,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -42,7 +40,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         onPress={[Function]}
         style={
@@ -54,7 +51,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -71,7 +67,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -96,7 +91,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -110,7 +104,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -135,7 +128,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -149,7 +141,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -174,7 +165,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -188,7 +178,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -221,7 +210,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -235,7 +223,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -261,7 +248,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -275,7 +261,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -293,7 +278,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -308,7 +292,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -332,7 +315,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -346,7 +328,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -362,7 +343,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         onPress={[Function]}
         style={
@@ -374,7 +354,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -391,7 +370,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -416,7 +394,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -430,7 +407,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -455,7 +431,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -469,7 +444,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -502,7 +476,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -516,7 +489,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -542,7 +514,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -556,7 +527,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -574,7 +544,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -589,7 +558,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -608,7 +576,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -623,7 +590,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -642,7 +608,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -657,7 +622,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -683,7 +647,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -697,7 +660,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -722,7 +684,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -736,7 +697,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -754,7 +714,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -769,7 +728,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -793,7 +751,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -807,7 +764,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         onPress={[Function]}
         style={
@@ -819,7 +775,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -836,7 +791,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -854,7 +808,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -869,7 +822,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -888,7 +840,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -903,7 +854,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -922,7 +872,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -937,7 +886,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -956,7 +904,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -971,7 +918,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -997,7 +943,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -1011,7 +956,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -1036,7 +980,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -1050,7 +993,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
