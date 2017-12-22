@@ -22,7 +22,7 @@ const ClientStateLink = withClientState({
 
 export default new ApolloClient({
   link: ClientStateLink.concat(
-    createHttpLink({ uri: 'https://api.newspring.cc/graphql' }),
+    createHttpLink({ uri: 'https://alpha-api.newspring.cc/graphql' }),
   ),
   cache: new InMemoryCache(),
 });
