@@ -14,7 +14,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -64,7 +63,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
               accessible={true}
               allowFontScaling={true}
               amount={14}
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -90,6 +88,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
             }
           >
             <TextInput
+              allowFontScaling={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"
@@ -146,7 +145,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -210,7 +208,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -285,7 +282,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 style={
                   Object {
@@ -302,7 +298,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 <Text
                   accessible={true}
                   allowFontScaling={true}
-                  disabled={false}
                   ellipsizeMode="tail"
                   style={
                     Object {
@@ -381,7 +376,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 onPress={[Function]}
                 style={
@@ -464,7 +458,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -576,7 +569,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -612,7 +604,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -659,7 +650,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -675,7 +665,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -744,7 +733,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -776,7 +764,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -826,7 +813,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
               accessible={true}
               allowFontScaling={true}
               amount={14}
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -852,6 +838,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
             }
           >
             <TextInput
+              allowFontScaling={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"
@@ -908,7 +895,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -972,7 +958,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -1047,7 +1032,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 style={
                   Object {
@@ -1064,7 +1048,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 <Text
                   accessible={true}
                   allowFontScaling={true}
-                  disabled={false}
                   ellipsizeMode="tail"
                   style={
                     Object {
@@ -1143,7 +1126,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 onPress={[Function]}
                 style={
@@ -1226,7 +1208,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -1300,7 +1281,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -1350,7 +1330,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
               accessible={true}
               allowFontScaling={true}
               amount={23}
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -1376,6 +1355,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
             }
           >
             <TextInput
+              allowFontScaling={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"
@@ -1432,7 +1412,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -1496,7 +1475,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -1571,7 +1549,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 style={
                   Object {
@@ -1588,7 +1565,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 <Text
                   accessible={true}
                   allowFontScaling={true}
-                  disabled={false}
                   ellipsizeMode="tail"
                   style={
                     Object {
@@ -1667,7 +1643,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 onPress={[Function]}
                 style={
@@ -1745,7 +1720,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -1857,7 +1831,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -1893,7 +1866,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -1940,7 +1912,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -1956,7 +1927,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -2025,7 +1995,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -2057,7 +2026,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -2107,7 +2075,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
               accessible={true}
               allowFontScaling={true}
               amount={14}
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -2133,6 +2100,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
             }
           >
             <TextInput
+              allowFontScaling={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"
@@ -2189,7 +2157,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -2253,7 +2220,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -2328,7 +2294,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 style={
                   Object {
@@ -2345,7 +2310,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                 <Text
                   accessible={true}
                   allowFontScaling={true}
-                  disabled={false}
                   ellipsizeMode="tail"
                   style={
                     Object {
@@ -2424,7 +2388,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 onPress={[Function]}
                 style={
@@ -2507,7 +2470,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -2619,7 +2581,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -2655,7 +2616,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -2702,7 +2662,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -2718,7 +2677,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -2787,7 +2745,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -2810,7 +2767,6 @@ exports[`The ContributionForm component shows the offline message 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -2827,7 +2783,6 @@ exports[`The ContributionForm component shows the offline message 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -2843,7 +2798,6 @@ exports[`The ContributionForm component shows the offline message 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -2873,7 +2827,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -2923,7 +2876,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
               accessible={true}
               allowFontScaling={true}
               amount={14}
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -2949,6 +2901,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
             }
           >
             <TextInput
+              allowFontScaling={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"
@@ -3005,7 +2958,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -3069,7 +3021,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -3144,7 +3095,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 style={
                   Object {
@@ -3161,7 +3111,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                 <Text
                   accessible={true}
                   allowFontScaling={true}
-                  disabled={false}
                   ellipsizeMode="tail"
                   style={
                     Object {
@@ -3240,7 +3189,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 onPress={[Function]}
                 style={
@@ -3323,7 +3271,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -3435,7 +3382,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -3471,7 +3417,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -3558,7 +3503,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
             <Text
               accessible={true}
               allowFontScaling={true}
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -3640,7 +3584,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
             <Text
               accessible={true}
               allowFontScaling={true}
-              disabled={false}
               ellipsizeMode="tail"
               onPress={[Function]}
               style={
@@ -3733,7 +3676,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -3828,6 +3770,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
           }
         >
           <TextInput
+            allowFontScaling={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -3882,7 +3825,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -3957,7 +3899,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -3973,7 +3914,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -4042,7 +3982,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -4074,7 +4013,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -4124,7 +4062,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
               accessible={true}
               allowFontScaling={true}
               amount={14}
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -4150,6 +4087,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
             }
           >
             <TextInput
+              allowFontScaling={true}
               focusAnimationDuration={450}
               focusAnimationEasing={[Function]}
               keyboardType="numeric"
@@ -4206,7 +4144,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -4270,7 +4207,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -4345,7 +4281,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 style={
                   Object {
@@ -4362,7 +4297,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                 <Text
                   accessible={true}
                   allowFontScaling={true}
-                  disabled={false}
                   ellipsizeMode="tail"
                   style={
                     Object {
@@ -4441,7 +4375,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 onPress={[Function]}
                 style={
@@ -4524,7 +4457,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -4636,7 +4568,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -4672,7 +4603,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -4719,7 +4649,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -4735,7 +4664,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -4804,7 +4732,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {

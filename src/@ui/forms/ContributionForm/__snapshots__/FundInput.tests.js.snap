@@ -13,7 +13,6 @@ exports[`The FrequencyInput component should render correctly 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -63,7 +62,6 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             accessible={true}
             allowFontScaling={true}
             amount={undefined}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -89,6 +87,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
           }
         >
           <TextInput
+            allowFontScaling={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -145,7 +144,6 @@ exports[`The FrequencyInput component should render correctly 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -209,7 +207,6 @@ exports[`The FrequencyInput component should render correctly 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -284,7 +281,6 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             <Text
               accessible={true}
               allowFontScaling={true}
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -301,7 +297,6 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 style={
                   Object {
@@ -380,7 +375,6 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             <Text
               accessible={true}
               allowFontScaling={true}
-              disabled={false}
               ellipsizeMode="tail"
               onPress={[Function]}
               style={
@@ -463,7 +457,6 @@ exports[`The FrequencyInput component should render correctly 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -540,7 +533,6 @@ exports[`The FrequencyInput component should render correctly as the first fund 
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -590,7 +582,6 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             accessible={true}
             allowFontScaling={true}
             amount={undefined}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -616,6 +607,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
           }
         >
           <TextInput
+            allowFontScaling={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -672,7 +664,6 @@ exports[`The FrequencyInput component should render correctly as the first fund 
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -736,7 +727,6 @@ exports[`The FrequencyInput component should render correctly as the first fund 
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -811,7 +801,6 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             <Text
               accessible={true}
               allowFontScaling={true}
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -828,7 +817,6 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 style={
                   Object {
@@ -907,7 +895,6 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             <Text
               accessible={true}
               allowFontScaling={true}
-              disabled={false}
               ellipsizeMode="tail"
               onPress={[Function]}
               style={
@@ -990,7 +977,6 @@ exports[`The FrequencyInput component should render correctly as the first fund 
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -1067,7 +1053,6 @@ exports[`The FrequencyInput component should render correctly with initial state
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -1117,7 +1102,6 @@ exports[`The FrequencyInput component should render correctly with initial state
             accessible={true}
             allowFontScaling={true}
             amount={undefined}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -1143,6 +1127,7 @@ exports[`The FrequencyInput component should render correctly with initial state
           }
         >
           <TextInput
+            allowFontScaling={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -1199,7 +1184,6 @@ exports[`The FrequencyInput component should render correctly with initial state
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -1263,7 +1247,6 @@ exports[`The FrequencyInput component should render correctly with initial state
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -1338,7 +1321,6 @@ exports[`The FrequencyInput component should render correctly with initial state
             <Text
               accessible={true}
               allowFontScaling={true}
-              disabled={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -1355,7 +1337,6 @@ exports[`The FrequencyInput component should render correctly with initial state
               <Text
                 accessible={true}
                 allowFontScaling={true}
-                disabled={false}
                 ellipsizeMode="tail"
                 style={
                   Object {
@@ -1434,7 +1415,6 @@ exports[`The FrequencyInput component should render correctly with initial state
             <Text
               accessible={true}
               allowFontScaling={true}
-              disabled={false}
               ellipsizeMode="tail"
               onPress={[Function]}
               style={
@@ -1517,7 +1497,6 @@ exports[`The FrequencyInput component should render correctly with initial state
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Object {

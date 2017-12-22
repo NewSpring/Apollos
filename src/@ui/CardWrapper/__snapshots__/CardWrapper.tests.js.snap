@@ -29,7 +29,6 @@ exports[`the Card component should accept a backgroundColor 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
     >
       Boom!
@@ -156,7 +155,6 @@ exports[`the Card component should render children 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
     >
       Boom!
