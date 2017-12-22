@@ -40,12 +40,14 @@ const getItemIsLight = (item) => {
 const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
     <FeedItemCard
+      id={item.id}
       title={item.title}
       category={item.category}
       images={getItemImages(item)}
       backgroundColor={getItemBgColor(item)}
       isLight={getItemIsLight(item)}
       isLoading={item.isLoading}
+      isLiked={item.isLiked}
     />
   </Link>
 );
