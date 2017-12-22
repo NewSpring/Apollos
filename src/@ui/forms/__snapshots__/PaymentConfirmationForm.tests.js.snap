@@ -1,0 +1,809 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The PaymentConfirmationForm component renders a loading indicator 1`] = `
+<ActivityIndicator
+  animating={true}
+  color="#999999"
+  hidesWhenStopped={true}
+  size="small"
+  style={
+    Object {
+      "alignSelf": "center",
+      "bottom": 0,
+      "flex": 1,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+/>
+`;
+
+exports[`The PaymentConfirmationForm component renders correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+        }
+      }
+    >
+      Campus
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+        }
+      }
+    >
+      web
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 20.02,
+          "fontWeight": "700",
+          "lineHeight": 25.46,
+        }
+      }
+    >
+      General
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 15.75,
+          "fontWeight": "700",
+          "lineHeight": 17.85,
+        }
+      }
+    >
+      $
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 20.02,
+            "fontWeight": "700",
+            "lineHeight": 25.46,
+          }
+        }
+      >
+        253
+      </Text>
+      .
+      00
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 20.02,
+          "fontWeight": "700",
+          "lineHeight": 25.46,
+        }
+      }
+    >
+      Total
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 20.02,
+          "fontWeight": "700",
+          "lineHeight": 25.46,
+        }
+      }
+    >
+      $
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 25.2,
+            "fontWeight": "700",
+            "lineHeight": 31.28,
+          }
+        }
+      >
+        253
+      </Text>
+      .
+      00
+    </Text>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel={undefined}
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      bordered={false}
+      disabled={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 6,
+          "borderWidth": 2,
+          "elevation": 4,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+          }
+        }
+      >
+        Complete
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+        }
+      }
+    >
+      Campus
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+        }
+      }
+    >
+      web
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 20.02,
+          "fontWeight": "700",
+          "lineHeight": 25.46,
+        }
+      }
+    >
+      General
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 15.75,
+          "fontWeight": "700",
+          "lineHeight": 17.85,
+        }
+      }
+    >
+      $
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 20.02,
+            "fontWeight": "700",
+            "lineHeight": 25.46,
+          }
+        }
+      >
+        253
+      </Text>
+      .
+      00
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 20.02,
+          "fontWeight": "700",
+          "lineHeight": 25.46,
+        }
+      }
+    >
+      Total
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 20.02,
+          "fontWeight": "700",
+          "lineHeight": 25.46,
+        }
+      }
+    >
+      $
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 25.2,
+            "fontWeight": "700",
+            "lineHeight": 31.28,
+          }
+        }
+      >
+        253
+      </Text>
+      .
+      00
+    </Text>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel={undefined}
+    accessibilityTraits={
+      Array [
+        "button",
+        "disabled",
+      ]
+    }
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      bordered={false}
+      disabled={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 6,
+          "borderWidth": 2,
+          "elevation": 4,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 10,
+        }
+      }
+    >
+      <ActivityIndicator
+        animating={true}
+        color="#ffffff"
+        hidesWhenStopped={true}
+        size="small"
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+        }
+      }
+    >
+      Campus
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+        }
+      }
+    >
+      web
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 20.02,
+          "fontWeight": "700",
+          "lineHeight": 25.46,
+        }
+      }
+    >
+      General
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 15.75,
+          "fontWeight": "700",
+          "lineHeight": 17.85,
+        }
+      }
+    >
+      $
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 20.02,
+            "fontWeight": "700",
+            "lineHeight": 25.46,
+          }
+        }
+      >
+        253
+      </Text>
+      .
+      00
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 20.02,
+            "fontWeight": "700",
+            "lineHeight": 25.46,
+          }
+        }
+      >
+        Schedule Details
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+          }
+        }
+      >
+        Frequency: 
+        once a month
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+          }
+        }
+      >
+        Starting: 
+        10/20/2120
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 20.02,
+          "fontWeight": "700",
+          "lineHeight": 25.46,
+        }
+      }
+    >
+      Total
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 20.02,
+          "fontWeight": "700",
+          "lineHeight": 25.46,
+        }
+      }
+    >
+      $
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 25.2,
+            "fontWeight": "700",
+            "lineHeight": 31.28,
+          }
+        }
+      >
+        253
+      </Text>
+      .
+      00
+    </Text>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel={undefined}
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      bordered={false}
+      disabled={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 6,
+          "borderWidth": 2,
+          "elevation": 4,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+          }
+        }
+      >
+        Complete
+      </Text>
+    </View>
+  </View>
+</View>
+`;

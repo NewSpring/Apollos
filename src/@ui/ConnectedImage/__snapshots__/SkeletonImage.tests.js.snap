@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the SkeletonImage component should render a loading state 1`] = `
+<View
+  style={
+    Object {
+      "aspectRatio": 1,
+      "backgroundColor": "#efefef",
+      "width": "100%",
+    }
+  }
+/>
+`;

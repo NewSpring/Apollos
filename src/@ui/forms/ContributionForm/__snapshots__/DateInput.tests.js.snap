@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The DateInput component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "marginVertical": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+    >
+      <TextInput
+        focusAnimationDuration={450}
+        focusAnimationEasing={[Function]}
+        keyboardType="numeric"
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        onFocus={[Function]}
+        placeholder="MM/DD/YYYY"
+        style={
+          Object {
+            "fontFamily": null,
+            "height": 40,
+            "lineHeight": 30,
+            "paddingVertical": 5,
+          }
+        }
+        type="date"
+        value="01/01/2015"
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </View>
+  <View
+    collapsable={undefined}
+    onLayout={[Function]}
+    pointerEvents="none"
+    style={
+      Object {
+        "justifyContent": "center",
+        "opacity": 0.8,
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "scale": 0.8,
+          },
+          Object {
+            "translateX": 0,
+          },
+          Object {
+            "translateY": 0,
+          },
+        ],
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+          "paddingVertical": 5,
+        }
+      }
+    >
+      Start Date
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#dddddd",
+          "bottom": -0.5,
+          "height": 0.5,
+        }
+      }
+    />
+    <View
+      collapsable={undefined}
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+          "transform": Array [
+            Object {
+              "scaleX": 1,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        hasError={false}
+        style={
+          Object {
+            "backgroundColor": "#6bac43",
+            "bottom": 0,
+            "height": 0.5,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

@@ -3,9 +3,9 @@ import { Animated, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import styled from '@ui/styled';
 
-const FocusedUnderline = styled(({ theme }) => ({
+const FocusedUnderline = styled(({ theme, hasError }) => ({
   height: StyleSheet.hairlineWidth,
-  backgroundColor: theme.colors.background.primary,
+  backgroundColor: hasError ? theme.colors.alert : theme.colors.background.primary,
   bottom: 0,
 }), 'InputUnderline.blurred')(View);
 
@@ -23,16 +23,19 @@ const styles = StyleSheet.create({
   },
 });
 
-const InputUnderline = ({ animation = new Animated.Value(0) }) => {
+const InputUnderline = ({ animation = new Animated.Value(0), hasError = false }) => {
+  let scaleX = animation.interpolate({ inputRange: [0, 1], outputRange: [0.0001, 1] });
+  if (hasError) scaleX = 1;
+
   const transform = [
-    { scaleX: animation.interpolate({ inputRange: [0, 1], outputRange: [0.0001, 1] }) },
+    { scaleX },
   ];
 
   return (
     <View style={styles.wrapper}>
       <BluredUnderline />
       <Animated.View style={[styles.wrapper, { transform }]}>
-        <FocusedUnderline />
+        <FocusedUnderline hasError={hasError} />
       </Animated.View>
     </View>
   );
@@ -42,6 +45,7 @@ InputUnderline.propTypes = {
   animation: PropTypes.shape({
     interpolate: PropTypes.func,
   }),
+  hasError: PropTypes.bool,
 };
 
 export default InputUnderline;

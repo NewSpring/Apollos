@@ -1,0 +1,3480 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The PaymentForm component renders a loading indicator 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "marginVertical": 20,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 18,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            Credit Card
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "transform": Array [
+                  Object {
+                    "rotate": "0deg",
+                  },
+                ],
+              }
+            }
+          >
+            <Svg
+              height={18}
+              viewBox="0 0 24 24"
+              width={18}
+            >
+              <Path
+                d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+                fill="#6bac43"
+              />
+            </Svg>
+          </View>
+        </View>
+      </View>
+    </View>
+    <Modal
+      animationType="slide"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderTopColor": "#dddddd",
+            "borderTopWidth": 0.5,
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "backgroundColor": "rgba(221, 221, 221, 0.09999999999999998)",
+              "padding": 10,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            onPress={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderRadius": 0,
+                "color": "#6bac43",
+                "fontFamily": null,
+                "fontSize": 18,
+                "lineHeight": 20,
+                "padding": 0,
+              }
+            }
+          >
+            Done
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "borderTopColor": "#dddddd",
+              "borderTopWidth": 0.5,
+            }
+          }
+        >
+          <RCTPicker
+            items={
+              Array [
+                Object {
+                  "label": "Credit Card",
+                  "textColor": undefined,
+                  "value": "creditCard",
+                },
+                Object {
+                  "label": "Bank Account",
+                  "textColor": undefined,
+                  "value": "bankAccount",
+                },
+              ]
+            }
+            onChange={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            selectedIndex={0}
+            style={
+              Array [
+                Object {
+                  "height": 216,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+    </Modal>
+    <View
+      collapsable={undefined}
+      onLayout={[Function]}
+      pointerEvents="none"
+      style={
+        Object {
+          "justifyContent": "center",
+          "opacity": 0.8,
+          "position": "absolute",
+          "transform": Array [
+            Object {
+              "scale": 0.8,
+            },
+            Object {
+              "translateX": 0,
+            },
+            Object {
+              "translateY": 0,
+            },
+          ],
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+            "paddingVertical": 5,
+          }
+        }
+      >
+        Payment Method
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dddddd",
+            "bottom": -0.5,
+            "height": 0.5,
+          }
+        }
+      />
+      <View
+        collapsable={undefined}
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+            "transform": Array [
+              Object {
+                "scaleX": 0.0001,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          hasError={false}
+          style={
+            Object {
+              "backgroundColor": "#6bac43",
+              "bottom": 0,
+              "height": 0.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            keyboardType="numeric"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="numericKeyboard"
+            value="4111111111111111"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Svg
+            height={32}
+            viewBox="0 0 24 24"
+            width={32}
+          >
+            <Path
+              d="M1.7 3.43c-.84 0-1.7.86-1.7 1.7v13.73c0 .85.86 1.7 1.7 1.7h20.6c.84 0 1.7-.85 1.7-1.7V5.14c0-.85-.86-1.7-1.7-1.7H1.7zm0 15.43v-6h20.6v6H1.7zm0-10.65V5.16h20.6V8.2H1.7z"
+              fill="#6bac43"
+            />
+          </Svg>
+        </View>
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Card Number
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            keyboardType="numeric"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            placeholder="mm/yy"
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="numericKeyboard"
+            value="10/32"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Expiration Date
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            keyboardType="numeric"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="numericKeyboard"
+            value="123"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          CVV
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel={undefined}
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      bordered={false}
+      disabled={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 6,
+          "borderWidth": 2,
+          "elevation": 4,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+          }
+        }
+      >
+        Next
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`The PaymentForm component renders correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "marginVertical": 20,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 18,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            Credit Card
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "transform": Array [
+                  Object {
+                    "rotate": "0deg",
+                  },
+                ],
+              }
+            }
+          >
+            <Svg
+              height={18}
+              viewBox="0 0 24 24"
+              width={18}
+            >
+              <Path
+                d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+                fill="#6bac43"
+              />
+            </Svg>
+          </View>
+        </View>
+      </View>
+    </View>
+    <Modal
+      animationType="slide"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderTopColor": "#dddddd",
+            "borderTopWidth": 0.5,
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "backgroundColor": "rgba(221, 221, 221, 0.09999999999999998)",
+              "padding": 10,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            onPress={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderRadius": 0,
+                "color": "#6bac43",
+                "fontFamily": null,
+                "fontSize": 18,
+                "lineHeight": 20,
+                "padding": 0,
+              }
+            }
+          >
+            Done
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "borderTopColor": "#dddddd",
+              "borderTopWidth": 0.5,
+            }
+          }
+        >
+          <RCTPicker
+            items={
+              Array [
+                Object {
+                  "label": "Credit Card",
+                  "textColor": undefined,
+                  "value": "creditCard",
+                },
+                Object {
+                  "label": "Bank Account",
+                  "textColor": undefined,
+                  "value": "bankAccount",
+                },
+              ]
+            }
+            onChange={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            selectedIndex={0}
+            style={
+              Array [
+                Object {
+                  "height": 216,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+    </Modal>
+    <View
+      collapsable={undefined}
+      onLayout={[Function]}
+      pointerEvents="none"
+      style={
+        Object {
+          "justifyContent": "center",
+          "opacity": 0.8,
+          "position": "absolute",
+          "transform": Array [
+            Object {
+              "scale": 0.8,
+            },
+            Object {
+              "translateX": 0,
+            },
+            Object {
+              "translateY": 0,
+            },
+          ],
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+            "paddingVertical": 5,
+          }
+        }
+      >
+        Payment Method
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dddddd",
+            "bottom": -0.5,
+            "height": 0.5,
+          }
+        }
+      />
+      <View
+        collapsable={undefined}
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+            "transform": Array [
+              Object {
+                "scaleX": 0.0001,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          hasError={false}
+          style={
+            Object {
+              "backgroundColor": "#6bac43",
+              "bottom": 0,
+              "height": 0.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            keyboardType="numeric"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="numericKeyboard"
+            value="4111111111111111"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Svg
+            height={32}
+            viewBox="0 0 24 24"
+            width={32}
+          >
+            <Path
+              d="M1.7 3.43c-.84 0-1.7.86-1.7 1.7v13.73c0 .85.86 1.7 1.7 1.7h20.6c.84 0 1.7-.85 1.7-1.7V5.14c0-.85-.86-1.7-1.7-1.7H1.7zm0 15.43v-6h20.6v6H1.7zm0-10.65V5.16h20.6V8.2H1.7z"
+              fill="#6bac43"
+            />
+          </Svg>
+        </View>
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Card Number
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            keyboardType="numeric"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            placeholder="mm/yy"
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="numericKeyboard"
+            value="10/32"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Expiration Date
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            keyboardType="numeric"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="numericKeyboard"
+            value="123"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          CVV
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel={undefined}
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      bordered={false}
+      disabled={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 6,
+          "borderWidth": 2,
+          "elevation": 4,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+          }
+        }
+      >
+        Next
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`The PaymentForm component shows a submitting state 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "marginVertical": 20,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 18,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            Credit Card
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "transform": Array [
+                  Object {
+                    "rotate": "0deg",
+                  },
+                ],
+              }
+            }
+          >
+            <Svg
+              height={18}
+              viewBox="0 0 24 24"
+              width={18}
+            >
+              <Path
+                d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+                fill="#6bac43"
+              />
+            </Svg>
+          </View>
+        </View>
+      </View>
+    </View>
+    <Modal
+      animationType="slide"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderTopColor": "#dddddd",
+            "borderTopWidth": 0.5,
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "backgroundColor": "rgba(221, 221, 221, 0.09999999999999998)",
+              "padding": 10,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            onPress={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderRadius": 0,
+                "color": "#6bac43",
+                "fontFamily": null,
+                "fontSize": 18,
+                "lineHeight": 20,
+                "padding": 0,
+              }
+            }
+          >
+            Done
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "borderTopColor": "#dddddd",
+              "borderTopWidth": 0.5,
+            }
+          }
+        >
+          <RCTPicker
+            items={
+              Array [
+                Object {
+                  "label": "Credit Card",
+                  "textColor": undefined,
+                  "value": "creditCard",
+                },
+                Object {
+                  "label": "Bank Account",
+                  "textColor": undefined,
+                  "value": "bankAccount",
+                },
+              ]
+            }
+            onChange={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            selectedIndex={0}
+            style={
+              Array [
+                Object {
+                  "height": 216,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+    </Modal>
+    <View
+      collapsable={undefined}
+      onLayout={[Function]}
+      pointerEvents="none"
+      style={
+        Object {
+          "justifyContent": "center",
+          "opacity": 0.8,
+          "position": "absolute",
+          "transform": Array [
+            Object {
+              "scale": 0.8,
+            },
+            Object {
+              "translateX": 0,
+            },
+            Object {
+              "translateY": 0,
+            },
+          ],
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+            "paddingVertical": 5,
+          }
+        }
+      >
+        Payment Method
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dddddd",
+            "bottom": -0.5,
+            "height": 0.5,
+          }
+        }
+      />
+      <View
+        collapsable={undefined}
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+            "transform": Array [
+              Object {
+                "scaleX": 0.0001,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          hasError={false}
+          style={
+            Object {
+              "backgroundColor": "#6bac43",
+              "bottom": 0,
+              "height": 0.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            keyboardType="numeric"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="numericKeyboard"
+            value="4111111111111111"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Svg
+            height={32}
+            viewBox="0 0 24 24"
+            width={32}
+          >
+            <Path
+              d="M1.7 3.43c-.84 0-1.7.86-1.7 1.7v13.73c0 .85.86 1.7 1.7 1.7h20.6c.84 0 1.7-.85 1.7-1.7V5.14c0-.85-.86-1.7-1.7-1.7H1.7zm0 15.43v-6h20.6v6H1.7zm0-10.65V5.16h20.6V8.2H1.7z"
+              fill="#6bac43"
+            />
+          </Svg>
+        </View>
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Card Number
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            keyboardType="numeric"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            placeholder="mm/yy"
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="numericKeyboard"
+            value="10/32"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Expiration Date
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            keyboardType="numeric"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="numericKeyboard"
+            value="123"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          CVV
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel={undefined}
+    accessibilityTraits={
+      Array [
+        "button",
+        "disabled",
+      ]
+    }
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      bordered={false}
+      disabled={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 6,
+          "borderWidth": 2,
+          "elevation": 4,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 10,
+        }
+      }
+    >
+      <ActivityIndicator
+        animating={true}
+        color="#ffffff"
+        hidesWhenStopped={true}
+        size="small"
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`The PaymentForm component shows bank account info 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "marginVertical": 20,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 18,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            Bank Account
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "transform": Array [
+                  Object {
+                    "rotate": "0deg",
+                  },
+                ],
+              }
+            }
+          >
+            <Svg
+              height={18}
+              viewBox="0 0 24 24"
+              width={18}
+            >
+              <Path
+                d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+                fill="#6bac43"
+              />
+            </Svg>
+          </View>
+        </View>
+      </View>
+    </View>
+    <Modal
+      animationType="slide"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderTopColor": "#dddddd",
+            "borderTopWidth": 0.5,
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "backgroundColor": "rgba(221, 221, 221, 0.09999999999999998)",
+              "padding": 10,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            onPress={[Function]}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderRadius": 0,
+                "color": "#6bac43",
+                "fontFamily": null,
+                "fontSize": 18,
+                "lineHeight": 20,
+                "padding": 0,
+              }
+            }
+          >
+            Done
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "borderTopColor": "#dddddd",
+              "borderTopWidth": 0.5,
+            }
+          }
+        >
+          <RCTPicker
+            items={
+              Array [
+                Object {
+                  "label": "Credit Card",
+                  "textColor": undefined,
+                  "value": "creditCard",
+                },
+                Object {
+                  "label": "Bank Account",
+                  "textColor": undefined,
+                  "value": "bankAccount",
+                },
+              ]
+            }
+            onChange={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            selectedIndex={1}
+            style={
+              Array [
+                Object {
+                  "height": 216,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+    </Modal>
+    <View
+      collapsable={undefined}
+      onLayout={[Function]}
+      pointerEvents="none"
+      style={
+        Object {
+          "justifyContent": "center",
+          "opacity": 0.8,
+          "position": "absolute",
+          "transform": Array [
+            Object {
+              "scale": 0.8,
+            },
+            Object {
+              "translateX": 0,
+            },
+            Object {
+              "translateY": 0,
+            },
+          ],
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+            "paddingVertical": 5,
+          }
+        }
+      >
+        Payment Method
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dddddd",
+            "bottom": -0.5,
+            "height": 0.5,
+          }
+        }
+      />
+      <View
+        collapsable={undefined}
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+            "transform": Array [
+              Object {
+                "scaleX": 0.0001,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          hasError={false}
+          style={
+            Object {
+              "backgroundColor": "#6bac43",
+              "bottom": 0,
+              "height": 0.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            value="My account"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Account Holder Name
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            keyboardType="numeric"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="numeric"
+            value="111111111111"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Routing Number
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+        >
+          <TextInput
+            focusAnimationDuration={450}
+            focusAnimationEasing={[Function]}
+            keyboardType="numeric"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            onFocus={[Function]}
+            style={
+              Object {
+                "fontFamily": null,
+                "height": 40,
+                "lineHeight": 30,
+                "paddingVertical": 5,
+              }
+            }
+            type="numeric"
+            value="22222222222"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        />
+      </View>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Account Number
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 1,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": null,
+                  "fontSize": 18,
+                  "height": 40,
+                  "lineHeight": 30,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              Checking
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "transform": Array [
+                    Object {
+                      "rotate": "0deg",
+                    },
+                  ],
+                }
+              }
+            >
+              <Svg
+                height={18}
+                viewBox="0 0 24 24"
+                width={18}
+              >
+                <Path
+                  d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+                  fill="#6bac43"
+                />
+              </Svg>
+            </View>
+          </View>
+        </View>
+      </View>
+      <Modal
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ffffff",
+              "borderTopColor": "#dddddd",
+              "borderTopWidth": 0.5,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "flex-end",
+                "backgroundColor": "rgba(221, 221, 221, 0.09999999999999998)",
+                "padding": 10,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              onPress={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderRadius": 0,
+                  "color": "#6bac43",
+                  "fontFamily": null,
+                  "fontSize": 18,
+                  "lineHeight": 20,
+                  "padding": 0,
+                }
+              }
+            >
+              Done
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "borderTopColor": "#dddddd",
+                "borderTopWidth": 0.5,
+              }
+            }
+          >
+            <RCTPicker
+              items={
+                Array [
+                  Object {
+                    "label": "Checking",
+                    "textColor": undefined,
+                    "value": "checking",
+                  },
+                  Object {
+                    "label": "Savings",
+                    "textColor": undefined,
+                    "value": "savings",
+                  },
+                ]
+              }
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </Modal>
+      <View
+        collapsable={undefined}
+        onLayout={[Function]}
+        pointerEvents="none"
+        style={
+          Object {
+            "justifyContent": "center",
+            "opacity": 0.8,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "scale": 0.8,
+              },
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Account Type
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "bottom": -0.5,
+              "height": 0.5,
+            }
+          }
+        />
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+              "transform": Array [
+                Object {
+                  "scaleX": 0.0001,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            hasError={false}
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "bottom": 0,
+                "height": 0.5,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel={undefined}
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      bordered={false}
+      disabled={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 6,
+          "borderWidth": 2,
+          "elevation": 4,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+          }
+        }
+      >
+        Next
+      </Text>
+    </View>
+  </View>
+</View>
+`;

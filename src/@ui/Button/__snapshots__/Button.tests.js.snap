@@ -2,12 +2,15 @@
 
 exports[`The Button component should render a disabled button 1`] = `
 <View
+  bordered={false}
   disabled={true}
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#dddddd",
+      "backgroundColor": "#6bac43",
+      "borderColor": "#6bac43",
       "borderRadius": 6,
+      "borderWidth": 2,
       "elevation": 4,
       "flexDirection": "row",
       "justifyContent": "center",
@@ -24,7 +27,7 @@ exports[`The Button component should render a disabled button 1`] = `
     ellipsizeMode="tail"
     style={
       Object {
-        "color": "#303030",
+        "color": "#ffffff",
         "fontFamily": null,
         "fontSize": 18,
         "lineHeight": 20,
@@ -38,12 +41,15 @@ exports[`The Button component should render a disabled button 1`] = `
 
 exports[`The Button component should render a primary button 1`] = `
 <View
+  bordered={false}
   disabled={false}
   style={
     Object {
       "alignItems": "center",
       "backgroundColor": "#6bac43",
+      "borderColor": "#6bac43",
       "borderRadius": 6,
+      "borderWidth": 2,
       "elevation": 4,
       "flexDirection": "row",
       "justifyContent": "center",
@@ -102,12 +108,15 @@ exports[`The Button component should render correctly 1`] = `
   tvParallaxProperties={undefined}
 >
   <View
+    bordered={false}
     disabled={false}
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#dddddd",
+        "backgroundColor": "#6bac43",
+        "borderColor": "#6bac43",
         "borderRadius": 6,
+        "borderWidth": 2,
         "elevation": 4,
         "flexDirection": "row",
         "justifyContent": "center",
@@ -124,7 +133,7 @@ exports[`The Button component should render correctly 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
+          "color": "#ffffff",
           "fontFamily": null,
           "fontSize": 18,
           "lineHeight": 20,
@@ -139,12 +148,15 @@ exports[`The Button component should render correctly 1`] = `
 
 exports[`The Button component should render with children 1`] = `
 <View
+  bordered={false}
   disabled={false}
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#dddddd",
+      "backgroundColor": "#6bac43",
+      "borderColor": "#6bac43",
       "borderRadius": 6,
+      "borderWidth": 2,
       "elevation": 4,
       "flexDirection": "row",
       "justifyContent": "center",

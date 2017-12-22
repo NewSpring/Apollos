@@ -1,18 +1,17 @@
 import React, { PureComponent } from 'react';
 import { Animated, Easing } from 'react-native';
-import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
 // helper HOC to wrap an Input in a floating label and animated underline
 const withFocusAnimation = Component => (
   class WrappedInput extends PureComponent {
     static propTypes = {
-      label: PropTypes.string.isRequired,
+      label: PropTypes.string,
       focusAnimationDuration: PropTypes.number,
       focusAnimationEasing: PropTypes.func,
       onFocus: PropTypes.func,
       onBlur: PropTypes.func,
-      value: PropTypes.string,
+      value: PropTypes.any, // eslint-disable-line
     };
 
     static defaultProps = {
@@ -20,13 +19,7 @@ const withFocusAnimation = Component => (
       focusAnimationEasing: Easing.in(Easing.bezier(0.23, 1, 0.32, 1)),
     }
 
-    componentWillReceiveProps(newProps) {
-      if (newProps.value !== this.props.value && !this.focused) {
-        this.playAnimation(newProps.value ? 1 : 0);
-      }
-    }
-
-    focusAnimation = new Animated.Value(this.props.value ? 1 : 0);
+    focusAnimation = new Animated.Value(0);
 
     playAnimation = (toValue) => {
       Animated.timing(this.focusAnimation, {
@@ -46,7 +39,7 @@ const withFocusAnimation = Component => (
     handleBlur = (event, ...other) => {
       if (this.props.onBlur) this.props.onBlur(event, ...other);
       this.focused = false;
-      this.playAnimation(get(event, 'nativeEvent.text') || this.props.value ? 1 : 0);
+      this.playAnimation(0);
     }
 
     render() {

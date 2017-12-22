@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import Category from './';
+import CategoryLabel from './';
 
 storiesOf('@ui/CategoryLabel', module)
   .add('Default', () => {
@@ -14,7 +14,7 @@ storiesOf('@ui/CategoryLabel', module)
 
     return (
       <View style={centered}>
-        <Category type={'Default'} />
+        <CategoryLabel type={'Default'} />
       </View>
     );
   })
@@ -27,7 +27,7 @@ storiesOf('@ui/CategoryLabel', module)
 
     return (
       <View style={centered}>
-        <Category type={'Series'} />
+        <CategoryLabel type={'Series'} />
       </View>
     );
   })
@@ -40,7 +40,33 @@ storiesOf('@ui/CategoryLabel', module)
 
     return (
       <View style={centered}>
-        <Category type={'Albums'} />
+        <CategoryLabel type={'Albums'} />
       </View>
     );
-  });
+  })
+  .add('isLoading', () => React.createElement(class CardImageLoading extends Component {
+    constructor() {
+      super();
+      this.state = { isLoading: true };
+    }
+
+    componentDidMount() {
+      setTimeout(() => {
+        this.setState({ isLoading: false });
+      }, 4000);
+    }
+
+    render() {
+      const centered = {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+      };
+
+      return (
+        <View style={centered}>
+          <CategoryLabel type={'Default'} isLoading={this.state.isLoading} />
+        </View>
+      );
+    }
+  }));
