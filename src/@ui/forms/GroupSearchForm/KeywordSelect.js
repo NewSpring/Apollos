@@ -35,7 +35,7 @@ class KeywordSelect extends PureComponent {
   toggleKeyword = (keyword) => {
     const selected = this.keywordIsInQuery(keyword);
     if (selected) return this.removeKeyword(keyword);
-    this.addKeyword(keyword);
+    return this.addKeyword(keyword);
   }
 
   removeKeyword = (keyword) => {

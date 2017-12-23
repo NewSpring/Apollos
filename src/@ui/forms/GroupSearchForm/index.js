@@ -44,7 +44,7 @@ export const GroupSearchForm = enhance(({
   campuses = [],
   groupAttributes = [],
   handleSubmit,
-}) => console.log({ groupAttributes }) || (
+}) => (
   <View>
     <KeywordSelect
       label="Groups I'm looking for..."

@@ -3,7 +3,7 @@ import groupAttributesQuery from './groupAttributesQuery';
 
 
 export default graphql(groupAttributesQuery, {
-  props: ({ data } = {}) => console.log({ data }) || ({
+  props: ({ data } = {}) => ({
     groupAttributes: data.groupAttributes,
     isLoading: data.loading,
   }),

@@ -68,7 +68,7 @@ const Text = enhance(({
   focusAnimation: focusAnimationInput, // from withFocusAnimation
   ...textInputProps
 }) => {
-  const focusAnimation = value || !label ? new Animated.Value(1) : focusAnimationInput;
+  const focusAnimation = (value || !label) ? new Animated.Value(1) : focusAnimationInput;
   return (
     <InputWrapper style={wrapperStyle} disabled={disabled}>
       <AddonRow>
