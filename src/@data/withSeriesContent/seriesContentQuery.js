@@ -31,6 +31,16 @@ export default gql`
             description
           }
         }
+        children {
+          id
+          title
+          meta {
+            date
+          }
+          content {
+            speaker
+          }
+        }
       }
     }
   }

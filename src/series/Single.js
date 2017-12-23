@@ -1,12 +1,14 @@
 import React from 'react';
 import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
+
+import withSeriesContent from '@data/withSeriesContent';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import ContentView from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
-import withSeriesContent from '@data/withSeriesContent';
 import { withThemeMixin } from '@ui/theme';
+import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 
 const enhance = compose(
   pure,
@@ -37,11 +39,13 @@ const SeriesSingle = enhance(({
       description,
     } = {},
   } = { },
+  children,
 }) => (
   <FlexedView>
     <Header titleText="Series" backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
     <ScrollView>
       <ContentView images={images} body={description} />
+      <HorizontalTileFeed content={children} />
     </ScrollView>
     <SecondaryNav>
       <Link icon="share" />
