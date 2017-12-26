@@ -35,6 +35,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
       }
     >
       <TextInput
+        allowFontScaling={true}
         editable={true}
         focusAnimationDuration={450}
         focusAnimationEasing={[Function]}
@@ -89,7 +90,6 @@ exports[`The Text Input component should render as a numeric field 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -188,6 +188,7 @@ exports[`The Text Input component should render as a password field with an icon
       }
     >
       <TextInput
+        allowFontScaling={true}
         autoCapitalize="none"
         autoCorrect={false}
         editable={true}
@@ -255,7 +256,6 @@ exports[`The Text Input component should render as a password field with an icon
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -354,6 +354,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
       }
     >
       <TextInput
+        allowFontScaling={true}
         editable={true}
         focusAnimationDuration={450}
         focusAnimationEasing={[Function]}
@@ -408,7 +409,6 @@ exports[`The Text Input component should render as a phone number field 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -507,6 +507,7 @@ exports[`The Text Input component should render as an email field 1`] = `
       }
     >
       <TextInput
+        allowFontScaling={true}
         autoCapitalize="none"
         autoCorrect={false}
         editable={true}
@@ -563,7 +564,6 @@ exports[`The Text Input component should render as an email field 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -662,6 +662,7 @@ exports[`The Text Input component should render correctly 1`] = `
       }
     >
       <TextInput
+        allowFontScaling={true}
         editable={true}
         focusAnimationDuration={450}
         focusAnimationEasing={[Function]}
@@ -714,7 +715,6 @@ exports[`The Text Input component should render correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {

@@ -35,6 +35,7 @@ exports[`The DateInput component should render correctly 1`] = `
       }
     >
       <TextInput
+        allowFontScaling={true}
         editable={true}
         focusAnimationDuration={450}
         focusAnimationEasing={[Function]}
@@ -90,7 +91,6 @@ exports[`The DateInput component should render correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {

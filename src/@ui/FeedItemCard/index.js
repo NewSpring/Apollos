@@ -1,17 +1,16 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { startCase, toLower } from 'lodash';
 import Placeholder from 'rn-placeholder';
 
 import { withTheme } from '@ui/theme';
-import styled from '@ui/styled';
 import Icon from '@ui/Icon';
 import Card from '@ui/CardWrapper';
 import CategoryLabel from '@ui/CategoryLabel';
 
 import CardImage from './CardImage';
+import LikeButton from './LikeButton';
 import {
   CardWrapper,
   CardTitle,
@@ -50,10 +49,6 @@ const enhance = compose(
   }),
 );
 
-const LikeButton = styled(({ theme }) => ({
-  paddingTop: theme.sizing.baseUnit / 2,
-}))(TouchableOpacity);
-
 const FeedItemCard = enhance(({
   images,
   title,
@@ -63,6 +58,7 @@ const FeedItemCard = enhance(({
   fontColor,
   backgroundColor,
   theme,
+  id,
   ...otherProps
 }) => (
   <CardWrapper>
@@ -81,7 +77,7 @@ const FeedItemCard = enhance(({
           color={fontColor}
           isLoading={loadingState}
         />
-        <LikeButton>
+        <LikeButton id={id}>
           <Icon
             name={isLiked ? 'like-solid' : 'like'}
             size={theme.helpers.rem(1.2)}

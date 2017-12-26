@@ -36,6 +36,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
         }
       >
         <TextInput
+          allowFontScaling={true}
           editable={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
@@ -88,7 +89,6 @@ exports[`The PaymentForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -184,6 +184,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
         }
       >
         <TextInput
+          allowFontScaling={true}
           editable={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
@@ -236,7 +237,6 @@ exports[`The PaymentForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -332,6 +332,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
         }
       >
         <TextInput
+          allowFontScaling={true}
           autoCapitalize="none"
           autoCorrect={false}
           editable={true}
@@ -388,7 +389,6 @@ exports[`The PaymentForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -463,6 +463,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
       accessibilityTraits={undefined}
       accessible={true}
       collapsable={undefined}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
       isTVSelectable={true}
       nativeID={undefined}
@@ -501,7 +502,6 @@ exports[`The PaymentForm component renders correctly 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -583,7 +583,6 @@ exports[`The PaymentForm component renders correctly 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             onPress={[Function]}
             style={
@@ -661,7 +660,6 @@ exports[`The PaymentForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -734,6 +732,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
     }
     accessible={true}
     collapsable={undefined}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
     isTVSelectable={true}
     nativeID={undefined}
@@ -774,7 +773,6 @@ exports[`The PaymentForm component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -828,6 +826,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         }
       >
         <TextInput
+          allowFontScaling={true}
           editable={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
@@ -880,7 +879,6 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -976,6 +974,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         }
       >
         <TextInput
+          allowFontScaling={true}
           editable={true}
           focusAnimationDuration={450}
           focusAnimationEasing={[Function]}
@@ -1028,7 +1027,6 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -1124,6 +1122,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         }
       >
         <TextInput
+          allowFontScaling={true}
           autoCapitalize="none"
           autoCorrect={false}
           editable={true}
@@ -1180,7 +1179,6 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -1255,6 +1253,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
       accessibilityTraits={undefined}
       accessible={true}
       collapsable={undefined}
+      hasTVPreferredFocus={undefined}
       hitSlop={undefined}
       isTVSelectable={true}
       nativeID={undefined}
@@ -1293,7 +1292,6 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             style={
               Object {
@@ -1375,7 +1373,6 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
             onPress={[Function]}
             style={
@@ -1453,7 +1450,6 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Object {
@@ -1526,6 +1522,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
     }
     accessible={true}
     collapsable={undefined}
+    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
     isTVSelectable={true}
     nativeID={undefined}
