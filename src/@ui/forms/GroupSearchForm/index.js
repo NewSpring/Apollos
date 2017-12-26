@@ -9,19 +9,60 @@ import Yup from 'yup';
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
 
-import KeywordSelect from './KeywordSelect';
+import getLocation from '@utils/getLocation';
+
+import KeywordSelect, { keywordIsInQuery, stripKeywordFromQuery } from './KeywordSelect';
 
 const enhance = compose(
+  setPropTypes({
+    onSubmit: PropTypes.func,
+  }),
   withFormik({
     mapPropsToValues: () => ({
       useDeviceLocation: true,
     }),
     validationSchema: Yup.object().shape({
-      query: Yup.array().of(Yup.string()),
+      query: Yup.string(),
       campusId: Yup.string(),
       zipCode: Yup.string(),
       useDeviceLocation: Yup.bool(),
     }),
+    isInitialValid: true,
+    handleSubmit: async (values, { props, setFieldError, setSubmitting }) => {
+      const tags = [];
+      let q = values.query;
+
+      props.groupAttributes.forEach((attr) => {
+        if (keywordIsInQuery(q, attr.value)) {
+          q = stripKeywordFromQuery(q, attr.value);
+          tags.push(attr.value);
+        }
+      });
+
+      q = q.replace(/(and)|(or)|(the)|(from)|(also)|(friendly)|(with)/g, '').trim(', ');
+
+      const query = {};
+
+      if (q && q.length) query.q = q;
+      if (tags.length) query.tags = tags.join(',').toLowerCase();
+
+
+      if (values.useDeviceLocation) {
+        try {
+          const { coords = {} } = await getLocation();
+          if (coords.latitude) query.latitude = coords.latitude;
+          if (coords.longitude) query.longitude = coords.longitude;
+        } catch (e) {
+          setFieldError('useDeviceLocation', 'Could not find your location');
+          return setSubmitting(false);
+        }
+      }
+
+      query.campus = values.campusId || null;
+      query.zip = (values.zipCode && !query.latitude && !query.longitude) ? values.zipCode : null;
+
+      return props.onSubmit(query);
+    },
   }),
   setPropTypes({
     setFieldValue: PropTypes.func,
@@ -44,6 +85,8 @@ export const GroupSearchForm = enhance(({
   campuses = [],
   groupAttributes = [],
   handleSubmit,
+  isValid,
+  isSubmitting,
 }) => (
   <View>
     <KeywordSelect
@@ -79,7 +122,7 @@ export const GroupSearchForm = enhance(({
       onValueChange={value => setFieldValue('useDeviceLocation', value)}
       error={errors.useDeviceLocation}
     />
-    <Button title="Let's Go!" onPress={handleSubmit} type="primary" />
+    <Button onPress={handleSubmit} title="Let's Go!" type="primary" disabled={!isValid} loading={isSubmitting} />
   </View>
 ));
 

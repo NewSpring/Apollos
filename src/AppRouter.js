@@ -124,6 +124,8 @@ class AppRouter extends PureComponent {
 
           <Route exact path="/events/:id" component={DebugView} />
 
+          <Route exact path="/groups/finder" component={DebugView} />
+
           <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
 
           <Route component={this.tabs} />

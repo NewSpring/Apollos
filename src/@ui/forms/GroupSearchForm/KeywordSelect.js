@@ -19,6 +19,23 @@ const arrayIsSubsetOf = (array, check) => array.find((word, index) => (
   every(check, (checkWord, checkIndex) => checkWord === array[index + checkIndex])
 ));
 
+export const keywordIsInQuery = (query, keyword) => {
+  const queryWords = words(query).map(word => word.toLocaleLowerCase());
+  const matchWords = words(keyword).map(word => word.toLocaleLowerCase());
+  return arrayIsSubsetOf(queryWords, matchWords);
+};
+
+export const stripKeywordFromQuery = (query, keyword) => {
+  const wordExp = words(keyword).join('(\\D|\\W)');
+
+  const strippedText = query.replace(
+    new RegExp(`(\\W|\\D|(,(\\s|))|)${wordExp}`, 'gi'),
+    '',
+  );
+
+  return trim(strippedText, ', ');
+};
+
 class KeywordSelect extends PureComponent {
   static propTypes = {
     onChangeText: PropTypes.func.isRequired,
@@ -26,28 +43,14 @@ class KeywordSelect extends PureComponent {
     value: PropTypes.string,
   };
 
-  keywordIsInQuery(keyword) {
-    const queryWords = words(this.props.value).map(word => word.toLocaleLowerCase());
-    const matchWords = words(keyword).map(word => word.toLocaleLowerCase());
-    return arrayIsSubsetOf(queryWords, matchWords);
-  }
-
   toggleKeyword = (keyword) => {
-    const selected = this.keywordIsInQuery(keyword);
+    const selected = keywordIsInQuery(this.props.value, keyword);
     if (selected) return this.removeKeyword(keyword);
     return this.addKeyword(keyword);
   }
 
   removeKeyword = (keyword) => {
-    const wordExp = words(keyword).join('(\\D|\\W)');
-
-    let text = this.props.value.replace(
-      new RegExp(`(\\W|\\D|(,(\\s|))|)${wordExp}`, 'gi'),
-      '',
-    );
-
-    text = trim(text, ', ');
-    this.props.onChangeText(text);
+    this.props.onChangeText(stripKeywordFromQuery(this.props.value, keyword));
   }
 
   addKeyword = (keyword) => {
@@ -57,7 +60,7 @@ class KeywordSelect extends PureComponent {
   }
 
   renderKeyword = (keyword) => {
-    const selected = this.keywordIsInQuery(keyword);
+    const selected = keywordIsInQuery(this.props.value, keyword);
     return (
       <Chip
         title={keyword}
