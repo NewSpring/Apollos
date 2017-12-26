@@ -32,15 +32,14 @@ const NavItem = enhance(({
 }) => (
   <Link to={link}>
     <CardView>
-      <NavItemImage source={image}>
-        <LinearGradient
-          colors={['rgba(0,0,0,0)', 'rgba(0,0,0,1)']}
-          locations={[0.3, 1]}
-          style={StyleSheet.absoluteFill}
-        >
-          <NavItemText>{text}</NavItemText>
-        </LinearGradient>
-      </NavItemImage>
+      <NavItemImage source={image} />
+      <LinearGradient
+        colors={['rgba(0,0,0,0)', 'rgba(0,0,0,1)']}
+        locations={[0.3, 1]}
+        style={StyleSheet.absoluteFill}
+      >
+        <NavItemText>{text}</NavItemText>
+      </LinearGradient>
     </CardView>
   </Link>
 ));
