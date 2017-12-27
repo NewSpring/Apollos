@@ -26,8 +26,8 @@ const enhance = compose(
 
 const tagPressHandler = ({ query, location, history }) => ({ value }) => {
   const sanitizedValue = value.toLowerCase();
-  let replaceTags = query.tags;
-  if (query.tags.indexOf(sanitizedValue) > -1) {
+  let replaceTags = query.tags || [];
+  if (replaceTags.indexOf(sanitizedValue) > -1) {
     replaceTags = without(replaceTags, sanitizedValue);
   } else {
     replaceTags.push(sanitizedValue);
