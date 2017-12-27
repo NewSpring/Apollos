@@ -41,7 +41,7 @@ const tagPressHandler = ({ query, location, history }) => ({ value }) => {
 
 const Results = enhance(props => (
   <FlexedView>
-    <Header titleText="Group Finder" />
+    <Header titleText="Group Finder" backButton />
     <FeedViewWithResults
       {...props.query}
       numColumns={1}
