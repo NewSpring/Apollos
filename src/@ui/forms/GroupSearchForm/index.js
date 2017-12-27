@@ -30,7 +30,7 @@ const enhance = compose(
     isInitialValid: true,
     handleSubmit: async (values, { props, setFieldError, setSubmitting }) => {
       const tags = [];
-      let q = values.query;
+      let q = values.query || '';
 
       props.groupAttributes.forEach((attr) => {
         if (keywordIsInQuery(q, attr.value)) {
@@ -45,7 +45,6 @@ const enhance = compose(
 
       if (q && q.length) query.q = q;
       if (tags.length) query.tags = tags.join(',').toLowerCase();
-
 
       if (values.useDeviceLocation) {
         try {
