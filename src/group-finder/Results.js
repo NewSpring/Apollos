@@ -1,5 +1,4 @@
 import React from 'react';
-import queryString from 'query-string';
 import { get, without } from 'lodash';
 import { compose, withProps } from 'recompose';
 
@@ -7,6 +6,8 @@ import Header from '@ui/Header';
 import FlexedView from '@ui/FlexedView';
 import withGroupFinderResults from '@data/withGroupFinderResults';
 import FeedView from '@ui/FeedView';
+import { parse, stringify } from '@utils/queryString';
+
 import GroupCard from './GroupCard';
 
 const FeedViewWithResults = compose(
@@ -17,7 +18,7 @@ const FeedViewWithResults = compose(
 )(FeedView);
 
 const withSearchProps = withProps(({ location: { search = '' } = {} }) => ({
-  query: queryString.parse(search),
+  query: parse(search),
 }));
 
 const enhance = compose(
@@ -32,7 +33,7 @@ const tagPressHandler = ({ query, location, history }) => ({ value }) => {
   } else {
     replaceTags.push(sanitizedValue);
   }
-  history.replace(`${location.pathname}?${queryString.stringify({
+  history.replace(`${location.pathname}?${stringify({
     ...query,
     tags: replaceTags,
   })}`);

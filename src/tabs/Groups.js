@@ -9,7 +9,7 @@ import PaddedView from '@ui/PaddedView';
 import { H3, H6 } from '@ui/typography';
 import { GroupSearchForm } from '@ui/forms';
 import { withRouter } from '@ui/NativeWebRouter';
-import queryString from 'query-string';
+import { stringify } from '@utils/queryString';
 
 const GroupSearchFormWithData = compose(
   withCampuses,
@@ -29,7 +29,7 @@ const Groups = withRouter(({
       <PaddedView>
         <GroupSearchFormWithData
           onSubmit={(data) => {
-            history.push(`/groups/finder?${queryString.stringify(data)}`);
+            history.push(`/groups/finder?${stringify(data)}`);
           }}
         />
       </PaddedView>
