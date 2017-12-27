@@ -114,7 +114,6 @@ FeedView.defaultProps = {
   refetch: undefined,
   fetchMore: undefined,
   renderItem: defaultFeedItemRenderer,
-  numColumns: 1,
 };
 
 FeedView.propTypes = {
