@@ -112,7 +112,6 @@ exports[`The FeedView component renders correctly 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}
@@ -308,7 +307,6 @@ exports[`The FeedView component renders correctly 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}
@@ -690,7 +688,6 @@ exports[`The FeedView component renders empty state 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}
@@ -886,7 +883,6 @@ exports[`The FeedView component renders empty state 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}
@@ -1082,7 +1078,6 @@ exports[`The FeedView component renders empty state 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}
@@ -1278,7 +1273,6 @@ exports[`The FeedView component renders empty state 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}
@@ -1474,7 +1468,6 @@ exports[`The FeedView component renders empty state 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}
@@ -1670,7 +1663,6 @@ exports[`The FeedView component renders empty state 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}
@@ -1866,7 +1858,6 @@ exports[`The FeedView component renders empty state 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}
@@ -2062,7 +2053,6 @@ exports[`The FeedView component renders empty state 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}
@@ -2258,7 +2248,6 @@ exports[`The FeedView component renders empty state 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}
@@ -2454,7 +2443,6 @@ exports[`The FeedView component renders empty state 1`] = `
               },
               "shadowOpacity": 1,
               "shadowRadius": 3,
-              "width": "100%",
             }
           }
           testID={undefined}

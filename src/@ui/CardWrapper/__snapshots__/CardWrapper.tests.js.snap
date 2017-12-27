@@ -14,7 +14,6 @@ exports[`the Card component should accept a backgroundColor 1`] = `
       },
       "shadowOpacity": 1,
       "shadowRadius": 3,
-      "width": "100%",
     }
   }
 >
@@ -52,7 +51,6 @@ exports[`the Card component should accept additional props 1`] = `
       },
       "shadowOpacity": 1,
       "shadowRadius": 3,
-      "width": "100%",
     }
   }
 >
@@ -111,7 +109,6 @@ exports[`the Card component should render 1`] = `
       },
       "shadowOpacity": 1,
       "shadowRadius": 3,
-      "width": "100%",
     }
   }
 >
@@ -140,7 +137,6 @@ exports[`the Card component should render children 1`] = `
       },
       "shadowOpacity": 1,
       "shadowRadius": 3,
-      "width": "100%",
     }
   }
 >

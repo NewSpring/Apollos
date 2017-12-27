@@ -23,7 +23,6 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
         },
         "shadowOpacity": 1,
         "shadowRadius": 3,
-        "width": "100%",
       }
     }
   >
@@ -419,7 +418,6 @@ exports[`the FeedItemCard component should render 1`] = `
         },
         "shadowOpacity": 1,
         "shadowRadius": 3,
-        "width": "100%",
       }
     }
   >
@@ -599,7 +597,6 @@ exports[`the FeedItemCard component should render as liked 1`] = `
         },
         "shadowOpacity": 1,
         "shadowRadius": 3,
-        "width": "100%",
       }
     }
   >
@@ -779,7 +776,6 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
         },
         "shadowOpacity": 1,
         "shadowRadius": 3,
-        "width": "100%",
       }
     }
   >
@@ -959,7 +955,6 @@ exports[`the FeedItemCard component should render with inverted (light) font col
         },
         "shadowOpacity": 1,
         "shadowRadius": 3,
-        "width": "100%",
       }
     }
   >
