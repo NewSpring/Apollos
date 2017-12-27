@@ -44,7 +44,7 @@ const enhance = compose(
       const query = {};
 
       if (q && q.length) query.q = q;
-      if (tags.length) query.tags = tags.join(',').toLowerCase();
+      if (tags.length) query.tags = tags.map(t => t.toLowerCase());
 
       if (values.useDeviceLocation) {
         try {

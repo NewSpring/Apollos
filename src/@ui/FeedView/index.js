@@ -6,6 +6,7 @@ import {
   compose,
   branch,
   withProps,
+  defaultProps,
 } from 'recompose';
 import { get } from 'lodash';
 
@@ -82,9 +83,9 @@ const enhance = compose(
     content: generateLoadingStateData(10),
     fetchMore: false,
   })),
-  mediaQuery(({ md }) => ({ maxWidth: md }), withProps({ numColumns: 1 })),
-  mediaQuery(({ md, lg }) => ({ minWidth: md, maxWidth: lg }), withProps({ numColumns: 2 })),
-  mediaQuery(({ lg }) => ({ minWidth: lg }), withProps({ numColumns: 3 })),
+  mediaQuery(({ md }) => ({ maxWidth: md }), defaultProps({ numColumns: 1 })),
+  mediaQuery(({ md, lg }) => ({ minWidth: md, maxWidth: lg }), defaultProps({ numColumns: 2 })),
+  mediaQuery(({ lg }) => ({ minWidth: lg }), defaultProps({ numColumns: 3 })),
 );
 
 const FeedView = enhance(({

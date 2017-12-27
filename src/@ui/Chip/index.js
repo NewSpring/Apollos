@@ -8,6 +8,8 @@ import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 
+export { default as ChipList } from './List';
+
 const enhance = compose(
   withTheme(),
   mapProps(({ theme, selected, ...otherProps }) => ({

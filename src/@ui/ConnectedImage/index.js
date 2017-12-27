@@ -6,15 +6,12 @@ import { every } from 'lodash';
 import SkeletonImage from './SkeletonImage';
 
 // This mirrors the File resource we get from Heighliner:
-const ImageSourceType = PropTypes.oneOfType([
-  PropTypes.shape({
-    uri: PropTypes.string,
-    label: PropTypes.string,
-    width: PropTypes.number,
-    height: PropTypes.number,
-  }),
-  PropTypes.string,
-]);
+const ImageSourceType = PropTypes.shape({
+  uri: PropTypes.string,
+  label: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+});
 
 export const sizeCache = {};
 
@@ -109,6 +106,7 @@ class ConnectedImage extends PureComponent {
     }
 
     const { ImageComponent = Image, style, ...otherProps } = this.props;
+
     return (
       <SkeletonImage onReady={!this.isLoading} animate={'fade'}>
         <ImageComponent {...otherProps} source={source} style={[this.aspectRatio, style]} />
