@@ -4,7 +4,7 @@ export default gql`
   query getAlbums($limit: Int!, $skip: Int!) {
     library: content(channel: "newspring_albums", limit: $limit, skip: $skip) {
       id
-      entryId: id
+      id
       title
       status
       channelName

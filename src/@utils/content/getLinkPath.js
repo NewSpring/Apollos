@@ -1,29 +1,29 @@
 const getLinkPath = (contentItem) => {
-  const entryId = contentItem.entryId || contentItem.id;
+  const id = contentItem.id || contentItem.id;
   const category = contentItem.channelName;
-  const seriesId = contentItem.parent && (contentItem.parent.entryId || contentItem.parent.id);
+  const seriesId = contentItem.parent && (contentItem.parent.id || contentItem.parent.id);
 
   switch (category) {
     case 'series_newspring':
-      return `/series/${entryId}`;
+      return `/series/${id}`;
     case 'sermons':
-      return `/series/${seriesId}/sermon/${entryId}`;
+      return `/series/${seriesId}/sermon/${id}`;
     case 'studies':
-      return `/studies/${entryId}`;
+      return `/studies/${id}`;
     case 'study_entries':
-      return `/studies/${seriesId}/entry/${entryId}`;
+      return `/studies/${seriesId}/entry/${id}`;
     case 'devotionals':
-      return `/devotions/${entryId}`;
+      return `/devotions/${id}`;
     case 'newspring_albums':
-      return `/music/${entryId}`;
+      return `/music/${id}`;
     case 'articles':
-      return `/articles/${entryId}`;
+      return `/articles/${id}`;
     case 'stories':
-      return `/stories/${entryId}`;
+      return `/stories/${id}`;
     case 'news':
-      return `/news/${entryId}`;
+      return `/news/${id}`;
     case 'newspring_now':
-      return `/events/${entryId}`;
+      return `/events/${id}`;
     default:
       return null;
   }

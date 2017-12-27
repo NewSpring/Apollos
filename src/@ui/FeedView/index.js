@@ -62,14 +62,14 @@ const generateLoadingStateData = (numberOfItems = 1) => {
       isLight: null,
     },
     isLoading: true,
-    entryId: 'fakeId0',
+    id: 'fakeId0',
   });
 
   const loadingStateData = [itemData()];
 
   while (loadingStateData.length < numberOfItems) {
     const newData = itemData();
-    newData.entryId = `fakeId${loadingStateData.length}`;
+    newData.id = `fakeId${loadingStateData.length}`;
     loadingStateData.push(newData);
   }
 
@@ -108,7 +108,7 @@ const FeedView = enhance(({
 FeedView.defaultProps = {
   isLoading: false,
   onEndReachedThreshold: 0.7,
-  keyExtractor: item => item.entryId,
+  keyExtractor: item => item.id,
   content: [],
   refetch: undefined,
   fetchMore: undefined,

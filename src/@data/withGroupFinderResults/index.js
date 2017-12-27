@@ -1,4 +1,5 @@
 import { graphql } from 'react-apollo';
+import { get } from 'lodash';
 import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 import groupsQuery from './groupsQuery';
 
@@ -27,7 +28,7 @@ export default graphql(groupsQuery, {
   props: ({ data } = {}) => ({
     content: data.content,
     isLoading: data.loading,
-    isDone: data.content && data.content.count === data.content.results.length,
+    canFetchMore: get(data, 'content.results.length') < get(data, 'content.count'),
     fetchMore: fetchMoreResolver({
       collectionName: 'content',
       data,

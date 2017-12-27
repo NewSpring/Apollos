@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 const contentFragment = gql`
   fragment ContentForFeed on Content {
-    entryId: id
+    id
     title
     channelName
     status
@@ -12,7 +12,7 @@ const contentFragment = gql`
       channelId
     }
     parent {
-      entryId: id
+      id
       content {
         isLight
         colors {
