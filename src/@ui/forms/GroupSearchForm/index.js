@@ -57,7 +57,7 @@ const enhance = compose(
         }
       }
 
-      query.campus = values.campusId || null;
+      query.campuses = [values.campusId] || [];
       query.zip = (values.zipCode && !query.latitude && !query.longitude) ? values.zipCode : null;
 
       return props.onSubmit(query);

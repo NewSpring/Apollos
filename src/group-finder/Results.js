@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import { get, without } from 'lodash';
 import { compose, withProps } from 'recompose';
 
@@ -11,19 +12,14 @@ import { parse, stringify } from '@utils/queryString';
 import GroupCard from './GroupCard';
 import Filter from './Filter';
 
-const FeedViewWithResults = compose(
-  withGroupFinderResults,
-  withProps(({ content }) => ({
-    content: get(content, 'results', []),
-  })),
-)(FeedView);
-
 const withSearchProps = withProps(({ location: { search = '' } = {} }) => ({
   query: parse(search),
 }));
 
 const enhance = compose(
   withSearchProps,
+  withProps(({ query }) => query),
+  withGroupFinderResults,
 );
 
 const tagPressHandler = ({ query, location, history }) => ({ value }) => {
@@ -48,8 +44,9 @@ const filterUpdateHandler = ({ query, location, history }) => (newQuery) => {
 const Results = enhance(props => (
   <FlexedView>
     <Header titleText="Group Finder" backButton />
-    <FeedViewWithResults
-      {...props.query}
+    <FeedView
+      content={get(props, 'content.results', [])}
+      isLoading={get(props, 'isLoading', true)}
       numColumns={1}
       renderItem={({ item }) => (
         <GroupCard
@@ -59,10 +56,14 @@ const Results = enhance(props => (
         />
       )}
       ListHeaderComponent={
-        <Filter
-          query={props.query}
-          onUpdateFilter={filterUpdateHandler(props)}
-        />
+        <View>
+          <Filter
+            query={props.query}
+            onUpdateFilter={filterUpdateHandler(props)}
+            isLoading={get(props, 'isLoading', true)}
+            numResults={get(props, 'content.count', 0)}
+          />
+        </View>
       }
     />
   </FlexedView>
