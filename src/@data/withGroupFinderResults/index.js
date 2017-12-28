@@ -3,7 +3,7 @@ import { get } from 'lodash';
 // import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 import groupsQuery from './groupsQuery';
 
-const getDay = (schedule: String) => {
+const getDay = (schedule) => {
   switch (schedule) {
     case 'sunday':
       return 0;

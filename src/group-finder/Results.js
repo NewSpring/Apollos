@@ -9,6 +9,7 @@ import FeedView from '@ui/FeedView';
 import { parse, stringify } from '@utils/queryString';
 
 import GroupCard from './GroupCard';
+import Filter from './Filter';
 
 const FeedViewWithResults = compose(
   withGroupFinderResults,
@@ -39,6 +40,11 @@ const tagPressHandler = ({ query, location, history }) => ({ value }) => {
   })}`);
 };
 
+const filterUpdateHandler = ({ query, location, history }) => (newQuery) => {
+  const queryToReplace = { ...query, ...newQuery };
+  history.replace(`${location.pathname}?${stringify(queryToReplace)}`);
+};
+
 const Results = enhance(props => (
   <FlexedView>
     <Header titleText="Group Finder" backButton />
@@ -52,6 +58,12 @@ const Results = enhance(props => (
           onTagPress={tagPressHandler(props)}
         />
       )}
+      ListHeaderComponent={
+        <Filter
+          query={props.query}
+          onUpdateFilter={filterUpdateHandler(props)}
+        />
+      }
     />
   </FlexedView>
 ));
