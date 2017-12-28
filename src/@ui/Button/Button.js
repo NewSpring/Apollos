@@ -51,6 +51,7 @@ const Button = enhance(({
   children,
   disabled,
   title,
+  to,
   onPress,
   style,
   bordered,
@@ -100,6 +101,7 @@ Button.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string,
   bordered: PropTypes.bool,
+  to: PropTypes.string,
   type: PropTypes.oneOf(['default', 'primary', 'secondary', 'tertiary']), // keys in theme.colors.action
   ...Touchable.propTypes,
 };

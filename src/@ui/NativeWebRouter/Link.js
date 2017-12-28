@@ -45,20 +45,23 @@ export default class Link extends Component {
 
     if (pop) {
       let distance = -1;
-      if (to && history.entries) {
+      if (to) {
+        if (!history.entries || !history.entries.length) return history.push(to);
         const routeToPopTo = history.entries.findIndex(location =>
           matchPath(location.pathname, to),
         );
         if (routeToPopTo && routeToPopTo < history.index) {
           distance = routeToPopTo - history.index;
+        } else {
+          return history.push(to);
         }
       }
-      history.go(distance);
+      return history.go(distance);
     } else if (replace && to) {
-      history.replace(to);
-    } else {
-      history.push(to);
+      return history.replace(to);
     }
+
+    return history.push(to);
   }
 
   render() {

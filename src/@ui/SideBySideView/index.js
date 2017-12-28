@@ -6,6 +6,7 @@ import { enhancer as mediaQuery } from '@ui/MediaQuery';
 const SideBySideView = styled(({ reversed = false }) => ({
   flexDirection: reversed ? 'row-reverse' : 'row',
   flexWrap: 'nowrap',
+  justifyContent: 'space-between',
   alignItems: 'stretch',
 }))(View);
 
