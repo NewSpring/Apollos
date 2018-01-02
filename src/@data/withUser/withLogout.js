@@ -4,6 +4,8 @@ import {
   AsyncStorage,
 } from 'react-native';
 
+import { QUERY as USER_QUERY } from './withUser';
+
 export const MUTATION = gql`
   mutation logoutUser {
     logoutUser
@@ -22,4 +24,12 @@ export default graphql(MUTATION, {
       }
     },
   }),
+  options: {
+    update: (proxy) => {
+      const query = USER_QUERY;
+      const data = proxy.readQuery({ query });
+      data.person = null;
+      proxy.writeQuery({ query, data });
+    },
+  },
 });

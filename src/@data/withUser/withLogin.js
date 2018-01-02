@@ -31,4 +31,9 @@ export default graphql(MUTATION, {
       }
     },
   }),
+  options: {
+    refetchQueries: [
+      'CurrentPerson',
+    ],
+  },
 });

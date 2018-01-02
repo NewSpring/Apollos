@@ -1,70 +1,72 @@
-import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, mapProps } from 'recompose';
-import FormInput from '@ui/FormInput';
+import { compose, withProps, setPropTypes } from 'recompose';
+import { withFormik } from 'formik';
+import Yup from 'yup';
+
 import withUser from '@data/withUser';
-
-// TODO: Use @primitives
-export class ChangePasswordForm extends Component {
-  static propTypes = {
-    onSubmit: PropTypes.func,
-  };
-
-  static defaultProps = {
-    onSubmit() {},
-  };
-
-  state = {
-    email: '',
-  };
-
-  handleSubmit = () => {
-    const {
-      email,
-    } = this.state;
-    const {
-      onSubmit,
-    } = this.props;
-
-    onSubmit({
-      email,
-    });
-  };
-
-  render() {
-    return (
-      <View>
-        <FormInput
-          label="Email"
-          onChangeText={email => this.setState({ email })}
-          value={this.state.email}
-        />
-
-        <TouchableWithoutFeedback
-          onPress={this.handleSubmit}
-        >
-          <View
-            style={{
-              padding: 10,
-              borderColor: 'gray',
-              borderWidth: 1,
-            }}
-          >
-            <Text>{'Enter'}</Text>
-          </View>
-        </TouchableWithoutFeedback>
-      </View>
-    );
-  }
-}
+import { Text as TextInput } from '@ui/inputs';
+import Button from '@ui/Button';
 
 const enhance = compose(
-  withUser,
-  mapProps(props => ({ ...props, onSubmit: props.forgotPassword })),
+  setPropTypes({
+    onForgotPasswordSuccess: PropTypes.func,
+    onSubmit: PropTypes.func,
+  }),
+  withFormik({
+    validationSchema: Yup.object().shape({
+      email: Yup.string().email().required(),
+    }),
+    handleSubmit: async (values, { props, setFieldError, setSubmitting }) => {
+      props.onSubmit(values)
+        .catch((...e) => {
+          console.log('Forgot Password error', e); // eslint-disable-line
+          setFieldError('email', 'Could not find your email'); // todo: show server error messages
+        })
+        .then((...args) => {
+          if (props.onForgotPasswordSuccess) props.onForgotPasswordSuccess(...args);
+        })
+        .finally(() => setSubmitting(false));
+    },
+  }),
+  setPropTypes({
+    setFieldValue: PropTypes.func,
+    setFieldTouched: PropTypes.func,
+    touched: PropTypes.shape({}),
+    errors: PropTypes.shape({}),
+    values: PropTypes.shape({}),
+    handleSubmit: PropTypes.func,
+    isSubmitting: PropTypes.bool,
+    isValid: PropTypes.bool,
+  }),
 );
-export default enhance(ChangePasswordForm);
+
+const ChangePasswordFormWithoutData = enhance(({
+  setFieldTouched,
+  setFieldValue,
+  touched,
+  errors,
+  values,
+  handleSubmit,
+  isValid,
+  isSubmitting,
+}) => (
+  <View>
+    <TextInput
+      label="Email"
+      type="email"
+      value={values.email}
+      onChangeText={text => setFieldValue('email', text)}
+      onBlur={() => setFieldTouched('email', true)}
+      error={touched.email && errors.email}
+    />
+    <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
+  </View>
+));
+
+const withData = compose(
+  withUser,
+  withProps(props => ({ onSubmit: props.forgotPassword })),
+);
+export default withData(ChangePasswordFormWithoutData);
