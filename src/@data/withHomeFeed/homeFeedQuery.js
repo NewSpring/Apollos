@@ -22,6 +22,7 @@ const contentFragment = gql`
       }
     }
     content {
+      isLiked
       images(sizes: ["large"]) {
         fileName
         fileType
@@ -39,8 +40,8 @@ const contentFragment = gql`
 `;
 
 export default gql`
-  query HomeFeed($filters: [String]!, $options: String!, $limit: Int!, $skip: Int!, $cache: Boolean!) {
-    feed: userFeed(filters: $filters, options: $options, limit: $limit, skip: $skip, cache: $cache) {
+  query HomeFeed($filters: [String]!, $limit: Int!, $skip: Int!, $cache: Boolean!) {
+    feed: userFeed(filters: $filters, limit: $limit, skip: $skip, cache: $cache) {
       ... on Content {
         ...ContentForFeed
         parent {

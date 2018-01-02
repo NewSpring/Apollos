@@ -1,7 +1,3 @@
-import { graphql } from 'react-apollo';
-import likesQuery from './likesQuery';
-import recentLikesQuery from './recentLikesQuery';
-
-export const withProfileLikes = graphql(likesQuery);
-export const withProfileRecentLikes = graphql(recentLikesQuery);
-
+export { default as withProfileLikes } from './withProfileLikes';
+export { default as withProfileRecentLikes } from './withProfileRecentLikes';
+export { default as withToggleLike } from './withToggleLike';

@@ -1,7 +1,8 @@
 import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
 import { contentCard, groupCard } from './fragments';
 
-export default gql`
+export const QUERY = gql`
   query UserLikes {
     userFeed(filters:["LIKES"]) {
       ... ContentCard
@@ -11,3 +12,5 @@ export default gql`
   ${contentCard}
   ${groupCard}
 `;
+
+export default graphql(QUERY);
