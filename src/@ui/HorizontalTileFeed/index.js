@@ -1,12 +1,13 @@
 import React from 'react';
-import { FlatList, Dimensions } from 'react-native';
+import { Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, branch, withProps, setPropTypes, defaultProps } from 'recompose';
 
 import { Link } from '@ui/NativeWebRouter';
 import { getLinkPath } from '@utils/content';
-import styled from '@ui/styled';
 import CardTile from '@ui/CardTile';
+
+import TileFeed from './TileFeed';
 
 const generateLoadingStateData = (numberOfItems = 1) => {
   const itemData = () => ({
@@ -71,17 +72,12 @@ const getTileWidth = () => {
   return width * 0.8;
 };
 
-const Boom = styled(({ theme, getHeight }) => ({
-  height: getHeight,
-  paddingHorizontal: theme.sizing.baseUnit / 2,
-}))(FlatList);
-
 const HorizontalTileFeed = enhance(({
   content,
   isLoading,
   ...otherProps
 }) => (
-  <Boom
+  <TileFeed
     renderItem={defaultItemRenderer}
     data={content}
     // getItemLayout={(data, index) => ({ length, offset, index })}
@@ -90,7 +86,7 @@ const HorizontalTileFeed = enhance(({
     refreshing={isLoading}
     showsHorizontalScrollIndicator
     showsVerticalScrollIndicator={false}
-    getHeight={getTileWidth()} // height is equal to 80% of width
+    getHeight={getTileWidth()} // passed into TileFeed styles. Height is equal to 80% of width
     snapToInterval={getTileWidth()} // passed down to rendered ScrollView
     snapToAlignment={'start'} // passed down to rendered ScrollView
     decelerationRate={'fast'} // passed down to rendered ScrollView
