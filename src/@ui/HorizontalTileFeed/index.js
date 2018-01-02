@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, branch, withProps, setPropTypes, defaultProps } from 'recompose';
 
@@ -10,15 +10,15 @@ import CardTile from '@ui/CardTile';
 
 const generateLoadingStateData = (numberOfItems = 1) => {
   const itemData = () => ({
+    id: 'fakeId0',
     title: '',
-    category: '',
+    meta: {
+      date: '',
+    },
     content: {
-      images: [],
-      backgroundColor: null,
-      isLight: null,
+      speaker: '',
     },
     isLoading: true,
-    entryId: 'fakeId0',
   });
 
   const loadingStateData = [itemData()];
@@ -32,7 +32,7 @@ const generateLoadingStateData = (numberOfItems = 1) => {
   return loadingStateData;
 };
 
-const defaultItemRenderer = ({ item }) => console.log(item) || ( // eslint-disable-line
+const defaultItemRenderer = ({ item }) => ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
     <CardTile
       // number={}
@@ -66,8 +66,13 @@ const enhance = compose(
   }),
 );
 
-const Boom = styled(({ theme }) => ({
-  height: 200,
+const getTileWidth = () => {
+  const { width } = Dimensions.get('window');
+  return width * 0.8;
+};
+
+const Boom = styled(({ theme, getHeight }) => ({
+  height: getHeight,
   paddingHorizontal: theme.sizing.baseUnit / 2,
 }))(FlatList);
 
@@ -82,10 +87,13 @@ const HorizontalTileFeed = enhance(({
     // getItemLayout={(data, index) => ({ length, offset, index })}
     horizontal
     initialScrollIndex={0}
-    pagingEnabled
     refreshing={isLoading}
     showsHorizontalScrollIndicator
     showsVerticalScrollIndicator={false}
+    getHeight={getTileWidth()} // height is equal to 80% of width
+    snapToInterval={getTileWidth()} // passed down to rendered ScrollView
+    snapToAlignment={'start'} // passed down to rendered ScrollView
+    decelerationRate={'fast'} // passed down to rendered ScrollView
     {...otherProps}
   />
 ));
