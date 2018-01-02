@@ -6,15 +6,15 @@ import CardTile from './';
 
 storiesOf('@ui/CardTile', module)
   .add('Default', () => {
-    const centered = {
+    const container = {
+      height: 200,
       justifyContent: 'center',
       alignItems: 'center',
-      flex: 1,
       backgroundColor: '#f7f7f7',
     };
 
     return (
-      <View style={centered}>
+      <View style={container}>
         <CardTile
           number={7}
           title={'Sermon Title'}
@@ -25,15 +25,15 @@ storiesOf('@ui/CardTile', module)
     );
   })
   .add('Skeleton', () => {
-    const centered = {
+    const container = {
+      height: 200,
       justifyContent: 'center',
       alignItems: 'center',
-      flex: 1,
       backgroundColor: '#f7f7f7',
     };
 
     return (
-      <View style={centered}>
+      <View style={container}>
         <CardTile
           number={7}
           title={'Sermon Title'}

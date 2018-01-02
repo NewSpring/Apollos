@@ -24,10 +24,11 @@ const enhance = compose(
 );
 
 const Tile = styled(({ theme }) => ({
-  width: '100%',
+  height: '100%',
   aspectRatio: 1,
   borderRadius: theme.sizing.borderRadius,
   overflow: 'hidden',
+  marginHorizontal: theme.sizing.baseUnit / 2,
   backgroundColor: theme.colors.lightTertiary, // TODO: sort out correct theme var for this color
   ...Platform.select({
     web: {
@@ -88,7 +89,7 @@ const CardTile = enhance(({
             </View>
           </Placeholder.Media>
         </TileNumber>
-      ) : renderNothing()}
+      ) : null}
 
       <Placeholder.Line
         width={'75%'}
