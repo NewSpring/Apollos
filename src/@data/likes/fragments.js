@@ -4,18 +4,13 @@ export const contentCard = gql`
   fragment ContentCard on Content {
     __typename
     entryId: id
-    parent {
-      entryId: id
-      content {
-        isLiked
-      }
-    }
     content {
       isLiked
     }
   }
 `;
 
+// TODO: Add isLiked to groups
 export const groupCard = gql`
   fragment GroupCard on Group {
     __typename
