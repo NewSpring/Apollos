@@ -2,6 +2,7 @@ import React from 'react';
 import { Platform, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
+import { startCase, toLower } from 'lodash';
 import Placeholder from 'rn-placeholder';
 
 import { withTheme } from '@ui/theme';
@@ -97,11 +98,11 @@ const CardTile = enhance(({
         animate={'fade'}
         onReady={!isLoading}
       >
-        <H4>{title}</H4>
+        <H4>{startCase(toLower(title))}</H4>
       </Placeholder.Line>
 
       <CategoryLabel
-        label={byLine}
+        label={startCase(toLower(byLine))}
         icon={'video'}
         isLoading={isLoading}
       >
