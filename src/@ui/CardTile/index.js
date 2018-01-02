@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, pure, setPropTypes, renderNothing } from 'recompose';
+import { compose, pure, setPropTypes } from 'recompose';
 import Placeholder from 'rn-placeholder';
 
 import { withTheme } from '@ui/theme';

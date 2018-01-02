@@ -38,8 +38,8 @@ const SeriesSingle = enhance(({
       images = [],
       description,
     } = {},
+    children,
   } = { },
-  children,
 }) => (
   <FlexedView>
     <Header titleText="Series" backButton barStyle={isLight ? 'dark-content' : 'light-content'} />

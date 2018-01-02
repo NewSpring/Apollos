@@ -5,6 +5,7 @@ import { compose, pure, branch, withProps, setPropTypes, defaultProps } from 're
 
 import { Link } from '@ui/NativeWebRouter';
 import { getLinkPath } from '@utils/content';
+import styled from '@ui/styled';
 import CardTile from '@ui/CardTile';
 
 const generateLoadingStateData = (numberOfItems = 1) => {
@@ -33,13 +34,13 @@ const generateLoadingStateData = (numberOfItems = 1) => {
 
 const defaultItemRenderer = ({ item }) => console.log(item) || ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
-    {/* <CardTile
-      number={}
-      title={'Sermon Title'}
-      byLine={'Marty McFly'}
-      date={'10/30/2017'}
-      isLoading
-    /> */}
+    <CardTile
+      // number={}
+      title={item.title}
+      byLine={item.content.speaker}
+      date={item.meta.date}
+      isLoading={item.isLoading}
+    />
   </Link>
 );
 
@@ -64,12 +65,17 @@ const enhance = compose(
   }),
 );
 
+const Boom = styled(({ theme }) => ({
+  height: 200,
+  paddingHorizontal: theme.sizing.baseUnit / 2,
+}))(FlatList);
+
 const HorizontalTileFeed = enhance(({
   content,
   isLoading,
   ...otherProps
 }) => (
-  <FlatList
+  <Boom
     renderItem={defaultItemRenderer}
     data={content}
     // keyExtractor={({ item }) => item.entryId}
