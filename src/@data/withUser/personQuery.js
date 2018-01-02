@@ -45,6 +45,7 @@ export default gql`
         number
         rawNumber
       }
+      followedTopics
     }
   }
 `;
