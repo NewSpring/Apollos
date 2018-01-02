@@ -46,6 +46,7 @@ export const QUERY = gql`
         number
         rawNumber
       }
+      followedTopics
     }
   }
 `;
