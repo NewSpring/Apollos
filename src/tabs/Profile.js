@@ -60,7 +60,7 @@ const Profile = enhance(({ user, isLoading }) => {
         </PaddedView>
       </ScrollView>
     </FlexedView>
-  )
+  );
 });
 
 export default Profile;
