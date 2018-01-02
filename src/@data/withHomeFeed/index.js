@@ -1,5 +1,4 @@
 import { graphql } from 'react-apollo';
-import { FOLLOWABLE_TOPICS } from '@data/constants';
 import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 import identifyCategory from '@data/utils/identifyCategory';
 import homeFeedQuery from './homeFeedQuery';
@@ -8,7 +7,6 @@ export default graphql(homeFeedQuery, {
   options: () => ({
     variables: {
       filters: ['CONTENT'],
-      options: JSON.stringify({ content: { channels: FOLLOWABLE_TOPICS } }),
       limit: 20,
       skip: 0,
       cache: true,
