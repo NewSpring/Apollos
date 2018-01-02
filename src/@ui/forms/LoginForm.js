@@ -1,79 +1,88 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   View,
-  Text,
-  TouchableWithoutFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, mapProps } from 'recompose';
-import FormInput from '@ui/FormInput';
+import { compose, mapProps, setPropTypes } from 'recompose';
+import { withFormik } from 'formik';
+import Yup from 'yup';
+
 import withUser from '@data/withUser';
-
-// TODO: Use @primitives
-export class LoginForm extends Component {
-  static propTypes = {
-    email: PropTypes.string,
-    onLogin: PropTypes.func,
-  };
-
-  static defaultProps = {
-    email: '',
-    onLogin() {},
-  };
-
-  state = {
-    email: this.props.email,
-    password: '',
-  };
-
-  handleSubmit = () => {
-    const {
-      email,
-      password,
-    } = this.state;
-    const {
-      onLogin,
-    } = this.props;
-
-    onLogin({ email, password });
-  };
-
-  render() {
-    return (
-      <View>
-        <FormInput
-          label="Email"
-          onChangeText={email => this.setState({ email })}
-          value={this.state.email}
-          keyboardType="email-address"
-        />
-        <FormInput
-          label="Password"
-          onChangeText={password => this.setState({ password })}
-          value={this.state.password}
-          secureTextEntry
-        />
-
-        <TouchableWithoutFeedback
-          onPress={this.handleSubmit}
-        >
-          <View
-            style={{
-              padding: 10,
-              borderColor: 'gray',
-              borderWidth: 1,
-            }}
-          >
-            <Text>{'Enter'}</Text>
-          </View>
-        </TouchableWithoutFeedback>
-      </View>
-    );
-  }
-}
+import { Text as TextInput } from '@ui/inputs';
+import Button from '@ui/Button';
 
 const enhance = compose(
-  withUser,
-  mapProps(props => ({ ...props, onLogin: props.login })),
+  setPropTypes({
+    email: PropTypes.string,
+    onLoginSuccess: PropTypes.func,
+    onSubmit: PropTypes.func,
+  }),
+  withFormik({
+    mapPropsToValues: ({ email }) => ({
+      email,
+    }),
+    validationSchema: Yup.object().shape({
+      email: Yup.string().email().required(),
+      password: Yup.string().required(),
+    }),
+    handleSubmit: async (values, { props, setFieldError, setSubmitting }) => {
+      props.onSubmit(values)
+        .catch((...e) => {
+          console.log('Login form error', e); // eslint-disable-line
+          setFieldError('email', true);
+          setFieldError('password', 'Your email or password is incorrect'); // todo: show real error message from server
+        })
+        .then((...args) => {
+          if (props.onLoginSuccess) props.onLoginSuccess(...args);
+        })
+        .finally(() => setSubmitting(false));
+    },
+  }),
+  setPropTypes({
+    setFieldValue: PropTypes.func,
+    setFieldTouched: PropTypes.func,
+    touched: PropTypes.shape({}),
+    errors: PropTypes.shape({}),
+    values: PropTypes.shape({}),
+    handleSubmit: PropTypes.func,
+    isSubmitting: PropTypes.bool,
+    isValid: PropTypes.bool,
+  }),
 );
-export default enhance(LoginForm);
+
+export const LoginFormWithoutData = enhance(({
+  setFieldTouched,
+  setFieldValue,
+  touched,
+  errors,
+  values,
+  handleSubmit,
+  isValid,
+  isSubmitting,
+}) => (
+  <View>
+    <TextInput
+      label="Email"
+      type="email"
+      value={values.email}
+      onChangeText={text => setFieldValue('email', text)}
+      onBlur={() => setFieldTouched('email', true)}
+      error={touched.email && errors.email}
+    />
+    <TextInput
+      label="Password"
+      type="password"
+      value={values.password}
+      onChangeText={text => setFieldValue('password', text)}
+      onBlur={() => setFieldTouched('password', true)}
+      error={touched.password && errors.password}
+    />
+    <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
+  </View>
+));
+
+const withData = compose(
+  withUser,
+  mapProps(props => ({ ...props, onSubmit: props.login })),
+);
+export default withData(LoginFormWithoutData);

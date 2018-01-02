@@ -1,48 +1,16 @@
-import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  TouchableWithoutFeedback,
-} from 'react-native';
-import PropTypes from 'prop-types';
-import { compose, mapProps } from 'recompose';
+import React from 'react';
+import { compose, withProps } from 'recompose';
 import withUser from '@data/withUser';
+import Button from '@ui/Button';
 
-// TODO: Use @primitives
-export class LogoutButton extends Component {
-  static propTypes = {
-    text: PropTypes.string,
-    onLogout: PropTypes.func,
-  };
-
-  static defaultProps = {
-    text: 'logout',
-    onLogout() {},
-  };
-
-  render() {
-    return (
-      <View>
-        <TouchableWithoutFeedback
-          onPress={this.props.onLogout}
-        >
-          <View
-            style={{
-              padding: 10,
-              borderColor: 'gray',
-              borderWidth: 1,
-            }}
-          >
-            <Text>{this.props.text}</Text>
-          </View>
-        </TouchableWithoutFeedback>
-      </View>
-    );
-  }
-}
-
-const enhance = compose(
-  withUser,
-  mapProps(props => ({ ...props, onLogout: props.logout })),
+export const LogoutButtonWithoutData = props => (
+  <Button title="Logout" {...props} />
 );
-export default enhance(LogoutButton);
+
+const withData = compose(
+  withUser,
+  withProps(({ logout }) => ({ onPress: logout })),
+);
+
+export default withData(LogoutButtonWithoutData);
+

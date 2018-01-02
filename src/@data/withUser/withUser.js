@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 export const QUERY = gql`
-  query GetPersonData {
+  query CurrentPerson {
     person: currentPerson {
       id
       age
@@ -51,7 +51,12 @@ export const QUERY = gql`
 `;
 
 export default graphql(QUERY, {
-  props: ({ data: { person } }) => ({
+  props: ({ data: { person, loading, refetch } }) => ({
     user: person,
+    isLoading: loading,
+    refetch,
   }),
+  options: {
+    fetchPolicy: 'cache-and-network',
+  },
 });
