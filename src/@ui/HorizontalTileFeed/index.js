@@ -60,6 +60,7 @@ const enhance = compose(
   }),
   defaultProps({
     renderItem: defaultItemRenderer,
+    keyExtractor: item => item.id,
     content: [],
     isLoading: false,
   }),
@@ -78,7 +79,6 @@ const HorizontalTileFeed = enhance(({
   <Boom
     renderItem={defaultItemRenderer}
     data={content}
-    // keyExtractor={({ item }) => item.entryId}
     // getItemLayout={(data, index) => ({ length, offset, index })}
     horizontal
     initialScrollIndex={0}
