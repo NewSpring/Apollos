@@ -26,7 +26,7 @@ const generateLoadingStateData = (numberOfItems = 1) => {
 
   while (loadingStateData.length < numberOfItems) {
     const newData = itemData();
-    newData.entryId = `fakeId${loadingStateData.length}`;
+    newData.id = `fakeId${loadingStateData.length}`;
     loadingStateData.push(newData);
   }
 
