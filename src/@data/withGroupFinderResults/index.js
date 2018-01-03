@@ -1,6 +1,6 @@
 import { graphql } from 'react-apollo';
 import { get } from 'lodash';
-// import fetchMoreResolver from '@data/utils/fetchMoreResolver';
+import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 import groupsQuery from './groupsQuery';
 
 const getDay = (schedule) => {
@@ -29,12 +29,12 @@ export default graphql(groupsQuery, {
     content: data.content,
     isLoading: data.loading,
     canFetchMore: get(data, 'content.results.length') < get(data, 'content.count'),
-    fetchMore: () => {},
-    // TODO: this wasn't working properly
-    // fetchMore: fetchMoreResolver({
-    //   collectionName: 'content',
-    //   data,
-    // }),
+    // fetchMore: () => {},
+    // TODO: Not sure if this is working as expected, there's still an error onEndReached
+    fetchMore: fetchMoreResolver({
+      collectionName: 'content.results',
+      data,
+    }),
   }),
   options: (ownProps = {}) => ({
     ssr: false,
