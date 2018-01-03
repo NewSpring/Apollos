@@ -19,8 +19,8 @@ const GroupCard = ({
   schedule = {},
   distance,
   onTagPress,
-}) => (
-  <Link to={!isLoading ? `/groups/${id}` : null}>
+}) => {
+  const card = (
     <Card isLoading={isLoading}>
       <SideBySideView reversed>
         <FlexedView><CardImage source={{ url: photo }} /></FlexedView>
@@ -55,8 +55,11 @@ const GroupCard = ({
         </FlexedView>
       </SideBySideView>
     </Card>
-  </Link>
-);
+  );
+
+  if (isLoading) return card;
+  return <Link to={`/groups/${id}`}>{card}</Link>;
+};
 
 GroupCard.propTypes = {
   id: PropTypes.string,

@@ -55,7 +55,7 @@ class Filter extends PureComponent {
     }),
     onUpdateFilter: PropTypes.func,
     numResults: PropTypes.number,
-    isLoading: PropTypes.bool,
+    isLoadingResults: PropTypes.bool,
     theme: PropTypes.shape({ helpers: PropTypes.shape({ rem: PropTypes.func }) }),
   }
 
@@ -223,9 +223,9 @@ class Filter extends PureComponent {
 
         <SearchPrompt>
           <Placeholder.Line
-            width={'10%'}
+            width={'40%'}
             textSize={this.props.theme.helpers.rem(1.4)}
-            onReady={!this.props.isLoading}
+            onReady={!this.props.isLoadingResults}
           >
             <H6>{pluralize('Result', this.props.numResults, true)}</H6>
           </Placeholder.Line>
