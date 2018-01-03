@@ -17,9 +17,9 @@ storiesOf('@ui/CardTile', module)
       <View style={container}>
         <CardTile
           number={7}
-          title={'Sermon Title'}
+          title={'Why Jesus is Timeless'}
           byLine={'Marty McFly'}
-          date={'10/30/2017'}
+          date={'Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)'} // this snapshot will expire in a year
         />
       </View>
     );
@@ -36,9 +36,9 @@ storiesOf('@ui/CardTile', module)
       <View style={container}>
         <CardTile
           number={7}
-          title={'Sermon Title'}
+          title={'Why Jesus is Timeless'}
           byLine={'Marty McFly'}
-          date={'10/30/2017'}
+          date={'Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)'}
           isLoading
         />
       </View>

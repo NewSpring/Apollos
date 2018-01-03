@@ -33,7 +33,7 @@ const generateLoadingStateData = (numberOfItems = 1) => {
   return loadingStateData;
 };
 
-const defaultItemRenderer = ({ item, index }) => ( // eslint-disable-line react/prop-types
+const defaultItemRenderer = ({ item, index }) => ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
     <CardTile
       number={index + 1}
@@ -46,11 +46,6 @@ const defaultItemRenderer = ({ item, index }) => ( // eslint-disable-line react/
 );
 
 const enhance = compose(
-  pure,
-  branch(({ isLoading, content }) => isLoading && !content.length, withProps({
-    content: generateLoadingStateData(10),
-    fetchMore: false,
-  })),
   setPropTypes({
     isLoading: PropTypes.bool,
     content: PropTypes.array,
@@ -65,6 +60,11 @@ const enhance = compose(
     content: [],
     isLoading: false,
   }),
+  branch(({ isLoading, content }) => isLoading && !content.length, withProps({
+    content: generateLoadingStateData(5),
+    fetchMore: false,
+  })),
+  pure,
 );
 
 const getTileWidth = () => {
@@ -80,7 +80,6 @@ const HorizontalTileFeed = enhance(({
   <TileFeed
     renderItem={defaultItemRenderer}
     data={content}
-    // getItemLayout={(data, index) => ({ length, offset, index })}
     horizontal
     initialScrollIndex={0}
     refreshing={isLoading}

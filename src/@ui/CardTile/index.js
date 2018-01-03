@@ -16,8 +16,8 @@ const enhance = compose(
   withTheme(),
   withThemeMixin({ type: 'light' }),
   setPropTypes({
+    title: PropTypes.string.isRequired,
     number: PropTypes.number,
-    title: PropTypes.string,
     byLine: PropTypes.string,
     date: PropTypes.string,
     style: PropTypes.any, // eslint-disable-line
@@ -107,7 +107,6 @@ const CardTile = enhance(({
         <Placeholder.Line
           width={'75%'}
           textSize={theme.helpers.rem(1.4)}
-          animate={'fade'}
           onReady={!isLoading}
         >
           <H4>{startCase(toLower(title))}</H4>

@@ -41,12 +41,13 @@ const Study = enhance(({
     } = {},
     children,
   } = { },
+  isLoading,
 }) => (
   <FlexedView>
     <Header titleText={title} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
     <ScrollView>
       <ContentView images={images} body={description} />
-      <HorizontalTileFeed content={children} />
+      <HorizontalTileFeed content={children} isLoading={isLoading} />
     </ScrollView>
     <SecondaryNav>
       <Link icon="share" />
