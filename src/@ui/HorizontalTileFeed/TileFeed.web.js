@@ -29,7 +29,7 @@ const enhance = compose(
 
 const itemRenderer = (data, renderItem) => (
   data.map(item => (
-    <ItemWrapper>
+    <ItemWrapper key={item.id}>
       {renderItem({ item })}
     </ItemWrapper>
   ))
