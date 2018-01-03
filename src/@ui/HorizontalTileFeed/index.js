@@ -33,7 +33,7 @@ const generateLoadingStateData = (numberOfItems = 1) => {
   return loadingStateData;
 };
 
-const defaultItemRenderer = ({ item, index }) => ( // eslint-disable-line
+const defaultItemRenderer = ({ item, index }) => ( // eslint-disable-line react/prop-types
   <Link to={getLinkPath(item)}>
     <CardTile
       number={index + 1}
@@ -53,7 +53,7 @@ const enhance = compose(
   })),
   setPropTypes({
     isLoading: PropTypes.bool,
-    content: PropTypes.array, // eslint-disable-line
+    content: PropTypes.array,
     refetch: PropTypes.func,
     fetchMore: PropTypes.func,
     renderItem: PropTypes.func,

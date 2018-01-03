@@ -12,13 +12,6 @@ const TiledFeed = styled(({ theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit / 2,
 }))(View);
 
-const ItemWrapper = styled(({ theme }) => ({
-  width: '25%',
-  minWidth: 250,
-  maxWidth: 375,
-  paddingVertical: theme.sizing.baseUnit / 2,
-}))(View);
-
 const enhance = compose(
   pure,
   setPropTypes({
@@ -29,9 +22,9 @@ const enhance = compose(
 
 const itemRenderer = (data, renderItem) => (
   data.map((item, index) => (
-    <ItemWrapper key={item.id}>
+    <View key={item.id}>
       {renderItem({ item, index })}
-    </ItemWrapper>
+    </View>
   ))
 );
 

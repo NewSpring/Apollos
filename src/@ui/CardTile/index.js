@@ -5,7 +5,7 @@ import { compose, pure, setPropTypes } from 'recompose';
 import { startCase, toLower } from 'lodash';
 import Placeholder from 'rn-placeholder';
 
-import { withTheme } from '@ui/theme';
+import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import { H4, H6, H7 } from '@ui/typography';
 import CategoryLabel from '@ui/CategoryLabel';
@@ -14,6 +14,7 @@ import relativeTime from '@utils/relativeTime';
 const enhance = compose(
   pure,
   withTheme(),
+  withThemeMixin({ type: 'light' }),
   setPropTypes({
     number: PropTypes.number,
     title: PropTypes.string,
@@ -24,17 +25,27 @@ const enhance = compose(
   }),
 );
 
+const TileSpacer = styled(({ theme }) => ({
+  paddingHorizontal: theme.sizing.baseUnit / 2,
+  ...Platform.select({
+    web: {
+      paddingVertical: theme.sizing.baseUnit / 2,
+    },
+  }),
+}))(View);
+
 const Tile = styled(({ theme }) => ({
   height: '100%',
   aspectRatio: 1,
   borderRadius: theme.sizing.borderRadius,
   overflow: 'hidden',
-  marginHorizontal: theme.sizing.baseUnit / 2,
   backgroundColor: theme.colors.lightTertiary, // TODO: sort out correct theme var for this color
   ...Platform.select({
     web: {
       position: 'relative',
-      // height: '80vw',
+      width: '25vw',
+      minWidth: '250px',
+      maxWidth: '320px',
       height: '0',
       paddingTop: '100%',
     },
@@ -61,7 +72,7 @@ const TileNumber = styled(({ theme, size }) => ({
   alignItems: 'center',
   borderTopLeftRadius: theme.sizing.borderRadius,
   borderBottomRightRadius: theme.sizing.borderRadius,
-  backgroundColor: theme.colors.background.default,
+  backgroundColor: theme.colors.white,
 }))(View);
 
 const CardTile = enhance(({
@@ -74,48 +85,50 @@ const CardTile = enhance(({
   theme,
   ...otherProps
 }) => (
-  <Tile style={styleProp} {...otherProps}>
-    <WebAspectRatioFix>
-      {typeof number !== 'undefined' ? (
-        <TileNumber size={number.toString().length}>
-          <Placeholder.Media
-            /* placeholder size is calculated the same as TileNumber width and height but slightly
-             * bigger to cover it's corners completely
-             */// eslint-disable-next-line max-len
-            size={theme.helpers.rem(1.25 * (number.toString().length < 2 ? 2 : number.toString().length))}
-            onReady={!isLoading}
-          >
-            <View>
-              <H6>{number}</H6>
-            </View>
-          </Placeholder.Media>
-        </TileNumber>
-      ) : null}
+  <TileSpacer>
+    <Tile style={styleProp} {...otherProps}>
+      <WebAspectRatioFix>
+        {typeof number !== 'undefined' ? (
+          <TileNumber size={number.toString().length}>
+            <Placeholder.Media
+              /* placeholder size is calculated the same as TileNumber width and height but slightly
+               * bigger to cover it's corners completely
+               */// eslint-disable-next-line max-len
+              size={theme.helpers.rem(1.25 * (number.toString().length < 2 ? 2 : number.toString().length))}
+              onReady={!isLoading}
+            >
+              <View>
+                <H6>{number}</H6>
+              </View>
+            </Placeholder.Media>
+          </TileNumber>
+        ) : null}
 
-      <Placeholder.Line
-        width={'75%'}
-        textSize={theme.helpers.rem(1.4)}
-        animate={'fade'}
-        onReady={!isLoading}
-      >
-        <H4>{startCase(toLower(title))}</H4>
-      </Placeholder.Line>
-
-      <CategoryLabel
-        label={startCase(toLower(byLine))}
-        icon={'video'}
-        isLoading={isLoading}
-      >
         <Placeholder.Line
-          width={'10%'}
-          textSize={theme.helpers.rem(1)}
+          width={'75%'}
+          textSize={theme.helpers.rem(1.4)}
+          animate={'fade'}
           onReady={!isLoading}
         >
-          <H7>{relativeTime(date)}</H7>
+          <H4>{startCase(toLower(title))}</H4>
         </Placeholder.Line>
-      </CategoryLabel>
-    </WebAspectRatioFix>
-  </Tile>
+
+        <CategoryLabel
+          label={startCase(toLower(byLine))}
+          icon={'video'}
+          isLoading={isLoading}
+        >
+          <Placeholder.Line
+            width={'10%'}
+            textSize={theme.helpers.rem(1)}
+            onReady={!isLoading}
+          >
+            <H7>{relativeTime(date)}</H7>
+          </Placeholder.Line>
+        </CategoryLabel>
+      </WebAspectRatioFix>
+    </Tile>
+  </TileSpacer>
 ));
 
 export default CardTile;
