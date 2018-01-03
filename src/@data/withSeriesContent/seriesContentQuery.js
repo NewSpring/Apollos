@@ -35,7 +35,6 @@ export default gql`
         children {
           id
           title
-          channelName
           meta {
             date
           }
