@@ -188,7 +188,7 @@ exports[`TabView Component renders 1`] = `
                   ellipsizeMode="tail"
                   style={
                     Object {
-                      "color": "#303030",
+                      "color": "#ffffff",
                       "fontFamily": null,
                       "fontSize": 15.75,
                       "fontWeight": "700",
@@ -253,7 +253,7 @@ exports[`TabView Component renders 1`] = `
                   ellipsizeMode="tail"
                   style={
                     Object {
-                      "color": "#303030",
+                      "color": "#ffffff",
                       "fontFamily": null,
                       "fontSize": 15.75,
                       "fontWeight": "700",

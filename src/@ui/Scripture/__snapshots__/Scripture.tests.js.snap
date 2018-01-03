@@ -1,0 +1,412 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the ScriptureItem component renders scripture html 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#303030",
+        "fontFamily": null,
+        "fontSize": 25.2,
+        "fontWeight": "700",
+        "lineHeight": 31.28,
+      }
+    }
+  >
+     
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#6bac43",
+          "fontFamily": null,
+          "fontSize": 14,
+          "lineHeight": 15.87,
+        }
+      }
+    >
+      ESV
+    </Text>
+  </Text>
+  <View>
+    <View
+      style={
+        Object {
+          "paddingVertical": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#6bac43",
+              "fontFamily": null,
+              "fontSize": 14,
+              "lineHeight": 15.87,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            15 
+          </Text>
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            He who has ears to hear, let him hear.
+          </Text>
+        </Text>
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingVertical": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#6bac43",
+              "fontFamily": null,
+              "fontSize": 14,
+              "lineHeight": 15.87,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            16 
+          </Text>
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            “But to what shall I compare this generation? It is like children sitting in the marketplaces and calling to their playmates,
+          </Text>
+        </Text>
+      </Text>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "paddingLeft": 10,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#6bac43",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": undefined,
+                  "fontFamily": "Georgia",
+                  "fontSize": 18,
+                  "lineHeight": 20,
+                }
+              }
+            >
+              17 
+            </Text>
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": undefined,
+                  "fontFamily": "Georgia",
+                  "fontSize": 18,
+                  "lineHeight": 20,
+                }
+              }
+            >
+              “‘We played the flute for you, and you did not dance;
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            >
+              
+
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            >
+                   
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": undefined,
+                  "fontFamily": "Georgia",
+                  "fontSize": 18,
+                  "lineHeight": 20,
+                }
+              }
+            >
+              we sang a dirge, and you did not mourn.’
+            </Text>
+          </Text>
+        </Text>
+      </View>
+    </Text>
+    <View
+      style={
+        Object {
+          "paddingVertical": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#6bac43",
+              "fontFamily": null,
+              "fontSize": 14,
+              "lineHeight": 15.87,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            18 
+          </Text>
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          For John came neither eating nor drinking, and they say, ‘He has a demon.’
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#6bac43",
+              "fontFamily": null,
+              "fontSize": 14,
+              "lineHeight": 15.87,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            19 
+          </Text>
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            The Son of Man came eating and drinking, and they say, ‘Look at him! A glutton and a drunkard, a friend of tax collectors and sinners!’ Yet wisdom is justified by her deeds.”
+          </Text>
+        </Text>
+      </Text>
+    </View>
+  </View>
+</View>
+`;
