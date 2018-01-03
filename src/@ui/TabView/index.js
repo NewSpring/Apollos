@@ -16,8 +16,14 @@ const initialLayout = {
 const withStyles = styled({ flex: 1 }, 'TabView');
 
 const defaultHeaderRenderer = ({ barStyle }) => (
-  withThemeMixin(() => ({
-    type: barStyle === 'dark-content' ? 'light' : 'dark',
+  withThemeMixin(({ theme }) => ({
+    colors: {
+      ...theme.colors,
+      text: {
+        ...theme.colors.text,
+        primary: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
+      },
+    },
   }))(props => <TabBar {...props} />)
 );
 
