@@ -78,15 +78,16 @@ const FeedItemCard = enhance(({
           label={startCase(toLower(category))}
           color={fontColor}
           isLoading={isLoading}
-        />
-        <LikeButton id={id}>
-          <Icon
-            name={isLiked ? 'like-solid' : 'like'}
-            size={theme.helpers.rem(1.2)}
-            fill={fontColor}
-            isLoading={isLoading}
-          />
-        </LikeButton>
+        >
+          <LikeButton id={id}>
+            <Icon
+              name={isLiked ? 'like-solid' : 'like'}
+              size={theme.helpers.rem(1.2)}
+              fill={fontColor}
+              isLoading={isLoading}
+            />
+          </LikeButton>
+        </CategoryLabel>
       </Footer>
     </Card>
   </CardWrapper>
