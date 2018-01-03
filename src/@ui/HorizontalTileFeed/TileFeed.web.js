@@ -28,9 +28,9 @@ const enhance = compose(
 );
 
 const itemRenderer = (data, renderItem) => (
-  data.map(item => (
+  data.map((item, index) => (
     <ItemWrapper key={item.id}>
-      {renderItem({ item })}
+      {renderItem({ item, index })}
     </ItemWrapper>
   ))
 );

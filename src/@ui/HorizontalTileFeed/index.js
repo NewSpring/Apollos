@@ -33,10 +33,10 @@ const generateLoadingStateData = (numberOfItems = 1) => {
   return loadingStateData;
 };
 
-const defaultItemRenderer = ({ item }) => ( // eslint-disable-line
+const defaultItemRenderer = ({ item, index }) => ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
     <CardTile
-      // number={}
+      number={index + 1}
       title={item.title}
       byLine={item.content.speaker}
       date={item.meta.date}
