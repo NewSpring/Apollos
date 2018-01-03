@@ -80,7 +80,7 @@ const Text = enhance(({
       </AddonRow>
 
       <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
-      <InputUnderline animation={focusAnimation} hasError={error} />
+      <InputUnderline animation={focusAnimation} hasError={Boolean(error)} />
 
       {(error && typeof error === 'string') ? <ErrorText>{error}</ErrorText> : null}
     </InputWrapper>
