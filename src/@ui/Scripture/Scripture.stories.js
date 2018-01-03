@@ -15,6 +15,7 @@ const references = [
   'Psalm 119',
   'Proverbs 24:23-24',
   'Jeremiah 23:33-40',
+  'Psalm 105:1-4',
 ];
 
 const ScriptureStory = ({ reference }) => ( // eslint-disable-line

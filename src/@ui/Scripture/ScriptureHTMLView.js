@@ -11,8 +11,6 @@ const renderer = (node, { children, ...other }) => { // eslint-disable-line
 
   const className = (node && node.attribs && node.attribs.class) || '';
 
-  if (node.name === 'p') return <Paragraph><Text>{wrapTextChildren(children)}</Text></Paragraph>;
-
   if (className.includes('chapter-num') || className.includes('verse-num')) {
     return <H7>{children}</H7>;
   }
@@ -28,6 +26,8 @@ const renderer = (node, { children, ...other }) => { // eslint-disable-line
   if (className.includes('indent')) { // todo
     return <Text>{'     '}{children}</Text>;
   }
+
+  if (node.name === 'p') return <Paragraph><Text>{wrapTextChildren(children)}</Text></Paragraph>;
 
   return defaultRenderer(node, { children, ...other });
 };
