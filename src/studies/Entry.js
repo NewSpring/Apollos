@@ -1,17 +1,19 @@
 import React from 'react';
-import { compose, mapProps, pure } from 'recompose';
+import { compose, mapProps, pure, withProps } from 'recompose';
 import { ScrollView } from 'react-native';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import ContentView from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import withStudyEntry from '@data/withStudyEntry';
+import TabView, { SceneMap } from '@ui/TabView';
 import { withThemeMixin } from '@ui/theme';
 
 const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withStudyEntry,
+
   withThemeMixin(({ content: { parent: { content = {} } = {} } = {} } = {}) => {
     const theme = { };
     if (content.colors && content.colors.length) {
@@ -26,6 +28,18 @@ const enhance = compose(
   }),
 );
 
+const Devotional = props => (
+  <ScrollView>
+    <ContentView {...props} />
+  </ScrollView>
+);
+
+const Scripture = () => (
+  <ScrollView />
+);
+
+const tabRoutes = [{ title: 'Devotional', key: 'devotional' }, { title: 'Scripture', key: 'scripture' }];
+
 const Study = enhance(({
   content: {
     title,
@@ -38,9 +52,14 @@ const Study = enhance(({
 }) => (
   <FlexedView>
     <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
-    <ScrollView>
-      <ContentView images={images} body={body} title={title} />
-    </ScrollView>
+    <TabView
+      barStyle={isLight ? 'dark-content' : 'light-content'}
+      routes={tabRoutes}
+      renderScene={SceneMap({
+        devotional: withProps({ title, images, body })(Devotional),
+        scripture: Scripture,
+      })}
+    />
     <SecondaryNav>
       <Link icon="share" />
       <Link icon="like" />

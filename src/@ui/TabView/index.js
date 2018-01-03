@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Dimensions, Platform } from 'react-native';
 import { TabViewAnimated, SceneMap } from 'react-native-tab-view';
 import { compose, withProps, withState, setPropTypes, defaultProps } from 'recompose';
+import { withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 
 import TabBar from './TabBar';
@@ -14,7 +15,11 @@ const initialLayout = {
 
 const withStyles = styled({ flex: 1 }, 'TabView');
 
-const defaultHeaderRenderer = props => <TabBar {...props} />;
+const defaultHeaderRenderer = ({ barStyle }) => (
+  withThemeMixin(() => ({
+    type: barStyle === 'dark-content' ? 'light' : 'dark',
+  }))(props => <TabBar {...props} />)
+);
 
 const TabView = compose(
   setPropTypes({
@@ -29,14 +34,14 @@ const TabView = compose(
   }),
   defaultProps({
     initialIndex: 0,
-    renderHeader: defaultHeaderRenderer,
     swipeEnabled: Platform.OS !== 'web',
   }),
   withStyles,
   withState('index', 'onIndexChange', ({ initialIndex }) => initialIndex),
-  withProps(({ index, routes }) => ({
-    navigationState: { index, routes },
+  withProps(props => ({
+    navigationState: { index: props.index, routes: props.routes },
     initialLayout,
+    renderHeader: props.renderHeader ? props.renderHeader : defaultHeaderRenderer(props),
   })),
 )(TabViewAnimated);
 
