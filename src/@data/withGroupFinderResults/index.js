@@ -28,6 +28,7 @@ export default graphql(groupsQuery, {
   props: ({ data } = {}) => ({
     content: data.content,
     isLoading: data.loading,
+    refetch: data.refetch,
     canFetchMore: get(data, 'content.results.length') < get(data, 'content.count'),
     // fetchMore: () => {},
     // TODO: Not sure if this is working as expected, there's still an error onEndReached

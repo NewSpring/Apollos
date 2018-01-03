@@ -49,6 +49,7 @@ const Results = enhance(props => (
       isLoading={get(props, 'isLoading', true)}
       numColumns={1}
       fetchMore={props.fetchMore}
+      refetch={props.refetch}
       renderItem={({ item }) => (
         <GroupCard
           {...item}
@@ -61,7 +62,7 @@ const Results = enhance(props => (
           <Filter
             query={props.query}
             onUpdateFilter={filterUpdateHandler(props)}
-            isLoading={get(props, 'isLoading', true)}
+            isLoadingResults={get(props, 'isLoading', true)}
             numResults={get(props, 'content.count', 0)}
           />
         </View>
