@@ -1,5 +1,5 @@
 import { ApolloClient } from 'apollo-client';
-import { InMemoryCache, IntrospectionFragmentMatcher, defaultDataIdFromObject } from 'apollo-cache-inmemory';
+import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
 
 import authenticationLink from './authenticationLink';
 import httpLink from './httpLink';
@@ -10,11 +10,6 @@ export default new ApolloClient({
     authenticationLink.concat(httpLink),
   ),
   cache: new InMemoryCache({
-    dataIdFromObject(obj) {
-      // eslint-disable-next-line no-underscore-dangle
-      if (obj.entryId) return `${obj.__typename}:${obj.entryId}`;
-      return defaultDataIdFromObject(obj);
-    },
     fragmentMatcher: new IntrospectionFragmentMatcher({
       // NOTE: Introspection result goes here!
       // More Info: ./README.md
