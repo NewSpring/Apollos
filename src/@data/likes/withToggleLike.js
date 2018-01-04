@@ -29,8 +29,6 @@ export default compose(
           fragment: contentCard,
         });
 
-        console.log('toggle like mutation');
-
         return mutate({
           variables: {
             nodeId,
@@ -52,5 +50,7 @@ export default compose(
       },
     }),
   }),
-  withProtectedFunction((protect, { toggleLike }) => ({ toggleLike: () => protect(toggleLike) })),
+  withProtectedFunction((protect, { toggleLike }) => ({
+    toggleLike: nodeId => protect(() => toggleLike(nodeId)),
+  })),
 );
