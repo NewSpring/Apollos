@@ -33,7 +33,7 @@ const asBannerText = styled(({ theme }) => ({ color: theme.colors.lightPrimary, 
 const BannerH3 = asBannerText(H3);
 const BannerH7 = asBannerText(H7);
 
-const Auth = enhance(() => console.log('auth') || (
+const Auth = enhance(() => (
   <ScrollView>
     <Banner>
       <BannerH3>WELCOME TO NEWSPRING</BannerH3>

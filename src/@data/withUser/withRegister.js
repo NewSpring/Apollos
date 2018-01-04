@@ -44,9 +44,6 @@ export default graphql(MUTATION, {
             };
             store.writeQuery({ query: CURRENT_USER_QUERY, data });
           },
-          refetchQueries: [
-            'CurrentPerson',
-          ],
         });
         await AsyncStorage.setItem('authToken', get(r, 'data.registerUser.token'));
         return r;

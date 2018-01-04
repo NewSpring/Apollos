@@ -11,11 +11,13 @@ export const goBackTo = ({ to, history }) => {
     const routeToPopTo = history.entries.findIndex(location =>
       matchPath(location.pathname, to),
     );
-    if (routeToPopTo && routeToPopTo < history.index) {
+    if (routeToPopTo >= 0 && routeToPopTo < history.index) {
       distance = routeToPopTo - history.index;
+    } else {
+      return history.replace(to);
     }
   }
-  history.go(distance);
+  return history.go(distance);
 };
 
 export default class Link extends Component {
