@@ -8,10 +8,7 @@ describe('the Card component', () => {
     const tree = renderer.create(
       <ThemeProvider>
         <CardTile
-          number={7}
-          title={'Sermon Title'}
-          byLine={'Marty McFly'}
-          date={'Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)'}
+          title={'Why Jesus is Timeless'}
         />
       </ThemeProvider>,
     );
@@ -21,11 +18,19 @@ describe('the Card component', () => {
     const tree = renderer.create(
       <ThemeProvider>
         <CardTile
-          number={7}
-          title={'Sermon Title'}
-          byLine={'Marty McFly'}
-          date={'Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)'}
+          title={'Why Jesus is Timeless'}
           isLoading
+        />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render a number box', () => {
+    const tree = renderer.create(
+      <ThemeProvider>
+        <CardTile
+          number={7}
+          title={'Why Jesus is Timeless'}
         />
       </ThemeProvider>,
     );
@@ -36,21 +41,49 @@ describe('the Card component', () => {
       <ThemeProvider>
         <CardTile
           number={7777}
-          title={'Sermon Title'}
-          byLine={'Marty McFly'}
-          date={'3mo'}
+          title={'Why Jesus is Timeless'}
         />
       </ThemeProvider>,
     );
     expect(tree).toMatchSnapshot();
   });
-  it('should not render a number box if prop is missing', () => {
+  it('should render card details', () => {
     const tree = renderer.create(
       <ThemeProvider>
         <CardTile
-          title={'Sermon Title'}
+          number={7}
+          title={'Why Jesus is Timeless'}
+          showDetails
+          byLine={'Marty McFly'}
+        />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render card details with date', () => {
+    const tree = renderer.create(
+      <ThemeProvider>
+        <CardTile
+          number={7}
+          title={'Why Jesus is Timeless'}
+          showDetails
+          byLine={'Marty McFly'}
+          date={'Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)'} // this snapshot will expire in a year
+        />
+      </ThemeProvider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render a loading skeleton for all available props', () => {
+    const tree = renderer.create(
+      <ThemeProvider>
+        <CardTile
+          number={7}
+          title={'Why Jesus is Timeless'}
+          showDetails
           byLine={'Marty McFly'}
           date={'Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)'}
+          isLoading
         />
       </ThemeProvider>,
     );
