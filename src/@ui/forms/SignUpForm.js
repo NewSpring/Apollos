@@ -31,6 +31,9 @@ const enhance = compose(
         const result = await props.onSubmit(values);
         if (props.onSignupSuccess) props.onSignupSuccess(result);
 
+        const next = get(props, 'location.state.authCallback');
+        if (next) next(result);
+
         const referrer = get(props, 'location.state.referrer');
         if (referrer) props.history.replace(referrer);
       } catch (e) {

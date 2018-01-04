@@ -11,7 +11,7 @@ import Yup from 'yup';
 import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
 import Button from '@ui/Button';
-import { withRouter } from '@ui/NativeWebRouter';
+import { withRouter, goBackTo } from '@ui/NativeWebRouter';
 
 const enhance = compose(
   setPropTypes({
@@ -33,8 +33,11 @@ const enhance = compose(
         const result = await props.onSubmit(values);
         if (props.onLoginSuccess) props.onLoginSuccess(result);
 
+        const next = get(props, 'location.state.authCallback');
+        if (next) next(result);
+
         const referrer = get(props, 'location.state.referrer');
-        if (referrer) props.history.replace(referrer);
+        if (referrer) goBackTo({ to: referrer, history: props.history });
       } catch (e) {
         setFieldError('email', true);
         setFieldError('password', 'Your email or password is incorrect'); // todo: show real error message from server

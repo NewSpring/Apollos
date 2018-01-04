@@ -30,8 +30,12 @@ ActivityIndicatorWhileLoading.propTypes = { ...Route.propTypes };
 
 const ProtectedRoute = compose(
   withUser,
-  branch(({ isLoading, user }) => isLoading && !user, renderComponent(ActivityIndicatorWhileLoading)),
-  branch(({ user }) => !user, renderComponent(RedirectWithReferrer)),
+  branch(({ isLoading, user }) => isLoading && !user,
+    renderComponent(ActivityIndicatorWhileLoading),
+  ),
+  branch(({ user }) => !user,
+    renderComponent(RedirectWithReferrer),
+  ),
 )(Route);
 
 export default ProtectedRoute;
