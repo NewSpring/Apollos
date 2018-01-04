@@ -431,8 +431,7 @@ exports[`The TileFeed component renders empty state 1`] = `
         "content": Object {
           "speaker": "",
         },
-        "entryId": "fakeId1",
-        "id": "fakeId0",
+        "id": "fakeId1",
         "isLoading": true,
         "meta": Object {
           "date": "",
@@ -443,8 +442,7 @@ exports[`The TileFeed component renders empty state 1`] = `
         "content": Object {
           "speaker": "",
         },
-        "entryId": "fakeId2",
-        "id": "fakeId0",
+        "id": "fakeId2",
         "isLoading": true,
         "meta": Object {
           "date": "",
@@ -455,8 +453,7 @@ exports[`The TileFeed component renders empty state 1`] = `
         "content": Object {
           "speaker": "",
         },
-        "entryId": "fakeId3",
-        "id": "fakeId0",
+        "id": "fakeId3",
         "isLoading": true,
         "meta": Object {
           "date": "",
@@ -467,8 +464,7 @@ exports[`The TileFeed component renders empty state 1`] = `
         "content": Object {
           "speaker": "",
         },
-        "entryId": "fakeId4",
-        "id": "fakeId0",
+        "id": "fakeId4",
         "isLoading": true,
         "meta": Object {
           "date": "",
