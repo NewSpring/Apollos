@@ -44,7 +44,11 @@ const Study = enhance(({
   isLoading,
 }) => (
   <FlexedView>
-    <Header titleText={title} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
+    <Header
+      titleText={title}
+      backButton
+      barStyle={isLight ? 'dark-content' : 'light-content'}
+    />
     <ScrollView>
       <ContentView images={images} body={description} />
       <HorizontalTileFeed content={children} isLoading={isLoading} />

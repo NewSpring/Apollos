@@ -33,11 +33,12 @@ const generateLoadingStateData = (numberOfItems = 1) => {
   return loadingStateData;
 };
 
-const defaultItemRenderer = ({ item, index }) => ( // eslint-disable-line
+const defaultItemRenderer = ({ item, showTileMeta, index }) => ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
     <CardTile
       number={index + 1}
       title={item.title}
+      showDetails={showTileMeta}
       byLine={item.content.speaker}
       date={item.meta.date}
       isLoading={item.isLoading}
@@ -49,15 +50,16 @@ const enhance = compose(
   setPropTypes({
     isLoading: PropTypes.bool,
     content: PropTypes.array,
+    showTileMeta: PropTypes.bool,
     refetch: PropTypes.func,
     fetchMore: PropTypes.func,
     renderItem: PropTypes.func,
-    numColumns: PropTypes.number,
   }),
   defaultProps({
-    renderItem: defaultItemRenderer,
+    // renderItem: defaultItemRenderer,
     keyExtractor: item => item.id,
     content: [],
+    showTileMeta: false,
     isLoading: false,
   }),
   branch(({ isLoading, content }) => isLoading && !content.length, withProps({
@@ -69,23 +71,24 @@ const enhance = compose(
 
 const getTileWidth = () => {
   const { width } = Dimensions.get('window');
-  return width * 0.8;
+  return width * 0.8; // 80% of width
 };
 
 const HorizontalTileFeed = enhance(({
   content,
   isLoading,
+  showTileMeta,
   ...otherProps
 }) => (
   <TileFeed
-    renderItem={defaultItemRenderer}
+    renderItem={renderItemProps => defaultItemRenderer({ ...renderItemProps, showTileMeta })}
     data={content}
     horizontal
     initialScrollIndex={0}
     refreshing={isLoading}
     showsHorizontalScrollIndicator
     showsVerticalScrollIndicator={false}
-    getHeight={getTileWidth()} // passed into TileFeed styles. Height is equal to 80% of width
+    tileHeight={getTileWidth()} // passed into TileFeed styles. Height is equal to 80% of width
     snapToInterval={getTileWidth()} // passed down to rendered ScrollView
     snapToAlignment={'start'} // passed down to rendered ScrollView
     decelerationRate={'fast'} // passed down to rendered ScrollView

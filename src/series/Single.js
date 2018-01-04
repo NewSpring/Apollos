@@ -43,10 +43,18 @@ const SeriesSingle = enhance(({
   isLoading,
 }) => (
   <FlexedView>
-    <Header titleText="Series" backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
+    <Header
+      titleText="Series"
+      backButton
+      barStyle={isLight ? 'dark-content' : 'light-content'}
+    />
     <ScrollView>
       <ContentView images={images} body={description} />
-      <HorizontalTileFeed content={children} isLoading={isLoading} />
+      <HorizontalTileFeed
+        content={children}
+        isLoading={isLoading}
+        showTileMeta
+      />
     </ScrollView>
     <SecondaryNav>
       <Link icon="share" />

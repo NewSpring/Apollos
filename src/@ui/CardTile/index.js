@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, pure, setPropTypes } from 'recompose';
+import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { startCase, toLower } from 'lodash';
 import Placeholder from 'rn-placeholder';
 
@@ -13,16 +13,20 @@ import relativeTime from '@utils/relativeTime';
 
 const enhance = compose(
   pure,
-  withTheme(),
-  withThemeMixin({ type: 'light' }),
   setPropTypes({
     title: PropTypes.string.isRequired,
     number: PropTypes.number,
+    showDetails: PropTypes.bool,
     byLine: PropTypes.string,
     date: PropTypes.string,
     style: PropTypes.any, // eslint-disable-line
     isLoading: PropTypes.bool,
   }),
+  defaultProps({
+    showDetails: true,
+  }),
+  withTheme(),
+  withThemeMixin({ type: 'light' }),
 );
 
 const TileSpacer = styled(({ theme }) => ({
@@ -78,6 +82,7 @@ const TileNumber = styled(({ theme, size }) => ({
 const CardTile = enhance(({
   number,
   title,
+  showDetails,
   byLine,
   date,
   style: styleProp = {},
@@ -88,7 +93,7 @@ const CardTile = enhance(({
   <TileSpacer>
     <Tile style={styleProp} {...otherProps}>
       <WebAspectRatioFix>
-        {typeof number !== 'undefined' ? (
+        {typeof number === 'undefined' ? null : (
           <TileNumber size={number.toString().length}>
             <Placeholder.Media
               /* placeholder size is calculated the same as TileNumber width and height but slightly
@@ -102,7 +107,7 @@ const CardTile = enhance(({
               </View>
             </Placeholder.Media>
           </TileNumber>
-        ) : null}
+        )}
 
         <Placeholder.Line
           width={'75%'}
@@ -112,19 +117,23 @@ const CardTile = enhance(({
           <H4>{startCase(toLower(title))}</H4>
         </Placeholder.Line>
 
-        <CategoryLabel
-          label={startCase(toLower(byLine))}
-          icon={'video'}
-          isLoading={isLoading}
-        >
-          <Placeholder.Line
-            width={'10%'}
-            textSize={theme.helpers.rem(1)}
-            onReady={!isLoading}
+        {showDetails ? (
+          <CategoryLabel
+            label={startCase(toLower(byLine))}
+            icon={'video'}
+            isLoading={isLoading}
           >
-            <H7>{relativeTime(date)}</H7>
-          </Placeholder.Line>
-        </CategoryLabel>
+            {typeof date === 'undefined' ? null : (
+              <Placeholder.Line
+                width={'10%'}
+                textSize={theme.helpers.rem(1)}
+                onReady={!isLoading}
+              >
+                <H7>{relativeTime(date)}</H7>
+              </Placeholder.Line>
+            )}
+          </CategoryLabel>
+        ) : null }
       </WebAspectRatioFix>
     </Tile>
   </TileSpacer>
