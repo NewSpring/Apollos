@@ -1,10 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
+import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import { compose, withProps, setPropTypes } from 'recompose';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 
+import { withRouter } from '@ui/NativeWebRouter';
 import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
 import Button from '@ui/Button';
@@ -15,6 +17,7 @@ const enhance = compose(
     onSubmit: PropTypes.func,
     email: PropTypes.string,
   }),
+  withRouter,
   withFormik({
     mapPropsToValues: ({ email }) => ({ email }),
     validationSchema: Yup.object().shape({
@@ -24,15 +27,17 @@ const enhance = compose(
       lastName: Yup.string().required(),
     }),
     handleSubmit: async (values, { props, setSubmitting }) => {
-      props.onSubmit(values)
-        .catch((...e) => {
-          console.log('Sign up error', e); // eslint-disable-line
-          // todo: show server error messages
-        })
-        .then((...args) => {
-          if (props.onSignupSuccess) props.onSignupSuccess(...args);
-        })
-        .finally(() => setSubmitting(false));
+      try {
+        const result = await props.onSubmit(values);
+        if (props.onSignupSuccess) props.onSignupSuccess(result);
+
+        const referrer = get(props, 'location.state.referrer');
+        if (referrer) props.history.replace(referrer);
+      } catch (e) {
+        // todo: show error message from server
+      }
+
+      setSubmitting(false);
     },
   }),
   setPropTypes({

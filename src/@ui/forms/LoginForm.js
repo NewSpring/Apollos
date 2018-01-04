@@ -4,12 +4,14 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, mapProps, setPropTypes } from 'recompose';
+import { get } from 'lodash';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 
 import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
 import Button from '@ui/Button';
+import { withRouter } from '@ui/NativeWebRouter';
 
 const enhance = compose(
   setPropTypes({
@@ -17,6 +19,7 @@ const enhance = compose(
     onLoginSuccess: PropTypes.func,
     onSubmit: PropTypes.func,
   }),
+  withRouter,
   withFormik({
     mapPropsToValues: ({ email }) => ({
       email,
@@ -26,16 +29,18 @@ const enhance = compose(
       password: Yup.string().required(),
     }),
     handleSubmit: async (values, { props, setFieldError, setSubmitting }) => {
-      props.onSubmit(values)
-        .catch((...e) => {
-          console.log('Login form error', e); // eslint-disable-line
-          setFieldError('email', true);
-          setFieldError('password', 'Your email or password is incorrect'); // todo: show real error message from server
-        })
-        .then((...args) => {
-          if (props.onLoginSuccess) props.onLoginSuccess(...args);
-        })
-        .finally(() => setSubmitting(false));
+      try {
+        const result = await props.onSubmit(values);
+        if (props.onLoginSuccess) props.onLoginSuccess(result);
+
+        const referrer = get(props, 'location.state.referrer');
+        if (referrer) props.history.replace(referrer);
+      } catch (e) {
+        setFieldError('email', true);
+        setFieldError('password', 'Your email or password is incorrect'); // todo: show real error message from server
+      }
+
+      setSubmitting(false);
     },
   }),
   setPropTypes({
