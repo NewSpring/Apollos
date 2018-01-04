@@ -5,19 +5,24 @@ import {
 } from 'react-native';
 import { matchPath } from './';
 
-export const goBackTo = ({ to, history }) => {
+export const goBackTo = ({ to, history, replace = false }) => {
+  let foundMatchingEntry = false;
   let distance = -1;
   if (to && history.entries) {
     const routeToPopTo = history.entries.findIndex(location =>
       matchPath(location.pathname, to),
     );
     if (routeToPopTo >= 0 && routeToPopTo < history.index) {
+      foundMatchingEntry = true;
       distance = routeToPopTo - history.index;
-    } else {
-      return history.replace(to);
     }
   }
-  return history.go(distance);
+
+  if (foundMatchingEntry || !replace) {
+    history.go(distance);
+  } else {
+    history.replace(to);
+  }
 };
 
 export default class Link extends Component {

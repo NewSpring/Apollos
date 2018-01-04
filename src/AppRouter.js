@@ -64,7 +64,7 @@ class AppRouter extends PureComponent {
   largeScreenModals = [
     <Route exact path="/sections" key="sections-modal" component={asModal(tabs.Sections)} />,
     <Route path="/give/checkout" key="give-checkout" component={asModal(give.Checkout)} />,
-    <Route path="/login" key="login" component={Auth} />, // doesn't need asModal b/c Auth handles it itself (this view is also modal on mobile)
+    <Route path="/login" key="login" component={asModal(Auth)} />,
   ];
 
   tabs = () => {

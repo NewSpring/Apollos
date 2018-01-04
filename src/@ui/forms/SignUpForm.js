@@ -6,7 +6,7 @@ import { compose, withProps, setPropTypes } from 'recompose';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 
-import { withRouter } from '@ui/NativeWebRouter';
+import { withRouter, goBackTo } from '@ui/NativeWebRouter';
 import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
 import Button from '@ui/Button';
@@ -35,7 +35,7 @@ const enhance = compose(
         if (next) next(result);
 
         const referrer = get(props, 'location.state.referrer');
-        if (referrer) props.history.replace(referrer);
+        if (referrer) goBackTo({ to: referrer, history: props.history, replace: true });
       } catch (e) {
         // todo: show error message from server
       }
