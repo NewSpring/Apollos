@@ -32,7 +32,7 @@ export default gql`
             description
           }
         }
-        children {
+        children(channels: ["sermons"]) {
           id
           title
           channelName
