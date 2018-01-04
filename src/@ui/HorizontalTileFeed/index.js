@@ -56,7 +56,6 @@ const enhance = compose(
     renderItem: PropTypes.func,
   }),
   defaultProps({
-    // renderItem: defaultItemRenderer,
     keyExtractor: item => item.id,
     content: [],
     showTileMeta: false,
@@ -86,8 +85,7 @@ const HorizontalTileFeed = enhance(({
     horizontal
     initialScrollIndex={0}
     refreshing={isLoading}
-    showsHorizontalScrollIndicator
-    showsVerticalScrollIndicator={false}
+    showsHorizontalScrollIndicator={false}
     tileHeight={getTileWidth()} // passed into TileFeed styles. Height is equal to 80% of width
     snapToInterval={getTileWidth()} // passed down to rendered ScrollView
     snapToAlignment={'start'} // passed down to rendered ScrollView
