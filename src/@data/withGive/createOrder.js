@@ -1,0 +1,46 @@
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
+import Client from '@data/Client';
+import { QUERY as contributionsQuery } from './withContributions';
+import getOrderDetails from './selectors/getOrderDetails';
+
+export const MUTATION = gql`
+  mutation order($data: String!, $id: ID, $instant: Boolean) {
+    order: createOrder(data: $data, id: $id, instant: $instant) {
+      url
+      error
+      success
+      code
+    }
+  }
+`;
+
+// NOTE: They create order after capturing a billing address
+// Works kind of like a thunk
+export default graphql(MUTATION, {
+  props: ({ mutate }) => ({
+    createOrder() {
+      const { contributions: state } = Client.readQuery({
+        query: contributionsQuery,
+      });
+      const orderDetails = getOrderDetails(state);
+      Client.writeQuery({
+        query: contributionsQuery,
+        data: {
+          contributions: {
+            ...state,
+            isLoadingOrderUrl: true,
+          },
+        },
+      });
+
+      return mutate({
+        variables: {
+          data: JSON.stringify(orderDetails),
+          id: null,
+          instant: false,
+        },
+      });
+    },
+  }),
+});

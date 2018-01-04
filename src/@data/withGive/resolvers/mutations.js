@@ -1,5 +1,5 @@
 import pick from 'lodash/pick';
-import contributionsQuery from './contributionsQuery';
+import { QUERY as contributionsQuery } from '@data/withGive/withContributions';
 
 export function addContribution(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({

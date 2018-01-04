@@ -37,3 +37,11 @@ export const INITIAL_STATE = {
   paymentFailedMessage: '',
   paymentSuccessful: false,
 };
+
+export function contributions() {
+  return {
+    __typename: 'GiveContributions',
+    ...INITIAL_STATE,
+  };
+}
+

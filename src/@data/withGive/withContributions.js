@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
 
-export default gql`
+export const QUERY = gql`
   query Give {
     contributions @client {
       contributions
@@ -38,3 +39,16 @@ export default gql`
     }
   }
 `;
+
+export default graphql(QUERY, {
+  props({ data: { contributions, loading } }) {
+    if (!contributions) return { contributions, isLoading: loading };
+    return {
+      isLoading: loading,
+      contributions: {
+        ...contributions,
+        startDate: contributions && new Date(contributions.startDate),
+      },
+    };
+  },
+});
