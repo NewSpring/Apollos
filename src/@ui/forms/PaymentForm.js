@@ -129,11 +129,11 @@ export const PaymentFormWithoutData = ({
       ) : (
         <View>
           <Inputs.Switch
-            value={values.willSaveAccountName}
-            onValueChange={r => setFieldValue('willSaveAccountName', r)}
+            value={values.willSavePaymentMethod}
+            onValueChange={r => setFieldValue('willSavePaymentMethod', r)}
             label="Save this payment for future contributions"
           />
-          {values.willSaveAccountName && (
+          {values.willSavePaymentMethod && (
             <Inputs.Text
               label="Save Account Name"
               value={values.savedAccountName}
@@ -162,7 +162,7 @@ PaymentFormWithoutData.propTypes = {
     cardNumber: PropTypes.string,
     expirationDate: PropTypes.string,
     cvv: PropTypes.string,
-    willSaveAccountName: PropTypes.bool,
+    willSavePaymentMethod: PropTypes.bool,
   }),
   setFieldTouched: PropTypes.func,
   touched: PropTypes.shape({
@@ -231,14 +231,15 @@ const PaymentForm = compose(
         then: Yup.string().required(),
       }),
       accountType: Yup.string().oneOf(['checking', 'savings']),
-      willSaveAccountName: Yup.boolean(),
-      savedAccountName: props.enforceAccountName ? Yup.string().required() : Yup.string().when('willSaveAccountName', {
+      willSavePaymentMethod: Yup.boolean(),
+      savedAccountName: props.enforceAccountName ? Yup.string().required() : Yup.string().when('willSavePaymentMethod', {
         is: true,
         then: Yup.string().required(),
       }),
     }),
     handleSubmit: (values, { props }) => {
       const formattedValues = { ...values };
+      console.log(formattedValues); // LEFT OFF HERE
       const selectPaymentType = values.paymentMethod === 'bankAccount' ? props.isPayingWithBankAccount : props.isPayingWithCreditCard;
       selectPaymentType();
 
