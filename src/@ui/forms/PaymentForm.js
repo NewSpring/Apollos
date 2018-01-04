@@ -34,6 +34,7 @@ export const PaymentFormWithoutData = ({
   errors,
   isSubmitting,
   isValid,
+  enforceAccountName, // Specific to saving a payment method
 }) => (
   <View>
     <Inputs.Picker
@@ -114,6 +115,37 @@ export const PaymentFormWithoutData = ({
       </View>
     )}
 
+    {
+      enforceAccountName ? (
+        <View>
+          <Inputs.Text
+            label="Save Account Name"
+            value={values.savedAccountName}
+            onChangeText={text => setFieldValue('savedAccountName', text)}
+            onBlur={() => setFieldTouched('savedAccountName', true)}
+            error={Boolean(touched.savedAccountName && errors.savedAccountName)}
+          />
+        </View>
+      ) : (
+        <View>
+          <Inputs.Switch
+            value={values.willSaveAccountName}
+            onValueChange={r => setFieldValue('willSaveAccountName', r)}
+            label="Save this payment for future contributions"
+          />
+          {values.willSaveAccountName && (
+            <Inputs.Text
+              label="Save Account Name"
+              value={values.savedAccountName}
+              onChangeText={text => setFieldValue('savedAccountName', text)}
+              onBlur={() => setFieldTouched('savedAccountName', true)}
+              error={Boolean(touched.savedAccountName && errors.savedAccountName)}
+            />
+          )}
+        </View>
+      )
+    }
+
     <Button onPress={handleSubmit} title="Next" disabled={!isValid} loading={isSubmitting} />
   </View>
 );
@@ -130,6 +162,7 @@ PaymentFormWithoutData.propTypes = {
     cardNumber: PropTypes.string,
     expirationDate: PropTypes.string,
     cvv: PropTypes.string,
+    willSaveAccountName: PropTypes.bool,
   }),
   setFieldTouched: PropTypes.func,
   touched: PropTypes.shape({
@@ -154,6 +187,7 @@ PaymentFormWithoutData.propTypes = {
   }),
   isSubmitting: PropTypes.bool,
   isValid: PropTypes.bool,
+  enforceAccountName: PropTypes.bool,
 };
 
 const PaymentForm = compose(
@@ -166,7 +200,7 @@ const PaymentForm = compose(
       ...get(props, 'contributions.bankAccount', {}),
       ...get(props, 'contributions.creditCard', {}),
     }),
-    validationSchema: Yup.object().shape({
+    validationSchema: props => Yup.object().shape({
       paymentMethod: Yup.string().oneOf(['bankAccount', 'creditCard']).required(),
       cardNumber: Yup.string().when('paymentMethod', {
         is: 'creditCard',
@@ -197,6 +231,11 @@ const PaymentForm = compose(
         then: Yup.string().required(),
       }),
       accountType: Yup.string().oneOf(['checking', 'savings']),
+      willSaveAccountName: Yup.boolean(),
+      savedAccountName: props.enforceAccountName ? Yup.string().required() : Yup.string().when('willSaveAccountName', {
+        is: true,
+        then: Yup.string().required(),
+      }),
     }),
     handleSubmit: (values, { props }) => {
       const formattedValues = { ...values };
