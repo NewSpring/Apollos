@@ -39,7 +39,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#6bac43",
+          "color": "#303030",
           "fontFamily": null,
           "fontSize": 14,
           "lineHeight": 15.87,
@@ -94,7 +94,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#6bac43",
+          "color": "#ffffff",
           "fontFamily": null,
           "fontSize": 14,
           "lineHeight": 15.87,
@@ -149,7 +149,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#6bac43",
+          "color": "#303030",
           "fontFamily": null,
           "fontSize": 14,
           "lineHeight": 15.87,
@@ -216,7 +216,7 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "red",
+          "color": "#303030",
           "fontFamily": null,
           "fontSize": 14,
           "lineHeight": 15.87,
@@ -271,7 +271,7 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "blue",
+          "color": "#ffffff",
           "fontFamily": null,
           "fontSize": 14,
           "lineHeight": 15.87,

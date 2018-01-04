@@ -1,12 +1,14 @@
 import React from 'react';
 import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
+
+import withStudy from '@data/withStudy';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import ContentView from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
-import withStudy from '@data/withStudy';
 import { withThemeMixin } from '@ui/theme';
+import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 
 const enhance = compose(
   pure,
@@ -37,12 +39,19 @@ const Study = enhance(({
       images = [],
       description,
     } = {},
+    children,
   } = { },
+  isLoading,
 }) => (
   <FlexedView>
-    <Header titleText={title} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
+    <Header
+      titleText={title}
+      backButton
+      barStyle={isLight ? 'dark-content' : 'light-content'}
+    />
     <ScrollView>
       <ContentView images={images} body={description} />
+      <HorizontalTileFeed content={children} isLoading={isLoading} />
     </ScrollView>
     <SecondaryNav>
       <Link icon="share" />
