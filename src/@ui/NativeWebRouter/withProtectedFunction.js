@@ -10,7 +10,7 @@ const authPromiseForClient = ({ history, location, client }) => async (next) => 
   if (!user || !user.id) {
     history.push({
       pathname: '/login',
-      state: { referrer: location.pathname, authCallback: next },
+      state: { referrer: location.pathname },
     });
   } else {
     next(user);
@@ -19,7 +19,9 @@ const authPromiseForClient = ({ history, location, client }) => async (next) => 
 
 /**
  * HOC that allows you to pass in functions into a component
- * that run only after a user logs in (and prompts for user login if needed)
+ * that run only if a user is logged in (and prompts for user login if needed)
+ * Todo: If user isn't logged in, this doesn't run the given function after they login.
+ * That proved to be problematic due to the different routers being used on web and native.
  * Usage:
  * withProtectedFunction((protect, ownProps) => ({
  *   protectedFunction: protect(ownProps.someFunctionIWantToSecure),
