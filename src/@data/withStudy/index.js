@@ -2,8 +2,9 @@ import { graphql } from 'react-apollo';
 import studyQuery from './studyQuery';
 
 export default graphql(studyQuery, {
-  props: ({ data: { content } }) => ({
+  props: ({ data: { content, loading } }) => ({
     content,
+    isLoading: loading,
   }),
   options: (ownProps = {}) => ({
     variables: {
@@ -11,4 +12,3 @@ export default graphql(studyQuery, {
     },
   }),
 });
-
