@@ -28,6 +28,9 @@ export default graphql(MUTATION, {
             token,
             newPassword,
           },
+          refetchQueries: [
+            'CurrentPerson',
+          ],
         });
         await AsyncStorage.setItem('authToken', get(r, 'data.resetUserPassword.token'));
         return r;
@@ -36,9 +39,4 @@ export default graphql(MUTATION, {
       }
     },
   }),
-  options: {
-    refetchQueries: [
-      'CurrentPerson',
-    ],
-  },
 });

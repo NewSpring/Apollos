@@ -5,6 +5,8 @@ import {
 } from 'react-native';
 import get from 'lodash/get';
 
+import { QUERY as CURRENT_USER_QUERY } from './withUser';
+
 export const MUTATION = gql`
   mutation loginUser($email: String!, $password: String!) {
     loginUser(email: $email, password: $password) {
@@ -23,6 +25,18 @@ export default graphql(MUTATION, {
             email,
             password,
           },
+          update: (store, { data: { loginUser } }) => {
+            const data = store.readQuery({ query: CURRENT_USER_QUERY });
+            data.person = {
+              id: loginUser.id,
+              email,
+              password,
+            };
+            store.writeQuery({ query: CURRENT_USER_QUERY, data });
+          },
+          refetchQueries: [
+            'CurrentPerson',
+          ],
         });
         await AsyncStorage.setItem('authToken', get(r, 'data.loginUser.token'));
         return r;
@@ -31,9 +45,4 @@ export default graphql(MUTATION, {
       }
     },
   }),
-  options: {
-    refetchQueries: [
-      'CurrentPerson',
-    ],
-  },
 });

@@ -5,6 +5,8 @@ import {
   AsyncStorage,
 } from 'react-native';
 
+import { QUERY as CURRENT_USER_QUERY } from './withUser';
+
 export const MUTATION = gql`
   mutation registerUser($email: String!, $password: String!, $firstName: String!, $lastName: String!) {
     registerUser(email: $email, password: $password, firstName: $firstName, lastName: $lastName) {
@@ -32,6 +34,19 @@ export default graphql(MUTATION, {
             firstName,
             lastName,
           },
+          update: (store, { data: { registerUser } }) => {
+            const data = store.readQuery({ query: CURRENT_USER_QUERY });
+            data.person = {
+              id: registerUser.id,
+              email,
+              firstName,
+              lastName,
+            };
+            store.writeQuery({ query: CURRENT_USER_QUERY, data });
+          },
+          refetchQueries: [
+            'CurrentPerson',
+          ],
         });
         await AsyncStorage.setItem('authToken', get(r, 'data.registerUser.token'));
         return r;
@@ -40,9 +55,4 @@ export default graphql(MUTATION, {
       }
     },
   }),
-  options: {
-    refetchQueries: [
-      'CurrentPerson',
-    ],
-  },
 });
