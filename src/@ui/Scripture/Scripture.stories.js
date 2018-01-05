@@ -8,7 +8,7 @@ import { ItemWithoutData } from './Item';
 
 const references = [
   'Psalm 1',
-  'Matthew 4:13–17',
+  'Matthew 4:13-17',
   'Matthew 11:15-19',
   'Matthew 13:14-15',
   'Matthew 21:4-5',
