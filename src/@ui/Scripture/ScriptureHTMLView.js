@@ -20,7 +20,7 @@ const renderer = (node, { children, ...other }) => { // eslint-disable-line
   }
 
   if (className.includes('block-indent')) { // todo
-    return <Text style={{ paddingLeft: 10 }}>{children}</Text>;
+    return <Text style={{ paddingLeft: 10, paddingTop: 10 }}>{children}</Text>;
   }
 
   if (className.includes('indent')) { // todo
@@ -29,6 +29,10 @@ const renderer = (node, { children, ...other }) => { // eslint-disable-line
 
   if (className.includes('small-caps')) {
     return <Text>{children[0].props.children.toUpperCase()}</Text>;
+  }
+
+  if (className.includes('woc')) {
+    return <Text style={{ color: 'darkred' }}>{children}</Text>;
   }
 
   if (node.name === 'p') return <Paragraph><Text>{wrapTextChildren(children)}</Text></Paragraph>;
