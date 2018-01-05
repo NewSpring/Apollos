@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { View } from 'react-native';
+import React from 'react';
+import { View, Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
+import Icon from '@ui/Icon';
 import CategoryLabel from './';
 
 storiesOf('@ui/CategoryLabel', module)
@@ -14,7 +15,23 @@ storiesOf('@ui/CategoryLabel', module)
 
     return (
       <View style={centered}>
-        <CategoryLabel type={'Default'} />
+        <CategoryLabel label={'Default'} />
+      </View>
+    );
+  })
+  .add('Skeleton', () => {
+    const centered = {
+      justifyContent: 'center',
+      alignItems: 'center',
+      flex: 1,
+    };
+
+    return (
+      <View style={centered}>
+        <CategoryLabel
+          label={'Default'}
+          isLoading
+        />
       </View>
     );
   })
@@ -27,7 +44,7 @@ storiesOf('@ui/CategoryLabel', module)
 
     return (
       <View style={centered}>
-        <CategoryLabel type={'Series'} />
+        <CategoryLabel label={'Series'} />
       </View>
     );
   })
@@ -40,33 +57,39 @@ storiesOf('@ui/CategoryLabel', module)
 
     return (
       <View style={centered}>
-        <CategoryLabel type={'Albums'} />
+        <CategoryLabel label={'Albums'} />
       </View>
     );
   })
-  .add('isLoading', () => React.createElement(class CardImageLoading extends Component {
-    constructor() {
-      super();
-      this.state = { isLoading: true };
-    }
+  .add('Custom', () => {
+    const centered = {
+      justifyContent: 'center',
+      alignItems: 'center',
+      flex: 1,
+    };
 
-    componentDidMount() {
-      setTimeout(() => {
-        this.setState({ isLoading: false });
-      }, 4000);
-    }
+    return (
+      <View style={centered}>
+        <CategoryLabel
+          label={'Albums'}
+          icon={'like-solid'}
+        />
+      </View>
+    );
+  })
+  .add('With children', () => {
+    const centered = {
+      justifyContent: 'center',
+      alignItems: 'center',
+      flex: 1,
+    };
 
-    render() {
-      const centered = {
-        justifyContent: 'center',
-        alignItems: 'center',
-        flex: 1,
-      };
-
-      return (
-        <View style={centered}>
-          <CategoryLabel type={'Default'} isLoading={this.state.isLoading} />
-        </View>
-      );
-    }
-  }));
+    return (
+      <View style={centered}>
+        <CategoryLabel label={'Albums'}>
+          <Text>Boom</Text>
+          <Icon name={'like-solid'} />
+        </CategoryLabel>
+      </View>
+    );
+  });

@@ -2,12 +2,14 @@ import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
+import { kebabCase } from 'lodash';
 import Placeholder from 'rn-placeholder';
 
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 import { H7 } from '@ui/typography';
 import Icon from '@ui/Icon';
+import * as Icons from '@ui/Icon/icons';
 
 const enhance = compose(
   pure,
@@ -16,72 +18,71 @@ const enhance = compose(
     theme,
   })),
   setPropTypes({
-    type: PropTypes.string,
+    label: PropTypes.string.isRequired,
+    icon: PropTypes.oneOf(Object.keys(Icons).map(kebabCase)),
     color: PropTypes.string,
     isLoading: PropTypes.bool,
+    children: PropTypes.node,
   }),
 );
 
 const Wrapper = styled(({ theme }) => ({
   flexDirection: 'row',
   alignItems: 'center',
-  flex: 1,
   paddingTop: theme.sizing.baseUnit / 2,
-  paddingRight: theme.sizing.baseUnit,
 }))(View);
 
-const StyledH7 = styled(({ color: fontColor, theme }) => ({
+const PlaceholderWrapper = styled(({ theme }) => ({
+  flex: 1,
   paddingHorizontal: theme.sizing.baseUnit / 2,
+}))(View);
+
+const LabelText = styled(({ color: fontColor }) => ({
   color: fontColor,
 }))(H7);
 
-const StyledView = styled({
-  flexDirection: 'row',
-  alignItems: 'center',
-})(View);
-
 // TODO: Ideally this should take an the current category and map it against an array of all the
 // categories in Heighliner
-const getIconName = (type) => {
-  switch (type) {
-    case 'Series':
-      return 'video';
-    case 'Albums':
-      return 'audio';
-    default:
-      return 'text';
+const getIconName = (label, icon) => {
+  if (typeof icon === 'undefined') {
+    switch (label) {
+      case 'Series':
+        return 'video';
+      case 'Albums':
+        return 'audio';
+      default:
+        return 'text';
+    }
+  } else {
+    return icon;
   }
 };
 
 const CategoryLabel = enhance(({
-  type,
+  label,
+  icon,
   color: fontColor,
   isLoading,
+  children,
   theme,
 }) => (
   <Wrapper>
-    <Placeholder.ImageContent
-      firstLineWidth={'40%'}
-      width={'40%'}
-      lastLineWidth={'40%'}
-      textSize={theme.helpers.rem(1.2)}
-      lineNumber={1}
+    <Icon
+      name={getIconName(label, icon)}
       size={theme.helpers.rem(1.2)}
-      hasRadius
-      onReady={!isLoading}
-    >
-      {/* unecessary view but removes warning from console about children. Consider refactoring this
-        whole thing to use isLoading prop on Icon
-        */ }
-      <StyledView>
-        <Icon
-          name={getIconName(type)}
-          size={theme.helpers.rem(1.2)}
-          fill={fontColor}
-        />
-        <StyledH7 color={fontColor}>{type}</StyledH7>
-      </StyledView>
-    </Placeholder.ImageContent>
+      fill={fontColor}
+      isLoading={isLoading}
+    />
+    <PlaceholderWrapper>
+      <Placeholder.Line
+        width={'40%'}
+        textSize={theme.helpers.rem(1)}
+        onReady={!isLoading}
+      >
+        <LabelText color={fontColor}>{label}</LabelText>
+      </Placeholder.Line>
+    </PlaceholderWrapper>
+    {children}
   </Wrapper>
 ));
 
