@@ -16,7 +16,7 @@ const StyledH7 = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(0.778),
   fontFamily: theme.typography.fontFamilySans,
   lineHeight: theme.helpers.verticalRhythm(0.778, 1.02),
-  color: theme.colors.primary,
+  color: theme.colors.text.primary,
 }), 'H7')(Text);
 
 const H7 = enhance(({
