@@ -70,10 +70,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -83,14 +79,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -148,14 +136,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -178,14 +158,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -268,14 +240,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -358,14 +322,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -448,14 +404,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -538,14 +486,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -628,14 +568,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -718,14 +650,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -808,14 +732,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -874,10 +790,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -887,14 +799,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -952,14 +856,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -1042,14 +938,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -1132,14 +1020,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -1214,14 +1094,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -1252,14 +1124,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -1342,14 +1206,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -1432,14 +1288,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -1522,14 +1370,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -1612,14 +1452,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -1678,10 +1510,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -1691,14 +1519,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -1756,14 +1576,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -1846,14 +1658,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -1936,14 +1740,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -2026,14 +1822,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -2116,14 +1904,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -2206,14 +1986,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -2296,14 +2068,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -2386,14 +2150,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -2452,10 +2208,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -2465,14 +2217,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -2530,14 +2274,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -2620,14 +2356,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -2710,14 +2438,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -2800,14 +2520,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -2890,14 +2602,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -2980,14 +2684,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -3062,14 +2758,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -3100,14 +2788,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -3190,14 +2870,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -3256,10 +2928,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -3269,14 +2937,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -3326,14 +2986,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -3364,14 +3016,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -3454,14 +3098,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -3544,14 +3180,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -3634,14 +3262,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -3724,14 +3344,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -3814,14 +3426,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -3904,14 +3508,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -3994,14 +3590,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -4060,10 +3648,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -4073,14 +3657,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -4130,14 +3706,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -4168,14 +3736,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -4258,14 +3818,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -4348,14 +3900,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -4438,14 +3982,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -4528,14 +4064,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -4618,14 +4146,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -4708,14 +4228,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -4798,14 +4310,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -4864,10 +4368,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -4877,14 +4377,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -4942,14 +4434,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -5032,14 +4516,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -5122,14 +4598,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -5212,14 +4680,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -5242,14 +4702,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -5332,14 +4784,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -5422,14 +4866,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -5504,14 +4940,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -5542,14 +4970,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -5632,14 +5052,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -5698,10 +5110,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -5711,14 +5119,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -5768,14 +5168,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -5806,14 +5198,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -5896,14 +5280,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -5986,14 +5362,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -6076,14 +5444,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -6166,14 +5526,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -6256,14 +5608,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -6346,14 +5690,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -6428,14 +5764,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -6466,14 +5794,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -6532,10 +5852,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -6545,14 +5861,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -6610,14 +5918,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -6640,14 +5940,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -6730,14 +6022,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -6820,14 +6104,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -6910,14 +6186,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -7000,14 +6268,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -7090,14 +6350,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -7180,14 +6432,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -7270,14 +6514,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -7336,10 +6572,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -7349,14 +6581,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -7414,14 +6638,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -7504,14 +6720,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -7586,14 +6794,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -7624,14 +6824,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -7714,14 +6906,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -7804,14 +6988,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -7894,14 +7070,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -7932,14 +7100,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -8022,14 +7182,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -8112,14 +7264,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -8178,10 +7322,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -8191,14 +7331,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -8256,14 +7388,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -8346,14 +7470,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -8436,14 +7552,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -8526,14 +7634,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -8616,14 +7716,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -8706,14 +7798,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -8796,14 +7880,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -8886,14 +7962,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -8952,10 +8020,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -8965,14 +8029,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -9022,14 +8078,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -9060,14 +8108,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -9150,14 +8190,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -9240,14 +8272,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -9330,14 +8354,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -9420,14 +8436,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -9510,14 +8518,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -9600,14 +8600,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -9690,14 +8682,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -9756,10 +8740,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -9769,14 +8749,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -9834,14 +8806,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -9924,14 +8888,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -10014,14 +8970,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -10104,14 +9052,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -10194,14 +9134,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -10284,14 +9216,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -10374,14 +9298,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -10464,14 +9380,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -10530,10 +9438,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -10543,14 +9447,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -10608,14 +9504,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -10698,14 +9586,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -10788,14 +9668,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -10818,14 +9690,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -10900,14 +9764,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -10938,14 +9794,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -11028,14 +9876,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -11118,14 +9958,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -11208,14 +10040,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -11298,14 +10122,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -11364,10 +10180,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -11377,14 +10189,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -11442,14 +10246,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -11532,14 +10328,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -11622,14 +10410,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -11712,14 +10492,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -11802,14 +10574,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -11892,14 +10656,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -11982,14 +10738,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -12072,14 +10820,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -12138,10 +10878,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -12151,14 +10887,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -12216,14 +10944,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -12306,14 +11026,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -12396,14 +11108,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -12486,14 +11190,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -12576,14 +11272,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -12658,14 +11346,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -12696,14 +11376,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -12786,14 +11458,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -12876,14 +11540,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -12942,10 +11598,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -12955,14 +11607,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -13020,14 +11664,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -13110,14 +11746,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -13200,14 +11828,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -13290,14 +11910,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -13380,14 +11992,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -13470,14 +12074,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -13560,14 +12156,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -13650,14 +12238,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -13716,10 +12296,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -13729,14 +12305,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -13786,14 +12354,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -13824,14 +12384,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -13914,14 +12466,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -14004,14 +12548,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -14094,14 +12630,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -14184,14 +12712,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -14274,14 +12794,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -14364,14 +12876,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -14454,14 +12958,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -14520,10 +13016,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -14533,14 +13025,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -14590,14 +13074,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -14628,14 +13104,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -14718,14 +13186,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -14808,14 +13268,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -14898,14 +13350,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -14988,14 +13432,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -15018,14 +13454,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -15108,14 +13536,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -15190,14 +13610,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -15228,14 +13640,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -15318,14 +13722,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -15384,10 +13780,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -15397,14 +13789,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -15462,14 +13846,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -15552,14 +13928,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -15642,14 +14010,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -15724,14 +14084,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -15762,14 +14114,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -15852,14 +14196,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -15942,14 +14278,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -16032,14 +14360,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -16122,14 +14442,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -16188,10 +14500,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -16201,14 +14509,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -16266,14 +14566,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -16356,14 +14648,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -16446,14 +14730,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -16536,14 +14812,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -16626,14 +14894,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -16708,14 +14968,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -16746,14 +14998,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -16836,14 +15080,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -16926,14 +15162,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -16992,10 +15220,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
           "paddingLeft": 10,
           "paddingTop": 10,
         }
@@ -17005,14 +15229,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
-          }
-        }
       >
         <Text
           accessible={true}
@@ -17062,14 +15278,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -17100,14 +15308,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -17190,14 +15390,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -17280,14 +15472,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -17370,14 +15554,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -17460,14 +15636,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -17542,14 +15710,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
           LORD
         </Text>
@@ -17580,14 +15740,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -17670,14 +15822,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
@@ -17760,14 +15904,6 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
-            }
-          }
         >
                
         </Text>
