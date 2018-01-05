@@ -245,7 +245,7 @@ class Transitioner extends PureComponent {
 
   cancelNavigationFromPan = (duration) => {
     this.animation = Animated.timing(this.animatedPosition, {
-      toValue: 1,
+      toValue: this.state.index,
       duration,
       easing: Easing.linear(),
       useNativeDriver: true,
