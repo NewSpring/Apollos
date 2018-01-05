@@ -27,6 +27,10 @@ const renderer = (node, { children, ...other }) => { // eslint-disable-line
     return <Text>{'     '}{children}</Text>;
   }
 
+  if (className.includes('small-caps')) {
+    return <Text>{children[0].props.children.toUpperCase()}</Text>;
+  }
+
   if (node.name === 'p') return <Paragraph><Text>{wrapTextChildren(children)}</Text></Paragraph>;
 
   return defaultRenderer(node, { children, ...other });
