@@ -238,7 +238,8 @@ const PaymentForm = compose(
         then: Yup.string().required(),
       }),
     }),
-    handleSubmit: (values, { props }) => {
+    handleSubmit: (values, { props, setSubmitting }) => {
+      setSubmitting(true);
       const formattedValues = { ...values };
       const selectPaymentType = values.paymentMethod === 'bankAccount' ? props.isPayingWithBankAccount : props.isPayingWithCreditCard;
       selectPaymentType();
@@ -256,6 +257,7 @@ const PaymentForm = compose(
       if (formattedValues.willSavePaymentMethod) {
         props.setSavedPaymentName(formattedValues.savedAccountName);
       }
+      setSubmitting(false);
       if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
     },
   }),
