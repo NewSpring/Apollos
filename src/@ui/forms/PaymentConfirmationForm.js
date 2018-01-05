@@ -127,6 +127,9 @@ const PaymentConfirmationForm = compose(
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
 
+        // TODO: checkout and save
+        if (props.willSavePaymentMethod) console.log('props.savePaymentMethod');
+
         props.setPaymentResult({
           success: true,
         });

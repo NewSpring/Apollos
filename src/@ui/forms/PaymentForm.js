@@ -198,7 +198,7 @@ const PaymentForm = compose(
     mapPropsToValues: props => ({
       paymentMethod: get(props, 'contributions.paymentMethod', 'creditCard'),
       willSavePaymentMethod: get(props, 'contributions.willSavePaymentMethod', true),
-      ...get(props, 'contributions.bankAccount', {}),
+      ...get(props, 'contributions.bankAccount', { accountType: 'checking' }),
       ...get(props, 'contributions.creditCard', {}),
     }),
     validationSchema: props => Yup.object().shape({
@@ -251,6 +251,7 @@ const PaymentForm = compose(
       }
 
       const setAccountDetails = values.paymentMethod === 'bankAccount' ? props.setBankAccount : props.setCreditCard;
+      console.log(formattedValues);
       setAccountDetails(formattedValues);
 
       props.willSavePaymentMethod(formattedValues.willSavePaymentMethod);

@@ -18,7 +18,7 @@ export default gql`
         description
       }
     }
-    savedPayments(cache: false){
+    savedPaymentMethods: savedPayments(cache: false){
       id: entityId
       name
       payment {
