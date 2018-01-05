@@ -126,7 +126,7 @@ const PaymentConfirmationForm = compose(
     cvv: get(props, 'contributions.creditCard.cvv'),
     onSubmit: async () => {
       try {
-        props.isPaying(true);
+        props.isSavingPaymentMethod(true);
         if (props.contributions.paymentMethod === 'creditCard') {
           await props.validateSingleCardTransaction(); // This seems unnecessary
         }
@@ -136,7 +136,7 @@ const PaymentConfirmationForm = compose(
         // the code to understand what id and name are for
         const completeOrderRes = await props.savePaymentMethod({
           token: props.contributions.orderPaymentToken,
-          name: 'tester',
+          name: props.contributions.savedAccountName,
         });
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
@@ -152,7 +152,7 @@ const PaymentConfirmationForm = compose(
         });
         return null;
       } finally {
-        props.isPaying(false);
+        props.isSavingPaymentMethod(false);
         if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
       }
     },
