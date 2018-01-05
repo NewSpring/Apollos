@@ -17,6 +17,9 @@ import setPaymentResult from './setPaymentResult';
 import setIsPaying from './setIsPaying';
 import validateSingleCardTransaction from './validateSingleCardTransaction';
 import savePaymentMethod from './savePaymentMethod';
+import setIsSavingPaymentMethod from './setIsSavingPaymentMethod';
+import setWillSavePaymentMethod from './setWillSavePaymentMethod';
+import setSavedPaymentName from './setSavedPaymentName';
 
 export default compose(
   addContribution,
@@ -37,4 +40,7 @@ export default compose(
   setIsPaying,
   withContributions,
   savePaymentMethod,
+  setIsSavingPaymentMethod,
+  setWillSavePaymentMethod,
+  setSavedPaymentName,
 );

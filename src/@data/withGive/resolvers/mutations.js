@@ -310,3 +310,75 @@ export async function isPaying(result, variables, { cache }) {
     throw err;
   }
 }
+
+export async function isSavingPaymentMethod(result, variables, { cache }) {
+  try {
+    const { contributions: state } = cache.readQuery({
+      query: contributionsQuery,
+      variables,
+    });
+
+    cache.writeQuery({
+      query: contributionsQuery,
+      variables,
+      data: {
+        contributions: {
+          ...state,
+          isSavingPaymentMethod: variables.isSavingPaymentMethod,
+        },
+      },
+    });
+
+    return null;
+  } catch (err) {
+    throw err;
+  }
+}
+
+export async function willSavePaymentMethod(result, variables, { cache }) {
+  try {
+    const { contributions: state } = cache.readQuery({
+      query: contributionsQuery,
+      variables,
+    });
+
+    cache.writeQuery({
+      query: contributionsQuery,
+      variables,
+      data: {
+        contributions: {
+          ...state,
+          willSavePaymentMethod: variables.willSavePaymentMethod,
+        },
+      },
+    });
+
+    return null;
+  } catch (err) {
+    throw err;
+  }
+}
+
+export async function setSavedPaymentName(result, variables, { cache }) {
+  try {
+    const { contributions: state } = cache.readQuery({
+      query: contributionsQuery,
+      variables,
+    });
+
+    cache.writeQuery({
+      query: contributionsQuery,
+      variables,
+      data: {
+        contributions: {
+          ...state,
+          savedAccountName: variables.name,
+        },
+      },
+    });
+
+    return null;
+  } catch (err) {
+    throw err;
+  }
+}

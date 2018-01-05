@@ -36,6 +36,9 @@ export const QUERY = gql`
       paymentFailed
       paymentFailedMessage
       paymentSuccessful
+      isSavingPaymentMethod
+      willSavePaymentMethod
+      savedAccountName
     }
   }
 `;
