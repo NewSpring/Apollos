@@ -196,7 +196,8 @@ const PaymentForm = compose(
   withRouter,
   withFormik({
     mapPropsToValues: props => ({
-      paymentMethod: get(props, 'contributions.paymentMethod') || 'creditCard',
+      paymentMethod: get(props, 'contributions.paymentMethod', 'creditCard'),
+      willSavePaymentMethod: get(props, 'contributions.willSavePaymentMethod', true),
       ...get(props, 'contributions.bankAccount', {}),
       ...get(props, 'contributions.creditCard', {}),
     }),
@@ -239,7 +240,6 @@ const PaymentForm = compose(
     }),
     handleSubmit: (values, { props }) => {
       const formattedValues = { ...values };
-      console.log(formattedValues); // LEFT OFF HERE
       const selectPaymentType = values.paymentMethod === 'bankAccount' ? props.isPayingWithBankAccount : props.isPayingWithCreditCard;
       selectPaymentType();
 
@@ -251,6 +251,11 @@ const PaymentForm = compose(
 
       const setAccountDetails = values.paymentMethod === 'bankAccount' ? props.setBankAccount : props.setCreditCard;
       setAccountDetails(formattedValues);
+
+      props.willSavePaymentMethod(formattedValues.willSavePaymentMethod);
+      if (formattedValues.willSavePaymentMethod) {
+        props.setSavedPaymentName(formattedValues.savedAccountName);
+      }
       if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
     },
   }),
