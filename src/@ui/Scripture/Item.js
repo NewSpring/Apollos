@@ -6,7 +6,6 @@ import Placeholder from 'rn-placeholder';
 
 import withScripture from '@data/withScripture';
 import { H4, H7 } from '@ui/typography';
-import styled from '@ui/styled';
 
 import ScriptureHTMLView from './ScriptureHTMLView';
 

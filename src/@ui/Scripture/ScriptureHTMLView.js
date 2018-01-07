@@ -8,7 +8,6 @@ import Paragraph from '@ui/Paragraph';
 const renderer = (node, { children, ...other }) => { // eslint-disable-line
   // the defaultRenderer support several basic elements out of the box,
   // this function only needs to handle the cases that are unique to scripture.
-
   const className = (node && node.attribs && node.attribs.class) || '';
 
   if (className.includes('chapter-num') || className.includes('verse-num')) {

@@ -6,16 +6,22 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#303030",
-        "fontFamily": null,
-        "fontSize": 25.2,
-        "fontWeight": "700",
-        "lineHeight": 31.28,
-      }
-    }
   >
+     
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 25.2,
+          "fontWeight": "700",
+          "lineHeight": 31.28,
+        }
+      }
+    />
      
     <Text
       accessible={true}
