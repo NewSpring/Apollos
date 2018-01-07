@@ -1,11 +1,14 @@
 import { Platform } from 'react-native';
-import { compose, withProps } from 'recompose';
+import PropTypes from 'prop-types';
+import { compose, getContext } from 'recompose';
 
 import styled from '@ui/styled';
 import ConnectedImage from '@ui/ConnectedImage';
 
 const Image = compose(
+  getContext({ isLoading: PropTypes.bool }),
   styled(({ theme }) => ({
+    aspectRatio: 1,
     width: '100%',
     resizeMode: 'cover',
     ...Platform.select({
@@ -20,7 +23,6 @@ const Image = compose(
       },
     }),
   }), 'Card.Image'),
-  withProps({ maintainAspectRatio: true }),
 )(ConnectedImage);
 
 export default Image;

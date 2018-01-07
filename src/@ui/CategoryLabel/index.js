@@ -3,8 +3,8 @@ import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import { kebabCase } from 'lodash';
-import Placeholder from 'rn-placeholder';
 
+import Placeholder from '@ui/Placeholder';
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 import { H7 } from '@ui/typography';
@@ -26,11 +26,11 @@ const enhance = compose(
   }),
 );
 
-const Wrapper = styled(({ theme }) => ({
+const Wrapper = styled({
+  flex: 1,
   flexDirection: 'row',
   alignItems: 'center',
-  paddingTop: theme.sizing.baseUnit / 2,
-}))(View);
+})(View);
 
 const PlaceholderWrapper = styled(({ theme }) => ({
   flex: 1,
@@ -63,7 +63,6 @@ const CategoryLabel = enhance(({
   icon,
   color: fontColor,
   isLoading,
-  children,
   theme,
 }) => (
   <Wrapper>
@@ -82,7 +81,6 @@ const CategoryLabel = enhance(({
         <LabelText color={fontColor}>{label}</LabelText>
       </Placeholder.Line>
     </PlaceholderWrapper>
-    {children}
   </Wrapper>
 ));
 

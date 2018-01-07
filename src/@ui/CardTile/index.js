@@ -3,8 +3,8 @@ import { Platform, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { startCase, toLower } from 'lodash';
-import Placeholder from 'rn-placeholder';
 
+import Placeholder from '@ui/Placeholder';
 import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import { H4, H6, H7 } from '@ui/typography';

@@ -1,12 +1,8 @@
-import { View } from 'react-native';
-
+import PaddedView from '@ui/PaddedView';
 import styled from '@ui/styled';
 
 const Content = styled(({ theme }) => ({
-  flexWrap: 'wrap',
-  flexDirection: 'row',
-  alignItems: 'center',
-  padding: theme.sizing.baseUnit,
-}))(View);
+  paddingVertical: theme.sizing.baseUnit * 0.75,
+}), 'Card.Content')(PaddedView);
 
 export default Content;

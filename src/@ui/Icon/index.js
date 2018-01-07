@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { compose, pure, setPropTypes } from 'recompose';
 import { flow, camelCase, upperFirst, kebabCase } from 'lodash';
-import Placeholder from 'rn-placeholder';
 
+import Placeholder from '@ui/Placeholder';
 import * as Icons from './icons';
 
 const pascalCase = string => flow(camelCase, upperFirst)(string);

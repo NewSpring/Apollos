@@ -9,6 +9,7 @@ import styled from '@ui/styled';
 import Touchable from '@ui/Touchable';
 import { UIText } from '@ui/typography';
 import { InlineActivityIndicator } from '@ui/ActivityIndicator';
+import { withPlaceholder, Line } from '@ui/Placeholder';
 
 const ButtonStyles = styled(({ theme, disabled, bordered }) => ({
   elevation: 4,
@@ -29,7 +30,15 @@ const ButtonStyles = styled(({ theme, disabled, bordered }) => ({
   }),
 }), 'Button')(View);
 
+const ButtonPlaceholder = styled(({ theme }) => ({
+  width: theme.sizing.baseUnit * 4,
+  height: theme.sizing.baseUnit + theme.helpers.rem(1),
+}), 'Button.Placeholder')(Line);
+
+export const withButtonPlaceholder = withPlaceholder(ButtonPlaceholder);
+
 const enhance = compose(
+  withButtonPlaceholder,
   withTheme(({ theme, type = 'default' }) => ({
     fill: get(theme, `buttons.${type}.fill`, theme.colors.action.default),
     accent: get(theme, `buttons.${type}.accent`, theme.colors.text.primary),

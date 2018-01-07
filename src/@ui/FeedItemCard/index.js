@@ -2,20 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { startCase, toLower } from 'lodash';
-import Placeholder from 'rn-placeholder';
 
 import { withTheme } from '@ui/theme';
 import Icon from '@ui/Icon';
-import Card from '@ui/CardWrapper';
+// import Card from '@ui/CardWrapper';
 import CategoryLabel from '@ui/CategoryLabel';
+import Card, { CardContent, CardActions } from '@ui/Card';
+import { H4 } from '@ui/typography';
+import styled from '@ui/styled';
 
 import CardImage from './CardImage';
 import LikeButton from './LikeButton';
-import {
-  CardWrapper,
-  CardTitle,
-  Footer,
-} from './styles';
+
+const StyledCardContent = styled({ paddingBottom: 0 })(CardContent);
 
 const enhance = compose(
   pure,
@@ -59,38 +58,30 @@ const FeedItemCard = enhance(({
   backgroundColor,
   theme,
   id,
+  style = {},
   ...otherProps
 }) => (
-  <CardWrapper>
-    <Card backgroundColor={backgroundColor} {...otherProps}>
-      <CardImage source={images} overlayColor={backgroundColor} />
-
-      <Footer>
-        <Placeholder.Line
-          width={'75%'}
-          textSize={theme.helpers.rem(1.4)}
-          onReady={!isLoading}
-        >
-          <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
-        </Placeholder.Line>
-
-        <CategoryLabel
-          label={startCase(toLower(category))}
-          color={fontColor}
+  <Card isLoading={isLoading} style={[{ backgroundColor }, style]} {...otherProps}>
+    <CardImage source={images} overlayColor={backgroundColor} />
+    <StyledCardContent>
+      <H4 style={{ color: fontColor }}>{startCase(toLower(title))}</H4>
+    </StyledCardContent>
+    <CardActions>
+      <CategoryLabel
+        label={startCase(toLower(category))}
+        color={fontColor}
+        isLoading={isLoading}
+      />
+      <LikeButton id={id}>
+        <Icon
+          name={isLiked ? 'like-solid' : 'like'}
+          size={theme.helpers.rem(1.2)}
+          fill={fontColor}
           isLoading={isLoading}
-        >
-          <LikeButton id={id}>
-            <Icon
-              name={isLiked ? 'like-solid' : 'like'}
-              size={theme.helpers.rem(1.2)}
-              fill={fontColor}
-              isLoading={isLoading}
-            />
-          </LikeButton>
-        </CategoryLabel>
-      </Footer>
-    </Card>
-  </CardWrapper>
+        />
+      </LikeButton>
+    </CardActions>
+  </Card>
 ));
 
 export default FeedItemCard;
