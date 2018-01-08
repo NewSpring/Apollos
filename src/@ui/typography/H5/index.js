@@ -1,5 +1,6 @@
 import { Text } from 'react-native';
-import { compose, pure } from 'recompose';
+import PropTypes from 'prop-types';
+import { compose, pure, setPropTypes } from 'recompose';
 import styled from '@ui/styled';
 import { withPlaceholder, Typography } from '@ui/Placeholder';
 
@@ -12,6 +13,10 @@ const styles = styled(({ theme }) => ({
 }), 'H5');
 
 const H5 = compose(
+  setPropTypes({
+    isLoading: PropTypes.bool, // display loading placeholder
+    ...Text.propTypes,
+  }),
   styles,
   withPlaceholder(Typography, { width: '60%' }),
   pure,
