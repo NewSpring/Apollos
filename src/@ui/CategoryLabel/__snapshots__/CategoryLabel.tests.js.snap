@@ -5,8 +5,8 @@ exports[`the FeedItemCard CategoryLabel component should render 1`] = `
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
@@ -53,8 +53,8 @@ exports[`the FeedItemCard CategoryLabel component should render a custom icon 1`
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
@@ -101,15 +101,15 @@ exports[`the FeedItemCard CategoryLabel component should render a skeleton view 
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
   <View
     style={
       Object {
-        "backgroundColor": "#efefef",
+        "backgroundColor": "#dddddd",
         "borderRadius": 10.8,
         "height": 21.6,
         "width": 21.6,
@@ -128,7 +128,7 @@ exports[`the FeedItemCard CategoryLabel component should render a skeleton view 
       style={
         Object {
           "alignSelf": "stretch",
-          "backgroundColor": "#efefef",
+          "backgroundColor": "#dddddd",
           "borderRadius": 4.5,
           "height": 18,
           "width": "40%",
@@ -144,8 +144,8 @@ exports[`the FeedItemCard CategoryLabel component should render as Albums 1`] = 
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
@@ -192,8 +192,8 @@ exports[`the FeedItemCard CategoryLabel component should render as a Series 1`] 
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
@@ -240,8 +240,8 @@ exports[`the FeedItemCard CategoryLabel component should render children 1`] = `
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
@@ -280,12 +280,5 @@ exports[`the FeedItemCard CategoryLabel component should render children 1`] = `
       Default
     </Text>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-  >
-    Boom
-  </Text>
 </View>
 `;

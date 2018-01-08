@@ -466,7 +466,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "#efefef",
+                    "backgroundColor": "#dddddd",
                     "borderRadius": 3,
                     "height": 45,
                     "width": 45,
@@ -478,7 +478,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               style={
                 Object {
                   "alignSelf": "stretch",
-                  "backgroundColor": "#efefef",
+                  "backgroundColor": "#dddddd",
                   "borderRadius": 6.3,
                   "height": 25.2,
                   "width": "75%",
@@ -565,7 +565,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "#efefef",
+                    "backgroundColor": "#dddddd",
                     "borderRadius": 3,
                     "height": 45,
                     "width": 45,
@@ -577,7 +577,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               style={
                 Object {
                   "alignSelf": "stretch",
-                  "backgroundColor": "#efefef",
+                  "backgroundColor": "#dddddd",
                   "borderRadius": 6.3,
                   "height": 25.2,
                   "width": "75%",
@@ -664,7 +664,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "#efefef",
+                    "backgroundColor": "#dddddd",
                     "borderRadius": 3,
                     "height": 45,
                     "width": 45,
@@ -676,7 +676,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               style={
                 Object {
                   "alignSelf": "stretch",
-                  "backgroundColor": "#efefef",
+                  "backgroundColor": "#dddddd",
                   "borderRadius": 6.3,
                   "height": 25.2,
                   "width": "75%",
@@ -763,7 +763,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "#efefef",
+                    "backgroundColor": "#dddddd",
                     "borderRadius": 3,
                     "height": 45,
                     "width": 45,
@@ -775,7 +775,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               style={
                 Object {
                   "alignSelf": "stretch",
-                  "backgroundColor": "#efefef",
+                  "backgroundColor": "#dddddd",
                   "borderRadius": 6.3,
                   "height": 25.2,
                   "width": "75%",
@@ -862,7 +862,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "#efefef",
+                    "backgroundColor": "#dddddd",
                     "borderRadius": 3,
                     "height": 45,
                     "width": 45,
@@ -874,7 +874,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               style={
                 Object {
                   "alignSelf": "stretch",
-                  "backgroundColor": "#efefef",
+                  "backgroundColor": "#dddddd",
                   "borderRadius": 6.3,
                   "height": 25.2,
                   "width": "75%",

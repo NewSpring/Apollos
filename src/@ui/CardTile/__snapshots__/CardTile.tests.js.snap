@@ -88,8 +88,8 @@ exports[`the Card component number box should grow elegantly with larger numbers
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "paddingTop": 10,
           }
         }
       >
@@ -186,8 +186,8 @@ exports[`the Card component should render 1`] = `
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "paddingTop": 10,
           }
         }
       >
@@ -268,7 +268,7 @@ exports[`the Card component should render a loading skeleton 1`] = `
         style={
           Object {
             "alignSelf": "stretch",
-            "backgroundColor": "#efefef",
+            "backgroundColor": "#dddddd",
             "borderRadius": 6.3,
             "height": 25.2,
             "width": "75%",
@@ -279,15 +279,15 @@ exports[`the Card component should render a loading skeleton 1`] = `
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "paddingTop": 10,
           }
         }
       >
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
+              "backgroundColor": "#dddddd",
               "borderRadius": 10.8,
               "height": 21.6,
               "width": 21.6,
@@ -306,7 +306,7 @@ exports[`the Card component should render a loading skeleton 1`] = `
             style={
               Object {
                 "alignSelf": "stretch",
-                "backgroundColor": "#efefef",
+                "backgroundColor": "#dddddd",
                 "borderRadius": 4.5,
                 "height": 18,
                 "width": "40%",
@@ -372,7 +372,7 @@ exports[`the Card component should render a loading skeleton for all available p
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
+              "backgroundColor": "#dddddd",
               "borderRadius": 3,
               "height": 45,
               "width": 45,
@@ -384,7 +384,7 @@ exports[`the Card component should render a loading skeleton for all available p
         style={
           Object {
             "alignSelf": "stretch",
-            "backgroundColor": "#efefef",
+            "backgroundColor": "#dddddd",
             "borderRadius": 6.3,
             "height": 25.2,
             "width": "75%",
@@ -395,15 +395,15 @@ exports[`the Card component should render a loading skeleton for all available p
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "paddingTop": 10,
           }
         }
       >
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
+              "backgroundColor": "#dddddd",
               "borderRadius": 10.8,
               "height": 21.6,
               "width": 21.6,
@@ -422,7 +422,7 @@ exports[`the Card component should render a loading skeleton for all available p
             style={
               Object {
                 "alignSelf": "stretch",
-                "backgroundColor": "#efefef",
+                "backgroundColor": "#dddddd",
                 "borderRadius": 4.5,
                 "height": 18,
                 "width": "40%",
@@ -430,17 +430,6 @@ exports[`the Card component should render a loading skeleton for all available p
             }
           />
         </View>
-        <View
-          style={
-            Object {
-              "alignSelf": "stretch",
-              "backgroundColor": "#efefef",
-              "borderRadius": 4.5,
-              "height": 18,
-              "width": "10%",
-            }
-          }
-        />
       </View>
     </View>
   </View>
@@ -535,8 +524,8 @@ exports[`the Card component should render a number box 1`] = `
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "paddingTop": 10,
           }
         }
       >
@@ -669,8 +658,8 @@ exports[`the Card component should render card details 1`] = `
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "paddingTop": 10,
           }
         }
       >
@@ -803,8 +792,8 @@ exports[`the Card component should render card details with date 1`] = `
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "paddingTop": 10,
           }
         }
       >
@@ -843,21 +832,6 @@ exports[`the Card component should render card details with date 1`] = `
             Marty Mcfly
           </Text>
         </View>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 14,
-              "lineHeight": 15.87,
-            }
-          }
-        >
-          32y
-        </Text>
       </View>
     </View>
   </View>

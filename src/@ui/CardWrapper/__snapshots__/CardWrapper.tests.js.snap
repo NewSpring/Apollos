@@ -2,10 +2,9 @@
 
 exports[`the Card component should accept a backgroundColor 1`] = `
 <View
-  cardColor="salmon"
   style={
     Object {
-      "backgroundColor": "salmon",
+      "backgroundColor": "#ffffff",
       "borderRadius": 6,
       "shadowColor": "#dddddd",
       "shadowOffset": Object {
@@ -38,8 +37,6 @@ exports[`the Card component should accept a backgroundColor 1`] = `
 
 exports[`the Card component should accept additional props 1`] = `
 <View
-  accessible={false}
-  cardColor={undefined}
   style={
     Object {
       "backgroundColor": "#ffffff",
@@ -67,7 +64,6 @@ exports[`the Card component should accept additional props 1`] = `
 
 exports[`the Card component should accept and render passed in styles 1`] = `
 <View
-  cardColor={undefined}
   style={
     Object {
       "backgroundColor": "#ffffff",
@@ -97,7 +93,6 @@ exports[`the Card component should accept and render passed in styles 1`] = `
 
 exports[`the Card component should render 1`] = `
 <View
-  cardColor={undefined}
   style={
     Object {
       "backgroundColor": "#ffffff",
@@ -125,7 +120,6 @@ exports[`the Card component should render 1`] = `
 
 exports[`the Card component should render children 1`] = `
 <View
-  cardColor={undefined}
   style={
     Object {
       "backgroundColor": "#ffffff",
