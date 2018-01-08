@@ -87,10 +87,15 @@ class Filter extends PureComponent {
   }
 
   get selectedCampuses() {
-    return this.props.campuses.filter(({ id }) => {
+    return this.props.campuses.filter(({ name = '' }) => {
       const campuses = get(this.props.query, 'campuses', []);
-      return campuses.findIndex(campusId => campusId === id) >= 0;
+      return campuses.findIndex(campusId => campusId === name.toLowerCase()) >= 0;
     });
+    // NOTE: Uncomment when Heighliner accepts id's
+    // return this.props.campuses.filter(({ id }) => {
+    //   const campuses = get(this.props.query, 'campuses', []);
+    //   return campuses.findIndex(campusId => campusId === id) >= 0;
+    // });
   }
 
   toggleFilterView = () => {
@@ -101,6 +106,7 @@ class Filter extends PureComponent {
     const filterObject = get(this.props.query, filter, []);
     const selected = filterObject.indexOf(value) >= 0;
 
+    console.log({ filterObject, selected });
     if (selected) {
       this.props.onUpdateFilter({ [filter]: without(filterObject, value) });
     } else {
@@ -166,7 +172,8 @@ class Filter extends PureComponent {
   renderCampus = campus => this.renderFilter({
     filter: 'campuses',
     displayValue: campus.name,
-    value: campus.id,
+    value: campus.name.toLowerCase(), // NOTE: Change this when id's are supported in Heighliner
+    // value: campus.id,
     key: campus.id,
     toggle: this.handleCampusToggle,
   });
