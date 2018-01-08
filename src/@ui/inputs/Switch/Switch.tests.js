@@ -1,15 +1,15 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 
 import Switch from './';
 
 describe('The Picker Input component', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Switch label="Some label text" />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

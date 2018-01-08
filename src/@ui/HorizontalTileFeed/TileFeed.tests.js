@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 import TileFeed from './';
 
 describe('The TileFeed component', () => {
   it('renders correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <TileFeed
           content={[
             {
@@ -32,18 +32,18 @@ describe('The TileFeed component', () => {
             },
           ]}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('renders empty state', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <TileFeed
           isLoading
           content={[]}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

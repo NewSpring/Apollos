@@ -13,8 +13,8 @@ import * as types from './types';
  * theme generation that you might want to customize.
  *
  * To customize these values, provide theme as options in the `themeInput`
- * prop in <ThemeProvider>, like:
- * <ThemeProvider themeInput={{ colors: { primary: 'blue' }, type: 'dark' }} />
+ * prop in <Providers>, like:
+ * <Providers themeInput={{ colors: { primary: 'blue' }, type: 'dark' }} />
  *
  * For more detail on how to customize a theme, see (TODO: should be on storybook)
  */

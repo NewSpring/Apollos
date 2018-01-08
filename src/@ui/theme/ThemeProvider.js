@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import createTheme, { THEME_PROPS } from './createTheme';
 
 
-export default class ThemeProvider extends PureComponent {
+export default class Providers extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     themeInput: PropTypes.shape(THEME_PROPS),

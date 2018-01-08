@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 
 import { ThemeProvider } from '@ui/theme';
 import FontLoader from '@ui/FontLoader';
+import { Router } from '@ui/NativeWebRouter';
 import { ApolloProvider } from 'react-apollo';
 
 import Client from '@data/Client';
@@ -15,13 +16,8 @@ const Providers = nest(
   withProps({ client: Client })(ApolloProvider),
   ThemeProvider,
   FontLoader,
+  Router,
 );
-
-const styles = StyleSheet.create({
-  main: {
-    backgroundColor: 'salmon',
-  },
-});
 
 export default function AppContent(renderStory) {
   return (
