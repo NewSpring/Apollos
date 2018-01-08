@@ -5,7 +5,7 @@ import {
   AsyncStorage,
 } from 'react-native';
 
-import { QUERY as CURRENT_USER_QUERY } from './withUser';
+import { QUERY as LOGGED_IN_QUERY } from './withIsLoggedIn';
 
 export const MUTATION = gql`
   mutation registerUser($email: String!, $password: String!, $firstName: String!, $lastName: String!) {
@@ -35,14 +35,12 @@ export default graphql(MUTATION, {
             lastName,
           },
           update: (store, { data: { registerUser } }) => {
-            const data = store.readQuery({ query: CURRENT_USER_QUERY });
+            const data = store.readQuery({ query: LOGGED_IN_QUERY });
             data.person = {
+              __typename: 'User',
               id: registerUser.id,
-              email,
-              firstName,
-              lastName,
             };
-            store.writeQuery({ query: CURRENT_USER_QUERY, data });
+            store.writeQuery({ query: LOGGED_IN_QUERY, data });
           },
         });
         await AsyncStorage.setItem('authToken', get(r, 'data.registerUser.token'));

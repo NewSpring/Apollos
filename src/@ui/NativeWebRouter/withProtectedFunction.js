@@ -1,7 +1,7 @@
 import { withApollo } from 'react-apollo';
 import { mapProps, compose } from 'recompose';
 import { get } from 'lodash';
-import { QUERY } from '@data/withUser/withUser';
+import { QUERY } from '@data/withUser/withIsLoggedIn';
 import { withRouter } from 'react-router';
 
 const authPromiseForClient = ({ history, location, client }) => async (next) => {
