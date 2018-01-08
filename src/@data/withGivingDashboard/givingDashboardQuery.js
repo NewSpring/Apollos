@@ -26,7 +26,7 @@ export default gql`
         paymentType
       }
     }
-    userFeed(filters: $filters) {
+    activityItems: userFeed(filters: $filters) {
       ... on Transaction {
         id
         date

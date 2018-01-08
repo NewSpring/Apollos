@@ -251,7 +251,6 @@ const PaymentForm = compose(
       }
 
       const setAccountDetails = values.paymentMethod === 'bankAccount' ? props.setBankAccount : props.setCreditCard;
-      console.log(formattedValues);
       setAccountDetails(formattedValues);
 
       props.willSavePaymentMethod(formattedValues.willSavePaymentMethod);

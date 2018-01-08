@@ -27,10 +27,12 @@ export class Dashboard extends PureComponent {
       paymentMethod: PropTypes.oneOf(['bankAccount', 'creditCard']),
       accountNumber: PropTypes.string,
     })),
+    activityItems: PropTypes.arrayOf(PropTypes.shape({})), // One of many :'(
   };
 
   static defaultProps = {
     savedPaymentMethods: [],
+    activityItems: [],
   };
 
   render() {
@@ -39,6 +41,19 @@ export class Dashboard extends PureComponent {
         <Header titleText="Give Dashboard" />
         <ScrollView>
           <PaddedView>
+            <H5>{'Dashboard (activity)'}</H5>
+            {this.props.activityItems.map((at) => {
+              // eslint-disable-next-line no-underscore-dangle
+              if (at.__typename === 'Transaction') {
+                return (
+                  <UIText>{at.summary}</UIText>
+                );
+              }
+              return (
+                <UIText>{at.name}</UIText>
+              );
+            })}
+
             <H5>{'Dashboard (add account)'}</H5>
             <BillingAddressForm />
             <PaymentForm
