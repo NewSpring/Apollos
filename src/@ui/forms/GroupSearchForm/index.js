@@ -18,9 +18,11 @@ const enhance = compose(
     onSubmit: PropTypes.func,
   }),
   withFormik({
-    mapPropsToValues: () => ({
+    mapPropsToValues: ({ campuses = [] } = {}) => ({
       useDeviceLocation: true,
+      campusId: campuses[0] && campuses[0].name.toLowerCase(),
     }),
+    enableReinitialize: true,
     validationSchema: Yup.object().shape({
       query: Yup.string(),
       campusId: Yup.string(),
@@ -57,7 +59,8 @@ const enhance = compose(
         }
       }
 
-      query.campuses = [values.campusId] || [];
+      query.campus = values.campusId; // NOTE: This is bad
+      // query.campuses = [values.campusId] || [];
       query.zip = (values.zipCode && !query.latitude && !query.longitude) ? values.zipCode : null;
 
       return props.onSubmit(query);
@@ -98,12 +101,13 @@ export const GroupSearchForm = enhance(({
     <Inputs.Picker
       label="Campus"
       value={values.campusId}
-      displayValue={get(campuses.find(campus => campus.id === values.campusId), 'name')}
+      displayValue={get(campuses.find(campus => campus.name.toLowerCase() === values.campusId), 'name')}
       onValueChange={value => setFieldValue('campusId', value)}
       error={errors.campusId}
     >
+      {/* NOTE: value should use id but heighliner doesn't support that yet */}
       {campuses.map(({ name, id }) => (
-        <Inputs.PickerItem label={name} value={id} key={id} />
+        <Inputs.PickerItem label={name} value={name.toLowerCase()} key={id} />
       ))}
     </Inputs.Picker>
     <Inputs.Text
