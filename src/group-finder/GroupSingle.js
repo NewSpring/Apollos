@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Linking, ScrollView, View, Platform } from 'react-native';
-import { compose, mapProps, pure, withProps } from 'recompose';
+import { compose, mapProps, pure } from 'recompose';
 
 import withGroupInfo from '@data/withGroupInfo';
 import Header from '@ui/Header';
