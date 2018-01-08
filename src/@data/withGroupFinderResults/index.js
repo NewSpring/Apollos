@@ -46,7 +46,7 @@ export default graphql(groupsQuery, {
       longitude: ownProps.longitude || null,
       zip: ownProps.zip || null,
       limit: 10,
-      offset: 0,
+      skip: 0,
       campus: ownProps.campus || null,
       campuses: ownProps.campuses || [],
       schedules: ownProps.schedules && ownProps.schedules.length
