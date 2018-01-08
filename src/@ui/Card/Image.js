@@ -1,12 +1,12 @@
 import { Platform } from 'react-native';
-import PropTypes from 'prop-types';
-import { compose, getContext } from 'recompose';
+import { compose } from 'recompose';
 
 import styled from '@ui/styled';
 import ConnectedImage from '@ui/ConnectedImage';
+import { getIsLoading } from '@ui/isLoading';
 
 const Image = compose(
-  getContext({ isLoading: PropTypes.bool }),
+  getIsLoading,
   styled(({ theme }) => ({
     aspectRatio: 1,
     width: '100%',
