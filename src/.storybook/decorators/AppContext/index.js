@@ -2,10 +2,20 @@
 
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import { nest, withProps } from 'recompose';
 import PropTypes from 'prop-types';
 
 import { ThemeProvider } from '@ui/theme';
 import FontLoader from '@ui/FontLoader';
+import { ApolloProvider } from 'react-apollo';
+
+import Client from '@data/Client';
+
+const Providers = nest(
+  withProps({ client: Client })(ApolloProvider),
+  ThemeProvider,
+  FontLoader,
+);
 
 const styles = StyleSheet.create({
   main: {
@@ -15,11 +25,9 @@ const styles = StyleSheet.create({
 
 export default function AppContent(renderStory) {
   return (
-    <ThemeProvider>
-      <FontLoader>
-        {renderStory()}
-      </FontLoader>
-    </ThemeProvider>
+    <Providers>
+      {renderStory()}
+    </Providers>
   );
 }
 
