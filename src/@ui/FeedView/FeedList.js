@@ -1,4 +1,4 @@
-import { FlatList } from 'react-native';
+import FlatList from '@ui/FlatList';
 import styled from '@ui/styled';
 
 const FeedList = styled(({ theme }) => ({
