@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import {
   ScrollView,
   View,
@@ -16,55 +16,57 @@ import SavedPaymentReviewForm from '@ui/forms/SavedPaymentReviewForm';
 import withGivingDashboard from '@data/withGivingDashboard';
 import last4 from '@utils/last4';
 
-export function Dashboard(props) {
-  return (
-    <FlexedView>
-      <Header titleText="Give Dashboard" />
-      <ScrollView>
-        <PaddedView>
-          <H5>{'Dashboard (add account)'}</H5>
-          <BillingAddressForm />
-          <PaymentForm
-            enforceAccountName
-          />
-          <SavedPaymentReviewForm />
+export class Dashboard extends PureComponent {
+  static propTypes = {
+    savedPaymentMethods: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+      ]),
+      name: PropTypes.string,
+      paymentMethod: PropTypes.oneOf(['bankAccount', 'creditCard']),
+      accountNumber: PropTypes.string,
+    })),
+  };
 
-          <H5>{'Dashboard (view accounts)'}</H5>
-          {props.savedPaymentMethods.map(pm => (
-            <View key={pm.id}>
-              <UIText>{pm.name}</UIText>
-              <UIText>{pm.paymentMethod}</UIText>
-              <UIText>{last4(pm.accountNumber)}</UIText>
-            </View>
-          ))}
-        </PaddedView>
-      </ScrollView>
-    </FlexedView>
-  );
+  static defaultProps = {
+    savedPaymentMethods: [],
+  };
+
+  render() {
+    return (
+      <FlexedView>
+        <Header titleText="Give Dashboard" />
+        <ScrollView>
+          <PaddedView>
+            <H5>{'Dashboard (add account)'}</H5>
+            <BillingAddressForm />
+            <PaymentForm
+              enforceAccountName
+            />
+            <SavedPaymentReviewForm />
+
+            <H5>{'Dashboard (view accounts)'}</H5>
+            {this.props.savedPaymentMethods.map(pm => (
+              <View key={pm.id}>
+                <UIText>{pm.name}</UIText>
+                <UIText>{pm.paymentMethod}</UIText>
+                <UIText>{last4(pm.accountNumber)}</UIText>
+              </View>
+            ))}
+          </PaddedView>
+        </ScrollView>
+      </FlexedView>
+    );
+  }
 }
-
-Dashboard.propTypes = {
-  savedPaymentMethods: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ]),
-    name: PropTypes.string,
-    paymentMethod: PropTypes.oneOf(['bankAccount', 'creditCard']),
-    accountNumber: PropTypes.string,
-  })),
-};
-
-Dashboard.defaultProps = {
-  savedPaymentMethods: [],
-};
 
 // TODO: Split withGivingDashboard, add edit name and delete mutations
 const enhance = compose(
   withGivingDashboard,
   mapProps(props => ({
     ...props,
-    savedPaymentMethods: get(props, 'savedPaymentMethods', []).map(pm => ({
+    savedPaymentMethods: (get(props, 'savedPaymentMethods') || []).map(pm => ({
       ...pm,
       paymentMethod: pm.payment.paymentType === 'ACH' ? 'bankAccount' : 'creditCard',
       accountNumber: pm.payment.accountNumber,
