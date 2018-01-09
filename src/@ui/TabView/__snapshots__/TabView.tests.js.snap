@@ -1,0 +1,341 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabView Component renders 1`] = `
+<View
+  loaded={
+    Array [
+      0,
+    ]
+  }
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      Object {
+        "flex": 1,
+      },
+    ]
+  }
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "backgroundColor": "#6bac43",
+        "elevation": 4,
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "height": 0.5,
+        },
+        "shadowOpacity": 0.1,
+        "shadowRadius": 0.5,
+        "zIndex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={undefined}
+      pointerEvents="none"
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        collapsable={undefined}
+        style={
+          Object {
+            "alignItems": "center",
+            "bottom": -16,
+            "height": 16,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+            "width": 375,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "transform": Array [
+                Object {
+                  "scaleX": 1.5,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#6bac43",
+                "height": 16,
+                "marginTop": -10,
+                "transform": Array [
+                  Object {
+                    "rotate": "45deg",
+                  },
+                ],
+                "width": 16,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "overflow": "scroll",
+        }
+      }
+    >
+      <RCTScrollView
+        alwaysBounceHorizontal={false}
+        automaticallyAdjustContentInsets={false}
+        bounces={false}
+        collapsable={undefined}
+        contentContainerStyle={
+          Array [
+            Object {
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+            },
+            Object {
+              "flex": 1,
+            },
+          ]
+        }
+        contentOffset={undefined}
+        horizontal={true}
+        keyboardShouldPersistTaps="handled"
+        onMomentumScrollBegin={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        overScrollMode="never"
+        scrollEnabled={undefined}
+        scrollEventThrottle={1}
+        scrollsToTop={false}
+        showsHorizontalScrollIndicator={false}
+      >
+        <View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel="First"
+            accessibilityTraits="button"
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <View
+              pointerEvents="none"
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                collapsable={undefined}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flex": 1,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "padding": 8,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#ffffff",
+                      "fontFamily": null,
+                      "fontSize": 15.75,
+                      "fontWeight": "700",
+                      "lineHeight": 17.85,
+                    }
+                  }
+                >
+                  First
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel="Second"
+            accessibilityTraits="button"
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <View
+              pointerEvents="none"
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                collapsable={undefined}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flex": 1,
+                    "justifyContent": "center",
+                    "opacity": 0.7,
+                    "padding": 8,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#ffffff",
+                      "fontFamily": null,
+                      "fontSize": 15.75,
+                      "fontWeight": "700",
+                      "lineHeight": 17.85,
+                    }
+                  }
+                >
+                  Second
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </View>
+  <View
+    collapsable={undefined}
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flex": 1,
+        "flexDirection": "row",
+        "transform": Array [
+          Object {
+            "translateX": 0,
+          },
+        ],
+        "width": 1500,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "width": 750,
+        }
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#ff4081",
+              "flex": 1,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "width": 750,
+        }
+      }
+      testID={undefined}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#673ab7",
+              "flex": 1,
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

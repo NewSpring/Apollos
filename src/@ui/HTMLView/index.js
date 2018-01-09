@@ -11,7 +11,7 @@ import { Link } from './styles';
 const LINE_BREAK = '\n';
 
 const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyCopy, Link];
-const wrapTextChildren = (children) => {
+export const wrapTextChildren = (children) => {
   const newChildren = [];
   let currentTextChildren = [];
   Children.toArray(children).forEach((child) => {

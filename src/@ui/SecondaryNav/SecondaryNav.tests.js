@@ -1,16 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeProvider } from '@ui/theme';
-import { Router } from '../NativeWebRouter';
+import Providers from '@ui/TestProviders';
 import Component, { Link } from './';
-
-const Providers = ({ children }) => ( // eslint-disable-line
-  <ThemeProvider>
-    <Router>
-      {children}
-    </Router>
-  </ThemeProvider>
-);
 
 describe('SecondaryNav Component', () => {
   it('renders correctly with default props', () => {

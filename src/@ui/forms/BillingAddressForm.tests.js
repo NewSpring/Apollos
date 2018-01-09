@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 
 import { BillingAddressFormWithoutData } from './BillingAddressForm';
 
@@ -46,9 +46,9 @@ const createTestData = () => ({
 describe('The ContributionForm component', () => {
   it('renders correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <BillingAddressFormWithoutData {...createTestData()} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -56,9 +56,9 @@ describe('The ContributionForm component', () => {
     const data = createTestData();
     data.isLoading = true;
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <BillingAddressFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -66,9 +66,9 @@ describe('The ContributionForm component', () => {
     const data = createTestData();
     data.values.countryId = 'FOREIGN';
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <BillingAddressFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
