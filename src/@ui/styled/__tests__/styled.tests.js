@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { compose } from 'recompose';
 import { View } from 'react-native';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 import styled from '../';
 
 describe('the styled HOC', () => {
@@ -33,7 +33,7 @@ describe('the styled HOC', () => {
   it('provides a theme', () => {
     const StyledView = styled(({ theme }) => ({ backgroundColor: theme.colors.primary }))(View);
     const tree = renderer.create(
-      <ThemeProvider><StyledView /></ThemeProvider>,
+      <Providers><StyledView /></Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -41,9 +41,9 @@ describe('the styled HOC', () => {
     const StyledView = styled(() => ({ backgroundColor: 'red' }), 'StyledView')(View);
     const overrides = { StyledView: { backgroundColor: 'green' } };
     const tree = renderer.create(
-      <ThemeProvider themeInput={{ overrides }}>
+      <Providers themeInput={{ overrides }}>
         <StyledView />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

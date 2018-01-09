@@ -91,9 +91,10 @@ class ConnectedImage extends PureComponent {
     return !every(this.state.source, image => image.width && image.height);
   }
 
-  async updateCache(sources) {
-    await updateCache(sources);
-    this.setState({ source: getCachedSources(sources) });
+  updateCache(sources) {
+    updateCache(sources).then(() => (
+      this.setState({ source: getCachedSources(sources) })
+    ));
   }
 
   render() {

@@ -6,6 +6,7 @@ import withChangePassword from './withChangePassword';
 import withForgotPassword from './withForgotPassword';
 import withResetPassword from './withResetPassword';
 import withUser from './withUser';
+import withIsLoggedIn from './withIsLoggedIn';
 
 export default compose(
   withLogin,
@@ -14,5 +15,6 @@ export default compose(
   withChangePassword,
   withForgotPassword,
   withResetPassword,
+  withIsLoggedIn,
   withUser,
 );
