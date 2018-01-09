@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 
 import { PersonalDetailsFormWithoutData } from './PersonalDetailsForm';
 
@@ -37,9 +37,9 @@ const createTestData = () => ({
 describe('The PaymentForm component', () => {
   it('renders correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <PersonalDetailsFormWithoutData {...createTestData()} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -47,9 +47,9 @@ describe('The PaymentForm component', () => {
     const data = createTestData();
     data.isSubmitting = true;
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <PersonalDetailsFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

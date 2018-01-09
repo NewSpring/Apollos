@@ -1,31 +1,66 @@
 import React from 'react';
+import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
 
-import { ThemeProvider } from '@ui/theme';
-import Category from './';
+import Providers from '@ui/TestProviders';
+import CategoryLabel from './';
 
-describe('the FeedItemCard Category component', () => {
+describe('the FeedItemCard CategoryLabel component', () => {
   it('should render', () => {
     const tree = renderer.create(
-      <ThemeProvider>
-        <Category type={'Default'} />
-      </ThemeProvider>,
+      <Providers>
+        <CategoryLabel label={'Default'} />
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render as a Series', () => {
     const tree = renderer.create(
-      <ThemeProvider>
-        <Category type={'Series'} />
-      </ThemeProvider>,
+      <Providers>
+        <CategoryLabel label={'Series'} />
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render as Albums', () => {
     const tree = renderer.create(
-      <ThemeProvider>
-        <Category type={'Albums'} />
-      </ThemeProvider>,
+      <Providers>
+        <CategoryLabel label={'Albums'} />
+      </Providers>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render a custom icon', () => {
+    const tree = renderer.create(
+      <Providers>
+        <CategoryLabel
+          label={'Default'}
+          icon={'like'}
+        />
+      </Providers>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render a skeleton view', () => {
+    const tree = renderer.create(
+      <Providers>
+        <CategoryLabel
+          label={'Default'}
+          isLoading
+        />
+      </Providers>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render children', () => {
+    const tree = renderer.create(
+      <Providers>
+        <CategoryLabel
+          label={'Default'}
+        >
+          <Text>Boom</Text>
+        </CategoryLabel>
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

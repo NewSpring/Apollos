@@ -16,9 +16,6 @@ const CardTitle = styled(({ theme, color: fontColor }) => ({
 }))(H4);
 
 const Footer = styled(({ theme }) => ({
-  flexWrap: 'wrap',
-  flexDirection: 'row',
-  alignItems: 'center',
   padding: theme.sizing.baseUnit,
 }))(View);
 

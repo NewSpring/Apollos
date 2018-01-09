@@ -9,9 +9,6 @@ export default gql`
         title
         status
         channelName
-        children {
-          id
-        }
         meta {
           urlTitle
           siteId
@@ -33,6 +30,20 @@ export default gql`
           colors {
             value
             description
+          }
+        }
+        children(channels: ["study_entries"], showFutureEntries: true) {
+          id
+          title
+          channelName
+          parent {
+            id
+          }
+          meta {
+            date
+          }
+          content {
+            speaker
           }
         }
       }

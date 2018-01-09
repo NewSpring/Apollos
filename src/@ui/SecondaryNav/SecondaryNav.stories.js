@@ -2,14 +2,10 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react-native';
 
-import { ThemeProvider } from '@ui/theme';
-import { Router } from '../NativeWebRouter';
 import SecondaryNav, { Link } from './';
 
 
 storiesOf('SecondaryNav', module)
-  .addDecorator(storyFn => <ThemeProvider>{storyFn()}</ThemeProvider>)
-  .addDecorator(storyFn => <Router>{storyFn()}</Router>)
   .add('default with back button', () => <SecondaryNav />)
   .add('custom links', () => (
     <SecondaryNav>
