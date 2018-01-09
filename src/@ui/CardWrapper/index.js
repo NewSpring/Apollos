@@ -30,6 +30,7 @@ const OverflowFix = styled(({ theme }) => ({
 
 const CardWrapper = enhance(({
   children,
+  isLoading,
   ...otherProps
 }) => (
   <StyledCard

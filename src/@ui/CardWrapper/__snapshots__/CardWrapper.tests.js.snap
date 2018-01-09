@@ -2,11 +2,12 @@
 
 exports[`the Card component should accept a backgroundColor 1`] = `
 <View
+  backgroundColor="salmon"
   style={
     Object {
       "backgroundColor": "#ffffff",
       "borderRadius": 6,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -37,11 +38,12 @@ exports[`the Card component should accept a backgroundColor 1`] = `
 
 exports[`the Card component should accept additional props 1`] = `
 <View
+  accessible={false}
   style={
     Object {
       "backgroundColor": "#ffffff",
       "borderRadius": 6,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -69,7 +71,7 @@ exports[`the Card component should accept and render passed in styles 1`] = `
       "backgroundColor": "#ffffff",
       "borderRadius": 6,
       "height": 400,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -97,7 +99,7 @@ exports[`the Card component should render 1`] = `
     Object {
       "backgroundColor": "#ffffff",
       "borderRadius": 6,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -124,7 +126,7 @@ exports[`the Card component should render children 1`] = `
     Object {
       "backgroundColor": "#ffffff",
       "borderRadius": 6,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,

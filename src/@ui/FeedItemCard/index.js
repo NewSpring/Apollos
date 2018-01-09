@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { startCase, toLower } from 'lodash';
 
-import { withTheme } from '@ui/theme';
+import { withThemeMixin, withTheme } from '@ui/theme';
 import Icon from '@ui/Icon';
 // import Card from '@ui/CardWrapper';
 import CategoryLabel from '@ui/CategoryLabel';
@@ -21,12 +21,10 @@ const enhance = compose(
   defaultProps({
     isLight: true,
   }),
-  withTheme(({ theme, isLight }) => ({
-    fontColor: (isLight || typeof isLight === 'undefined') ?
-      theme.colors.text.primary :
-      theme.colors.lightPrimary,
-    theme,
+  withThemeMixin(({ isLight }) => ({
+    type: isLight ? 'light' : 'dark',
   })),
+  withTheme(),
   setPropTypes({
     title: PropTypes.string.isRequired,
     images: PropTypes.oneOfType([
@@ -53,30 +51,29 @@ const FeedItemCard = enhance(({
   title,
   category,
   isLoading,
+  isLight,
   isLiked,
   fontColor,
   backgroundColor,
   theme,
   id,
-  style = {},
   ...otherProps
 }) => (
-  <Card isLoading={isLoading} style={[{ backgroundColor }, style]} {...otherProps}>
+  <Card isLoading={isLoading} cardColor={backgroundColor} {...otherProps}>
     <CardImage source={images} overlayColor={backgroundColor} />
     <StyledCardContent>
-      <H4 style={{ color: fontColor }}>{startCase(toLower(title))}</H4>
+      <H4>{startCase(toLower(title))}</H4>
     </StyledCardContent>
     <CardActions>
       <CategoryLabel
         label={startCase(toLower(category))}
-        color={fontColor}
         isLoading={isLoading}
       />
       <LikeButton id={id}>
         <Icon
           name={isLiked ? 'like-solid' : 'like'}
           size={theme.helpers.rem(1.2)}
-          fill={fontColor}
+          fill={theme.colors.text.primary}
           isLoading={isLoading}
         />
       </LikeButton>

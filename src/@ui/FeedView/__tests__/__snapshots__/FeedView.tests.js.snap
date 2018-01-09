@@ -78,13 +78,27 @@ exports[`The FeedView component renders correctly 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor={null}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": null,
+            "backgroundColor": "#ffffff",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -93,6 +107,7 @@ exports[`The FeedView component renders correctly 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={
@@ -257,13 +272,27 @@ exports[`The FeedView component renders correctly 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor="#584068"
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "backgroundColor": "#584068",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -272,6 +301,7 @@ exports[`The FeedView component renders correctly 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={
@@ -622,13 +652,27 @@ exports[`The FeedView component renders empty state 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor={null}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": null,
+            "backgroundColor": "#ffffff",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -637,6 +681,7 @@ exports[`The FeedView component renders empty state 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={
@@ -779,13 +824,27 @@ exports[`The FeedView component renders empty state 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor={null}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": null,
+            "backgroundColor": "#ffffff",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -794,6 +853,7 @@ exports[`The FeedView component renders empty state 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={
@@ -936,13 +996,27 @@ exports[`The FeedView component renders empty state 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor={null}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": null,
+            "backgroundColor": "#ffffff",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -951,6 +1025,7 @@ exports[`The FeedView component renders empty state 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={
@@ -1093,13 +1168,27 @@ exports[`The FeedView component renders empty state 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor={null}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": null,
+            "backgroundColor": "#ffffff",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -1108,6 +1197,7 @@ exports[`The FeedView component renders empty state 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={
@@ -1250,13 +1340,27 @@ exports[`The FeedView component renders empty state 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor={null}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": null,
+            "backgroundColor": "#ffffff",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -1265,6 +1369,7 @@ exports[`The FeedView component renders empty state 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={
@@ -1407,13 +1512,27 @@ exports[`The FeedView component renders empty state 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor={null}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": null,
+            "backgroundColor": "#ffffff",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -1422,6 +1541,7 @@ exports[`The FeedView component renders empty state 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={
@@ -1564,13 +1684,27 @@ exports[`The FeedView component renders empty state 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor={null}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": null,
+            "backgroundColor": "#ffffff",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -1579,6 +1713,7 @@ exports[`The FeedView component renders empty state 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={
@@ -1721,13 +1856,27 @@ exports[`The FeedView component renders empty state 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor={null}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": null,
+            "backgroundColor": "#ffffff",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -1736,6 +1885,7 @@ exports[`The FeedView component renders empty state 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={
@@ -1878,13 +2028,27 @@ exports[`The FeedView component renders empty state 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor={null}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": null,
+            "backgroundColor": "#ffffff",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -1893,6 +2057,7 @@ exports[`The FeedView component renders empty state 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={
@@ -2035,13 +2200,27 @@ exports[`The FeedView component renders empty state 1`] = `
       style={null}
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        cardColor={null}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": null,
+            "backgroundColor": "#ffffff",
             "borderRadius": 6,
             "marginHorizontal": 10,
             "marginVertical": 5,
-            "shadowColor": "#dddddd",
+            "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "shadowOffset": Object {
               "height": 1,
               "width": 0,
@@ -2050,6 +2229,7 @@ exports[`The FeedView component renders empty state 1`] = `
             "shadowRadius": 3,
           }
         }
+        testID={undefined}
       >
         <View
           style={

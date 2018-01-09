@@ -2,13 +2,14 @@
 
 exports[`the FeedItemCard component should accept a different backgroundColor 1`] = `
 <View
+  cardColor="salmon"
   style={
     Object {
       "backgroundColor": "salmon",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -214,14 +215,15 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
 
 exports[`the FeedItemCard component should accept and render passed in styles 1`] = `
 <View
+  cardColor={undefined}
   style={
     Object {
-      "backgroundColor": undefined,
+      "backgroundColor": "#ffffff",
       "borderRadius": 6,
       "height": 400,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -393,13 +395,14 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
 
 exports[`the FeedItemCard component should render 1`] = `
 <View
+  cardColor={undefined}
   style={
     Object {
-      "backgroundColor": undefined,
+      "backgroundColor": "#ffffff",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -570,13 +573,14 @@ exports[`the FeedItemCard component should render 1`] = `
 
 exports[`the FeedItemCard component should render as liked 1`] = `
 <View
+  cardColor={undefined}
   style={
     Object {
-      "backgroundColor": undefined,
+      "backgroundColor": "#ffffff",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -747,13 +751,14 @@ exports[`the FeedItemCard component should render as liked 1`] = `
 
 exports[`the FeedItemCard component should render text correctly with isLight 1`] = `
 <View
+  cardColor={undefined}
   style={
     Object {
-      "backgroundColor": undefined,
+      "backgroundColor": "#ffffff",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -924,13 +929,14 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
 
 exports[`the FeedItemCard component should render with inverted (light) font colors 1`] = `
 <View
+  cardColor={undefined}
   style={
     Object {
-      "backgroundColor": undefined,
+      "backgroundColor": "#303030",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,

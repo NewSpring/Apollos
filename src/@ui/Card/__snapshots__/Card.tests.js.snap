@@ -8,7 +8,7 @@ exports[`the Card component it should render a placeholder 1`] = `
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
@@ -151,7 +151,7 @@ exports[`the Card component should render 1`] = `
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
-      "shadowColor": "#dddddd",
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
       "shadowOffset": Object {
         "height": 1,
         "width": 0,
