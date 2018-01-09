@@ -127,8 +127,21 @@ const PaymentConfirmationForm = compose(
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
 
-        // TODO: checkout and save
-        if (props.willSavePaymentMethod) console.log('props.savePaymentMethod');
+        // TODO: this can be simplified
+        if (props.willSavePaymentMethod) {
+          await props.resetContributions();
+          const createOrderResponse = await props.createOrder();
+          const order = get(createOrderResponse, 'data.order', {});
+          const token = order.url.split('/').pop();
+          await props.setOrder({
+            url: order.url,
+          });
+          await props.postPayment();
+          await props.savePaymentMethod({
+            token,
+            name: props.contributions.savedAccountName,
+          });
+        }
 
         props.setPaymentResult({
           success: true,
