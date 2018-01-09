@@ -106,7 +106,6 @@ class Filter extends PureComponent {
     const filterObject = get(this.props.query, filter, []);
     const selected = filterObject.indexOf(value) >= 0;
 
-    console.log({ filterObject, selected });
     if (selected) {
       this.props.onUpdateFilter({ [filter]: without(filterObject, value) });
     } else {
