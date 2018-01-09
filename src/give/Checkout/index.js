@@ -10,6 +10,7 @@ import BillingAddress from './BillingAddress';
 import Payment from './Payment';
 import PaymentConfirmation from './PaymentConfirmation';
 import PaymentComplete from './PaymentComplete';
+import ChangePaymentMethod from './ChangePaymentMethod';
 
 const progressForLocation = ({ pathname }) => {
   let step = 0;
@@ -32,6 +33,7 @@ const Checkout = withRouter(({ match, location }) => (
         <Route exact path={`${match.url}/payment`} component={Payment} />
         <Route exact path={`${match.url}/confirm`} component={PaymentConfirmation} />
         <Route exact path={`${match.url}/complete`} component={PaymentComplete} />
+        <Route exact path={`${match.url}/change-payment-method`} component={ChangePaymentMethod} />
         <Redirect to={`${match.url}/personal`} />
       </Switch>
     </KeyboardAwareScrollView>

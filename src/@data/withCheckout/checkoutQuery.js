@@ -18,7 +18,7 @@ export default gql`
       campus { name, id: entityId }
       home { street1, street2, city, state, zip, country }
     }
-    savedPayments {
+    savedPayments(cache: false) {
       name, id: entityId, date,
       payment { accountNumber, paymentType }
     }
