@@ -9,8 +9,8 @@ import FlexedView from '@ui/FlexedView';
 import SafeAreaView from '@ui/SafeAreaView';
 import Touchable from '@ui/Touchable';
 import styled from '@ui/styled';
-import { withTheme } from '@ui/theme';
 import MiniControls from './MiniControls';
+import FullScreenControls from './FullScreenControls';
 
 const MINI_CONTROL_HEIGHT = 50;
 
@@ -20,31 +20,6 @@ const FullScreenContainer = styled(() => ({
 }))(View);
 
 const Spacer = styled({ height: MINI_CONTROL_HEIGHT })(View);
-
-const animatedStyles = StyleSheet.create({
-  positioner: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-});
-
-const BackgroundAnimator = compose(
-  withTheme(),
-  mapProps(({ driver, color, theme, children }) => ({
-    style: {
-      backgroundColor: driver.interpolate({
-        inputRange: [0, 1],
-        outputRange: [
-          theme.colors.background.default,
-          color || theme.colors.background.default,
-        ],
-      }),
-    },
-    children,
-  })),
-)(Animated.View);
 
 const enhance = compose(
   withMediaPlayerActions,
@@ -67,6 +42,16 @@ const enhance = compose(
       const nextTrackIndex = (currentTrackIndex + 1) % tracks.length;
       setNowPlaying({ albumId: nowPlaying.albumId, currentTrack: tracks[nextTrackIndex] });
     },
+    playPrevTrack: () => {
+      const tracks = get(content, 'content.tracks', []);
+      if (!tracks.length) return;
+
+      const currentTrack = get(nowPlaying, 'currentTrack.file');
+      const currentTrackIndex = findIndex(tracks, track => track.file === currentTrack);
+      let nextTrackIndex = (currentTrackIndex - 1);
+      if (nextTrackIndex < 0) nextTrackIndex = tracks.length - 1;
+      setNowPlaying({ albumId: nowPlaying.albumId, currentTrack: tracks[nextTrackIndex] });
+    },
   })),
 );
 
@@ -86,6 +71,7 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     colors: PropTypes.arrayOf(PropTypes.shape({ value: PropTypes.string })), // eslint-disable-line
     children: PropTypes.node,
     playNextTrack: PropTypes.func,
+    playPrevTrack: PropTypes.func,
   };
 
   get primaryColor() {
@@ -110,6 +96,23 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     }).start();
   }
 
+  renderMiniControls() {
+    return (
+      <Touchable onPress={this.expand}>
+        <MiniControls
+          isPlaying={this.props.isPlaying}
+          play={this.props.play}
+          pause={this.props.pause}
+          skip={this.props.playNextTrack}
+          trackName={this.props.currentTrack.title}
+          trackByLine={this.props.title}
+          albumArt={this.props.images}
+          height={MINI_CONTROL_HEIGHT}
+        />
+      </Touchable>
+    );
+  }
+
   renderPlayer() {
     const { height } = Dimensions.get('window');
     const translateY = this.positionerDriver.interpolate({
@@ -119,29 +122,23 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     const transform = [{ translateY }];
 
     return (
-      <Animated.View style={[animatedStyles.positioner, { transform }]}>
+      <Animated.View style={[StyleSheet.absoluteFill, { transform }]}>
         <Audio
           source={this.props.currentTrack.file}
           isPlaying={this.props.isPlaying}
           onPlaybackReachedEnd={this.props.playNextTrack}
         >
-          <BackgroundAnimator driver={this.positionerDriver} color={this.primaryColor}>
-            <SafeAreaView>
-              <Touchable onPress={this.expand}>
-                <MiniControls
-                  isPlaying={this.props.isPlaying}
-                  play={this.props.play}
-                  pause={this.props.pause}
-                  skip={this.props.playNextTrack}
-                  trackName={this.props.currentTrack.title}
-                  trackByLine={this.props.title}
-                  albumArt={this.props.images}
-                  height={MINI_CONTROL_HEIGHT}
-                />
-              </Touchable>
-              <FullScreenContainer />
-            </SafeAreaView>
-          </BackgroundAnimator>
+          <FullScreenControls
+            isPlaying={this.props.isPlaying}
+            play={this.props.play}
+            pause={this.props.pause}
+            next={this.props.playNextTrack}
+            prev={this.props.playPrevTrack}
+            trackName={this.props.currentTrack.title}
+            trackByLine={this.props.title}
+            albumArt={this.props.images}
+            color={this.primaryColor}
+          />
         </Audio>
       </Animated.View>
     );
@@ -151,7 +148,7 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     return (
       <FlexedView>
         <FlexedView>{this.props.children}</FlexedView>
-        {this.props.currentTrack ? <SafeAreaView><Spacer /></SafeAreaView> : null}
+        {this.props.currentTrack ? this.renderMiniControls() : null}
         {this.props.currentTrack ? this.renderPlayer() : null}
       </FlexedView>
     );

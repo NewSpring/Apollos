@@ -8,8 +8,8 @@ import { withTheme } from '@ui/theme';
 import Icon from '@ui/Icon';
 import Card from '@ui/CardWrapper';
 import CategoryLabel from '@ui/CategoryLabel';
+import CardImage from '@ui/GradientOverlayImage';
 
-import CardImage from './CardImage';
 import LikeButton from './LikeButton';
 import {
   CardWrapper,

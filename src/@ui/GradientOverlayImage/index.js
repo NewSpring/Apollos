@@ -62,7 +62,7 @@ const Overlay = styled(({ theme }) => ({
   }),
 }))(LinearGradient);
 
-const CardImage = enhance(({
+const GradientOverlayImage = enhance(({
   source: imageSource,
   overlayColor,
 }) => (
@@ -72,4 +72,4 @@ const CardImage = enhance(({
   </Wrapper>
 ));
 
-export default CardImage;
+export default GradientOverlayImage;

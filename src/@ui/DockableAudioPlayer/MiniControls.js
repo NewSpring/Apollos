@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Color from 'color';
 import { compose, setPropTypes } from 'recompose';
 import { View, StyleSheet } from 'react-native';
+import SafeAreaView from '@ui/SafeAreaView';
 import Icon from '@ui/Icon';
 import Touchable from '@ui/Touchable';
 import ConnectedImage from '@ui/ConnectedImage';
@@ -31,7 +32,7 @@ const Container = styled(({ theme }) => ({
   overflow: 'hidden',
   borderTopColor: Color(theme.colors.background.default).darken(0.2).string(),
   borderTopWidth: StyleSheet.hairlineWidth,
-}), 'MiniControls')(View);
+}), 'MiniControls')(SafeAreaView);
 
 const Controls = styled(({ theme }) => ({
   flexDirection: 'row',
