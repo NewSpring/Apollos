@@ -6,7 +6,14 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
-import { compose, withProps, branch, renderComponent, setPropTypes } from 'recompose';
+import {
+  compose,
+  withProps,
+  branch,
+  renderComponent,
+  setPropTypes,
+  defaultProps,
+} from 'recompose';
 import { isEmpty } from 'lodash';
 import { withFormik } from 'formik';
 import Yup from 'yup';
@@ -15,6 +22,7 @@ import { withRouter } from '@ui/NativeWebRouter';
 
 import withGive from '@data/withGive';
 import withFinancialAccounts from '@data/withFinancialAccounts';
+import withGivingDashboard from '@data/withGivingDashboard';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { H3, H2, BodyCopy as P } from '@ui/typography';
 import Button from '@ui/Button';
@@ -208,11 +216,15 @@ export class ContributionFormWithoutData extends Component {
 
 const ContributionForm = compose(
   setPropTypes({
-    navigateToOnComplete: PropTypes.string,
+    onComplete: PropTypes.func,
+  }),
+  defaultProps({
+    onComplete() {},
   }),
   withGive,
   withRouter,
   withFinancialAccounts,
+  withGivingDashboard,
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
   withProps(({ accounts }) => ({ funds: accounts })),
   withFormik({
@@ -258,7 +270,7 @@ const ContributionForm = compose(
       props.setContributionFrequency(result.frequencyId);
       props.setContributionStartDate(result.startDate);
 
-      if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
+      props.onComplete(props);
       setSubmitting(false);
     },
   }),

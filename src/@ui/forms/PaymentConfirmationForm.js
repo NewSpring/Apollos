@@ -12,7 +12,7 @@ import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import styled from '@ui/styled';
-import Button from '@ui/Button';
+import Button, { ButtonLink } from '@ui/Button';
 
 const Row = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 2,
@@ -39,6 +39,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
       isPaying: PropTypes.bool,
     }),
     onSubmit: PropTypes.func,
+    onPressChangePaymentMethod: PropTypes.func,
   };
 
   static defaultProps = {
@@ -49,6 +50,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
       isPaying: false,
     },
     onSubmit() {},
+    onPressChangePaymentMethod() {},
   };
 
   get total() {
@@ -94,6 +96,10 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
         </Row>
 
         <Button onPress={this.props.onSubmit} title="Complete" loading={this.props.contributions.isPaying} />
+
+        <ButtonLink onPress={this.props.onPressChangePaymentMethod}>
+          {'Change Payment Method'}
+        </ButtonLink>
       </View>
     );
   }
