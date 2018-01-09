@@ -30,10 +30,10 @@ const OverflowFix = styled(({ theme }) => ({
 
 const CardWrapper = enhance(({
   children,
-  style: styleProp = {},
+  ...otherProps
 }) => (
   <StyledCard
-    style={styleProp}
+    {...otherProps}
   >
     <OverflowFix>
       {children}
