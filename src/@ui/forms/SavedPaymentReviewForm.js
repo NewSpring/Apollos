@@ -134,11 +134,11 @@ const PaymentConfirmationForm = compose(
 
         // NOTE: Need to keep reading through
         // the code to understand what id and name are for
-        const completeOrderRes = await props.savePaymentMethod({
+        const savePaymentMethodRes = await props.savePaymentMethod({
           token: props.contributions.orderPaymentToken,
           name: props.contributions.savedAccountName,
         });
-        const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
+        const unableToCompleteOrderError = get(savePaymentMethodRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
 
         props.setPaymentResult({

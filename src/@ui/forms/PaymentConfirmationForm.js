@@ -122,26 +122,14 @@ const PaymentConfirmationForm = compose(
         await props.postPayment();
 
         // NOTE: Need to keep reading through
-        // the code to understand what id and name are for
-        const completeOrderRes = await props.completeOrder(props.contributions.orderPaymentToken);
+        // the code to understand what id is for
+        const completeOrderRes = await props.completeOrder({
+          token: props.contributions.orderPaymentToken,
+          name: props.contributions.willSavePaymentMethod ?
+            props.contributions.savedAccountName : null,
+        });
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
-
-        // TODO: this can be simplified
-        if (props.willSavePaymentMethod) {
-          await props.resetContributions();
-          const createOrderResponse = await props.createOrder();
-          const order = get(createOrderResponse, 'data.order', {});
-          const token = order.url.split('/').pop();
-          await props.setOrder({
-            url: order.url,
-          });
-          await props.postPayment();
-          await props.savePaymentMethod({
-            token,
-            name: props.contributions.savedAccountName,
-          });
-        }
 
         props.setPaymentResult({
           success: true,
