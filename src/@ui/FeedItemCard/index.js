@@ -5,7 +5,6 @@ import { startCase, toLower } from 'lodash';
 
 import { withThemeMixin, withTheme } from '@ui/theme';
 import Icon from '@ui/Icon';
-// import Card from '@ui/CardWrapper';
 import CategoryLabel from '@ui/CategoryLabel';
 import Card, { CardContent, CardActions } from '@ui/Card';
 import { H4 } from '@ui/typography';
@@ -39,8 +38,6 @@ const enhance = compose(
     isLoading: PropTypes.bool,
     isLiked: PropTypes.bool,
     isLight: PropTypes.bool,
-    color: PropTypes.string,
-    fontColor: PropTypes.string,
     backgroundColor: PropTypes.string,
     style: PropTypes.any, // eslint-disable-line
   }),
@@ -51,9 +48,7 @@ const FeedItemCard = enhance(({
   title,
   category,
   isLoading,
-  isLight,
   isLiked,
-  fontColor,
   backgroundColor,
   theme,
   id,
