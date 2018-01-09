@@ -30,6 +30,7 @@ const FlexRow = styled(({ theme, height }) => ({
 
 const Container = styled(({ theme }) => ({
   overflow: 'hidden',
+  backgroundColor: theme.colors.background.default,
   borderTopColor: Color(theme.colors.background.default).darken(0.2).string(),
   borderTopWidth: StyleSheet.hairlineWidth,
 }), 'MiniControls')(SafeAreaView);

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Animated } from 'react-native';
 import getContext from 'recompose/getContext';
 import compose from 'recompose/compose';
 import PropTypes from 'prop-types';
@@ -8,7 +9,7 @@ export class AudioSeeker extends PureComponent {
   static propTypes = {
     seek: PropTypes.func.isRequired,
     seekingHandler: PropTypes.func,
-    progress: PropTypes.number,
+    progress: PropTypes.object, // eslint-disable-line
     component: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.func,
@@ -17,7 +18,7 @@ export class AudioSeeker extends PureComponent {
 
   static defaultProps = {
     seekingHandler() {},
-    progress: 0,
+    progress: new Animated.Value(0),
     component: Seeker,
   };
 
@@ -44,6 +45,8 @@ export class AudioSeeker extends PureComponent {
 const enhance = compose(
   getContext({
     seek: PropTypes.func,
+    progress: PropTypes.object,
+    seekingHandler: PropTypes.func,
   }),
 );
 

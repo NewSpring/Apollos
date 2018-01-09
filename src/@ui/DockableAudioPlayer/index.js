@@ -72,6 +72,11 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     children: PropTypes.node,
     playNextTrack: PropTypes.func,
     playPrevTrack: PropTypes.func,
+    artist: PropTypes.string,
+  };
+
+  static defaultProps = {
+    artist: 'NewSpring',
   };
 
   get primaryColor() {
@@ -127,6 +132,7 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
           source={this.props.currentTrack.file}
           isPlaying={this.props.isPlaying}
           onPlaybackReachedEnd={this.props.playNextTrack}
+          style={StyleSheet.absoluteFill}
         >
           <FullScreenControls
             isPlaying={this.props.isPlaying}
@@ -135,9 +141,10 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
             next={this.props.playNextTrack}
             prev={this.props.playPrevTrack}
             trackName={this.props.currentTrack.title}
-            trackByLine={this.props.title}
+            trackByLine={`${this.props.artist} - ${this.props.title}`}
             albumArt={this.props.images}
             color={this.primaryColor}
+            handleClose={this.contract}
           />
         </Audio>
       </Animated.View>

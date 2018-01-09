@@ -1,7 +1,7 @@
-import React, { Component, Children } from 'react';
+import React, { Component } from 'react';
 import { Audio as ExpoAudio } from 'expo';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { Animated, View } from 'react-native';
 import AudioPlay from './AudioPlay';
 import AudioPause from './AudioPause';
 import AudioSeeker from './AudioSeeker';
@@ -23,6 +23,7 @@ export default class Audio extends Component {
     onSeeking: PropTypes.func,
     children: PropTypes.node,
     isPlaying: PropTypes.bool,
+    style: PropTypes.any, // eslint-disable-line
   };
 
   static defaultProps = {
@@ -46,10 +47,8 @@ export default class Audio extends Component {
     stop: PropTypes.func,
     pause: PropTypes.func,
     seek: PropTypes.func,
-  };
-
-  state = {
-    progress: 0,
+    progress: PropTypes.object,
+    seekingHandler: PropTypes.func,
   };
 
   getChildContext = () => ({
@@ -57,6 +56,8 @@ export default class Audio extends Component {
     stop: this.stop,
     pause: this.pause,
     seek: this.seek,
+    progress: this.progressDriver,
+    seekingHandler: this.handleSeeking,
   });
 
   componentWillMount() {
@@ -85,15 +86,15 @@ export default class Audio extends Component {
   }
 
   onPlaybackStatusUpdate = (soundStatus) => {
-    this.setState({
-      progress: soundStatus.positionMillis / this.duration,
-    });
+    this.progressDriver.setValue((soundStatus.positionMillis / this.duration) || 0);
 
     if (soundStatus.didJustFinish) {
       this.props.onPlaybackReachedEnd();
     }
   }
 
+
+  progressDriver = new Animated.Value(0);
   duration = 0;
   positionListener = undefined;
   previousSoundStatus = undefined;
@@ -173,12 +174,6 @@ export default class Audio extends Component {
   }
 
   render() {
-    const children = Children.map(this.props.children, child => (
-      React.cloneElement(child, {
-        progress: this.state.progress,
-        seekingHandler: this.handleSeeking,
-      })
-    ));
-    return <View>{children}</View>;
+    return <View style={this.props.style}>{this.props.children}</View>;
   }
 }

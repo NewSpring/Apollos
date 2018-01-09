@@ -96,7 +96,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             >
               <Path
                 d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-                fill="#6bac43"
+                fill="#303030"
               />
             </Svg>
           </View>
@@ -346,7 +346,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
           >
             <Path
               d="M1.7 3.43c-.84 0-1.7.86-1.7 1.7v13.73c0 .85.86 1.7 1.7 1.7h20.6c.84 0 1.7-.85 1.7-1.7V5.14c0-.85-.86-1.7-1.7-1.7H1.7zm0 15.43v-6h20.6v6H1.7zm0-10.65V5.16h20.6V8.2H1.7z"
-              fill="#6bac43"
+              fill="#303030"
             />
           </Svg>
         </View>
@@ -900,7 +900,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
             >
               <Path
                 d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-                fill="#6bac43"
+                fill="#303030"
               />
             </Svg>
           </View>
@@ -1150,7 +1150,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
           >
             <Path
               d="M1.7 3.43c-.84 0-1.7.86-1.7 1.7v13.73c0 .85.86 1.7 1.7 1.7h20.6c.84 0 1.7-.85 1.7-1.7V5.14c0-.85-.86-1.7-1.7-1.7H1.7zm0 15.43v-6h20.6v6H1.7zm0-10.65V5.16h20.6V8.2H1.7z"
-              fill="#6bac43"
+              fill="#303030"
             />
           </Svg>
         </View>
@@ -1704,7 +1704,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             >
               <Path
                 d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-                fill="#6bac43"
+                fill="#303030"
               />
             </Svg>
           </View>
@@ -1954,7 +1954,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           >
             <Path
               d="M1.7 3.43c-.84 0-1.7.86-1.7 1.7v13.73c0 .85.86 1.7 1.7 1.7h20.6c.84 0 1.7-.85 1.7-1.7V5.14c0-.85-.86-1.7-1.7-1.7H1.7zm0 15.43v-6h20.6v6H1.7zm0-10.65V5.16h20.6V8.2H1.7z"
-              fill="#6bac43"
+              fill="#303030"
             />
           </Svg>
         </View>
@@ -2500,7 +2500,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             >
               <Path
                 d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-                fill="#6bac43"
+                fill="#303030"
               />
             </Svg>
           </View>
@@ -3219,7 +3219,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
               >
                 <Path
                   d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-                  fill="#6bac43"
+                  fill="#303030"
                 />
               </Svg>
             </View>

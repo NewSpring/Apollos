@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Animated,
   View,
   PanResponder,
 } from 'react-native';
@@ -8,7 +9,7 @@ import { withTheme } from '@ui/theme';
 
 export class Seeker extends Component {
   static propTypes = {
-    progress: PropTypes.number,
+    progress: PropTypes.object, // eslint-disable-line
     onSeek: PropTypes.func,
     onSeeking: PropTypes.func,
     trackHeight: PropTypes.number,
@@ -21,7 +22,7 @@ export class Seeker extends Component {
   };
 
   static defaultProps = {
-    progress: 0,
+    progress: new Animated.Value(0),
     onSeek() {},
     onSeeking() {},
     trackHeight: 20,
@@ -34,46 +35,49 @@ export class Seeker extends Component {
   };
 
   state = {
-    position: 0,
-    offset: 0,
     width: 0,
+  }
+
+  componentWillMount() {
+    this.listen(this.props.progress);
   }
 
   componentWillReceiveProps({ progress }) {
     if (progress !== this.props.progress) {
-      this.setState({
-        position: progress * this.state.width,
-      });
+      this.listen(progress);
     }
   }
 
-  get currentProgress() {
-    return this.state.position / this.state.width;
+  componentWillUnmount() {
+    if (this.listener) this.props.progress.removeListener(this.props.progress);
   }
+
+  listen = (progress) => {
+    if (this.listener) this.props.progress.removeListener(progress);
+    this.listener = progress.addListener(({ value }) => {
+      this.lastProgressValue = value;
+      this.lastPosition = value * this.state.width;
+    });
+  }
+
+  offsetDriver = new Animated.Value(0);
 
   panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => !!this.props.onSeeking,
     onPanResponderMove: (e, { dx }) => {
-      this.setState({
-        offset: dx,
-      });
+      this.offsetDriver.setValue(dx || 0);
       const { onSeeking } = this.props;
-      onSeeking((this.state.position + dx) / this.state.width);
+      onSeeking((this.lastPosition + dx) / this.state.width);
     },
     onPanResponderRelease: (e, { dx }) => {
-      this.setState({
-        position: this.state.position + dx,
-        offset: 0,
-      }, () => {
-        const { onSeek } = this.props;
-        if (onSeek) onSeek(this.currentProgress);
-      });
+      this.offsetDriver.setValue(0);
+      const { onSeek } = this.props;
+      if (onSeek) onSeek(((this.lastPosition || 0) + dx) / this.state.width);
     },
   });
 
   handleOnLayout = ({ nativeEvent: { layout: { width } } }) => {
     this.setState({
-      position: ((this.state.position / this.state.width) * width || this.props.progress * width),
       width,
     });
   };
@@ -89,10 +93,10 @@ export class Seeker extends Component {
       knobSize,
     } = this.props;
 
-    const {
-      position,
-      offset,
-    } = this.state;
+    const position = Animated.multiply(this.props.progress, this.state.width);
+    const offset = this.offsetDriver;
+
+    const trackBarWidth = Animated.add(position, offset);
 
     return (
       <View onLayout={this.handleOnLayout}>
@@ -102,27 +106,28 @@ export class Seeker extends Component {
             height: trackHeight,
           }}
         />
-        <View
+        <Animated.View
           style={{
             position: 'absolute',
             left: 0,
             backgroundColor: progressColor,
             height: progressHeight,
-            width: position + offset,
+            width: trackBarWidth,
             transform: [
               { translateY: (trackHeight - progressHeight) / 2 },
             ],
           }}
         />
-        <View
+        <Animated.View
           style={{
             backgroundColor: knobColor,
             borderRadius: knobRadius,
             position: 'absolute',
-            left: (position - (knobSize / 2)) + offset,
+            left: -(knobSize / 2),
             height: knobSize,
             width: knobSize,
             transform: [
+              { translateX: trackBarWidth },
               { translateY: (trackHeight - knobSize) / 2 },
             ],
           }}
