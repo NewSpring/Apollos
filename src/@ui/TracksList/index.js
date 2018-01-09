@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Platform } from 'react-native';
 import { pure, branch, withProps, compose } from 'recompose';
 import { times } from 'lodash';
 import FlatList from '@ui/FlatList';
@@ -45,15 +46,23 @@ class TracksList extends PureComponent {
     keyExtractor: PropTypes.func,
     refetch: PropTypes.func,
     fetchMore: PropTypes.func,
+    onTrackPress: PropTypes.func,
+    onContextualPress: PropTypes.func,
   };
 
+  handleTrackPress = (item) => {
+    if (this.props.onTrackPress) this.props.onTrackPress(item);
+  }
+
   renderTrack = ({ item }) => (
-    <Touchable>
+    <Touchable onPress={() => this.handleTrackPress(item)}>
       <TrackView>
         <BodyCopy isLoading={this.props.isLoading}>{item.title}</BodyCopy>
-        <Touchable>
-          <Ellipsis />
-        </Touchable>
+        {(this.props.onContextualPress && Platform.OS !== 'web') ? (
+          <Touchable onPress={() => this.props.onContextualPress(item)}>
+            <Ellipsis />
+          </Touchable>
+        ) : null}
       </TrackView>
     </Touchable>
   );

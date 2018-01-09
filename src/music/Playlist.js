@@ -1,18 +1,23 @@
 import React from 'react';
 import { filter } from 'lodash';
-import { compose, mapProps, pure } from 'recompose';
+import { compose, mapProps, withProps, pure } from 'recompose';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import TracksList from '@ui/TracksList';
 import AlbumView from '@ui/AlbumView';
 import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
-import { withPlaylist } from '@data/mediaPlayer';
+import { withPlaylist, withMediaPlayerActions, withNowPlaying } from '@data/mediaPlayer';
 
 const enhance = compose(
-  pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withPlaylist,
+  withMediaPlayerActions,
+  withNowPlaying,
+  pure,
+  withProps(({ setNowPlaying, id }) => ({
+    setNowPlaying: track => setNowPlaying({ albumId: id, currentTrack: track }),
+  })),
 );
 
 // TODO: we should modify Heighliner to separate these resources into props
@@ -33,12 +38,14 @@ const Playlist = enhance(({
     } = {},
   } = { },
   isLoading,
+  setNowPlaying,
 }) => (
   <FlexedView>
     <Header titleText="Music" backButton />
     <TracksList
       isLoading={isLoading}
       tracks={tracks}
+      onTrackPress={setNowPlaying}
       ListHeaderComponent={
         <AlbumView
           isLoading={isLoading}

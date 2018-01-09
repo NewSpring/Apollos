@@ -3,17 +3,25 @@ import { compose } from 'recompose';
 import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 import playMutation from './playMutation';
 import pauseMutation from './pauseMutation';
+import nowPlayingMutation from './nowPlayingMutation';
 import mediaPlayerQuery from './mediaPlayerQuery';
 import albumQuery from './albumQuery';
 import albumsQuery from './albumsQuery';
 
 const play = graphql(playMutation, {
   props: ({ mutate }) => ({
-    play: ({ id } = {}) => (mutate({
-      variables: {
-        id,
-      },
-    })),
+    play: () => (mutate()),
+  }),
+});
+
+const setNowPlaying = graphql(nowPlayingMutation, {
+  props: ({ mutate }) => ({
+    setNowPlaying: ({
+      albumId,
+      currentTrack,
+    }) => mutate({
+      variables: { albumId, currentTrack },
+    }),
   }),
 });
 
@@ -23,9 +31,9 @@ const pause = graphql(pauseMutation, {
   }),
 });
 
-const get = graphql(mediaPlayerQuery, {
+export const withNowPlaying = graphql(mediaPlayerQuery, {
   props: ({ data: { mediaPlayer } }) => ({
-    mediaPlayer,
+    nowPlaying: mediaPlayer,
   }),
 });
 
@@ -56,5 +64,5 @@ export const withPlaylist = graphql(albumQuery, {
 export const withMediaPlayerActions = compose(
   play,
   pause,
-  get,
+  setNowPlaying,
 );
