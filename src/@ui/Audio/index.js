@@ -22,6 +22,7 @@ export default class Audio extends Component {
     onSeek: PropTypes.func,
     onSeeking: PropTypes.func,
     children: PropTypes.node,
+    isPlaying: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -37,6 +38,7 @@ export default class Audio extends Component {
     onSeek() {},
     onSeeking() {},
     children: null,
+    isPlaying: false,
   };
 
   static childContextTypes = {
@@ -58,45 +60,71 @@ export default class Audio extends Component {
   });
 
   componentWillMount() {
-    this.Sound = new ExpoAudio.Sound();
+    ExpoAudio.setAudioModeAsync({
+      allowsRecordingIOS: false,
+      interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+      playsInSilentModeIOS: true,
+      shouldDuckAndroid: true,
+      interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+    });
+
     this.loadSource();
   }
 
+  componentDidUpdate({ source, isPlaying }) {
+    if (this.props.source !== source) {
+      this.loadSource();
+    } else if (this.props.isPlaying !== isPlaying) {
+      if (this.props.isPlaying) this.play();
+      if (!this.props.isPlaying) this.pause();
+    }
+  }
+
   componentWillUnmount() {
-    this.Sound.unloadAsync();
-    this.removeStatusListener();
+    this.sound.unloadAsync();
+  }
+
+  onPlaybackStatusUpdate = (soundStatus) => {
+    this.setState({
+      progress: soundStatus.positionMillis / this.duration,
+    });
+
+    if (soundStatus.didJustFinish) {
+      this.props.onPlaybackReachedEnd();
+    }
   }
 
   duration = 0;
   positionListener = undefined;
   previousSoundStatus = undefined;
   isReady = false;
-  playbackEnded = false;
+  playState = this.props.isPlaying;
 
   play = async () => {
-    try {
-      if (this.playbackEnded) await this.Sound.stopAsync();
-      if (this.isReady) {
-        this.Sound.playAsync();
+    if (this.sound) {
+      try {
+        await this.sound.playAsync();
         this.props.onPlay();
+      } catch (err) {
+        this.props.onError(err);
       }
-    } catch (err) {
-      this.props.onError(err);
     }
   }
 
   pause = async () => {
-    try {
-      this.Sound.pauseAsync();
-      this.props.onPause();
-    } catch (err) {
-      this.props.onError(err);
+    if (this.sound) {
+      try {
+        await this.sound.pauseAsync();
+        this.props.onPause();
+      } catch (err) {
+        this.props.onError(err);
+      }
     }
   }
 
   stop = async () => {
     try {
-      this.Sound.stopAsync();
+      this.sound.stopAsync();
       this.props.onStop();
     } catch (err) {
       this.props.onError(err);
@@ -105,7 +133,7 @@ export default class Audio extends Component {
 
   seek = (percentageOfSong) => {
     const positionInMillis = this.duration * percentageOfSong;
-    this.Sound.setPositionAsync(positionInMillis);
+    this.sound.setPositionAsync(positionInMillis);
     this.props.onSeek(positionInMillis);
   }
 
@@ -121,47 +149,27 @@ export default class Audio extends Component {
       onError,
     } = this.props;
 
+    const uri = source.replace(/^http:\/\/|^\/\//i, 'https://');
+
     try {
-      const soundStatus = await this.Sound.loadAsync({ uri: source });
-      this.previousSoundStatus = soundStatus;
+      if (this.sound) {
+        await this.sound.pauseAsync();
+        await this.sound.unloadAsync();
+        delete this.sound;
+      }
+
+      this.sound = await new ExpoAudio.Sound();
+
+      const soundStatus = await this.sound.loadAsync({ uri });
       this.duration = soundStatus.durationMillis;
-      this.createStatusListener();
-      this.isReady = true;
+
+      this.sound.setOnPlaybackStatusUpdate(this.onPlaybackStatusUpdate);
+
+      if (this.props.isPlaying) await this.play();
       onReady();
     } catch (err) {
       onError(err);
     }
-  }
-
-  createStatusListener = () => {
-    this.positionListener = setInterval(async () => {
-      try {
-        const soundStatus = await this.Sound.getStatusAsync();
-        this.setState({
-          progress: soundStatus.positionMillis / this.duration,
-        });
-
-        const currentIsFinished = soundStatus.positionMillis === this.duration;
-        const previousIsFinished = this.previousSoundStatus.positionMillis === this.duration;
-        if (currentIsFinished && !previousIsFinished) {
-          this.pause();
-          this.props.onPlaybackReachedEnd();
-        }
-        this.previousSoundStatus = soundStatus;
-
-        if (currentIsFinished) {
-          this.playbackEnded = true;
-        } else {
-          this.playbackEnded = false;
-        }
-      } catch (err) {
-        this.props.onError(err);
-      }
-    }, 200);
-  }
-
-  removeStatusListener = () => {
-    if (this.positionListener) clearInterval(this.positionListener);
   }
 
   render() {

@@ -6,7 +6,7 @@ export function play(result, variables, { cache }) {
     variables,
   });
 
-  if (!state.currentTrackId) return null;
+  if (!state.currentTrack) return null;
 
   cache.writeQuery({
     query: mediaPlayerQuery,

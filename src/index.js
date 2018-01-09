@@ -3,6 +3,7 @@ import { ApolloProvider } from 'react-apollo';
 import { nest, withProps } from 'recompose';
 import { ThemeProvider } from '@ui/theme';
 import FontLoader from '@ui/FontLoader';
+import DockableAudioPlayer from '@ui/DockableAudioPlayer';
 import Client from '@data/Client';
 import AppRouter from './AppRouter';
 
@@ -10,6 +11,7 @@ const App = nest(
   withProps({ client: Client })(ApolloProvider),
   ThemeProvider,
   FontLoader,
+  DockableAudioPlayer,
   AppRouter,
 );
 

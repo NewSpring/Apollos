@@ -59,6 +59,7 @@ export const withPlaylist = graphql(albumQuery, {
   props: ({ data: { playlist } }) => ({
     content: playlist,
   }),
+  skip: ({ id }) => !id,
 });
 
 export const withMediaPlayerActions = compose(
