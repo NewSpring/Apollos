@@ -5,6 +5,26 @@ import {
 } from 'react-native';
 import { matchPath } from './';
 
+export const goBackTo = ({ to, history, replace = false }) => {
+  let foundMatchingEntry = false;
+  let distance = -1;
+  if (to && history.entries) {
+    const routeToPopTo = history.entries.findIndex(location =>
+      matchPath(location.pathname, to),
+    );
+    if (routeToPopTo >= 0 && routeToPopTo < history.index) {
+      foundMatchingEntry = true;
+      distance = routeToPopTo - history.index;
+    }
+  }
+
+  if (foundMatchingEntry || !replace) {
+    history.go(distance);
+  } else {
+    history.replace(to);
+  }
+};
+
 export default class Link extends Component {
   static contextTypes = {
     router: PropTypes.shape({
@@ -44,16 +64,7 @@ export default class Link extends Component {
     const { to, replace, pop } = this.props;
 
     if (pop) {
-      let distance = -1;
-      if (to && history.entries) {
-        const routeToPopTo = history.entries.findIndex(location =>
-          matchPath(location.pathname, to),
-        );
-        if (routeToPopTo && routeToPopTo < history.index) {
-          distance = routeToPopTo - history.index;
-        }
-      }
-      history.go(distance);
+      goBackTo({ to, history });
     } else if (replace && to) {
       history.replace(to);
     } else {

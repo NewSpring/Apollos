@@ -16,7 +16,14 @@ export default graphql(MUTATION, {
   props: ({ mutate }) => ({
     logout: async () => {
       try {
-        const r = await mutate();
+        const r = await mutate({
+          update: (proxy) => {
+            const query = USER_QUERY;
+            const data = proxy.readQuery({ query });
+            data.person = null;
+            proxy.writeQuery({ query, data });
+          },
+        });
         await AsyncStorage.removeItem('authToken');
         return r;
       } catch (err) {
@@ -24,12 +31,4 @@ export default graphql(MUTATION, {
       }
     },
   }),
-  options: {
-    update: (proxy) => {
-      const query = USER_QUERY;
-      const data = proxy.readQuery({ query });
-      data.person = null;
-      proxy.writeQuery({ query, data });
-    },
-  },
 });

@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 import FeedView from '../';
 
 describe('The FeedView component', () => {
   it('renders correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <FeedView
           content={[
             {
@@ -42,18 +42,18 @@ describe('The FeedView component', () => {
             },
           ]}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('renders empty state', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <FeedView
           isLoading
           content={[]}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

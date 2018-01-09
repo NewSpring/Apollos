@@ -1,63 +1,62 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 import FeedItemCard from './';
 
 describe('the FeedItemCard component', () => {
   it('should render', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <FeedItemCard
           title={'Boom'}
           category={'What'}
           images={[{
-            uri: 'https://picsum.photos/600/400/?random',
-            width: 600,
-            height: 400,
-          }]}
+              uri: 'https://picsum.photos/600/400/?random',
+              width: 600,
+              height: 400,
+            }]}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render with inverted (light) font colors', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <FeedItemCard
           title={'Boom'}
           category={'What'}
           images={[{
-            uri: 'https://picsum.photos/600/400/?random',
-            width: 600,
-            height: 400,
-          }]}
+              uri: 'https://picsum.photos/600/400/?random',
+              width: 600,
+              height: 400,
+            }]}
           isLight={false}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should accept a different backgroundColor', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <FeedItemCard
           title={'Boom'}
           category={'What'}
           images={[{
-            uri: 'https://picsum.photos/600/400/?random',
-            width: 600,
-            height: 400,
-          }]}
+              uri: 'https://picsum.photos/600/400/?random',
+              width: 600,
+              height: 400,
+            }]}
           backgroundColor={'salmon'}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render text correctly with isLight', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <FeedItemCard
           title={'Boom'}
           category={'What'}
@@ -68,24 +67,24 @@ describe('the FeedItemCard component', () => {
           }]}
           isLight
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render as liked', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <FeedItemCard
           title={'Boom'}
           category={'What'}
           images={[{
-            uri: 'https://picsum.photos/600/400/?random',
-            width: 600,
-            height: 400,
-          }]}
+              uri: 'https://picsum.photos/600/400/?random',
+              width: 600,
+              height: 400,
+            }]}
           isLiked
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -96,18 +95,18 @@ describe('the FeedItemCard component', () => {
     };
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <FeedItemCard
           title={'Boom'}
           category={'What'}
           images={[{
-            uri: 'https://picsum.photos/600/400/?random',
-            width: 600,
-            height: 400,
-          }]}
+              uri: 'https://picsum.photos/600/400/?random',
+              width: 600,
+              height: 400,
+            }]}
           style={cardDimensions}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
