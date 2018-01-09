@@ -112,7 +112,6 @@ exports[`The TileFeed component renders correctly 1`] = `
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
-                "paddingHorizontal": 20,
                 "position": "absolute",
                 "right": 0,
                 "top": 0,
@@ -155,22 +154,31 @@ exports[`The TileFeed component renders correctly 1`] = `
                 </Text>
               </View>
             </View>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
+            <View
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": null,
-                  "fontSize": 25.2,
-                  "fontWeight": "700",
-                  "lineHeight": 31.28,
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
                 }
               }
             >
-              Why Jesus Is Timeless
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": null,
+                    "fontSize": 25.2,
+                    "fontWeight": "700",
+                    "lineHeight": 31.28,
+                  }
+                }
+              >
+                Why Jesus Is Timeless
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -224,7 +232,6 @@ exports[`The TileFeed component renders correctly 1`] = `
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
-                "paddingHorizontal": 20,
                 "position": "absolute",
                 "right": 0,
                 "top": 0,
@@ -267,22 +274,31 @@ exports[`The TileFeed component renders correctly 1`] = `
                 </Text>
               </View>
             </View>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
+            <View
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": null,
-                  "fontSize": 25.2,
-                  "fontWeight": "700",
-                  "lineHeight": 31.28,
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
                 }
               }
             >
-              Why Jesus Is Timeless
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": null,
+                    "fontSize": 25.2,
+                    "fontWeight": "700",
+                    "lineHeight": 31.28,
+                  }
+                }
+              >
+                Why Jesus Is Timeless
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -439,7 +455,6 @@ exports[`The TileFeed component renders empty state 1`] = `
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
-                "paddingHorizontal": 20,
                 "position": "absolute",
                 "right": 0,
                 "top": 0,
@@ -466,7 +481,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "#dddddd",
+                    "backgroundColor": "#f7f7f7",
                     "borderRadius": 6,
                     "height": 45,
                     "width": 45,
@@ -477,14 +492,24 @@ exports[`The TileFeed component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignSelf": "stretch",
-                  "backgroundColor": "#dddddd",
-                  "borderRadius": 6,
-                  "height": 18,
-                  "width": "75%",
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
                 }
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 25.2,
+                    "marginVertical": 3.040000000000001,
+                    "width": "80%",
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -538,7 +563,6 @@ exports[`The TileFeed component renders empty state 1`] = `
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
-                "paddingHorizontal": 20,
                 "position": "absolute",
                 "right": 0,
                 "top": 0,
@@ -565,7 +589,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "#dddddd",
+                    "backgroundColor": "#f7f7f7",
                     "borderRadius": 6,
                     "height": 45,
                     "width": 45,
@@ -576,14 +600,24 @@ exports[`The TileFeed component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignSelf": "stretch",
-                  "backgroundColor": "#dddddd",
-                  "borderRadius": 6,
-                  "height": 18,
-                  "width": "75%",
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
                 }
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 25.2,
+                    "marginVertical": 3.040000000000001,
+                    "width": "80%",
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -637,7 +671,6 @@ exports[`The TileFeed component renders empty state 1`] = `
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
-                "paddingHorizontal": 20,
                 "position": "absolute",
                 "right": 0,
                 "top": 0,
@@ -664,7 +697,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "#dddddd",
+                    "backgroundColor": "#f7f7f7",
                     "borderRadius": 6,
                     "height": 45,
                     "width": 45,
@@ -675,14 +708,24 @@ exports[`The TileFeed component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignSelf": "stretch",
-                  "backgroundColor": "#dddddd",
-                  "borderRadius": 6,
-                  "height": 18,
-                  "width": "75%",
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
                 }
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 25.2,
+                    "marginVertical": 3.040000000000001,
+                    "width": "80%",
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -736,7 +779,6 @@ exports[`The TileFeed component renders empty state 1`] = `
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
-                "paddingHorizontal": 20,
                 "position": "absolute",
                 "right": 0,
                 "top": 0,
@@ -763,7 +805,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "#dddddd",
+                    "backgroundColor": "#f7f7f7",
                     "borderRadius": 6,
                     "height": 45,
                     "width": 45,
@@ -774,14 +816,24 @@ exports[`The TileFeed component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignSelf": "stretch",
-                  "backgroundColor": "#dddddd",
-                  "borderRadius": 6,
-                  "height": 18,
-                  "width": "75%",
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
                 }
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 25.2,
+                    "marginVertical": 3.040000000000001,
+                    "width": "80%",
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -835,7 +887,6 @@ exports[`The TileFeed component renders empty state 1`] = `
                 "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
-                "paddingHorizontal": 20,
                 "position": "absolute",
                 "right": 0,
                 "top": 0,
@@ -862,7 +913,7 @@ exports[`The TileFeed component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "backgroundColor": "#dddddd",
+                    "backgroundColor": "#f7f7f7",
                     "borderRadius": 6,
                     "height": 45,
                     "width": 45,
@@ -873,14 +924,24 @@ exports[`The TileFeed component renders empty state 1`] = `
             <View
               style={
                 Object {
-                  "alignSelf": "stretch",
-                  "backgroundColor": "#dddddd",
-                  "borderRadius": 6,
-                  "height": 18,
-                  "width": "75%",
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
                 }
               }
-            />
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 25.2,
+                    "marginVertical": 3.040000000000001,
+                    "width": "80%",
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>

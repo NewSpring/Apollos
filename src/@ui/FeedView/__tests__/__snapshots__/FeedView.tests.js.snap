@@ -84,6 +84,7 @@ exports[`The FeedView component renders correctly 1`] = `
         accessible={true}
         cardColor={null}
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -201,31 +202,22 @@ exports[`The FeedView component renders correctly 1`] = `
                   fill="#303030"
                 />
               </Svg>
-              <View
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
                 style={
                   Object {
-                    "flex": 1,
+                    "color": "#303030",
+                    "fontFamily": null,
+                    "fontSize": 14,
+                    "lineHeight": 15.87,
                     "paddingHorizontal": 10,
                   }
                 }
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  color="#303030"
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "color": "#303030",
-                      "fontFamily": null,
-                      "fontSize": 14,
-                      "lineHeight": 15.87,
-                    }
-                  }
-                >
-                  Bob
-                </Text>
-              </View>
+                Bob
+              </Text>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -278,6 +270,7 @@ exports[`The FeedView component renders correctly 1`] = `
         accessible={true}
         cardColor="#584068"
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -430,31 +423,22 @@ exports[`The FeedView component renders correctly 1`] = `
                   fill="#303030"
                 />
               </Svg>
-              <View
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
                 style={
                   Object {
-                    "flex": 1,
+                    "color": "#303030",
+                    "fontFamily": null,
+                    "fontSize": 14,
+                    "lineHeight": 15.87,
                     "paddingHorizontal": 10,
                   }
                 }
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  color="#303030"
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "color": "#303030",
-                      "fontFamily": null,
-                      "fontSize": 14,
-                      "lineHeight": 15.87,
-                    }
-                  }
-                >
-                  Bob 2
-                </Text>
-              </View>
+                Bob 2
+              </Text>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -658,6 +642,7 @@ exports[`The FeedView component renders empty state 1`] = `
         accessible={true}
         cardColor={null}
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -761,23 +746,15 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "paddingHorizontal": 10,
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 14,
+                    "marginVertical": 0.9349999999999996,
+                    "width": "40%",
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 6,
-                      "height": 18,
-                      "width": "40%",
-                    }
-                  }
-                />
-              </View>
+              />
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -830,6 +807,7 @@ exports[`The FeedView component renders empty state 1`] = `
         accessible={true}
         cardColor={null}
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -933,23 +911,15 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "paddingHorizontal": 10,
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 14,
+                    "marginVertical": 0.9349999999999996,
+                    "width": "40%",
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 6,
-                      "height": 18,
-                      "width": "40%",
-                    }
-                  }
-                />
-              </View>
+              />
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1002,6 +972,7 @@ exports[`The FeedView component renders empty state 1`] = `
         accessible={true}
         cardColor={null}
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1105,23 +1076,15 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "paddingHorizontal": 10,
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 14,
+                    "marginVertical": 0.9349999999999996,
+                    "width": "40%",
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 6,
-                      "height": 18,
-                      "width": "40%",
-                    }
-                  }
-                />
-              </View>
+              />
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1174,6 +1137,7 @@ exports[`The FeedView component renders empty state 1`] = `
         accessible={true}
         cardColor={null}
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1277,23 +1241,15 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "paddingHorizontal": 10,
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 14,
+                    "marginVertical": 0.9349999999999996,
+                    "width": "40%",
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 6,
-                      "height": 18,
-                      "width": "40%",
-                    }
-                  }
-                />
-              </View>
+              />
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1346,6 +1302,7 @@ exports[`The FeedView component renders empty state 1`] = `
         accessible={true}
         cardColor={null}
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1449,23 +1406,15 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "paddingHorizontal": 10,
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 14,
+                    "marginVertical": 0.9349999999999996,
+                    "width": "40%",
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 6,
-                      "height": 18,
-                      "width": "40%",
-                    }
-                  }
-                />
-              </View>
+              />
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1518,6 +1467,7 @@ exports[`The FeedView component renders empty state 1`] = `
         accessible={true}
         cardColor={null}
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1621,23 +1571,15 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "paddingHorizontal": 10,
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 14,
+                    "marginVertical": 0.9349999999999996,
+                    "width": "40%",
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 6,
-                      "height": 18,
-                      "width": "40%",
-                    }
-                  }
-                />
-              </View>
+              />
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1690,6 +1632,7 @@ exports[`The FeedView component renders empty state 1`] = `
         accessible={true}
         cardColor={null}
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1793,23 +1736,15 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "paddingHorizontal": 10,
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 14,
+                    "marginVertical": 0.9349999999999996,
+                    "width": "40%",
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 6,
-                      "height": 18,
-                      "width": "40%",
-                    }
-                  }
-                />
-              </View>
+              />
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1862,6 +1797,7 @@ exports[`The FeedView component renders empty state 1`] = `
         accessible={true}
         cardColor={null}
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1965,23 +1901,15 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "paddingHorizontal": 10,
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 14,
+                    "marginVertical": 0.9349999999999996,
+                    "width": "40%",
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 6,
-                      "height": 18,
-                      "width": "40%",
-                    }
-                  }
-                />
-              </View>
+              />
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -2034,6 +1962,7 @@ exports[`The FeedView component renders empty state 1`] = `
         accessible={true}
         cardColor={null}
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -2137,23 +2066,15 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "paddingHorizontal": 10,
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 14,
+                    "marginVertical": 0.9349999999999996,
+                    "width": "40%",
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 6,
-                      "height": 18,
-                      "width": "40%",
-                    }
-                  }
-                />
-              </View>
+              />
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -2206,6 +2127,7 @@ exports[`The FeedView component renders empty state 1`] = `
         accessible={true}
         cardColor={null}
         hitSlop={undefined}
+        isLight={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -2309,23 +2231,15 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "flex": 1,
-                    "paddingHorizontal": 10,
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 14,
+                    "marginVertical": 0.9349999999999996,
+                    "width": "40%",
                   }
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 6,
-                      "height": 18,
-                      "width": "40%",
-                    }
-                  }
-                />
-              </View>
+              />
             </View>
             <View
               accessibilityComponentType={undefined}
