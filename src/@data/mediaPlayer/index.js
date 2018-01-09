@@ -1,6 +1,7 @@
 import { graphql } from 'react-apollo';
 import { compose } from 'recompose';
 import fetchMoreResolver from '@data/utils/fetchMoreResolver';
+import identifyCategory from '@data/utils/identifyCategory';
 import playMutation from './playMutation';
 import pauseMutation from './pauseMutation';
 import nowPlayingMutation from './nowPlayingMutation';
@@ -40,7 +41,7 @@ export const withNowPlaying = graphql(mediaPlayerQuery, {
 export const withLibrary = graphql(albumsQuery, {
   options: { variables: { limit: 20, skip: 0 } },
   props: ({ data }) => ({
-    content: data.library,
+    content: data.library && data.library.map(identifyCategory),
     isLoading: data.loading,
     refetch: data.refetch,
     fetchMore: fetchMoreResolver({

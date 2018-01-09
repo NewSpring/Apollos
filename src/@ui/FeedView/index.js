@@ -108,7 +108,7 @@ const FeedView = enhance(({
 FeedView.defaultProps = {
   isLoading: false,
   onEndReachedThreshold: 0.7,
-  keyExtractor: item => item.entryId,
+  keyExtractor: item => item.id || item.entryId,
   content: [],
   refetch: undefined,
   fetchMore: undefined,

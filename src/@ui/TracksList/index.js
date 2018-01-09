@@ -25,7 +25,7 @@ const enhance = compose(
   pure,
   withProps({ isLoading: true }),
   branch(({ isLoading, tracks = [] }) => isLoading && !tracks.length, withProps({
-    tracks: times(10, i => ({ id: i })),
+    tracks: times(10, i => ({ id: i, file: i })),
   })),
 );
 
@@ -33,7 +33,7 @@ class TracksList extends PureComponent {
   static defaultProps = {
     isLoading: false,
     onEndReachedThreshold: 0.7,
-    keyExtractor: item => item.id,
+    keyExtractor: item => item.file,
     tracks: [],
     refetch: undefined,
     fetchMore: undefined,
