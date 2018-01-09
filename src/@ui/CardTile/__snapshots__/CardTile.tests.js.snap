@@ -269,8 +269,8 @@ exports[`the Card component should render a loading skeleton 1`] = `
           Object {
             "alignSelf": "stretch",
             "backgroundColor": "#dddddd",
-            "borderRadius": 6.3,
-            "height": 25.2,
+            "borderRadius": 6,
+            "height": 18,
             "width": "75%",
           }
         }
@@ -288,7 +288,7 @@ exports[`the Card component should render a loading skeleton 1`] = `
           style={
             Object {
               "backgroundColor": "#dddddd",
-              "borderRadius": 10.8,
+              "borderRadius": 6,
               "height": 21.6,
               "width": 21.6,
             }
@@ -307,7 +307,7 @@ exports[`the Card component should render a loading skeleton 1`] = `
               Object {
                 "alignSelf": "stretch",
                 "backgroundColor": "#dddddd",
-                "borderRadius": 4.5,
+                "borderRadius": 6,
                 "height": 18,
                 "width": "40%",
               }
@@ -373,7 +373,7 @@ exports[`the Card component should render a loading skeleton for all available p
           style={
             Object {
               "backgroundColor": "#dddddd",
-              "borderRadius": 3,
+              "borderRadius": 6,
               "height": 45,
               "width": 45,
             }
@@ -385,8 +385,8 @@ exports[`the Card component should render a loading skeleton for all available p
           Object {
             "alignSelf": "stretch",
             "backgroundColor": "#dddddd",
-            "borderRadius": 6.3,
-            "height": 25.2,
+            "borderRadius": 6,
+            "height": 18,
             "width": "75%",
           }
         }
@@ -404,7 +404,7 @@ exports[`the Card component should render a loading skeleton for all available p
           style={
             Object {
               "backgroundColor": "#dddddd",
-              "borderRadius": 10.8,
+              "borderRadius": 6,
               "height": 21.6,
               "width": 21.6,
             }
@@ -423,7 +423,7 @@ exports[`the Card component should render a loading skeleton for all available p
               Object {
                 "alignSelf": "stretch",
                 "backgroundColor": "#dddddd",
-                "borderRadius": 4.5,
+                "borderRadius": 6,
                 "height": 18,
                 "width": "40%",
               }

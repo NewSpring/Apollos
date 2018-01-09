@@ -39,8 +39,9 @@ exports[`the Card component it should render a placeholder 1`] = `
           Object {
             "alignSelf": "stretch",
             "backgroundColor": "#dddddd",
-            "borderRadius": 3,
-            "height": 12,
+            "borderRadius": 6,
+            "height": 32.4,
+            "marginVertical": 4.41,
             "width": "100%",
           }
         }
@@ -50,64 +51,56 @@ exports[`the Card component it should render a placeholder 1`] = `
           Object {
             "alignSelf": "stretch",
             "backgroundColor": "#dddddd",
-            "borderRadius": 3,
-            "height": 12,
+            "borderRadius": 6,
+            "height": 14,
+            "marginVertical": 0.9349999999999996,
             "width": "40%",
           }
         }
       />
-      <View>
+      <View
+        style={
+          Object {
+            "paddingVertical": 10,
+          }
+        }
+      >
         <View
           style={
             Object {
-              "marginBottom": 0,
+              "alignSelf": "stretch",
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": 18,
+              "marginVertical": 4,
+              "width": "85%",
             }
           }
-        >
-          <View
-            style={
-              Object {
-                "alignSelf": "stretch",
-                "backgroundColor": "#dddddd",
-                "borderRadius": 3,
-                "height": 12,
-                "width": "75%",
-              }
-            }
-          />
-        </View>
+        />
         <View
           style={
             Object {
-              "marginBottom": 0,
+              "alignSelf": "stretch",
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": 18,
+              "marginVertical": 4,
+              "width": "100%",
             }
           }
-        >
-          <View
-            style={
-              Object {
-                "alignSelf": "stretch",
-                "backgroundColor": "#dddddd",
-                "borderRadius": 3,
-                "height": 12,
-                "width": "100%",
-              }
+        />
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": 18,
+              "marginVertical": 4,
+              "width": "75%",
             }
-          />
-        </View>
-        <View>
-          <View
-            style={
-              Object {
-                "alignSelf": "stretch",
-                "backgroundColor": "#dddddd",
-                "borderRadius": 3,
-                "height": 12,
-                "width": "85%",
-              }
-            }
-          />
-        </View>
+          }
+        />
       </View>
     </View>
     <View
@@ -128,9 +121,9 @@ exports[`the Card component it should render a placeholder 1`] = `
           Object {
             "alignSelf": "stretch",
             "backgroundColor": "#dddddd",
-            "borderRadius": 3,
-            "height": 12,
-            "width": "100%",
+            "borderRadius": 6,
+            "height": 38,
+            "width": 80,
           }
         }
       />
@@ -139,9 +132,9 @@ exports[`the Card component it should render a placeholder 1`] = `
           Object {
             "alignSelf": "stretch",
             "backgroundColor": "#dddddd",
-            "borderRadius": 3,
-            "height": 12,
-            "width": "100%",
+            "borderRadius": 6,
+            "height": 38,
+            "width": 80,
           }
         }
       />
