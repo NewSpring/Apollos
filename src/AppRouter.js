@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Platform } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
-import { Router, Route, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@ui/NativeWebRouter';
+import { Router, Route, ProtectedRoute, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@ui/NativeWebRouter';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
@@ -18,6 +18,7 @@ import Series, { Sermon, SeriesSingle } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist } from './music';
+import Auth from './auth';
 
 let previousLocation;
 
@@ -63,6 +64,7 @@ class AppRouter extends PureComponent {
   largeScreenModals = [
     <Route exact path="/sections" key="sections-modal" component={asModal(tabs.Sections)} />,
     <Route path="/give/checkout" key="give-checkout" component={asModal(give.Checkout)} />,
+    <Route path="/login" key="login" component={asModal(Auth)} />,
   ];
 
   tabs = () => {
@@ -75,7 +77,7 @@ class AppRouter extends PureComponent {
         <Route exact path="/sections" component={tabs.Sections} />
         <Route exact path="/groups" component={tabs.Groups} />
         <Route exact path="/discover" component={tabs.Discover} />
-        <Route exact path="/profile" component={tabs.Profile} />
+        <ProtectedRoute exact path="/profile" component={tabs.Profile} />
 
         <Route exact path="/give" component={give.Dashboard} />
         <Route exact path="/give/methods" component={give.PaymentMethods} />
@@ -125,6 +127,8 @@ class AppRouter extends PureComponent {
           <Route exact path="/events/:id" component={DebugView} />
 
           <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
+
+          <Route path="/login" cardStackDirection="vertical" component={Auth} />
 
           <Route component={this.tabs} />
         </AppSwitch>

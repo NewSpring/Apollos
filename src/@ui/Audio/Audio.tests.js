@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { View } from 'react-native';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 import Icon from '@ui/Icon';
 import Audio from './';
 
 it('renders correctly', () => {
   const tree = renderer.create(
-    <ThemeProvider>
+    <Providers>
       <Audio source="https://www.w3schools.com/html/horse.mp3">
         <Audio.Play>
           <View>
@@ -23,7 +23,7 @@ it('renders correctly', () => {
 
         <Audio.Seeker />
       </Audio>
-    </ThemeProvider>,
+    </Providers>,
   );
   // expect(true).toBe(true);
   expect(tree).toMatchSnapshot();

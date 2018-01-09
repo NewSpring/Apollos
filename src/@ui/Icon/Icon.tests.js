@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { kebabCase } from 'lodash';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 import Icon from './';
 import * as icons from './icons';
 
@@ -9,9 +9,9 @@ Object.keys(icons).forEach((iconName) => {
   describe(`The ${iconName} icon`, () => {
     it('renders correctly', () => {
       const tree = renderer.create(
-        <ThemeProvider>
+        <Providers>
           <Icon name={kebabCase(iconName)} />
-        </ThemeProvider>,
+        </Providers>,
       );
       expect(tree).toMatchSnapshot();
     });

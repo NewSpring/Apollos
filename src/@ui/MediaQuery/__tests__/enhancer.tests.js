@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { View, Dimensions } from 'react-native';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 import { DEFAULT_THEME } from '@ui/constants';
 import enhancer from '../enhancer';
 
@@ -20,9 +20,9 @@ describe('The mediaQuery enhancer', () => {
 
     const Component = enhancer(mediaQueryThatPasses, TestHOC(firstMock), TestHOC(secondMock))(View);
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Component />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
     expect(firstMock.mock.calls.length).toBe(1);
@@ -34,9 +34,9 @@ describe('The mediaQuery enhancer', () => {
 
     const Component = enhancer(mediaQueryThatFails, TestHOC(firstMock), TestHOC(secondMock))(View);
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Component />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
     expect(firstMock.mock.calls.length).toBe(0);
@@ -53,9 +53,9 @@ describe('The mediaQuery enhancer', () => {
     )(View);
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Component />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
     expect(firstMock.mock.calls.length).toBe(1);
@@ -77,9 +77,9 @@ describe('The mediaQuery enhancer', () => {
     )(View);
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Component />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
     expect(firstMock.mock.calls.length).toBe(1);
@@ -103,9 +103,9 @@ describe('The mediaQuery enhancer', () => {
     )(View);
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Component />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
     expect(firstMock.mock.calls.length).toBe(0);
@@ -123,9 +123,9 @@ describe('The mediaQuery enhancer', () => {
     const Component = enhancer(testFunction, TestHOC(firstMock))(View);
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Component />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
     expect(firstMock.mock.calls.length).toBe(1);
@@ -143,9 +143,9 @@ describe('The mediaQuery enhancer', () => {
     const Component = enhancer(testFunction, TestHOC(firstMock))(View);
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Component />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
     expect(firstMock.mock.calls.length).toBe(1);

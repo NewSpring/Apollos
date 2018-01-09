@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 
 import Icon from '@ui/Icon';
 import Text from './';
@@ -8,19 +8,19 @@ import Text from './';
 describe('The Text Input component', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Text
           editable
           label="Some label text"
           placeholder="Some placeholder"
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render as a password field with an icon', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Text
           editable
           type="password"
@@ -28,45 +28,45 @@ describe('The Text Input component', () => {
           placeholder="Some placeholder"
           suffix={<Icon name="lock" size={18} />}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render as an email field', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Text
           editable
           type="email"
           label="Email"
           placeholder="Some placeholder"
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render as a numeric field', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Text
           editable
           type="numeric"
           label="Numeric"
           placeholder="Some placeholder"
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render as a phone number field', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Text
           type="phone"
           label="Phone Number"
           placeholder="Some placeholder"
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

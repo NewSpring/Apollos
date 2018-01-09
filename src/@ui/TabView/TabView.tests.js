@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import renderer from 'react-test-renderer';
 import { TabViewPagerPan } from 'react-native-tab-view';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 
 import TabView, { SceneMap } from './';
 
@@ -12,7 +12,7 @@ const SecondRoute = () => <View style={[{ flex: 1, backgroundColor: '#673ab7' }]
 describe('TabView Component', () => {
   it('renders', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <TabView
           routes={[
             { key: 'first', title: 'First' },
@@ -24,7 +24,7 @@ describe('TabView Component', () => {
           })}
           renderPager={props => <TabViewPagerPan {...props} />}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import moment from 'moment';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 
 import { PaymentConfirmationFormWithoutData } from './PaymentConfirmationForm';
 
@@ -23,9 +23,9 @@ const createTestData = () => ({
 describe('The PaymentConfirmationForm component', () => {
   it('renders correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <PaymentConfirmationFormWithoutData {...createTestData()} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -33,9 +33,9 @@ describe('The PaymentConfirmationForm component', () => {
     const data = createTestData();
     data.isLoading = true;
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <PaymentConfirmationFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -43,9 +43,9 @@ describe('The PaymentConfirmationForm component', () => {
     const data = createTestData();
     data.contributions.isPaying = true;
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <PaymentConfirmationFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -53,9 +53,9 @@ describe('The PaymentConfirmationForm component', () => {
     const data = createTestData();
     data.contributions.frequencyId = 'monthly';
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <PaymentConfirmationFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
