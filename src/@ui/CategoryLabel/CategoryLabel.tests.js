@@ -2,65 +2,65 @@ import React from 'react';
 import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
 
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 import CategoryLabel from './';
 
 describe('the FeedItemCard CategoryLabel component', () => {
   it('should render', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <CategoryLabel label={'Default'} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render as a Series', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <CategoryLabel label={'Series'} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render as Albums', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <CategoryLabel label={'Albums'} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render a custom icon', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <CategoryLabel
           label={'Default'}
           icon={'like'}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render a skeleton view', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <CategoryLabel
           label={'Default'}
           isLoading
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render children', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <CategoryLabel
           label={'Default'}
         >
           <Text>Boom</Text>
         </CategoryLabel>
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

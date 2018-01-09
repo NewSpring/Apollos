@@ -1,15 +1,15 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 
 import FrequencyInput from './FrequencyInput';
 
 describe('The FrequencyInput component', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <FrequencyInput value="biweekly" onChange={jest.fn()} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

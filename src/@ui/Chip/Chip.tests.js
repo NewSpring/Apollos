@@ -1,31 +1,31 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 
 import Chip from './';
 
 describe('The Chip component', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Chip title="My Button!" onPress={() => {}} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render an icon', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Chip icon="like" title="Heart!!!" />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should be selected', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Chip title="My Button!" selected />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

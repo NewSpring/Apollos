@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import moment from 'moment';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 
 import { ContributionFormWithoutData } from './index';
 
@@ -45,9 +45,9 @@ const createTestData = () => ({
 describe('The ContributionForm component', () => {
   it('renders correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <ContributionFormWithoutData {...createTestData()} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -56,9 +56,9 @@ describe('The ContributionForm component', () => {
     data.values.secondFundVisible = true;
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <ContributionFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -67,9 +67,9 @@ describe('The ContributionForm component', () => {
     data.isOffline = true;
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <ContributionFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -78,9 +78,9 @@ describe('The ContributionForm component', () => {
     data.values.frequencyId = 'monthly';
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <ContributionFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -92,9 +92,9 @@ describe('The ContributionForm component', () => {
     };
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <ContributionFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -103,9 +103,9 @@ describe('The ContributionForm component', () => {
     data.values.funds = [];
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <ContributionFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

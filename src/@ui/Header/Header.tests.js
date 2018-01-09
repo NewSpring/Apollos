@@ -1,26 +1,23 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeProvider } from '@ui/theme';
-import { Router } from '@ui/NativeWebRouter';
+import Providers from '@ui/TestProviders';
 
 import Header from './';
 
 describe('The Header component', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <Header />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render with a back button correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
-        <Router>
-          <Header backButton />
-        </Router>
-      </ThemeProvider>,
+      <Providers>
+        <Header backButton />
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
