@@ -7,10 +7,12 @@ import PropTypes from 'prop-types';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 import { compose, mapProps } from 'recompose';
+import get from 'lodash/get';
 import { withRouter } from '@ui/NativeWebRouter';
 import Radio from '@ui/inputs/Radio';
 import ErrorText from '@ui/inputs/ErrorText';
 import Button, { ButtonLink } from '@ui/Button';
+import withCheckout from '@data/withCheckout';
 
 export class ChangePaymentMethodForm extends PureComponent {
   static propTypes = {
@@ -27,6 +29,15 @@ export class ChangePaymentMethodForm extends PureComponent {
       ]),
     }),
     onPressNewPaymentMethod: PropTypes.func,
+    savedPaymentMethods: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+      ]),
+      name: PropTypes.string,
+      paymentMethod: PropTypes.oneOf(['bankAccount', 'creditCard']),
+      accountNumber: PropTypes.string,
+    })),
   };
 
   static defaultProps = {
@@ -36,6 +47,7 @@ export class ChangePaymentMethodForm extends PureComponent {
     errors: {},
     values: {},
     onPressNewPaymentMethod() {},
+    savedPaymentMethods: [],
   };
 
   render() {
@@ -44,20 +56,20 @@ export class ChangePaymentMethodForm extends PureComponent {
         {this.props.errors.general && <ErrorText>{this.props.errors.general}</ErrorText>}
         <Radio
           onChange={this.props.handleOnChange}
-          initialValue={this.props.values.paymentMethod}
+          value={this.props.values.paymentMethod}
         >
-          <Radio.Button
-            value="1"
-            Label={() => (
-              <View>
-                <Text>{'stuff!'}</Text>
-              </View>
-            )}
-          />
-          <Radio.Button
-            value="2"
-            Label="two"
-          />
+          {this.props.savedPaymentMethods.map(paymentMethod => (
+            <Radio.Button
+              key={paymentMethod.id}
+              value={paymentMethod.id}
+              Label={() => (
+                <View>
+                  <Text>{paymentMethod.name}</Text>
+                  <Text>{paymentMethod.accountNumber}</Text>
+                </View>
+              )}
+            />
+          ))}
         </Radio>
 
         <Button
@@ -74,14 +86,17 @@ export class ChangePaymentMethodForm extends PureComponent {
   }
 }
 
-export default compose(
+const enhance = compose(
+  withCheckout,
+  withRouter,
   withFormik({
-    mapPropsToValues: () => ({
-      paymentMethod: '1',
+    mapPropsToValues: props => ({
+      paymentMethod: get(props, 'savedPaymentMethods.0', {}).id,
     }),
     validationSchema: Yup.object().shape({
       paymentMethod: Yup.mixed().required(),
     }),
+    enableReinitialize: true,
     handleSubmit: async (values, { setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
@@ -95,15 +110,16 @@ export default compose(
       }
     },
   }),
-  withRouter,
   mapProps(props => ({
     ...props,
     handleOnChange(value) {
       return props.setFieldValue('paymentMethod', value);
     },
     onPressNewPaymentMethod() {
-      props.history.push('/give/checkout/personal');
+      return props.history.push('/give/checkout/personal');
     },
   })),
-)(ChangePaymentMethodForm);
+);
+
+export default enhance(ChangePaymentMethodForm);
 

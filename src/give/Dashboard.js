@@ -4,8 +4,7 @@ import {
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, mapProps } from 'recompose';
-import get from 'lodash/get';
+import { compose } from 'recompose';
 import { H5, UIText } from '@ui/typography';
 import Header from '@ui/Header';
 import FlexedView from '@ui/FlexedView';
@@ -79,14 +78,6 @@ export class Dashboard extends PureComponent {
 // TODO: Split withGivingDashboard, add edit name and delete mutations
 const enhance = compose(
   withGivingDashboard,
-  mapProps(props => ({
-    ...props,
-    savedPaymentMethods: (get(props, 'savedPaymentMethods') || []).map(pm => ({
-      ...pm,
-      paymentMethod: pm.payment.paymentType === 'ACH' ? 'bankAccount' : 'creditCard',
-      accountNumber: pm.payment.accountNumber,
-    })),
-  })),
 );
 
 export default enhance(Dashboard);
