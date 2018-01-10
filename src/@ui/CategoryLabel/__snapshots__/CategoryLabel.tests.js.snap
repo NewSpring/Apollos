@@ -5,8 +5,8 @@ exports[`the FeedItemCard CategoryLabel component should render 1`] = `
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
@@ -31,7 +31,6 @@ exports[`the FeedItemCard CategoryLabel component should render 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      color="#303030"
       ellipsizeMode="tail"
       style={
         Object {
@@ -53,8 +52,8 @@ exports[`the FeedItemCard CategoryLabel component should render a custom icon 1`
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
@@ -79,7 +78,6 @@ exports[`the FeedItemCard CategoryLabel component should render a custom icon 1`
     <Text
       accessible={true}
       allowFontScaling={true}
-      color="#303030"
       ellipsizeMode="tail"
       style={
         Object {
@@ -101,16 +99,16 @@ exports[`the FeedItemCard CategoryLabel component should render a skeleton view 
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
   <View
     style={
       Object {
-        "backgroundColor": "#efefef",
-        "borderRadius": 10.8,
+        "backgroundColor": "#dddddd",
+        "borderRadius": 6,
         "height": 21.6,
         "width": 21.6,
       }
@@ -128,9 +126,10 @@ exports[`the FeedItemCard CategoryLabel component should render a skeleton view 
       style={
         Object {
           "alignSelf": "stretch",
-          "backgroundColor": "#efefef",
-          "borderRadius": 4.5,
-          "height": 18,
+          "backgroundColor": "#dddddd",
+          "borderRadius": 6,
+          "height": 14,
+          "marginVertical": 0.9349999999999996,
           "width": "40%",
         }
       }
@@ -144,8 +143,8 @@ exports[`the FeedItemCard CategoryLabel component should render as Albums 1`] = 
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
@@ -170,7 +169,6 @@ exports[`the FeedItemCard CategoryLabel component should render as Albums 1`] = 
     <Text
       accessible={true}
       allowFontScaling={true}
-      color="#303030"
       ellipsizeMode="tail"
       style={
         Object {
@@ -192,8 +190,8 @@ exports[`the FeedItemCard CategoryLabel component should render as a Series 1`] 
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
@@ -218,7 +216,6 @@ exports[`the FeedItemCard CategoryLabel component should render as a Series 1`] 
     <Text
       accessible={true}
       allowFontScaling={true}
-      color="#303030"
       ellipsizeMode="tail"
       style={
         Object {
@@ -240,8 +237,8 @@ exports[`the FeedItemCard CategoryLabel component should render children 1`] = `
   style={
     Object {
       "alignItems": "center",
+      "flex": 1,
       "flexDirection": "row",
-      "paddingTop": 10,
     }
   }
 >
@@ -266,7 +263,6 @@ exports[`the FeedItemCard CategoryLabel component should render children 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      color="#303030"
       ellipsizeMode="tail"
       style={
         Object {
@@ -280,12 +276,5 @@ exports[`the FeedItemCard CategoryLabel component should render children 1`] = `
       Default
     </Text>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-  >
-    Boom
-  </Text>
 </View>
 `;

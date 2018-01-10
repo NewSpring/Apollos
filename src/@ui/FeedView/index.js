@@ -79,7 +79,8 @@ const generateLoadingStateData = (numberOfItems = 1) => {
 
 const enhance = compose(
   pure,
-  branch(({ isLoading, content }) => isLoading && !content.length, withProps({
+  branch(({ isLoading, content }) => (isLoading && !content.length), withProps({
+    isLoading: true,
     content: generateLoadingStateData(10),
     fetchMore: false,
   })),

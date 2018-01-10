@@ -1,18 +1,18 @@
 import React from 'react';
 import { Platform, View } from 'react-native';
 import { compose } from 'recompose';
-import Placeholder from 'rn-placeholder';
 
+import Placeholder from 'rn-placeholder';
 import styled from '@ui/styled';
 
 const enhance = compose(
   Placeholder.connect,
 );
 
-const StyledView = styled({
+const StyledView = styled(({ theme }) => ({
   width: '100%',
   aspectRatio: 1,
-  backgroundColor: '#efefef',
+  backgroundColor: theme.colors.background.inactive,
   ...Platform.select({
     web: {
       // web doesn't support aspectRatio, this hacks it:
@@ -20,7 +20,7 @@ const StyledView = styled({
       paddingTop: '100%',
     },
   }),
-})(View);
+}))(View);
 
 const SkeletonImage = enhance(() => (
   <StyledView />

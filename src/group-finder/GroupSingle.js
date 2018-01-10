@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Linking, ScrollView, View, Platform } from 'react-native';
-import { compose, mapProps, pure, withProps } from 'recompose';
+import { compose, mapProps, pure } from 'recompose';
 
 import withGroupInfo from '@data/withGroupInfo';
 import Header from '@ui/Header';
 import ConnectedImage from '@ui/ConnectedImage';
 import PaddedView from '@ui/PaddedView';
 import FlexedView from '@ui/FlexedView';
-import Card, { CardText } from '@ui/Card';
+import Card from '@ui/Card';
 import { H3, H4, H5, H6, H7, BodyCopy } from '@ui/typography';
 import styled from '@ui/styled';
 import Avatar, { AvatarList } from '@ui/Avatar';
@@ -37,8 +37,8 @@ const StyledImage = styled({
   }),
 })(ConnectedImage);
 
-const Label = withProps({ Type: H7 })(CardText);
-const Info = withProps({ Type: H6 })(CardText);
+const Label = H7;
+const Info = H6;
 const GroupInfoContainer = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 2,
 }))(View);
@@ -50,10 +50,6 @@ const CenteredSideBySideView = styled({
 const GroupFindCTA = styled({
   alignItems: 'center',
 })(PaddedView);
-
-const CenteredCardText = styled({
-  textAlign: 'center',
-})(CardText);
 
 const GroupInfo = ({ label, info }) => (
   <GroupInfoContainer>
@@ -103,10 +99,10 @@ const GroupSingle = enhance(({
         <StyledImage source={{ url: photo }} />
         <Card isLoading={isLoading}>
           <PaddedView>
-            <CardText Type={H3}>{name}</CardText>
+            <H3>{name}</H3>
             <GroupInfoContainer>
               <Label>Group Leaders</Label>
-              <CardText Type={H5}>{leaders.map(leader => `${leader.person.firstName} ${leader.person.lastName}`).join(', ')}</CardText>
+              <H5>{leaders.map(leader => `${leader.person.firstName} ${leader.person.lastName}`).join(', ')}</H5>
               <AvatarList>
                 {leaders.map(leader => (
                   <Avatar key={leader.person.id} source={{ url: leader.person.photo }} size="medium" />
@@ -127,7 +123,7 @@ const GroupSingle = enhance(({
 
         <Card isLoading={isLoading}>
           <PaddedView>
-            <CardText Type={H5}>Group Details</CardText>
+            <H5>Group Details</H5>
             {(() => {
               const loc = locations[0];
               if (!loc) return null;
@@ -147,10 +143,10 @@ const GroupSingle = enhance(({
 
         <Card isLoading={isLoading}>
           <PaddedView>
-            <CardText Type={H5}>More Information</CardText>
+            <H5>More Information</H5>
             <GroupInfoContainer>
               <Label>Description</Label>
-              <CardText Type={BodyCopy}>{description}</CardText>
+              <BodyCopy>{description}</BodyCopy>
             </GroupInfoContainer>
 
             <GroupInfoContainer>
@@ -187,7 +183,7 @@ const GroupSingle = enhance(({
 
         <Card>
           <GroupFindCTA>
-            <CenteredCardText Type={H4}>Looking for another group?</CenteredCardText>
+            <H4>Looking for another group?</H4>
             <Link component={Button} bordered to="/groups" pop title="Find A Group" type="default" />
           </GroupFindCTA>
         </Card>

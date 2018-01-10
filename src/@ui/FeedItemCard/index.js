@@ -2,32 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { startCase, toLower } from 'lodash';
-import Placeholder from 'rn-placeholder';
 
-import { withTheme } from '@ui/theme';
+import { withThemeMixin, withTheme } from '@ui/theme';
 import Icon from '@ui/Icon';
-import Card from '@ui/CardWrapper';
 import CategoryLabel from '@ui/CategoryLabel';
+import Card, { CardContent, CardActions } from '@ui/Card';
+import { H4 } from '@ui/typography';
+import styled from '@ui/styled';
 
 import CardImage from './CardImage';
 import LikeButton from './LikeButton';
-import {
-  CardWrapper,
-  CardTitle,
-  Footer,
-} from './styles';
+
+const StyledCardContent = styled({ paddingBottom: 0 })(CardContent);
 
 const enhance = compose(
   pure,
   defaultProps({
     isLight: true,
   }),
-  withTheme(({ theme, isLight }) => ({
-    fontColor: (isLight || typeof isLight === 'undefined') ?
-      theme.colors.text.primary :
-      theme.colors.lightPrimary,
-    theme,
+  withThemeMixin(({ isLight }) => ({
+    type: isLight ? 'light' : 'dark',
   })),
+  withTheme(),
   setPropTypes({
     title: PropTypes.string.isRequired,
     images: PropTypes.oneOfType([
@@ -42,8 +38,6 @@ const enhance = compose(
     isLoading: PropTypes.bool,
     isLiked: PropTypes.bool,
     isLight: PropTypes.bool,
-    color: PropTypes.string,
-    fontColor: PropTypes.string,
     backgroundColor: PropTypes.string,
     style: PropTypes.any, // eslint-disable-line
   }),
@@ -55,42 +49,31 @@ const FeedItemCard = enhance(({
   category,
   isLoading,
   isLiked,
-  fontColor,
   backgroundColor,
   theme,
   id,
   ...otherProps
 }) => (
-  <CardWrapper>
-    <Card backgroundColor={backgroundColor} {...otherProps}>
-      <CardImage source={images} overlayColor={backgroundColor} />
-
-      <Footer>
-        <Placeholder.Line
-          width={'75%'}
-          textSize={theme.helpers.rem(1.4)}
-          onReady={!isLoading}
-        >
-          <CardTitle color={fontColor}>{startCase(toLower(title))}</CardTitle>
-        </Placeholder.Line>
-
-        <CategoryLabel
-          label={startCase(toLower(category))}
-          color={fontColor}
+  <Card isLoading={isLoading} cardColor={backgroundColor} {...otherProps}>
+    <CardImage source={images} overlayColor={backgroundColor} />
+    <StyledCardContent>
+      <H4>{startCase(toLower(title))}</H4>
+    </StyledCardContent>
+    <CardActions>
+      <CategoryLabel
+        label={startCase(toLower(category))}
+        isLoading={isLoading}
+      />
+      <LikeButton id={id}>
+        <Icon
+          name={isLiked ? 'like-solid' : 'like'}
+          size={theme.helpers.rem(1.2)}
+          fill={theme.colors.text.primary}
           isLoading={isLoading}
-        >
-          <LikeButton id={id}>
-            <Icon
-              name={isLiked ? 'like-solid' : 'like'}
-              size={theme.helpers.rem(1.2)}
-              fill={fontColor}
-              isLoading={isLoading}
-            />
-          </LikeButton>
-        </CategoryLabel>
-      </Footer>
-    </Card>
-  </CardWrapper>
+        />
+      </LikeButton>
+    </CardActions>
+  </Card>
 ));
 
 export default FeedItemCard;

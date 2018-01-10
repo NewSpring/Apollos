@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Card, { CardContent, CardImage, CardText, CardParagraph } from '@ui/Card';
-import { H5, H6, H7 } from '@ui/typography';
+import Card, { CardContent, CardImage } from '@ui/Card';
+import { H5, H6, H7, UIText } from '@ui/typography';
+import Paragraph from '@ui/Paragraph';
 import Chip, { ChipList } from '@ui/Chip';
 import { Link } from '@ui/NativeWebRouter';
 import SideBySideView from '@ui/SideBySideView';
@@ -26,15 +27,15 @@ const GroupCard = ({
         <FlexedView><CardImage source={{ url: photo }} /></FlexedView>
         <FlexedView>
           <CardContent>
-            <CardText Type={H5}>{name}</CardText>
+            <H5>{name}</H5>
 
             {schedule && schedule.description ? (
-              <CardText Type={H6}>{schedule.description}</CardText>
+              <H6>{schedule.description}</H6>
             ) : null}
 
-            <CardText Type={H7}>{parseInt(distance, 0)} miles away</CardText>
+            <H7>{parseInt(distance, 0)} miles away</H7>
 
-            <CardParagraph>{description}</CardParagraph>
+            <Paragraph><UIText>{description}</UIText></Paragraph>
 
             <ChipList>
               {tags.map((tag) => {

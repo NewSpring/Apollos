@@ -562,7 +562,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
         style={
           Object {
             "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "borderTopWidth": 0.5,
             "bottom": 0,
             "left": 0,
@@ -1352,7 +1352,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         style={
           Object {
             "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "borderTopWidth": 0.5,
             "bottom": 0,
             "left": 0,

@@ -57,6 +57,7 @@ class ConnectedImage extends PureComponent {
     ]),
     ImageComponent: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     maintainAspectRatio: PropTypes.bool,
+    isLoading: PropTypes.bool,
     style: PropTypes.any, // eslint-disable-line
   }
 
@@ -88,7 +89,7 @@ class ConnectedImage extends PureComponent {
   }
 
   get isLoading() {
-    return !every(this.state.source, image => image.width && image.height);
+    return this.props.isLoading || !every(this.state.source, image => image.width && image.height);
   }
 
   updateCache(sources) {
@@ -106,10 +107,12 @@ class ConnectedImage extends PureComponent {
       [source] = source;
     }
 
-    const { ImageComponent = Image, style, ...otherProps } = this.props;
+    const {
+      ImageComponent = Image, style, isLoading, ...otherProps
+    } = this.props;
 
     return (
-      <SkeletonImage onReady={!this.isLoading} animate={'fade'}>
+      <SkeletonImage onReady={!this.isLoading}>
         <ImageComponent {...otherProps} source={source} style={[this.aspectRatio, style]} />
       </SkeletonImage>
     );

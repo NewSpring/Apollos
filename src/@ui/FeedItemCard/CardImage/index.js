@@ -6,7 +6,7 @@ import Color from 'color';
 
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
-import ConnectedImage from '@ui/ConnectedImage';
+import { CardImage } from '@ui/Card';
 import LinearGradient from '@ui/LinearGradient';
 
 const enhance = compose(
@@ -35,23 +35,6 @@ const Wrapper = styled(({ theme }) => ({
   }),
 }))(View);
 
-const StyledImage = styled(({ theme }) => ({
-  width: '100%',
-  aspectRatio: 1,
-  resizeMode: 'cover',
-  ...Platform.select({
-    android: { // fixes android borderRadius overflow display issue
-      borderTopRightRadius: theme.sizing.borderRadius,
-      borderTopLeftRadius: theme.sizing.borderRadius,
-    },
-    web: {
-      // web doesn't support aspectRatio, this hacks it:
-      height: 0,
-      paddingTop: '100%',
-    },
-  }),
-}))(ConnectedImage);
-
 const Overlay = styled(({ theme }) => ({
   ...StyleSheet.absoluteFillObject,
   ...Platform.select({
@@ -62,14 +45,14 @@ const Overlay = styled(({ theme }) => ({
   }),
 }))(LinearGradient);
 
-const CardImage = enhance(({
+const FeedItemCardImage = enhance(({
   source: imageSource,
   overlayColor,
 }) => (
   <Wrapper>
-    <StyledImage source={imageSource} />
+    <CardImage source={imageSource} />
     {overlayColor ? <Overlay colors={[`${Color(overlayColor).fade(1).string()}`, overlayColor]} start={[0, 0]} end={[0, 1]} locations={[0.3, 1]} /> : null}
   </Wrapper>
 ));
 
-export default CardImage;
+export default FeedItemCardImage;

@@ -4,8 +4,8 @@ import { StyleSheet, View } from 'react-native';
 import { compose } from 'recompose';
 import { get, without, debounce } from 'lodash';
 import pluralize from 'pluralize';
-import Placeholder from 'rn-placeholder';
 
+import Placeholder from '@ui/Placeholder';
 import withCampuses from '@data/withCampuses';
 import withGroupAttributes from '@data/withGroupAttributes';
 import { H4, H6, UIText } from '@ui/typography';
@@ -106,7 +106,6 @@ class Filter extends PureComponent {
     const filterObject = get(this.props.query, filter, []);
     const selected = filterObject.indexOf(value) >= 0;
 
-    console.log({ filterObject, selected });
     if (selected) {
       this.props.onUpdateFilter({ [filter]: without(filterObject, value) });
     } else {

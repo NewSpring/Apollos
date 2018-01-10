@@ -30,13 +30,10 @@ const OverflowFix = styled(({ theme }) => ({
 
 const CardWrapper = enhance(({
   children,
-  backgroundColor,
-  style: styleProp = {},
+  isLoading,
   ...otherProps
 }) => (
   <StyledCard
-    cardColor={backgroundColor}
-    style={styleProp}
     {...otherProps}
   >
     <OverflowFix>

@@ -1,19 +1,15 @@
-import PropTypes from 'prop-types';
-import { compose, withContext } from 'recompose';
+import { compose } from 'recompose';
 
+import { withIsLoading } from '@ui/isLoading';
 import styled from '@ui/styled';
 import CardWrapper from '@ui/CardWrapper';
 
 export { default as CardImage } from './Image';
-export { default as CardText } from './TextLine';
-export { default as CardParagraph } from './Paragraph';
 export { default as CardContent } from './Content';
+export { default as CardActions } from './Actions';
 
 const Card = compose(
-  withContext(
-    { isLoading: PropTypes.bool },
-    ({ isLoading }) => ({ isLoading }),
-  ),
+  withIsLoading,
   styled(({ theme }) => ({
     marginHorizontal: theme.sizing.baseUnit / 2,
     marginVertical: theme.sizing.baseUnit / 4,

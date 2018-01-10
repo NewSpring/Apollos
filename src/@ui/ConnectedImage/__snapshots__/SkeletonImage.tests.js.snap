@@ -5,7 +5,7 @@ exports[`the SkeletonImage component should render a loading state 1`] = `
   style={
     Object {
       "aspectRatio": 1,
-      "backgroundColor": "#efefef",
+      "backgroundColor": "#dddddd",
       "width": "100%",
     }
   }
