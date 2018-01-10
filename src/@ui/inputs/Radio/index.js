@@ -9,7 +9,7 @@ export default class Radio extends Component {
   static propTypes = {
     children: PropTypes.node,
     onChange: PropTypes.func,
-    initialValue: PropTypes.oneOfType([
+    value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
     ]),
@@ -18,7 +18,7 @@ export default class Radio extends Component {
   static defaultProps = {
     children: null,
     onChange() {},
-    initialValue: null,
+    value: null,
   };
 
   static childContextTypes = {
@@ -32,7 +32,7 @@ export default class Radio extends Component {
   static Button = RadioButton;
 
   state = {
-    value: this.props.initialValue,
+    value: this.props.value,
   };
 
   getChildContext() {
@@ -40,6 +40,14 @@ export default class Radio extends Component {
       onSelectValue: this.selectValue,
       currentValue: this.state.value,
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.value !== this.props.value) {
+      this.setState({
+        value: nextProps.value,
+      }, this.notifyValueChanged);
+    }
   }
 
   selectValue = (value) => {
