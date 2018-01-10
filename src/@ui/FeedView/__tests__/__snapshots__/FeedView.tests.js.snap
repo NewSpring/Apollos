@@ -202,22 +202,30 @@ exports[`The FeedView component renders correctly 1`] = `
                   fill="#303030"
                 />
               </Svg>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
+              <View
                 style={
                   Object {
-                    "color": "#303030",
-                    "fontFamily": null,
-                    "fontSize": 14,
-                    "lineHeight": 15.87,
+                    "flex": 1,
                     "paddingHorizontal": 10,
                   }
                 }
               >
-                Bob
-              </Text>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#303030",
+                      "fontFamily": null,
+                      "fontSize": 14,
+                      "lineHeight": 15.87,
+                    }
+                  }
+                >
+                  Bob
+                </Text>
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -423,22 +431,30 @@ exports[`The FeedView component renders correctly 1`] = `
                   fill="#303030"
                 />
               </Svg>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
+              <View
                 style={
                   Object {
-                    "color": "#303030",
-                    "fontFamily": null,
-                    "fontSize": 14,
-                    "lineHeight": 15.87,
+                    "flex": 1,
                     "paddingHorizontal": 10,
                   }
                 }
               >
-                Bob 2
-              </Text>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#303030",
+                      "fontFamily": null,
+                      "fontSize": 14,
+                      "lineHeight": 15.87,
+                    }
+                  }
+                >
+                  Bob 2
+                </Text>
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -746,15 +762,24 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#dddddd",
-                    "borderRadius": 6,
-                    "height": 14,
-                    "marginVertical": 0.9349999999999996,
-                    "width": "40%",
+                    "flex": 1,
+                    "paddingHorizontal": 10,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#dddddd",
+                      "borderRadius": 6,
+                      "height": 14,
+                      "marginVertical": 0.9349999999999996,
+                      "width": "40%",
+                    }
+                  }
+                />
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -911,15 +936,24 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#dddddd",
-                    "borderRadius": 6,
-                    "height": 14,
-                    "marginVertical": 0.9349999999999996,
-                    "width": "40%",
+                    "flex": 1,
+                    "paddingHorizontal": 10,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#dddddd",
+                      "borderRadius": 6,
+                      "height": 14,
+                      "marginVertical": 0.9349999999999996,
+                      "width": "40%",
+                    }
+                  }
+                />
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1076,15 +1110,24 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#dddddd",
-                    "borderRadius": 6,
-                    "height": 14,
-                    "marginVertical": 0.9349999999999996,
-                    "width": "40%",
+                    "flex": 1,
+                    "paddingHorizontal": 10,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#dddddd",
+                      "borderRadius": 6,
+                      "height": 14,
+                      "marginVertical": 0.9349999999999996,
+                      "width": "40%",
+                    }
+                  }
+                />
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1241,15 +1284,24 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#dddddd",
-                    "borderRadius": 6,
-                    "height": 14,
-                    "marginVertical": 0.9349999999999996,
-                    "width": "40%",
+                    "flex": 1,
+                    "paddingHorizontal": 10,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#dddddd",
+                      "borderRadius": 6,
+                      "height": 14,
+                      "marginVertical": 0.9349999999999996,
+                      "width": "40%",
+                    }
+                  }
+                />
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1406,15 +1458,24 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#dddddd",
-                    "borderRadius": 6,
-                    "height": 14,
-                    "marginVertical": 0.9349999999999996,
-                    "width": "40%",
+                    "flex": 1,
+                    "paddingHorizontal": 10,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#dddddd",
+                      "borderRadius": 6,
+                      "height": 14,
+                      "marginVertical": 0.9349999999999996,
+                      "width": "40%",
+                    }
+                  }
+                />
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1571,15 +1632,24 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#dddddd",
-                    "borderRadius": 6,
-                    "height": 14,
-                    "marginVertical": 0.9349999999999996,
-                    "width": "40%",
+                    "flex": 1,
+                    "paddingHorizontal": 10,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#dddddd",
+                      "borderRadius": 6,
+                      "height": 14,
+                      "marginVertical": 0.9349999999999996,
+                      "width": "40%",
+                    }
+                  }
+                />
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1736,15 +1806,24 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#dddddd",
-                    "borderRadius": 6,
-                    "height": 14,
-                    "marginVertical": 0.9349999999999996,
-                    "width": "40%",
+                    "flex": 1,
+                    "paddingHorizontal": 10,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#dddddd",
+                      "borderRadius": 6,
+                      "height": 14,
+                      "marginVertical": 0.9349999999999996,
+                      "width": "40%",
+                    }
+                  }
+                />
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -1901,15 +1980,24 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#dddddd",
-                    "borderRadius": 6,
-                    "height": 14,
-                    "marginVertical": 0.9349999999999996,
-                    "width": "40%",
+                    "flex": 1,
+                    "paddingHorizontal": 10,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#dddddd",
+                      "borderRadius": 6,
+                      "height": 14,
+                      "marginVertical": 0.9349999999999996,
+                      "width": "40%",
+                    }
+                  }
+                />
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -2066,15 +2154,24 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#dddddd",
-                    "borderRadius": 6,
-                    "height": 14,
-                    "marginVertical": 0.9349999999999996,
-                    "width": "40%",
+                    "flex": 1,
+                    "paddingHorizontal": 10,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#dddddd",
+                      "borderRadius": 6,
+                      "height": 14,
+                      "marginVertical": 0.9349999999999996,
+                      "width": "40%",
+                    }
+                  }
+                />
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}
@@ -2231,15 +2328,24 @@ exports[`The FeedView component renders empty state 1`] = `
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#dddddd",
-                    "borderRadius": 6,
-                    "height": 14,
-                    "marginVertical": 0.9349999999999996,
-                    "width": "40%",
+                    "flex": 1,
+                    "paddingHorizontal": 10,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#dddddd",
+                      "borderRadius": 6,
+                      "height": 14,
+                      "marginVertical": 0.9349999999999996,
+                      "width": "40%",
+                    }
+                  }
+                />
+              </View>
             </View>
             <View
               accessibilityComponentType={undefined}

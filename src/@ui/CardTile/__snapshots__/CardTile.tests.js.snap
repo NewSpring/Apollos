@@ -330,15 +330,24 @@ exports[`the Card component should render a loading skeleton for all available p
           <View
             style={
               Object {
-                "alignSelf": "stretch",
-                "backgroundColor": "#f7f7f7",
-                "borderRadius": 6,
-                "height": 14,
-                "marginVertical": 0.9349999999999996,
-                "width": "40%",
+                "flex": 1,
+                "paddingHorizontal": 10,
               }
             }
-          />
+          >
+            <View
+              style={
+                Object {
+                  "alignSelf": "stretch",
+                  "backgroundColor": "#f7f7f7",
+                  "borderRadius": 6,
+                  "height": 14,
+                  "marginVertical": 0.9349999999999996,
+                  "width": "40%",
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
@@ -579,22 +588,30 @@ exports[`the Card component should render card details 1`] = `
               fill="#303030"
             />
           </Svg>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <View
             style={
               Object {
-                "color": "#303030",
-                "fontFamily": null,
-                "fontSize": 14,
-                "lineHeight": 15.87,
+                "flex": 1,
                 "paddingHorizontal": 10,
               }
             }
           >
-            Marty Mcfly
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": null,
+                  "fontSize": 14,
+                  "lineHeight": 15.87,
+                }
+              }
+            >
+              Marty Mcfly
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -726,22 +743,30 @@ exports[`the Card component should render card details with date 1`] = `
               fill="#303030"
             />
           </Svg>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <View
             style={
               Object {
-                "color": "#303030",
-                "fontFamily": null,
-                "fontSize": 14,
-                "lineHeight": 15.87,
+                "flex": 1,
                 "paddingHorizontal": 10,
               }
             }
           >
-            Marty Mcfly
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": null,
+                  "fontSize": 14,
+                  "lineHeight": 15.87,
+                }
+              }
+            >
+              Marty Mcfly
+            </Text>
+          </View>
         </View>
         <Text
           accessible={true}

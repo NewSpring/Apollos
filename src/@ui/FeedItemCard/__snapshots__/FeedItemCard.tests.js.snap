@@ -147,22 +147,30 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
             fill="#303030"
           />
         </Svg>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 14,
-              "lineHeight": 15.87,
+              "flex": 1,
               "paddingHorizontal": 10,
             }
           }
         >
-          What
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
+              }
+            }
+          >
+            What
+          </Text>
+        </View>
       </View>
       <View
         accessibilityComponentType={undefined}
@@ -319,22 +327,30 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
             fill="#303030"
           />
         </Svg>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 14,
-              "lineHeight": 15.87,
+              "flex": 1,
               "paddingHorizontal": 10,
             }
           }
         >
-          What
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
+              }
+            }
+          >
+            What
+          </Text>
+        </View>
       </View>
       <View
         accessibilityComponentType={undefined}
@@ -489,22 +505,30 @@ exports[`the FeedItemCard component should render 1`] = `
             fill="#303030"
           />
         </Svg>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 14,
-              "lineHeight": 15.87,
+              "flex": 1,
               "paddingHorizontal": 10,
             }
           }
         >
-          What
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
+              }
+            }
+          >
+            What
+          </Text>
+        </View>
       </View>
       <View
         accessibilityComponentType={undefined}
@@ -659,22 +683,30 @@ exports[`the FeedItemCard component should render as liked 1`] = `
             fill="#303030"
           />
         </Svg>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 14,
-              "lineHeight": 15.87,
+              "flex": 1,
               "paddingHorizontal": 10,
             }
           }
         >
-          What
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
+              }
+            }
+          >
+            What
+          </Text>
+        </View>
       </View>
       <View
         accessibilityComponentType={undefined}
@@ -829,22 +861,30 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
             fill="#303030"
           />
         </Svg>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 14,
-              "lineHeight": 15.87,
+              "flex": 1,
               "paddingHorizontal": 10,
             }
           }
         >
-          What
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
+              }
+            }
+          >
+            What
+          </Text>
+        </View>
       </View>
       <View
         accessibilityComponentType={undefined}
@@ -999,22 +1039,30 @@ exports[`the FeedItemCard component should render with inverted (light) font col
             fill="#ffffff"
           />
         </Svg>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "color": "#ffffff",
-              "fontFamily": null,
-              "fontSize": 14,
-              "lineHeight": 15.87,
+              "flex": 1,
               "paddingHorizontal": 10,
             }
           }
         >
-          What
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#ffffff",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
+              }
+            }
+          >
+            What
+          </Text>
+        </View>
       </View>
       <View
         accessibilityComponentType={undefined}

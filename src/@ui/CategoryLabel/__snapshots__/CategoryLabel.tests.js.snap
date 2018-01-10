@@ -20,22 +20,30 @@ exports[`the FeedItemCard CategoryLabel component should render 1`] = `
       fill="#303030"
     />
   </Svg>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": null,
-        "fontSize": 14,
-        "lineHeight": 15.87,
+        "flex": 1,
         "paddingHorizontal": 10,
       }
     }
   >
-    Default
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 14,
+          "lineHeight": 15.87,
+        }
+      }
+    >
+      Default
+    </Text>
+  </View>
 </View>
 `;
 
@@ -59,22 +67,30 @@ exports[`the FeedItemCard CategoryLabel component should render a custom icon 1`
       fill="#303030"
     />
   </Svg>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": null,
-        "fontSize": 14,
-        "lineHeight": 15.87,
+        "flex": 1,
         "paddingHorizontal": 10,
       }
     }
   >
-    Default
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 14,
+          "lineHeight": 15.87,
+        }
+      }
+    >
+      Default
+    </Text>
+  </View>
 </View>
 `;
 
@@ -101,15 +117,24 @@ exports[`the FeedItemCard CategoryLabel component should render a skeleton view 
   <View
     style={
       Object {
-        "alignSelf": "stretch",
-        "backgroundColor": "#dddddd",
-        "borderRadius": 6,
-        "height": 14,
-        "marginVertical": 0.9349999999999996,
-        "width": "40%",
+        "flex": 1,
+        "paddingHorizontal": 10,
       }
     }
-  />
+  >
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#dddddd",
+          "borderRadius": 6,
+          "height": 14,
+          "marginVertical": 0.9349999999999996,
+          "width": "40%",
+        }
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -133,22 +158,30 @@ exports[`the FeedItemCard CategoryLabel component should render as Albums 1`] = 
       fill="#303030"
     />
   </Svg>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": null,
-        "fontSize": 14,
-        "lineHeight": 15.87,
+        "flex": 1,
         "paddingHorizontal": 10,
       }
     }
   >
-    Albums
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 14,
+          "lineHeight": 15.87,
+        }
+      }
+    >
+      Albums
+    </Text>
+  </View>
 </View>
 `;
 
@@ -172,22 +205,30 @@ exports[`the FeedItemCard CategoryLabel component should render as a Series 1`] 
       fill="#303030"
     />
   </Svg>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": null,
-        "fontSize": 14,
-        "lineHeight": 15.87,
+        "flex": 1,
         "paddingHorizontal": 10,
       }
     }
   >
-    Series
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 14,
+          "lineHeight": 15.87,
+        }
+      }
+    >
+      Series
+    </Text>
+  </View>
 </View>
 `;
 
@@ -211,21 +252,29 @@ exports[`the FeedItemCard CategoryLabel component should render children 1`] = `
       fill="#303030"
     />
   </Svg>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": null,
-        "fontSize": 14,
-        "lineHeight": 15.87,
+        "flex": 1,
         "paddingHorizontal": 10,
       }
     }
   >
-    Default
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 14,
+          "lineHeight": 15.87,
+        }
+      }
+    >
+      Default
+    </Text>
+  </View>
 </View>
 `;
