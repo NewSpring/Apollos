@@ -98,27 +98,35 @@ PersonalDetailsFormWithoutData.propTypes = {
   })),
 };
 
+const validationSchema = Yup.object().shape({
+  firstName: Yup.string().required(),
+  lastName: Yup.string().required(),
+  email: Yup.string().email().required(),
+  campusId: Yup.number().required(),
+});
+
+const mapPropsToValues = props => ({
+  firstName: get(props, 'contributions.firstName') || get(props, 'person.firstName'),
+  lastName: get(props, 'contributions.lastName') || get(props, 'person.lastName'),
+  email: get(props, 'contributions.email') || get(props, 'person.email'),
+  campusId: get(props, 'contributions.campusId') || get(props, 'person.campus.id') || get(props, 'campuses.0.id'),
+});
+
 const PersonalDetailsForm = compose(
   withGive,
   withCheckout,
   withRouter,
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
   withFormik({
-    mapPropsToValues: props => ({
-      firstName: get(props, 'contributions.firstName') || get(props, 'person.firstName'),
-      lastName: get(props, 'contributions.lastName') || get(props, 'person.lastName'),
-      email: get(props, 'contributions.email') || get(props, 'person.email'),
-      campusId: get(props, 'contributions.campusId') || get(props, 'person.campus.id') || get(props, 'campuses.0.id'),
-    }),
-    validationSchema: Yup.object().shape({
-      firstName: Yup.string().required(),
-      lastName: Yup.string().required(),
-      email: Yup.string().email().required(),
-      campusId: Yup.number().required(),
-    }),
+    mapPropsToValues,
+    validationSchema,
     handleSubmit: (values, { props }) => props.setBillingPerson(values).then(() => {
       if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
     }),
+    isInitialValid(props) {
+      return validationSchema
+        .validate(mapPropsToValues(props));
+    },
   }),
 )(PersonalDetailsFormWithoutData);
 
