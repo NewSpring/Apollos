@@ -8,6 +8,8 @@ import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 
+export { default as ChipList } from './List';
+
 const enhance = compose(
   withTheme(),
   mapProps(({ theme, selected, ...otherProps }) => ({
@@ -25,6 +27,12 @@ const StyledUIText = styled({
   paddingHorizontal: 6,
 })(UIText);
 
+const StyledButton = styled(({ theme }) => ({
+  justifyContent: 'flex-end',
+  marginRight: theme.sizing.baseUnit / 2,
+  marginBottom: theme.sizing.baseUnit / 2,
+}), 'Chip')(Button);
+
 const Chip = enhance(({
   icon,
   iconStyles = {},
@@ -33,10 +41,10 @@ const Chip = enhance(({
   title,
   ...buttonProps
 }) => (
-  <Button {...buttonProps} style={{ justifyContent: 'flex-end' }}>
+  <StyledButton {...buttonProps}>
     <StyledUIText>{title}</StyledUIText>
     {icon ? <Icon name={icon} style={iconStyles} size={iconSize} /> : null}
-  </Button>
+  </StyledButton>
 ));
 
 export default Chip;

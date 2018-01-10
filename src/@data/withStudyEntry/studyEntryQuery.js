@@ -4,7 +4,7 @@ export default gql`
   query GetStudyEntry($id: ID!) {
     content: node(id: $id) {
       ... on Content {
-        entryId: id
+        id
         title
         status
         channelName

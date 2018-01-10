@@ -1,35 +1,24 @@
-import React from 'react';
 import { Text } from 'react-native';
-import { compose, pure, setPropTypes } from 'recompose';
 import PropTypes from 'prop-types';
+import { compose, pure, setPropTypes } from 'recompose';
 import styled from '@ui/styled';
+import { withPlaceholder, Typography } from '@ui/Placeholder';
 
-const enhance = compose(
-  pure,
-  setPropTypes({
-    children: PropTypes.node,
-    style: Text.propTypes.style,
-  }),
-);
-
-const StyledUIText = styled(({ theme }) => ({
+const styles = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(1),
   fontFamily: theme.typography.fontFamilySans,
   lineHeight: theme.helpers.verticalRhythm(1, 1),
   color: theme.colors.text.primary,
-}), 'UIText')(Text);
+}), 'UIText');
 
-const UIText = enhance(({
-  children,
-  style: styleProp = {},
-  ...otherProps
-}) => (
-  <StyledUIText
-    style={styleProp}
-    {...otherProps}
-  >
-    {children}
-  </StyledUIText>
-));
+const UIText = compose(
+  setPropTypes({
+    isLoading: PropTypes.bool, // display loading placeholder
+    ...Text.propTypes,
+  }),
+  styles,
+  withPlaceholder(Typography),
+  pure,
+)(Text);
 
 export default UIText;

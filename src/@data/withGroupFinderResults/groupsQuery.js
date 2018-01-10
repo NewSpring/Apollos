@@ -5,7 +5,7 @@ export default gql`
     $query: String
     $tags: [String]
     $limit: Int
-    $offset: Int
+    $skip: Int
     $campus: String
     $campuses: [String]
     $latitude: Float
@@ -17,7 +17,7 @@ export default gql`
       query: $query
       attributes: $tags
       limit: $limit
-      offset: $offset
+      offset: $skip
       campus: $campus
       campuses: $campuses
       latitude: $latitude

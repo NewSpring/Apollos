@@ -2,6 +2,7 @@
 
 exports[`The DateInput component should render correctly 1`] = `
 <View
+  disabled={false}
   style={
     Object {
       "marginVertical": 20,
@@ -35,6 +36,7 @@ exports[`The DateInput component should render correctly 1`] = `
     >
       <TextInput
         allowFontScaling={true}
+        editable={true}
         focusAnimationDuration={450}
         focusAnimationEasing={[Function]}
         keyboardType="numeric"

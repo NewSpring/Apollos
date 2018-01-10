@@ -8,6 +8,7 @@ import styled from '@ui/styled';
 import { LabelText } from '../FloatingLabel';
 import InputWrapper from '../InputWrapper';
 import { withInputControlViewStyles } from '../withInputControlStyles';
+import ErrorText from '../ErrorText';
 
 const ControlWrapper = compose(
   withInputControlViewStyles,
@@ -27,6 +28,7 @@ const enhance = compose(
 
 const Text = enhance(({
   label,
+  error,
   ...switchProps
 }) => (
   <InputWrapper>
@@ -34,11 +36,14 @@ const Text = enhance(({
       <LabelText>{label}</LabelText>
       <Switch {...switchProps} />
     </ControlWrapper>
+
+    {(error && typeof error === 'string') ? <ErrorText>{error}</ErrorText> : null}
   </InputWrapper>
 ));
 
 Text.propTypes = {
   label: PropTypes.node,
+  error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 export default Text;

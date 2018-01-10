@@ -4,7 +4,7 @@ export default gql`
   query getSeries($limit: Int!, $skip: Int!){
     content(channel: "series_newspring", limit: $limit, skip: $skip) {
       id
-      entryId: id
+      id
       title
       status
       channelName

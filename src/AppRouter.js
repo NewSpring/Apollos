@@ -20,6 +20,8 @@ import News, { NewsSingle } from './news';
 import Music, { Playlist } from './music';
 import Auth from './auth';
 
+import { Results as GroupFinderResults, GroupSingle } from './group-finder';
+
 let previousLocation;
 
 class AppRouter extends PureComponent {
@@ -125,6 +127,9 @@ class AppRouter extends PureComponent {
           <Route exact path="/news/:id" component={NewsSingle} />
 
           <Route exact path="/events/:id" component={DebugView} />
+
+          <Route exact path="/groups/finder" component={GroupFinderResults} />
+          <Route exact path="/groups/:id" component={GroupSingle} />
 
           <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
 

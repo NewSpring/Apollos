@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Line placeholder accepts custom styles 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "salmon",
+      "borderRadius": 6,
+      "height": 18,
+      "width": "50%",
+    }
+  }
+/>
+`;
+
+exports[`The Line placeholder accepts width 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": 18,
+      "width": "50%",
+    }
+  }
+/>
+`;
+
+exports[`The Line placeholder renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": 18,
+      "width": "100%",
+    }
+  }
+/>
+`;

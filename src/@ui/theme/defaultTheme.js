@@ -68,6 +68,11 @@ export const breakpoints = {
 export const sizing = {
   baseUnit: 20,
   borderRadius: 6,
+  avatar: {
+    small: 40,
+    medium: 80,
+    large: 160,
+  },
 };
 
 export const alpha = {
