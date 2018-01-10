@@ -64,7 +64,7 @@ export default class Link extends Component {
     const { to, replace, pop } = this.props;
 
     if (pop) {
-      goBackTo({ to, history });
+      return goBackTo({ to, history });
     } else if (replace && to) {
       return history.replace(to);
     }
