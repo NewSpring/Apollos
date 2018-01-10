@@ -30,9 +30,10 @@ const Wrapper = styled({
   alignItems: 'center',
 })(View);
 
-const LabelText = styled(({ theme }) => ({
+const PlaceholderWrapper = styled(({ theme }) => ({
+  flex: 1,
   paddingHorizontal: theme.sizing.baseUnit / 2,
-}), 'CategoryLabel.LabelText')(H7);
+}))(View);
 
 // TODO: Ideally this should take an the current category and map it against an array of all the
 // categories in Heighliner
@@ -64,7 +65,9 @@ const CategoryLabel = enhance(({
       fill={theme.colors.text.primary}
       isLoading={isLoading}
     />
-    <LabelText /* TODO: The placeholder for this is out of position 😢 */>{label}</LabelText>
+    <PlaceholderWrapper>
+      <H7>{label}</H7>
+    </PlaceholderWrapper>
   </Wrapper>
 ));
 
