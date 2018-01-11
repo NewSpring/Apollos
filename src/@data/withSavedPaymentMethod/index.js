@@ -1,33 +1,10 @@
-import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
-import get from 'lodash/get';
+import { compose } from 'recompose';
+import withEditSavedPaymentMethod from './withEditSavedPaymentMethod';
+import withRemoveSavedPaymentMethod from './withRemoveSavedPaymentMethod';
+import withSavedPaymentMethod from './withSavedPaymentMethod';
 
-export const QUERY = gql`
-  query SavedPayment($id: ID!) {
-    savedPaymentMethod: savedPayment(id: $id) {
-      id: entityId
-      name
-      payment {
-        accountNumber
-        paymentType
-      }
-    }
-  }
-`;
-
-export default graphql(QUERY, {
-  props: ({ data: { savedPaymentMethod, loading } }) => ({
-    savedPaymentMethod: {
-      ...savedPaymentMethod,
-      paymentType: get(savedPaymentMethod, 'payment.paymentType') === 'ACH' ? 'bankAccount' : 'creditCard',
-      accountNumber: get(savedPaymentMethod, 'payment.accountNumber'),
-    },
-    isLoading: loading,
-  }),
-  options: (ownProps = {}) => ({
-    variables: {
-      id: ownProps.id,
-    },
-  }),
-});
-
+export default compose(
+  withEditSavedPaymentMethod,
+  withRemoveSavedPaymentMethod,
+  withSavedPaymentMethod,
+);
