@@ -6,7 +6,7 @@ import { withFormik } from 'formik';
 import Yup from 'yup';
 import { compose, mapProps } from 'recompose';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
+import { get, pick } from 'lodash';
 import { H4, H6 } from '@ui/typography';
 import * as Inputs from '@ui/inputs';
 import { withRouter } from '@ui/NativeWebRouter';
@@ -21,16 +21,30 @@ export class EditSavedPaymentMethodForm extends PureComponent {
     values: PropTypes.shape({
       accountName: PropTypes.string,
     }),
+    touched: PropTypes.shape({
+      accountName: PropTypes.string,
+    }),
+    errors: PropTypes.shape({
+      accountName: PropTypes.string,
+    }),
     isLoading: PropTypes.bool,
     isSubmitting: PropTypes.bool,
     isValid: PropTypes.bool,
     handleSubmit: PropTypes.func,
+    setFieldValue: PropTypes.func,
+    setFieldTouched: PropTypes.func,
   };
 
   static defaultProps = {
     accountNumber: '',
     accountType: '',
     values: {
+      accountName: '',
+    },
+    touched: {
+      accountName: false,
+    },
+    errors: {
       accountName: '',
     },
     isLoading: true,
@@ -56,6 +70,9 @@ export class EditSavedPaymentMethodForm extends PureComponent {
         <Inputs.Text
           label="Saved Account Name"
           value={this.props.values.accountName}
+          onChangeText={text => this.props.setFieldValue('accountName', text)}
+          onBlur={() => this.props.setFieldTouched('accountName', true)}
+          error={Boolean(this.props.touched.accountName && this.props.errors.accountName)}
         />
         <Button
           onPress={this.props.handleSubmit}
@@ -83,11 +100,14 @@ const enhance = compose(
   })),
   withSavedPaymentMethod,
   mapProps(props => ({
-    id: props.id,
     accountNumber: get(props, 'savedPaymentMethod.accountNumber', ''),
     accountType: get(props, 'savedPaymentMethod.paymentType', ''),
     accountName: get(props, 'savedPaymentMethod.name', ''),
-    isLoading: props.isLoading,
+    ...pick(props, [
+      'isLoading',
+      'id',
+      'updateSavedPaymentMethod',
+    ]),
   })),
   withFormik({
     mapPropsToValues,
@@ -97,9 +117,13 @@ const enhance = compose(
       return validationSchema
         .validate(mapPropsToValues(props));
     },
-    handleSubmit: (values, { props, setSubmitting }) => {
+    handleSubmit: async (values, { props, setSubmitting }) => {
       try {
         setSubmitting(true);
+        await props.updateSavedPaymentMethod({
+          id: props.id,
+          name: values.accountName,
+        });
         console.log('props.updateSavedPaymentMethodName', {
           id: props.id,
           name: values.accountName,
