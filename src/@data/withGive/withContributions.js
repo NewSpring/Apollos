@@ -39,6 +39,7 @@ export const QUERY = gql`
       isSavingPaymentMethod
       willSavePaymentMethod
       savedAccountName
+      savedPaymentMethodId
     }
   }
 `;

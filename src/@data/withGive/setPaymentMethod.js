@@ -19,5 +19,10 @@ export default graphql(MUTATION, {
         method: 'bankAccount',
       },
     })),
+    isPayingWithSavedPaymentMethod: () => (mutate({
+      variables: {
+        method: 'savedPaymentMethod',
+      },
+    })),
   }),
 });

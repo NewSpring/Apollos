@@ -382,3 +382,27 @@ export async function setSavedPaymentName(result, variables, { cache }) {
     throw err;
   }
 }
+
+export async function setSavedPaymentMethod(result, variables, { cache }) {
+  try {
+    const { contributions: state } = cache.readQuery({
+      query: contributionsQuery,
+      variables,
+    });
+
+    cache.writeQuery({
+      query: contributionsQuery,
+      variables,
+      data: {
+        contributions: {
+          ...state,
+          savedPaymentMethodId: variables.id,
+        },
+      },
+    });
+
+    return null;
+  } catch (err) {
+    throw err;
+  }
+}

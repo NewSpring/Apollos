@@ -5,7 +5,6 @@ import {
   // TouchableHighlight,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
 import {
   compose,
   withProps,
@@ -14,7 +13,7 @@ import {
   setPropTypes,
   defaultProps,
 } from 'recompose';
-import { isEmpty } from 'lodash';
+import { isEmpty, get } from 'lodash';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 
@@ -253,6 +252,7 @@ const ContributionForm = compose(
     }),
     handleSubmit(values, { props, setSubmitting }) {
       const result = { ...values };
+      props.isPayingWithCreditCard();
       if (get(result, 'firstContribution.amount')) {
         result.firstContribution.amount = parseFloat(result.firstContribution.amount);
       }
@@ -269,6 +269,12 @@ const ContributionForm = compose(
 
       props.setContributionFrequency(result.frequencyId);
       props.setContributionStartDate(result.startDate);
+
+      const userHasPaymentMethods = props.savedPaymentMethods.length > 0;
+      if (userHasPaymentMethods) {
+        props.isPayingWithSavedPaymentMethod();
+        props.setSavedPaymentMethod(get(props, 'savedPaymentMethods.0.id', ''));
+      }
 
       props.onComplete(props);
       setSubmitting(false);

@@ -31,7 +31,7 @@ export const INITIAL_STATE = {
     accountName: '',
     accountType: 'checking',
   },
-  paymentMethod: 'creditCard',
+  paymentMethod: 'creditCard', // creditCard, bankAccount, savedPaymentMethod
   isPaying: false,
   paymentFailed: false,
   paymentFailedMessage: '',
@@ -39,6 +39,7 @@ export const INITIAL_STATE = {
   isSavingPaymentMethod: false,
   willSavePaymentMethod: true,
   savedAccountName: '',
+  savedPaymentMethodId: '',
 };
 
 export function contributions() {
