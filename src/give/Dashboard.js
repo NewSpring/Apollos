@@ -2,9 +2,11 @@ import React, { PureComponent } from 'react';
 import {
   ScrollView,
   View,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
+import { withRouter } from '@ui/NativeWebRouter';
 import { H5, UIText } from '@ui/typography';
 import Header from '@ui/Header';
 import FlexedView from '@ui/FlexedView';
@@ -27,6 +29,9 @@ export class Dashboard extends PureComponent {
       accountNumber: PropTypes.string,
     })),
     activityItems: PropTypes.arrayOf(PropTypes.shape({})), // One of many :'(
+    history: PropTypes.shape({
+      push: PropTypes.func,
+    }),
   };
 
   static defaultProps = {
@@ -62,11 +67,15 @@ export class Dashboard extends PureComponent {
 
             <H5>{'Dashboard (view accounts)'}</H5>
             {this.props.savedPaymentMethods.map(pm => (
-              <View key={pm.id}>
-                <UIText>{pm.name}</UIText>
-                <UIText>{pm.paymentMethod}</UIText>
-                <UIText>{last4(pm.accountNumber)}</UIText>
-              </View>
+              <TouchableWithoutFeedback
+                onPress={() => this.props.history.push(`/give/payment-methods/${pm.id}`)}
+              >
+                <View key={pm.id}>
+                  <UIText>{pm.name}</UIText>
+                  <UIText>{pm.paymentMethod}</UIText>
+                  <UIText>{last4(pm.accountNumber)}</UIText>
+                </View>
+              </TouchableWithoutFeedback>
             ))}
           </PaddedView>
         </ScrollView>
@@ -78,6 +87,7 @@ export class Dashboard extends PureComponent {
 // TODO: Split withGivingDashboard, add edit name and delete mutations
 const enhance = compose(
   withGivingDashboard,
+  withRouter,
 );
 
 export default enhance(Dashboard);
