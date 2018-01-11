@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, pure, setPropTypes } from 'recompose';
+import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { kebabCase } from 'lodash';
 
 import { withIsLoading } from '@ui/isLoading';
@@ -20,15 +20,18 @@ const enhance = compose(
     icon: PropTypes.oneOf(Object.keys(Icons).map(kebabCase)),
     color: PropTypes.string,
     isLoading: PropTypes.bool,
-    children: PropTypes.node,
+    withFlex: PropTypes.bool,
+  }),
+  defaultProps({
+    withFlex: false,
   }),
 );
 
-const Wrapper = styled({
-  flex: 1,
+const Wrapper = styled(({ flexed }) => ({
+  flex: flexed ? 1 : null,
   flexDirection: 'row',
   alignItems: 'center',
-})(View);
+}))(View);
 
 const PlaceholderWrapper = styled(({ theme }) => ({
   flex: 1,
@@ -55,10 +58,11 @@ const getIconName = (label, icon) => {
 const CategoryLabel = enhance(({
   label,
   icon,
+  withFlex,
   isLoading,
   theme,
 }) => (
-  <Wrapper>
+  <Wrapper flexed={withFlex}>
     <Icon
       name={getIconName(label, icon)}
       size={theme.helpers.rem(1.2)}
