@@ -14,6 +14,7 @@ import Radio from '@ui/inputs/Radio';
 import ErrorText from '@ui/inputs/ErrorText';
 import Button, { ButtonLink } from '@ui/Button';
 import withCheckout from '@data/withCheckout';
+import withGive from '@data/withGive';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import last4 from '@utils/last4';
 import styled from '@ui/styled';
@@ -113,6 +114,7 @@ export class ChangePaymentMethodForm extends PureComponent {
 
 const enhance = compose(
   withCheckout,
+  withGive,
   withRouter,
   withFormik({
     mapPropsToValues: props => ({
@@ -122,10 +124,11 @@ const enhance = compose(
       paymentMethod: Yup.mixed().required(),
     }),
     enableReinitialize: true,
-    handleSubmit: async (values, { setSubmitting, setErrors }) => {
+    handleSubmit: async (values, { setSubmitting, setErrors, props }) => {
       try {
         setSubmitting(true);
-        console.log('set payment method to saved', values);
+        props.setSavedPaymentMethod(values.paymentMethod);
+        props.history.push('/give/checkout/confirm');
       } catch (err) {
         setErrors({
           general: err.message,
