@@ -33,12 +33,14 @@ exports[`the RelatedContentCard component should render 1`] = `
           "flexDirection": "row",
           "flexWrap": "nowrap",
           "justifyContent": "space-between",
+          "minHeight": 110,
         }
       }
     >
       <View
         style={
           Object {
+            "flex": 1.66,
             "paddingHorizontal": 20,
             "paddingVertical": 15,
           }
@@ -109,6 +111,7 @@ exports[`the RelatedContentCard component should render 1`] = `
       <View
         style={
           Object {
+            "alignSelf": "stretch",
             "backgroundColor": "#ffffff",
             "flex": 1,
           }
@@ -162,12 +165,14 @@ exports[`the RelatedContentCard component should render a loading state 1`] = `
           "flexDirection": "row",
           "flexWrap": "nowrap",
           "justifyContent": "space-between",
+          "minHeight": 110,
         }
       }
     >
       <View
         style={
           Object {
+            "flex": 1.66,
             "paddingHorizontal": 20,
             "paddingVertical": 15,
           }
@@ -185,10 +190,53 @@ exports[`the RelatedContentCard component should render a loading state 1`] = `
             }
           }
         />
+        <View
+          flexed={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": null,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "borderRadius": 6,
+                "height": 21.6,
+                "width": 21.6,
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignSelf": "stretch",
+                  "backgroundColor": "#dddddd",
+                  "borderRadius": 6,
+                  "height": 14,
+                  "marginVertical": 0.9349999999999996,
+                  "width": "40%",
+                }
+              }
+            />
+          </View>
+        </View>
       </View>
       <View
         style={
           Object {
+            "alignSelf": "stretch",
             "backgroundColor": "#ffffff",
             "flex": 1,
           }

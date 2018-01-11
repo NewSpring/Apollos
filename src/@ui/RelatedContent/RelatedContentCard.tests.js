@@ -21,8 +21,9 @@ describe('the RelatedContentCard component', () => {
     const tree = renderer.create(
       <Providers>
         <RelatedContentCard
-          title={''}
-          image={''}
+          title={'Why Jesus is Timeless'}
+          image={'https://picsum.photos/100/100/?random'}
+          category={'Time Travel'}
           isLoading
         />
       </Providers>,

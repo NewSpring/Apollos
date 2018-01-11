@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
+import { Platform } from 'react-native';
 
 import { withIsLoading } from '@ui/isLoading';
 import styled from '@ui/styled';
-import Card, { CardContent, CardImage } from '@ui/Card';
+import Card, { CardContent } from '@ui/Card';
 import SideBySideView from '@ui/SideBySideView';
 import FlexedView from '@ui/FlexedView';
 import { H5 } from '@ui/typography';
 import CategoryLabel from '@ui/CategoryLabel';
+
+import Thumbnail from './Thumbnail';
 
 const enhance = compose(
   setPropTypes({
@@ -23,7 +26,21 @@ const enhance = compose(
 
 const HorizontalLayout = styled({
   alignItems: 'center',
+  minHeight: 110, // kind of the best middle ground for various title lengths.
 })(SideBySideView);
+
+const LeftColumn = styled({
+  flex: 1.66,
+})(CardContent);
+
+const RightColumn = styled({
+  alignSelf: 'stretch',
+  ...Platform.select({
+    web: {
+      position: 'relative',
+    },
+  }),
+})(FlexedView);
 
 const RelatedContentCard = enhance(({
   title,
@@ -34,16 +51,16 @@ const RelatedContentCard = enhance(({
 }) => (
   <Card isLoading={isLoading} {...otherProps}>
     <HorizontalLayout>
-      <CardContent>
+      <LeftColumn>
         <H5>{title}</H5>
         { category ? (
-          <CategoryLabel label={category} />
+          <CategoryLabel label={category} isLoading={isLoading} />
         ) : null }
-      </CardContent>
+      </LeftColumn>
 
-      <FlexedView>
-        <CardImage source={{ url: image }} />
-      </FlexedView>
+      <RightColumn>
+        <Thumbnail source={{ url: image }} />
+      </RightColumn>
     </HorizontalLayout>
   </Card>
 ));

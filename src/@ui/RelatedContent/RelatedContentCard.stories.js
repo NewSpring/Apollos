@@ -5,25 +5,36 @@ import { storiesOf } from '@storybook/react-native';
 import RelatedContentCard from './RelatedContentCard';
 
 storiesOf('@ui/RelatedContent/Card', module)
-  .add('Default', () => (
-    <RelatedContentCard
-      title={'Why Jesus is Timeless'}
-      image={'https://picsum.photos/200/200/?random'}
-      category={'Time Travel'}
-    />
-  ))
-  .add('Skeleton', () => {
+  .add('Default', () => {
     const container = {
-      height: 100,
+      flex: 1,
+      justifyContent: 'center',
       backgroundColor: '#f7f7f7',
     };
 
     return (
       <View style={container}>
         <RelatedContentCard
-          title={''}
-          image={''}
-          category={''}
+          title={'Why Jesus is Timeless'}
+          image={'https://picsum.photos/400/400/?random'}
+          category={'Time Travel'}
+        />
+      </View>
+    );
+  })
+  .add('Skeleton', () => {
+    const container = {
+      flex: 1,
+      justifyContent: 'center',
+      backgroundColor: '#f7f7f7',
+    };
+
+    return (
+      <View style={container}>
+        <RelatedContentCard
+          title={'Why Jesus is Timeless'}
+          image={'https://picsum.photos/400/400/?random'}
+          category={'Time Travel'}
           isLoading
         />
       </View>
