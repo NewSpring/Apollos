@@ -252,7 +252,6 @@ const ContributionForm = compose(
     }),
     handleSubmit(values, { props, setSubmitting }) {
       const result = { ...values };
-      props.isPayingWithCreditCard();
       if (get(result, 'firstContribution.amount')) {
         result.firstContribution.amount = parseFloat(result.firstContribution.amount);
       }
@@ -274,6 +273,8 @@ const ContributionForm = compose(
       if (userHasPaymentMethods) {
         props.isPayingWithSavedPaymentMethod();
         props.setSavedPaymentMethod(get(props, 'savedPaymentMethods.0.id', ''));
+      } else {
+        props.isPayingWithCreditCard();
       }
 
       props.onComplete(props);

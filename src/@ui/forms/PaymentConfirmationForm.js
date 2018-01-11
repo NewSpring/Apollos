@@ -131,7 +131,15 @@ const PaymentConfirmationForm = compose(
         if (props.contributions.paymentMethod === 'creditCard') {
           await props.validateSingleCardTransaction(); // This seems unnecessary
         }
-        await props.postPayment();
+        if (props.contributions.paymentMethod !== 'savedPaymentMethod') {
+          await props.postPayment();
+        } else {
+          const createOrderResponse = await props.createOrder();
+          const order = get(createOrderResponse, 'data.order', {});
+          props.setOrder({
+            url: order.url,
+          });
+        }
 
         // NOTE: Need to keep reading through
         // the code to understand what id is for

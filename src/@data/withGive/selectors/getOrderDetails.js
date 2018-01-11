@@ -22,8 +22,6 @@ export default function getOrderDetails(state) {
     'merchant-defined-field-2': isEmpty(state.campusId) ? undefined : state.campusId,
   });
 
-  // NOTE: Looks like this can be guest or savedPayment?
-  // if (state.transactionType === 'savedPayment') delete joinedData.amount;
   if (state.frequencyId !== 'today') {
     joinedData.plan = {
       payments: 0,
@@ -82,10 +80,9 @@ export default function getOrderDetails(state) {
     }));
   }
 
-  // if (savedAccount.id) {
-  //   joinedData.savedAccount = savedAccount.id;
-  //   joinedData.savedAccountName = savedAccount.name;
-  // }
+  if (state.savedPaymentMethodId) {
+    joinedData.savedAccount = state.savedPaymentMethodId;
+  }
 
   return joinedData;
 }
