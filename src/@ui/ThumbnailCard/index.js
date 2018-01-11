@@ -42,7 +42,7 @@ const RightColumn = styled({
   }),
 })(FlexedView);
 
-const RelatedContentCard = enhance(({
+const ThumbnailCard = enhance(({
   title,
   image,
   category,
@@ -65,4 +65,4 @@ const RelatedContentCard = enhance(({
   </Card>
 ));
 
-export default RelatedContentCard;
+export default ThumbnailCard;

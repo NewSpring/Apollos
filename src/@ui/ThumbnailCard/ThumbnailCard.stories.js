@@ -2,9 +2,9 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
-import RelatedContentCard from './RelatedContentCard';
+import ThumbnailCard from './';
 
-storiesOf('@ui/RelatedContent/Card', module)
+storiesOf('@ui/ThumbnailCard', module)
   .add('Default', () => {
     const container = {
       flex: 1,
@@ -14,7 +14,7 @@ storiesOf('@ui/RelatedContent/Card', module)
 
     return (
       <View style={container}>
-        <RelatedContentCard
+        <ThumbnailCard
           title={'Why Jesus is Timeless'}
           image={'https://picsum.photos/400/400/?random'}
           category={'Time Travel'}
@@ -31,7 +31,7 @@ storiesOf('@ui/RelatedContent/Card', module)
 
     return (
       <View style={container}>
-        <RelatedContentCard
+        <ThumbnailCard
           title={'Why Jesus is Timeless'}
           image={'https://picsum.photos/400/400/?random'}
           category={'Time Travel'}
