@@ -2,10 +2,11 @@
 
 exports[`the FeedItemCard CategoryLabel component should render 1`] = `
 <View
+  flexed={false}
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
+      "flex": null,
       "flexDirection": "row",
     }
   }
@@ -49,10 +50,11 @@ exports[`the FeedItemCard CategoryLabel component should render 1`] = `
 
 exports[`the FeedItemCard CategoryLabel component should render a custom icon 1`] = `
 <View
+  flexed={false}
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
+      "flex": null,
       "flexDirection": "row",
     }
   }
@@ -96,10 +98,11 @@ exports[`the FeedItemCard CategoryLabel component should render a custom icon 1`
 
 exports[`the FeedItemCard CategoryLabel component should render a skeleton view 1`] = `
 <View
+  flexed={false}
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
+      "flex": null,
       "flexDirection": "row",
     }
   }
@@ -140,10 +143,11 @@ exports[`the FeedItemCard CategoryLabel component should render a skeleton view 
 
 exports[`the FeedItemCard CategoryLabel component should render as Albums 1`] = `
 <View
+  flexed={false}
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
+      "flex": null,
       "flexDirection": "row",
     }
   }
@@ -187,10 +191,11 @@ exports[`the FeedItemCard CategoryLabel component should render as Albums 1`] = 
 
 exports[`the FeedItemCard CategoryLabel component should render as a Series 1`] = `
 <View
+  flexed={false}
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
+      "flex": null,
       "flexDirection": "row",
     }
   }
@@ -234,10 +239,11 @@ exports[`the FeedItemCard CategoryLabel component should render as a Series 1`] 
 
 exports[`the FeedItemCard CategoryLabel component should render children 1`] = `
 <View
+  flexed={false}
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
+      "flex": null,
       "flexDirection": "row",
     }
   }
