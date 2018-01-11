@@ -64,6 +64,7 @@ class AppRouter extends PureComponent {
   largeScreenModals = [
     <Route exact path="/sections" key="sections-modal" component={asModal(tabs.Sections)} />,
     <Route path="/give/checkout" key="give-checkout" component={asModal(give.Checkout)} />,
+    <Route path="/give/payment-methods/:id" key="give-payment-method" component={asModal(give.PaymentMethod)} />,
     <Route path="/login" key="login" component={asModal(Auth)} />,
   ];
 
@@ -127,6 +128,7 @@ class AppRouter extends PureComponent {
           <Route exact path="/events/:id" component={DebugView} />
 
           <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
+          <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
           <Route path="/login" cardStackDirection="vertical" component={Auth} />
 
