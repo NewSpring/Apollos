@@ -17,6 +17,22 @@ storiesOf('@ui/ThumbnailCard', module)
         <ThumbnailCard
           title={'Why Jesus is Timeless'}
           image={'https://picsum.photos/400/400/?random'}
+        />
+      </View>
+    );
+  })
+  .add('With Category', () => {
+    const container = {
+      flex: 1,
+      justifyContent: 'center',
+      backgroundColor: '#f7f7f7',
+    };
+
+    return (
+      <View style={container}>
+        <ThumbnailCard
+          title={'Why Jesus is Timeless'}
+          image={'https://picsum.photos/400/400/?random'}
           category={'Time Travel'}
         />
       </View>

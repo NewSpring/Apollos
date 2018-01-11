@@ -4,8 +4,19 @@ import Providers from '@ui/TestProviders';
 
 import ThumbnailCard from './';
 
-describe('the RelatedContentCard component', () => {
+describe('the ThumbnailCard component', () => {
   it('should render', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ThumbnailCard
+          title={'Why Jesus is Timeless'}
+          image={'https://picsum.photos/100/100/?random'}
+        />
+      </Providers>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render with a category', () => {
     const tree = renderer.create(
       <Providers>
         <ThumbnailCard
