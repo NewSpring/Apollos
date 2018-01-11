@@ -10,6 +10,16 @@ describe('the ThumbnailCard component', () => {
       <Providers>
         <ThumbnailCard
           title={'Why Jesus is Timeless'}
+        />
+      </Providers>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render with an image', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ThumbnailCard
+          title={'Why Jesus is Timeless'}
           image={'https://picsum.photos/100/100/?random'}
         />
       </Providers>,
@@ -17,6 +27,17 @@ describe('the ThumbnailCard component', () => {
     expect(tree).toMatchSnapshot();
   });
   it('should render with a category', () => {
+    const tree = renderer.create(
+      <Providers>
+        <ThumbnailCard
+          title={'Why Jesus is Timeless'}
+          category={'Time Travel'}
+        />
+      </Providers>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render with a category and image', () => {
     const tree = renderer.create(
       <Providers>
         <ThumbnailCard

@@ -16,7 +16,7 @@ import Thumbnail from './Thumbnail';
 const enhance = compose(
   setPropTypes({
     title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
     category: PropTypes.string,
     isLoading: PropTypes.bool,
   }),
@@ -58,9 +58,11 @@ const ThumbnailCard = enhance(({
         ) : null }
       </LeftColumn>
 
-      <RightColumn>
-        <Thumbnail source={{ url: image }} />
-      </RightColumn>
+      { image ? (
+        <RightColumn>
+          <Thumbnail source={{ url: image }} />
+        </RightColumn>
+      ) : null }
     </HorizontalLayout>
   </Card>
 ));
