@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { PureComponent } from 'react';
 import {
   View,
@@ -6,7 +5,6 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, getContext } from 'recompose';
-import get from 'lodash/get';
 import isString from 'lodash/isString';
 import {
   UIText,
@@ -48,7 +46,7 @@ class RadioButton extends PureComponent {
   static defaultProps = {
     Label: '',
     onSelectValue() {},
-    RadioButtonIndicator: RadioButtonIndicator,
+    RadioButtonIndicator,
   };
 
   handleOnPress = () => {
@@ -56,15 +54,18 @@ class RadioButton extends PureComponent {
   };
 
   render() {
+    const Indicator = this.props.RadioButtonIndicator;
     return (
       <TouchableWithoutFeedback
         onPress={this.handleOnPress}
       >
         <Row>
-          <this.props.RadioButtonIndicator
+          <Indicator
             isSelected={this.props.currentValue === this.props.value}
           />
-          {isString(this.props.Label) ? (<UIText>{this.props.Label}</UIText>) : (<this.props.Label />)}
+          {isString(this.props.Label) ?
+            (<UIText>{this.props.Label}</UIText>) : (<this.props.Label />)
+          }
         </Row>
       </TouchableWithoutFeedback>
     );
