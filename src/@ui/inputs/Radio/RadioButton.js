@@ -20,6 +20,7 @@ const Row = styled(({ theme }) => ({
   borderBottomColor: theme.colors.background.accent,
   flexDirection: 'row',
   justifyContent: 'space-between',
+  alignItems: 'center',
 }))(View);
 
 class RadioButton extends PureComponent {

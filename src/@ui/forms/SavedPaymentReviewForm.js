@@ -83,7 +83,13 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
   );
 
   render() {
-    if (this.props.isLoading) return <ActivityIndicator />;
+    if (this.props.isLoading) {
+      return (
+        <View>
+          <ActivityIndicator />
+        </View>
+      );
+    }
 
     return (
       <View>

@@ -8,11 +8,23 @@ import { withFormik } from 'formik';
 import Yup from 'yup';
 import { compose, mapProps } from 'recompose';
 import get from 'lodash/get';
+import Icon from '@ui/Icon';
 import { withRouter } from '@ui/NativeWebRouter';
 import Radio from '@ui/inputs/Radio';
 import ErrorText from '@ui/inputs/ErrorText';
 import Button, { ButtonLink } from '@ui/Button';
 import withCheckout from '@data/withCheckout';
+import ActivityIndicator from '@ui/ActivityIndicator';
+import last4 from '@utils/last4';
+import styled from '@ui/styled';
+
+const Row = styled(({ theme }) => ({
+  paddingVertical: theme.sizing.baseUnit / 2,
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  flex: 1,
+  paddingLeft: 10,
+}))(View);
 
 export class ChangePaymentMethodForm extends PureComponent {
   static propTypes = {
@@ -38,6 +50,7 @@ export class ChangePaymentMethodForm extends PureComponent {
       paymentMethod: PropTypes.oneOf(['bankAccount', 'creditCard']),
       accountNumber: PropTypes.string,
     })),
+    isLoading: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -48,9 +61,18 @@ export class ChangePaymentMethodForm extends PureComponent {
     values: {},
     onPressNewPaymentMethod() {},
     savedPaymentMethods: [],
+    isLoading: false,
   };
 
   render() {
+    if (this.props.isLoading) {
+      return (
+        <View>
+          <ActivityIndicator />
+        </View>
+      );
+    }
+
     return (
       <View>
         {this.props.errors.general && <ErrorText>{this.props.errors.general}</ErrorText>}
@@ -63,10 +85,13 @@ export class ChangePaymentMethodForm extends PureComponent {
               key={paymentMethod.id}
               value={paymentMethod.id}
               Label={() => (
-                <View>
-                  <Text>{paymentMethod.name}</Text>
-                  <Text>{paymentMethod.accountNumber}</Text>
-                </View>
+                <Row>
+                  <View>
+                    <Text>{paymentMethod.name}</Text>
+                    <Text>{`****${last4(paymentMethod.accountNumber)}`}</Text>
+                  </View>
+                  {paymentMethod.paymentMethod === 'creditCard' && <Icon name="credit" />}
+                </Row>
               )}
             />
           ))}
