@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import { Platform } from 'react-native';
+import { startCase, toLower } from 'lodash';
 
 import { withIsLoading } from '@ui/isLoading';
 import styled from '@ui/styled';
@@ -52,9 +53,9 @@ const ThumbnailCard = enhance(({
   <Card isLoading={isLoading} {...otherProps}>
     <HorizontalLayout>
       <LeftColumn>
-        <H5>{title}</H5>
+        <H5>{startCase(toLower(title))}</H5>
         { category ? (
-          <CategoryLabel label={category} isLoading={isLoading} />
+          <CategoryLabel label={startCase(toLower(category))} isLoading={isLoading} />
         ) : null }
       </LeftColumn>
 
