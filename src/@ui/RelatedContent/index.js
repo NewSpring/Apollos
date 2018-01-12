@@ -7,6 +7,7 @@ import { get, times } from 'lodash';
 import withRelatedContent from '@data/withRelatedContent';
 import { Link } from '@ui/NativeWebRouter';
 import { getLinkPath } from '@utils/content';
+import { withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import { H5 } from '@ui/typography';
 import ThumbnailCard from '@ui/ThumbnailCard';
@@ -40,7 +41,6 @@ const getItemImages = (item) => {
 
 const enhance = compose(
   pure,
-  withRelatedContent,
   setPropTypes({
     excludedIds: PropTypes.arrayOf(PropTypes.string),
     tags: PropTypes.arrayOf(PropTypes.string),
@@ -50,9 +50,12 @@ const enhance = compose(
     isLoading: false,
     sectionTitle: 'More Like This',
   }),
-  branch(({ isLoading, data }) => (isLoading && !data.length), withProps({
+  withRelatedContent,
+  branch(({ isLoading, data }) => (isLoading && data.taggedContent !== 'undefined'), withProps({
     data: generateLoadingStateData(3),
-    fetchMore: false,
+  })),
+  withThemeMixin(() => ({
+    type: 'light',
   })),
 );
 
@@ -90,7 +93,7 @@ const RelatedContent = enhance(({
 }) => (
   <Wrapper>
     <Title>{sectionTitle}</Title>
-    <View>{renderItems(data)}</View>
+    {renderItems(data)}
   </Wrapper>
 ));
 

@@ -1,12 +1,14 @@
 import React from 'react';
 import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
+
+import withStory from '@data/withStory';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import ContentView from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
-import withStory from '@data/withStory';
+import RelatedContent from '@ui/RelatedContent';
 
 const enhance = compose(
   pure,
@@ -20,6 +22,7 @@ const StorySingle = enhance(({
     title = '',
     content = {},
   } = { },
+  id,
 }) => (
   <FlexedView>
     <Header titleText="News" backButton />
@@ -29,6 +32,7 @@ const StorySingle = enhance(({
         authors={authors}
         {...content}
       />
+      <RelatedContent tags={content.tags} excludedIds={[id]} />
     </ScrollView>
     <MediaQuery maxWidth="md">
       <SecondaryNav>
