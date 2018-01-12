@@ -23,7 +23,6 @@ const generateLoadingStateData = (numberOfItems = 1) => {
   });
 
   const loadingStateData = { taggedContent: [] };
-  console.log('BOOM!');
   times(numberOfItems, (n) => {
     const newData = itemData();
     newData.id = `fakeId${n}`;
@@ -51,7 +50,7 @@ const enhance = compose(
     isLoading: false,
     sectionTitle: 'More Like This',
   }),
-  branch(({ isLoading, data }) => (isLoading, !data.length), withProps({ // eslint-disable-line
+  branch(({ isLoading, data }) => (isLoading && !data.length), withProps({
     data: generateLoadingStateData(3),
     fetchMore: false,
   })),
