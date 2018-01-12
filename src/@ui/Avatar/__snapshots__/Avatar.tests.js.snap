@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Avatar component should render large 1`] = `
+<View
+  style={
+    Object {
+      "aspectRatio": 1,
+      "backgroundColor": "#dddddd",
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`The Avatar component should render medium 1`] = `
+<View
+  style={
+    Object {
+      "aspectRatio": 1,
+      "backgroundColor": "#dddddd",
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`The Avatar component should render small 1`] = `
+<View
+  style={
+    Object {
+      "aspectRatio": 1,
+      "backgroundColor": "#dddddd",
+      "width": "100%",
+    }
+  }
+/>
+`;

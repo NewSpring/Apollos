@@ -3,16 +3,17 @@ import { Platform, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { startCase, toLower } from 'lodash';
-import Placeholder from 'rn-placeholder';
 
+import Placeholder from '@ui/Placeholder';
+import { withIsLoading } from '@ui/isLoading';
 import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import { H4, H6, H7 } from '@ui/typography';
+import { CardContent, CardActions } from '@ui/Card';
 import CategoryLabel from '@ui/CategoryLabel';
 import relativeTime from '@utils/relativeTime';
 
 const enhance = compose(
-  pure,
   setPropTypes({
     title: PropTypes.string.isRequired,
     number: PropTypes.number,
@@ -23,10 +24,19 @@ const enhance = compose(
     isLoading: PropTypes.bool,
   }),
   defaultProps({
-    showDetails: true,
+    showDetails: false,
   }),
+  withIsLoading,
+  withThemeMixin(({ theme }) => ({
+    type: 'light',
+    colors: {
+      background: {
+        inactive: theme.colors.lightSecondary, // TODO: sort out correct inactive color value.
+      },
+    },
+  })),
   withTheme(),
-  withThemeMixin({ type: 'light' }),
+  pure,
 );
 
 const TileSpacer = styled(({ theme }) => ({
@@ -56,11 +66,10 @@ const Tile = styled(({ theme }) => ({
   }),
 }))(View);
 
-const WebAspectRatioFix = styled(({ theme }) => ({
+const WebAspectRatioFix = styled({
   justifyContent: 'center',
-  paddingHorizontal: theme.sizing.baseUnit,
   ...StyleSheet.absoluteFillObject,
-}))(View);
+})(View);
 
 const TileNumber = styled(({ theme, size }) => ({
   position: 'absolute',
@@ -109,30 +118,21 @@ const CardTile = enhance(({
           </TileNumber>
         )}
 
-        <Placeholder.Line
-          width={'75%'}
-          textSize={theme.helpers.rem(1.4)}
-          onReady={!isLoading}
-        >
+        <CardContent>
           <H4>{startCase(toLower(title))}</H4>
-        </Placeholder.Line>
+        </CardContent>
 
         {showDetails ? (
-          <CategoryLabel
-            label={startCase(toLower(byLine))}
-            icon={'video'}
-            isLoading={isLoading}
-          >
+          <CardActions>
+            <CategoryLabel
+              label={startCase(toLower(byLine))}
+              icon={'video'}
+              isLoading={isLoading}
+            />
             {typeof date === 'undefined' ? null : (
-              <Placeholder.Line
-                width={'10%'}
-                textSize={theme.helpers.rem(1)}
-                onReady={!isLoading}
-              >
-                <H7>{relativeTime(date)}</H7>
-              </Placeholder.Line>
+              <H7>{relativeTime(date)}</H7>
             )}
-          </CategoryLabel>
+          </CardActions>
         ) : null }
       </WebAspectRatioFix>
     </Tile>

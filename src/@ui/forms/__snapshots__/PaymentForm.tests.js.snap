@@ -114,7 +114,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
         style={
           Object {
             "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "borderTopWidth": 0.5,
             "bottom": 0,
             "left": 0,
@@ -280,6 +280,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
   </View>
   <View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -313,6 +314,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -439,6 +441,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
       </View>
     </View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -472,6 +475,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -588,6 +592,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
       </View>
     </View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -621,6 +626,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -975,7 +981,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
         style={
           Object {
             "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "borderTopWidth": 0.5,
             "bottom": 0,
             "left": 0,
@@ -1141,6 +1147,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
   </View>
   <View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -1174,6 +1181,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -1300,6 +1308,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
       </View>
     </View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -1333,6 +1342,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -1449,6 +1459,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
       </View>
     </View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -1482,6 +1493,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -1836,7 +1848,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         style={
           Object {
             "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "borderTopWidth": 0.5,
             "bottom": 0,
             "left": 0,
@@ -2002,6 +2014,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
   </View>
   <View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -2035,6 +2048,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -2161,6 +2175,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
       </View>
     </View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -2194,6 +2209,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -2310,6 +2326,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
       </View>
     </View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -2343,6 +2360,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -2689,7 +2707,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
         style={
           Object {
             "backgroundColor": "#ffffff",
-            "borderTopColor": "#dddddd",
+            "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
             "borderTopWidth": 0.5,
             "bottom": 0,
             "left": 0,
@@ -2855,6 +2873,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
   </View>
   <View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -2888,6 +2907,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             onBlur={[Function]}
@@ -3001,6 +3021,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
       </View>
     </View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -3034,6 +3055,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -3149,6 +3171,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
       </View>
     </View>
     <View
+      disabled={false}
       style={
         Object {
           "marginVertical": 20,
@@ -3182,6 +3205,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -3408,7 +3432,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
           style={
             Object {
               "backgroundColor": "#ffffff",
-              "borderTopColor": "#dddddd",
+              "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
               "borderTopWidth": 0.5,
               "bottom": 0,
               "left": 0,
