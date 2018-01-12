@@ -125,7 +125,7 @@ const PersonalDetailsForm = compose(
     }),
     isInitialValid(props) {
       return validationSchema
-        .validate(mapPropsToValues(props));
+        .isValid(mapPropsToValues(props));
     },
   }),
 )(PersonalDetailsFormWithoutData);

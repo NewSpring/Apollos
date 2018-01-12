@@ -9,10 +9,19 @@ import PropTypes from 'prop-types';
 import { get, pick } from 'lodash';
 import { H4, H6 } from '@ui/typography';
 import * as Inputs from '@ui/inputs';
-import { withRouter } from '@ui/NativeWebRouter';
 import withSavedPaymentMethod from '@data/withSavedPaymentMethod';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import Button from '@ui/Button';
+import Icon from '@ui/Icon';
+import Spacer from '@ui/Spacer';
+import last4 from '@utils/last4';
+import styled from '@ui/styled';
+
+const Row = styled(({ theme }) => ({
+  paddingVertical: theme.sizing.baseUnit / 2,
+  flexDirection: 'row',
+  alignItems: 'center',
+}))(View);
 
 export class EditSavedPaymentMethodForm extends PureComponent {
   static propTypes = {
@@ -54,7 +63,6 @@ export class EditSavedPaymentMethodForm extends PureComponent {
   };
 
   render() {
-    console.log({ props: this.props });
     if (this.props.isLoading) {
       return (
         <View>
@@ -66,7 +74,11 @@ export class EditSavedPaymentMethodForm extends PureComponent {
     return (
       <View>
         <H4>{'Edit Account'}</H4>
-        <H6>{`${this.props.accountNumber} - ${this.props.accountType}`}</H6>
+        <Row>
+          {this.props.accountType === 'creditCard' && <Icon name="credit" />}
+          <Spacer byWidth />
+          <H6>{`****${last4(this.props.accountNumber)}`}</H6>
+        </Row>
         <Inputs.Text
           label="Saved Account Name"
           value={this.props.values.accountName}
@@ -76,8 +88,8 @@ export class EditSavedPaymentMethodForm extends PureComponent {
         />
         <Button
           onPress={this.props.handleSubmit}
-          title="Next"
-          disabled={!this.props.isValid}
+          title="Save Changes"
+          disabled={this.props.isSubmitting || !this.props.isValid}
           loading={this.props.isSubmitting}
         />
       </View>
@@ -94,10 +106,6 @@ const validationSchema = Yup.object().shape({
 });
 
 const enhance = compose(
-  withRouter,
-  mapProps(props => ({
-    id: props.match.params.id,
-  })),
   withSavedPaymentMethod,
   mapProps(props => ({
     accountNumber: get(props, 'savedPaymentMethod.accountNumber', ''),
@@ -115,22 +123,19 @@ const enhance = compose(
     enableReinitialize: true,
     isInitialValid(props) {
       return validationSchema
-        .validate(mapPropsToValues(props));
+        .isValid(mapPropsToValues(props));
     },
-    handleSubmit: async (values, { props, setSubmitting }) => {
+    handleSubmit: async (values, { props, setSubmitting, setErrors }) => {
       try {
         setSubmitting(true);
         await props.updateSavedPaymentMethod({
           id: props.id,
           name: values.accountName,
         });
-        console.log('props.updateSavedPaymentMethodName', {
-          id: props.id,
-          name: values.accountName,
-        });
       } catch (e) {
-        console.log(e);
-        // todo: If there's an error, we want to stay on this page and display it.
+        setErrors({
+          accountName: e.message,
+        });
       } finally {
         setSubmitting(false);
       }

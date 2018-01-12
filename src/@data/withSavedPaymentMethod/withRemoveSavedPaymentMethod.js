@@ -1,9 +1,10 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import removeSavedPaymentMethod from './removeSavedPaymentMethod';
 
 export const MUTATION = gql`
   mutation RemoveSavedPayment($id: Int!) {
-    payment: cancelSavedPayment(entityId: $id) {
+    cancelSavedPayment(entityId: $id) {
       error
       code
       success
@@ -13,16 +14,19 @@ export const MUTATION = gql`
 
 export default graphql(MUTATION, {
   props: ({ mutate }) => ({
-    remove: id => (mutate({
+    removeSavedPaymentMethod: id => (mutate({
       variables: { id },
       optimisticResponse: {
         __typename: 'Mutation',
-        payment: {
+        cancelSavedPayment: {
           error: null,
           code: null,
           success: true,
           __typename: 'SavePaymentMutationResponse',
         },
+      },
+      update() {
+        return removeSavedPaymentMethod(id);
       },
     })),
   }),
