@@ -20,10 +20,10 @@ const enhance = compose(
   }),
   // TODO: Condsider refactoring the branches below!
   // only run query if we have required data!
-  branch(({ tags, excludedIds, data }) => console.log('BOOM 1', data) || (!tags.length || !excludedIds.length || data !== 'undefined'), renderNothing),
+  branch(({ tags, excludedIds }) => (!tags.length || !excludedIds.length), renderNothing),
   withRelatedContent,
   // only render if query returns data!
-  branch(({ data }) => console.log('BOOM 3', data) || (data.taggedContent === 'undefined'), renderNothing),
+  branch(({ content }) => (typeof content === 'undefined' || !content.length), renderNothing),
 );
 
 const RelatedContent = enhance(RelatedContentWithoutData);

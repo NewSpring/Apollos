@@ -47,7 +47,7 @@ const enhance = compose(
     sectionTitle: 'More Like This',
     content: [],
   }),
-  branch(({ isLoading, data }) => (isLoading && data.taggedContent !== 'undefined'), withProps({
+  branch(({ isLoading, content }) => (isLoading && !content.length), withProps({
     content: generateLoadingStateData(3),
   })),
   withThemeMixin(() => ({
@@ -61,23 +61,18 @@ const getItemImages = (item) => {
   return images[0].url; // TODO short circuit. Highliner should handle image selection in the array
 };
 
-const renderItems = (content) => {
-  let items = null;
-  if (content.length) {
-    items = content.map(item => (
-      <Link to={getLinkPath(item)} key={item.id}>
-        <ThumbnailCard
-          title={item.title}
-          category={item.channelName}
-          image={getItemImages(item)}
-          isLoading={item.isLoading}
-        />
-      </Link>
-    ));
-  }
-
-  return items;
-};
+const renderItems = (content = []) => (
+  content.map(item => (
+    <Link to={getLinkPath(item)} key={item.id}>
+      <ThumbnailCard
+        title={item.title}
+        category={item.channelName}
+        image={getItemImages(item)}
+        isLoading={item.isLoading}
+      />
+    </Link>
+  ))
+);
 
 const Wrapper = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit,
