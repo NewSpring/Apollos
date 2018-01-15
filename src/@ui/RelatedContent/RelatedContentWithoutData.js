@@ -38,7 +38,7 @@ const enhance = compose(
   setPropTypes({
     excludedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-    content: PropTypes.object,
+    content: PropTypes.array,
     sectionTitle: PropTypes.string,
     isLoading: PropTypes.bool,
   }),
