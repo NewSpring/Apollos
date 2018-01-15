@@ -48,36 +48,7 @@ export const PaymentFormWithoutData = ({
       <Inputs.PickerItem label="Bank Account" value={'bankAccount'} />
     </Inputs.Picker>
 
-    {values.paymentMethod === 'creditCard' ? (
-      <View>
-        <Inputs.Text
-          suffix={<Icon name="credit" />}
-          label="Card Number"
-          type="numericKeyboard"
-          value={values.cardNumber}
-          onChangeText={text => setFieldValue('cardNumber', formatCardNumber(text))}
-          onBlur={() => setFieldTouched('cardNumber', true)}
-          error={Boolean(touched.cardNumber && errors.cardNumber)}
-        />
-        <Inputs.Text
-          label="Expiration Date"
-          placeholder="mm/yy"
-          type="numericKeyboard"
-          value={values.expirationDate}
-          onChangeText={text => setFieldValue('expirationDate', formatCardExpiry(text))}
-          onBlur={() => setFieldTouched('expirationDate', true)}
-          error={Boolean(touched.expirationDate && errors.expirationDate)}
-        />
-        <Inputs.Text
-          label="CVV"
-          type="numericKeyboard"
-          value={values.cvv}
-          onChangeText={text => setFieldValue('cvv', text)}
-          onBlur={() => setFieldTouched('cvv', true)}
-          error={Boolean(touched.cvv && errors.cvv)}
-        />
-      </View>
-    ) : (
+    {values.paymentMethod === 'bankAccount' ? (
       <View>
         <Inputs.Text
           label="Account Holder Name"
@@ -112,6 +83,35 @@ export const PaymentFormWithoutData = ({
           <Inputs.PickerItem label="Checking" value="checking" />
           <Inputs.PickerItem label="Savings" value="savings" />
         </Inputs.Picker>
+      </View>
+    ) : (
+      <View>
+        <Inputs.Text
+          suffix={<Icon name="credit" />}
+          label="Card Number"
+          type="numericKeyboard"
+          value={values.cardNumber}
+          onChangeText={text => setFieldValue('cardNumber', formatCardNumber(text))}
+          onBlur={() => setFieldTouched('cardNumber', true)}
+          error={Boolean(touched.cardNumber && errors.cardNumber)}
+        />
+        <Inputs.Text
+          label="Expiration Date"
+          placeholder="mm/yy"
+          type="numericKeyboard"
+          value={values.expirationDate}
+          onChangeText={text => setFieldValue('expirationDate', formatCardExpiry(text))}
+          onBlur={() => setFieldTouched('expirationDate', true)}
+          error={Boolean(touched.expirationDate && errors.expirationDate)}
+        />
+        <Inputs.Text
+          label="CVV"
+          type="numericKeyboard"
+          value={values.cvv}
+          onChangeText={text => setFieldValue('cvv', text)}
+          onBlur={() => setFieldTouched('cvv', true)}
+          error={Boolean(touched.cvv && errors.cvv)}
+        />
       </View>
     )}
 
