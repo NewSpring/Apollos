@@ -1,5 +1,6 @@
 import pick from 'lodash/pick';
 import { QUERY as contributionsQuery } from '@data/withGive/withContributions';
+import { INITIAL_STATE } from './queries';
 
 export function addContribution(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
@@ -267,6 +268,22 @@ export async function setPaymentResult(result, variables, { cache }) {
       query: contributionsQuery,
       variables,
     });
+    const paymentSuccessful = !!variables.success;
+    if (paymentSuccessful) {
+      cache.writeQuery({
+        query: contributionsQuery,
+        variables,
+        data: {
+          contributions: {
+            ...INITIAL_STATE,
+            paymentFailed: false,
+            paymentFailedMessage: '',
+            paymentSuccessful,
+          },
+        },
+      });
+      return null;
+    }
 
     cache.writeQuery({
       query: contributionsQuery,
@@ -276,7 +293,7 @@ export async function setPaymentResult(result, variables, { cache }) {
           ...state,
           paymentFailed: !!variables.error,
           paymentFailedMessage: variables.error || '',
-          paymentSuccessful: !!variables.success,
+          paymentSuccessful: false,
         },
       },
     });

@@ -1,5 +1,6 @@
 export const INITIAL_STATE = {
   // Create Order Forms
+  __typename: 'GiveContributions',
   contributions: [],
   frequencyId: 'today',
   startDate: (new Date()).toJSON(),
@@ -43,9 +44,6 @@ export const INITIAL_STATE = {
 };
 
 export function contributions() {
-  return {
-    __typename: 'GiveContributions',
-    ...INITIAL_STATE,
-  };
+  return INITIAL_STATE;
 }
 
