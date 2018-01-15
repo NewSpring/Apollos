@@ -2,6 +2,7 @@ import Client from '@data/Client';
 import givingDashboardQuery from './givingDashboardQuery';
 
 export default function (savedPaymentMethod) {
+  if (!savedPaymentMethod) return;
   const state = Client.readQuery({
     query: givingDashboardQuery,
     variables: {
