@@ -33,12 +33,14 @@ export default graphql(MUTATION, {
           },
         },
       });
-
+      const data = JSON.stringify(orderDetails);
+      console.log(state);
+      const isInstant = state.paymentMethod === 'savedPaymentMethod' && state.frequencyId !== 'today';
       return mutate({
         variables: {
-          data: JSON.stringify(orderDetails),
+          data,
           id: null,
-          instant: false,
+          instant: isInstant,
         },
       });
     },

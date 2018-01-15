@@ -131,25 +131,36 @@ const PaymentConfirmationForm = compose(
         if (props.contributions.paymentMethod === 'creditCard') {
           await props.validateSingleCardTransaction(); // This seems unnecessary
         }
-        if (props.contributions.paymentMethod !== 'savedPaymentMethod') {
+
+        const isCardOrBankAccount = props.contributions.paymentMethod === 'creditCard' || props.contributions.paymentMethod === 'bankAccount';
+        if (isCardOrBankAccount) {
           await props.postPayment();
-        } else {
-          const createOrderResponse = await props.createOrder();
-          const order = get(createOrderResponse, 'data.order', {});
-          props.setOrder({
-            url: order.url,
-          });
         }
 
-        // NOTE: Need to keep reading through
-        // the code to understand what id is for
-        const completeOrderRes = await props.completeOrder({
-          token: props.contributions.orderPaymentToken,
-          name: props.contributions.willSavePaymentMethod ?
-            props.contributions.savedAccountName : null,
-        });
-        const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
-        if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
+        const isSavedPaymentMethod = props.contributions.paymentMethod === 'savedPaymentMethod';
+        const isScheduled = props.contributions.frequencyId !== 'today';
+        if (isSavedPaymentMethod) {
+          const createOrderResponse = await props.createOrder();
+
+          if (!isScheduled) {
+            const order = get(createOrderResponse, 'data.order', {});
+            props.setOrder({
+              url: order.url,
+            });
+          }
+        }
+
+        if (!isScheduled) {
+          // NOTE: Need to keep reading through
+          // the code to understand what id is for
+          const completeOrderRes = await props.completeOrder({
+            token: props.contributions.orderPaymentToken,
+            name: props.contributions.willSavePaymentMethod ?
+              props.contributions.savedAccountName : null,
+          });
+          const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
+          if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
+        }
 
         props.setPaymentResult({
           success: true,
