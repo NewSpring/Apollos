@@ -1,7 +1,5 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
-import get from 'lodash/get';
-import updateSavedPaymentMethod from './updateSavedPaymentMethod';
 
 export const MUTATION = gql`
   mutation UpdateSavedPayment($id: Int, $name: String!) {
@@ -34,9 +32,6 @@ export default graphql(MUTATION, {
           },
           __typename: 'SavePaymentMutationResponse',
         },
-      },
-      update(_, { data }) {
-        return updateSavedPaymentMethod(get(data, 'updateSavedPayment.savedPaymentMethod', {}));
       },
     }),
   }),
