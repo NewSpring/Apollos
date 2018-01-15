@@ -55,7 +55,7 @@ const Study = enhance(({
     <ScrollView>
       <ContentView images={images} body={description} />
       <HorizontalTileFeed content={children} isLoading={isLoading} />
-      {/* there has to be a more elegant way to handle the conditiion below */
+      { // Don't render till data is ready. Consider adding placeholder views for the content above.
         !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
     </ScrollView>
     <SecondaryNav>

@@ -23,6 +23,7 @@ const StorySingle = enhance(({
     content = {},
   } = { },
   id,
+  isLoading,
 }) => (
   <FlexedView>
     <Header titleText="News" backButton />
@@ -32,7 +33,8 @@ const StorySingle = enhance(({
         authors={authors}
         {...content}
       />
-      <RelatedContent tags={content.tags} excludedIds={[id]} />
+      { // Don't render till data is ready. Consider adding placeholder views for the content above.
+        !isLoading && <RelatedContent tags={content.tags} excludedIds={[id]} />}
     </ScrollView>
     <MediaQuery maxWidth="md">
       <SecondaryNav>
