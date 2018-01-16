@@ -4,6 +4,7 @@ import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 import identifyCategory from '@data/utils/identifyCategory';
 import playMutation from './playMutation';
 import pauseMutation from './pauseMutation';
+import shuffleMutation from './shuffleMutation';
 import nowPlayingMutation from './nowPlayingMutation';
 import mediaPlayerQuery from './mediaPlayerQuery';
 import albumQuery from './albumQuery';
@@ -22,6 +23,14 @@ const setNowPlaying = graphql(nowPlayingMutation, {
       currentTrack,
     }) => mutate({
       variables: { albumId, currentTrack },
+    }),
+  }),
+});
+
+const shuffle = graphql(shuffleMutation, {
+  props: ({ mutate }) => ({
+    shuffle: ({ isShuffling }) => mutate({
+      variables: { isShuffling },
     }),
   }),
 });
@@ -66,5 +75,6 @@ export const withPlaylist = graphql(albumQuery, {
 export const withMediaPlayerActions = compose(
   play,
   pause,
+  shuffle,
   setNowPlaying,
 );

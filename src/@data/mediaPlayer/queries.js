@@ -4,6 +4,8 @@ export function mediaPlayer() {
     isPlaying: false,
     albumId: null,
     currentTrack: null,
+    shuffle: null,
+    repeat: false,
   };
 }
 

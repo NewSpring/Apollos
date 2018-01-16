@@ -42,6 +42,24 @@ export function nowPlaying(result, variables, { cache }) {
   return null;
 }
 
+export function shuffle(result, variables, { cache }) {
+  const { mediaPlayer: state } = cache.readQuery({
+    query: mediaPlayerQuery,
+    variables,
+  });
+
+  const { isShuffling } = variables;
+
+  cache.writeQuery({
+    mediaPlayerQuery,
+    variables,
+    data: {
+      ...state,
+      shuffle: isShuffling ? Date.now() : null,
+    },
+  });
+}
+
 export function pause(result, variables, { cache }) {
   const { mediaPlayer: state } = cache.readQuery({
     query: mediaPlayerQuery,
