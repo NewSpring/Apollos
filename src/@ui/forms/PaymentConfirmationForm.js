@@ -150,7 +150,11 @@ const PaymentConfirmationForm = compose(
         const token = order.url.split('/').pop();
 
         await props.postPayment(order.url);
-        const completeOrderRes = await props.completeOrder({ token });
+        const completeOrderRes = await props.completeOrder({
+          token,
+          name: props.contributions.willSavePaymentMethod ?
+            props.contributions.savedAccountName : null,
+        });
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
 
