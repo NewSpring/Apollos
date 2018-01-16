@@ -24,7 +24,7 @@ const WebView = ({
   createElement('iframe', {
     src: source.uri,
     allowFullScreen,
-    frameBoder: '0',
+    frameBorder: '0',
     seamless: true,
     scrolling: scrollEnabled,
     style: [
