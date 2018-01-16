@@ -5,7 +5,7 @@ import { ScrollView } from 'react-native';
 import withSeriesContent from '@data/withSeriesContent';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
-import ContentView from '@ui/ContentView';
+import ContentView, { HTMLView } from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import { withThemeMixin } from '@ui/theme';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
@@ -35,10 +35,11 @@ const enhance = compose(
 const SeriesSingle = enhance(({
   content: {
     content: {
+      video,
       isLight = true,
-      images = [],
       description,
       tags,
+      ...otherContentProps
     } = {},
     children,
     id,
@@ -52,7 +53,9 @@ const SeriesSingle = enhance(({
       barStyle={isLight ? 'dark-content' : 'light-content'}
     />
     <ScrollView>
-      <ContentView images={images} body={description} />
+      <ContentView {...otherContentProps}>
+        <HTMLView>{description}</HTMLView>
+      </ContentView>
       <HorizontalTileFeed
         content={children}
         isLoading={isLoading}

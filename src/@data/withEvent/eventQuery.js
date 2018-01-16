@@ -18,7 +18,9 @@ export default gql`
         content {
           isLiked
           body
-          ooyalaId
+          video {
+            embedUrl
+          }
           tags
           images(sizes: ["large"]) {
             fileName

@@ -53,7 +53,9 @@ export default gql`
           body
           tags
           speaker
-          ooyalaId
+          video {
+            embedUrl
+          }
         }
       }
     }

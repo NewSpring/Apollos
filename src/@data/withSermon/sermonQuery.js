@@ -41,7 +41,9 @@ export default gql`
           }
           description
           speaker
-          ooyalaId
+          video {
+            embedUrl
+          }
         }
       }
     }
