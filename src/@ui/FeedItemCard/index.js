@@ -63,6 +63,7 @@ const FeedItemCard = enhance(({
       <CategoryLabel
         label={startCase(toLower(category))}
         isLoading={isLoading}
+        withFlex
       />
       <LikeButton id={id}>
         <Icon

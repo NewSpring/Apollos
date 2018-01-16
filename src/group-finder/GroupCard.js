@@ -6,7 +6,7 @@ import { H5, H6, H7, UIText } from '@ui/typography';
 import Paragraph from '@ui/Paragraph';
 import Chip, { ChipList } from '@ui/Chip';
 import { Link } from '@ui/NativeWebRouter';
-import SideBySideView from '@ui/SideBySideView';
+import { ResponsiveSideBySideView } from '@ui/SideBySideView';
 import FlexedView from '@ui/FlexedView';
 
 const GroupCard = ({
@@ -23,7 +23,7 @@ const GroupCard = ({
 }) => {
   const card = (
     <Card isLoading={isLoading}>
-      <SideBySideView reversed>
+      <ResponsiveSideBySideView reversed>
         <FlexedView><CardImage source={{ url: photo }} /></FlexedView>
         <FlexedView>
           <CardContent>
@@ -54,7 +54,7 @@ const GroupCard = ({
             </ChipList>
           </CardContent>
         </FlexedView>
-      </SideBySideView>
+      </ResponsiveSideBySideView>
     </Card>
   );
 

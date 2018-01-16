@@ -14,4 +14,7 @@ const ResponsiveSideBySideView = compose(
   mediaQuery(({ md }) => ({ minWidth: md }), renderComponent(SideBySideView)),
 )(View);
 
-export default ResponsiveSideBySideView;
+export {
+  SideBySideView as default,
+  ResponsiveSideBySideView,
+};

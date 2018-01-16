@@ -128,6 +128,7 @@ const CardTile = enhance(({
               label={startCase(toLower(byLine))}
               icon={'video'}
               isLoading={isLoading}
+              withFlex
             />
             {typeof date === 'undefined' ? null : (
               <H7>{relativeTime(date)}</H7>
