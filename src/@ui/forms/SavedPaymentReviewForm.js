@@ -136,12 +136,15 @@ const PaymentConfirmationForm = compose(
         if (props.contributions.paymentMethod === 'creditCard') {
           await props.validateSingleCardTransaction(); // This seems unnecessary
         }
-        await props.postPayment();
+        const createOrderResponse = await props.createOrder();
+        const order = get(createOrderResponse, 'data.order', {});
+        const token = order.url.split('/').pop();
+        await props.postPayment(order.url);
 
         // NOTE: Need to keep reading through
         // the code to understand what id and name are for
         const savePaymentMethodRes = await props.savePaymentMethod({
-          token: props.contributions.orderPaymentToken,
+          token,
           name: props.contributions.savedAccountName,
         });
         const unableToCompleteOrderError = get(savePaymentMethodRes, 'data.response.error');

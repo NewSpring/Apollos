@@ -167,11 +167,6 @@ const BillingAddressForm = compose(
       try {
         setSubmitting(true);
         props.setBillingAddress(formValues);
-        const createOrderResponse = await props.createOrder();
-        const order = get(createOrderResponse, 'data.order', {});
-        props.setOrder({
-          url: order.url,
-        });
         setSubmitting(false);
         if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
       } catch (e) {

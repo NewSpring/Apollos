@@ -5,12 +5,10 @@ import { INITIAL_STATE } from './queries';
 export function addContribution(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
     query: contributionsQuery,
-    variables,
   });
 
   cache.writeQuery({
     query: contributionsQuery,
-    variables,
     data: {
       contributions: {
         ...state,
@@ -30,12 +28,10 @@ export function addContribution(result, variables, { cache }) {
 export function resetContributions(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
     query: contributionsQuery,
-    variables,
   });
 
   cache.writeQuery({
     query: contributionsQuery,
-    variables,
     data: {
       contributions: {
         ...state,
@@ -49,12 +45,10 @@ export function resetContributions(result, variables, { cache }) {
 export function setContributionFrequency(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
     query: contributionsQuery,
-    variables,
   });
 
   cache.writeQuery({
     query: contributionsQuery,
-    variables,
     data: {
       contributions: {
         ...state,
@@ -68,12 +62,10 @@ export function setContributionFrequency(result, variables, { cache }) {
 export function setContributionStartDate(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
     query: contributionsQuery,
-    variables,
   });
 
   cache.writeQuery({
     query: contributionsQuery,
-    variables,
     data: {
       contributions: {
         ...state,
@@ -87,12 +79,10 @@ export function setContributionStartDate(result, variables, { cache }) {
 export function setBillingPerson(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
     query: contributionsQuery,
-    variables,
   });
 
   cache.writeQuery({
     query: contributionsQuery,
-    variables,
     data: {
       contributions: {
         ...state,
@@ -112,12 +102,10 @@ export function setBillingPerson(result, variables, { cache }) {
 export function setBillingAddress(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
     query: contributionsQuery,
-    variables,
   });
 
   cache.writeQuery({
     query: contributionsQuery,
-    variables,
     data: {
       contributions: {
         ...state,
@@ -136,36 +124,13 @@ export function setBillingAddress(result, variables, { cache }) {
   return null;
 }
 
-export function setOrder(result, variables, { cache }) {
-  const { contributions: state } = cache.readQuery({
-    query: contributionsQuery,
-    variables,
-  });
-
-  cache.writeQuery({
-    query: contributionsQuery,
-    variables,
-    data: {
-      contributions: {
-        ...state,
-        orderPaymentUrl: variables.url,
-        orderPaymentToken: variables.url.split('/').pop(),
-        isLoadingOrderUrl: false,
-      },
-    },
-  });
-  return null;
-}
-
 export function setCreditCard(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
     query: contributionsQuery,
-    variables,
   });
 
   cache.writeQuery({
     query: contributionsQuery,
-    variables,
     data: {
       contributions: {
         ...state,
@@ -184,12 +149,10 @@ export function setCreditCard(result, variables, { cache }) {
 export function setBankAccount(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
     query: contributionsQuery,
-    variables,
   });
 
   cache.writeQuery({
     query: contributionsQuery,
-    variables,
     data: {
       contributions: {
         ...state,
@@ -209,12 +172,10 @@ export function setBankAccount(result, variables, { cache }) {
 export function setPaymentMethod(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
     query: contributionsQuery,
-    variables,
   });
 
   cache.writeQuery({
     query: contributionsQuery,
-    variables,
     data: {
       contributions: {
         ...state,
@@ -227,9 +188,9 @@ export function setPaymentMethod(result, variables, { cache }) {
 
 export async function postPayment(result, variables, { cache }) {
   try {
+    if (!variables.url) throw new Error('url is required!');
     const { contributions: state } = cache.readQuery({
       query: contributionsQuery,
-      variables,
     });
 
     const formData = new FormData();
@@ -250,7 +211,7 @@ export async function postPayment(result, variables, { cache }) {
         break;
     }
 
-    await fetch(state.orderPaymentUrl, {
+    await fetch(variables.url, {
       method: 'POST',
       mode: 'no-cors',
       body: formData,
@@ -266,13 +227,11 @@ export async function setPaymentResult(result, variables, { cache }) {
   try {
     const { contributions: state } = cache.readQuery({
       query: contributionsQuery,
-      variables,
     });
     const paymentSuccessful = !!variables.success;
     if (paymentSuccessful) {
       cache.writeQuery({
         query: contributionsQuery,
-        variables,
         data: {
           contributions: {
             ...INITIAL_STATE,
@@ -287,7 +246,6 @@ export async function setPaymentResult(result, variables, { cache }) {
 
     cache.writeQuery({
       query: contributionsQuery,
-      variables,
       data: {
         contributions: {
           ...state,
@@ -308,12 +266,10 @@ export async function isPaying(result, variables, { cache }) {
   try {
     const { contributions: state } = cache.readQuery({
       query: contributionsQuery,
-      variables,
     });
 
     cache.writeQuery({
       query: contributionsQuery,
-      variables,
       data: {
         contributions: {
           ...state,
@@ -332,12 +288,10 @@ export async function isSavingPaymentMethod(result, variables, { cache }) {
   try {
     const { contributions: state } = cache.readQuery({
       query: contributionsQuery,
-      variables,
     });
 
     cache.writeQuery({
       query: contributionsQuery,
-      variables,
       data: {
         contributions: {
           ...state,
@@ -356,12 +310,10 @@ export async function willSavePaymentMethod(result, variables, { cache }) {
   try {
     const { contributions: state } = cache.readQuery({
       query: contributionsQuery,
-      variables,
     });
 
     cache.writeQuery({
       query: contributionsQuery,
-      variables,
       data: {
         contributions: {
           ...state,
@@ -380,12 +332,10 @@ export async function setSavedPaymentName(result, variables, { cache }) {
   try {
     const { contributions: state } = cache.readQuery({
       query: contributionsQuery,
-      variables,
     });
 
     cache.writeQuery({
       query: contributionsQuery,
-      variables,
       data: {
         contributions: {
           ...state,
@@ -404,12 +354,10 @@ export async function setSavedPaymentMethod(result, variables, { cache }) {
   try {
     const { contributions: state } = cache.readQuery({
       query: contributionsQuery,
-      variables,
     });
 
     cache.writeQuery({
       query: contributionsQuery,
-      variables,
       data: {
         contributions: {
           ...state,

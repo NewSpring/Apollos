@@ -16,9 +16,6 @@ export const INITIAL_STATE = {
   zipCode: '',
 
   // Make payment
-  isLoadingOrderUrl: false,
-  orderPaymentUrl: '',
-  orderPaymentToken: '',
   creditCard: {
     __typename: 'CreditCard',
     cardNumber: '',

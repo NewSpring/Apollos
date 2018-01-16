@@ -17,9 +17,6 @@ export const QUERY = gql`
       city
       stateId
       zipCode
-      isLoadingOrderUrl
-      orderPaymentUrl
-      orderPaymentToken
       creditCard {
         cardNumber
         expirationDate

@@ -80,7 +80,7 @@ export default function getOrderDetails(state) {
     }));
   }
 
-  if (state.savedPaymentMethodId) {
+  if (state.paymentMethod === 'savedPaymentMethod') {
     joinedData.savedAccount = state.savedPaymentMethodId;
   }
 

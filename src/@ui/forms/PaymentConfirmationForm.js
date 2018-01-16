@@ -132,35 +132,28 @@ const PaymentConfirmationForm = compose(
           await props.validateSingleCardTransaction(); // This seems unnecessary
         }
 
-        const isCardOrBankAccount = props.contributions.paymentMethod === 'creditCard' || props.contributions.paymentMethod === 'bankAccount';
-        if (isCardOrBankAccount) {
-          await props.postPayment();
-        }
-
         const isSavedPaymentMethod = props.contributions.paymentMethod === 'savedPaymentMethod';
         const isScheduled = props.contributions.frequencyId !== 'today';
         if (isSavedPaymentMethod) {
-          const createOrderResponse = await props.createOrder();
+          await props.createOrder();
 
-          if (!isScheduled) {
-            const order = get(createOrderResponse, 'data.order', {});
-            props.setOrder({
-              url: order.url,
+          if (isScheduled) {
+            props.setPaymentResult({
+              success: true,
             });
+            return true;
           }
         }
 
-        if (!isScheduled) {
-          // NOTE: Need to keep reading through
-          // the code to understand what id is for
-          const completeOrderRes = await props.completeOrder({
-            token: props.contributions.orderPaymentToken,
-            name: props.contributions.willSavePaymentMethod ?
-              props.contributions.savedAccountName : null,
-          });
-          const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
-          if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
-        }
+        const createOrderResponse = await props.createOrder();
+        const order = get(createOrderResponse, 'data.order', {});
+        const token = order.url.split('/').pop();
+
+        await props.postPayment(order.url);
+        const completeOrderRes = await props.completeOrder({ token });
+        const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
+        if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
+
 
         props.setPaymentResult({
           success: true,

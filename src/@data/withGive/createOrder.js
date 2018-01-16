@@ -24,17 +24,8 @@ export default graphql(MUTATION, {
         query: contributionsQuery,
       });
       const orderDetails = getOrderDetails(state);
-      Client.writeQuery({
-        query: contributionsQuery,
-        data: {
-          contributions: {
-            ...state,
-            isLoadingOrderUrl: true,
-          },
-        },
-      });
       const data = JSON.stringify(orderDetails);
-      console.log(state);
+
       const isInstant = state.paymentMethod === 'savedPaymentMethod' && state.frequencyId !== 'today';
       return mutate({
         variables: {
