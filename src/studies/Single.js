@@ -10,6 +10,7 @@ import ContentView, { Title, HTMLView } from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import { withThemeMixin } from '@ui/theme';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
+import RelatedContent from '@ui/RelatedContent';
 
 const enhance = compose(
   pure,
@@ -38,9 +39,11 @@ const Study = enhance(({
     content: {
       isLight = true,
       description,
+      tags,
       ...otherContentProps
     } = {},
     children,
+    id,
   } = { },
   isLoading,
 }) => (
@@ -56,6 +59,8 @@ const Study = enhance(({
         <HTMLView>{description}</HTMLView>
       </ContentView>
       <HorizontalTileFeed content={children} isLoading={isLoading} />
+      { // Don't render till data is ready. Consider adding placeholder views for the content above.
+        !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
     </ScrollView>
     <SecondaryNav>
       <Link icon="share" />

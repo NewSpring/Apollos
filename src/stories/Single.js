@@ -3,12 +3,13 @@ import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
 import { startCase, toLower } from 'lodash';
 
+import withStory from '@data/withStory';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import ContentView, { ByLine, Title, HTMLView } from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
-import withStory from '@data/withStory';
+import RelatedContent from '@ui/RelatedContent';
 
 const enhance = compose(
   pure,
@@ -22,9 +23,12 @@ const StorySingle = enhance(({
     title = '',
     content: {
       body,
+      tags,
       ...otherContentProps
     } = {},
   } = { },
+  id,
+  isLoading,
 }) => (
   <FlexedView>
     <Header titleText="News" backButton />
@@ -34,6 +38,8 @@ const StorySingle = enhance(({
         <ByLine authors={authors} />
         <HTMLView>{body}</HTMLView>
       </ContentView>
+      { // Don't render till data is ready. Consider adding placeholder views for the content above.
+        !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
     </ScrollView>
     <MediaQuery maxWidth="md">
       <SecondaryNav>
