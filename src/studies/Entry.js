@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, mapProps, pure, withProps } from 'recompose';
 import { ScrollView } from 'react-native';
+import { startCase, toLower } from 'lodash';
+
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
 import Header from '@ui/Header';
@@ -80,7 +82,7 @@ const Study = enhance(({
       />
       <ScrollView>
         <ContentView {...otherContentProps}>
-          <Title>{title}</Title>
+          <Title>{startCase(toLower(title))}</Title>
           <HTMLView>{body}</HTMLView>
         </ContentView>
       </ScrollView>

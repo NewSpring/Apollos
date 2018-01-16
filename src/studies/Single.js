@@ -1,6 +1,7 @@
 import React from 'react';
 import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
+import { startCase, toLower } from 'lodash';
 
 import withStudy from '@data/withStudy';
 import FlexedView from '@ui/FlexedView';
@@ -51,7 +52,7 @@ const Study = enhance(({
     />
     <ScrollView>
       <ContentView {...otherContentProps}>
-        <Title>{title}</Title>
+        <Title>{startCase(toLower(title))}</Title>
         <HTMLView>{description}</HTMLView>
       </ContentView>
       <HorizontalTileFeed content={children} isLoading={isLoading} />

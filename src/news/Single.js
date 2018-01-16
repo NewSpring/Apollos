@@ -1,6 +1,8 @@
 import React from 'react';
 import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
+import { startCase, toLower } from 'lodash';
+
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import ContentView, { Title, ByLine, HTMLView } from '@ui/ContentView';
@@ -28,7 +30,7 @@ const NewsSingle = enhance(({
     <Header titleText="News" backButton />
     <ScrollView>
       <ContentView {...otherContentProps}>
-        <Title>{title}</Title>
+        <Title>{startCase(toLower(title))}</Title>
         <ByLine authors={authors} />
         <HTMLView>{body}</HTMLView>
       </ContentView>

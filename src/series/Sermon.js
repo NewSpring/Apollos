@@ -1,6 +1,8 @@
 import React from 'react';
 import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
+import { startCase, toLower } from 'lodash';
+
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import ContentView, { Title, SubHeading, HTMLView } from '@ui/ContentView';
@@ -41,8 +43,8 @@ const Sermon = enhance(({
     <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
     <ScrollView>
       <ContentView {...otherContentProps}>
-        <Title>{title}</Title>
-        <SubHeading>{speaker}</SubHeading>
+        <Title>{startCase(toLower(title))}</Title>
+        <SubHeading>{startCase(toLower(speaker))}</SubHeading>
         <HTMLView>{description}</HTMLView>
       </ContentView>
     </ScrollView>
