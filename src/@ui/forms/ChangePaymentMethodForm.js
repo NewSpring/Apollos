@@ -118,7 +118,7 @@ const enhance = compose(
   withRouter,
   withFormik({
     mapPropsToValues: props => ({
-      paymentMethod: get(props, 'savedPaymentMethods.0', {}).id,
+      paymentMethod: get(props, 'contributions.savedPaymentMethodId') || get(props, 'savedPaymentMethods.0.id'),
     }),
     validationSchema: Yup.object().shape({
       paymentMethod: Yup.mixed().required(),

@@ -37,7 +37,7 @@ export const INITIAL_STATE = {
   isSavingPaymentMethod: false,
   willSavePaymentMethod: true,
   savedAccountName: '',
-  savedPaymentMethodId: '',
+  savedPaymentMethodId: null,
 };
 
 export function contributions() {
