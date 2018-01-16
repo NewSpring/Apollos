@@ -1,12 +1,14 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { compose, mapProps, pure } from 'recompose';
+
+import withArticle from '@data/withArticle';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import ContentView from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
+import RelatedContent from '@ui/RelatedContent';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
-import withArticle from '@data/withArticle';
 
 const enhance = compose(
   pure,
@@ -20,6 +22,8 @@ const ArticleSingle = enhance(({
     title = '',
     content = {},
   } = { },
+  id,
+  isLoading,
 }) => (
   <FlexedView>
     <Header titleText="Article" backButton />
@@ -29,6 +33,8 @@ const ArticleSingle = enhance(({
         authors={authors}
         {...content}
       />
+      { // Don't render till data is ready. Consider adding placeholder views for the content above.
+        !isLoading && <RelatedContent tags={content.tags} excludedIds={[id]} />}
     </ScrollView>
     <MediaQuery maxWidth="md">
       <SecondaryNav>

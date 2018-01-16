@@ -9,6 +9,7 @@ import ContentView from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import { withThemeMixin } from '@ui/theme';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
+import RelatedContent from '@ui/RelatedContent';
 
 const enhance = compose(
   pure,
@@ -37,8 +38,10 @@ const SeriesSingle = enhance(({
       isLight = true,
       images = [],
       description,
+      tags,
     } = {},
     children,
+    id,
   } = { },
   isLoading,
 }) => (
@@ -55,6 +58,8 @@ const SeriesSingle = enhance(({
         isLoading={isLoading}
         showTileMeta
       />
+      { // Don't render till data is ready. Consider adding placeholder views for the content above.
+        !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
     </ScrollView>
     <SecondaryNav>
       <Link icon="share" />

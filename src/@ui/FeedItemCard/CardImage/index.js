@@ -45,13 +45,29 @@ const Overlay = styled(({ theme }) => ({
   }),
 }))(LinearGradient);
 
+const getGradientValues = (overlayColor) => {
+  const values = {
+    colors: [`${Color(overlayColor).fade(1).string()}`, overlayColor],
+    start: [0, 0],
+    end: [0, 1],
+    locations: [0.3, 1],
+  };
+
+  return values;
+};
+
 const FeedItemCardImage = enhance(({
   source: imageSource,
   overlayColor,
 }) => (
   <Wrapper>
     <CardImage source={imageSource} />
-    {overlayColor ? <Overlay colors={[`${Color(overlayColor).fade(1).string()}`, overlayColor]} start={[0, 0]} end={[0, 1]} locations={[0.3, 1]} /> : null}
+    {overlayColor ? <Overlay
+      colors={getGradientValues(overlayColor).colors}
+      start={getGradientValues(overlayColor).start}
+      end={getGradientValues(overlayColor).end}
+      locations={getGradientValues(overlayColor).locations}
+    /> : null}
   </Wrapper>
 ));
 

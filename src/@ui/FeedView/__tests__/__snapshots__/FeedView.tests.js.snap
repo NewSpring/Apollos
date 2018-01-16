@@ -184,6 +184,7 @@ exports[`The FeedView component renders correctly 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",
@@ -413,6 +414,7 @@ exports[`The FeedView component renders correctly 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",
@@ -741,6 +743,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",
@@ -915,6 +918,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",
@@ -1089,6 +1093,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",
@@ -1263,6 +1268,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",
@@ -1437,6 +1443,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",
@@ -1611,6 +1618,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",
@@ -1785,6 +1793,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",
@@ -1959,6 +1968,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",
@@ -2133,6 +2143,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",
@@ -2307,6 +2318,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           >
             <View
+              flexed={true}
               style={
                 Object {
                   "alignItems": "center",

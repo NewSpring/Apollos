@@ -309,6 +309,7 @@ exports[`the Card component should render a loading skeleton for all available p
         }
       >
         <View
+          flexed={true}
           style={
             Object {
               "alignItems": "center",
@@ -570,6 +571,7 @@ exports[`the Card component should render card details 1`] = `
         }
       >
         <View
+          flexed={true}
           style={
             Object {
               "alignItems": "center",
@@ -725,6 +727,7 @@ exports[`the Card component should render card details with date 1`] = `
         }
       >
         <View
+          flexed={true}
           style={
             Object {
               "alignItems": "center",
