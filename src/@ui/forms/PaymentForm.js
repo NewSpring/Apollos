@@ -195,12 +195,15 @@ const PaymentForm = compose(
   withCheckout,
   withRouter,
   withFormik({
-    mapPropsToValues: props => ({
-      paymentMethod: get(props, 'contributions.paymentMethod', 'creditCard'),
-      willSavePaymentMethod: get(props, 'contributions.willSavePaymentMethod', true),
-      ...get(props, 'contributions.bankAccount', { accountType: 'checking' }),
-      ...get(props, 'contributions.creditCard', {}),
-    }),
+    mapPropsToValues: (props) => {
+      const paymentMethod = get(props, 'contributions.paymentMethod', 'creditCard');
+      return {
+        paymentMethod: paymentMethod !== 'bankAccount' || paymentMethod !== 'creditCard' ? 'creditCard' : paymentMethod,
+        willSavePaymentMethod: get(props, 'contributions.willSavePaymentMethod', true),
+        ...get(props, 'contributions.bankAccount', { accountType: 'checking' }),
+        ...get(props, 'contributions.creditCard', {}),
+      };
+    },
     validationSchema: props => Yup.object().shape({
       paymentMethod: Yup.string().oneOf(['bankAccount', 'creditCard']).required(),
       cardNumber: Yup.string().when('paymentMethod', {
