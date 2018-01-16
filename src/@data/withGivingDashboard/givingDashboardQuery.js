@@ -18,7 +18,7 @@ export default gql`
         description
       }
     }
-    savedPayments(cache: false){
+    savedPaymentMethods: savedPayments(cache: false){
       id: entityId
       name
       payment {
@@ -26,7 +26,7 @@ export default gql`
         paymentType
       }
     }
-    userFeed(filters: $filters) {
+    activityItems: userFeed(filters: $filters) {
       ... on Transaction {
         id
         date

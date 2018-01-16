@@ -163,14 +163,11 @@ const BillingAddressForm = compose(
       countryId: Yup.string().required(),
       zipCode: Yup.string().required(),
     }),
-    handleSubmit: async (formValues, { props }) => {
+    handleSubmit: async (formValues, { props, setSubmitting }) => {
       try {
+        setSubmitting(true);
         props.setBillingAddress(formValues);
-        const createOrderResponse = await props.createOrder();
-        const order = get(createOrderResponse, 'data.order', {});
-        props.setOrder({
-          url: order.url,
-        });
+        setSubmitting(false);
         if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
       } catch (e) {
         // todo: If there's an error, we want to stay on this page and display it.

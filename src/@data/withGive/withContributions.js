@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
 
-export default gql`
+export const QUERY = gql`
   query Give {
     contributions @client {
       contributions
@@ -16,9 +17,6 @@ export default gql`
       city
       stateId
       zipCode
-      isLoadingOrderUrl
-      orderPaymentUrl
-      orderPaymentToken
       creditCard {
         cardNumber
         expirationDate
@@ -35,6 +33,23 @@ export default gql`
       paymentFailed
       paymentFailedMessage
       paymentSuccessful
+      isSavingPaymentMethod
+      willSavePaymentMethod
+      savedAccountName
+      savedPaymentMethodId
     }
   }
 `;
+
+export default graphql(QUERY, {
+  props({ data: { contributions, loading } }) {
+    if (!contributions) return { contributions, isLoading: loading };
+    return {
+      isLoading: loading,
+      contributions: {
+        ...contributions,
+        startDate: contributions && new Date(contributions.startDate),
+      },
+    };
+  },
+});

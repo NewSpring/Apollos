@@ -18,9 +18,13 @@ export default gql`
       campus { name, id: entityId }
       home { street1, street2, city, state, zip, country }
     }
-    savedPayments {
-      name, id: entityId, date,
-      payment { accountNumber, paymentType }
+    savedPaymentMethods: savedPayments(cache: false){
+      id: entityId
+      name
+      payment {
+        accountNumber
+        paymentType
+      }
     }
     campuses { label: name, id: entityId }
   }

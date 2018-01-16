@@ -742,6 +742,63 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
       </View>
     </View>
   </View>
+  <View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 40,
+            "justifyContent": "space-between",
+            "paddingVertical": 5,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Save this payment for future contributions
+        </Text>
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#6bac43"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              undefined,
+            ]
+          }
+          value={false}
+        />
+      </View>
+    </View>
+  </View>
   <View
     accessibilityComponentType="button"
     accessibilityLabel={undefined}
@@ -1552,6 +1609,63 @@ exports[`The PaymentForm component renders correctly 1`] = `
       </View>
     </View>
   </View>
+  <View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 40,
+            "justifyContent": "space-between",
+            "paddingVertical": 5,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Save this payment for future contributions
+        </Text>
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#6bac43"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              undefined,
+            ]
+          }
+          value={false}
+        />
+      </View>
+    </View>
+  </View>
   <View
     accessibilityComponentType="button"
     accessibilityLabel={undefined}
@@ -2359,6 +2473,63 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             }
           />
         </View>
+      </View>
+    </View>
+  </View>
+  <View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 40,
+            "justifyContent": "space-between",
+            "paddingVertical": 5,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Save this payment for future contributions
+        </Text>
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#6bac43"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              undefined,
+            ]
+          }
+          value={false}
+        />
       </View>
     </View>
   </View>
@@ -3423,6 +3594,63 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             }
           />
         </View>
+      </View>
+    </View>
+  </View>
+  <View>
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 40,
+            "justifyContent": "space-between",
+            "paddingVertical": 5,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Save this payment for future contributions
+        </Text>
+        <RCTSwitch
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#6bac43"
+          onValueChange={[Function]}
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              undefined,
+            ]
+          }
+          value={false}
+        />
       </View>
     </View>
   </View>

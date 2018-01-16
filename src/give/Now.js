@@ -10,7 +10,15 @@ const Now = () => (
     <Header titleText="Give Dashboard" />
     <ScrollView>
       <PaddedView>
-        <ContributionForm navigateToOnComplete="/give/checkout" />
+        <ContributionForm
+          onComplete={({ history, savedPaymentMethods } = {}) => {
+            const userHasPaymentMethods = savedPaymentMethods.length > 0;
+            if (userHasPaymentMethods) {
+              return history.push('/give/checkout/confirm');
+            }
+            return history.push('/give/checkout');
+          }}
+        />
       </PaddedView>
     </ScrollView>
   </FlexedView>
