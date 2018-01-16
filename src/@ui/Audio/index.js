@@ -48,6 +48,7 @@ export default class Audio extends Component {
     pause: PropTypes.func,
     seek: PropTypes.func,
     progress: PropTypes.object,
+    positionMillis: PropTypes.object,
     seekingHandler: PropTypes.func,
   };
 
@@ -57,6 +58,7 @@ export default class Audio extends Component {
     pause: this.pause,
     seek: this.seek,
     progress: this.progressDriver,
+    positionMillis: this.positionMillisDriver,
     seekingHandler: this.handleSeeking,
   });
 
@@ -86,6 +88,7 @@ export default class Audio extends Component {
   }
 
   onPlaybackStatusUpdate = (soundStatus) => {
+    this.positionMillisDriver.setValue(soundStatus.positionMillis);
     this.progressDriver.setValue((soundStatus.positionMillis / this.duration) || 0);
 
     if (soundStatus.didJustFinish) {
@@ -93,7 +96,7 @@ export default class Audio extends Component {
     }
   }
 
-
+  positionMillisDriver = new Animated.Value(0);
   progressDriver = new Animated.Value(0);
   duration = 0;
   positionListener = undefined;

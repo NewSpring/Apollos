@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Dimensions, View, Animated, StyleSheet } from 'react-native';
+import { Dimensions, View, Animated, StyleSheet, Easing } from 'react-native';
 import { compose, withProps, mapProps } from 'recompose';
 import { get, findIndex } from 'lodash';
 import Audio from '@ui/Audio';
@@ -58,6 +58,7 @@ const enhance = compose(
 const trackType = PropTypes.shape({
   title: PropTypes.string,
   file: PropTypes.string,
+  duration: PropTypes.string,
 });
 
 export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
@@ -91,6 +92,7 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     Animated.spring(this.positionerDriver, {
       toValue: 1,
       useNativeDriver: true,
+      bounciness: 2,
     }).start();
   }
 
@@ -98,6 +100,7 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     Animated.spring(this.positionerDriver, {
       toValue: 0,
       useNativeDriver: true,
+      bounciness: 2,
     }).start();
   }
 
@@ -145,6 +148,7 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
             albumArt={this.props.images}
             color={this.primaryColor}
             handleClose={this.contract}
+            duration={this.props.currentTrack.duration}
           />
         </Audio>
       </Animated.View>

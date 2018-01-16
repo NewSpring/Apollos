@@ -1,9 +1,18 @@
 import React, { PureComponent } from 'react';
-import { Animated } from 'react-native';
+import { Animated, View } from 'react-native';
 import getContext from 'recompose/getContext';
 import compose from 'recompose/compose';
 import PropTypes from 'prop-types';
 import Seeker from '@ui/Seeker';
+import { UIText } from '@ui/typography';
+import styled from '@ui/styled';
+import TimeElapsed from './TimeElapsed';
+
+const Container = styled({
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+})(View);
 
 export class AudioSeeker extends PureComponent {
   static propTypes = {
@@ -14,6 +23,7 @@ export class AudioSeeker extends PureComponent {
       PropTypes.element,
       PropTypes.func,
     ]),
+    duration: PropTypes.string,
   };
 
   static defaultProps = {
@@ -27,17 +37,22 @@ export class AudioSeeker extends PureComponent {
       seek,
       seekingHandler,
       progress,
+      duration,
       component: Component,
       ...otherProps
     } = this.props;
 
     return (
-      <Component
-        progress={progress}
-        onSeek={seek}
-        onSeeking={seekingHandler}
-        {...otherProps}
-      />
+      <Container>
+        <TimeElapsed />
+        <Component
+          progress={progress}
+          onSeek={seek}
+          onSeeking={seekingHandler}
+          {...otherProps}
+        />
+        <UIText>{duration}</UIText>
+      </Container>
     );
   }
 }

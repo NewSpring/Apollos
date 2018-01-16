@@ -3,35 +3,51 @@ import {
   Animated,
   View,
   PanResponder,
+  StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import Color from 'color';
+import styled from '@ui/styled';
 import { withTheme } from '@ui/theme';
+
+const Container = styled(({ theme }) => ({
+  minWidth: '65%',
+  marginHorizontal: theme.sizing.baseUnit,
+}), 'Seeker.Container')(View);
+
+const Track = styled(({ theme }) => ({
+  backgroundColor: Color(theme.colors.text.primary).fade(theme.alpha.medium).string(),
+  height: theme.sizing.borderRadius,
+  borderRadius: theme.sizing.borderRadius,
+  overflow: 'hidden',
+}), 'Seeker.Track')(View);
+
+const ProgressBar = styled(({ theme }) => ({
+  backgroundColor: theme.colors.text.primary,
+  ...StyleSheet.absoluteFillObject,
+}), 'Seeker.ProgressBar')(View);
+
+const Knob = styled(({ theme }) => ({
+  backgroundColor: theme.colors.text.primary,
+  borderRadius: theme.sizing.baseUnit,
+  position: 'absolute',
+  top: (theme.sizing.borderRadius / 2) - (theme.sizing.baseUnit / 2),
+  right: -(theme.sizing.baseUnit / 2),
+  height: theme.sizing.baseUnit,
+  width: theme.sizing.baseUnit,
+}), 'Seeker.Knob')(View);
 
 export class Seeker extends Component {
   static propTypes = {
     progress: PropTypes.object, // eslint-disable-line
     onSeek: PropTypes.func,
     onSeeking: PropTypes.func,
-    trackHeight: PropTypes.number,
-    trackColor: PropTypes.string,
-    progressHeight: PropTypes.number,
-    progressColor: PropTypes.string,
-    knobColor: PropTypes.string,
-    knobRadius: PropTypes.number,
-    knobSize: PropTypes.number,
   };
 
   static defaultProps = {
     progress: new Animated.Value(0),
     onSeek() {},
     onSeeking() {},
-    trackHeight: 20,
-    trackColor: 'gray',
-    progressHeight: 20,
-    progressColor: 'red',
-    knobColor: 'blue',
-    knobRadius: 9999,
-    knobSize: 30,
   };
 
   state = {
@@ -83,57 +99,37 @@ export class Seeker extends Component {
   };
 
   render() {
-    const {
-      trackHeight,
-      trackColor,
-      progressHeight,
-      progressColor,
-      knobColor,
-      knobRadius,
-      knobSize,
-    } = this.props;
-
-    const position = Animated.multiply(this.props.progress, this.state.width);
+    const progressInvert = Animated.add(1, Animated.multiply(this.props.progress, -1));
+    const position = Animated.multiply(progressInvert, -this.state.width);
     const offset = this.offsetDriver;
 
-    const trackBarWidth = Animated.add(position, offset);
+    const trackBarOffset = Animated.add(position, offset);
 
     return (
-      <View onLayout={this.handleOnLayout}>
-        <View
-          style={{
-            backgroundColor: trackColor,
-            height: trackHeight,
-          }}
-        />
+      <Container onLayout={this.handleOnLayout}>
+        <Track>
+          <Animated.View
+            style={[StyleSheet.absoluteFill, {
+              transform: [{ translateX: trackBarOffset }],
+            }]}
+          >
+            <ProgressBar />
+          </Animated.View>
+        </Track>
         <Animated.View
           style={{
             position: 'absolute',
-            left: 0,
-            backgroundColor: progressColor,
-            height: progressHeight,
-            width: trackBarWidth,
+            right: 0,
+            top: 0,
+            bottom: 0,
             transform: [
-              { translateY: (trackHeight - progressHeight) / 2 },
+              { translateX: trackBarOffset },
             ],
           }}
-        />
-        <Animated.View
-          style={{
-            backgroundColor: knobColor,
-            borderRadius: knobRadius,
-            position: 'absolute',
-            left: -(knobSize / 2),
-            height: knobSize,
-            width: knobSize,
-            transform: [
-              { translateX: trackBarWidth },
-              { translateY: (trackHeight - knobSize) / 2 },
-            ],
-          }}
-          {...this.panResponder.panHandlers}
-        />
-      </View>
+        >
+          <Knob {...this.panResponder.panHandlers} />
+        </Animated.View>
+      </Container>
     );
   }
 }

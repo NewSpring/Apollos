@@ -23,6 +23,7 @@ const Titles = styled({
 
 const PlayerBody = styled({
   flex: 1,
+  justifyContent: 'space-around',
 })(SafeAreaView);
 
 const Controls = styled({
@@ -47,6 +48,7 @@ const enhance = compose(
 
 const FullScreenControls = enhance(({
   isPlaying,
+  duration,
   play,
   pause,
   next,
@@ -85,7 +87,7 @@ const FullScreenControls = enhance(({
         </PaddedView>
       </Controls>
       <PaddedView>
-        <Audio.Seeker />
+        <Audio.Seeker duration={duration} />
       </PaddedView>
       <Settings>
         <PaddedView>
