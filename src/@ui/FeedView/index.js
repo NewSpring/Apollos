@@ -6,6 +6,7 @@ import {
   compose,
   branch,
   withProps,
+  defaultProps,
 } from 'recompose';
 import { get } from 'lodash';
 
@@ -40,14 +41,14 @@ const getItemIsLight = (item) => {
 const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
     <FeedItemCard
-      id={item.id}
+      id={item.entryId}
       title={item.title}
       category={item.category}
       images={getItemImages(item)}
       backgroundColor={getItemBgColor(item)}
       isLight={getItemIsLight(item)}
       isLoading={item.isLoading}
-      isLiked={item.isLiked}
+      isLiked={get(item, 'content.isLiked', false)}
     />
   </Link>
 );
@@ -62,14 +63,14 @@ const generateLoadingStateData = (numberOfItems = 1) => {
       isLight: null,
     },
     isLoading: true,
-    entryId: 'fakeId0',
+    id: 'fakeId0',
   });
 
   const loadingStateData = [itemData()];
 
   while (loadingStateData.length < numberOfItems) {
     const newData = itemData();
-    newData.entryId = `fakeId${loadingStateData.length}`;
+    newData.id = `fakeId${loadingStateData.length}`;
     loadingStateData.push(newData);
   }
 
@@ -78,13 +79,14 @@ const generateLoadingStateData = (numberOfItems = 1) => {
 
 const enhance = compose(
   pure,
-  branch(({ isLoading, content }) => isLoading && !content.length, withProps({
+  branch(({ isLoading, content }) => (isLoading && !content.length), withProps({
+    isLoading: true,
     content: generateLoadingStateData(10),
     fetchMore: false,
   })),
-  mediaQuery(({ md }) => ({ maxWidth: md }), withProps({ numColumns: 1 })),
-  mediaQuery(({ md, lg }) => ({ minWidth: md, maxWidth: lg }), withProps({ numColumns: 2 })),
-  mediaQuery(({ lg }) => ({ minWidth: lg }), withProps({ numColumns: 3 })),
+  mediaQuery(({ md }) => ({ maxWidth: md }), defaultProps({ numColumns: 1 })),
+  mediaQuery(({ md, lg }) => ({ minWidth: md, maxWidth: lg }), defaultProps({ numColumns: 2 })),
+  mediaQuery(({ lg }) => ({ minWidth: lg }), defaultProps({ numColumns: 3 })),
 );
 
 const FeedView = enhance(({
@@ -108,12 +110,11 @@ const FeedView = enhance(({
 FeedView.defaultProps = {
   isLoading: false,
   onEndReachedThreshold: 0.7,
-  keyExtractor: item => item.entryId,
+  keyExtractor: item => item.id,
   content: [],
   refetch: undefined,
   fetchMore: undefined,
   renderItem: defaultFeedItemRenderer,
-  numColumns: 1,
 };
 
 FeedView.propTypes = {

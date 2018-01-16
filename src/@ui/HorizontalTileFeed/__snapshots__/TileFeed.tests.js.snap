@@ -1,0 +1,951 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The TileFeed component renders correctly 1`] = `
+<RCTScrollView
+  data={
+    Array [
+      Object {
+        "content": Object {
+          "speaker": "Marty McFly",
+        },
+        "id": "fakeId0",
+        "meta": Object {
+          "date": "Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)",
+        },
+        "title": "Why Jesus is Timeless",
+      },
+      Object {
+        "content": Object {
+          "speaker": "Marty McFly",
+        },
+        "id": "fakeId1",
+        "meta": Object {
+          "date": "Sat Oct 26 1985 01:24:00 GMT+0008 (UTC)",
+        },
+        "title": "Why Jesus is Timeless",
+      },
+    ]
+  }
+  decelerationRate="fast"
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={true}
+  initialNumToRender={10}
+  initialScrollIndex={0}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={1}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  refreshing={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  showsHorizontalScrollIndicator={false}
+  snapToAlignment="start"
+  snapToInterval={600}
+  stickyHeaderIndices={Array []}
+  style={
+    Object {
+      "height": 600,
+      "paddingBottom": 20,
+      "paddingHorizontal": 10,
+    }
+  }
+  tileHeight={600}
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 10,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": "100%",
+              "overflow": "hidden",
+            }
+          }
+          testID={undefined}
+        >
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <View
+              size={1}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomRightRadius": 6,
+                  "borderTopLeftRadius": 6,
+                  "height": 36,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 36,
+                }
+              }
+            >
+              <View>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#303030",
+                      "fontFamily": null,
+                      "fontSize": 15.75,
+                      "fontWeight": "700",
+                      "lineHeight": 17.85,
+                    }
+                  }
+                >
+                  1
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": null,
+                    "fontSize": 25.2,
+                    "fontWeight": "700",
+                    "lineHeight": 31.28,
+                  }
+                }
+              >
+                Why Jesus Is Timeless
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 10,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": "100%",
+              "overflow": "hidden",
+            }
+          }
+          testID={undefined}
+        >
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <View
+              size={1}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomRightRadius": 6,
+                  "borderTopLeftRadius": 6,
+                  "height": 36,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 36,
+                }
+              }
+            >
+              <View>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#303030",
+                      "fontFamily": null,
+                      "fontSize": 15.75,
+                      "fontWeight": "700",
+                      "lineHeight": 17.85,
+                    }
+                  }
+                >
+                  2
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": null,
+                    "fontSize": 25.2,
+                    "fontWeight": "700",
+                    "lineHeight": 31.28,
+                  }
+                }
+              >
+                Why Jesus Is Timeless
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`The TileFeed component renders empty state 1`] = `
+<RCTScrollView
+  data={
+    Array [
+      Object {
+        "content": Object {
+          "speaker": "",
+        },
+        "id": "fakeId0",
+        "isLoading": true,
+        "meta": Object {
+          "date": "",
+        },
+        "title": "",
+      },
+      Object {
+        "content": Object {
+          "speaker": "",
+        },
+        "id": "fakeId1",
+        "isLoading": true,
+        "meta": Object {
+          "date": "",
+        },
+        "title": "",
+      },
+      Object {
+        "content": Object {
+          "speaker": "",
+        },
+        "id": "fakeId2",
+        "isLoading": true,
+        "meta": Object {
+          "date": "",
+        },
+        "title": "",
+      },
+      Object {
+        "content": Object {
+          "speaker": "",
+        },
+        "id": "fakeId3",
+        "isLoading": true,
+        "meta": Object {
+          "date": "",
+        },
+        "title": "",
+      },
+      Object {
+        "content": Object {
+          "speaker": "",
+        },
+        "id": "fakeId4",
+        "isLoading": true,
+        "meta": Object {
+          "date": "",
+        },
+        "title": "",
+      },
+    ]
+  }
+  decelerationRate="fast"
+  disableVirtualization={false}
+  fetchMore={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={true}
+  initialNumToRender={10}
+  initialScrollIndex={0}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={1}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  refreshing={true}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  showsHorizontalScrollIndicator={false}
+  snapToAlignment="start"
+  snapToInterval={600}
+  stickyHeaderIndices={Array []}
+  style={
+    Object {
+      "height": 600,
+      "paddingBottom": 20,
+      "paddingHorizontal": 10,
+    }
+  }
+  tileHeight={600}
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 10,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": "100%",
+              "overflow": "hidden",
+            }
+          }
+          testID={undefined}
+        >
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <View
+              size={1}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomRightRadius": 6,
+                  "borderTopLeftRadius": 6,
+                  "height": 36,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 36,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 45,
+                    "width": 45,
+                  }
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 25.2,
+                    "marginVertical": 3.040000000000001,
+                    "width": "80%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 10,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": "100%",
+              "overflow": "hidden",
+            }
+          }
+          testID={undefined}
+        >
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <View
+              size={1}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomRightRadius": 6,
+                  "borderTopLeftRadius": 6,
+                  "height": 36,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 36,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 45,
+                    "width": 45,
+                  }
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 25.2,
+                    "marginVertical": 3.040000000000001,
+                    "width": "80%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 10,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": "100%",
+              "overflow": "hidden",
+            }
+          }
+          testID={undefined}
+        >
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <View
+              size={1}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomRightRadius": 6,
+                  "borderTopLeftRadius": 6,
+                  "height": 36,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 36,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 45,
+                    "width": 45,
+                  }
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 25.2,
+                    "marginVertical": 3.040000000000001,
+                    "width": "80%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 10,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": "100%",
+              "overflow": "hidden",
+            }
+          }
+          testID={undefined}
+        >
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <View
+              size={1}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomRightRadius": 6,
+                  "borderTopLeftRadius": 6,
+                  "height": 36,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 36,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 45,
+                    "width": 45,
+                  }
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 25.2,
+                    "marginVertical": 3.040000000000001,
+                    "width": "80%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 10,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": "100%",
+              "overflow": "hidden",
+            }
+          }
+          testID={undefined}
+        >
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <View
+              size={1}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomRightRadius": 6,
+                  "borderTopLeftRadius": 6,
+                  "height": 36,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 36,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 45,
+                    "width": 45,
+                  }
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 25.2,
+                    "marginVertical": 3.040000000000001,
+                    "width": "80%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

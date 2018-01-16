@@ -64,22 +64,23 @@ const Text = enhance(({
   value,
   wrapperStyle,
   error,
+  disabled = false,
   focusAnimation: focusAnimationInput, // from withFocusAnimation
   ...textInputProps
 }) => {
-  const focusAnimation = value || !label ? new Animated.Value(1) : focusAnimationInput;
+  const focusAnimation = (value || !label) ? new Animated.Value(1) : focusAnimationInput;
   return (
-    <InputWrapper style={wrapperStyle}>
+    <InputWrapper style={wrapperStyle} disabled={disabled}>
       <AddonRow>
         <InputAddon>{prefix}</InputAddon>
         <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
-          <StyledTextInput {...textInputProps} value={`${value || ''}`} />
+          <StyledTextInput {...textInputProps} editable={!disabled} value={`${value || ''}`} />
         </Animated.View>
         <InputAddon>{suffix}</InputAddon>
       </AddonRow>
 
       <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
-      <InputUnderline animation={focusAnimation} hasError={error} />
+      <InputUnderline animation={focusAnimation} hasError={Boolean(error)} />
 
       {(error && typeof error === 'string') ? <ErrorText>{error}</ErrorText> : null}
     </InputWrapper>
@@ -87,6 +88,7 @@ const Text = enhance(({
 });
 
 Text.propTypes = {
+  disabled: PropTypes.bool,
   prefix: PropTypes.node,
   suffix: PropTypes.node,
   label: PropTypes.string,

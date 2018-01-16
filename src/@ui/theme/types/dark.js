@@ -17,7 +17,7 @@ const dark = ({ colors, alpha }) => ({
       darkOverlay: Color(colors.darkTertiary).fade(alpha.low).string(),
     },
     shadows: {
-      default: colors.black,
+      default: Color(colors.darkTertiary).fade(alpha.medium).string(),
     },
     input: {
       // todo

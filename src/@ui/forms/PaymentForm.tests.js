@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 
 import { PaymentFormWithoutData } from './PaymentForm';
 
@@ -45,9 +45,9 @@ const createTestData = () => ({
 describe('The PaymentForm component', () => {
   it('renders correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <PaymentFormWithoutData {...createTestData()} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -55,9 +55,9 @@ describe('The PaymentForm component', () => {
     const data = createTestData();
     data.isLoading = true;
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <PaymentFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -65,9 +65,9 @@ describe('The PaymentForm component', () => {
     const data = createTestData();
     data.isSubmitting = true;
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <PaymentFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -75,9 +75,9 @@ describe('The PaymentForm component', () => {
     const data = createTestData();
     data.values.paymentMethod = 'bankAccount';
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <PaymentFormWithoutData {...data} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

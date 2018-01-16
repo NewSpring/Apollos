@@ -2,213 +2,211 @@
 
 exports[`the FeedItemCard component should accept a different backgroundColor 1`] = `
 <View
+  cardColor="salmon"
+  isLight={true}
   style={
     Object {
+      "backgroundColor": "salmon",
+      "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
     }
   }
 >
   <View
-    cardColor="salmon"
-    isLight={true}
     style={
       Object {
-        "backgroundColor": "salmon",
         "borderRadius": 6,
-        "shadowColor": "#dddddd",
-        "shadowOffset": Object {
-          "height": 1,
-          "width": 0,
-        },
-        "shadowOpacity": 1,
-        "shadowRadius": 3,
-        "width": "100%",
+        "overflow": "hidden",
       }
     }
   >
     <View
+      style={Object {}}
+    >
+      <Image
+        maintainAspectRatio={false}
+        source={
+          Array [
+            Object {
+              "height": 400,
+              "uri": "https://picsum.photos/600/400/?random",
+              "width": 600,
+            },
+          ]
+        }
+        style={
+          Array [
+            Object {},
+            Object {
+              "aspectRatio": 1,
+              "resizeMode": "cover",
+              "width": "100%",
+            },
+          ]
+        }
+      />
+      <ExponentLinearGradient
+        colors={
+          Array [
+            16416882,
+            4294606962,
+          ]
+        }
+        endPoint={
+          Array [
+            0,
+            1,
+          ]
+        }
+        locations={
+          Array [
+            0.3,
+            1,
+          ]
+        }
+        startPoint={
+          Array [
+            0,
+            0,
+          ]
+        }
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
+    <View
       style={
         Object {
-          "borderRadius": 6,
-          "overflow": "hidden",
+          "paddingBottom": 0,
+          "paddingHorizontal": 20,
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 25.2,
+            "fontWeight": "700",
+            "lineHeight": 31.28,
+          }
+        }
+      >
+        Boom
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 20,
+          "paddingTop": 5,
+          "paddingVertical": 20,
         }
       }
     >
       <View
-        style={Object {}}
-      >
-        <Image
-          maintainAspectRatio={false}
-          source={
-            Array [
-              Object {
-                "height": 400,
-                "uri": "https://picsum.photos/600/400/?random",
-                "width": 600,
-              },
-            ]
-          }
-          style={
-            Array [
-              Object {},
-              Object {
-                "aspectRatio": 1,
-                "resizeMode": "cover",
-                "width": "100%",
-              },
-            ]
-          }
-        />
-        <ExponentLinearGradient
-          colors={
-            Array [
-              16416882,
-              4294606962,
-            ]
-          }
-          endPoint={
-            Array [
-              0,
-              1,
-            ]
-          }
-          locations={
-            Array [
-              0.3,
-              1,
-            ]
-          }
-          startPoint={
-            Array [
-              0,
-              0,
-            ]
-          }
-          style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        />
-      </View>
-      <View
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "flexWrap": "wrap",
-            "padding": 20,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          color="#303030"
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 25.2,
-              "fontWeight": "700",
-              "lineHeight": 31.28,
-              "width": "100%",
-            }
-          }
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          Boom
-        </Text>
+          <Path
+            d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
+            fill="#303030"
+          />
+        </Svg>
         <View
           style={
             Object {
-              "alignItems": "center",
               "flex": 1,
-              "flexDirection": "row",
-              "paddingRight": 20,
-              "paddingTop": 10,
+              "paddingHorizontal": 10,
             }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
               }
             }
           >
-            <Svg
-              height={21.6}
-              viewBox="0 0 24 24"
-              width={21.6}
-            >
-              <Path
-                d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
-                fill="#303030"
-              />
-            </Svg>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              color="#303030"
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#303030",
-                  "fontFamily": null,
-                  "fontSize": 14,
-                  "lineHeight": 15.87,
-                  "paddingHorizontal": 10,
-                }
-              }
-            >
-              What
-            </Text>
-          </View>
+            What
+          </Text>
         </View>
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "paddingTop": 10,
-            }
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          <Svg
-            height={21.6}
-            viewBox="0 0 24 24"
-            width={21.6}
-          >
-            <Path
-              d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
-              fill="#303030"
-            />
-          </Svg>
-        </View>
+          <Path
+            d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
+            fill="#303030"
+          />
+        </Svg>
       </View>
     </View>
   </View>
@@ -217,179 +215,178 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
 
 exports[`the FeedItemCard component should accept and render passed in styles 1`] = `
 <View
+  cardColor={undefined}
+  isLight={true}
   style={
     Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
+      "height": 400,
       "marginHorizontal": 10,
       "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
+      "width": "92%",
     }
   }
 >
   <View
-    cardColor={undefined}
-    isLight={true}
     style={
       Object {
-        "backgroundColor": "#ffffff",
         "borderRadius": 6,
-        "height": 400,
-        "shadowColor": "#dddddd",
-        "shadowOffset": Object {
-          "height": 1,
-          "width": 0,
-        },
-        "shadowOpacity": 1,
-        "shadowRadius": 3,
-        "width": "92%",
+        "overflow": "hidden",
       }
     }
   >
     <View
+      style={Object {}}
+    >
+      <Image
+        maintainAspectRatio={false}
+        source={
+          Array [
+            Object {
+              "height": 400,
+              "uri": "https://picsum.photos/600/400/?random",
+              "width": 600,
+            },
+          ]
+        }
+        style={
+          Array [
+            Object {},
+            Object {
+              "aspectRatio": 1,
+              "resizeMode": "cover",
+              "width": "100%",
+            },
+          ]
+        }
+      />
+    </View>
+    <View
       style={
         Object {
-          "borderRadius": 6,
-          "overflow": "hidden",
+          "paddingBottom": 0,
+          "paddingHorizontal": 20,
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 25.2,
+            "fontWeight": "700",
+            "lineHeight": 31.28,
+          }
+        }
+      >
+        Boom
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 20,
+          "paddingTop": 5,
+          "paddingVertical": 20,
         }
       }
     >
       <View
-        style={Object {}}
-      >
-        <Image
-          maintainAspectRatio={false}
-          source={
-            Array [
-              Object {
-                "height": 400,
-                "uri": "https://picsum.photos/600/400/?random",
-                "width": 600,
-              },
-            ]
-          }
-          style={
-            Array [
-              Object {},
-              Object {
-                "aspectRatio": 1,
-                "resizeMode": "cover",
-                "width": "100%",
-              },
-            ]
-          }
-        />
-      </View>
-      <View
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "flexWrap": "wrap",
-            "padding": 20,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          color="#303030"
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 25.2,
-              "fontWeight": "700",
-              "lineHeight": 31.28,
-              "width": "100%",
-            }
-          }
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          Boom
-        </Text>
+          <Path
+            d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
+            fill="#303030"
+          />
+        </Svg>
         <View
           style={
             Object {
-              "alignItems": "center",
               "flex": 1,
-              "flexDirection": "row",
-              "paddingRight": 20,
-              "paddingTop": 10,
+              "paddingHorizontal": 10,
             }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
               }
             }
           >
-            <Svg
-              height={21.6}
-              viewBox="0 0 24 24"
-              width={21.6}
-            >
-              <Path
-                d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
-                fill="#303030"
-              />
-            </Svg>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              color="#303030"
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#303030",
-                  "fontFamily": null,
-                  "fontSize": 14,
-                  "lineHeight": 15.87,
-                  "paddingHorizontal": 10,
-                }
-              }
-            >
-              What
-            </Text>
-          </View>
+            What
+          </Text>
         </View>
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "paddingTop": 10,
-            }
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          <Svg
-            height={21.6}
-            viewBox="0 0 24 24"
-            width={21.6}
-          >
-            <Path
-              d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
-              fill="#303030"
-            />
-          </Svg>
-        </View>
+          <Path
+            d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
+            fill="#303030"
+          />
+        </Svg>
       </View>
     </View>
   </View>
@@ -398,178 +395,176 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
 
 exports[`the FeedItemCard component should render 1`] = `
 <View
+  cardColor={undefined}
+  isLight={true}
   style={
     Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
     }
   }
 >
   <View
-    cardColor={undefined}
-    isLight={true}
     style={
       Object {
-        "backgroundColor": "#ffffff",
         "borderRadius": 6,
-        "shadowColor": "#dddddd",
-        "shadowOffset": Object {
-          "height": 1,
-          "width": 0,
-        },
-        "shadowOpacity": 1,
-        "shadowRadius": 3,
-        "width": "100%",
+        "overflow": "hidden",
       }
     }
   >
     <View
+      style={Object {}}
+    >
+      <Image
+        maintainAspectRatio={false}
+        source={
+          Array [
+            Object {
+              "height": 400,
+              "uri": "https://picsum.photos/600/400/?random",
+              "width": 600,
+            },
+          ]
+        }
+        style={
+          Array [
+            Object {},
+            Object {
+              "aspectRatio": 1,
+              "resizeMode": "cover",
+              "width": "100%",
+            },
+          ]
+        }
+      />
+    </View>
+    <View
       style={
         Object {
-          "borderRadius": 6,
-          "overflow": "hidden",
+          "paddingBottom": 0,
+          "paddingHorizontal": 20,
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 25.2,
+            "fontWeight": "700",
+            "lineHeight": 31.28,
+          }
+        }
+      >
+        Boom
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 20,
+          "paddingTop": 5,
+          "paddingVertical": 20,
         }
       }
     >
       <View
-        style={Object {}}
-      >
-        <Image
-          maintainAspectRatio={false}
-          source={
-            Array [
-              Object {
-                "height": 400,
-                "uri": "https://picsum.photos/600/400/?random",
-                "width": 600,
-              },
-            ]
-          }
-          style={
-            Array [
-              Object {},
-              Object {
-                "aspectRatio": 1,
-                "resizeMode": "cover",
-                "width": "100%",
-              },
-            ]
-          }
-        />
-      </View>
-      <View
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "flexWrap": "wrap",
-            "padding": 20,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          color="#303030"
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 25.2,
-              "fontWeight": "700",
-              "lineHeight": 31.28,
-              "width": "100%",
-            }
-          }
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          Boom
-        </Text>
+          <Path
+            d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
+            fill="#303030"
+          />
+        </Svg>
         <View
           style={
             Object {
-              "alignItems": "center",
               "flex": 1,
-              "flexDirection": "row",
-              "paddingRight": 20,
-              "paddingTop": 10,
+              "paddingHorizontal": 10,
             }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
               }
             }
           >
-            <Svg
-              height={21.6}
-              viewBox="0 0 24 24"
-              width={21.6}
-            >
-              <Path
-                d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
-                fill="#303030"
-              />
-            </Svg>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              color="#303030"
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#303030",
-                  "fontFamily": null,
-                  "fontSize": 14,
-                  "lineHeight": 15.87,
-                  "paddingHorizontal": 10,
-                }
-              }
-            >
-              What
-            </Text>
-          </View>
+            What
+          </Text>
         </View>
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "paddingTop": 10,
-            }
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          <Svg
-            height={21.6}
-            viewBox="0 0 24 24"
-            width={21.6}
-          >
-            <Path
-              d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
-              fill="#303030"
-            />
-          </Svg>
-        </View>
+          <Path
+            d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
+            fill="#303030"
+          />
+        </Svg>
       </View>
     </View>
   </View>
@@ -578,178 +573,176 @@ exports[`the FeedItemCard component should render 1`] = `
 
 exports[`the FeedItemCard component should render as liked 1`] = `
 <View
+  cardColor={undefined}
+  isLight={true}
   style={
     Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
     }
   }
 >
   <View
-    cardColor={undefined}
-    isLight={true}
     style={
       Object {
-        "backgroundColor": "#ffffff",
         "borderRadius": 6,
-        "shadowColor": "#dddddd",
-        "shadowOffset": Object {
-          "height": 1,
-          "width": 0,
-        },
-        "shadowOpacity": 1,
-        "shadowRadius": 3,
-        "width": "100%",
+        "overflow": "hidden",
       }
     }
   >
     <View
+      style={Object {}}
+    >
+      <Image
+        maintainAspectRatio={false}
+        source={
+          Array [
+            Object {
+              "height": 400,
+              "uri": "https://picsum.photos/600/400/?random",
+              "width": 600,
+            },
+          ]
+        }
+        style={
+          Array [
+            Object {},
+            Object {
+              "aspectRatio": 1,
+              "resizeMode": "cover",
+              "width": "100%",
+            },
+          ]
+        }
+      />
+    </View>
+    <View
       style={
         Object {
-          "borderRadius": 6,
-          "overflow": "hidden",
+          "paddingBottom": 0,
+          "paddingHorizontal": 20,
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 25.2,
+            "fontWeight": "700",
+            "lineHeight": 31.28,
+          }
+        }
+      >
+        Boom
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 20,
+          "paddingTop": 5,
+          "paddingVertical": 20,
         }
       }
     >
       <View
-        style={Object {}}
-      >
-        <Image
-          maintainAspectRatio={false}
-          source={
-            Array [
-              Object {
-                "height": 400,
-                "uri": "https://picsum.photos/600/400/?random",
-                "width": 600,
-              },
-            ]
-          }
-          style={
-            Array [
-              Object {},
-              Object {
-                "aspectRatio": 1,
-                "resizeMode": "cover",
-                "width": "100%",
-              },
-            ]
-          }
-        />
-      </View>
-      <View
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "flexWrap": "wrap",
-            "padding": 20,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          color="#303030"
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 25.2,
-              "fontWeight": "700",
-              "lineHeight": 31.28,
-              "width": "100%",
-            }
-          }
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          Boom
-        </Text>
+          <Path
+            d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
+            fill="#303030"
+          />
+        </Svg>
         <View
           style={
             Object {
-              "alignItems": "center",
               "flex": 1,
-              "flexDirection": "row",
-              "paddingRight": 20,
-              "paddingTop": 10,
+              "paddingHorizontal": 10,
             }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
               }
             }
           >
-            <Svg
-              height={21.6}
-              viewBox="0 0 24 24"
-              width={21.6}
-            >
-              <Path
-                d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
-                fill="#303030"
-              />
-            </Svg>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              color="#303030"
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#303030",
-                  "fontFamily": null,
-                  "fontSize": 14,
-                  "lineHeight": 15.87,
-                  "paddingHorizontal": 10,
-                }
-              }
-            >
-              What
-            </Text>
-          </View>
+            What
+          </Text>
         </View>
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "paddingTop": 10,
-            }
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          <Svg
-            height={21.6}
-            viewBox="0 0 24 24"
-            width={21.6}
-          >
-            <Path
-              d="M10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
-              fill="#303030"
-            />
-          </Svg>
-        </View>
+          <Path
+            d="M10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
+            fill="#303030"
+          />
+        </Svg>
       </View>
     </View>
   </View>
@@ -758,178 +751,176 @@ exports[`the FeedItemCard component should render as liked 1`] = `
 
 exports[`the FeedItemCard component should render text correctly with isLight 1`] = `
 <View
+  cardColor={undefined}
+  isLight={true}
   style={
     Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
     }
   }
 >
   <View
-    cardColor={undefined}
-    isLight={true}
     style={
       Object {
-        "backgroundColor": "#ffffff",
         "borderRadius": 6,
-        "shadowColor": "#dddddd",
-        "shadowOffset": Object {
-          "height": 1,
-          "width": 0,
-        },
-        "shadowOpacity": 1,
-        "shadowRadius": 3,
-        "width": "100%",
+        "overflow": "hidden",
       }
     }
   >
     <View
+      style={Object {}}
+    >
+      <Image
+        maintainAspectRatio={false}
+        source={
+          Array [
+            Object {
+              "height": 400,
+              "uri": "https://picsum.photos/600/400/?random",
+              "width": 600,
+            },
+          ]
+        }
+        style={
+          Array [
+            Object {},
+            Object {
+              "aspectRatio": 1,
+              "resizeMode": "cover",
+              "width": "100%",
+            },
+          ]
+        }
+      />
+    </View>
+    <View
       style={
         Object {
-          "borderRadius": 6,
-          "overflow": "hidden",
+          "paddingBottom": 0,
+          "paddingHorizontal": 20,
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 25.2,
+            "fontWeight": "700",
+            "lineHeight": 31.28,
+          }
+        }
+      >
+        Boom
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 20,
+          "paddingTop": 5,
+          "paddingVertical": 20,
         }
       }
     >
       <View
-        style={Object {}}
-      >
-        <Image
-          maintainAspectRatio={false}
-          source={
-            Array [
-              Object {
-                "height": 400,
-                "uri": "https://picsum.photos/600/400/?random",
-                "width": 600,
-              },
-            ]
-          }
-          style={
-            Array [
-              Object {},
-              Object {
-                "aspectRatio": 1,
-                "resizeMode": "cover",
-                "width": "100%",
-              },
-            ]
-          }
-        />
-      </View>
-      <View
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "flexWrap": "wrap",
-            "padding": 20,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          color="#303030"
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 25.2,
-              "fontWeight": "700",
-              "lineHeight": 31.28,
-              "width": "100%",
-            }
-          }
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          Boom
-        </Text>
+          <Path
+            d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
+            fill="#303030"
+          />
+        </Svg>
         <View
           style={
             Object {
-              "alignItems": "center",
               "flex": 1,
-              "flexDirection": "row",
-              "paddingRight": 20,
-              "paddingTop": 10,
+              "paddingHorizontal": 10,
             }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
               }
             }
           >
-            <Svg
-              height={21.6}
-              viewBox="0 0 24 24"
-              width={21.6}
-            >
-              <Path
-                d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
-                fill="#303030"
-              />
-            </Svg>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              color="#303030"
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#303030",
-                  "fontFamily": null,
-                  "fontSize": 14,
-                  "lineHeight": 15.87,
-                  "paddingHorizontal": 10,
-                }
-              }
-            >
-              What
-            </Text>
-          </View>
+            What
+          </Text>
         </View>
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "paddingTop": 10,
-            }
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          <Svg
-            height={21.6}
-            viewBox="0 0 24 24"
-            width={21.6}
-          >
-            <Path
-              d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
-              fill="#303030"
-            />
-          </Svg>
-        </View>
+          <Path
+            d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
+            fill="#303030"
+          />
+        </Svg>
       </View>
     </View>
   </View>
@@ -938,178 +929,176 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
 
 exports[`the FeedItemCard component should render with inverted (light) font colors 1`] = `
 <View
+  cardColor={undefined}
+  isLight={false}
   style={
     Object {
+      "backgroundColor": "#303030",
+      "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
     }
   }
 >
   <View
-    cardColor={undefined}
-    isLight={false}
     style={
       Object {
-        "backgroundColor": "#ffffff",
         "borderRadius": 6,
-        "shadowColor": "#dddddd",
-        "shadowOffset": Object {
-          "height": 1,
-          "width": 0,
-        },
-        "shadowOpacity": 1,
-        "shadowRadius": 3,
-        "width": "100%",
+        "overflow": "hidden",
       }
     }
   >
     <View
+      style={Object {}}
+    >
+      <Image
+        maintainAspectRatio={false}
+        source={
+          Array [
+            Object {
+              "height": 400,
+              "uri": "https://picsum.photos/600/400/?random",
+              "width": 600,
+            },
+          ]
+        }
+        style={
+          Array [
+            Object {},
+            Object {
+              "aspectRatio": 1,
+              "resizeMode": "cover",
+              "width": "100%",
+            },
+          ]
+        }
+      />
+    </View>
+    <View
       style={
         Object {
-          "borderRadius": 6,
-          "overflow": "hidden",
+          "paddingBottom": 0,
+          "paddingHorizontal": 20,
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontFamily": null,
+            "fontSize": 25.2,
+            "fontWeight": "700",
+            "lineHeight": 31.28,
+          }
+        }
+      >
+        Boom
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 20,
+          "paddingTop": 5,
+          "paddingVertical": 20,
         }
       }
     >
       <View
-        style={Object {}}
-      >
-        <Image
-          maintainAspectRatio={false}
-          source={
-            Array [
-              Object {
-                "height": 400,
-                "uri": "https://picsum.photos/600/400/?random",
-                "width": 600,
-              },
-            ]
-          }
-          style={
-            Array [
-              Object {},
-              Object {
-                "aspectRatio": 1,
-                "resizeMode": "cover",
-                "width": "100%",
-              },
-            ]
-          }
-        />
-      </View>
-      <View
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "flexWrap": "wrap",
-            "padding": 20,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          color="#ffffff"
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#ffffff",
-              "fontFamily": null,
-              "fontSize": 25.2,
-              "fontWeight": "700",
-              "lineHeight": 31.28,
-              "width": "100%",
-            }
-          }
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          Boom
-        </Text>
+          <Path
+            d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
+            fill="#ffffff"
+          />
+        </Svg>
         <View
           style={
             Object {
-              "alignItems": "center",
               "flex": 1,
-              "flexDirection": "row",
-              "paddingRight": 20,
-              "paddingTop": 10,
+              "paddingHorizontal": 10,
             }
           }
         >
-          <View
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
             style={
               Object {
-                "alignItems": "center",
-                "flexDirection": "row",
+                "color": "#ffffff",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
               }
             }
           >
-            <Svg
-              height={21.6}
-              viewBox="0 0 24 24"
-              width={21.6}
-            >
-              <Path
-                d="M4.6 3.64v16.356c0 .004 0 .004-.003.004h14.806c-.004 0-.003 0-.003-.004V3.64c0-.004 0-.004.003-.004H4.597c.004 0 .003 0 .003.004zm-1.6 0C3 2.734 3.717 2 4.597 2h14.806C20.285 2 21 2.734 21 3.64v16.356c0 .906-.717 1.64-1.597 1.64H4.597c-.882 0-1.597-.734-1.597-1.64V3.64zm4 3.27c0 .45.366.817.818.817h8.364c.452 0 .818-.366.818-.818 0-.454-.366-.82-.818-.82H7.818c-.452 0-.818.366-.818.82zm0 4.908c0 .452.366.818.818.818h8.364c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.366-.818.818zm0 4.91c0 .45.366.817.818.817h4.764c.452 0 .818-.366.818-.818 0-.452-.366-.818-.818-.818H7.818c-.452 0-.818.364-.818.816z"
-                fill="#ffffff"
-              />
-            </Svg>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              color="#ffffff"
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#ffffff",
-                  "fontFamily": null,
-                  "fontSize": 14,
-                  "lineHeight": 15.87,
-                  "paddingHorizontal": 10,
-                }
-              }
-            >
-              What
-            </Text>
-          </View>
+            What
+          </Text>
         </View>
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "paddingTop": 10,
-            }
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Svg
+          height={21.6}
+          viewBox="0 0 24 24"
+          width={21.6}
         >
-          <Svg
-            height={21.6}
-            viewBox="0 0 24 24"
-            width={21.6}
-          >
-            <Path
-              d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
-              fill="#ffffff"
-            />
-          </Svg>
-        </View>
+          <Path
+            d="M13.13 20.2h-2.26l1.4-1.4.03-.02.03-.03c6.37-5.6 8.06-7.67 8.06-10.27 0-2.2-1.7-3.9-3.9-3.9-1.23 0-2.48.6-3.28 1.54L12 7.57l-1.23-1.45C9.97 5.18 8.72 4.6 7.5 4.6c-2.2 0-3.9 1.67-3.9 3.88 0 2.6 1.7 4.66 8.07 10.27l.03.03.04.03 1.4 1.4zM10.8 4.03l-.03.03h.1c.4.3.8.64 1.13 1.03.33-.4.72-.75 1.14-1.05h.1c-.02 0-.03-.02-.04-.03.97-.66 2.13-1.03 3.3-1.03C19.6 3 22 5.4 22 8.47c0 3.8-3.4 6.88-8.6 11.46l-1.4 1.4-1.4-1.4C5.4 15.36 2 12.27 2 8.48 2 5.38 4.4 3 7.5 3c1.17 0 2.33.37 3.3 1.03z"
+            fill="#ffffff"
+          />
+        </Svg>
       </View>
     </View>
   </View>

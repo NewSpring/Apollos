@@ -1,35 +1,24 @@
-import React from 'react';
 import { Text } from 'react-native';
-import { compose, pure, setPropTypes } from 'recompose';
 import PropTypes from 'prop-types';
+import { compose, pure, setPropTypes } from 'recompose';
 import styled from '@ui/styled';
+import { withPlaceholder, Typography } from '@ui/Placeholder';
 
-const enhance = compose(
-  pure,
-  setPropTypes({
-    children: PropTypes.node,
-    style: Text.propTypes.style,
-  }),
-);
-
-const StyledBodyCopy = styled(({ theme }) => ({
+const styles = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(1),
   lineHeight: theme.helpers.verticalRhythm(1, 1),
   fontFamily: theme.typography.fontFamilySerif,
   color: theme.colors.text.primary,
-}), 'BodyCopy')(Text);
+}), 'BodyCopy');
 
-const BodyCopy = enhance(({
-  children,
-  style: styleProp = {},
-  ...otherProps
-}) => (
-  <StyledBodyCopy
-    style={styleProp}
-    {...otherProps}
-  >
-    {children}
-  </StyledBodyCopy>
-));
+const BodyCopy = compose(
+  setPropTypes({
+    isLoading: PropTypes.bool, // display loading placeholder
+    ...Text.propTypes,
+  }),
+  styles,
+  withPlaceholder(Typography),
+  pure,
+)(Text);
 
 export default BodyCopy;

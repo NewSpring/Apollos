@@ -18,7 +18,7 @@ const light = ({ colors, alpha }) => ({
       // todo
     },
     shadows: {
-      default: colors.lightTertiary,
+      default: Color(colors.darkTertiary).fade(alpha.medium).string(),
     },
     input: {
       // todo

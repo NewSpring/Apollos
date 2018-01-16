@@ -48,7 +48,7 @@ const styled = (styleInput, fqn) => compose(
     ({ ownProps, theme }) => {
       let style = getStyleLiteralFromStyledInput(styleInput, { ownProps, theme });
 
-      const themeOverrides = fqn ? get(theme, `overrides.${fqn}`, {}) : {};
+      const themeOverrides = fqn ? get(theme, `overrides['${fqn}']`, {}) : {};
       const { style: ownPropsStyle = {} } = ownProps;
 
       style = mergeStyles(style, themeOverrides, ownPropsStyle);

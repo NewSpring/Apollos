@@ -1,16 +1,20 @@
-// TODO: Test this, make it more flexible
+import get from 'lodash/get';
+import set from 'lodash/fp/set';
+
+// TODO: Test this
 export default function fetchMoreResolver({ collectionName, mapTo, data } = {}) {
   return () => {
     data.fetchMore({
-      variables: { ...data.variables, skip: data[collectionName].length },
+      variables: { ...data.variables, skip: get(data, collectionName, []).length },
       updateQuery: (previousResult, { fetchMoreResult }) => {
         if (!fetchMoreResult) return previousResult;
-        return {
-          [mapTo || collectionName]: [
-            ...previousResult[collectionName],
-            ...fetchMoreResult[collectionName],
+        return set(mapTo || collectionName,
+          [
+            ...get(previousResult, collectionName),
+            ...get(fetchMoreResult, collectionName),
           ],
-        };
+          { ...previousResult },
+        );
       },
     });
   };

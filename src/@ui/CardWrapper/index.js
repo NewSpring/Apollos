@@ -14,7 +14,6 @@ const enhance = compose(
 );
 
 const StyledCard = styled(({ theme, cardColor }) => ({
-  width: '100%',
   backgroundColor: cardColor || theme.colors.background.default,
   borderRadius: theme.sizing.borderRadius,
   ...Platform.select(theme.shadows.default),
@@ -31,13 +30,10 @@ const OverflowFix = styled(({ theme }) => ({
 
 const CardWrapper = enhance(({
   children,
-  backgroundColor,
-  style: styleProp = {},
+  isLoading,
   ...otherProps
 }) => (
   <StyledCard
-    cardColor={backgroundColor}
-    style={styleProp}
     {...otherProps}
   >
     <OverflowFix>

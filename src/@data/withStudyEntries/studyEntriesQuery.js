@@ -6,12 +6,12 @@ export default gql`
       ... on Content {
         studyEntries: children(channels: ["study_entries"], showFutureEntries: true) {
           id
-          entryId: id
+          id
           title
           status
           channelName
           parent {
-            entryId: id
+            id
             content {
               isLiked
               isLight

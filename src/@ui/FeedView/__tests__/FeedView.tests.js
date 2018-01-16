@@ -1,17 +1,17 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 import FeedView from '../';
 
 describe('The FeedView component', () => {
   it('renders correctly', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <FeedView
           content={[
             {
-              entryId: '1',
+              id: '1',
               title: 'hi',
               category: 'bob',
               content: {
@@ -25,7 +25,7 @@ describe('The FeedView component', () => {
               },
             },
             {
-              entryId: '2',
+              id: '2',
               title: 'hi 2',
               category: 'bob 2',
               content: {
@@ -42,18 +42,18 @@ describe('The FeedView component', () => {
             },
           ]}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('renders empty state', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <FeedView
           isLoading
           content={[]}
         />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

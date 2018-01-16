@@ -5,13 +5,10 @@ export default gql`
     content: node(id: $id) {
       id
       ... on Content {
-        entryId: id
+        id
         title
         status
         channelName
-        children {
-          id
-        }
         meta {
           urlTitle
           siteId
@@ -35,6 +32,20 @@ export default gql`
           colors {
             value
             description
+          }
+        }
+        children(channels: ["study_entries"], showFutureEntries: true) {
+          id
+          title
+          channelName
+          parent {
+            id
+          }
+          meta {
+            date
+          }
+          content {
+            speaker
           }
         }
       }

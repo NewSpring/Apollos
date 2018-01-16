@@ -4,12 +4,12 @@ export default gql`
   query getSermon($id: ID!) {
     content: node(id: $id) {
       ... on Content {
-        entryId: id
+        id
         title
         status
         channelName
         parent {
-          entryId: id
+          id
           title
           content {
             isLiked
