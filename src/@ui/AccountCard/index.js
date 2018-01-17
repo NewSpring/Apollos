@@ -56,7 +56,11 @@ const RightColumn = styled(({ theme }) => ({
   }),
 }))(FlexedView);
 
-const ThumbnailCard = enhance(({
+const CardWrapper = styled(({ theme }) => ({
+  marginVertical: theme.sizing.baseUnit / 4,
+}))(Card);
+
+const AccountCard = enhance(({
   title,
   isLoading,
   accountNumber,
@@ -64,7 +68,7 @@ const ThumbnailCard = enhance(({
   iconSize,
   ...otherProps
 }) => (
-  <Card isLoading={isLoading} {...otherProps}>
+  <CardWrapper isLoading={isLoading} {...otherProps}>
     <HorizontalLayout>
       <LeftColumn>
         <H5>{startCase(toLower(title))}</H5>
@@ -79,7 +83,7 @@ const ThumbnailCard = enhance(({
         <Icon name="ArrowNext" size={iconSize} />
       </RightColumn>
     </HorizontalLayout>
-  </Card>
+  </CardWrapper>
 ));
 
-export default ThumbnailCard;
+export default AccountCard;
