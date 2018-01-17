@@ -5,10 +5,12 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
+import get from 'lodash/get';
 import { withRouter } from '@ui/NativeWebRouter';
 import { H5, UIText } from '@ui/typography';
 import Header from '@ui/Header';
 import AccountCard from '@ui/AccountCard';
+import ScheduleCard from '@ui/ScheduleCard';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
 import BillingAddressForm from '@ui/forms/BillingAddressForm';
@@ -31,11 +33,13 @@ export class Dashboard extends PureComponent {
     history: PropTypes.shape({
       push: PropTypes.func,
     }),
+    scheduledTransactions: PropTypes.arrayOf(PropTypes.shape({})),
   };
 
   static defaultProps = {
     savedPaymentMethods: [],
     activityItems: [],
+    scheduledTransactions: [],
   };
 
   render() {
@@ -65,16 +69,28 @@ export class Dashboard extends PureComponent {
             <SavedPaymentReviewForm />
           </PaddedView>
 
+          <H5>{'Dashboard (active schedules)'}</H5>
+          {this.props.scheduledTransactions.map(scheduledTransaction => (
+            <ScheduleCard
+              key={scheduledTransaction.id}
+              accountName={get(scheduledTransaction, 'details.0.account.name')}
+              amount={get(scheduledTransaction, 'details.0.amount')}
+              frequency={get(scheduledTransaction, 'schedule.description')}
+              startDate={get(scheduledTransaction, 'start')}
+              onPress={() => { console.log('route to', scheduledTransaction.id); }}
+            />
+          ))}
+
           <H5>{'Dashboard (view accounts)'}</H5>
-          {this.props.savedPaymentMethods.map(pm => (
+          {this.props.savedPaymentMethods.map(paymentMethod => (
             <TouchableWithoutFeedback
-              onPress={() => this.props.history.push(`/give/payment-methods/${pm.id}`)}
+              onPress={() => this.props.history.push(`/give/payment-methods/${paymentMethod.id}`)}
             >
               <AccountCard
-                key={pm.id}
-                title={pm.name}
-                accountNumber={pm.accountNumber}
-                accountType={pm.paymentMethod}
+                key={paymentMethod.id}
+                title={paymentMethod.name}
+                accountNumber={paymentMethod.accountNumber}
+                accountType={paymentMethod.paymentMethod}
               />
             </TouchableWithoutFeedback>
           ))}
