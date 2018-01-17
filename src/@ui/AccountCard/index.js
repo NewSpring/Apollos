@@ -56,10 +56,6 @@ const RightColumn = styled(({ theme }) => ({
   }),
 }))(FlexedView);
 
-const CardWrapper = styled(({ theme }) => ({
-  marginVertical: theme.sizing.baseUnit / 4,
-}))(Card);
-
 const AccountCard = enhance(({
   title,
   isLoading,
@@ -68,7 +64,7 @@ const AccountCard = enhance(({
   iconSize,
   ...otherProps
 }) => (
-  <CardWrapper isLoading={isLoading} {...otherProps}>
+  <Card isLoading={isLoading} {...otherProps}>
     <HorizontalLayout>
       <LeftColumn>
         <H5>{startCase(toLower(title))}</H5>
@@ -83,7 +79,7 @@ const AccountCard = enhance(({
         <Icon name="ArrowNext" size={iconSize} />
       </RightColumn>
     </HorizontalLayout>
-  </CardWrapper>
+  </Card>
 ));
 
 export default AccountCard;
