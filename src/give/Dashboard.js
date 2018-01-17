@@ -3,22 +3,26 @@ import React, { PureComponent } from 'react';
 import {
   ScrollView,
   TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import get from 'lodash/get';
 import { withRouter } from '@ui/NativeWebRouter';
-import { H5 } from '@ui/typography';
+import { H5, UIText } from '@ui/typography';
 import Header from '@ui/Header';
 import AccountCard from '@ui/AccountCard';
 import ScheduleCard from '@ui/ScheduleCard';
 import TransactionCard from '@ui/TransactionCard';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
-import BillingAddressForm from '@ui/forms/BillingAddressForm';
-import PaymentForm from '@ui/forms/PaymentForm';
-import SavedPaymentReviewForm from '@ui/forms/SavedPaymentReviewForm';
 import withGivingDashboard from '@data/withGivingDashboard';
+import styled from '@ui/styled';
+
+const Row = styled({
+  flexDirection: 'row',
+  alignItems: 'center',
+})(View);
 
 export class Dashboard extends PureComponent {
   static propTypes = {
@@ -49,6 +53,24 @@ export class Dashboard extends PureComponent {
       <FlexedView>
         <Header titleText="Give Dashboard" />
         <ScrollView>
+          <Row>
+            <TouchableWithoutFeedback
+              onPress={() => this.props.history.push('/give')}
+            >
+              <UIText>{'Dashboard'}</UIText>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={() => this.props.history.push('/give/now')}
+            >
+              <UIText>{'Give'}</UIText>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={() => this.props.history.push('/give/history')}
+            >
+              <UIText>{'History'}</UIText>
+            </TouchableWithoutFeedback>
+          </Row>
+
           <H5>{'Dashboard (activity)'}</H5>
           {this.props.activityItems.filter(at => (at.__typename === 'Transaction')).map(activityItem => (
             <TransactionCard
@@ -65,11 +87,11 @@ export class Dashboard extends PureComponent {
 
           <PaddedView>
             <H5>{'Dashboard (add account)'}</H5>
-            <BillingAddressForm />
-            <PaymentForm
-              enforceAccountName
-            />
-            <SavedPaymentReviewForm />
+            <TouchableWithoutFeedback
+              onPress={() => this.props.history.push('/give/new-payment-method/address')}
+            >
+              <H5>{'add account'}</H5>
+            </TouchableWithoutFeedback>
           </PaddedView>
 
           <H5>{'Dashboard (active schedules)'}</H5>
