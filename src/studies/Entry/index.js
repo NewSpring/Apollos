@@ -63,7 +63,7 @@ const Study = enhance(({
             scripture: withProps({ scripture })(ScriptureTab),
           })}
         />
-        <EntryList entries={children} />
+        <EntryList entries={children} isLoading={isLoading} />
       </ScrollView>
       <SecondaryNav>
         <Link icon="share" />

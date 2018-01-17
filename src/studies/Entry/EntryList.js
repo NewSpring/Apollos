@@ -24,11 +24,10 @@ const enhance = compose(
 
 const Title = styled(({ theme }) => ({
   textAlign: 'center',
-  marginBottom: theme.sizing.baseUnit / 2,
+  marginBottom: theme.sizing.baseUnit,
 }))(H5);
 
 const Wrapper = styled(({ theme }) => ({
-  width: '100%',
   paddingVertical: theme.sizing.baseUnit,
   backgroundColor: theme.colors.lightSecondary,
 }))(View);
