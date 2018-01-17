@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { UIText } from '@ui/typography';
 
+// TODO: Missing is expiring soon message
 function StatusMessage(props = {}) {
   const {
     status,

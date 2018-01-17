@@ -48,15 +48,6 @@ const StyledH6 = styled(({ theme }) => ({
   color: theme.colors.text.link,
 }))(H6);
 
-// const StyledH1 = styled(({ theme }) => ({
-//   color: theme.colors.text.primary,
-// }))(H1);
-
-// const ItalicText = styled(({ theme }) => ({
-//   color: theme.colors.text.secondary,
-//   fontStyle: 'italic',
-// }))(UIText);
-
 const Row = styled({
   flexDirection: 'row',
   alignItems: 'center',
@@ -64,6 +55,16 @@ const Row = styled({
 
 const Spacer = styled(({ theme }) => ({
   height: theme.sizing.baseUnit,
+}))(View);
+
+const Circle = styled(({ theme }) => ({
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: 3,
+  borderRadius: 99,
+  borderColor: theme.colors.primary,
+  borderWidth: 1,
+  marginRight: 10,
 }))(View);
 
 const TransactionCard = enhance(({
@@ -77,33 +78,33 @@ const TransactionCard = enhance(({
   isScheduled,
   error,
   ...otherProps
-}) => {
-  console.log({ status, details });
-  return (
-    <Card isLoading={isLoading} {...otherProps}>
-      <PaddedView>
+}) => (
+  <Card isLoading={isLoading} {...otherProps}>
+    <PaddedView>
+      <Row>
+        <Circle>
+          <Icon name="Check" size={iconSize} />
+        </Circle>
+        <H5>{moment(date).format(dateFormat)}</H5>
+      </Row>
+      <Spacer />
+      <StatusMessage
+        status={status}
+        details={details}
+        isScheduled={isScheduled}
+        error={error}
+      />
+      <Spacer />
+      <TouchableWithoutFeedback
+        onPress={onPress}
+      >
         <Row>
+          <StyledH6>{'View Contribution'}</StyledH6>
           <Icon name="ArrowNext" size={iconSize} />
-          <H5>{moment(date).format(dateFormat)}</H5>
         </Row>
-        <Spacer />
-        <StatusMessage
-          status={status}
-          details={details}
-          isScheduled={isScheduled}
-          error={error}
-        />
-        <TouchableWithoutFeedback
-          onPress={onPress}
-        >
-          <Row>
-            <StyledH6>{'View Contribution'}</StyledH6>
-            <Icon name="ArrowNext" size={iconSize} />
-          </Row>
-        </TouchableWithoutFeedback>
-      </PaddedView>
-    </Card>
-  );
-});
+      </TouchableWithoutFeedback>
+    </PaddedView>
+  </Card>
+));
 
 export default TransactionCard;
