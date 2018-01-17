@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
-import { ScrollView } from 'react-native';
 
 import PaddedView from '@ui/PaddedView';
 import Scripture from '@ui/Scripture';
@@ -23,11 +22,9 @@ const bibleData = scripture => (
 );
 
 const ScriptureTab = enhance(({ scripture }) => (
-  <ScrollView>
-    <PaddedView>
-      <Scripture references={bibleData(scripture)} />
-    </PaddedView>
-  </ScrollView>
+  <PaddedView>
+    <Scripture references={bibleData(scripture)} />
+  </PaddedView>
 ));
 
 export default ScriptureTab;
