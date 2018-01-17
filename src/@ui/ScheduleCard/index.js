@@ -28,7 +28,7 @@ const enhance = compose(
   defaultProps({
     isLoading: false,
     accountName: null,
-    amount: null,
+    amount: 0,
     frequency: null,
     startDate: null,
     iconSize: null,
@@ -73,32 +73,35 @@ const ScheduleCard = enhance(({
   dateFormat,
   onPress,
   ...otherProps
-}) => (
-  <Card isLoading={isLoading} {...otherProps}>
-    <PaddedView>
-      <Row>
-        <H3>{'$'}</H3>
-        <StyledH1>{amount}</StyledH1>
-        <H3>{'.00'}</H3>
-      </Row>
-      <H5>{frequency}</H5>
-      <H5>{accountName}</H5>
-      <Spacer />
-      <Row>
-        <UIText>{'Start Date: '}</UIText>
-        <ItalicText>{moment(startDate).format(dateFormat)}</ItalicText>
-      </Row>
-      <Spacer />
-      <TouchableWithoutFeedback
-        onPress={onPress}
-      >
+}) => {
+  const amountParts = amount.toFixed(2).split('.');
+  return (
+    <Card isLoading={isLoading} {...otherProps}>
+      <PaddedView>
         <Row>
-          <StyledH6>{'View Schedule Details'}</StyledH6>
-          <Icon name="ArrowNext" size={iconSize} />
+          <H3>{'$'}</H3>
+          <StyledH1>{amountParts[0]}</StyledH1>
+          <H3>{`.${amountParts[1]}`}</H3>
         </Row>
-      </TouchableWithoutFeedback>
-    </PaddedView>
-  </Card>
-));
+        <H5>{frequency}</H5>
+        <H5>{accountName}</H5>
+        <Spacer />
+        <Row>
+          <UIText>{'Start Date: '}</UIText>
+          <ItalicText>{moment(startDate).format(dateFormat)}</ItalicText>
+        </Row>
+        <Spacer />
+        <TouchableWithoutFeedback
+          onPress={onPress}
+        >
+          <Row>
+            <StyledH6>{'View Schedule Details'}</StyledH6>
+            <Icon name="ArrowNext" size={iconSize} />
+          </Row>
+        </TouchableWithoutFeedback>
+      </PaddedView>
+    </Card>
+  );
+});
 
 export default ScheduleCard;
