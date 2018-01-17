@@ -43,7 +43,7 @@ export const QUERY = gql`
 
 export default graphql(QUERY, {
   props({ ownProps, data: { contributions, loading } }) {
-    if (!contributions) return { contributions, isLoading: loading };
+    if (!contributions) return { contributions, isLoading: ownProps.isLoading || loading };
     return {
       isLoading: ownProps.isLoading || loading,
       contributions: {
