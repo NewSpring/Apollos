@@ -58,6 +58,7 @@ export const PaymentFormWithoutData = ({
           error={Boolean(touched.accountName && errors.accountName)}
         />
         <Inputs.Text
+          suffix={<Icon name="bank" />}
           label="Routing Number"
           value={values.routingNumber}
           type="numeric"
