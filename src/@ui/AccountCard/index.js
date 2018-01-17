@@ -30,8 +30,8 @@ const enhance = compose(
     iconSize: undefined,
   }),
   withIsLoading,
-  withTheme(({ theme }) => ({
-    iconSize: theme.helpers.rem(1),
+  withTheme(({ theme, ...otherProps }) => ({
+    iconSize: otherProps.iconSize || theme.helpers.rem(1),
   })),
   pure,
 );
