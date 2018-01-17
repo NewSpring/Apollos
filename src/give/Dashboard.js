@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
   ScrollView,
-  View,
   TouchableWithoutFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -9,13 +8,13 @@ import { compose } from 'recompose';
 import { withRouter } from '@ui/NativeWebRouter';
 import { H5, UIText } from '@ui/typography';
 import Header from '@ui/Header';
+import AccountCard from '@ui/AccountCard';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
 import BillingAddressForm from '@ui/forms/BillingAddressForm';
 import PaymentForm from '@ui/forms/PaymentForm';
 import SavedPaymentReviewForm from '@ui/forms/SavedPaymentReviewForm';
 import withGivingDashboard from '@data/withGivingDashboard';
-import last4 from '@utils/last4';
 
 export class Dashboard extends PureComponent {
   static propTypes = {
@@ -64,20 +63,21 @@ export class Dashboard extends PureComponent {
               enforceAccountName
             />
             <SavedPaymentReviewForm />
-
-            <H5>{'Dashboard (view accounts)'}</H5>
-            {this.props.savedPaymentMethods.map(pm => (
-              <TouchableWithoutFeedback
-                onPress={() => this.props.history.push(`/give/payment-methods/${pm.id}`)}
-              >
-                <View key={pm.id}>
-                  <UIText>{pm.name}</UIText>
-                  <UIText>{pm.paymentMethod}</UIText>
-                  <UIText>{last4(pm.accountNumber)}</UIText>
-                </View>
-              </TouchableWithoutFeedback>
-            ))}
           </PaddedView>
+
+          <H5>{'Dashboard (view accounts)'}</H5>
+          {this.props.savedPaymentMethods.map(pm => (
+            <TouchableWithoutFeedback
+              onPress={() => this.props.history.push(`/give/payment-methods/${pm.id}`)}
+            >
+              <AccountCard
+                key={pm.id}
+                title={pm.name}
+                accountNumber={pm.accountNumber}
+                accountType={pm.paymentMethod}
+              />
+            </TouchableWithoutFeedback>
+          ))}
         </ScrollView>
       </FlexedView>
     );
