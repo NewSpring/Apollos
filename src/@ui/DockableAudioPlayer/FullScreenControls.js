@@ -40,7 +40,12 @@ const Settings = styled({
 
 const Ellipsis = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 4,
+  opacity: theme.alpha.medium,
 }))(props => <UIText {...props}>•••</UIText>);
+
+const IconWithActiveOpacity = styled(({ theme, active }) => ({
+  opacity: active ? 1 : theme.alpha.medium,
+}))(Icon);
 
 const enhance = compose(
   withThemeMixin({ type: 'dark' }),
@@ -58,7 +63,11 @@ const FullScreenControls = enhance(({
   albumArt,
   color,
   handleClose,
-}) => (
+  isShuffling,
+  isRepeating,
+  handleShuffle,
+  handleRepeat,
+}) => console.log({ isShuffling, isRepeating, handleShuffle, handleRepeat }) || (
   <Container backgroundColor={color}>
     <GradientOverlayImage
       source={albumArt}
@@ -91,13 +100,21 @@ const FullScreenControls = enhance(({
       </PaddedView>
       <Settings>
         <PaddedView>
-          <Touchable>
-            <Icon name="shuffle" size={24} />
+          <Touchable onPress={handleShuffle}>
+            <IconWithActiveOpacity
+              active={isShuffling}
+              name="shuffle"
+              size={24}
+            />
           </Touchable>
         </PaddedView>
         <PaddedView>
-          <Touchable>
-            <Icon name="repeat" size={24} />
+          <Touchable onPress={handleRepeat}>
+            <IconWithActiveOpacity
+              active={isRepeating}
+              name="repeat"
+              size={24}
+            />
           </Touchable>
         </PaddedView>
         <PaddedView>

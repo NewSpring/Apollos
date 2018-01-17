@@ -5,8 +5,8 @@ export default gql`
     mediaPlayer @client {
       isPlaying
       albumId
-      shuffle
-      repeat
+      isShuffling
+      isRepeating
       currentTrack {
         duration
         file

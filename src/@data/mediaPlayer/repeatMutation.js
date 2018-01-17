@@ -2,6 +2,6 @@ import gql from 'graphql-tag';
 
 export default gql`
   mutation repeat($isRepeating: Boolean) {
-    repeat($isRepeating) @client
+    repeat(isRepeating: $isRepeating) @client
   }
 `;

@@ -5,6 +5,7 @@ import identifyCategory from '@data/utils/identifyCategory';
 import playMutation from './playMutation';
 import pauseMutation from './pauseMutation';
 import shuffleMutation from './shuffleMutation';
+import repeatMutation from './repeatMutation';
 import nowPlayingMutation from './nowPlayingMutation';
 import mediaPlayerQuery from './mediaPlayerQuery';
 import albumQuery from './albumQuery';
@@ -31,6 +32,14 @@ const shuffle = graphql(shuffleMutation, {
   props: ({ mutate }) => ({
     shuffle: ({ isShuffling }) => mutate({
       variables: { isShuffling },
+    }),
+  }),
+});
+
+const repeat = graphql(repeatMutation, {
+  props: ({ mutate }) => ({
+    repeat: ({ isRepeating }) => mutate({
+      variables: { isRepeating },
     }),
   }),
 });
@@ -76,5 +85,6 @@ export const withMediaPlayerActions = compose(
   play,
   pause,
   shuffle,
+  repeat,
   setNowPlaying,
 );

@@ -48,16 +48,48 @@ export function shuffle(result, variables, { cache }) {
     variables,
   });
 
-  const { isShuffling } = variables;
+  let { isShuffling } = variables;
+
+  if (typeof isShuffling === 'undefined') {
+    isShuffling = !state.isShuffling;
+  }
 
   cache.writeQuery({
-    mediaPlayerQuery,
+    query: mediaPlayerQuery,
     variables,
     data: {
-      ...state,
-      shuffle: isShuffling ? Date.now() : null,
+      mediaPlayer: {
+        ...state,
+        isShuffling: isShuffling ? Date.now() : null,
+      },
     },
   });
+  return null;
+}
+
+export function repeat(result, variables, { cache }) {
+  const { mediaPlayer: state } = cache.readQuery({
+    query: mediaPlayerQuery,
+    variables,
+  });
+
+  let { isRepeating } = variables;
+
+  if (typeof isRepeating === 'undefined') {
+    isRepeating = !state.isRepeating;
+  }
+
+  cache.writeQuery({
+    query: mediaPlayerQuery,
+    variables,
+    data: {
+      mediaPlayer: {
+        ...state,
+        isRepeating,
+      },
+    },
+  });
+  return null;
 }
 
 export function pause(result, variables, { cache }) {

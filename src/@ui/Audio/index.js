@@ -92,7 +92,7 @@ export default class Audio extends Component {
     this.progressDriver.setValue((soundStatus.positionMillis / this.duration) || 0);
 
     if (soundStatus.didJustFinish) {
-      this.props.onPlaybackReachedEnd();
+      this.props.onPlaybackReachedEnd(this.sound);
     }
   }
 
