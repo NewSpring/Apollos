@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform } from 'react-native';
+import { View, Platform, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import ConnectedImage from '@ui/ConnectedImage';
 import EmbeddedVideoPlayer from '@ui/EmbeddedVideoPlayer';
@@ -21,12 +21,19 @@ const VideoHeader = styled({
   width: '100%',
   aspectRatio: 16 / 9,
   ...Platform.select({
-    web: {
-      height: 0,
-      paddingTop: '50%',
-    },
+    web: StyleSheet.absoluteFillObject,
   }),
 })(EmbeddedVideoPlayer);
+
+const VideoWrapper = styled(Platform.select({
+  web: {
+    position: 'relative',
+    paddingBottom: '56.25%', // NOTE: 16:9 :D
+    overflow: 'hidden',
+    width: '100%',
+    height: 0,
+  },
+}))(View);
 
 const ContentMedia = ({
   images = [],
@@ -35,7 +42,9 @@ const ContentMedia = ({
   let visual = null;
   if (video && video.embedUrl) {
     visual = (
-      <VideoHeader src={video.embedUrl} />
+      <VideoWrapper>
+        <VideoHeader src={video.embedUrl} />
+      </VideoWrapper>
     );
   } else if (images && images.length) {
     visual = (
