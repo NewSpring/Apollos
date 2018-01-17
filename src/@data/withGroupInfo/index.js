@@ -2,10 +2,10 @@ import { graphql } from 'react-apollo';
 import groupQuery from './groupQuery';
 
 export default graphql(groupQuery, {
-  props: ({ data }) => ({
+  props: ({ ownProps, data }) => ({
     group: data.group,
     person: data.person,
-    isLoading: data.loading,
+    isLoading: ownProps.isLoading || data.loading,
   }),
   options: (ownProps = {}) => ({
     variables: {

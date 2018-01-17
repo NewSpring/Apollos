@@ -42,10 +42,10 @@ export const QUERY = gql`
 `;
 
 export default graphql(QUERY, {
-  props({ data: { contributions, loading } }) {
+  props({ ownProps, data: { contributions, loading } }) {
     if (!contributions) return { contributions, isLoading: loading };
     return {
-      isLoading: loading,
+      isLoading: ownProps.isLoading || loading,
       contributions: {
         ...contributions,
         startDate: contributions && new Date(contributions.startDate),
