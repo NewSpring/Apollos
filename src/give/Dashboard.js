@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { PureComponent } from 'react';
 import {
   ScrollView,
@@ -7,10 +8,11 @@ import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import get from 'lodash/get';
 import { withRouter } from '@ui/NativeWebRouter';
-import { H5, UIText } from '@ui/typography';
+import { H5 } from '@ui/typography';
 import Header from '@ui/Header';
 import AccountCard from '@ui/AccountCard';
 import ScheduleCard from '@ui/ScheduleCard';
+import TransactionCard from '@ui/TransactionCard';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
 import BillingAddressForm from '@ui/forms/BillingAddressForm';
@@ -47,20 +49,21 @@ export class Dashboard extends PureComponent {
       <FlexedView>
         <Header titleText="Give Dashboard" />
         <ScrollView>
-          <PaddedView>
-            <H5>{'Dashboard (activity)'}</H5>
-            {this.props.activityItems.map((at) => {
-              // eslint-disable-next-line no-underscore-dangle
-              if (at.__typename === 'Transaction') {
-                return (
-                  <UIText>{at.summary}</UIText>
-                );
-              }
-              return (
-                <UIText>{at.name}</UIText>
-              );
-            })}
+          <H5>{'Dashboard (activity)'}</H5>
+          {this.props.activityItems.filter(at => (at.__typename === 'Transaction')).map(activityItem => (
+            <TransactionCard
+              key={activityItem.id}
+              date={activityItem.date}
+              status={activityItem.status}
+              details={activityItem.details}
+              isScheduled={activityItem.scheduled}
+              amount={activityItem.amount}
+              error={activityItem.statusMessage}
+              onPress={() => { console.log('route to', activityItem.id); }}
+            />
+          ))}
 
+          <PaddedView>
             <H5>{'Dashboard (add account)'}</H5>
             <BillingAddressForm />
             <PaymentForm
