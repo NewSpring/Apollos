@@ -4,6 +4,7 @@ exports[`The Button component should render a disabled button 1`] = `
 <View
   bordered={false}
   disabled={true}
+  pill={false}
   style={
     Object {
       "alignItems": "center",
@@ -42,6 +43,7 @@ exports[`The Button component should render a primary button 1`] = `
 <View
   bordered={false}
   disabled={false}
+  pill={false}
   style={
     Object {
       "alignItems": "center",
@@ -109,6 +111,7 @@ exports[`The Button component should render correctly 1`] = `
   <View
     bordered={false}
     disabled={false}
+    pill={false}
     style={
       Object {
         "alignItems": "center",
@@ -148,6 +151,7 @@ exports[`The Button component should render with children 1`] = `
 <View
   bordered={false}
   disabled={false}
+  pill={false}
   style={
     Object {
       "alignItems": "center",
