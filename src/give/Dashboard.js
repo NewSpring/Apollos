@@ -9,14 +9,14 @@ import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import get from 'lodash/get';
 import { withRouter } from '@ui/NativeWebRouter';
-import { H5, UIText } from '@ui/typography';
+import { UIText } from '@ui/typography';
 import Header from '@ui/Header';
 import AccountCard from '@ui/AccountCard';
 import ScheduleCard from '@ui/ScheduleCard';
 import TransactionCard from '@ui/TransactionCard';
 import ExpiringAccountCard from '@ui/ExpiringAccountCard';
 import FlexedView from '@ui/FlexedView';
-import PaddedView from '@ui/PaddedView';
+import DashboardSubheader from '@ui/DashboardSubheader';
 import withGivingDashboard from '@data/withGivingDashboard';
 import styled from '@ui/styled';
 
@@ -72,7 +72,11 @@ export class Dashboard extends PureComponent {
             </TouchableWithoutFeedback>
           </Row>
 
-          <H5>{'Dashboard (activity)'}</H5>
+          <DashboardSubheader
+            text="Activity"
+            buttonText="See All"
+            onPress={() => console.log('go to history')}
+          />
           {this.props.activityItems.map((activityItem) => {
             if (activityItem.__typename === 'Transaction') {
               return (
@@ -92,20 +96,17 @@ export class Dashboard extends PureComponent {
               <ExpiringAccountCard
                 key={activityItem.id}
                 name={activityItem.name}
+                expirationDate={`${activityItem.expirationMonth}/1/${activityItem.expirationYear}`}
               />
             );
           })}
+          <UIText>{'Contributions Graph'}</UIText>
 
-          <PaddedView>
-            <H5>{'Dashboard (add account)'}</H5>
-            <TouchableWithoutFeedback
-              onPress={() => this.props.history.push('/give/new-payment-method/address')}
-            >
-              <H5>{'add account'}</H5>
-            </TouchableWithoutFeedback>
-          </PaddedView>
-
-          <H5>{'Dashboard (active schedules)'}</H5>
+          <DashboardSubheader
+            text="Active Schedules"
+            buttonText="New Schedule"
+            onPress={() => console.log('go to give/now')}
+          />
           {this.props.scheduledTransactions.map(scheduledTransaction => (
             <ScheduleCard
               key={scheduledTransaction.id}
@@ -117,7 +118,11 @@ export class Dashboard extends PureComponent {
             />
           ))}
 
-          <H5>{'Dashboard (view accounts)'}</H5>
+          <DashboardSubheader
+            text="Saved Accounts"
+            buttonText="Add Account"
+            onPress={() => this.props.history.push('/give/new-payment-method/address')}
+          />
           {this.props.savedPaymentMethods.map(paymentMethod => (
             <TouchableWithoutFeedback
               onPress={() => this.props.history.push(`/give/payment-methods/${paymentMethod.id}`)}

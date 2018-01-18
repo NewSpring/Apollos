@@ -12,6 +12,8 @@ const Row = styled(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   paddingHorizontal: theme.sizing.baseUnit / 2,
+  marginTop: theme.sizing.baseUnit * 2,
+  marginBottom: theme.sizing.baseUnit,
 }))(View);
 
 const StyledH6 = styled(({ theme }) => ({
