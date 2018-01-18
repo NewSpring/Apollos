@@ -44,7 +44,7 @@ const Ellipsis = styled(({ theme }) => ({
 }))(props => <UIText {...props}>•••</UIText>);
 
 const IconWithActiveOpacity = styled(({ theme, active }) => ({
-  opacity: active ? 1 : theme.alpha.medium,
+  opacity: active ? 1 : theme.alpha.low,
 }))(Icon);
 
 const enhance = compose(
@@ -67,7 +67,7 @@ const FullScreenControls = enhance(({
   isRepeating,
   handleShuffle,
   handleRepeat,
-}) => console.log({ isShuffling, isRepeating, handleShuffle, handleRepeat }) || (
+}) => (
   <Container backgroundColor={color}>
     <GradientOverlayImage
       source={albumArt}

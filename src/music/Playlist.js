@@ -1,5 +1,4 @@
 import React from 'react';
-import { filter } from 'lodash';
 import { compose, mapProps, withProps, pure } from 'recompose';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
@@ -8,6 +7,7 @@ import AlbumView from '@ui/AlbumView';
 import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import { withPlaylist, withMediaPlayerActions, withNowPlaying } from '@data/mediaPlayer';
+import { getBlurredImageSource, getAlbumImageSource } from '@utils/content';
 
 const enhance = compose(
   mapProps(({ match: { params: { id } } }) => ({ id })),
@@ -19,15 +19,6 @@ const enhance = compose(
     setNowPlaying: track => setNowPlaying({ albumId: id, currentTrack: track }),
   })),
 );
-
-// TODO: we should modify Heighliner to separate these resources into props
-const getAlbumImageSource = images => filter(images, image => (
-  image.fileName.indexOf('blur') === -1
-));
-
-const getBlurredImageSource = images => filter(images, image => (
-  image.fileName.indexOf('blur') > -1
-));
 
 const Playlist = enhance(({
   content: {
