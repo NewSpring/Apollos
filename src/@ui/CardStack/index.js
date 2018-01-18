@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { compose, mapProps } from 'recompose';
 import { withRouter } from '../NativeWebRouter';
 
 import Transitioner from './Transitioner';
@@ -48,4 +49,13 @@ class Stack extends PureComponent {
   }
 }
 
-export default withRouter(Stack);
+const enhance = compose(
+  mapProps(ownProps => ({ ownProps })),
+  withRouter,
+  mapProps(({ ownProps, ...routerProps }) => ({
+    ...routerProps,
+    ...ownProps,
+  })),
+);
+
+export default enhance(Stack);

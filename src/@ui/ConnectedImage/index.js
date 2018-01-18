@@ -78,10 +78,11 @@ class ConnectedImage extends PureComponent {
     if (this.props.maintainAspectRatio) {
       const firstSource = this.state.source[0];
       if (firstSource && firstSource.width && firstSource.height) {
-        style.aspectRatio = firstSource.width / firstSource.height;
         if (Platform.OS === 'web') {
           style.height = 0;
           style.paddingTop = `${style.aspectRatio * 100}%`;
+        } else {
+          style.aspectRatio = firstSource.width / firstSource.height;
         }
       }
     }
