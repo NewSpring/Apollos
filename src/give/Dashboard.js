@@ -76,7 +76,7 @@ export class Dashboard extends PureComponent {
           <DashboardSubheader
             text="Activity"
             buttonText="See All"
-            onPress={() => console.log('go to history')}
+            onPress={() => this.props.history.push('/give/history')}
           />
           {this.props.activityItems.map((activityItem) => {
             if (activityItem.__typename === 'Transaction') {
@@ -98,7 +98,7 @@ export class Dashboard extends PureComponent {
                 key={activityItem.id}
                 name={activityItem.name}
                 expirationDate={`${activityItem.expirationMonth}/1/${activityItem.expirationYear}`}
-                onPress={() => { console.log('route to /give/now'); }}
+                onPress={() => this.props.history.push('/give/now')}
               />
             );
           })}
@@ -107,7 +107,7 @@ export class Dashboard extends PureComponent {
           <DashboardSubheader
             text="Active Schedules"
             buttonText="New Schedule"
-            onPress={() => console.log('go to give/now')}
+            onPress={() => this.props.history.push('/give/now')}
           />
           {this.props.scheduledTransactions.map(scheduledTransaction => (
             <ScheduleCard
