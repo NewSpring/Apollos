@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  // TouchableHighlight,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
-import { compose, withProps, branch, renderComponent, setPropTypes } from 'recompose';
-import { isEmpty } from 'lodash';
+import {
+  compose,
+  withProps,
+  branch,
+  renderComponent,
+  setPropTypes,
+  defaultProps,
+} from 'recompose';
+import { isEmpty, get } from 'lodash';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 
@@ -15,6 +20,7 @@ import { withRouter } from '@ui/NativeWebRouter';
 
 import withGive from '@data/withGive';
 import withFinancialAccounts from '@data/withFinancialAccounts';
+import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { H3, H2, BodyCopy as P } from '@ui/typography';
 import Button from '@ui/Button';
@@ -72,6 +78,7 @@ export class ContributionFormWithoutData extends Component {
     setFieldTouched: PropTypes.func,
     isSubmitting: PropTypes.bool,
     isValid: PropTypes.bool,
+    recurringPaymentOptionsAvailable: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -80,6 +87,7 @@ export class ContributionFormWithoutData extends Component {
     offlineContactEmail: '',
     offlineMessageTitle: 'Unfortunately our giving service is offline.',
     offlineMessageBody: 'We are working to resolve this as fast as possible. We are sorry for any inconvience this may have caused.',
+    recurringPaymentOptionsAvailable: false,
   };
 
   state = {
@@ -167,13 +175,14 @@ export class ContributionFormWithoutData extends Component {
           title={this.state.secondFundVisible ? 'Remove Fund' : 'Add Another Fund'}
         />
 
-        <Inputs.Switch
-          value={!!this.state.recurringPaymentOptionsVisible}
-          onValueChange={this.handleToggleRecurringPaymentOptionsVisibility}
-          label="Schedule Contribution"
-        />
-
-        {this.state.recurringPaymentOptionsVisible &&
+        {this.props.recurringPaymentOptionsAvailable &&
+          <Inputs.Switch
+            value={!!this.state.recurringPaymentOptionsVisible}
+            onValueChange={this.handleToggleRecurringPaymentOptionsVisibility}
+            label="Schedule Contribution"
+          />
+        }
+        {this.props.recurringPaymentOptionsAvailable && this.state.recurringPaymentOptionsVisible &&
           <View>
             <FrequencyInput
               value={this.props.values.frequencyId}
@@ -208,13 +217,20 @@ export class ContributionFormWithoutData extends Component {
 
 const ContributionForm = compose(
   setPropTypes({
-    navigateToOnComplete: PropTypes.string,
+    onComplete: PropTypes.func,
+  }),
+  defaultProps({
+    onComplete() {},
   }),
   withGive,
   withRouter,
   withFinancialAccounts,
+  withCheckout,
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
-  withProps(({ accounts }) => ({ funds: accounts })),
+  withProps(({ accounts, person }) => ({
+    funds: accounts,
+    recurringPaymentOptionsAvailable: !!person,
+  })),
   withFormik({
     mapPropsToValues: props => ({
       firstContribution: {
@@ -258,7 +274,15 @@ const ContributionForm = compose(
       props.setContributionFrequency(result.frequencyId);
       props.setContributionStartDate(result.startDate);
 
-      if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
+      const userHasPaymentMethods = props.savedPaymentMethods.length > 0;
+      if (userHasPaymentMethods) {
+        props.isPayingWithSavedPaymentMethod();
+        props.setSavedPaymentMethod(get(props, 'savedPaymentMethods.0.id', ''));
+      } else {
+        props.isPayingWithCreditCard();
+      }
+
+      props.onComplete(props);
       setSubmitting(false);
     },
   }),

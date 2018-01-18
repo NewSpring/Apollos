@@ -1,12 +1,15 @@
 import React from 'react';
-import { compose, mapProps, pure } from 'recompose';
-import { ScrollView } from 'react-native';
+import { compose, mapProps, pure, withProps } from 'recompose';
+
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
-import ContentView from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import withStudyEntry from '@data/withStudyEntry';
+import TabView, { SceneMap } from '@ui/TabView';
 import { withThemeMixin } from '@ui/theme';
+
+import ScriptureTab from './ScriptureTab';
+import DevotionalTab from './DevotionalTab';
 
 const enhance = compose(
   pure,
@@ -31,21 +34,34 @@ const Study = enhance(({
     title,
     parent: { title: parentTitle, content: { isLight = true } = {} } = {},
     content: {
-      images = [],
       body,
+      scripture = [],
+      ...otherContentProps
     } = {},
   } = {},
-}) => (
-  <FlexedView>
-    <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
-    <ScrollView>
-      <ContentView images={images} body={body} title={title} />
-    </ScrollView>
-    <SecondaryNav>
-      <Link icon="share" />
-      <Link icon="like" />
-    </SecondaryNav>
-  </FlexedView>
-));
+  isLoading,
+}) => {
+  const hasScripture = isLoading || scripture.length;
+  const tabRoutes = [{ title: 'Devotional', key: 'devotional' }];
+  if (hasScripture) tabRoutes.push({ title: 'Scripture', key: 'scripture' });
+
+  return (
+    <FlexedView>
+      <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
+      <TabView
+        barStyle={isLight ? 'dark-content' : 'light-content'}
+        routes={tabRoutes}
+        renderScene={SceneMap({
+          devotional: withProps({ title, body, otherContentProps })(DevotionalTab),
+          scripture: withProps({ scripture })(ScriptureTab),
+        })}
+      />
+      <SecondaryNav>
+        <Link icon="share" />
+        <Link icon="like" />
+      </SecondaryNav>
+    </FlexedView>
+  );
+});
 
 export default Study;

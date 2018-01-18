@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 export default gql`
   query getArticles($limit: Int!, $skip: Int!) {
     content(channel: "articles", limit: $limit, skip: $skip) {
-      entryId: id
+      id
       title
       status
       channelName

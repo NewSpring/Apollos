@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Card component it should render a placeholder 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
+      "marginHorizontal": 10,
+      "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 20,
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "#dddddd",
+            "borderRadius": 6,
+            "height": 32.4,
+            "marginVertical": 4.41,
+            "width": "100%",
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "#dddddd",
+            "borderRadius": 6,
+            "height": 14,
+            "marginVertical": 0.9349999999999996,
+            "width": "40%",
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": 18,
+              "marginVertical": 4,
+              "width": "85%",
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": 18,
+              "marginVertical": 4,
+              "width": "100%",
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "backgroundColor": "#dddddd",
+              "borderRadius": 6,
+              "height": 18,
+              "marginVertical": 4,
+              "width": "75%",
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 20,
+          "paddingTop": 5,
+          "paddingVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "#dddddd",
+            "borderRadius": 6,
+            "height": 38,
+            "width": 80,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "#dddddd",
+            "borderRadius": 6,
+            "height": 38,
+            "width": 80,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`the Card component should render 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
+      "marginHorizontal": 10,
+      "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "aspectRatio": 1,
+          "backgroundColor": "#dddddd",
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 20,
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 32.4,
+            "fontWeight": "700",
+            "lineHeight": 41.22,
+          }
+        }
+      >
+        Coffee
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": null,
+            "fontSize": 14,
+            "lineHeight": 15.87,
+          }
+        }
+      >
+        noun
+      </Text>
+      <View
+        style={
+          Object {
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          A dark substance that turns "leave me alone" into "good morning!"
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 20,
+          "paddingTop": 5,
+          "paddingVertical": 20,
+        }
+      }
+    >
+      <View
+        bordered={false}
+        disabled={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#6bac43",
+            "borderColor": "#6bac43",
+            "borderRadius": 6,
+            "borderWidth": 2,
+            "elevation": 4,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
+            "overflow": "hidden",
+            "padding": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontFamily": null,
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          Learn More
+        </Text>
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "borderRadius": 0,
+            "color": "#6bac43",
+            "fontFamily": null,
+            "fontSize": 18,
+            "lineHeight": 20,
+            "padding": 0,
+          }
+        }
+      >
+        Share
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -1,54 +1,48 @@
 import React from 'react';
-import { View } from 'react-native';
-import { nest } from 'recompose';
 
 import { storiesOf } from '@storybook/react-native';
 import FlexedView from '@ui/FlexedView';
-import styled from '@ui/styled';
 
 import Chip from './';
-
-const ViewWithMargin = styled({ margin: 5 })(View);
-const ChipWithMargin = nest(ViewWithMargin, Chip);
 
 storiesOf('Chip', module)
   .add('default', () => (
     <FlexedView style={{ flexWrap: 'wrap', flexDirection: 'row' }}>
-      <ChipWithMargin
+      <Chip
         onPress={() => {}}
         title="I'm just a poor chip"
       />
-      <ChipWithMargin
+      <Chip
         onPress={() => {}}
         icon="close"
         title="I need no sympathy"
       />
-      <ChipWithMargin
+      <Chip
         onPress={() => {}}
         selected
         title="Easy come"
       />
-      <ChipWithMargin
+      <Chip
         onPress={() => {}}
         icon="close"
         selected
         title="Easy go"
       />
-      <ChipWithMargin
+      <Chip
         onPress={() => {}}
         icon="arrow-up"
         title="Litte high"
       />
-      <ChipWithMargin
+      <Chip
         onPress={() => {}}
         type="secondary"
         icon="arrow-down"
         title="Litte low"
       />
-      <ChipWithMargin
+      <Chip
         title="📍💨?"
       />
-      <ChipWithMargin
+      <Chip
         selected
         title="¯\_(ツ)_/¯"
       />

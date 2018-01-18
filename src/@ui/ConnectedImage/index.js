@@ -6,15 +6,12 @@ import { every } from 'lodash';
 import SkeletonImage from './SkeletonImage';
 
 // This mirrors the File resource we get from Heighliner:
-const ImageSourceType = PropTypes.oneOfType([
-  PropTypes.shape({
-    uri: PropTypes.string,
-    label: PropTypes.string,
-    width: PropTypes.number,
-    height: PropTypes.number,
-  }),
-  PropTypes.string,
-]);
+const ImageSourceType = PropTypes.shape({
+  uri: PropTypes.string,
+  label: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+});
 
 export const sizeCache = {};
 
@@ -60,6 +57,7 @@ class ConnectedImage extends PureComponent {
     ]),
     ImageComponent: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     maintainAspectRatio: PropTypes.bool,
+    isLoading: PropTypes.bool,
     style: PropTypes.any, // eslint-disable-line
   }
 
@@ -92,12 +90,13 @@ class ConnectedImage extends PureComponent {
   }
 
   get isLoading() {
-    return !every(this.state.source, image => image.width && image.height);
+    return this.props.isLoading || !every(this.state.source, image => image.width && image.height);
   }
 
-  async updateCache(sources) {
-    await updateCache(sources);
-    this.setState({ source: getCachedSources(sources) });
+  updateCache(sources) {
+    updateCache(sources).then(() => (
+      this.setState({ source: getCachedSources(sources) })
+    ));
   }
 
   render() {
@@ -109,9 +108,12 @@ class ConnectedImage extends PureComponent {
       [source] = source;
     }
 
-    const { ImageComponent = Image, style, ...otherProps } = this.props;
+    const {
+      ImageComponent = Image, style, isLoading, ...otherProps
+    } = this.props;
+
     return (
-      <SkeletonImage onReady={!this.isLoading} animate={'fade'}>
+      <SkeletonImage onReady={!this.isLoading}>
         <ImageComponent {...otherProps} source={source} style={[this.aspectRatio, style]} />
       </SkeletonImage>
     );

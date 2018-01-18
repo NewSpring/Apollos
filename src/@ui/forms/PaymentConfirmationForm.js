@@ -12,7 +12,7 @@ import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import styled from '@ui/styled';
-import Button from '@ui/Button';
+import Button, { ButtonLink } from '@ui/Button';
 
 const Row = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 2,
@@ -39,6 +39,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
       isPaying: PropTypes.bool,
     }),
     onSubmit: PropTypes.func,
+    onPressChangePaymentMethod: PropTypes.func,
   };
 
   static defaultProps = {
@@ -49,6 +50,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
       isPaying: false,
     },
     onSubmit() {},
+    onPressChangePaymentMethod() {},
   };
 
   get total() {
@@ -57,7 +59,13 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
   }
 
   render() {
-    if (this.props.isLoading) return <ActivityIndicator />;
+    if (this.props.isLoading) {
+      return (
+        <View>
+          <ActivityIndicator />
+        </View>
+      );
+    }
 
     return (
       <View>
@@ -94,6 +102,10 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
         </Row>
 
         <Button onPress={this.props.onSubmit} title="Complete" loading={this.props.contributions.isPaying} />
+
+        <ButtonLink onPress={this.props.onPressChangePaymentMethod}>
+          {'Change Payment Method'}
+        </ButtonLink>
       </View>
     );
   }
@@ -119,13 +131,33 @@ const PaymentConfirmationForm = compose(
         if (props.contributions.paymentMethod === 'creditCard') {
           await props.validateSingleCardTransaction(); // This seems unnecessary
         }
-        await props.postPayment();
 
-        // NOTE: Need to keep reading through
-        // the code to understand what id and name are for
-        const completeOrderRes = await props.completeOrder(props.contributions.orderPaymentToken);
+        const isSavedPaymentMethod = props.contributions.paymentMethod === 'savedPaymentMethod';
+        const isScheduled = props.contributions.frequencyId !== 'today';
+        if (isSavedPaymentMethod) {
+          await props.createOrder();
+
+          if (isScheduled) {
+            props.setPaymentResult({
+              success: true,
+            });
+            return true;
+          }
+        }
+
+        const createOrderResponse = await props.createOrder();
+        const order = get(createOrderResponse, 'data.order', {});
+        const token = order.url.split('/').pop();
+
+        await props.postPayment(order.url);
+        const completeOrderRes = await props.completeOrder({
+          token,
+          name: props.contributions.willSavePaymentMethod ?
+            props.contributions.savedAccountName : null,
+        });
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
+
 
         props.setPaymentResult({
           success: true,

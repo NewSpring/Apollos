@@ -4,7 +4,7 @@ export default gql`
   query getStories($limit: Int!, $skip: Int!) {
     content(channel: "stories", limit: $limit, skip: $skip) {
       id
-      entryId: id
+      id
       title
       status
       channelName
@@ -23,7 +23,9 @@ export default gql`
           fileLabel
           url
         }
-        ooyalaId
+        video {
+          embedUrl
+        }
       }
     }
   }

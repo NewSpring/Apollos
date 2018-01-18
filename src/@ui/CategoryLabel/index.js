@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, pure, setPropTypes } from 'recompose';
+import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { kebabCase } from 'lodash';
-import Placeholder from 'rn-placeholder';
 
+import { withIsLoading } from '@ui/isLoading';
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 import { H7 } from '@ui/typography';
@@ -12,34 +12,31 @@ import Icon from '@ui/Icon';
 import * as Icons from '@ui/Icon/icons';
 
 const enhance = compose(
+  withIsLoading,
   pure,
-  withTheme(({ theme, color }) => ({
-    color: color || theme.colors.text.primary,
-    theme,
-  })),
+  withTheme(),
   setPropTypes({
     label: PropTypes.string.isRequired,
     icon: PropTypes.oneOf(Object.keys(Icons).map(kebabCase)),
     color: PropTypes.string,
     isLoading: PropTypes.bool,
-    children: PropTypes.node,
+    withFlex: PropTypes.bool,
+  }),
+  defaultProps({
+    withFlex: false,
   }),
 );
 
-const Wrapper = styled(({ theme }) => ({
+const Wrapper = styled(({ flexed }) => ({
+  flex: flexed ? 1 : null,
   flexDirection: 'row',
   alignItems: 'center',
-  paddingTop: theme.sizing.baseUnit / 2,
 }))(View);
 
 const PlaceholderWrapper = styled(({ theme }) => ({
   flex: 1,
   paddingHorizontal: theme.sizing.baseUnit / 2,
 }))(View);
-
-const LabelText = styled(({ color: fontColor }) => ({
-  color: fontColor,
-}))(H7);
 
 // TODO: Ideally this should take an the current category and map it against an array of all the
 // categories in Heighliner
@@ -61,28 +58,20 @@ const getIconName = (label, icon) => {
 const CategoryLabel = enhance(({
   label,
   icon,
-  color: fontColor,
+  withFlex,
   isLoading,
-  children,
   theme,
 }) => (
-  <Wrapper>
+  <Wrapper flexed={withFlex}>
     <Icon
       name={getIconName(label, icon)}
       size={theme.helpers.rem(1.2)}
-      fill={fontColor}
+      fill={theme.colors.text.primary}
       isLoading={isLoading}
     />
     <PlaceholderWrapper>
-      <Placeholder.Line
-        width={'40%'}
-        textSize={theme.helpers.rem(1)}
-        onReady={!isLoading}
-      >
-        <LabelText color={fontColor}>{label}</LabelText>
-      </Placeholder.Line>
+      <H7>{label}</H7>
     </PlaceholderWrapper>
-    {children}
   </Wrapper>
 ));
 

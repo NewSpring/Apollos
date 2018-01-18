@@ -5,7 +5,7 @@ export default gql`
     playlist: node(id: $id) {
       id
       ... on Content {
-        entryId: id
+        id
         title
         status
         channelName

@@ -1,35 +1,35 @@
 import React from 'react';
 import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 import CardWrapper from './';
 
 describe('the Card component', () => {
   it('should render', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <CardWrapper />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should render children', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <CardWrapper>
           <Text>Boom!</Text>
         </CardWrapper>
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should accept a backgroundColor', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <CardWrapper backgroundColor={'salmon'}>
           <Text>Boom!</Text>
         </CardWrapper>
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -40,17 +40,17 @@ describe('the Card component', () => {
     };
 
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <CardWrapper style={cardDimensions} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
   it('should accept additional props', () => {
     const tree = renderer.create(
-      <ThemeProvider>
+      <Providers>
         <CardWrapper accessible={false} />
-      </ThemeProvider>,
+      </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });

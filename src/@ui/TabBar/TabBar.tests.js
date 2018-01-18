@@ -1,11 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { ThemeProvider } from '@ui/theme';
+import Providers from '@ui/TestProviders';
 import Component from './';
 
 it('renders correctly', () => {
   const tree = renderer.create(
-    <ThemeProvider><Component /></ThemeProvider>,
+    <Providers><Component /></Providers>,
   );
   expect(tree).toMatchSnapshot();
 });

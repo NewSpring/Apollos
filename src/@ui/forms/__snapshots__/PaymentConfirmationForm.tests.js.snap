@@ -1,23 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The PaymentConfirmationForm component renders a loading indicator 1`] = `
-<ActivityIndicator
-  animating={true}
-  color="#999999"
-  hidesWhenStopped={true}
-  size="small"
-  style={
-    Object {
-      "alignSelf": "center",
-      "bottom": 0,
-      "flex": 1,
-      "left": 0,
-      "position": "absolute",
-      "right": 0,
-      "top": 0,
+<View>
+  <ActivityIndicator
+    animating={true}
+    color="#999999"
+    hidesWhenStopped={true}
+    size="small"
+    style={
+      Object {
+        "alignSelf": "center",
+        "bottom": 0,
+        "flex": 1,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
     }
-  }
-/>
+  />
+</View>
 `;
 
 exports[`The PaymentConfirmationForm component renders correctly 1`] = `
@@ -253,6 +255,25 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       </Text>
     </View>
   </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "borderRadius": 0,
+        "color": "#6bac43",
+        "fontFamily": null,
+        "fontSize": 18,
+        "lineHeight": 20,
+        "padding": 0,
+      }
+    }
+  >
+    Change Payment Method
+  </Text>
 </View>
 `;
 
@@ -481,6 +502,25 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       />
     </View>
   </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "borderRadius": 0,
+        "color": "#6bac43",
+        "fontFamily": null,
+        "fontSize": 18,
+        "lineHeight": 20,
+        "padding": 0,
+      }
+    }
+  >
+    Change Payment Method
+  </Text>
 </View>
 `;
 
@@ -779,5 +819,24 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       </Text>
     </View>
   </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "borderRadius": 0,
+        "color": "#6bac43",
+        "fontFamily": null,
+        "fontSize": 18,
+        "lineHeight": 20,
+        "padding": 0,
+      }
+    }
+  >
+    Change Payment Method
+  </Text>
 </View>
 `;
