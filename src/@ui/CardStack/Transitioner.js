@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, StyleSheet, View, Easing, PanResponder } from 'react-native';
-import { clamp, get } from 'lodash';
+import { Platform, Animated, StyleSheet, View, Easing, PanResponder } from 'react-native';
+import { clamp, get, findIndex } from 'lodash';
 import styled from '@ui/styled';
 
 import interpolator from './interpolator';
@@ -9,6 +9,7 @@ import findFirstMatch from './findFirstMatch';
 
 export const PUSH = 'PUSH';
 export const POP = 'POP';
+export const REPLACE = 'REPLACE';
 const ANIMATION_DURATION = 500;
 const ANIMATION_EASING = Easing.bezier(0.2833, 0.99, 0.31833, 0.99);
 const POSITION_THRESHOLD = 1 / 2;
@@ -28,6 +29,9 @@ class Transitioner extends PureComponent {
       index: PropTypes.number,
       canGo: PropTypes.func,
       goBack: PropTypes.func,
+      entries: PropTypes.arrayOf(PropTypes.shape({
+        key: PropTypes.string,
+      })).isRequired,
       goForward: PropTypes.func,
       push: PropTypes.func,
     }),
@@ -56,63 +60,74 @@ class Transitioner extends PureComponent {
 
   state = {
     transition: null,
+    entries: [this.props.location],
+    index: 0,
   };
 
   // In a routing change: set up state to handle the transition and start the animation
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.key === this.props.location.key) return;
 
-    // we only care about PUSH and POP actions. (EX: REPLACE we don't want to animate)
-    if (nextProps.history.action === PUSH || nextProps.history.action === POP) {
-      let transition = PUSH;
-      let fromPosition = 0;
-      let toPosition = 1;
+    let { entries } = this.state;
+    let transition = nextProps.history.action;
 
-      if (nextProps.history.action === POP) {
-        transition = POP;
-        fromPosition = 1;
-        toPosition = 0;
-      }
-
-      // Since ReactRouter uses a global history state, we need to figure out when we're dealing
-      // with a routing change that happens inside of nested routes, as we don't want this CardStack
-      // to add animation when we're transitioning between two nested routes.
-      if (this.locationsfromSameRoute(this.props.location, nextProps.location)) {
-        transition = null;
-      }
-
-      this.setState({
-        previouslyRenderedLocation: this.props.location,
-        transition,
-      }, () => {
-        if (
-          !transition ||
-          this.isPanning ||
-          (nextProps.history.action === POP && nextProps.history.index < this.startingIndex)
-        ) {
-          return;
-        }
-
-        // Below we'll render the two routes we're animating between.
-        // Here we'll animate between the two routes, where this.animatedPosition
-        // refers to the index of the route.
-        this.animatedPosition.setValue(fromPosition);
-        this.animation = Animated.timing(this.animatedPosition, {
-          duration: ANIMATION_DURATION,
-          easing: ANIMATION_EASING,
-          toValue: toPosition,
-          useNativeDriver: true,
-        }).start(({ finished }) => {
-          if (finished) {
-            this.setState({
-              transition: null,
-            });
-            this.animatedPosition.setValue(0);
-            this.animation = null;
-          }
-        });
-      });
+    // If new location and current location point to same route,
+    // change entry at current index and exit (no animation)
+    if (this.locationsfromSameRoute(this.props.location, nextProps.location)) {
+      entries[this.state.index] = nextProps.location;
+      this.setState(entries);
+      return;
     }
+
+    let toPosition = this.state.index;
+
+    switch (nextProps.history.action) {
+      case PUSH: {
+        // If the next <Route> doesn't have a path, we know we are pushing from
+        // an inner page to a root-level page, and we should show a POP animation instead
+        const nextRouteChild = this.routeChildForLocation(nextProps.location);
+        if (!nextRouteChild.props.path && !nextRouteChild.props.to) {
+          entries = [nextProps.location, this.props.location];
+          toPosition = 0;
+          transition = POP;
+        } else {
+          // otherwise, insert route at next place in stack
+          entries.splice(this.state.index + 1, 0, nextProps.location);
+          toPosition = this.state.index + 1;
+        }
+        break;
+      }
+      case POP:
+        toPosition = findIndex(entries, ({ key }) => key === nextProps.location.key);
+        if (toPosition < 0) {
+          entries = [nextProps.location, ...entries];
+          toPosition = 0;
+        }
+        break;
+      case REPLACE:
+      default:
+        entries[this.state.index] = nextProps.location;
+        break;
+    }
+
+    const fromPosition = findIndex(entries, ({ key }) => key === this.props.location.key);
+
+    this.setState({
+      entries,
+      previouslyRenderedLocation: this.props.location,
+      index: toPosition,
+      transition,
+    }, () => {
+      if (
+        !transition ||
+        this.isPanning ||
+        (nextProps.history.action === POP && nextProps.history.index < this.startingIndex)
+      ) {
+        return;
+      }
+
+      this.animatePosition(fromPosition, toPosition);
+    });
   }
 
   componentWillUnmount() {
@@ -157,6 +172,29 @@ class Transitioner extends PureComponent {
   // Points to the index of the current screen rendered in `renderScreens`
   animatedPosition = new Animated.Value(0);
 
+  animatePosition = (fromPosition, toPosition) => {
+    if (Platform.OS === 'web') {
+      this.animatedPosition.setValue(toPosition);
+      this.afterNavigate();
+      return;
+    }
+
+    // Here we'll animate between routes, where this.animatedPosition
+    // refers to the index of the route.
+    this.animatedPosition.setValue(fromPosition);
+    this.animation = Animated.timing(this.animatedPosition, {
+      duration: ANIMATION_DURATION,
+      easing: ANIMATION_EASING,
+      toValue: toPosition,
+      useNativeDriver: true,
+    }).start(({ finished }) => {
+      if (finished) {
+        this.afterNavigate();
+        this.animation = null;
+      }
+    });
+  }
+
   panResponder = PanResponder.create({
     onMoveShouldSetPanResponder: (event, gesture) => (
       !this.wouldPopToSameRouteChild &&
@@ -178,18 +216,16 @@ class Transitioner extends PureComponent {
     onPanResponderGrant: () => {
       this.animatedPosition.stopAnimation(() => {
         this.isPanning = true;
-        this.props.history.goBack();
       });
     },
 
     onPanResponderMove: (event, { dx, dy }) => {
-      // current route is always the "second" (index=1) route in the stack (stack size is always 2)
-      const startValue = 1;
+      const startValue = this.state.index;
       const dValue = this.isHorizontal ? dx : dy;
       const size = this.isHorizontal ? this.props.width : this.props.height;
 
       const currentValue = startValue + (-dValue / size);
-      const value = clamp(0, currentValue, 1);
+      const value = clamp(startValue - 1, currentValue, startValue);
       this.animatedPosition.setValue(value);
     },
 
@@ -241,26 +277,27 @@ class Transitioner extends PureComponent {
 
   cancelNavigationFromPan = (duration) => {
     this.animation = Animated.timing(this.animatedPosition, {
-      toValue: 1,
+      toValue: this.state.index,
       duration,
       easing: Easing.linear(),
       useNativeDriver: true,
     }).start(({ finished }) => {
       if (finished) {
-        this.props.history.goForward();
         this.afterPan();
       }
     });
   };
 
   finishNavigationFromPan = (duration) => {
+    this.props.history.goBack();
     Animated.timing(this.animatedPosition, {
-      toValue: 0,
+      toValue: Math.max(this.state.index - 1, 0),
       duration,
       easing: Easing.linear(),
       useNativeDriver: true,
     }).start(({ finished }) => {
       if (finished) {
+        this.afterNavigate();
         this.afterPan();
       }
     });
@@ -271,50 +308,26 @@ class Transitioner extends PureComponent {
 
     this.setState({
       previouslyRenderedLocation: {},
-      transition: null,
-    }, () => this.animatedPosition.setValue(0));
+    });
   };
 
+  afterNavigate = () => {
+    this.setState({
+      transition: null,
+      entries: this.state.entries.slice(0, this.state.index + 1),
+    });
+  }
+
   renderScreens() {
-    let screens = [];
-    // This is how we emulate a CardStack with ReactRouter:
-    // Essentially, our CardStack size during a transition is always 2:
-    // The Screen we're navigating away from, and the Screen we're navigating to.
-    if (this.state.transition === PUSH) {
-      screens = [
+    const screens = this.state.entries
+      .filter(entry => this.routeChildForLocation(entry))
+      .map((entry, index) => (
         this.renderScreenWithAnimation({
-          index: 0,
-          screen: this.previouslyRenderedRouteChild,
-          key: this.state.previouslyRenderedLocation.key,
-        }),
-        this.renderScreenWithAnimation({
-          index: 1,
-          screen: this.currentRouteChild,
-          key: this.props.location.key,
-        }),
-      ];
-    } else if (this.state.transition === POP || this.isPanning) {
-      screens = [
-        this.renderScreenWithAnimation({
-          index: 0,
-          screen: this.currentRouteChild,
-          key: this.props.location.key,
-        }),
-        this.renderScreenWithAnimation({
-          index: 1,
-          screen: this.previouslyRenderedRouteChild,
-          key: this.state.previouslyRenderedLocation.key,
-        }),
-      ];
-    } else {
-      screens = [
-        this.renderScreenWithAnimation({
-          index: 0,
-          screen: this.currentRouteChild,
-          key: this.props.location.key,
-        }),
-      ];
-    }
+          index,
+          screen: this.routeChildForLocation(entry),
+          key: entry.key,
+        })
+      ));
     return screens;
   }
 
