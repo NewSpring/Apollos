@@ -16,12 +16,13 @@ const enhance = compose(
     title: PropTypes.string,
     subheading: PropTypes.string,
     body: PropTypes.string,
-    images: PropTypes.arrayOf(PropTypes.shape({
-      url: PropTypes.string,
-    })),
     video: PropTypes.shape({
       embedUrl: PropTypes.string,
     }),
+    images: PropTypes.arrayOf(PropTypes.shape({
+      url: PropTypes.string,
+    })),
+    imageOverlayColor: PropTypes.string,
   }),
 );
 
@@ -30,12 +31,13 @@ const ContentWrapper = styled(({ theme }) => ({
 }))(View);
 
 const ContentView = enhance(({
-  images = [],
   video,
+  images = [],
+  imageOverlayColor,
   children,
 }) => (
   <View>
-    <ContentMedia images={images} video={video} />
+    <ContentMedia images={images} video={video} imageOverlayColor={imageOverlayColor} />
     <ContentWrapper>
       {children}
     </ContentWrapper>
