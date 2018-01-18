@@ -65,7 +65,7 @@ class AppRouter extends PureComponent {
     <Route path="/give/checkout" key="give-checkout" component={asModal(give.Checkout)} />,
   ];
 
-  tabs = () => {
+  tabs = () => { // eslint-disable-line
     // On mobile we render tabs.Layout at this level so that other <Route>s at
     // the root level in the router can render on top of the tabbar
     const TabSwitch = Platform.OS === 'web' ? Switch : tabs.Layout;
@@ -92,41 +92,43 @@ class AppRouter extends PureComponent {
   render() {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
-    const AppSwitch = Platform.OS === 'web' ? tabs.Layout : CardStack;
+    const AppSwitch = Platform.OS === 'web' ? tabs.Layout : FlexedView;
     return (
       <FlexedView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         <AppSwitch location={this.isModal ? previousLocation : this.props.location}>
-          <Redirect from="/sermons" to="/series" />
-          <Route exact path="/series" component={Series} />
-          <Route exact path="/series/:id" component={SeriesSingle} />
-          <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
+          <CardStack location={this.isModal ? previousLocation : this.props.location}>
+            <Redirect from="/sermons" to="/series" />
+            <Route exact path="/series" component={Series} />
+            <Route exact path="/series/:id" component={SeriesSingle} />
+            <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
 
-          <Route exact path="/studies" component={Studies} />
-          <Route exact path="/studies/:id" component={StudiesSingle} />
-          <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
+            <Route exact path="/studies" component={Studies} />
+            <Route exact path="/studies/:id" component={StudiesSingle} />
+            <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
 
-          <Redirect from="/devotionals" to="/studies" />
-          <Redirect from="/devotions" to="/studies" />
-          <Route exact path="/devotions/:id" component={DebugView} />
+            <Redirect from="/devotionals" to="/studies" />
+            <Redirect from="/devotions" to="/studies" />
+            <Route exact path="/devotions/:id" component={DebugView} />
 
-          <Route exact path="/music" component={Music} />
-          <Route exact path="/music/:id" component={Playlist} />
+            <Route exact path="/music" component={Music} />
+            <Route exact path="/music/:id" component={Playlist} />
 
-          <Route exact path="/articles" component={Articles} />
-          <Route exact path="/articles/:id" component={ArticlesSingle} />
+            <Route exact path="/articles" component={Articles} />
+            <Route exact path="/articles/:id" component={ArticlesSingle} />
 
-          <Route exact path="/stories" component={Stories} />
-          <Route exact path="/stories/:id" component={StoriesSingle} />
+            <Route exact path="/stories" component={Stories} />
+            <Route exact path="/stories/:id" component={StoriesSingle} />
 
-          <Route exact path="/news" component={News} />
-          <Route exact path="/news/:id" component={NewsSingle} />
+            <Route exact path="/news" component={News} />
+            <Route exact path="/news/:id" component={NewsSingle} />
 
-          <Route exact path="/events/:id" component={DebugView} />
+            <Route exact path="/events/:id" component={DebugView} />
 
-          <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
+            <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
 
-          <Route component={this.tabs} />
+            <Route component={this.tabs} />
+          </CardStack>
         </AppSwitch>
         {this.isModal ? this.largeScreenModals : null}
       </FlexedView>
