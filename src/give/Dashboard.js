@@ -6,8 +6,9 @@ import {
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose } from 'recompose';
+import { compose, branch, renderComponent } from 'recompose';
 import get from 'lodash/get';
+import ActivityIndicator from '@ui/ActivityIndicator';
 import { withRouter } from '@ui/NativeWebRouter';
 import { UIText } from '@ui/typography';
 import Header from '@ui/Header';
@@ -97,6 +98,7 @@ export class Dashboard extends PureComponent {
                 key={activityItem.id}
                 name={activityItem.name}
                 expirationDate={`${activityItem.expirationMonth}/1/${activityItem.expirationYear}`}
+                onPress={() => { console.log('route to /give/now'); }}
               />
             );
           })}
@@ -145,6 +147,7 @@ export class Dashboard extends PureComponent {
 const enhance = compose(
   withGivingDashboard,
   withRouter,
+  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
 );
 
 export default enhance(Dashboard);
