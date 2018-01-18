@@ -19,7 +19,7 @@ const enhance = compose(
   setPropTypes({
     isLoading: PropTypes.bool,
     accountName: PropTypes.string,
-    amount: PropTypes.string,
+    amount: PropTypes.number,
     frequency: PropTypes.string,
     startDate: PropTypes.string,
     iconSize: PropTypes.number,
@@ -74,7 +74,7 @@ const ScheduleCard = enhance(({
   onPress,
   ...otherProps
 }) => {
-  const amountParts = amount.toFixed(2).split('.');
+  const amountParts = parseFloat(amount).toFixed(2).split('.');
   return (
     <Card isLoading={isLoading} {...otherProps}>
       <PaddedView>
