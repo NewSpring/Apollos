@@ -63,7 +63,7 @@ const AlbumView = enhance(({
   title, artist, blurredImage, albumImage, isLoading = false,
 }) => (
   <Container>
-    <BlurredImage source={blurredImage} />
+    {(blurredImage) ? <BlurredImage source={blurredImage} /> : null}
     <InfoWrapper>
       <AlbumArt isLoading={isLoading} source={albumImage} />
       <TitleWrapper>

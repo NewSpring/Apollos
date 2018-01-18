@@ -1,15 +1,17 @@
 import React from 'react';
 import { Modal } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, setPropTypes } from 'recompose';
+import { compose, setPropTypes, mapProps } from 'recompose';
 import { withPlaylist } from '@data/mediaPlayer';
 import { withThemeMixin } from '@ui/theme';
 import AlbumView from '@ui/AlbumView';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
-import { getBlurredImageSource, getAlbumImageSource } from '@utils/content';
+import { getAlbumImageSource } from '@utils/content';
+import { asModal } from '@ui/ModalView';
 
 const enhance = compose(
+  mapProps(({ match: { params: { id, track } } }) => ({ id, track })),
   setPropTypes({
     id: PropTypes.string, // album id
     track: PropTypes.string, // track title
@@ -18,31 +20,27 @@ const enhance = compose(
   }),
   withPlaylist,
   withThemeMixin({ type: 'dark' }),
+  asModal,
 );
 
 const TrackContextual = enhance(({
   track,
-  handleViewAlbum,
+  // handleViewAlbum,
   content: {
     title,
     content: {
       images = [],
     } = {},
   } = {},
-  ...modalProps
 }) => (
-  <Modal {...modalProps}>
-    <FlexedView>
-      <PaddedView>
-        <AlbumView
-          title={title}
-          artist="NewSpring"
-          albumImage={getAlbumImageSource(images)}
-          blurredImage={getBlurredImageSource(images)}
-        />
-      </PaddedView>
-    </FlexedView>
-  </Modal>
+  <FlexedView>
+    <AlbumView
+      title={track}
+      artist={`${title} - NewsSpring`}
+      albumImage={getAlbumImageSource(images)}
+    />
+    <PaddedView />
+  </FlexedView>
 ));
 
 export default TrackContextual;

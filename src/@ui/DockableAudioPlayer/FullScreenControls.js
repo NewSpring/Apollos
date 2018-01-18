@@ -10,6 +10,7 @@ import Icon from '@ui/Icon';
 import Audio from '@ui/Audio';
 import Touchable from '@ui/Touchable';
 import { UIText, H7, H4 } from '@ui/typography';
+import { Link } from '@ui/NativeWebRouter';
 import styled from '@ui/styled';
 
 const Container = styled(({ theme, backgroundColor }) => ({
@@ -67,6 +68,7 @@ const FullScreenControls = enhance(({
   isRepeating,
   handleShuffle,
   handleRepeat,
+  trackInfoLink,
 }) => (
   <Container backgroundColor={color}>
     <GradientOverlayImage
@@ -118,9 +120,9 @@ const FullScreenControls = enhance(({
           </Touchable>
         </PaddedView>
         <PaddedView>
-          <Touchable>
+          <Link to={trackInfoLink}>
             <Ellipsis />
-          </Touchable>
+          </Link>
         </PaddedView>
       </Settings>
       <Controls>

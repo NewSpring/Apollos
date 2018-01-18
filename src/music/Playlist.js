@@ -21,6 +21,7 @@ const enhance = compose(
 );
 
 const Playlist = enhance(({
+  id,
   content: {
     title,
     content: {
@@ -37,6 +38,7 @@ const Playlist = enhance(({
       isLoading={isLoading}
       tracks={tracks}
       onTrackPress={setNowPlaying}
+      trackEllipsisLink={({ title: track }) => `/music/${id}/${encodeURIComponent(track)}`}
       ListHeaderComponent={
         <AlbumView
           isLoading={isLoading}
