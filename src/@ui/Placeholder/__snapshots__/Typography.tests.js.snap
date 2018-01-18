@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Typography placeholder renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": 18,
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`The Typography placeholder translates type styles 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": 24,
+      "marginVertical": 4,
+      "width": "100%",
+    }
+  }
+/>
+`;

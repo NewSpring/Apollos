@@ -34,6 +34,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
     }
   >
     <View
+      disabled={false}
       style={
         Object {
           "marginBottom": 0,
@@ -88,6 +89,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -355,7 +357,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
           style={
             Object {
               "backgroundColor": "#ffffff",
-              "borderTopColor": "#dddddd",
+              "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
               "borderTopWidth": 0.5,
               "bottom": 0,
               "left": 0,
@@ -555,6 +557,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
     }
   >
     <View
+      disabled={false}
       style={
         Object {
           "marginBottom": 0,
@@ -609,6 +612,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -876,7 +880,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
           style={
             Object {
               "backgroundColor": "#ffffff",
-              "borderTopColor": "#dddddd",
+              "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
               "borderTopWidth": 0.5,
               "bottom": 0,
               "left": 0,
@@ -1076,6 +1080,7 @@ exports[`The FrequencyInput component should render correctly with initial state
     }
   >
     <View
+      disabled={false}
       style={
         Object {
           "marginBottom": 0,
@@ -1130,6 +1135,7 @@ exports[`The FrequencyInput component should render correctly with initial state
         >
           <TextInput
             allowFontScaling={true}
+            editable={true}
             focusAnimationDuration={450}
             focusAnimationEasing={[Function]}
             keyboardType="numeric"
@@ -1397,7 +1403,7 @@ exports[`The FrequencyInput component should render correctly with initial state
           style={
             Object {
               "backgroundColor": "#ffffff",
-              "borderTopColor": "#dddddd",
+              "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
               "borderTopWidth": 0.5,
               "bottom": 0,
               "left": 0,

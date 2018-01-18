@@ -5,7 +5,7 @@ export default gql`
     content: node(id: $id) {
       id
       ... on Content {
-        entryId: id
+        id
         title
         status
         channelName
@@ -26,7 +26,9 @@ export default gql`
             fileLabel
             url
           }
-          ooyalaId
+          video {
+            embedUrl
+          }
           colors {
             value
             description

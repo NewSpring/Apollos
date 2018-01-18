@@ -11,7 +11,7 @@ describe('The FeedView component', () => {
         <FeedView
           content={[
             {
-              entryId: '1',
+              id: '1',
               title: 'hi',
               category: 'bob',
               content: {
@@ -25,7 +25,7 @@ describe('The FeedView component', () => {
               },
             },
             {
-              entryId: '2',
+              id: '2',
               title: 'hi 2',
               category: 'bob 2',
               content: {

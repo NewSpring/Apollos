@@ -64,12 +64,12 @@ export default class Link extends Component {
     const { to, replace, pop } = this.props;
 
     if (pop) {
-      goBackTo({ to, history });
+      return goBackTo({ to, history });
     } else if (replace && to) {
-      history.replace(to);
-    } else {
-      history.push(to);
+      return history.replace(to);
     }
+
+    return history.push(to);
   }
 
   render() {

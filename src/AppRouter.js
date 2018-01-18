@@ -21,6 +21,8 @@ import News, { NewsSingle } from './news';
 import Music, { Playlist, TrackContextual } from './music';
 import Auth from './auth';
 
+import { Results as GroupFinderResults, GroupSingle } from './group-finder';
+
 let previousLocation;
 
 class AppRouter extends PureComponent {
@@ -65,6 +67,7 @@ class AppRouter extends PureComponent {
   largeScreenModals = [
     <Route exact path="/sections" key="sections-modal" component={asModal(tabs.Sections)} />,
     <Route path="/give/checkout" key="give-checkout" component={asModal(give.Checkout)} />,
+    <Route path="/give/payment-methods/:id" key="give-payment-method" component={asModal(give.PaymentMethod)} />,
     <Route path="/login" key="login" component={asModal(Auth)} />,
   ];
 
@@ -119,7 +122,7 @@ class AppRouter extends PureComponent {
 
                 <Route exact path="/music" component={Music} />
                 <Route exact path="/music/:id" component={Playlist} />
-                
+
 
                 <Route exact path="/articles" component={Articles} />
                 <Route exact path="/articles/:id" component={ArticlesSingle} />
@@ -132,7 +135,11 @@ class AppRouter extends PureComponent {
 
                 <Route exact path="/events/:id" component={DebugView} />
 
+                <Route exact path="/groups/finder" component={GroupFinderResults} />
+                <Route exact path="/groups/:id" component={GroupSingle} />
+
                 <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
+                <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
                 <Route path="/login" cardStackDirection="vertical" component={Auth} />
 

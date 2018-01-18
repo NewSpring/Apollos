@@ -1,4 +1,6 @@
 import moment from 'moment';
+import isEmpty from 'lodash/isEmpty';
+import removeUndefined from '@utils/removeUndefined';
 import getOrderTotal from './getOrderTotal';
 
 // TODO: Saved payment methods
@@ -6,7 +8,7 @@ export default function getOrderDetails(state) {
   const total = getOrderTotal(state);
 
   // here we format data for the NMI processing
-  const joinedData = {
+  const joinedData = removeUndefined({
     billing: {
       'first-name': state.firstName,
       'last-name': state.lastName,
@@ -17,11 +19,8 @@ export default function getOrderDetails(state) {
       state: state.state,
       postal: state.zipCode,
     },
-    'merchant-defined-field-2': state.campusId,
-  };
-
-  // NOTE: Looks like this can be guest or savedPayment?
-  // if (state.transactionType === 'savedPayment') delete joinedData.amount;
+    'merchant-defined-field-2': isEmpty(state.campusId) ? undefined : state.campusId,
+  });
 
   if (state.frequencyId !== 'today') {
     joinedData.plan = {
@@ -70,7 +69,7 @@ export default function getOrderDetails(state) {
       .join(',');
 
   // SINGLE
-  } else {
+  } else if (state.contributions.length > 0) {
     joinedData.amount = total;
     joinedData.product = state.contributions.map(contribution => ({
       quantity: 1,
@@ -81,10 +80,9 @@ export default function getOrderDetails(state) {
     }));
   }
 
-  // if (savedAccount.id) {
-  //   joinedData.savedAccount = savedAccount.id;
-  //   joinedData.savedAccountName = savedAccount.name;
-  // }
+  if (state.paymentMethod === 'savedPaymentMethod') {
+    joinedData.savedAccount = state.savedPaymentMethodId;
+  }
 
   return joinedData;
 }

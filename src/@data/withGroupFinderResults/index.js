@@ -1,8 +1,9 @@
 import { graphql } from 'react-apollo';
+import { get } from 'lodash';
 import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 import groupsQuery from './groupsQuery';
 
-const getDay = (schedule: String) => {
+const getDay = (schedule) => {
   switch (schedule) {
     case 'sunday':
       return 0;
@@ -27,31 +28,30 @@ export default graphql(groupsQuery, {
   props: ({ data } = {}) => ({
     content: data.content,
     isLoading: data.loading,
-    isDone: data.content && data.content.count === data.content.results.length,
+    refetch: data.refetch,
+    canFetchMore: get(data, 'content.results.length') < get(data, 'content.count'),
+    // fetchMore: () => {},
+    // TODO: Not sure if this is working as expected, there's still an error onEndReached
     fetchMore: fetchMoreResolver({
-      collectionName: 'content',
+      collectionName: 'content.results',
       data,
     }),
   }),
   options: (ownProps = {}) => ({
     ssr: false,
     variables: {
-      tags: ownProps.tags && ownProps.tags.split(',').filter(x => x),
+      tags: ownProps.tags || [],
       query: ownProps.q || '',
       latitude: ownProps.latitude || null,
       longitude: ownProps.longitude || null,
-      zip: ownProps.zip !== 'none' ? ownProps.zip : '',
+      zip: ownProps.zip || null,
       limit: 10,
-      offset: 0,
-      campus: ownProps.campus !== 'none' ? ownProps.campus : '',
-      campuses:
-        ownProps.campuses && ownProps.campuses.length
-          ? ownProps.campuses.split(',').filter(x => x)
-          : [],
-      schedules:
-        ownProps.schedules && ownProps.schedules.length
-          ? ownProps.schedules.split(',').filter(x => x).map(x => getDay(x))
-          : [],
+      skip: 0,
+      campus: ownProps.campus || null,
+      campuses: ownProps.campuses || [],
+      schedules: ownProps.schedules && ownProps.schedules.length
+        ? ownProps.schedules.filter(x => x).map(x => getDay(x))
+        : [],
     },
   }),
 });

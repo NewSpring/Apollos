@@ -37,7 +37,17 @@ class FlatList extends PureComponent {
     renderItem: PropTypes.func,
     onEndReachedThreshold: PropTypes.number,
     refreshing: PropTypes.bool,
+    ListHeaderComponent: PropTypes.any, // eslint-disable-line
   };
+
+  get listHeader() {
+    if (!this.props.ListHeaderComponent) return null;
+    return React.isValidElement(this.props.ListHeaderComponent) ? (
+      this.props.ListHeaderComponent
+    ) : (
+      <this.props.ListHeaderComponent />
+    );
+  }
 
   handleLayout = ({ nativeEvent: { layout: { height, width } } }) => {
     this.layoutHeight = height;
@@ -51,7 +61,6 @@ class FlatList extends PureComponent {
       this.props.onEndReached();
     }
   }
-
   render() {
     return (
       <ScrollView
@@ -59,6 +68,7 @@ class FlatList extends PureComponent {
         scrollEventThrottle={250}
         onScroll={this.handleScroll}
       >
+        {this.listHeader}
         <MappedReactList {...this.props} />
       </ScrollView>
     );

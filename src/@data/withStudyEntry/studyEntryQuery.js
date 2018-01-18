@@ -4,7 +4,7 @@ export default gql`
   query GetStudyEntry($id: ID!) {
     content: node(id: $id) {
       ... on Content {
-        entryId: id
+        id
         title
         status
         channelName
@@ -53,7 +53,9 @@ export default gql`
           body
           tags
           speaker
-          ooyalaId
+          video {
+            embedUrl
+          }
         }
       }
     }

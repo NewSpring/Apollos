@@ -1,16 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { compose, mapProps, pure, withProps } from 'recompose';
-import { ScrollView } from 'react-native';
+
 import FlexedView from '@ui/FlexedView';
-import PaddedView from '@ui/PaddedView';
 import Header from '@ui/Header';
-import ContentView from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import withStudyEntry from '@data/withStudyEntry';
 import TabView, { SceneMap } from '@ui/TabView';
 import { withThemeMixin } from '@ui/theme';
-import Scripture from '@ui/Scripture';
+
+import ScriptureTab from './ScriptureTab';
+import DevotionalTab from './DevotionalTab';
 
 const enhance = compose(
   pure,
@@ -30,34 +29,14 @@ const enhance = compose(
   }),
 );
 
-const DevotionalTab = props => (
-  <ScrollView>
-    <ContentView {...props} />
-  </ScrollView>
-);
-
-const ScriptureTab = ({ scripture }) => (
-  <ScrollView>
-    <PaddedView>
-      <Scripture references={scripture.map(({ book, passage }) => `${book} ${passage}`)} />
-    </PaddedView>
-  </ScrollView>
-);
-
-ScriptureTab.propTypes = {
-  scripture: PropTypes.arrayOf(PropTypes.shape({
-    book: PropTypes.string, passage: PropTypes.string,
-  })),
-};
-
 const Study = enhance(({
   content: {
     title,
     parent: { title: parentTitle, content: { isLight = true } = {} } = {},
     content: {
-      images = [],
       body,
       scripture = [],
+      ...otherContentProps
     } = {},
   } = {},
   isLoading,
@@ -73,7 +52,7 @@ const Study = enhance(({
         barStyle={isLight ? 'dark-content' : 'light-content'}
         routes={tabRoutes}
         renderScene={SceneMap({
-          devotional: withProps({ title, images, body })(DevotionalTab),
+          devotional: withProps({ title, body, otherContentProps })(DevotionalTab),
           scripture: withProps({ scripture })(ScriptureTab),
         })}
       />

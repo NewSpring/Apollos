@@ -8,7 +8,7 @@ export default gql`
       includeChannels: $includeChannels,
       cache: false
     ) {
-      entryId: id
+      id
       title
       channelName
       status

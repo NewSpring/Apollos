@@ -92,4 +92,11 @@ FundInput.propTypes = {
   }),
 };
 
+FundInput.defaultProps = {
+  funds: [],
+  isFirst: false,
+  onChange() {},
+  value: {},
+};
+
 export default FundInput;

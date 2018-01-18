@@ -5,7 +5,7 @@ export default gql`
     content: node(id: $id) {
       id
       ... on Content {
-        entryId: id
+        id
         title
         status
         channelName
@@ -18,7 +18,9 @@ export default gql`
         content {
           isLiked
           body
-          ooyalaId
+          video {
+            embedUrl
+          }
           tags
           images(sizes: ["large"]) {
             fileName

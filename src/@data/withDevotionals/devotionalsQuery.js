@@ -4,7 +4,7 @@ export default gql`
   query getDevotionals($limit: Int!, $skip: Int!) {
     content(channel: "devotionals", limit: $limit, skip: $skip) {
       id
-      entryId: id
+      id
       title
       status
       channelName

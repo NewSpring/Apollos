@@ -9,7 +9,7 @@ export default graphql(checkoutQuery, {
       countries = [],
       states = [],
       person,
-      savedPayments,
+      savedPaymentMethods = [],
       loading,
     } = data;
 
@@ -19,7 +19,11 @@ export default graphql(checkoutQuery, {
       countries: countries.map(c => ({ label: c.description, id: c.value })),
       states: states.map(s => ({ label: s.description, id: s.value })),
       person,
-      savedPayments,
+      savedPaymentMethods: savedPaymentMethods.map(pm => ({
+        ...pm,
+        paymentMethod: pm.payment.paymentType === 'ACH' ? 'bankAccount' : 'creditCard',
+        accountNumber: pm.payment.accountNumber,
+      })),
     });
   },
 });

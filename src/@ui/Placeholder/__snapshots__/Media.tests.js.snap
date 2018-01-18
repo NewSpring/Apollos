@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Media placeholder accepts custom styles 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "salmon",
+      "borderRadius": 6,
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`The Media placeholder accepts size 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": "50%",
+      "width": "50%",
+    }
+  }
+/>
+`;
+
+exports[`The Media placeholder renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#dddddd",
+      "borderRadius": 6,
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+/>
+`;

@@ -1,14 +1,16 @@
 import React from 'react';
 import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
+import { startCase, toLower } from 'lodash';
 
 import withStudy from '@data/withStudy';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
-import ContentView from '@ui/ContentView';
+import ContentView, { Title, HTMLView } from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import { withThemeMixin } from '@ui/theme';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
+import RelatedContent from '@ui/RelatedContent';
 
 const enhance = compose(
   pure,
@@ -36,10 +38,12 @@ const Study = enhance(({
     title,
     content: {
       isLight = true,
-      images = [],
       description,
+      tags,
+      ...otherContentProps
     } = {},
     children,
+    id,
   } = { },
   isLoading,
 }) => (
@@ -50,8 +54,13 @@ const Study = enhance(({
       barStyle={isLight ? 'dark-content' : 'light-content'}
     />
     <ScrollView>
-      <ContentView images={images} body={description} />
+      <ContentView {...otherContentProps}>
+        <Title>{startCase(toLower(title))}</Title>
+        <HTMLView>{description}</HTMLView>
+      </ContentView>
       <HorizontalTileFeed content={children} isLoading={isLoading} />
+      { // Don't render till data is ready. Consider adding placeholder views for the content above.
+        !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
     </ScrollView>
     <SecondaryNav>
       <Link icon="share" />
