@@ -554,6 +554,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
     <View
       bordered={true}
       disabled={false}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -664,6 +665,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
     <View
       bordered={false}
       disabled={true}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -1769,6 +1771,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     <View
       bordered={true}
       disabled={false}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -1879,6 +1882,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     <View
       bordered={false}
       disabled={true}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -2469,6 +2473,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
     <View
       bordered={true}
       disabled={false}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -2579,6 +2584,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
     <View
       bordered={false}
       disabled={true}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -3220,6 +3226,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
     <View
       bordered={true}
       disabled={false}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -3330,6 +3337,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
     <View
       bordered={false}
       disabled={true}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -3920,6 +3928,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
     <View
       bordered={true}
       disabled={false}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -4030,6 +4039,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
     <View
       bordered={false}
       disabled={true}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
