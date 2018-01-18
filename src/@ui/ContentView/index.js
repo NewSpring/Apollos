@@ -33,7 +33,7 @@ const ContentWrapper = styled(({ theme }) => ({
 const ContentView = enhance(({
   video,
   images = [],
-  imageOverlayColor,
+  imageOverlayColor = '',
   children,
 }) => (
   <View>
