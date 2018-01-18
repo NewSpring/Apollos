@@ -50,3 +50,5 @@ export { default as Time } from './Time';
 export { default as Umbrella } from './Umbrella';
 export { default as Video } from './Video';
 export { default as Warning } from './Warning';
+export { default as CircleOutlineCheckMark } from './CircleOutlineCheckMark';
+export { default as CircleOutlineXMark } from './CircleOutlineXMark';
