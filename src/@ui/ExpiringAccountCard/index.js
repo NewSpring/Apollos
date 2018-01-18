@@ -11,11 +11,10 @@ import { withIsLoading } from '@ui/isLoading';
 import styled from '@ui/styled';
 import Card from '@ui/Card';
 import PaddedView from '@ui/PaddedView';
-import { H5, H6 } from '@ui/typography';
+import { H5, H6, UIText } from '@ui/typography';
 import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
 import Spacer from '@ui/Spacer';
-import StatusMessage from './StatusMessage';
 
 const enhance = compose(
   setPropTypes({
@@ -41,13 +40,13 @@ const enhance = compose(
   withIsLoading,
   withTheme(({ theme, ...otherProps }) => ({
     iconSize: otherProps.iconSize || theme.helpers.rem(1.5),
-    isErrorColor: theme.colors.alert,
+    iconFill: theme.colors.alert,
   })),
   pure,
 );
 
 const StyledH6 = styled(({ theme }) => ({
-  color: theme.colors.text.link,
+  color: theme.colors.alert,
 }))(H6);
 
 const Row = styled({
@@ -58,44 +57,33 @@ const Row = styled({
 const TransactionCard = enhance(({
   isLoading,
   iconSize,
-  date,
+  name,
+  expirationDate,
   dateFormat,
   onPress,
-  status,
-  details,
-  isScheduled,
-  error,
-  isErrorColor,
+  iconFill,
   ...otherProps
-}) => {
-  const isOk = status === null || status === 'Success' || status === 'Complete' || status === 'Pending';
-  return (
-    <Card isLoading={isLoading} {...otherProps}>
-      <PaddedView>
+}) => (
+  <Card isLoading={isLoading} {...otherProps}>
+    <PaddedView>
+      <Row>
+        <Icon name="CircleOutlineXMark" size={iconSize} fill={iconFill} />
+        <Spacer byWidth />
+        <H5>{moment(expirationDate).format(dateFormat)}</H5>
+      </Row>
+      <Spacer />
+      <UIText>{`Your saved payment ${name} is expiring soon.`}</UIText>
+      <Spacer />
+      <TouchableWithoutFeedback
+        onPress={onPress}
+      >
         <Row>
-          {isOk ? <Icon name="CircleOutlineCheckMark" size={iconSize} /> : <Icon name="CircleOutlineXMark" size={iconSize} fill={isErrorColor} />}
-          <Spacer byWidth />
-          <H5>{moment(date).format(dateFormat)}</H5>
+          <StyledH6>{'Update it Now'}</StyledH6>
+          <Icon name="ArrowNext" size={iconSize} fill={iconFill} />
         </Row>
-        <Spacer />
-        <StatusMessage
-          status={status}
-          details={details}
-          isScheduled={isScheduled}
-          error={error}
-        />
-        <Spacer />
-        <TouchableWithoutFeedback
-          onPress={onPress}
-        >
-          <Row>
-            <StyledH6>{'View Contribution'}</StyledH6>
-            <Icon name="ArrowNext" size={iconSize} />
-          </Row>
-        </TouchableWithoutFeedback>
-      </PaddedView>
-    </Card>
-  );
-});
+      </TouchableWithoutFeedback>
+    </PaddedView>
+  </Card>
+));
 
 export default TransactionCard;

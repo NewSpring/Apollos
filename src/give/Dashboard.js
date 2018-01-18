@@ -14,6 +14,7 @@ import Header from '@ui/Header';
 import AccountCard from '@ui/AccountCard';
 import ScheduleCard from '@ui/ScheduleCard';
 import TransactionCard from '@ui/TransactionCard';
+import ExpiringAccountCard from '@ui/ExpiringAccountCard';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
 import withGivingDashboard from '@data/withGivingDashboard';
@@ -72,18 +73,28 @@ export class Dashboard extends PureComponent {
           </Row>
 
           <H5>{'Dashboard (activity)'}</H5>
-          {this.props.activityItems.filter(at => (at.__typename === 'Transaction')).map(activityItem => (
-            <TransactionCard
-              key={activityItem.id}
-              date={activityItem.date}
-              status={activityItem.status}
-              details={activityItem.details}
-              isScheduled={activityItem.scheduled}
-              amount={activityItem.amount}
-              error={activityItem.statusMessage}
-              onPress={() => { console.log('route to', activityItem.id); }}
-            />
-          ))}
+          {this.props.activityItems.map((activityItem) => {
+            if (activityItem.__typename === 'Transaction') {
+              return (
+                <TransactionCard
+                  key={activityItem.id}
+                  date={activityItem.date}
+                  status={activityItem.status}
+                  details={activityItem.details}
+                  isScheduled={activityItem.scheduled}
+                  amount={activityItem.amount}
+                  error={activityItem.statusMessage}
+                  onPress={() => { console.log('route to', activityItem.id); }}
+                />
+              );
+            }
+            return (
+              <ExpiringAccountCard
+                key={activityItem.id}
+                name={activityItem.name}
+              />
+            );
+          })}
 
           <PaddedView>
             <H5>{'Dashboard (add account)'}</H5>
