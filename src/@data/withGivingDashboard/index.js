@@ -5,6 +5,7 @@ export default graphql(givingDashboardQuery, {
   props: ({ data }) => {
     const paymentMethods = data.savedPaymentMethods || [];
     return ({
+      isLoading: data.loading,
       scheduledTransactions: data.scheduledTransactions || [],
       activityItems: data.activityItems || [],
       savedPaymentMethods: paymentMethods.map(pm => ({
