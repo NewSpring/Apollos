@@ -4,6 +4,7 @@ exports[`The Chip component should be selected 1`] = `
 <View
   bordered={false}
   disabled={false}
+  pill={false}
   style={
     Object {
       "alignItems": "center",
@@ -49,6 +50,7 @@ exports[`The Chip component should render an icon 1`] = `
 <View
   bordered={false}
   disabled={false}
+  pill={false}
   style={
     Object {
       "alignItems": "center",
@@ -134,6 +136,7 @@ exports[`The Chip component should render correctly 1`] = `
   <View
     bordered={false}
     disabled={false}
+    pill={false}
     style={
       Object {
         "alignItems": "center",

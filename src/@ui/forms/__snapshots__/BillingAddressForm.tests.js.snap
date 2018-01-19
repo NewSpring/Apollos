@@ -875,6 +875,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
   <View
     bordered={false}
     disabled={false}
+    pill={false}
     style={
       Object {
         "alignItems": "center",
@@ -2088,6 +2089,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
   <View
     bordered={false}
     disabled={false}
+    pill={false}
     style={
       Object {
         "alignItems": "center",
