@@ -257,6 +257,7 @@ exports[`the Card component should render 1`] = `
       <View
         bordered={false}
         disabled={false}
+        pill={false}
         style={
           Object {
             "alignItems": "center",
