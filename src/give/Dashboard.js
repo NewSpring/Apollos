@@ -16,7 +16,7 @@ import TransactionCard from '@ui/TransactionCard';
 import ExpiringAccountCard from '@ui/ExpiringAccountCard';
 import FlexedView from '@ui/FlexedView';
 import DashboardSubheader from '@ui/DashboardSubheader';
-import ContributionsChart from '@ui/ContributionsChart';
+import ContributionsChartCard from '@ui/ContributionsChartCard';
 import withGivingDashboard from '@data/withGivingDashboard';
 import GiveNavigator from '@ui/TmpGiveNavigator';
 
@@ -80,7 +80,7 @@ export class Dashboard extends PureComponent {
               />
             );
           })}
-          <ContributionsChart />
+          <ContributionsChartCard />
 
           <DashboardSubheader
             text="Active Schedules"
