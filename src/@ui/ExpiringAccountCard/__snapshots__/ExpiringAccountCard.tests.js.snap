@@ -256,7 +256,7 @@ exports[`the ExpiringAccountCard component should render without props 1`] = `
             }
           }
         >
-          Jan 18 2018
+          Jan 19 2018
         </Text>
       </View>
       <View

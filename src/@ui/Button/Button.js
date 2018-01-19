@@ -17,10 +17,9 @@ const ButtonStyles = styled(({
   bordered,
   pill,
 }) => ({
-  elevation: 4,
   padding: theme.sizing.baseUnit / 2,
   overflow: 'hidden',
-  borderRadius: pill ? 9999 : theme.sizing.borderRadius,
+  borderRadius: pill ? 999 : theme.sizing.borderRadius,
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
@@ -32,6 +31,7 @@ const ButtonStyles = styled(({
   } : {
     backgroundColor: theme.colors.background.default,
     borderColor: theme.colors.background.default,
+    elevation: 4,
   }),
 }), 'Button')(View);
 

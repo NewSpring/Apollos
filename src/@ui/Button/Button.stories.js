@@ -20,6 +20,15 @@ storiesOf('Button', module)
         onPress={() => {}}
         title="Just a plain 'ole Button"
       />
+    </FlexedView>
+  ))
+  .add('Types', () => (
+    <FlexedView>
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Default"
+        type="default"
+      />
       <ButtonWithMargin
         onPress={() => {}}
         title="Primary Action"
@@ -35,11 +44,47 @@ storiesOf('Button', module)
         title="Tertiary Action"
         type="tertiary"
       />
+    </FlexedView>
+  ))
+  .add('Disabled', () => (
+    <FlexedView>
       <ButtonWithMargin
         onPress={() => {}}
         title="Disabled Button 😭"
         disabled
       />
+    </FlexedView>
+  ))
+  .add('Ghost', () => (
+    <FlexedView>
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Ghost Button"
+        bordered
+      />
+    </FlexedView>
+  ))
+  .add('Pill', () => (
+    <FlexedView>
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Pill button"
+        pill
+      />
+    </FlexedView>
+  ))
+  .add('Ghost Pill', () => (
+    <FlexedView>
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Ghost Pill"
+        bordered
+        pill
+      />
+    </FlexedView>
+  ))
+  .add('With Children', () => (
+    <FlexedView>
       <ButtonWithMargin onPress={() => {}} type="primary">
         <H4>Non-Text Children</H4>
         <Icon name="like" />
