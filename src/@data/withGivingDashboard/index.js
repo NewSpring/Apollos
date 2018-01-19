@@ -2,10 +2,10 @@ import { graphql } from 'react-apollo';
 import givingDashboardQuery from './givingDashboardQuery';
 
 export default graphql(givingDashboardQuery, {
-  props: ({ data }) => {
+  props: ({ data, ownProps }) => {
     const paymentMethods = data.savedPaymentMethods || [];
     return ({
-      isLoading: data.loading,
+      isLoading: ownProps.isLoading || data.loading,
       scheduledTransactions: data.scheduledTransactions || [],
       activityItems: data.activityItems || [],
       savedPaymentMethods: paymentMethods.map(pm => ({
