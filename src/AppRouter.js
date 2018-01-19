@@ -40,7 +40,8 @@ class AppRouter extends PureComponent {
   componentWillUpdate(nextProps) {
     if ((nextProps.history.action !== 'POP' &&
         nextProps.history.action !== 'REPLACE') &&
-        !this.isModal
+        !this.isModal &&
+        !this.musicPlayerIsOpened
     ) {
       previousLocation = this.props.location;
     }
@@ -53,6 +54,10 @@ class AppRouter extends PureComponent {
       this.largeScreenModals.find(route =>
         matchPath(this.props.location.pathname, route.props.path),
       );
+  }
+
+  get musicPlayerIsOpened() {
+    return matchPath(this.props.location.pathname, '/player');
   }
 
   // On large screens we render modals on top of the previous route.
@@ -102,51 +107,51 @@ class AppRouter extends PureComponent {
       <FlexedView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         <Player>
-          <CardStack>
-            <Route>
-              <AppSwitch>
-                <CardStack location={this.isModal ? previousLocation : this.props.location}>
-                  <Redirect from="/sermons" to="/series" />
-                  <Route exact path="/series" component={Series} />
-                  <Route exact path="/series/:id" component={SeriesSingle} />
-                  <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
+          <AppSwitch>
+            <CardStack
+              location={(this.isModal || this.musicPlayerIsOpened) ?
+                previousLocation : this.props.location
+              }
+            >
+              <Redirect from="/sermons" to="/series" />
+              <Route exact path="/series" component={Series} />
+              <Route exact path="/series/:id" component={SeriesSingle} />
+              <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
 
-                  <Route exact path="/studies" component={Studies} />
-                  <Route exact path="/studies/:id" component={StudiesSingle} />
-                  <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
+              <Route exact path="/studies" component={Studies} />
+              <Route exact path="/studies/:id" component={StudiesSingle} />
+              <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
 
-                  <Redirect from="/devotionals" to="/studies" />
-                  <Redirect from="/devotions" to="/studies" />
-                  <Route exact path="/devotions/:id" component={DebugView} />
+              <Redirect from="/devotionals" to="/studies" />
+              <Redirect from="/devotions" to="/studies" />
+              <Route exact path="/devotions/:id" component={DebugView} />
 
-                  <Route exact path="/music" component={Music} />
-                  <Route exact path="/music/:id" component={Playlist} />
-                  <Route exact path="/music/:id/:track" component={TrackContextual} cardStackDirection="vertical" />
+              <Route exact path="/music" component={Music} />
+              <Route exact path="/music/:id" component={Playlist} />
+              <Route exact path="/music/:id/:track" component={TrackContextual} cardStackDirection="vertical" />
 
-                  <Route exact path="/articles" component={Articles} />
-                  <Route exact path="/articles/:id" component={ArticlesSingle} />
+              <Route exact path="/articles" component={Articles} />
+              <Route exact path="/articles/:id" component={ArticlesSingle} />
 
-                  <Route exact path="/stories" component={Stories} />
-                  <Route exact path="/stories/:id" component={StoriesSingle} />
+              <Route exact path="/stories" component={Stories} />
+              <Route exact path="/stories/:id" component={StoriesSingle} />
 
-                  <Route exact path="/news" component={News} />
-                  <Route exact path="/news/:id" component={NewsSingle} />
+              <Route exact path="/news" component={News} />
+              <Route exact path="/news/:id" component={NewsSingle} />
 
-                  <Route exact path="/events/:id" component={DebugView} />
+              <Route exact path="/events/:id" component={DebugView} />
 
-                  <Route exact path="/groups/finder" component={GroupFinderResults} />
-                  <Route exact path="/groups/:id" component={GroupSingle} />
+              <Route exact path="/groups/finder" component={GroupFinderResults} />
+              <Route exact path="/groups/:id" component={GroupSingle} />
 
-                  <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
-                  <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
+              <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
+              <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
-                  <Route path="/login" cardStackDirection="vertical" component={Auth} />
+              <Route path="/login" cardStackDirection="vertical" component={Auth} />
 
-                  <Route component={this.tabs} />
-                </CardStack>
-              </AppSwitch>
-            </Route>
-          </CardStack>
+              <Route cardStackKey="tabs" component={this.tabs} />
+            </CardStack>
+          </AppSwitch>
           {this.isModal ? this.largeScreenModals : null}
         </Player>
       </FlexedView>

@@ -1,19 +1,21 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Dimensions, Animated, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { compose, withProps, mapProps } from 'recompose';
 import { get, findIndex } from 'lodash';
 import { shuffle } from 'shuffle-seed';
 import Audio from '@ui/Audio';
 import { withMediaPlayerActions, withNowPlaying, withPlaylist } from '@data/mediaPlayer';
 import FlexedView from '@ui/FlexedView';
-import Touchable from '@ui/Touchable';
+import CardStack from '@ui/CardStack';
+import { withRouter, Link, Route } from '@ui/NativeWebRouter';
 import MiniControls from './MiniControls';
 import FullScreenControls from './FullScreenControls';
 
 const MINI_CONTROL_HEIGHT = 50;
 
 const enhance = compose(
+  withRouter,
   withMediaPlayerActions,
   withNowPlaying,
   withProps(({ nowPlaying }) => ({ id: nowPlaying && nowPlaying.albumId })),
@@ -59,6 +61,7 @@ const trackType = PropTypes.shape({
 
 export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
   static propTypes = {
+    playerPath: PropTypes.string,
     play: PropTypes.func,
     pause: PropTypes.func,
     isPlaying: PropTypes.bool,
@@ -75,11 +78,19 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     repeat: PropTypes.func,
     shuffle: PropTypes.func,
     getLinkForTrack: PropTypes.func,
+    location: PropTypes.shape({
+      pathname: PropTypes.string,
+    }),
   };
 
   static defaultProps = {
     artist: 'NewSpring',
+    playerPath: '/player',
   };
+
+  componentWillMount() {
+    if (!this.previousLocation) this.previousLocation = this.props.location;
+  }
 
   get primaryColor() {
     const { colors } = this.props;
@@ -87,32 +98,16 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     return `#${colors[0].value}`;
   }
 
-  positionerDriver = new Animated.Value(0);
+  previousLocation = null;
 
   handleEndReached = async (sound) => {
     if (!this.props.isRepeating) return this.props.playNextTrack();
     return sound.replayAsync();
   }
 
-  expand = () => {
-    Animated.spring(this.positionerDriver, {
-      toValue: 1,
-      useNativeDriver: true,
-      bounciness: 2,
-    }).start();
-  }
-
-  contract = () => {
-    Animated.spring(this.positionerDriver, {
-      toValue: 0,
-      useNativeDriver: true,
-      bounciness: 2,
-    }).start();
-  }
-
-  renderMiniControls() {
-    return (
-      <Touchable onPress={this.expand}>
+  renderMiniControls = () => (
+    <Link to={this.props.playerPath}>
+      <View>
         <MiniControls
           isPlaying={this.props.isPlaying}
           play={this.props.play}
@@ -123,58 +118,51 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
           albumArt={this.props.images}
           height={MINI_CONTROL_HEIGHT}
         />
-      </Touchable>
-    );
-  }
+      </View>
+    </Link>
+  );
 
-  renderPlayer() {
-    const { height } = Dimensions.get('window');
-    const translateY = this.positionerDriver.interpolate({
-      inputRange: [0, 1],
-      outputRange: [height, 0],
-    });
-    const transform = [{ translateY }];
-
-    return (
-      <Animated.View style={[StyleSheet.absoluteFill, { transform }]}>
-        <Audio
-          source={this.props.currentTrack.file}
-          isPlaying={this.props.isPlaying}
-          onPlaybackReachedEnd={this.handleEndReached}
-          style={StyleSheet.absoluteFill}
-        >
-          <FullScreenControls
-            isPlaying={this.props.isPlaying}
-            play={this.props.play}
-            pause={this.props.pause}
-            next={this.props.playNextTrack}
-            prev={this.props.playPrevTrack}
-            trackName={this.props.currentTrack.title}
-            trackByLine={`${this.props.artist} - ${this.props.title}`}
-            albumArt={this.props.images}
-            color={this.primaryColor}
-            handleClose={this.contract}
-            duration={this.props.currentTrack.duration}
-            isRepeating={this.props.isRepeating}
-            isShuffling={this.props.isShuffling}
-            handleRepeat={this.props.repeat}
-            handleShuffle={this.props.shuffle}
-            trackInfoLink={this.props.getLinkForTrack ? (
-              this.props.getLinkForTrack(this.props)
-            ) : null}
-          />
-        </Audio>
-      </Animated.View>
-    );
-  }
+  renderPlayer = () => (
+    <FullScreenControls
+      isPlaying={this.props.isPlaying}
+      play={this.props.play}
+      pause={this.props.pause}
+      next={this.props.playNextTrack}
+      prev={this.props.playPrevTrack}
+      trackName={this.props.currentTrack.title}
+      trackByLine={`${this.props.artist} - ${this.props.title}`}
+      albumArt={this.props.images}
+      color={this.primaryColor}
+      handleClose={this.contract}
+      duration={this.props.currentTrack.duration}
+      isRepeating={this.props.isRepeating}
+      isShuffling={this.props.isShuffling}
+      handleRepeat={this.props.repeat}
+      handleShuffle={this.props.shuffle}
+      trackInfoLink={this.props.getLinkForTrack ? (
+        this.props.getLinkForTrack(this.props)
+      ) : null}
+    />
+  );
 
   render() {
     return (
-      <FlexedView>
-        <FlexedView>{this.props.children}</FlexedView>
-        {this.props.currentTrack ? this.renderMiniControls() : null}
-        {this.props.currentTrack ? this.renderPlayer() : null}
-      </FlexedView>
+      <Audio
+        source={this.props.currentTrack && this.props.currentTrack.file}
+        isPlaying={this.props.isPlaying}
+        onPlaybackReachedEnd={this.handleEndReached}
+        style={StyleSheet.absoluteFill}
+      >
+        <CardStack direction="vertical">
+          <Route cardStackKey="player" path={this.props.playerPath} render={this.renderPlayer} />
+          <Route cardStackKey="app">
+            <FlexedView>
+              {this.props.children}
+              {this.props.currentTrack ? this.renderMiniControls() : null}
+            </FlexedView>
+          </Route>
+        </CardStack>
+      </Audio>
     );
   }
 }

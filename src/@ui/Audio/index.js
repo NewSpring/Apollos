@@ -12,7 +12,7 @@ export default class Audio extends Component {
   static Seeker = AudioSeeker;
 
   static propTypes = {
-    source: PropTypes.string.isRequired,
+    source: PropTypes.string,
     onReady: PropTypes.func,
     onError: PropTypes.func,
     onPlaybackReachedEnd: PropTypes.func,
@@ -153,11 +153,11 @@ export default class Audio extends Component {
       onError,
     } = this.props;
 
+    if (!source) return;
     const uri = source.replace(/^http:\/\/|^\/\//i, 'https://');
 
     try {
       if (this.sound) {
-        await this.sound.pauseAsync();
         await this.sound.unloadAsync();
         delete this.sound;
       }

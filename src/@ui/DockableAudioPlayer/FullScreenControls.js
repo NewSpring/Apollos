@@ -63,7 +63,6 @@ const FullScreenControls = enhance(({
   trackByLine,
   albumArt,
   color,
-  handleClose,
   isShuffling,
   isRepeating,
   handleShuffle,
@@ -126,7 +125,7 @@ const FullScreenControls = enhance(({
         </PaddedView>
       </Settings>
       <Controls>
-        <Touchable onPress={handleClose}><Icon name="arrow-down" /></Touchable>
+        <Link pop><PaddedView><Icon name="arrow-down" /></PaddedView></Link>
       </Controls>
     </PlayerBody>
   </Container>

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component, Children } from 'react';
 import PropTypes from 'prop-types';
 import { Platform, Animated, StyleSheet, View, Easing, PanResponder } from 'react-native';
 import { clamp, get, findIndex } from 'lodash';
@@ -21,7 +21,7 @@ const GESTURE_RESPONSE_DISTANCE_VERTICAL = 135;
 // by pulling out the routes involved in a transition, stacking them,
 // and animating their position. When using this component, it becomes
 // very important to use `.push` and `.goBack` appropriately.
-class Transitioner extends PureComponent {
+class Transitioner extends Component {
   static propTypes = {
     children: PropTypes.node,
     history: PropTypes.shape({
@@ -64,16 +64,21 @@ class Transitioner extends PureComponent {
     index: 0,
   };
 
+  componentWillMount() {
+    console.log('mounting');
+  }
+
   // In a routing change: set up state to handle the transition and start the animation
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.key === this.props.location.key) return;
 
     let { entries } = this.state;
-    let transition = nextProps.history.action;
+    const transition = nextProps.history.action;
+    const toKey = this.keyForLocation(nextProps.location);
 
-    // If new location and current location point to same route,
+    // If new location and current location point to same key,
     // change entry at current index and exit (no animation)
-    if (this.locationsfromSameRoute(this.props.location, nextProps.location)) {
+    if (this.keyForLocation(this.props.location) === toKey) {
       entries[this.state.index] = nextProps.location;
       this.setState(entries);
       return;
@@ -83,18 +88,14 @@ class Transitioner extends PureComponent {
 
     switch (nextProps.history.action) {
       case PUSH: {
-        // If the next <Route> doesn't have a path, we know we are pushing from
-        // an inner page to a root-level page, and we should show a POP animation instead
-        const nextRouteChild = this.routeChildForLocation(nextProps.location);
-        if (!nextRouteChild.props.path && !nextRouteChild.props.to) {
-          entries = [nextProps.location, this.props.location];
-          toPosition = 0;
-          transition = POP;
+        const routeIndex = findIndex(entries, entry => this.keyForLocation(entry) === toKey);
+        if (routeIndex > -1) {
+          toPosition = routeIndex;
         } else {
-          // otherwise, insert route at next place in stack
           entries.splice(this.state.index + 1, 0, nextProps.location);
           toPosition = this.state.index + 1;
         }
+
         break;
       }
       case POP:
@@ -109,6 +110,8 @@ class Transitioner extends PureComponent {
         entries[this.state.index] = nextProps.location;
         break;
     }
+
+    console.log('receiving', { toPosition, entries }, this.props.children.length);
 
     const fromPosition = findIndex(entries, ({ key }) => key === this.props.location.key);
 
@@ -269,6 +272,12 @@ class Transitioner extends PureComponent {
     return location && findFirstMatch(this.props.children, location);
   }
 
+  keyForLocation = (entry) => {
+    const child = this.routeChildForLocation(entry);
+    if (get(child, 'props.cardStackKey')) return get(child, 'props.cardStackKey');
+    return entry.key;
+  }
+
   // Determines if two locations would be driven by the same <Route> in props.children
   locationsfromSameRoute(locationA, locationB) {
     return get(this.routeChildForLocation(locationA), 'props.computedMatch.path') ===
@@ -314,7 +323,7 @@ class Transitioner extends PureComponent {
   afterNavigate = () => {
     this.setState({
       transition: null,
-      entries: this.state.entries.slice(0, this.state.index + 1),
+      entries: this.state.entries.slice(0, this.state.index + 2),
     });
   }
 
@@ -324,14 +333,14 @@ class Transitioner extends PureComponent {
       .map((entry, index) => (
         this.renderScreenWithAnimation({
           index,
+          key: this.keyForLocation(entry),
           screen: this.routeChildForLocation(entry),
-          key: entry.key,
         })
       ));
     return screens;
   }
 
-  renderScreenWithAnimation = ({ index, key, screen }) => {
+  renderScreenWithAnimation = ({ index, screen, key }) => {
     const style = [
       StyleSheet.absoluteFill,
       interpolator({
