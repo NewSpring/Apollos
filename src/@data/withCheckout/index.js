@@ -7,7 +7,6 @@ export default graphql(checkoutQuery, {
       state: 28,
       country: 45,
     },
-    fetchPolicy: 'cache-and-network',
   },
   props({ ownProps, data }) {
     const {

@@ -12,11 +12,5 @@ export default graphql(givingDashboardQuery, {
       accountNumber: pm.payment.accountNumber,
     })),
   }),
-  options: (ownProps = {}) => ({
-    variables: {
-      filters: ownProps.filters || ['GIVING_DASHBOARD'],
-    },
-    fetchPolicy: 'cache-and-network',
-  }),
 });
 
