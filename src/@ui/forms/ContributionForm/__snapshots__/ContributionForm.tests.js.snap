@@ -554,6 +554,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
     <View
       bordered={true}
       disabled={false}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -561,7 +562,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
           "borderColor": "#6bac43",
           "borderRadius": 6,
           "borderWidth": 2,
-          "elevation": 4,
           "flexDirection": "row",
           "justifyContent": "center",
           "opacity": 1,
@@ -664,6 +664,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
     <View
       bordered={false}
       disabled={true}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -1769,6 +1770,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     <View
       bordered={true}
       disabled={false}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -1776,7 +1778,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
           "borderColor": "#6bac43",
           "borderRadius": 6,
           "borderWidth": 2,
-          "elevation": 4,
           "flexDirection": "row",
           "justifyContent": "center",
           "opacity": 1,
@@ -1879,6 +1880,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     <View
       bordered={false}
       disabled={true}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -2469,6 +2471,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
     <View
       bordered={true}
       disabled={false}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -2476,7 +2479,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
           "borderColor": "#6bac43",
           "borderRadius": 6,
           "borderWidth": 2,
-          "elevation": 4,
           "flexDirection": "row",
           "justifyContent": "center",
           "opacity": 1,
@@ -2579,6 +2581,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
     <View
       bordered={false}
       disabled={true}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -3220,6 +3223,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
     <View
       bordered={true}
       disabled={false}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -3227,7 +3231,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
           "borderColor": "#6bac43",
           "borderRadius": 6,
           "borderWidth": 2,
-          "elevation": 4,
           "flexDirection": "row",
           "justifyContent": "center",
           "opacity": 1,
@@ -3330,6 +3333,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
     <View
       bordered={false}
       disabled={true}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -3920,6 +3924,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
     <View
       bordered={true}
       disabled={false}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
@@ -3927,7 +3932,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
           "borderColor": "#6bac43",
           "borderRadius": 6,
           "borderWidth": 2,
-          "elevation": 4,
           "flexDirection": "row",
           "justifyContent": "center",
           "opacity": 1,
@@ -4030,6 +4034,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
     <View
       bordered={false}
       disabled={true}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
