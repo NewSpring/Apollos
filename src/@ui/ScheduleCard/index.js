@@ -15,6 +15,7 @@ import { H5, H6, UIText } from '@ui/typography';
 import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
 import CashAmountIndicator from '@ui/CashAmountIndicator';
+import Spacer from '@ui/Spacer';
 
 const enhance = compose(
   setPropTypes({
@@ -55,10 +56,6 @@ const Row = styled({
   flexDirection: 'row',
   alignItems: 'center',
 })(View);
-
-const Spacer = styled(({ theme }) => ({
-  height: theme.sizing.baseUnit,
-}))(View);
 
 const ScheduleCard = enhance(({
   isLoading,
