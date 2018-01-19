@@ -6,8 +6,12 @@ import withSeriesContent from '@data/withSeriesContent';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import ContentView, { HTMLView } from '@ui/ContentView';
+import Button from '@ui/Button';
+import { H6 } from '@ui/typography';
+import Icon from '@ui/Icon';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
-import { withThemeMixin } from '@ui/theme';
+import { withTheme, withThemeMixin } from '@ui/theme';
+// import styled from '@ui/styled';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 import RelatedContent from '@ui/RelatedContent';
 
@@ -30,7 +34,12 @@ const enhance = compose(
     }
     return theme;
   }),
+  withTheme(),
 );
+
+// const StyledButton = styled(({ theme }) => ({
+//   marginBotton: theme.sizing.baseUnit,
+// }))(Button);
 
 const SeriesSingle = enhance(({
   content: {
@@ -45,6 +54,7 @@ const SeriesSingle = enhance(({
     id,
   } = { },
   isLoading,
+  theme,
 }) => (
   <FlexedView>
     <Header
@@ -54,6 +64,10 @@ const SeriesSingle = enhance(({
     />
     <ScrollView>
       <ContentView {...otherContentProps}>
+        <Button type={'ghost'} bordered pill>
+          <Icon name="play" size={theme.helpers.rem(0.875)} fill={theme.colors.text.primary} />
+          <H6>{' '}Watch The Trailer</H6>{/* NOTE: empty string pads the text from the icon */}
+        </Button>
         <HTMLView>{description}</HTMLView>
       </ContentView>
       <HorizontalTileFeed

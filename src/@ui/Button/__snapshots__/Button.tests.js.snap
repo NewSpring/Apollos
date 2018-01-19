@@ -138,6 +138,74 @@ exports[`The Button component should render a Tertiary button 1`] = `
 </View>
 `;
 
+exports[`The Button component should render a bordered button 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel={undefined}
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    bordered={true}
+    disabled={false}
+    pill={false}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderColor": "#6bac43",
+        "borderRadius": 6,
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "padding": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "hsl(97.10000000000002, 43.9%, 37.5%)",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+        }
+      }
+    >
+      Ghost Button
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`The Button component should render a disabled button 1`] = `
 <View
   accessibilityComponentType="button"
@@ -246,7 +314,7 @@ exports[`The Button component should render a ghost button 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "transparent",
-        "borderColor": "#6bac43",
+        "borderColor": "#303030",
         "borderRadius": 6,
         "borderWidth": 2,
         "flexDirection": "row",
@@ -263,7 +331,75 @@ exports[`The Button component should render a ghost button 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "hsl(97.10000000000002, 43.9%, 37.5%)",
+          "color": "hsl(0, 0%, 15.1%)",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
+        }
+      }
+    >
+      Ghost Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`The Button component should render a ghost pill button 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel={undefined}
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    bordered={true}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderColor": "#303030",
+        "borderRadius": 999,
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "padding": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "hsl(0, 0%, 15.1%)",
           "fontFamily": null,
           "fontSize": 18,
           "lineHeight": 20,
@@ -339,75 +475,7 @@ exports[`The Button component should render a pill button 1`] = `
         }
       }
     >
-      Ghost Button
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`The Button component should render a pill button 2`] = `
-<View
-  accessibilityComponentType="button"
-  accessibilityLabel={undefined}
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
-  accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
-  isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "opacity": 1,
-    }
-  }
-  testID={undefined}
-  tvParallaxProperties={undefined}
->
-  <View
-    bordered={true}
-    disabled={false}
-    pill={true}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "transparent",
-        "borderColor": "#6bac43",
-        "borderRadius": 999,
-        "borderWidth": 2,
-        "flexDirection": "row",
-        "justifyContent": "center",
-        "opacity": 1,
-        "overflow": "hidden",
-        "padding": 10,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "hsl(97.10000000000002, 43.9%, 37.5%)",
-          "fontFamily": null,
-          "fontSize": 18,
-          "lineHeight": 20,
-        }
-      }
-    >
-      Ghost Button
+      Pill Button
     </Text>
   </View>
 </View>
