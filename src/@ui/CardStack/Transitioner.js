@@ -1,4 +1,4 @@
-import React, { Component, Children } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Platform, Animated, StyleSheet, View, Easing, PanResponder } from 'react-native';
 import { clamp, get, findIndex } from 'lodash';
@@ -21,7 +21,7 @@ const GESTURE_RESPONSE_DISTANCE_VERTICAL = 135;
 // by pulling out the routes involved in a transition, stacking them,
 // and animating their position. When using this component, it becomes
 // very important to use `.push` and `.goBack` appropriately.
-class Transitioner extends Component {
+class Transitioner extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     history: PropTypes.shape({
@@ -63,10 +63,6 @@ class Transitioner extends Component {
     entries: [this.props.location],
     index: 0,
   };
-
-  componentWillMount() {
-    console.log('mounting');
-  }
 
   // In a routing change: set up state to handle the transition and start the animation
   componentWillReceiveProps(nextProps) {
@@ -111,8 +107,6 @@ class Transitioner extends Component {
         break;
     }
 
-    console.log('receiving', { toPosition, entries }, this.props.children.length);
-
     const fromPosition = findIndex(entries, ({ key }) => key === this.props.location.key);
 
     this.setState({
@@ -149,11 +143,11 @@ class Transitioner extends Component {
 
   // Determines if the previous location in history points at the same <Route> that's active.
   // Used to keep us from swiping back on a screen that we shouldn't be able to swipe back from
-  get wouldPopToSameRouteChild() {
-    return this.locationsfromSameRoute(
-      this.props.location,
-      get(this.props.history, `entries[${this.props.history.index - 1}]`),
-    );
+  get wouldPopToSameRouteKey() {
+    const previous = get(this.props.history, `entries[${this.props.history.index - 1}]`);
+    if (!previous) return true;
+    return this.keyForLocation(this.props.location) ===
+      this.keyForLocation(previous);
   }
 
   get direction() {
@@ -200,7 +194,7 @@ class Transitioner extends Component {
 
   panResponder = PanResponder.create({
     onMoveShouldSetPanResponder: (event, gesture) => (
-      !this.wouldPopToSameRouteChild &&
+      !this.wouldPopToSameRouteKey &&
       this.props.history.index > this.startingIndex &&
       this.props.history.canGo(-1) &&
       (

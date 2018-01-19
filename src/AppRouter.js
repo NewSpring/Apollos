@@ -17,7 +17,7 @@ import Stories, { StoriesSingle } from './stories';
 import Series, { Sermon, SeriesSingle } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
-import Music, { Playlist, TrackContextual, Player } from './music';
+import Music, { Playlist, Player, TrackContextual } from './music';
 import Auth from './auth';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';

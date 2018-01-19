@@ -8,9 +8,16 @@ import Audio from '@ui/Audio';
 import { withMediaPlayerActions, withNowPlaying, withPlaylist } from '@data/mediaPlayer';
 import FlexedView from '@ui/FlexedView';
 import CardStack from '@ui/CardStack';
+import { asModal } from '@ui/ModalView';
 import { withRouter, Link, Route } from '@ui/NativeWebRouter';
 import MiniControls from './MiniControls';
 import FullScreenControls from './FullScreenControls';
+import TrackContextual from '../TrackContextual';
+import Playlist from '../Playlist';
+
+const PlayerTrackContextual = withProps({
+  pathForAlbumId: id => `/player/list/${id}`,
+})(TrackContextual);
 
 const MINI_CONTROL_HEIGHT = 50;
 
@@ -61,6 +68,7 @@ const trackType = PropTypes.shape({
 
 export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
   static propTypes = {
+    id: PropTypes.string,
     playerPath: PropTypes.string,
     play: PropTypes.func,
     pause: PropTypes.func,
@@ -77,7 +85,6 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     isShuffling: PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.number]),
     repeat: PropTypes.func,
     shuffle: PropTypes.func,
-    getLinkForTrack: PropTypes.func,
     location: PropTypes.shape({
       pathname: PropTypes.string,
     }),
@@ -139,9 +146,7 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
       isShuffling={this.props.isShuffling}
       handleRepeat={this.props.repeat}
       handleShuffle={this.props.shuffle}
-      trackInfoLink={this.props.getLinkForTrack ? (
-        this.props.getLinkForTrack(this.props)
-      ) : null}
+      trackInfoLink={`player/${this.props.id}/${this.props.currentTrack.title}`}
     />
   );
 
@@ -154,7 +159,9 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
         style={StyleSheet.absoluteFill}
       >
         <CardStack direction="vertical">
-          <Route cardStackKey="player" path={this.props.playerPath} render={this.renderPlayer} />
+          <Route exact path={'/player'} render={this.renderPlayer} />
+          <Route exact path={'/player/list/:id'} component={asModal(Playlist)} />
+          <Route exact path={'/player/:id/:track'} component={PlayerTrackContextual} />
           <Route cardStackKey="app">
             <FlexedView>
               {this.props.children}
