@@ -16,6 +16,7 @@ export default graphql(givingDashboardQuery, {
     variables: {
       filters: ownProps.filters || ['GIVING_DASHBOARD'],
     },
+    fetchPolicy: 'cache-and-network',
   }),
 });
 

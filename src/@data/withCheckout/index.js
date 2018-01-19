@@ -2,7 +2,13 @@ import { graphql } from 'react-apollo';
 import checkoutQuery from './checkoutQuery';
 
 export default graphql(checkoutQuery, {
-  options: { variables: { state: 28, country: 45 } },
+  options: {
+    variables: {
+      state: 28,
+      country: 45,
+    },
+    fetchPolicy: 'cache-and-network',
+  },
   props({ ownProps, data }) {
     const {
       campuses,

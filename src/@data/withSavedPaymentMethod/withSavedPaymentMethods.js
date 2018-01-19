@@ -24,4 +24,7 @@ export default graphql(QUERY, {
     })),
     isLoading: ownProps.isLoading || loading,
   }),
+  options: {
+    fetchPolicy: 'cache-and-network',
+  },
 });
