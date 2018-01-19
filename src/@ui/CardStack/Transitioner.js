@@ -31,7 +31,7 @@ class Transitioner extends PureComponent {
       goBack: PropTypes.func,
       entries: PropTypes.arrayOf(PropTypes.shape({
         key: PropTypes.string,
-      })).isRequired,
+      })),
       goForward: PropTypes.func,
       push: PropTypes.func,
     }),

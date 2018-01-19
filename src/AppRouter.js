@@ -78,36 +78,38 @@ class AppRouter extends PureComponent {
   tabs = () => { // eslint-disable-line
     // On mobile we render tabs.Layout at this level so that other <Route>s at
     // the root level in the router can render on top of the tabbar
-    const TabSwitch = Platform.OS === 'web' ? Switch : tabs.Layout;
+    const Layout = Platform.OS === 'web' ? FlexedView : tabs.Layout;
     return (
-      <TabSwitch>
-        <Route exact path="/" component={tabs.Feed} />
-        <Route exact path="/sections" component={tabs.Sections} />
-        <Route exact path="/groups" component={tabs.Groups} />
-        <Route exact path="/discover" component={tabs.Discover} />
-        <ProtectedRoute exact path="/profile" component={tabs.Profile} />
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={tabs.Feed} />
+          <Route exact path="/sections" component={tabs.Sections} />
+          <Route exact path="/groups" component={tabs.Groups} />
+          <Route exact path="/discover" component={tabs.Discover} />
+          <ProtectedRoute exact path="/profile" component={tabs.Profile} />
 
-        <Route exact path="/give" component={give.Dashboard} />
-        <Route exact path="/give/methods" component={give.PaymentMethods} />
-        <Route exact path="/give/history" component={give.Transactions} />
-        <Route exact path="/give/history/:id" component={give.TransactionDetails} />
-        <Route exact path="/give/now" component={give.Now} />
-        <Route exact path="/give/campaign/:slug" component={give.Campaign} />
-        <Route exact path="/give/schedules/:id" component={give.Schedule} />
-        <Route exact path="/give/thankyou" component={give.ThankYou} />
-      </TabSwitch>
+          <Route exact path="/give" component={give.Dashboard} />
+          <Route exact path="/give/methods" component={give.PaymentMethods} />
+          <Route exact path="/give/history" component={give.Transactions} />
+          <Route exact path="/give/history/:id" component={give.TransactionDetails} />
+          <Route exact path="/give/now" component={give.Now} />
+          <Route exact path="/give/campaign/:slug" component={give.Campaign} />
+          <Route exact path="/give/schedules/:id" component={give.Schedule} />
+          <Route exact path="/give/thankyou" component={give.ThankYou} />
+        </Switch>
+      </Layout>
     );
   };
 
   render() {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
-    const AppSwitch = Platform.OS === 'web' ? tabs.Layout : FlexedView;
+    const AppLayout = Platform.OS === 'web' ? tabs.Layout : FlexedView;
     return (
       <FlexedView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         <Player>
-          <AppSwitch>
+          <AppLayout>
             <CardStack
               location={(this.isModal || this.musicPlayerIsOpened) ?
                 previousLocation : this.props.location
@@ -151,7 +153,7 @@ class AppRouter extends PureComponent {
 
               <Route cardStackKey="tabs" component={this.tabs} />
             </CardStack>
-          </AppSwitch>
+          </AppLayout>
           {this.isModal ? this.largeScreenModals : null}
         </Player>
       </FlexedView>

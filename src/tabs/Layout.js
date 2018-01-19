@@ -2,14 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TabBar, { Layout, Link } from '@ui/TabBar';
 import FlexedView from '@ui/FlexedView';
-import { Switch } from '@ui/NativeWebRouter';
 
-const TabBarLayout = ({ children, ...switchProps }) => (
+const TabBarLayout = ({ children }) => (
   <Layout>
     <FlexedView>
-      <Switch {...switchProps}>
-        {children}
-      </Switch>
+      {children}
     </FlexedView>
     <TabBar>
       <Link to="/" icon="logo" label="Home" />
