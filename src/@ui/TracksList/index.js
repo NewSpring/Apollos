@@ -57,7 +57,7 @@ class TracksList extends PureComponent {
   renderTrack = ({ item }) => (
     <Touchable onPress={() => this.handleTrackPress(item)}>
       <TrackView>
-        <BodyCopy isLoading={this.props.isLoading}>{item.title}</BodyCopy>
+        <BodyCopy isLoading={!item.title && this.props.isLoading}>{item.title}</BodyCopy>
         {(this.props.trackEllipsisLink) ? (
           <Link to={this.props.trackEllipsisLink(item)}>
             <Ellipsis />

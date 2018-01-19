@@ -85,63 +85,134 @@ exports[`renders correctly 1`] = `
     </View>
   </View>
   <View
-    onLayout={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
       style={
         Object {
-          "backgroundColor": "#303030",
-          "height": 20,
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
         }
       }
-    />
+    >
+      0
+      :
+      00
+    </Text>
     <View
-      collapsable={undefined}
+      onLayout={[Function]}
       style={
         Object {
-          "backgroundColor": "#6bac43",
-          "height": 20,
-          "left": 0,
-          "position": "absolute",
-          "transform": Array [
-            Object {
-              "translateY": 0,
-            },
-          ],
-          "width": 0,
+          "marginHorizontal": 20,
+          "minWidth": "65%",
         }
       }
-    />
-    <View
-      collapsable={undefined}
-      onMoveShouldSetResponder={[Function]}
-      onMoveShouldSetResponderCapture={[Function]}
-      onResponderEnd={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderReject={[Function]}
-      onResponderRelease={[Function]}
-      onResponderStart={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      onStartShouldSetResponderCapture={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(48, 48, 48, 0.30000000000000004)",
+            "borderRadius": 6,
+            "height": 6,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <View
+          collapsable={undefined}
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "transform": Array [
+                Object {
+                  "translateX": 0,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#303030",
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        collapsable={undefined}
+        style={
+          Object {
+            "bottom": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          onMoveShouldSetResponder={[Function]}
+          onMoveShouldSetResponderCapture={[Function]}
+          onResponderEnd={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderReject={[Function]}
+          onResponderRelease={[Function]}
+          onResponderStart={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onStartShouldSetResponderCapture={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#303030",
+              "borderRadius": 20,
+              "height": 20,
+              "position": "absolute",
+              "right": -10,
+              "top": -7,
+              "width": 20,
+            }
+          }
+        />
+      </View>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
       style={
         Object {
-          "backgroundColor": "#1c683e",
-          "borderRadius": 9999,
-          "height": 30,
-          "left": -15,
-          "position": "absolute",
-          "transform": Array [
-            Object {
-              "translateX": 0,
-            },
-            Object {
-              "translateY": -5,
-            },
-          ],
-          "width": 30,
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 18,
+          "lineHeight": 20,
         }
       }
     />

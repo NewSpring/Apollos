@@ -7,17 +7,18 @@ import { nest } from 'recompose';
 
 import ModalContainer from './ModalContainer';
 
-const ModalView = ({ children }) => (
+const ModalView = ({ children, onBackPress }) => (
   <SafeAreaView style={StyleSheet.absoluteFill} forceInset={{ vertical: 'always', horizontal: 'always' }}>
     <ModalContainer>
       {children}
-      <SecondaryNav backButton backButtonIcon="close" />
+      <SecondaryNav backButton backButtonIcon="close" onBackPress={onBackPress} />
     </ModalContainer>
   </SafeAreaView>
 );
 
 ModalView.propTypes = {
   children: PropTypes.node,
+  onBackPress: PropTypes.func,
 };
 
 // quick n' dirty asModal hoc

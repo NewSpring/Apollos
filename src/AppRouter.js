@@ -4,7 +4,6 @@ import { Platform } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import { Router, Route, ProtectedRoute, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@ui/NativeWebRouter';
-import DockableAudioPlayer from '@ui/DockableAudioPlayer';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
@@ -18,7 +17,7 @@ import Stories, { StoriesSingle } from './stories';
 import Series, { Sermon, SeriesSingle } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
-import Music, { Playlist, TrackContextual } from './music';
+import Music, { Playlist, TrackContextual, Player } from './music';
 import Auth from './auth';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
@@ -71,7 +70,7 @@ class AppRouter extends PureComponent {
     <Route path="/login" key="login" component={asModal(Auth)} />,
   ];
 
-  tabs = () => {
+  tabs = () => { // eslint-disable-line
     // On mobile we render tabs.Layout at this level so that other <Route>s at
     // the root level in the router can render on top of the tabbar
     const TabSwitch = Platform.OS === 'web' ? Switch : tabs.Layout;
@@ -98,57 +97,58 @@ class AppRouter extends PureComponent {
   render() {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
-    const AppSwitch = Platform.OS === 'web' ? tabs.Layout : CardStack;
+    const AppSwitch = Platform.OS === 'web' ? tabs.Layout : FlexedView;
     return (
       <FlexedView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-        <DockableAudioPlayer>
+        <Player>
           <CardStack>
-            <Route exact path="/music/:id/:track" cardStackDirection="vertical" component={TrackContextual} />
             <Route>
-              <AppSwitch location={this.isModal ? previousLocation : this.props.location}>
-                <Redirect from="/sermons" to="/series" />
-                <Route exact path="/series" component={Series} />
-                <Route exact path="/series/:id" component={SeriesSingle} />
-                <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
+              <AppSwitch>
+                <CardStack location={this.isModal ? previousLocation : this.props.location}>
+                  <Redirect from="/sermons" to="/series" />
+                  <Route exact path="/series" component={Series} />
+                  <Route exact path="/series/:id" component={SeriesSingle} />
+                  <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
 
-                <Route exact path="/studies" component={Studies} />
-                <Route exact path="/studies/:id" component={StudiesSingle} />
-                <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
+                  <Route exact path="/studies" component={Studies} />
+                  <Route exact path="/studies/:id" component={StudiesSingle} />
+                  <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
 
-                <Redirect from="/devotionals" to="/studies" />
-                <Redirect from="/devotions" to="/studies" />
-                <Route exact path="/devotions/:id" component={DebugView} />
+                  <Redirect from="/devotionals" to="/studies" />
+                  <Redirect from="/devotions" to="/studies" />
+                  <Route exact path="/devotions/:id" component={DebugView} />
 
-                <Route exact path="/music" component={Music} />
-                <Route exact path="/music/:id" component={Playlist} />
+                  <Route exact path="/music" component={Music} />
+                  <Route exact path="/music/:id" component={Playlist} />
+                  <Route exact path="/music/:id/:track" component={TrackContextual} cardStackDirection="vertical" />
 
+                  <Route exact path="/articles" component={Articles} />
+                  <Route exact path="/articles/:id" component={ArticlesSingle} />
 
-                <Route exact path="/articles" component={Articles} />
-                <Route exact path="/articles/:id" component={ArticlesSingle} />
+                  <Route exact path="/stories" component={Stories} />
+                  <Route exact path="/stories/:id" component={StoriesSingle} />
 
-                <Route exact path="/stories" component={Stories} />
-                <Route exact path="/stories/:id" component={StoriesSingle} />
+                  <Route exact path="/news" component={News} />
+                  <Route exact path="/news/:id" component={NewsSingle} />
 
-                <Route exact path="/news" component={News} />
-                <Route exact path="/news/:id" component={NewsSingle} />
+                  <Route exact path="/events/:id" component={DebugView} />
 
-                <Route exact path="/events/:id" component={DebugView} />
+                  <Route exact path="/groups/finder" component={GroupFinderResults} />
+                  <Route exact path="/groups/:id" component={GroupSingle} />
 
-                <Route exact path="/groups/finder" component={GroupFinderResults} />
-                <Route exact path="/groups/:id" component={GroupSingle} />
+                  <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
+                  <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
-                <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
-                <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
+                  <Route path="/login" cardStackDirection="vertical" component={Auth} />
 
-                <Route path="/login" cardStackDirection="vertical" component={Auth} />
-
-                <Route component={this.tabs} />
+                  <Route component={this.tabs} />
+                </CardStack>
               </AppSwitch>
             </Route>
           </CardStack>
-        </DockableAudioPlayer>
-        {this.isModal ? this.largeScreenModals : null}
+          {this.isModal ? this.largeScreenModals : null}
+        </Player>
       </FlexedView>
     );
   }

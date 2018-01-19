@@ -31,7 +31,7 @@ const Playlist = enhance(({
   } = { },
   isLoading,
   setNowPlaying,
-}) => (
+}) => console.log({ tracks, isLoading }) || (
   <FlexedView>
     <Header titleText="Music" backButton />
     <TracksList

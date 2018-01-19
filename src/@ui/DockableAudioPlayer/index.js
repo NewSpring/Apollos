@@ -59,7 +59,6 @@ const trackType = PropTypes.shape({
 
 export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
   static propTypes = {
-    id: PropTypes.string,
     play: PropTypes.func,
     pause: PropTypes.func,
     isPlaying: PropTypes.bool,
@@ -75,6 +74,7 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     isShuffling: PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.number]),
     repeat: PropTypes.func,
     shuffle: PropTypes.func,
+    getLinkForTrack: PropTypes.func,
   };
 
   static defaultProps = {
@@ -159,7 +159,9 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
             isShuffling={this.props.isShuffling}
             handleRepeat={this.props.repeat}
             handleShuffle={this.props.shuffle}
-            trackInfoLink={`/music/${this.props.id}/${encodeURIComponent(this.props.currentTrack.title)}`}
+            trackInfoLink={this.props.getLinkForTrack ? (
+              this.props.getLinkForTrack(this.props)
+            ) : null}
           />
         </Audio>
       </Animated.View>
