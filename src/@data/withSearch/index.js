@@ -1,10 +1,10 @@
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
-// import fetchMoreResolver from '@data/utils/fetchMoreResolver';
+import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 
 const searchQuery = gql`
-  query Search($term: String!, $first: Int, $after: Int, $site: String) {
-    content: search(query: $term, first: $first, after: $after, site: $site) {
+  query Search($term: String!, $first: Int, $skip: Int, $site: String) {
+    content: search(query: $term, first: $first, after: $skip, site: $site) {
       total
       items {
         id
@@ -35,9 +35,9 @@ export default graphql(searchQuery, {
     total: data.content && data.content.total,
     isLoading: data.loading,
     refetch: data.refetch,
-    // fetchMore: fetchMoreResolver({
-    //   collectionName: 'content',
-    //   data,
-    // }),
+    fetchMore: fetchMoreResolver({
+      collectionName: 'content.items',
+      data,
+    }),
   }),
 });

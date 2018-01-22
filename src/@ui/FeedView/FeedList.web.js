@@ -57,7 +57,7 @@ class FeedList extends PureComponent {
     if (!this.props.refreshing &&
         this.props.onEndReachedThreshold <
           ((contentOffset.y + this.layoutHeight) / contentSize.height)) {
-      this.props.onEndReached();
+      if (this.props.onEndReached) this.props.onEndReached();
     }
   }
   render() {

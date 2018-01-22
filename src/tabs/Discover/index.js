@@ -1,5 +1,10 @@
-import React from 'react';
-import { compose, withState } from 'recompose';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { compose, withProps } from 'recompose';
+import { Platform, View } from 'react-native';
+import { debounce } from 'lodash';
+import { parse, stringify } from '@utils/queryString';
+import { withRouter } from '@ui/NativeWebRouter';
 import { Text as TextInput } from '@ui/inputs';
 import { UIText } from '@ui/typography';
 import FlexedView from '@ui/FlexedView';
@@ -10,30 +15,68 @@ import Feed from './Feed';
 import Results from './Results';
 
 const enhance = compose(
-  withState('term', 'setSearchTerm'),
+  withRouter,
+  withProps(({ location: { search = '' } = {} }) => ({
+    term: parse(search).q,
+  })),
 );
 
-const Discover = enhance(({
-  term = '',
-  setSearchTerm,
-}) => (
-  <FlexedView>
-    <Header>
+class Discover extends PureComponent {
+  static propTypes = {
+    term: PropTypes.string,
+    history: PropTypes.shape({
+      replace: PropTypes.func,
+    }),
+    location: PropTypes.shape({
+      pathname: PropTypes.string,
+    }),
+  }
+
+  state = {
+    searchText: this.props.term,
+  };
+
+  componentWillMount() {
+    console.log('mounting!!!');
+  }
+
+
+  get searchForm() {
+    return (
       <FlexedView>
         <TextInput
-          value={term}
-          onChangeText={setSearchTerm}
+          value={this.state.searchText}
+          onChangeText={this.handleSearch}
           wrapperStyle={{ marginVertical: 0 }}
           prefix={<Icon name="search" size={24} />}
-          suffix={(term && term.length) ? (
-            <UIText onPress={() => setSearchTerm('')}>Cancel</UIText>
+          suffix={(this.state.searchText && this.state.searchText.length) ? (
+            <UIText onPress={() => this.handleSearch('')}>Cancel</UIText>
           ) : null}
           placeholder="Type your search here"
         />
       </FlexedView>
-    </Header>
-    {(term && term.length) ? <Results term={term} /> : <Feed />}
-  </FlexedView>
-));
+    );
+  }
 
-export default Discover;
+  handleSearch = (searchText) => {
+    this.setState({ searchText });
+    this.debouncedUpdate(searchText);
+  }
+
+  debouncedUpdate = debounce((q) => {
+    this.props.history.replace(`${this.props.location.pathname}?${stringify({ q })}`);
+  }, 500);
+
+  render() {
+    return (
+      <FlexedView>
+        {Platform.OS === 'web' ? <View>{this.searchForm}</View> : <Header>{this.searchForm}</Header>}
+        {(this.props.term && this.props.term.length) ? (
+          <Results term={this.props.term} />
+        ) : <Feed />}
+      </FlexedView>
+    );
+  }
+}
+
+export default enhance(Discover);
