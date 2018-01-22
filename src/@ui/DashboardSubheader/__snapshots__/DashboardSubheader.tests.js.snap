@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the DashboardSubheader component should render 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "marginBottom": 20,
+      "marginTop": 40,
+      "paddingHorizontal": 10,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#858585",
+        "fontFamily": null,
+        "fontSize": 15.75,
+        "fontWeight": "700",
+        "lineHeight": 17.85,
+      }
+    }
+  >
+    title text
+  </Text>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel={undefined}
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      bordered={true}
+      disabled={false}
+      pill={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderColor": "#858585",
+          "borderRadius": 999,
+          "borderWidth": 1,
+          "color": "#858585",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 10,
+          "paddingHorizontal": 20,
+          "paddingVertical": 3.3333333333333335,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#858585",
+            "fontFamily": null,
+            "fontSize": 14,
+            "lineHeight": 15.87,
+          }
+        }
+      >
+        click action
+      </Text>
+    </View>
+  </View>
+</View>
+`;

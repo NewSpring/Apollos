@@ -50,8 +50,8 @@ export default graphql(sectionsQuery, {
       skip: ownProps.skip || 0,
     },
   }),
-  props: ({ data } = {}) => ({
+  props: ({ data, ownProps } = {}) => ({
     navigation: filterNavigation(data),
-    isLoading: data.loading,
+    isLoading: ownProps.isLoading || data.loading,
   }),
 });

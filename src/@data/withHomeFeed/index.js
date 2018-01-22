@@ -12,11 +12,11 @@ export default graphql(homeFeedQuery, {
       cache: true,
     },
   }),
-  props: ({ data }) => ({
+  props: ({ data, ownProps }) => ({
     // NOTE: if we need to transform feed with more than one identity function
     // we should use the transducer pattern instead
     content: data.feed && data.feed.map(identifyCategory),
-    isLoading: data.loading,
+    isLoading: ownProps.isLoading || data.loading,
     refetch: data.refetch,
     fetchMore: fetchMoreResolver({
       collectionName: 'feed',

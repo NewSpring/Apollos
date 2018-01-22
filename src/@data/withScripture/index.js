@@ -15,9 +15,9 @@ export default graphql(scriptureQuery, {
       query: ownProps.query,
     },
   }),
-  props: ({ data } = {}) => ({
+  props: ({ ownProps, data } = {}) => ({
     content: data.scripture,
-    isLoading: data.loading,
+    isLoading: ownProps.isLoading || data.loading,
   }),
 });
 

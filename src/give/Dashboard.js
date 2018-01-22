@@ -1,21 +1,24 @@
+/* eslint-disable no-underscore-dangle */
 import React, { PureComponent } from 'react';
 import {
   ScrollView,
-  View,
   TouchableWithoutFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose } from 'recompose';
+import { compose, branch, renderComponent } from 'recompose';
+import get from 'lodash/get';
+import ActivityIndicator from '@ui/ActivityIndicator';
 import { withRouter } from '@ui/NativeWebRouter';
-import { H5, UIText } from '@ui/typography';
 import Header from '@ui/Header';
+import AccountCard from '@ui/AccountCard';
+import ScheduleCard from '@ui/ScheduleCard';
+import TransactionCard from '@ui/TransactionCard';
+import ExpiringAccountCard from '@ui/ExpiringAccountCard';
 import FlexedView from '@ui/FlexedView';
-import PaddedView from '@ui/PaddedView';
-import BillingAddressForm from '@ui/forms/BillingAddressForm';
-import PaymentForm from '@ui/forms/PaymentForm';
-import SavedPaymentReviewForm from '@ui/forms/SavedPaymentReviewForm';
+import DashboardSubheader from '@ui/DashboardSubheader';
+import ContributionsChartCard from '@ui/ContributionsChartCard';
 import withGivingDashboard from '@data/withGivingDashboard';
-import last4 from '@utils/last4';
+import GiveNavigator from '@ui/TmpGiveNavigator';
 
 export class Dashboard extends PureComponent {
   static propTypes = {
@@ -32,11 +35,13 @@ export class Dashboard extends PureComponent {
     history: PropTypes.shape({
       push: PropTypes.func,
     }),
+    scheduledTransactions: PropTypes.arrayOf(PropTypes.shape({})),
   };
 
   static defaultProps = {
     savedPaymentMethods: [],
     activityItems: [],
+    scheduledTransactions: [],
   };
 
   render() {
@@ -44,40 +49,72 @@ export class Dashboard extends PureComponent {
       <FlexedView>
         <Header titleText="Give Dashboard" />
         <ScrollView>
-          <PaddedView>
-            <H5>{'Dashboard (activity)'}</H5>
-            {this.props.activityItems.map((at) => {
-              // eslint-disable-next-line no-underscore-dangle
-              if (at.__typename === 'Transaction') {
-                return (
-                  <UIText>{at.summary}</UIText>
-                );
-              }
+          <GiveNavigator />
+
+          <DashboardSubheader
+            text="Activity"
+            buttonText="See All"
+            onPress={() => this.props.history.push('/give/history')}
+          />
+          {this.props.activityItems.map((activityItem) => {
+            if (activityItem.__typename === 'Transaction') {
               return (
-                <UIText>{at.name}</UIText>
+                <TransactionCard
+                  key={activityItem.id}
+                  date={activityItem.date}
+                  status={activityItem.status}
+                  details={activityItem.details}
+                  isScheduled={activityItem.scheduled}
+                  amount={activityItem.amount}
+                  error={activityItem.statusMessage}
+                  onPress={() => { console.log('route to', activityItem.id); }}
+                />
               );
-            })}
+            }
+            return (
+              <ExpiringAccountCard
+                key={activityItem.id}
+                name={activityItem.name}
+                expirationDate={`${activityItem.expirationMonth}/1/${activityItem.expirationYear}`}
+                onPress={() => this.props.history.push('/give/now')}
+              />
+            );
+          })}
+          <ContributionsChartCard />
 
-            <H5>{'Dashboard (add account)'}</H5>
-            <BillingAddressForm />
-            <PaymentForm
-              enforceAccountName
+          <DashboardSubheader
+            text="Active Schedules"
+            buttonText="New Schedule"
+            onPress={() => this.props.history.push('/give/now')}
+          />
+          {this.props.scheduledTransactions.map(scheduledTransaction => (
+            <ScheduleCard
+              key={scheduledTransaction.id}
+              accountName={get(scheduledTransaction, 'details.0.account.name')}
+              amount={get(scheduledTransaction, 'details.0.amount')}
+              frequency={get(scheduledTransaction, 'schedule.description')}
+              startDate={get(scheduledTransaction, 'start')}
+              onPress={() => { console.log('route to', scheduledTransaction.id); }}
             />
-            <SavedPaymentReviewForm />
+          ))}
 
-            <H5>{'Dashboard (view accounts)'}</H5>
-            {this.props.savedPaymentMethods.map(pm => (
-              <TouchableWithoutFeedback
-                onPress={() => this.props.history.push(`/give/payment-methods/${pm.id}`)}
-              >
-                <View key={pm.id}>
-                  <UIText>{pm.name}</UIText>
-                  <UIText>{pm.paymentMethod}</UIText>
-                  <UIText>{last4(pm.accountNumber)}</UIText>
-                </View>
-              </TouchableWithoutFeedback>
-            ))}
-          </PaddedView>
+          <DashboardSubheader
+            text="Saved Accounts"
+            buttonText="Add Account"
+            onPress={() => this.props.history.push('/give/new-payment-method/address')}
+          />
+          {this.props.savedPaymentMethods.map(paymentMethod => (
+            <TouchableWithoutFeedback
+              onPress={() => this.props.history.push(`/give/payment-methods/${paymentMethod.id}`)}
+            >
+              <AccountCard
+                key={paymentMethod.id}
+                title={paymentMethod.name}
+                accountNumber={paymentMethod.accountNumber}
+                accountType={paymentMethod.paymentMethod}
+              />
+            </TouchableWithoutFeedback>
+          ))}
         </ScrollView>
       </FlexedView>
     );
@@ -88,6 +125,7 @@ export class Dashboard extends PureComponent {
 const enhance = compose(
   withGivingDashboard,
   withRouter,
+  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
 );
 
 export default enhance(Dashboard);
