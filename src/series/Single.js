@@ -3,6 +3,7 @@ import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
 
 import withSeriesContent from '@data/withSeriesContent';
+import { withIsLoading } from '@ui/isLoading';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import ContentView, { HTMLView } from '@ui/ContentView';
@@ -11,7 +12,7 @@ import { H6 } from '@ui/typography';
 import Icon from '@ui/Icon';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import { withTheme, withThemeMixin } from '@ui/theme';
-// import styled from '@ui/styled';
+import styled from '@ui/styled';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 import RelatedContent from '@ui/RelatedContent';
 
@@ -35,11 +36,12 @@ const enhance = compose(
     return theme;
   }),
   withTheme(),
+  withIsLoading,
 );
 
-// const StyledButton = styled(({ theme }) => ({
-//   marginBotton: theme.sizing.baseUnit,
-// }))(Button);
+const StyledButton = styled(({ theme }) => ({
+  marginBottom: theme.sizing.baseUnit,
+}))(Button);
 
 const SeriesSingle = enhance(({
   content: {
@@ -64,11 +66,11 @@ const SeriesSingle = enhance(({
       barStyle={isLight ? 'dark-content' : 'light-content'}
     />
     <ScrollView>
-      <ContentView imageOverlayColor={(!isLoading && colors !== 'undefined') ? `#${colors[0].value}` : false} {...otherContentProps}>
-        <Button type={'ghost'} bordered pill>
+      <ContentView imageOverlayColor={(!isLoading && colors !== 'undefined') ? `#${colors[0].value}` : ''} {...otherContentProps}>
+        <StyledButton type={'ghost'} bordered pill>
           <Icon name="play" size={theme.helpers.rem(0.875)} fill={theme.colors.text.primary} />
           <H6>{' '}Watch The Trailer</H6>{/* NOTE: empty string pads the text from the icon */}
-        </Button>
+        </StyledButton>
         <HTMLView>{description}</HTMLView>
       </ContentView>
       <HorizontalTileFeed
