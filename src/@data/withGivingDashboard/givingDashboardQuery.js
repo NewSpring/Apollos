@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  query GivingDashboard($filters: [String]!) {
+  query GivingDashboard {
     scheduledTransactions(cache: false) {
       id
       start
@@ -26,7 +26,7 @@ export default gql`
         paymentType
       }
     }
-    activityItems: userFeed(filters: $filters) {
+    activityItems: userFeed(filters: ["GIVING_DASHBOARD"]) {
       ... on Transaction {
         id
         date

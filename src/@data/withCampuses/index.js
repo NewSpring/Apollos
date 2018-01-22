@@ -2,9 +2,9 @@ import { graphql } from 'react-apollo';
 import campusesQuery from './campusesQuery';
 
 export default graphql(campusesQuery, {
-  props: ({ data } = {}) => ({
+  props: ({ ownProps, data } = {}) => ({
     campuses: data.campuses,
-    isLoading: data.loading,
+    isLoading: ownProps.isLoading || data.loading,
   }),
 });
 

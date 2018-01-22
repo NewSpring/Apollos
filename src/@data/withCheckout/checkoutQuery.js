@@ -11,6 +11,7 @@ export default gql`
       description, id, _id, value
     }
     person: currentPerson {
+      id
       firstName
       nickName
       lastName

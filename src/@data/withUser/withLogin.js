@@ -25,16 +25,17 @@ export default graphql(MUTATION, {
             email,
             password,
           },
-          update: (store, { data: { loginUser } }) => {
+          refetchQueries: ['GivingDashboard', 'GetCheckoutData', 'SavedPaymentMethods'],
+          update: async (store, { data: { loginUser } }) => {
             const data = store.readQuery({ query: LOGGED_IN_QUERY });
             data.person = {
               __typename: 'User',
               id: loginUser.id,
             };
+            await AsyncStorage.setItem('authToken', get(loginUser, 'token'));
             store.writeQuery({ query: LOGGED_IN_QUERY, data });
           },
         });
-        await AsyncStorage.setItem('authToken', get(r, 'data.loginUser.token'));
         return r;
       } catch (err) {
         throw err;
