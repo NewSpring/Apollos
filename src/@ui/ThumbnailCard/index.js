@@ -17,7 +17,7 @@ import Thumbnail from './Thumbnail';
 const enhance = compose(
   setPropTypes({
     title: PropTypes.string.isRequired,
-    image: PropTypes.string,
+    images: Thumbnail.propTypes.source,
     category: PropTypes.string,
     isLoading: PropTypes.bool,
   }),
@@ -45,7 +45,7 @@ const RightColumn = styled({
 
 const ThumbnailCard = enhance(({
   title,
-  image,
+  images,
   category,
   isLoading,
   ...otherProps
@@ -59,9 +59,9 @@ const ThumbnailCard = enhance(({
         ) : null }
       </LeftColumn>
 
-      { image ? (
+      { images ? (
         <RightColumn>
-          <Thumbnail source={{ url: image }} />
+          <Thumbnail source={images} />
         </RightColumn>
       ) : null }
     </HorizontalLayout>
