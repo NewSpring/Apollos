@@ -6,7 +6,6 @@ export default gql`
       ... on Content {
         sermons: children(channels: ["sermons"]) {
           id
-          id
           title
           status
           channelName

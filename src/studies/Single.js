@@ -40,6 +40,7 @@ const Study = enhance(({
       isLight = true,
       description,
       tags,
+      colors,
       ...otherContentProps
     } = {},
     children,
@@ -54,7 +55,7 @@ const Study = enhance(({
       barStyle={isLight ? 'dark-content' : 'light-content'}
     />
     <ScrollView>
-      <ContentView {...otherContentProps}>
+      <ContentView imageOverlayColor={(!isLoading && colors !== 'undefined') ? `#${colors[0].value}` : ''} {...otherContentProps}>
         <Title>{startCase(toLower(title))}</Title>
         <HTMLView>{description}</HTMLView>
       </ContentView>

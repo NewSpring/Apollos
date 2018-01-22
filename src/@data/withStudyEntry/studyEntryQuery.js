@@ -32,6 +32,17 @@ export default gql`
               url
             }
           }
+          children(channels: ["study_entries"]) {
+            id
+            title
+            channelName
+            meta {
+              date
+            }
+            content {
+              speaker
+            }
+          }
         }
         content {
           isLiked

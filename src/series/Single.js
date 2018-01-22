@@ -39,6 +39,7 @@ const SeriesSingle = enhance(({
       isLight = true,
       description,
       tags,
+      colors,
       ...otherContentProps
     } = {},
     children,
@@ -53,7 +54,7 @@ const SeriesSingle = enhance(({
       barStyle={isLight ? 'dark-content' : 'light-content'}
     />
     <ScrollView>
-      <ContentView {...otherContentProps}>
+      <ContentView imageOverlayColor={(!isLoading && colors !== 'undefined') ? `#${colors[0].value}` : false} {...otherContentProps}>
         <HTMLView>{description}</HTMLView>
       </ContentView>
       <HorizontalTileFeed
