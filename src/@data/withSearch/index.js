@@ -24,13 +24,15 @@ const searchQuery = gql`
 
 export default graphql(searchQuery, {
   options: (ownProps = {}) => ({
+    skip: !ownProps.term,
     variables: {
       term: ownProps.term,
       site: ownProps.site || 'https://newspring.cc',
     },
   }),
   props: ({ data } = {}) => ({
-    content: data.content,
+    content: (data.content && data.content.items) || [],
+    total: data.content && data.content.total,
     isLoading: data.loading,
     refetch: data.refetch,
     // fetchMore: fetchMoreResolver({
