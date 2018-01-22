@@ -25,6 +25,17 @@ export default gql`
               url
             }
           }
+          children(channels: ["sermons"]) {
+            id
+            title
+            channelName
+            meta {
+              date
+            }
+            content {
+              speaker
+            }
+          }
         }
         meta {
           urlTitle

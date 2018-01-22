@@ -11,11 +11,15 @@ import { UIText } from '@ui/typography';
 import { InlineActivityIndicator } from '@ui/ActivityIndicator';
 import { withPlaceholder, Line } from '@ui/Placeholder';
 
-const ButtonStyles = styled(({ theme, disabled, bordered }) => ({
-  elevation: 4,
+const ButtonStyles = styled(({
+  theme,
+  disabled,
+  bordered,
+  pill,
+}) => ({
   padding: theme.sizing.baseUnit / 2,
   overflow: 'hidden',
-  borderRadius: theme.sizing.borderRadius,
+  borderRadius: pill ? 999 : theme.sizing.borderRadius,
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
@@ -27,6 +31,7 @@ const ButtonStyles = styled(({ theme, disabled, bordered }) => ({
   } : {
     backgroundColor: theme.colors.background.default,
     borderColor: theme.colors.background.default,
+    elevation: 4,
   }),
 }), 'Button')(View);
 
@@ -66,13 +71,14 @@ const Button = enhance(({
   bordered,
   loading,
   accent,
+  pill,
   ...touchableProps
 }) => {
   const accessibilityTraits = ['button'];
   if (disabled || loading) accessibilityTraits.push('disabled');
 
   const buttonContent = (
-    <ButtonStyles style={style} disabled={disabled} bordered={bordered}>
+    <ButtonStyles style={style} disabled={disabled} bordered={bordered} pill={pill}>
       {loading ? (
         <InlineActivityIndicator color={accent} />
       ) : (
@@ -100,6 +106,7 @@ const Button = enhance(({
 Button.defaultProps = {
   disabled: false,
   bordered: false,
+  pill: false,
   title: '',
   accessibilityComponentType: 'button',
   type: 'primary',
@@ -110,6 +117,7 @@ Button.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string,
   bordered: PropTypes.bool,
+  pill: PropTypes.bool,
   to: PropTypes.string,
   type: PropTypes.oneOf(['default', 'primary', 'secondary', 'tertiary']), // keys in theme.colors.action
   ...Touchable.propTypes,

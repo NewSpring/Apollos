@@ -1,9 +1,27 @@
 import React from 'react';
 import { View, Platform, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+import Color from 'color';
+
 import ConnectedImage from '@ui/ConnectedImage';
 import EmbeddedVideoPlayer from '@ui/EmbeddedVideoPlayer';
 import styled from '@ui/styled';
+import LinearGradient from '@ui/LinearGradient';
+
+const ImageOverlay = styled({
+  ...StyleSheet.absoluteFillObject,
+})(LinearGradient);
+
+const getGradientValues = (overlayColor) => {
+  const values = {
+    colors: [`${Color(overlayColor).fade(1).string()}`, overlayColor],
+    start: [0, 0],
+    end: [0, 1],
+    locations: [0.3, 1],
+  };
+
+  return values;
+};
 
 const ImageHeader = styled({
   width: '100%',
@@ -36,8 +54,9 @@ const VideoWrapper = styled(Platform.select({
 }))(View);
 
 const ContentMedia = ({
-  images = [],
   video,
+  images = [],
+  imageOverlayColor,
 }) => {
   let visual = null;
   if (video && video.embedUrl) {
@@ -48,7 +67,17 @@ const ContentMedia = ({
     );
   } else if (images && images.length) {
     visual = (
-      <ImageHeader source={images} />
+      <View>
+        <ImageHeader source={images} />
+        {imageOverlayColor && (
+          <ImageOverlay
+            colors={getGradientValues(imageOverlayColor).colors}
+            start={getGradientValues(imageOverlayColor).start}
+            end={getGradientValues(imageOverlayColor).end}
+            locations={getGradientValues(imageOverlayColor).locations}
+          />
+        )}
+      </View>
     );
   }
 
@@ -57,11 +86,11 @@ const ContentMedia = ({
 };
 
 ContentMedia.propTypes = {
-  images: PropTypes.any, // eslint-disable-line
   video: PropTypes.shape({
     embedUrl: PropTypes.string,
   }),
+  images: PropTypes.any, // eslint-disable-line
+  imageOverlayColor: PropTypes.string,
 };
 
 export default ContentMedia;
-
