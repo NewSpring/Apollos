@@ -40,7 +40,7 @@ const enhance = compose(
   }),
   withIsLoading,
   withTheme(({ theme, ...otherProps }) => ({
-    iconSize: otherProps.iconSize || theme.helpers.rem(1.5),
+    iconSize: otherProps.iconSize || theme.helpers.rem(1),
     isErrorColor: theme.colors.alert,
   })),
   pure,
