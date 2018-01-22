@@ -3,14 +3,12 @@ import React, { PureComponent } from 'react';
 import {
   ScrollView,
   TouchableWithoutFeedback,
-  View,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, branch, renderComponent } from 'recompose';
 import get from 'lodash/get';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { withRouter } from '@ui/NativeWebRouter';
-import { UIText } from '@ui/typography';
 import Header from '@ui/Header';
 import AccountCard from '@ui/AccountCard';
 import ScheduleCard from '@ui/ScheduleCard';
@@ -18,13 +16,9 @@ import TransactionCard from '@ui/TransactionCard';
 import ExpiringAccountCard from '@ui/ExpiringAccountCard';
 import FlexedView from '@ui/FlexedView';
 import DashboardSubheader from '@ui/DashboardSubheader';
+import ContributionsChartCard from '@ui/ContributionsChartCard';
 import withGivingDashboard from '@data/withGivingDashboard';
-import styled from '@ui/styled';
-
-const Row = styled({
-  flexDirection: 'row',
-  alignItems: 'center',
-})(View);
+import GiveNavigator from '@ui/TmpGiveNavigator';
 
 export class Dashboard extends PureComponent {
   static propTypes = {
@@ -55,23 +49,7 @@ export class Dashboard extends PureComponent {
       <FlexedView>
         <Header titleText="Give Dashboard" />
         <ScrollView>
-          <Row>
-            <TouchableWithoutFeedback
-              onPress={() => this.props.history.push('/give')}
-            >
-              <UIText>{'Dashboard'}</UIText>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback
-              onPress={() => this.props.history.push('/give/now')}
-            >
-              <UIText>{'Give'}</UIText>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback
-              onPress={() => this.props.history.push('/give/history')}
-            >
-              <UIText>{'History'}</UIText>
-            </TouchableWithoutFeedback>
-          </Row>
+          <GiveNavigator />
 
           <DashboardSubheader
             text="Activity"
@@ -102,7 +80,7 @@ export class Dashboard extends PureComponent {
               />
             );
           })}
-          <UIText>{'Contributions Graph'}</UIText>
+          <ContributionsChartCard />
 
           <DashboardSubheader
             text="Active Schedules"
