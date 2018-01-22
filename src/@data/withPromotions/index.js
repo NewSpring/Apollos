@@ -1,4 +1,5 @@
 import { graphql } from 'react-apollo';
+import identifyCategory from '@data/utils/identifyCategory';
 import promotionsQuery from './promotionsQuery';
 
 export default graphql(promotionsQuery, {
@@ -8,7 +9,7 @@ export default graphql(promotionsQuery, {
     },
   }),
   props: ({ data } = {}) => ({
-    content: data.content,
+    content: data.content && data.content.map(identifyCategory),
     isLoading: data.loading,
     refetch: data.refetch,
   }),

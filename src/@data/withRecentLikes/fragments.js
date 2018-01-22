@@ -5,7 +5,6 @@ export const contentCard = gql`
     __typename
     id
     title
-    category: channelName
     channelName
     parent {
       channelName
