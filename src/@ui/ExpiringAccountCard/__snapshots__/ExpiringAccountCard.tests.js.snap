@@ -84,7 +84,7 @@ exports[`the ExpiringAccountCard component should render with name, expirationDa
             }
           }
         >
-          Feb 2, 2020 12:00 AM
+          Feb 1, 2020 12:00 AM
         </Text>
       </View>
       <View

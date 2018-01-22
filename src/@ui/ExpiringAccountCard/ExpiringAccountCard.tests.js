@@ -10,7 +10,7 @@ describe('the ExpiringAccountCard component', () => {
       <ThemeProvider>
         <ExpiringAccountCard
           name="Bank Account"
-          expirationDate="02/02/2020"
+          expirationDate="02/20"
           dateFormat="lll"
           onPress={() => {}}
           iconFill="#ffffff"

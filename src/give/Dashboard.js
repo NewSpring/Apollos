@@ -75,7 +75,7 @@ export class Dashboard extends PureComponent {
               <ExpiringAccountCard
                 key={activityItem.id}
                 name={activityItem.name}
-                expirationDate={`${activityItem.expirationMonth}/1/${activityItem.expirationYear}`}
+                expirationDate={`${activityItem.expirationMonth}/${activityItem.expirationYear}`}
                 onPress={() => this.props.history.push('/give/now')}
               />
             );

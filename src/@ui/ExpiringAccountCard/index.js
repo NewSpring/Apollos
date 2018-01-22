@@ -69,7 +69,7 @@ const TransactionCard = enhance(({
       <Row>
         <Icon name="circle-outline-x-mark" size={iconSize} fill={iconFill} />
         <Spacer byWidth />
-        <H5>{moment(expirationDate).format(dateFormat)}</H5>
+        <H5>{moment(expirationDate, 'MM/YY').format(dateFormat)}</H5>
       </Row>
       <Spacer />
       <UIText>{`Your saved payment ${name} is expiring soon.`}</UIText>

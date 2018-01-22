@@ -12,7 +12,7 @@ describe('the TransactionCard component', () => {
     const tree = renderer.create(
       <ThemeProvider>
         <TransactionCard
-          date="02/02/2020"
+          date="2018-01-17T00:00:00.000Z"
           iconSize={20}
           dateFormat="lll"
           status="Success"
@@ -27,7 +27,7 @@ describe('the TransactionCard component', () => {
     const tree = renderer.create(
       <ThemeProvider>
         <TransactionCard
-          date="02/02/2020"
+          date="2018-01-17T00:00:00.000Z"
           iconSize={20}
           dateFormat="lll"
           status="Failed"
@@ -42,7 +42,7 @@ describe('the TransactionCard component', () => {
     const tree = renderer.create(
       <ThemeProvider>
         <TransactionCard
-          date="02/02/2020"
+          date="2018-01-17T00:00:00.000Z"
           iconSize={20}
           dateFormat="lll"
           status="Pending"
