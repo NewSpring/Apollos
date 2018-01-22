@@ -7,7 +7,7 @@ import SafeAreaView from '@ui/SafeAreaView';
 import Icon from '@ui/Icon';
 import Touchable from '@ui/Touchable';
 import ConnectedImage from '@ui/ConnectedImage';
-import { UIText, H7, H6 } from '@ui/typography';
+import { H7, H6 } from '@ui/typography';
 import styled from '@ui/styled';
 import { withThemeMixin } from '@ui/theme';
 
