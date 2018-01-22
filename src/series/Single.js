@@ -48,6 +48,7 @@ const SeriesSingle = enhance(({
       isLight = true,
       description,
       tags,
+      colors,
       ...otherContentProps
     } = {},
     children,
@@ -63,7 +64,7 @@ const SeriesSingle = enhance(({
       barStyle={isLight ? 'dark-content' : 'light-content'}
     />
     <ScrollView>
-      <ContentView {...otherContentProps}>
+      <ContentView imageOverlayColor={(!isLoading && colors !== 'undefined') ? `#${colors[0].value}` : false} {...otherContentProps}>
         <Button type={'ghost'} bordered pill>
           <Icon name="play" size={theme.helpers.rem(0.875)} fill={theme.colors.text.primary} />
           <H6>{' '}Watch The Trailer</H6>{/* NOTE: empty string pads the text from the icon */}
