@@ -5,14 +5,6 @@ import { ThemeProvider } from '@ui/theme';
 import ExpiringAccountCard from './';
 
 describe('the ExpiringAccountCard component', () => {
-  it('should render without props', () => {
-    const tree = renderer.create(
-      <ThemeProvider>
-        <ExpiringAccountCard />
-      </ThemeProvider>,
-    );
-    expect(tree).toMatchSnapshot();
-  });
   it('should render with name, expirationDate, dateFormat, onPress, and iconFill', () => {
     const tree = renderer.create(
       <ThemeProvider>
