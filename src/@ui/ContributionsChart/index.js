@@ -9,16 +9,18 @@ import {
   VictoryAxis,
 } from '@ui/Chart';
 import withContributionsChartData from '@data/withContributionsChartData';
+import { withTheme } from '@ui/theme';
 
 export class ContributionsChart extends PureComponent {
   static propTypes = {
     animate: PropTypes.shape({}),
     data: PropTypes.arrayOf(PropTypes.shape({})),
     fill: PropTypes.string,
-    lineWidth: PropTypes.string,
-    dotSize: PropTypes.string,
+    lineWidth: PropTypes.number,
+    dotSize: PropTypes.number,
     tickLabelFill: PropTypes.string,
     chartHeight: PropTypes.number,
+    tickFontSize: PropTypes.number,
   };
 
   static defaultProps = {
@@ -41,10 +43,11 @@ export class ContributionsChart extends PureComponent {
       { month: 'December', amount: 0, tick: 'D' },
     ],
     fill: '#6bac43',
-    lineWidth: '3',
-    dotSize: '3',
+    lineWidth: 3,
+    dotSize: 3,
     tickLabelFill: '#858585',
     chartHeight: 160,
+    tickFontSize: 10,
   };
 
   get areaStyles() {
@@ -82,12 +85,10 @@ export class ContributionsChart extends PureComponent {
     return {
       axis: {
         stroke: 'transparent',
-        strokeWidth: '0',
+        strokeWidth: 0,
       },
       tickLabels: {
-        // NOTE: Not too sure about this
-        // fontFamily: 'colfax-web, sans-serif',
-        fontSize: '10',
+        fontSize: this.props.tickFontSize,
         fill: this.props.tickLabelFill,
       },
     };
@@ -129,6 +130,11 @@ export class ContributionsChart extends PureComponent {
 
 const enhance = compose(
   withContributionsChartData,
+  withTheme(({ theme, ...otherProps }) => ({
+    tickFontSize: otherProps.fontSize || theme.helpers.rem(0.75),
+    fill: otherProps.fill || theme.colors.primary,
+    tickLabelFill: otherProps.tickLabelFill || theme.colors.darkTertiary,
+  })),
 );
 
 export default enhance(ContributionsChart);
