@@ -16,13 +16,13 @@ export const QUERY = gql`
 `;
 
 export default graphql(QUERY, {
-  props: ({ data: { savedPaymentMethod, loading } }) => ({
+  props: ({ ownProps, data: { savedPaymentMethod, loading } }) => ({
     savedPaymentMethod: {
       ...savedPaymentMethod,
       paymentType: get(savedPaymentMethod, 'payment.paymentType') === 'ACH' ? 'bankAccount' : 'creditCard',
       accountNumber: get(savedPaymentMethod, 'payment.accountNumber'),
     },
-    isLoading: loading,
+    isLoading: ownProps.isLoading || loading,
   }),
   options: (ownProps = {}) => ({
     variables: {

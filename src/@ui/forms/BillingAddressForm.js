@@ -171,6 +171,7 @@ const BillingAddressForm = compose(
         if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
       } catch (e) {
         // todo: If there's an error, we want to stay on this page and display it.
+        console.log(e);
       }
     },
   }),

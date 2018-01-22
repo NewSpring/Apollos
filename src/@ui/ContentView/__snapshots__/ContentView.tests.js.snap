@@ -121,3 +121,311 @@ exports[`the ContentView component renders 1`] = `
   </View>
 </View>
 `;
+
+exports[`the ContentView component renders with images 1`] = `
+<View>
+  <View>
+    <Image
+      maintainAspectRatio={false}
+      source={
+        Array [
+          Object {
+            "height": 400,
+            "uri": "https://picsum.photos/600/400/?random",
+            "width": 600,
+          },
+          Object {
+            "height": 400,
+            "uri": "https://picsum.photos/600/400/?random",
+            "width": 600,
+          },
+        ]
+      }
+      style={
+        Array [
+          Object {},
+          Object {
+            "aspectRatio": 1,
+            "resizeMode": "cover",
+            "width": "100%",
+          },
+        ]
+      }
+    />
+    <ExponentLinearGradient
+      colors={
+        Array [
+          16416882,
+          4294606962,
+        ]
+      }
+      endPoint={
+        Array [
+          0,
+          1,
+        ]
+      }
+      locations={
+        Array [
+          0.3,
+          1,
+        ]
+      }
+      startPoint={
+        Array [
+          0,
+          0,
+        ]
+      }
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "padding": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 42.3,
+          "fontWeight": "700",
+          "lineHeight": 53.82,
+        }
+      }
+    >
+      The great escape
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 15.75,
+          "fontWeight": "700",
+          "lineHeight": 17.85,
+        }
+      }
+    >
+      By: 
+      Mike Douglas
+    </Text>
+    <View>
+      <View
+        style={
+          Object {
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            Yo yo
+          </Text>
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            this is some cool html
+          </Text>
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`the ContentView component renders with video 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "padding": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 42.3,
+          "fontWeight": "700",
+          "lineHeight": 53.82,
+        }
+      }
+    >
+      The great escape
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": null,
+          "fontSize": 15.75,
+          "fontWeight": "700",
+          "lineHeight": 17.85,
+        }
+      }
+    >
+      By: 
+      Mike Douglas
+    </Text>
+    <View>
+      <View
+        style={
+          Object {
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            Yo yo
+          </Text>
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "lineHeight": 20,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": undefined,
+                "fontFamily": "Georgia",
+                "fontSize": 18,
+                "lineHeight": 20,
+              }
+            }
+          >
+            this is some cool html
+          </Text>
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

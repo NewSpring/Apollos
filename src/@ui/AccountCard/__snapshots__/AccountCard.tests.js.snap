@@ -1,0 +1,676 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the AccountCard component should render accountType:bankAccount 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
+      "marginHorizontal": 10,
+      "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "nowrap",
+          "justifyContent": "space-between",
+          "minHeight": 110,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1.66,
+            "paddingHorizontal": 20,
+            "paddingVertical": 15,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 20.02,
+              "fontWeight": "700",
+              "lineHeight": 25.46,
+            }
+          }
+        >
+          My Account
+        </Text>
+        <View
+          flexed={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": null,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Svg
+            height={21.6}
+            viewBox="0 0 24 24"
+            width={21.6}
+          >
+            <Path
+              d="M1.3,0 L22.7,0 C23.42,0 24,0.57 24,1.28 L24,15.88 C24,16.58 23.42,17.16 22.7,17.16 L1.3,17.16 C0.57,17.15 0,16.57 0,15.87 L0,1.27 C0,0.57 0.58,0 1.3,0 Z M22.2,15.43 L22.2,1.71 L1.8,1.71 L1.8,15.43 L22.2,15.43 Z M11.4,12 L4.2,12 L4.2,9.7 L11.4,9.7 L11.4,12 Z M19.8,6.86 L4.2,6.86 L4.2,4.57 L19.8,4.57 L19.8,6.87 L19.8,6.86 Z"
+              fill="#303030"
+            />
+          </Svg>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": null,
+                  "fontSize": 14,
+                  "lineHeight": 15.87,
+                }
+              }
+            >
+              1234
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "backgroundColor": "#ffffff",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }
+      >
+        <Svg
+          height={18}
+          viewBox="0 0 24 24"
+          width={18}
+        >
+          <Path
+            d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
+            fill="#6bac43"
+          />
+        </Svg>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`the AccountCard component should render accountType:creditCard 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
+      "marginHorizontal": 10,
+      "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "nowrap",
+          "justifyContent": "space-between",
+          "minHeight": 110,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1.66,
+            "paddingHorizontal": 20,
+            "paddingVertical": 15,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 20.02,
+              "fontWeight": "700",
+              "lineHeight": 25.46,
+            }
+          }
+        >
+          My Account
+        </Text>
+        <View
+          flexed={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": null,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Svg
+            height={21.6}
+            viewBox="0 0 24 24"
+            width={21.6}
+          >
+            <Path
+              d="M1.7 3.43c-.84 0-1.7.86-1.7 1.7v13.73c0 .85.86 1.7 1.7 1.7h20.6c.84 0 1.7-.85 1.7-1.7V5.14c0-.85-.86-1.7-1.7-1.7H1.7zm0 15.43v-6h20.6v6H1.7zm0-10.65V5.16h20.6V8.2H1.7z"
+              fill="#303030"
+            />
+          </Svg>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": null,
+                  "fontSize": 14,
+                  "lineHeight": 15.87,
+                }
+              }
+            >
+              1234
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "backgroundColor": "#ffffff",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }
+      >
+        <Svg
+          height={18}
+          viewBox="0 0 24 24"
+          width={18}
+        >
+          <Path
+            d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
+            fill="#6bac43"
+          />
+        </Svg>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`the AccountCard component should render allow changing iconSize 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
+      "marginHorizontal": 10,
+      "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "nowrap",
+          "justifyContent": "space-between",
+          "minHeight": 110,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1.66,
+            "paddingHorizontal": 20,
+            "paddingVertical": 15,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 20.02,
+              "fontWeight": "700",
+              "lineHeight": 25.46,
+            }
+          }
+        >
+          My Account
+        </Text>
+        <View
+          flexed={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": null,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Svg
+            height={21.6}
+            viewBox="0 0 24 24"
+            width={21.6}
+          >
+            <Path
+              d="M1.7 3.43c-.84 0-1.7.86-1.7 1.7v13.73c0 .85.86 1.7 1.7 1.7h20.6c.84 0 1.7-.85 1.7-1.7V5.14c0-.85-.86-1.7-1.7-1.7H1.7zm0 15.43v-6h20.6v6H1.7zm0-10.65V5.16h20.6V8.2H1.7z"
+              fill="#303030"
+            />
+          </Svg>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": null,
+                  "fontSize": 14,
+                  "lineHeight": 15.87,
+                }
+              }
+            >
+              1234
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "backgroundColor": "#ffffff",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }
+      >
+        <Svg
+          height={20}
+          viewBox="0 0 24 24"
+          width={20}
+        >
+          <Path
+            d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
+            fill="#6bac43"
+          />
+        </Svg>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`the AccountCard component should render with accountNumber 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
+      "marginHorizontal": 10,
+      "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "nowrap",
+          "justifyContent": "space-between",
+          "minHeight": 110,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1.66,
+            "paddingHorizontal": 20,
+            "paddingVertical": 15,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 20.02,
+              "fontWeight": "700",
+              "lineHeight": 25.46,
+            }
+          }
+        >
+          My Account
+        </Text>
+        <View
+          flexed={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": null,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Svg
+            height={21.6}
+            viewBox="0 0 24 24"
+            width={21.6}
+          >
+            <Path
+              d="M1.7 3.43c-.84 0-1.7.86-1.7 1.7v13.73c0 .85.86 1.7 1.7 1.7h20.6c.84 0 1.7-.85 1.7-1.7V5.14c0-.85-.86-1.7-1.7-1.7H1.7zm0 15.43v-6h20.6v6H1.7zm0-10.65V5.16h20.6V8.2H1.7z"
+              fill="#303030"
+            />
+          </Svg>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": null,
+                  "fontSize": 14,
+                  "lineHeight": 15.87,
+                }
+              }
+            >
+              1234
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "backgroundColor": "#ffffff",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }
+      >
+        <Svg
+          height={18}
+          viewBox="0 0 24 24"
+          width={18}
+        >
+          <Path
+            d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
+            fill="#6bac43"
+          />
+        </Svg>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`the AccountCard component should render with title 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
+      "marginHorizontal": 10,
+      "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "nowrap",
+          "justifyContent": "space-between",
+          "minHeight": 110,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1.66,
+            "paddingHorizontal": 20,
+            "paddingVertical": 15,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": null,
+              "fontSize": 20.02,
+              "fontWeight": "700",
+              "lineHeight": 25.46,
+            }
+          }
+        >
+          My Account
+        </Text>
+        <View
+          flexed={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": null,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Svg
+            height={21.6}
+            viewBox="0 0 24 24"
+            width={21.6}
+          >
+            <Path
+              d="M1.7 3.43c-.84 0-1.7.86-1.7 1.7v13.73c0 .85.86 1.7 1.7 1.7h20.6c.84 0 1.7-.85 1.7-1.7V5.14c0-.85-.86-1.7-1.7-1.7H1.7zm0 15.43v-6h20.6v6H1.7zm0-10.65V5.16h20.6V8.2H1.7z"
+              fill="#303030"
+            />
+          </Svg>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": null,
+                  "fontSize": 14,
+                  "lineHeight": 15.87,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "backgroundColor": "#ffffff",
+            "flex": 1,
+            "justifyContent": "center",
+            "paddingRight": 20,
+          }
+        }
+      >
+        <Svg
+          height={18}
+          viewBox="0 0 24 24"
+          width={18}
+        >
+          <Path
+            d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
+            fill="#6bac43"
+          />
+        </Svg>
+      </View>
+    </View>
+  </View>
+</View>
+`;

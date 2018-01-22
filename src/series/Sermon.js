@@ -9,6 +9,7 @@ import ContentView, { Title, SubHeading, HTMLView } from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import withSermon from '@data/withSermon';
 import { withThemeMixin } from '@ui/theme';
+import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 
 const enhance = compose(
   pure,
@@ -31,13 +32,18 @@ const enhance = compose(
 const Sermon = enhance(({
   content: {
     title,
-    parent: { title: parentTitle, content: { isLight = true } = {} } = {},
+    parent: {
+      title: parentTitle,
+      content: { isLight = true } = {},
+      children,
+    } = {},
     content: {
       speaker,
       description,
       ...otherContentProps
     } = {},
   } = {},
+  isLoading,
 }) => (
   <FlexedView>
     <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
@@ -47,6 +53,11 @@ const Sermon = enhance(({
         <SubHeading>{startCase(toLower(speaker))}</SubHeading>
         <HTMLView>{description}</HTMLView>
       </ContentView>
+      <HorizontalTileFeed
+        content={children}
+        isLoading={isLoading}
+        showTileMeta
+      />
     </ScrollView>
     <SecondaryNav>
       <Link icon="share" />

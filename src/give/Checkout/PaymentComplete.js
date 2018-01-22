@@ -8,6 +8,10 @@ import Success from './Success';
 import Failure from './Failure';
 
 const PaymentComplete = compose(
+  withGive,
+  withProps(props => ({
+    ...get(props, 'contributions') || {},
+  })),
   setPropTypes({
     isLoading: PropTypes.bool,
     paymentFailed: PropTypes.bool,
@@ -20,10 +24,6 @@ const PaymentComplete = compose(
     paymentFailedMessage: '',
     paymentSuccessful: false,
   }),
-  withGive,
-  withProps(props => ({
-    ...get(props, 'contributions') || {},
-  })),
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
   branch(
     ({ paymentFailed, paymentSuccessful }) => paymentFailed || !paymentSuccessful,

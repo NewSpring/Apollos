@@ -9,9 +9,9 @@ export default graphql(transactionsQuery, {
       skip: ownProps.skip || 0,
     },
   }),
-  props: ({ data } = {}) => ({
+  props: ({ ownProps, data } = {}) => ({
     content: data.content,
-    isLoading: data.loading,
+    isLoading: ownProps.isLoading || data.loading,
     fetchMore: fetchMoreResolver({
       collectionName: 'content',
       data,

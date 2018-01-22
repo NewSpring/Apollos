@@ -2,9 +2,9 @@ import { graphql } from 'react-apollo';
 import seriesContentQuery from './seriesContentQuery';
 
 export default graphql(seriesContentQuery, {
-  props: ({ data: { content, loading } }) => ({
+  props: ({ ownProps, data: { content, loading } }) => ({
     content,
-    isLoading: loading,
+    isLoading: ownProps.isLoading || loading,
   }),
   options: (ownProps = {}) => ({
     variables: {
