@@ -8,8 +8,8 @@ export const QUERY = gql`
 `;
 
 export default graphql(QUERY, {
-  props: ({ data } = {}) => ({
+  props: ({ ownProps, data } = {}) => ({
     topics: data.topics,
-    isLoading: data.loading,
+    isLoading: ownProps.isLoading || data.loading,
   }),
 });

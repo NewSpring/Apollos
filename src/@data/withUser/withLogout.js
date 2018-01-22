@@ -17,14 +17,15 @@ export default graphql(MUTATION, {
     logout: async () => {
       try {
         const r = await mutate({
-          update: (proxy) => {
+          refetchQueries: ['GivingDashboard', 'GetCheckoutData', 'SavedPaymentMethods'],
+          update: async (proxy) => {
             const query = USER_QUERY;
             const data = proxy.readQuery({ query });
             data.person = null;
+            await AsyncStorage.removeItem('authToken');
             proxy.writeQuery({ query, data });
           },
         });
-        await AsyncStorage.removeItem('authToken');
         return r;
       } catch (err) {
         throw err;

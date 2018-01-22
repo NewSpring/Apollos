@@ -10,9 +10,9 @@ export default graphql(newsStoriesQuery, {
       skip: ownProps.skip || 0,
     },
   }),
-  props: ({ data } = {}) => ({
+  props: ({ ownProps, data } = {}) => ({
     content: data.content && data.content.map(identifyCategory),
-    isLoading: data.loading,
+    isLoading: ownProps.isLoading || data.loading,
     refetch: data.refetch,
     fetchMore: fetchMoreResolver({
       collectionName: 'content',

@@ -2,9 +2,9 @@ import { graphql } from 'react-apollo';
 import financialAccountsQuery from './financialAccountsQuery';
 
 export default graphql(financialAccountsQuery, {
-  props: ({ data }) => ({
+  props: ({ ownProps, data }) => ({
     accounts: data.accounts,
-    isLoading: data.loading,
+    isLoading: ownProps.isLoading || data.loading,
   }),
 });
 
