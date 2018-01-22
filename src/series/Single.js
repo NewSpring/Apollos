@@ -16,6 +16,10 @@ import styled from '@ui/styled';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 import RelatedContent from '@ui/RelatedContent';
 
+import CardStack from '@ui/CardStack';
+import { Route } from '@ui/NativeWebRouter';
+import SeriesTrailer from './SeriesTrailer';
+
 const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
@@ -85,6 +89,10 @@ const SeriesSingle = enhance(({
       <Link icon="share" />
       <Link icon="like" />
     </SecondaryNav>
+
+    <CardStack direction="vertical">
+      <Route exact path="/series/:id/trailer" component={SeriesTrailer} />
+    </CardStack>
   </FlexedView>
 ));
 export default SeriesSingle;
