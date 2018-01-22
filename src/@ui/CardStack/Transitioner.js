@@ -31,7 +31,7 @@ class Transitioner extends PureComponent {
       goBack: PropTypes.func,
       entries: PropTypes.arrayOf(PropTypes.shape({
         key: PropTypes.string,
-      })).isRequired,
+      })),
       goForward: PropTypes.func,
       push: PropTypes.func,
     }),
@@ -58,22 +58,27 @@ class Transitioner extends PureComponent {
     style: undefined,
   };
 
-  state = {
-    transition: null,
-    entries: [this.props.location],
-    index: 0,
-  };
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      transition: null,
+      entries: [this.props.location],
+      toKey: this.keyForLocation(this.props.location),
+      index: 0,
+    };
+  }
 
   // In a routing change: set up state to handle the transition and start the animation
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.key === this.props.location.key) return;
 
     let { entries } = this.state;
-    let transition = nextProps.history.action;
+    const transition = nextProps.history.action;
+    let toKey = this.keyForLocation(nextProps.location);
 
-    // If new location and current location point to same route,
+    // If new location and current location point to same key,
     // change entry at current index and exit (no animation)
-    if (this.locationsfromSameRoute(this.props.location, nextProps.location)) {
+    if (this.keyForLocation(this.props.location) === toKey) {
       entries[this.state.index] = nextProps.location;
       this.setState(entries);
       return;
@@ -83,18 +88,14 @@ class Transitioner extends PureComponent {
 
     switch (nextProps.history.action) {
       case PUSH: {
-        // If the next <Route> doesn't have a path, we know we are pushing from
-        // an inner page to a root-level page, and we should show a POP animation instead
-        const nextRouteChild = this.routeChildForLocation(nextProps.location);
-        if (!nextRouteChild.props.path && !nextRouteChild.props.to) {
-          entries = [nextProps.location, this.props.location];
-          toPosition = 0;
-          transition = POP;
+        const routeIndex = findIndex(entries, entry => this.keyForLocation(entry) === toKey);
+        if (routeIndex > -1) {
+          toPosition = routeIndex;
         } else {
-          // otherwise, insert route at next place in stack
           entries.splice(this.state.index + 1, 0, nextProps.location);
           toPosition = this.state.index + 1;
         }
+
         break;
       }
       case POP:
@@ -107,13 +108,17 @@ class Transitioner extends PureComponent {
       case REPLACE:
       default:
         entries[this.state.index] = nextProps.location;
+        // optimization: prevents remount edge-case
+        toKey = this.state.toKey || toKey;  // eslint-disable-line
         break;
     }
 
-    const fromPosition = findIndex(entries, ({ key }) => key === this.props.location.key);
+    let fromPosition = findIndex(entries, ({ key }) => key === this.props.location.key);
+    if (fromPosition <= -1) fromPosition = toPosition;
 
     this.setState({
       entries,
+      toKey,
       previouslyRenderedLocation: this.props.location,
       index: toPosition,
       transition,
@@ -146,11 +151,11 @@ class Transitioner extends PureComponent {
 
   // Determines if the previous location in history points at the same <Route> that's active.
   // Used to keep us from swiping back on a screen that we shouldn't be able to swipe back from
-  get wouldPopToSameRouteChild() {
-    return this.locationsfromSameRoute(
-      this.props.location,
-      get(this.props.history, `entries[${this.props.history.index - 1}]`),
-    );
+  get wouldPopToSameRouteKey() {
+    const previous = get(this.props.history, `entries[${this.props.history.index - 1}]`);
+    if (!previous) return true;
+    return this.keyForLocation(this.props.location) ===
+      this.keyForLocation(previous);
   }
 
   get direction() {
@@ -197,7 +202,7 @@ class Transitioner extends PureComponent {
 
   panResponder = PanResponder.create({
     onMoveShouldSetPanResponder: (event, gesture) => (
-      !this.wouldPopToSameRouteChild &&
+      !this.wouldPopToSameRouteKey &&
       this.props.history.index > this.startingIndex &&
       this.props.history.canGo(-1) &&
       (
@@ -269,6 +274,12 @@ class Transitioner extends PureComponent {
     return location && findFirstMatch(this.props.children, location);
   }
 
+  keyForLocation = (entry) => {
+    const child = this.routeChildForLocation(entry);
+    if (get(child, 'props.cardStackKey')) return get(child, 'props.cardStackKey');
+    return entry.key;
+  }
+
   // Determines if two locations would be driven by the same <Route> in props.children
   locationsfromSameRoute(locationA, locationB) {
     return get(this.routeChildForLocation(locationA), 'props.computedMatch.path') ===
@@ -314,7 +325,7 @@ class Transitioner extends PureComponent {
   afterNavigate = () => {
     this.setState({
       transition: null,
-      entries: this.state.entries.slice(0, this.state.index + 1),
+      entries: this.state.entries.slice(0, this.state.index + 2),
     });
   }
 
@@ -324,14 +335,14 @@ class Transitioner extends PureComponent {
       .map((entry, index) => (
         this.renderScreenWithAnimation({
           index,
+          key: this.state.index === index ? this.state.toKey : this.keyForLocation(entry),
           screen: this.routeChildForLocation(entry),
-          key: entry.key,
         })
       ));
     return screens;
   }
 
-  renderScreenWithAnimation = ({ index, key, screen }) => {
+  renderScreenWithAnimation = ({ index, screen, key }) => {
     const style = [
       StyleSheet.absoluteFill,
       interpolator({

@@ -102,7 +102,7 @@ class AppRouter extends PureComponent {
     return (
       <FlexedView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-        <AppSwitch location={this.isModal ? previousLocation : this.props.location}>
+        <AppSwitch>
           <CardStack location={this.isModal ? previousLocation : this.props.location}>
             <Redirect from="/sermons" to="/series" />
             <Route exact path="/series" component={Series} />
@@ -140,7 +140,7 @@ class AppRouter extends PureComponent {
 
             <Route path="/login" cardStackDirection="vertical" component={Auth} />
 
-            <Route component={this.tabs} />
+            <Route component={this.tabs} cardStackKey="tabs" />
           </CardStack>
         </AppSwitch>
         {this.isModal ? this.largeScreenModals : null}
