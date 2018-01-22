@@ -55,7 +55,7 @@ export class ContributionsChartCard extends PureComponent {
           >
             <Row>
               <StyledH6>{'View Giving History'}</StyledH6>
-              <Icon name="ArrowNext" />
+              <Icon name="arrow-next" />
             </Row>
           </TouchableWithoutFeedback>
         </PaddedView>

@@ -76,7 +76,7 @@ const AccountCard = enhance(({
       </LeftColumn>
 
       <RightColumn>
-        <Icon name="ArrowNext" size={iconSize} />
+        <Icon name="arrow-next" size={iconSize} />
       </RightColumn>
     </HorizontalLayout>
   </Card>

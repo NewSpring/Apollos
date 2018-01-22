@@ -67,7 +67,7 @@ const TransactionCard = enhance(({
   <Card isLoading={isLoading} {...otherProps}>
     <PaddedView>
       <Row>
-        <Icon name="CircleOutlineXMark" size={iconSize} fill={iconFill} />
+        <Icon name="circle-outline-x-mark" size={iconSize} fill={iconFill} />
         <Spacer byWidth />
         <H5>{moment(expirationDate).format(dateFormat)}</H5>
       </Row>
@@ -79,7 +79,7 @@ const TransactionCard = enhance(({
       >
         <Row>
           <StyledH6>{'Update it Now'}</StyledH6>
-          <Icon name="ArrowNext" size={iconSize} fill={iconFill} />
+          <Icon name="arrow-next" size={iconSize} fill={iconFill} />
         </Row>
       </TouchableWithoutFeedback>
     </PaddedView>

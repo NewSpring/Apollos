@@ -86,7 +86,7 @@ const ScheduleCard = enhance(({
       >
         <Row>
           <StyledH6>{'View Schedule Details'}</StyledH6>
-          <Icon name="ArrowNext" size={iconSize} />
+          <Icon name="arrow-next" size={iconSize} />
         </Row>
       </TouchableWithoutFeedback>
     </PaddedView>
