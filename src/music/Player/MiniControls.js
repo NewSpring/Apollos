@@ -7,7 +7,7 @@ import SafeAreaView from '@ui/SafeAreaView';
 import Icon from '@ui/Icon';
 import Touchable from '@ui/Touchable';
 import ConnectedImage from '@ui/ConnectedImage';
-import { UIText } from '@ui/typography';
+import { UIText, H7, H6 } from '@ui/typography';
 import styled from '@ui/styled';
 import { withThemeMixin } from '@ui/theme';
 
@@ -15,10 +15,15 @@ const TrackInfo = styled(({ theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit / 2,
 }))(View);
 
+const TrackName = styled(({ theme }) => ({
+  height: theme.sizing.baseUnit,
+  overflow: 'hidden',
+}))(H6);
+
 const TrackLabel = styled(({ theme }) => ({
   height: theme.sizing.baseUnit,
   overflow: 'hidden',
-}))(UIText);
+}))(H7);
 
 const FlexRow = styled(({ theme, height }) => ({
   height,
@@ -67,7 +72,7 @@ const MiniControls = enhance(({
     <FlexRow height={height}>
       <ConnectedImage source={albumArt} maintainAspectRatio />
       <TrackInfo>
-        <TrackLabel>{trackName}</TrackLabel>
+        <TrackName>{trackName}</TrackName>
         <TrackLabel>{trackByLine}</TrackLabel>
       </TrackInfo>
     </FlexRow>
