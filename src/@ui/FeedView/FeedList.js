@@ -1,4 +1,4 @@
-import FlatList from '@ui/FlatList';
+import FlatList from '@ui/WebCompatibleFlatList';
 import styled from '@ui/styled';
 
 const FeedList = styled(({ theme }) => ({

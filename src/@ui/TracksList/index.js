@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { pure, branch, withProps, compose } from 'recompose';
 import { times } from 'lodash';
-import FlatList from '@ui/FlatList';
+import FlatList from '@ui/WebCompatibleFlatList';
 import PaddedView from '@ui/PaddedView';
 import Touchable from '@ui/Touchable';
 import { BodyCopy } from '@ui/typography';
