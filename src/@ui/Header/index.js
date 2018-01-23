@@ -41,6 +41,7 @@ const enhance = compose(
     type: (barStyle === 'light-content') ? 'dark' : 'light',
     colors: {
       background: {
+        ...theme.colors.background,
         default: theme.colors.background.primary,
       },
     },
