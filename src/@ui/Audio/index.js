@@ -157,19 +157,22 @@ export default class Audio extends Component {
     const uri = source.replace(/^http:\/\/|^\/\//i, 'https://');
 
     try {
-      if (this.sound) {
+      if (this.sound && this.soundLoaded === this.sound) {
         await this.sound.unloadAsync();
-        delete this.sound;
       }
 
-      this.sound = await new ExpoAudio.Sound();
-
+      const sound = this.sound = await new ExpoAudio.Sound(); // eslint-disable-line
       const soundStatus = await this.sound.loadAsync({ uri });
-      this.duration = soundStatus.durationMillis;
+      this.soundLoaded = this.sound;
 
-      this.sound.setOnPlaybackStatusUpdate(this.onPlaybackStatusUpdate);
+      if (sound === this.sound) { // since the above calls are promise base, there's a chance that
+      // the current sound changes before this sound is loaded (pressing skip button quickly).
+      // We don't want to start playing this sound in that scenario :)
+        this.duration = soundStatus.durationMillis;
+        this.sound.setOnPlaybackStatusUpdate(this.onPlaybackStatusUpdate);
+        if (this.props.isPlaying) await this.play();
+      }
 
-      if (this.props.isPlaying) await this.play();
       onReady();
     } catch (err) {
       onError(err);
