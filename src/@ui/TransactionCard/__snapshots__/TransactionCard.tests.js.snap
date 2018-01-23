@@ -79,7 +79,7 @@ exports[`the TransactionCard component should render Failure 1`] = `
             }
           }
         >
-          Feb 2, 2020 12:00 AM
+          Jan 16, 2018 4:00 PM
         </Text>
       </View>
       <View
@@ -266,7 +266,7 @@ exports[`the TransactionCard component should render Success 1`] = `
             }
           }
         >
-          Feb 2, 2020 12:00 AM
+          Jan 16, 2018 4:00 PM
         </Text>
       </View>
       <View
@@ -468,7 +468,7 @@ exports[`the TransactionCard component should render scheduled payments 1`] = `
             }
           }
         >
-          Feb 2, 2020 12:00 AM
+          Jan 16, 2018 4:00 PM
         </Text>
       </View>
       <View

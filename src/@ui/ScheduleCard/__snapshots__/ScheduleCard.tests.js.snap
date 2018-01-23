@@ -168,7 +168,7 @@ exports[`the ScheduleCard component should render 1`] = `
             }
           }
         >
-          Feb 2, 2020 12:00 AM
+          Jan 16, 2018 4:00 PM
         </Text>
       </View>
       <View
