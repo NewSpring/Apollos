@@ -78,7 +78,7 @@ const ScheduleCard = enhance(({
       <Spacer />
       <Row>
         <UIText>{'Start Date: '}</UIText>
-        <ItalicText>{moment(startDate).format(dateFormat)}</ItalicText>
+        <ItalicText>{moment(startDate).utc().format(dateFormat)}</ItalicText>
       </Row>
       <Spacer />
       <TouchableWithoutFeedback

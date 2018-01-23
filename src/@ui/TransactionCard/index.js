@@ -75,7 +75,7 @@ const TransactionCard = enhance(({
         <Row>
           {isOk ? <Icon name="circle-outline-check-mark" size={iconSize} /> : <Icon name="circle-outline-x-mark" size={iconSize} fill={isErrorColor} />}
           <Spacer byWidth />
-          <H5>{moment(date).format(dateFormat)}</H5>
+          <H5>{moment(date).utc().format(dateFormat)}</H5>
         </Row>
         <Spacer />
         <StatusMessage
