@@ -12,7 +12,7 @@ describe('the ScheduleCard component', () => {
           accountName="accountName"
           amount={20}
           frequency="often"
-          startDate="02/02/2020"
+          startDate="2018-01-17T00:00:00.000Z"
           iconSize={20}
           dateFormat="lll"
         />

@@ -1,6 +1,10 @@
 import React, { PureComponent } from 'react';
+import {
+  View,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
+import get from 'lodash/get';
 import {
   VictoryLine,
   VictoryScatter,
@@ -50,6 +54,10 @@ export class ContributionsChart extends PureComponent {
     tickFontSize: 10,
   };
 
+  state = {
+    width: undefined,
+  };
+
   get areaStyles() {
     return {
       data: {
@@ -94,36 +102,49 @@ export class ContributionsChart extends PureComponent {
     };
   }
 
+  setWidth = (e) => {
+    this.setState({
+      width: get(e, 'nativeEvent.layout.width'),
+    });
+  }
+
   render() {
     return (
-      <VictoryChart
-        height={this.props.chartHeight}
+      <View
+        onLayout={this.setWidth}
       >
-        <VictoryArea
-          data={this.props.data}
-          x="month"
-          y="amount"
-          style={this.areaStyles}
-        />
-        <VictoryLine
-          animate={this.props.animate}
-          data={this.props.data}
-          x="month"
-          y="amount"
-          style={this.lineStyles}
-        />
-        <VictoryScatter
-          data={this.props.data}
-          x="month"
-          y="amount"
-          size={this.props.dotSize}
-          style={this.scatterStyles}
-        />
-        <VictoryAxis
-          tickFormat={this.tickFormat}
-          style={this.axisStyles}
-        />
-      </VictoryChart>
+        {this.state.width && (
+          <VictoryChart
+            height={this.props.chartHeight}
+            width={this.state.width}
+          >
+            <VictoryArea
+              data={this.props.data}
+              x="month"
+              y="amount"
+              style={this.areaStyles}
+            />
+            <VictoryLine
+              animate={this.props.animate}
+              data={this.props.data}
+              x="month"
+              y="amount"
+              style={this.lineStyles}
+            />
+            <VictoryScatter
+              data={this.props.data}
+              x="month"
+              y="amount"
+              size={this.props.dotSize}
+              style={this.scatterStyles}
+            />
+            <VictoryAxis
+              tickFormat={this.tickFormat}
+              style={this.axisStyles}
+            />
+          </VictoryChart>
+        )}
+      </View>
     );
   }
 }

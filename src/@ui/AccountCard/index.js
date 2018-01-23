@@ -19,8 +19,8 @@ const enhance = compose(
   setPropTypes({
     title: PropTypes.string.isRequired,
     isLoading: PropTypes.bool,
-    accountNumber: PropTypes.number,
-    accountType: PropTypes.number,
+    accountNumber: PropTypes.string,
+    accountType: PropTypes.string,
     iconSize: PropTypes.number,
   }),
   defaultProps({
@@ -76,7 +76,7 @@ const AccountCard = enhance(({
       </LeftColumn>
 
       <RightColumn>
-        <Icon name="ArrowNext" size={iconSize} />
+        <Icon name="arrow-next" size={iconSize} />
       </RightColumn>
     </HorizontalLayout>
   </Card>
