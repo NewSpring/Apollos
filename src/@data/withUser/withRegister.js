@@ -34,16 +34,16 @@ export default graphql(MUTATION, {
             firstName,
             lastName,
           },
-          update: (store, { data: { registerUser } }) => {
+          update: async (store, { data: { registerUser } }) => {
             const data = store.readQuery({ query: LOGGED_IN_QUERY });
             data.person = {
               __typename: 'User',
               id: registerUser.id,
             };
             store.writeQuery({ query: LOGGED_IN_QUERY, data });
+            await AsyncStorage.setItem('authToken', get(registerUser, 'token'));
           },
         });
-        await AsyncStorage.setItem('authToken', get(r, 'data.registerUser.token'));
         return r;
       } catch (err) {
         throw err;
