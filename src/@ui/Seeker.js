@@ -14,6 +14,8 @@ const Container = styled(({ theme }) => ({
   minWidth: '65%',
   marginHorizontal: theme.sizing.baseUnit,
   overflow: 'visible',
+  paddingHorizontal: theme.sizing.baseUnit / 2,
+  paddingVertical: (theme.sizing.baseUnit / 2) - (theme.sizing.borderRadius / 2),
 }), 'Seeker.Container')(View);
 
 const Track = styled(({ theme }) => ({
@@ -45,12 +47,6 @@ export class Seeker extends Component {
     progress: PropTypes.object, // eslint-disable-line
     onSeek: PropTypes.func,
     onSeeking: PropTypes.func,
-    theme: PropTypes.shape({
-      sizing: PropTypes.shape({
-        borderRadius: PropTypes.number,
-        baseUnit: PropTypes.number,
-      }),
-    }),
   };
 
   static defaultProps = {
@@ -118,11 +114,9 @@ export class Seeker extends Component {
 
     const trackBarOffset = Animated.add(position, offset);
 
-    const { theme } = this.props;
-
     return (
-      <Container onLayout={this.handleOnLayout}>
-        <Track>
+      <Container>
+        <Track onLayout={this.handleOnLayout}>
           <Animated.View
             style={[StyleSheet.absoluteFill, {
               transform: [{ translateX: trackBarOffset }],
@@ -134,9 +128,9 @@ export class Seeker extends Component {
         <Animated.View
           style={{
             position: 'absolute',
-            right: -(theme.sizing.baseUnit / 2),
-            top: (theme.sizing.borderRadius / 2) - (theme.sizing.baseUnit / 2),
-            bottom: (theme.sizing.borderRadius / 2) - (theme.sizing.baseUnit / 2),
+            right: 0,
+            top: 0,
+            bottom: 0,
             width: '100%',
             overflow: 'visible',
             transform: [
@@ -152,7 +146,6 @@ export class Seeker extends Component {
 }
 
 export default withTheme(({ theme, ...otherProps } = {}) => ({
-  theme,
   progressColor: theme.colors.primary,
   knobColor: theme.colors.secondary,
   trackColor: theme.colors.darkPrimary,
