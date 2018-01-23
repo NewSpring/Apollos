@@ -107,7 +107,7 @@ class AppRouter extends PureComponent {
             <Redirect from="/sermons" to="/series" />
             <Route exact path="/series" component={Series} />
             <Route exact path="/series/:id" component={SeriesSingle} />
-            <Route exact path="/series/:id/trailer" component={SeriesTrailer} />
+            <Route exact path="/series/:id/trailer" component={asModal(SeriesTrailer)} cardStackDirection="vertical" />
             <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
 
             <Route exact path="/studies" component={Studies} />

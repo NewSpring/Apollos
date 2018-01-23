@@ -15,15 +15,13 @@ import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 import RelatedContent from '@ui/RelatedContent';
-
-import CardStack from '@ui/CardStack';
-import { Route } from '@ui/NativeWebRouter';
-import SeriesTrailer from './SeriesTrailer';
+import { withRouter } from '@ui/NativeWebRouter';
 
 const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withSeriesContent,
+  withRouter,
   withThemeMixin(({ content: { content = {} } = {} } = {}) => {
     const theme = {
       type: content.isLight ? 'light' : 'dark',
@@ -60,6 +58,7 @@ const SeriesSingle = enhance(({
     children,
     id,
   } = { },
+  history,
   isLoading,
   theme,
 }) => (
@@ -71,10 +70,12 @@ const SeriesSingle = enhance(({
     />
     <ScrollView>
       <ContentView imageOverlayColor={(!isLoading && colors !== 'undefined') ? `#${colors[0].value}` : ''} {...otherContentProps}>
-        <StyledButton type={'ghost'} bordered pill>
-          <Icon name="play" size={theme.helpers.rem(0.875)} fill={theme.colors.text.primary} />
-          <H6>{' '}Watch The Trailer</H6>{/* NOTE: empty string pads the text from the icon */}
-        </StyledButton>
+        {(video && video.embedUrl) && (
+          <StyledButton onPress={() => history.push(`/series/${id}/trailer`)} type={'ghost'} bordered pill>
+            <Icon name="play" size={theme.helpers.rem(0.875)} fill={theme.colors.text.primary} />
+            <H6>{' '}Watch The Trailer</H6>{/* NOTE: empty string pads the text from the icon */}
+          </StyledButton>
+        )}
         <HTMLView>{description}</HTMLView>
       </ContentView>
       <HorizontalTileFeed
@@ -89,10 +90,6 @@ const SeriesSingle = enhance(({
       <Link icon="share" />
       <Link icon="like" />
     </SecondaryNav>
-
-    <CardStack direction="vertical">
-      <Route exact path="/series/:id/trailer" component={SeriesTrailer} />
-    </CardStack>
   </FlexedView>
 ));
 export default SeriesSingle;
