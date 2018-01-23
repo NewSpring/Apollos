@@ -3,7 +3,9 @@ import { TabBar } from 'react-native-tab-view';
 import { compose, withProps } from 'recompose';
 import {
   View,
+  Platform,
 } from 'react-native';
+import Header from '@ui/Header';
 import { H2 } from '@ui/typography';
 import { matchPath, withRouter } from '@ui/NativeWebRouter';
 import TabView, { SceneMap } from '@ui/TabView';
@@ -42,12 +44,16 @@ const StyledH2 = styled(({ theme }) => ({
 }))(H2);
 
 class GiveRoutes extends PureComponent {
-  get initialIndex() {
+  get currentRouteIndex() {
     // eslint-disable-next-line
     return this.routes.findIndex(route => (matchPath(this.props.location.pathname, {
       path: route.path,
       exact: true,
     })));
+  }
+
+  get currentRoute() {
+    return this.routes[this.currentRouteIndex];
   }
 
   scenes = SceneMap({
@@ -57,26 +63,41 @@ class GiveRoutes extends PureComponent {
   });
 
   routes = [
-    { title: 'Dashboard', key: 'Dashboard', path: '/give' },
-    { title: 'Now', key: 'Now', path: '/give/now' },
-    { title: 'History', key: 'ContributionHistory', path: '/give/history' },
+    {
+      title: 'Dashboard',
+      headerTitle: 'My Giving',
+      key: 'Dashboard',
+      path: '/give',
+    },
+    {
+      title: 'Now',
+      headerTitle: 'My Giving',
+      key: 'Now',
+      path: '/give/now',
+    },
+    {
+      title: 'History',
+      headerTitle: 'My Giving',
+      key: 'ContributionHistory',
+      path: '/give/history',
+    },
   ];
 
-  // eslint-disable-next-line
-  Header = (props) => {
-    return (
-      <StyledHeader>
+  Header = props => (
+    <StyledHeader>
+      <Header titleText={this.currentRoute.headerTitle} />
+      {Platform.OS === 'web' && (
         <StyledH2>{'My Giving'}</StyledH2>
-        <Spacer />
-        <StyledTabBar {...props} />
-      </StyledHeader>
-    );
-  }
+      )}
+      <Spacer />
+      <StyledTabBar {...props} />
+    </StyledHeader>
+  );
 
   render() {
     return (
       <TabView
-        initialIndex={this.initialIndex}
+        initialIndex={this.currentRouteIndex}
         routes={this.routes}
         renderScene={this.scenes}
         renderHeader={this.Header}

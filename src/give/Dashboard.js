@@ -9,7 +9,6 @@ import { compose, branch, renderComponent } from 'recompose';
 import get from 'lodash/get';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { withRouter } from '@ui/NativeWebRouter';
-import Header from '@ui/Header';
 import AccountCard from '@ui/AccountCard';
 import ScheduleCard from '@ui/ScheduleCard';
 import TransactionCard from '@ui/TransactionCard';
@@ -46,7 +45,6 @@ export class Dashboard extends PureComponent {
   render() {
     return (
       <FlexedView>
-        <Header titleText="Give Dashboard" />
         <ScrollView>
           <DashboardSubheader
             text="Activity"
