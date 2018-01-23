@@ -75,7 +75,7 @@ export class Dashboard extends PureComponent {
               <ExpiringAccountCard
                 key={activityItem.id}
                 name={activityItem.name}
-                expirationDate={`${activityItem.expirationMonth}/1/${activityItem.expirationYear}`}
+                expirationDate={`${activityItem.expirationMonth}/${activityItem.expirationYear}`}
                 onPress={() => this.props.history.push('/give/now')}
               />
             );
@@ -105,10 +105,10 @@ export class Dashboard extends PureComponent {
           />
           {this.props.savedPaymentMethods.map(paymentMethod => (
             <TouchableWithoutFeedback
+              key={paymentMethod.id}
               onPress={() => this.props.history.push(`/give/payment-methods/${paymentMethod.id}`)}
             >
               <AccountCard
-                key={paymentMethod.id}
                 title={paymentMethod.name}
                 accountNumber={paymentMethod.accountNumber}
                 accountType={paymentMethod.paymentMethod}
