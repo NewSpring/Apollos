@@ -99,10 +99,13 @@ exports[`renders correctly 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
+          "alignItems": "center",
           "color": "#303030",
           "fontFamily": null,
           "fontSize": 18,
           "lineHeight": 20,
+          "textAlign": "center",
+          "width": 50,
         }
       }
     >
@@ -111,15 +114,18 @@ exports[`renders correctly 1`] = `
       00
     </Text>
     <View
-      onLayout={[Function]}
       style={
         Object {
           "marginHorizontal": 20,
           "minWidth": "65%",
+          "overflow": "visible",
+          "paddingHorizontal": 10,
+          "paddingVertical": 7,
         }
       }
     >
       <View
+        onLayout={[Function]}
         style={
           Object {
             "backgroundColor": "rgba(48, 48, 48, 0.30000000000000004)",
@@ -165,6 +171,7 @@ exports[`renders correctly 1`] = `
         style={
           Object {
             "bottom": 0,
+            "overflow": "visible",
             "position": "absolute",
             "right": 0,
             "top": 0,
@@ -173,6 +180,7 @@ exports[`renders correctly 1`] = `
                 "translateX": 0,
               },
             ],
+            "width": "100%",
           }
         }
       >
@@ -193,11 +201,13 @@ exports[`renders correctly 1`] = `
             Object {
               "backgroundColor": "#303030",
               "borderRadius": 20,
+              "elevation": 2,
               "height": 20,
               "position": "absolute",
-              "right": -10,
-              "top": -7,
+              "right": 0,
+              "top": 0,
               "width": 20,
+              "zIndex": 100,
             }
           }
         />
@@ -209,10 +219,13 @@ exports[`renders correctly 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
+          "alignItems": "center",
           "color": "#303030",
           "fontFamily": null,
           "fontSize": 18,
           "lineHeight": 20,
+          "textAlign": "center",
+          "width": 50,
         }
       }
     />
