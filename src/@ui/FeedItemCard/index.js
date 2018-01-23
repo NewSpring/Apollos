@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Platform } from 'react-native';
 import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { startCase, toLower } from 'lodash';
 
@@ -14,6 +15,15 @@ import styled from '@ui/styled';
 import LikeButton from './LikeButton';
 
 const StyledCardContent = styled({ paddingBottom: 0 })(CardContent);
+
+const CardImageWithBorderFix = styled(({ theme }) => ({
+  ...Platform.select({
+    android: { // fixes android borderRadius overflow display issue
+      borderTopRightRadius: theme.sizing.borderRadius,
+      borderTopLeftRadius: theme.sizing.borderRadius,
+    },
+  }),
+}))(CardImage);
 
 const enhance = compose(
   pure,
@@ -55,7 +65,7 @@ const FeedItemCard = enhance(({
   ...otherProps
 }) => (
   <Card isLoading={isLoading} cardColor={backgroundColor} {...otherProps}>
-    <CardImage source={images} overlayColor={backgroundColor} />
+    <CardImageWithBorderFix source={images} overlayColor={backgroundColor} />
     <StyledCardContent>
       <H4>{startCase(toLower(title))}</H4>
     </StyledCardContent>
