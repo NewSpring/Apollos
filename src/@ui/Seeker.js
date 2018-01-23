@@ -81,7 +81,11 @@ export class Seeker extends Component {
   panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => !!this.props.onSeeking,
     onPanResponderMove: (e, { dx }) => {
-      this.offsetDriver.setValue(dx || 0);
+      let offset = dx;
+      offset = Math.min(this.state.width - this.lastPosition, offset);
+      offset = Math.max(-this.lastPosition, offset);
+      this.offsetDriver.setValue(offset || 0);
+
       const { onSeeking } = this.props;
       onSeeking((this.lastPosition + dx) / this.state.width);
     },
