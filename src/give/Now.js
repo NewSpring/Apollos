@@ -4,13 +4,11 @@ import Header from '@ui/Header';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
 import { ContributionForm } from '@ui/forms';
-import GiveNavigator from '@ui/TmpGiveNavigator';
 
 const Now = () => (
   <FlexedView>
-    <Header titleText="Give Dashboard" />
+    <Header titleText="Give Now" />
     <ScrollView>
-      <GiveNavigator />
       <PaddedView>
         <ContributionForm
           onComplete={({ history, savedPaymentMethods } = {}) => {

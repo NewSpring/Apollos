@@ -18,7 +18,6 @@ import FlexedView from '@ui/FlexedView';
 import DashboardSubheader from '@ui/DashboardSubheader';
 import ContributionsChartCard from '@ui/ContributionsChartCard';
 import withGivingDashboard from '@data/withGivingDashboard';
-import GiveNavigator from '@ui/TmpGiveNavigator';
 
 export class Dashboard extends PureComponent {
   static propTypes = {
@@ -49,8 +48,6 @@ export class Dashboard extends PureComponent {
       <FlexedView>
         <Header titleText="Give Dashboard" />
         <ScrollView>
-          <GiveNavigator />
-
           <DashboardSubheader
             text="Activity"
             buttonText="See All"
