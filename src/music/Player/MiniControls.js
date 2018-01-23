@@ -56,7 +56,6 @@ const enhance = compose(
     isPlaying: PropTypes.bool,
     play: PropTypes.func,
     pause: PropTypes.func,
-    skip: PropTypes.func,
     trackName: PropTypes.string,
     trackByLine: PropTypes.string,
     albumArt: ConnectedImage.propTypes.source,
@@ -66,7 +65,7 @@ const enhance = compose(
 );
 
 const MiniControls = enhance(({
-  isPlaying, play, pause, skip, trackName, trackByLine, albumArt, height,
+  isPlaying, play, pause, trackName, trackByLine, albumArt, height,
 }) => (
   <Container>
     <FlexRow height={height}>
@@ -82,9 +81,6 @@ const MiniControls = enhance(({
       ) : (
         <Touchable onPress={play}><Icon name="play" /></Touchable>
       )}
-      {(skip) ? (
-        <Touchable onPress={skip}><Icon name="skip-next" /></Touchable>
-      ) : null}
     </Controls>
   </Container>
 ));

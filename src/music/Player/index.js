@@ -119,7 +119,6 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
           isPlaying={this.props.isPlaying}
           play={this.props.play}
           pause={this.props.pause}
-          skip={this.props.playNextTrack}
           trackName={this.props.currentTrack.title}
           trackByLine={this.props.title}
           albumArt={this.props.images}
