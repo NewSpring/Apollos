@@ -41,8 +41,9 @@ class TimeElapsed extends PureComponent {
 
   render() {
     const duration = moment.duration(this.state.value);
+    const { positionMillis, ...otherProps } = this.props;
     return (
-      <UIText>
+      <UIText {...otherProps}>
         {duration.minutes()}:{padStart(duration.seconds(), 2, '0')}
       </UIText>
     );

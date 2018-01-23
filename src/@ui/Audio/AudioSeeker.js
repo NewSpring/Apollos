@@ -14,6 +14,10 @@ const Container = styled({
   justifyContent: 'center',
 })(View);
 
+const fixedWidth = styled({ width: 50, textAlign: 'center', alignItems: 'center' });
+const StyledTimeElapsed = fixedWidth(TimeElapsed);
+const DurationText = fixedWidth(UIText);
+
 export class AudioSeeker extends PureComponent {
   static propTypes = {
     seek: PropTypes.func.isRequired,
@@ -44,14 +48,14 @@ export class AudioSeeker extends PureComponent {
 
     return (
       <Container>
-        <TimeElapsed />
+        <StyledTimeElapsed />
         <Component
           progress={progress}
           onSeek={seek}
           onSeeking={seekingHandler}
           {...otherProps}
         />
-        <UIText>{duration}</UIText>
+        <DurationText>{duration}</DurationText>
       </Container>
     );
   }
