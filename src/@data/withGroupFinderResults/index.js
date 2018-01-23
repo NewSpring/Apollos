@@ -25,9 +25,9 @@ const getDay = (schedule) => {
 };
 
 export default graphql(groupsQuery, {
-  props: ({ data } = {}) => ({
+  props: ({ ownProps, data } = {}) => ({
     content: data.content,
-    isLoading: data.loading,
+    isLoading: ownProps.isLoading || data.loading,
     refetch: data.refetch,
     canFetchMore: get(data, 'content.results.length') < get(data, 'content.count'),
     // fetchMore: () => {},
