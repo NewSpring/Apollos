@@ -6,13 +6,16 @@ import { debounce } from 'lodash';
 import { parse, stringify } from '@utils/queryString';
 import { withRouter } from '@ui/NativeWebRouter';
 import { Text as TextInput } from '@ui/inputs';
-import { UIText } from '@ui/typography';
+import { H7 } from '@ui/typography';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 import Icon from '@ui/Icon';
+import styled from '@ui/styled';
 
 import Feed from './Feed';
 import Results from './Results';
+
+const CancelText = styled(({ theme }) => ({ paddingHorizontal: theme.sizing.baseUnit / 2 }))(H7);
 
 const enhance = compose(
   withRouter,
@@ -36,11 +39,6 @@ class Discover extends PureComponent {
     searchText: this.props.term,
   };
 
-  componentWillMount() {
-    console.log('mounting!!!');
-  }
-
-
   get searchForm() {
     return (
       <FlexedView>
@@ -50,7 +48,7 @@ class Discover extends PureComponent {
           wrapperStyle={{ marginVertical: 0 }}
           prefix={<Icon name="search" size={24} />}
           suffix={(this.state.searchText && this.state.searchText.length) ? (
-            <UIText onPress={() => this.handleSearch('')}>Cancel</UIText>
+            <CancelText onPress={() => this.handleSearch('')}>Cancel</CancelText>
           ) : null}
           placeholder="Type your search here"
         />
