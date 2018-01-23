@@ -97,8 +97,10 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholder="0.00"
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "fontSize": 32.4,
                 "fontWeight": "700",
@@ -339,7 +341,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               >
                 <Path
                   d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-                  fill="#6bac43"
+                  fill="#303030"
                 />
               </Svg>
             </View>
@@ -620,8 +622,10 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholder="0.00"
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "fontSize": 32.4,
                 "fontWeight": "700",
@@ -862,7 +866,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               >
                 <Path
                   d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-                  fill="#6bac43"
+                  fill="#303030"
                 />
               </Svg>
             </View>
@@ -1143,8 +1147,10 @@ exports[`The FrequencyInput component should render correctly with initial state
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholder="0.00"
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "fontSize": 32.4,
                 "fontWeight": "700",
@@ -1385,7 +1391,7 @@ exports[`The FrequencyInput component should render correctly with initial state
               >
                 <Path
                   d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-                  fill="#6bac43"
+                  fill="#303030"
                 />
               </Svg>
             </View>
