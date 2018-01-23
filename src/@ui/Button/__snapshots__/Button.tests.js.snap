@@ -193,7 +193,7 @@ exports[`The Button component should render a bordered button 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "hsl(97.10000000000002, 43.9%, 37.5%)",
+          "color": "#6bac43",
           "fontFamily": null,
           "fontSize": 18,
           "lineHeight": 20,
@@ -331,7 +331,7 @@ exports[`The Button component should render a ghost button 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "hsl(0, 0%, 15.1%)",
+          "color": "#303030",
           "fontFamily": null,
           "fontSize": 18,
           "lineHeight": 20,
@@ -399,7 +399,7 @@ exports[`The Button component should render a ghost pill button 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "hsl(0, 0%, 15.1%)",
+          "color": "#303030",
           "fontFamily": null,
           "fontSize": 18,
           "lineHeight": 20,
