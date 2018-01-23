@@ -48,9 +48,9 @@ exports[`the ExpiringAccountCard component should render with name, expirationDa
         }
       >
         <Svg
-          height={27}
+          height={18}
           viewBox="0 0 60 61"
-          width={27}
+          width={18}
         >
           <Path
             d="M30,54.33 L30,54.33 C43.254834,54.33 54,43.584834 54,30.33 C54,17.075166 43.254834,6.33 30,6.33 C16.745166,6.33 6,17.075166 6,30.33 C6,43.584834 16.745166,54.33 30,54.33 L30,54.33 Z M30,60.33 L30,60.33 C13.4314575,60.33 0,46.8985425 0,30.33 C0,13.7614575 13.4314575,0.33 30,0.33 C46.5685425,0.33 60,13.7614575 60,30.33 C60,46.8985425 46.5685425,60.33 30,60.33 L30,60.33 Z"
@@ -84,7 +84,7 @@ exports[`the ExpiringAccountCard component should render with name, expirationDa
             }
           }
         >
-          Feb 2, 2020 12:00 AM
+          Feb 1, 2020 12:00 AM
         </Text>
       </View>
       <View
@@ -157,9 +157,9 @@ exports[`the ExpiringAccountCard component should render with name, expirationDa
           Update it Now
         </Text>
         <Svg
-          height={27}
+          height={18}
           viewBox="0 0 24 24"
-          width={27}
+          width={18}
         >
           <Path
             d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"

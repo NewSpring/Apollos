@@ -69,7 +69,6 @@ exports[`the DashboardSubheader component should render 1`] = `
           "borderColor": "#858585",
           "borderRadius": 999,
           "borderWidth": 1,
-          "color": "#858585",
           "flexDirection": "row",
           "justifyContent": "center",
           "opacity": 1,
