@@ -1,4 +1,7 @@
 import React, { PureComponent } from 'react';
+import {
+  Platform,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import { matchPath, withRouter } from '@ui/NativeWebRouter';
 import TabView, { SceneMap } from '@ui/TabView';
@@ -67,7 +70,6 @@ class GiveRoutes extends PureComponent {
   handleOnChangeTab = (routeIndex) => {
     const nextRoute = this.props.routes[routeIndex];
     if (nextRoute) {
-      console.log(nextRoute);
       // eslint-disable-next-line
       this.props.history.replace(nextRoute.path);
     }
@@ -89,7 +91,7 @@ class GiveRoutes extends PureComponent {
         renderScene={this.props.scenes}
         renderHeader={this.renderHeader}
         onChangeFinished={this.handleOnChangeTab}
-        renderPager={props => (<TabViewPagerPan {...props} />)}
+        renderPager={Platform.OS === 'web' ? props => (<TabViewPagerPan {...props} />) : undefined}
       />
     );
   }
