@@ -30,7 +30,7 @@ ActivityIndicatorWhileLoading.propTypes = { ...Route.propTypes };
 
 const ProtectedRoute = compose(
   withUser,
-  branch(({ isLoading }) => isLoading,
+  branch(({ isLoading, user }) => isLoading && !user,
     renderComponent(ActivityIndicatorWhileLoading),
   ),
   branch(({ isLoggedIn }) => !isLoggedIn,

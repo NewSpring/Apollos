@@ -3,9 +3,18 @@ import gql from 'graphql-tag';
 export const contentCard = gql`
   fragment ContentCard on Content {
     __typename
-    entryId: id
+    id
+    title
+    channelName
     content {
       isLiked
+      images(sizes: ["large"]) {
+        fileName
+        fileType
+        fileLabel
+        url
+        size
+      }
     }
   }
 `;
