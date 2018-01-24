@@ -137,6 +137,10 @@ export const buttons = ({ colors: themeColors }) => ({
     fill: themeColors.action.tertiary,
     accent: themeColors.white,
   },
+  ghost: {
+    fill: themeColors.text.primary,
+    accent: themeColors.text.primary,
+  },
 });
 
 // Helpers make it easy to expose simple utils in your theme that rely on the current
