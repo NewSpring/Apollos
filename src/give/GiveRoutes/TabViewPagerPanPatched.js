@@ -59,6 +59,7 @@ const DefaultTransitionSpec = {
   timing: Animated.spring,
   tension: 300,
   friction: 35,
+  useNativeDriver: true,
 };
 
 export default class TabViewPagerPan<T: *> extends React.Component<Props<T>> {

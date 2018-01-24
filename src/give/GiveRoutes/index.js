@@ -93,7 +93,9 @@ class GiveRoutes extends PureComponent {
         renderScene={this.props.scenes}
         renderHeader={this.renderHeader}
         onChangeFinished={Platform.OS === 'web' && this.handleOnChangeTab}
-        renderPager={Platform.OS === 'web' ? props => (<TabViewPagerPan {...props} />) : undefined}
+        // NOTE: We need to use TabViewPagerPan to be able to return to the
+        // correct index position
+        renderPager={props => (<TabViewPagerPan {...props} />)}
       />
     );
   }
