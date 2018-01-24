@@ -63,6 +63,7 @@ export class EditSavedPaymentMethodForm extends PureComponent {
   };
 
   render() {
+    console.log(this.props.isValid);
     if (this.props.isLoading) {
       return (
         <View>
@@ -123,7 +124,7 @@ const enhance = compose(
     enableReinitialize: true,
     isInitialValid(props) {
       return validationSchema
-        .isValid(mapPropsToValues(props));
+        .isValidSync(mapPropsToValues(props));
     },
     handleSubmit: async (values, { props, setSubmitting, setErrors }) => {
       try {
