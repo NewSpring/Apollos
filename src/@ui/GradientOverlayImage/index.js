@@ -50,6 +50,7 @@ const getGradientValues = (overlayColor) => {
 const GradientOverlayImage = enhance(({
   source: imageSource,
   overlayColor,
+  theme,
   ...otherProps
 }) => (
   <View {...otherProps}>
