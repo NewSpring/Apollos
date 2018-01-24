@@ -20,6 +20,10 @@ exports[`the GradientOverlayImage component should render 1`] = `
           "accent": "#303030",
           "fill": "#dddddd",
         },
+        "ghost": Object {
+          "accent": "#303030",
+          "fill": "#303030",
+        },
         "primary": Object {
           "accent": "#ffffff",
           "fill": "#6bac43",
@@ -223,6 +227,10 @@ exports[`the GradientOverlayImage component should render with an overlayColor 1
         "default": Object {
           "accent": "#303030",
           "fill": "#dddddd",
+        },
+        "ghost": Object {
+          "accent": "#303030",
+          "fill": "#303030",
         },
         "primary": Object {
           "accent": "#ffffff",

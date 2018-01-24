@@ -48,6 +48,10 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
               "accent": "#303030",
               "fill": "#dddddd",
             },
+            "ghost": Object {
+              "accent": "#303030",
+              "fill": "#303030",
+            },
             "primary": Object {
               "accent": "#ffffff",
               "fill": "#6bac43",
@@ -440,6 +444,10 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
               "accent": "#303030",
               "fill": "#dddddd",
             },
+            "ghost": Object {
+              "accent": "#303030",
+              "fill": "#303030",
+            },
             "primary": Object {
               "accent": "#ffffff",
               "fill": "#6bac43",
@@ -794,6 +802,10 @@ exports[`the FeedItemCard component should render 1`] = `
             "default": Object {
               "accent": "#303030",
               "fill": "#dddddd",
+            },
+            "ghost": Object {
+              "accent": "#303030",
+              "fill": "#303030",
             },
             "primary": Object {
               "accent": "#ffffff",
@@ -1150,6 +1162,10 @@ exports[`the FeedItemCard component should render as liked 1`] = `
               "accent": "#303030",
               "fill": "#dddddd",
             },
+            "ghost": Object {
+              "accent": "#303030",
+              "fill": "#303030",
+            },
             "primary": Object {
               "accent": "#ffffff",
               "fill": "#6bac43",
@@ -1505,6 +1521,10 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
               "accent": "#303030",
               "fill": "#dddddd",
             },
+            "ghost": Object {
+              "accent": "#303030",
+              "fill": "#303030",
+            },
             "primary": Object {
               "accent": "#ffffff",
               "fill": "#6bac43",
@@ -1859,6 +1879,10 @@ exports[`the FeedItemCard component should render with inverted (light) font col
             "default": Object {
               "accent": "#ffffff",
               "fill": "#858585",
+            },
+            "ghost": Object {
+              "accent": "#ffffff",
+              "fill": "#ffffff",
             },
             "primary": Object {
               "accent": "#ffffff",
