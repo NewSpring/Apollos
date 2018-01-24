@@ -251,7 +251,7 @@ const PaymentForm = compose(
       if (formattedValues.cardNumber) formattedValues.cardNumber = formattedValues.cardNumber.replace(/\D/g, '');
       if (formattedValues.expirationDate) {
         const { month, year } = parseCardExpiry(formattedValues.expirationDate);
-        formattedValues.expirationDate = moment().set('month', month).set('year', year).format('MM/YY');
+        formattedValues.expirationDate = moment().month(month - 1).year(year).format('MM/YY');
       }
 
       const setAccountDetails = values.paymentMethod === 'bankAccount' ? props.setBankAccount : props.setCreditCard;

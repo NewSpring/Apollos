@@ -40,7 +40,7 @@ const enhance = compose(
   }),
   withIsLoading,
   withTheme(({ theme, ...otherProps }) => ({
-    iconSize: otherProps.iconSize || theme.helpers.rem(1.5),
+    iconSize: otherProps.iconSize || theme.helpers.rem(1),
     isErrorColor: theme.colors.alert,
   })),
   pure,
@@ -73,9 +73,9 @@ const TransactionCard = enhance(({
     <Card isLoading={isLoading} {...otherProps}>
       <PaddedView>
         <Row>
-          {isOk ? <Icon name="CircleOutlineCheckMark" size={iconSize} /> : <Icon name="CircleOutlineXMark" size={iconSize} fill={isErrorColor} />}
+          {isOk ? <Icon name="circle-outline-check-mark" size={iconSize} /> : <Icon name="circle-outline-x-mark" size={iconSize} fill={isErrorColor} />}
           <Spacer byWidth />
-          <H5>{moment(date).format(dateFormat)}</H5>
+          <H5>{moment(date).utc().format(dateFormat)}</H5>
         </Row>
         <Spacer />
         <StatusMessage
@@ -90,7 +90,7 @@ const TransactionCard = enhance(({
         >
           <Row>
             <StyledH6>{'View Contribution'}</StyledH6>
-            <Icon name="ArrowNext" size={iconSize} />
+            <Icon name="arrow-next" size={iconSize} />
           </Row>
         </TouchableWithoutFeedback>
       </PaddedView>
