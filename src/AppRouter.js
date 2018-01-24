@@ -14,7 +14,7 @@ import * as give from './give';
 
 import Articles, { ArticlesSingle } from './articles';
 import Stories, { StoriesSingle } from './stories';
-import Series, { Sermon, SeriesSingle } from './series';
+import Series, { Sermon, SeriesSingle, SeriesTrailer } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
@@ -120,6 +120,7 @@ class AppRouter extends PureComponent {
               <Route exact path="/series" component={Series} />
               <Route exact path="/series/:id" component={SeriesSingle} />
               <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
+              <Route exact path="/series/:id/trailer" component={asModal(SeriesTrailer)} cardStackDirection="vertical" />
 
               <Route exact path="/studies" component={Studies} />
               <Route exact path="/studies/:id" component={StudiesSingle} />

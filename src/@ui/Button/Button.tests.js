@@ -70,7 +70,7 @@ describe('The Button component', () => {
     );
     expect(tree).toMatchSnapshot();
   });
-  it('should render a ghost button', () => {
+  it('should render a bordered button', () => {
     const tree = renderer.create(
       <Providers>
         <Button
@@ -87,19 +87,33 @@ describe('The Button component', () => {
       <Providers>
         <Button
           onPress={() => {}}
-          title="Ghost Button"
+          title="Pill Button"
           pill
         />
       </Providers>,
     );
     expect(tree).toMatchSnapshot();
   });
-  it('should render a pill button', () => {
+  it('should render a ghost button', () => {
     const tree = renderer.create(
       <Providers>
         <Button
           onPress={() => {}}
           title="Ghost Button"
+          type={'ghost'}
+          bordered
+        />
+      </Providers>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render a ghost pill button', () => {
+    const tree = renderer.create(
+      <Providers>
+        <Button
+          onPress={() => {}}
+          title="Ghost Button"
+          type={'ghost'}
           bordered
           pill
         />

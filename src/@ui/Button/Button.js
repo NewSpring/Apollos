@@ -1,5 +1,4 @@
 import React from 'react';
-import Color from 'color';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
@@ -52,7 +51,7 @@ const enhance = compose(
   withThemeMixin(({ fill, accent, bordered }) => ({
     colors: {
       primary: bordered ? fill : accent,
-      text: { primary: bordered ? Color(fill).darken(0.2).string() : accent },
+      text: { primary: bordered ? fill : accent },
       background: { default: fill, screen: fill },
     },
   })),
@@ -119,7 +118,7 @@ Button.propTypes = {
   bordered: PropTypes.bool,
   pill: PropTypes.bool,
   to: PropTypes.string,
-  type: PropTypes.oneOf(['default', 'primary', 'secondary', 'tertiary']), // keys in theme.colors.action
+  type: PropTypes.oneOf(['default', 'primary', 'secondary', 'tertiary', 'ghost']), // keys in theme.colors.action
   ...Touchable.propTypes,
 };
 
