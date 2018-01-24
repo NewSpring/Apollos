@@ -70,8 +70,10 @@ class GiveRoutes extends PureComponent {
   handleOnChangeTab = (routeIndex) => {
     const nextRoute = this.props.routes[routeIndex];
     if (nextRoute) {
-      // eslint-disable-next-line
-      this.props.history.replace(nextRoute.path);
+      // NOTE: It's only actually relevant in web
+      // so we can prevent rerenders by using the History
+      // API directly
+      window.history.replaceState(window.history.state, '', nextRoute.path);
     }
   };
 
@@ -90,7 +92,7 @@ class GiveRoutes extends PureComponent {
         routes={this.props.routes}
         renderScene={this.props.scenes}
         renderHeader={this.renderHeader}
-        onChangeFinished={this.handleOnChangeTab}
+        onChangeFinished={Platform.OS === 'web' && this.handleOnChangeTab}
         renderPager={Platform.OS === 'web' ? props => (<TabViewPagerPan {...props} />) : undefined}
       />
     );
