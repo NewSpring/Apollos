@@ -71,6 +71,7 @@ class GiveRoutes extends PureComponent {
   );
 
   render() {
+    if (!this.currentRoute) return null;
     return (
       <TabView
         initialIndex={this.currentRouteIndex}
