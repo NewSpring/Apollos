@@ -22,7 +22,7 @@ class TimeElapsed extends PureComponent {
 
     if (this.props.positionMillis) {
       this.listener = this.props.positionMillis.addListener(this.listen);
-      
+
       // this fixes a but when `TimeElapsed` is mount the displayed time may not be accurate
       this.state.value = this.props.positionMillis._value; // eslint-disable-line
     }
