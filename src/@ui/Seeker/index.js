@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   Animated,
   View,
@@ -42,7 +42,7 @@ const Knob = styled(({ theme }) => ({
   zIndex: 100,
 }), 'Seeker.Knob')(View);
 
-export class Seeker extends Component {
+export class Seeker extends PureComponent {
   static propTypes = {
     progress: PropTypes.object, // eslint-disable-line
     onSeek: PropTypes.func,
@@ -77,6 +77,26 @@ export class Seeker extends Component {
     const progressInvert = Animated.add(1, Animated.multiply(this.props.progress, -1));
     const position = Animated.multiply(progressInvert, -this.state.width);
     return Animated.add(position, this.offsetDriver);
+  }
+
+  get knobStyles() {
+    return ({
+      position: 'absolute',
+      right: 0,
+      top: 0,
+      bottom: 0,
+      width: '100%',
+      overflow: 'visible',
+      transform: [
+        { translateX: this.trackBarOffset },
+      ],
+    });
+  }
+
+  get progressBarStyles() {
+    return ([StyleSheet.absoluteFill, {
+      transform: [{ translateX: this.trackBarOffset }],
+    }]);
   }
 
   listen = (progress) => {
@@ -118,25 +138,13 @@ export class Seeker extends Component {
       <Container>
         <Track onLayout={this.handleOnLayout}>
           <Animated.View
-            style={[StyleSheet.absoluteFill, {
-              transform: [{ translateX: this.trackBarOffset }],
-            }]}
+            style={this.progressBarStyles}
           >
             <ProgressBar />
           </Animated.View>
         </Track>
         <Animated.View
-          style={{
-            position: 'absolute',
-            right: 0,
-            top: 0,
-            bottom: 0,
-            width: '100%',
-            overflow: 'visible',
-            transform: [
-              { translateX: this.trackBarOffset },
-            ],
-          }}
+          style={this.knobStyles}
         >
           <Knob {...this.panResponder.panHandlers} />
         </Animated.View>

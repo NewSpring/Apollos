@@ -24,6 +24,9 @@ const Titles = styled({
   paddingVertical: 0,
 })(PaddedView);
 
+const TrackName = styled({ textAlign: 'center' })(H4);
+const ByLine = styled({ textAlign: 'center' })(H7);
+
 const PlayerBody = styled({
   flex: 1,
   justifyContent: 'space-around',
@@ -95,8 +98,8 @@ const FullScreenControls = enhance(({
     />
     <PlayerBody>
       <Titles>
-        <H4>{trackName}</H4>
-        <H7>{trackByLine}</H7>
+        <TrackName>{trackName}</TrackName>
+        <ByLine>{trackByLine}</ByLine>
       </Titles>
       <Controls>
         <PaddedView>
