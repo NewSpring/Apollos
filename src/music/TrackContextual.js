@@ -1,5 +1,4 @@
 import React from 'react';
-import { Modal } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes, withProps, defaultProps } from 'recompose';
 import { withPlaylist } from '@data/mediaPlayer';
@@ -24,7 +23,6 @@ const enhance = compose(
     id: PropTypes.string, // album id
     track: PropTypes.string, // track title
     albumPath: PropTypes.func,
-    ...Modal.propTypes,
   }),
   defaultProps({
     pathForAlbumId: id => `/music/${id}`,
