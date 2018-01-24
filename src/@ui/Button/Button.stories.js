@@ -55,11 +55,11 @@ storiesOf('Button', module)
       />
     </FlexedView>
   ))
-  .add('Ghost', () => (
+  .add('Bordered', () => (
     <FlexedView>
       <ButtonWithMargin
         onPress={() => {}}
-        title="Ghost Button"
+        title="Bordered Button"
         bordered
       />
     </FlexedView>
@@ -73,11 +73,22 @@ storiesOf('Button', module)
       />
     </FlexedView>
   ))
+  .add('Ghost', () => (
+    <FlexedView>
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Ghost Pill"
+        type={'ghost'}
+        bordered
+      />
+    </FlexedView>
+  ))
   .add('Ghost Pill', () => (
     <FlexedView>
       <ButtonWithMargin
         onPress={() => {}}
         title="Ghost Pill"
+        type={'ghost'}
         bordered
         pill
       />
