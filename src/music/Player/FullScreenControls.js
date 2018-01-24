@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import { compose } from 'recompose';
+import PropTypes from 'prop-types';
+import { compose, setPropTypes } from 'recompose';
 import { withThemeMixin } from '@ui/theme';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
@@ -20,7 +21,8 @@ const Container = styled(({ theme, backgroundColor }) => ({
 
 const Titles = styled({
   alignItems: 'center',
-})(View);
+  paddingVertical: 0,
+})(PaddedView);
 
 const PlayerBody = styled({
   flex: 1,
@@ -50,6 +52,23 @@ const IconWithActiveOpacity = styled(({ theme, active }) => ({
 
 const enhance = compose(
   withThemeMixin({ type: 'dark' }),
+  setPropTypes({
+    isPlaying: PropTypes.bool,
+    duration: PropTypes.string,
+    play: PropTypes.func,
+    pause: PropTypes.func,
+    next: PropTypes.func,
+    prev: PropTypes.func,
+    trackName: PropTypes.string,
+    trackByLine: PropTypes.string,
+    albumArt: PropTypes.any, // eslint-disable-line
+    color: PropTypes.string,
+    isShuffling: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    isRepeating: PropTypes.bool,
+    handleShuffle: PropTypes.func,
+    handleRepeat: PropTypes.func,
+    trackInfoLink: PropTypes.string,
+  }),
 );
 
 const FullScreenControls = enhance(({

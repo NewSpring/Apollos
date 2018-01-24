@@ -73,6 +73,12 @@ export class Seeker extends Component {
     if (this.listener) this.props.progress.removeListener(this.props.progress);
   }
 
+  get trackBarOffset() {
+    const progressInvert = Animated.add(1, Animated.multiply(this.props.progress, -1));
+    const position = Animated.multiply(progressInvert, -this.state.width);
+    return Animated.add(position, this.offsetDriver);
+  }
+
   listen = (progress) => {
     if (this.listener) this.props.progress.removeListener(progress);
     this.listener = progress.addListener(({ value }) => {
@@ -108,18 +114,12 @@ export class Seeker extends Component {
   };
 
   render() {
-    const progressInvert = Animated.add(1, Animated.multiply(this.props.progress, -1));
-    const position = Animated.multiply(progressInvert, -this.state.width);
-    const offset = this.offsetDriver;
-
-    const trackBarOffset = Animated.add(position, offset);
-
     return (
       <Container>
         <Track onLayout={this.handleOnLayout}>
           <Animated.View
             style={[StyleSheet.absoluteFill, {
-              transform: [{ translateX: trackBarOffset }],
+              transform: [{ translateX: this.trackBarOffset }],
             }]}
           >
             <ProgressBar />
@@ -134,7 +134,7 @@ export class Seeker extends Component {
             width: '100%',
             overflow: 'visible',
             transform: [
-              { translateX: trackBarOffset },
+              { translateX: this.trackBarOffset },
             ],
           }}
         >

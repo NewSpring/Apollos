@@ -34,6 +34,8 @@ const enhance = compose(
     title: get(content, 'title'),
     ...(nowPlaying || {}),
     ...get(content, 'content', {}),
+
+    // todo: these props should probably be moved to the data HOC "withMediaPlayerActions"
     playNextTrack: () => {
       let tracks = get(content, 'content.tracks', []);
       if (!tracks.length) return;
