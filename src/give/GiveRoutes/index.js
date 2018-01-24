@@ -7,6 +7,7 @@ import Dashboard from 'give/Dashboard';
 import Now from 'give/Now';
 import ContributionHistory from 'give/ContributionHistory';
 import GiveHeader from './GiveHeader';
+import TabViewPagerPan from './TabViewPagerPanPatched';
 
 class GiveRoutes extends PureComponent {
   static propTypes = {
@@ -33,7 +34,7 @@ class GiveRoutes extends PureComponent {
         path: '/give',
       },
       {
-        title: 'Now',
+        title: 'Give Now',
         headerTitle: 'My Giving',
         key: 'Now',
         path: '/give/now',
@@ -63,6 +64,15 @@ class GiveRoutes extends PureComponent {
     return this.props.routes[this.currentRouteIndex];
   }
 
+  handleOnChangeTab = (routeIndex) => {
+    const nextRoute = this.props.routes[routeIndex];
+    if (nextRoute) {
+      console.log(nextRoute);
+      // eslint-disable-next-line
+      this.props.history.replace(nextRoute.path);
+    }
+  };
+
   renderHeader = props => (
     <this.props.Header
       headerTitle={this.currentRoute.headerTitle}
@@ -78,6 +88,8 @@ class GiveRoutes extends PureComponent {
         routes={this.props.routes}
         renderScene={this.props.scenes}
         renderHeader={this.renderHeader}
+        onChangeFinished={this.handleOnChangeTab}
+        renderPager={props => (<TabViewPagerPan {...props} />)}
       />
     );
   }
