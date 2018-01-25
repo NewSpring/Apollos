@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the FeedItemCard CardImage component should render 1`] = `
-<View
-  style={Object {}}
->
+exports[`the GradientOverlayImage component should render 1`] = `
+<View>
   <Image
     maintainAspectRatio={false}
     source={
@@ -29,10 +27,8 @@ exports[`the FeedItemCard CardImage component should render 1`] = `
 </View>
 `;
 
-exports[`the FeedItemCard CardImage component should render with an overlayColor 1`] = `
-<View
-  style={Object {}}
->
+exports[`the GradientOverlayImage component should render with an overlayColor 1`] = `
+<View>
   <Image
     maintainAspectRatio={false}
     source={

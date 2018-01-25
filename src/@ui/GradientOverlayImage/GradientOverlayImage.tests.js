@@ -2,13 +2,13 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import Providers from '@ui/TestProviders';
-import CardImage from './';
+import GradientOverlayImage from './';
 
-describe('the FeedItemCard CardImage component', () => {
+describe('the GradientOverlayImage component', () => {
   it('should render', () => {
     const tree = renderer.create(
       <Providers>
-        <CardImage source={[{
+        <GradientOverlayImage source={[{
             uri: 'https://picsum.photos/600/400/?random',
             width: 600,
             height: 400,
@@ -21,7 +21,7 @@ describe('the FeedItemCard CardImage component', () => {
   it('should render with an overlayColor', () => {
     const tree = renderer.create(
       <Providers>
-        <CardImage
+        <GradientOverlayImage
           source={[{
             uri: 'https://picsum.photos/600/400/?random',
             width: 600,

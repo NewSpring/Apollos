@@ -69,14 +69,14 @@ const ContentMedia = ({
     visual = (
       <View>
         <ImageHeader source={images} />
-        {imageOverlayColor && (
+        {imageOverlayColor ? (
           <ImageOverlay
             colors={getGradientValues(imageOverlayColor).colors}
             start={getGradientValues(imageOverlayColor).start}
             end={getGradientValues(imageOverlayColor).end}
             locations={getGradientValues(imageOverlayColor).locations}
           />
-        )}
+        ) : null}
       </View>
     );
   }

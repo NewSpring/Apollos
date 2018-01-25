@@ -1,13 +1,14 @@
+/**
+ * this is a temporary polyfill for _some_ selected FlatList
+ * functionality. We should port over to react-native-web's FlatList implementation
+ * when available. See https://github.com/necolas/react-native-web/pull/659
+ */
 import React, { PureComponent } from 'react';
 import { ScrollView, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { mapProps, compose } from 'recompose';
 import ReactList from 'react-list';
 import styled from '@ui/styled';
-
-const StyledScrollView = styled(({ theme }) => ({
-  paddingVertical: theme.sizing.baseUnit / 4,
-}))(ScrollView);
 
 const Item = compose(
   styled(({ numColumns }) => ({ flex: 1, display: 'inline-block', width: `${(1 / numColumns) * 100}%` })),
@@ -28,7 +29,7 @@ const MappedReactList = mapProps(({
   length: data.length,
 }))(ReactList);
 
-class FeedList extends PureComponent {
+class FlatList extends PureComponent {
   static propTypes = {
     onEndReached: PropTypes.func,
     onRefresh: PropTypes.func,
@@ -62,16 +63,16 @@ class FeedList extends PureComponent {
   }
   render() {
     return (
-      <StyledScrollView
+      <ScrollView
         onLayout={this.handleLayout}
         scrollEventThrottle={250}
         onScroll={this.handleScroll}
       >
         {this.listHeader}
         <MappedReactList {...this.props} />
-      </StyledScrollView>
+      </ScrollView>
     );
   }
 }
 
-export default FeedList;
+export default FlatList;
