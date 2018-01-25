@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
-import { Animated } from 'react-native';
+import { Animated, Picker as NativePicker } from 'react-native';
 import styled from '@ui/styled';
 
-import NativePicker from './PickerFromRNWeb'; // todo
 import InputUnderline from '../InputUnderline';
 import InputWrapper from '../InputWrapper';
 import FloatingLabel from '../FloatingLabel';
