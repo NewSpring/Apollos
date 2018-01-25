@@ -1,29 +1,54 @@
 import React from 'react';
-import { compose, mapProps, pure } from 'recompose';
-import { ScrollView } from 'react-native';
+import { compose, mapProps, withProps, pure } from 'recompose';
 import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
-import ContentView from '@ui/ContentView';
+import TracksList from '@ui/TracksList';
+import AlbumView from '@ui/AlbumView';
 import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
-import { withPlaylist } from '@data/mediaPlayer';
+import { withPlaylist, withMediaPlayerActions, withNowPlaying } from '@data/mediaPlayer';
+import { getBlurredImageSource, getAlbumImageSource } from '@utils/content';
 
 const enhance = compose(
-  pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withPlaylist,
+  withMediaPlayerActions,
+  withNowPlaying,
+  pure,
+  withProps(({ setNowPlaying, id }) => ({
+    setNowPlaying: track => setNowPlaying({ albumId: id, currentTrack: track }),
+  })),
 );
 
 const Playlist = enhance(({
+  id,
   content: {
-    content = {},
+    title,
+    content: {
+      images = [],
+      tracks = [],
+    } = {},
   } = { },
+  isLoading,
+  setNowPlaying,
 }) => (
   <FlexedView>
     <Header titleText="Music" backButton />
-    <ScrollView>
-      <ContentView {...content} />
-    </ScrollView>
+    <TracksList
+      isLoading={isLoading}
+      tracks={tracks}
+      onTrackPress={setNowPlaying}
+      trackEllipsisLink={({ title: track }) => `/music/${id}/${encodeURIComponent(track)}`}
+      ListHeaderComponent={
+        <AlbumView
+          isLoading={isLoading}
+          title={title}
+          artist="NewSpring"
+          albumImage={getAlbumImageSource(images)}
+          blurredImage={getBlurredImageSource(images)}
+        />
+      }
+    />
     <MediaQuery maxWidth="md">
       <SecondaryNav>
         <Link icon="share" />

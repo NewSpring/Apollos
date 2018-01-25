@@ -32,17 +32,21 @@ class Stack extends PureComponent {
 
   render() {
     const { height, width } = this.state;
+    const {
+      history, location, match, children, ...otherProps
+    } = this.props;
 
     return (
       <View style={StyleSheet.absoluteFill} onLayout={this.onLayout}>
         <Transitioner
-          history={this.props.history}
-          location={this.props.location}
-          match={this.props.match}
+          history={history}
+          location={location}
+          match={match}
           height={height}
           width={width}
+          {...otherProps}
         >
-          {this.props.children}
+          {children}
         </Transitioner>
       </View>
     );

@@ -1,7 +1,7 @@
-import React, { Component, Children } from 'react';
+import React, { Component } from 'react';
 import { Audio as ExpoAudio } from 'expo';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { Animated, View } from 'react-native';
 import AudioPlay from './AudioPlay';
 import AudioPause from './AudioPause';
 import AudioSeeker from './AudioSeeker';
@@ -12,7 +12,7 @@ export default class Audio extends Component {
   static Seeker = AudioSeeker;
 
   static propTypes = {
-    source: PropTypes.string.isRequired,
+    source: PropTypes.string,
     onReady: PropTypes.func,
     onError: PropTypes.func,
     onPlaybackReachedEnd: PropTypes.func,
@@ -22,6 +22,8 @@ export default class Audio extends Component {
     onSeek: PropTypes.func,
     onSeeking: PropTypes.func,
     children: PropTypes.node,
+    isPlaying: PropTypes.bool,
+    style: PropTypes.any, // eslint-disable-line
   };
 
   static defaultProps = {
@@ -37,6 +39,7 @@ export default class Audio extends Component {
     onSeek() {},
     onSeeking() {},
     children: null,
+    isPlaying: false,
   };
 
   static childContextTypes = {
@@ -44,10 +47,9 @@ export default class Audio extends Component {
     stop: PropTypes.func,
     pause: PropTypes.func,
     seek: PropTypes.func,
-  };
-
-  state = {
-    progress: 0,
+    progress: PropTypes.object,
+    positionMillis: PropTypes.object,
+    seekingHandler: PropTypes.func,
   };
 
   getChildContext = () => ({
@@ -55,48 +57,78 @@ export default class Audio extends Component {
     stop: this.stop,
     pause: this.pause,
     seek: this.seek,
+    progress: this.progressDriver,
+    positionMillis: this.positionMillisDriver,
+    seekingHandler: this.handleSeeking,
   });
 
   componentWillMount() {
-    this.Sound = new ExpoAudio.Sound();
+    ExpoAudio.setAudioModeAsync({
+      allowsRecordingIOS: false,
+      interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+      playsInSilentModeIOS: true,
+      shouldDuckAndroid: true,
+      interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+    });
+
     this.loadSource();
   }
 
-  componentWillUnmount() {
-    this.Sound.unloadAsync();
-    this.removeStatusListener();
+  componentDidUpdate({ source, isPlaying }) {
+    if (this.props.source !== source) {
+      this.loadSource();
+    } else if (this.props.isPlaying !== isPlaying) {
+      if (this.props.isPlaying) this.play();
+      if (!this.props.isPlaying) this.pause();
+    }
   }
 
+  componentWillUnmount() {
+    this.sound.unloadAsync();
+  }
+
+  onPlaybackStatusUpdate = (soundStatus) => {
+    this.positionMillisDriver.setValue(soundStatus.positionMillis);
+    this.progressDriver.setValue((soundStatus.positionMillis / this.duration) || 0);
+
+    if (soundStatus.didJustFinish) {
+      this.props.onPlaybackReachedEnd(this.sound);
+    }
+  }
+
+  positionMillisDriver = new Animated.Value(0);
+  progressDriver = new Animated.Value(0);
   duration = 0;
   positionListener = undefined;
   previousSoundStatus = undefined;
   isReady = false;
-  playbackEnded = false;
+  playState = this.props.isPlaying;
 
   play = async () => {
-    try {
-      if (this.playbackEnded) await this.Sound.stopAsync();
-      if (this.isReady) {
-        this.Sound.playAsync();
+    if (this.sound) {
+      try {
+        await this.sound.playAsync();
         this.props.onPlay();
+      } catch (err) {
+        this.props.onError(err);
       }
-    } catch (err) {
-      this.props.onError(err);
     }
   }
 
   pause = async () => {
-    try {
-      this.Sound.pauseAsync();
-      this.props.onPause();
-    } catch (err) {
-      this.props.onError(err);
+    if (this.sound) {
+      try {
+        await this.sound.pauseAsync();
+        this.props.onPause();
+      } catch (err) {
+        this.props.onError(err);
+      }
     }
   }
 
   stop = async () => {
     try {
-      this.Sound.stopAsync();
+      this.sound.stopAsync();
       this.props.onStop();
     } catch (err) {
       this.props.onError(err);
@@ -105,7 +137,7 @@ export default class Audio extends Component {
 
   seek = (percentageOfSong) => {
     const positionInMillis = this.duration * percentageOfSong;
-    this.Sound.setPositionAsync(positionInMillis);
+    this.sound.setPositionAsync(positionInMillis);
     this.props.onSeek(positionInMillis);
   }
 
@@ -121,56 +153,33 @@ export default class Audio extends Component {
       onError,
     } = this.props;
 
+    if (!source) return;
+    const uri = source.replace(/^http:\/\/|^\/\//i, 'https://');
+
     try {
-      const soundStatus = await this.Sound.loadAsync({ uri: source });
-      this.previousSoundStatus = soundStatus;
-      this.duration = soundStatus.durationMillis;
-      this.createStatusListener();
-      this.isReady = true;
+      if (this.sound && this.soundLoaded === this.sound) {
+        await this.sound.unloadAsync();
+      }
+
+      const sound = this.sound = await new ExpoAudio.Sound(); // eslint-disable-line
+      const soundStatus = await this.sound.loadAsync({ uri });
+      this.soundLoaded = this.sound;
+
+      if (sound === this.sound) { // since the above calls are promise base, there's a chance that
+      // the current sound changes before this sound is loaded (pressing skip button quickly).
+      // We don't want to start playing this sound in that scenario :)
+        this.duration = soundStatus.durationMillis;
+        this.sound.setOnPlaybackStatusUpdate(this.onPlaybackStatusUpdate);
+        if (this.props.isPlaying) await this.play();
+      }
+
       onReady();
     } catch (err) {
       onError(err);
     }
   }
 
-  createStatusListener = () => {
-    this.positionListener = setInterval(async () => {
-      try {
-        const soundStatus = await this.Sound.getStatusAsync();
-        this.setState({
-          progress: soundStatus.positionMillis / this.duration,
-        });
-
-        const currentIsFinished = soundStatus.positionMillis === this.duration;
-        const previousIsFinished = this.previousSoundStatus.positionMillis === this.duration;
-        if (currentIsFinished && !previousIsFinished) {
-          this.pause();
-          this.props.onPlaybackReachedEnd();
-        }
-        this.previousSoundStatus = soundStatus;
-
-        if (currentIsFinished) {
-          this.playbackEnded = true;
-        } else {
-          this.playbackEnded = false;
-        }
-      } catch (err) {
-        this.props.onError(err);
-      }
-    }, 200);
-  }
-
-  removeStatusListener = () => {
-    if (this.positionListener) clearInterval(this.positionListener);
-  }
-
   render() {
-    const children = Children.map(this.props.children, child => (
-      React.cloneElement(child, {
-        progress: this.state.progress,
-        seekingHandler: this.handleSeeking,
-      })
-    ));
-    return <View>{children}</View>;
+    return <View style={this.props.style}>{this.props.children}</View>;
   }
 }
