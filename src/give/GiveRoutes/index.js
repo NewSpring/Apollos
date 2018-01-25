@@ -3,6 +3,7 @@ import {
   Platform,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import { TabViewPagerPan } from 'react-native-tab-view';
 import { matchPath, withRouter } from '@ui/NativeWebRouter';
 import TabView, { SceneMap } from '@ui/TabView';
 
@@ -10,7 +11,6 @@ import Dashboard from 'give/Dashboard';
 import Now from 'give/Now';
 import ContributionHistory from 'give/ContributionHistory';
 import GiveHeader from './GiveHeader';
-import TabViewPagerPan from './TabViewPagerPanPatched';
 
 class GiveRoutes extends PureComponent {
   static propTypes = {
@@ -92,9 +92,9 @@ class GiveRoutes extends PureComponent {
         routes={this.props.routes}
         renderScene={this.props.scenes}
         renderHeader={this.renderHeader}
-        onChangeFinished={Platform.OS === 'web' && this.handleOnChangeTab}
+        onChange={Platform.OS === 'web' && this.handleOnChangeTab}
         // NOTE: We need to use TabViewPagerPan to be able to return to the
-        // correct index position
+        // correct index position on native
         renderPager={props => (<TabViewPagerPan {...props} />)}
       />
     );
