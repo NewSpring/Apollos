@@ -57,6 +57,10 @@ const Row = styled({
   alignItems: 'center',
 })(View);
 
+const StyledIcon = withTheme(({ theme }) => ({
+  fill: theme.colors.text.link,
+}))(Icon);
+
 const ScheduleCard = enhance(({
   isLoading,
   accountName,
@@ -86,7 +90,7 @@ const ScheduleCard = enhance(({
       >
         <Row>
           <StyledH6>{'View Schedule Details'}</StyledH6>
-          <Icon name="arrow-next" size={iconSize} />
+          <StyledIcon name="arrow-next" size={iconSize} />
         </Row>
       </TouchableWithoutFeedback>
     </PaddedView>

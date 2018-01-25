@@ -55,6 +55,10 @@ const Row = styled({
   alignItems: 'center',
 })(View);
 
+const StyledIcon = withTheme(({ theme }) => ({
+  fill: theme.colors.text.link,
+}))(Icon);
+
 const TransactionCard = enhance(({
   isLoading,
   iconSize,
@@ -90,7 +94,7 @@ const TransactionCard = enhance(({
         >
           <Row>
             <StyledH6>{'View Contribution'}</StyledH6>
-            <Icon name="arrow-next" size={iconSize} />
+            <StyledIcon name="arrow-next" size={iconSize} />
           </Row>
         </TouchableWithoutFeedback>
       </PaddedView>
