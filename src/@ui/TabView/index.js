@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Dimensions, Platform } from 'react-native';
+import { Dimensions, Platform, View, Animated } from 'react-native';
 import { TabViewAnimated, SceneMap } from 'react-native-tab-view';
-import { compose, withProps, withState, setPropTypes, defaultProps } from 'recompose';
+import { compose, withProps, withState, setPropTypes, defaultProps, branch } from 'recompose';
 import { withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 
@@ -37,10 +37,12 @@ const TabView = compose(
     renderScene: PropTypes.func.isRequired,
     renderHeader: PropTypes.func,
     swipeEnabled: PropTypes.bool,
+    autoHeightEnabled: PropTypes.bool,
   }),
   defaultProps({
     initialIndex: 0,
     swipeEnabled: Platform.OS !== 'web',
+    autoHeightEnabled: false,
   }),
   withStyles,
   withState('index', 'onIndexChange', ({ initialIndex }) => initialIndex),

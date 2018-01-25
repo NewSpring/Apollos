@@ -24,10 +24,16 @@ const StyledAvatar = styled(({ theme }) => ({
 
 const enhance = compose(
   setPropTypes({
-    photo: ConnectedImage.propTypes.source,
-    firstName: PropTypes.string,
-    lastName: PropTypes.string,
-    city: PropTypes.string,
+    user: PropTypes.shape({
+      photo: ConnectedImage.propTypes.source,
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      home: PropTypes.shape({
+        city: PropTypes.string,
+      }),
+    }),
+    isLoading: PropTypes.bool,
+    refetch: PropTypes.func,
     onPhotoPress: PropTypes.func,
     blurIntensity: PropTypes.number,
     ...View.propTypes,
@@ -36,10 +42,14 @@ const enhance = compose(
 );
 
 const UserAvatarView = enhance(({
-  photo,
-  firstName,
-  lastName,
-  city,
+  user: {
+    photo,
+    firstName,
+    lastName,
+    home = {},
+  } = {},
+  isLoading,
+  refetch,
   onPhotoPress,
   blurIntensity = 100,
   ...viewProps
@@ -53,7 +63,7 @@ const UserAvatarView = enhance(({
         <StyledAvatar source={photo} size="large" />
       </Touchable>
       <Name>{firstName} {lastName}</Name>
-      <City>{city}</City>
+      {home ? (<City>{home.city}</City>) : null}
     </Content>
   </Container>
 ));

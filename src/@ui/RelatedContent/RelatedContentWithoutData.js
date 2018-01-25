@@ -36,8 +36,6 @@ const generateLoadingStateData = (numberOfItems = 1) => {
 const enhance = compose(
   pure,
   setPropTypes({
-    excludedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
-    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
     content: PropTypes.array,
     sectionTitle: PropTypes.string,
     isLoading: PropTypes.bool,
@@ -82,14 +80,16 @@ const Wrapper = styled(({ theme }) => ({
 const Title = styled(({ theme }) => ({
   textAlign: 'center',
   marginBottom: theme.sizing.baseUnit / 2,
+  paddingHorizontal: theme.sizing.baseUnit,
 }))(H5);
 
 const RelatedContentWithoutData = enhance(({
   sectionTitle,
   content,
+  style,
 }) => (
-  <Wrapper>
-    <Title>{sectionTitle}</Title>
+  <Wrapper style={style}>
+    {sectionTitle ? (<Title>{sectionTitle}</Title>) : null}
     {renderItems(content)}
   </Wrapper>
 ));

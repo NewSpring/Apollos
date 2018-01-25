@@ -6,12 +6,15 @@ import { every } from 'lodash';
 import SkeletonImage from './SkeletonImage';
 
 // This mirrors the File resource we get from Heighliner:
-const ImageSourceType = PropTypes.shape({
-  uri: PropTypes.string,
-  label: PropTypes.string,
-  width: PropTypes.number,
-  height: PropTypes.number,
-});
+const ImageSourceType = PropTypes.oneOfType([
+  PropTypes.shape({
+    uri: PropTypes.string,
+    label: PropTypes.string,
+    width: PropTypes.number,
+    height: PropTypes.number,
+  }),
+  PropTypes.string,
+]);
 
 export const sizeCache = {};
 

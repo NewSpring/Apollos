@@ -6,14 +6,25 @@ export const contentCard = gql`
     id
     title
     channelName
+    parent {
+      channelName
+      id
+      content {
+        images(sizes: ["medium"]) {
+          url
+          label
+          fileLabel
+          id
+        }
+      }
+    }
     content {
       isLiked
-      images(sizes: ["large"]) {
-        fileName
-        fileType
-        fileLabel
+      images(sizes: ["medium"]) {
         url
-        size
+        label
+        fileLabel
+        id
       }
     }
   }

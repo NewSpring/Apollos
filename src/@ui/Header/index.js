@@ -40,9 +40,10 @@ const Header = enhance(({
   backButton = false,
   backgroundColor,
   barStyle = 'light-content',
+  style = {},
   theme,
 }) => (
-  <HeaderContainer style={backgroundColor ? { backgroundColor } : null}>
+  <HeaderContainer style={[backgroundColor ? { backgroundColor } : null, style]}>
     <StatusBar barStyle={barStyle} />
     <StyledHeaderBar>
       {backButton ? <BackButton color={barStyle === 'dark-content' ? theme.colors.darkPrimary : undefined} /> : null}
