@@ -90,6 +90,7 @@ const HistoricalContributionCard = enhance(({
   amount,
   dateFormat,
   date,
+  profileImageUrl,
   ...otherProps
 }) => (
   <Card isLoading={isLoading} {...otherProps}>
