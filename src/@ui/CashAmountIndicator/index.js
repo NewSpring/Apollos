@@ -47,11 +47,12 @@ function CashAmountIndicator(props) {
   const amountParts = parseFloat(props.amount).toFixed(2).split('.');
   const SmallType = Typography[`StyledH${props.size + 2}`];
   const LargeType = Typography[`StyledH${props.size}`];
+  const styleOverride = props.color ? { color: props.color } : undefined;
   return (
     <Row>
-      <SmallType>{'$'}</SmallType>
-      <LargeType>{amountParts[0]}</LargeType>
-      <SmallType>{`.${amountParts[1]}`}</SmallType>
+      <SmallType style={styleOverride}>{'$'}</SmallType>
+      <LargeType style={styleOverride}>{amountParts[0]}</LargeType>
+      <SmallType style={styleOverride}>{`.${amountParts[1]}`}</SmallType>
     </Row>
   );
 }
@@ -62,6 +63,7 @@ CashAmountIndicator.propTypes = {
     if (props[propName] > 5) return new Error(`${componentName} ${propName} prop cannot be greater than 5`);
     return null;
   },
+  color: PropTypes.string,
 };
 
 CashAmountIndicator.defaultProps = {
