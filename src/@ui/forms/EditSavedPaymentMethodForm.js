@@ -63,7 +63,6 @@ export class EditSavedPaymentMethodForm extends PureComponent {
   };
 
   render() {
-    console.log(this.props.isValid);
     if (this.props.isLoading) {
       return (
         <View>
