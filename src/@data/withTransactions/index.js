@@ -1,6 +1,6 @@
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
-import moment from 'moment';
+import flatten from 'lodash/flatten';
 import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 
 export const QUERY = gql`
@@ -35,18 +35,22 @@ export default graphql(QUERY, {
     },
   }),
   props: ({ ownProps, data } = {}) => ({
-    transactions: data.transactions && data.transactions.map(transaction => ({
-      ...transaction,
-      // NOTE: Holtzman logic, this should be in Heighliner
-      year: moment(transaction.date).utc().year(),
-      details: transaction.details && transaction.details
-        .filter(x => (x.amount && Number(x.amount) !== 0)),
-    })),
+    // NOTE: This should happen in Heighliner
+    transactions: data.transactions && flatten(data.transactions
+      .map(transaction => (transaction.details.map(detail => ({
+        ...detail,
+        date: transaction.date,
+        transactionId: transaction.id,
+        person: transaction.person,
+        year: new Date(transaction.date).getFullYear(),
+      })))),
+    ),
     isLoading: ownProps.isLoading || data.loading,
     fetchMore: fetchMoreResolver({
-      collectionName: 'content',
+      collectionName: 'transactions',
       data,
     }),
+    refetch: data.refetch,
   }),
 });
 
