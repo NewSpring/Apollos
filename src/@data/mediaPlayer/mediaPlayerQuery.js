@@ -4,7 +4,14 @@ export default gql`
   query MediaPlayer {
     mediaPlayer @client {
       isPlaying
-      current
+      albumId
+      isShuffling
+      isRepeating
+      currentTrack {
+        duration
+        file
+        title
+      }
     }
   }
 `;

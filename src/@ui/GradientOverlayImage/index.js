@@ -26,15 +26,6 @@ const enhance = compose(
   }),
 );
 
-const Wrapper = styled(({ theme }) => ({
-  ...Platform.select({
-    android: { // fixes android borderRadius overflow display issue
-      borderTopRightRadius: theme.sizing.borderRadius,
-      borderTopLeftRadius: theme.sizing.borderRadius,
-    },
-  }),
-}))(View);
-
 const Overlay = styled(({ theme }) => ({
   ...StyleSheet.absoluteFillObject,
   ...Platform.select({
@@ -56,11 +47,13 @@ const getGradientValues = (overlayColor) => {
   return values;
 };
 
-const FeedItemCardImage = enhance(({
+const GradientOverlayImage = enhance(({
   source: imageSource,
   overlayColor,
+  theme,
+  ...otherProps
 }) => (
-  <Wrapper>
+  <View {...otherProps}>
     <CardImage source={imageSource} />
     {overlayColor ? <Overlay
       colors={getGradientValues(overlayColor).colors}
@@ -68,7 +61,7 @@ const FeedItemCardImage = enhance(({
       end={getGradientValues(overlayColor).end}
       locations={getGradientValues(overlayColor).locations}
     /> : null}
-  </Wrapper>
+  </View>
 ));
 
-export default FeedItemCardImage;
+export default GradientOverlayImage;
