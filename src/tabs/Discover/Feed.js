@@ -7,7 +7,7 @@ import { ButtonLink } from '@ui/Button';
 import Card, { CardContent } from '@ui/Card';
 import FeedItemCard from '@ui/FeedItemCard';
 import ThumbnailCard from '@ui/ThumbnailCard';
-import withRecentLikes from '@data/withRecentLikes';
+import { withRecentLikes } from '@data/likes';
 import withPromotions from '@data/withPromotions';
 import styled from '@ui/styled';
 
