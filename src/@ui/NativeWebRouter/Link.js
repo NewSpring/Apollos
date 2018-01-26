@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  TouchableWithoutFeedback,
-} from 'react-native';
+import Touchable from '@ui/Touchable';
 import { matchPath } from './';
 
 export const goBackTo = ({ to, history, replace = false }) => {
@@ -51,7 +49,7 @@ export default class Link extends Component {
 
   static defaultProps = {
     onPress() {},
-    component: TouchableWithoutFeedback,
+    component: Touchable,
     replace: false,
     to: null,
     pop: false,

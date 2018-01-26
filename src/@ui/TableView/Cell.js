@@ -9,11 +9,12 @@ const asFirstChild = child => cloneElement(child, {
 
 const Container = styled(({ theme }) => ({
   padding: theme.sizing.baseUnit / 2,
+  paddingLeft: theme.sizing.baseUnit / 1.5,
   backgroundColor: theme.colors.background.paper,
   flexDirection: 'row',
   justifyContent: 'flex-start',
   alignItems: 'center',
-  height: theme.sizing.baseUnit * 3,
+  height: theme.sizing.baseUnit * 2.5,
 }), 'TableView.Cell.Container')(View);
 
 const Cell = ({ children, ...otherProps }) => (

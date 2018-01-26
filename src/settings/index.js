@@ -1,15 +1,20 @@
 import React from 'react';
 import { ScrollView, Linking } from 'react-native';
-import { withProps } from 'recompose';
+import { withProps, compose } from 'recompose';
 import SafeAreaView from '@ui/SafeAreaView';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
 import Header from '@ui/Header';
 import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
 import { Link } from '@ui/NativeWebRouter';
-import LogoutButton from '@ui/forms/LogoutButton';
 import Touchable from '@ui/Touchable';
 import { H7 } from '@ui/typography';
+import withUser from '@data/withUser';
+
+const LogoutTouchable = compose(
+  withUser,
+  withProps(({ logout }) => ({ onPress: logout })),
+)(Touchable);
 
 const Arrow = withProps({
   name: 'arrow-next',
@@ -88,9 +93,14 @@ const Settings = () => (
             </Link>
           </TableView>
 
-          <PaddedView>
-            <LogoutButton />
-          </PaddedView>
+          <TableView>
+            <LogoutTouchable>
+              <Cell>
+                <CellText>Logout</CellText>
+                <Arrow />
+              </Cell>
+            </LogoutTouchable>
+          </TableView>
 
           {process.env.APP_VERSION && (
             <H7>
