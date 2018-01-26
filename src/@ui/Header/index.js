@@ -37,7 +37,6 @@ const RightContainer = styled({
   top: 0,
   bottom: 0,
   justifyContent: 'center',
-  backgroundColor: 'red',
 }, 'Header.RightContainer')(View);
 
 const enhance = compose(
