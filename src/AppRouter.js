@@ -19,7 +19,7 @@ import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
 import Auth from './auth';
-import Settings from './settings';
+import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
 
@@ -121,6 +121,7 @@ class AppRouter extends PureComponent {
               <Route exact path="/series" component={Series} />
               <Route exact path="/series/:id" component={SeriesSingle} />
               <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
+              <Route exact path="/series/:id/trailer" component={asModal(SeriesTrailer)} cardStackDirection="vertical" />
 
               <Route exact path="/studies" component={Studies} />
               <Route exact path="/studies/:id" component={StudiesSingle} />
@@ -132,6 +133,7 @@ class AppRouter extends PureComponent {
 
               <Route exact path="/music" component={Music} />
               <Route exact path="/music/:id" component={Playlist} />
+              <Route exact path="/music/:id/:track" component={TrackContextual} cardStackDirection="vertical" />
 
               <Route exact path="/articles" component={Articles} />
               <Route exact path="/articles/:id" component={ArticlesSingle} />
@@ -152,7 +154,11 @@ class AppRouter extends PureComponent {
               <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
               <Route path="/login" cardStackDirection="vertical" component={Auth} />
+
               <ProtectedRoute exact path="/settings" component={Settings} />
+              <ProtectedRoute exact path="/settings/profile" component={ProfileDetails} />
+              <ProtectedRoute exact path="/settings/address" component={ProfileAddress} />
+              <ProtectedRoute exact path="/settings/password" component={ChangePassword} />
 
               <Route cardStackKey="tabs" component={this.tabs} />
             </CardStack>

@@ -123,7 +123,7 @@ const enhance = compose(
     enableReinitialize: true,
     isInitialValid(props) {
       return validationSchema
-        .isValid(mapPropsToValues(props));
+        .isValidSync(mapPropsToValues(props));
     },
     handleSubmit: async (values, { props, setSubmitting, setErrors }) => {
       try {

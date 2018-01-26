@@ -23,7 +23,7 @@ const tabRoutes = [{ title: 'Likes', key: 'likes' }, { title: 'Topics', key: 'to
 class Profile extends PureComponent {
   renderLikes = () => (
     <ScrollView>
-      <MediaQuery maxWidth="md"><CurrentUserAvatar /></MediaQuery>
+      <MediaQuery maxWidth="md"><CurrentUserAvatar allowProfileImageChange /></MediaQuery>
       <Likes />
     </ScrollView>
   );
@@ -51,7 +51,7 @@ class Profile extends PureComponent {
           </Left>
           <MediaQuery minWidth="md">
             <Right>
-              <DesktopCurrentUserAvatar />
+              <DesktopCurrentUserAvatar allowProfileImageChange />
             </Right>
           </MediaQuery>
         </SideBySideView>

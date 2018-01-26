@@ -10,6 +10,9 @@ import { Link } from '@ui/NativeWebRouter';
 import Touchable from '@ui/Touchable';
 import { H7 } from '@ui/typography';
 import withUser from '@data/withUser';
+import ImagePicker from '@ui/ImagePicker';
+
+export { ProfileDetails, ProfileAddress, ChangePassword } from './forms';
 
 const LogoutTouchable = compose(
   withUser,
@@ -27,25 +30,33 @@ const Settings = () => (
       <SafeAreaView>
         <PaddedView horizontal={false}>
           <TableView>
-            <Cell>
-              <CellText>Personal Details</CellText>
-              <Arrow />
-            </Cell>
+            <Link to="/settings/profile">
+              <Cell>
+                <CellText>Personal Details</CellText>
+                <Arrow />
+              </Cell>
+            </Link>
             <Divider />
-            <Cell>
-              <CellText>My Address</CellText>
-              <Arrow />
-            </Cell>
+            <Link to="/settings/address">
+              <Cell>
+                <CellText>My Address</CellText>
+                <Arrow />
+              </Cell>
+            </Link>
             <Divider />
-            <Cell>
-              <CellText>Change Profile Photo</CellText>
-              <Arrow />
-            </Cell>
+            <ImagePicker>
+              <Cell>
+                <CellText>Change Profile Photo</CellText>
+                <Arrow />
+              </Cell>
+            </ImagePicker>
             <Divider />
-            <Cell>
-              <CellText>Change Password</CellText>
-              <Arrow />
-            </Cell>
+            <Link to="/settings/password">
+              <Cell>
+                <CellText>Change Password</CellText>
+                <Arrow />
+              </Cell>
+            </Link>
           </TableView>
           <TableView>
             <Touchable onPress={() => Linking.openURL('mailto:web.helpdesk@newspring.cc')}>

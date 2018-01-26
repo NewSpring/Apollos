@@ -9,6 +9,7 @@ import BlurView from '@ui/BlurView';
 import PaddedView from '@ui/PaddedView';
 import ConnectedImage from '@ui/ConnectedImage';
 import Touchable from '@ui/Touchable';
+import ImagePicker from '@ui/ImagePicker';
 import styled from '@ui/styled';
 
 const Container = styled(({ theme }) => ({
@@ -46,6 +47,7 @@ const enhance = compose(
     refetch: PropTypes.func,
     onPhotoPress: PropTypes.func,
     blurIntensity: PropTypes.number,
+    allowProfileImageChange: PropTypes.bool,
     ...View.propTypes,
   }),
   withThemeMixin({ type: 'dark' }),
@@ -62,20 +64,27 @@ const UserAvatarView = enhance(({
   refetch,
   onPhotoPress,
   blurIntensity = 100,
+  allowProfileImageChange = false,
   ...viewProps
-}) => (
-  <Container {...viewProps}>
-    <BlurView intensity={blurIntensity} tint="dark" style={StyleSheet.absoluteFill}>
-      <BlurredImage source={photo} resizeMode="cover" />
-    </BlurView>
-    <Content>
-      <Touchable onPress={onPhotoPress} disabled={!onPhotoPress}>
-        <StyledAvatar source={photo} size="large" />
-      </Touchable>
-      <Name>{firstName} {lastName}</Name>
-      {home ? (<City>{home.city}</City>) : null}
-    </Content>
-  </Container>
-));
+}) => {
+  let ImageContainer = Touchable;
+  if (allowProfileImageChange) ImageContainer = ImagePicker;
+  // todo: handle file select stuff
+
+  return (
+    <Container {...viewProps}>
+      <BlurView intensity={blurIntensity} tint="dark" style={StyleSheet.absoluteFill}>
+        <BlurredImage source={photo} resizeMode="cover" />
+      </BlurView>
+      <Content>
+        <ImageContainer onPress={onPhotoPress} disabled={!allowProfileImageChange && !onPhotoPress}>
+          <StyledAvatar source={photo} size="large" />
+        </ImageContainer>
+        <Name>{firstName} {lastName}</Name>
+        {home ? (<City>{home.city}</City>) : null}
+      </Content>
+    </Container>
+  );
+});
 
 export default UserAvatarView;
