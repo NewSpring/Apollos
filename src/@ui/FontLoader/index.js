@@ -1,7 +1,11 @@
+import {
+  StyleSheet,
+} from 'react-native';
 import { Component } from 'react';
-import { Font } from 'expo';
+// import { Font } from 'expo';
 import PropTypes from 'prop-types';
 import FONTS from 'assets/fonts';
+import * as Font from './Font';
 
 export default class FontLoader extends Component {
   static propTypes = {
@@ -22,6 +26,17 @@ export default class FontLoader extends Component {
     isLoading: true,
   };
 
+  componentWillMount() {
+    // NOTE: This is an experimental feature but is currently
+    // shadowing what expo does to get fontFamilies working
+
+    // eslint-disable-next-line no-console
+    console.disableYellowBox = true;
+    StyleSheet.setStyleAttributePreprocessor('fontFamily', Font.processFontFamily);
+    // eslint-disable-next-line no-console
+    console.disableYellowBox = false;
+  }
+
   async loadFonts() {
     try {
       await Promise.all(FONTS.map(({ name, asset }) => (
@@ -34,7 +49,7 @@ export default class FontLoader extends Component {
         isLoading: false,
       });
     } catch (err) {
-      throw new Error(err);
+      throw err;
     }
   }
 
