@@ -17,7 +17,7 @@ import Stories, { StoriesSingle } from './stories';
 import Series, { Sermon, SeriesSingle, SeriesTrailer } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
-import Music, { Playlist } from './music';
+import Music, { Playlist, Player, TrackContextual } from './music';
 import Auth from './auth';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
@@ -40,7 +40,8 @@ class AppRouter extends PureComponent {
   componentWillUpdate(nextProps) {
     if ((nextProps.history.action !== 'POP' &&
         nextProps.history.action !== 'REPLACE') &&
-        !this.isModal
+        !this.isModal &&
+        !this.musicPlayerIsOpened
     ) {
       previousLocation = this.props.location;
     }
@@ -53,6 +54,10 @@ class AppRouter extends PureComponent {
       this.largeScreenModals.find(route =>
         matchPath(this.props.location.pathname, route.props.path),
       );
+  }
+
+  get musicPlayerIsOpened() {
+    return matchPath(this.props.location.pathname, '/player');
   }
 
   // On large screens we render modals on top of the previous route.
@@ -75,77 +80,86 @@ class AppRouter extends PureComponent {
   tabs = () => { // eslint-disable-line
     // On mobile we render tabs.Layout at this level so that other <Route>s at
     // the root level in the router can render on top of the tabbar
-    const TabSwitch = Platform.OS === 'web' ? Switch : tabs.Layout;
+    const Layout = Platform.OS === 'web' ? FlexedView : tabs.Layout;
     return (
-      <TabSwitch>
-        <Route exact path="/" component={tabs.Feed} />
-        <Route exact path="/sections" component={tabs.Sections} />
-        <Route exact path="/groups" component={tabs.Groups} />
-        <Route exact path="/discover" component={tabs.Discover} />
-        <ProtectedRoute exact path="/profile" component={tabs.Profile} />
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={tabs.Feed} />
+          <Route exact path="/sections" component={tabs.Sections} />
+          <Route exact path="/groups" component={tabs.Groups} />
+          <Route exact path="/discover" component={tabs.Discover} />
+          <ProtectedRoute exact path="/profile" component={tabs.Profile} />
 
-        <Route exact path="/give" component={give.Dashboard} />
-        <Route exact path="/give/methods" component={give.PaymentMethods} />
-        <Route exact path="/give/history" component={give.Transactions} />
-        <Route exact path="/give/history/:id" component={give.TransactionDetails} />
-        <Route exact path="/give/now" component={give.Now} />
-        <Route exact path="/give/campaign/:slug" component={give.Campaign} />
-        <Route exact path="/give/schedules/:id" component={give.Schedule} />
-        <Route exact path="/give/thankyou" component={give.ThankYou} />
-      </TabSwitch>
+          <Route exact path="/give" component={give.Dashboard} />
+          <Route exact path="/give/methods" component={give.PaymentMethods} />
+          <Route exact path="/give/history" component={give.Transactions} />
+          <Route exact path="/give/history/:id" component={give.TransactionDetails} />
+          <Route exact path="/give/now" component={give.Now} />
+          <Route exact path="/give/campaign/:slug" component={give.Campaign} />
+          <Route exact path="/give/schedules/:id" component={give.Schedule} />
+          <Route exact path="/give/thankyou" component={give.ThankYou} />
+        </Switch>
+      </Layout>
     );
   };
 
   render() {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
-    const AppSwitch = Platform.OS === 'web' ? tabs.Layout : FlexedView;
+    const AppLayout = Platform.OS === 'web' ? tabs.Layout : FlexedView;
     return (
       <FlexedView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
-        <AppSwitch>
-          <CardStack location={this.isModal ? previousLocation : this.props.location}>
-            <Redirect from="/sermons" to="/series" />
-            <Route exact path="/series" component={Series} />
-            <Route exact path="/series/:id" component={SeriesSingle} />
-            <Route exact path="/series/:id/trailer" component={asModal(SeriesTrailer)} cardStackDirection="vertical" />
-            <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
+        <Player>
+          <AppLayout>
+            <CardStack
+              location={(this.isModal || this.musicPlayerIsOpened) ?
+                previousLocation : this.props.location
+              }
+            >
+              <Redirect from="/sermons" to="/series" />
+              <Route exact path="/series" component={Series} />
+              <Route exact path="/series/:id" component={SeriesSingle} />
+              <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
+              <Route exact path="/series/:id/trailer" component={asModal(SeriesTrailer)} cardStackDirection="vertical" />
 
-            <Route exact path="/studies" component={Studies} />
-            <Route exact path="/studies/:id" component={StudiesSingle} />
-            <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
+              <Route exact path="/studies" component={Studies} />
+              <Route exact path="/studies/:id" component={StudiesSingle} />
+              <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
 
-            <Redirect from="/devotionals" to="/studies" />
-            <Redirect from="/devotions" to="/studies" />
-            <Route exact path="/devotions/:id" component={DebugView} />
+              <Redirect from="/devotionals" to="/studies" />
+              <Redirect from="/devotions" to="/studies" />
+              <Route exact path="/devotions/:id" component={DebugView} />
 
-            <Route exact path="/music" component={Music} />
-            <Route exact path="/music/:id" component={Playlist} />
+              <Route exact path="/music" component={Music} />
+              <Route exact path="/music/:id" component={Playlist} />
+              <Route exact path="/music/:id/:track" component={TrackContextual} cardStackDirection="vertical" />
 
-            <Route exact path="/articles" component={Articles} />
-            <Route exact path="/articles/:id" component={ArticlesSingle} />
+              <Route exact path="/articles" component={Articles} />
+              <Route exact path="/articles/:id" component={ArticlesSingle} />
 
-            <Route exact path="/stories" component={Stories} />
-            <Route exact path="/stories/:id" component={StoriesSingle} />
+              <Route exact path="/stories" component={Stories} />
+              <Route exact path="/stories/:id" component={StoriesSingle} />
 
-            <Route exact path="/news" component={News} />
-            <Route exact path="/news/:id" component={NewsSingle} />
+              <Route exact path="/news" component={News} />
+              <Route exact path="/news/:id" component={NewsSingle} />
 
-            <Route exact path="/events/:id" component={DebugView} />
+              <Route exact path="/events/:id" component={DebugView} />
 
-            <Route exact path="/groups/finder" component={GroupFinderResults} />
-            <Route exact path="/groups/:id" component={GroupSingle} />
+              <Route exact path="/groups/finder" component={GroupFinderResults} />
+              <Route exact path="/groups/:id" component={GroupSingle} />
 
-            <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
-            <Route path="/give/new-payment-method" cardStackDirection="vertical" component={give.AddAccount} />
-            <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
+              <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
+              <Route path="/give/new-payment-method" cardStackDirection="vertical" component={give.AddAccount} />
+              <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
-            <Route path="/login" cardStackDirection="vertical" component={Auth} />
+              <Route path="/login" cardStackDirection="vertical" component={Auth} />
 
-            <Route component={this.tabs} cardStackKey="tabs" />
-          </CardStack>
-        </AppSwitch>
-        {this.isModal ? this.largeScreenModals : null}
+              <Route cardStackKey="tabs" component={this.tabs} />
+            </CardStack>
+          </AppLayout>
+          {this.isModal ? this.largeScreenModals : null}
+        </Player>
       </FlexedView>
     );
   }
