@@ -1,2 +1,2 @@
-import './Colfax.css';
-import './DroidSerif.css';
+import './colfax/Colfax.css';
+import './droid-serif/DroidSerif.css';

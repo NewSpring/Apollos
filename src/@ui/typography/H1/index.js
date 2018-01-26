@@ -7,7 +7,7 @@ import { withPlaceholder, Typography } from '@ui/Placeholder';
 const styles = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(2.9),
   fontWeight: 'bold',
-  fontFamily: theme.typography.fontFamilySans,
+  fontFamily: 'Colfax-Black',
   color: theme.colors.primary,
   ...Platform.select({
     ios: {
