@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { uniqBy } from 'lodash';
 import { compose, withProps } from 'recompose';
 import { Link } from '@ui/NativeWebRouter';
 import withSearch from '@data/withSearch';
@@ -27,10 +28,11 @@ ResultItem.propTypes = {
 
 const Results = compose(
   withSearch,
-  withProps({
+  withProps(({ content = [] } = {}) => ({
     numColumns: 1,
     renderItem: ResultItem,
-  }),
+    content: uniqBy(content, ({ id }) => id),
+  })),
 )(FeedView);
 
 export default Results;

@@ -19,6 +19,12 @@ const StyledHeaderBar = styled(({ theme }) => ({
 
 const HeaderContainer = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.primary,
+  ...Platform.select({
+    android: {
+      paddingTop: 25, // todo: this is currently required as SafeAreaView isn't
+      // properly adding padding on android.
+    },
+  }),
 }), 'Header.Container')(SafeAreaView);
 
 const StyledHeaderText = styled(({ theme, barStyle }) => ({

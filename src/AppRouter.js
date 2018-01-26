@@ -149,11 +149,11 @@ class AppRouter extends PureComponent {
               <Route exact path="/groups/finder" component={GroupFinderResults} />
               <Route exact path="/groups/:id" component={GroupSingle} />
 
-              <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
-              <Route path="/give/new-payment-method" cardStackDirection="vertical" component={give.AddAccount} />
-              <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
+              <Route path="/give/checkout" component={give.Checkout} cardStackDirection="vertical" />
+              <Route path="/give/new-payment-method" component={give.AddAccount} cardStackDirection="vertical" />
+              <Route path="/give/payment-methods/:id" component={give.PaymentMethod} cardStackDirection="vertical" />
 
-              <Route path="/login" cardStackDirection="vertical" component={Auth} />
+              <Route path="/login" component={Auth} cardStackDirection="vertical" />
 
               <Route cardStackKey="tabs" component={this.tabs} />
             </CardStack>
