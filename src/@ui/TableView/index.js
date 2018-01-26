@@ -1,7 +1,8 @@
 import { StyleSheet, View } from 'react-native';
-import { compose } from 'recompose';
+import { compose, renderComponent } from 'recompose';
 import styled from '@ui/styled';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
+import Card from '@ui/Card';
 
 export { default as Cell } from './Cell';
 export { default as CellText } from './CellText';
@@ -18,11 +19,7 @@ const TableView = compose(
     borderLeftWidth: 0,
     borderRightWidth: 0,
   }), 'TableView'),
-  mediaQuery(({ md }) => ({ minWidth: md }), styled(({ theme }) => ({
-    borderLeftWidth: StyleSheet.hairlineWidth,
-    borderRightWidth: StyleSheet.hairlineWidth,
-    margin: theme.sizing.baseUnit / 2,
-  }))),
+  mediaQuery(({ md }) => ({ minWidth: md }), renderComponent(Card)),
 )(View);
 
 export default TableView;
