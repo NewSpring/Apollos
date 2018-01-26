@@ -321,8 +321,10 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,
@@ -483,8 +485,10 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholder="mm/yy"
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,
@@ -633,8 +637,10 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,
@@ -1189,8 +1195,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,
@@ -1351,8 +1359,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholder="mm/yy"
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,
@@ -1501,8 +1511,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,
@@ -2057,8 +2069,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,
@@ -2219,8 +2233,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholder="mm/yy"
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,
@@ -2369,8 +2385,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,
@@ -2916,8 +2934,10 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,
@@ -3065,8 +3085,10 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,
@@ -3226,8 +3248,10 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": null,
                 "height": 40,
                 "lineHeight": 30,

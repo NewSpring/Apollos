@@ -58,11 +58,15 @@ class Transitioner extends PureComponent {
     style: undefined,
   };
 
-  state = {
-    transition: null,
-    entries: [this.props.location],
-    index: 0,
-  };
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      transition: null,
+      entries: [this.props.location],
+      toKey: this.keyForLocation(this.props.location),
+      index: 0,
+    };
+  }
 
   // In a routing change: set up state to handle the transition and start the animation
   componentWillReceiveProps(nextProps) {
@@ -70,7 +74,7 @@ class Transitioner extends PureComponent {
 
     let { entries } = this.state;
     const transition = nextProps.history.action;
-    const toKey = this.keyForLocation(nextProps.location);
+    let toKey = this.keyForLocation(nextProps.location);
 
     // If new location and current location point to same key,
     // change entry at current index and exit (no animation)
@@ -104,13 +108,17 @@ class Transitioner extends PureComponent {
       case REPLACE:
       default:
         entries[this.state.index] = nextProps.location;
+        // optimization: prevents remount edge-case
+        toKey = this.state.toKey || toKey;  // eslint-disable-line
         break;
     }
 
-    const fromPosition = findIndex(entries, ({ key }) => key === this.props.location.key);
+    let fromPosition = findIndex(entries, ({ key }) => key === this.props.location.key);
+    if (fromPosition <= -1) fromPosition = toPosition;
 
     this.setState({
       entries,
+      toKey,
       previouslyRenderedLocation: this.props.location,
       index: toPosition,
       transition,
@@ -327,7 +335,7 @@ class Transitioner extends PureComponent {
       .map((entry, index) => (
         this.renderScreenWithAnimation({
           index,
-          key: this.keyForLocation(entry),
+          key: this.state.index === index ? this.state.toKey : this.keyForLocation(entry),
           screen: this.routeChildForLocation(entry),
         })
       ));
