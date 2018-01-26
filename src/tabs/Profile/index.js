@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import withUser from '@data/withUser';
 // import withTopics from '@data/withTopics';
 import Header from '@ui/Header';
@@ -9,6 +9,8 @@ import UserAvatarView from '@ui/UserAvatarView';
 import MediaQuery from '@ui/MediaQuery';
 import SideBySideView, { Left, Right } from '@ui/SideBySideView';
 import styled from '@ui/styled';
+import Icon from '@ui/Icon';
+import { Link } from '@ui/NativeWebRouter';
 
 import Topics from './Topics';
 import Likes from './Likes';
@@ -29,7 +31,14 @@ class Profile extends PureComponent {
   render() {
     return (
       <FlexedView>
-        <Header titleText="Profile" style={{ zIndex: 2 }} />
+        <Header
+          titleText="Profile"
+          right={
+            <Link to="/settings">
+              <View><Icon name="settings" size={24} /></View>
+            </Link>
+          }
+        />
         <SideBySideView style={{ flex: 1 }}>
           <Left>
             <TabView

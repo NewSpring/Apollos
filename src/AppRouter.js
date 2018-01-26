@@ -19,6 +19,7 @@ import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist } from './music';
 import Auth from './auth';
+import Settings from './settings';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
 
@@ -139,6 +140,7 @@ class AppRouter extends PureComponent {
             <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
             <Route path="/login" cardStackDirection="vertical" component={Auth} />
+            <Route exact path="/settings" component={Settings} />
 
             <Route component={this.tabs} />
           </CardStack>
