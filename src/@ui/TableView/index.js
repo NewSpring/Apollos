@@ -10,7 +10,7 @@ export { default as Divider } from './Divider';
 
 const TableView = compose(
   styled(({ theme }) => ({
-    marginVertical: theme.sizing.baseUnit,
+    marginBottom: theme.sizing.baseUnit,
     backgroundColor: theme.colors.background.paper,
     borderColor: theme.colors.shadows.default,
     borderTopWidth: StyleSheet.hairlineWidth,
