@@ -25,7 +25,6 @@ const StyledH7 = styled(({ theme }) => ({
 }))(H7);
 
 const StyledButton = styled(({ theme }) => ({
-  color: theme.colors.darkTertiary,
   borderColor: theme.colors.darkTertiary,
   paddingVertical: theme.sizing.baseUnit / 6,
   paddingHorizontal: theme.sizing.baseUnit,

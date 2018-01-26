@@ -14,6 +14,7 @@ import styled from '@ui/styled';
 import Icon from '@ui/Icon';
 import Spacer from '@ui/Spacer';
 import PaddedView from '@ui/PaddedView';
+import { withTheme } from '@ui/theme';
 
 const ItalicText = styled(({ theme }) => ({
   color: theme.colors.text.secondary,
@@ -32,10 +33,12 @@ const Row = styled({
 export class ContributionsChartCard extends PureComponent {
   static propTypes = {
     total: PropTypes.number,
+    iconSize: PropTypes.number,
   };
 
   static defaultProps = {
     total: 0,
+    iconSize: undefined,
   };
 
   render() {
@@ -55,7 +58,7 @@ export class ContributionsChartCard extends PureComponent {
           >
             <Row>
               <StyledH6>{'View Giving History'}</StyledH6>
-              <Icon name="ArrowNext" />
+              <Icon name="arrow-next" size={this.props.iconSize} />
             </Row>
           </TouchableWithoutFeedback>
         </PaddedView>
@@ -66,6 +69,9 @@ export class ContributionsChartCard extends PureComponent {
 
 const enhance = compose(
   withContributionsChartData,
+  withTheme(({ theme, ...otherProps }) => ({
+    iconSize: otherProps.iconSize || theme.helpers.rem(1),
+  })),
 );
 
 export default enhance(ContributionsChartCard);

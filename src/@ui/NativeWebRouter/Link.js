@@ -56,7 +56,7 @@ export default class Link extends Component {
   };
 
   handlePress = (event) => {
-    this.props.onPress(event);
+    if (this.props.onPress) this.props.onPress(event);
 
     const { history } = this.context.router;
     const { to, replace, pop } = this.props;

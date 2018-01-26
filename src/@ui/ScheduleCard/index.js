@@ -78,7 +78,7 @@ const ScheduleCard = enhance(({
       <Spacer />
       <Row>
         <UIText>{'Start Date: '}</UIText>
-        <ItalicText>{moment(startDate).format(dateFormat)}</ItalicText>
+        <ItalicText>{moment(startDate).utc().format(dateFormat)}</ItalicText>
       </Row>
       <Spacer />
       <TouchableWithoutFeedback
@@ -86,7 +86,7 @@ const ScheduleCard = enhance(({
       >
         <Row>
           <StyledH6>{'View Schedule Details'}</StyledH6>
-          <Icon name="ArrowNext" size={iconSize} />
+          <Icon name="arrow-next" size={iconSize} />
         </Row>
       </TouchableWithoutFeedback>
     </PaddedView>
