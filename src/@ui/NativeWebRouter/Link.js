@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Touchable from '@ui/Touchable';
+import { Linking } from 'react-native';
 import { matchPath } from './';
 
 export const goBackTo = ({ to, history, replace = false }) => {
@@ -60,6 +61,11 @@ export default class Link extends Component {
 
     const { history } = this.context.router;
     const { to, replace, pop } = this.props;
+
+    // handle web links
+    if (to && to.indexOf('http') > -1) {
+      return Linking.openURL(to);
+    }
 
     if (pop) {
       return goBackTo({ to, history });

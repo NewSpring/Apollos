@@ -306,7 +306,7 @@ exports[`the ThumbnailCard component should render with a category 1`] = `
 </View>
 `;
 
-exports[`the ThumbnailCard component should render with a category and image 1`] = `
+exports[`the ThumbnailCard component should render with a category and images 1`] = `
 <View
   style={
     Object {
@@ -438,7 +438,7 @@ exports[`the ThumbnailCard component should render with a category and image 1`]
 </View>
 `;
 
-exports[`the ThumbnailCard component should render with an image 1`] = `
+exports[`the ThumbnailCard component should render with an images 1`] = `
 <View
   style={
     Object {

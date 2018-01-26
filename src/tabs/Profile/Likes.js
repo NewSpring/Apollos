@@ -2,7 +2,7 @@ import React from 'react';
 import { compose, pure } from 'recompose';
 import { View } from 'react-native';
 import styled from '@ui/styled';
-import { withProfileLikes, withProfileRecentLikes } from '@data/likes';
+import { withProfileLikes, withRecentLikes } from '@data/likes';
 import { RelatedContentWithoutData } from '@ui/RelatedContent';
 import { H7 } from '@ui/typography';
 
@@ -20,7 +20,7 @@ const LikedContent = compose(
   styled({ backgroundColor: 'transparent' }),
 )(RelatedContentWithoutData);
 
-const RecentLikes = withProfileRecentLikes(props => (
+const RecentLikes = withRecentLikes(props => (
   <View>
     <RecentLikesHeader>Check out some of the latest things from NewSpring</RecentLikesHeader>
     <LikedContent

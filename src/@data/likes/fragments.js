@@ -30,7 +30,6 @@ export const contentCard = gql`
   }
 `;
 
-// TODO: Add isLiked to groups
 export const groupCard = gql`
   fragment GroupCard on Group {
     __typename
