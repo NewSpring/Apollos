@@ -5,7 +5,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, branch, renderComponent, getContext, withProps } from 'recompose';
+import { compose, branch, renderComponent, withProps } from 'recompose';
 import get from 'lodash/get';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { withRouter } from '@ui/NativeWebRouter';
@@ -31,7 +31,6 @@ export class Dashboard extends PureComponent {
     })),
     activityItems: PropTypes.arrayOf(PropTypes.shape({})), // One of many :'(
     history: PropTypes.shape({
-      replace: PropTypes.func,
       push: PropTypes.func,
     }),
     scheduledTransactions: PropTypes.arrayOf(PropTypes.shape({})),
@@ -127,11 +126,10 @@ export class Dashboard extends PureComponent {
 const enhance = compose(
   withGivingDashboard,
   withRouter,
-  getContext({ jumpTo: PropTypes.func }),
   withProps(props => ({
-    onPressActivityLink() { props.jumpTo('ContributionHistory'); },
-    onPressExpiringAccountCard() { props.jumpTo('Now'); },
-    onPressNewScheduleLink() { props.jumpTo('ContributionHistory'); },
+    onPressActivityLink() { props.route.jumpTo('ContributionHistory'); },
+    onPressExpiringAccountCard() { props.route.jumpTo('Now'); },
+    onPressNewScheduleLink() { props.route.jumpTo('ContributionHistory'); },
   })),
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
 );
