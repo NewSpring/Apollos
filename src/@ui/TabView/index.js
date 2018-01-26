@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Dimensions, Platform, View, Animated } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 import { TabViewAnimated, SceneMap } from 'react-native-tab-view';
-import { compose, withProps, withState, setPropTypes, defaultProps, branch } from 'recompose';
+import { compose, withProps, withState, setPropTypes, defaultProps } from 'recompose';
 import { withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 

@@ -6,18 +6,22 @@ import Header from '@ui/Header';
 import FlexedView from '@ui/FlexedView';
 import TabView, { SceneMap } from '@ui/TabView';
 import UserAvatarView from '@ui/UserAvatarView';
+import MediaQuery from '@ui/MediaQuery';
+import SideBySideView, { Left, Right } from '@ui/SideBySideView';
+import styled from '@ui/styled';
 
 import Topics from './Topics';
 import Likes from './Likes';
 
 const CurrentUserAvatar = withUser(UserAvatarView);
+const DesktopCurrentUserAvatar = styled({ height: '100vh' })(CurrentUserAvatar);
 
 const tabRoutes = [{ title: 'Likes', key: 'likes' }, { title: 'Topics', key: 'topics' }];
 
 class Profile extends PureComponent {
   renderLikes = () => (
     <ScrollView>
-      <CurrentUserAvatar />
+      <MediaQuery maxWidth="md"><CurrentUserAvatar /></MediaQuery>
       <Likes />
     </ScrollView>
   );
@@ -26,13 +30,22 @@ class Profile extends PureComponent {
     return (
       <FlexedView>
         <Header titleText="Profile" style={{ zIndex: 2 }} />
-        <TabView
-          routes={tabRoutes}
-          renderScene={SceneMap({
-            likes: this.renderLikes,
-            topics: Topics,
-          })}
-        />
+        <SideBySideView style={{ flex: 1 }}>
+          <Left>
+            <TabView
+              routes={tabRoutes}
+              renderScene={SceneMap({
+                likes: this.renderLikes,
+                topics: Topics,
+              })}
+            />
+          </Left>
+          <MediaQuery minWidth="md">
+            <Right>
+              <DesktopCurrentUserAvatar />
+            </Right>
+          </MediaQuery>
+        </SideBySideView>
       </FlexedView>
     );
   }

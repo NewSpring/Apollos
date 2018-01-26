@@ -11,8 +11,13 @@ import ConnectedImage from '@ui/ConnectedImage';
 import Touchable from '@ui/Touchable';
 import styled from '@ui/styled';
 
-const Container = styled({ alignItems: 'center' })(View);
-const Content = styled({ alignItems: 'center' })(PaddedView);
+const Container = styled(({ theme }) => ({
+  alignItems: 'center',
+  justifyContent: 'center',
+  overflow: 'hidden',
+  backgroundColor: theme.colors.darkSecondary,
+}))(View);
+const Content = styled({ alignItems: 'center', justifyContent: 'center' })(PaddedView);
 
 const copyStyles = styled({ backgroundColor: 'transparent', textAlign: 'center' });
 const Name = copyStyles(H4);
@@ -21,6 +26,11 @@ const City = copyStyles(BodyCopy);
 const StyledAvatar = styled(({ theme }) => ({
   marginRight: 0, marginBottom: theme.sizing.baseUnit / 2,
 }))(Avatar);
+
+const BlurredImage = styled({
+  resizeMode: 'cover',
+  ...StyleSheet.absoluteFillObject,
+})(ConnectedImage);
 
 const enhance = compose(
   setPropTypes({
@@ -56,7 +66,7 @@ const UserAvatarView = enhance(({
 }) => (
   <Container {...viewProps}>
     <BlurView intensity={blurIntensity} tint="dark" style={StyleSheet.absoluteFill}>
-      <ConnectedImage source={photo} style={StyleSheet.absoluteFill} />
+      <BlurredImage source={photo} resizeMode="cover" />
     </BlurView>
     <Content>
       <Touchable onPress={onPhotoPress} disabled={!onPhotoPress}>
