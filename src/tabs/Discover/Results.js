@@ -31,7 +31,8 @@ const Results = compose(
   withProps(({ content = [] } = {}) => ({
     numColumns: 1,
     renderItem: ResultItem,
-    content: uniqBy(content, ({ id }) => id),
+    content: uniqBy(content, ({ link }) => link),
+    keyExtractor: item => item.link || item.id,
   })),
 )(FeedView);
 
