@@ -31,6 +31,7 @@ export class Dashboard extends PureComponent {
     })),
     activityItems: PropTypes.arrayOf(PropTypes.shape({})), // One of many :'(
     history: PropTypes.shape({
+      replace: PropTypes.func,
       push: PropTypes.func,
     }),
     scheduledTransactions: PropTypes.arrayOf(PropTypes.shape({})),
