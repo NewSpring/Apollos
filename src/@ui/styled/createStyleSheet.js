@@ -36,7 +36,7 @@ const createStyleSheet = (stylesToGenerate) => {
     styles[index] = generatedStyle;
   });
 
-  if (styles.length === 1) [styles] = styles;
+  if (styles.length === 1) styles = styles[0]; // eslint-disable-line
   return styles;
 };
 

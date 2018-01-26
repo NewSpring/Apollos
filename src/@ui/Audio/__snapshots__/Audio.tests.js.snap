@@ -20,18 +20,13 @@ exports[`renders correctly 1`] = `
     onResponderTerminate={[Function]}
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
-        undefined,
-      ]
-    }
+    style={null}
     testID={undefined}
     tvParallaxProperties={undefined}
   >
-    <View>
+    <View
+      style={null}
+    >
       <Svg
         height={32}
         viewBox="0 0 24 24"
@@ -60,18 +55,13 @@ exports[`renders correctly 1`] = `
     onResponderTerminate={[Function]}
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
-        undefined,
-      ]
-    }
+    style={null}
     testID={undefined}
     tvParallaxProperties={undefined}
   >
-    <View>
+    <View
+      style={null}
+    >
       <Svg
         height={32}
         viewBox="0 0 24 24"
