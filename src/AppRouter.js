@@ -140,7 +140,7 @@ class AppRouter extends PureComponent {
             <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
             <Route path="/login" cardStackDirection="vertical" component={Auth} />
-            <Route exact path="/settings" component={Settings} />
+            <ProtectedRoute exact path="/settings" component={Settings} />
 
             <Route component={this.tabs} />
           </CardStack>
