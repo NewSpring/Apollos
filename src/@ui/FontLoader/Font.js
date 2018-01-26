@@ -118,7 +118,6 @@ async function _loadSingleFontAsync(name: string, asset: Asset): Promise<void> {
   if (!asset.downloaded) {
     throw new Error(`Failed to download asset for font "${name}"`);
   }
-  console.log(asset.localUri);
   await NativeModules.ExponentFontLoader.loadAsync(_getNativeFontName(name), asset.localUri);
 }
 
