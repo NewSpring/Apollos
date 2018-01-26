@@ -1,28 +1,31 @@
 import React from 'react';
-import { compose, pure } from 'recompose';
+import { compose, pure, withProps } from 'recompose';
 import { View } from 'react-native';
 import styled from '@ui/styled';
 import { withProfileLikes, withRecentLikes } from '@data/likes';
 import { RelatedContentWithoutData } from '@ui/RelatedContent';
-import { H7 } from '@ui/typography';
+import { H7, H5 } from '@ui/typography';
+import ThumbnailCard from '@ui/ThumbnailCard';
+import FeedView from '@ui/FeedView';
 
-const enhance = compose(
-  pure,
-  withProfileLikes,
-);
-
-const RecentLikesHeader = styled(({ theme }) => ({
+const asHeaderText = styled(({ theme }) => ({
   textAlign: 'center',
   paddingHorizontal: theme.sizing.baseUnit,
-}))(H7);
+  paddingVertical: theme.sizing.baseUnit,
+}));
+
+const RecentLikesHeaderText = asHeaderText(H7);
+const YourLikesHeaderText = asHeaderText(H5);
 
 const LikedContent = compose(
-  styled({ backgroundColor: 'transparent' }),
+  styled({ backgroundColor: 'transparent', paddingTop: 0 }),
 )(RelatedContentWithoutData);
 
 const RecentLikes = withRecentLikes(props => (
   <View>
-    <RecentLikesHeader>Check out some of the latest things from NewSpring</RecentLikesHeader>
+    <RecentLikesHeaderText>
+      Check out some of the latest things from NewSpring
+    </RecentLikesHeaderText>
     <LikedContent
       sectionTitle={null}
       {...props}
@@ -30,16 +33,19 @@ const RecentLikes = withRecentLikes(props => (
   </View>
 ));
 
-const Likes = enhance(({ content = [], isLoading, ...otherProps }) => (
-  <View>
-    <LikedContent
-      isLoading={isLoading}
-      sectionTitle={(content.length || isLoading) ? 'Your Likes' : null}
-      content={content}
-      {...otherProps}
-    />
-    {(content.length < 5) ? <RecentLikes /> : null}
-  </View>
-));
+const YourLikesHeader = () => (
+  <YourLikesHeaderText>Your Likes</YourLikesHeaderText>
+);
+
+const Likes = compose(
+  pure,
+  withProfileLikes,
+  withProps(({ content = [], isLoading }) => ({
+    numColumns: 1,
+    ItemComponent: ThumbnailCard,
+    ListHeaderComponent: (content.length || isLoading) ? YourLikesHeader : null,
+    ListFooterComponent: content.length < 5 ? RecentLikes : null,
+  })),
+)(FeedView);
 
 export default Likes;
