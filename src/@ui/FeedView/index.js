@@ -40,7 +40,7 @@ const getItemIsLight = (item) => {
 
 export const defaultFeedItemRenderer = (CardComponent = FeedItemCard) => ({ item }) => ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
-    <FeedItemCard
+    <CardComponent
       id={item.id}
       title={item.title}
       category={item.category}
@@ -100,7 +100,6 @@ const FeedView = enhance(({
   ...otherProps
 }) => {
   let itemRenderer = renderItem;
-
   if (!itemRenderer) {
     itemRenderer = defaultFeedItemRenderer(ItemComponent);
   }

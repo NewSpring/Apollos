@@ -70,9 +70,9 @@ const Header = enhance(({
   titleText,
   right,
   backButton = false,
-  backgroundColor,
   barStyle = 'light-content',
   style = {},
+  backgroundColor,
   children,
   theme,
 }) => (
