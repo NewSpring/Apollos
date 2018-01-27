@@ -6,11 +6,11 @@ import { withPlaceholder, Typography } from '@ui/Placeholder';
 
 const styles = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(2.9),
-  fontWeight: 'bold',
-  fontFamily: 'Colfax-Black',
+  fontFamily: theme.typography.fontFamilySansNeue.bold.default,
   color: theme.colors.primary,
   ...Platform.select({
     ios: {
+      paddingTop: theme.helpers.rem(0.25),
       lineHeight: theme.helpers.verticalRhythm(2.9, 0.945),
     },
     web: {
