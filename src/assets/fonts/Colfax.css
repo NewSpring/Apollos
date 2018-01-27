@@ -1,35 +1,35 @@
 @font-face{
-    font-family: 'Light';
+    font-family: 'Colfax-Light';
     font-style: normal;
     font-weight: 300;
     src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/light.eot"); /* IE9 Compat Modes */
     src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/light.woff") format("woff"), /* Pretty Modern Browsers */
 }
 @font-face{
-    font-family: 'Regular';
+    font-family: 'Colfax-Regular';
     font-style: normal;
     font-weight: 400;
     src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/regular.eot"); /* IE9 Compat Modes */
     src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/regular.woff") format("woff"), /* Pretty Modern Browsers */
 }
 @font-face{
-    font-family: 'Medium';
+    font-family: 'Colfax-Medium';
     font-style: normal;
     font-weight: 500;
-    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/Medium.eot"); /* IE9 Compat Modes */
-    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/Medium.woff") format("woff"), /* Pretty Modern Browsers */
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/medium.eot"); /* IE9 Compat Modes */
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/medium.woff") format("woff"), /* Pretty Modern Browsers */
 }
 @font-face{
-    font-family: 'Bold';
+    font-family: 'Colfax-Bold';
     font-style: normal;
     font-weight: 700;
-    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/Bold.eot"); /* IE9 Compat Modes */
-    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/Bold.woff") format("woff"), /* Pretty Modern Browsers */
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/bold.eot"); /* IE9 Compat Modes */
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/bold.woff") format("woff"), /* Pretty Modern Browsers */
 }
 @font-face{
-    font-family: 'Black';
+    font-family: 'Colfax-Black';
     font-style: normal;
     font-weight: 900;
-    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/Black.eot"); /* IE9 Compat Modes */
-    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/Black.woff") format("woff"), /* Pretty Modern Browsers */
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/black.eot"); /* IE9 Compat Modes */
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/colfax/black.woff") format("woff"), /* Pretty Modern Browsers */
 }
