@@ -18,11 +18,11 @@ storiesOf('@ui/ThumbnailCard', module)
       />
     </View>
   ))
-  .add('With Image', () => (
+  .add('With images', () => (
     <View style={containerStyles}>
       <ThumbnailCard
         title={'Why Jesus is Timeless'}
-        image={'https://picsum.photos/400/400/?random'}
+        images={'https://picsum.photos/400/400/?random'}
       />
     </View>
   ))
@@ -34,12 +34,12 @@ storiesOf('@ui/ThumbnailCard', module)
       />
     </View>
   ))
-  .add('With Category and Image', () => (
+  .add('With Category and images', () => (
     <View style={containerStyles}>
       <ThumbnailCard
         title={'Why Jesus is Timeless'}
         category={'Time Travel'}
-        image={'https://picsum.photos/400/400/?random'}
+        images={'https://picsum.photos/400/400/?random'}
       />
     </View>
   ))
@@ -47,7 +47,7 @@ storiesOf('@ui/ThumbnailCard', module)
     <View style={containerStyles}>
       <ThumbnailCard
         title={'Why Jesus is Timeless'}
-        image={'https://picsum.photos/400/400/?random'}
+        images={'https://picsum.photos/400/400/?random'}
         category={'Time Travel'}
         isLoading
       />
