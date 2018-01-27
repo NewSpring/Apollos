@@ -32,10 +32,10 @@ exports[`the CashAmountIndicator component should render a decimal 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 52.2,
-        "fontWeight": "bold",
         "lineHeight": 54.81,
+        "paddingTop": 4.5,
       }
     }
   >
@@ -92,10 +92,10 @@ exports[`the CashAmountIndicator component should render a number 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 52.2,
-        "fontWeight": "bold",
         "lineHeight": 54.81,
+        "paddingTop": 4.5,
       }
     }
   >
