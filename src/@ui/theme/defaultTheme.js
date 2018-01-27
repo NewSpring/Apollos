@@ -52,6 +52,28 @@ export const typography = {
   baseFontSize: 18,
   baseLineHeight: 20,
   fontFamilySans: null, // force system font
+  fontFamilySansNeue: {
+    light: {
+      default: 'Colfax-Light',
+      italic: 'Colfax-LightItalic',
+    },
+    regular: {
+      default: 'Colfax-Regular',
+      italic: 'Colfax-RegularItalic',
+    },
+    medium: {
+      default: 'Colfax-Medium',
+      italic: 'Colfax-MediumItalic',
+    },
+    bold: {
+      default: 'Colfax-Bold',
+      italic: 'Colfax-BoldItalic',
+    },
+    black: {
+      display: 'Colfax-Black',
+      italic: 'Colfax-BlackItalic',
+    },
+  },
   fontFamilySerif: Platform.OS !== 'android' ? 'Georgia' : 'serif',
 };
 
