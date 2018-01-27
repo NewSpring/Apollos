@@ -618,7 +618,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 42.3,
             "fontWeight": "700",
             "lineHeight": 53.82,
@@ -1834,7 +1834,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 42.3,
             "fontWeight": "700",
             "lineHeight": 53.82,
@@ -2535,7 +2535,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 42.3,
             "fontWeight": "700",
             "lineHeight": 53.82,
@@ -3287,7 +3287,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 42.3,
             "fontWeight": "700",
             "lineHeight": 53.82,
@@ -3988,7 +3988,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 42.3,
             "fontWeight": "700",
             "lineHeight": 53.82,
