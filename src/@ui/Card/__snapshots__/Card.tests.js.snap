@@ -208,7 +208,7 @@ exports[`the Card component should render 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 14,
             "lineHeight": 15.87,
           }

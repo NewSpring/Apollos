@@ -36,7 +36,7 @@ exports[`the FeedItemCard CategoryLabel component should render 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.87,
         }
@@ -84,7 +84,7 @@ exports[`the FeedItemCard CategoryLabel component should render a custom icon 1`
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.87,
         }
@@ -177,7 +177,7 @@ exports[`the FeedItemCard CategoryLabel component should render as Albums 1`] = 
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.87,
         }
@@ -225,7 +225,7 @@ exports[`the FeedItemCard CategoryLabel component should render as a Series 1`] 
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.87,
         }
@@ -273,7 +273,7 @@ exports[`the FeedItemCard CategoryLabel component should render children 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.87,
         }

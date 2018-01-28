@@ -135,7 +135,7 @@ exports[`The RelatedContent component renders correctly 1`] = `
                 style={
                   Object {
                     "color": "#303030",
-                    "fontFamily": null,
+                    "fontFamily": "Colfax-Regular",
                     "fontSize": 14,
                     "lineHeight": 15.87,
                   }

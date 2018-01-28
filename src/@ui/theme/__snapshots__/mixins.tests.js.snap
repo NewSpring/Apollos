@@ -39,7 +39,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.87,
         }
@@ -93,7 +93,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.87,
         }
@@ -147,7 +147,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.87,
         }
@@ -213,7 +213,7 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.87,
         }
@@ -267,7 +267,7 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.87,
         }

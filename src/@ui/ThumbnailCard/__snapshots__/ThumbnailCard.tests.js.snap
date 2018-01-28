@@ -288,7 +288,7 @@ exports[`the ThumbnailCard component should render with a category 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
                   "lineHeight": 15.87,
                 }
@@ -400,7 +400,7 @@ exports[`the ThumbnailCard component should render with a category and image 1`]
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
                   "lineHeight": 15.87,
                 }

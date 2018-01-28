@@ -85,7 +85,7 @@ exports[`the DashboardSubheader component should render 1`] = `
         style={
           Object {
             "color": "#858585",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 14,
             "lineHeight": 15.87,
           }

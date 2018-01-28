@@ -8,7 +8,7 @@ exports[`the H7 component should accept additional props 1`] = `
   style={
     Object {
       "color": "#303030",
-      "fontFamily": null,
+      "fontFamily": "Colfax-Regular",
       "fontSize": 14,
       "lineHeight": 15.87,
     }
@@ -26,7 +26,7 @@ exports[`the H7 component should accept and render passed in styles 1`] = `
   style={
     Object {
       "color": "salmon",
-      "fontFamily": null,
+      "fontFamily": "Colfax-Regular",
       "fontSize": 14,
       "lineHeight": 15.87,
     }
@@ -44,7 +44,7 @@ exports[`the H7 component should render correctly 1`] = `
   style={
     Object {
       "color": "#303030",
-      "fontFamily": null,
+      "fontFamily": "Colfax-Regular",
       "fontSize": 14,
       "lineHeight": 15.87,
     }
