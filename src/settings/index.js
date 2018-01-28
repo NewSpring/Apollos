@@ -2,7 +2,6 @@ import React from 'react';
 import { ScrollView, Linking } from 'react-native';
 import { withProps, compose } from 'recompose';
 import SafeAreaView from '@ui/SafeAreaView';
-import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
 import Header from '@ui/Header';
 import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
@@ -11,6 +10,8 @@ import Touchable from '@ui/Touchable';
 import { H7 } from '@ui/typography';
 import withUser from '@data/withUser';
 import ImagePicker from '@ui/ImagePicker';
+
+import Layout from './Layout';
 
 export { ProfileDetails, ProfileAddress, ChangePassword } from './forms';
 
@@ -24,8 +25,8 @@ const Arrow = withProps({
 })(CellIcon);
 
 const Settings = () => (
-  <FlexedView>
-    <Header titleText="Profile" backButton />
+  <Layout>
+    <Header webEnabled titleText="Settings" backButton />
     <ScrollView>
       <SafeAreaView>
         <PaddedView horizontal={false}>
@@ -121,7 +122,7 @@ const Settings = () => (
         </PaddedView>
       </SafeAreaView>
     </ScrollView>
-  </FlexedView>
+  </Layout>
 );
 
 export default Settings;

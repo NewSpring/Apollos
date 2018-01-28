@@ -1,16 +1,17 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { ProfileDetailsForm, ProfileAddressForm, ChangePasswordForm } from '@ui/forms';
-import FlexedView from '@ui/FlexedView';
 import Header from '@ui/Header';
 
+import Layout from './Layout';
+
 const makeFormScreen = (Form, title = 'Title') => props => (
-  <FlexedView>
-    <Header titleText={title} backButton />
+  <Layout>
+    <Header webEnabled titleText={title} backButton />
     <ScrollView>
       <Form {...props} />
     </ScrollView>
-  </FlexedView>
+  </Layout>
 );
 
 export const ProfileDetails = makeFormScreen(ProfileDetailsForm, 'Personal Details');

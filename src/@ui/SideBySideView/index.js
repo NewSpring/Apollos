@@ -6,11 +6,11 @@ import { enhancer as mediaQuery } from '@ui/MediaQuery';
 export { default as Right } from './Right';
 export { default as Left } from './Left';
 
-const SideBySideView = styled(({ reversed = false }) => ({
+const SideBySideView = styled(({ reversed = false, stretched = true }) => ({
   flexDirection: reversed ? 'row-reverse' : 'row',
   flexWrap: 'nowrap',
   justifyContent: 'space-between',
-  alignItems: 'stretch',
+  alignItems: stretched ? 'stretch' : 'center',
 }))(View);
 
 const ResponsiveSideBySideView = compose(

@@ -2,10 +2,10 @@ import React from 'react';
 import { View, StatusBar, Platform } from 'react-native';
 import SafeAreaView from '@ui/SafeAreaView';
 import PropTypes from 'prop-types';
-import { compose, setPropTypes, branch, renderNothing, pure, defaultProps } from 'recompose';
+import { compose, setPropTypes, pure, branch, renderNothing, defaultProps, renderComponent } from 'recompose';
 import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
-import { H6 } from '@ui/typography';
+import { H2, H6 } from '@ui/typography';
 
 import BackButton from './BackButton';
 
@@ -15,6 +15,15 @@ const StyledHeaderBar = styled(({ theme }) => ({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
+  ...Platform.select({
+    web: {
+      height: undefined,
+      paddingHorizontal: theme.sizing.baseUnit,
+      paddingVertical: theme.sizing.baseUnit,
+      paddingTop: theme.sizing.baseUnit * 2.5,
+      justifyContent: 'flex-start',
+    },
+  }),
 }), 'Header.Bar')(View);
 
 const HeaderContainer = styled(({ theme }) => ({
@@ -24,20 +33,35 @@ const HeaderContainer = styled(({ theme }) => ({
       paddingTop: 25, // todo: this is currently required as SafeAreaView isn't
       // properly adding padding on android.
     },
+    web: {
+      backgroundColor: theme.colors.background.paper,
+    },
   }),
 }), 'Header.Container')(SafeAreaView);
 
-const StyledHeaderText = styled(({ theme, barStyle }) => ({
-  color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
-}), 'Header.Text')(H6);
+const StyledHeaderText = compose(
+  branch(() => Platform.OS === 'web',
+    renderComponent(H2),
+    styled(({ theme, barStyle }) => ({
+      color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
+    }), 'Header.Text'),
+  ),
+)(H6);
 
-const RightContainer = styled({
+const RightContainer = styled(({ theme }) => ({
   position: 'absolute',
   right: 4,
   top: 0,
   bottom: 0,
   justifyContent: 'center',
-}, 'Header.RightContainer')(View);
+  ...Platform.select({
+    web: {
+      right: theme.sizing.baseUnit,
+      top: theme.sizing.baseUnit,
+      justifyContent: 'flex-start',
+    },
+  }),
+}), 'Header.RightContainer')(View);
 
 const enhance = compose(
   defaultProps({
@@ -46,12 +70,14 @@ const enhance = compose(
     children: null,
   }),
   setPropTypes({
+    webEnabled: PropTypes.bool,
     titleText: PropTypes.string,
     backButton: PropTypes.bool,
     barStyle: PropTypes.oneOf(['light-content', 'dark-content']),
     children: PropTypes.node,
   }),
-  withThemeMixin(({ theme, barStyle }) => ({
+  branch(({ webEnabled }) => !webEnabled && Platform.OS === 'web', renderNothing),
+  branch(() => Platform.OS !== 'web', withThemeMixin(({ theme, barStyle }) => ({
     type: (barStyle === 'light-content') ? 'dark' : 'light',
     colors: {
       background: {
@@ -59,10 +85,9 @@ const enhance = compose(
         default: theme.colors.background.primary,
       },
     },
-  })),
+  }))),
   withTheme(),
   pure,
-  branch(() => Platform.OS === 'web', renderNothing),
 );
 
 const Header = enhance(({

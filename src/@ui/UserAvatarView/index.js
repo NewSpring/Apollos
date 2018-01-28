@@ -77,7 +77,11 @@ const UserAvatarView = enhance(({
         <BlurredImage source={photo} resizeMode="cover" />
       </BlurView>
       <Content>
-        <ImageContainer onPress={onPhotoPress} disabled={!allowProfileImageChange && !onPhotoPress}>
+        <ImageContainer
+          onPress={onPhotoPress}
+          disabled={!allowProfileImageChange && !onPhotoPress}
+          webWrapperStyle={{ alignItems: 'center' }}
+        >
           <StyledAvatar source={photo} size="large" />
         </ImageContainer>
         <Name>{firstName} {lastName}</Name>
