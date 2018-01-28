@@ -10,7 +10,6 @@ exports[`the H2 component should accept additional props 1`] = `
       "color": "#303030",
       "fontFamily": "Colfax-Bold",
       "fontSize": 42.3,
-      "fontWeight": "700",
       "lineHeight": 53.82,
     }
   }
@@ -29,7 +28,6 @@ exports[`the H2 component should accept and render passed in styles 1`] = `
       "color": "salmon",
       "fontFamily": "Colfax-Bold",
       "fontSize": 42.3,
-      "fontWeight": "700",
       "lineHeight": 53.82,
     }
   }
@@ -48,7 +46,6 @@ exports[`the H2 component should render correctly 1`] = `
       "color": "#303030",
       "fontFamily": "Colfax-Bold",
       "fontSize": 42.3,
-      "fontWeight": "700",
       "lineHeight": 53.82,
     }
   }

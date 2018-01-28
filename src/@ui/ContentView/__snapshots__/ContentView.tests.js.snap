@@ -18,7 +18,6 @@ exports[`the ContentView component renders 1`] = `
           "color": "#303030",
           "fontFamily": "Colfax-Bold",
           "fontSize": 42.3,
-          "fontWeight": "700",
           "lineHeight": 53.82,
         }
       }
@@ -204,7 +203,6 @@ exports[`the ContentView component renders with images 1`] = `
           "color": "#303030",
           "fontFamily": "Colfax-Bold",
           "fontSize": 42.3,
-          "fontWeight": "700",
           "lineHeight": 53.82,
         }
       }
@@ -326,7 +324,6 @@ exports[`the ContentView component renders with video 1`] = `
           "color": "#303030",
           "fontFamily": "Colfax-Bold",
           "fontSize": 42.3,
-          "fontWeight": "700",
           "lineHeight": 53.82,
         }
       }
