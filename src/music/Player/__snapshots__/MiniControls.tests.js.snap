@@ -57,9 +57,8 @@ exports[`The MiniControls component should render 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 15.75,
-            "fontWeight": "700",
             "height": 20,
             "lineHeight": 17.85,
             "overflow": "hidden",

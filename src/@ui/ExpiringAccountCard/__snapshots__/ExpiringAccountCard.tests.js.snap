@@ -146,9 +146,8 @@ exports[`the ExpiringAccountCard component should render with name, expirationDa
           style={
             Object {
               "color": "#c64f55",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 15.75,
-              "fontWeight": "700",
               "lineHeight": 17.85,
             }
           }

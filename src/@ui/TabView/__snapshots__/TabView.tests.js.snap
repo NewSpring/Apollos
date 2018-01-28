@@ -189,9 +189,8 @@ exports[`TabView Component renders 1`] = `
                   style={
                     Object {
                       "color": "#ffffff",
-                      "fontFamily": null,
+                      "fontFamily": "Colfax-Bold",
                       "fontSize": 15.75,
-                      "fontWeight": "700",
                       "lineHeight": 17.85,
                     }
                   }
@@ -254,9 +253,8 @@ exports[`TabView Component renders 1`] = `
                   style={
                     Object {
                       "color": "#ffffff",
-                      "fontFamily": null,
+                      "fontFamily": "Colfax-Bold",
                       "fontSize": 15.75,
-                      "fontWeight": "700",
                       "lineHeight": 17.85,
                     }
                   }

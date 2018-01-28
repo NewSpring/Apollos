@@ -26,9 +26,8 @@ exports[`The Header component should render correctly 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
-          "fontWeight": "700",
           "lineHeight": 17.85,
         }
       }
@@ -108,9 +107,8 @@ exports[`The Header component should render with a back button correctly 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
-          "fontWeight": "700",
           "lineHeight": 17.85,
         }
       }

@@ -161,9 +161,8 @@ exports[`the TransactionCard component should render Failure 1`] = `
           style={
             Object {
               "color": "#6bac43",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 15.75,
-              "fontWeight": "700",
               "lineHeight": 17.85,
             }
           }
@@ -362,9 +361,8 @@ exports[`the TransactionCard component should render Success 1`] = `
           style={
             Object {
               "color": "#6bac43",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 15.75,
-              "fontWeight": "700",
               "lineHeight": 17.85,
             }
           }
@@ -563,9 +561,8 @@ exports[`the TransactionCard component should render scheduled payments 1`] = `
           style={
             Object {
               "color": "#6bac43",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 15.75,
-              "fontWeight": "700",
               "lineHeight": 17.85,
             }
           }

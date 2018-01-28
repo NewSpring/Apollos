@@ -31,9 +31,8 @@ exports[`the ContentView component renders 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
-          "fontWeight": "700",
           "lineHeight": 17.85,
         }
       }
@@ -216,9 +215,8 @@ exports[`the ContentView component renders with images 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
-          "fontWeight": "700",
           "lineHeight": 17.85,
         }
       }
@@ -337,9 +335,8 @@ exports[`the ContentView component renders with video 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
-          "fontWeight": "700",
           "lineHeight": 17.85,
         }
       }
