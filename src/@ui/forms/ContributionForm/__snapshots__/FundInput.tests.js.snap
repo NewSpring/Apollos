@@ -66,9 +66,8 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 25.2,
-                "fontWeight": "700",
                 "lineHeight": 31.28,
                 "opacity": 0.5,
               }
@@ -587,9 +586,8 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 25.2,
-                "fontWeight": "700",
                 "lineHeight": 31.28,
                 "opacity": 0.5,
               }
@@ -1108,9 +1106,8 @@ exports[`The FrequencyInput component should render correctly with initial state
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 25.2,
-                "fontWeight": "700",
                 "lineHeight": 31.28,
                 "opacity": 0.5,
               }

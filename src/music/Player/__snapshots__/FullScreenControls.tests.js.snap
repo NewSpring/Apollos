@@ -94,9 +94,8 @@ exports[`The FullScreenControls component should render 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
-            "fontWeight": "700",
             "lineHeight": 31.28,
             "textAlign": "center",
           }

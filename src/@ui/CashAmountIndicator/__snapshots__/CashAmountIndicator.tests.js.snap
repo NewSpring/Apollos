@@ -132,9 +132,8 @@ exports[`the CashAmountIndicator component should render accept different sizes 
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 25.2,
-        "fontWeight": "700",
         "lineHeight": 31.28,
       }
     }
@@ -163,9 +162,8 @@ exports[`the CashAmountIndicator component should render accept different sizes 
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 25.2,
-        "fontWeight": "700",
         "lineHeight": 31.28,
       }
     }

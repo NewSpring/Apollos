@@ -82,9 +82,8 @@ exports[`the Card component number box should grow elegantly with larger numbers
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 25.2,
-              "fontWeight": "700",
               "lineHeight": 31.28,
             }
           }
@@ -143,9 +142,8 @@ exports[`the Card component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 25.2,
-              "fontWeight": "700",
               "lineHeight": 31.28,
             }
           }
@@ -450,9 +448,8 @@ exports[`the Card component should render a number box 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 25.2,
-              "fontWeight": "700",
               "lineHeight": 31.28,
             }
           }
@@ -547,9 +544,8 @@ exports[`the Card component should render card details 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 25.2,
-              "fontWeight": "700",
               "lineHeight": 31.28,
             }
           }
@@ -703,9 +699,8 @@ exports[`the Card component should render card details with date 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 25.2,
-              "fontWeight": "700",
               "lineHeight": 31.28,
             }
           }

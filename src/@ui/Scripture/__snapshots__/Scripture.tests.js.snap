@@ -15,9 +15,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -47,9 +46,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -767,9 +765,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -1487,9 +1484,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -2185,9 +2181,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -2905,9 +2900,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -3625,9 +3619,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -4345,9 +4338,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -5087,9 +5079,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -5829,9 +5820,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -6549,9 +6539,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -7299,9 +7288,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -7997,9 +7985,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -8717,9 +8704,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -9415,9 +9401,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -10157,9 +10142,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -10855,9 +10839,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -11575,9 +11558,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -12273,9 +12255,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -12993,9 +12974,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -13757,9 +13737,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -14477,9 +14456,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
@@ -15197,9 +15175,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
-          "fontWeight": "700",
           "lineHeight": 31.28,
         }
       }
