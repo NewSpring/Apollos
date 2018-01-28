@@ -16,6 +16,8 @@ import { H7 } from '@ui/typography';
 import Topics from './Topics';
 import Likes from './Likes';
 
+const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
+
 const CurrentUserAvatar = withUser(UserAvatarView);
 const DesktopCurrentUserAvatar = styled({ height: '100vh' })(CurrentUserAvatar);
 
@@ -25,7 +27,7 @@ const enhance = shouldUpdate(() => false);
 
 const Profile = enhance(() => (
   <FlexedView>
-    <SideBySideView style={{ flex: 1 }}>
+    <FlexedSideBySideView>
       <Left>
         <Header
           webEnabled
@@ -54,7 +56,7 @@ const Profile = enhance(() => (
           />
         </Right>
       </MediaQuery>
-    </SideBySideView>
+    </FlexedSideBySideView>
   </FlexedView>
 ));
 

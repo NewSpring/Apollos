@@ -6,13 +6,15 @@ import { H7 } from '@ui/typography';
 import Icon from '@ui/Icon';
 import styled from '@ui/styled';
 
-const Row = styled({ flexDirection: 'row', alignItems: 'center' })(View);
+const Row = styled({ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' })(View);
 
 const Container = styled(({ theme }) => ({
   position: 'absolute',
   left: 4,
   top: 0,
   bottom: 0,
+  alignItems: 'center',
+  justifyContent: 'center',
   ...Platform.select({
     web: {
       left: theme.sizing.baseUnit,
