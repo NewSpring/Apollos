@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
-import { compose, withProps, mapProps } from 'recompose';
+import { compose, withProps, withPropsOnChange } from 'recompose';
 import { get, findIndex } from 'lodash';
 import { shuffle } from 'shuffle-seed';
 import Audio from '@ui/Audio';
@@ -27,7 +27,9 @@ const enhance = compose(
   withNowPlaying,
   withProps(({ nowPlaying }) => ({ id: nowPlaying && nowPlaying.albumId })),
   withPlaylist,
-  mapProps(({
+  withPropsOnChange([
+    'nowPlaying', 'content', 'setNowPlaying', 'children',
+  ], ({
     nowPlaying, content, setNowPlaying, ...otherProps
   }) => ({
     ...otherProps,

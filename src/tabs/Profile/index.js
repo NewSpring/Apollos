@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react';
-import { ScrollView, View } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
+import { shouldUpdate } from 'recompose';
 import withUser from '@data/withUser';
 // import withTopics from '@data/withTopics';
 import Header from '@ui/Header';
@@ -22,55 +23,46 @@ const DesktopCurrentUserAvatar = styled({ height: '100vh' })(CurrentUserAvatar);
 
 const tabRoutes = [{ title: 'Likes', key: 'likes' }, { title: 'Topics', key: 'topics' }];
 
-class Profile extends PureComponent {
-  renderLikes = () => (
-    <ScrollView>
-      <MediaQuery maxWidth="md"><CurrentUserAvatar allowProfileImageChange /></MediaQuery>
-      <Likes />
-    </ScrollView>
-  );
+const enhance = shouldUpdate(() => false);
 
-  render() {
-    return (
-      <FlexedView>
-        <Header
-          titleText="Profile"
-          right={
-            <Link to="/settings">
-              <View><Icon name="settings" size={24} /></View>
-            </Link>
-          }
+const Profile = enhance(() => (
+  <FlexedView>
+    <Header
+      titleText="Profile"
+      right={
+        <Link to="/settings">
+          <View><Icon name="settings" size={24} /></View>
+        </Link>
+      }
+    />
+    <SideBySideView style={{ flex: 1 }}>
+      <Left>
+        <MediaQuery minWidth="md">
+          {/* Todo: replace this with a better <Header> component */}
+          <PaddedView>
+            <SideBySideView>
+              <H2>Profile</H2>
+              <Link to="/settings">
+                <View><Icon name="settings" size={48} /></View>
+              </Link>
+            </SideBySideView>
+          </PaddedView>
+        </MediaQuery>
+        <TabView
+          routes={tabRoutes}
+          renderScene={SceneMap({
+            likes: Likes, // this.renderLikes,
+            topics: Topics,
+          })}
         />
-        <SideBySideView style={{ flex: 1 }}>
-          <Left>
-            <MediaQuery minWidth="md">
-              {/* Todo: replace this with a better <Header> component */}
-              <PaddedView>
-                <SideBySideView>
-                  <H2>Profile</H2>
-                  <Link to="/settings">
-                    <View><Icon name="settings" size={48} /></View>
-                  </Link>
-                </SideBySideView>
-              </PaddedView>
-            </MediaQuery>
-            <TabView
-              routes={tabRoutes}
-              renderScene={SceneMap({
-                likes: this.renderLikes,
-                topics: Topics,
-              })}
-            />
-          </Left>
-          <MediaQuery minWidth="md">
-            <Right>
-              <DesktopCurrentUserAvatar allowProfileImageChange />
-            </Right>
-          </MediaQuery>
-        </SideBySideView>
-      </FlexedView>
-    );
-  }
-}
+      </Left>
+      <MediaQuery minWidth="md">
+        <Right>
+          <DesktopCurrentUserAvatar allowProfileImageChange />
+        </Right>
+      </MediaQuery>
+    </SideBySideView>
+  </FlexedView>
+));
 
 export default Profile;

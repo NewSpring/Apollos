@@ -7,6 +7,11 @@ import { RelatedContentWithoutData } from '@ui/RelatedContent';
 import { H7, H5 } from '@ui/typography';
 import ThumbnailCard from '@ui/ThumbnailCard';
 import FeedView from '@ui/FeedView';
+import MediaQuery from '@ui/MediaQuery';
+import withUser from '@data/withUser';
+import UserAvatarView from '@ui/UserAvatarView';
+
+const CurrentUserAvatar = withUser(UserAvatarView);
 
 const asHeaderText = styled(({ theme }) => ({
   textAlign: 'center',
@@ -34,7 +39,10 @@ const RecentLikes = withRecentLikes(props => (
 ));
 
 const YourLikesHeader = () => (
-  <YourLikesHeaderText>Your Likes</YourLikesHeaderText>
+  <View>
+    <MediaQuery maxWidth="md"><CurrentUserAvatar allowProfileImageChange /></MediaQuery>
+    <YourLikesHeaderText>Your Likes</YourLikesHeaderText>
+  </View>
 );
 
 const Likes = compose(
@@ -46,6 +54,7 @@ const Likes = compose(
     ListHeaderComponent: (content.length || isLoading) ? YourLikesHeader : null,
     ListFooterComponent: content.length < 5 ? RecentLikes : null,
   })),
+  styled({ paddingVertical: 0 }),
 )(FeedView);
 
 export default Likes;
