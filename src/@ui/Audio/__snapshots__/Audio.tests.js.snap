@@ -91,7 +91,7 @@ exports[`renders correctly 1`] = `
         Object {
           "alignItems": "center",
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
           "textAlign": "center",
@@ -211,7 +211,7 @@ exports[`renders correctly 1`] = `
         Object {
           "alignItems": "center",
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
           "textAlign": "center",

@@ -96,7 +96,7 @@ exports[`The DateInput component should render correctly 1`] = `
         Object {
           "backgroundColor": "transparent",
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
           "paddingVertical": 5,

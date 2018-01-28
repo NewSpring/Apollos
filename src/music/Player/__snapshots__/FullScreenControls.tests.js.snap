@@ -290,7 +290,7 @@ exports[`The FullScreenControls component should render 1`] = `
             Object {
               "alignItems": "center",
               "color": "#ffffff",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
               "textAlign": "center",
@@ -410,7 +410,7 @@ exports[`The FullScreenControls component should render 1`] = `
             Object {
               "alignItems": "center",
               "color": "#ffffff",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
               "textAlign": "center",
@@ -562,7 +562,7 @@ exports[`The FullScreenControls component should render 1`] = `
           style={
             Object {
               "color": "#ffffff",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
               "opacity": 0.7,

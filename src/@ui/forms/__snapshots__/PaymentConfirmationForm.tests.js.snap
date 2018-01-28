@@ -42,7 +42,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
         }
@@ -57,7 +57,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
         }
@@ -240,7 +240,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -260,7 +260,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
         "backgroundColor": "transparent",
         "borderRadius": 0,
         "color": "#6bac43",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Regular",
         "fontSize": 18,
         "lineHeight": 20,
         "padding": 0,
@@ -292,7 +292,7 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
         }
@@ -307,7 +307,7 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
         }
@@ -502,7 +502,7 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
         "backgroundColor": "transparent",
         "borderRadius": 0,
         "color": "#6bac43",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Regular",
         "fontSize": 18,
         "lineHeight": 20,
         "padding": 0,
@@ -534,7 +534,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
         }
@@ -549,7 +549,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
         }
@@ -651,7 +651,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -667,7 +667,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -793,7 +793,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -813,7 +813,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         "backgroundColor": "transparent",
         "borderRadius": 0,
         "color": "#6bac43",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Regular",
         "fontSize": 18,
         "lineHeight": 20,
         "padding": 0,

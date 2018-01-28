@@ -8,7 +8,7 @@ exports[`the P component should accept additional props 1`] = `
   style={
     Object {
       "color": "#303030",
-      "fontFamily": null,
+      "fontFamily": "Colfax-Regular",
       "fontSize": 18,
       "lineHeight": 20,
     }
@@ -26,7 +26,7 @@ exports[`the P component should accept and render passed in styles 1`] = `
   style={
     Object {
       "color": "salmon",
-      "fontFamily": null,
+      "fontFamily": "Colfax-Regular",
       "fontSize": 18,
       "lineHeight": 20,
     }
@@ -44,7 +44,7 @@ exports[`the P component should render correctly 1`] = `
   style={
     Object {
       "color": "#303030",
-      "fontFamily": null,
+      "fontFamily": "Colfax-Regular",
       "fontSize": 18,
       "lineHeight": 20,
     }

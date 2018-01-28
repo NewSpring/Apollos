@@ -142,7 +142,7 @@ exports[`the ScheduleCard component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -157,7 +157,7 @@ exports[`the ScheduleCard component should render 1`] = `
           style={
             Object {
               "color": "#505050",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "fontStyle": "italic",
               "lineHeight": 20,
