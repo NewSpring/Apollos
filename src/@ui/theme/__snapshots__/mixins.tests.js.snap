@@ -4,7 +4,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#f7f7f7",
       "flex": 1,
     }
   }
@@ -12,7 +12,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#f7f7f7",
         "flex": 1,
       }
     }
@@ -122,7 +122,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#f7f7f7",
         "flex": 1,
       }
     }
@@ -181,7 +181,7 @@ exports[`withThemeMixin works with dynamic props 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#f7f7f7",
       "flex": 1,
     }
   }
@@ -189,7 +189,7 @@ exports[`withThemeMixin works with dynamic props 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#f7f7f7",
         "flex": 1,
       }
     }

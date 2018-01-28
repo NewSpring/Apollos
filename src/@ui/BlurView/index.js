@@ -5,7 +5,9 @@ import styled from '@ui/styled';
 
 const FilledBlurView = styled(StyleSheet.absoluteFill)(ExpoBlurView);
 
-const BlurView = ({ intensity, tint, children,  ...viewProps }) => (
+const BlurView = ({
+  intensity, tint, children, ...viewProps
+}) => (
   <View {...viewProps}>
     {children}
     <FilledBlurView intensity={intensity} tint={tint} />
