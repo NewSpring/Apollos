@@ -49,9 +49,8 @@ exports[`the ScheduleCard component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 32.4,
-              "fontWeight": "700",
               "lineHeight": 41.22,
             }
           }
@@ -81,9 +80,8 @@ exports[`the ScheduleCard component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 32.4,
-              "fontWeight": "700",
               "lineHeight": 41.22,
             }
           }

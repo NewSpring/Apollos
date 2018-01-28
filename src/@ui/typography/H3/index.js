@@ -6,9 +6,8 @@ import { withPlaceholder, Typography } from '@ui/Placeholder';
 
 const styles = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(1.8),
-  fontFamily: theme.typography.fontFamilySans,
+  fontFamily: theme.typography.fontFamilySansNeue.bold.default,
   lineHeight: theme.helpers.verticalRhythm(1.8, 1.145),
-  fontWeight: '700',
   color: theme.colors.text.primary,
 }), 'H3');
 
