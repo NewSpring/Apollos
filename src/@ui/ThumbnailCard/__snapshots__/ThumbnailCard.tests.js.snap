@@ -53,9 +53,8 @@ exports[`the ThumbnailCard component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 20.02,
-              "fontWeight": "700",
               "lineHeight": 25.46,
             }
           }
@@ -246,9 +245,8 @@ exports[`the ThumbnailCard component should render with a category 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 20.02,
-              "fontWeight": "700",
               "lineHeight": 25.46,
             }
           }
@@ -359,9 +357,8 @@ exports[`the ThumbnailCard component should render with a category and image 1`]
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 20.02,
-              "fontWeight": "700",
               "lineHeight": 25.46,
             }
           }
@@ -491,9 +488,8 @@ exports[`the ThumbnailCard component should render with an image 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 20.02,
-              "fontWeight": "700",
               "lineHeight": 25.46,
             }
           }

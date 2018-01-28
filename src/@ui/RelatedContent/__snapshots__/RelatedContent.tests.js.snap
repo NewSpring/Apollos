@@ -16,9 +16,8 @@ exports[`The RelatedContent component renders correctly 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 20.02,
-        "fontWeight": "700",
         "lineHeight": 25.46,
         "marginBottom": 10,
         "textAlign": "center",
@@ -93,9 +92,8 @@ exports[`The RelatedContent component renders correctly 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 20.02,
-                "fontWeight": "700",
                 "lineHeight": 25.46,
               }
             }
@@ -217,9 +215,8 @@ exports[`The RelatedContent component renders correctly 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 20.02,
-                "fontWeight": "700",
                 "lineHeight": 25.46,
               }
             }
@@ -296,9 +293,8 @@ exports[`The RelatedContent component renders correctly 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 20.02,
-                "fontWeight": "700",
                 "lineHeight": 25.46,
               }
             }
@@ -328,9 +324,8 @@ exports[`The RelatedContent component renders empty state 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 20.02,
-        "fontWeight": "700",
         "lineHeight": 25.46,
         "marginBottom": 10,
         "textAlign": "center",

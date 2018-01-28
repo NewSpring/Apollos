@@ -55,9 +55,8 @@ exports[`The AlbumView component should render 1`] = `
             "backgroundColor": "transparent",
             "color": "#ffffff",
             "flexWrap": "wrap",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
-            "fontWeight": "700",
             "lineHeight": 25.46,
           }
         }
