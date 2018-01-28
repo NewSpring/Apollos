@@ -145,6 +145,7 @@ exports[`the ScheduleCard component should render 1`] = `
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -161,6 +162,7 @@ exports[`the ScheduleCard component should render 1`] = `
               "fontSize": 18,
               "fontStyle": "italic",
               "lineHeight": 20,
+              "paddingTop": 2.7,
             }
           }
         >

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 
 import UIText from './';
@@ -12,6 +12,9 @@ storiesOf('@ui/typography/UIText', module)
     const border = { borderWidth: 1 };
 
     return (
-      <UIText style={border}>UI Text</UIText>
+      <View>
+        <UIText style={border}>UI Text</UIText>
+        <UIText style={border}>{'"True faith means holding nothing back. It means putting every hope in God\'s fidelity to His Promises." ― Francis Chan'}</UIText>
+      </View>
     );
   });

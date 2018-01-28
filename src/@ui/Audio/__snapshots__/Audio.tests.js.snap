@@ -94,6 +94,7 @@ exports[`renders correctly 1`] = `
           "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
           "textAlign": "center",
           "width": 50,
         }
@@ -214,6 +215,7 @@ exports[`renders correctly 1`] = `
           "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
           "textAlign": "center",
           "width": 50,
         }

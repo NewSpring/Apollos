@@ -99,6 +99,7 @@ exports[`the TransactionCard component should render Failure 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -115,6 +116,7 @@ exports[`the TransactionCard component should render Failure 1`] = `
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -284,6 +286,7 @@ exports[`the TransactionCard component should render Success 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -300,6 +303,7 @@ exports[`the TransactionCard component should render Success 1`] = `
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -316,6 +320,7 @@ exports[`the TransactionCard component should render Success 1`] = `
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -484,6 +489,7 @@ exports[`the TransactionCard component should render scheduled payments 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -500,6 +506,7 @@ exports[`the TransactionCard component should render scheduled payments 1`] = `
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -517,6 +524,7 @@ exports[`the TransactionCard component should render scheduled payments 1`] = `
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
             }
           }
         >

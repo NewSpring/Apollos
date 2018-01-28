@@ -152,6 +152,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }
@@ -290,6 +291,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                   "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
+                  "paddingTop": 2.7,
                   "paddingVertical": 5,
                 }
               }
@@ -304,6 +306,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                     "fontFamily": "Colfax-Regular",
                     "fontSize": 18,
                     "lineHeight": 20,
+                    "paddingTop": 2.7,
                   }
                 }
               />
@@ -386,6 +389,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                   "fontSize": 18,
                   "lineHeight": 20,
                   "padding": 0,
+                  "paddingTop": 2.7,
                 }
               }
             >
@@ -465,6 +469,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }
@@ -672,6 +677,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }
@@ -810,6 +816,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                   "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
+                  "paddingTop": 2.7,
                   "paddingVertical": 5,
                 }
               }
@@ -824,6 +831,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                     "fontFamily": "Colfax-Regular",
                     "fontSize": 18,
                     "lineHeight": 20,
+                    "paddingTop": 2.7,
                   }
                 }
               />
@@ -906,6 +914,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                   "fontSize": 18,
                   "lineHeight": 20,
                   "padding": 0,
+                  "paddingTop": 2.7,
                 }
               }
             >
@@ -985,6 +994,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }
@@ -1192,6 +1202,7 @@ exports[`The FrequencyInput component should render correctly with initial state
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }
@@ -1330,6 +1341,7 @@ exports[`The FrequencyInput component should render correctly with initial state
                   "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
+                  "paddingTop": 2.7,
                   "paddingVertical": 5,
                 }
               }
@@ -1344,6 +1356,7 @@ exports[`The FrequencyInput component should render correctly with initial state
                     "fontFamily": "Colfax-Regular",
                     "fontSize": 18,
                     "lineHeight": 20,
+                    "paddingTop": 2.7,
                   }
                 }
               />
@@ -1426,6 +1439,7 @@ exports[`The FrequencyInput component should render correctly with initial state
                   "fontSize": 18,
                   "lineHeight": 20,
                   "padding": 0,
+                  "paddingTop": 2.7,
                 }
               }
             >
@@ -1505,6 +1519,7 @@ exports[`The FrequencyInput component should render correctly with initial state
               "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }

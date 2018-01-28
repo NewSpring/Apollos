@@ -153,6 +153,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -291,6 +292,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                     "fontWeight": "700",
                     "height": 40,
                     "lineHeight": 30,
+                    "paddingTop": 2.7,
                     "paddingVertical": 5,
                   }
                 }
@@ -305,6 +307,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                       "fontFamily": "Colfax-Regular",
                       "fontSize": 18,
                       "lineHeight": 20,
+                      "paddingTop": 2.7,
                     }
                   }
                 />
@@ -387,6 +390,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                     "fontSize": 18,
                     "lineHeight": 20,
                     "padding": 0,
+                    "paddingTop": 2.7,
                   }
                 }
               >
@@ -466,6 +470,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -577,6 +582,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -686,6 +692,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -849,6 +856,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -987,6 +995,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     "fontWeight": "700",
                     "height": 40,
                     "lineHeight": 30,
+                    "paddingTop": 2.7,
                     "paddingVertical": 5,
                   }
                 }
@@ -1001,6 +1010,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                       "fontFamily": "Colfax-Regular",
                       "fontSize": 18,
                       "lineHeight": 20,
+                      "paddingTop": 2.7,
                     }
                   }
                 />
@@ -1083,6 +1093,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     "fontSize": 18,
                     "lineHeight": 20,
                     "padding": 0,
+                    "paddingTop": 2.7,
                   }
                 }
               >
@@ -1162,6 +1173,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -1366,6 +1378,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -1504,6 +1517,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     "fontWeight": "700",
                     "height": 40,
                     "lineHeight": 30,
+                    "paddingTop": 2.7,
                     "paddingVertical": 5,
                   }
                 }
@@ -1518,6 +1532,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                       "fontFamily": "Colfax-Regular",
                       "fontSize": 18,
                       "lineHeight": 20,
+                      "paddingTop": 2.7,
                     }
                   }
                 />
@@ -1600,6 +1615,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     "fontSize": 18,
                     "lineHeight": 20,
                     "padding": 0,
+                    "paddingTop": 2.7,
                   }
                 }
               >
@@ -1674,6 +1690,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -1785,6 +1802,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -1894,6 +1912,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -2057,6 +2076,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -2195,6 +2215,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                     "fontWeight": "700",
                     "height": 40,
                     "lineHeight": 30,
+                    "paddingTop": 2.7,
                     "paddingVertical": 5,
                   }
                 }
@@ -2209,6 +2230,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                       "fontFamily": "Colfax-Regular",
                       "fontSize": 18,
                       "lineHeight": 20,
+                      "paddingTop": 2.7,
                     }
                   }
                 />
@@ -2291,6 +2313,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                     "fontSize": 18,
                     "lineHeight": 20,
                     "padding": 0,
+                    "paddingTop": 2.7,
                   }
                 }
               >
@@ -2370,6 +2393,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -2481,6 +2505,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -2590,6 +2615,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -2803,6 +2829,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -2941,6 +2968,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                     "fontWeight": "700",
                     "height": 40,
                     "lineHeight": 30,
+                    "paddingTop": 2.7,
                     "paddingVertical": 5,
                   }
                 }
@@ -2955,6 +2983,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                       "fontFamily": "Colfax-Regular",
                       "fontSize": 18,
                       "lineHeight": 20,
+                      "paddingTop": 2.7,
                     }
                   }
                 />
@@ -3037,6 +3066,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                     "fontSize": 18,
                     "lineHeight": 20,
                     "padding": 0,
+                    "paddingTop": 2.7,
                   }
                 }
               >
@@ -3116,6 +3146,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -3227,6 +3258,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -3336,6 +3368,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -3499,6 +3532,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -3637,6 +3671,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                     "fontWeight": "700",
                     "height": 40,
                     "lineHeight": 30,
+                    "paddingTop": 2.7,
                     "paddingVertical": 5,
                   }
                 }
@@ -3651,6 +3686,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                       "fontFamily": "Colfax-Regular",
                       "fontSize": 18,
                       "lineHeight": 20,
+                      "paddingTop": 2.7,
                     }
                   }
                 />
@@ -3733,6 +3769,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                     "fontSize": 18,
                     "lineHeight": 20,
                     "padding": 0,
+                    "paddingTop": 2.7,
                   }
                 }
               >
@@ -3812,6 +3849,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -3923,6 +3961,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -4032,6 +4071,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >

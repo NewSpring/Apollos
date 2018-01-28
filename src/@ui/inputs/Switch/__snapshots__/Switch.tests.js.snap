@@ -30,6 +30,7 @@ exports[`The Picker Input component should render correctly 1`] = `
           "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
           "paddingVertical": 5,
         }
       }
