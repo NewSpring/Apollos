@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import moment from 'moment';
 import Providers from '@ui/TestProviders';
 
-import DateInput from './DateInput';
+import DateInput from './';
 
 describe('The DateInput component', () => {
   it('should render correctly', () => {
