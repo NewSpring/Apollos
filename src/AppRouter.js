@@ -2,12 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Platform } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
-import { enhancer as mediaQuery } from '@ui/MediaQuery';
+import { withWindow } from '@ui/MediaQuery';
+import { withTheme } from '@ui/theme';
 import { Router, Route, ProtectedRoute, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@ui/NativeWebRouter';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
 import FlexedView from '@ui/FlexedView';
+import orientation from '@utils/orientation';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -34,7 +36,13 @@ class AppRouter extends PureComponent {
     isLargeScreen: PropTypes.bool,
   }
 
+  constructor(...args) {
+    super(...args);
+    orientation.allow(orientation.Orientation.PORTRAIT_UP);
+  }
+
   componentWillMount() {
+    console.log('mounting');
     if (!previousLocation) previousLocation = this.props.location;
   }
 
@@ -168,7 +176,11 @@ class AppRouter extends PureComponent {
 
 const enhance = compose(
   withRouter,
-  mediaQuery(({ md }) => ({ minWidth: md }), withProps(() => ({ isLargeScreen: true }))),
+  withWindow,
+  withTheme(),
+  withProps(({ theme, window }) => ({
+    isLargeScreen: window.width > theme.breakpoints.md,
+  })),
 );
 
 export default nest(Router, enhance(AppRouter));

@@ -11,6 +11,7 @@ import LogoutButton from '@ui/forms/LogoutButton';
 import PaddedView from '@ui/PaddedView';
 import Header from '@ui/Header';
 import FlexedView from '@ui/FlexedView';
+import LiveNowButton from '@ui/LiveNowButton';
 import withUser from '@data/withUser';
 
 const enhance = withUser;
@@ -54,6 +55,7 @@ const Profile = enhance(({ user, isLoading }) => {
   return (
     <FlexedView>
       <Header titleText="Profile" />
+    <LiveNowButton />
       <ScrollView>
         <PaddedView>
           <UserView />

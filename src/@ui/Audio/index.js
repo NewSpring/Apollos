@@ -84,7 +84,7 @@ export default class Audio extends Component {
   }
 
   componentWillUnmount() {
-    this.sound.unloadAsync();
+    if (this.sound) this.sound.unloadAsync();
   }
 
   onPlaybackStatusUpdate = (soundStatus) => {

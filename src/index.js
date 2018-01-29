@@ -4,6 +4,8 @@ import { nest, withProps } from 'recompose';
 import { ThemeProvider } from '@ui/theme';
 import FontLoader from '@ui/FontLoader';
 import Client from '@data/Client';
+import orientation from '@utils/orientation';
+
 import AppRouter from './AppRouter';
 
 const App = nest(
@@ -12,6 +14,8 @@ const App = nest(
   FontLoader,
   AppRouter,
 );
+
+orientation.allow(orientation.Orientation.PORTRAIT_UP);
 
 export default App;
 
