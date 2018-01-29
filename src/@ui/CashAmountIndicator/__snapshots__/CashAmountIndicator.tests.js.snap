@@ -18,7 +18,9 @@ exports[`the CashAmountIndicator component should render a decimal 1`] = `
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "lineHeight": 41.22,
+        "lineHeight": 58.75,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.5,
       }
     }
   >
@@ -50,7 +52,9 @@ exports[`the CashAmountIndicator component should render a decimal 1`] = `
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "lineHeight": 41.22,
+        "lineHeight": 58.75,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.5,
       }
     }
   >
@@ -77,7 +81,9 @@ exports[`the CashAmountIndicator component should render a number 1`] = `
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "lineHeight": 41.22,
+        "lineHeight": 58.75,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.5,
       }
     }
   >
@@ -109,7 +115,9 @@ exports[`the CashAmountIndicator component should render a number 1`] = `
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "lineHeight": 41.22,
+        "lineHeight": 58.75,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.5,
       }
     }
   >
@@ -151,7 +159,9 @@ exports[`the CashAmountIndicator component should render accept different sizes 
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 42.3,
-        "lineHeight": 53.82,
+        "lineHeight": 58.75,
+        "paddingBottom": 3.6,
+        "paddingTop": 6.3,
       }
     }
   >

@@ -1,4 +1,4 @@
-import { Text } from 'react-native';
+import { Platform, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import styled from '@ui/styled';
@@ -7,8 +7,20 @@ import { withPlaceholder, Typography } from '@ui/Placeholder';
 const styles = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(2.35),
   fontFamily: theme.typography.fontFamilySansNeue.bold.default,
-  lineHeight: theme.helpers.verticalRhythm(2.35, 1.145),
   color: theme.colors.text.primary,
+  ...Platform.select({
+    ios: {
+      paddingTop: theme.helpers.rem(0.35),
+      paddingBottom: theme.helpers.rem(0.2),
+      lineHeight: theme.helpers.verticalRhythm(2.35, 1.25),
+    },
+    android: {
+      lineHeight: theme.helpers.verticalRhythm(2.35, 1.45),
+    },
+    web: {
+      lineHeight: theme.helpers.verticalRhythm(2.35, 1.25),
+    },
+  }),
 }), 'H2');
 
 const H2 = compose(
