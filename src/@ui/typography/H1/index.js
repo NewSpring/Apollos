@@ -10,14 +10,15 @@ const styles = styled(({ theme }) => ({
   color: theme.colors.primary,
   ...Platform.select({
     ios: {
-      paddingTop: theme.helpers.rem(0.25),
-      lineHeight: theme.helpers.verticalRhythm(2.9, 0.945),
-    },
-    web: {
-      lineHeight: theme.helpers.verticalRhythm(2.9, 0.945),
+      paddingTop: theme.helpers.rem(0.5),
+      paddingBottom: theme.helpers.rem(0.2),
+      lineHeight: theme.helpers.verticalRhythm(2.9, 1.05),
     },
     android: {
-      lineHeight: theme.helpers.verticalRhythm(2.9, 1.025),
+      lineHeight: theme.helpers.verticalRhythm(2.9, 1.25),
+    },
+    web: {
+      lineHeight: theme.helpers.verticalRhythm(2.9, 1.05),
     },
   }),
 }), 'H1');
