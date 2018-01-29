@@ -65,7 +65,7 @@ export const ProfileDetailsFormWithoutData = ({
         <Inputs.DateInput
           label="Birthday"
           value={values.birthday}
-          onChangeText={text => setFieldValue('birthday', text)}
+          onChange={text => setFieldValue('birthday', text)}
           onBlur={() => setFieldTouched('birthday', true)}
           error={Boolean(touched.birthday && errors.birthday)}
         />

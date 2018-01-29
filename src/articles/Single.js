@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native';
 import { compose, mapProps, pure } from 'recompose';
 
 import withArticle from '@data/withArticle';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 import Header from '@ui/Header';
 import ContentView, { Title, ByLine, HTMLView } from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
@@ -29,7 +29,7 @@ const ArticleSingle = enhance(({
   id,
   isLoading,
 }) => (
-  <FlexedView>
+  <FlexedRootView>
     <Header titleText="Article" backButton />
     <ScrollView>
       <ContentView {...otherContentProps}>
@@ -46,7 +46,7 @@ const ArticleSingle = enhance(({
         <Link icon="like" />
       </SecondaryNav>
     </MediaQuery>
-  </FlexedView>
+  </FlexedRootView>
 ));
 
 export default ArticleSingle;

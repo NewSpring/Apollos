@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native';
 
 import withSeriesContent from '@data/withSeriesContent';
 import { withIsLoading } from '@ui/isLoading';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 import Header from '@ui/Header';
 import ContentView, { HTMLView } from '@ui/ContentView';
 import Button from '@ui/Button';
@@ -62,7 +62,7 @@ const SeriesSingle = enhance(({
   isLoading,
   theme,
 }) => (
-  <FlexedView>
+  <FlexedRootView>
     <Header
       titleText="Series"
       backButton
@@ -90,6 +90,6 @@ const SeriesSingle = enhance(({
       <Link icon="share" />
       <Link icon="like" />
     </SecondaryNav>
-  </FlexedView>
+  </FlexedRootView>
 ));
 export default SeriesSingle;

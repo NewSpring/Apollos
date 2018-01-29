@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 import { ResponsiveSideBySideView as SideBySideView, Right, Left } from '@ui/SideBySideView';
 import withUser from '@data/withUser';
 import UserAvatarView from '@ui/UserAvatarView';
@@ -15,7 +15,7 @@ const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
 const FlexedLeft = styled({ flex: 1 })(Left);
 
 const Layout = ({ children }) => (
-  <FlexedView>
+  <FlexedRootView>
     <FlexedSideBySideView>
       <FlexedLeft>
         {children}
@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
         </Right>
       </MediaQuery>
     </FlexedSideBySideView>
-  </FlexedView>
+  </FlexedRootView>
 );
 
 Layout.propTypes = {

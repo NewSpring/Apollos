@@ -3,7 +3,7 @@ import { pure, compose } from 'recompose';
 import Header from '@ui/Header';
 import TileNav from '@ui/TileNav';
 import withSections from '@data/withSections';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 
 const TileNavWithSections = withSections(TileNav);
 
@@ -12,10 +12,10 @@ const enhance = compose(
 );
 
 const Sections = enhance(() => (
-  <FlexedView>
+  <FlexedRootView>
     <Header titleText="Sections" />
     <TileNavWithSections />
-  </FlexedView>
+  </FlexedRootView>
 ));
 
 export default Sections;

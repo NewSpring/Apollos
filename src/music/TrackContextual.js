@@ -4,7 +4,7 @@ import { compose, setPropTypes, withProps, defaultProps } from 'recompose';
 import { withPlaylist } from '@data/mediaPlayer';
 import { withThemeMixin } from '@ui/theme';
 import AlbumView from '@ui/AlbumView';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 import PaddedView from '@ui/PaddedView';
 import { getAlbumImageSource } from '@utils/content';
 import { asModal } from '@ui/ModalView';
@@ -15,7 +15,7 @@ import styled from '@ui/styled';
 
 const Container = styled({
   justifyContent: 'flex-end',
-})(FlexedView);
+})(FlexedRootView);
 
 const enhance = compose(
   withProps(({ match: { params: { id, track } } }) => ({ id, track })),

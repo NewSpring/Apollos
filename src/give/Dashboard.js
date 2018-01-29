@@ -13,7 +13,7 @@ import AccountCard from '@ui/AccountCard';
 import ScheduleCard from '@ui/ScheduleCard';
 import TransactionCard from '@ui/TransactionCard';
 import ExpiringAccountCard from '@ui/ExpiringAccountCard';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 import DashboardSubheader from '@ui/DashboardSubheader';
 import ContributionsChartCard from '@ui/ContributionsChartCard';
 import withGivingDashboard from '@data/withGivingDashboard';
@@ -50,7 +50,7 @@ export class Dashboard extends PureComponent {
 
   render() {
     return (
-      <FlexedView>
+      <FlexedRootView>
         <ScrollView>
           <DashboardSubheader
             text="Activity"
@@ -117,7 +117,7 @@ export class Dashboard extends PureComponent {
             </TouchableWithoutFeedback>
           ))}
         </ScrollView>
-      </FlexedView>
+      </FlexedRootView>
     );
   }
 }

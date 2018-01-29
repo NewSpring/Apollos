@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native';
 import { startCase, toLower } from 'lodash';
 
 import withStudy from '@data/withStudy';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 import Header from '@ui/Header';
 import ContentView, { Title, HTMLView } from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
@@ -48,7 +48,7 @@ const Study = enhance(({
   } = { },
   isLoading,
 }) => (
-  <FlexedView>
+  <FlexedRootView>
     <Header
       titleText={title}
       backButton
@@ -67,7 +67,7 @@ const Study = enhance(({
       <Link icon="share" />
       <Link icon="like" />
     </SecondaryNav>
-  </FlexedView>
+  </FlexedRootView>
 ));
 
 export default Study;

@@ -7,7 +7,7 @@ import { Router, Route, ProtectedRoute, Redirect, AndroidBackButton, Switch, mat
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -81,7 +81,7 @@ class AppRouter extends PureComponent {
   tabs = () => { // eslint-disable-line
     // On mobile we render tabs.Layout at this level so that other <Route>s at
     // the root level in the router can render on top of the tabbar
-    const Layout = Platform.OS === 'web' ? FlexedView : tabs.Layout;
+    const Layout = Platform.OS === 'web' ? FlexedRootView : tabs.Layout;
     return (
       <Layout>
         <Switch>
@@ -98,9 +98,9 @@ class AppRouter extends PureComponent {
   render() {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
-    const AppLayout = Platform.OS === 'web' ? tabs.Layout : FlexedView;
+    const AppLayout = Platform.OS === 'web' ? tabs.Layout : FlexedRootView;
     return (
-      <FlexedView>
+      <FlexedRootView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         <Player>
           <AppLayout>
@@ -164,7 +164,7 @@ class AppRouter extends PureComponent {
           </AppLayout>
           {this.isModal ? this.largeScreenModals : null}
         </Player>
-      </FlexedView>
+      </FlexedRootView>
     );
   }
 }

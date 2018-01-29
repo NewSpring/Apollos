@@ -2,7 +2,7 @@ import React from 'react';
 import { pure, compose } from 'recompose';
 import Header from '@ui/Header';
 import FeedView from '@ui/FeedView';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 import withSeries from '@data/withSeries';
 
 const SeriesFeed = withSeries(FeedView);
@@ -12,10 +12,10 @@ const enhance = compose(
 );
 
 const Series = enhance(() => (
-  <FlexedView>
+  <FlexedRootView>
     <Header backButton titleText="All Series" />
     <SeriesFeed />
-  </FlexedView>
+  </FlexedRootView>
 ));
 
 export default Series;

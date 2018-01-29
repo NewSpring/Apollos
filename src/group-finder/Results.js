@@ -4,7 +4,7 @@ import { get, without } from 'lodash';
 import { compose, withProps } from 'recompose';
 
 import Header from '@ui/Header';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 import withGroupFinderResults from '@data/withGroupFinderResults';
 import FeedView from '@ui/FeedView';
 import { parse, stringify } from '@utils/queryString';
@@ -42,7 +42,7 @@ const filterUpdateHandler = ({ query, location, history }) => (newQuery) => {
 };
 
 const Results = enhance(props => (
-  <FlexedView>
+  <FlexedRootView>
     <Header titleText="Group Finder" backButton />
     <FeedView
       content={get(props, 'content.results', [])}
@@ -68,7 +68,7 @@ const Results = enhance(props => (
         </View>
       }
     />
-  </FlexedView>
+  </FlexedRootView>
 ));
 
 export default Results;
