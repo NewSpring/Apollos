@@ -74,9 +74,22 @@ class Transitioner extends PureComponent {
     const transition = nextProps.history.action;
     let toKey = this.keyForLocation(nextProps.location);
 
-    // If new location and current location point to same key,
-    // change entry at current index and exit (no animation)
-    if (this.keyForLocation(this.props.location) === toKey) {
+    // If new location and current location point to the same <Route> object,
+    // we need to decide whether we should animate the transition, or let the <Route>
+    // component do it. Sometimes, <Route>'s render child routes, or respond to multiple
+    // path types. Other times, a route might be pushed multiple times if there's a wildcard in
+    // the route - like '/articles/:article_id'. So, to determine whether we should animate this
+    // transition, or pass it off to the <Route> child, we look for the inclusion of `exact` in the
+    // route config. If the route is exact, we treat the route as a normal card stack transition.
+    // Otherwise, we assume the <Route> renders sub-routes, and let it handle its own animation.
+    let isSameKey = false;
+    if (this.routeChildForLocation(nextProps.location).props.exact) {
+      // if exact matching is enabled on the Route, use key
+      isSameKey = (this.keyForLocation(this.props.location) === toKey);
+    } else {
+      isSameKey = (this.locationsfromSameRoute(nextProps.location, this.props.location));
+    }
+    if (isSameKey) {
       entries[this.state.index] = nextProps.location;
       this.setState(entries);
       return;

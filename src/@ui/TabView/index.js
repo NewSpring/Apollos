@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Dimensions, Platform } from 'react-native';
 import { TabViewAnimated, SceneMap } from 'react-native-tab-view';
 import { compose, withProps, withState, setPropTypes, defaultProps } from 'recompose';
+import isFunction from 'lodash/isFunction';
 import { withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 
@@ -46,12 +47,30 @@ const TabView = compose(
   }),
   withStyles,
   withState('index', 'onIndexChange', ({ initialIndex }) => initialIndex),
-  withProps(props => ({
-    navigationState: { index: props.index, routes: props.routes },
-    initialLayout,
-    renderHeader: props.renderHeader ? props.renderHeader : defaultHeaderRenderer(props),
-  })),
+  withProps((props) => {
+    function onIndexChange(index) {
+      props.onIndexChange(index);
+      if (isFunction(props.onChange)) props.onChange(index);
+    }
+
+    return ({
+      navigationState: {
+        index: props.index,
+        routes: props.routes.map(routeProps => ({
+          ...routeProps,
+          jumpTo(key) {
+            const index = props.routes.findIndex(r => (r.key === key));
+            return props.onIndexChange(index);
+          },
+        })),
+      },
+      initialLayout,
+      renderHeader: props.renderHeader ? props.renderHeader : defaultHeaderRenderer(props),
+      onIndexChange,
+    });
+  }),
 )(TabViewAnimated);
+
 
 export { SceneMap, TabBar };
 export default TabView;

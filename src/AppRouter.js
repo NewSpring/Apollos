@@ -73,7 +73,7 @@ class AppRouter extends PureComponent {
     <Route exact path="/sections" key="sections-modal" component={asModal(tabs.Sections)} />,
     <Route path="/give/checkout" key="give-checkout" component={asModal(give.Checkout)} />,
     <Route path="/give/new-payment-method" key="give-new-payment-method" component={asModal(give.AddAccount)} />,
-    <Route path="/give/payment-methods/:id" key="give-payment-method" component={asModal(give.PaymentMethod)} />,
+    <Route exact path="/give/payment-methods/:id" key="give-payment-method" component={asModal(give.PaymentMethod)} />,
     <Route path="/login" key="login" component={asModal(Auth)} />,
     <Route path="/discover" key="discover" component={asModal(tabs.Discover)} />,
   ];
@@ -90,15 +90,6 @@ class AppRouter extends PureComponent {
           <Route exact path="/groups" component={tabs.Groups} />
           <Route exact path="/discover" component={tabs.Discover} />
           <ProtectedRoute exact path="/profile" component={tabs.Profile} />
-
-          <Route exact path="/give" component={give.Dashboard} />
-          <Route exact path="/give/methods" component={give.PaymentMethods} />
-          <Route exact path="/give/history" component={give.Transactions} />
-          <Route exact path="/give/history/:id" component={give.TransactionDetails} />
-          <Route exact path="/give/now" component={give.Now} />
-          <Route exact path="/give/campaign/:slug" component={give.Campaign} />
-          <Route exact path="/give/schedules/:id" component={give.Schedule} />
-          <Route exact path="/give/thankyou" component={give.ThankYou} />
         </Switch>
       </Layout>
     );
@@ -150,9 +141,16 @@ class AppRouter extends PureComponent {
               <Route exact path="/groups/finder" component={GroupFinderResults} />
               <Route exact path="/groups/:id" component={GroupSingle} />
 
-              <Route path="/give/checkout" component={give.Checkout} cardStackDirection="vertical" />
-              <Route path="/give/new-payment-method" component={give.AddAccount} cardStackDirection="vertical" />
-              <Route path="/give/payment-methods/:id" component={give.PaymentMethod} cardStackDirection="vertical" />
+              <Route exact path="/give/methods" component={give.PaymentMethods} />
+              <Route exact path="/give/campaign/:slug" component={give.Campaign} />
+              <Route exact path="/give/schedules/:id" component={give.Schedule} />
+              <Route exact path="/give/thankyou" component={give.ThankYou} />
+
+              <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
+              <Route path="/give/new-payment-method" cardStackDirection="vertical" component={give.AddAccount} />
+              <Route exact path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
+
+              <Route path="/give" component={give.GiveRoutes} />
 
               <Route path="/login" component={Auth} cardStackDirection="vertical" />
 
