@@ -1,56 +1,18 @@
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
-import flatten from 'lodash/flatten';
-import fetchMoreResolver from '@data/utils/fetchMoreResolver';
+import { compose, withState, withHandlers } from 'recompose';
+import moment from 'moment';
+import withTransactions from './withTransactions';
 
-export const QUERY = gql`
-  query GetTransactions($limit: Int, $skip: Int, $people: [Int], $start: String, $end: String) {
-    transactions(
-      limit: $limit,
-      skip: $skip,
-      people: $people,
-      start: $start,
-      end: $end,
-      cache: false
-    ) {
-      id
-      date
-      status
-      summary
-      person { id, firstName, lastName, photo }
-      details {
-        id
-        amount
-        account { id, name }
-      }
-    }
-  }
-`;
-
-export default graphql(QUERY, {
-  options: (ownProps = {}) => ({
-    variables: {
-      limit: ownProps.limit || 20,
-      skip: ownProps.skip || 0,
+const withTransactionsEngine = compose(
+  withState('dateRange', 'setDateRange'),
+  withHandlers({
+    setFilterDateRange: ({ setDateRange }) => ({ startDate, endDate }, format) => {
+      setDateRange({
+        startDate: moment(startDate, format).format('MM/DD/YYYY'),
+        endDate: moment(endDate, format).format('MM/DD/YYYY'),
+      });
     },
   }),
-  props: ({ ownProps, data } = {}) => ({
-    // NOTE: This should happen in Heighliner
-    transactions: data.transactions && flatten(data.transactions
-      .map(transaction => (transaction.details.map(detail => ({
-        ...detail,
-        date: transaction.date,
-        transactionId: transaction.id,
-        person: transaction.person,
-        year: new Date(transaction.date).getFullYear(),
-      })))),
-    ),
-    isLoading: ownProps.isLoading || data.loading,
-    fetchMore: fetchMoreResolver({
-      collectionName: 'transactions',
-      data,
-    }),
-    refetch: data.refetch,
-  }),
-});
+  withTransactions,
+);
 
+export default withTransactionsEngine;
