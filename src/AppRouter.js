@@ -42,7 +42,6 @@ class AppRouter extends PureComponent {
   }
 
   componentWillMount() {
-    console.log('mounting');
     if (!previousLocation) previousLocation = this.props.location;
   }
 
