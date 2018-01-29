@@ -21,10 +21,9 @@ export const goBackTo = ({ to, history, replace = false }) => {
   }
 
   if (foundMatchingEntry || !replace) {
-    history.go(distance);
-  } else {
-    history.replace(to);
+    return history.go(distance);
   }
+  return history.replace(to);
 };
 
 export default class Link extends Component {
