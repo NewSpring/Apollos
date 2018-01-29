@@ -1,6 +1,8 @@
 import React from 'react';
 import { compose, nest } from 'recompose';
-import { ScrollView } from 'react-native';
+import { ScrollView, Platform } from 'react-native';
+import { TabViewPagerExperimental } from 'react-native-tab-view';
+import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
 import LoginForm from '@ui/forms/LoginForm';
 import SignUpForm from '@ui/forms/SignUpForm';
@@ -27,7 +29,16 @@ const tabRoutes = [
 const Banner = styled(({ theme }) => ({
   alignItems: 'center',
   backgroundColor: theme.colors.primary,
-}))(PaddedView);
+  ...Platform.select({
+    android: {
+      paddingTop: 20, // compensate for status bar
+    },
+  }),
+}))(SafeAreaView);
+
+const BannerContent = styled({ alignItems: 'center' })(PaddedView);
+
+const renderPager = props => <TabViewPagerExperimental {...props} />;
 
 const asBannerText = styled(({ theme }) => ({ color: theme.colors.lightPrimary, textAlign: 'center' }));
 const BannerH3 = asBannerText(H3);
@@ -36,10 +47,13 @@ const BannerH7 = asBannerText(H7);
 const Auth = enhance(() => (
   <ScrollView>
     <Banner>
-      <BannerH3>WELCOME TO NEWSPRING</BannerH3>
-      <BannerH7>Sign In or Create your NewSpring account</BannerH7>
+      <BannerContent>
+        <BannerH3>WELCOME TO NEWSPRING</BannerH3>
+        <BannerH7>Sign In or Create your NewSpring account</BannerH7>
+      </BannerContent>
     </Banner>
     <TabView
+      renderPager={renderPager}
       routes={tabRoutes}
       renderScene={tabSenes}
     />
