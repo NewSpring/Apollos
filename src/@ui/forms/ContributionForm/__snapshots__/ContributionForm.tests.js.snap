@@ -622,7 +622,9 @@ exports[`The ContributionForm component renders correctly 1`] = `
             "color": "#303030",
             "fontFamily": "Colfax-Bold",
             "fontSize": 42.3,
-            "lineHeight": 53.82,
+            "lineHeight": 58.75,
+            "paddingBottom": 3.6,
+            "paddingTop": 6.3,
           }
         }
       >
@@ -1842,7 +1844,9 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
             "color": "#303030",
             "fontFamily": "Colfax-Bold",
             "fontSize": 42.3,
-            "lineHeight": 53.82,
+            "lineHeight": 58.75,
+            "paddingBottom": 3.6,
+            "paddingTop": 6.3,
           }
         }
       >
@@ -2545,7 +2549,9 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
             "color": "#303030",
             "fontFamily": "Colfax-Bold",
             "fontSize": 42.3,
-            "lineHeight": 53.82,
+            "lineHeight": 58.75,
+            "paddingBottom": 3.6,
+            "paddingTop": 6.3,
           }
         }
       >
@@ -3298,7 +3304,9 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
             "color": "#303030",
             "fontFamily": "Colfax-Bold",
             "fontSize": 42.3,
-            "lineHeight": 53.82,
+            "lineHeight": 58.75,
+            "paddingBottom": 3.6,
+            "paddingTop": 6.3,
           }
         }
       >
@@ -4001,7 +4009,9 @@ exports[`The ContributionForm component shows the second fund 1`] = `
             "color": "#303030",
             "fontFamily": "Colfax-Bold",
             "fontSize": 42.3,
-            "lineHeight": 53.82,
+            "lineHeight": 58.75,
+            "paddingBottom": 3.6,
+            "paddingTop": 6.3,
           }
         }
       >

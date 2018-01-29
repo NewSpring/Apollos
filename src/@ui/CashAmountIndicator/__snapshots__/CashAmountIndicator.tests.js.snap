@@ -151,7 +151,9 @@ exports[`the CashAmountIndicator component should render accept different sizes 
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 42.3,
-        "lineHeight": 53.82,
+        "lineHeight": 58.75,
+        "paddingBottom": 3.6,
+        "paddingTop": 6.3,
       }
     }
   >
