@@ -19,7 +19,9 @@ exports[`The FrequencyInput component should render correctly 1`] = `
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "lineHeight": 41.22,
+        "lineHeight": 58.75,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.5,
       }
     }
   >
@@ -214,7 +216,9 @@ exports[`The FrequencyInput component should render correctly 1`] = `
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "lineHeight": 41.22,
+        "lineHeight": 58.75,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.5,
       }
     }
   >
@@ -544,7 +548,9 @@ exports[`The FrequencyInput component should render correctly as the first fund 
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "lineHeight": 41.22,
+        "lineHeight": 58.75,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.5,
       }
     }
   >
@@ -739,7 +745,9 @@ exports[`The FrequencyInput component should render correctly as the first fund 
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "lineHeight": 41.22,
+        "lineHeight": 58.75,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.5,
       }
     }
   >
@@ -1069,7 +1077,9 @@ exports[`The FrequencyInput component should render correctly with initial state
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "lineHeight": 41.22,
+        "lineHeight": 58.75,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.5,
       }
     }
   >
@@ -1264,7 +1274,9 @@ exports[`The FrequencyInput component should render correctly with initial state
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "lineHeight": 41.22,
+        "lineHeight": 58.75,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.5,
       }
     }
   >
