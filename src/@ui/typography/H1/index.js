@@ -18,7 +18,9 @@ const styles = styled(({ theme }) => ({
       lineHeight: theme.helpers.verticalRhythm(2.9, 1.25),
     },
     web: {
-      lineHeight: theme.helpers.verticalRhythm(2.9, 1.05),
+      paddingTop: theme.helpers.rem(0.45),
+      paddingBottom: theme.helpers.rem(0.15),
+      lineHeight: theme.helpers.verticalRhythm(2.9, 1.1),
     },
   }),
 }), 'H1');
