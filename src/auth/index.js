@@ -53,7 +53,7 @@ const Auth = enhance(() => (
       </BannerContent>
     </Banner>
     <TabView
-      renderPager={renderPager}
+      renderPager={Platform.OS === 'android' ? renderPager : undefined}
       routes={tabRoutes}
       renderScene={tabSenes}
     />
