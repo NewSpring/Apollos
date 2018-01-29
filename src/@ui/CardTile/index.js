@@ -52,7 +52,6 @@ const Tile = styled(({ theme }) => ({
   height: '100%',
   aspectRatio: 1,
   borderRadius: theme.sizing.borderRadius,
-  overflow: 'hidden',
   backgroundColor: theme.colors.lightTertiary, // TODO: sort out correct theme var for this color
   ...Platform.select({
     web: {
@@ -64,6 +63,12 @@ const Tile = styled(({ theme }) => ({
       paddingTop: '100%',
     },
   }),
+}))(View);
+
+const OverflowFix = styled(({ theme }) => ({
+  ...StyleSheet.absoluteFillObject,
+  borderRadius: theme.sizing.borderRadius,
+  overflow: 'hidden',
 }))(View);
 
 const WebAspectRatioFix = styled({
@@ -97,45 +102,50 @@ const CardTile = enhance(({
   style: styleProp = {},
   isLoading,
   theme,
+  children,
   ...otherProps
 }) => (
   <TileSpacer>
     <Tile style={styleProp} {...otherProps}>
-      <WebAspectRatioFix>
-        {typeof number === 'undefined' ? null : (
-          <TileNumber size={number.toString().length}>
-            <Placeholder.Media
-              /* placeholder size is calculated the same as TileNumber width and height but slightly
-               * bigger to cover it's corners completely
-               */// eslint-disable-next-line max-len
-              size={theme.helpers.rem(1.25 * (number.toString().length < 2 ? 2 : number.toString().length))}
-              onReady={!isLoading}
-            >
-              <View>
-                <H6>{number}</H6>
-              </View>
-            </Placeholder.Media>
-          </TileNumber>
-        )}
+      <OverflowFix>
+        <WebAspectRatioFix>
+          {typeof number === 'undefined' ? null : (
+            <TileNumber size={number.toString().length}>
+              <Placeholder.Media
+                /* placeholder size is calculated the same as TileNumber width and height but slightly
+                * bigger to cover it's corners completely
+                */// eslint-disable-next-line max-len
+                size={theme.helpers.rem(1.25 * (number.toString().length < 2 ? 2 : number.toString().length))}
+                onReady={!isLoading}
+              >
+                <View>
+                  <H6>{number}</H6>
+                </View>
+              </Placeholder.Media>
+            </TileNumber>
+          )}
 
-        <CardContent>
-          <H4>{startCase(toLower(title))}</H4>
-        </CardContent>
+          <CardContent>
+            <H4>{startCase(toLower(title))}</H4>
+          </CardContent>
 
-        {showDetails ? (
-          <CardActions>
-            <CategoryLabel
-              label={startCase(toLower(byLine))}
-              icon={'video'}
-              isLoading={isLoading}
-              withFlex
-            />
-            {typeof date === 'undefined' ? null : (
-              <H7>{relativeTime(date)}</H7>
-            )}
-          </CardActions>
-        ) : null }
-      </WebAspectRatioFix>
+          {showDetails ? (
+            <CardActions>
+              <CategoryLabel
+                label={startCase(toLower(byLine))}
+                icon={'video'}
+                isLoading={isLoading}
+                withFlex
+              />
+              {typeof date === 'undefined' ? null : (
+                <H7>{relativeTime(date)}</H7>
+              )}
+            </CardActions>
+          ) : null }
+
+          {children}
+        </WebAspectRatioFix>
+      </OverflowFix>
     </Tile>
   </TileSpacer>
 ));

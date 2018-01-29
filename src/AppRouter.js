@@ -18,6 +18,7 @@ import Series, { Sermon, SeriesSingle, SeriesTrailer } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
+import Locations from './locations';
 import Auth from './auth';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
@@ -150,6 +151,8 @@ class AppRouter extends PureComponent {
               <Route exact path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
               <Route path="/give" component={give.GiveRoutes} />
+
+              <Route path="/locations" component={Locations} />
 
               <Route path="/login" component={Auth} cardStackDirection="vertical" />
 
