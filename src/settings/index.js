@@ -21,7 +21,7 @@ const LogoutTouchable = compose(
   withProps(({ logout, history }) => ({
     onPress: () => {
       logout();
-      goBackTo({ to: '/', history });
+      goBackTo({ to: '/', history, replace: true });
     },
   })),
 )(Touchable);
