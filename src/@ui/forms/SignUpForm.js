@@ -32,7 +32,7 @@ const enhance = compose(
         if (props.onSignupSuccess) props.onSignupSuccess(result);
 
         const referrer = get(props, 'location.state.referrer');
-        if (referrer) goBackTo({ to: referrer, history: props.history, replace: true });
+        if (referrer) return goBackTo({ to: referrer, history: props.history, replace: true });
       } catch (e) {
         // todo: show error message from server
       }
