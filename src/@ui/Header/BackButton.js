@@ -17,6 +17,8 @@ const Container = styled(({ theme }) => ({
   justifyContent: 'center',
   ...Platform.select({
     web: {
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
       left: theme.sizing.baseUnit,
       top: theme.sizing.baseUnit,
     },

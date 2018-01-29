@@ -12,13 +12,14 @@ export { ProfileDetails, ProfileAddress, ChangePassword } from './forms';
 const CurrentUserAvatar = withUser(UserAvatarView);
 const DesktopCurrentUserAvatar = styled({ height: '100vh' })(CurrentUserAvatar);
 const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
+const FlexedLeft = styled({ flex: 1 })(Left);
 
 const Layout = ({ children }) => (
   <FlexedView>
     <FlexedSideBySideView>
-      <Left>
+      <FlexedLeft>
         {children}
-      </Left>
+      </FlexedLeft>
       <MediaQuery minWidth="md">
         <Right>
           <DesktopCurrentUserAvatar

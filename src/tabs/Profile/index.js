@@ -7,7 +7,7 @@ import FlexedView from '@ui/FlexedView';
 import TabView, { SceneMap } from '@ui/TabView';
 import UserAvatarView from '@ui/UserAvatarView';
 import MediaQuery from '@ui/MediaQuery';
-import SideBySideView, { Left, Right } from '@ui/SideBySideView';
+import { ResponsiveSideBySideView as SideBySideView, Left, Right } from '@ui/SideBySideView';
 import styled from '@ui/styled';
 import Icon from '@ui/Icon';
 import { Link } from '@ui/NativeWebRouter';
@@ -20,6 +20,7 @@ const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
 
 const CurrentUserAvatar = withUser(UserAvatarView);
 const DesktopCurrentUserAvatar = styled({ height: '100vh' })(CurrentUserAvatar);
+const FlexedLeft = styled({ flex: 1 })(Left);
 
 const tabRoutes = [{ title: 'Likes', key: 'likes' }, { title: 'Topics', key: 'topics' }];
 
@@ -28,7 +29,7 @@ const enhance = shouldUpdate(() => false);
 const Profile = enhance(() => (
   <FlexedView>
     <FlexedSideBySideView>
-      <Left>
+      <FlexedLeft>
         <Header
           webEnabled
           titleText="Profile"
@@ -48,7 +49,7 @@ const Profile = enhance(() => (
             topics: Topics,
           })}
         />
-      </Left>
+      </FlexedLeft>
       <MediaQuery minWidth="md">
         <Right>
           <DesktopCurrentUserAvatar
