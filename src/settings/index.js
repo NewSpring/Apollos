@@ -75,7 +75,7 @@ const Settings = () => (
               </Cell>
             </Link>
             <Divider />
-            <Link to="/give/schedules">
+            <Link to="/give">
               <Cell>
                 <CellText>Scheduled Contributions</CellText>
                 <Arrow />
