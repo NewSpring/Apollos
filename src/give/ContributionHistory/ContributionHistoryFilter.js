@@ -2,11 +2,23 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
   View,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 import TextInput from '@ui/inputs/Text';
 import Button from '@ui/Button';
+import { H7 } from '@ui/typography';
+import styled from '@ui/styled';
+import Icon from '@ui/Icon';
+
+const Row = styled(({ theme }) => ({
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  paddingHorizontal: theme.sizing.baseUnit,
+  paddingVertical: theme.sizing.baseUnit,
+}))(View);
 
 class ContributionHistoryFilter extends PureComponent {
   static propTypes = {
@@ -28,7 +40,28 @@ class ContributionHistoryFilter extends PureComponent {
     isSubmitting: PropTypes.bool,
   };
 
-  render() {
+  static defaultProps = {
+    values: {},
+    touched: {},
+    errors: {},
+    setFieldValue() {},
+    setFieldTouched() {},
+    handleSubmit() {},
+    isSubmitting: false,
+  };
+
+  state = {
+    isVisible: false,
+  };
+
+  toggle = () => {
+    this.setState({
+      isVisible: !this.state.isVisible,
+    });
+  }
+
+  renderFilters = () => {
+    if (!this.state.isVisible) return null;
     return (
       <View>
         <TextInput
@@ -50,6 +83,22 @@ class ContributionHistoryFilter extends PureComponent {
           title="Filter"
           loading={this.props.isSubmitting}
         />
+      </View>
+    );
+  };
+
+  render() {
+    return (
+      <View>
+        <TouchableWithoutFeedback
+          onPress={this.toggle}
+        >
+          <Row>
+            <H7>{'Filter Transactions'}</H7>
+            <Icon name="arrow-next" />
+          </Row>
+        </TouchableWithoutFeedback>
+        {this.renderFilters()}
       </View>
     );
   }
