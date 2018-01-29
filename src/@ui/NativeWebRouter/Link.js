@@ -7,6 +7,9 @@ import { matchPath } from './';
 export const goBackTo = ({ to, history, replace = false }) => {
   let foundMatchingEntry = false;
   let distance = -1;
+
+  if (!history.entries) return history.replace(to);
+
   if (to && history.entries) {
     const routeToPopTo = history.entries.findIndex(location =>
       matchPath(location.pathname, to),
