@@ -55,7 +55,7 @@ const Profile = enhance(({ user, isLoading }) => {
   return (
     <FlexedView>
       <Header titleText="Profile" />
-    <LiveNowButton />
+      <LiveNowButton />
       <ScrollView>
         <PaddedView>
           <UserView />
