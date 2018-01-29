@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from '@ui/Header';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 
 export default function Dashboard() {
   return (
-    <FlexedView>
+    <FlexedRootView>
       <Header titleText="Give Dashboard" />
-    </FlexedView>
+    </FlexedRootView>
   );
 }

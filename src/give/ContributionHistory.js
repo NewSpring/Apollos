@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from '@ui/Header';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 
 export default function ContributionHistory() {
   return (
-    <FlexedView>
+    <FlexedRootView>
       <Header titleText="Contribution History" />
-    </FlexedView>
+    </FlexedRootView>
   );
 }

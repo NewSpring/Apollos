@@ -3,7 +3,7 @@ import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
 import { startCase, toLower } from 'lodash';
 
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 import Header from '@ui/Header';
 import ContentView, { Title, ByLine, HTMLView } from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
@@ -26,7 +26,7 @@ const NewsSingle = enhance(({
     } = {},
   } = { },
 }) => (
-  <FlexedView>
+  <FlexedRootView>
     <Header titleText="News" backButton />
     <ScrollView>
       <ContentView {...otherContentProps}>
@@ -41,7 +41,7 @@ const NewsSingle = enhance(({
         <Link icon="like" />
       </SecondaryNav>
     </MediaQuery>
-  </FlexedView>
+  </FlexedRootView>
 ));
 
 export default NewsSingle;

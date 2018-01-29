@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, setPropTypes } from 'recompose';
 import { withThemeMixin } from '@ui/theme';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 import PaddedView from '@ui/PaddedView';
 import SafeAreaView from '@ui/SafeAreaView';
 import GradientOverlayImage from '@ui/GradientOverlayImage';
@@ -17,7 +17,7 @@ import styled from '@ui/styled';
 const Container = styled(({ theme, backgroundColor }) => ({
   backgroundColor: backgroundColor || theme.colors.background.default,
   justifyContent: 'space-between',
-}))(FlexedView);
+}))(FlexedRootView);
 
 const Titles = styled({
   alignItems: 'center',

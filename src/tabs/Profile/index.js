@@ -3,7 +3,7 @@ import { shouldUpdate } from 'recompose';
 import withUser from '@data/withUser';
 // import withTopics from '@data/withTopics';
 import Header from '@ui/Header';
-import FlexedView from '@ui/FlexedView';
+import FlexedRootView from '@ui/FlexedRootView';
 import TabView, { SceneMap } from '@ui/TabView';
 import UserAvatarView from '@ui/UserAvatarView';
 import MediaQuery from '@ui/MediaQuery';
@@ -27,7 +27,7 @@ const tabRoutes = [{ title: 'Likes', key: 'likes' }, { title: 'Topics', key: 'to
 const enhance = shouldUpdate(() => false);
 
 const Profile = enhance(() => (
-  <FlexedView>
+  <FlexedRootView>
     <FlexedSideBySideView>
       <FlexedLeft>
         <Header
@@ -58,7 +58,7 @@ const Profile = enhance(() => (
         </Right>
       </MediaQuery>
     </FlexedSideBySideView>
-  </FlexedView>
+  </FlexedRootView>
 ));
 
 export default Profile;
