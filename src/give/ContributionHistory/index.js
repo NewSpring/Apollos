@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { compose, withProps } from 'recompose';
 import FlexedView from '@ui/FlexedView';
 import withTransactions from '@data/withTransactions';
 import ContributionHistoryList from './ContributionHistoryList';
@@ -6,11 +8,21 @@ import ContributionHistoryFilter from './ContributionHistoryFilter';
 
 class ContributionHistory extends PureComponent {
   static propTypes = {
-    ...ContributionHistoryList.propTypes,
+    fetchMore: ContributionHistoryList.propTypes.fetchMore,
+    isLoading: ContributionHistoryList.propTypes.isLoading,
+    refetch: ContributionHistoryList.propTypes.refetch,
+    transactions: ContributionHistoryList.propTypes.transactions,
+    onPressNoDataButton: ContributionHistoryList.propTypes.onPressNoDataButton,
+    setFilterDateRange: PropTypes.func,
   };
 
   static defaultProps = {
-    ...ContributionHistoryList.defaultProps,
+    fetchMore: ContributionHistoryList.defaultProps.fetchMore,
+    isLoading: ContributionHistoryList.defaultProps.isLoading,
+    refetch: ContributionHistoryList.defaultProps.refetch,
+    transactions: ContributionHistoryList.defaultProps.transactions,
+    onPressNoDataButton: ContributionHistoryList.defaultProps.onPressNoDataButton,
+    setFilterDateRange() {},
   };
 
   handleFilter = ({ startDate, endDate } = {}) => {
@@ -31,10 +43,18 @@ class ContributionHistory extends PureComponent {
           isLoading={this.props.isLoading}
           refetch={this.props.refetch}
           transactions={this.props.transactions}
+          onPressNoDataButton={this.props.onPressNoDataButton}
         />
       </FlexedView>
     );
   }
 }
 
-export default withTransactions(ContributionHistory);
+const enhance = compose(
+  withTransactions,
+  withProps(props => ({
+    onPressNoDataButton() { props.route.jumpTo('Now'); },
+  })),
+);
+
+export default enhance(ContributionHistory);

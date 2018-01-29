@@ -6,6 +6,10 @@ import PropTypes from 'prop-types';
 import { groupBy, map } from 'lodash';
 import HistoricalContributionCard from '@ui/HistoricalContributionCard';
 import FlatList from '@ui/WebCompatibleFlatList';
+import FlexedView from '@ui/FlexedView';
+import ActivityIndicator from '@ui/ActivityIndicator';
+import { UIText } from '@ui/typography';
+import { ButtonLink } from '@ui/Button';
 import ContributionHistoryHeader from './ContributionHistoryHeader';
 
 class ContributionHistoryList extends PureComponent {
@@ -29,6 +33,7 @@ class ContributionHistoryList extends PureComponent {
         name: PropTypes.string,
       }),
     })),
+    onPressNoDataButton: PropTypes.func,
   };
 
   static defaultProps = {
@@ -36,6 +41,7 @@ class ContributionHistoryList extends PureComponent {
     fetchMore() {},
     refetch() {},
     isLoading: true,
+    onPressNoDataButton() {},
   };
 
   renderItem = ({ item }) => (
@@ -55,7 +61,26 @@ class ContributionHistoryList extends PureComponent {
   );
 
   render() {
+    if (this.props.isLoading) {
+      return (
+        <FlexedView>
+          <ActivityIndicator />
+        </FlexedView>
+      );
+    }
+
     const transactionsPerYear = map(groupBy(this.props.transactions, 'year'), (transactions, year) => ({ year, transactions }));
+    if (transactionsPerYear.length === 0) {
+      return (
+        <UIText>
+          {'We didn\'t find any contributions associated with your account. If you would like to start giving, click '}
+          <ButtonLink onPress={this.props.onPressNoDataButton}>
+            {'here'}
+          </ButtonLink>
+        </UIText>
+      );
+    }
+
     return (
       <FlatList
         refreshing={this.props.isLoading}
