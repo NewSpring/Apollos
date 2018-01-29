@@ -3,10 +3,8 @@ import {
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose } from 'recompose';
 import { groupBy, map } from 'lodash';
 import HistoricalContributionCard from '@ui/HistoricalContributionCard';
-import withTransactions from '@data/withTransactions';
 import FlatList from '@ui/WebCompatibleFlatList';
 import ContributionHistoryHeader from './ContributionHistoryHeader';
 
@@ -73,8 +71,4 @@ class ContributionHistoryList extends PureComponent {
   }
 }
 
-const enhance = compose(
-  withTransactions,
-);
-
-export default enhance(ContributionHistoryList);
+export default ContributionHistoryList;
