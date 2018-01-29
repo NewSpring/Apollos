@@ -40,7 +40,7 @@ const enhance = compose(
         setFieldError('password', 'Your email or password is incorrect'); // todo: show real error message from server
       }
 
-      setSubmitting(false);
+      return setSubmitting(false);
     },
   }),
   setPropTypes({

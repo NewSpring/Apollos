@@ -37,7 +37,7 @@ const enhance = compose(
         // todo: show error message from server
       }
 
-      setSubmitting(false);
+      return setSubmitting(false);
     },
   }),
   setPropTypes({
