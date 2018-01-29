@@ -25,4 +25,6 @@ const Image = compose(
   }), 'Card.Image'),
 )(ConnectedImage);
 
+Image.propTypes = ConnectedImage.propTypes;
+
 export default Image;

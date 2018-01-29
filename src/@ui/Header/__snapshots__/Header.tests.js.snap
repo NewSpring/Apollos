@@ -15,25 +15,10 @@ exports[`The Header component should render correctly 1`] = `
         "flexDirection": "row",
         "height": 50,
         "justifyContent": "center",
+        "paddingHorizontal": 10,
       }
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      barStyle="light-content"
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#ffffff",
-          "fontFamily": null,
-          "fontSize": 15.75,
-          "fontWeight": "700",
-          "lineHeight": 17.85,
-        }
-      }
-    />
-  </View>
+  />
 </RCTSafeAreaView>
 `;
 
@@ -52,6 +37,7 @@ exports[`The Header component should render with a back button correctly 1`] = `
         "flexDirection": "row",
         "height": 50,
         "justifyContent": "center",
+        "paddingHorizontal": 10,
       }
     }
   >
@@ -100,21 +86,6 @@ exports[`The Header component should render with a back button correctly 1`] = `
         </Svg>
       </View>
     </View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      barStyle="light-content"
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#ffffff",
-          "fontFamily": null,
-          "fontSize": 15.75,
-          "fontWeight": "700",
-          "lineHeight": 17.85,
-        }
-      }
-    />
   </View>
 </RCTSafeAreaView>
 `;

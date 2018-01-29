@@ -2,10 +2,10 @@ import React from 'react';
 import Header from '@ui/Header';
 import FlexedView from '@ui/FlexedView';
 
-export default function Discover() {
+export default function ContributionHistory() {
   return (
     <FlexedView>
-      <Header titleText="Discover" />
+      <Header titleText="Contribution History" />
     </FlexedView>
   );
 }

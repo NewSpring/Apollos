@@ -74,6 +74,7 @@ class AppRouter extends PureComponent {
     <Route path="/give/new-payment-method" key="give-new-payment-method" component={asModal(give.AddAccount)} />,
     <Route exact path="/give/payment-methods/:id" key="give-payment-method" component={asModal(give.PaymentMethod)} />,
     <Route path="/login" key="login" component={asModal(Auth)} />,
+    <Route path="/discover" key="discover" component={asModal(tabs.Discover)} />,
   ];
 
   tabs = () => { // eslint-disable-line
@@ -150,14 +151,13 @@ class AppRouter extends PureComponent {
 
               <Route path="/give" component={give.GiveRoutes} />
 
-              <Route path="/login" cardStackDirection="vertical" component={Auth} />
+              <Route path="/login" component={Auth} cardStackDirection="vertical" />
 
               <Route cardStackKey="tabs" component={this.tabs} />
             </CardStack>
           </AppLayout>
           {this.isModal ? this.largeScreenModals : null}
         </Player>
-        {this.isModal ? this.largeScreenModals : null}
       </FlexedView>
     );
   }

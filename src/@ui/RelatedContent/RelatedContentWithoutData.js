@@ -67,7 +67,7 @@ const renderItems = (content = []) => (
       <ThumbnailCard
         title={item.title}
         category={item.channelName}
-        image={getItemImages(item)}
+        images={getItemImages(item)}
         isLoading={item.isLoading}
       />
     </Link>

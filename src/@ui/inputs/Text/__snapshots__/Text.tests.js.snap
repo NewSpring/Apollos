@@ -43,8 +43,10 @@ exports[`The Text Input component should render as a numeric field 1`] = `
         onBlur={[Function]}
         onFocus={[Function]}
         placeholder="Some placeholder"
+        placeholderTextColor="rgba(48, 48, 48, 0.6)"
         style={
           Object {
+            "color": "#303030",
             "fontFamily": null,
             "height": 40,
             "lineHeight": 30,
@@ -197,9 +199,11 @@ exports[`The Text Input component should render as a password field with an icon
         onBlur={[Function]}
         onFocus={[Function]}
         placeholder="Some placeholder"
+        placeholderTextColor="rgba(48, 48, 48, 0.6)"
         secureTextEntry={true}
         style={
           Object {
+            "color": "#303030",
             "fontFamily": null,
             "height": 40,
             "lineHeight": 30,
@@ -362,8 +366,10 @@ exports[`The Text Input component should render as a phone number field 1`] = `
         onBlur={[Function]}
         onFocus={[Function]}
         placeholder="Some placeholder"
+        placeholderTextColor="rgba(48, 48, 48, 0.6)"
         style={
           Object {
+            "color": "#303030",
             "fontFamily": null,
             "height": 40,
             "lineHeight": 30,
@@ -517,8 +523,10 @@ exports[`The Text Input component should render as an email field 1`] = `
         onBlur={[Function]}
         onFocus={[Function]}
         placeholder="Some placeholder"
+        placeholderTextColor="rgba(48, 48, 48, 0.6)"
         style={
           Object {
+            "color": "#303030",
             "fontFamily": null,
             "height": 40,
             "lineHeight": 30,
@@ -669,8 +677,10 @@ exports[`The Text Input component should render correctly 1`] = `
         onBlur={[Function]}
         onFocus={[Function]}
         placeholder="Some placeholder"
+        placeholderTextColor="rgba(48, 48, 48, 0.6)"
         style={
           Object {
+            "color": "#303030",
             "fontFamily": null,
             "height": 40,
             "lineHeight": 30,

@@ -1,3 +1,5 @@
+import { get } from 'lodash';
+
 const getLinkPath = (contentItem) => {
   const id = contentItem.id || contentItem.id;
   const category = contentItem.channelName;
@@ -25,7 +27,7 @@ const getLinkPath = (contentItem) => {
     case 'newspring_now':
       return `/events/${id}`;
     default:
-      return null;
+      return get(contentItem, 'meta.urlTitle', '#');
   }
 };
 

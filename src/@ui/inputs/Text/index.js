@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import { compose, withProps, pure } from 'recompose';
 import { Platform, TextInput, Animated } from 'react-native';
+import Color from 'color';
+import { withTheme } from '@ui/theme';
 
 import FloatingLabel from '../FloatingLabel';
 import InputUnderline from '../InputUnderline';
@@ -49,6 +51,7 @@ const propsForInputType = {
 };
 
 const enhance = compose(
+  withTheme(),
   pure,
   withFocusAnimation,
   withProps(({ type, ...props }) => ({
@@ -65,6 +68,7 @@ const Text = enhance(({
   wrapperStyle,
   error,
   disabled = false,
+  theme,
   focusAnimation: focusAnimationInput, // from withFocusAnimation
   ...textInputProps
 }) => {
@@ -74,7 +78,14 @@ const Text = enhance(({
       <AddonRow>
         <InputAddon>{prefix}</InputAddon>
         <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
-          <StyledTextInput {...textInputProps} editable={!disabled} value={`${value || ''}`} />
+          <StyledTextInput
+            placeholderTextColor={
+              Color(theme.colors.text.primary).fade(theme.alpha.low).string()
+            }
+            {...textInputProps}
+            editable={!disabled}
+            value={`${value || ''}`}
+          />
         </Animated.View>
         <InputAddon>{suffix}</InputAddon>
       </AddonRow>
