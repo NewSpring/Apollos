@@ -5,7 +5,7 @@ import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
 import Header from '@ui/Header';
 import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
-import { Link } from '@ui/NativeWebRouter';
+import { Link, withRouter, goBackTo } from '@ui/NativeWebRouter';
 import Touchable from '@ui/Touchable';
 import { H7 } from '@ui/typography';
 import withUser from '@data/withUser';
@@ -17,7 +17,13 @@ export { ProfileDetails, ProfileAddress, ChangePassword } from './forms';
 
 const LogoutTouchable = compose(
   withUser,
-  withProps(({ logout }) => ({ onPress: logout })),
+  withRouter,
+  withProps(({ logout, history }) => ({
+    onPress: () => {
+      logout();
+      goBackTo({ to: '/', history });
+    },
+  })),
 )(Touchable);
 
 const Arrow = withProps({
