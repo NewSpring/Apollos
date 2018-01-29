@@ -4,7 +4,7 @@ import { compose, branch, renderComponent } from 'recompose';
 import withUser from '@data/withUser/withIsLoggedIn';
 import { Route, Redirect } from 'react-router';
 import ActivityIndicator from '@ui/ActivityIndicator';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 
 const RedirectWithReferrer = ({ path }) => (
   <Redirect
@@ -25,9 +25,9 @@ const ActivityIndicatorWhileLoading = ({
   ...otherProps
 }) => (
   <Route {...otherProps}>
-    <FlexedRootView>
+    <BackgroundView>
       <ActivityIndicator />
-    </FlexedRootView>
+    </BackgroundView>
   </Route>
 );
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { pure, compose } from 'recompose';
 import Header from '@ui/Header';
 import FeedView from '@ui/FeedView';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import withStudies from '@data/withStudies';
 
 const StudiesFeed = withStudies(FeedView);
@@ -12,10 +12,10 @@ const enhance = compose(
 );
 
 const Studies = enhance(() => (
-  <FlexedRootView>
+  <BackgroundView>
     <Header backButton titleText="All Studies" />
     <StudiesFeed />
-  </FlexedRootView>
+  </BackgroundView>
 ));
 
 export default Studies;

@@ -2,7 +2,7 @@ import React from 'react';
 import { pure, compose } from 'recompose';
 import Header from '@ui/Header';
 import FeedView from '@ui/FeedView';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import withNewsStories from '@data/withNewsStories';
 
 const NewsFeed = withNewsStories(FeedView);
@@ -12,10 +12,10 @@ const enhance = compose(
 );
 
 const News = enhance(() => (
-  <FlexedRootView>
+  <BackgroundView>
     <Header backButton titleText="All News" />
     <NewsFeed />
-  </FlexedRootView>
+  </BackgroundView>
 ));
 
 export default News;

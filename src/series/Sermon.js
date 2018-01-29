@@ -3,7 +3,7 @@ import { compose, mapProps, pure } from 'recompose';
 import { ScrollView } from 'react-native';
 import { startCase, toLower } from 'lodash';
 
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import ContentView, { Title, SubHeading, HTMLView } from '@ui/ContentView';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
@@ -45,7 +45,7 @@ const Sermon = enhance(({
   } = {},
   isLoading,
 }) => (
-  <FlexedRootView>
+  <BackgroundView>
     <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
     <ScrollView>
       <ContentView {...otherContentProps}>
@@ -63,7 +63,7 @@ const Sermon = enhance(({
       <Link icon="share" />
       <Link icon="like" />
     </SecondaryNav>
-  </FlexedRootView>
+  </BackgroundView>
 ));
 
 export default Sermon;

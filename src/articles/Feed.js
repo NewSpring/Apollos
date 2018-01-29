@@ -2,7 +2,7 @@ import React from 'react';
 import { pure, compose } from 'recompose';
 import Header from '@ui/Header';
 import FeedView from '@ui/FeedView';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import withArticles from '@data/withArticles';
 
 const ArticlesFeed = withArticles(FeedView);
@@ -12,10 +12,10 @@ const enhance = compose(
 );
 
 const Articles = enhance(() => (
-  <FlexedRootView>
+  <BackgroundView>
     <Header backButton titleText="All Articles" />
     <ArticlesFeed />
-  </FlexedRootView>
+  </BackgroundView>
 ));
 
 export default Articles;

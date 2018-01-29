@@ -2,7 +2,7 @@ import React from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Switch, Route, withRouter } from '@ui/NativeWebRouter';
 import Header from '@ui/Header';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import Progress from '@ui/Progress';
 
 import BillingAddress from './BillingAddress';
@@ -25,7 +25,7 @@ const progressForLocation = ({ pathname }) => {
 };
 
 const Checkout = withRouter(({ match, location }) => (
-  <FlexedRootView>
+  <BackgroundView>
     <Header titleText="Add Account" backButton />
     <Progress progress={progressForLocation(location)} />
     <KeyboardAwareScrollView>
@@ -36,7 +36,7 @@ const Checkout = withRouter(({ match, location }) => (
         <Route exact path={`${match.url}/done`} component={Success} />
       </Switch>
     </KeyboardAwareScrollView>
-  </FlexedRootView>
+  </BackgroundView>
 ));
 
 export default Checkout;

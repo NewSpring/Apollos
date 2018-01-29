@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native';
 import { startCase, toLower } from 'lodash';
 
 import withStory from '@data/withStory';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import ContentView, { ByLine, Title, HTMLView } from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
@@ -30,7 +30,7 @@ const StorySingle = enhance(({
   id,
   isLoading,
 }) => (
-  <FlexedRootView>
+  <BackgroundView>
     <Header titleText="News" backButton />
     <ScrollView>
       <ContentView {...otherContentProps}>
@@ -47,6 +47,6 @@ const StorySingle = enhance(({
         <Link icon="like" />
       </SecondaryNav>
     </MediaQuery>
-  </FlexedRootView>
+  </BackgroundView>
 ));
 export default StorySingle;

@@ -2,7 +2,7 @@ import React from 'react';
 import { pure, compose } from 'recompose';
 import Header from '@ui/Header';
 import FeedView from '@ui/FeedView';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import { withLibrary } from '@data/mediaPlayer';
 
 const MusicFeed = withLibrary(FeedView);
@@ -12,10 +12,10 @@ const enhance = compose(
 );
 
 const Music = enhance(() => (
-  <FlexedRootView>
+  <BackgroundView>
     <Header backButton titleText="All Music" />
     <MusicFeed />
-  </FlexedRootView>
+  </BackgroundView>
 ));
 
 export default Music;

@@ -2,7 +2,7 @@ import React from 'react';
 import { pure, compose } from 'recompose';
 import Header from '@ui/Header';
 import FeedView from '@ui/FeedView';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import withStories from '@data/withStories';
 
 const StoriesFeed = withStories(FeedView);
@@ -12,10 +12,10 @@ const enhance = compose(
 );
 
 const Stories = enhance(() => (
-  <FlexedRootView>
+  <BackgroundView>
     <Header backButton titleText="All Stories" />
     <StoriesFeed />
-  </FlexedRootView>
+  </BackgroundView>
 ));
 
 export default Stories;

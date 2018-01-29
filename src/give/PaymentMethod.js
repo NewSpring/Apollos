@@ -1,7 +1,7 @@
 import React from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Header from '@ui/Header';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import PaddedView from '@ui/PaddedView';
 import EditSavedPaymentMethodForm from '@ui/forms/EditSavedPaymentMethodForm';
 import DeleteSavedPaymentMethodButton from '@ui/forms/DeleteSavedPaymentMethodButton';
@@ -10,7 +10,7 @@ import Spacer from '@ui/Spacer';
 
 export function PaymentMethod({ id } = {}) {
   return (
-    <FlexedRootView>
+    <BackgroundView>
       <Header titleText="Payment Method" />
       <KeyboardAwareScrollView>
         <PaddedView>
@@ -19,7 +19,7 @@ export function PaymentMethod({ id } = {}) {
           <DeleteSavedPaymentMethodButton id={id} />
         </PaddedView>
       </KeyboardAwareScrollView>
-    </FlexedRootView>
+    </BackgroundView>
   );
 }
 

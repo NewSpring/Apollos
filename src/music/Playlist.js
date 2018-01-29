@@ -1,6 +1,6 @@
 import React from 'react';
 import { compose, mapProps, withProps, pure } from 'recompose';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import TracksList from '@ui/TracksList';
 import AlbumView from '@ui/AlbumView';
@@ -32,7 +32,7 @@ const Playlist = enhance(({
   isLoading,
   setNowPlaying,
 }) => (
-  <FlexedRootView>
+  <BackgroundView>
     <Header titleText="Music" backButton />
     <TracksList
       isLoading={isLoading}
@@ -55,6 +55,6 @@ const Playlist = enhance(({
         <Link icon="like" />
       </SecondaryNav>
     </MediaQuery>
-  </FlexedRootView>
+  </BackgroundView>
 ));
 export default Playlist;

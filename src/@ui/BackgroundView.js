@@ -1,9 +1,9 @@
 import { View } from 'react-native';
 import styled from '@ui/styled';
 
-const FlexedRootView = styled(({ theme }) => ({
+const BackgroundView = styled(({ theme }) => ({
   flex: 1,
   backgroundColor: theme.colors.background.default,
-}), 'FlexedRootView')(View);
+}), 'BackgroundView')(View);
 
-export default FlexedRootView;
+export default BackgroundView;

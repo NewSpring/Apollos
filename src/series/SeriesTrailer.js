@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, mapProps } from 'recompose';
 import EmbeddedVideoPlayer from '@ui/EmbeddedVideoPlayer';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import styled from '@ui/styled';
 
 import withSeriesContent from '@data/withSeriesContent';
@@ -30,9 +30,9 @@ const SeriesTrailer = enhance(({
     } = {},
   } = {},
 }) => (
-  <FlexedRootView>
+  <BackgroundView>
     <TheaterMode src={video.embedUrl} />
-  </FlexedRootView>
+  </BackgroundView>
 ));
 
 export default SeriesTrailer;

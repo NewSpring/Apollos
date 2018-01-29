@@ -6,7 +6,7 @@ import { get, findIndex } from 'lodash';
 import { shuffle } from 'shuffle-seed';
 import Audio from '@ui/Audio';
 import { withMediaPlayerActions, withNowPlaying, withPlaylist } from '@data/mediaPlayer';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import { withRouter, Link, Route } from '@ui/NativeWebRouter';
@@ -166,10 +166,10 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
           <Route exact path={'/player/list/:id'} component={asModal(Playlist)} />
           <Route exact path={'/player/:id/:track'} component={PlayerTrackContextual} />
           <Route cardStackKey="app">
-            <FlexedRootView>
+            <BackgroundView>
               {this.props.children}
               {this.props.currentTrack ? this.renderMiniControls() : null}
-            </FlexedRootView>
+            </BackgroundView>
           </Route>
         </CardStack>
       </Audio>

@@ -2,7 +2,7 @@ import React from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Switch, Route, Redirect, withRouter } from '@ui/NativeWebRouter';
 import Header from '@ui/Header';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import Progress from '@ui/Progress';
 
 import PersonalDetails from './PersonalDetails';
@@ -30,7 +30,7 @@ const progressForLocation = ({ pathname }) => {
 };
 
 const Checkout = withRouter(({ match, location }) => (
-  <FlexedRootView>
+  <BackgroundView>
     <Header titleText="My Giving" backButton />
     <Progress progress={progressForLocation(location)} />
     <KeyboardAwareScrollView>
@@ -44,7 +44,7 @@ const Checkout = withRouter(({ match, location }) => (
         <Redirect to={`${match.url}/personal`} />
       </Switch>
     </KeyboardAwareScrollView>
-  </FlexedRootView>
+  </BackgroundView>
 ));
 
 export default Checkout;

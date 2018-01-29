@@ -7,7 +7,7 @@ import withGroupInfo from '@data/withGroupInfo';
 import Header from '@ui/Header';
 import ConnectedImage from '@ui/ConnectedImage';
 import PaddedView from '@ui/PaddedView';
-import FlexedRootView from '@ui/FlexedRootView';
+import BackgroundView from '@ui/BackgroundView';
 import Card from '@ui/Card';
 import { H3, H4, H5, H6, H7, BodyCopy } from '@ui/typography';
 import styled from '@ui/styled';
@@ -93,7 +93,7 @@ const GroupSingle = enhance(({
   const loginParam = person ? person.impersonationParameter : '';
 
   return (
-    <FlexedRootView>
+    <BackgroundView>
       <Header titleText="Group Profile" backButton />
       <ScrollView>
         <StyledImage source={{ url: photo }} />
@@ -188,7 +188,7 @@ const GroupSingle = enhance(({
           </GroupFindCTA>
         </Card>
       </ScrollView>
-    </FlexedRootView>
+    </BackgroundView>
   );
 });
 
