@@ -57,7 +57,7 @@ exports[`The Picker Input component should render correctly 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "height": 40,
               "lineHeight": 30,

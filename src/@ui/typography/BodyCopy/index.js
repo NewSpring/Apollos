@@ -7,7 +7,7 @@ import { withPlaceholder, Typography } from '@ui/Placeholder';
 const styles = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(1),
   lineHeight: theme.helpers.verticalRhythm(1, 1),
-  fontFamily: theme.typography.fontFamilySerif,
+  fontFamily: theme.typography.fontFamilySerif.regular.default,
   color: theme.colors.text.primary,
 }), 'BodyCopy');
 

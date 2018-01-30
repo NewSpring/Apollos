@@ -45,7 +45,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
           onFocus={[Function]}
           style={
             Object {
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -194,7 +194,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
           onFocus={[Function]}
           style={
             Object {
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -356,7 +356,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "height": 40,
                 "lineHeight": 30,
@@ -622,7 +622,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
           onFocus={[Function]}
           style={
             Object {
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -772,7 +772,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
           onFocus={[Function]}
           style={
             Object {
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -984,7 +984,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
           onFocus={[Function]}
           style={
             Object {
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -1133,7 +1133,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
           onFocus={[Function]}
           style={
             Object {
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -1295,7 +1295,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "height": 40,
                 "lineHeight": 30,
@@ -1561,7 +1561,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
           onFocus={[Function]}
           style={
             Object {
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -1723,7 +1723,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "height": 40,
                 "lineHeight": 30,
@@ -1998,7 +1998,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
           onFocus={[Function]}
           style={
             Object {
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,

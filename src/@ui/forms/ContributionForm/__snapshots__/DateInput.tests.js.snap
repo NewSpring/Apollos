@@ -46,7 +46,7 @@ exports[`The DateInput component should render correctly 1`] = `
         placeholder="MM/DD/YYYY"
         style={
           Object {
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "height": 40,
             "lineHeight": 30,
             "paddingVertical": 5,

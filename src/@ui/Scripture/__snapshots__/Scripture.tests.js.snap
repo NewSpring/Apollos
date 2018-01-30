@@ -65,7 +65,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -112,7 +112,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -128,7 +128,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -158,7 +158,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -180,7 +180,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -218,7 +218,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -234,7 +234,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -264,7 +264,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -302,7 +302,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -318,7 +318,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -348,7 +348,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -386,7 +386,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -402,7 +402,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -432,7 +432,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -470,7 +470,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -486,7 +486,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -516,7 +516,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -554,7 +554,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -570,7 +570,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -600,7 +600,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -638,7 +638,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -654,7 +654,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -684,7 +684,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -722,7 +722,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -738,7 +738,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -768,7 +768,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -802,7 +802,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -849,7 +849,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -865,7 +865,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -895,7 +895,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -933,7 +933,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -949,7 +949,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -979,7 +979,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1017,7 +1017,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -1033,7 +1033,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1063,7 +1063,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1101,7 +1101,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -1117,7 +1117,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1139,7 +1139,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1169,7 +1169,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1207,7 +1207,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -1223,7 +1223,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1253,7 +1253,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1291,7 +1291,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -1307,7 +1307,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1337,7 +1337,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1375,7 +1375,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -1391,7 +1391,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1421,7 +1421,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1459,7 +1459,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -1475,7 +1475,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1505,7 +1505,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1539,7 +1539,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -1586,7 +1586,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -1602,7 +1602,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1632,7 +1632,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1670,7 +1670,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -1686,7 +1686,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1716,7 +1716,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1754,7 +1754,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -1770,7 +1770,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1800,7 +1800,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1838,7 +1838,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -1854,7 +1854,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1884,7 +1884,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1922,7 +1922,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -1938,7 +1938,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -1968,7 +1968,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2006,7 +2006,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -2022,7 +2022,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2052,7 +2052,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2090,7 +2090,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -2106,7 +2106,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2136,7 +2136,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2174,7 +2174,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -2190,7 +2190,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2220,7 +2220,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2254,7 +2254,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -2301,7 +2301,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -2317,7 +2317,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2347,7 +2347,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2385,7 +2385,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -2401,7 +2401,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2431,7 +2431,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2469,7 +2469,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -2485,7 +2485,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2515,7 +2515,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2553,7 +2553,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -2569,7 +2569,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2599,7 +2599,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2637,7 +2637,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -2653,7 +2653,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2683,7 +2683,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2721,7 +2721,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -2737,7 +2737,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2767,7 +2767,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2805,7 +2805,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -2821,7 +2821,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2843,7 +2843,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2873,7 +2873,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2911,7 +2911,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -2927,7 +2927,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2957,7 +2957,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -2991,7 +2991,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -3038,7 +3038,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -3054,7 +3054,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3076,7 +3076,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3106,7 +3106,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3144,7 +3144,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -3160,7 +3160,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3190,7 +3190,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3228,7 +3228,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -3244,7 +3244,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3274,7 +3274,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3312,7 +3312,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -3328,7 +3328,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3358,7 +3358,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3396,7 +3396,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -3412,7 +3412,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3442,7 +3442,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3480,7 +3480,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -3496,7 +3496,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3526,7 +3526,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3564,7 +3564,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -3580,7 +3580,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3610,7 +3610,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3648,7 +3648,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -3664,7 +3664,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3694,7 +3694,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3728,7 +3728,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -3775,7 +3775,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -3791,7 +3791,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3813,7 +3813,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3843,7 +3843,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3881,7 +3881,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -3897,7 +3897,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3927,7 +3927,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -3965,7 +3965,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -3981,7 +3981,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4011,7 +4011,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4049,7 +4049,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -4065,7 +4065,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4095,7 +4095,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4133,7 +4133,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -4149,7 +4149,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4179,7 +4179,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4217,7 +4217,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -4233,7 +4233,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4263,7 +4263,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4301,7 +4301,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -4317,7 +4317,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4347,7 +4347,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4385,7 +4385,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -4401,7 +4401,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4431,7 +4431,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4465,7 +4465,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -4512,7 +4512,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -4528,7 +4528,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4558,7 +4558,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4596,7 +4596,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -4612,7 +4612,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4642,7 +4642,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4680,7 +4680,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -4696,7 +4696,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4726,7 +4726,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4764,7 +4764,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -4780,7 +4780,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4810,7 +4810,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4832,7 +4832,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4870,7 +4870,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -4886,7 +4886,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4916,7 +4916,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -4954,7 +4954,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -4970,7 +4970,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5000,7 +5000,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5038,7 +5038,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -5054,7 +5054,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5076,7 +5076,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5106,7 +5106,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5144,7 +5144,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -5160,7 +5160,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5190,7 +5190,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5224,7 +5224,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -5271,7 +5271,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -5287,7 +5287,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5309,7 +5309,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5339,7 +5339,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5377,7 +5377,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -5393,7 +5393,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5423,7 +5423,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5461,7 +5461,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -5477,7 +5477,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5507,7 +5507,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5545,7 +5545,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -5561,7 +5561,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5591,7 +5591,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5629,7 +5629,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -5645,7 +5645,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5675,7 +5675,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5713,7 +5713,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -5729,7 +5729,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5759,7 +5759,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5797,7 +5797,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -5813,7 +5813,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5843,7 +5843,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5881,7 +5881,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -5897,7 +5897,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5919,7 +5919,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5949,7 +5949,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -5983,7 +5983,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -6030,7 +6030,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -6046,7 +6046,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6076,7 +6076,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6098,7 +6098,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6136,7 +6136,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -6152,7 +6152,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6182,7 +6182,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6220,7 +6220,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -6236,7 +6236,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6266,7 +6266,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6304,7 +6304,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -6320,7 +6320,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6350,7 +6350,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6388,7 +6388,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -6404,7 +6404,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6434,7 +6434,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6472,7 +6472,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -6488,7 +6488,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6518,7 +6518,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6556,7 +6556,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -6572,7 +6572,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6602,7 +6602,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6640,7 +6640,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -6656,7 +6656,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6686,7 +6686,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6720,7 +6720,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -6767,7 +6767,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -6783,7 +6783,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6813,7 +6813,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6851,7 +6851,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -6867,7 +6867,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6897,7 +6897,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6935,7 +6935,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -6951,7 +6951,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -6973,7 +6973,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7003,7 +7003,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7041,7 +7041,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -7057,7 +7057,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7087,7 +7087,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7125,7 +7125,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -7141,7 +7141,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7171,7 +7171,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7209,7 +7209,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -7225,7 +7225,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7255,7 +7255,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7285,7 +7285,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7323,7 +7323,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -7339,7 +7339,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7369,7 +7369,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7407,7 +7407,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -7423,7 +7423,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7453,7 +7453,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7487,7 +7487,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -7534,7 +7534,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -7550,7 +7550,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7580,7 +7580,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7618,7 +7618,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -7634,7 +7634,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7664,7 +7664,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7702,7 +7702,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -7718,7 +7718,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7748,7 +7748,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7786,7 +7786,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -7802,7 +7802,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7832,7 +7832,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7870,7 +7870,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -7886,7 +7886,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7916,7 +7916,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -7954,7 +7954,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -7970,7 +7970,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8000,7 +8000,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8038,7 +8038,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -8054,7 +8054,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8084,7 +8084,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8122,7 +8122,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -8138,7 +8138,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8168,7 +8168,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8202,7 +8202,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -8249,7 +8249,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -8265,7 +8265,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8287,7 +8287,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8317,7 +8317,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8355,7 +8355,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -8371,7 +8371,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8401,7 +8401,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8439,7 +8439,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -8455,7 +8455,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8485,7 +8485,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8523,7 +8523,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -8539,7 +8539,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8569,7 +8569,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8607,7 +8607,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -8623,7 +8623,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8653,7 +8653,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8691,7 +8691,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -8707,7 +8707,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8737,7 +8737,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8775,7 +8775,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -8791,7 +8791,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8821,7 +8821,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8859,7 +8859,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -8875,7 +8875,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8905,7 +8905,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -8939,7 +8939,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -8986,7 +8986,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9002,7 +9002,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9032,7 +9032,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9070,7 +9070,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9086,7 +9086,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9116,7 +9116,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9154,7 +9154,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9170,7 +9170,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9200,7 +9200,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9238,7 +9238,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9254,7 +9254,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9284,7 +9284,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9322,7 +9322,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9338,7 +9338,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9368,7 +9368,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9406,7 +9406,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9422,7 +9422,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9452,7 +9452,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9490,7 +9490,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9506,7 +9506,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9536,7 +9536,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9574,7 +9574,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9590,7 +9590,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9620,7 +9620,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9654,7 +9654,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -9701,7 +9701,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9717,7 +9717,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9747,7 +9747,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9785,7 +9785,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9801,7 +9801,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9831,7 +9831,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9869,7 +9869,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9885,7 +9885,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9915,7 +9915,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9937,7 +9937,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -9975,7 +9975,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -9991,7 +9991,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10013,7 +10013,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10043,7 +10043,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10081,7 +10081,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -10097,7 +10097,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10127,7 +10127,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10165,7 +10165,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -10181,7 +10181,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10211,7 +10211,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10249,7 +10249,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -10265,7 +10265,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10295,7 +10295,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10333,7 +10333,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -10349,7 +10349,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10379,7 +10379,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10413,7 +10413,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -10460,7 +10460,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -10476,7 +10476,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10506,7 +10506,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10544,7 +10544,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -10560,7 +10560,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10590,7 +10590,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10628,7 +10628,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -10644,7 +10644,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10674,7 +10674,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10712,7 +10712,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -10728,7 +10728,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10758,7 +10758,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10796,7 +10796,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -10812,7 +10812,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10842,7 +10842,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10880,7 +10880,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -10896,7 +10896,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10926,7 +10926,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -10964,7 +10964,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -10980,7 +10980,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11010,7 +11010,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11048,7 +11048,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -11064,7 +11064,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11094,7 +11094,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11128,7 +11128,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -11175,7 +11175,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -11191,7 +11191,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11221,7 +11221,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11259,7 +11259,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -11275,7 +11275,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11305,7 +11305,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11343,7 +11343,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -11359,7 +11359,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11389,7 +11389,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11427,7 +11427,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -11443,7 +11443,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11473,7 +11473,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11511,7 +11511,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -11527,7 +11527,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11557,7 +11557,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11595,7 +11595,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -11611,7 +11611,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11633,7 +11633,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11663,7 +11663,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11701,7 +11701,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -11717,7 +11717,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11747,7 +11747,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11785,7 +11785,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -11801,7 +11801,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11831,7 +11831,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11865,7 +11865,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -11912,7 +11912,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -11928,7 +11928,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11958,7 +11958,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -11996,7 +11996,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -12012,7 +12012,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12042,7 +12042,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12080,7 +12080,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -12096,7 +12096,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12126,7 +12126,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12164,7 +12164,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -12180,7 +12180,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12210,7 +12210,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12248,7 +12248,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -12264,7 +12264,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12294,7 +12294,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12332,7 +12332,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -12348,7 +12348,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12378,7 +12378,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12416,7 +12416,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -12432,7 +12432,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12462,7 +12462,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12500,7 +12500,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -12516,7 +12516,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12546,7 +12546,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12580,7 +12580,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -12627,7 +12627,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -12643,7 +12643,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12665,7 +12665,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12695,7 +12695,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12733,7 +12733,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -12749,7 +12749,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12779,7 +12779,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12817,7 +12817,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -12833,7 +12833,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12863,7 +12863,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12901,7 +12901,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -12917,7 +12917,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12947,7 +12947,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -12985,7 +12985,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -13001,7 +13001,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13031,7 +13031,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13069,7 +13069,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -13085,7 +13085,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13115,7 +13115,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13153,7 +13153,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -13169,7 +13169,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13199,7 +13199,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13237,7 +13237,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -13253,7 +13253,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13283,7 +13283,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13317,7 +13317,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -13364,7 +13364,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -13380,7 +13380,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13402,7 +13402,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13432,7 +13432,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13470,7 +13470,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -13486,7 +13486,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13516,7 +13516,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13554,7 +13554,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -13570,7 +13570,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13600,7 +13600,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13638,7 +13638,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -13654,7 +13654,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13684,7 +13684,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13722,7 +13722,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -13738,7 +13738,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13768,7 +13768,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13790,7 +13790,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13828,7 +13828,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -13844,7 +13844,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13874,7 +13874,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13912,7 +13912,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -13928,7 +13928,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13950,7 +13950,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -13980,7 +13980,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14018,7 +14018,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -14034,7 +14034,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14064,7 +14064,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14098,7 +14098,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -14145,7 +14145,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -14161,7 +14161,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14191,7 +14191,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14229,7 +14229,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -14245,7 +14245,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14275,7 +14275,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14313,7 +14313,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -14329,7 +14329,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14359,7 +14359,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14397,7 +14397,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -14413,7 +14413,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14435,7 +14435,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14465,7 +14465,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14503,7 +14503,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -14519,7 +14519,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14549,7 +14549,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14587,7 +14587,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -14603,7 +14603,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14633,7 +14633,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14671,7 +14671,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -14687,7 +14687,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14717,7 +14717,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14755,7 +14755,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -14771,7 +14771,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14801,7 +14801,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14835,7 +14835,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -14882,7 +14882,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -14898,7 +14898,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14928,7 +14928,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -14966,7 +14966,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -14982,7 +14982,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15012,7 +15012,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15050,7 +15050,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -15066,7 +15066,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15096,7 +15096,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15134,7 +15134,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -15150,7 +15150,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15180,7 +15180,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15218,7 +15218,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -15234,7 +15234,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15264,7 +15264,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15302,7 +15302,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -15318,7 +15318,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15340,7 +15340,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15370,7 +15370,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15408,7 +15408,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -15424,7 +15424,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15454,7 +15454,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15492,7 +15492,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -15508,7 +15508,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15538,7 +15538,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15572,7 +15572,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
+            "fontFamily": "DroidSerif-Regular",
             "fontSize": 18,
             "lineHeight": 20,
           }
@@ -15619,7 +15619,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -15635,7 +15635,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15657,7 +15657,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15687,7 +15687,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15725,7 +15725,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -15741,7 +15741,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15771,7 +15771,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15809,7 +15809,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -15825,7 +15825,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15855,7 +15855,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15893,7 +15893,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -15909,7 +15909,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15939,7 +15939,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -15977,7 +15977,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -15993,7 +15993,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -16023,7 +16023,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -16061,7 +16061,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -16077,7 +16077,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -16099,7 +16099,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -16129,7 +16129,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -16167,7 +16167,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -16183,7 +16183,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -16213,7 +16213,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -16251,7 +16251,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -16267,7 +16267,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -16297,7 +16297,7 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }

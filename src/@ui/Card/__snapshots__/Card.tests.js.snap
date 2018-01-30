@@ -234,7 +234,7 @@ exports[`the Card component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }

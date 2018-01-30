@@ -59,7 +59,7 @@ exports[`the ContentView component renders 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -72,7 +72,7 @@ exports[`the ContentView component renders 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -96,7 +96,7 @@ exports[`the ContentView component renders 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -109,7 +109,7 @@ exports[`the ContentView component renders 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -247,7 +247,7 @@ exports[`the ContentView component renders with images 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -260,7 +260,7 @@ exports[`the ContentView component renders with images 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -284,7 +284,7 @@ exports[`the ContentView component renders with images 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -297,7 +297,7 @@ exports[`the ContentView component renders with images 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -371,7 +371,7 @@ exports[`the ContentView component renders with video 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -384,7 +384,7 @@ exports[`the ContentView component renders with video 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }
@@ -408,7 +408,7 @@ exports[`the ContentView component renders with video 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 18,
               "lineHeight": 20,
             }
@@ -421,7 +421,7 @@ exports[`the ContentView component renders with video 1`] = `
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
+                "fontFamily": "DroidSerif-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
               }

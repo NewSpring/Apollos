@@ -58,7 +58,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
+          "fontFamily": "DroidSerif-Regular",
           "fontSize": 18,
           "lineHeight": 20,
         }
@@ -116,7 +116,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": "Georgia",
+          "fontFamily": "DroidSerif-Regular",
           "fontSize": 18,
           "lineHeight": 20,
         }
@@ -174,7 +174,7 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
+          "fontFamily": "DroidSerif-Regular",
           "fontSize": 18,
           "lineHeight": 20,
         }
@@ -244,7 +244,7 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
+          "fontFamily": "DroidSerif-Regular",
           "fontSize": 18,
           "lineHeight": 20,
         }
@@ -302,7 +302,7 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": "Georgia",
+          "fontFamily": "DroidSerif-Regular",
           "fontSize": 18,
           "lineHeight": 20,
         }

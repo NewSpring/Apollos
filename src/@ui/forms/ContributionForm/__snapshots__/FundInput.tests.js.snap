@@ -101,7 +101,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             placeholder="0.00"
             style={
               Object {
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 32.4,
                 "fontWeight": "700",
                 "height": 40,
@@ -292,7 +292,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               style={
                 Object {
                   "color": "#6bac43",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
@@ -632,7 +632,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             placeholder="0.00"
             style={
               Object {
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 32.4,
                 "fontWeight": "700",
                 "height": 40,
@@ -823,7 +823,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               style={
                 Object {
                   "color": "#6bac43",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
@@ -1163,7 +1163,7 @@ exports[`The FrequencyInput component should render correctly with initial state
             placeholder="0.00"
             style={
               Object {
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 32.4,
                 "fontWeight": "700",
                 "height": 40,
@@ -1354,7 +1354,7 @@ exports[`The FrequencyInput component should render correctly with initial state
               style={
                 Object {
                   "color": "#6bac43",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
