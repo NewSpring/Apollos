@@ -29,9 +29,10 @@ const enhance = compose(
 const Text = enhance(({
   label,
   error,
+  wrapperStyle,
   ...switchProps
 }) => (
-  <InputWrapper>
+  <InputWrapper style={wrapperStyle}>
     <ControlWrapper>
       <LabelText>{label}</LabelText>
       <Switch {...switchProps} />

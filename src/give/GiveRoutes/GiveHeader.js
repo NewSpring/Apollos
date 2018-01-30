@@ -7,14 +7,12 @@ import {
   Platform,
 } from 'react-native';
 import Header from '@ui/Header';
-import { H2 } from '@ui/typography';
-import Spacer from '@ui/Spacer';
 import Label from '@ui/TabView/TabBar/Label';
 import styled from '@ui/styled';
 import { withTheme } from '@ui/theme';
 
 const withTabBarStyles = styled(({ theme }) => ({
-  backgroundColor: theme.colors.background.default,
+  backgroundColor: theme.colors.background.paper,
 }));
 
 const StyledTabBar = compose(
@@ -32,20 +30,16 @@ const StyledHeader = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.default,
 }))(View);
 
-const StyledH2 = styled(({ theme }) => ({
-  paddingVertical: theme.sizing.baseUnit,
-  paddingHorizontal: theme.sizing.baseUnit,
-  color: theme.colors.darkSecondary,
-}))(H2);
-
 function GiveHeader(props) {
+  let { headerTitle } = props;
+  if (Platform.OS === 'web' && props.webHeaderTitle) headerTitle = props.webHeaderTitle;
   return (
     <StyledHeader>
-      <Header backButton titleText={props.headerTitle} />
-      {Platform.OS === 'web' && (
-        <StyledH2>{props.webHeaderTitle || props.headerTitle}</StyledH2>
-      )}
-      <Spacer />
+      <Header
+        webEnabled
+        backButton={Platform.OS !== 'web'}
+        titleText={headerTitle}
+      />
       <StyledTabBar {...props} />
     </StyledHeader>
   );

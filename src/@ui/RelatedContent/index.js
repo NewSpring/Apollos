@@ -5,6 +5,8 @@ import withRelatedContent from '@data/withRelatedContent';
 
 import RelatedContentWithoutData from './RelatedContentWithoutData';
 
+export { RelatedContentWithoutData };
+
 const enhance = compose(
   pure,
   setPropTypes({

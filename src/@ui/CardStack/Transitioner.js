@@ -4,7 +4,7 @@ import { Platform, Animated, StyleSheet, View, Easing, PanResponder } from 'reac
 import { clamp, get, findIndex } from 'lodash';
 import styled from '@ui/styled';
 
-import interpolator from './interpolator';
+import Interpolator from './Interpolator';
 import findFirstMatch from './findFirstMatch';
 
 export const PUSH = 'PUSH';
@@ -41,8 +41,6 @@ class Transitioner extends PureComponent {
     match: PropTypes.shape({
       isExact: PropTypes.bool,
     }),
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     directionPropNameForChildren: PropTypes.string,
     style: PropTypes.any, // eslint-disable-line
@@ -190,6 +188,9 @@ class Transitioner extends PureComponent {
   // Points to the index of the current screen rendered in `renderScreens`
   animatedPosition = new Animated.Value(0);
 
+  width = 0;
+  height = 0;
+
   animatePosition = (fromPosition, toPosition) => {
     if (Platform.OS === 'web') {
       this.animatedPosition.setValue(toPosition);
@@ -212,6 +213,11 @@ class Transitioner extends PureComponent {
       }
     });
   }
+
+  handleLayout = ({ nativeEvent: { layout: { height, width } } }) => {
+    this.height = height;
+    this.width = width;
+  };
 
   panResponder = PanResponder.create({
     onMoveShouldSetPanResponder: (event, gesture) => (
@@ -240,7 +246,7 @@ class Transitioner extends PureComponent {
     onPanResponderMove: (event, { dx, dy }) => {
       const startValue = this.state.index;
       const dValue = this.isHorizontal ? dx : dy;
-      const size = this.isHorizontal ? this.props.width : this.props.height;
+      const size = this.isHorizontal ? this.width : this.height;
 
       const currentValue = startValue + (-dValue / size);
       const value = clamp(startValue - 1, currentValue, startValue);
@@ -253,7 +259,7 @@ class Transitioner extends PureComponent {
       // Calculate animate duration according to gesture speed and moved distance
       const movedDistance = this.isHorizontal ? dx : dy;
       const gestureVelocity = this.isHorizontal ? vx : vy;
-      const size = this.isHorizontal ? this.props.width : this.props.height;
+      const size = this.isHorizontal ? this.width : this.height;
       const defaultVelocity = size / ANIMATION_DURATION;
       const velocity = Math.max(Math.abs(gestureVelocity), defaultVelocity);
       const resetDuration = movedDistance / velocity;
@@ -338,7 +344,7 @@ class Transitioner extends PureComponent {
   afterNavigate = () => {
     this.setState({
       transition: null,
-      entries: this.state.entries.slice(0, this.state.index + 2),
+      entries: this.state.entries.slice(0, this.state.index + 1),
     });
   }
 
@@ -355,27 +361,25 @@ class Transitioner extends PureComponent {
     return screens;
   }
 
-  renderScreenWithAnimation = ({ index, screen, key }) => {
-    const style = [
-      StyleSheet.absoluteFill,
-      interpolator({
-        ...this.props,
-        direction: this.direction,
-        index,
-        animatedPosition: this.animatedPosition,
-      }),
-    ];
-    return (
-      <Animated.View key={key} style={style}>
-        {screen}
-      </Animated.View>
-    );
-  }
+  renderScreenWithAnimation = ({ index, screen, key }) => (
+    <Interpolator
+      key={key}
+      {...this.props}
+      width={this.width}
+      height={this.height}
+      direction={this.direction}
+      index={index}
+      animatedPosition={this.animatedPosition}
+    >
+      {screen}
+    </Interpolator>
+  )
 
   render() {
     return (
       <View
         style={this.props.style}
+        onLayout={this.handleLayout}
         {...this.panResponder.panHandlers}
       >
         {this.renderScreens()}

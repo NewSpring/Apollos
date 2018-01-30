@@ -4,6 +4,7 @@ import { compose, branch, renderComponent } from 'recompose';
 import withUser from '@data/withUser/withIsLoggedIn';
 import { Route, Redirect } from 'react-router';
 import ActivityIndicator from '@ui/ActivityIndicator';
+import BackgroundView from '@ui/BackgroundView';
 
 const RedirectWithReferrer = ({ path }) => (
   <Redirect
@@ -23,14 +24,18 @@ const ActivityIndicatorWhileLoading = ({
   children,
   ...otherProps
 }) => (
-  <Route {...otherProps} component={ActivityIndicator} />
+  <Route {...otherProps}>
+    <BackgroundView>
+      <ActivityIndicator />
+    </BackgroundView>
+  </Route>
 );
 
 ActivityIndicatorWhileLoading.propTypes = { ...Route.propTypes };
 
 const ProtectedRoute = compose(
   withUser,
-  branch(({ isLoading }) => isLoading,
+  branch(({ isLoading, isLoggedIn }) => isLoading && !isLoggedIn,
     renderComponent(ActivityIndicatorWhileLoading),
   ),
   branch(({ isLoggedIn }) => !isLoggedIn,

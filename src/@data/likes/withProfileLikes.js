@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import identifyCategory from '@data/utils/identifyCategory';
 import { contentCard, groupCard } from './fragments';
 
 export const QUERY = gql`
@@ -13,4 +14,10 @@ export const QUERY = gql`
   ${groupCard}
 `;
 
-export default graphql(QUERY);
+export default graphql(QUERY, {
+  props: ({ ownProps, data } = {}) => ({
+    content: data.userFeed && data.userFeed.map(identifyCategory),
+    isLoading: ownProps.isLoading || data.loading,
+    refetch: data.refetch,
+  }),
+});

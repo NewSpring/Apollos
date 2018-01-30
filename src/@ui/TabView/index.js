@@ -38,10 +38,12 @@ const TabView = compose(
     renderScene: PropTypes.func.isRequired,
     renderHeader: PropTypes.func,
     swipeEnabled: PropTypes.bool,
+    autoHeightEnabled: PropTypes.bool,
   }),
   defaultProps({
     initialIndex: 0,
     swipeEnabled: Platform.OS !== 'web',
+    autoHeightEnabled: false,
   }),
   withStyles,
   withState('index', 'onIndexChange', ({ initialIndex }) => initialIndex),
