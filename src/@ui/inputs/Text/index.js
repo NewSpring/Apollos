@@ -68,6 +68,7 @@ const Text = enhance(({
   wrapperStyle,
   error,
   disabled = false,
+  Component = StyledTextInput,
   theme,
   focusAnimation: focusAnimationInput, // from withFocusAnimation
   ...textInputProps
@@ -78,7 +79,7 @@ const Text = enhance(({
       <AddonRow>
         <InputAddon>{prefix}</InputAddon>
         <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
-          <StyledTextInput
+          <Component
             placeholderTextColor={
               Color(theme.colors.text.primary).fade(theme.alpha.low).string()
             }

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { View } from 'react-native';
 import { withFormik } from 'formik';
 import moment from 'moment';
 import Yup from 'yup';
@@ -9,7 +10,7 @@ import Button from '@ui/Button';
 import { H7 } from '@ui/typography';
 import styled from '@ui/styled';
 import Touchable from '@ui/Touchable';
-import TableView, { Cell, CellText, CellIcon } from '@ui/TableView';
+import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
 import Chip, { ChipList } from '@ui/Chip';
 import { withTheme } from '@ui/theme';
 import PaddedView from '@ui/PaddedView';
@@ -32,14 +33,14 @@ class ContributionHistoryFilter extends PureComponent {
       startDate: PropTypes.instanceOf(Date),
       endDate: PropTypes.instanceOf(Date),
     }),
-    touched: PropTypes.shape({
-      startDate: PropTypes.bool,
-      endDate: PropTypes.bool,
-    }),
-    errors: PropTypes.shape({
-      startDate: PropTypes.string,
-      endDate: PropTypes.string,
-    }),
+    // touched: PropTypes.shape({
+    //   startDate: PropTypes.bool,
+    //   endDate: PropTypes.bool,
+    // }),
+    // errors: PropTypes.shape({
+    //   startDate: PropTypes.string,
+    //   endDate: PropTypes.string,
+    // }),
     setFieldValue: PropTypes.func,
     setFieldTouched: PropTypes.func,
     handleSubmit: PropTypes.func,
@@ -49,8 +50,8 @@ class ContributionHistoryFilter extends PureComponent {
 
   static defaultProps = {
     values: {},
-    touched: {},
-    errors: {},
+    // touched: {},
+    // errors: {},
     setFieldValue() {},
     setFieldTouched() {},
     handleSubmit() {},
@@ -96,71 +97,74 @@ class ContributionHistoryFilter extends PureComponent {
   renderFilters = () => {
     if (!this.state.isVisible) return null;
     return (
-      <PaddedView>
-        <Label>Date Range</Label>
-        <ChipList>
-          {this.dateRanges.map(({ key, startDate, endDate }) => {
-            const selected = this.props.values.startDate === startDate &&
-              this.props.values.endDate === endDate;
-            return (
-              <Chip
-                key={key}
-                title={key}
-                selected={selected}
-                icon={selected ? 'close' : null}
-                onPress={() => {
-                  if (selected) {
-                    this.clear();
-                  } else {
-                    this.props.setFieldValue('startDate', startDate);
-                    this.props.setFieldValue('endDate', endDate);
-                  }
-                }}
-              />
-            );
-          })}
-        </ChipList>
-
-        <Label>Custom Dates</Label>
-        <ChipList>
-          <DateInput
-            label="Start Date"
-            displayValue={
-              this.props.values.startDate ? moment(this.props.values.startDate).format('MM/DD/YYYY') : null
-            }
-            value={this.props.values.startDate}
-            onChange={t => this.props.setFieldValue('startDate', t)}
-            onBlur={() => this.props.setFieldTouched('startDate', true)}
-            error={this.props.touched.startDate && this.props.errors.startDate}
+      <View>
+        <PaddedView>
+          <Label>Date Range</Label>
+          <ChipList>
+            {this.dateRanges.map(({ key, startDate, endDate }) => {
+              const selected = this.props.values.startDate === startDate &&
+                this.props.values.endDate === endDate;
+              return (
+                <Chip
+                  key={key}
+                  title={key}
+                  selected={selected}
+                  icon={selected ? 'close' : null}
+                  onPress={() => {
+                    if (selected) {
+                      this.clear();
+                    } else {
+                      this.props.setFieldValue('startDate', startDate);
+                      this.props.setFieldValue('endDate', endDate);
+                    }
+                  }}
+                />
+              );
+            })}
+          </ChipList>
+        </PaddedView>
+        <PaddedView>
+          <Label>Custom Dates</Label>
+          <ChipList>
+            <DateInput
+              label="Start Date"
+              displayValue={
+                this.props.values.startDate ? moment(this.props.values.startDate).format('MM/DD/YYYY') : null
+              }
+              value={this.props.values.startDate}
+              onChange={t => console.log({ t }) || this.props.setFieldValue('startDate', t)}
+              onBlur={() => this.props.setFieldTouched('startDate', true)}
+            />
+            <DateInput
+              label="End Date"
+              displayValue={
+                this.props.values.endDate ? moment(this.props.values.endDate).format('MM/DD/YYYY') : null
+              }
+              value={this.props.values.endDate}
+              onChange={t => this.props.setFieldValue('endDate', t)}
+              onBlur={() => this.props.setFieldTouched('endDate', true)}
+            />
+            {(this.props.values.startDate || this.props.values.endDate) ? (
+              <Chip onPress={this.clear} icon="close" />
+            ) : null}
+          </ChipList>
+        </PaddedView>
+        <PaddedView>
+          <Button
+            bordered
+            pill
+            onPress={this.props.handleSubmit}
+            title="Filter Results"
+            loading={this.props.isSubmitting}
           />
-          <DateInput
-            label="End Date"
-            displayValue={
-              this.props.values.endDate ? moment(this.props.values.endDate).format('MM/DD/YYYY') : null
-            }
-            value={this.props.values.endDate}
-            onChange={t => this.props.setFieldValue('endDate', t)}
-            onBlur={() => this.props.setFieldTouched('endDate', true)}
-            error={this.props.touched.endDate && this.props.errors.endDate}
-          />
-          {(this.props.values.startDate || this.props.values.endDate) ? (
-            <Chip onPress={this.clear} icon="close" />
-          ) : null}
-        </ChipList>
-        <Button
-          bordered
-          pill
-          onPress={this.props.handleSubmit}
-          title="Filter Results"
-          loading={this.props.isSubmitting}
-        />
-      </PaddedView>
+        </PaddedView>
+      </View>
     );
   };
 
   render() {
     return (
-      <TableView>
+      <TableView responsive={false}>
         <Touchable
           onPress={this.toggle}
         >
@@ -172,6 +176,7 @@ class ContributionHistoryFilter extends PureComponent {
             />
           </Cell>
         </Touchable>
+        {this.state.isVisible ? <Divider /> : null}
         {this.renderFilters()}
       </TableView>
     );
