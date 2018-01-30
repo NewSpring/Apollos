@@ -17,8 +17,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -30,8 +32,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -56,8 +60,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
             Object {
               "color": undefined,
               "fontFamily": "DroidSerif-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
@@ -72,8 +78,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -96,8 +104,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -109,8 +119,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -133,8 +145,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -146,8 +160,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -170,8 +186,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -183,8 +201,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -215,8 +235,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": "#303030",
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -228,8 +250,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
             Object {
               "color": undefined,
               "fontFamily": "DroidSerif-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
@@ -253,8 +277,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -266,8 +292,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -298,8 +326,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": undefined,
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -321,8 +351,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -334,8 +366,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -360,8 +394,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
             Object {
               "color": undefined,
               "fontFamily": "DroidSerif-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
@@ -376,8 +412,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -400,8 +438,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -413,8 +453,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -437,8 +479,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -450,8 +494,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -482,8 +528,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": "#303030",
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -495,8 +543,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
             Object {
               "color": undefined,
               "fontFamily": "DroidSerif-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
@@ -520,8 +570,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -533,8 +585,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -550,8 +604,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       Object {
         "color": "#303030",
         "fontFamily": "DroidSerif-Regular",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -564,8 +620,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": undefined,
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -582,8 +640,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       Object {
         "color": "#303030",
         "fontFamily": "DroidSerif-Regular",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -596,8 +656,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": undefined,
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -614,8 +676,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       Object {
         "color": "#303030",
         "fontFamily": "DroidSerif-Regular",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -628,8 +692,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": undefined,
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -653,8 +719,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -666,8 +734,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -690,8 +760,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -703,8 +775,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -735,8 +809,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": undefined,
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -758,8 +834,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -782,8 +860,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
             Object {
               "color": undefined,
               "fontFamily": "DroidSerif-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
@@ -798,8 +878,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -815,8 +897,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       Object {
         "color": "#303030",
         "fontFamily": "DroidSerif-Regular",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -829,8 +913,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": undefined,
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -847,8 +933,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       Object {
         "color": "#303030",
         "fontFamily": "DroidSerif-Regular",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -861,8 +949,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": undefined,
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -879,8 +969,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       Object {
         "color": "#303030",
         "fontFamily": "DroidSerif-Regular",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -893,8 +985,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": undefined,
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -911,8 +1005,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       Object {
         "color": "#303030",
         "fontFamily": "DroidSerif-Regular",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -925,8 +1021,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": undefined,
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -950,8 +1048,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -963,8 +1063,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -987,8 +1089,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -1000,8 +1104,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           Object {
             "color": undefined,
             "fontFamily": "DroidSerif-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >

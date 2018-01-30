@@ -59,8 +59,10 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -117,8 +119,10 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
         Object {
           "color": "#ffffff",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -175,8 +179,10 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -245,8 +251,10 @@ exports[`withThemeMixin works with dynamic props 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -303,8 +311,10 @@ exports[`withThemeMixin works with dynamic props 1`] = `
         Object {
           "color": "#ffffff",
           "fontFamily": "DroidSerif-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >

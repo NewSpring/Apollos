@@ -9,8 +9,10 @@ exports[`the P component should accept additional props 1`] = `
     Object {
       "color": "#303030",
       "fontFamily": "DroidSerif-Regular",
-      "fontSize": 18,
-      "lineHeight": 20,
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
     }
   }
 >
@@ -27,8 +29,10 @@ exports[`the P component should accept and render passed in styles 1`] = `
     Object {
       "color": "salmon",
       "fontFamily": "DroidSerif-Regular",
-      "fontSize": 18,
-      "lineHeight": 20,
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
     }
   }
 >
@@ -45,8 +49,10 @@ exports[`the P component should render correctly 1`] = `
     Object {
       "color": "#303030",
       "fontFamily": "DroidSerif-Regular",
-      "fontSize": 18,
-      "lineHeight": 20,
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
     }
   }
 >
