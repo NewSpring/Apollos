@@ -30,14 +30,14 @@ class DateInput extends PureComponent {
   handleConfirm = (value) => {
     if (this.props.onChange) this.props.onChange(value);
     if (this.props.onChangeText) {
-      this.props.onChangeText(moment(value).utc().format('MM/DD/YYYY'));
+      this.props.onChangeText(moment(value).format('MM/DD/YYYY'));
     }
     this.handleClose();
   }
 
   render() {
     let date = this.props.value;
-    if (typeof date === 'string') date = moment(date).utc().toDate();
+    if (typeof date === 'string') date = moment(date).toDate();
     return (
       <View>
         <Chip title={this.props.displayValue || this.props.label} onPress={this.handleOpen} />
