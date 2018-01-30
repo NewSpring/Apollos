@@ -58,7 +58,9 @@ exports[`the Card component number box should grow elegantly with larger numbers
                 "color": "#303030",
                 "fontFamily": "Colfax-Bold",
                 "fontSize": 15.75,
-                "lineHeight": 17.85,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
               }
             }
           >
@@ -427,7 +429,9 @@ exports[`the Card component should render a number box 1`] = `
                 "color": "#303030",
                 "fontFamily": "Colfax-Bold",
                 "fontSize": 15.75,
-                "lineHeight": 17.85,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
               }
             }
           >
@@ -524,7 +528,9 @@ exports[`the Card component should render card details 1`] = `
                 "color": "#303030",
                 "fontFamily": "Colfax-Bold",
                 "fontSize": 15.75,
-                "lineHeight": 17.85,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
               }
             }
           >
@@ -680,7 +686,9 @@ exports[`the Card component should render card details with date 1`] = `
                 "color": "#303030",
                 "fontFamily": "Colfax-Bold",
                 "fontSize": 15.75,
-                "lineHeight": 17.85,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
               }
             }
           >

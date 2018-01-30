@@ -10,7 +10,9 @@ exports[`the H6 component should accept additional props 1`] = `
       "color": "#303030",
       "fontFamily": "Colfax-Bold",
       "fontSize": 15.75,
-      "lineHeight": 17.85,
+      "lineHeight": 17.75,
+      "paddingBottom": 1.8,
+      "paddingTop": 2.25,
     }
   }
 >
@@ -28,7 +30,9 @@ exports[`the H6 component should accept and render passed in styles 1`] = `
       "color": "salmon",
       "fontFamily": "Colfax-Bold",
       "fontSize": 15.75,
-      "lineHeight": 17.85,
+      "lineHeight": 17.75,
+      "paddingBottom": 1.8,
+      "paddingTop": 2.25,
     }
   }
 >
@@ -46,7 +50,9 @@ exports[`the H6 component should render correctly 1`] = `
       "color": "#303030",
       "fontFamily": "Colfax-Bold",
       "fontSize": 15.75,
-      "lineHeight": 17.85,
+      "lineHeight": 17.75,
+      "paddingBottom": 1.8,
+      "paddingTop": 2.25,
     }
   }
 >

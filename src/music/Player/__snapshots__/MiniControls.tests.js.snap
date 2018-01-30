@@ -60,8 +60,10 @@ exports[`The MiniControls component should render 1`] = `
             "fontFamily": "Colfax-Bold",
             "fontSize": 15.75,
             "height": 20,
-            "lineHeight": 17.85,
+            "lineHeight": 17.75,
             "overflow": "hidden",
+            "paddingBottom": 1.8,
+            "paddingTop": 2.25,
           }
         }
       >

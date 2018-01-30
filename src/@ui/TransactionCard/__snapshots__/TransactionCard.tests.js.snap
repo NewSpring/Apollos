@@ -167,7 +167,9 @@ exports[`the TransactionCard component should render Failure 1`] = `
               "color": "#6bac43",
               "fontFamily": "Colfax-Bold",
               "fontSize": 15.75,
-              "lineHeight": 17.85,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
             }
           }
         >
@@ -372,7 +374,9 @@ exports[`the TransactionCard component should render Success 1`] = `
               "color": "#6bac43",
               "fontFamily": "Colfax-Bold",
               "fontSize": 15.75,
-              "lineHeight": 17.85,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
             }
           }
         >
@@ -577,7 +581,9 @@ exports[`the TransactionCard component should render scheduled payments 1`] = `
               "color": "#6bac43",
               "fontFamily": "Colfax-Bold",
               "fontSize": 15.75,
-              "lineHeight": 17.85,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
             }
           }
         >

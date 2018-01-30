@@ -145,7 +145,9 @@ exports[`The TileFeed component renders correctly 1`] = `
                       "color": "#303030",
                       "fontFamily": "Colfax-Bold",
                       "fontSize": 15.75,
-                      "lineHeight": 17.85,
+                      "lineHeight": 17.75,
+                      "paddingBottom": 1.8,
+                      "paddingTop": 2.25,
                     }
                   }
                 >
@@ -265,7 +267,9 @@ exports[`The TileFeed component renders correctly 1`] = `
                       "color": "#303030",
                       "fontFamily": "Colfax-Bold",
                       "fontSize": 15.75,
-                      "lineHeight": 17.85,
+                      "lineHeight": 17.75,
+                      "paddingBottom": 1.8,
+                      "paddingTop": 2.25,
                     }
                   }
                 >
