@@ -12,7 +12,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -27,7 +29,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -55,7 +59,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": undefined,
@@ -73,7 +79,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -99,7 +107,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -114,7 +124,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -140,7 +152,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -155,7 +169,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -181,7 +197,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -196,7 +214,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -230,7 +250,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": "#303030",
@@ -245,7 +267,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": undefined,
@@ -272,7 +296,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -287,7 +313,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -321,7 +349,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
@@ -346,7 +376,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -361,7 +393,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -389,7 +423,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": undefined,
@@ -407,7 +443,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -433,7 +471,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -448,7 +488,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -474,7 +516,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -489,7 +533,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -523,7 +569,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": "#303030",
@@ -538,7 +586,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": undefined,
@@ -565,7 +615,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -580,7 +632,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -599,7 +653,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
@@ -615,7 +671,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
@@ -635,7 +693,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
@@ -651,7 +711,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
@@ -671,7 +733,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
@@ -687,7 +751,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
@@ -714,7 +780,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -729,7 +797,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -755,7 +825,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -770,7 +842,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -804,7 +878,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
@@ -829,7 +905,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -855,7 +933,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": undefined,
@@ -873,7 +953,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -892,7 +974,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
@@ -908,7 +992,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
@@ -928,7 +1014,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
@@ -944,7 +1032,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
@@ -964,7 +1054,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
@@ -980,7 +1072,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
@@ -1000,7 +1094,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
@@ -1016,7 +1112,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
@@ -1043,7 +1141,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -1058,7 +1158,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
@@ -1084,7 +1186,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
@@ -1099,7 +1203,9 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,

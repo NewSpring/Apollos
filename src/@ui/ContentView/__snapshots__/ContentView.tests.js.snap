@@ -55,7 +55,9 @@ exports[`the ContentView component renders 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
@@ -70,7 +72,9 @@ exports[`the ContentView component renders 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,
@@ -96,7 +100,9 @@ exports[`the ContentView component renders 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
@@ -111,7 +117,9 @@ exports[`the ContentView component renders 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,
@@ -251,7 +259,9 @@ exports[`the ContentView component renders with images 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
@@ -266,7 +276,9 @@ exports[`the ContentView component renders with images 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,
@@ -292,7 +304,9 @@ exports[`the ContentView component renders with images 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
@@ -307,7 +321,9 @@ exports[`the ContentView component renders with images 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,
@@ -383,7 +399,9 @@ exports[`the ContentView component renders with video 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
@@ -398,7 +416,9 @@ exports[`the ContentView component renders with video 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,
@@ -424,7 +444,9 @@ exports[`the ContentView component renders with video 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
@@ -439,7 +461,9 @@ exports[`the ContentView component renders with video 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,

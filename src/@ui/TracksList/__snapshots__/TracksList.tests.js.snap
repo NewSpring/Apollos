@@ -125,7 +125,9 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
@@ -185,7 +187,9 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
@@ -245,7 +249,9 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
@@ -305,7 +311,9 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
@@ -365,7 +373,9 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
@@ -425,7 +435,9 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
@@ -485,7 +497,9 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
@@ -545,7 +559,9 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
@@ -605,7 +621,9 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
@@ -665,7 +683,9 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
