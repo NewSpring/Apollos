@@ -95,6 +95,9 @@ class ContributionHistoryList extends PureComponent {
       );
     }
 
+    // TODO: this should probably be refactored to use a SectionList eventually.
+    // However, SectionList isn't supported on react-native-web, and writing a polyfill
+    // would add more debt then worth
     return (
       <FlatList
         refreshing={this.props.isLoading}
@@ -105,7 +108,7 @@ class ContributionHistoryList extends PureComponent {
         numColumns={1}
         onEndReachedThreshold={0.7}
         ListHeaderComponent={emptyHeader}
-        keyExtractor={item => item.id}
+        keyExtractor={({ year }) => year}
       />
     );
   }
