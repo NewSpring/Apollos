@@ -10,15 +10,17 @@ const styles = styled(({ theme }) => ({
   color: theme.colors.text.primary,
   ...Platform.select({
     ios: {
-      paddingTop: theme.helpers.rem(0.25),
+      paddingTop: theme.helpers.rem(0.3),
       paddingBottom: theme.helpers.rem(0.15),
-      lineHeight: theme.helpers.verticalRhythm(2.35, 1.25),
+      lineHeight: theme.helpers.verticalRhythm(1.8, 1.14),
     },
     android: {
-      lineHeight: theme.helpers.verticalRhythm(2.35, 1.4),
+      lineHeight: theme.helpers.verticalRhythm(1.8, 1.34),
     },
     web: {
-      lineHeight: theme.helpers.verticalRhythm(2.35, 1.25),
+      paddingTop: theme.helpers.rem(0.3),
+      paddingBottom: theme.helpers.rem(0.1),
+      lineHeight: theme.helpers.verticalRhythm(1.8, 1.15),
     },
   }),
 }), 'H3');

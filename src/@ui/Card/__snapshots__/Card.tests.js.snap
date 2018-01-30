@@ -41,7 +41,7 @@ exports[`the Card component it should render a placeholder 1`] = `
             "backgroundColor": "#dddddd",
             "borderRadius": 6,
             "height": 32.4,
-            "marginVertical": 13.175,
+            "marginVertical": 4.32,
             "width": "100%",
           }
         }
@@ -195,9 +195,9 @@ exports[`the Card component should render 1`] = `
             "color": "#303030",
             "fontFamily": "Colfax-Bold",
             "fontSize": 32.4,
-            "lineHeight": 58.75,
+            "lineHeight": 41.04,
             "paddingBottom": 2.7,
-            "paddingTop": 4.5,
+            "paddingTop": 5.4,
           }
         }
       >
