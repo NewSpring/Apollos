@@ -143,6 +143,8 @@ exports[`the CashAmountIndicator component should render accept different sizes 
         "fontFamily": "Colfax-Bold",
         "fontSize": 25.2,
         "lineHeight": 31.28,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.05,
       }
     }
   >
@@ -175,6 +177,8 @@ exports[`the CashAmountIndicator component should render accept different sizes 
         "fontFamily": "Colfax-Bold",
         "fontSize": 25.2,
         "lineHeight": 31.28,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.05,
       }
     }
   >

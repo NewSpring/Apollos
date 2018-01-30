@@ -72,6 +72,8 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                 "fontSize": 25.2,
                 "lineHeight": 31.28,
                 "opacity": 0.5,
+                "paddingBottom": 2.7,
+                "paddingTop": 4.05,
               }
             }
           >
@@ -601,6 +603,8 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                 "fontSize": 25.2,
                 "lineHeight": 31.28,
                 "opacity": 0.5,
+                "paddingBottom": 2.7,
+                "paddingTop": 4.05,
               }
             }
           >
@@ -1130,6 +1134,8 @@ exports[`The FrequencyInput component should render correctly with initial state
                 "fontSize": 25.2,
                 "lineHeight": 31.28,
                 "opacity": 0.5,
+                "paddingBottom": 2.7,
+                "paddingTop": 4.05,
               }
             }
           >

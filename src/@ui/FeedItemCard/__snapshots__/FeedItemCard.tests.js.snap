@@ -108,6 +108,8 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
             "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -288,6 +290,8 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
             "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -466,6 +470,8 @@ exports[`the FeedItemCard component should render 1`] = `
             "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -644,6 +650,8 @@ exports[`the FeedItemCard component should render as liked 1`] = `
             "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -822,6 +830,8 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
             "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -1000,6 +1010,8 @@ exports[`the FeedItemCard component should render with inverted (light) font col
             "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >

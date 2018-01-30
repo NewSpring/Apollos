@@ -171,6 +171,8 @@ exports[`The TileFeed component renders correctly 1`] = `
                     "fontFamily": "Colfax-Bold",
                     "fontSize": 25.2,
                     "lineHeight": 31.28,
+                    "paddingBottom": 2.7,
+                    "paddingTop": 4.05,
                   }
                 }
               >
@@ -289,6 +291,8 @@ exports[`The TileFeed component renders correctly 1`] = `
                     "fontFamily": "Colfax-Bold",
                     "fontSize": 25.2,
                     "lineHeight": 31.28,
+                    "paddingBottom": 2.7,
+                    "paddingTop": 4.05,
                   }
                 }
               >
