@@ -75,67 +75,105 @@ exports[`The TileFeed component renders correctly 1`] = `
       }
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "paddingHorizontal": 10,
+            "opacity": 1,
           }
         }
+        testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "aspectRatio": 1,
-              "backgroundColor": "#dddddd",
-              "borderRadius": 6,
-              "height": "100%",
-              "overflow": "hidden",
+              "paddingHorizontal": 10,
             }
           }
-          testID={undefined}
         >
           <View
             style={
               Object {
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "aspectRatio": 1,
+                "backgroundColor": "#dddddd",
+                "borderRadius": 6,
+                "height": "100%",
+                "overflow": "hidden",
               }
             }
           >
             <View
-              size={1}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#ffffff",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
-                  "height": 36,
+                  "bottom": 0,
                   "justifyContent": "center",
                   "left": 0,
                   "position": "absolute",
+                  "right": 0,
                   "top": 0,
-                  "width": 36,
                 }
               }
             >
-              <View>
+              <View
+                size={1}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#ffffff",
+                    "borderBottomRightRadius": 6,
+                    "borderTopLeftRadius": 6,
+                    "height": 36,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": 36,
+                  }
+                }
+              >
+                <View>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "#303030",
+                        "fontFamily": "Colfax-Bold",
+                        "fontSize": 15.75,
+                        "lineHeight": 17.75,
+                        "paddingBottom": 1.8,
+                        "paddingTop": 2.25,
+                      }
+                    }
+                  >
+                    1
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "paddingHorizontal": 20,
+                    "paddingVertical": 15,
+                  }
+                }
+              >
                 <Text
                   accessible={true}
                   allowFontScaling={true}
@@ -144,42 +182,16 @@ exports[`The TileFeed component renders correctly 1`] = `
                     Object {
                       "color": "#303030",
                       "fontFamily": "Colfax-Bold",
-                      "fontSize": 15.75,
-                      "lineHeight": 17.75,
-                      "paddingBottom": 1.8,
-                      "paddingTop": 2.25,
+                      "fontSize": 25.2,
+                      "lineHeight": 31.28,
+                      "paddingBottom": 2.7,
+                      "paddingTop": 4.05,
                     }
                   }
                 >
-                  1
+                  Why Jesus Is Timeless
                 </Text>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "#303030",
-                    "fontFamily": "Colfax-Bold",
-                    "fontSize": 25.2,
-                    "lineHeight": 31.28,
-                    "paddingBottom": 2.7,
-                    "paddingTop": 4.05,
-                  }
-                }
-              >
-                Why Jesus Is Timeless
-              </Text>
             </View>
           </View>
         </View>
@@ -197,67 +209,105 @@ exports[`The TileFeed component renders correctly 1`] = `
       }
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "paddingHorizontal": 10,
+            "opacity": 1,
           }
         }
+        testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "aspectRatio": 1,
-              "backgroundColor": "#dddddd",
-              "borderRadius": 6,
-              "height": "100%",
-              "overflow": "hidden",
+              "paddingHorizontal": 10,
             }
           }
-          testID={undefined}
         >
           <View
             style={
               Object {
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "aspectRatio": 1,
+                "backgroundColor": "#dddddd",
+                "borderRadius": 6,
+                "height": "100%",
+                "overflow": "hidden",
               }
             }
           >
             <View
-              size={1}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#ffffff",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
-                  "height": 36,
+                  "bottom": 0,
                   "justifyContent": "center",
                   "left": 0,
                   "position": "absolute",
+                  "right": 0,
                   "top": 0,
-                  "width": 36,
                 }
               }
             >
-              <View>
+              <View
+                size={1}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#ffffff",
+                    "borderBottomRightRadius": 6,
+                    "borderTopLeftRadius": 6,
+                    "height": 36,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": 36,
+                  }
+                }
+              >
+                <View>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "#303030",
+                        "fontFamily": "Colfax-Bold",
+                        "fontSize": 15.75,
+                        "lineHeight": 17.75,
+                        "paddingBottom": 1.8,
+                        "paddingTop": 2.25,
+                      }
+                    }
+                  >
+                    2
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "paddingHorizontal": 20,
+                    "paddingVertical": 15,
+                  }
+                }
+              >
                 <Text
                   accessible={true}
                   allowFontScaling={true}
@@ -266,42 +316,16 @@ exports[`The TileFeed component renders correctly 1`] = `
                     Object {
                       "color": "#303030",
                       "fontFamily": "Colfax-Bold",
-                      "fontSize": 15.75,
-                      "lineHeight": 17.75,
-                      "paddingBottom": 1.8,
-                      "paddingTop": 2.25,
+                      "fontSize": 25.2,
+                      "lineHeight": 31.28,
+                      "paddingBottom": 2.7,
+                      "paddingTop": 4.05,
                     }
                   }
                 >
-                  2
+                  Why Jesus Is Timeless
                 </Text>
               </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "#303030",
-                    "fontFamily": "Colfax-Bold",
-                    "fontSize": 25.2,
-                    "lineHeight": 31.28,
-                    "paddingBottom": 2.7,
-                    "paddingTop": 4.05,
-                  }
-                }
-              >
-                Why Jesus Is Timeless
-              </Text>
             </View>
           </View>
         </View>
@@ -422,97 +446,109 @@ exports[`The TileFeed component renders empty state 1`] = `
       }
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "paddingHorizontal": 10,
+            "opacity": 1,
           }
         }
+        testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "aspectRatio": 1,
-              "backgroundColor": "#dddddd",
-              "borderRadius": 6,
-              "height": "100%",
-              "overflow": "hidden",
+              "paddingHorizontal": 10,
             }
           }
-          testID={undefined}
         >
           <View
             style={
               Object {
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "aspectRatio": 1,
+                "backgroundColor": "#dddddd",
+                "borderRadius": 6,
+                "height": "100%",
+                "overflow": "hidden",
               }
             }
           >
             <View
-              size={1}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#ffffff",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
-                  "height": 36,
+                  "bottom": 0,
                   "justifyContent": "center",
                   "left": 0,
                   "position": "absolute",
+                  "right": 0,
                   "top": 0,
-                  "width": 36,
                 }
               }
             >
               <View
+                size={1}
                 style={
                   Object {
-                    "backgroundColor": "#f7f7f7",
-                    "borderRadius": 6,
-                    "height": 45,
-                    "width": 45,
+                    "alignItems": "center",
+                    "backgroundColor": "#ffffff",
+                    "borderBottomRightRadius": 6,
+                    "borderTopLeftRadius": 6,
+                    "height": 36,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": 36,
                   }
                 }
-              />
-            </View>
-            <View
-              style={
-                Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
-                }
-              }
-            >
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#f7f7f7",
+                      "borderRadius": 6,
+                      "height": 45,
+                      "width": 45,
+                    }
+                  }
+                />
+              </View>
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#f7f7f7",
-                    "borderRadius": 6,
-                    "height": 25.2,
-                    "marginVertical": 3.040000000000001,
-                    "width": "80%",
+                    "paddingHorizontal": 20,
+                    "paddingVertical": 15,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#f7f7f7",
+                      "borderRadius": 6,
+                      "height": 25.2,
+                      "marginVertical": 3.040000000000001,
+                      "width": "80%",
+                    }
+                  }
+                />
+              </View>
             </View>
           </View>
         </View>
@@ -530,97 +566,109 @@ exports[`The TileFeed component renders empty state 1`] = `
       }
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "paddingHorizontal": 10,
+            "opacity": 1,
           }
         }
+        testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "aspectRatio": 1,
-              "backgroundColor": "#dddddd",
-              "borderRadius": 6,
-              "height": "100%",
-              "overflow": "hidden",
+              "paddingHorizontal": 10,
             }
           }
-          testID={undefined}
         >
           <View
             style={
               Object {
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "aspectRatio": 1,
+                "backgroundColor": "#dddddd",
+                "borderRadius": 6,
+                "height": "100%",
+                "overflow": "hidden",
               }
             }
           >
             <View
-              size={1}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#ffffff",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
-                  "height": 36,
+                  "bottom": 0,
                   "justifyContent": "center",
                   "left": 0,
                   "position": "absolute",
+                  "right": 0,
                   "top": 0,
-                  "width": 36,
                 }
               }
             >
               <View
+                size={1}
                 style={
                   Object {
-                    "backgroundColor": "#f7f7f7",
-                    "borderRadius": 6,
-                    "height": 45,
-                    "width": 45,
+                    "alignItems": "center",
+                    "backgroundColor": "#ffffff",
+                    "borderBottomRightRadius": 6,
+                    "borderTopLeftRadius": 6,
+                    "height": 36,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": 36,
                   }
                 }
-              />
-            </View>
-            <View
-              style={
-                Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
-                }
-              }
-            >
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#f7f7f7",
+                      "borderRadius": 6,
+                      "height": 45,
+                      "width": 45,
+                    }
+                  }
+                />
+              </View>
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#f7f7f7",
-                    "borderRadius": 6,
-                    "height": 25.2,
-                    "marginVertical": 3.040000000000001,
-                    "width": "80%",
+                    "paddingHorizontal": 20,
+                    "paddingVertical": 15,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#f7f7f7",
+                      "borderRadius": 6,
+                      "height": 25.2,
+                      "marginVertical": 3.040000000000001,
+                      "width": "80%",
+                    }
+                  }
+                />
+              </View>
             </View>
           </View>
         </View>
@@ -638,97 +686,109 @@ exports[`The TileFeed component renders empty state 1`] = `
       }
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "paddingHorizontal": 10,
+            "opacity": 1,
           }
         }
+        testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "aspectRatio": 1,
-              "backgroundColor": "#dddddd",
-              "borderRadius": 6,
-              "height": "100%",
-              "overflow": "hidden",
+              "paddingHorizontal": 10,
             }
           }
-          testID={undefined}
         >
           <View
             style={
               Object {
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "aspectRatio": 1,
+                "backgroundColor": "#dddddd",
+                "borderRadius": 6,
+                "height": "100%",
+                "overflow": "hidden",
               }
             }
           >
             <View
-              size={1}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#ffffff",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
-                  "height": 36,
+                  "bottom": 0,
                   "justifyContent": "center",
                   "left": 0,
                   "position": "absolute",
+                  "right": 0,
                   "top": 0,
-                  "width": 36,
                 }
               }
             >
               <View
+                size={1}
                 style={
                   Object {
-                    "backgroundColor": "#f7f7f7",
-                    "borderRadius": 6,
-                    "height": 45,
-                    "width": 45,
+                    "alignItems": "center",
+                    "backgroundColor": "#ffffff",
+                    "borderBottomRightRadius": 6,
+                    "borderTopLeftRadius": 6,
+                    "height": 36,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": 36,
                   }
                 }
-              />
-            </View>
-            <View
-              style={
-                Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
-                }
-              }
-            >
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#f7f7f7",
+                      "borderRadius": 6,
+                      "height": 45,
+                      "width": 45,
+                    }
+                  }
+                />
+              </View>
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#f7f7f7",
-                    "borderRadius": 6,
-                    "height": 25.2,
-                    "marginVertical": 3.040000000000001,
-                    "width": "80%",
+                    "paddingHorizontal": 20,
+                    "paddingVertical": 15,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#f7f7f7",
+                      "borderRadius": 6,
+                      "height": 25.2,
+                      "marginVertical": 3.040000000000001,
+                      "width": "80%",
+                    }
+                  }
+                />
+              </View>
             </View>
           </View>
         </View>
@@ -746,97 +806,109 @@ exports[`The TileFeed component renders empty state 1`] = `
       }
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "paddingHorizontal": 10,
+            "opacity": 1,
           }
         }
+        testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "aspectRatio": 1,
-              "backgroundColor": "#dddddd",
-              "borderRadius": 6,
-              "height": "100%",
-              "overflow": "hidden",
+              "paddingHorizontal": 10,
             }
           }
-          testID={undefined}
         >
           <View
             style={
               Object {
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "aspectRatio": 1,
+                "backgroundColor": "#dddddd",
+                "borderRadius": 6,
+                "height": "100%",
+                "overflow": "hidden",
               }
             }
           >
             <View
-              size={1}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#ffffff",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
-                  "height": 36,
+                  "bottom": 0,
                   "justifyContent": "center",
                   "left": 0,
                   "position": "absolute",
+                  "right": 0,
                   "top": 0,
-                  "width": 36,
                 }
               }
             >
               <View
+                size={1}
                 style={
                   Object {
-                    "backgroundColor": "#f7f7f7",
-                    "borderRadius": 6,
-                    "height": 45,
-                    "width": 45,
+                    "alignItems": "center",
+                    "backgroundColor": "#ffffff",
+                    "borderBottomRightRadius": 6,
+                    "borderTopLeftRadius": 6,
+                    "height": 36,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": 36,
                   }
                 }
-              />
-            </View>
-            <View
-              style={
-                Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
-                }
-              }
-            >
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#f7f7f7",
+                      "borderRadius": 6,
+                      "height": 45,
+                      "width": 45,
+                    }
+                  }
+                />
+              </View>
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#f7f7f7",
-                    "borderRadius": 6,
-                    "height": 25.2,
-                    "marginVertical": 3.040000000000001,
-                    "width": "80%",
+                    "paddingHorizontal": 20,
+                    "paddingVertical": 15,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#f7f7f7",
+                      "borderRadius": 6,
+                      "height": 25.2,
+                      "marginVertical": 3.040000000000001,
+                      "width": "80%",
+                    }
+                  }
+                />
+              </View>
             </View>
           </View>
         </View>
@@ -854,97 +926,109 @@ exports[`The TileFeed component renders empty state 1`] = `
       }
     >
       <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "paddingHorizontal": 10,
+            "opacity": 1,
           }
         }
+        testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "aspectRatio": 1,
-              "backgroundColor": "#dddddd",
-              "borderRadius": 6,
-              "height": "100%",
-              "overflow": "hidden",
+              "paddingHorizontal": 10,
             }
           }
-          testID={undefined}
         >
           <View
             style={
               Object {
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "aspectRatio": 1,
+                "backgroundColor": "#dddddd",
+                "borderRadius": 6,
+                "height": "100%",
+                "overflow": "hidden",
               }
             }
           >
             <View
-              size={1}
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#ffffff",
-                  "borderBottomRightRadius": 6,
-                  "borderTopLeftRadius": 6,
-                  "height": 36,
+                  "bottom": 0,
                   "justifyContent": "center",
                   "left": 0,
                   "position": "absolute",
+                  "right": 0,
                   "top": 0,
-                  "width": 36,
                 }
               }
             >
               <View
+                size={1}
                 style={
                   Object {
-                    "backgroundColor": "#f7f7f7",
-                    "borderRadius": 6,
-                    "height": 45,
-                    "width": 45,
+                    "alignItems": "center",
+                    "backgroundColor": "#ffffff",
+                    "borderBottomRightRadius": 6,
+                    "borderTopLeftRadius": 6,
+                    "height": 36,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": 36,
                   }
                 }
-              />
-            </View>
-            <View
-              style={
-                Object {
-                  "paddingHorizontal": 20,
-                  "paddingVertical": 15,
-                }
-              }
-            >
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#f7f7f7",
+                      "borderRadius": 6,
+                      "height": 45,
+                      "width": 45,
+                    }
+                  }
+                />
+              </View>
               <View
                 style={
                   Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#f7f7f7",
-                    "borderRadius": 6,
-                    "height": 25.2,
-                    "marginVertical": 3.040000000000001,
-                    "width": "80%",
+                    "paddingHorizontal": 20,
+                    "paddingVertical": 15,
                   }
                 }
-              />
+              >
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#f7f7f7",
+                      "borderRadius": 6,
+                      "height": 25.2,
+                      "marginVertical": 3.040000000000001,
+                      "width": "80%",
+                    }
+                  }
+                />
+              </View>
             </View>
           </View>
         </View>

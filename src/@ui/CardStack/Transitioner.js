@@ -4,7 +4,7 @@ import { Platform, Animated, StyleSheet, View, Easing, PanResponder } from 'reac
 import { clamp, get, findIndex } from 'lodash';
 import styled from '@ui/styled';
 
-import interpolator from './interpolator';
+import Interpolator from './Interpolator';
 import findFirstMatch from './findFirstMatch';
 
 export const PUSH = 'PUSH';
@@ -41,8 +41,6 @@ class Transitioner extends PureComponent {
     match: PropTypes.shape({
       isExact: PropTypes.bool,
     }),
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     directionPropNameForChildren: PropTypes.string,
     style: PropTypes.any, // eslint-disable-line
@@ -58,11 +56,15 @@ class Transitioner extends PureComponent {
     style: undefined,
   };
 
-  state = {
-    transition: null,
-    entries: [this.props.location],
-    index: 0,
-  };
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      transition: null,
+      entries: [this.props.location],
+      toKey: this.keyForLocation(this.props.location),
+      index: 0,
+    };
+  }
 
   // In a routing change: set up state to handle the transition and start the animation
   componentWillReceiveProps(nextProps) {
@@ -70,11 +72,24 @@ class Transitioner extends PureComponent {
 
     let { entries } = this.state;
     const transition = nextProps.history.action;
-    const toKey = this.keyForLocation(nextProps.location);
+    let toKey = this.keyForLocation(nextProps.location);
 
-    // If new location and current location point to same key,
-    // change entry at current index and exit (no animation)
-    if (this.keyForLocation(this.props.location) === toKey) {
+    // If new location and current location point to the same <Route> object,
+    // we need to decide whether we should animate the transition, or let the <Route>
+    // component do it. Sometimes, <Route>'s render child routes, or respond to multiple
+    // path types. Other times, a route might be pushed multiple times if there's a wildcard in
+    // the route - like '/articles/:article_id'. So, to determine whether we should animate this
+    // transition, or pass it off to the <Route> child, we look for the inclusion of `exact` in the
+    // route config. If the route is exact, we treat the route as a normal card stack transition.
+    // Otherwise, we assume the <Route> renders sub-routes, and let it handle its own animation.
+    let isSameKey = false;
+    if (this.routeChildForLocation(nextProps.location).props.exact) {
+      // if exact matching is enabled on the Route, use key
+      isSameKey = (this.keyForLocation(this.props.location) === toKey);
+    } else {
+      isSameKey = (this.locationsfromSameRoute(nextProps.location, this.props.location));
+    }
+    if (isSameKey) {
       entries[this.state.index] = nextProps.location;
       this.setState(entries);
       return;
@@ -104,13 +119,17 @@ class Transitioner extends PureComponent {
       case REPLACE:
       default:
         entries[this.state.index] = nextProps.location;
+        // optimization: prevents remount edge-case
+        toKey = this.state.toKey || toKey;  // eslint-disable-line
         break;
     }
 
-    const fromPosition = findIndex(entries, ({ key }) => key === this.props.location.key);
+    let fromPosition = findIndex(entries, ({ key }) => key === this.props.location.key);
+    if (fromPosition <= -1) fromPosition = toPosition;
 
     this.setState({
       entries,
+      toKey,
       previouslyRenderedLocation: this.props.location,
       index: toPosition,
       transition,
@@ -169,6 +188,9 @@ class Transitioner extends PureComponent {
   // Points to the index of the current screen rendered in `renderScreens`
   animatedPosition = new Animated.Value(0);
 
+  width = 0;
+  height = 0;
+
   animatePosition = (fromPosition, toPosition) => {
     if (Platform.OS === 'web') {
       this.animatedPosition.setValue(toPosition);
@@ -191,6 +213,11 @@ class Transitioner extends PureComponent {
       }
     });
   }
+
+  handleLayout = ({ nativeEvent: { layout: { height, width } } }) => {
+    this.height = height;
+    this.width = width;
+  };
 
   panResponder = PanResponder.create({
     onMoveShouldSetPanResponder: (event, gesture) => (
@@ -219,7 +246,7 @@ class Transitioner extends PureComponent {
     onPanResponderMove: (event, { dx, dy }) => {
       const startValue = this.state.index;
       const dValue = this.isHorizontal ? dx : dy;
-      const size = this.isHorizontal ? this.props.width : this.props.height;
+      const size = this.isHorizontal ? this.width : this.height;
 
       const currentValue = startValue + (-dValue / size);
       const value = clamp(startValue - 1, currentValue, startValue);
@@ -232,7 +259,7 @@ class Transitioner extends PureComponent {
       // Calculate animate duration according to gesture speed and moved distance
       const movedDistance = this.isHorizontal ? dx : dy;
       const gestureVelocity = this.isHorizontal ? vx : vy;
-      const size = this.isHorizontal ? this.props.width : this.props.height;
+      const size = this.isHorizontal ? this.width : this.height;
       const defaultVelocity = size / ANIMATION_DURATION;
       const velocity = Math.max(Math.abs(gestureVelocity), defaultVelocity);
       const resetDuration = movedDistance / velocity;
@@ -317,7 +344,7 @@ class Transitioner extends PureComponent {
   afterNavigate = () => {
     this.setState({
       transition: null,
-      entries: this.state.entries.slice(0, this.state.index + 2),
+      entries: this.state.entries.slice(0, this.state.index + 1),
     });
   }
 
@@ -327,34 +354,32 @@ class Transitioner extends PureComponent {
       .map((entry, index) => (
         this.renderScreenWithAnimation({
           index,
-          key: this.keyForLocation(entry),
+          key: this.state.index === index ? this.state.toKey : this.keyForLocation(entry),
           screen: this.routeChildForLocation(entry),
         })
       ));
     return screens;
   }
 
-  renderScreenWithAnimation = ({ index, screen, key }) => {
-    const style = [
-      StyleSheet.absoluteFill,
-      interpolator({
-        ...this.props,
-        direction: this.direction,
-        index,
-        animatedPosition: this.animatedPosition,
-      }),
-    ];
-    return (
-      <Animated.View key={key} style={style}>
-        {screen}
-      </Animated.View>
-    );
-  }
+  renderScreenWithAnimation = ({ index, screen, key }) => (
+    <Interpolator
+      key={key}
+      {...this.props}
+      width={this.width}
+      height={this.height}
+      direction={this.direction}
+      index={index}
+      animatedPosition={this.animatedPosition}
+    >
+      {screen}
+    </Interpolator>
+  )
 
   render() {
     return (
       <View
         style={this.props.style}
+        onLayout={this.handleLayout}
         {...this.panResponder.panHandlers}
       >
         {this.renderScreens()}

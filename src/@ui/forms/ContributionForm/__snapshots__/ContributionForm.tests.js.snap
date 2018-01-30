@@ -100,8 +100,10 @@ exports[`The ContributionForm component renders correctly 1`] = `
               onChangeText={[Function]}
               onFocus={[Function]}
               placeholder="0.00"
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
               style={
                 Object {
+                  "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",
@@ -813,8 +815,10 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
               onChangeText={[Function]}
               onFocus={[Function]}
               placeholder="0.00"
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
               style={
                 Object {
+                  "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",
@@ -1341,8 +1345,10 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
               onChangeText={[Function]}
               onFocus={[Function]}
               placeholder="0.00"
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
               style={
                 Object {
+                  "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",
@@ -2049,8 +2055,10 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
               onChangeText={[Function]}
               onFocus={[Function]}
               placeholder="0.00"
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
               style={
                 Object {
+                  "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",
@@ -2822,8 +2830,10 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
               onChangeText={[Function]}
               onFocus={[Function]}
               placeholder="0.00"
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
               style={
                 Object {
+                  "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",
@@ -3535,8 +3545,10 @@ exports[`The ContributionForm component shows the second fund 1`] = `
               onChangeText={[Function]}
               onFocus={[Function]}
               placeholder="0.00"
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
               style={
                 Object {
+                  "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",

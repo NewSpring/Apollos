@@ -44,8 +44,10 @@ exports[`The DateInput component should render correctly 1`] = `
         onChangeText={[Function]}
         onFocus={[Function]}
         placeholder="MM/DD/YYYY"
+        placeholderTextColor="rgba(48, 48, 48, 0.6)"
         style={
           Object {
+            "color": "#303030",
             "fontFamily": "Colfax-Regular",
             "height": 40,
             "lineHeight": 30,

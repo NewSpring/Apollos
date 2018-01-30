@@ -2,51 +2,111 @@ import React from 'react';
 import { View, StatusBar, Platform } from 'react-native';
 import SafeAreaView from '@ui/SafeAreaView';
 import PropTypes from 'prop-types';
-import { compose, setPropTypes, branch, renderNothing, pure } from 'recompose';
-import { withTheme } from '@ui/theme';
+import { compose, setPropTypes, pure, branch, renderNothing, defaultProps, renderComponent } from 'recompose';
+import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
-import { H6 } from '@ui/typography';
+import { H2, H6 } from '@ui/typography';
 
 import BackButton from './BackButton';
 
-const StyledHeaderBar = styled({
+const StyledHeaderBar = styled(({ theme }) => ({
   height: 50,
+  paddingHorizontal: theme.sizing.baseUnit / 2,
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
-}, 'Header.Bar')(View);
+  ...Platform.select({
+    web: {
+      height: undefined,
+      paddingHorizontal: theme.sizing.baseUnit,
+      paddingVertical: theme.sizing.baseUnit,
+      paddingTop: theme.sizing.baseUnit * 2.5,
+      justifyContent: 'flex-start',
+    },
+  }),
+}), 'Header.Bar')(View);
 
 const HeaderContainer = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.primary,
+  ...Platform.select({
+    android: {
+      paddingTop: 25, // todo: this is currently required as SafeAreaView isn't
+      // properly adding padding on android.
+    },
+    web: {
+      backgroundColor: theme.colors.background.paper,
+    },
+  }),
 }), 'Header.Container')(SafeAreaView);
 
-const StyledHeaderText = styled(({ theme, barStyle }) => ({
-  color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
-}), 'Header.Text')(H6);
+const StyledHeaderText = compose(
+  branch(() => Platform.OS === 'web',
+    renderComponent(H2),
+    styled(({ theme, barStyle }) => ({
+      color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
+    }), 'Header.Text'),
+  ),
+)(H6);
+
+const RightContainer = styled(({ theme }) => ({
+  position: 'absolute',
+  right: 4,
+  top: 0,
+  bottom: 0,
+  justifyContent: 'center',
+  ...Platform.select({
+    web: {
+      right: theme.sizing.baseUnit,
+      top: theme.sizing.baseUnit,
+      justifyContent: 'flex-start',
+    },
+  }),
+}), 'Header.RightContainer')(View);
 
 const enhance = compose(
-  withTheme(),
-  pure,
-  branch(() => Platform.OS === 'web', renderNothing),
+  defaultProps({
+    backButton: false,
+    barStyle: 'light-content',
+    children: null,
+  }),
   setPropTypes({
+    webEnabled: PropTypes.bool,
     titleText: PropTypes.string,
     backButton: PropTypes.bool,
     barStyle: PropTypes.oneOf(['light-content', 'dark-content']),
+    children: PropTypes.node,
   }),
+  branch(({ webEnabled }) => !webEnabled && Platform.OS === 'web', renderNothing),
+  branch(() => Platform.OS !== 'web', withThemeMixin(({ theme, barStyle }) => ({
+    type: (barStyle === 'light-content') ? 'dark' : 'light',
+    colors: {
+      background: {
+        ...theme.colors.background,
+        default: theme.colors.background.primary,
+      },
+    },
+  }))),
+  withTheme(),
+  pure,
 );
 
 const Header = enhance(({
   titleText,
+  right,
   backButton = false,
-  backgroundColor,
   barStyle = 'light-content',
+  style = {},
+  backgroundColor,
+  children,
   theme,
 }) => (
-  <HeaderContainer style={backgroundColor ? { backgroundColor } : null}>
+  <HeaderContainer style={[backgroundColor ? { backgroundColor } : null, style]}>
     <StatusBar barStyle={barStyle} />
     <StyledHeaderBar>
       {backButton ? <BackButton color={barStyle === 'dark-content' ? theme.colors.darkPrimary : undefined} /> : null}
-      <StyledHeaderText barStyle={barStyle}>{titleText}</StyledHeaderText>
+      {titleText ? (<StyledHeaderText barStyle={barStyle}>{titleText}</StyledHeaderText>) : null}
+      {children}
+      {right ? <RightContainer>{right}</RightContainer> : null}
     </StyledHeaderBar>
   </HeaderContainer>
 ));

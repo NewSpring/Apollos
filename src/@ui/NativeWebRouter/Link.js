@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  TouchableWithoutFeedback,
-} from 'react-native';
+import Touchable from '@ui/Touchable';
+import { Linking } from 'react-native';
 import { matchPath } from './';
 
 export const goBackTo = ({ to, history, replace = false }) => {
   let foundMatchingEntry = false;
   let distance = -1;
+
   if (to && history.entries) {
     const routeToPopTo = history.entries.findIndex(location =>
       matchPath(location.pathname, to),
@@ -19,10 +19,9 @@ export const goBackTo = ({ to, history, replace = false }) => {
   }
 
   if (foundMatchingEntry || !replace) {
-    history.go(distance);
-  } else {
-    history.replace(to);
+    return history.go(distance);
   }
+  return history.replace(to);
 };
 
 export default class Link extends Component {
@@ -51,7 +50,7 @@ export default class Link extends Component {
 
   static defaultProps = {
     onPress() {},
-    component: TouchableWithoutFeedback,
+    component: Touchable,
     replace: false,
     to: null,
     pop: false,
@@ -62,6 +61,11 @@ export default class Link extends Component {
 
     const { history } = this.context.router;
     const { to, replace, pop } = this.props;
+
+    // handle web links
+    if (to && to.indexOf('http') > -1) {
+      return Linking.openURL(to);
+    }
 
     if (pop) {
       return goBackTo({ to, history });

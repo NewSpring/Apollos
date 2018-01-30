@@ -43,8 +43,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
           onBlur={[Function]}
           onChangeText={[Function]}
           onFocus={[Function]}
+          placeholderTextColor="rgba(48, 48, 48, 0.6)"
           style={
             Object {
+              "color": "#303030",
               "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
@@ -192,8 +194,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
           onBlur={[Function]}
           onChangeText={[Function]}
           onFocus={[Function]}
+          placeholderTextColor="rgba(48, 48, 48, 0.6)"
           style={
             Object {
+              "color": "#303030",
               "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
@@ -344,8 +348,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
           onBlur={[Function]}
           onChangeText={[Function]}
           onFocus={[Function]}
+          placeholderTextColor="rgba(48, 48, 48, 0.6)"
           style={
             Object {
+              "color": "#303030",
               "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
@@ -841,8 +847,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           onBlur={[Function]}
           onChangeText={[Function]}
           onFocus={[Function]}
+          placeholderTextColor="rgba(48, 48, 48, 0.6)"
           style={
             Object {
+              "color": "#303030",
               "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
@@ -990,8 +998,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           onBlur={[Function]}
           onChangeText={[Function]}
           onFocus={[Function]}
+          placeholderTextColor="rgba(48, 48, 48, 0.6)"
           style={
             Object {
+              "color": "#303030",
               "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
@@ -1142,8 +1152,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           onBlur={[Function]}
           onChangeText={[Function]}
           onFocus={[Function]}
+          placeholderTextColor="rgba(48, 48, 48, 0.6)"
           style={
             Object {
+              "color": "#303030",
               "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,

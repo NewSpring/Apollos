@@ -15,26 +15,10 @@ exports[`The Header component should render correctly 1`] = `
         "flexDirection": "row",
         "height": 50,
         "justifyContent": "center",
+        "paddingHorizontal": 10,
       }
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      barStyle="light-content"
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#ffffff",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 15.75,
-          "lineHeight": 17.75,
-          "paddingBottom": 1.8,
-          "paddingTop": 2.25,
-        }
-      }
-    />
-  </View>
+  />
 </RCTSafeAreaView>
 `;
 
@@ -53,13 +37,16 @@ exports[`The Header component should render with a back button correctly 1`] = `
         "flexDirection": "row",
         "height": 50,
         "justifyContent": "center",
+        "paddingHorizontal": 10,
       }
     }
   >
     <View
       style={
         Object {
+          "alignItems": "center",
           "bottom": 0,
+          "justifyContent": "center",
           "left": 4,
           "position": "absolute",
           "top": 0,
@@ -71,7 +58,10 @@ exports[`The Header component should render with a back button correctly 1`] = `
         accessibilityLabel={undefined}
         accessibilityTraits={undefined}
         accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
+        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -82,41 +72,35 @@ exports[`The Header component should render with a back button correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "alignItems": "center",
-            "height": 50,
-            "justifyContent": "center",
+            "opacity": 1,
           }
         }
         testID={undefined}
+        tvParallaxProperties={undefined}
       >
-        <Svg
-          height={24}
-          viewBox="0 0 24 24"
-          width={24}
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
         >
-          <Path
-            d="M14.35 21L6.2 12.46c-.26-.28-.26-.64 0-.92L14.34 3l1.65.9L8.27 12 16 20.1l-1.65.9z"
-            fill="#ffffff"
-          />
-        </Svg>
+          <Svg
+            color={undefined}
+            height={24}
+            viewBox="0 0 24 24"
+            width={24}
+          >
+            <Path
+              d="M14.35 21L6.2 12.46c-.26-.28-.26-.64 0-.92L14.34 3l1.65.9L8.27 12 16 20.1l-1.65.9z"
+              fill="#ffffff"
+            />
+          </Svg>
+        </View>
       </View>
     </View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      barStyle="light-content"
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#ffffff",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 15.75,
-          "lineHeight": 17.75,
-          "paddingBottom": 1.8,
-          "paddingTop": 2.25,
-        }
-      }
-    />
   </View>
 </RCTSafeAreaView>
 `;

@@ -953,7 +953,7 @@ exports[`the FeedItemCard component should render with inverted (light) font col
   isLight={false}
   style={
     Object {
-      "backgroundColor": "#303030",
+      "backgroundColor": "#505050",
       "borderRadius": 6,
       "marginHorizontal": 10,
       "marginVertical": 5,

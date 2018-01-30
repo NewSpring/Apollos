@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Audio as ExpoAudio } from 'expo';
 import PropTypes from 'prop-types';
 import { Animated, View } from 'react-native';
@@ -6,7 +6,7 @@ import AudioPlay from './AudioPlay';
 import AudioPause from './AudioPause';
 import AudioSeeker from './AudioSeeker';
 
-export default class Audio extends Component {
+export default class Audio extends PureComponent {
   static Play = AudioPlay;
   static Pause = AudioPause;
   static Seeker = AudioSeeker;
@@ -84,14 +84,14 @@ export default class Audio extends Component {
   }
 
   componentWillUnmount() {
-    this.sound.unloadAsync();
+    if (this.sound) this.sound.unloadAsync();
   }
 
-  onPlaybackStatusUpdate = (soundStatus) => {
-    this.positionMillisDriver.setValue(soundStatus.positionMillis);
-    this.progressDriver.setValue((soundStatus.positionMillis / this.duration) || 0);
+  onPlaybackStatusUpdate = ({ didJustFinish, positionMillis }) => {
+    this.positionMillisDriver.setValue(positionMillis);
+    this.progressDriver.setValue((positionMillis / this.duration) || 0);
 
-    if (soundStatus.didJustFinish) {
+    if (didJustFinish) {
       this.props.onPlaybackReachedEnd(this.sound);
     }
   }

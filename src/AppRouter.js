@@ -2,12 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Platform } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
-import { enhancer as mediaQuery } from '@ui/MediaQuery';
+import { withWindow } from '@ui/MediaQuery';
+import { withTheme } from '@ui/theme';
 import { Router, Route, ProtectedRoute, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@ui/NativeWebRouter';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
-import FlexedView from '@ui/FlexedView';
+import orientation from '@utils/orientation';
+import BackgroundView from '@ui/BackgroundView';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -18,7 +20,9 @@ import Series, { Sermon, SeriesSingle, SeriesTrailer } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
+import Live from './live';
 import Auth from './auth';
+import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
 
@@ -31,6 +35,11 @@ class AppRouter extends PureComponent {
       pathname: PropTypes.string,
     }),
     isLargeScreen: PropTypes.bool,
+  }
+
+  constructor(...args) {
+    super(...args);
+    orientation.allow(orientation.Orientation.PORTRAIT_UP);
   }
 
   componentWillMount() {
@@ -72,14 +81,15 @@ class AppRouter extends PureComponent {
     <Route exact path="/sections" key="sections-modal" component={asModal(tabs.Sections)} />,
     <Route path="/give/checkout" key="give-checkout" component={asModal(give.Checkout)} />,
     <Route path="/give/new-payment-method" key="give-new-payment-method" component={asModal(give.AddAccount)} />,
-    <Route path="/give/payment-methods/:id" key="give-payment-method" component={asModal(give.PaymentMethod)} />,
+    <Route exact path="/give/payment-methods/:id" key="give-payment-method" component={asModal(give.PaymentMethod)} />,
     <Route path="/login" key="login" component={asModal(Auth)} />,
+    <Route path="/discover" key="discover" component={asModal(tabs.Discover)} />,
   ];
 
   tabs = () => { // eslint-disable-line
     // On mobile we render tabs.Layout at this level so that other <Route>s at
     // the root level in the router can render on top of the tabbar
-    const Layout = Platform.OS === 'web' ? FlexedView : tabs.Layout;
+    const Layout = Platform.OS === 'web' ? BackgroundView : tabs.Layout;
     return (
       <Layout>
         <Switch>
@@ -88,15 +98,6 @@ class AppRouter extends PureComponent {
           <Route exact path="/groups" component={tabs.Groups} />
           <Route exact path="/discover" component={tabs.Discover} />
           <ProtectedRoute exact path="/profile" component={tabs.Profile} />
-
-          <Route exact path="/give" component={give.Dashboard} />
-          <Route exact path="/give/methods" component={give.PaymentMethods} />
-          <Route exact path="/give/history" component={give.Transactions} />
-          <Route exact path="/give/history/:id" component={give.TransactionDetails} />
-          <Route exact path="/give/now" component={give.Now} />
-          <Route exact path="/give/campaign/:slug" component={give.Campaign} />
-          <Route exact path="/give/schedules/:id" component={give.Schedule} />
-          <Route exact path="/give/thankyou" component={give.ThankYou} />
         </Switch>
       </Layout>
     );
@@ -105,9 +106,9 @@ class AppRouter extends PureComponent {
   render() {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
-    const AppLayout = Platform.OS === 'web' ? tabs.Layout : FlexedView;
+    const AppLayout = Platform.OS === 'web' ? tabs.Layout : BackgroundView;
     return (
-      <FlexedView>
+      <BackgroundView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         <Player>
           <AppLayout>
@@ -148,26 +149,42 @@ class AppRouter extends PureComponent {
               <Route exact path="/groups/finder" component={GroupFinderResults} />
               <Route exact path="/groups/:id" component={GroupSingle} />
 
+              <Route exact path="/give/methods" component={give.PaymentMethods} />
+              <Route exact path="/give/campaign/:slug" component={give.Campaign} />
+              <Route exact path="/give/schedules/:id" component={give.Schedule} />
+              <Route exact path="/give/thankyou" component={give.ThankYou} />
+
               <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
               <Route path="/give/new-payment-method" cardStackDirection="vertical" component={give.AddAccount} />
-              <Route path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
+              <Route exact path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
-              <Route path="/login" cardStackDirection="vertical" component={Auth} />
+              <Route path="/give" component={give.GiveRoutes} />
+
+              <Route path="/login" component={Auth} cardStackDirection="vertical" />
+
+              <Route exact path="/live" component={asModal(Live)} cardStackDirection="vertical" />
+              <ProtectedRoute exact path="/settings" component={Settings} />
+              <ProtectedRoute exact path="/settings/profile" component={ProfileDetails} />
+              <ProtectedRoute exact path="/settings/address" component={ProfileAddress} />
+              <ProtectedRoute exact path="/settings/password" component={ChangePassword} />
 
               <Route cardStackKey="tabs" component={this.tabs} />
             </CardStack>
           </AppLayout>
           {this.isModal ? this.largeScreenModals : null}
         </Player>
-        {this.isModal ? this.largeScreenModals : null}
-      </FlexedView>
+      </BackgroundView>
     );
   }
 }
 
 const enhance = compose(
   withRouter,
-  mediaQuery(({ md }) => ({ minWidth: md }), withProps(() => ({ isLargeScreen: true }))),
+  withWindow,
+  withTheme(),
+  withProps(({ theme, window }) => ({
+    isLargeScreen: window.width > theme.breakpoints.md,
+  })),
 );
 
 export default nest(Router, enhance(AppRouter));

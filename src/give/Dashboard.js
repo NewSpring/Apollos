@@ -5,20 +5,18 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, branch, renderComponent } from 'recompose';
+import { compose, branch, renderComponent, withProps } from 'recompose';
 import get from 'lodash/get';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { withRouter } from '@ui/NativeWebRouter';
-import Header from '@ui/Header';
 import AccountCard from '@ui/AccountCard';
 import ScheduleCard from '@ui/ScheduleCard';
 import TransactionCard from '@ui/TransactionCard';
 import ExpiringAccountCard from '@ui/ExpiringAccountCard';
-import FlexedView from '@ui/FlexedView';
+import BackgroundView from '@ui/BackgroundView';
 import DashboardSubheader from '@ui/DashboardSubheader';
 import ContributionsChartCard from '@ui/ContributionsChartCard';
 import withGivingDashboard from '@data/withGivingDashboard';
-import GiveNavigator from '@ui/TmpGiveNavigator';
 
 export class Dashboard extends PureComponent {
   static propTypes = {
@@ -36,25 +34,28 @@ export class Dashboard extends PureComponent {
       push: PropTypes.func,
     }),
     scheduledTransactions: PropTypes.arrayOf(PropTypes.shape({})),
+    onPressActivityLink: PropTypes.func,
+    onPressExpiringAccountCard: PropTypes.func,
+    onPressNewScheduleLink: PropTypes.func,
   };
 
   static defaultProps = {
     savedPaymentMethods: [],
     activityItems: [],
     scheduledTransactions: [],
+    onPressActivityLink() {},
+    onPressExpiringAccountCard() {},
+    onPressNewScheduleLink() {},
   };
 
   render() {
     return (
-      <FlexedView>
-        <Header titleText="Give Dashboard" />
+      <BackgroundView>
         <ScrollView>
-          <GiveNavigator />
-
           <DashboardSubheader
             text="Activity"
             buttonText="See All"
-            onPress={() => this.props.history.push('/give/history')}
+            onPress={this.props.onPressActivityLink}
           />
           {this.props.activityItems.map((activityItem) => {
             if (activityItem.__typename === 'Transaction') {
@@ -76,7 +77,7 @@ export class Dashboard extends PureComponent {
                 key={activityItem.id}
                 name={activityItem.name}
                 expirationDate={`${activityItem.expirationMonth}/${activityItem.expirationYear}`}
-                onPress={() => this.props.history.push('/give/now')}
+                onPress={() => this.props.onPressExpiringAccountCard(activityItem.id)}
               />
             );
           })}
@@ -85,7 +86,7 @@ export class Dashboard extends PureComponent {
           <DashboardSubheader
             text="Active Schedules"
             buttonText="New Schedule"
-            onPress={() => this.props.history.push('/give/now')}
+            onPress={this.props.onPressNewScheduleLink}
           />
           {this.props.scheduledTransactions.map(scheduledTransaction => (
             <ScheduleCard
@@ -116,7 +117,7 @@ export class Dashboard extends PureComponent {
             </TouchableWithoutFeedback>
           ))}
         </ScrollView>
-      </FlexedView>
+      </BackgroundView>
     );
   }
 }
@@ -125,6 +126,11 @@ export class Dashboard extends PureComponent {
 const enhance = compose(
   withGivingDashboard,
   withRouter,
+  withProps(props => ({
+    onPressActivityLink() { props.route.jumpTo('ContributionHistory'); },
+    onPressExpiringAccountCard() { props.route.jumpTo('Now'); },
+    onPressNewScheduleLink() { props.route.jumpTo('ContributionHistory'); },
+  })),
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
 );
 

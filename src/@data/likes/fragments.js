@@ -3,14 +3,33 @@ import gql from 'graphql-tag';
 export const contentCard = gql`
   fragment ContentCard on Content {
     __typename
-    entryId: id
+    id
+    title
+    channelName
+    parent {
+      channelName
+      id
+      content {
+        images(sizes: ["medium"]) {
+          url
+          label
+          fileLabel
+          id
+        }
+      }
+    }
     content {
       isLiked
+      images(sizes: ["medium"]) {
+        url
+        label
+        fileLabel
+        id
+      }
     }
   }
 `;
 
-// TODO: Add isLiked to groups
 export const groupCard = gql`
   fragment GroupCard on Group {
     __typename

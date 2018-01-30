@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TabBar, { Layout, Link } from '@ui/TabBar';
-import FlexedView from '@ui/FlexedView';
+import BackgroundView from '@ui/BackgroundView';
 
 const TabBarLayout = ({ children }) => (
   <Layout>
-    <FlexedView>
+    <BackgroundView>
       {children}
-    </FlexedView>
+    </BackgroundView>
     <TabBar>
       <Link to="/" icon="logo" label="Home" />
       <Link to="/sections" icon="sections" label="Sections" />

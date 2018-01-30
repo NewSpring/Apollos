@@ -79,6 +79,7 @@
     }
   },
   "dependencies": {
+    "@expo/react-native-action-sheet": "github:xcarpentier/react-native-action-sheet",
     "apollo-cache-inmemory": "^1.1.0",
     "apollo-client": "^2.0.2",
     "apollo-link-context": "^1.0.1",
@@ -132,7 +133,7 @@
     "react-list": "^0.8.8",
     "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
     "react-native-keyboard-aware-scroll-view": "^0.4.1",
-    "react-native-tab-view": "^0.0.73",
+    "react-native-tab-view": "^0.0.74",
     "react-native-web": "^0.3.2",
     "react-router": "^4.2.0",
     "recompose": "^0.26.0",

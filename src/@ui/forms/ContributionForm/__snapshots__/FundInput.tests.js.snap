@@ -99,8 +99,10 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholder="0.00"
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 32.4,
                 "fontWeight": "700",
@@ -630,8 +632,10 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholder="0.00"
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 32.4,
                 "fontWeight": "700",
@@ -1161,8 +1165,10 @@ exports[`The FrequencyInput component should render correctly with initial state
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholder="0.00"
+            placeholderTextColor="rgba(48, 48, 48, 0.6)"
             style={
               Object {
+                "color": "#303030",
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 32.4,
                 "fontWeight": "700",

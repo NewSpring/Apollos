@@ -38,10 +38,10 @@ const getItemIsLight = (item) => {
   return isLight;
 };
 
-const defaultFeedItemRenderer = ({ item }) => ( // eslint-disable-line
+export const defaultFeedItemRenderer = (CardComponent = FeedItemCard) => ({ item }) => ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
-    <FeedItemCard
-      id={item.entryId}
+    <CardComponent
+      id={item.id}
       title={item.title}
       category={item.category}
       images={getItemImages(item)}
@@ -95,17 +95,26 @@ const FeedView = enhance(({
   content,
   fetchMore,
   numColumns,
+  renderItem,
+  ItemComponent,
   ...otherProps
-}) => (
-  <FeedList
-    {...otherProps}
-    refreshing={isLoading}
-    onRefresh={refetch}
-    onEndReached={fetchMore}
-    numColumns={numColumns}
-    data={content}
-  />
-));
+}) => {
+  let itemRenderer = renderItem;
+  if (!itemRenderer) {
+    itemRenderer = defaultFeedItemRenderer(ItemComponent);
+  }
+  return (
+    <FeedList
+      {...otherProps}
+      renderItem={itemRenderer}
+      refreshing={isLoading}
+      onRefresh={refetch}
+      onEndReached={fetchMore}
+      numColumns={numColumns}
+      data={content}
+    />
+  );
+});
 
 FeedView.defaultProps = {
   isLoading: false,
@@ -114,7 +123,7 @@ FeedView.defaultProps = {
   content: [],
   refetch: undefined,
   fetchMore: undefined,
-  renderItem: defaultFeedItemRenderer,
+  ItemComponent: FeedItemCard,
 };
 
 FeedView.propTypes = {
@@ -125,6 +134,7 @@ FeedView.propTypes = {
   renderItem: PropTypes.func,
   renderEmptyState: PropTypes.func,
   numColumns: PropTypes.number,
+  ItemComponent: PropTypes.any, // eslint-disable-line
 };
 
 export default FeedView;

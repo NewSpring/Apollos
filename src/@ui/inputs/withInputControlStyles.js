@@ -9,6 +9,7 @@ const textStyle = ({ theme }) => ({
   ...baseStyle({ theme }),
   lineHeight: 30,
   fontFamily: theme.typography.fontFamilySans.regular.default,
+  color: theme.colors.text.primary,
 });
 
 export const withInputControlViewStyles = styled(baseStyle);

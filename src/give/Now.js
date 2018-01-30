@@ -1,16 +1,12 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import Header from '@ui/Header';
-import FlexedView from '@ui/FlexedView';
+import BackgroundView from '@ui/BackgroundView';
 import PaddedView from '@ui/PaddedView';
 import { ContributionForm } from '@ui/forms';
-import GiveNavigator from '@ui/TmpGiveNavigator';
 
 const Now = () => (
-  <FlexedView>
-    <Header titleText="Give Dashboard" />
+  <BackgroundView>
     <ScrollView>
-      <GiveNavigator />
       <PaddedView>
         <ContributionForm
           onComplete={({ history, savedPaymentMethods } = {}) => {
@@ -23,7 +19,7 @@ const Now = () => (
         />
       </PaddedView>
     </ScrollView>
-  </FlexedView>
+  </BackgroundView>
 );
 
 export default Now;

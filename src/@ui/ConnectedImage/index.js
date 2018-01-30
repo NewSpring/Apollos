@@ -2,16 +2,20 @@ import React, { PureComponent } from 'react';
 import { Platform, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { every } from 'lodash';
+import makeCanceable from '@utils/makeCanceable';
 
 import SkeletonImage from './SkeletonImage';
 
 // This mirrors the File resource we get from Heighliner:
-const ImageSourceType = PropTypes.shape({
-  uri: PropTypes.string,
-  label: PropTypes.string,
-  width: PropTypes.number,
-  height: PropTypes.number,
-});
+const ImageSourceType = PropTypes.oneOfType([
+  PropTypes.shape({
+    uri: PropTypes.string,
+    label: PropTypes.string,
+    width: PropTypes.number,
+    height: PropTypes.number,
+  }),
+  PropTypes.string,
+]);
 
 export const sizeCache = {};
 
@@ -73,6 +77,10 @@ class ConnectedImage extends PureComponent {
   componentWillMount() { this.updateCache(this.props.source); }
   componentWillReceiveProps(newProps) { this.updateCache(newProps.source); }
 
+  componentWillUnmount() {
+    if (this.cacheUpdater) this.cacheUpdater.cancel();
+  }
+
   get aspectRatio() {
     const style = {};
     if (this.props.maintainAspectRatio) {
@@ -94,7 +102,8 @@ class ConnectedImage extends PureComponent {
   }
 
   updateCache(sources) {
-    updateCache(sources).then(() => (
+    this.cacheUpdater = makeCanceable(updateCache(sources));
+    this.cacheUpdater.promise.then(() => (
       this.setState({ source: getCachedSources(sources) })
     ));
   }
