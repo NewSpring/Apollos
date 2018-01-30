@@ -1,8 +1,21 @@
 {
   "expo": {
+    "name": "NewSpring Apollos",
+    "description": "The official NewSpring mobile application.",
+    "slug": "newspring-apollos",
     "sdkVersion": "25.0.0",
+    "version": "6.0.0",
     "ios": {
-      "bundleIdentifier": "com.newspring.apollos"
+      "bundleIdentifier": "com.subsplashstudio31.NewSpring-Church",
+      "buildNumber": "6",
+      "supportsTablet": true,
+      "associatedDomains": [
+        "applinks:beta.newspring.cc",
+        "applinks:newspring.cc",
+        "applinks:beta-my.newspring.cc",
+        "applinks:my.newspring.cc",
+        "applinks:rm2y5.app.goo.gl"
+      ]
     },
     "android": {
       "package": "com.newspring.apollos"
