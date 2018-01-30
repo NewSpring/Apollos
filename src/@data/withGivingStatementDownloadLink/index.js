@@ -1,10 +1,37 @@
 import { graphql } from 'react-apollo';
-import givingStatementMutation from './givingStatementMutation';
+import gql from 'graphql-tag';
+import moment from 'moment';
 
-// Not too sure how this will work on native
-export default graphql(givingStatementMutation, {
+export const MUTATION = gql`
+  mutation GetGivingStatement($limit: Int, $skip: Int, $people: [Int], $start: String, $end: String) {
+    transactionStatement(
+      limit: $limit,
+      skip: $skip,
+      people: $people,
+      start: $start,
+      end: $end
+    ){
+      file
+    }
+  }
+`;
+
+export default graphql(MUTATION, {
   props: ({ mutate }) => ({
-    getPDF: variables => mutate({ variables }),
+    getPDF: year => mutate({
+      variables: {
+        start: moment()
+          .utc()
+          .year(year)
+          .startOf('year')
+          .format('MM/DD/YYYY'),
+        end: moment()
+          .utc()
+          .year(year)
+          .endOf('year')
+          .format('MM/DD/YYYY'),
+      },
+    }),
   }),
 });
 
