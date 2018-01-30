@@ -5,6 +5,17 @@ import {
 import PropTypes from 'prop-types';
 import { H3 } from '@ui/typography';
 import CashAmountIndicator from '@ui/CashAmountIndicator';
+import styled from '@ui/styled';
+
+const StyledView = styled(({ theme }) => ({
+  alignItems: 'center',
+  justifyContent: 'center',
+  paddingVertical: theme.sizing.baseUnit / 2,
+}))(View);
+
+const StyledH3 = styled(({ theme }) => ({
+  color: theme.colors.text.secondary,
+}))(H3);
 
 export default class TransactionDetail extends PureComponent {
   static propTypes = {
@@ -19,12 +30,12 @@ export default class TransactionDetail extends PureComponent {
 
   render() {
     return (
-      <View>
-        <H3>{this.props.fundName}</H3>
+      <StyledView>
+        <StyledH3>{this.props.fundName}</StyledH3>
         <CashAmountIndicator
           amount={this.props.amount}
         />
-      </View>
+      </StyledView>
     );
   }
 }
