@@ -12,6 +12,7 @@ import ActivityIndicator from '@ui/ActivityIndicator';
 import { BodyCopy } from '@ui/typography';
 import { ButtonLink } from '@ui/Button';
 import ContributionHistoryHeader from './ContributionHistoryHeader';
+import ContributionHistoryFilter from './ContributionHistoryFilter';
 
 class ContributionHistoryList extends PureComponent {
   static propTypes = {
@@ -35,6 +36,7 @@ class ContributionHistoryList extends PureComponent {
       }),
     })),
     onPressNoDataButton: PropTypes.func,
+    FilterComponent: PropTypes.any, // eslint-disable-line
   };
 
   static defaultProps = {
@@ -43,6 +45,7 @@ class ContributionHistoryList extends PureComponent {
     refetch() {},
     isLoading: true,
     onPressNoDataButton() {},
+    FilterComponent: ContributionHistoryFilter,
   };
 
   renderItem = ({ item }) => (
@@ -71,10 +74,15 @@ class ContributionHistoryList extends PureComponent {
     }
 
     const transactionsPerYear = map(groupBy(this.props.transactions, 'year'), (transactions, year) => ({ year, transactions }));
-    let emptyHeader = null;
+    let Header = (
+      <View>
+        <this.props.FilterComponent />
+      </View>
+    );
     if (transactionsPerYear.length === 0) {
-      emptyHeader = (
+      Header = (
         <View>
+          <this.props.FilterComponent />
           <PaddedView>
             <BodyCopy>
               {'We didn\'t find any contributions associated with your account. If you would like to start giving, you can '}
@@ -107,7 +115,7 @@ class ContributionHistoryList extends PureComponent {
         renderItem={this.renderItem}
         numColumns={1}
         onEndReachedThreshold={0.7}
-        ListHeaderComponent={emptyHeader}
+        ListHeaderComponent={Header}
         keyExtractor={({ year }) => year}
       />
     );
