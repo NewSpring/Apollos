@@ -4,7 +4,7 @@
 import invariant from 'invariant';
 import { NativeModules } from 'react-native';
 
-import Asset from './Asset';
+import Asset from './PatchedAssetFromExpo';
 import Constants from 'expo/src/Constants';
 
 type FontSource = string | number | Asset;
