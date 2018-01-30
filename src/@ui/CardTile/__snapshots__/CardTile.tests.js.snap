@@ -15,16 +15,16 @@ exports[`the Card component number box should grow elegantly with larger numbers
         "backgroundColor": "#dddddd",
         "borderRadius": 6,
         "height": "100%",
-        "overflow": "hidden",
       }
     }
   >
     <View
       style={
         Object {
+          "borderRadius": 6,
           "bottom": 0,
-          "justifyContent": "center",
           "left": 0,
+          "overflow": "hidden",
           "position": "absolute",
           "right": 0,
           "top": 0,
@@ -32,23 +32,61 @@ exports[`the Card component number box should grow elegantly with larger numbers
       }
     >
       <View
-        size={4}
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "#ffffff",
-            "borderBottomRightRadius": 6,
-            "borderTopLeftRadius": 6,
-            "height": 72,
+            "bottom": 0,
             "justifyContent": "center",
             "left": 0,
             "position": "absolute",
+            "right": 0,
             "top": 0,
-            "width": 72,
           }
         }
       >
-        <View>
+        <View
+          size={4}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#ffffff",
+              "borderBottomRightRadius": 6,
+              "borderTopLeftRadius": 6,
+              "height": 72,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 72,
+            }
+          }
+        >
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": null,
+                  "fontSize": 15.75,
+                  "fontWeight": "700",
+                  "lineHeight": 17.85,
+                }
+              }
+            >
+              7777
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 20,
+              "paddingVertical": 15,
+            }
+          }
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -57,40 +95,15 @@ exports[`the Card component number box should grow elegantly with larger numbers
               Object {
                 "color": "#303030",
                 "fontFamily": null,
-                "fontSize": 15.75,
+                "fontSize": 25.2,
                 "fontWeight": "700",
-                "lineHeight": 17.85,
+                "lineHeight": 31.28,
               }
             }
           >
-            7777
+            Why Jesus Is Timeless
           </Text>
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "paddingHorizontal": 20,
-            "paddingVertical": 15,
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 25.2,
-              "fontWeight": "700",
-              "lineHeight": 31.28,
-            }
-          }
-        >
-          Why Jesus Is Timeless
-        </Text>
       </View>
     </View>
   </View>
@@ -112,16 +125,16 @@ exports[`the Card component should render 1`] = `
         "backgroundColor": "#dddddd",
         "borderRadius": 6,
         "height": "100%",
-        "overflow": "hidden",
       }
     }
   >
     <View
       style={
         Object {
+          "borderRadius": 6,
           "bottom": 0,
-          "justifyContent": "center",
           "left": 0,
+          "overflow": "hidden",
           "position": "absolute",
           "right": 0,
           "top": 0,
@@ -131,27 +144,40 @@ exports[`the Card component should render 1`] = `
       <View
         style={
           Object {
-            "paddingHorizontal": 20,
-            "paddingVertical": 15,
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 25.2,
-              "fontWeight": "700",
-              "lineHeight": 31.28,
+              "paddingHorizontal": 20,
+              "paddingVertical": 15,
             }
           }
         >
-          Why Jesus Is Timeless
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 25.2,
+                "fontWeight": "700",
+                "lineHeight": 31.28,
+              }
+            }
+          >
+            Why Jesus Is Timeless
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -173,16 +199,16 @@ exports[`the Card component should render a loading skeleton 1`] = `
         "backgroundColor": "#dddddd",
         "borderRadius": 6,
         "height": "100%",
-        "overflow": "hidden",
       }
     }
   >
     <View
       style={
         Object {
+          "borderRadius": 6,
           "bottom": 0,
-          "justifyContent": "center",
           "left": 0,
+          "overflow": "hidden",
           "position": "absolute",
           "right": 0,
           "top": 0,
@@ -192,23 +218,36 @@ exports[`the Card component should render a loading skeleton 1`] = `
       <View
         style={
           Object {
-            "paddingHorizontal": 20,
-            "paddingVertical": 15,
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
           }
         }
       >
         <View
           style={
             Object {
-              "alignSelf": "stretch",
-              "backgroundColor": "#f7f7f7",
-              "borderRadius": 6,
-              "height": 25.2,
-              "marginVertical": 3.040000000000001,
-              "width": "80%",
+              "paddingHorizontal": 20,
+              "paddingVertical": 15,
             }
           }
-        />
+        >
+          <View
+            style={
+              Object {
+                "alignSelf": "stretch",
+                "backgroundColor": "#f7f7f7",
+                "borderRadius": 6,
+                "height": 25.2,
+                "marginVertical": 3.040000000000001,
+                "width": "80%",
+              }
+            }
+          />
+        </View>
       </View>
     </View>
   </View>
@@ -230,16 +269,16 @@ exports[`the Card component should render a loading skeleton for all available p
         "backgroundColor": "#dddddd",
         "borderRadius": 6,
         "height": "100%",
-        "overflow": "hidden",
       }
     }
   >
     <View
       style={
         Object {
+          "borderRadius": 6,
           "bottom": 0,
-          "justifyContent": "center",
           "left": 0,
+          "overflow": "hidden",
           "position": "absolute",
           "right": 0,
           "top": 0,
@@ -247,74 +286,31 @@ exports[`the Card component should render a loading skeleton for all available p
       }
     >
       <View
-        size={1}
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "#ffffff",
-            "borderBottomRightRadius": 6,
-            "borderTopLeftRadius": 6,
-            "height": 36,
+            "bottom": 0,
             "justifyContent": "center",
             "left": 0,
             "position": "absolute",
+            "right": 0,
             "top": 0,
-            "width": 36,
           }
         }
       >
         <View
-          style={
-            Object {
-              "backgroundColor": "#f7f7f7",
-              "borderRadius": 6,
-              "height": 45,
-              "width": 45,
-            }
-          }
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "paddingHorizontal": 20,
-            "paddingVertical": 15,
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignSelf": "stretch",
-              "backgroundColor": "#f7f7f7",
-              "borderRadius": 6,
-              "height": 25.2,
-              "marginVertical": 3.040000000000001,
-              "width": "80%",
-            }
-          }
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "flexWrap": "wrap",
-            "justifyContent": "space-between",
-            "paddingHorizontal": 20,
-            "paddingTop": 5,
-            "paddingVertical": 20,
-          }
-        }
-      >
-        <View
-          flexed={true}
+          size={1}
           style={
             Object {
               "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
+              "backgroundColor": "#ffffff",
+              "borderBottomRightRadius": 6,
+              "borderTopLeftRadius": 6,
+              "height": 36,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 36,
             }
           }
         >
@@ -323,45 +319,101 @@ exports[`the Card component should render a loading skeleton for all available p
               Object {
                 "backgroundColor": "#f7f7f7",
                 "borderRadius": 6,
-                "height": 21.6,
-                "width": 21.6,
+                "height": 45,
+                "width": 45,
               }
             }
           />
+        </View>
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 20,
+              "paddingVertical": 15,
+            }
+          }
+        >
           <View
             style={
               Object {
+                "alignSelf": "stretch",
+                "backgroundColor": "#f7f7f7",
+                "borderRadius": 6,
+                "height": 25.2,
+                "marginVertical": 3.040000000000001,
+                "width": "80%",
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "justifyContent": "space-between",
+              "paddingHorizontal": 20,
+              "paddingTop": 5,
+              "paddingVertical": 20,
+            }
+          }
+        >
+          <View
+            flexed={true}
+            style={
+              Object {
+                "alignItems": "center",
                 "flex": 1,
-                "paddingHorizontal": 10,
+                "flexDirection": "row",
               }
             }
           >
             <View
               style={
                 Object {
-                  "alignSelf": "stretch",
                   "backgroundColor": "#f7f7f7",
                   "borderRadius": 6,
-                  "height": 14,
-                  "marginVertical": 0.9349999999999996,
-                  "width": "40%",
+                  "height": 21.6,
+                  "width": 21.6,
                 }
               }
             />
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "paddingHorizontal": 10,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#f7f7f7",
+                    "borderRadius": 6,
+                    "height": 14,
+                    "marginVertical": 0.9349999999999996,
+                    "width": "40%",
+                  }
+                }
+              />
+            </View>
           </View>
-        </View>
-        <View
-          style={
-            Object {
-              "alignSelf": "stretch",
-              "backgroundColor": "#f7f7f7",
-              "borderRadius": 6,
-              "height": 14,
-              "marginVertical": 0.9349999999999996,
-              "width": "40%",
+          <View
+            style={
+              Object {
+                "alignSelf": "stretch",
+                "backgroundColor": "#f7f7f7",
+                "borderRadius": 6,
+                "height": 14,
+                "marginVertical": 0.9349999999999996,
+                "width": "40%",
+              }
             }
-          }
-        />
+          />
+        </View>
       </View>
     </View>
   </View>
@@ -383,16 +435,16 @@ exports[`the Card component should render a number box 1`] = `
         "backgroundColor": "#dddddd",
         "borderRadius": 6,
         "height": "100%",
-        "overflow": "hidden",
       }
     }
   >
     <View
       style={
         Object {
+          "borderRadius": 6,
           "bottom": 0,
-          "justifyContent": "center",
           "left": 0,
+          "overflow": "hidden",
           "position": "absolute",
           "right": 0,
           "top": 0,
@@ -400,23 +452,61 @@ exports[`the Card component should render a number box 1`] = `
       }
     >
       <View
-        size={1}
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "#ffffff",
-            "borderBottomRightRadius": 6,
-            "borderTopLeftRadius": 6,
-            "height": 36,
+            "bottom": 0,
             "justifyContent": "center",
             "left": 0,
             "position": "absolute",
+            "right": 0,
             "top": 0,
-            "width": 36,
           }
         }
       >
-        <View>
+        <View
+          size={1}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#ffffff",
+              "borderBottomRightRadius": 6,
+              "borderTopLeftRadius": 6,
+              "height": 36,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 36,
+            }
+          }
+        >
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": null,
+                  "fontSize": 15.75,
+                  "fontWeight": "700",
+                  "lineHeight": 17.85,
+                }
+              }
+            >
+              7
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 20,
+              "paddingVertical": 15,
+            }
+          }
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -425,40 +515,15 @@ exports[`the Card component should render a number box 1`] = `
               Object {
                 "color": "#303030",
                 "fontFamily": null,
-                "fontSize": 15.75,
+                "fontSize": 25.2,
                 "fontWeight": "700",
-                "lineHeight": 17.85,
+                "lineHeight": 31.28,
               }
             }
           >
-            7
+            Why Jesus Is Timeless
           </Text>
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "paddingHorizontal": 20,
-            "paddingVertical": 15,
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 25.2,
-              "fontWeight": "700",
-              "lineHeight": 31.28,
-            }
-          }
-        >
-          Why Jesus Is Timeless
-        </Text>
       </View>
     </View>
   </View>
@@ -480,16 +545,16 @@ exports[`the Card component should render card details 1`] = `
         "backgroundColor": "#dddddd",
         "borderRadius": 6,
         "height": "100%",
-        "overflow": "hidden",
       }
     }
   >
     <View
       style={
         Object {
+          "borderRadius": 6,
           "bottom": 0,
-          "justifyContent": "center",
           "left": 0,
+          "overflow": "hidden",
           "position": "absolute",
           "right": 0,
           "top": 0,
@@ -497,107 +562,35 @@ exports[`the Card component should render card details 1`] = `
       }
     >
       <View
-        size={1}
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "#ffffff",
-            "borderBottomRightRadius": 6,
-            "borderTopLeftRadius": 6,
-            "height": 36,
+            "bottom": 0,
             "justifyContent": "center",
             "left": 0,
             "position": "absolute",
+            "right": 0,
             "top": 0,
-            "width": 36,
-          }
-        }
-      >
-        <View>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#303030",
-                "fontFamily": null,
-                "fontSize": 15.75,
-                "fontWeight": "700",
-                "lineHeight": 17.85,
-              }
-            }
-          >
-            7
-          </Text>
-        </View>
-      </View>
-      <View
-        style={
-          Object {
-            "paddingHorizontal": 20,
-            "paddingVertical": 15,
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 25.2,
-              "fontWeight": "700",
-              "lineHeight": 31.28,
-            }
-          }
-        >
-          Why Jesus Is Timeless
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "flexWrap": "wrap",
-            "justifyContent": "space-between",
-            "paddingHorizontal": 20,
-            "paddingTop": 5,
-            "paddingVertical": 20,
           }
         }
       >
         <View
-          flexed={true}
+          size={1}
           style={
             Object {
               "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
+              "backgroundColor": "#ffffff",
+              "borderBottomRightRadius": 6,
+              "borderTopLeftRadius": 6,
+              "height": 36,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 36,
             }
           }
         >
-          <Svg
-            height={21.6}
-            viewBox="0 0 24 24"
-            width={21.6}
-          >
-            <Path
-              d="M3.8182 5.7778v12.4444H14.2V5.7778H3.8182zM16 6v12c0 1.1046-.8954 2-2 2H4c-1.1046 0-2-.8954-2-2V6c0-1.1046.8954-2 2-2h10c1.1046 0 2 .8954 2 2zm4.1818 2.6952L16 11.8084v.3832l4.1818 3.251V8.695zM16 14.4957V9.4253l6-4.2178v13.585l-6-4.2968z"
-              fill="#303030"
-            />
-          </Svg>
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "paddingHorizontal": 10,
-              }
-            }
-          >
+          <View>
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -606,13 +599,98 @@ exports[`the Card component should render card details 1`] = `
                 Object {
                   "color": "#303030",
                   "fontFamily": null,
-                  "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "fontSize": 15.75,
+                  "fontWeight": "700",
+                  "lineHeight": 17.85,
                 }
               }
             >
-              Marty Mcfly
+              7
             </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 20,
+              "paddingVertical": 15,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 25.2,
+                "fontWeight": "700",
+                "lineHeight": 31.28,
+              }
+            }
+          >
+            Why Jesus Is Timeless
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "justifyContent": "space-between",
+              "paddingHorizontal": 20,
+              "paddingTop": 5,
+              "paddingVertical": 20,
+            }
+          }
+        >
+          <View
+            flexed={true}
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Svg
+              height={21.6}
+              viewBox="0 0 24 24"
+              width={21.6}
+            >
+              <Path
+                d="M3.8182 5.7778v12.4444H14.2V5.7778H3.8182zM16 6v12c0 1.1046-.8954 2-2 2H4c-1.1046 0-2-.8954-2-2V6c0-1.1046.8954-2 2-2h10c1.1046 0 2 .8954 2 2zm4.1818 2.6952L16 11.8084v.3832l4.1818 3.251V8.695zM16 14.4957V9.4253l6-4.2178v13.585l-6-4.2968z"
+                fill="#303030"
+              />
+            </Svg>
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "paddingHorizontal": 10,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": null,
+                    "fontSize": 14,
+                    "lineHeight": 15.87,
+                  }
+                }
+              >
+                Marty Mcfly
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -636,16 +714,16 @@ exports[`the Card component should render card details with date 1`] = `
         "backgroundColor": "#dddddd",
         "borderRadius": 6,
         "height": "100%",
-        "overflow": "hidden",
       }
     }
   >
     <View
       style={
         Object {
+          "borderRadius": 6,
           "bottom": 0,
-          "justifyContent": "center",
           "left": 0,
+          "overflow": "hidden",
           "position": "absolute",
           "right": 0,
           "top": 0,
@@ -653,107 +731,35 @@ exports[`the Card component should render card details with date 1`] = `
       }
     >
       <View
-        size={1}
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "#ffffff",
-            "borderBottomRightRadius": 6,
-            "borderTopLeftRadius": 6,
-            "height": 36,
+            "bottom": 0,
             "justifyContent": "center",
             "left": 0,
             "position": "absolute",
+            "right": 0,
             "top": 0,
-            "width": 36,
-          }
-        }
-      >
-        <View>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#303030",
-                "fontFamily": null,
-                "fontSize": 15.75,
-                "fontWeight": "700",
-                "lineHeight": 17.85,
-              }
-            }
-          >
-            7
-          </Text>
-        </View>
-      </View>
-      <View
-        style={
-          Object {
-            "paddingHorizontal": 20,
-            "paddingVertical": 15,
-          }
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 25.2,
-              "fontWeight": "700",
-              "lineHeight": 31.28,
-            }
-          }
-        >
-          Why Jesus Is Timeless
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "flexWrap": "wrap",
-            "justifyContent": "space-between",
-            "paddingHorizontal": 20,
-            "paddingTop": 5,
-            "paddingVertical": 20,
           }
         }
       >
         <View
-          flexed={true}
+          size={1}
           style={
             Object {
               "alignItems": "center",
-              "flex": 1,
-              "flexDirection": "row",
+              "backgroundColor": "#ffffff",
+              "borderBottomRightRadius": 6,
+              "borderTopLeftRadius": 6,
+              "height": 36,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 36,
             }
           }
         >
-          <Svg
-            height={21.6}
-            viewBox="0 0 24 24"
-            width={21.6}
-          >
-            <Path
-              d="M3.8182 5.7778v12.4444H14.2V5.7778H3.8182zM16 6v12c0 1.1046-.8954 2-2 2H4c-1.1046 0-2-.8954-2-2V6c0-1.1046.8954-2 2-2h10c1.1046 0 2 .8954 2 2zm4.1818 2.6952L16 11.8084v.3832l4.1818 3.251V8.695zM16 14.4957V9.4253l6-4.2178v13.585l-6-4.2968z"
-              fill="#303030"
-            />
-          </Svg>
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "paddingHorizontal": 10,
-              }
-            }
-          >
+          <View>
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -762,30 +768,115 @@ exports[`the Card component should render card details with date 1`] = `
                 Object {
                   "color": "#303030",
                   "fontFamily": null,
-                  "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "fontSize": 15.75,
+                  "fontWeight": "700",
+                  "lineHeight": 17.85,
                 }
               }
             >
-              Marty Mcfly
+              7
             </Text>
           </View>
         </View>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": null,
-              "fontSize": 14,
-              "lineHeight": 15.87,
+              "paddingHorizontal": 20,
+              "paddingVertical": 15,
             }
           }
         >
-          32y
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 25.2,
+                "fontWeight": "700",
+                "lineHeight": 31.28,
+              }
+            }
+          >
+            Why Jesus Is Timeless
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "justifyContent": "space-between",
+              "paddingHorizontal": 20,
+              "paddingTop": 5,
+              "paddingVertical": 20,
+            }
+          }
+        >
+          <View
+            flexed={true}
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Svg
+              height={21.6}
+              viewBox="0 0 24 24"
+              width={21.6}
+            >
+              <Path
+                d="M3.8182 5.7778v12.4444H14.2V5.7778H3.8182zM16 6v12c0 1.1046-.8954 2-2 2H4c-1.1046 0-2-.8954-2-2V6c0-1.1046.8954-2 2-2h10c1.1046 0 2 .8954 2 2zm4.1818 2.6952L16 11.8084v.3832l4.1818 3.251V8.695zM16 14.4957V9.4253l6-4.2178v13.585l-6-4.2968z"
+                fill="#303030"
+              />
+            </Svg>
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "paddingHorizontal": 10,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": null,
+                    "fontSize": 14,
+                    "lineHeight": 15.87,
+                  }
+                }
+              >
+                Marty Mcfly
+              </Text>
+            </View>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": null,
+                "fontSize": 14,
+                "lineHeight": 15.87,
+              }
+            }
+          >
+            32y
+          </Text>
+        </View>
       </View>
     </View>
   </View>
