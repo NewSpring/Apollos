@@ -18,8 +18,10 @@ exports[`The RelatedContent component renders correctly 1`] = `
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 20.02,
-        "lineHeight": 25.46,
+        "lineHeight": 25.33,
         "marginBottom": 10,
+        "paddingBottom": 3.15,
+        "paddingTop": 2.7,
         "textAlign": "center",
       }
     }
@@ -94,7 +96,9 @@ exports[`The RelatedContent component renders correctly 1`] = `
                 "color": "#303030",
                 "fontFamily": "Colfax-Bold",
                 "fontSize": 20.02,
-                "lineHeight": 25.46,
+                "lineHeight": 25.33,
+                "paddingBottom": 3.15,
+                "paddingTop": 2.7,
               }
             }
           >
@@ -217,7 +221,9 @@ exports[`The RelatedContent component renders correctly 1`] = `
                 "color": "#303030",
                 "fontFamily": "Colfax-Bold",
                 "fontSize": 20.02,
-                "lineHeight": 25.46,
+                "lineHeight": 25.33,
+                "paddingBottom": 3.15,
+                "paddingTop": 2.7,
               }
             }
           >
@@ -295,7 +301,9 @@ exports[`The RelatedContent component renders correctly 1`] = `
                 "color": "#303030",
                 "fontFamily": "Colfax-Bold",
                 "fontSize": 20.02,
-                "lineHeight": 25.46,
+                "lineHeight": 25.33,
+                "paddingBottom": 3.15,
+                "paddingTop": 2.7,
               }
             }
           >
@@ -326,8 +334,10 @@ exports[`The RelatedContent component renders empty state 1`] = `
         "color": "#303030",
         "fontFamily": "Colfax-Bold",
         "fontSize": 20.02,
-        "lineHeight": 25.46,
+        "lineHeight": 25.33,
         "marginBottom": 10,
+        "paddingBottom": 3.15,
+        "paddingTop": 2.7,
         "textAlign": "center",
       }
     }
@@ -400,7 +410,7 @@ exports[`The RelatedContent component renders empty state 1`] = `
                 "backgroundColor": "#dddddd",
                 "borderRadius": 6,
                 "height": 20.02,
-                "marginVertical": 2.7200000000000006,
+                "marginVertical": 2.6549999999999994,
                 "width": "60%",
               }
             }
@@ -517,7 +527,7 @@ exports[`The RelatedContent component renders empty state 1`] = `
                 "backgroundColor": "#dddddd",
                 "borderRadius": 6,
                 "height": 20.02,
-                "marginVertical": 2.7200000000000006,
+                "marginVertical": 2.6549999999999994,
                 "width": "60%",
               }
             }
@@ -634,7 +644,7 @@ exports[`The RelatedContent component renders empty state 1`] = `
                 "backgroundColor": "#dddddd",
                 "borderRadius": 6,
                 "height": 20.02,
-                "marginVertical": 2.7200000000000006,
+                "marginVertical": 2.6549999999999994,
                 "width": "60%",
               }
             }

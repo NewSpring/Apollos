@@ -10,7 +10,9 @@ exports[`the H5 component should accept additional props 1`] = `
       "color": "#303030",
       "fontFamily": "Colfax-Bold",
       "fontSize": 20.02,
-      "lineHeight": 25.46,
+      "lineHeight": 25.33,
+      "paddingBottom": 3.15,
+      "paddingTop": 2.7,
     }
   }
 >
@@ -28,7 +30,9 @@ exports[`the H5 component should accept and render passed in styles 1`] = `
       "color": "salmon",
       "fontFamily": "Colfax-Bold",
       "fontSize": 20.02,
-      "lineHeight": 25.46,
+      "lineHeight": 25.33,
+      "paddingBottom": 3.15,
+      "paddingTop": 2.7,
     }
   }
 >
@@ -46,7 +50,9 @@ exports[`the H5 component should render correctly 1`] = `
       "color": "#303030",
       "fontFamily": "Colfax-Bold",
       "fontSize": 20.02,
-      "lineHeight": 25.46,
+      "lineHeight": 25.33,
+      "paddingBottom": 3.15,
+      "paddingTop": 2.7,
     }
   }
 >
