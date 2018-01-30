@@ -2,7 +2,7 @@ import React from 'react';
 import { compose, mapProps, pure, withProps } from 'recompose';
 
 import withStudyEntry from '@data/withStudyEntry';
-import FlexedView from '@ui/FlexedView';
+import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import SecondaryNav, { Link } from '@ui/SecondaryNav';
 import TabView, { SceneMap } from '@ui/TabView';
@@ -50,7 +50,7 @@ const Study = enhance(({
   if (hasScripture) tabRoutes.push({ title: 'Scripture', key: 'scripture' });
 
   return (
-    <FlexedView>
+    <BackgroundView>
       <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
       <TabView
         barStyle={isLight ? 'dark-content' : 'light-content'}
@@ -74,7 +74,7 @@ const Study = enhance(({
         <Link icon="share" />
         <Link icon="like" />
       </SecondaryNav>
-    </FlexedView>
+    </BackgroundView>
   );
 });
 

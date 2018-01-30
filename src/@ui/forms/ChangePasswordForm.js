@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withProps, setPropTypes } from 'recompose';
 import { withFormik } from 'formik';
@@ -7,6 +6,8 @@ import Yup from 'yup';
 
 import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
+import PaddedView from '@ui/PaddedView';
+import TableView from '@ui/TableView';
 import Button from '@ui/Button';
 
 const enhance = compose(
@@ -53,25 +54,31 @@ const ChangePasswordFormWithoutData = enhance(({
   isValid,
   isSubmitting,
 }) => (
-  <View>
-    <TextInput
-      label="Current password"
-      type="password"
-      value={values.oldPassword}
-      onChangeText={text => setFieldValue('oldPassword', text)}
-      onBlur={() => setFieldTouched('oldPassword', true)}
-      error={touched.oldPassword && errors.oldPassword}
-    />
-    <TextInput
-      label="New password"
-      type="password"
-      value={values.newPassword}
-      onChangeText={text => setFieldValue('newPassword', text)}
-      onBlur={() => setFieldTouched('newPassword', true)}
-      error={touched.newPassword && errors.newPassword}
-    />
-    <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
-  </View>
+  <PaddedView horizontal={false}>
+    <TableView>
+      <PaddedView>
+        <TextInput
+          label="Current password"
+          type="password"
+          value={values.oldPassword}
+          onChangeText={text => setFieldValue('oldPassword', text)}
+          onBlur={() => setFieldTouched('oldPassword', true)}
+          error={touched.oldPassword && errors.oldPassword}
+        />
+        <TextInput
+          label="New password"
+          type="password"
+          value={values.newPassword}
+          onChangeText={text => setFieldValue('newPassword', text)}
+          onBlur={() => setFieldTouched('newPassword', true)}
+          error={touched.newPassword && errors.newPassword}
+        />
+      </PaddedView>
+    </TableView>
+    <PaddedView>
+      <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
+    </PaddedView>
+  </PaddedView>
 ));
 
 const withData = compose(

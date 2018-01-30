@@ -34,13 +34,13 @@ const enhance = compose(
         if (props.onLoginSuccess) props.onLoginSuccess(result);
 
         const referrer = get(props, 'location.state.referrer');
-        if (referrer) goBackTo({ to: referrer, history: props.history, replace: true });
+        if (referrer) return goBackTo({ to: referrer, history: props.history, replace: true });
       } catch (e) {
         setFieldError('email', true);
         setFieldError('password', 'Your email or password is incorrect'); // todo: show real error message from server
       }
 
-      setSubmitting(false);
+      return setSubmitting(false);
     },
   }),
   setPropTypes({

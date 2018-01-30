@@ -544,14 +544,15 @@ exports[`The FullScreenControls component should render 1`] = `
           }
         }
       >
-        <Text
+        <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
           accessibilityTraits={undefined}
           accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
           hitSlop={undefined}
+          isTVSelectable={true}
           nativeID={undefined}
           onLayout={undefined}
           onResponderGrant={[Function]}
@@ -562,18 +563,30 @@ exports[`The FullScreenControls component should render 1`] = `
           onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "color": "#ffffff",
-              "fontFamily": null,
-              "fontSize": 18,
-              "lineHeight": 20,
-              "opacity": 0.7,
-              "paddingVertical": 5,
+              "opacity": 1,
             }
           }
           testID={undefined}
+          tvParallaxProperties={undefined}
         >
-          •••
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#ffffff",
+                "fontFamily": null,
+                "fontSize": 18,
+                "lineHeight": 20,
+                "opacity": 0.7,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            •••
+          </Text>
+        </View>
       </View>
     </View>
     <View
@@ -590,7 +603,10 @@ exports[`The FullScreenControls component should render 1`] = `
         accessibilityLabel={undefined}
         accessibilityTraits={undefined}
         accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
+        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -601,22 +617,31 @@ exports[`The FullScreenControls component should render 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "paddingHorizontal": 20,
-            "paddingVertical": 20,
+            "opacity": 1,
           }
         }
         testID={undefined}
+        tvParallaxProperties={undefined}
       >
-        <Svg
-          height={32}
-          viewBox="0 0 24 24"
-          width={32}
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 20,
+              "paddingVertical": 20,
+            }
+          }
         >
-          <Path
-            d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-            fill="#ffffff"
-          />
-        </Svg>
+          <Svg
+            height={32}
+            viewBox="0 0 24 24"
+            width={32}
+          >
+            <Path
+              d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+              fill="#ffffff"
+            />
+          </Svg>
+        </View>
       </View>
     </View>
   </RCTSafeAreaView>

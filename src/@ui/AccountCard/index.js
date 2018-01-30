@@ -49,6 +49,7 @@ const RightColumn = styled(({ theme }) => ({
   paddingRight: theme.sizing.baseUnit,
   alignItems: 'flex-end',
   justifyContent: 'center',
+  backgroundColor: 'transparent',
   ...Platform.select({
     web: {
       position: 'relative',

@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
-import { compose, withProps, mapProps } from 'recompose';
+import { compose, withProps, withPropsOnChange } from 'recompose';
 import { get, findIndex } from 'lodash';
 import { shuffle } from 'shuffle-seed';
 import Audio from '@ui/Audio';
 import { withMediaPlayerActions, withNowPlaying, withPlaylist } from '@data/mediaPlayer';
-import FlexedView from '@ui/FlexedView';
+import BackgroundView from '@ui/BackgroundView';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import { withRouter, Link, Route } from '@ui/NativeWebRouter';
@@ -27,7 +27,9 @@ const enhance = compose(
   withNowPlaying,
   withProps(({ nowPlaying }) => ({ id: nowPlaying && nowPlaying.albumId })),
   withPlaylist,
-  mapProps(({
+  withPropsOnChange([
+    'nowPlaying', 'content', 'setNowPlaying', 'children',
+  ], ({
     nowPlaying, content, setNowPlaying, ...otherProps
   }) => ({
     ...otherProps,
@@ -164,10 +166,10 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
           <Route exact path={'/player/list/:id'} component={asModal(Playlist)} />
           <Route exact path={'/player/:id/:track'} component={PlayerTrackContextual} />
           <Route cardStackKey="app">
-            <FlexedView>
+            <BackgroundView>
               {this.props.children}
               {this.props.currentTrack ? this.renderMiniControls() : null}
-            </FlexedView>
+            </BackgroundView>
           </Route>
         </CardStack>
       </Audio>

@@ -9,7 +9,8 @@ const light = ({ colors, alpha }) => ({
       link: colors.primary,
     },
     background: {
-      default: colors.white,
+      default: colors.lightSecondary,
+      paper: colors.white,
       primary: colors.primary,
       accent: Color(colors.lightTertiary).fade(alpha.high).string(),
       inactive: colors.lightTertiary,
