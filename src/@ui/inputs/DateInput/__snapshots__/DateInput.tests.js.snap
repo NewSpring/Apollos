@@ -157,7 +157,7 @@ exports[`The DateInput component should render correctly 1`] = `
             style={undefined}
           >
             <RCTDatePicker
-              date={1420092000000}
+              date={1420099200000}
               locale={undefined}
               maximumDate={undefined}
               minimumDate={undefined}
