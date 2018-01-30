@@ -1,27 +1,18 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import {
-  View,
-  TouchableWithoutFeedback,
-} from 'react-native';
 import { withFormik } from 'formik';
+import moment from 'moment';
 import Yup from 'yup';
 import { compose } from 'recompose';
-import TextInput from '@ui/inputs/Text';
+import { DateInput } from '@ui/inputs';
 import Button from '@ui/Button';
 import { H7 } from '@ui/typography';
 import styled from '@ui/styled';
-import Icon from '@ui/Icon';
+import Touchable from '@ui/Touchable';
+import TableView, { Cell, CellText, CellIcon } from '@ui/TableView';
+import { ChipList } from '@ui/Chip';
 import { withTheme } from '@ui/theme';
 import PaddedView from '@ui/PaddedView';
-
-const Row = styled(({ theme }) => ({
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  paddingHorizontal: theme.sizing.baseUnit / 2,
-  paddingVertical: theme.sizing.baseUnit / 2,
-}))(View);
 
 const StyledH7 = styled(({ theme }) => ({
   color: theme.colors.text.secondary,
@@ -29,7 +20,7 @@ const StyledH7 = styled(({ theme }) => ({
 
 const StyledIcon = withTheme(({ theme }) => ({
   fill: theme.colors.text.secondary,
-}))(Icon);
+}))(CellIcon);
 
 class ContributionHistoryFilter extends PureComponent {
   static propTypes = {
@@ -38,8 +29,8 @@ class ContributionHistoryFilter extends PureComponent {
       endDate: PropTypes.string,
     }),
     touched: PropTypes.shape({
-      startDate: PropTypes.string,
-      endDate: PropTypes.string,
+      startDate: PropTypes.bool,
+      endDate: PropTypes.bool,
     }),
     errors: PropTypes.shape({
       startDate: PropTypes.string,
@@ -77,20 +68,29 @@ class ContributionHistoryFilter extends PureComponent {
     if (!this.state.isVisible) return null;
     return (
       <PaddedView>
-        <TextInput
-          label="Start Date"
-          value={this.props.values.startDate}
-          onChangeText={t => this.props.setFieldValue('startDate', t)}
-          onBlur={() => this.props.setFieldTouched('startDate', true)}
-          error={this.props.touched.startDate && this.props.errors.startDate}
-        />
-        <TextInput
-          label="End Date"
-          value={this.props.values.endDate}
-          onChangeText={t => this.props.setFieldValue('endDate', t)}
-          onBlur={() => this.props.setFieldTouched('endDate', true)}
-          error={this.props.touched.endDate && this.props.errors.endDate}
-        />
+        <H7>Custom Dates</H7>
+        <ChipList>
+          <DateInput
+            label="Start Date"
+            displayValue={
+              this.props.values.startDate ? moment(this.props.values.startDate).format('MM/DD/YYYY') : null
+            }
+            value={this.props.values.startDate}
+            onChangeText={t => this.props.setFieldValue('startDate', t)}
+            onBlur={() => this.props.setFieldTouched('startDate', true)}
+            error={this.props.touched.startDate && this.props.errors.startDate}
+          />
+          <DateInput
+            label="End Date"
+            displayValue={
+              this.props.values.endDate ? moment(this.props.values.endDate).format('MM/DD/YYYY') : null
+            }
+            value={this.props.values.endDate}
+            onChangeText={t => this.props.setFieldValue('endDate', t)}
+            onBlur={() => this.props.setFieldTouched('endDate', true)}
+            error={this.props.touched.endDate && this.props.errors.endDate}
+          />
+        </ChipList>
         <Button
           bordered
           pill
@@ -104,20 +104,20 @@ class ContributionHistoryFilter extends PureComponent {
 
   render() {
     return (
-      <View>
-        <TouchableWithoutFeedback
+      <TableView>
+        <Touchable
           onPress={this.toggle}
         >
-          <Row>
-            <StyledH7>{'Filter Transactions'}</StyledH7>
+          <Cell>
+            <CellText><StyledH7>{'Filter Transactions'}</StyledH7></CellText>
             <StyledIcon
               name={this.state.isVisible ? 'close' : 'filter'}
               size={this.props.iconSize}
             />
-          </Row>
-        </TouchableWithoutFeedback>
+          </Cell>
+        </Touchable>
         {this.renderFilters()}
-      </View>
+      </TableView>
     );
   }
 }

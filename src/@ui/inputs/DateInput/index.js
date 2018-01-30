@@ -1,40 +1,53 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-
-import { Text as TextInput } from '@ui/inputs';
+import { View } from 'react-native';
+import DateTimePicker from 'react-native-modal-datetime-picker';
+import Chip from '@ui/Chip';
 
 class DateInput extends PureComponent {
   static propTypes = {
-    value: PropTypes.instanceOf(Date),
+    label: PropTypes.string,
+    value: PropTypes.any, // eslint-disable-line
+    displayValue: PropTypes.string,
     onChange: PropTypes.func,
-  };
-
-  state = {
-    internalDateValue: moment(this.props.value).format('MM/DD/YYYY'),
-  };
-
-  handleChange = (text) => {
-    this.props.onChange(this.parseValue(text));
-
-    // todo: here we can parse text a bit, automatically add forward slashes, etc
-    // to make it easier for user to type
-    this.setState({ internalDateValue: text });
+    onChangeText: PropTypes.func,
+    onBlur: PropTypes.func,
+    error: PropTypes.any, // eslint-disable-line
   }
 
-  parseValue = value => new Date(value);
+  state = {
+    isVisible: false,
+  };
+
+  handleOpen = () => this.setState({ isVisible: true });
+
+  handleClose = () => {
+    this.setState({ isVisible: false });
+    if (this.props.onBlur) this.props.onBlur();
+  }
+
+  handleConfirm = (value) => {
+    if (this.props.onChange) this.props.onChange(value);
+    if (this.props.onChangeText) {
+      this.props.onChangeText(moment(value).format('MM/DD/YYYY'));
+    }
+    this.handleClose();
+  }
 
   render() {
-    const { value, onChange, ...textInputProps } = this.props;
+    let date = this.props.value;
+    if (typeof date === 'string') date = moment(date).toDate();
     return (
-      <TextInput
-        label="Start Date"
-        placeholder="MM/DD/YYYY"
-        type="date"
-        {...textInputProps}
-        value={this.state.internalDateValue}
-        onChangeText={this.handleChange}
-      />
+      <View>
+        <Chip title={this.props.displayValue || this.props.label} onPress={this.handleOpen} />
+        <DateTimePicker
+          date={date}
+          isVisible={this.state.isVisible}
+          onConfirm={this.handleConfirm}
+          onCancel={this.handleClose}
+        />
+      </View>
     );
   }
 }

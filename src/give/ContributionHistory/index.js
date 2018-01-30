@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
-import FlexedView from '@ui/FlexedView';
+import BackgroundView from '@ui/BackgroundView';
 import withTransactions from '@data/withTransactions';
 import ContributionHistoryList from './ContributionHistoryList';
 import ContributionHistoryFilter from './ContributionHistoryFilter';
@@ -34,7 +34,7 @@ class ContributionHistory extends PureComponent {
 
   render() {
     return (
-      <FlexedView>
+      <BackgroundView>
         <ContributionHistoryFilter
           onSubmit={this.handleFilter}
         />
@@ -45,7 +45,7 @@ class ContributionHistory extends PureComponent {
           transactions={this.props.transactions}
           onPressNoDataButton={this.props.onPressNoDataButton}
         />
-      </FlexedView>
+      </BackgroundView>
     );
   }
 }
