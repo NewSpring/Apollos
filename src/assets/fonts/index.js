@@ -45,12 +45,12 @@ export default [
     asset: 'https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Regular.ttf',
   },
   {
-    name: 'DroidSerif-Bold',
-    asset: 'https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Bold.ttf',
+    name: 'DroidSerif-RegularItalic',
+    asset: 'https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Italic.ttf',
   },
   {
-    name: 'DroidSerif-Italic',
-    asset: 'https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Italic.ttf',
+    name: 'DroidSerif-Bold',
+    asset: 'https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Bold.ttf',
   },
   {
     name: 'DroidSerif-BoldItalic',
