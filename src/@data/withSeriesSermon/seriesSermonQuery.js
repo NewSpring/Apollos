@@ -25,6 +25,9 @@ export default gql`
                 url
               }
             }
+            meta {
+              urlTitle
+            }
           }
           meta {
             urlTitle

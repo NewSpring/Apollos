@@ -12,6 +12,9 @@ export default gql`
           channelName
           parent {
             id
+            meta {
+              urlTitle
+            }
             content {
               isLiked
               isLight
