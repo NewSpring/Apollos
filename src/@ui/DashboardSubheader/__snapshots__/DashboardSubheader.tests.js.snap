@@ -89,7 +89,9 @@ exports[`the DashboardSubheader component should render 1`] = `
             "color": "#858585",
             "fontFamily": "Colfax-Regular",
             "fontSize": 14,
-            "lineHeight": 15.87,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.35,
           }
         }
       >

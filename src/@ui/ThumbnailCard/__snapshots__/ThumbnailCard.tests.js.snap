@@ -162,7 +162,7 @@ exports[`the ThumbnailCard component should render a loading state 1`] = `
                   "backgroundColor": "#dddddd",
                   "borderRadius": 6,
                   "height": 14,
-                  "marginVertical": 0.9349999999999996,
+                  "marginVertical": 0.8899999999999997,
                   "width": "40%",
                 }
               }
@@ -294,7 +294,9 @@ exports[`the ThumbnailCard component should render with a category 1`] = `
                   "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
@@ -408,7 +410,9 @@ exports[`the ThumbnailCard component should render with a category and image 1`]
                   "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >

@@ -114,7 +114,9 @@ exports[`The FullScreenControls component should render 1`] = `
             "color": "#ffffff",
             "fontFamily": "Colfax-Regular",
             "fontSize": 14,
-            "lineHeight": 15.87,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.35,
             "textAlign": "center",
           }
         }

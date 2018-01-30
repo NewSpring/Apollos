@@ -43,7 +43,9 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
           "color": "#303030",
           "fontFamily": "Colfax-Regular",
           "fontSize": 14,
-          "lineHeight": 15.87,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -99,7 +101,9 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
           "color": "#ffffff",
           "fontFamily": "Colfax-Regular",
           "fontSize": 14,
-          "lineHeight": 15.87,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -155,7 +159,9 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
           "color": "#303030",
           "fontFamily": "Colfax-Regular",
           "fontSize": 14,
-          "lineHeight": 15.87,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -223,7 +229,9 @@ exports[`withThemeMixin works with dynamic props 1`] = `
           "color": "#303030",
           "fontFamily": "Colfax-Regular",
           "fontSize": 14,
-          "lineHeight": 15.87,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -279,7 +287,9 @@ exports[`withThemeMixin works with dynamic props 1`] = `
           "color": "#ffffff",
           "fontFamily": "Colfax-Regular",
           "fontSize": 14,
-          "lineHeight": 15.87,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >

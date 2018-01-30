@@ -100,7 +100,9 @@ exports[`the AccountCard component should render accountType:bankAccount 1`] = `
                   "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
@@ -236,7 +238,9 @@ exports[`the AccountCard component should render accountType:creditCard 1`] = `
                   "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
@@ -372,7 +376,9 @@ exports[`the AccountCard component should render allow changing iconSize 1`] = `
                   "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
@@ -508,7 +514,9 @@ exports[`the AccountCard component should render with accountNumber 1`] = `
                   "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
@@ -644,7 +652,9 @@ exports[`the AccountCard component should render with title 1`] = `
                   "color": "#303030",
                   "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
