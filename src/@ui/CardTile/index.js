@@ -112,8 +112,8 @@ const CardTile = enhance(({
           {typeof number === 'undefined' ? null : (
             <TileNumber size={number.toString().length}>
               <Placeholder.Media
-                /* placeholder size is calculated the same as TileNumber width and height but slightly
-                * bigger to cover it's corners completely
+                /* placeholder size is calculated the same as TileNumber width and height but
+                * slightly bigger to cover it's corners completely
                 */// eslint-disable-next-line max-len
                 size={theme.helpers.rem(1.25 * (number.toString().length < 2 ? 2 : number.toString().length))}
                 onReady={!isLoading}

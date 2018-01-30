@@ -75,6 +75,6 @@ class Locations extends PureComponent {
       </BackgroundView>
     );
   }
-};
+}
 
 export default enhance(Locations);
