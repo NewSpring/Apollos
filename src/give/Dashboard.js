@@ -37,6 +37,7 @@ export class Dashboard extends PureComponent {
     onPressActivityLink: PropTypes.func,
     onPressExpiringAccountCard: PropTypes.func,
     onPressNewScheduleLink: PropTypes.func,
+    onPressTransactionCard: PropTypes.func,
   };
 
   static defaultProps = {
@@ -46,6 +47,7 @@ export class Dashboard extends PureComponent {
     onPressActivityLink() {},
     onPressExpiringAccountCard() {},
     onPressNewScheduleLink() {},
+    onPressTransactionCard() {},
   };
 
   render() {
@@ -68,7 +70,7 @@ export class Dashboard extends PureComponent {
                   isScheduled={activityItem.scheduled}
                   amount={activityItem.amount}
                   error={activityItem.statusMessage}
-                  onPress={() => { console.log('route to', activityItem.id); }}
+                  onPress={() => { this.props.onPressTransactionCard(activityItem.id); }}
                 />
               );
             }
@@ -130,6 +132,7 @@ const enhance = compose(
     onPressActivityLink() { props.route.jumpTo('ContributionHistory'); },
     onPressExpiringAccountCard() { props.route.jumpTo('Now'); },
     onPressNewScheduleLink() { props.route.jumpTo('ContributionHistory'); },
+    onPressTransactionCard(id) { props.history.push(`/give/history/${id}`); },
   })),
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
 );
