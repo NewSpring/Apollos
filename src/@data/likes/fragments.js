@@ -19,6 +19,7 @@ export const contentCard = gql`
       }
     }
     content {
+      isLiked
       images(sizes: ["medium"]) {
         url
         label

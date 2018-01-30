@@ -112,7 +112,7 @@ exports[`the AccountCard component should render accountType:bankAccount 1`] = `
         style={
           Object {
             "alignItems": "flex-end",
-            "backgroundColor": "#ffffff",
+            "backgroundColor": "transparent",
             "flex": 1,
             "justifyContent": "center",
             "paddingRight": 20,
@@ -247,7 +247,7 @@ exports[`the AccountCard component should render accountType:creditCard 1`] = `
         style={
           Object {
             "alignItems": "flex-end",
-            "backgroundColor": "#ffffff",
+            "backgroundColor": "transparent",
             "flex": 1,
             "justifyContent": "center",
             "paddingRight": 20,
@@ -382,7 +382,7 @@ exports[`the AccountCard component should render allow changing iconSize 1`] = `
         style={
           Object {
             "alignItems": "flex-end",
-            "backgroundColor": "#ffffff",
+            "backgroundColor": "transparent",
             "flex": 1,
             "justifyContent": "center",
             "paddingRight": 20,
@@ -517,7 +517,7 @@ exports[`the AccountCard component should render with accountNumber 1`] = `
         style={
           Object {
             "alignItems": "flex-end",
-            "backgroundColor": "#ffffff",
+            "backgroundColor": "transparent",
             "flex": 1,
             "justifyContent": "center",
             "paddingRight": 20,
@@ -652,7 +652,7 @@ exports[`the AccountCard component should render with title 1`] = `
         style={
           Object {
             "alignItems": "flex-end",
-            "backgroundColor": "#ffffff",
+            "backgroundColor": "transparent",
             "flex": 1,
             "justifyContent": "center",
             "paddingRight": 20,

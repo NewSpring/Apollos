@@ -6,3 +6,6 @@ export { default as ContributionForm } from './ContributionForm';
 export { default as ChangePaymentMethodForm } from './ChangePaymentMethodForm';
 export { default as EditSavedPaymentMethodForm } from './EditSavedPaymentMethodForm';
 export { default as GroupSearchForm } from './GroupSearchForm';
+export { default as ProfileDetailsForm } from './ProfileDetailsForm';
+export { default as ProfileAddressForm } from './ProfileAddressForm';
+export { default as ChangePasswordForm } from './ChangePasswordForm';

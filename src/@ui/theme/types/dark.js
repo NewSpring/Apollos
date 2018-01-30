@@ -10,6 +10,7 @@ const dark = ({ colors, alpha }) => ({
     },
     background: {
       default: colors.darkPrimary,
+      paper: colors.darkSecondary,
       primary: colors.primary,
       accent: Color(colors.darkTertiary).fade(alpha.high).string(),
       inactive: colors.darkTertiary,
