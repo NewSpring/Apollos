@@ -18,7 +18,7 @@ exports[`the ContentView component renders 1`] = `
           "color": "#303030",
           "fontFamily": "Colfax-Bold",
           "fontSize": 42.3,
-          "lineHeight": 58.75,
+          "lineHeight": 53.58,
           "paddingBottom": 3.6,
           "paddingTop": 6.3,
         }
@@ -204,7 +204,7 @@ exports[`the ContentView component renders with images 1`] = `
           "color": "#303030",
           "fontFamily": "Colfax-Bold",
           "fontSize": 42.3,
-          "lineHeight": 58.75,
+          "lineHeight": 53.58,
           "paddingBottom": 3.6,
           "paddingTop": 6.3,
         }
@@ -326,7 +326,7 @@ exports[`the ContentView component renders with video 1`] = `
           "color": "#303030",
           "fontFamily": "Colfax-Bold",
           "fontSize": 42.3,
-          "lineHeight": 58.75,
+          "lineHeight": 53.58,
           "paddingBottom": 3.6,
           "paddingTop": 6.3,
         }

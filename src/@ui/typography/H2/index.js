@@ -12,15 +12,15 @@ const styles = styled(({ theme }) => ({
     ios: {
       paddingTop: theme.helpers.rem(0.35),
       paddingBottom: theme.helpers.rem(0.2),
-      lineHeight: theme.helpers.verticalRhythm(2.35, 1.25),
+      lineHeight: theme.helpers.verticalRhythm(2.35, 1.14),
     },
     android: {
-      lineHeight: theme.helpers.verticalRhythm(2.35, 1.45),
+      lineHeight: theme.helpers.verticalRhythm(2.35, 1.34),
     },
     web: {
       paddingTop: theme.helpers.rem(0.4),
-      paddingBottom: theme.helpers.rem(0.2),
-      lineHeight: theme.helpers.verticalRhythm(2.35, 1.275),
+      paddingBottom: theme.helpers.rem(0.15),
+      lineHeight: theme.helpers.verticalRhythm(2.35, 1.15),
     },
   }),
 }), 'H2');
