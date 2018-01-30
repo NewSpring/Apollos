@@ -7,8 +7,8 @@ const withTransactionsEngine = compose(
   withHandlers({
     setFilterDateRange: ({ setDateRange }) => ({ startDate, endDate }, format) => {
       setDateRange({
-        startDate: moment(startDate, format).format('MM/DD/YYYY'),
-        endDate: moment(endDate, format).format('MM/DD/YYYY'),
+        startDate: startDate ? moment(startDate, format).format('MM/DD/YYYY') : '',
+        endDate: startDate ? moment(endDate, format).format('MM/DD/YYYY') : '',
       });
     },
   }),
