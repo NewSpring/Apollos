@@ -10,6 +10,7 @@ import { H7 } from '@ui/typography';
 import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import Icon from '@ui/Icon';
+import LiveNowButton from '@ui/LiveNowButton';
 import styled from '@ui/styled';
 
 import Feed from './Feed';
@@ -69,6 +70,7 @@ class Discover extends PureComponent {
     return (
       <BackgroundView>
         {Platform.OS === 'web' ? <View>{this.searchForm}</View> : <Header>{this.searchForm}</Header>}
+        <LiveNowButton />
         {(this.props.term && this.props.term.length) ? (
           <Results term={this.props.term} />
         ) : <Feed />}

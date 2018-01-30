@@ -42,7 +42,7 @@ class DateInput extends PureComponent {
       <View>
         <Chip title={this.props.displayValue || this.props.label} onPress={this.handleOpen} />
         <DateTimePicker
-          date={date}
+          date={date || new Date()}
           isVisible={this.state.isVisible}
           onConfirm={this.handleConfirm}
           onCancel={this.handleClose}

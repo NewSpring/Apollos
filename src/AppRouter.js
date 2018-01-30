@@ -2,11 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Platform } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
-import { enhancer as mediaQuery } from '@ui/MediaQuery';
+import { withWindow } from '@ui/MediaQuery';
+import { withTheme } from '@ui/theme';
 import { Router, Route, ProtectedRoute, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@ui/NativeWebRouter';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
+import orientation from '@utils/orientation';
 import BackgroundView from '@ui/BackgroundView';
 
 import * as tabs from './tabs';
@@ -18,6 +20,7 @@ import Series, { Sermon, SeriesSingle, SeriesTrailer } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
+import Live from './live';
 import Auth from './auth';
 import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
 
@@ -32,6 +35,11 @@ class AppRouter extends PureComponent {
       pathname: PropTypes.string,
     }),
     isLargeScreen: PropTypes.bool,
+  }
+
+  constructor(...args) {
+    super(...args);
+    orientation.allow(orientation.Orientation.PORTRAIT_UP);
   }
 
   componentWillMount() {
@@ -155,6 +163,7 @@ class AppRouter extends PureComponent {
 
               <Route path="/login" component={Auth} cardStackDirection="vertical" />
 
+              <Route exact path="/live" component={asModal(Live)} cardStackDirection="vertical" />
               <ProtectedRoute exact path="/settings" component={Settings} />
               <ProtectedRoute exact path="/settings/profile" component={ProfileDetails} />
               <ProtectedRoute exact path="/settings/address" component={ProfileAddress} />
@@ -172,7 +181,11 @@ class AppRouter extends PureComponent {
 
 const enhance = compose(
   withRouter,
-  mediaQuery(({ md }) => ({ minWidth: md }), withProps(() => ({ isLargeScreen: true }))),
+  withWindow,
+  withTheme(),
+  withProps(({ theme, window }) => ({
+    isLargeScreen: window.width > theme.breakpoints.md,
+  })),
 );
 
 export default nest(Router, enhance(AppRouter));

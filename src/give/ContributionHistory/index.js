@@ -35,15 +35,17 @@ class ContributionHistory extends PureComponent {
   render() {
     return (
       <BackgroundView>
-        <ContributionHistoryFilter
-          onSubmit={this.handleFilter}
-        />
         <ContributionHistoryList
           fetchMore={this.props.fetchMore}
           isLoading={this.props.isLoading}
           refetch={this.props.refetch}
           transactions={this.props.transactions}
           onPressNoDataButton={this.props.onPressNoDataButton}
+          FilterComponent={() => (
+            <ContributionHistoryFilter
+              onSubmit={this.handleFilter}
+            />
+          )}
         />
       </BackgroundView>
     );

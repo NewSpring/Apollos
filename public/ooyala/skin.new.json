@@ -1,0 +1,184 @@
+
+{
+  "general": {
+    "watermark": {"imageResource": {"url": "//ns-ops.s3.amazonaws.com/player/ns.logo.white.png","androidResource" : "logo","iosResource" : "logo"  } },
+    "loadingImage": {"imageResource": {"url": "//player.ooyala.com/static/v4/stable/4.6.9/skin-plugin/assets/images/loader_svg.svg" } }
+  },
+  "localization": {
+    "defaultLanguage": "en",
+    "availableLanguageFile": [
+      {
+        "language": "en",
+        "languageFile": "//player.ooyala.com/static/v4/stable/4.6.9/skin-plugin/en.json",
+        "androidResource": "skin-config/en.json",
+        "iosResource": "en"
+      },
+      {
+        "language": "es",
+        "languageFile": "//player.ooyala.com/static/v4/stable/4.6.9/skin-plugin/es.json",
+        "androidResource": "skin-config/es.json",
+        "iosResource": "es"
+      },
+      {
+        "language": "zh",
+        "languageFile": "//player.ooyala.com/static/v4/stable/4.6.9/skin-plugin/zh.json",
+        "androidResource": "skin-config/zh.json",
+        "iosResource": "zh"
+      }
+    ]
+  },
+  "responsive": {
+    "breakpoints": {
+      "xs": {"id": "xs", "name": "oo-xsmall", "maxWidth": 559, "multiplier": 0.7},
+      "sm": {"id": "sm", "name": "oo-small", "minWidth": 560, "maxWidth": 839, "multiplier": 1},
+      "md": {"id": "md", "name": "oo-medium", "minWidth": 840, "maxWidth": 1279, "multiplier": 1},
+      "lg": {"id": "lg", "name": "oo-large", "minWidth": 1280, "multiplier": 1.2}
+    },
+    "aspectRatio": "auto"
+  },
+  "startScreen": {
+    "promoImageSize": "default",
+    "showPlayButton": true,
+    "playButtonPosition": "center",
+    "playIconStyle": {
+      "color": "white",
+      "opacity": 1
+    },
+    "showTitle": false,
+    "showDescription": false,
+    "titleFont": {
+      "color": "white"
+    },
+    "descriptionFont": {
+      "color": "white"
+    },
+    "infoPanelPosition": "topLeft",
+    "showPromo": true
+  },
+  "pauseScreen": {
+    "showPauseIcon": true,
+    "pauseIconPosition": "center",
+    "PauseIconStyle": {
+      "color": "white",
+      "opacity": 1
+    },
+    "showTitle": false,
+    "showDescription": false,
+    "infoPanelPosition": "topLeft",
+    "screenToShowOnPause": "default"
+  },
+  "endScreen": {
+    "screenToShowOnEnd": "discovery",
+    "showReplayButton": true,
+    "replayIconStyle": {
+      "color": "white",
+      "opacity": 1
+    }
+  },
+  "adScreen": {
+    "showAdMarquee": true,
+    "showControlBar": false
+  },
+  "discoveryScreen": {
+    "panelTitle": {
+      "titleFont": {
+        "fontSize": 28,
+        "fontFamily": "Roboto Condensed",
+        "color": "white"
+      }
+    },
+    "contentTitle": {
+      "show": true,
+      "font": {
+        "fontSize": 22,
+        "fontFamily": "Roboto Condensed",
+        "color": "white"
+      }
+    },
+    "contentDuration": {
+      "show": true,
+      "font": {
+        "fontSize": 12,
+        "fontFamily": "Arial-BoldMT",
+        "color": "white"
+      }
+    },
+    "showCountDownTimerOnEndScreen": true,
+    "countDownTime": "10"
+  },
+  "shareScreen": {
+    "embed": {
+      "source": "<iframe width='640' height='480' frameborder='0' allowfullscreen src='//player.ooyala.com/static/v4/stable/4.6.9/skin-plugin/iframe.html?ec=<ASSET_ID>&pbid=<PLAYER_ID>&pcode=<PUBLISHER_ID>'></iframe>"
+    }
+  },
+  "moreOptionsScreen": {
+    "brightOpacity": 1.0,
+    "darkOpacity": 0.4,
+    "iconSize": 30,
+    "color": "white",
+    "iconStyle": {
+      "active": {
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      },
+      "inactive": {
+        "color": "#FFFFFF",
+        "opacity": 0.95
+      }
+    }
+  },
+  "closedCaptionOptions": {
+    "enabled": true,
+    "language": "en",
+    "textColor": "White",
+    "windowColor": "Transparent",
+    "backgroundColor": "Black",
+    "textOpacity": 1,
+    "backgroundOpacity": 0.6,
+    "windowOpacity": 0,
+    "fontType": "Proportional Sans-Serif",
+    "fontSize": "Medium",
+    "textEnhancement": "Uniform"
+  },
+  "upNext": {
+    "showUpNext": true,
+    "timeToShow": "10"
+  },
+  "controlBar": {
+    "volumeControl": {
+      "color": "#FFFFFF"
+    },
+    "iconStyle": {
+      "active": {
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      },
+      "inactive": {
+        "color": "#FFFFFF",
+        "opacity": 0.95
+      }
+    },
+    "autoHide": true,
+    "logo": {
+      "imageResource": {"url": "//ns-ops.s3.amazonaws.com/player/ns.logo.white.png","androidResource" : "logo","iosResource" : "logo"},
+      "clickUrl": "https://newspring.cc",
+      "target": "_blank",
+      "width": 26,
+      "height": 26
+    },
+    "adScrubberBar": {
+      "backgroundColor": "rgba(241, 241, 241, 0.9)",
+      "bufferedColor": "rgba(241, 241, 241, 0.9)",
+      "playedColor": "#71AF34"
+    },
+    "scrubberBar": {
+      "backgroundColor": "rgba(241, 241, 241, 0.9)",
+      "bufferedColor": "rgba(241, 241, 241, 0.9)",
+      "playedColor": "#71AF34",
+      "thumbnailPreview": false
+    }
+  },
+  "live": {
+    "forceDvrDisabled": false
+  },
+}
