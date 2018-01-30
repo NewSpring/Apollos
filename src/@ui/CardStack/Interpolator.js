@@ -1,4 +1,9 @@
-const interpolator = ({
+import React from 'react';
+import { StyleSheet, Animated } from 'react-native';
+import PropTypes from 'prop-types';
+import { compose, mapProps, onlyUpdateForKeys, setPropTypes } from 'recompose';
+
+const interpolate = ({
   animatedPosition, index, width, height, direction,
 }) => {
   // animatedPosition = aniamted index of the active route
@@ -55,4 +60,34 @@ const interpolator = ({
   return style;
 };
 
-export default interpolator;
+const enhance = compose(
+  // optimization: prevent unnecessary re-renders when width or height changes
+  // when we're animating in the opposite axis
+  mapProps(({
+    width, height, direction, ...otherProps
+  }) => ({
+    width: direction === 'horizontal' ? width : null,
+    height: direction === 'vertical' ? height : null,
+    direction,
+    ...otherProps,
+  })),
+  onlyUpdateForKeys(['direction', 'index', 'width', 'height', 'children']),
+  setPropTypes({
+    direction: PropTypes.string,
+    index: PropTypes.number,
+    animatedPosition: PropTypes.shape({
+      interpolate: PropTypes.func,
+    }),
+    width: PropTypes.number,
+    height: PropTypes.number,
+    children: PropTypes.node,
+  }),
+);
+
+const Interpolator = enhance(props => (
+  <Animated.View style={[StyleSheet.absoluteFill, interpolate(props)]}>
+    {props.children}
+  </Animated.View>
+));
+
+export default Interpolator;

@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 import withCampuses from '@data/withCampuses';
 import withGroupAttributes from '@data/withGroupAttributes';
 import Header from '@ui/Header';
-import FlexedView from '@ui/FlexedView';
+import BackgroundView from '@ui/BackgroundView';
 import PaddedView from '@ui/PaddedView';
 import { H3, H6 } from '@ui/typography';
 import { GroupSearchForm } from '@ui/forms';
@@ -20,7 +20,7 @@ const GroupSearchFormWithData = compose(
 const Groups = withRouter(({
   history,
 }) => (
-  <FlexedView>
+  <BackgroundView>
     <Header titleText="Group Finder" />
     <LiveNowButton />
     <ScrollView>
@@ -36,7 +36,7 @@ const Groups = withRouter(({
         />
       </PaddedView>
     </ScrollView>
-  </FlexedView>
+  </BackgroundView>
 ));
 
 export default Groups;

@@ -7,7 +7,7 @@ import { parse, stringify } from '@utils/queryString';
 import { withRouter } from '@ui/NativeWebRouter';
 import { Text as TextInput } from '@ui/inputs';
 import { H7 } from '@ui/typography';
-import FlexedView from '@ui/FlexedView';
+import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import Icon from '@ui/Icon';
 import LiveNowButton from '@ui/LiveNowButton';
@@ -42,7 +42,7 @@ class Discover extends PureComponent {
 
   get searchForm() {
     return (
-      <FlexedView>
+      <BackgroundView>
         <TextInput
           value={this.state.searchText}
           onChangeText={this.handleSearch}
@@ -53,7 +53,7 @@ class Discover extends PureComponent {
           ) : null}
           placeholder="Type your search here"
         />
-      </FlexedView>
+      </BackgroundView>
     );
   }
 
@@ -68,13 +68,13 @@ class Discover extends PureComponent {
 
   render() {
     return (
-      <FlexedView>
+      <BackgroundView>
         {Platform.OS === 'web' ? <View>{this.searchForm}</View> : <Header>{this.searchForm}</Header>}
         <LiveNowButton />
         {(this.props.term && this.props.term.length) ? (
           <Results term={this.props.term} />
         ) : <Feed />}
-      </FlexedView>
+      </BackgroundView>
     );
   }
 }

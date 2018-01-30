@@ -3,8 +3,8 @@ import { pure, compose } from 'recompose';
 import Header from '@ui/Header';
 import TileNav from '@ui/TileNav';
 import withSections from '@data/withSections';
-import FlexedView from '@ui/FlexedView';
 import LiveNowButton from '@ui/LiveNowButton';
+import BackgroundView from '@ui/BackgroundView';
 
 const TileNavWithSections = withSections(TileNav);
 
@@ -13,11 +13,11 @@ const enhance = compose(
 );
 
 const Sections = enhance(() => (
-  <FlexedView>
+  <BackgroundView>
     <Header titleText="Sections" />
     <LiveNowButton />
     <TileNavWithSections />
-  </FlexedView>
+  </BackgroundView>
 ));
 
 export default Sections;

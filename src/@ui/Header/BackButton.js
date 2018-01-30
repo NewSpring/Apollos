@@ -1,18 +1,40 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Link } from '@ui/TabBar';
+import { View, Platform } from 'react-native';
+import MediaQuery from '@ui/MediaQuery';
+import { Link } from '@ui/NativeWebRouter';
+import { H7 } from '@ui/typography';
+import Icon from '@ui/Icon';
 import styled from '@ui/styled';
 
-const Container = styled({
+const Row = styled({ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' })(View);
+
+const Container = styled(({ theme }) => ({
   position: 'absolute',
   left: 4,
   top: 0,
   bottom: 0,
-}, 'BackButton.Container')(View);
+  alignItems: 'center',
+  justifyContent: 'center',
+  ...Platform.select({
+    web: {
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      left: theme.sizing.baseUnit,
+      top: theme.sizing.baseUnit,
+    },
+  }),
+}), 'BackButton.Container')(View);
 
 const BackButton = props => (
   <Container>
-    <Link pop icon="arrow-back" iconSize={24} {...props} />
+    <Link pop>
+      <Row>
+        <Icon name="arrow-back" size={24} {...props} />
+        <MediaQuery minWidth="md">
+          <H7>Back</H7>
+        </MediaQuery>
+      </Row>
+    </Link>
   </Container>
 );
 

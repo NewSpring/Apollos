@@ -3,6 +3,7 @@ import { ApolloProvider } from 'react-apollo';
 import { nest, withProps } from 'recompose';
 import { ThemeProvider } from '@ui/theme';
 import FontLoader from '@ui/FontLoader';
+import { ActionSheetProvider } from '@ui/ActionSheet';
 import Client from '@data/Client';
 import orientation from '@utils/orientation';
 
@@ -12,6 +13,7 @@ const App = nest(
   withProps({ client: Client })(ApolloProvider),
   ThemeProvider,
   FontLoader,
+  ActionSheetProvider,
   AppRouter,
 );
 

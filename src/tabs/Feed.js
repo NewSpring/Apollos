@@ -2,7 +2,7 @@ import React from 'react';
 import { pure, compose } from 'recompose';
 import Header from '@ui/Header';
 import FeedView from '@ui/FeedView';
-import FlexedView from '@ui/FlexedView';
+import BackgroundView from '@ui/BackgroundView';
 import withHomeFeed from '@data/withHomeFeed';
 import LiveNowButton from '@ui/LiveNowButton';
 
@@ -13,11 +13,11 @@ const enhance = compose(
 );
 
 const Feed = enhance(() => (
-  <FlexedView>
+  <BackgroundView>
     <Header titleText="NewSpring Church" />
     <LiveNowButton />
     <FeedViewWithHomeFeed />
-  </FlexedView>
+  </BackgroundView>
 ));
 
 export default Feed;

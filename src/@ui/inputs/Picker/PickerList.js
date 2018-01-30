@@ -10,7 +10,7 @@ const StyledPicker = styled(({ theme }) => ({
 }), 'Inputs.Picker.List')(NativePicker);
 
 const PickerKeyboardView = styled(({ theme }) => ({
-  backgroundColor: theme.colors.background.default,
+  backgroundColor: theme.colors.background.paper,
   position: 'absolute',
   bottom: 0,
   left: 0,
