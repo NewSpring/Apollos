@@ -38,6 +38,7 @@ export class Dashboard extends PureComponent {
     onPressExpiringAccountCard: PropTypes.func,
     onPressNewScheduleLink: PropTypes.func,
     onPressTransactionCard: PropTypes.func,
+    onPressScheduleCard: PropTypes.func,
   };
 
   static defaultProps = {
@@ -48,6 +49,7 @@ export class Dashboard extends PureComponent {
     onPressExpiringAccountCard() {},
     onPressNewScheduleLink() {},
     onPressTransactionCard() {},
+    onPressScheduleCard() {},
   };
 
   render() {
@@ -97,7 +99,7 @@ export class Dashboard extends PureComponent {
               amount={get(scheduledTransaction, 'details.0.amount')}
               frequency={get(scheduledTransaction, 'schedule.description')}
               startDate={get(scheduledTransaction, 'start')}
-              onPress={() => { console.log('route to', scheduledTransaction.id); }}
+              onPress={() => { this.props.onPressScheduleCard(scheduledTransaction.id); }}
             />
           ))}
 
@@ -133,6 +135,7 @@ const enhance = compose(
     onPressExpiringAccountCard() { props.route.jumpTo('Now'); },
     onPressNewScheduleLink() { props.route.jumpTo('ContributionHistory'); },
     onPressTransactionCard(id) { props.history.push(`/give/history/${id}`); },
+    onPressScheduleCard(id) { props.history.push(`/give/schedules/${id}`); },
   })),
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
 );
