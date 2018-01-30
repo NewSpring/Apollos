@@ -5,6 +5,8 @@ import { ThemeProvider } from '@ui/theme';
 import FontLoader from '@ui/FontLoader';
 import { ActionSheetProvider } from '@ui/ActionSheet';
 import Client from '@data/Client';
+import orientation from '@utils/orientation';
+
 import AppRouter from './AppRouter';
 
 const App = nest(
@@ -14,6 +16,8 @@ const App = nest(
   ActionSheetProvider,
   AppRouter,
 );
+
+orientation.allow(orientation.Orientation.PORTRAIT_UP);
 
 export default App;
 
