@@ -1,157 +1,278 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The DateInput component should render correctly 1`] = `
-<View
-  disabled={false}
-  style={
-    Object {
-      "marginVertical": 20,
-    }
-  }
->
+<View>
   <View
+    accessibilityComponentType="button"
+    accessibilityLabel={undefined}
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "flexDirection": "row",
-        "justifyContent": "center",
+        "opacity": 1,
       }
     }
+    testID={undefined}
+    tvParallaxProperties={undefined}
   >
     <View
+      bordered={false}
+      disabled={false}
+      pill={false}
       style={
         Object {
           "alignItems": "center",
-          "justifyContent": "center",
+          "backgroundColor": "#dddddd",
+          "borderColor": "#dddddd",
+          "borderRadius": 6,
+          "borderWidth": 2,
+          "elevation": 4,
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "marginBottom": 10,
+          "marginRight": 10,
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 10,
         }
       }
     />
+  </View>
+  <Modal
+    animationType="none"
+    hardwareAccelerated={false}
+    onModalHide={[Function]}
+    onRequestClose={[Function]}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "black",
+          "bottom": 0,
+          "height": 1334,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": 750,
+        }
+      }
+      testID={undefined}
+    />
     <View
       collapsable={undefined}
+      onModalHide={[Function]}
+      pointerEvents="box-none"
       style={
         Object {
           "flex": 1,
-          "opacity": 1,
-        }
-      }
-    >
-      <TextInput
-        allowFontScaling={true}
-        editable={true}
-        focusAnimationDuration={450}
-        focusAnimationEasing={[Function]}
-        keyboardType="numeric"
-        onBlur={[Function]}
-        onChangeText={[Function]}
-        onFocus={[Function]}
-        placeholder="MM/DD/YYYY"
-        placeholderTextColor="rgba(48, 48, 48, 0.6)"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": null,
-            "height": 40,
-            "lineHeight": 30,
-            "paddingVertical": 5,
-          }
-        }
-        type="date"
-        value="01/01/2015"
-      />
-    </View>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "justifyContent": "center",
-        }
-      }
-    />
-  </View>
-  <View
-    collapsable={undefined}
-    onLayout={[Function]}
-    pointerEvents="none"
-    style={
-      Object {
-        "justifyContent": "center",
-        "opacity": 0.8,
-        "position": "absolute",
-        "transform": Array [
-          Object {
-            "scale": 0.8,
-          },
-          Object {
-            "translateX": 0,
-          },
-          Object {
-            "translateY": 0,
-          },
-        ],
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#303030",
-          "fontFamily": null,
-          "fontSize": 18,
-          "lineHeight": 20,
-          "paddingVertical": 5,
-        }
-      }
-    >
-      Start Date
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "bottom": 0,
-        "left": 0,
-        "right": 0,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "backgroundColor": "#dddddd",
-          "bottom": -0.5,
-          "height": 0.5,
-        }
-      }
-    />
-    <View
-      collapsable={undefined}
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
+          "justifyContent": "flex-end",
+          "margin": 10,
           "transform": Array [
             Object {
-              "scaleX": 1,
+              "translateY": 0,
             },
           ],
         }
       }
     >
       <View
-        hasError={false}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "white",
+              "borderRadius": 13,
+              "marginBottom": 8,
+              "overflow": "hidden",
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "borderBottomColor": "#d5d5d5",
+              "borderBottomWidth": 0.5,
+              "padding": 14,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#8f8f8f",
+                  "fontSize": 13,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          >
+            Pick a date
+          </Text>
+        </View>
+        <View
+          onStartShouldSetResponderCapture={[Function]}
+        >
+          <View
+            style={undefined}
+          >
+            <RCTDatePicker
+              date={1420092000000}
+              locale={undefined}
+              maximumDate={undefined}
+              minimumDate={undefined}
+              minuteInterval={undefined}
+              mode="date"
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "height": 216,
+                }
+              }
+              timeZoneOffsetInMinutes={undefined}
+            />
+          </View>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "borderColor": "#d5d5d5",
+              "borderTopWidth": 0.5,
+              "height": 57,
+              "justifyContent": "center",
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#007ff9",
+                  "fontSize": 20,
+                  "fontWeight": "normal",
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          >
+            Confirm
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "backgroundColor": "#6bac43",
-            "bottom": 0,
-            "height": 0.5,
+            "backgroundColor": "white",
+            "borderRadius": 13,
+            "height": 57,
+            "justifyContent": "center",
           }
         }
-      />
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#007ff9",
+                "fontSize": 20,
+                "fontWeight": "600",
+                "padding": 10,
+                "textAlign": "center",
+              },
+              undefined,
+            ]
+          }
+        >
+          Cancel
+        </Text>
+      </View>
     </View>
-  </View>
+  </Modal>
 </View>
 `;
