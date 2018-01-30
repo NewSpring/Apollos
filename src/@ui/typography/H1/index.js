@@ -10,17 +10,16 @@ const styles = styled(({ theme }) => ({
   color: theme.colors.primary,
   ...Platform.select({
     ios: {
-      paddingTop: theme.helpers.rem(0.5),
-      paddingBottom: theme.helpers.rem(0.2),
-      lineHeight: theme.helpers.verticalRhythm(2.9, 1.05),
+      paddingTop: theme.helpers.rem(0.65),
+      lineHeight: theme.helpers.verticalRhythm(2.9, 0.945),
     },
     android: {
-      lineHeight: theme.helpers.verticalRhythm(2.9, 1.25),
+      lineHeight: theme.helpers.verticalRhythm(2.9, 1.15),
     },
     web: {
       paddingTop: theme.helpers.rem(0.45),
-      paddingBottom: theme.helpers.rem(0.15),
-      lineHeight: theme.helpers.verticalRhythm(2.9, 1.1),
+      paddingBottom: theme.helpers.rem(0.175),
+      lineHeight: theme.helpers.verticalRhythm(2.9, 0.975),
     },
   }),
 }), 'H1');

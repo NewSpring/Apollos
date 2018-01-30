@@ -68,9 +68,8 @@ exports[`the ScheduleCard component should render 1`] = `
               "color": "#303030",
               "fontFamily": "Colfax-Bold",
               "fontSize": 52.2,
-              "lineHeight": 60.9,
-              "paddingBottom": 3.6,
-              "paddingTop": 9,
+              "lineHeight": 54.81,
+              "paddingTop": 11.7,
             }
           }
         >
