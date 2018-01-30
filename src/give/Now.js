@@ -1,11 +1,11 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import FlexedView from '@ui/FlexedView';
+import BackgroundView from '@ui/BackgroundView';
 import PaddedView from '@ui/PaddedView';
 import { ContributionForm } from '@ui/forms';
 
 const Now = () => (
-  <FlexedView>
+  <BackgroundView>
     <ScrollView>
       <PaddedView>
         <ContributionForm
@@ -19,7 +19,7 @@ const Now = () => (
         />
       </PaddedView>
     </ScrollView>
-  </FlexedView>
+  </BackgroundView>
 );
 
 export default Now;

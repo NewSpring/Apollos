@@ -173,7 +173,6 @@ exports[`the ThumbnailCard component should render a loading state 1`] = `
         style={
           Object {
             "alignSelf": "stretch",
-            "backgroundColor": "#ffffff",
             "flex": 1,
           }
         }
@@ -418,7 +417,6 @@ exports[`the ThumbnailCard component should render with a category and images 1`
         style={
           Object {
             "alignSelf": "stretch",
-            "backgroundColor": "#ffffff",
             "flex": 1,
           }
         }
@@ -505,7 +503,6 @@ exports[`the ThumbnailCard component should render with an images 1`] = `
         style={
           Object {
             "alignSelf": "stretch",
-            "backgroundColor": "#ffffff",
             "flex": 1,
           }
         }

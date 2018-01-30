@@ -38,7 +38,7 @@ export default compose(
               __typename: 'LikesMutationResponse',
               like: {
                 __typename: 'Content',
-                entryId: nodeId,
+                id: nodeId,
                 content: {
                   __typename: 'ContentData',
                   isLiked: !get(state, 'content.isLiked'),

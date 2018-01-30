@@ -32,8 +32,8 @@ export default graphql(MUTATION, {
               __typename: 'User',
               id: loginUser.id,
             };
-            await AsyncStorage.setItem('authToken', get(loginUser, 'token'));
             store.writeQuery({ query: LOGGED_IN_QUERY, data });
+            await AsyncStorage.setItem('authToken', get(loginUser, 'token'));
           },
         });
         return r;
