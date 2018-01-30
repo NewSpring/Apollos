@@ -150,9 +150,10 @@ class AppRouter extends PureComponent {
               <Route path="/give/new-payment-method" cardStackDirection="vertical" component={give.AddAccount} />
               <Route exact path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
-              <Route path="/give" component={give.GiveRoutes} />
               <Route exact path="/give/history/:id" component={give.TransactionDetails} />
               <Route exact path="/give/schedules/:id" component={give.ScheduleDetails} />
+
+              <Route path="/give" component={give.GiveRoutes} />
 
               <Route path="/login" component={Auth} cardStackDirection="vertical" />
 
