@@ -1,4 +1,3 @@
-import { Platform } from 'react-native';
 import * as types from './types';
 
 /**
@@ -51,8 +50,7 @@ export const colors = {
 export const typography = {
   baseFontSize: 18,
   baseLineHeight: 20,
-  fontFamilySans: null, // force system font
-  fontFamilySansNeue: {
+  fontFamilySans: {
     light: {
       default: 'Colfax-Light',
       italic: 'Colfax-LightItalic',
@@ -74,7 +72,16 @@ export const typography = {
       italic: 'Colfax-BlackItalic',
     },
   },
-  fontFamilySerif: Platform.OS !== 'android' ? 'Georgia' : 'serif',
+  fontFamilySerif: {
+    regular: {
+      default: 'DroidSerif-Regular',
+      italic: 'DroidSerif-RegularItalic',
+    },
+    bold: {
+      default: 'DroidSerif-Bold',
+      italic: 'DroidSerif-BoldItalic',
+    },
+  },
 };
 
 // Responsive breakpoints
