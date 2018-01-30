@@ -15,6 +15,8 @@ import Chip, { ChipList } from '@ui/Chip';
 import { withTheme } from '@ui/theme';
 import PaddedView from '@ui/PaddedView';
 
+const StyledTableView = styled({ marginBottom: 0 })(TableView);
+
 const StyledH7 = styled(({ theme }) => ({
   color: theme.colors.text.secondary,
 }))(H7);
@@ -33,14 +35,6 @@ class ContributionHistoryFilter extends PureComponent {
       startDate: PropTypes.instanceOf(Date),
       endDate: PropTypes.instanceOf(Date),
     }),
-    // touched: PropTypes.shape({
-    //   startDate: PropTypes.bool,
-    //   endDate: PropTypes.bool,
-    // }),
-    // errors: PropTypes.shape({
-    //   startDate: PropTypes.string,
-    //   endDate: PropTypes.string,
-    // }),
     setFieldValue: PropTypes.func,
     setFieldTouched: PropTypes.func,
     handleSubmit: PropTypes.func,
@@ -50,8 +44,6 @@ class ContributionHistoryFilter extends PureComponent {
 
   static defaultProps = {
     values: {},
-    // touched: {},
-    // errors: {},
     setFieldValue() {},
     setFieldTouched() {},
     handleSubmit() {},
@@ -132,7 +124,7 @@ class ContributionHistoryFilter extends PureComponent {
                 this.props.values.startDate ? moment(this.props.values.startDate).format('MM/DD/YYYY') : null
               }
               value={this.props.values.startDate}
-              onChange={t => console.log({ t }) || this.props.setFieldValue('startDate', t)}
+              onChange={t => this.props.setFieldValue('startDate', t)}
               onBlur={() => this.props.setFieldTouched('startDate', true)}
             />
             <DateInput
@@ -164,7 +156,7 @@ class ContributionHistoryFilter extends PureComponent {
 
   render() {
     return (
-      <TableView responsive={false}>
+      <StyledTableView responsive={false}>
         <Touchable
           onPress={this.toggle}
         >
@@ -178,7 +170,7 @@ class ContributionHistoryFilter extends PureComponent {
         </Touchable>
         {this.state.isVisible ? <Divider /> : null}
         {this.renderFilters()}
-      </TableView>
+      </StyledTableView>
     );
   }
 }

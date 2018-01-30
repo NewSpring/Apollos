@@ -9,7 +9,7 @@ import FlatList from '@ui/WebCompatibleFlatList';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
 import ActivityIndicator from '@ui/ActivityIndicator';
-import { UIText } from '@ui/typography';
+import { BodyCopy } from '@ui/typography';
 import { ButtonLink } from '@ui/Button';
 import ContributionHistoryHeader from './ContributionHistoryHeader';
 
@@ -71,24 +71,25 @@ class ContributionHistoryList extends PureComponent {
     }
 
     const transactionsPerYear = map(groupBy(this.props.transactions, 'year'), (transactions, year) => ({ year, transactions }));
+    let emptyHeader = null;
     if (transactionsPerYear.length === 0) {
-      return (
+      emptyHeader = (
         <View>
           <PaddedView>
-            <UIText>
+            <BodyCopy>
               {'We didn\'t find any contributions associated with your account. If you would like to start giving, you can '}
               <ButtonLink onPress={this.props.onPressNoDataButton}>
                 {'give now'}
               </ButtonLink>
               {'.'}
-            </UIText>
+            </BodyCopy>
           </PaddedView>
           <PaddedView>
-            <UIText>
+            <BodyCopy>
               If you have any questions, please call our Finance Team at 864-965-9990 or
               <ButtonLink onPress={() => Linking.openURL('https://newspring.cc/contact')}> contact us </ButtonLink>
               and someone will be happy to assist you.
-            </UIText>
+            </BodyCopy>
           </PaddedView>
         </View>
       );
@@ -103,6 +104,7 @@ class ContributionHistoryList extends PureComponent {
         renderItem={this.renderItem}
         numColumns={1}
         onEndReachedThreshold={0.7}
+        ListHeaderComponent={emptyHeader}
         keyExtractor={item => item.id}
       />
     );
