@@ -8,7 +8,7 @@ const styles = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(2.9),
   fontWeight: 'bold',
   fontFamily: theme.typography.fontFamilySans,
-  color: theme.colors.primary,
+  color: theme.colors.text.primary,
   ...Platform.select({
     ios: {
       lineHeight: theme.helpers.verticalRhythm(2.9, 0.945),
