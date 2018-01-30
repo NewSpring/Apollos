@@ -1,8 +1,8 @@
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
-const liveNowQuery = gql`
-query {
+export const QUERY = gql`
+query Live {
   live {
     live
     embedUrl
@@ -10,7 +10,7 @@ query {
 }
 `;
 
-export default graphql(liveNowQuery, {
+export default graphql(QUERY, {
   props: ({ data: { live = {} } = {} }) => ({
     isLive: live.live,
     embedUrl: live.embedUrl,
