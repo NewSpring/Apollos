@@ -5,13 +5,13 @@ import { compose, withProps } from 'recompose';
 import { debounce } from 'lodash';
 import { parse, stringify } from '@utils/queryString';
 import { withRouter } from '@ui/NativeWebRouter';
-import FlexedView from '@ui/FlexedView';
+import BackgroundView from '@ui/BackgroundView';
 import PaddedView from '@ui/PaddedView';
 import Header from '@ui/Header';
 import { H3 } from '@ui/typography';
-import styled from '@ui/styled';
 import { Text as TextInput } from '@ui/inputs';
 import Icon from '@ui/Icon';
+import styled from '@ui/styled';
 
 import CampusFeed from './CampusFeed';
 
@@ -23,6 +23,11 @@ const enhance = compose(
     term: parse(search).q,
   })),
 );
+
+const Form = styled(({ theme }) => ({
+  backgroundColor: theme.colors.background.paper,
+  paddingVertical: theme.sizing.baseUnit * 2,
+}))(PaddedView);
 
 class Locations extends PureComponent {
   static propTypes = {
@@ -50,10 +55,10 @@ class Locations extends PureComponent {
 
   render() {
     return (
-      <FlexedView>
+      <BackgroundView>
         <Header backButton titleText="Locations" />
         <ScrollView>
-          <PaddedView>
+          <Form>
             <Title>Find Your Closest Campus</Title>
             <TextInput
               value={this.state.searchText}
@@ -61,13 +66,13 @@ class Locations extends PureComponent {
               placeholder="Find a campus by city, state or zip"
               onChangeText={this.handleSearch}
             />
-          </PaddedView>
+          </Form>
           <PaddedView>
             <Title>Campus Directory</Title>
           </PaddedView>
           <CampusFeed origin={this.props.term} />
         </ScrollView>
-      </FlexedView>
+      </BackgroundView>
     );
   }
 };
