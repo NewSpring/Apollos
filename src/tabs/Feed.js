@@ -19,6 +19,7 @@ const enhance = compose(
 );
 
 const FlexedLeft = styled({ flex: 1 })(Left);
+const FlexedResponsiveSideBySideView = styled({ flex: 1 })(ResponsiveSideBySideView);
 
 const BackgroundVideo = () => (
   <Video
@@ -32,7 +33,7 @@ const BackgroundVideo = () => (
 
 export const Feed = enhance(() => (
   <BackgroundView>
-    <ResponsiveSideBySideView>
+    <FlexedResponsiveSideBySideView>
       <FlexedLeft>
         <Header titleText="NewSpring Church" />
         <LiveNowButton />
@@ -45,7 +46,7 @@ export const Feed = enhance(() => (
           </Hero>
         </Right>
       </MediaQuery>
-    </ResponsiveSideBySideView>
+    </FlexedResponsiveSideBySideView>
   </BackgroundView>
 ));
 
