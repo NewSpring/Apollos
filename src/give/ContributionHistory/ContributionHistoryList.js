@@ -46,7 +46,7 @@ class ContributionHistoryList extends PureComponent {
 
   renderItem = ({ item }) => (
     <View>
-      <ContributionHistoryHeader>{item.year}</ContributionHistoryHeader>
+      <ContributionHistoryHeader year={item.year} />
       {item.transactions.map(transaction => (
         <HistoricalContributionCard
           key={transaction.id}
