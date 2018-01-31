@@ -104,8 +104,8 @@ const CardTile = enhance(({
   theme,
   children,
   ...otherProps
-}) => (
-  <TileSpacer>
+}) => ( // collablse={false} fixes a very obscure bug on Android
+  <TileSpacer collapsable={false}>
     <Tile style={styleProp} {...otherProps}>
       <OverflowFix>
         <WebAspectRatioFix>
