@@ -7,7 +7,7 @@
     "version": "6.0.0",
     "ios": {
       "bundleIdentifier": "com.subsplashstudio31.NewSpring-Church",
-      "buildNumber": "6",
+      "buildNumber": "7",
       "supportsTablet": true,
       "associatedDomains": [
         "applinks:beta.newspring.cc",
@@ -15,10 +15,15 @@
         "applinks:beta-my.newspring.cc",
         "applinks:my.newspring.cc",
         "applinks:rm2y5.app.goo.gl"
-      ]
+      ],
+      "icon": "src/assets/icons/ios/icon-1024x1024.png",
+      "splash": {
+        "image": "src/assets/splash/ios/splash-768x1024.png",
+        "resizeMode": "cover"
+      }
     },
     "android": {
-      "package": "com.newspring.apollos"
+      "package": "cc.newspring.newspringapp"
     }
   }
 }
