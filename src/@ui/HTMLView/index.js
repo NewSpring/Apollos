@@ -42,6 +42,8 @@ export const defaultRenderer = (node, { children }) => {
 
   switch (node.name) {
     case 'p': return <Paragraph>{wrapTextChildren(children)}</Paragraph>;
+    case 'strong': return <BodyCopy bold>{children}</BodyCopy>;
+    case 'em': return <BodyCopy italic>{children}</BodyCopy>;
     case 'blockquote': return <Paragraph style={{ paddingHorizontal: 20 }}>{children}</Paragraph>; // todo
     case 'h1': return <H1>{children}</H1>;
     case 'h2': return <H2>{children}</H2>;

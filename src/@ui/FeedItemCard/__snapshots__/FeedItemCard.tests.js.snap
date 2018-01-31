@@ -105,10 +105,11 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
-            "fontWeight": "700",
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -163,9 +164,11 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 14,
-                "lineHeight": 15.87,
+                "lineHeight": 15.78,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.35,
               }
             }
           >
@@ -286,10 +289,11 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
-            "fontWeight": "700",
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -344,9 +348,11 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 14,
-                "lineHeight": 15.87,
+                "lineHeight": 15.78,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.35,
               }
             }
           >
@@ -465,10 +471,11 @@ exports[`the FeedItemCard component should render 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
-            "fontWeight": "700",
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -523,9 +530,11 @@ exports[`the FeedItemCard component should render 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 14,
-                "lineHeight": 15.87,
+                "lineHeight": 15.78,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.35,
               }
             }
           >
@@ -644,10 +653,11 @@ exports[`the FeedItemCard component should render as liked 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
-            "fontWeight": "700",
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -702,9 +712,11 @@ exports[`the FeedItemCard component should render as liked 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 14,
-                "lineHeight": 15.87,
+                "lineHeight": 15.78,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.35,
               }
             }
           >
@@ -823,10 +835,11 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
-            "fontWeight": "700",
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -881,9 +894,11 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 14,
-                "lineHeight": 15.87,
+                "lineHeight": 15.78,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.35,
               }
             }
           >
@@ -1002,10 +1017,11 @@ exports[`the FeedItemCard component should render with inverted (light) font col
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
-            "fontWeight": "700",
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -1060,9 +1076,11 @@ exports[`the FeedItemCard component should render with inverted (light) font col
             style={
               Object {
                 "color": "#ffffff",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 14,
-                "lineHeight": 15.87,
+                "lineHeight": 15.78,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.35,
               }
             }
           >

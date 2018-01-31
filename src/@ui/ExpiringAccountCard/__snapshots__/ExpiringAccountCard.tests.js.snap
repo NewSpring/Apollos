@@ -77,10 +77,11 @@ exports[`the ExpiringAccountCard component should render with name, expirationDa
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 20.02,
-              "fontWeight": "700",
-              "lineHeight": 25.46,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -102,9 +103,10 @@ exports[`the ExpiringAccountCard component should render with name, expirationDa
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -147,10 +149,11 @@ exports[`the ExpiringAccountCard component should render with name, expirationDa
           style={
             Object {
               "color": "#c64f55",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 15.75,
-              "fontWeight": "700",
-              "lineHeight": 17.85,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
             }
           }
         >

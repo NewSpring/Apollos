@@ -47,7 +47,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -96,9 +96,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
             "paddingVertical": 5,
           }
         }
@@ -197,7 +198,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -246,9 +247,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
             "paddingVertical": 5,
           }
         }
@@ -350,7 +352,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -400,9 +402,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
             "paddingVertical": 5,
           }
         }
@@ -512,10 +515,11 @@ exports[`The PaymentForm component renders correctly 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "height": 40,
                 "lineHeight": 30,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -596,10 +600,11 @@ exports[`The PaymentForm component renders correctly 1`] = `
                 "backgroundColor": "transparent",
                 "borderRadius": 0,
                 "color": "#6bac43",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
                 "padding": 0,
+                "paddingTop": 2.7,
               }
             }
           >
@@ -671,9 +676,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
             "paddingVertical": 5,
           }
         }
@@ -784,9 +790,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -844,7 +851,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -893,9 +900,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
             "paddingVertical": 5,
           }
         }
@@ -994,7 +1002,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -1043,9 +1051,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
             "paddingVertical": 5,
           }
         }
@@ -1147,7 +1156,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "height": 40,
               "lineHeight": 30,
               "paddingVertical": 5,
@@ -1197,9 +1206,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
             "paddingVertical": 5,
           }
         }
@@ -1309,10 +1319,11 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "height": 40,
                 "lineHeight": 30,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }
@@ -1393,10 +1404,11 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                 "backgroundColor": "transparent",
                 "borderRadius": 0,
                 "color": "#6bac43",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
                 "padding": 0,
+                "paddingTop": 2.7,
               }
             }
           >
@@ -1468,9 +1480,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
             "paddingVertical": 5,
           }
         }
