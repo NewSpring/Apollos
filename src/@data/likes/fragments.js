@@ -9,6 +9,9 @@ export const contentCard = gql`
     parent {
       channelName
       id
+      meta {
+        urlTitle
+      }
       content {
         images(sizes: ["medium"]) {
           url
@@ -17,6 +20,9 @@ export const contentCard = gql`
           id
         }
       }
+    }
+    meta {
+      urlTitle
     }
     content {
       isLiked

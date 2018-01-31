@@ -84,9 +84,10 @@ const enhance = compose(
     content: generateLoadingStateData(10),
     fetchMore: false,
   })),
-  mediaQuery(({ md }) => ({ maxWidth: md }), defaultProps({ numColumns: 1 })),
-  mediaQuery(({ md, lg }) => ({ minWidth: md, maxWidth: lg }), defaultProps({ numColumns: 2 })),
-  mediaQuery(({ lg }) => ({ minWidth: lg }), defaultProps({ numColumns: 3 })),
+  mediaQuery(({ md }) => ({ maxWidth: md }),
+    defaultProps({ numColumns: 1 }),
+    defaultProps({ numColumns: 2 }),
+  ),
 );
 
 const FeedView = enhance(({

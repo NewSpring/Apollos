@@ -7,7 +7,7 @@ exports[`the H1 component should accept additional props 1`] = `
   ellipsizeMode="tail"
   style={
     Object {
-      "color": "#6bac43",
+      "color": "#303030",
       "fontFamily": "Colfax-Bold",
       "fontSize": 52.2,
       "lineHeight": 54.81,
@@ -45,7 +45,7 @@ exports[`the H1 component should render correctly 1`] = `
   ellipsizeMode="tail"
   style={
     Object {
-      "color": "#6bac43",
+      "color": "#303030",
       "fontFamily": "Colfax-Bold",
       "fontSize": 52.2,
       "lineHeight": 54.81,

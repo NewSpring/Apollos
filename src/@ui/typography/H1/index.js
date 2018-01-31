@@ -7,7 +7,7 @@ import { withPlaceholder, Typography } from '@ui/Placeholder';
 const styles = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(2.9),
   fontFamily: theme.typography.fontFamilySans.bold.default,
-  color: theme.colors.primary,
+  color: theme.colors.text.primary,
   ...Platform.select({
     ios: {
       paddingTop: theme.helpers.rem(0.65),

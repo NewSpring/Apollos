@@ -8,6 +8,7 @@ export default compose(
     styled({
       width: `${100 - 41.6666666}%`,
       height: '100%',
+      overflow: 'hidden',
       ...Platform.select({
         web: {
           maxHeight: '100vh',

@@ -18,6 +18,9 @@ export default gql`
         parent {
           id
           title
+          meta {
+            urlTitle
+          }
           content {
             isLiked
             isLight
