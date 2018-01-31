@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import {
   View,
+  ScrollView,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
@@ -13,6 +14,7 @@ import { UIText } from '@ui/typography';
 
 import Transaction from './Transaction';
 import ArrowBack from './ArrowBack';
+import RecentArticles from './RecentArticles';
 
 const PaperView = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.paper,
@@ -41,7 +43,7 @@ class TransactionDetails extends PureComponent {
 
   render() {
     return (
-      <View>
+      <ScrollView>
         <PaperView>
           <Header
             titleText="Transaction"
@@ -60,8 +62,10 @@ class TransactionDetails extends PureComponent {
             {'Thank you for your contribution to NewSpring Church. Because you are obedient in giving, we\'ll be able to connect more people to Jesus and each other.'}
           </Note>
         </PaperView>
-        <BackgroundView />
-      </View>
+        <BackgroundView>
+          <RecentArticles />
+        </BackgroundView>
+      </ScrollView>
     );
   }
 }
