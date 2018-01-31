@@ -22,9 +22,10 @@ const styles = StyleSheet.create({
 });
 
 const TabBar = compose(
-  styled(({ theme }) => ({
-    backgroundColor: theme.colors.darkPrimary,
-  }), 'TabBar'),
+  styled({
+    // todo - this color was hardcoded in Holtzman and has no corresponding theme value
+    backgroundColor: '#202020',
+  }, 'TabBar'),
   mediaQuery(({ md }) => ({ maxWidth: md }),
     styled(styles.horizontal, 'TabBar@narrow'),
     styled(styles.vertical, 'TabBar@wide'),
