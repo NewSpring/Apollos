@@ -22,10 +22,11 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 32.4,
-          "fontWeight": "700",
-          "lineHeight": 41.22,
+          "lineHeight": 41.04,
+          "paddingBottom": 2.7,
+          "paddingTop": 5.4,
         }
       }
     >
@@ -38,9 +39,11 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
-          "lineHeight": 15.87,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -49,13 +52,17 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -76,10 +83,11 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 32.4,
-          "fontWeight": "700",
-          "lineHeight": 41.22,
+          "lineHeight": 41.04,
+          "paddingBottom": 2.7,
+          "paddingTop": 5.4,
         }
       }
     >
@@ -92,9 +100,11 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
-          "lineHeight": 15.87,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -103,13 +113,17 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -130,10 +144,11 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 32.4,
-          "fontWeight": "700",
-          "lineHeight": 41.22,
+          "lineHeight": 41.04,
+          "paddingBottom": 2.7,
+          "paddingTop": 5.4,
         }
       }
     >
@@ -146,9 +161,11 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
-          "lineHeight": 15.87,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -157,13 +174,17 @@ exports[`withThemeMixin overrides styles without affecting siblings 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -195,10 +216,11 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 32.4,
-          "fontWeight": "700",
-          "lineHeight": 41.22,
+          "lineHeight": 41.04,
+          "paddingBottom": 2.7,
+          "paddingTop": 5.4,
         }
       }
     >
@@ -211,9 +233,11 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
-          "lineHeight": 15.87,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -222,13 +246,17 @@ exports[`withThemeMixin works with dynamic props 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -249,10 +277,11 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 32.4,
-          "fontWeight": "700",
-          "lineHeight": 41.22,
+          "lineHeight": 41.04,
+          "paddingBottom": 2.7,
+          "paddingTop": 5.4,
         }
       }
     >
@@ -265,9 +294,11 @@ exports[`withThemeMixin works with dynamic props 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 14,
-          "lineHeight": 15.87,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -276,13 +307,17 @@ exports[`withThemeMixin works with dynamic props 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >

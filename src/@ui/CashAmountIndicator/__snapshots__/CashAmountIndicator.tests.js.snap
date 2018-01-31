@@ -16,10 +16,11 @@ exports[`the CashAmountIndicator component should render a decimal 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
@@ -32,10 +33,10 @@ exports[`the CashAmountIndicator component should render a decimal 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 52.2,
-        "fontWeight": "bold",
         "lineHeight": 54.81,
+        "paddingTop": 11.7,
       }
     }
   >
@@ -48,10 +49,11 @@ exports[`the CashAmountIndicator component should render a decimal 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
@@ -76,10 +78,11 @@ exports[`the CashAmountIndicator component should render a number 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
@@ -92,10 +95,10 @@ exports[`the CashAmountIndicator component should render a number 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 52.2,
-        "fontWeight": "bold",
         "lineHeight": 54.81,
+        "paddingTop": 11.7,
       }
     }
   >
@@ -108,10 +111,11 @@ exports[`the CashAmountIndicator component should render a number 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
@@ -136,10 +140,11 @@ exports[`the CashAmountIndicator component should render accept different sizes 
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 25.2,
-        "fontWeight": "700",
         "lineHeight": 31.28,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.05,
       }
     }
   >
@@ -152,10 +157,11 @@ exports[`the CashAmountIndicator component should render accept different sizes 
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 42.3,
-        "fontWeight": "700",
-        "lineHeight": 53.82,
+        "lineHeight": 53.58,
+        "paddingBottom": 3.6,
+        "paddingTop": 6.3,
       }
     }
   >
@@ -168,10 +174,11 @@ exports[`the CashAmountIndicator component should render accept different sizes 
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 25.2,
-        "fontWeight": "700",
         "lineHeight": 31.28,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.05,
       }
     }
   >

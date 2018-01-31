@@ -57,9 +57,10 @@ exports[`The Button component should render 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -126,9 +127,10 @@ exports[`The Button component should render a Tertiary button 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -194,9 +196,10 @@ exports[`The Button component should render a bordered button 1`] = `
       style={
         Object {
           "color": "#6bac43",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -264,9 +267,10 @@ exports[`The Button component should render a disabled button 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -332,9 +336,10 @@ exports[`The Button component should render a ghost button 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -400,9 +405,10 @@ exports[`The Button component should render a ghost pill button 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -469,9 +475,10 @@ exports[`The Button component should render a pill button 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -538,9 +545,10 @@ exports[`The Button component should render a primary button 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -607,9 +615,10 @@ exports[`The Button component should render a secondary button 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -676,9 +685,10 @@ exports[`The Button component should render as default type 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >

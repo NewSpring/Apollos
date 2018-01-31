@@ -56,10 +56,11 @@ exports[`the Card component number box should grow elegantly with larger numbers
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 15.75,
-                "fontWeight": "700",
-                "lineHeight": 17.85,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
               }
             }
           >
@@ -82,10 +83,11 @@ exports[`the Card component number box should grow elegantly with larger numbers
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 25.2,
-              "fontWeight": "700",
               "lineHeight": 31.28,
+              "paddingBottom": 2.7,
+              "paddingTop": 4.05,
             }
           }
         >
@@ -143,10 +145,11 @@ exports[`the Card component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 25.2,
-              "fontWeight": "700",
               "lineHeight": 31.28,
+              "paddingBottom": 2.7,
+              "paddingTop": 4.05,
             }
           }
         >
@@ -343,7 +346,7 @@ exports[`the Card component should render a loading skeleton for all available p
                   "backgroundColor": "#f7f7f7",
                   "borderRadius": 6,
                   "height": 14,
-                  "marginVertical": 0.9349999999999996,
+                  "marginVertical": 0.8899999999999997,
                   "width": "40%",
                 }
               }
@@ -357,7 +360,7 @@ exports[`the Card component should render a loading skeleton for all available p
               "backgroundColor": "#f7f7f7",
               "borderRadius": 6,
               "height": 14,
-              "marginVertical": 0.9349999999999996,
+              "marginVertical": 0.8899999999999997,
               "width": "40%",
             }
           }
@@ -424,10 +427,11 @@ exports[`the Card component should render a number box 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 15.75,
-                "fontWeight": "700",
-                "lineHeight": 17.85,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
               }
             }
           >
@@ -450,10 +454,11 @@ exports[`the Card component should render a number box 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 25.2,
-              "fontWeight": "700",
               "lineHeight": 31.28,
+              "paddingBottom": 2.7,
+              "paddingTop": 4.05,
             }
           }
         >
@@ -521,10 +526,11 @@ exports[`the Card component should render card details 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 15.75,
-                "fontWeight": "700",
-                "lineHeight": 17.85,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
               }
             }
           >
@@ -547,10 +553,11 @@ exports[`the Card component should render card details 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 25.2,
-              "fontWeight": "700",
               "lineHeight": 31.28,
+              "paddingBottom": 2.7,
+              "paddingTop": 4.05,
             }
           }
         >
@@ -605,9 +612,11 @@ exports[`the Card component should render card details 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
@@ -677,10 +686,11 @@ exports[`the Card component should render card details with date 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 15.75,
-                "fontWeight": "700",
-                "lineHeight": 17.85,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
               }
             }
           >
@@ -703,10 +713,11 @@ exports[`the Card component should render card details with date 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 25.2,
-              "fontWeight": "700",
               "lineHeight": 31.28,
+              "paddingBottom": 2.7,
+              "paddingTop": 4.05,
             }
           }
         >
@@ -761,9 +772,11 @@ exports[`the Card component should render card details with date 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
@@ -778,9 +791,11 @@ exports[`the Card component should render card details with date 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 14,
-              "lineHeight": 15.87,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
             }
           }
         >
