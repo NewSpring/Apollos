@@ -45,10 +45,10 @@ exports[`The Hero component should render with arbitrary background 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 52.2,
-            "fontWeight": "bold",
             "lineHeight": 54.81,
+            "paddingTop": 11.7,
           }
         }
       >
@@ -73,10 +73,10 @@ exports[`The Hero component should render with arbitrary background 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 52.2,
-          "fontWeight": "bold",
           "lineHeight": 54.81,
+          "paddingTop": 11.7,
         }
       }
     >
@@ -91,10 +91,11 @@ exports[`The Hero component should render with arbitrary background 1`] = `
       Object {
         "bottom": 20,
         "color": "#ffffff",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 25.2,
-        "fontWeight": "700",
         "lineHeight": 31.28,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.05,
         "position": "absolute",
         "right": 20,
       }
@@ -171,10 +172,10 @@ exports[`The Hero component should render with background image 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 52.2,
-          "fontWeight": "bold",
           "lineHeight": 54.81,
+          "paddingTop": 11.7,
         }
       }
     >
@@ -189,10 +190,11 @@ exports[`The Hero component should render with background image 1`] = `
       Object {
         "bottom": 20,
         "color": "#ffffff",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 25.2,
-        "fontWeight": "700",
         "lineHeight": 31.28,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.05,
         "position": "absolute",
         "right": 20,
       }
@@ -259,10 +261,10 @@ exports[`The Hero component should render with solid background 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 52.2,
-          "fontWeight": "bold",
           "lineHeight": 54.81,
+          "paddingTop": 11.7,
         }
       }
     >
@@ -277,10 +279,11 @@ exports[`The Hero component should render with solid background 1`] = `
       Object {
         "bottom": 20,
         "color": "#ffffff",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 25.2,
-        "fontWeight": "700",
         "lineHeight": 31.28,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.05,
         "position": "absolute",
         "right": 20,
       }
