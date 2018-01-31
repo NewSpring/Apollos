@@ -12,9 +12,9 @@ import BackgroundView from '@ui/BackgroundView';
 import styled from '@ui/styled';
 import { UIText } from '@ui/typography';
 
-import RecentArticles from 'give/RecentArticles';
 import ArrowBackButton from 'give/ArrowBackButton';
-import Transaction from './Transaction';
+import RecentArticles from 'give/RecentArticles';
+import Schedule from './Schedule';
 
 const PaperView = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.paper,
@@ -27,7 +27,7 @@ const Note = styled(({ theme }) => ({
   color: theme.colors.text.secondary,
 }))(UIText);
 
-class TransactionDetails extends PureComponent {
+class ScheduleDetails extends PureComponent {
   static propTypes = {
     id: PropTypes.oneOfType([
       PropTypes.string,
@@ -46,7 +46,7 @@ class TransactionDetails extends PureComponent {
       <ScrollView>
         <PaperView>
           <Header
-            titleText="Transaction"
+            titleText="Schedule"
             backButton
           />
 
@@ -54,12 +54,12 @@ class TransactionDetails extends PureComponent {
             onPress={this.props.goBack}
           />
 
-          <Transaction
+          <Schedule
             id={this.props.id}
           />
 
           <Note>
-            {'Thank you for your contribution to NewSpring Church. Because you are obedient in giving, we\'ll be able to connect more people to Jesus and each other.'}
+            {'To change details about a schedule, please cancel the current one and create a new schedule with the desired information. We are sorry for any inconvenience this may cause and are working to provide the ability to edit contribution schedules in the future.'}
           </Note>
         </PaperView>
         <BackgroundView>
@@ -80,4 +80,4 @@ const enhance = compose(
   })),
 );
 
-export default enhance(TransactionDetails);
+export default enhance(ScheduleDetails);
