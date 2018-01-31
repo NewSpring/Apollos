@@ -43,6 +43,7 @@ export default gql`
           }
           meta {
             date
+            urlTitle
           }
           content {
             speaker

@@ -13,6 +13,7 @@ export default gql`
       channelName
       status
       meta {
+        urlTitle
         summary
         urlTitle
       }
