@@ -32,11 +32,12 @@ exports[`The Chip component should be selected 1`] = `
         "alignItems": "center",
         "color": "#ffffff",
         "flexGrow": 1,
-        "fontFamily": null,
+        "fontFamily": "Colfax-Regular",
         "fontSize": 18,
         "justifyContent": "center",
         "lineHeight": 20,
         "paddingHorizontal": 6,
+        "paddingTop": 2.7,
         "textAlign": "center",
       }
     }
@@ -78,11 +79,12 @@ exports[`The Chip component should render an icon 1`] = `
         "alignItems": "center",
         "color": "#303030",
         "flexGrow": 1,
-        "fontFamily": null,
+        "fontFamily": "Colfax-Regular",
         "fontSize": 18,
         "justifyContent": "center",
         "lineHeight": 20,
         "paddingHorizontal": 6,
+        "paddingTop": 2.7,
         "textAlign": "center",
       }
     }
@@ -164,11 +166,12 @@ exports[`The Chip component should render correctly 1`] = `
           "alignItems": "center",
           "color": "#303030",
           "flexGrow": 1,
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "justifyContent": "center",
           "lineHeight": 20,
           "paddingHorizontal": 6,
+          "paddingTop": 2.7,
           "textAlign": "center",
         }
       }

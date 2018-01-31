@@ -1,21 +1,18 @@
-import { graphql } from 'react-apollo';
-import fetchMoreResolver from '@data/utils/fetchMoreResolver';
-import transactionsQuery from './transactionsQuery';
+import { compose, withState, withHandlers } from 'recompose';
+import moment from 'moment';
+import withTransactions from './withTransactions';
 
-export default graphql(transactionsQuery, {
-  options: (ownProps = {}) => ({
-    variables: {
-      limit: ownProps.limit || 20,
-      skip: ownProps.skip || 0,
+const withTransactionsEngine = compose(
+  withState('dateRange', 'setDateRange'),
+  withHandlers({
+    setFilterDateRange: ({ setDateRange }) => ({ startDate, endDate }, format) => {
+      setDateRange({
+        startDate: startDate ? moment(startDate, format).format('MM/DD/YYYY') : '',
+        endDate: startDate ? moment(endDate, format).format('MM/DD/YYYY') : '',
+      });
     },
   }),
-  props: ({ ownProps, data } = {}) => ({
-    content: data.content,
-    isLoading: ownProps.isLoading || data.loading,
-    fetchMore: fetchMoreResolver({
-      collectionName: 'content',
-      data,
-    }),
-  }),
-});
+  withTransactions,
+);
 
+export default withTransactionsEngine;

@@ -29,7 +29,6 @@ import PaddedView from '@ui/PaddedView';
 
 import FundInput from './FundInput';
 import FrequencyInput, { FREQUENCY_IDS } from './FrequencyInput';
-import DateInput from './DateInput';
 
 
 const FundContributionType = {
@@ -190,7 +189,7 @@ export class ContributionFormWithoutData extends Component {
               onBlur={() => this.props.setFieldTouched('frequencyId', true)}
               error={Boolean(touched.frequencyId && errors.frequencyId)}
             />
-            <DateInput
+            <Inputs.DateInput
               value={this.props.values.startDate}
               onChange={value => this.props.setFieldValue('startDate', value)}
               onBlur={() => this.props.setFieldTouched('startDate', true)}

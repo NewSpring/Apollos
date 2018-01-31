@@ -49,10 +49,11 @@ exports[`the ScheduleCard component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 32.4,
-              "fontWeight": "700",
-              "lineHeight": 41.22,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
             }
           }
         >
@@ -65,10 +66,10 @@ exports[`the ScheduleCard component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 52.2,
-              "fontWeight": "bold",
               "lineHeight": 54.81,
+              "paddingTop": 11.7,
             }
           }
         >
@@ -81,10 +82,11 @@ exports[`the ScheduleCard component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 32.4,
-              "fontWeight": "700",
-              "lineHeight": 41.22,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
             }
           }
         >
@@ -98,10 +100,11 @@ exports[`the ScheduleCard component should render 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
-            "fontWeight": "700",
-            "lineHeight": 25.46,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -114,10 +117,11 @@ exports[`the ScheduleCard component should render 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
-            "fontWeight": "700",
-            "lineHeight": 25.46,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -146,9 +150,10 @@ exports[`the ScheduleCard component should render 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -161,10 +166,11 @@ exports[`the ScheduleCard component should render 1`] = `
           style={
             Object {
               "color": "#505050",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "fontStyle": "italic",
               "lineHeight": 20,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -208,10 +214,11 @@ exports[`the ScheduleCard component should render 1`] = `
           style={
             Object {
               "color": "#6bac43",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 15.75,
-              "fontWeight": "700",
-              "lineHeight": 17.85,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
             }
           }
         >
@@ -224,7 +231,7 @@ exports[`the ScheduleCard component should render 1`] = `
         >
           <Path
             d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
-            fill="#303030"
+            fill="#6bac43"
           />
         </Svg>
       </View>

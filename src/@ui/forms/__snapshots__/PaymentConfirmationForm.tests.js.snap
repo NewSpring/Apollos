@@ -42,9 +42,10 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -57,9 +58,10 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -84,10 +86,11 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 20.02,
-          "fontWeight": "700",
-          "lineHeight": 25.46,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -100,10 +103,11 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
-          "fontWeight": "700",
-          "lineHeight": 17.85,
+          "lineHeight": 17.75,
+          "paddingBottom": 1.8,
+          "paddingTop": 2.25,
         }
       }
     >
@@ -115,10 +119,11 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
-            "fontWeight": "700",
-            "lineHeight": 25.46,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -146,10 +151,11 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 20.02,
-          "fontWeight": "700",
-          "lineHeight": 25.46,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -162,10 +168,11 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 20.02,
-          "fontWeight": "700",
-          "lineHeight": 25.46,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -177,10 +184,11 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
-            "fontWeight": "700",
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -246,9 +254,10 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -266,10 +275,11 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
         "backgroundColor": "transparent",
         "borderRadius": 0,
         "color": "#6bac43",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Regular",
         "fontSize": 18,
         "lineHeight": 20,
         "padding": 0,
+        "paddingTop": 2.7,
       }
     }
   >
@@ -298,9 +308,10 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -313,9 +324,10 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -340,10 +352,11 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 20.02,
-          "fontWeight": "700",
-          "lineHeight": 25.46,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -356,10 +369,11 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
-          "fontWeight": "700",
-          "lineHeight": 17.85,
+          "lineHeight": 17.75,
+          "paddingBottom": 1.8,
+          "paddingTop": 2.25,
         }
       }
     >
@@ -371,10 +385,11 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
-            "fontWeight": "700",
-            "lineHeight": 25.46,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -402,10 +417,11 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 20.02,
-          "fontWeight": "700",
-          "lineHeight": 25.46,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -418,10 +434,11 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 20.02,
-          "fontWeight": "700",
-          "lineHeight": 25.46,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -433,10 +450,11 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
-            "fontWeight": "700",
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -514,10 +532,11 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
         "backgroundColor": "transparent",
         "borderRadius": 0,
         "color": "#6bac43",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Regular",
         "fontSize": 18,
         "lineHeight": 20,
         "padding": 0,
+        "paddingTop": 2.7,
       }
     }
   >
@@ -546,9 +565,10 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -561,9 +581,10 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -588,10 +609,11 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 20.02,
-          "fontWeight": "700",
-          "lineHeight": 25.46,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -604,10 +626,11 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
-          "fontWeight": "700",
-          "lineHeight": 17.85,
+          "lineHeight": 17.75,
+          "paddingBottom": 1.8,
+          "paddingTop": 2.25,
         }
       }
     >
@@ -619,10 +642,11 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
-            "fontWeight": "700",
-            "lineHeight": 25.46,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -651,10 +675,11 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
-            "fontWeight": "700",
-            "lineHeight": 25.46,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -667,9 +692,10 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -683,9 +709,10 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -712,10 +739,11 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 20.02,
-          "fontWeight": "700",
-          "lineHeight": 25.46,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -728,10 +756,11 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 20.02,
-          "fontWeight": "700",
-          "lineHeight": 25.46,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
+          "paddingTop": 2.7,
         }
       }
     >
@@ -743,10 +772,11 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
-            "fontWeight": "700",
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
           }
         }
       >
@@ -812,9 +842,10 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -832,10 +863,11 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         "backgroundColor": "transparent",
         "borderRadius": 0,
         "color": "#6bac43",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Regular",
         "fontSize": 18,
         "lineHeight": 20,
         "padding": 0,
+        "paddingTop": 2.7,
       }
     }
   >

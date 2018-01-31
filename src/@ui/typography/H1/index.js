@@ -6,18 +6,20 @@ import { withPlaceholder, Typography } from '@ui/Placeholder';
 
 const styles = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(2.9),
-  fontWeight: 'bold',
-  fontFamily: theme.typography.fontFamilySans,
+  fontFamily: theme.typography.fontFamilySans.bold.default,
   color: theme.colors.primary,
   ...Platform.select({
     ios: {
-      lineHeight: theme.helpers.verticalRhythm(2.9, 0.945),
-    },
-    web: {
+      paddingTop: theme.helpers.rem(0.65),
       lineHeight: theme.helpers.verticalRhythm(2.9, 0.945),
     },
     android: {
-      lineHeight: theme.helpers.verticalRhythm(2.9, 1.025),
+      lineHeight: theme.helpers.verticalRhythm(2.9, 1.15),
+    },
+    web: {
+      paddingTop: theme.helpers.rem(0.45),
+      paddingBottom: theme.helpers.rem(0.175),
+      lineHeight: theme.helpers.verticalRhythm(2.9, 0.975),
     },
   }),
 }), 'H1');
