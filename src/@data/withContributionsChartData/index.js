@@ -9,8 +9,10 @@ export const QUERY = gql`
       id
       date
       details {
+        id
         amount
         account {
+          id
           name
         }
       }
