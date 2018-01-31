@@ -12,6 +12,7 @@ export const QUERY = gql`
         summary
         status
         person {
+          id
           firstName
           nickName
           lastName
@@ -20,6 +21,7 @@ export const QUERY = gql`
           id
           amount
           account {
+            id
             name
             description
             summary
