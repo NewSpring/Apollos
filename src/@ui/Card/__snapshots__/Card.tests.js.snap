@@ -41,7 +41,7 @@ exports[`the Card component it should render a placeholder 1`] = `
             "backgroundColor": "#dddddd",
             "borderRadius": 6,
             "height": 32.4,
-            "marginVertical": 4.41,
+            "marginVertical": 4.32,
             "width": "100%",
           }
         }
@@ -53,7 +53,7 @@ exports[`the Card component it should render a placeholder 1`] = `
             "backgroundColor": "#dddddd",
             "borderRadius": 6,
             "height": 14,
-            "marginVertical": 0.9349999999999996,
+            "marginVertical": 0.8899999999999997,
             "width": "40%",
           }
         }
@@ -193,10 +193,11 @@ exports[`the Card component should render 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 32.4,
-            "fontWeight": "700",
-            "lineHeight": 41.22,
+            "lineHeight": 41.04,
+            "paddingBottom": 2.7,
+            "paddingTop": 5.4,
           }
         }
       >
@@ -209,9 +210,11 @@ exports[`the Card component should render 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 14,
-            "lineHeight": 15.87,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.35,
           }
         }
       >
@@ -227,13 +230,17 @@ exports[`the Card component should render 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
@@ -281,9 +288,10 @@ exports[`the Card component should render 1`] = `
           style={
             Object {
               "color": "#ffffff",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -299,10 +307,11 @@ exports[`the Card component should render 1`] = `
             "backgroundColor": "transparent",
             "borderRadius": 0,
             "color": "#6bac43",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 18,
             "lineHeight": 20,
             "padding": 0,
+            "paddingTop": 2.7,
           }
         }
       >

@@ -1,5 +1,6 @@
 import { StyleSheet, View } from 'react-native';
-import { compose, renderComponent } from 'recompose';
+import PropTypes from 'prop-types';
+import { compose, renderComponent, setPropTypes } from 'recompose';
 import styled from '@ui/styled';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import Card from '@ui/Card';
@@ -11,6 +12,9 @@ export { default as Divider } from './Divider';
 export { default as FormFields } from './FormFields';
 
 const TableView = compose(
+  setPropTypes({
+    responsive: PropTypes.bool,
+  }),
   styled(({ theme }) => ({
     marginBottom: theme.sizing.baseUnit,
     backgroundColor: theme.colors.background.paper,
@@ -20,7 +24,9 @@ const TableView = compose(
     borderLeftWidth: 0,
     borderRightWidth: 0,
   }), 'TableView'),
-  mediaQuery(({ md }) => ({ minWidth: md }), renderComponent(Card)),
+  mediaQuery(({ md, width }, { responsive = true }) => responsive && width > md,
+    renderComponent(Card),
+  ),
 )(View);
 
 export default TableView;

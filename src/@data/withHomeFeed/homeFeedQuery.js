@@ -7,12 +7,16 @@ const contentFragment = gql`
     channelName
     status
     meta {
+      urlTitle
       siteId
       date
       channelId
     }
     parent {
       id
+      meta {
+        urlTitle
+      }
       content {
         isLight
         colors {

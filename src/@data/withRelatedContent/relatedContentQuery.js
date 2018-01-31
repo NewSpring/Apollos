@@ -18,6 +18,12 @@ export default gql`
             id
           }
         }
+        meta {
+          urlTitle
+        }
+      }
+      meta {
+        urlTitle
       }
       content {
         images(sizes: ["medium"]) {

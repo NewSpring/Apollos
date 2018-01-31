@@ -42,7 +42,7 @@ const Chip = enhance(({
   ...buttonProps
 }) => (
   <StyledButton {...buttonProps}>
-    <StyledUIText>{title}</StyledUIText>
+    {title ? <StyledUIText>{title}</StyledUIText> : null}
     {icon ? <Icon name={icon} style={iconStyles} size={iconSize} /> : null}
   </StyledButton>
 ));
