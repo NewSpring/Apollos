@@ -8,12 +8,14 @@ import styled from '@ui/styled';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 import { Link } from '@ui/NativeWebRouter';
 import CardTile from '@ui/CardTile';
-import withCampuses from '@data/withCampuses';
-import withGeoLocation from '@data/withGeoLocation';
 import { ButtonLink } from '@ui/Button';
 
-const LocationCard = styled(({ theme }) => ({
+const LocationCard = styled(({ theme, isHighlighted }) => ({
   backgroundColor: 'white', // todo: use theme.colors.background.paper
+  ...(isHighlighted ? {
+    borderColor: theme.colors.primary,
+    borderWidth: 3,
+  } : {}),
   ...Platform.select(theme.shadows.default),
 }))(CardTile);
 
@@ -29,6 +31,7 @@ const DistanceText = styled(({ theme }) => ({
 const renderCampus = ({ item: campus }) => (
   <Link to={campus.url}>
     <LocationCard
+      isHighlighted={campus.isHighlighted}
       title={campus.name || ''}
       isLoading={campus.isLoading}
     >
@@ -55,18 +58,12 @@ renderCampus.propTypes = {
     url: PropTypes.string,
     name: PropTypes.string,
     isLoading: PropTypes.bool,
+    isHighlighted: PropTypes.bool,
     service: PropTypes.arrayOf(PropTypes.string),
   }),
 };
 
 const CampusFeed = compose(
-  withCampuses,
-  withProps(({ campuses = [] } = {}) => ({
-    destinations: campuses.map(campus => (
-      `${campus.location.street1} ${campus.location.zip}`
-    )),
-  })),
-  withGeoLocation,
   withProps(({ campuses = [], geoElements = [] } = {}) => ({
     content: campuses
       .filter(campus => campus.location && campus.location.street1)
@@ -74,7 +71,8 @@ const CampusFeed = compose(
         ...campus,
         distance: geoElements[i] ? geoElements[i].distance : undefined,
       }))
-      .sort((l, r) => (l.distance && l.distance.value) - (r.distance && r.distance.value)),
+      .sort((l, r) => (l.distance && l.distance.value) - (r.distance && r.distance.value))
+      .map((item, i) => ({ ...item, isHighlighted: geoElements.length > 0 && i === 0 })),
     renderItem: renderCampus,
   })),
 )(HorizontalTileFeed);

@@ -12,6 +12,9 @@ import { H3 } from '@ui/typography';
 import { Text as TextInput } from '@ui/inputs';
 import Icon from '@ui/Icon';
 import styled from '@ui/styled';
+import withCampuses from '@data/withCampuses';
+import withGeoLocation from '@data/withGeoLocation';
+import ActivityIndicator from '@ui/ActivityIndicator';
 
 import CampusFeed from './CampusFeed';
 
@@ -20,8 +23,15 @@ const Title = styled({ textAlign: 'center' })(H3);
 const enhance = compose(
   withRouter,
   withProps(({ location: { search = '' } = {} }) => ({
-    term: parse(search).q,
+    origin: parse(search).q,
   })),
+  withCampuses,
+  withProps(({ campuses = [] } = {}) => ({
+    destinations: campuses.map(campus => (
+      `${campus.location.street1} ${campus.location.zip}`
+    )),
+  })),
+  withGeoLocation,
 );
 
 const Form = styled(({ theme }) => ({
@@ -31,17 +41,23 @@ const Form = styled(({ theme }) => ({
 
 class Locations extends PureComponent {
   static propTypes = {
-    term: PropTypes.string,
+    origin: PropTypes.string,
     history: PropTypes.shape({
       replace: PropTypes.func,
     }),
     location: PropTypes.shape({
       pathname: PropTypes.string,
     }),
+    isLoading: PropTypes.bool,
+
+    // These come in from withCampuses and withGeoLocation, and get passed
+    // blindly to CampusFeed
+    campuses: PropTypes.array, // eslint-disable-line
+    geoElements: PropTypes.array, // eslint-disable-line
   }
 
   state = {
-    searchText: this.props.term,
+    searchText: this.props.origin,
   };
 
   handleSearch = (searchText) => {
@@ -63,6 +79,9 @@ class Locations extends PureComponent {
             <TextInput
               value={this.state.searchText}
               prefix={<Icon name="search" />}
+              suffix={
+                (this.props.isLoading) ? <ActivityIndicator /> : null
+              }
               placeholder="Find a campus by city, state or zip"
               onChangeText={this.handleSearch}
             />
@@ -70,7 +89,10 @@ class Locations extends PureComponent {
           <PaddedView>
             <Title>Campus Directory</Title>
           </PaddedView>
-          <CampusFeed origin={this.props.term} />
+          <CampusFeed
+            campuses={this.props.campuses}
+            geoElements={this.props.geoElements}
+          />
         </ScrollView>
       </BackgroundView>
     );
