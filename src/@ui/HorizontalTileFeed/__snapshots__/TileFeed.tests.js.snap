@@ -154,10 +154,11 @@ exports[`The TileFeed component renders correctly 1`] = `
                     style={
                       Object {
                         "color": "#303030",
-                        "fontFamily": null,
+                        "fontFamily": "Colfax-Bold",
                         "fontSize": 15.75,
-                        "fontWeight": "700",
-                        "lineHeight": 17.85,
+                        "lineHeight": 17.75,
+                        "paddingBottom": 1.8,
+                        "paddingTop": 2.25,
                       }
                     }
                   >
@@ -180,10 +181,11 @@ exports[`The TileFeed component renders correctly 1`] = `
                   style={
                     Object {
                       "color": "#303030",
-                      "fontFamily": null,
+                      "fontFamily": "Colfax-Bold",
                       "fontSize": 25.2,
-                      "fontWeight": "700",
                       "lineHeight": 31.28,
+                      "paddingBottom": 2.7,
+                      "paddingTop": 4.05,
                     }
                   }
                 >
@@ -286,10 +288,11 @@ exports[`The TileFeed component renders correctly 1`] = `
                     style={
                       Object {
                         "color": "#303030",
-                        "fontFamily": null,
+                        "fontFamily": "Colfax-Bold",
                         "fontSize": 15.75,
-                        "fontWeight": "700",
-                        "lineHeight": 17.85,
+                        "lineHeight": 17.75,
+                        "paddingBottom": 1.8,
+                        "paddingTop": 2.25,
                       }
                     }
                   >
@@ -312,10 +315,11 @@ exports[`The TileFeed component renders correctly 1`] = `
                   style={
                     Object {
                       "color": "#303030",
-                      "fontFamily": null,
+                      "fontFamily": "Colfax-Bold",
                       "fontSize": 25.2,
-                      "fontWeight": "700",
                       "lineHeight": 31.28,
+                      "paddingBottom": 2.7,
+                      "paddingTop": 4.05,
                     }
                   }
                 >

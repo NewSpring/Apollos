@@ -16,12 +16,13 @@ exports[`The RelatedContent component renders correctly 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 20.02,
-        "fontWeight": "700",
-        "lineHeight": 25.46,
+        "lineHeight": 25.33,
         "marginBottom": 10,
+        "paddingBottom": 3.15,
         "paddingHorizontal": 20,
+        "paddingTop": 2.7,
         "textAlign": "center",
       }
     }
@@ -105,10 +106,11 @@ exports[`The RelatedContent component renders correctly 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Bold",
                   "fontSize": 20.02,
-                  "fontWeight": "700",
-                  "lineHeight": 25.46,
+                  "lineHeight": 25.33,
+                  "paddingBottom": 3.15,
+                  "paddingTop": 2.7,
                 }
               }
             >
@@ -149,9 +151,11 @@ exports[`The RelatedContent component renders correctly 1`] = `
                   style={
                     Object {
                       "color": "#303030",
-                      "fontFamily": null,
+                      "fontFamily": "Colfax-Regular",
                       "fontSize": 14,
-                      "lineHeight": 15.87,
+                      "lineHeight": 15.78,
+                      "paddingBottom": 2.25,
+                      "paddingTop": 1.35,
                     }
                   }
                 >
@@ -241,10 +245,11 @@ exports[`The RelatedContent component renders correctly 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Bold",
                   "fontSize": 20.02,
-                  "fontWeight": "700",
-                  "lineHeight": 25.46,
+                  "lineHeight": 25.33,
+                  "paddingBottom": 3.15,
+                  "paddingTop": 2.7,
                 }
               }
             >
@@ -332,10 +337,11 @@ exports[`The RelatedContent component renders correctly 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Bold",
                   "fontSize": 20.02,
-                  "fontWeight": "700",
-                  "lineHeight": 25.46,
+                  "lineHeight": 25.33,
+                  "paddingBottom": 3.15,
+                  "paddingTop": 2.7,
                 }
               }
             >
@@ -365,12 +371,13 @@ exports[`The RelatedContent component renders empty state 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 20.02,
-        "fontWeight": "700",
-        "lineHeight": 25.46,
+        "lineHeight": 25.33,
         "marginBottom": 10,
+        "paddingBottom": 3.15,
         "paddingHorizontal": 20,
+        "paddingTop": 2.7,
         "textAlign": "center",
       }
     }
@@ -454,7 +461,7 @@ exports[`The RelatedContent component renders empty state 1`] = `
                   "backgroundColor": "#dddddd",
                   "borderRadius": 6,
                   "height": 20.02,
-                  "marginVertical": 2.7200000000000006,
+                  "marginVertical": 2.6549999999999994,
                   "width": "60%",
                 }
               }
@@ -494,7 +501,7 @@ exports[`The RelatedContent component renders empty state 1`] = `
                       "backgroundColor": "#dddddd",
                       "borderRadius": 6,
                       "height": 14,
-                      "marginVertical": 0.9349999999999996,
+                      "marginVertical": 0.8899999999999997,
                       "width": "40%",
                     }
                   }
@@ -583,7 +590,7 @@ exports[`The RelatedContent component renders empty state 1`] = `
                   "backgroundColor": "#dddddd",
                   "borderRadius": 6,
                   "height": 20.02,
-                  "marginVertical": 2.7200000000000006,
+                  "marginVertical": 2.6549999999999994,
                   "width": "60%",
                 }
               }
@@ -623,7 +630,7 @@ exports[`The RelatedContent component renders empty state 1`] = `
                       "backgroundColor": "#dddddd",
                       "borderRadius": 6,
                       "height": 14,
-                      "marginVertical": 0.9349999999999996,
+                      "marginVertical": 0.8899999999999997,
                       "width": "40%",
                     }
                   }
@@ -712,7 +719,7 @@ exports[`The RelatedContent component renders empty state 1`] = `
                   "backgroundColor": "#dddddd",
                   "borderRadius": 6,
                   "height": 20.02,
-                  "marginVertical": 2.7200000000000006,
+                  "marginVertical": 2.6549999999999994,
                   "width": "60%",
                 }
               }
@@ -752,7 +759,7 @@ exports[`The RelatedContent component renders empty state 1`] = `
                       "backgroundColor": "#dddddd",
                       "borderRadius": 6,
                       "height": 14,
-                      "marginVertical": 0.9349999999999996,
+                      "marginVertical": 0.8899999999999997,
                       "width": "40%",
                     }
                   }

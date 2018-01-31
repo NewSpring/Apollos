@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Hero component should render with arbitrary background 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "overflow": "hidden",
+    }
+  }
+>
+  <View
+    backgroundColor={undefined}
+    style={
+      Object {
+        "backgroundColor": "#303030",
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      opacity={undefined}
+      style={
+        Object {
+          "alignItems": "stretch",
+          "bottom": 0,
+          "left": 0,
+          "opacity": 0.8,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 52.2,
+            "lineHeight": 54.81,
+            "paddingTop": 11.7,
+          }
+        }
+      >
+        This would be dumb, but should work fine!
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "paddingHorizontal": 20,
+        "paddingVertical": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 52.2,
+          "lineHeight": 54.81,
+          "paddingTop": 11.7,
+        }
+      }
+    >
+      Hello!
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "bottom": 20,
+        "color": "#ffffff",
+        "fontFamily": "Colfax-Bold",
+        "fontSize": 25.2,
+        "lineHeight": 31.28,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.05,
+        "position": "absolute",
+        "right": 20,
+      }
+    }
+  >
+    NEWSPRING
+  </Text>
+</View>
+`;
+
+exports[`The Hero component should render with background image 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "overflow": "hidden",
+    }
+  }
+>
+  <View
+    backgroundColor={undefined}
+    style={
+      Object {
+        "backgroundColor": "#303030",
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      opacity={0.5}
+      style={
+        Object {
+          "alignItems": "stretch",
+          "bottom": 0,
+          "left": 0,
+          "opacity": 0.5,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "aspectRatio": 1,
+            "backgroundColor": "#858585",
+            "width": "100%",
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "paddingHorizontal": 20,
+        "paddingVertical": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 52.2,
+          "lineHeight": 54.81,
+          "paddingTop": 11.7,
+        }
+      }
+    >
+      Hello!
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "bottom": 20,
+        "color": "#ffffff",
+        "fontFamily": "Colfax-Bold",
+        "fontSize": 25.2,
+        "lineHeight": 31.28,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.05,
+        "position": "absolute",
+        "right": 20,
+      }
+    }
+  >
+    My Cool Church
+  </Text>
+</View>
+`;
+
+exports[`The Hero component should render with solid background 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "overflow": "hidden",
+    }
+  }
+>
+  <View
+    backgroundColor="salmon"
+    style={
+      Object {
+        "backgroundColor": "salmon",
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      opacity={undefined}
+      style={
+        Object {
+          "alignItems": "stretch",
+          "bottom": 0,
+          "left": 0,
+          "opacity": 0.8,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "paddingHorizontal": 20,
+        "paddingVertical": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 52.2,
+          "lineHeight": 54.81,
+          "paddingTop": 11.7,
+        }
+      }
+    >
+      Hello!
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "bottom": 20,
+        "color": "#ffffff",
+        "fontFamily": "Colfax-Bold",
+        "fontSize": 25.2,
+        "lineHeight": 31.28,
+        "paddingBottom": 2.7,
+        "paddingTop": 4.05,
+        "position": "absolute",
+        "right": 20,
+      }
+    }
+  >
+    My Cool Church
+  </Text>
+</View>
+`;

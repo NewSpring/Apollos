@@ -12,26 +12,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -51,13 +59,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
@@ -67,13 +79,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -91,26 +107,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -128,26 +152,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -165,26 +197,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -210,26 +250,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
@@ -248,26 +296,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -282,23 +338,28 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -315,26 +376,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -354,13 +423,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
@@ -370,13 +443,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -394,26 +471,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -431,26 +516,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -476,26 +569,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
@@ -514,26 +615,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -544,13 +653,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "Georgia",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontFamily": "DroidSerif-Regular",
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -558,13 +671,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -576,13 +693,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "Georgia",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontFamily": "DroidSerif-Regular",
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -590,13 +711,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -608,13 +733,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "Georgia",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontFamily": "DroidSerif-Regular",
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -622,13 +751,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -647,26 +780,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -684,26 +825,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -718,23 +867,28 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -751,13 +905,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -775,13 +933,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": undefined,
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
@@ -791,13 +953,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -808,13 +974,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "Georgia",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontFamily": "DroidSerif-Regular",
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -822,13 +992,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -840,13 +1014,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "Georgia",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontFamily": "DroidSerif-Regular",
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -854,13 +1032,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -872,13 +1054,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "Georgia",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontFamily": "DroidSerif-Regular",
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -886,13 +1072,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -904,13 +1094,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    bold={false}
     ellipsizeMode="tail"
+    italic={false}
     style={
       Object {
         "color": "#303030",
-        "fontFamily": "Georgia",
-        "fontSize": 18,
-        "lineHeight": 20,
+        "fontFamily": "DroidSerif-Regular",
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
       }
     }
   >
@@ -918,13 +1112,17 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
@@ -943,26 +1141,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >
@@ -980,26 +1186,34 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      bold={false}
       ellipsizeMode="tail"
+      italic={false}
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Georgia",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
         }
       }
     >
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
           }
         }
       >

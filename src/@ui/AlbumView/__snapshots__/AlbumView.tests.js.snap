@@ -55,10 +55,11 @@ exports[`The AlbumView component should render 1`] = `
             "backgroundColor": "transparent",
             "color": "#ffffff",
             "flexWrap": "wrap",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
-            "fontWeight": "700",
-            "lineHeight": 25.46,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 2.7,
           }
         }
       >
@@ -73,9 +74,11 @@ exports[`The AlbumView component should render 1`] = `
             "backgroundColor": "transparent",
             "color": "#ffffff",
             "flexWrap": "wrap",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 14,
-            "lineHeight": 15.87,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.35,
           }
         }
       >
