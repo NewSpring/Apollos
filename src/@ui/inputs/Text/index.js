@@ -99,6 +99,10 @@ const Text = enhance(({
   );
 });
 
+Text.defaultProps = {
+  returnKeyType: 'done',
+};
+
 Text.propTypes = {
   disabled: PropTypes.bool,
   prefix: PropTypes.node,
@@ -106,6 +110,7 @@ Text.propTypes = {
   label: PropTypes.string,
   value: PropTypes.any, // eslint-disable-line
   wrapperStyle: PropTypes.any, // eslint-disable-line
+  returnKeyType: PropTypes.string,
   error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 

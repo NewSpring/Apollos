@@ -14,7 +14,8 @@ const baseStyle = ({ theme }) => ({
 const textStyle = ({ theme }) => ({
   ...baseStyle({ theme }),
   lineHeight: 30,
-  fontFamily: theme.typography.fontFamilySans.regular.default,
+  fontSize: theme.helpers.rem(0.875),
+  fontFamily: theme.typography.fontFamilySans.bold.default,
   color: theme.colors.text.primary,
 });
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import { compose, mapProps } from 'recompose';
 
-import { UIText } from '@ui/typography';
+import { H6 } from '@ui/typography';
 import Button from '@ui/Button';
 import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
@@ -19,16 +19,17 @@ const enhance = compose(
   })),
 );
 
-const StyledUIText = styled({
+const TitleText = styled({
   flexGrow: 1,
   textAlign: 'center',
   alignItems: 'center',
   justifyContent: 'center',
   paddingHorizontal: 6,
-})(UIText);
+})(H6);
 
 const StyledButton = styled(({ theme }) => ({
   justifyContent: 'flex-end',
+  padding: theme.sizing.baseUnit / 4,
   marginRight: theme.sizing.baseUnit / 2,
   marginBottom: theme.sizing.baseUnit / 2,
 }), 'Chip')(Button);
@@ -39,10 +40,11 @@ const Chip = enhance(({
   iconSize,
   selected,
   title,
+  pill = false,
   ...buttonProps
 }) => (
-  <StyledButton {...buttonProps}>
-    {title ? <StyledUIText>{title}</StyledUIText> : null}
+  <StyledButton pill={pill} {...buttonProps}>
+    {title ? <TitleText>{title}</TitleText> : null}
     {icon ? <Icon name={icon} style={iconStyles} size={iconSize} /> : null}
   </StyledButton>
 ));
