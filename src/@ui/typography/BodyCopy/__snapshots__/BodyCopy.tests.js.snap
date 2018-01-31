@@ -1,16 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the P component should accept additional props 1`] = `
+exports[`the BodyCopy component should accept additional props 1`] = `
 <Text
   accessible={false}
   allowFontScaling={true}
+  bold={false}
   ellipsizeMode="tail"
+  italic={false}
   style={
     Object {
       "color": "#303030",
-      "fontFamily": "Georgia",
-      "fontSize": 18,
-      "lineHeight": 20,
+      "fontFamily": "DroidSerif-Regular",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
     }
   }
 >
@@ -18,17 +22,21 @@ exports[`the P component should accept additional props 1`] = `
 </Text>
 `;
 
-exports[`the P component should accept and render passed in styles 1`] = `
+exports[`the BodyCopy component should accept and render passed in styles 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
+  bold={false}
   ellipsizeMode="tail"
+  italic={false}
   style={
     Object {
       "color": "salmon",
-      "fontFamily": "Georgia",
-      "fontSize": 18,
-      "lineHeight": 20,
+      "fontFamily": "DroidSerif-Regular",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
     }
   }
 >
@@ -36,20 +44,90 @@ exports[`the P component should accept and render passed in styles 1`] = `
 </Text>
 `;
 
-exports[`the P component should render correctly 1`] = `
+exports[`the BodyCopy component should render as bold 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
+  bold={true}
   ellipsizeMode="tail"
+  italic={false}
   style={
     Object {
       "color": "#303030",
-      "fontFamily": "Georgia",
-      "fontSize": 18,
-      "lineHeight": 20,
+      "fontFamily": "DroidSerif-Bold",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
     }
   }
 >
-  Default P text
+  Bold BodyCopy text
+</Text>
+`;
+
+exports[`the BodyCopy component should render as bold italic 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  bold={true}
+  ellipsizeMode="tail"
+  italic={true}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "DroidSerif-BoldItalic",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
+    }
+  }
+>
+  Bold italic BodyCopy text
+</Text>
+`;
+
+exports[`the BodyCopy component should render as italic 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  bold={false}
+  ellipsizeMode="tail"
+  italic={true}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "DroidSerif-RegularItalic",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
+    }
+  }
+>
+  Italic BodyCopy text
+</Text>
+`;
+
+exports[`the BodyCopy component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  bold={false}
+  ellipsizeMode="tail"
+  italic={false}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "DroidSerif-Regular",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
+    }
+  }
+>
+  Default BodyCopy text
 </Text>
 `;

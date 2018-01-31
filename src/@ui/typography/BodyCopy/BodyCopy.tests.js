@@ -1,13 +1,37 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Providers from '@ui/TestProviders';
-import P from './';
+import BodyCopy from './';
 
-describe('the P component', () => {
+describe('the BodyCopy component', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
       <Providers>
-        <P>Default P text</P>
+        <BodyCopy>Default BodyCopy text</BodyCopy>
+      </Providers>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render as bold', () => {
+    const tree = renderer.create(
+      <Providers>
+        <BodyCopy bold>Bold BodyCopy text</BodyCopy>
+      </Providers>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render as italic', () => {
+    const tree = renderer.create(
+      <Providers>
+        <BodyCopy italic>Italic BodyCopy text</BodyCopy>
+      </Providers>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render as bold italic', () => {
+    const tree = renderer.create(
+      <Providers>
+        <BodyCopy bold italic>Bold italic BodyCopy text</BodyCopy>
       </Providers>,
     );
     expect(tree).toMatchSnapshot();
@@ -16,7 +40,7 @@ describe('the P component', () => {
     const salmon = { color: 'salmon' };
     const tree = renderer.create(
       <Providers>
-        <P style={salmon}>Salmon text</P>
+        <BodyCopy style={salmon}>Salmon text</BodyCopy>
       </Providers>,
     );
     expect(tree).toMatchSnapshot();
@@ -24,7 +48,7 @@ describe('the P component', () => {
   it('should accept additional props', () => {
     const tree = renderer.create(
       <Providers>
-        <P accessible={false}>{'"True faith means holding nothing back. It means putting every hope in God\'s fidelity to His Promises." ― Francis Chan'}</P>
+        <BodyCopy accessible={false}>{'"True faith means holding nothing back. It means putting every hope in God\'s fidelity to His Promises." ― Francis Chan'}</BodyCopy>
       </Providers>,
     );
     expect(tree).toMatchSnapshot();
