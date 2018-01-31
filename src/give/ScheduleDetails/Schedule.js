@@ -47,6 +47,7 @@ const StyledActivityIndicatorContainer = styled({
   height: 40,
 })(View);
 
+// TODO: Make this pretty
 class Schedule extends PureComponent {
   static propTypes = {
     transactionId: PropTypes.oneOfType([
@@ -70,15 +71,21 @@ class Schedule extends PureComponent {
       );
     }
 
-    // const isComplete = new Date(this.props.transaction.next) < new Date() && this.props.transaction.schedule.value === "One-Time";
-    // const isActive = ; // NOTE: In holtzman this is identified via state
-    // const isCancellable = !isComplete && isActive;
+    const isCancellable = !this.props.isComplete && this.props.isActive;
 
     return (
       <View>
-        <CancelScheduleButton
-          id={this.props.transactionId}
-        />
+        {!this.props.isActive && (
+          <ItalicText>{'Schedule Inactive'}</ItalicText>
+        )}
+        {this.props.isComplete && (
+          <ItalicText>{'Schedule Completed'}</ItalicText>
+        )}
+        {isCancellable && (
+          <CancelScheduleButton
+            id={this.props.transactionId}
+          />
+        )}
       </View>
     );
     // return (
@@ -112,7 +119,9 @@ class Schedule extends PureComponent {
 const enhance = compose(
   withScheduledTransaction,
   withProps(props => ({
-    transactionId: get(props, 'transaction.id'),
+    transactionId: get(props, 'transaction.transactionId'),
+    isActive: get(props, 'transaction.isActive'),
+    isComplete: new Date(get(props, 'transaction.next')) < new Date() && get(props, 'transaction.schedule.value') === "One-Time",
   })),
 );
 

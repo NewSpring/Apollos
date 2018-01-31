@@ -8,11 +8,13 @@ export const QUERY = gql`
         numberOfPayments
         next
         end
-        id: entityId
+        id
+        transactionId: entityId
         reminderDate
         gateway
         start
         date
+        isActive
         details {
           amount
           account {

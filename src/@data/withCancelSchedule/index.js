@@ -8,7 +8,9 @@ export const MUTATION = gql`
       success
       error
       schedule {
-        entityId
+        id
+        isActive
+        __typename
       }
     }
   }
@@ -17,6 +19,7 @@ export const MUTATION = gql`
 export default graphql(MUTATION, {
   props: ({ mutate }) => ({
     cancelSchedule: id => (mutate({
+      refetchQueries: ['GivingDashboard'],
       variables: {
         id,
       },
