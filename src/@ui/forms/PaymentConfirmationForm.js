@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View } from 'react-native';
+import { View, Platform, Linking } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
@@ -13,6 +13,8 @@ import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import styled from '@ui/styled';
 import Button, { ButtonLink } from '@ui/Button';
+import WebBrowser from '@ui/WebBrowser';
+import Constants from '@utils/ExpoConstants';
 
 const Row = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 2,
@@ -111,6 +113,11 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
   }
 }
 
+function handleRedirect(e) {
+  WebBrowser.dismissBrowser();
+  console.log(e);
+}
+
 const PaymentConfirmationForm = compose(
   withGive,
   withRouter,
@@ -127,6 +134,14 @@ const PaymentConfirmationForm = compose(
   withProps(props => ({
     onSubmit: async () => {
       try {
+        if (Platform.OS !== 'web') {
+          Linking.addEventListener('url', handleRedirect);
+          const res = await WebBrowser.openBrowserAsync(`http://localhost:3000/give/restored-checkout?linkingUri=${Constants.linkingUri}`);
+          console.log(res);
+          Linking.removeEventListener('url', handleRedirect);
+
+          return res;
+        }
         props.isPaying(true);
         if (props.contributions.paymentMethod === 'creditCard') {
           await props.validateSingleCardTransaction(); // This seems unnecessary
