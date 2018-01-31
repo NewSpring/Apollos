@@ -47,7 +47,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "height": 40,
             "lineHeight": 30,
             "paddingVertical": 5,
@@ -97,9 +97,10 @@ exports[`The Text Input component should render as a numeric field 1`] = `
         Object {
           "backgroundColor": "transparent",
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
           "paddingVertical": 5,
         }
       }
@@ -204,7 +205,7 @@ exports[`The Text Input component should render as a password field with an icon
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "height": 40,
             "lineHeight": 30,
             "paddingVertical": 5,
@@ -265,9 +266,10 @@ exports[`The Text Input component should render as a password field with an icon
         Object {
           "backgroundColor": "transparent",
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
           "paddingVertical": 5,
         }
       }
@@ -370,7 +372,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "height": 40,
             "lineHeight": 30,
             "paddingVertical": 5,
@@ -420,9 +422,10 @@ exports[`The Text Input component should render as a phone number field 1`] = `
         Object {
           "backgroundColor": "transparent",
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
           "paddingVertical": 5,
         }
       }
@@ -527,7 +530,7 @@ exports[`The Text Input component should render as an email field 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "height": 40,
             "lineHeight": 30,
             "paddingVertical": 5,
@@ -577,9 +580,10 @@ exports[`The Text Input component should render as an email field 1`] = `
         Object {
           "backgroundColor": "transparent",
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
           "paddingVertical": 5,
         }
       }
@@ -681,7 +685,7 @@ exports[`The Text Input component should render correctly 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "height": 40,
             "lineHeight": 30,
             "paddingVertical": 5,
@@ -730,9 +734,10 @@ exports[`The Text Input component should render correctly 1`] = `
         Object {
           "backgroundColor": "transparent",
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Regular",
           "fontSize": 18,
           "lineHeight": 20,
+          "paddingTop": 2.7,
           "paddingVertical": 5,
         }
       }

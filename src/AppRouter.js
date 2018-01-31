@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Platform } from 'react-native';
+import { Platform, View } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
 import { withWindow } from '@ui/MediaQuery';
 import { withTheme } from '@ui/theme';
@@ -26,6 +26,8 @@ import Auth from './auth';
 import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
+
+const redirectToNewspring = path => window.location.replace(`https://newspring.cc/${path}`);
 
 let previousLocation;
 
@@ -104,6 +106,23 @@ class AppRouter extends PureComponent {
     );
   };
 
+  renderWebRedirects = () => (
+    <View>
+      <Route path="/about" component={() => redirectToNewspring('about')} />
+      <Route path="/locations" component={() => redirectToNewspring('locations')} />
+      <Route path="/sermons" component={() => redirectToNewspring('sermons')} />
+      <Route path="/series" component={() => redirectToNewspring('sermons')} />
+      <Route path="/devotions" component={() => redirectToNewspring('devotions')} />
+      <Route path="/studies" component={() => redirectToNewspring('studies')} />
+      <Route path="/music" component={() => redirectToNewspring('music')} />
+      <Route path="/stories" component={() => redirectToNewspring('stories')} />
+      <Route path="/events" component={() => redirectToNewspring('events')} />
+      <Route path="/live" component={() => redirectToNewspring('live')} />
+      <Route path="/watchandread" component={() => redirectToNewspring('watchandread')} />
+      <Route path="/nextsteps" component={() => redirectToNewspring('nextsteps')} />
+    </View>
+  );
+
   render() {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
@@ -111,6 +130,7 @@ class AppRouter extends PureComponent {
     return (
       <BackgroundView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
+        {Platform.OS === 'web' ? this.renderWebRedirects() : null}
         <Player>
           <AppLayout>
             <CardStack

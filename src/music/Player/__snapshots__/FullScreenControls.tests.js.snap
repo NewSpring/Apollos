@@ -94,10 +94,11 @@ exports[`The FullScreenControls component should render 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Bold",
             "fontSize": 25.2,
-            "fontWeight": "700",
             "lineHeight": 31.28,
+            "paddingBottom": 2.7,
+            "paddingTop": 4.05,
             "textAlign": "center",
           }
         }
@@ -111,9 +112,11 @@ exports[`The FullScreenControls component should render 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 14,
-            "lineHeight": 15.87,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.35,
             "textAlign": "center",
           }
         }
@@ -291,9 +294,10 @@ exports[`The FullScreenControls component should render 1`] = `
             Object {
               "alignItems": "center",
               "color": "#ffffff",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "textAlign": "center",
               "width": 50,
             }
@@ -411,9 +415,10 @@ exports[`The FullScreenControls component should render 1`] = `
             Object {
               "alignItems": "center",
               "color": "#ffffff",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "textAlign": "center",
               "width": 50,
             }
@@ -576,10 +581,11 @@ exports[`The FullScreenControls component should render 1`] = `
             style={
               Object {
                 "color": "#ffffff",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 18,
                 "lineHeight": 20,
                 "opacity": 0.7,
+                "paddingTop": 2.7,
                 "paddingVertical": 5,
               }
             }

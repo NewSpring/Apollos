@@ -16,10 +16,11 @@ exports[`the ContentView component renders 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 42.3,
-          "fontWeight": "700",
-          "lineHeight": 53.82,
+          "lineHeight": 53.58,
+          "paddingBottom": 3.6,
+          "paddingTop": 6.3,
         }
       }
     >
@@ -32,10 +33,11 @@ exports[`the ContentView component renders 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
-          "fontWeight": "700",
-          "lineHeight": 17.85,
+          "lineHeight": 17.75,
+          "paddingBottom": 1.8,
+          "paddingTop": 2.25,
         }
       }
     >
@@ -53,26 +55,34 @@ exports[`the ContentView component renders 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -90,26 +100,34 @@ exports[`the ContentView component renders 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -202,10 +220,11 @@ exports[`the ContentView component renders with images 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 42.3,
-          "fontWeight": "700",
-          "lineHeight": 53.82,
+          "lineHeight": 53.58,
+          "paddingBottom": 3.6,
+          "paddingTop": 6.3,
         }
       }
     >
@@ -218,10 +237,11 @@ exports[`the ContentView component renders with images 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
-          "fontWeight": "700",
-          "lineHeight": 17.85,
+          "lineHeight": 17.75,
+          "paddingBottom": 1.8,
+          "paddingTop": 2.25,
         }
       }
     >
@@ -239,26 +259,34 @@ exports[`the ContentView component renders with images 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -276,26 +304,34 @@ exports[`the ContentView component renders with images 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -324,10 +360,11 @@ exports[`the ContentView component renders with video 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 42.3,
-          "fontWeight": "700",
-          "lineHeight": 53.82,
+          "lineHeight": 53.58,
+          "paddingBottom": 3.6,
+          "paddingTop": 6.3,
         }
       }
     >
@@ -340,10 +377,11 @@ exports[`the ContentView component renders with video 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": null,
+          "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
-          "fontWeight": "700",
-          "lineHeight": 17.85,
+          "lineHeight": 17.75,
+          "paddingBottom": 1.8,
+          "paddingTop": 2.25,
         }
       }
     >
@@ -361,26 +399,34 @@ exports[`the ContentView component renders with video 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -398,26 +444,34 @@ exports[`the ContentView component renders with video 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Georgia",
-              "fontSize": 18,
-              "lineHeight": 20,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
             }
           }
         >
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >

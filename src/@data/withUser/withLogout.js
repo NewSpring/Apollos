@@ -17,7 +17,7 @@ export default graphql(MUTATION, {
     logout: async () => {
       try {
         const r = await mutate({
-          refetchQueries: ['GivingDashboard', 'GetCheckoutData', 'SavedPaymentMethods'],
+          refetchQueries: ['GivingDashboard', 'GetCheckoutData', 'SavedPaymentMethods', 'GetTransactions'],
           update: async (proxy) => {
             const query = USER_QUERY;
             const data = proxy.readQuery({ query });

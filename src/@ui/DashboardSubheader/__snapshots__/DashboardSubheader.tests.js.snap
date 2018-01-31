@@ -20,10 +20,11 @@ exports[`the DashboardSubheader component should render 1`] = `
     style={
       Object {
         "color": "#858585",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 15.75,
-        "fontWeight": "700",
-        "lineHeight": 17.85,
+        "lineHeight": 17.75,
+        "paddingBottom": 1.8,
+        "paddingTop": 2.25,
       }
     }
   >
@@ -86,9 +87,11 @@ exports[`the DashboardSubheader component should render 1`] = `
         style={
           Object {
             "color": "#858585",
-            "fontFamily": null,
+            "fontFamily": "Colfax-Regular",
             "fontSize": 14,
-            "lineHeight": 15.87,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.35,
           }
         }
       >
