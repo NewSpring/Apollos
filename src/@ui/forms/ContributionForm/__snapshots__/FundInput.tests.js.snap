@@ -17,10 +17,11 @@ exports[`The FrequencyInput component should render correctly 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
@@ -67,11 +68,12 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 25.2,
-                "fontWeight": "700",
                 "lineHeight": 31.28,
                 "opacity": 0.5,
+                "paddingBottom": 2.7,
+                "paddingTop": 4.05,
               }
             }
           >
@@ -101,7 +103,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 32.4,
                 "fontWeight": "700",
                 "height": 40,
@@ -153,9 +155,10 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }
@@ -215,10 +218,11 @@ exports[`The FrequencyInput component should render correctly 1`] = `
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
@@ -290,11 +294,12 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               style={
                 Object {
                   "color": "#6bac43",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
+                  "paddingTop": 2.7,
                   "paddingVertical": 5,
                 }
               }
@@ -306,9 +311,10 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                 style={
                   Object {
                     "color": "#858585",
-                    "fontFamily": null,
+                    "fontFamily": "Colfax-Regular",
                     "fontSize": 18,
                     "lineHeight": 20,
+                    "paddingTop": 2.7,
                   }
                 }
               />
@@ -387,10 +393,11 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                   "backgroundColor": "transparent",
                   "borderRadius": 0,
                   "color": "#6bac43",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 18,
                   "lineHeight": 20,
                   "padding": 0,
+                  "paddingTop": 2.7,
                 }
               }
             >
@@ -467,9 +474,10 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }
@@ -542,10 +550,11 @@ exports[`The FrequencyInput component should render correctly as the first fund 
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
@@ -592,11 +601,12 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 25.2,
-                "fontWeight": "700",
                 "lineHeight": 31.28,
                 "opacity": 0.5,
+                "paddingBottom": 2.7,
+                "paddingTop": 4.05,
               }
             }
           >
@@ -626,7 +636,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 32.4,
                 "fontWeight": "700",
                 "height": 40,
@@ -678,9 +688,10 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             Object {
               "backgroundColor": "transparent",
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }
@@ -740,10 +751,11 @@ exports[`The FrequencyInput component should render correctly as the first fund 
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
@@ -815,11 +827,12 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               style={
                 Object {
                   "color": "#6bac43",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
+                  "paddingTop": 2.7,
                   "paddingVertical": 5,
                 }
               }
@@ -831,9 +844,10 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                 style={
                   Object {
                     "color": "#858585",
-                    "fontFamily": null,
+                    "fontFamily": "Colfax-Regular",
                     "fontSize": 18,
                     "lineHeight": 20,
+                    "paddingTop": 2.7,
                   }
                 }
               />
@@ -912,10 +926,11 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                   "backgroundColor": "transparent",
                   "borderRadius": 0,
                   "color": "#6bac43",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 18,
                   "lineHeight": 20,
                   "padding": 0,
+                  "paddingTop": 2.7,
                 }
               }
             >
@@ -992,9 +1007,10 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             Object {
               "backgroundColor": "transparent",
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }
@@ -1067,10 +1083,11 @@ exports[`The FrequencyInput component should render correctly with initial state
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
@@ -1117,11 +1134,12 @@ exports[`The FrequencyInput component should render correctly with initial state
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 25.2,
-                "fontWeight": "700",
                 "lineHeight": 31.28,
                 "opacity": 0.5,
+                "paddingBottom": 2.7,
+                "paddingTop": 4.05,
               }
             }
           >
@@ -1151,7 +1169,7 @@ exports[`The FrequencyInput component should render correctly with initial state
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": null,
+                "fontFamily": "Colfax-Regular",
                 "fontSize": 32.4,
                 "fontWeight": "700",
                 "height": 40,
@@ -1203,9 +1221,10 @@ exports[`The FrequencyInput component should render correctly with initial state
             Object {
               "backgroundColor": "transparent",
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }
@@ -1265,10 +1284,11 @@ exports[`The FrequencyInput component should render correctly with initial state
     style={
       Object {
         "color": "#303030",
-        "fontFamily": null,
+        "fontFamily": "Colfax-Bold",
         "fontSize": 32.4,
-        "fontWeight": "700",
-        "lineHeight": 41.22,
+        "lineHeight": 41.04,
+        "paddingBottom": 2.7,
+        "paddingTop": 5.4,
       }
     }
   >
@@ -1340,11 +1360,12 @@ exports[`The FrequencyInput component should render correctly with initial state
               style={
                 Object {
                   "color": "#6bac43",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
+                  "paddingTop": 2.7,
                   "paddingVertical": 5,
                 }
               }
@@ -1356,9 +1377,10 @@ exports[`The FrequencyInput component should render correctly with initial state
                 style={
                   Object {
                     "color": "#858585",
-                    "fontFamily": null,
+                    "fontFamily": "Colfax-Regular",
                     "fontSize": 18,
                     "lineHeight": 20,
+                    "paddingTop": 2.7,
                   }
                 }
               />
@@ -1437,10 +1459,11 @@ exports[`The FrequencyInput component should render correctly with initial state
                   "backgroundColor": "transparent",
                   "borderRadius": 0,
                   "color": "#6bac43",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 18,
                   "lineHeight": 20,
                   "padding": 0,
+                  "paddingTop": 2.7,
                 }
               }
             >
@@ -1517,9 +1540,10 @@ exports[`The FrequencyInput component should render correctly with initial state
             Object {
               "backgroundColor": "transparent",
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Regular",
               "fontSize": 18,
               "lineHeight": 20,
+              "paddingTop": 2.7,
               "paddingVertical": 5,
             }
           }

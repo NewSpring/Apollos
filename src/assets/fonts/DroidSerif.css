@@ -1,0 +1,36 @@
+@font-face{
+    font-family: 'DroidSerif-Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Regular.eot"); /* IE9 Compat Modes */
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Regular.woff2") format("woff2"), /* Super Modern Browsers */
+         url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Regular.woff") format("woff"), /* Pretty Modern Browsers */
+         url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face{
+    font-family: 'DroidSerif-RegularItalic';
+    font-style:  italic;
+    font-weight: 400;
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Italic.eot"); /* IE9 Compat Modes */
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Italic.woff2") format("woff2"), /* Super Modern Browsers */
+         url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Italic.woff") format("woff"), /* Pretty Modern Browsers */
+         url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Italic.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face{
+    font-family: 'DroidSerif-Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Bold.eot"); /* IE9 Compat Modes */
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Bold.woff2") format("woff2"), /* Super Modern Browsers */
+         url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Bold.woff") format("woff"), /* Pretty Modern Browsers */
+         url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face{
+    font-family: 'DroidSerif-BoldItalic';
+    font-style:  italic;
+    font-weight: 700;
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-BoldItalic.eot"); /* IE9 Compat Modes */
+    src: url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-BoldItalic.woff2") format("woff2"), /* Super Modern Browsers */
+         url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-BoldItalic.woff") format("woff"), /* Pretty Modern Browsers */
+         url("https://d3n6tjerleuu41.cloudfront.net/fonts/droid-serif/DroidSerif-BoldItalic.ttf") format("truetype"); /* Safari, Android, iOS */
+}

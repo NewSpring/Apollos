@@ -5,6 +5,7 @@
     "slug": "newspring-apollos",
     "sdkVersion": "25.0.0",
     "version": "6.0.0",
+    "orientation": "portrait",
     "ios": {
       "bundleIdentifier": "com.subsplashstudio31.NewSpring-Church",
       "buildNumber": "7",

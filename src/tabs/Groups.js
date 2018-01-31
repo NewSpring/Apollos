@@ -9,6 +9,7 @@ import PaddedView from '@ui/PaddedView';
 import { H3, H6 } from '@ui/typography';
 import { GroupSearchForm } from '@ui/forms';
 import { withRouter } from '@ui/NativeWebRouter';
+import LiveNowButton from '@ui/LiveNowButton';
 import { stringify } from '@utils/queryString';
 
 const GroupSearchFormWithData = compose(
@@ -21,6 +22,7 @@ const Groups = withRouter(({
 }) => (
   <BackgroundView>
     <Header titleText="Group Finder" />
+    <LiveNowButton />
     <ScrollView>
       <PaddedView>
         <H3>Find your people</H3>

@@ -125,13 +125,17 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -183,13 +187,17 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -241,13 +249,17 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -299,13 +311,17 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -357,13 +373,17 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -415,13 +435,17 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -473,13 +497,17 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -531,13 +559,17 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -589,13 +621,17 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >
@@ -647,13 +683,17 @@ exports[`The TracksList component should render 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
+            bold={false}
             ellipsizeMode="tail"
+            italic={false}
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Georgia",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
               }
             }
           >

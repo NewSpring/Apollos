@@ -84,7 +84,7 @@ export default class Audio extends PureComponent {
   }
 
   componentWillUnmount() {
-    this.sound.unloadAsync();
+    if (this.sound) this.sound.unloadAsync();
   }
 
   onPlaybackStatusUpdate = ({ didJustFinish, positionMillis }) => {

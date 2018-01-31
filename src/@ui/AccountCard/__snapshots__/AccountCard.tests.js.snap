@@ -53,10 +53,11 @@ exports[`the AccountCard component should render accountType:bankAccount 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 20.02,
-              "fontWeight": "700",
-              "lineHeight": 25.46,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -97,9 +98,11 @@ exports[`the AccountCard component should render accountType:bankAccount 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
@@ -188,10 +191,11 @@ exports[`the AccountCard component should render accountType:creditCard 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 20.02,
-              "fontWeight": "700",
-              "lineHeight": 25.46,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -232,9 +236,11 @@ exports[`the AccountCard component should render accountType:creditCard 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
@@ -323,10 +329,11 @@ exports[`the AccountCard component should render allow changing iconSize 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 20.02,
-              "fontWeight": "700",
-              "lineHeight": 25.46,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -367,9 +374,11 @@ exports[`the AccountCard component should render allow changing iconSize 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
@@ -458,10 +467,11 @@ exports[`the AccountCard component should render with accountNumber 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 20.02,
-              "fontWeight": "700",
-              "lineHeight": 25.46,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -502,9 +512,11 @@ exports[`the AccountCard component should render with accountNumber 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >
@@ -593,10 +605,11 @@ exports[`the AccountCard component should render with title 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": null,
+              "fontFamily": "Colfax-Bold",
               "fontSize": 20.02,
-              "fontWeight": "700",
-              "lineHeight": 25.46,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
             }
           }
         >
@@ -637,9 +650,11 @@ exports[`the AccountCard component should render with title 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": null,
+                  "fontFamily": "Colfax-Regular",
                   "fontSize": 14,
-                  "lineHeight": 15.87,
+                  "lineHeight": 15.78,
+                  "paddingBottom": 2.25,
+                  "paddingTop": 1.35,
                 }
               }
             >

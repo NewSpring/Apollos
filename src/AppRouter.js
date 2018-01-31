@@ -1,12 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Platform } from 'react-native';
+import { Platform, View } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
-import { enhancer as mediaQuery } from '@ui/MediaQuery';
+import { withWindow } from '@ui/MediaQuery';
+import { withTheme } from '@ui/theme';
 import { Router, Route, ProtectedRoute, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@ui/NativeWebRouter';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
+import orientation from '@utils/orientation';
 import BackgroundView from '@ui/BackgroundView';
 
 import * as tabs from './tabs';
@@ -18,10 +20,13 @@ import Series, { Sermon, SeriesSingle, SeriesTrailer } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
+import Live from './live';
 import Auth from './auth';
 import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
+
+const redirectToNewspring = path => window.location.replace(`https://newspring.cc/${path}`);
 
 let previousLocation;
 
@@ -32,6 +37,11 @@ class AppRouter extends PureComponent {
       pathname: PropTypes.string,
     }),
     isLargeScreen: PropTypes.bool,
+  }
+
+  constructor(...args) {
+    super(...args);
+    orientation.allow(orientation.Orientation.PORTRAIT_UP);
   }
 
   componentWillMount() {
@@ -95,6 +105,23 @@ class AppRouter extends PureComponent {
     );
   };
 
+  renderWebRedirects = () => (
+    <View>
+      <Route path="/about" component={() => redirectToNewspring('about')} />
+      <Route path="/locations" component={() => redirectToNewspring('locations')} />
+      <Route path="/sermons" component={() => redirectToNewspring('sermons')} />
+      <Route path="/series" component={() => redirectToNewspring('sermons')} />
+      <Route path="/devotions" component={() => redirectToNewspring('devotions')} />
+      <Route path="/studies" component={() => redirectToNewspring('studies')} />
+      <Route path="/music" component={() => redirectToNewspring('music')} />
+      <Route path="/stories" component={() => redirectToNewspring('stories')} />
+      <Route path="/events" component={() => redirectToNewspring('events')} />
+      <Route path="/live" component={() => redirectToNewspring('live')} />
+      <Route path="/watchandread" component={() => redirectToNewspring('watchandread')} />
+      <Route path="/nextsteps" component={() => redirectToNewspring('nextsteps')} />
+    </View>
+  );
+
   render() {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
@@ -102,6 +129,7 @@ class AppRouter extends PureComponent {
     return (
       <BackgroundView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
+        {Platform.OS === 'web' ? this.renderWebRedirects() : null}
         <Player>
           <AppLayout>
             <CardStack
@@ -154,6 +182,7 @@ class AppRouter extends PureComponent {
 
               <Route path="/login" component={Auth} cardStackDirection="vertical" />
 
+              <Route exact path="/live" component={asModal(Live)} cardStackDirection="vertical" />
               <ProtectedRoute exact path="/settings" component={Settings} />
               <ProtectedRoute exact path="/settings/profile" component={ProfileDetails} />
               <ProtectedRoute exact path="/settings/address" component={ProfileAddress} />
@@ -171,7 +200,11 @@ class AppRouter extends PureComponent {
 
 const enhance = compose(
   withRouter,
-  mediaQuery(({ md }) => ({ minWidth: md }), withProps(() => ({ isLargeScreen: true }))),
+  withWindow,
+  withTheme(),
+  withProps(({ theme, window }) => ({
+    isLargeScreen: window.width > theme.breakpoints.md,
+  })),
 );
 
 export default nest(Router, enhance(AppRouter));
