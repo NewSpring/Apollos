@@ -31,7 +31,7 @@ const Bullet = styled(({ theme }) => ({
 
 const IosTextWrapFix = styled({ // 😢
   flexShrink: 1,
-})(BodyCopy);
+})(View);
 
 const BulletListItem = enhance(({
   children,
@@ -41,7 +41,7 @@ const BulletListItem = enhance(({
       <BodyCopy>•</BodyCopy>
     </Bullet>
     <IosTextWrapFix>
-      {children}
+      {typeof children === 'string' ? <BodyCopy>{children}</BodyCopy> : children}
     </IosTextWrapFix>
   </Wrapper>
 ));

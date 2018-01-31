@@ -6,7 +6,7 @@ import { decodeHTML } from 'entities';
 import { BodyCopy, H1, H2, H3, H4, H5, H6, H7 } from '@ui/typography';
 import ConnectedImage from '@ui/ConnectedImage';
 import Paragraph from '@ui/Paragraph';
-import BlockQuote from '@ui/BlockQuote';
+import BlockQuote, { QuoteText } from '@ui/BlockQuote';
 import BulletListItem from '@ui/BulletListItem';
 import { Link } from './styles';
 
