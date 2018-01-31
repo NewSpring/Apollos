@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Platform } from 'react-native';
 import { compose } from 'recompose';
 import withCampuses from '@data/withCampuses';
 import withGroupAttributes from '@data/withGroupAttributes';
@@ -21,14 +21,18 @@ const Groups = withRouter(({
   history,
 }) => (
   <BackgroundView>
-    <Header titleText="Group Finder" />
+    <Header webEnabled titleText={Platform.OS === 'web' ? 'Find your people' : 'Group Finder'}>
+      {Platform.OS === 'web' ? <H6>Select your interests, campus and location to search for groups near you.</H6> : null}
+    </Header>
     <LiveNowButton />
     <ScrollView>
-      <PaddedView>
-        <H3>Find your people</H3>
-        <H6>Select your interests, campus and location to search for groups near you.</H6>
-      </PaddedView>
-      <PaddedView>
+      {Platform.OS !== 'web' ? (
+        <PaddedView>
+          <H3>Find your people</H3>
+          <H6>Select your interests, campus and location to search for groups near you.</H6>
+        </PaddedView>
+      ) : null}
+      <PaddedView horizontal={false}>
         <GroupSearchFormWithData
           onSubmit={(data) => {
             history.push(`/groups/finder?${stringify(data)}`);

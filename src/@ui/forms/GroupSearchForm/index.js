@@ -6,6 +6,8 @@ import { compose, setPropTypes } from 'recompose';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 
+import TableView, { FormFields } from '@ui/TableView';
+import PaddedView from '@ui/PaddedView';
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
 
@@ -91,41 +93,51 @@ export const GroupSearchForm = enhance(({
   isSubmitting,
 }) => (
   <View>
-    <KeywordSelect
-      label="Groups I'm looking for..."
-      keywords={groupAttributes.map(attr => attr.value)}
-      value={values.query}
-      onChangeText={value => setFieldValue('query', value)}
-      onBlur={() => setFieldTouched('query')}
-    />
-    <Inputs.Picker
-      label="Campus"
-      value={values.campusId}
-      displayValue={get(campuses.find(campus => campus.name.toLowerCase() === values.campusId), 'name')}
-      onValueChange={value => setFieldValue('campusId', value)}
-      error={errors.campusId}
-    >
-      {/* NOTE: value should use id but heighliner doesn't support that yet */}
-      {campuses.map(({ name, id }) => (
-        <Inputs.PickerItem label={name} value={name.toLowerCase()} key={id} />
-      ))}
-    </Inputs.Picker>
-    <Inputs.Text
-      label="Zip Code"
-      disabled={values.useDeviceLocation}
-      type="numeric"
-      value={values.zipCode}
-      onChangeText={value => setFieldValue('zipCode', value)}
-      onBlur={() => setFieldTouched('zipCode')}
-      error={touched.zipCode && errors.zipCode}
-    />
-    <Inputs.Switch
-      label="Use my current location"
-      value={values.useDeviceLocation}
-      onValueChange={value => setFieldValue('useDeviceLocation', value)}
-      error={errors.useDeviceLocation}
-    />
-    <Button onPress={handleSubmit} title="Let's Go!" type="primary" disabled={!isValid} loading={isSubmitting} />
+    <TableView>
+      <FormFields>
+        <KeywordSelect
+          label="Groups I'm looking for..."
+          keywords={groupAttributes.map(attr => attr.value)}
+          value={values.query}
+          onChangeText={value => setFieldValue('query', value)}
+          onBlur={() => setFieldTouched('query')}
+        />
+      </FormFields>
+    </TableView>
+    <TableView>
+      <FormFields>
+        <Inputs.Picker
+          label="Campus"
+          value={values.campusId}
+          displayValue={get(campuses.find(campus => campus.name.toLowerCase() === values.campusId), 'name')}
+          onValueChange={value => setFieldValue('campusId', value)}
+          error={errors.campusId}
+        >
+          {/* NOTE: value should use id but heighliner doesn't support that yet */}
+          {campuses.map(({ name, id }) => (
+            <Inputs.PickerItem label={name} value={name.toLowerCase()} key={id} />
+          ))}
+        </Inputs.Picker>
+        <Inputs.Text
+          label="Zip Code"
+          disabled={values.useDeviceLocation}
+          type="numeric"
+          value={values.zipCode}
+          onChangeText={value => setFieldValue('zipCode', value)}
+          onBlur={() => setFieldTouched('zipCode')}
+          error={touched.zipCode && errors.zipCode}
+        />
+        <Inputs.Switch
+          label="Use my current location"
+          value={values.useDeviceLocation}
+          onValueChange={value => setFieldValue('useDeviceLocation', value)}
+          error={errors.useDeviceLocation}
+        />
+      </FormFields>
+    </TableView>
+    <PaddedView vertical={false}>
+      <Button onPress={handleSubmit} title="Let's Go!" type="primary" disabled={!isValid} loading={isSubmitting} />
+    </PaddedView>
   </View>
 ));
 

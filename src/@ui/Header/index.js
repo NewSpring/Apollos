@@ -21,7 +21,9 @@ const StyledHeaderBar = styled(({ theme }) => ({
       paddingHorizontal: theme.sizing.baseUnit,
       paddingVertical: theme.sizing.baseUnit,
       paddingTop: theme.sizing.baseUnit * 2.5,
-      justifyContent: 'flex-start',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'flex-start',
     },
   }),
 }), 'Header.Bar')(View);
