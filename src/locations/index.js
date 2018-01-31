@@ -61,13 +61,14 @@ class Locations extends PureComponent {
   };
 
   handleSearch = (searchText) => {
-    this.setState({ searchText });
-    this.debouncedUpdate(searchText);
+    if (searchText !== this.state.searchText) this.setState({ searchText });
   }
 
-  debouncedUpdate = debounce((q) => {
-    this.props.history.replace(`${this.props.location.pathname}?${stringify({ q })}`);
-  }, 500);
+  update = () => {
+    this.props.history.replace(`${this.props.location.pathname}?${stringify({ q: this.state.searchText })}`);
+  }
+
+  debouncedUpdate = debounce(this.update, 500);
 
   render() {
     return (
@@ -84,6 +85,8 @@ class Locations extends PureComponent {
               }
               placeholder="Find a campus by city, state or zip"
               onChangeText={this.handleSearch}
+              onBlur={this.update}
+              returnKeyType="go"
             />
           </Form>
           <PaddedView>
