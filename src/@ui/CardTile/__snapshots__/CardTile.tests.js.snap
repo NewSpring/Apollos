@@ -2,9 +2,10 @@
 
 exports[`the Card component number box should grow elegantly with larger numbers 1`] = `
 <View
+  collapsable={false}
   style={
     Object {
-      "paddingHorizontal": 10,
+      "padding": 10,
     }
   }
 >
@@ -112,9 +113,10 @@ exports[`the Card component number box should grow elegantly with larger numbers
 
 exports[`the Card component should render 1`] = `
 <View
+  collapsable={false}
   style={
     Object {
-      "paddingHorizontal": 10,
+      "padding": 10,
     }
   }
 >
@@ -186,9 +188,10 @@ exports[`the Card component should render 1`] = `
 
 exports[`the Card component should render a loading skeleton 1`] = `
 <View
+  collapsable={false}
   style={
     Object {
-      "paddingHorizontal": 10,
+      "padding": 10,
     }
   }
 >
@@ -256,9 +259,10 @@ exports[`the Card component should render a loading skeleton 1`] = `
 
 exports[`the Card component should render a loading skeleton for all available props 1`] = `
 <View
+  collapsable={false}
   style={
     Object {
-      "paddingHorizontal": 10,
+      "padding": 10,
     }
   }
 >
@@ -422,9 +426,10 @@ exports[`the Card component should render a loading skeleton for all available p
 
 exports[`the Card component should render a number box 1`] = `
 <View
+  collapsable={false}
   style={
     Object {
-      "paddingHorizontal": 10,
+      "padding": 10,
     }
   }
 >
@@ -532,9 +537,10 @@ exports[`the Card component should render a number box 1`] = `
 
 exports[`the Card component should render card details 1`] = `
 <View
+  collapsable={false}
   style={
     Object {
-      "paddingHorizontal": 10,
+      "padding": 10,
     }
   }
 >
@@ -701,9 +707,10 @@ exports[`the Card component should render card details 1`] = `
 
 exports[`the Card component should render card details with date 1`] = `
 <View
+  collapsable={false}
   style={
     Object {
-      "paddingHorizontal": 10,
+      "padding": 10,
     }
   }
 >

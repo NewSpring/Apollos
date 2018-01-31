@@ -40,12 +40,7 @@ const enhance = compose(
 );
 
 const TileSpacer = styled(({ theme }) => ({
-  paddingHorizontal: theme.sizing.baseUnit / 2,
-  ...Platform.select({
-    web: {
-      paddingVertical: theme.sizing.baseUnit / 2,
-    },
-  }),
+  padding: theme.sizing.baseUnit / 2,
 }))(View);
 
 const Tile = styled(({ theme }) => ({

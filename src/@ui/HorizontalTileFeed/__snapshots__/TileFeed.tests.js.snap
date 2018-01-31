@@ -53,7 +53,7 @@ exports[`The TileFeed component renders correctly 1`] = `
   style={
     Object {
       "height": 600,
-      "paddingBottom": 20,
+      "paddingBottom": 10,
       "paddingHorizontal": 10,
     }
   }
@@ -100,9 +100,10 @@ exports[`The TileFeed component renders correctly 1`] = `
         tvParallaxProperties={undefined}
       >
         <View
+          collapsable={false}
           style={
             Object {
-              "paddingHorizontal": 10,
+              "padding": 10,
             }
           }
         >
@@ -245,9 +246,10 @@ exports[`The TileFeed component renders correctly 1`] = `
         tvParallaxProperties={undefined}
       >
         <View
+          collapsable={false}
           style={
             Object {
-              "paddingHorizontal": 10,
+              "padding": 10,
             }
           }
         >
@@ -446,7 +448,7 @@ exports[`The TileFeed component renders empty state 1`] = `
   style={
     Object {
       "height": 600,
-      "paddingBottom": 20,
+      "paddingBottom": 10,
       "paddingHorizontal": 10,
     }
   }
@@ -493,9 +495,10 @@ exports[`The TileFeed component renders empty state 1`] = `
         tvParallaxProperties={undefined}
       >
         <View
+          collapsable={false}
           style={
             Object {
-              "paddingHorizontal": 10,
+              "padding": 10,
             }
           }
         >
@@ -626,9 +629,10 @@ exports[`The TileFeed component renders empty state 1`] = `
         tvParallaxProperties={undefined}
       >
         <View
+          collapsable={false}
           style={
             Object {
-              "paddingHorizontal": 10,
+              "padding": 10,
             }
           }
         >
@@ -759,9 +763,10 @@ exports[`The TileFeed component renders empty state 1`] = `
         tvParallaxProperties={undefined}
       >
         <View
+          collapsable={false}
           style={
             Object {
-              "paddingHorizontal": 10,
+              "padding": 10,
             }
           }
         >
@@ -892,9 +897,10 @@ exports[`The TileFeed component renders empty state 1`] = `
         tvParallaxProperties={undefined}
       >
         <View
+          collapsable={false}
           style={
             Object {
-              "paddingHorizontal": 10,
+              "padding": 10,
             }
           }
         >
@@ -1025,9 +1031,10 @@ exports[`The TileFeed component renders empty state 1`] = `
         tvParallaxProperties={undefined}
       >
         <View
+          collapsable={false}
           style={
             Object {
-              "paddingHorizontal": 10,
+              "padding": 10,
             }
           }
         >
