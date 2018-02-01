@@ -1,5 +1,10 @@
 import React, { PureComponent } from 'react';
-import { View, Platform, Linking } from 'react-native';
+import {
+  View,
+  Platform,
+  Linking,
+  AsyncStorage,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
@@ -136,11 +141,19 @@ const PaymentConfirmationForm = compose(
       try {
         if (Platform.OS === 'ios') {
           Linking.addEventListener('url', handleRedirect);
+          const userToken = await AsyncStorage.getItem('authToken');
+
+          // console.log(stringify({
+          //   redirect: `${linkingUri}${props.navigateToOnComplete}`,
+          //   state: JSON.stringify(props.contributions),
+          //   userToken,
+          // }));
+
           const res = await WebBrowser.openBrowserAsync(`http://localhost:3000/give/restored-checkout?${stringify({
-            // redirect: `${linkingUri}/give/checkout/${props.navigateToOnComplete}`,
-            redirect: `${linkingUri}/`,
+            redirect: `${linkingUri}${props.navigateToOnComplete}`,
+            state: JSON.stringify(props.contributions),
+            userToken,
           })}`);
-          console.log({ res });
 
           return res;
         }
