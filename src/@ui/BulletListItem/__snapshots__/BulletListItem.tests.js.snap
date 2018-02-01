@@ -64,3 +64,68 @@ exports[`the BulletListItem component should render 1`] = `
   </View>
 </View>
 `;
+
+exports[`the BulletListItem component should render a loading state 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "paddingRight": 9,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      bold={false}
+      ellipsizeMode="tail"
+      italic={false}
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
+        }
+      }
+    >
+      •
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flexShrink": 1,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      bold={false}
+      ellipsizeMode="tail"
+      italic={false}
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
+        }
+      }
+    >
+      “God’s work done in God’s way will never lack God’s supplies.” – Hudson Taylor
+    </Text>
+  </View>
+</View>
+`;
