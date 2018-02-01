@@ -23,13 +23,13 @@ const enhance = compose(
   })),
 );
 
-const TitleText = styled({
-  flexGrow: 1,
+const TitleText = styled(({ withIcon = false }) => ({
+  flexGrow: withIcon ? 1 : undefined,
   textAlign: 'center',
   alignItems: 'center',
   justifyContent: 'center',
   paddingHorizontal: 6,
-})(H6);
+}))(H6);
 
 const StyledButton = styled(({ theme }) => ({
   justifyContent: 'flex-end',
@@ -49,7 +49,7 @@ const Chip = enhance(({
   ...buttonProps
 }) => (
   <StyledButton TouchableComponent={TouchableOpacity} pill={pill} {...buttonProps}>
-    {title ? <TitleText>{title}</TitleText> : null}
+    {title ? <TitleText withIcon={icon}>{title}</TitleText> : null}
     {icon ? <Icon name={icon} style={iconStyles} size={iconSize} /> : null}
   </StyledButton>
 ));

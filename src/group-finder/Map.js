@@ -40,6 +40,7 @@ class Map extends PureComponent {
     latitude: PropTypes.number,
     longitude: PropTypes.number,
     groups: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
       locations: PropTypes.arrayOf(PropTypes.shape({
         location: PropTypes.shape({
           latitude: PropTypes.number,
@@ -50,6 +51,11 @@ class Map extends PureComponent {
     history: PropTypes.shape({
       push: PropTypes.func,
     }),
+    linkToGroup: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    linkToGroup: true,
   };
 
   componentDidUpdate(lastProps) {
@@ -101,7 +107,7 @@ class Map extends PureComponent {
               key={id}
               coordinate={{ latitude, longitude }}
               onPress={() => {
-                this.props.history.push(`/groups/${id}`);
+                if (this.props.linkToGroup) this.props.history.push(`/groups/${id}`);
               }}
             />
           ))}
