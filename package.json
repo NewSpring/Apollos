@@ -137,6 +137,7 @@
     "react-native-modal-datetime-picker": "^4.13.0",
     "react-native-tab-view": "^0.0.74",
     "react-native-web": "^0.3.2",
+    "react-native-web-maps": "react-native-web-community/react-native-web-maps",
     "react-router": "^4.2.0",
     "recompose": "^0.26.0",
     "rn-placeholder": "^1.2.0",

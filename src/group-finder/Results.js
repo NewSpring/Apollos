@@ -12,6 +12,7 @@ import SideBySideView, { Left, Right } from '@ui/SideBySideView';
 import MediaQuery from '@ui/MediaQuery';
 import styled from '@ui/styled';
 
+import Map from './Map';
 import AdUnit from './AdUnit';
 import NoResults from './NoResults';
 import GroupCard from './GroupCard';
@@ -99,7 +100,13 @@ const Results = enhance(props => (
         />
       </FlexedLeft>
       <MediaQuery minWidth="md">
-        <Right />
+        <Right>
+          <Map
+            latitude={parseFloat(props.query.latitude)}
+            longitude={parseFloat(props.query.longitude)}
+            groups={get(props, 'content.results', [])}
+          />
+        </Right>
       </MediaQuery>
     </FlexedSideBySideView>
   </BackgroundView>
