@@ -12,6 +12,8 @@ import SideBySideView, { Left, Right } from '@ui/SideBySideView';
 import MediaQuery from '@ui/MediaQuery';
 import styled from '@ui/styled';
 
+import AdUnit from './AdUnit';
+import NoResults from './NoResults';
 import GroupCard from './GroupCard';
 import Filter from './Filter';
 
@@ -82,6 +84,8 @@ const Results = enhance(props => (
               onSelectCampus={campusSelectHandler(props)}
             />
           )}
+          ListEmptyComponent={NoResults}
+          ListFooterComponent={AdUnit}
           ListHeaderComponent={
             <View>
               <Filter
