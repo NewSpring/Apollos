@@ -14,7 +14,8 @@ import ActivityIndicator from '@ui/ActivityIndicator';
 import styled from '@ui/styled';
 import Button, { ButtonLink } from '@ui/Button';
 import WebBrowser from '@ui/WebBrowser';
-import Constants from '@utils/ExpoConstants';
+import linkingUri from '@utils/linkingUri';
+import { stringify } from '@utils/queryString';
 
 const Row = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 2,
@@ -113,9 +114,8 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
   }
 }
 
-function handleRedirect(e) {
+function handleRedirect() {
   WebBrowser.dismissBrowser();
-  console.log(e);
 }
 
 const PaymentConfirmationForm = compose(
@@ -136,9 +136,10 @@ const PaymentConfirmationForm = compose(
       try {
         if (Platform.OS !== 'web') {
           Linking.addEventListener('url', handleRedirect);
-          const res = await WebBrowser.openBrowserAsync(`http://localhost:3000/give/restored-checkout?linkingUri=${Constants.linkingUri}`);
-          console.log(res);
-          Linking.removeEventListener('url', handleRedirect);
+          const res = await WebBrowser.openBrowserAsync(`http://localhost:3000/give/restored-checkout?${stringify({
+            redirect: `${linkingUri}/`,
+          })}`);
+          console.log({ res });
 
           return res;
         }
@@ -183,6 +184,9 @@ const PaymentConfirmationForm = compose(
         });
         return null;
       } finally {
+        if (Platform.OS !== 'web') {
+          Linking.removeEventListener('url', handleRedirect);
+        }
         props.isPaying(false);
         if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
       }
