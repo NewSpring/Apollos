@@ -134,9 +134,10 @@ const PaymentConfirmationForm = compose(
   withProps(props => ({
     onSubmit: async () => {
       try {
-        if (Platform.OS !== 'web') {
+        if (Platform.OS === 'ios') {
           Linking.addEventListener('url', handleRedirect);
           const res = await WebBrowser.openBrowserAsync(`http://localhost:3000/give/restored-checkout?${stringify({
+            // redirect: `${linkingUri}/give/checkout/${props.navigateToOnComplete}`,
             redirect: `${linkingUri}/`,
           })}`);
           console.log({ res });
@@ -184,11 +185,12 @@ const PaymentConfirmationForm = compose(
         });
         return null;
       } finally {
-        if (Platform.OS !== 'web') {
-          Linking.removeEventListener('url', handleRedirect);
-        }
         props.isPaying(false);
-        if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
+        if (Platform.OS === 'ios') {
+          Linking.removeEventListener('url', handleRedirect);
+        } else if (props.navigateToOnComplete) {
+          props.history.push(props.navigateToOnComplete);
+        }
       }
     },
   })),
