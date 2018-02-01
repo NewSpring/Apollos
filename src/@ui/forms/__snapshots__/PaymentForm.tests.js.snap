@@ -58,8 +58,8 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingTop": 2.7,
@@ -199,9 +199,11 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
       pointerEvents="none"
       style={
         Object {
+          "bottom": 0,
           "justifyContent": "center",
           "opacity": 0.8,
           "position": "absolute",
+          "top": 0,
           "transform": Array [
             Object {
               "scale": 0.8,
@@ -223,11 +225,12 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
         style={
           Object {
             "backgroundColor": "transparent",
-            "color": "#303030",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
-            "paddingTop": 2.7,
+            "color": "#505050",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 15.75,
+            "lineHeight": 17.75,
+            "paddingBottom": 1.8,
+            "paddingTop": 2.25,
             "paddingVertical": 5,
           }
         }
@@ -325,10 +328,12 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -364,9 +369,11 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -388,11 +395,12 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -490,10 +498,12 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             onFocus={[Function]}
             placeholder="mm/yy"
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -518,9 +528,11 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -542,11 +554,12 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -643,10 +656,12 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -671,9 +686,11 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -695,11 +712,12 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -765,50 +783,83 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
       <View
         style={
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
             "height": 40,
-            "justifyContent": "space-between",
             "paddingVertical": 5,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
-              "paddingVertical": 5,
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
         >
-          Save this payment for future contributions
-        </Text>
-        <RCTSwitch
-          disabled={false}
-          onChange={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          onTintColor="#6bac43"
-          onValueChange={[Function]}
-          style={
-            Array [
+          <View
+            style={
               Object {
-                "height": 31,
-                "width": 51,
-              },
-              undefined,
-            ]
-          }
-          value={false}
-        />
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 2.25,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              Save this payment for future contributions
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <RCTSwitch
+              disabled={false}
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              onTintColor="#6bac43"
+              onValueChange={[Function]}
+              style={
+                Array [
+                  Object {
+                    "height": 31,
+                    "width": 51,
+                  },
+                  undefined,
+                ]
+              }
+              value={false}
+            />
+          </View>
+        </View>
       </View>
     </View>
   </View>
@@ -844,20 +895,21 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
     <View
       bordered={false}
       disabled={false}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "#6bac43",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
-          "elevation": 4,
+          "elevation": 2,
           "flexDirection": "row",
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
           "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -868,9 +920,10 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
@@ -940,8 +993,8 @@ exports[`The PaymentForm component renders correctly 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingTop": 2.7,
@@ -1081,9 +1134,11 @@ exports[`The PaymentForm component renders correctly 1`] = `
       pointerEvents="none"
       style={
         Object {
+          "bottom": 0,
           "justifyContent": "center",
           "opacity": 0.8,
           "position": "absolute",
+          "top": 0,
           "transform": Array [
             Object {
               "scale": 0.8,
@@ -1105,11 +1160,12 @@ exports[`The PaymentForm component renders correctly 1`] = `
         style={
           Object {
             "backgroundColor": "transparent",
-            "color": "#303030",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
-            "paddingTop": 2.7,
+            "color": "#505050",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 15.75,
+            "lineHeight": 17.75,
+            "paddingBottom": 1.8,
+            "paddingTop": 2.25,
             "paddingVertical": 5,
           }
         }
@@ -1207,10 +1263,12 @@ exports[`The PaymentForm component renders correctly 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -1246,9 +1304,11 @@ exports[`The PaymentForm component renders correctly 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -1270,11 +1330,12 @@ exports[`The PaymentForm component renders correctly 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -1372,10 +1433,12 @@ exports[`The PaymentForm component renders correctly 1`] = `
             onFocus={[Function]}
             placeholder="mm/yy"
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -1400,9 +1463,11 @@ exports[`The PaymentForm component renders correctly 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -1424,11 +1489,12 @@ exports[`The PaymentForm component renders correctly 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -1525,10 +1591,12 @@ exports[`The PaymentForm component renders correctly 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -1553,9 +1621,11 @@ exports[`The PaymentForm component renders correctly 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -1577,11 +1647,12 @@ exports[`The PaymentForm component renders correctly 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -1647,50 +1718,83 @@ exports[`The PaymentForm component renders correctly 1`] = `
       <View
         style={
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
             "height": 40,
-            "justifyContent": "space-between",
             "paddingVertical": 5,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
-              "paddingVertical": 5,
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
         >
-          Save this payment for future contributions
-        </Text>
-        <RCTSwitch
-          disabled={false}
-          onChange={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          onTintColor="#6bac43"
-          onValueChange={[Function]}
-          style={
-            Array [
+          <View
+            style={
               Object {
-                "height": 31,
-                "width": 51,
-              },
-              undefined,
-            ]
-          }
-          value={false}
-        />
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 2.25,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              Save this payment for future contributions
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <RCTSwitch
+              disabled={false}
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              onTintColor="#6bac43"
+              onValueChange={[Function]}
+              style={
+                Array [
+                  Object {
+                    "height": 31,
+                    "width": 51,
+                  },
+                  undefined,
+                ]
+              }
+              value={false}
+            />
+          </View>
+        </View>
       </View>
     </View>
   </View>
@@ -1726,20 +1830,21 @@ exports[`The PaymentForm component renders correctly 1`] = `
     <View
       bordered={false}
       disabled={false}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "#6bac43",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
-          "elevation": 4,
+          "elevation": 2,
           "flexDirection": "row",
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
           "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -1750,9 +1855,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
@@ -1822,8 +1928,8 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingTop": 2.7,
@@ -1963,9 +2069,11 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
       pointerEvents="none"
       style={
         Object {
+          "bottom": 0,
           "justifyContent": "center",
           "opacity": 0.8,
           "position": "absolute",
+          "top": 0,
           "transform": Array [
             Object {
               "scale": 0.8,
@@ -1987,11 +2095,12 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         style={
           Object {
             "backgroundColor": "transparent",
-            "color": "#303030",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
-            "paddingTop": 2.7,
+            "color": "#505050",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 15.75,
+            "lineHeight": 17.75,
+            "paddingBottom": 1.8,
+            "paddingTop": 2.25,
             "paddingVertical": 5,
           }
         }
@@ -2089,10 +2198,12 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -2128,9 +2239,11 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -2152,11 +2265,12 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -2254,10 +2368,12 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             onFocus={[Function]}
             placeholder="mm/yy"
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -2282,9 +2398,11 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -2306,11 +2424,12 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -2407,10 +2526,12 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -2435,9 +2556,11 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -2459,11 +2582,12 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -2529,50 +2653,83 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
       <View
         style={
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
             "height": 40,
-            "justifyContent": "space-between",
             "paddingVertical": 5,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
-              "paddingVertical": 5,
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
         >
-          Save this payment for future contributions
-        </Text>
-        <RCTSwitch
-          disabled={false}
-          onChange={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          onTintColor="#6bac43"
-          onValueChange={[Function]}
-          style={
-            Array [
+          <View
+            style={
               Object {
-                "height": 31,
-                "width": 51,
-              },
-              undefined,
-            ]
-          }
-          value={false}
-        />
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 2.25,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              Save this payment for future contributions
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <RCTSwitch
+              disabled={false}
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              onTintColor="#6bac43"
+              onValueChange={[Function]}
+              style={
+                Array [
+                  Object {
+                    "height": 31,
+                    "width": 51,
+                  },
+                  undefined,
+                ]
+              }
+              value={false}
+            />
+          </View>
+        </View>
       </View>
     </View>
   </View>
@@ -2609,20 +2766,21 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
     <View
       bordered={false}
       disabled={false}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "#6bac43",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
-          "elevation": 4,
+          "elevation": 2,
           "flexDirection": "row",
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
           "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -2695,8 +2853,8 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingTop": 2.7,
@@ -2836,9 +2994,11 @@ exports[`The PaymentForm component shows bank account info 1`] = `
       pointerEvents="none"
       style={
         Object {
+          "bottom": 0,
           "justifyContent": "center",
           "opacity": 0.8,
           "position": "absolute",
+          "top": 0,
           "transform": Array [
             Object {
               "scale": 0.8,
@@ -2860,11 +3020,12 @@ exports[`The PaymentForm component shows bank account info 1`] = `
         style={
           Object {
             "backgroundColor": "transparent",
-            "color": "#303030",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
-            "paddingTop": 2.7,
+            "color": "#505050",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 15.75,
+            "lineHeight": 17.75,
+            "paddingBottom": 1.8,
+            "paddingTop": 2.25,
             "paddingVertical": 5,
           }
         }
@@ -2961,10 +3122,12 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -2988,9 +3151,11 @@ exports[`The PaymentForm component shows bank account info 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -3012,11 +3177,12 @@ exports[`The PaymentForm component shows bank account info 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -3113,10 +3279,12 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -3152,9 +3320,11 @@ exports[`The PaymentForm component shows bank account info 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -3176,11 +3346,12 @@ exports[`The PaymentForm component shows bank account info 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -3277,10 +3448,12 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             onChangeText={[Function]}
             onFocus={[Function]}
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
                 "paddingVertical": 5,
@@ -3305,9 +3478,11 @@ exports[`The PaymentForm component shows bank account info 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -3329,11 +3504,12 @@ exports[`The PaymentForm component shows bank account info 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -3443,8 +3619,8 @@ exports[`The PaymentForm component shows bank account info 1`] = `
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": "Colfax-Regular",
-                  "fontSize": 18,
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
                   "height": 40,
                   "lineHeight": 30,
                   "paddingTop": 2.7,
@@ -3584,9 +3760,11 @@ exports[`The PaymentForm component shows bank account info 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -3608,11 +3786,12 @@ exports[`The PaymentForm component shows bank account info 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -3678,50 +3857,83 @@ exports[`The PaymentForm component shows bank account info 1`] = `
       <View
         style={
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
             "height": 40,
-            "justifyContent": "space-between",
             "paddingVertical": 5,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
-              "paddingVertical": 5,
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
         >
-          Save this payment for future contributions
-        </Text>
-        <RCTSwitch
-          disabled={false}
-          onChange={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          onTintColor="#6bac43"
-          onValueChange={[Function]}
-          style={
-            Array [
+          <View
+            style={
               Object {
-                "height": 31,
-                "width": 51,
-              },
-              undefined,
-            ]
-          }
-          value={false}
-        />
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 2.25,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              Save this payment for future contributions
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <RCTSwitch
+              disabled={false}
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              onTintColor="#6bac43"
+              onValueChange={[Function]}
+              style={
+                Array [
+                  Object {
+                    "height": 31,
+                    "width": 51,
+                  },
+                  undefined,
+                ]
+              }
+              value={false}
+            />
+          </View>
+        </View>
       </View>
     </View>
   </View>
@@ -3757,20 +3969,21 @@ exports[`The PaymentForm component shows bank account info 1`] = `
     <View
       bordered={false}
       disabled={false}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "#6bac43",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
-          "elevation": 4,
+          "elevation": 2,
           "flexDirection": "row",
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
           "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -3781,9 +3994,10 @@ exports[`The PaymentForm component shows bank account info 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }

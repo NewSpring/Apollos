@@ -12,7 +12,7 @@ exports[`The Chip component should be selected 1`] = `
       "borderColor": "#6bac43",
       "borderRadius": 6,
       "borderWidth": 2,
-      "elevation": 4,
+      "elevation": 2,
       "flexDirection": "row",
       "justifyContent": "flex-end",
       "marginBottom": 10,
@@ -20,6 +20,8 @@ exports[`The Chip component should be selected 1`] = `
       "opacity": 1,
       "overflow": "hidden",
       "padding": 10,
+      "paddingHorizontal": 5,
+      "paddingVertical": 5,
     }
   }
 >
@@ -31,16 +33,18 @@ exports[`The Chip component should be selected 1`] = `
       Object {
         "alignItems": "center",
         "color": "#ffffff",
-        "flexGrow": 1,
-        "fontFamily": "Colfax-Regular",
-        "fontSize": 18,
+        "flexGrow": undefined,
+        "fontFamily": "Colfax-Bold",
+        "fontSize": 15.75,
         "justifyContent": "center",
-        "lineHeight": 20,
+        "lineHeight": 17.75,
+        "paddingBottom": 1.8,
         "paddingHorizontal": 6,
-        "paddingTop": 2.7,
+        "paddingTop": 2.25,
         "textAlign": "center",
       }
     }
+    withIcon={undefined}
   >
     My Button!
   </Text>
@@ -59,7 +63,7 @@ exports[`The Chip component should render an icon 1`] = `
       "borderColor": "#dddddd",
       "borderRadius": 6,
       "borderWidth": 2,
-      "elevation": 4,
+      "elevation": 2,
       "flexDirection": "row",
       "justifyContent": "flex-end",
       "marginBottom": 10,
@@ -67,6 +71,8 @@ exports[`The Chip component should render an icon 1`] = `
       "opacity": 1,
       "overflow": "hidden",
       "padding": 10,
+      "paddingHorizontal": 5,
+      "paddingVertical": 5,
     }
   }
 >
@@ -79,15 +85,17 @@ exports[`The Chip component should render an icon 1`] = `
         "alignItems": "center",
         "color": "#303030",
         "flexGrow": 1,
-        "fontFamily": "Colfax-Regular",
-        "fontSize": 18,
+        "fontFamily": "Colfax-Bold",
+        "fontSize": 15.75,
         "justifyContent": "center",
-        "lineHeight": 20,
+        "lineHeight": 17.75,
+        "paddingBottom": 1.8,
         "paddingHorizontal": 6,
-        "paddingTop": 2.7,
+        "paddingTop": 2.25,
         "textAlign": "center",
       }
     }
+    withIcon="like"
   >
     Heart!!!
   </Text>
@@ -146,7 +154,7 @@ exports[`The Chip component should render correctly 1`] = `
         "borderColor": "#dddddd",
         "borderRadius": 6,
         "borderWidth": 2,
-        "elevation": 4,
+        "elevation": 2,
         "flexDirection": "row",
         "justifyContent": "flex-end",
         "marginBottom": 10,
@@ -154,6 +162,8 @@ exports[`The Chip component should render correctly 1`] = `
         "opacity": 1,
         "overflow": "hidden",
         "padding": 10,
+        "paddingHorizontal": 5,
+        "paddingVertical": 5,
       }
     }
   >
@@ -165,16 +175,18 @@ exports[`The Chip component should render correctly 1`] = `
         Object {
           "alignItems": "center",
           "color": "#303030",
-          "flexGrow": 1,
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
+          "flexGrow": undefined,
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 15.75,
           "justifyContent": "center",
-          "lineHeight": 20,
+          "lineHeight": 17.75,
+          "paddingBottom": 1.8,
           "paddingHorizontal": 6,
-          "paddingTop": 2.7,
+          "paddingTop": 2.25,
           "textAlign": "center",
         }
       }
+      withIcon={undefined}
     >
       My Button!
     </Text>

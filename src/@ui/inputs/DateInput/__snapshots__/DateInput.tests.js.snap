@@ -42,7 +42,7 @@ exports[`The DateInput component should render correctly 1`] = `
           "borderColor": "#dddddd",
           "borderRadius": 6,
           "borderWidth": 2,
-          "elevation": 4,
+          "elevation": 2,
           "flexDirection": "row",
           "justifyContent": "flex-end",
           "marginBottom": 10,
@@ -50,6 +50,8 @@ exports[`The DateInput component should render correctly 1`] = `
           "opacity": 1,
           "overflow": "hidden",
           "padding": 10,
+          "paddingHorizontal": 5,
+          "paddingVertical": 5,
         }
       }
     />

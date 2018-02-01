@@ -33,20 +33,21 @@ exports[`The Button component should render 1`] = `
   <View
     bordered={false}
     disabled={false}
-    pill={false}
+    pill={true}
     style={
       Object {
         "alignItems": "center",
         "backgroundColor": "#6bac43",
         "borderColor": "#6bac43",
-        "borderRadius": 6,
+        "borderRadius": 60,
         "borderWidth": 2,
-        "elevation": 4,
+        "elevation": 2,
         "flexDirection": "row",
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
         "padding": 10,
+        "paddingHorizontal": 20,
       }
     }
   >
@@ -57,9 +58,10 @@ exports[`The Button component should render 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
           "paddingTop": 2.7,
         }
       }
@@ -103,20 +105,21 @@ exports[`The Button component should render a Tertiary button 1`] = `
   <View
     bordered={false}
     disabled={false}
-    pill={false}
+    pill={true}
     style={
       Object {
         "alignItems": "center",
         "backgroundColor": "#2a4930",
         "borderColor": "#2a4930",
-        "borderRadius": 6,
+        "borderRadius": 60,
         "borderWidth": 2,
-        "elevation": 4,
+        "elevation": 2,
         "flexDirection": "row",
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
         "padding": 10,
+        "paddingHorizontal": 20,
       }
     }
   >
@@ -127,9 +130,10 @@ exports[`The Button component should render a Tertiary button 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
           "paddingTop": 2.7,
         }
       }
@@ -173,19 +177,20 @@ exports[`The Button component should render a bordered button 1`] = `
   <View
     bordered={true}
     disabled={false}
-    pill={false}
+    pill={true}
     style={
       Object {
         "alignItems": "center",
         "backgroundColor": "transparent",
         "borderColor": "#6bac43",
-        "borderRadius": 6,
+        "borderRadius": 60,
         "borderWidth": 2,
         "flexDirection": "row",
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
         "padding": 10,
+        "paddingHorizontal": 20,
       }
     }
   >
@@ -196,9 +201,10 @@ exports[`The Button component should render a bordered button 1`] = `
       style={
         Object {
           "color": "#6bac43",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
           "paddingTop": 2.7,
         }
       }
@@ -243,20 +249,21 @@ exports[`The Button component should render a disabled button 1`] = `
   <View
     bordered={false}
     disabled={true}
-    pill={false}
+    pill={true}
     style={
       Object {
         "alignItems": "center",
         "backgroundColor": "#6bac43",
         "borderColor": "#6bac43",
-        "borderRadius": 6,
+        "borderRadius": 60,
         "borderWidth": 2,
-        "elevation": 4,
+        "elevation": 2,
         "flexDirection": "row",
         "justifyContent": "center",
         "opacity": 0.5,
         "overflow": "hidden",
         "padding": 10,
+        "paddingHorizontal": 20,
       }
     }
   >
@@ -267,9 +274,10 @@ exports[`The Button component should render a disabled button 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
           "paddingTop": 2.7,
         }
       }
@@ -313,19 +321,20 @@ exports[`The Button component should render a ghost button 1`] = `
   <View
     bordered={true}
     disabled={false}
-    pill={false}
+    pill={true}
     style={
       Object {
         "alignItems": "center",
         "backgroundColor": "transparent",
         "borderColor": "#303030",
-        "borderRadius": 6,
+        "borderRadius": 60,
         "borderWidth": 2,
         "flexDirection": "row",
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
         "padding": 10,
+        "paddingHorizontal": 20,
       }
     }
   >
@@ -336,9 +345,10 @@ exports[`The Button component should render a ghost button 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
           "paddingTop": 2.7,
         }
       }
@@ -388,13 +398,14 @@ exports[`The Button component should render a ghost pill button 1`] = `
         "alignItems": "center",
         "backgroundColor": "transparent",
         "borderColor": "#303030",
-        "borderRadius": 999,
+        "borderRadius": 60,
         "borderWidth": 2,
         "flexDirection": "row",
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
         "padding": 10,
+        "paddingHorizontal": 20,
       }
     }
   >
@@ -405,9 +416,10 @@ exports[`The Button component should render a ghost pill button 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
           "paddingTop": 2.7,
         }
       }
@@ -457,14 +469,15 @@ exports[`The Button component should render a pill button 1`] = `
         "alignItems": "center",
         "backgroundColor": "#6bac43",
         "borderColor": "#6bac43",
-        "borderRadius": 999,
+        "borderRadius": 60,
         "borderWidth": 2,
-        "elevation": 4,
+        "elevation": 2,
         "flexDirection": "row",
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
         "padding": 10,
+        "paddingHorizontal": 20,
       }
     }
   >
@@ -475,9 +488,10 @@ exports[`The Button component should render a pill button 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
           "paddingTop": 2.7,
         }
       }
@@ -521,20 +535,21 @@ exports[`The Button component should render a primary button 1`] = `
   <View
     bordered={false}
     disabled={false}
-    pill={false}
+    pill={true}
     style={
       Object {
         "alignItems": "center",
         "backgroundColor": "#6bac43",
         "borderColor": "#6bac43",
-        "borderRadius": 6,
+        "borderRadius": 60,
         "borderWidth": 2,
-        "elevation": 4,
+        "elevation": 2,
         "flexDirection": "row",
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
         "padding": 10,
+        "paddingHorizontal": 20,
       }
     }
   >
@@ -545,9 +560,10 @@ exports[`The Button component should render a primary button 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
           "paddingTop": 2.7,
         }
       }
@@ -591,20 +607,21 @@ exports[`The Button component should render a secondary button 1`] = `
   <View
     bordered={false}
     disabled={false}
-    pill={false}
+    pill={true}
     style={
       Object {
         "alignItems": "center",
         "backgroundColor": "#1c683e",
         "borderColor": "#1c683e",
-        "borderRadius": 6,
+        "borderRadius": 60,
         "borderWidth": 2,
-        "elevation": 4,
+        "elevation": 2,
         "flexDirection": "row",
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
         "padding": 10,
+        "paddingHorizontal": 20,
       }
     }
   >
@@ -615,9 +632,10 @@ exports[`The Button component should render a secondary button 1`] = `
       style={
         Object {
           "color": "#ffffff",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
           "paddingTop": 2.7,
         }
       }
@@ -661,20 +679,21 @@ exports[`The Button component should render as default type 1`] = `
   <View
     bordered={false}
     disabled={false}
-    pill={false}
+    pill={true}
     style={
       Object {
         "alignItems": "center",
         "backgroundColor": "#dddddd",
         "borderColor": "#dddddd",
-        "borderRadius": 6,
+        "borderRadius": 60,
         "borderWidth": 2,
-        "elevation": 4,
+        "elevation": 2,
         "flexDirection": "row",
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
         "padding": 10,
+        "paddingHorizontal": 20,
       }
     }
   >
@@ -685,9 +704,10 @@ exports[`The Button component should render as default type 1`] = `
       style={
         Object {
           "color": "#303030",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 20.02,
+          "lineHeight": 25.33,
+          "paddingBottom": 3.15,
           "paddingTop": 2.7,
         }
       }
@@ -702,20 +722,21 @@ exports[`The Button component should render with children 1`] = `
 <View
   bordered={false}
   disabled={false}
-  pill={false}
+  pill={true}
   style={
     Object {
       "alignItems": "center",
       "backgroundColor": "#6bac43",
       "borderColor": "#6bac43",
-      "borderRadius": 6,
+      "borderRadius": 60,
       "borderWidth": 2,
-      "elevation": 4,
+      "elevation": 2,
       "flexDirection": "row",
       "justifyContent": "center",
       "opacity": 1,
       "overflow": "hidden",
       "padding": 10,
+      "paddingHorizontal": 20,
     }
   }
 >
