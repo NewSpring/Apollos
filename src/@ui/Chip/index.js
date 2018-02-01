@@ -2,6 +2,10 @@
 import React from 'react';
 import { compose, mapProps } from 'recompose';
 
+// touchable native feedback currently is having flex layout issues
+// on react-native android, so we fall back to TouchableOpacity
+import { TouchableOpacity } from 'react-native';
+
 import { H6 } from '@ui/typography';
 import Button from '@ui/Button';
 import Icon from '@ui/Icon';
@@ -44,7 +48,7 @@ const Chip = enhance(({
   pill = false,
   ...buttonProps
 }) => (
-  <StyledButton pill={pill} {...buttonProps}>
+  <StyledButton TouchableComponent={TouchableOpacity} pill={pill} {...buttonProps}>
     {title ? <TitleText>{title}</TitleText> : null}
     {icon ? <Icon name={icon} style={iconStyles} size={iconSize} /> : null}
   </StyledButton>

@@ -35,7 +35,7 @@ const propsReducer = ({ user, isLoading }) => {
 const renderItem = item => (
   <Link to={`/groups/${item.id}`} key={item.id}>
     <ThumbnailCard
-      title={item.title}
+      title={item.name || ''}
       images={item.photo}
       isLoading={item.isLoading}
     />

@@ -3,15 +3,9 @@ import PropTypes from 'prop-types';
 import { Platform, View } from 'react-native';
 import { every, words, trim } from 'lodash';
 import { Text as TextInput } from '@ui/inputs';
-import Chip from '@ui/Chip';
+import Chip, { ChipList } from '@ui/Chip';
 import Icon from '@ui/Icon';
 import Touchable from '@ui/Touchable';
-import styled from '@ui/styled';
-
-const KeywordList = styled({
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-}, 'GroupSearchForm.KeywordSelect.List')(View);
 
 // Checks if the second array given is contained, in order, inside the first array
 // [0,1,2,3], [1,2,3] === true
@@ -112,9 +106,9 @@ class KeywordSelect extends PureComponent {
           }
         />
         {(this.state.keywordsVisible) ? (
-          <KeywordList>
+          <ChipList>
             {keywords.map(this.renderKeyword)}
-          </KeywordList>
+          </ChipList>
         ) : null}
       </View>
     );

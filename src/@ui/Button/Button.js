@@ -31,7 +31,7 @@ const ButtonStyles = styled(({
   } : {
     backgroundColor: theme.colors.background.default,
     borderColor: theme.colors.background.default,
-    elevation: 4,
+    elevation: 2,
   }),
 }), 'Button')(View);
 
@@ -72,6 +72,7 @@ const Button = enhance(({
   loading,
   accent,
   pill,
+  TouchableComponent = Touchable,
   ...touchableProps
 }) => {
   const accessibilityTraits = ['button'];
@@ -89,14 +90,14 @@ const Button = enhance(({
 
   if (onPress) {
     return (
-      <Touchable
+      <TouchableComponent
         onPress={onPress}
         disabled={disabled || loading}
         accessibilityTraits={accessibilityTraits}
         {...touchableProps}
       >
         {buttonContent}
-      </Touchable>
+      </TouchableComponent>
     );
   }
 
