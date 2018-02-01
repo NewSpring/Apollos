@@ -17,6 +17,7 @@ import Hero, { BackgroundImage } from '@ui/Hero';
 import styled from '@ui/styled';
 
 import GroupStories from './GroupStories';
+import GroupsILead from './GroupsILead';
 
 const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
 const FlexedLeft = styled({ flex: 1 })(Left);
@@ -58,6 +59,7 @@ const Groups = withRouter(({
               }}
             />
           </PaddedView>
+          <GroupsILead />
           <GroupStories tagName="community" sectionTitle="You can't do life alone" />
         </ScrollView>
       </FlexedLeft>
