@@ -9,7 +9,7 @@ import FlatList from '@ui/WebCompatibleFlatList';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
 import ActivityIndicator from '@ui/ActivityIndicator';
-import { BodyCopy } from '@ui/typography';
+import { BodyText } from '@ui/typography';
 import { ButtonLink } from '@ui/Button';
 import ContributionHistoryHeader from './ContributionHistoryHeader';
 import ContributionHistoryFilter from './ContributionHistoryFilter';
@@ -84,20 +84,20 @@ class ContributionHistoryList extends PureComponent {
         <View>
           <this.props.FilterComponent />
           <PaddedView>
-            <BodyCopy>
+            <BodyText>
               {'We didn\'t find any contributions associated with your account. If you would like to start giving, you can '}
               <ButtonLink onPress={this.props.onPressNoDataButton}>
                 {'give now'}
               </ButtonLink>
               {'.'}
-            </BodyCopy>
+            </BodyText>
           </PaddedView>
           <PaddedView>
-            <BodyCopy>
+            <BodyText>
               If you have any questions, please call our Finance Team at 864-965-9990 or
               <ButtonLink onPress={() => Linking.openURL('https://newspring.cc/contact')}> contact us </ButtonLink>
               and someone will be happy to assist you.
-            </BodyCopy>
+            </BodyText>
           </PaddedView>
         </View>
       );

@@ -34,7 +34,7 @@ const styles = styled(({ theme, bold, italic }) => {
       },
     }),
   });
-}, 'BodyCopy');
+}, 'BodyText');
 
 const BodyText = compose(
   setPropTypes({

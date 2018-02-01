@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { View, Text, Linking } from 'react-native';
 import { Parser, DomHandler } from 'htmlparser2';
 import { decodeHTML } from 'entities';
-import { BodyCopy, H1, H2, H3, H4, H5, H6, H7 } from '@ui/typography';
+import { BodyText, H1, H2, H3, H4, H5, H6, H7 } from '@ui/typography';
 import ConnectedImage from '@ui/ConnectedImage';
 import Paragraph from '@ui/Paragraph';
 import { Link } from './styles';
 
 const LINE_BREAK = '\n';
 
-const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyCopy, Link];
+const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyText, Link];
 export const wrapTextChildren = (children) => {
   const newChildren = [];
   let currentTextChildren = [];
@@ -27,7 +27,7 @@ export const wrapTextChildren = (children) => {
   });
   if (currentTextChildren.length) {
     newChildren.push(
-      <BodyCopy key="composed-children">{currentTextChildren}</BodyCopy>,
+      <BodyText key="composed-children">{currentTextChildren}</BodyText>,
     );
   }
   return newChildren;
@@ -36,14 +36,14 @@ export const wrapTextChildren = (children) => {
 export const defaultRenderer = (node, { children }) => {
   if (node.type === 'text' && node.data && node.data.trim()) {
     // todo: the color style is needed here to keep color inherited from the parent element
-    // example: <a>text</a> gets rendered like <Link><BodyCopy>text</BodyCopy></Link>
-    return <BodyCopy style={{ color: undefined }}>{decodeHTML(node.data)}</BodyCopy>;
+    // example: <a>text</a> gets rendered like <Link><BodyText>text</BodyText></Link>
+    return <BodyText style={{ color: undefined }}>{decodeHTML(node.data)}</BodyText>;
   }
 
   switch (node.name) {
     case 'p': return <Paragraph>{wrapTextChildren(children)}</Paragraph>;
-    case 'strong': return <BodyCopy bold>{children}</BodyCopy>;
-    case 'em': return <BodyCopy italic>{children}</BodyCopy>;
+    case 'strong': return <BodyText bold>{children}</BodyText>;
+    case 'em': return <BodyText italic>{children}</BodyText>;
     case 'blockquote': return <Paragraph style={{ paddingHorizontal: 20 }}>{children}</Paragraph>; // todo
     case 'h1': return <H1>{children}</H1>;
     case 'h2': return <H2>{children}</H2>;
@@ -53,7 +53,7 @@ export const defaultRenderer = (node, { children }) => {
     case 'h6': return <H6>{children}</H6>;
     case 'h7': return <H7>{children}</H7>;
     case 'ul': return children; // todo
-    case 'li': return <BodyCopy>• {children}{LINE_BREAK}</BodyCopy>; // todo
+    case 'li': return <BodyText>• {children}{LINE_BREAK}</BodyText>; // todo
     case 'a': {
       const url = node.attribs && node.attribs.href;
       const onPress = () => Linking.openURL(decodeHTML(url));

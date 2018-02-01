@@ -22,7 +22,7 @@ import withGive from '@data/withGive';
 import withFinancialAccounts from '@data/withFinancialAccounts';
 import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
-import { H3, H2, BodyCopy as P } from '@ui/typography';
+import { H3, H2, BodyText as P } from '@ui/typography';
 import Button from '@ui/Button';
 import * as Inputs from '@ui/inputs';
 import PaddedView from '@ui/PaddedView';
