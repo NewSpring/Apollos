@@ -29,7 +29,8 @@ const TitleText = styled({
 
 const StyledButton = styled(({ theme }) => ({
   justifyContent: 'flex-end',
-  padding: theme.sizing.baseUnit / 4,
+  paddingHorizontal: theme.sizing.baseUnit / 4,
+  paddingVertical: theme.sizing.baseUnit / 4,
   marginRight: theme.sizing.baseUnit / 2,
   marginBottom: theme.sizing.baseUnit / 2,
 }), 'Chip')(Button);

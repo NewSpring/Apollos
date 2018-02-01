@@ -11,16 +11,15 @@ import { GroupSearchForm } from '@ui/forms';
 import { withRouter } from '@ui/NativeWebRouter';
 import LiveNowButton from '@ui/LiveNowButton';
 import { stringify } from '@utils/queryString';
-import { RelatedContentWithoutData } from '@ui/RelatedContent';
-import withTaggedContent from '@data/withTaggedContent';
 import MediaQuery from '@ui/MediaQuery';
 import { ResponsiveSideBySideView as SideBySideView, Left, Right } from '@ui/SideBySideView';
+import Hero, { BackgroundImage } from '@ui/Hero';
 import styled from '@ui/styled';
+
+import GroupStories from './GroupStories';
 
 const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
 const FlexedLeft = styled({ flex: 1 })(Left);
-
-const GroupStories = withTaggedContent(RelatedContentWithoutData);
 
 const GroupSearchFormWithData = compose(
   withCampuses,
@@ -63,7 +62,9 @@ const Groups = withRouter(({
         </ScrollView>
       </FlexedLeft>
       <MediaQuery minWidth="md">
-        <Right />
+        <Right>
+          <Hero background={<BackgroundImage source={require('./groups.camping.jpg')} />} />
+        </Right>
       </MediaQuery>
     </FlexedSideBySideView>
   </BackgroundView>

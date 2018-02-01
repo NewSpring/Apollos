@@ -17,8 +17,9 @@ const ButtonStyles = styled(({
   pill,
 }) => ({
   padding: theme.sizing.baseUnit / 2,
+  paddingHorizontal: theme.sizing.baseUnit,
   overflow: 'hidden',
-  borderRadius: pill ? 999 : theme.sizing.borderRadius,
+  borderRadius: pill ? theme.sizing.baseUnit * 3 : theme.sizing.borderRadius,
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
