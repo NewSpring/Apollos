@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import truncate from 'truncate';
+import { Platform } from 'react-native';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import Card, { CardContent, CardImage } from '@ui/Card';
 import { H5, H6, H7, BodyCopy } from '@ui/typography';
@@ -36,17 +37,21 @@ const ImageColumn = mediaQuery(({ md }) => ({ minWidth: md }),
     width: '40%',
   }),
   styled({
-    maxHeight: 260,
     width: '100%',
     overflow: 'hidden',
+    ...Platform.select({
+      ios: {
+        aspectRatio: 1.5, // only apply on iOS b/c android overflow:hidden doesn't work
+        // makes the placeholders the same size as the loaded images
+      },
+    }),
   }),
 )(FlexedView);
 
 const GroupCardImage = styled({
   width: '100%',
-  height: '100%',
   resizeMode: 'cover',
-  aspectRatio: null,
+  aspectRatio: 1.5,
 })(CardImage);
 
 const GroupCard = ({
