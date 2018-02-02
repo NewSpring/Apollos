@@ -18,8 +18,8 @@ storiesOf('@ui/BlockQuote', module)
     const SetIsLoading = withIsLoading(PaddedView);
 
     return (
-      <SetIsLoading>
-        <BlockQuote isLoading>
+      <SetIsLoading isLoading>
+        <BlockQuote>
           “You are the only Bible some unbelievers will ever read.” – John MacArthur
         </BlockQuote>
       </SetIsLoading>
