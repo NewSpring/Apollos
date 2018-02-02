@@ -59,6 +59,13 @@ const GroupFindCTA = styled({
   alignItems: 'center',
 })(PaddedView);
 
+const leadersLoadingState = [{
+  person: {
+    id: 'loading',
+    photo: null,
+  },
+}];
+
 const GroupInfo = ({ label, info }) => (
   <GroupInfoContainer>
     <Label>{label}</Label>
@@ -114,15 +121,15 @@ const GroupSingle = enhance(({
             <Card isLoading={isLoading}>
               <PaddedView>
                 <H3>{name}</H3>
-                <GroupInfoContainer>
-                  <Label>Group Leaders</Label>
-                  <H5>{leaders.map(leader => `${leader.person.firstName} ${leader.person.lastName}`).join(', ')}</H5>
-                  <AvatarList>
-                    {leaders.map(leader => (
-                      <Avatar key={leader.person.id} source={{ url: leader.person.photo }} size="medium" />
-                    ))}
-                  </AvatarList>
-                </GroupInfoContainer>
+              </PaddedView>
+              <PaddedView vertical={false}>
+                <Label>Group Leaders</Label>
+                <H5>{leaders.map(leader => `${leader.person.firstName} ${leader.person.lastName}`).join(', ')}</H5>
+                <AvatarList>
+                  {(isLoading ? leadersLoadingState : leaders).map(leader => (
+                    <Avatar key={leader.person.id} source={{ url: leader.person.photo }} size="medium" />
+                  ))}
+                </AvatarList>
               </PaddedView>
             </Card>
 
