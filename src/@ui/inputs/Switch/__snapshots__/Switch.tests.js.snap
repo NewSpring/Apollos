@@ -85,7 +85,6 @@ exports[`The Picker Input component should render correctly 1`] = `
               undefined,
             ]
           }
-          thumbTintColor="#ffffff"
           tintColor="#dddddd"
           trackColor="#dddddd"
           value={false}

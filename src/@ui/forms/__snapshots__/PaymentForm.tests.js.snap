@@ -861,7 +861,6 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                   undefined,
                 ]
               }
-              thumbTintColor="#ffffff"
               tintColor="#dddddd"
               trackColor="#dddddd"
               value={false}
@@ -1804,7 +1803,6 @@ exports[`The PaymentForm component renders correctly 1`] = `
                   undefined,
                 ]
               }
-              thumbTintColor="#ffffff"
               tintColor="#dddddd"
               trackColor="#dddddd"
               value={false}
@@ -2747,7 +2745,6 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                   undefined,
                 ]
               }
-              thumbTintColor="#ffffff"
               tintColor="#dddddd"
               trackColor="#dddddd"
               value={false}
@@ -3959,7 +3956,6 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                   undefined,
                 ]
               }
-              thumbTintColor="#ffffff"
               tintColor="#dddddd"
               trackColor="#dddddd"
               value={false}
