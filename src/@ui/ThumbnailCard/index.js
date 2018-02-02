@@ -10,6 +10,7 @@ import Card, { CardContent } from '@ui/Card';
 import SideBySideView from '@ui/SideBySideView';
 import FlexedView from '@ui/FlexedView';
 import { H5, BodyCopy } from '@ui/typography';
+import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import CategoryLabel from '@ui/CategoryLabel';
 
 import Thumbnail from './Thumbnail';
@@ -30,9 +31,18 @@ const HorizontalLayout = styled({
   minHeight: 110, // kind of the best middle ground for various title lengths.
 })(SideBySideView);
 
-const LeftColumn = styled({
-  flex: 1.66,
-})(CardContent);
+const LeftColumn = compose(
+  styled({ flex: 1.66 }),
+  mediaQuery(({ md }) => ({ maxWidth: md }),
+    styled(({ theme }) => ({
+      paddingVertical: theme.sizing.baseUnit * 0.75,
+    })),
+    styled(({ theme }) => ({
+      paddingVertical: theme.sizing.baseUnit * 2,
+      paddingHorizontal: theme.sizing.baseUnit * 1.5,
+    })),
+  ),
+)(CardContent);
 
 const RightColumn = styled({
   alignSelf: 'stretch',
@@ -49,6 +59,7 @@ const ThumbnailCard = enhance(({
   images,
   category,
   isLoading,
+  children,
   ...otherProps
 }) => (
   <Card isLoading={isLoading} {...otherProps}>
@@ -58,6 +69,7 @@ const ThumbnailCard = enhance(({
         { description ? (
           <BodyCopy>{description}</BodyCopy>
         ) : null }
+        {children}
         { typeof category !== 'undefined' ? (
           <CategoryLabel label={startCase(toLower(category))} isLoading={isLoading} />
         ) : null }

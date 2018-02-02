@@ -4,34 +4,79 @@ exports[`The Avatar component should render large 1`] = `
 <View
   style={
     Object {
-      "aspectRatio": 1,
       "backgroundColor": "#dddddd",
-      "width": "100%",
+      "borderRadius": 80,
+      "height": 160,
+      "marginBottom": 40,
+      "marginRight": 40,
+      "overflow": "hidden",
+      "width": 160,
     }
   }
-/>
+  themeSize={160}
+>
+  <View
+    style={
+      Object {
+        "aspectRatio": 1,
+        "backgroundColor": "#dddddd",
+        "width": "100%",
+      }
+    }
+  />
+</View>
 `;
 
 exports[`The Avatar component should render medium 1`] = `
 <View
   style={
     Object {
-      "aspectRatio": 1,
       "backgroundColor": "#dddddd",
-      "width": "100%",
+      "borderRadius": 40,
+      "height": 80,
+      "marginBottom": 20,
+      "marginRight": 20,
+      "overflow": "hidden",
+      "width": 80,
     }
   }
-/>
+  themeSize={80}
+>
+  <View
+    style={
+      Object {
+        "aspectRatio": 1,
+        "backgroundColor": "#dddddd",
+        "width": "100%",
+      }
+    }
+  />
+</View>
 `;
 
 exports[`The Avatar component should render small 1`] = `
 <View
   style={
     Object {
-      "aspectRatio": 1,
       "backgroundColor": "#dddddd",
-      "width": "100%",
+      "borderRadius": 20,
+      "height": 40,
+      "marginBottom": 10,
+      "marginRight": 10,
+      "overflow": "hidden",
+      "width": 40,
     }
   }
-/>
+  themeSize={40}
+>
+  <View
+    style={
+      Object {
+        "aspectRatio": 1,
+        "backgroundColor": "#dddddd",
+        "width": "100%",
+      }
+    }
+  />
+</View>
 `;
