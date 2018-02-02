@@ -21,7 +21,7 @@ const defaultHeaderRenderer = ({ barStyle = 'light-content' }) => (
   compose(
     withProps({ mobile: true }),
     mediaQuery(({ md }) => ({ minWidth: md }), withProps({ mobile: false })),
-    withThemeMixin(({ theme, mobile }) => console.log({ mobile }) || ({
+    withThemeMixin(({ theme, mobile }) => ({
       colors: {
         text: {
           primary: (!mobile || barStyle === 'dark-content') ? theme.colors.darkPrimary : theme.colors.lightPrimary,
