@@ -296,8 +296,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Regular",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 18,
                     "height": 40,
                     "lineHeight": 30,
                     "paddingTop": 2.7,
@@ -1011,8 +1010,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Regular",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 18,
                     "height": 40,
                     "lineHeight": 30,
                     "paddingTop": 2.7,
@@ -1541,8 +1539,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Regular",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 18,
                     "height": 40,
                     "lineHeight": 30,
                     "paddingTop": 2.7,
@@ -2251,8 +2248,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Regular",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 18,
                     "height": 40,
                     "lineHeight": 30,
                     "paddingTop": 2.7,
@@ -3026,8 +3022,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Regular",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 18,
                     "height": 40,
                     "lineHeight": 30,
                     "paddingTop": 2.7,
@@ -3741,8 +3736,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Regular",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 18,
                     "height": 40,
                     "lineHeight": 30,
                     "paddingTop": 2.7,
