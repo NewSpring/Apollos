@@ -24,7 +24,7 @@ const enhance = compose(
 );
 
 const TitleText = styled(({ withIcon = false }) => ({
-  flexGrow: withIcon ? 1 : undefined,
+  ...(withIcon ? { flexGrow: 1 } : {}),
   textAlign: 'center',
   alignItems: 'center',
   justifyContent: 'center',

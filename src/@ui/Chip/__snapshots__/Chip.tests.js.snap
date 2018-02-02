@@ -33,7 +33,6 @@ exports[`The Chip component should be selected 1`] = `
       Object {
         "alignItems": "center",
         "color": "#ffffff",
-        "flexGrow": undefined,
         "fontFamily": "Colfax-Bold",
         "fontSize": 15.75,
         "justifyContent": "center",
@@ -175,7 +174,6 @@ exports[`The Chip component should render correctly 1`] = `
         Object {
           "alignItems": "center",
           "color": "#303030",
-          "flexGrow": undefined,
           "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
           "justifyContent": "center",
