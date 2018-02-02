@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TabBar, { Link } from '../TabBar';
+import { withProps } from 'recompose';
+import TabBar, { Link } from '@ui/TabBar';
+import { share } from '@utils/content';
 
 export { Link };
+
+export const Share = withProps(({ content }) => ({
+  icon: 'share',
+  onPress: () => share(content),
+}))(Link);
 
 const SecondaryNav = ({
   backButton = false,

@@ -8,13 +8,15 @@ import Header from '@ui/Header';
 import ContentView, { Title, ByLine, HTMLView } from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
 import RelatedContent from '@ui/RelatedContent';
-import SecondaryNav, { Link } from '@ui/SecondaryNav';
+import SecondaryNav, { Link, Share } from '@ui/SecondaryNav';
 
 const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withArticle,
 );
+
+const ShareLink = withArticle(Share);
 
 const ArticleSingle = enhance(({
   content: {
@@ -42,7 +44,7 @@ const ArticleSingle = enhance(({
     </ScrollView>
     <MediaQuery maxWidth="md">
       <SecondaryNav>
-        <Link icon="share" />
+        <ShareLink id={id} />
         <Link icon="like" />
       </SecondaryNav>
     </MediaQuery>

@@ -10,7 +10,7 @@ import ContentView, { HTMLView } from '@ui/ContentView';
 import Button from '@ui/Button';
 import { H6 } from '@ui/typography';
 import Icon from '@ui/Icon';
-import SecondaryNav, { Link } from '@ui/SecondaryNav';
+import SecondaryNav, { Link, Share } from '@ui/SecondaryNav';
 import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
@@ -40,6 +40,8 @@ const enhance = compose(
   withTheme(),
   withIsLoading,
 );
+
+const ShareLink = withSeriesContent(Share);
 
 const StyledButton = styled(({ theme }) => ({
   marginBottom: theme.sizing.baseUnit,
@@ -87,7 +89,7 @@ const SeriesSingle = enhance(({
         !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
     </ScrollView>
     <SecondaryNav>
-      <Link icon="share" />
+      <ShareLink id={id} />
       <Link icon="like" />
     </SecondaryNav>
   </BackgroundView>

@@ -5,7 +5,7 @@ import Header from '@ui/Header';
 import TracksList from '@ui/TracksList';
 import AlbumView from '@ui/AlbumView';
 import MediaQuery from '@ui/MediaQuery';
-import SecondaryNav, { Link } from '@ui/SecondaryNav';
+import SecondaryNav, { Link, Share } from '@ui/SecondaryNav';
 import { withPlaylist, withMediaPlayerActions, withNowPlaying } from '@data/mediaPlayer';
 import { getBlurredImageSource, getAlbumImageSource } from '@utils/content';
 
@@ -19,6 +19,8 @@ const enhance = compose(
     setNowPlaying: track => setNowPlaying({ albumId: id, currentTrack: track }),
   })),
 );
+
+const ShareLink = withPlaylist(Share);
 
 const Playlist = enhance(({
   id,
@@ -51,7 +53,7 @@ const Playlist = enhance(({
     />
     <MediaQuery maxWidth="md">
       <SecondaryNav>
-        <Link icon="share" />
+        <ShareLink id={id} />
         <Link icon="like" />
       </SecondaryNav>
     </MediaQuery>

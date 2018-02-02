@@ -4,7 +4,7 @@ import { compose, mapProps, pure, withProps } from 'recompose';
 import withStudyEntry from '@data/withStudyEntry';
 import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
-import SecondaryNav, { Link } from '@ui/SecondaryNav';
+import SecondaryNav, { Link, Share } from '@ui/SecondaryNav';
 import TabView, { SceneMap } from '@ui/TabView';
 import { withThemeMixin } from '@ui/theme';
 
@@ -29,7 +29,10 @@ const enhance = compose(
   }),
 );
 
+const ShareLink = withStudyEntry(Share);
+
 const Study = enhance(({
+  id,
   content: {
     title,
     parent: {
@@ -71,7 +74,7 @@ const Study = enhance(({
         })}
       />
       <SecondaryNav>
-        <Link icon="share" />
+        <ShareLink id={id} />
         <Link icon="like" />
       </SecondaryNav>
     </BackgroundView>

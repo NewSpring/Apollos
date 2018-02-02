@@ -6,7 +6,7 @@ import { startCase, toLower } from 'lodash';
 import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import ContentView, { Title, SubHeading, HTMLView } from '@ui/ContentView';
-import SecondaryNav, { Link } from '@ui/SecondaryNav';
+import SecondaryNav, { Link, Share } from '@ui/SecondaryNav';
 import withSermon from '@data/withSermon';
 import { withThemeMixin } from '@ui/theme';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
@@ -29,7 +29,10 @@ const enhance = compose(
   }),
 );
 
+const ShareLink = withSermon(Share);
+
 const Sermon = enhance(({
+  id,
   content: {
     title,
     parent: {
@@ -60,7 +63,7 @@ const Sermon = enhance(({
       />
     </ScrollView>
     <SecondaryNav>
-      <Link icon="share" />
+      <ShareLink id={id} />
       <Link icon="like" />
     </SecondaryNav>
   </BackgroundView>
