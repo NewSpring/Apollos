@@ -247,6 +247,7 @@ class Filter extends PureComponent {
           <TableView responsive={false}>
             <FormFields>
               <TextInput
+                autoFocus
                 placeholder="Search"
                 value={this.state.searchText}
                 onChangeText={this.handleTextSearch}
