@@ -13,7 +13,7 @@ import DevotionalTab from './DevotionalTab';
 
 const enhance = compose(
   pure,
-  mapProps(({ match: { params: { id } } }) => console.log({ id }) || ({ id })),
+  mapProps(({ match: { params: { id } } }) => ({ id })),
   withStudyEntry,
   withThemeMixin(({ content: { parent: { content = {} } = {} } = {} } = {}) => {
     const theme = { };
