@@ -80,25 +80,18 @@ exports[`the BulletListItem component should render a loading state 1`] = `
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      bold={false}
-      ellipsizeMode="tail"
-      italic={false}
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
+          "alignSelf": "stretch",
+          "backgroundColor": "#dddddd",
+          "borderRadius": 6,
+          "height": 20.02,
+          "marginVertical": 6.545,
+          "width": "100%",
         }
       }
-    >
-      •
-    </Text>
+    />
   </View>
   <View
     style={
@@ -107,25 +100,18 @@ exports[`the BulletListItem component should render a loading state 1`] = `
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      bold={false}
-      ellipsizeMode="tail"
-      italic={false}
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
+          "alignSelf": "stretch",
+          "backgroundColor": "#dddddd",
+          "borderRadius": 6,
+          "height": 20.02,
+          "marginVertical": 6.545,
+          "width": "100%",
         }
       }
-    >
-      “God’s work done in God’s way will never lack God’s supplies.” – Hudson Taylor
-    </Text>
+    />
   </View>
 </View>
 `;
