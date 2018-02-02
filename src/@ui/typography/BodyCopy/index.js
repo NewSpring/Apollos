@@ -46,7 +46,6 @@ const BodyCopy = compose(
   defaultProps({
     bold: false,
     italic: false,
-    isLoading: false,
   }),
   styles,
   withPlaceholder(Typography),
