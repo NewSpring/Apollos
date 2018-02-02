@@ -193,8 +193,13 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <View
     style={
       Object {
+        "alignSelf": "stretch",
+        "borderBottomWidth": 0.5,
+        "borderColor": "#858585",
+        "borderTopWidth": 0.5,
+        "marginVertical": 40,
         "paddingHorizontal": 20,
-        "paddingVertical": 10,
+        "paddingVertical": 30,
       }
     }
   >
@@ -214,11 +219,12 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif-Regular",
+            "fontFamily": "DroidSerif-RegularItalic",
             "fontSize": 20.02,
             "lineHeight": 33.11,
             "paddingBottom": 2.25,
             "paddingTop": 1.8,
+            "textAlign": "center",
           }
         }
       >
@@ -462,8 +468,13 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   <View
     style={
       Object {
+        "alignSelf": "stretch",
+        "borderBottomWidth": 0.5,
+        "borderColor": "#858585",
+        "borderTopWidth": 0.5,
+        "marginVertical": 40,
         "paddingHorizontal": 20,
-        "paddingVertical": 10,
+        "paddingVertical": 30,
       }
     }
   >
@@ -483,11 +494,12 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         style={
           Object {
             "color": "#303030",
-            "fontFamily": "DroidSerif-Regular",
+            "fontFamily": "DroidSerif-RegularItalic",
             "fontSize": 20.02,
             "lineHeight": 33.11,
             "paddingBottom": 2.25,
             "paddingTop": 1.8,
+            "textAlign": "center",
           }
         }
       >
@@ -544,105 +556,171 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       </Text>
     </Text>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    bold={false}
-    ellipsizeMode="tail"
-    italic={false}
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": "DroidSerif-Regular",
-        "fontSize": 20.02,
-        "lineHeight": 33.11,
-        "paddingBottom": 2.25,
-        "paddingTop": 1.8,
+        "flexDirection": "row",
       }
     }
   >
-    • 
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": undefined,
+          "paddingRight": 9,
         }
       }
     >
-      Am I putting others before myself right now?
-    </Text>
-    
-
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    bold={false}
-    ellipsizeMode="tail"
-    italic={false}
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        bold={false}
+        ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
+      >
+        •
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexShrink": 1,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+      >
+        Am I putting others before myself right now?
+      </Text>
+    </View>
+  </View>
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": "DroidSerif-Regular",
-        "fontSize": 20.02,
-        "lineHeight": 33.11,
-        "paddingBottom": 2.25,
-        "paddingTop": 1.8,
+        "flexDirection": "row",
       }
     }
   >
-    • 
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": undefined,
+          "paddingRight": 9,
         }
       }
     >
-      How can I love the people around me if I’m not even paying attention to them?
-    </Text>
-    
-
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    bold={false}
-    ellipsizeMode="tail"
-    italic={false}
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        bold={false}
+        ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
+      >
+        •
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexShrink": 1,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+      >
+        How can I love the people around me if I’m not even paying attention to them?
+      </Text>
+    </View>
+  </View>
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": "DroidSerif-Regular",
-        "fontSize": 20.02,
-        "lineHeight": 33.11,
-        "paddingBottom": 2.25,
-        "paddingTop": 1.8,
+        "flexDirection": "row",
       }
     }
   >
-    • 
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": undefined,
+          "paddingRight": 9,
         }
       }
     >
-      What if Jesus wants to speak through me, but I’ve got my nose stuck in my phone? 
-    </Text>
-    
-
-  </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        bold={false}
+        ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
+      >
+        •
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexShrink": 1,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+      >
+        What if Jesus wants to speak through me, but I’ve got my nose stuck in my phone? 
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Object {
@@ -815,138 +893,226 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       </Text>
     </Text>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    bold={false}
-    ellipsizeMode="tail"
-    italic={false}
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": "DroidSerif-Regular",
-        "fontSize": 20.02,
-        "lineHeight": 33.11,
-        "paddingBottom": 2.25,
-        "paddingTop": 1.8,
+        "flexDirection": "row",
       }
     }
   >
-    • 
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": undefined,
+          "paddingRight": 9,
         }
       }
     >
-      Turn your phone off, leave it in the car, or put it in airplane mode. Habitual notification checks can take a break.
-    </Text>
-    
-
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    bold={false}
-    ellipsizeMode="tail"
-    italic={false}
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        bold={false}
+        ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
+      >
+        •
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexShrink": 1,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+      >
+        Turn your phone off, leave it in the car, or put it in airplane mode. Habitual notification checks can take a break.
+      </Text>
+    </View>
+  </View>
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": "DroidSerif-Regular",
-        "fontSize": 20.02,
-        "lineHeight": 33.11,
-        "paddingBottom": 2.25,
-        "paddingTop": 1.8,
+        "flexDirection": "row",
       }
     }
   >
-    • 
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": undefined,
+          "paddingRight": 9,
         }
       }
     >
-      Talk about something other than yourself. Ask someone else about their life (job, school, kids).
-    </Text>
-    
-
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    bold={false}
-    ellipsizeMode="tail"
-    italic={false}
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        bold={false}
+        ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
+      >
+        •
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexShrink": 1,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+      >
+        Talk about something other than yourself. Ask someone else about their life (job, school, kids).
+      </Text>
+    </View>
+  </View>
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": "DroidSerif-Regular",
-        "fontSize": 20.02,
-        "lineHeight": 33.11,
-        "paddingBottom": 2.25,
-        "paddingTop": 1.8,
+        "flexDirection": "row",
       }
     }
   >
-    • 
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": undefined,
+          "paddingRight": 9,
         }
       }
     >
-      Look for opportunities to encourage someone. Ask the Holy Spirit to speak through you and help you love people.
-    </Text>
-    
-
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    bold={false}
-    ellipsizeMode="tail"
-    italic={false}
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        bold={false}
+        ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
+      >
+        •
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexShrink": 1,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+      >
+        Look for opportunities to encourage someone. Ask the Holy Spirit to speak through you and help you love people.
+      </Text>
+    </View>
+  </View>
+  <View
     style={
       Object {
-        "color": "#303030",
-        "fontFamily": "DroidSerif-Regular",
-        "fontSize": 20.02,
-        "lineHeight": 33.11,
-        "paddingBottom": 2.25,
-        "paddingTop": 1.8,
+        "flexDirection": "row",
       }
     }
   >
-    • 
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": undefined,
+          "paddingRight": 9,
         }
       }
     >
-      Ask Jesus to keep your heart interested and engaged in what really matters. He wants to help!
-    </Text>
-    
-
-  </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        bold={false}
+        ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
+      >
+        •
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexShrink": 1,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+      >
+        Ask Jesus to keep your heart interested and engaged in what really matters. He wants to help!
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Object {

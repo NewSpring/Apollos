@@ -6,6 +6,8 @@ import { decodeHTML } from 'entities';
 import { BodyCopy, H1, H2, H3, H4, H5, H6, H7 } from '@ui/typography';
 import ConnectedImage from '@ui/ConnectedImage';
 import Paragraph from '@ui/Paragraph';
+import BlockQuote from '@ui/BlockQuote';
+import BulletListItem from '@ui/BulletListItem';
 import { Link } from './styles';
 
 const LINE_BREAK = '\n';
@@ -14,12 +16,14 @@ const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyCopy, Link];
 export const wrapTextChildren = (children, Component = BodyCopy) => {
   const newChildren = [];
   let currentTextChildren = [];
-  Children.toArray(children).forEach((child) => {
+  Children.toArray(children).forEach((child, i) => {
     if (TEXT_TYPES_THAT_SHOULD_WRAP.includes(child.type)) {
       currentTextChildren.push(child);
     } else {
       if (currentTextChildren.length) {
-        newChildren.push(currentTextChildren);
+        newChildren.push( // eslint-disable-next-line
+          <Component key={`composed-children-${i}`}>{currentTextChildren}</Component>,
+        );
         currentTextChildren = [];
       }
       newChildren.push(child);
@@ -44,7 +48,7 @@ export const defaultRenderer = (node, { children }) => {
     case 'p': return <Paragraph>{wrapTextChildren(children)}</Paragraph>;
     case 'strong': return <BodyCopy bold>{children}</BodyCopy>;
     case 'em': return <BodyCopy italic>{children}</BodyCopy>;
-    case 'blockquote': return <Paragraph style={{ paddingHorizontal: 20 }}>{children}</Paragraph>; // todo
+    case 'blockquote': return <BlockQuote>{children}</BlockQuote>;
     case 'h1': return <H1>{wrapTextChildren(children, Text)}</H1>;
     case 'h2': return <H2>{wrapTextChildren(children, Text)}</H2>;
     case 'h3': return <H3>{wrapTextChildren(children, Text)}</H3>;
@@ -53,7 +57,7 @@ export const defaultRenderer = (node, { children }) => {
     case 'h6': return <H6>{wrapTextChildren(children, Text)}</H6>;
     case 'h7': return <H7>{wrapTextChildren(children, Text)}</H7>;
     case 'ul': return children; // todo
-    case 'li': return <BodyCopy>• {children}{LINE_BREAK}</BodyCopy>; // todo
+    case 'li': return <BulletListItem>{children}</BulletListItem>;
     case 'a': {
       const url = node.attribs && node.attribs.href;
       const onPress = () => Linking.openURL(decodeHTML(url));
