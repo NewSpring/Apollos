@@ -1,11 +1,8 @@
 import React from 'react';
 import { Linking } from 'react-native';
-// import moment from 'moment';
-// import PropTypes from 'prop-types';
 import PaddedView from '@ui/PaddedView';
 import styled from '@ui/styled';
-// import { H5, H3, UIText } from '@ui/typography';
-import { H3, H4, UIText } from '@ui/typography';
+import { H3, H4, H7 } from '@ui/typography';
 import LinkText from '@ui/LinkText';
 import Icon from '@ui/Icon';
 
@@ -24,7 +21,7 @@ const CenteredH4 = styled({
 
 const CenteredText = styled({
   textAlign: 'center',
-})(UIText);
+})(H7);
 
 const Failure = () => (
   <CenteredView>

@@ -5,7 +5,7 @@ import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
 import moment from 'moment';
 
-import { H4, H5, H6, UIText } from '@ui/typography';
+import { H4, H5, H6, H7 } from '@ui/typography';
 import { FREQUENCY_IDS } from '@ui/forms/ContributionForm/FrequencyInput';
 import { withRouter } from '@ui/NativeWebRouter';
 import withGive from '@data/withGive';
@@ -70,8 +70,8 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
     return (
       <View>
         <Row>
-          <UIText>Campus</UIText>
-          <UIText>{this.props.campus}</UIText>
+          <H7>Campus</H7>
+          <H7>{this.props.campus}</H7>
         </Row>
 
         {this.props.contributions.contributions.map(contribution => (
@@ -85,13 +85,13 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
           <Row>
             <View>
               <H5>Schedule Details</H5>
-              <UIText>
+              <H7>
                 {'Frequency: '}
                 {FREQUENCY_IDS.find(f => f.id === this.props.contributions.frequencyId).label}
-              </UIText>
-              <UIText>
+              </H7>
+              <H7>
                 Starting: {moment(this.props.contributions.startDate).format('MM/DD/YYYY')}
-              </UIText>
+              </H7>
             </View>
           </Row>
         ) : null}
