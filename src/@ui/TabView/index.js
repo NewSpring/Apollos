@@ -5,6 +5,7 @@ import { TabViewAnimated, SceneMap } from 'react-native-tab-view';
 import { compose, withProps, withState, setPropTypes, defaultProps } from 'recompose';
 import isFunction from 'lodash/isFunction';
 import { withThemeMixin } from '@ui/theme';
+import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import styled from '@ui/styled';
 
 import TabBar from './TabBar';
@@ -16,16 +17,22 @@ const initialLayout = {
 
 const withStyles = styled({ flex: 1 }, 'TabView');
 
-const defaultHeaderRenderer = ({ barStyle }) => (
-  withThemeMixin(({ theme }) => ({
-    colors: {
-      ...theme.colors,
-      text: {
-        ...theme.colors.text,
-        primary: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
+const defaultHeaderRenderer = ({ barStyle = 'light-content' }) => (
+  compose(
+    withProps({ mobile: true }),
+    mediaQuery(({ md }) => ({ minWidth: md }), withProps({ mobile: false })),
+    withThemeMixin(({ theme, mobile }) => console.log({ mobile }) || ({
+      colors: {
+        text: {
+          primary: (!mobile || barStyle === 'dark-content') ? theme.colors.darkPrimary : theme.colors.lightPrimary,
+        },
+        background: {
+          primary: (mobile) ? theme.colors.background.primary : theme.colors.background.paper,
+          secondary: (mobile) ? theme.colors.background.secondary : theme.colors.background.primary,
+        },
       },
-    },
-  }))(props => <TabBar {...props} />)
+    })),
+  )(props => <TabBar {...props} />)
 );
 
 const TabView = compose(

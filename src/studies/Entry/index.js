@@ -1,5 +1,6 @@
 import React from 'react';
 import { compose, mapProps, pure, withProps } from 'recompose';
+import Color from 'color';
 
 import withStudyEntry from '@data/withStudyEntry';
 import BackgroundView from '@ui/BackgroundView';
@@ -19,9 +20,18 @@ const enhance = compose(
     const theme = { };
     if (content.colors && content.colors.length) {
       const primary = `#${content.colors[0].value}`;
+
+      let secondary = Color(primary);
+      if (content.isLight) {
+        secondary = secondary.darken(0.5).rgb().string();
+      } else {
+        secondary = secondary.mix(Color('white'), 0.5).rgb().string();
+      }
+
       theme.colors = {
         background: {
           primary,
+          secondary,
         },
       };
     }
