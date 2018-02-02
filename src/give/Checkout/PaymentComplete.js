@@ -24,6 +24,10 @@ const withRouterGiveResult = compose(
       props.setPaymentResult({
         success,
         error,
+        // NOTE: We need to refetch to
+        // ensure new payment methods
+        // and transactions are up to date
+        refetchQueries: true,
       });
     }
 
