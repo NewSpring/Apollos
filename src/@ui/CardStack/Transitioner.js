@@ -101,6 +101,7 @@ class Transitioner extends PureComponent {
       case PUSH: {
         const routeIndex = findIndex(entries, entry => this.keyForLocation(entry) === toKey);
         if (routeIndex > -1) {
+          entries[routeIndex] = nextProps.location;
           toPosition = routeIndex;
         } else {
           entries.splice(this.state.index + 1, 0, nextProps.location);
