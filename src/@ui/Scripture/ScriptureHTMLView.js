@@ -8,12 +8,6 @@ import { H7, BodyCopy } from '@ui/typography';
 import Paragraph from '@ui/Paragraph';
 
 const renderer = (node, { children, ...other }) => { // eslint-disable-line
-  if (node.type === 'text' && node.data && node.data.trim()) {
-    // todo: the color style is needed here to keep color inherited from the parent element
-    // example: <a>text</a> gets rendered like <Link><BodyCopy>text</BodyCopy></Link>
-    return <BodyCopy style={{ color: undefined }}>{decodeHTML(node.data)}</BodyCopy>;
-  }
-
   // the defaultRenderer support several basic elements out of the box,
   // this function only needs to handle the cases that are unique to scripture.
   const className = (node && node.attribs && node.attribs.class) || '';
@@ -23,7 +17,7 @@ const renderer = (node, { children, ...other }) => { // eslint-disable-line
   }
 
   if (className.includes('line-group')) {
-    return <Text>{children}{'\n'}</Text>;
+    return <BodyCopy>{children}{'\n'}</BodyCopy>;
   }
 
   if (className.includes('block-indent')) { // todo
@@ -42,7 +36,7 @@ const renderer = (node, { children, ...other }) => { // eslint-disable-line
     return <Text style={{ color: 'darkred' }}>{children}</Text>;
   }
 
-  if (node.name === 'p') return <Paragraph><Text>{wrapTextChildren(children)}</Text></Paragraph>;
+  if (node.name === 'p') return <Paragraph><BodyCopy>{wrapTextChildren(children)}</BodyCopy></Paragraph>;
 
   return defaultRenderer(node, { children, ...other });
 };
