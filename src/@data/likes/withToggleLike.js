@@ -49,7 +49,7 @@ export default compose(
           variables: {
             nodeId,
           },
-          refetchQueries: ['UserLikes'],
+          refetchQueries: ['UserLikes', 'RecentlyLiked'],
           optimisticResponse: {
             toggleLike: {
               __typename: 'LikesMutationResponse',
