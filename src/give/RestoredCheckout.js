@@ -1,35 +1,49 @@
 import React from 'react';
 import {
-  AsyncStorage,
+  View,
 } from 'react-native';
 import get from 'lodash/get';
-import BackgroundView from '@ui/BackgroundView';
-import { UIText } from '@ui/typography';
-import Button from '@ui/Button';
+import {
+  compose,
+  branch,
+  renderComponent,
+} from 'recompose';
+import { H4, H7 } from '@ui/typography';
+import ActivityIndicator from '@ui/ActivityIndicator';
 import { parse } from '@utils/queryString';
-import withGive from '@data/withGive';
+import withRestoredGive from '@data/withRestoredGive';
+import { PaymentConfirmationForm } from '@ui/forms';
+import styled from '@ui/styled';
+import { withoutTabBar } from 'tabs/Layout';
 
-export default withGive((props) => {
-  const { redirect, state, userToken } = parse(get(props, 'location.search', {}));
+const PaperView = styled(({ theme }) => ({
+  flex: 1,
+  backgroundColor: theme.colors.background.paper,
+  padding: theme.sizing.baseUnit,
+}), 'PaperView')(View);
 
-  // Restore state
-  props.restoreContributions(state);
+const enhance = compose(
+  withoutTabBar,
+  withRestoredGive,
+  branch(({ isRestored }) => !isRestored, renderComponent(ActivityIndicator)),
+);
 
-  // Restore user
-  AsyncStorage.setItem('authToken', userToken);
+export const RestoredCheckout = (props) => {
+  const { redirect } = parse(get(props, 'location.search', {}));
 
-  // LEFT OFF HERE: Need to turn restoreLogic into a decorator
-  // And render PaymentConfirmation underneath it
   return (
-    <BackgroundView>
-      <UIText>{`${redirect}`}</UIText>
-      <UIText>{`${state}`}</UIText>
-      <Button
-        onPress={() => {
+    <PaperView>
+      <H4>Secure Web Checkout</H4>
+      <H7>{'Per Apple\'s charitable donations guidelines, we are forced to checkout contributors on web only'}</H7>
+      <H7>{'Please review your donation'}</H7>
+      <PaymentConfirmationForm
+        submitButtonText="Give Now"
+        onComplete={() => {
           window.location.href = redirect;
         }}
-        title="click to return"
       />
-    </BackgroundView>
+    </PaperView>
   );
-});
+};
+
+export default enhance(RestoredCheckout);

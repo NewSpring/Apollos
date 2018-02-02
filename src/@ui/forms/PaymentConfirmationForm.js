@@ -48,6 +48,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
     }),
     onSubmit: PropTypes.func,
     onPressChangePaymentMethod: PropTypes.func,
+    submitButtonText: PropTypes.string,
   };
 
   static defaultProps = {
@@ -59,6 +60,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
     },
     onSubmit() {},
     onPressChangePaymentMethod() {},
+    submitButtonText: 'Complete',
   };
 
   get total() {
@@ -109,11 +111,17 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
           <H5>$<H4>{this.total.toFixed(2).split('.')[0]}</H4>.{this.total.toFixed(2).split('.')[1]}</H5>
         </Row>
 
-        <Button onPress={this.props.onSubmit} title="Complete" loading={this.props.contributions.isPaying} />
+        <Button
+          onPress={this.props.onSubmit}
+          title={this.props.submitButtonText}
+          loading={this.props.contributions.isPaying}
+        />
 
-        <ButtonLink onPress={this.props.onPressChangePaymentMethod}>
-          {'Change Payment Method'}
-        </ButtonLink>
+        {this.props.onPressChangePaymentMethod && (
+          <ButtonLink onPress={this.props.onPressChangePaymentMethod}>
+            {'Change Payment Method'}
+          </ButtonLink>
+        )}
       </View>
     );
   }
@@ -142,12 +150,6 @@ const PaymentConfirmationForm = compose(
         if (Platform.OS === 'ios') {
           Linking.addEventListener('url', handleRedirect);
           const userToken = await AsyncStorage.getItem('authToken');
-
-          // console.log(stringify({
-          //   redirect: `${linkingUri}${props.navigateToOnComplete}`,
-          //   state: JSON.stringify(props.contributions),
-          //   userToken,
-          // }));
 
           const res = await WebBrowser.openBrowserAsync(`http://localhost:3000/give/restored-checkout?${stringify({
             redirect: `${linkingUri}${props.navigateToOnComplete}`,
@@ -204,6 +206,7 @@ const PaymentConfirmationForm = compose(
         } else if (props.navigateToOnComplete) {
           props.history.push(props.navigateToOnComplete);
         }
+        if (props.onComplete) props.onComplete();
       }
     },
   })),
