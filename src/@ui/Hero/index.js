@@ -47,7 +47,11 @@ const Container = styled({
   justifyContent: 'center',
 })(FlexedView);
 
-export const BackgroundImage = styled({ width: '100%', height: '100%', resizeMode: 'cover' })(ConnectedImage);
+export const BackgroundImage = styled({
+  width: '100%',
+  height: '100%',
+  resizeMode: 'cover',
+})(ConnectedImage);
 
 const Hero = withThemeMixin({ type: 'dark' })(({
   brandText = 'NEWSPRING',
