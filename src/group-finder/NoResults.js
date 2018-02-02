@@ -6,17 +6,17 @@ import styled from '@ui/styled';
 import PaddedView from '@ui/PaddedView';
 
 const Link = styled(({ theme }) => ({ color: theme.colors.primary }))(BodyCopy);
-const Text = styled({ textAlign: 'center' })(BodyCopy);
+const StyledBodyCopy = styled({ textAlign: 'center' })(BodyCopy);
 
 const AdUnit = () => (
   <Card>
     <CardContent>
       <PaddedView>
-        <Text italic>
+        <StyledBodyCopy italic>
           {'Unfortunately, we didn\'t find any groups matching your search. Gather some friends, and '}
           <Link onPress={() => Linking.openURL('https://rock.newspring.cc/workflows/81')}>start your own group</Link>
           {' !'}
-        </Text>
+        </StyledBodyCopy>
       </PaddedView>
     </CardContent>
   </Card>
