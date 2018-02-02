@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
-import { Switch, View } from 'react-native';
+import { Platform, Switch, View } from 'react-native';
 import { withTheme } from '@ui/theme';
 import FlexedView from '@ui/FlexedView';
 import styled from '@ui/styled';
@@ -17,11 +17,13 @@ const enhance = compose(
   pure,
   withTheme(({ theme }) => ({
     onTintColor: theme.colors.background.primary,
-    thumbTintColor: theme.colors.background.paper,
     activeTrackColor: theme.colors.background.primary,
-    activeThumbColor: theme.colors.background.paper,
     trackColor: theme.colors.background.inactive,
     tintColor: theme.colors.background.inactive,
+    activeThumbColor: theme.colors.background.paper,
+    ...Platform.select({
+      android: { thumbTintColor: theme.colors.background.paper },
+    }),
   })),
 );
 
