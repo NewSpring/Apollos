@@ -8,7 +8,7 @@ const getSiteLink = (contentItem) => {
 
   switch (category) {
     case 'series_newspring':
-      return `${site}/sermons/${contentItem.parent.meta.urlTitle}`;
+      return `${site}/sermons/${meta.urlTitle}`;
     case 'sermons':
       return `${site}/sermons/${contentItem.parent.meta.urlTitle}/${meta.urlTitle}`;
     case 'studies':

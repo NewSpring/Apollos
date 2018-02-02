@@ -7,7 +7,7 @@ import withStudy from '@data/withStudy';
 import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import ContentView, { Title, HTMLView } from '@ui/ContentView';
-import SecondaryNav, { Link, Share } from '@ui/SecondaryNav';
+import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import { withThemeMixin } from '@ui/theme';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 import RelatedContent from '@ui/RelatedContent';
@@ -36,9 +36,11 @@ const enhance = compose(
 const ShareLink = withStudy(Share);
 
 const Study = enhance(({
+  id,
   content: {
     title,
     content: {
+      isLiked,
       isLight = true,
       description,
       tags,
@@ -46,7 +48,6 @@ const Study = enhance(({
       ...otherContentProps
     } = {},
     children,
-    id,
   } = { },
   isLoading,
 }) => (
@@ -67,7 +68,7 @@ const Study = enhance(({
     </ScrollView>
     <SecondaryNav>
       <ShareLink id={id} />
-      <Link icon="like" />
+      <Like id={id} isLiked={isLiked} />
     </SecondaryNav>
   </BackgroundView>
 ));

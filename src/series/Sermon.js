@@ -6,7 +6,7 @@ import { startCase, toLower } from 'lodash';
 import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import ContentView, { Title, SubHeading, HTMLView } from '@ui/ContentView';
-import SecondaryNav, { Link, Share } from '@ui/SecondaryNav';
+import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import withSermon from '@data/withSermon';
 import { withThemeMixin } from '@ui/theme';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
@@ -41,6 +41,7 @@ const Sermon = enhance(({
       children,
     } = {},
     content: {
+      isLiked,
       speaker,
       description,
       ...otherContentProps
@@ -64,7 +65,7 @@ const Sermon = enhance(({
     </ScrollView>
     <SecondaryNav>
       <ShareLink id={id} />
-      <Link icon="like" />
+      <Like id={id} isLiked={isLiked} />
     </SecondaryNav>
   </BackgroundView>
 ));

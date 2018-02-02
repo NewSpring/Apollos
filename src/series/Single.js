@@ -10,7 +10,7 @@ import ContentView, { HTMLView } from '@ui/ContentView';
 import Button from '@ui/Button';
 import { H6 } from '@ui/typography';
 import Icon from '@ui/Icon';
-import SecondaryNav, { Link, Share } from '@ui/SecondaryNav';
+import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
@@ -50,6 +50,7 @@ const StyledButton = styled(({ theme }) => ({
 const SeriesSingle = enhance(({
   content: {
     content: {
+      isLiked,
       video,
       isLight = true,
       description,
@@ -58,8 +59,8 @@ const SeriesSingle = enhance(({
       ...otherContentProps
     } = {},
     children,
-    id,
   } = { },
+  id,
   history,
   isLoading,
   theme,
@@ -90,7 +91,7 @@ const SeriesSingle = enhance(({
     </ScrollView>
     <SecondaryNav>
       <ShareLink id={id} />
-      <Link icon="like" />
+      <Like id={id} isLiked={isLiked} />
     </SecondaryNav>
   </BackgroundView>
 ));
