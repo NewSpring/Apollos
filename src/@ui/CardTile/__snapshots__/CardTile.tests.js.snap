@@ -904,3 +904,60 @@ exports[`the Card component should render card details with date 1`] = `
   </View>
 </View>
 `;
+
+exports[`the Card component should render children 1`] = `
+<View
+  collapsable={false}
+  style={
+    Object {
+      "padding": 10,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "aspectRatio": 1,
+        "backgroundColor": "#dddddd",
+        "borderRadius": 6,
+        "height": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "borderRadius": 6,
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Biff Tannen was here
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

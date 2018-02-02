@@ -15,7 +15,7 @@ import relativeTime from '@utils/relativeTime';
 
 const enhance = compose(
   setPropTypes({
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     number: PropTypes.number,
     showDetails: PropTypes.bool,
     byLine: PropTypes.string,
@@ -120,9 +120,11 @@ const CardTile = enhance(({
             </TileNumber>
           )}
 
-          <CardContent>
-            <H4>{startCase(toLower(title))}</H4>
-          </CardContent>
+          {typeof title === 'undefined' ? null : (
+            <CardContent>
+              <H4>{startCase(toLower(title))}</H4>
+            </CardContent>
+          )}
 
           {showDetails ? (
             <CardActions>
