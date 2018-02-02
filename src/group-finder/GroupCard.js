@@ -86,7 +86,11 @@ const GroupCard = ({
 
             <DistanceText>{parseInt(distance, 0)} miles away</DistanceText>
 
-            <Paragraph><BodyCopy>{truncate(description, 120)}</BodyCopy></Paragraph>
+            <Paragraph>
+              <BodyCopy numberOfLines={4} ellipsizeMode={'tail'}>
+                {Platform.OS === 'web' ? truncate(description, 120) : description}
+              </BodyCopy>
+            </Paragraph>
 
             <ChipList>
               {tags.map((tag) => {
