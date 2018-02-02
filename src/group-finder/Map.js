@@ -73,7 +73,7 @@ class Map extends PureComponent {
 
   get bounds() {
     const { markers } = this;
-    if (!markers) return null;
+    if (!markers.length) return null;
     const ew = markers.map(m => m.longitude);
     const ns = markers.map(m => m.latitude);
     const north = max(ns);
