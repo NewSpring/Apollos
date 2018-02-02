@@ -26,7 +26,6 @@ const Content = styled({
 
 const Brand = styled(({ theme }) => ({
   color: theme.colors.white,
-  // transform: [{ rotate: '-90deg' }],
   position: 'absolute',
   bottom: theme.sizing.baseUnit,
   right: theme.sizing.baseUnit,
