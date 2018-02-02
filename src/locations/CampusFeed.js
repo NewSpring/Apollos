@@ -40,7 +40,7 @@ const renderCampus = ({ item: campus }) => (
           if (!campus.distance || !campus.distance.value) return null;
           return (
             <DistanceText>
-              {(campus.distance.value * 0.000621371192).toFixed(2)} miles away
+              {(campus.distance.value * 0.000621371192).toFixed(2) /* meters to miles */} miles away
             </DistanceText>
           );
         })()}
