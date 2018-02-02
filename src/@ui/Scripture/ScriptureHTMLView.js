@@ -1,6 +1,5 @@
 import React from 'react';
 import { withProps } from 'recompose';
-import { decodeHTML } from 'entities';
 
 import HTMLView, { defaultRenderer, wrapTextChildren } from '@ui/HTMLView';
 import { Text } from 'react-native';
