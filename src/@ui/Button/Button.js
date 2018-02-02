@@ -16,11 +16,11 @@ const ButtonStyles = styled(({
   bordered,
   pill,
 }) => ({
-  padding: theme.sizing.baseUnit / 2,
   paddingHorizontal: theme.sizing.baseUnit,
   overflow: 'hidden',
   borderRadius: pill ? theme.sizing.baseUnit * 3 : theme.sizing.borderRadius,
   flexDirection: 'row',
+  height: theme.sizing.baseUnit * 3,
   alignItems: 'center',
   justifyContent: 'center',
   opacity: disabled ? 0.5 : 1,
