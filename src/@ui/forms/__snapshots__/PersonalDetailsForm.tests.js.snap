@@ -55,6 +55,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
               "paddingVertical": 5,
             }
           }
+          underlineColorAndroid="transparent"
           value="firstName"
         />
       </View>
@@ -211,6 +212,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
               "paddingVertical": 5,
             }
           }
+          underlineColorAndroid="transparent"
           value="lastName"
         />
       </View>
@@ -371,6 +373,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
             }
           }
           type="email"
+          underlineColorAndroid="transparent"
           value="email@email.com"
         />
       </View>
@@ -794,10 +797,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
           "borderWidth": 2,
           "elevation": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 0.5,
           "overflow": "hidden",
-          "padding": 10,
           "paddingHorizontal": 20,
         }
       }
@@ -879,6 +882,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
               "paddingVertical": 5,
             }
           }
+          underlineColorAndroid="transparent"
           value="firstName"
         />
       </View>
@@ -1035,6 +1039,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
               "paddingVertical": 5,
             }
           }
+          underlineColorAndroid="transparent"
           value="lastName"
         />
       </View>
@@ -1195,6 +1200,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             }
           }
           type="email"
+          underlineColorAndroid="transparent"
           value="email@email.com"
         />
       </View>
@@ -1618,10 +1624,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           "borderWidth": 2,
           "elevation": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 0.5,
           "overflow": "hidden",
-          "padding": 10,
           "paddingHorizontal": 20,
         }
       }

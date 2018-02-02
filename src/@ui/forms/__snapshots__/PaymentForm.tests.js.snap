@@ -340,6 +340,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
               }
             }
             type="numericKeyboard"
+            underlineColorAndroid="transparent"
             value="4111111111111111"
           />
         </View>
@@ -510,6 +511,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
               }
             }
             type="numericKeyboard"
+            underlineColorAndroid="transparent"
             value="10/32"
           />
         </View>
@@ -668,6 +670,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
               }
             }
             type="numericKeyboard"
+            underlineColorAndroid="transparent"
             value="123"
           />
         </View>
@@ -841,6 +844,8 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             }
           >
             <RCTSwitch
+              activeThumbColor="#ffffff"
+              activeTrackColor="#6bac43"
               disabled={false}
               onChange={[Function]}
               onResponderTerminationRequest={[Function]}
@@ -856,6 +861,9 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                   undefined,
                 ]
               }
+              thumbTintColor="#ffffff"
+              tintColor="#dddddd"
+              trackColor="#dddddd"
               value={false}
             />
           </View>
@@ -905,10 +913,10 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
           "borderWidth": 2,
           "elevation": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
-          "padding": 10,
           "paddingHorizontal": 20,
         }
       }
@@ -1275,6 +1283,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
               }
             }
             type="numericKeyboard"
+            underlineColorAndroid="transparent"
             value="4111111111111111"
           />
         </View>
@@ -1445,6 +1454,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
               }
             }
             type="numericKeyboard"
+            underlineColorAndroid="transparent"
             value="10/32"
           />
         </View>
@@ -1603,6 +1613,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
               }
             }
             type="numericKeyboard"
+            underlineColorAndroid="transparent"
             value="123"
           />
         </View>
@@ -1776,6 +1787,8 @@ exports[`The PaymentForm component renders correctly 1`] = `
             }
           >
             <RCTSwitch
+              activeThumbColor="#ffffff"
+              activeTrackColor="#6bac43"
               disabled={false}
               onChange={[Function]}
               onResponderTerminationRequest={[Function]}
@@ -1791,6 +1804,9 @@ exports[`The PaymentForm component renders correctly 1`] = `
                   undefined,
                 ]
               }
+              thumbTintColor="#ffffff"
+              tintColor="#dddddd"
+              trackColor="#dddddd"
               value={false}
             />
           </View>
@@ -1840,10 +1856,10 @@ exports[`The PaymentForm component renders correctly 1`] = `
           "borderWidth": 2,
           "elevation": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
-          "padding": 10,
           "paddingHorizontal": 20,
         }
       }
@@ -2210,6 +2226,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
               }
             }
             type="numericKeyboard"
+            underlineColorAndroid="transparent"
             value="4111111111111111"
           />
         </View>
@@ -2380,6 +2397,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
               }
             }
             type="numericKeyboard"
+            underlineColorAndroid="transparent"
             value="10/32"
           />
         </View>
@@ -2538,6 +2556,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
               }
             }
             type="numericKeyboard"
+            underlineColorAndroid="transparent"
             value="123"
           />
         </View>
@@ -2711,6 +2730,8 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             }
           >
             <RCTSwitch
+              activeThumbColor="#ffffff"
+              activeTrackColor="#6bac43"
               disabled={false}
               onChange={[Function]}
               onResponderTerminationRequest={[Function]}
@@ -2726,6 +2747,9 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                   undefined,
                 ]
               }
+              thumbTintColor="#ffffff"
+              tintColor="#dddddd"
+              trackColor="#dddddd"
               value={false}
             />
           </View>
@@ -2776,10 +2800,10 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
           "borderWidth": 2,
           "elevation": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
-          "padding": 10,
           "paddingHorizontal": 20,
         }
       }
@@ -3133,6 +3157,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                 "paddingVertical": 5,
               }
             }
+            underlineColorAndroid="transparent"
             value="My account"
           />
         </View>
@@ -3291,6 +3316,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
               }
             }
             type="numeric"
+            underlineColorAndroid="transparent"
             value="111111111111"
           />
         </View>
@@ -3460,6 +3486,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
               }
             }
             type="numeric"
+            underlineColorAndroid="transparent"
             value="22222222222"
           />
         </View>
@@ -3915,6 +3942,8 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             }
           >
             <RCTSwitch
+              activeThumbColor="#ffffff"
+              activeTrackColor="#6bac43"
               disabled={false}
               onChange={[Function]}
               onResponderTerminationRequest={[Function]}
@@ -3930,6 +3959,9 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                   undefined,
                 ]
               }
+              thumbTintColor="#ffffff"
+              tintColor="#dddddd"
+              trackColor="#dddddd"
               value={false}
             />
           </View>
@@ -3979,10 +4011,10 @@ exports[`The PaymentForm component shows bank account info 1`] = `
           "borderWidth": 2,
           "elevation": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
-          "padding": 10,
           "paddingHorizontal": 20,
         }
       }

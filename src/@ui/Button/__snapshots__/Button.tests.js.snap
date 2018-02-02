@@ -43,10 +43,10 @@ exports[`The Button component should render 1`] = `
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }
@@ -115,10 +115,10 @@ exports[`The Button component should render a Tertiary button 1`] = `
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }
@@ -186,10 +186,10 @@ exports[`The Button component should render a bordered button 1`] = `
         "borderRadius": 60,
         "borderWidth": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }
@@ -259,10 +259,10 @@ exports[`The Button component should render a disabled button 1`] = `
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 0.5,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }
@@ -330,10 +330,10 @@ exports[`The Button component should render a ghost button 1`] = `
         "borderRadius": 60,
         "borderWidth": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }
@@ -401,10 +401,10 @@ exports[`The Button component should render a ghost pill button 1`] = `
         "borderRadius": 60,
         "borderWidth": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }
@@ -473,10 +473,10 @@ exports[`The Button component should render a pill button 1`] = `
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }
@@ -545,10 +545,10 @@ exports[`The Button component should render a primary button 1`] = `
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }
@@ -617,10 +617,10 @@ exports[`The Button component should render a secondary button 1`] = `
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }
@@ -689,10 +689,10 @@ exports[`The Button component should render as default type 1`] = `
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }
@@ -732,10 +732,10 @@ exports[`The Button component should render with children 1`] = `
       "borderWidth": 2,
       "elevation": 2,
       "flexDirection": "row",
+      "height": 60,
       "justifyContent": "center",
       "opacity": 1,
       "overflow": "hidden",
-      "padding": 10,
       "paddingHorizontal": 20,
     }
   }

@@ -55,6 +55,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
               "paddingVertical": 5,
             }
           }
+          underlineColorAndroid="transparent"
           value="My Street"
         />
       </View>
@@ -211,6 +212,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
               "paddingVertical": 5,
             }
           }
+          underlineColorAndroid="transparent"
           value=""
         />
       </View>
@@ -649,6 +651,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
               "paddingVertical": 5,
             }
           }
+          underlineColorAndroid="transparent"
           value="My City"
         />
       </View>
@@ -807,6 +810,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
             }
           }
           type="numeric"
+          underlineColorAndroid="transparent"
           value="12345"
         />
       </View>
@@ -923,10 +927,10 @@ exports[`The ContributionForm component hides state field for foreign countries 
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }
@@ -1027,6 +1031,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
               "paddingVertical": 5,
             }
           }
+          underlineColorAndroid="transparent"
           value="My Street"
         />
       </View>
@@ -1183,6 +1188,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
               "paddingVertical": 5,
             }
           }
+          underlineColorAndroid="transparent"
           value=""
         />
       </View>
@@ -1621,6 +1627,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
               "paddingVertical": 5,
             }
           }
+          underlineColorAndroid="transparent"
           value="My City"
         />
       </View>
@@ -2069,6 +2076,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
             }
           }
           type="numeric"
+          underlineColorAndroid="transparent"
           value="12345"
         />
       </View>
@@ -2185,10 +2193,10 @@ exports[`The ContributionForm component renders correctly 1`] = `
         "borderWidth": 2,
         "elevation": 2,
         "flexDirection": "row",
+        "height": 60,
         "justifyContent": "center",
         "opacity": 1,
         "overflow": "hidden",
-        "padding": 10,
         "paddingHorizontal": 20,
       }
     }

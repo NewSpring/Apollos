@@ -274,10 +274,10 @@ exports[`the Card component should render 1`] = `
             "borderWidth": 2,
             "elevation": 2,
             "flexDirection": "row",
+            "height": 60,
             "justifyContent": "center",
             "opacity": 1,
             "overflow": "hidden",
-            "padding": 10,
             "paddingHorizontal": 20,
           }
         }

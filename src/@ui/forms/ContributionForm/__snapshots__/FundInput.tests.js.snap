@@ -113,6 +113,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               }
             }
             type="numeric"
+            underlineColorAndroid="transparent"
             value=""
           />
         </View>
@@ -653,6 +654,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               }
             }
             type="numeric"
+            underlineColorAndroid="transparent"
             value=""
           />
         </View>
@@ -1193,6 +1195,7 @@ exports[`The FrequencyInput component should render correctly with initial state
               }
             }
             type="numeric"
+            underlineColorAndroid="transparent"
             value=""
           />
         </View>
