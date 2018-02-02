@@ -22,6 +22,7 @@ import WebBrowser from '@ui/WebBrowser';
 import linkingUri from '@utils/linkingUri';
 import { stringify } from '@utils/queryString';
 import FlexedView from '@ui/FlexedView';
+import Settings from '@utils/Settings';
 
 const Row = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 2,
@@ -154,7 +155,7 @@ const PaymentConfirmationForm = compose(
           Linking.addEventListener('url', handleRedirect);
           const userToken = await AsyncStorage.getItem('authToken');
 
-          const res = await WebBrowser.openBrowserAsync(`http://localhost:3000/give/restored-checkout?${stringify({
+          const res = await WebBrowser.openBrowserAsync(`${Settings.ROOT_URL || 'http://localhost:3000'}/give/restored-checkout?${stringify({
             redirect: `${linkingUri}${props.navigateToOnComplete}`,
             state: JSON.stringify(props.contributions),
             userToken,
