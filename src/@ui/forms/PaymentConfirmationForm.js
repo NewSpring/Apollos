@@ -21,6 +21,7 @@ import Button, { ButtonLink } from '@ui/Button';
 import WebBrowser from '@ui/WebBrowser';
 import linkingUri from '@utils/linkingUri';
 import { stringify } from '@utils/queryString';
+import FlexedView from '@ui/FlexedView';
 
 const Row = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 2,
@@ -49,6 +50,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
     onSubmit: PropTypes.func,
     onPressChangePaymentMethod: PropTypes.func,
     submitButtonText: PropTypes.string,
+    hideChangePaymentMethodButton: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -61,6 +63,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
     onSubmit() {},
     onPressChangePaymentMethod() {},
     submitButtonText: 'Complete',
+    hideChangePaymentMethodButton: false,
   };
 
   get total() {
@@ -71,9 +74,9 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
   render() {
     if (this.props.isLoading) {
       return (
-        <View>
+        <FlexedView>
           <ActivityIndicator />
-        </View>
+        </FlexedView>
       );
     }
 
@@ -117,7 +120,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
           loading={this.props.contributions.isPaying}
         />
 
-        {this.props.onPressChangePaymentMethod && (
+        {!this.props.hideChangePaymentMethodButton && (
           <ButtonLink onPress={this.props.onPressChangePaymentMethod}>
             {'Change Payment Method'}
           </ButtonLink>
@@ -192,12 +195,14 @@ const PaymentConfirmationForm = compose(
         props.setPaymentResult({
           success: true,
         });
+        if (props.onComplete) props.onComplete(null, true);
         return true;
       } catch (err) {
         console.log('err', err); // eslint-disable-line no-console
         props.setPaymentResult({
           error: err.message,
         });
+        if (props.onComplete) props.onComplete(err.message, null);
         return null;
       } finally {
         props.isPaying(false);
@@ -206,7 +211,6 @@ const PaymentConfirmationForm = compose(
         } else if (props.navigateToOnComplete) {
           props.history.push(props.navigateToOnComplete);
         }
-        if (props.onComplete) props.onComplete();
       }
     },
   })),
