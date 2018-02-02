@@ -29,17 +29,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -59,17 +52,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          bold={false}
           ellipsizeMode="tail"
-          italic={false}
           style={
             Object {
               "color": undefined,
-              "fontFamily": "DroidSerif-Regular",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.8,
             }
           }
         >
@@ -79,17 +65,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -124,17 +103,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -169,17 +141,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -214,17 +179,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -267,17 +225,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          bold={false}
           ellipsizeMode="tail"
-          italic={false}
           style={
             Object {
               "color": undefined,
-              "fontFamily": "DroidSerif-Regular",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.8,
             }
           }
         >
@@ -313,17 +264,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -349,21 +293,20 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      bold={false}
       ellipsizeMode="tail"
-      italic={false}
-      style={
-        Object {
-          "color": undefined,
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
-        }
-      }
     >
-      Why Being Present Matters
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+      >
+        Why Being Present Matters
+      </Text>
     </Text>
   </Text>
   <View
@@ -393,17 +336,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -423,17 +359,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          bold={false}
           ellipsizeMode="tail"
-          italic={false}
           style={
             Object {
               "color": undefined,
-              "fontFamily": "DroidSerif-Regular",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.8,
             }
           }
         >
@@ -443,17 +372,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -488,17 +410,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -533,17 +448,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -586,17 +494,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          bold={false}
           ellipsizeMode="tail"
-          italic={false}
           style={
             Object {
               "color": undefined,
-              "fontFamily": "DroidSerif-Regular",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.8,
             }
           }
         >
@@ -632,17 +533,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -671,17 +565,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      bold={false}
       ellipsizeMode="tail"
-      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
         }
       }
     >
@@ -711,17 +598,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      bold={false}
       ellipsizeMode="tail"
-      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
         }
       }
     >
@@ -751,17 +631,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      bold={false}
       ellipsizeMode="tail"
-      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
         }
       }
     >
@@ -797,17 +670,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -842,17 +708,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -878,21 +737,20 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      bold={false}
       ellipsizeMode="tail"
-      italic={false}
-      style={
-        Object {
-          "color": undefined,
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
-        }
-      }
     >
-      Four Ways To Stay Away From Your Phone And Be Intentionally Present
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+      >
+        Four Ways To Stay Away From Your Phone And Be Intentionally Present
+      </Text>
     </Text>
   </Text>
   <View
@@ -933,17 +791,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          bold={false}
           ellipsizeMode="tail"
-          italic={false}
           style={
             Object {
               "color": undefined,
-              "fontFamily": "DroidSerif-Regular",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.8,
             }
           }
         >
@@ -953,17 +804,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -992,17 +836,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      bold={false}
       ellipsizeMode="tail"
-      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
         }
       }
     >
@@ -1032,17 +869,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      bold={false}
       ellipsizeMode="tail"
-      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
         }
       }
     >
@@ -1072,17 +902,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      bold={false}
       ellipsizeMode="tail"
-      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
         }
       }
     >
@@ -1112,17 +935,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      bold={false}
       ellipsizeMode="tail"
-      italic={false}
       style={
         Object {
           "color": undefined,
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
         }
       }
     >
@@ -1158,17 +974,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >
@@ -1203,17 +1012,10 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
         style={
           Object {
             "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
           }
         }
       >

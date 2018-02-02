@@ -61,21 +61,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Aleph
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Aleph
+        </Text>
       </Text>
     </Text>
     <Text
@@ -902,21 +908,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Beth
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Beth
+        </Text>
       </Text>
     </Text>
     <Text
@@ -1743,21 +1755,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Gimel
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Gimel
+        </Text>
       </Text>
     </Text>
     <Text
@@ -2558,21 +2576,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Daleth
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Daleth
+        </Text>
       </Text>
     </Text>
     <Text
@@ -3399,21 +3423,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        He
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          He
+        </Text>
       </Text>
     </Text>
     <Text
@@ -4240,21 +4270,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Waw
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Waw
+        </Text>
       </Text>
     </Text>
     <Text
@@ -5081,21 +5117,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Zayin
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Zayin
+        </Text>
       </Text>
     </Text>
     <Text
@@ -5948,21 +5990,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Heth
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Heth
+        </Text>
       </Text>
     </Text>
     <Text
@@ -6815,21 +6863,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Teth
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Teth
+        </Text>
       </Text>
     </Text>
     <Text
@@ -7656,21 +7710,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Yodh
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Yodh
+        </Text>
       </Text>
     </Text>
     <Text
@@ -8531,21 +8591,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Kaph
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Kaph
+        </Text>
       </Text>
     </Text>
     <Text
@@ -9346,21 +9412,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Lamedh
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Lamedh
+        </Text>
       </Text>
     </Text>
     <Text
@@ -10187,21 +10259,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Mem
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Mem
+        </Text>
       </Text>
     </Text>
     <Text
@@ -11002,21 +11080,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Nun
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Nun
+        </Text>
       </Text>
     </Text>
     <Text
@@ -11869,21 +11953,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Samekh
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Samekh
+        </Text>
       </Text>
     </Text>
     <Text
@@ -12684,21 +12774,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Ayin
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Ayin
+        </Text>
       </Text>
     </Text>
     <Text
@@ -13525,21 +13621,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Pe
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Pe
+        </Text>
       </Text>
     </Text>
     <Text
@@ -14340,21 +14442,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Tsadhe
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Tsadhe
+        </Text>
       </Text>
     </Text>
     <Text
@@ -15181,21 +15289,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Qoph
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Qoph
+        </Text>
       </Text>
     </Text>
     <Text
@@ -16074,21 +16188,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Resh
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Resh
+        </Text>
       </Text>
     </Text>
     <Text
@@ -16915,21 +17035,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Sin and Shin
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Sin and Shin
+        </Text>
       </Text>
     </Text>
     <Text
@@ -17756,21 +17882,27 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
-        Taw
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          bold={false}
+          ellipsizeMode="tail"
+          italic={false}
+          style={
+            Object {
+              "color": undefined,
+              "fontFamily": "DroidSerif-Regular",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.8,
+            }
+          }
+        >
+          Taw
+        </Text>
       </Text>
     </Text>
     <Text

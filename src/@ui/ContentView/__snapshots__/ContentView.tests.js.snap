@@ -72,17 +72,10 @@ exports[`the ContentView component renders 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            bold={false}
             ellipsizeMode="tail"
-            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "DroidSerif-Regular",
-                "fontSize": 20.02,
-                "lineHeight": 33.11,
-                "paddingBottom": 2.25,
-                "paddingTop": 1.8,
               }
             }
           >
@@ -117,17 +110,10 @@ exports[`the ContentView component renders 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            bold={false}
             ellipsizeMode="tail"
-            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "DroidSerif-Regular",
-                "fontSize": 20.02,
-                "lineHeight": 33.11,
-                "paddingBottom": 2.25,
-                "paddingTop": 1.8,
               }
             }
           >
@@ -276,17 +262,10 @@ exports[`the ContentView component renders with images 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            bold={false}
             ellipsizeMode="tail"
-            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "DroidSerif-Regular",
-                "fontSize": 20.02,
-                "lineHeight": 33.11,
-                "paddingBottom": 2.25,
-                "paddingTop": 1.8,
               }
             }
           >
@@ -321,17 +300,10 @@ exports[`the ContentView component renders with images 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            bold={false}
             ellipsizeMode="tail"
-            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "DroidSerif-Regular",
-                "fontSize": 20.02,
-                "lineHeight": 33.11,
-                "paddingBottom": 2.25,
-                "paddingTop": 1.8,
               }
             }
           >
@@ -416,17 +388,10 @@ exports[`the ContentView component renders with video 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            bold={false}
             ellipsizeMode="tail"
-            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "DroidSerif-Regular",
-                "fontSize": 20.02,
-                "lineHeight": 33.11,
-                "paddingBottom": 2.25,
-                "paddingTop": 1.8,
               }
             }
           >
@@ -461,17 +426,10 @@ exports[`the ContentView component renders with video 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            bold={false}
             ellipsizeMode="tail"
-            italic={false}
             style={
               Object {
                 "color": undefined,
-                "fontFamily": "DroidSerif-Regular",
-                "fontSize": 20.02,
-                "lineHeight": 33.11,
-                "paddingBottom": 2.25,
-                "paddingTop": 1.8,
               }
             }
           >
