@@ -1,11 +1,19 @@
 import React from 'react';
 import { withProps } from 'recompose';
+import { decodeHTML } from 'entities';
+
 import HTMLView, { defaultRenderer, wrapTextChildren } from '@ui/HTMLView';
 import { Text } from 'react-native';
-import { H7 } from '@ui/typography';
+import { H7, BodyCopy } from '@ui/typography';
 import Paragraph from '@ui/Paragraph';
 
 const renderer = (node, { children, ...other }) => { // eslint-disable-line
+  if (node.type === 'text' && node.data && node.data.trim()) {
+    // todo: the color style is needed here to keep color inherited from the parent element
+    // example: <a>text</a> gets rendered like <Link><BodyCopy>text</BodyCopy></Link>
+    return <BodyCopy style={{ color: undefined }}>{decodeHTML(node.data)}</BodyCopy>;
+  }
+
   // the defaultRenderer support several basic elements out of the box,
   // this function only needs to handle the cases that are unique to scripture.
   const className = (node && node.attribs && node.attribs.class) || '';
