@@ -11,7 +11,7 @@ import CardTile from '@ui/CardTile';
 import { ButtonLink } from '@ui/Button';
 
 const LocationCard = styled(({ theme, isHighlighted }) => ({
-  backgroundColor: 'white', // todo: use theme.colors.background.paper
+  backgroundColor: theme.colors.background.paper,
   ...(isHighlighted ? {
     borderColor: theme.colors.primary,
     borderWidth: 3,
