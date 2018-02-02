@@ -101,6 +101,7 @@ const Text = enhance(({
 
 Text.defaultProps = {
   returnKeyType: 'done',
+  underlineColorAndroid: 'transparent',
 };
 
 Text.propTypes = {
@@ -112,6 +113,7 @@ Text.propTypes = {
   wrapperStyle: PropTypes.any, // eslint-disable-line
   returnKeyType: PropTypes.string,
   error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  underlineColorAndroid: PropTypes.string,
 };
 
 export default Text;
