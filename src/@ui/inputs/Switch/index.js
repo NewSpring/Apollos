@@ -17,6 +17,11 @@ const enhance = compose(
   pure,
   withTheme(({ theme }) => ({
     onTintColor: theme.colors.background.primary,
+    thumbTintColor: theme.colors.background.paper,
+    activeTrackColor: theme.colors.background.primary,
+    activeThumbColor: theme.colors.background.paper,
+    trackColor: theme.colors.background.inactive,
+    tintColor: theme.colors.background.inactive,
   })),
 );
 
