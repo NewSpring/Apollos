@@ -9606,12 +9606,6 @@ react-native-vector-icons@4.4.2:
     prop-types "^15.5.10"
     yargs "^8.0.2"
 
-react-native-web-maps@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-web-maps/-/react-native-web-maps-0.1.0.tgz#a5ead1e001376df2a3e3afbe49f057c4356f4315"
-  dependencies:
-    react-google-maps "^7.3.0"
-
 react-native-web-maps@react-native-web-community/react-native-web-maps:
   version "0.1.0"
   resolved "https://codeload.github.com/react-native-web-community/react-native-web-maps/tar.gz/a418efc060a9c305cacaf5f039f473bb6c253bd3"
