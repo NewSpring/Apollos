@@ -24,7 +24,7 @@ class DeepLinking extends Component {
   };
 
   async componentDidMount() {
-    // this.push('/give/now');
+    this.push('/give/now');
     Linking.addEventListener('url', this.handleChange);
   }
 
@@ -40,7 +40,6 @@ class DeepLinking extends Component {
 
   push = (url) => {
     const pathname = url.replace(this.baseUrl, '');
-    // console.log({ url, pathname }, 'pushed');
     this.context.router.history.push(pathname);
   };
 
