@@ -76,6 +76,7 @@ const Results = enhance(props => (
           numColumns={1}
           fetchMore={props.fetchMore}
           refetch={props.refetch}
+          refreshing={props.isLoading}
           renderItem={({ item }) => (
             <GroupCard
               {...item}

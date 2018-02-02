@@ -5,7 +5,6 @@ import { compose, withProps } from 'recompose';
 import { get, without, debounce } from 'lodash';
 import pluralize from 'pluralize';
 
-import Placeholder from '@ui/Placeholder';
 import withCampuses from '@data/withCampuses';
 import withGroupAttributes from '@data/withGroupAttributes';
 import { H4, H6, H7 } from '@ui/typography';
@@ -14,13 +13,11 @@ import Chip, { ChipList } from '@ui/Chip';
 import PaddedView from '@ui/PaddedView';
 import styled from '@ui/styled';
 import Touchable from '@ui/Touchable';
-import { withTheme } from '@ui/theme';
 import { Text as TextInput } from '@ui/inputs';
 import TableView, { FormFields } from '@ui/TableView';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 
 const enhance = compose(
-  withTheme(),
   withCampuses,
   withGroupAttributes,
 );
@@ -81,7 +78,6 @@ class Filter extends PureComponent {
     onUpdateFilter: PropTypes.func,
     numResults: PropTypes.number,
     isLoadingResults: PropTypes.bool,
-    theme: PropTypes.shape({ helpers: PropTypes.shape({ rem: PropTypes.func }) }),
   }
 
   static defaultProps = {
@@ -261,15 +257,9 @@ class Filter extends PureComponent {
         ) : null}
 
         <SearchPrompt>
-          <Placeholder.Line
-            width={'40%'}
-            textSize={this.props.theme.helpers.rem(1.4)}
-            onReady={!this.props.isLoadingResults}
-          >
-            <NumResultsText>{pluralize('Result', this.props.numResults, true)}</NumResultsText>
-          </Placeholder.Line>
+          <NumResultsText isLoading={this.props.isLoadingResults}>{pluralize('Result', this.props.numResults, true)}</NumResultsText>
           <Touchable onPress={this.toggleSearch}>
-            <Icon name="search" />
+            <Icon isLoading={this.props.isLoadingResults} name="search" />
           </Touchable>
         </SearchPrompt>
       </View>
