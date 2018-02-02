@@ -48,16 +48,16 @@ exports[`The TileFeed component renders correctly 1`] = `
   scrollEventThrottle={50}
   showsHorizontalScrollIndicator={false}
   snapToAlignment="start"
-  snapToInterval={610}
+  snapToInterval={590}
   stickyHeaderIndices={Array []}
   style={
     Object {
-      "height": 620,
+      "height": 600,
       "paddingBottom": 10,
       "paddingHorizontal": 10,
     }
   }
-  tileHeight={620}
+  tileHeight={600}
   updateCellsBatchingPeriod={50}
   viewabilityConfigCallbackPairs={Array []}
   windowSize={21}
@@ -447,16 +447,16 @@ exports[`The TileFeed component renders empty state 1`] = `
   scrollEventThrottle={50}
   showsHorizontalScrollIndicator={false}
   snapToAlignment="start"
-  snapToInterval={610}
+  snapToInterval={590}
   stickyHeaderIndices={Array []}
   style={
     Object {
-      "height": 620,
+      "height": 600,
       "paddingBottom": 10,
       "paddingHorizontal": 10,
     }
   }
-  tileHeight={620}
+  tileHeight={600}
   updateCellsBatchingPeriod={50}
   viewabilityConfigCallbackPairs={Array []}
   windowSize={21}

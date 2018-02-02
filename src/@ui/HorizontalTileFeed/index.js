@@ -70,13 +70,7 @@ const enhance = compose(
 
 const getTileWidth = () => {
   const { width } = Dimensions.get('window');
-  /*
-   * 80% of width + baseUnit which is used for padding on the tile. This padding was added to fix a
-   * shadow clipping bug on Android so the additional math here was added to maintain an 80% view.
-   * Below snapToInterval was also adjusted to account for half of that padding on each swipe.
-   * TODO: find better shadow clipping fix that doesn't affect this math.
-   */
-  return (width * 0.8) + 20;
+  return width * 0.8; // 80% of width
 };
 
 const HorizontalTileFeed = enhance(({
@@ -93,8 +87,12 @@ const HorizontalTileFeed = enhance(({
     refreshing={isLoading}
     showsHorizontalScrollIndicator={false}
     tileHeight={getTileWidth()} // passed into TileFeed styles. Height is equal to 80% of width
-    // passed down to rendered ScrollView. See comment on line 74 explaining math.
-    snapToInterval={(getTileWidth() - 10)}
+    /*
+     * `(80% of width - baseUnit / 2)` which is used for padding on the tile. This padding was added
+     * to fix a shadow clipping bug on Android. `snapToInterval` below is adjusted to account for
+     * that padding on each swipe. TODO: find better shadow clipping fix that simplifies this math.
+     */
+    snapToInterval={(getTileWidth() - 10)} // passed down to rendered ScrollView.
     snapToAlignment={'start'} // passed down to rendered ScrollView
     decelerationRate={'fast'} // passed down to rendered ScrollView
     {...otherProps}
