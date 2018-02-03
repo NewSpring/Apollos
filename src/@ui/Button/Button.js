@@ -6,7 +6,7 @@ import { get } from 'lodash';
 import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import Touchable from '@ui/Touchable';
-import { UIText } from '@ui/typography';
+import { H5 } from '@ui/typography';
 import { InlineActivityIndicator } from '@ui/ActivityIndicator';
 import { withPlaceholder, Line } from '@ui/Placeholder';
 
@@ -16,10 +16,11 @@ const ButtonStyles = styled(({
   bordered,
   pill,
 }) => ({
-  padding: theme.sizing.baseUnit / 2,
+  paddingHorizontal: theme.sizing.baseUnit,
   overflow: 'hidden',
-  borderRadius: pill ? 999 : theme.sizing.borderRadius,
+  borderRadius: pill ? theme.sizing.baseUnit * 3 : theme.sizing.borderRadius,
   flexDirection: 'row',
+  height: theme.sizing.baseUnit * 3,
   alignItems: 'center',
   justifyContent: 'center',
   opacity: disabled ? 0.5 : 1,
@@ -30,7 +31,7 @@ const ButtonStyles = styled(({
   } : {
     backgroundColor: theme.colors.background.default,
     borderColor: theme.colors.background.default,
-    elevation: 4,
+    elevation: 2,
   }),
 }), 'Button')(View);
 
@@ -71,6 +72,7 @@ const Button = enhance(({
   loading,
   accent,
   pill,
+  TouchableComponent = Touchable,
   ...touchableProps
 }) => {
   const accessibilityTraits = ['button'];
@@ -81,21 +83,21 @@ const Button = enhance(({
       {loading ? (
         <InlineActivityIndicator color={accent} />
       ) : (
-        children || (<UIText>{title}</UIText>)
+        children || (<H5>{title}</H5>)
       )}
     </ButtonStyles>
   );
 
   if (onPress) {
     return (
-      <Touchable
+      <TouchableComponent
         onPress={onPress}
         disabled={disabled || loading}
         accessibilityTraits={accessibilityTraits}
         {...touchableProps}
       >
         {buttonContent}
-      </Touchable>
+      </TouchableComponent>
     );
   }
 
@@ -105,7 +107,7 @@ const Button = enhance(({
 Button.defaultProps = {
   disabled: false,
   bordered: false,
-  pill: false,
+  pill: true,
   title: '',
   accessibilityComponentType: 'button',
   type: 'primary',

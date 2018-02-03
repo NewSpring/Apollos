@@ -38,6 +38,8 @@ class FlatList extends PureComponent {
     onEndReachedThreshold: PropTypes.number,
     refreshing: PropTypes.bool,
     ListHeaderComponent: PropTypes.any, // eslint-disable-line
+    ListFooterComponent: PropTypes.any, // eslint-disable-line
+    ListEmptyComponent: PropTypes.any, // eslint-disable-line
   };
 
   get listHeader() {
@@ -46,6 +48,24 @@ class FlatList extends PureComponent {
       this.props.ListHeaderComponent
     ) : (
       <this.props.ListHeaderComponent />
+    );
+  }
+
+  get listFooter() {
+    if (!this.props.ListFooterComponent) return null;
+    return React.isValidElement(this.props.ListFooterComponent) ? (
+      this.props.ListFooterComponent
+    ) : (
+      <this.props.ListFooterComponent />
+    );
+  }
+
+  get listEmpty() {
+    if (!this.props.ListEmptyComponent) return null;
+    return React.isValidElement(this.props.ListEmptyComponent) ? (
+      this.props.ListEmptyComponent
+    ) : (
+      <this.props.ListEmptyComponent />
     );
   }
 
@@ -69,7 +89,9 @@ class FlatList extends PureComponent {
         onScroll={this.handleScroll}
       >
         {this.listHeader}
+        {!(this.props.data.length) ? this.listEmpty : null}
         <MappedReactList {...this.props} />
+        {this.listFooter}
       </ScrollView>
     );
   }

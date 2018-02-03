@@ -7,7 +7,7 @@ import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import ContentView, { Title, ByLine, HTMLView } from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
-import SecondaryNav, { Link } from '@ui/SecondaryNav';
+import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import withNewsStory from '@data/withNewsStory';
 
 const enhance = compose(
@@ -16,11 +16,15 @@ const enhance = compose(
   withNewsStory,
 );
 
+const ShareLink = withNewsStory(Share);
+
 const NewsSingle = enhance(({
+  id,
   content: {
     authors = [],
     title = '',
     content: {
+      isLiked,
       body,
       ...otherContentProps
     } = {},
@@ -37,8 +41,8 @@ const NewsSingle = enhance(({
     </ScrollView>
     <MediaQuery maxWidth="md">
       <SecondaryNav>
-        <Link icon="share" />
-        <Link icon="like" />
+        <ShareLink id={id} />
+        <Like id={id} isLiked={isLiked} />
       </SecondaryNav>
     </MediaQuery>
   </BackgroundView>

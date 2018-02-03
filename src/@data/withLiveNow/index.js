@@ -17,7 +17,7 @@ export default graphql(QUERY, {
   }),
   options: () => ({
     fetchPolicy: 'cache-and-network',
-    pollInterval: 5000,
+    pollInterval: 60000,
   }),
 });
 
