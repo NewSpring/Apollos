@@ -10,7 +10,7 @@ export default compose(
     overflow: 'hidden',
     ...Platform.select({
       web: {
-        height: '100vh',
+        maxHeight: '100vh',
       },
     }),
   }, 'SideBySideView.Right')),

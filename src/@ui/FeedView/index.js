@@ -10,33 +10,10 @@ import {
 } from 'recompose';
 import { get } from 'lodash';
 
-import { getLinkPath } from '@utils/content';
+import { getLinkPath, getItemBgColor, getItemImages, getItemIsLight } from '@utils/content';
 import FeedItemCard from '@ui/FeedItemCard';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import FeedList from './FeedList';
-
-const getItemBgColor = (item) => {
-  let color = get(item, 'content.colors[0].value');
-  if (!color) color = get(item, 'parent.content.colors[0].value');
-  if (!color) return null;
-  return `#${color}`;
-};
-
-const getItemImages = (item) => {
-  let images = get(item, 'content.images');
-  if (!images.length) images = get(item, 'parent.content.images', []);
-  return images;
-};
-
-const getItemIsLight = (item) => {
-  let isLight = get(item, 'content.isLight');
-  if (typeof isLight !== 'boolean' ||
-    !get(item, 'content.colors[0].value') // we want to use parent's isLight value if relying on parent's colors
-  ) {
-    isLight = get(item, 'parent.content.isLight');
-  }
-  return isLight;
-};
 
 export const defaultFeedItemRenderer = (CardComponent = FeedItemCard) => ({ item }) => ( // eslint-disable-line
   <Link to={getLinkPath(item)}>
