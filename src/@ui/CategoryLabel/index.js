@@ -49,6 +49,8 @@ const getIconName = (label, icon) => {
         return 'audio';
       case 'Need To Know':
         return 'leaf-outline';
+      case 'Groups':
+        return 'groups';
       default:
         return 'text';
     }
