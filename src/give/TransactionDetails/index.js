@@ -1,31 +1,27 @@
 import React, { PureComponent } from 'react';
-import {
-  View,
-  ScrollView,
-} from 'react-native';
+import { Platform, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
 import { withRouter } from '@ui/NativeWebRouter';
 import Header from '@ui/Header';
 import BackgroundView from '@ui/BackgroundView';
+import PaddedView from '@ui/PaddedView';
 import styled from '@ui/styled';
-import { UIText } from '@ui/typography';
+import { BodyCopy } from '@ui/typography';
 
 import RecentArticles from 'give/RecentArticles';
-import ArrowBackButton from 'give/ArrowBackButton';
 import Transaction from './Transaction';
 
 const PaperView = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.paper,
-  padding: theme.sizing.baseUnit / 2,
-}), 'BackgroundView')(View);
+}))(PaddedView);
 
 const Note = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit * 2,
   textAlign: 'center',
   color: theme.colors.text.secondary,
-}))(UIText);
+}))(BodyCopy);
 
 class TransactionDetails extends PureComponent {
   static propTypes = {
@@ -33,39 +29,32 @@ class TransactionDetails extends PureComponent {
       PropTypes.string,
       PropTypes.number,
     ]),
-    goBack: PropTypes.func,
   };
 
   static defaultProps = {
     id: undefined,
-    goBack() {},
   };
 
   render() {
     return (
-      <ScrollView>
-        <PaperView>
-          <Header
-            titleText="Transaction"
-            backButton
-          />
-
-          <ArrowBackButton
-            onPress={this.props.goBack}
-          />
-
-          <Transaction
-            id={this.props.id}
-          />
-
-          <Note>
-            {'Thank you for your contribution to NewSpring Church. Because you are obedient in giving, we\'ll be able to connect more people to Jesus and each other.'}
-          </Note>
-        </PaperView>
-        <BackgroundView>
+      <BackgroundView>
+        <Header
+          titleText={Platform.OS !== 'web' ? 'Contribution Details' : null}
+          backButton
+          webEnabled
+        />
+        <ScrollView>
+          <PaperView>
+            <Transaction id={this.props.id} />
+            <PaddedView horizontal={false}>
+              <Note>
+                {'Thank you for your contribution to NewSpring Church. Because you are obedient in giving, we\'ll be able to connect more people to Jesus and each other.'}
+              </Note>
+            </PaddedView>
+          </PaperView>
           <RecentArticles />
-        </BackgroundView>
-      </ScrollView>
+        </ScrollView>
+      </BackgroundView>
     );
   }
 }

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   View,
 } from 'react-native';
@@ -8,26 +8,24 @@ import get from 'lodash/get';
 import moment from 'moment';
 import withTransaction from '@data/withTransaction';
 import styled from '@ui/styled';
-import { UIText, H6, H4 } from '@ui/typography';
-import ActivityIndicator from '@ui/ActivityIndicator';
+import { BodyCopy, H6, H4 } from '@ui/typography';
 import Icon from '@ui/Icon';
 import last4 from '@utils/last4';
 import Spacer from '@ui/Spacer';
 import { withTheme } from '@ui/theme';
+import ActivityIndicator from '@ui/ActivityIndicator';
 
 import TransactionDetail from './TransactionDetail';
-
-const ItalicText = styled(({ theme }) => ({
-  color: theme.colors.text.secondary,
-  fontStyle: 'italic',
-  textAlign: 'center',
-}))(UIText);
 
 const Row = styled({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
 })(View);
+
+const DateText = styled({
+  textAlign: 'center',
+})(BodyCopy);
 
 const StyledH6 = styled(({ theme }) => ({
   textAlign: 'center',
@@ -41,72 +39,6 @@ const StyledH4 = styled(({ theme }) => ({
 const StyledIcon = withTheme(({ theme }) => ({
   fill: theme.colors.text.secondary,
 }))(Icon);
-
-const StyledActivityIndicatorContainer = styled({
-  height: 40,
-})(View);
-
-class Transaction extends PureComponent {
-  static propTypes = {
-    isLoading: PropTypes.bool,
-    date: PropTypes.string,
-    contributorName: PropTypes.string,
-    paymentMethodNumber: PropTypes.string,
-    paymentMethod: PropTypes.oneOf(['bankAccount', 'creditCard']),
-    transactionDetails: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]),
-      fundName: PropTypes.string,
-      amount: PropTypes.number,
-    })),
-  };
-
-  static defaultProps = {
-    isLoading: false,
-    date: '',
-    contributorName: '',
-    paymentMethodNumber: '',
-    paymentMethod: 'creditCard',
-    transactionDetails: [],
-  };
-
-  render() {
-    if (this.props.isLoading) {
-      return (
-        <StyledActivityIndicatorContainer>
-          <ActivityIndicator />
-        </StyledActivityIndicatorContainer>
-      );
-    }
-
-    return (
-      <View>
-        <ItalicText>{this.props.date}</ItalicText>
-        <Spacer />
-
-        {/* NOTE: A transaction can have multiple funds, this was not reflected in Holtzman */}
-        {this.props.transactionDetails.map(detail => (
-          <TransactionDetail
-            key={detail.id}
-            fundName={detail.fundName}
-            amount={detail.amount}
-          />
-        ))}
-
-        <Row>
-          <StyledH4>{last4(this.props.paymentMethodNumber)}</StyledH4>
-          <Spacer byWidth />
-          <StyledIcon
-            name={this.props.paymentMethod === 'bankAccount' ? 'bank' : 'credit'}
-          />
-        </Row>
-        <StyledH6>{this.props.contributorName}</StyledH6>
-      </View>
-    );
-  }
-}
 
 const enhance = compose(
   withTransaction,
@@ -122,4 +54,59 @@ const enhance = compose(
   })),
 );
 
-export default enhance(Transaction);
+const Transaction = enhance(({
+  date,
+  transactionDetails,
+  contributorName,
+  paymentMethodNumber,
+  paymentMethod,
+  isLoading,
+}) => (
+  <View>
+    <DateText italic isLoading={isLoading}>{date}</DateText>
+    <Spacer />
+
+    {isLoading ? <ActivityIndicator /> : null}
+    {transactionDetails.map(detail => (
+      <TransactionDetail key={detail.id} {...detail} />
+    ))}
+
+    <StyledH6>{contributorName}</StyledH6>
+
+    <Row>
+      <StyledH4>{last4(paymentMethodNumber)}</StyledH4>
+      <Spacer byWidth />
+      <StyledIcon
+        name={paymentMethod === 'bankAccount' ? 'bank' : 'credit'}
+      />
+    </Row>
+  </View>
+));
+
+Transaction.propTypes = {
+  isLoading: PropTypes.bool,
+  date: PropTypes.string,
+  contributorName: PropTypes.string,
+  paymentMethodNumber: PropTypes.string,
+  paymentMethod: PropTypes.oneOf(['bankAccount', 'creditCard']),
+  transactionDetails: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
+    fundName: PropTypes.string,
+    amount: PropTypes.number,
+  })),
+};
+
+Transaction.defaultProps = {
+  isLoading: false,
+  date: '',
+  contributorName: '',
+  paymentMethodNumber: '',
+  paymentMethod: 'creditCard',
+  transactionDetails: [],
+};
+
+
+export default Transaction;

@@ -12,7 +12,6 @@ import BackgroundView from '@ui/BackgroundView';
 import styled from '@ui/styled';
 import { UIText } from '@ui/typography';
 
-import ArrowBackButton from 'give/ArrowBackButton';
 import RecentArticles from 'give/RecentArticles';
 import Schedule from './Schedule';
 
@@ -33,39 +32,30 @@ class ScheduleDetails extends PureComponent {
       PropTypes.string,
       PropTypes.number,
     ]),
-    goBack: PropTypes.func,
   };
 
   static defaultProps = {
     id: undefined,
-    goBack() {},
   };
 
   render() {
     return (
-      <ScrollView>
-        <PaperView>
-          <Header
-            titleText="Schedule"
-            backButton
-          />
-
-          <ArrowBackButton
-            onPress={this.props.goBack}
-          />
-
-          <Schedule
-            id={this.props.id}
-          />
-
-          <Note>
-            {'To change details about a schedule, please cancel the current one and create a new schedule with the desired information. We are sorry for any inconvenience this may cause and are working to provide the ability to edit contribution schedules in the future.'}
-          </Note>
-        </PaperView>
-        <BackgroundView>
+      <BackgroundView>
+        <Header
+          titleText="Schedule"
+          backButton
+          webEnabled
+        />
+        <ScrollView>
+          <PaperView>
+            <Schedule id={this.props.id} />
+            <Note>
+              {'To change details about a schedule, please cancel the current one and create a new schedule with the desired information. We are sorry for any inconvenience this may cause and are working to provide the ability to edit contribution schedules in the future.'}
+            </Note>
+          </PaperView>
           <RecentArticles />
-        </BackgroundView>
-      </ScrollView>
+        </ScrollView>
+      </BackgroundView>
     );
   }
 }
