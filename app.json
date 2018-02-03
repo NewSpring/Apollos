@@ -1,6 +1,8 @@
 {
   "expo": {
     "sdkVersion": "25.0.0",
+    "primaryColor": "#6bac43",
+    "slug": "newspring",
     "ios": {
       "bundleIdentifier": "com.newspring.apollos"
     },

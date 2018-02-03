@@ -34,7 +34,7 @@ const Icon = enhance(({
   const IconComponent = Icons[pascalCase(name)];
   return (
     <Placeholder.Media
-      size={size}
+      size={size === undefined ? 32 : size} // 32 is the default size used within the svg component
       hasRadius
       onReady={!isLoading}
     >

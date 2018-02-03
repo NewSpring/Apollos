@@ -1,15 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { every, words, trim } from 'lodash';
 import { Text as TextInput } from '@ui/inputs';
-import Chip from '@ui/Chip';
-import styled from '@ui/styled';
-
-const KeywordList = styled({
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-}, 'GroupSearchForm.KeywordSelect.List')(View);
+import Chip, { ChipList } from '@ui/Chip';
+import Icon from '@ui/Icon';
+import Touchable from '@ui/Touchable';
 
 // Checks if the second array given is contained, in order, inside the first array
 // [0,1,2,3], [1,2,3] === true
@@ -39,8 +35,14 @@ export const stripKeywordFromQuery = (query, keyword) => {
 class KeywordSelect extends PureComponent {
   static propTypes = {
     onChangeText: PropTypes.func.isRequired,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
     keywords: PropTypes.arrayOf(PropTypes.string),
     value: PropTypes.string,
+  };
+
+  state = {
+    keywordsVisible: false,
   };
 
   toggleKeyword = (keyword) => {
@@ -57,6 +59,16 @@ class KeywordSelect extends PureComponent {
     let str = keyword;
     if (this.props.value && this.props.value.trim().length) str = `${this.props.value}, ${str}`;
     this.props.onChangeText(str);
+  }
+
+  handleFocus = (...args) => {
+    if (this.props.onFocus) this.props.onFocus(...args);
+    if (!this.state.keywordsVisible) this.setState({ keywordsVisible: true });
+  }
+
+  handleBlur = (...args) => {
+    if (this.props.onBlur) this.props.onBlur(...args);
+    if (Platform.OS !== 'web' && this.state.keywordsVisible) this.setState({ keywordsVisible: false });
   }
 
   renderKeyword = (keyword) => {
@@ -79,10 +91,25 @@ class KeywordSelect extends PureComponent {
     } = this.props;
     return (
       <View>
-        <TextInput {...textInputProps} />
-        <KeywordList>
-          {keywords.map(this.renderKeyword)}
-        </KeywordList>
+        <TextInput
+          {...textInputProps}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+          suffix={
+            (Platform.OS === 'web') ? (
+              <Touchable
+                onPress={() => this.setState({ keywordsVisible: !this.state.keywordsVisible })}
+              >
+                <Icon name={this.state.keywordsVisible ? 'arrow-up' : 'arrow-down'} size={18} />
+              </Touchable>
+            ) : null
+          }
+        />
+        {(this.state.keywordsVisible) ? (
+          <ChipList>
+            {keywords.map(this.renderKeyword)}
+          </ChipList>
+        ) : null}
       </View>
     );
   }

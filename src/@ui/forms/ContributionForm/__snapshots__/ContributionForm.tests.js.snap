@@ -101,10 +101,11 @@ exports[`The ContributionForm component renders correctly 1`] = `
               onFocus={[Function]}
               placeholder="0.00"
               placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": "Colfax-Regular",
+                  "fontFamily": "Colfax-Bold",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
@@ -113,6 +114,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 }
               }
               type="numeric"
+              underlineColorAndroid="transparent"
               value="14"
             />
           </View>
@@ -131,9 +133,11 @@ exports[`The ContributionForm component renders correctly 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -155,11 +159,12 @@ exports[`The ContributionForm component renders correctly 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -295,7 +300,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 style={
                   Object {
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
+                    "fontFamily": "Colfax-Bold",
                     "fontSize": 32.4,
                     "fontWeight": "700",
                     "height": 40,
@@ -450,9 +455,11 @@ exports[`The ContributionForm component renders correctly 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -474,11 +481,12 @@ exports[`The ContributionForm component renders correctly 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -564,19 +572,20 @@ exports[`The ContributionForm component renders correctly 1`] = `
     <View
       bordered={true}
       disabled={false}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "transparent",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
-          "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -587,9 +596,10 @@ exports[`The ContributionForm component renders correctly 1`] = `
         style={
           Object {
             "color": "#6bac43",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
@@ -677,20 +687,21 @@ exports[`The ContributionForm component renders correctly 1`] = `
     <View
       bordered={false}
       disabled={true}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "#6bac43",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
-          "elevation": 4,
+          "elevation": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 0.5,
           "overflow": "hidden",
-          "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -701,9 +712,10 @@ exports[`The ContributionForm component renders correctly 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
@@ -816,10 +828,11 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
               onFocus={[Function]}
               placeholder="0.00"
               placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": "Colfax-Regular",
+                  "fontFamily": "Colfax-Bold",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
@@ -828,6 +841,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 }
               }
               type="numeric"
+              underlineColorAndroid="transparent"
               value="14"
             />
           </View>
@@ -846,9 +860,11 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -870,11 +886,12 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -1010,7 +1027,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 style={
                   Object {
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
+                    "fontFamily": "Colfax-Bold",
                     "fontSize": 32.4,
                     "fontWeight": "700",
                     "height": 40,
@@ -1165,9 +1182,11 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -1189,11 +1208,12 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -1346,10 +1366,11 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
               onFocus={[Function]}
               placeholder="0.00"
               placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": "Colfax-Regular",
+                  "fontFamily": "Colfax-Bold",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
@@ -1358,6 +1379,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 }
               }
               type="numeric"
+              underlineColorAndroid="transparent"
               value="23"
             />
           </View>
@@ -1376,9 +1398,11 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -1400,11 +1424,12 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -1540,7 +1565,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 style={
                   Object {
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
+                    "fontFamily": "Colfax-Bold",
                     "fontSize": 32.4,
                     "fontWeight": "700",
                     "height": 40,
@@ -1690,9 +1715,11 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -1714,11 +1741,12 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -1804,19 +1832,20 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     <View
       bordered={true}
       disabled={false}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "transparent",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
-          "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -1827,9 +1856,10 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
         style={
           Object {
             "color": "#6bac43",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
@@ -1917,20 +1947,21 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     <View
       bordered={false}
       disabled={true}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "#6bac43",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
-          "elevation": 4,
+          "elevation": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 0.5,
           "overflow": "hidden",
-          "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -1941,9 +1972,10 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
@@ -2056,10 +2088,11 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
               onFocus={[Function]}
               placeholder="0.00"
               placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": "Colfax-Regular",
+                  "fontFamily": "Colfax-Bold",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
@@ -2068,6 +2101,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                 }
               }
               type="numeric"
+              underlineColorAndroid="transparent"
               value="14"
             />
           </View>
@@ -2086,9 +2120,11 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -2110,11 +2146,12 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -2250,7 +2287,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                 style={
                   Object {
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
+                    "fontFamily": "Colfax-Bold",
                     "fontSize": 32.4,
                     "fontWeight": "700",
                     "height": 40,
@@ -2405,9 +2442,11 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -2429,11 +2468,12 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -2519,19 +2559,20 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
     <View
       bordered={true}
       disabled={false}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "transparent",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
-          "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -2542,9 +2583,10 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
         style={
           Object {
             "color": "#6bac43",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
@@ -2632,20 +2674,21 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
     <View
       bordered={false}
       disabled={true}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "#6bac43",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
-          "elevation": 4,
+          "elevation": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 0.5,
           "overflow": "hidden",
-          "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -2656,9 +2699,10 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
@@ -2831,10 +2875,11 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
               onFocus={[Function]}
               placeholder="0.00"
               placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": "Colfax-Regular",
+                  "fontFamily": "Colfax-Bold",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
@@ -2843,6 +2888,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                 }
               }
               type="numeric"
+              underlineColorAndroid="transparent"
               value="14"
             />
           </View>
@@ -2861,9 +2907,11 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -2885,11 +2933,12 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -3025,7 +3074,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                 style={
                   Object {
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
+                    "fontFamily": "Colfax-Bold",
                     "fontSize": 32.4,
                     "fontWeight": "700",
                     "height": 40,
@@ -3180,9 +3229,11 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -3204,11 +3255,12 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -3294,19 +3346,20 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
     <View
       bordered={true}
       disabled={false}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "transparent",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
-          "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -3317,9 +3370,10 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
         style={
           Object {
             "color": "#6bac43",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
@@ -3407,20 +3461,21 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
     <View
       bordered={false}
       disabled={true}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "#6bac43",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
-          "elevation": 4,
+          "elevation": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 0.5,
           "overflow": "hidden",
-          "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -3431,9 +3486,10 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
@@ -3546,10 +3602,11 @@ exports[`The ContributionForm component shows the second fund 1`] = `
               onFocus={[Function]}
               placeholder="0.00"
               placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
               style={
                 Object {
                   "color": "#303030",
-                  "fontFamily": "Colfax-Regular",
+                  "fontFamily": "Colfax-Bold",
                   "fontSize": 32.4,
                   "fontWeight": "700",
                   "height": 40,
@@ -3558,6 +3615,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                 }
               }
               type="numeric"
+              underlineColorAndroid="transparent"
               value="14"
             />
           </View>
@@ -3576,9 +3634,11 @@ exports[`The ContributionForm component shows the second fund 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -3600,11 +3660,12 @@ exports[`The ContributionForm component shows the second fund 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -3740,7 +3801,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                 style={
                   Object {
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
+                    "fontFamily": "Colfax-Bold",
                     "fontSize": 32.4,
                     "fontWeight": "700",
                     "height": 40,
@@ -3895,9 +3956,11 @@ exports[`The ContributionForm component shows the second fund 1`] = `
           pointerEvents="none"
           style={
             Object {
+              "bottom": 0,
               "justifyContent": "center",
               "opacity": 0.8,
               "position": "absolute",
+              "top": 0,
               "transform": Array [
                 Object {
                   "scale": 0.8,
@@ -3919,11 +3982,12 @@ exports[`The ContributionForm component shows the second fund 1`] = `
             style={
               Object {
                 "backgroundColor": "transparent",
-                "color": "#303030",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "paddingTop": 2.7,
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -4009,19 +4073,20 @@ exports[`The ContributionForm component shows the second fund 1`] = `
     <View
       bordered={true}
       disabled={false}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "transparent",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 1,
           "overflow": "hidden",
-          "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -4032,9 +4097,10 @@ exports[`The ContributionForm component shows the second fund 1`] = `
         style={
           Object {
             "color": "#6bac43",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
@@ -4122,20 +4188,21 @@ exports[`The ContributionForm component shows the second fund 1`] = `
     <View
       bordered={false}
       disabled={true}
-      pill={false}
+      pill={true}
       style={
         Object {
           "alignItems": "center",
           "backgroundColor": "#6bac43",
           "borderColor": "#6bac43",
-          "borderRadius": 6,
+          "borderRadius": 60,
           "borderWidth": 2,
-          "elevation": 4,
+          "elevation": 2,
           "flexDirection": "row",
+          "height": 60,
           "justifyContent": "center",
           "opacity": 0.5,
           "overflow": "hidden",
-          "padding": 10,
+          "paddingHorizontal": 20,
         }
       }
     >
@@ -4146,9 +4213,10 @@ exports[`The ContributionForm component shows the second fund 1`] = `
         style={
           Object {
             "color": "#ffffff",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
             "paddingTop": 2.7,
           }
         }
