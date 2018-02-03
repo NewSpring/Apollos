@@ -1,17 +1,20 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, StyleSheet } from 'react-native';
-import { UIText } from '@ui/typography';
+import { H6 } from '@ui/typography';
 import styled from '@ui/styled';
 
 export const LabelText = styled(({ theme }) => ({
+  color: theme.colors.text.secondary,
   backgroundColor: 'transparent',
   paddingVertical: theme.sizing.baseUnit / 4,
-}), 'FloatingLabel.LabelText')(UIText);
+}), 'FloatingLabel.LabelText')(H6);
 
 const styles = StyleSheet.create({
   floatLabelView: {
     position: 'absolute',
+    bottom: 0,
+    top: 0,
     justifyContent: 'center',
   },
 });
@@ -57,7 +60,7 @@ class FloatingLabel extends PureComponent {
     });
     const translateY = this.props.animation.interpolate({
       inputRange: [0, 1],
-      outputRange: [0, -this.state.labelHeight],
+      outputRange: [0, -(this.state.labelHeight * 0.7)],
     });
     const translateX = this.props.animation.interpolate({
       inputRange: [0, 1],

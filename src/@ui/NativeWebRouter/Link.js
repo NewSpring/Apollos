@@ -62,6 +62,8 @@ export default class Link extends Component {
     const { history } = this.context.router;
     const { to, replace, pop } = this.props;
 
+    if (!to && !pop) return null;
+
     // handle web links
     if (to && to.indexOf('http') > -1) {
       return Linking.openURL(to);

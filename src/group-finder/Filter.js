@@ -1,36 +1,58 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View } from 'react-native';
-import { compose } from 'recompose';
+import { StyleSheet, View, ScrollView } from 'react-native';
+import { compose, withProps } from 'recompose';
 import { get, without, debounce } from 'lodash';
 import pluralize from 'pluralize';
 
-import Placeholder from '@ui/Placeholder';
 import withCampuses from '@data/withCampuses';
 import withGroupAttributes from '@data/withGroupAttributes';
-import { H4, H6, UIText } from '@ui/typography';
+import { H4, H6, H7 } from '@ui/typography';
 import Icon from '@ui/Icon';
 import Chip, { ChipList } from '@ui/Chip';
 import PaddedView from '@ui/PaddedView';
 import styled from '@ui/styled';
 import Touchable from '@ui/Touchable';
-import { withTheme } from '@ui/theme';
 import { Text as TextInput } from '@ui/inputs';
+import TableView, { FormFields } from '@ui/TableView';
+import { enhancer as mediaQuery } from '@ui/MediaQuery';
 
 const enhance = compose(
-  withTheme(),
   withCampuses,
   withGroupAttributes,
 );
 
+const Filters = styled({ alignItems: 'center', paddingHorizontal: 0 })(PaddedView);
+const List = styled({ alignItems: 'center', justifyContent: 'center' })(ChipList);
+
+const NumResultsText = styled(({ theme }) => ({
+  color: theme.colors.text.tertiary,
+}))(H6);
+
 const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-const Toolbar = styled(({ theme }) => ({
-  borderBottomWidth: StyleSheet.hairlineWidth,
-  borderBottomColor: theme.colors.shadows.default,
-  paddingHorizontal: theme.sizing.baseUnit / 2,
-  paddingBottom: 0,
-  paddingTop: theme.sizing.baseUnit / 4,
+const Toolbar = compose(
+  mediaQuery(({ md }) => ({ minWidth: md }), styled(({ theme }) => ({
+    paddingHorizontal: theme.sizing.baseUnit,
+    paddingTop: theme.sizing.baseUnit,
+    paddingBottom: theme.sizing.baseUnit - (theme.sizing.baseUnit / 2),
+  }))),
+  styled(({ theme }) => ({
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: theme.colors.shadows.default,
+    paddingHorizontal: theme.sizing.baseUnit / 2,
+    paddingBottom: 0,
+    paddingTop: theme.sizing.baseUnit / 2,
+    backgroundColor: theme.colors.background.paper,
+  })),
+  withProps({
+    showsHorizontalScrollIndicator: false,
+    horizontal: true,
+  }),
+)(ScrollView);
+
+const FilterLists = styled(({ theme }) => ({
+  backgroundColor: theme.colors.background.paper,
 }))(PaddedView);
 
 const SearchPrompt = styled({
@@ -56,7 +78,6 @@ class Filter extends PureComponent {
     onUpdateFilter: PropTypes.func,
     numResults: PropTypes.number,
     isLoadingResults: PropTypes.bool,
-    theme: PropTypes.shape({ helpers: PropTypes.shape({ rem: PropTypes.func }) }),
   }
 
   static defaultProps = {
@@ -191,52 +212,54 @@ class Filter extends PureComponent {
               icon={this.state.showFilters ? 'arrow-up' : 'arrow-down'}
             />
           </ChipList>
-
-          {this.state.showFilters ? (
-            <View>
-              <H4>Featured Tags</H4>
-              <ChipList>
-                {this.props.groupAttributes.map(this.renderTag)}
-              </ChipList>
-
-              <H4>Day of Week</H4>
-              <ChipList>
-                {daysOfWeek.map(this.renderDay)}
-              </ChipList>
-
-              <H4>Campuses</H4>
-              <ChipList>
-                {this.props.campuses.map(this.renderCampus)}
-              </ChipList>
-            </View>
-          ) : null}
-
         </Toolbar>
 
+        {this.state.showFilters ? (
+          <FilterLists>
+            <View>
+              <Filters>
+                <H4>Featured Tags</H4>
+                <List>
+                  {this.props.groupAttributes.map(this.renderTag)}
+                </List>
+              </Filters>
+              <Filters>
+                <H4>Day of Week</H4>
+                <List>
+                  {daysOfWeek.map(this.renderDay)}
+                </List>
+              </Filters>
+              <Filters>
+                <H4>Campuses</H4>
+                <List>
+                  {this.props.campuses.map(this.renderCampus)}
+                </List>
+              </Filters>
+            </View>
+          </FilterLists>
+        ) : null}
+
         {(this.state.showSearch || this.props.query.q) ? (
-          <Toolbar>
-            <TextInput
-              placeholder="Find a group by name, campus, zipcode, or description"
-              value={this.state.searchText}
-              onChangeText={this.handleTextSearch}
-              prefix={<Icon name="search" />}
-              suffix={
-                <UIText onPress={this.cancelSearch}>Cancel</UIText>
-              }
-            />
-          </Toolbar>
+          <TableView responsive={false}>
+            <FormFields>
+              <TextInput
+                autoFocus
+                placeholder="Search"
+                value={this.state.searchText}
+                onChangeText={this.handleTextSearch}
+                prefix={<Icon name="search" />}
+                suffix={
+                  <H7 onPress={this.cancelSearch}>Cancel</H7>
+                }
+              />
+            </FormFields>
+          </TableView>
         ) : null}
 
         <SearchPrompt>
-          <Placeholder.Line
-            width={'40%'}
-            textSize={this.props.theme.helpers.rem(1.4)}
-            onReady={!this.props.isLoadingResults}
-          >
-            <H6>{pluralize('Result', this.props.numResults, true)}</H6>
-          </Placeholder.Line>
+          <NumResultsText isLoading={this.props.isLoadingResults}>{pluralize('Result', this.props.numResults, true)}</NumResultsText>
           <Touchable onPress={this.toggleSearch}>
-            <Icon name="search" />
+            <Icon isLoading={this.props.isLoadingResults} name="search" />
           </Touchable>
         </SearchPrompt>
       </View>

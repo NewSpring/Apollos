@@ -59,6 +59,7 @@ const enhance = compose(
     iconSize: PropTypes.number,
     to: Link.propTypes.to,
     color: PropTypes.string,
+    onPress: PropTypes.func,
   }),
 );
 

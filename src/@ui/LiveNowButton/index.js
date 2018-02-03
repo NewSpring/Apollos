@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Platform } from 'react-native';
 import { compose, setPropTypes } from 'recompose';
 import { withThemeMixin } from '@ui/theme';
 import withLiveNow from '@data/withLiveNow';
@@ -26,7 +27,7 @@ const LiveNowButton = enhance(({
   titleText = 'NewSpring Church Live, Watch Now!',
   liveNowPath = '/live',
 }) => {
-  if (!isLive) return null;
+  if (!isLive || Platform.OS === 'web') return null;
   return (
     <Link to={liveNowPath}>
       <Container>

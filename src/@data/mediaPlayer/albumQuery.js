@@ -16,6 +16,7 @@ export default gql`
           channelId
         }
         content {
+          isLiked
           tracks {
             title
             duration
