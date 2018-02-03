@@ -11,49 +11,86 @@ exports[`The Picker Input component should render correctly 1`] = `
   <View
     style={
       Object {
-        "alignItems": "center",
-        "flexDirection": "row",
         "height": 40,
-        "justifyContent": "space-between",
         "paddingVertical": 5,
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "backgroundColor": "transparent",
-          "color": "#303030",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
-          "paddingTop": 2.7,
-          "paddingVertical": 5,
+          "flexDirection": "row",
+          "justifyContent": "center",
         }
       }
     >
-      Some label text
-    </Text>
-    <RCTSwitch
-      disabled={false}
-      onChange={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      onTintColor="#6bac43"
-      style={
-        Array [
+      <View
+        style={
           Object {
-            "height": 31,
-            "width": 51,
-          },
-          undefined,
-        ]
-      }
-      value={false}
-    />
+            "alignItems": "center",
+            "justifyContent": "center",
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
+              "paddingVertical": 5,
+            }
+          }
+        >
+          Some label text
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <RCTSwitch
+          activeThumbColor="#ffffff"
+          activeTrackColor="#6bac43"
+          disabled={false}
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          onTintColor="#6bac43"
+          style={
+            Array [
+              Object {
+                "height": 31,
+                "width": 51,
+              },
+              undefined,
+            ]
+          }
+          tintColor="#dddddd"
+          trackColor="#dddddd"
+          value={false}
+        />
+      </View>
+    </View>
   </View>
 </View>
 `;
