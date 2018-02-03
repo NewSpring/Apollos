@@ -3,10 +3,10 @@ import { View } from 'react-native';
 import Placeholder from 'rn-placeholder';
 import styled from '@ui/styled';
 
-export const Media = styled(({ theme, size = '100%' }) => ({
+export const Media = styled(({ borderRadius, theme, size = '100%' }) => ({
   height: size,
   width: size,
-  borderRadius: theme.sizing.borderRadius,
+  borderRadius: borderRadius || theme.sizing.borderRadius,
   backgroundColor: theme.colors.background.inactive,
 }), 'Placeholder.Media')(({ style }) => (
   <View style={style} />

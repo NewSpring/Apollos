@@ -9,6 +9,8 @@ const Image = compose(
   getIsLoading,
   styled({
     ...StyleSheet.absoluteFillObject,
+    width: '100%',
+    height: '100%',
     resizeMode: 'cover',
   }, 'Card.Image'),
 )(ConnectedImage);

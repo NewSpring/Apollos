@@ -57,8 +57,8 @@ exports[`The Picker Input component should render correctly 1`] = `
           style={
             Object {
               "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
               "height": 40,
               "lineHeight": 30,
               "paddingTop": 2.7,
@@ -213,9 +213,11 @@ exports[`The Picker Input component should render correctly 1`] = `
     pointerEvents="none"
     style={
       Object {
+        "bottom": 0,
         "justifyContent": "center",
         "opacity": 1,
         "position": "absolute",
+        "top": 0,
         "transform": Array [
           Object {
             "scale": 1,
@@ -237,11 +239,12 @@ exports[`The Picker Input component should render correctly 1`] = `
       style={
         Object {
           "backgroundColor": "transparent",
-          "color": "#303030",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
-          "paddingTop": 2.7,
+          "color": "#505050",
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 15.75,
+          "lineHeight": 17.75,
+          "paddingBottom": 1.8,
+          "paddingTop": 2.25,
           "paddingVertical": 5,
         }
       }

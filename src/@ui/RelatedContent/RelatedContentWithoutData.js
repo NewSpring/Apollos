@@ -2,10 +2,10 @@ import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, defaultProps, branch, withProps } from 'recompose';
-import { get, times } from 'lodash';
+import { times } from 'lodash';
 
 import { Link } from '@ui/NativeWebRouter';
-import { getLinkPath } from '@utils/content';
+import { getLinkPath, getItemImages } from '@utils/content';
 import { withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import { H5 } from '@ui/typography';
@@ -37,7 +37,8 @@ const enhance = compose(
   pure,
   setPropTypes({
     content: PropTypes.array,
-    sectionTitle: PropTypes.string,
+    sectionTitle: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+    renderItem: PropTypes.func,
     isLoading: PropTypes.bool,
   }),
   defaultProps({
@@ -53,24 +54,21 @@ const enhance = compose(
   })),
 );
 
-const getItemImages = (item) => {
-  let images = get(item, 'content.images', []);
-  if (!images.length) images = get(item, 'parent.content.images', [{}]);
-  return images[0].url; // TODO short circuit. Highliner should handle image selection in the array
-};
-
-const renderItems = (content = []) => (
-  content.map(item => (
-    <Link to={getLinkPath(item)} key={item.id}>
-      <ThumbnailCard
-        title={item.title}
-        category={item.channelName}
-        images={getItemImages(item)}
-        isLoading={item.isLoading}
-      />
-    </Link>
-  ))
+const defaultItemRenderer = item => (
+  <Link to={getLinkPath(item)} key={item.id}>
+    <ThumbnailCard
+      title={item.title}
+      category={item.channelName}
+      images={getItemImages(item)}
+      isLoading={item.isLoading}
+    />
+  </Link>
 );
+
+const renderSectionTitle = (sectionTitle) => {
+  if (typeof sectionTitle !== 'string') return sectionTitle;
+  return (<Title>{sectionTitle}</Title>);
+};
 
 const Wrapper = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit,
@@ -85,12 +83,13 @@ const Title = styled(({ theme }) => ({
 
 const RelatedContentWithoutData = enhance(({
   sectionTitle,
+  renderItem = defaultItemRenderer,
   content,
   style,
 }) => (
   <Wrapper style={style}>
-    {sectionTitle ? (<Title>{sectionTitle}</Title>) : null}
-    {renderItems(content)}
+    {sectionTitle ? renderSectionTitle(sectionTitle) : null}
+    {content.map(renderItem)}
   </Wrapper>
 ));
 
