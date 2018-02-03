@@ -34,7 +34,7 @@ const getExpPublishName = () => (
   `${packageName}-${branchName}`.replace(/[^a-zA-Z0-9\\-]/, '-')
 );
 
-const status = ({ state = 'pending', description = '', error } = {}) => {
+const status = async ({ state = 'pending', description = '', error } = {}) => {
   console.log(description);
   if (GITHUB_TOKEN_FOR_STATUSES && TRAVIS_PULL_REQUEST_SHA && EXP_USERNAME) {
     // send a status:
@@ -48,7 +48,7 @@ const status = ({ state = 'pending', description = '', error } = {}) => {
       context: 'deploy/exponent',
     }
 
-    request.post(
+    return request.post(
       {
         url: statusUrl,
         headers: {
@@ -71,7 +71,7 @@ const status = ({ state = 'pending', description = '', error } = {}) => {
 };
 
 const cwd = __dirname + '/../';
-const spawn = (task, args, onClose) => {
+const spawn =  (task, args, onClose) => {
   const child = childProcess.spawn(task, args, {
     stdio: 'inherit',
     env: process.env,
@@ -92,10 +92,10 @@ writePackageJSON(modifiedPackage);
 
 // Start Deploy:
 status({ description: 'Logging into expo...' });
-spawn(exp, ['login', '-u', EXP_USERNAME, '-p', EXP_PASSWORD], (loginError) => {
+spawn(exp, ['login', '-u', EXP_USERNAME, '-p', EXP_PASSWORD], async (loginError) => {
   if (loginError) return status({ state: 'error', description: 'Expo Login Failed', error: loginError });
 
-  status({ description: 'Publishing project to expo...' });
+  await status({ description: 'Publishing project to expo...' });
   spawn(exp, ['publish', '--non-interactive'], (publishError) => {
     if (publishError) return status({ state: 'error', description: 'Expo publish failed', error: publishError });
 
