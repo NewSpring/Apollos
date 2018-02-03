@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "NewSpring",
-    "description": "The official NewSpring mobile application.",
-    "slug": "newspring-apollos",
     "sdkVersion": "25.0.0",
+    "name": "NewSpring",
     "version": "6.0.0",
+    "description": "The official NewSpring mobile app.",
+    "primaryColor": "#6bac43",
+    "slug": "newspring",
     "orientation": "portrait",
     "ios": {
       "bundleIdentifier": "com.subsplashstudio31.NewSpring-Church",

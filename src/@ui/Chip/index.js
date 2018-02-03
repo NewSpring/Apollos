@@ -2,7 +2,11 @@
 import React from 'react';
 import { compose, mapProps } from 'recompose';
 
-import { UIText } from '@ui/typography';
+// touchable native feedback currently is having flex layout issues
+// on react-native android, so we fall back to TouchableOpacity
+import { TouchableOpacity } from 'react-native';
+
+import { H6 } from '@ui/typography';
 import Button from '@ui/Button';
 import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
@@ -19,16 +23,19 @@ const enhance = compose(
   })),
 );
 
-const StyledUIText = styled({
-  flexGrow: 1,
+const TitleText = styled(({ withIcon = false }) => ({
+  ...(withIcon ? { flexGrow: 1 } : {}),
   textAlign: 'center',
   alignItems: 'center',
   justifyContent: 'center',
   paddingHorizontal: 6,
-})(UIText);
+}))(H6);
 
 const StyledButton = styled(({ theme }) => ({
   justifyContent: 'flex-end',
+  paddingHorizontal: theme.sizing.baseUnit / 4,
+  paddingVertical: theme.sizing.baseUnit / 4,
+  height: theme.sizing.baseUnit * 2,
   marginRight: theme.sizing.baseUnit / 2,
   marginBottom: theme.sizing.baseUnit / 2,
 }), 'Chip')(Button);
@@ -39,10 +46,11 @@ const Chip = enhance(({
   iconSize,
   selected,
   title,
+  pill = false,
   ...buttonProps
 }) => (
-  <StyledButton {...buttonProps}>
-    {title ? <StyledUIText>{title}</StyledUIText> : null}
+  <StyledButton TouchableComponent={TouchableOpacity} pill={pill} {...buttonProps}>
+    {title ? <TitleText withIcon={icon}>{title}</TitleText> : null}
     {icon ? <Icon name={icon} style={iconStyles} size={iconSize} /> : null}
   </StyledButton>
 ));
