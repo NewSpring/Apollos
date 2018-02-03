@@ -9,6 +9,7 @@ export { default as Cell } from './Cell';
 export { default as CellText } from './CellText';
 export { default as CellIcon } from './CellIcon';
 export { default as Divider } from './Divider';
+export { default as FormFields } from './FormFields';
 
 const TableView = compose(
   setPropTypes({

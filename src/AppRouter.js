@@ -20,6 +20,7 @@ import Series, { Sermon, SeriesSingle, SeriesTrailer } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
+import Locations from './locations';
 import Live from './live';
 import Auth from './auth';
 import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
@@ -180,6 +181,8 @@ class AppRouter extends PureComponent {
               <Route exact path="/give/schedules/:id" component={give.ScheduleDetails} />
 
               <Route path="/give" component={give.GiveRoutes} />
+
+              <Route path="/locations" component={Locations} />
 
               <Route path="/login" component={Auth} cardStackDirection="vertical" />
 

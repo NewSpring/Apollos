@@ -4,7 +4,23 @@ import { compose } from 'recompose';
 import get from 'lodash/get';
 import Client from '@data/Client';
 import { withProtectedFunction } from '@ui/NativeWebRouter';
-import { contentCard, groupCard } from './fragments';
+
+const contentCard = gql`
+  fragment ContentCard on Content {
+    __typename
+    id
+    content {
+      isLiked
+    }
+  }
+`;
+
+const groupCard = gql`
+  fragment GroupCard on Group {
+    __typename
+    id
+  }
+`;
 
 // TODO: groups cannot be liked yet
 export const MUTATION = gql`
@@ -33,6 +49,7 @@ export default compose(
           variables: {
             nodeId,
           },
+          refetchQueries: ['UserLikes', 'RecentlyLiked'],
           optimisticResponse: {
             toggleLike: {
               __typename: 'LikesMutationResponse',
