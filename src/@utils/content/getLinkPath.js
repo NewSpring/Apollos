@@ -5,6 +5,10 @@ const getLinkPath = (contentItem) => {
   const category = contentItem.channelName;
   const seriesId = contentItem.parent && (contentItem.parent.id || contentItem.parent.id);
 
+  if (contentItem && contentItem.__typename === 'Group') { // eslint-disable-line
+    return `/groups/${id}`;
+  }
+
   switch (category) {
     case 'series_newspring':
       return `/series/${id}`;
