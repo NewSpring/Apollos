@@ -6,26 +6,39 @@ import { compose, setPropTypes } from 'recompose';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 
+import TableView, { FormFields } from '@ui/TableView';
+import PaddedView from '@ui/PaddedView';
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
+import Icon from '@ui/Icon';
+import { withTheme } from '@ui/theme';
+import styled from '@ui/styled';
 
 import getLocation from '@utils/getLocation';
 
 import KeywordSelect, { keywordIsInQuery, stripKeywordFromQuery } from './KeywordSelect';
+
+const SwitchIcon = compose(
+  styled(({ theme }) => ({
+    marginRight: theme.sizing.baseUnit / 2,
+  })),
+  withTheme(({ theme, enabled = false }) => ({
+    ...(enabled ? { fill: theme.colors.primary } : {}),
+  })),
+)(Icon);
 
 const enhance = compose(
   setPropTypes({
     onSubmit: PropTypes.func,
   }),
   withFormik({
-    mapPropsToValues: ({ campuses = [] } = {}) => ({
+    mapPropsToValues: () => ({
       useDeviceLocation: true,
-      campusId: campuses[0] && campuses[0].name.toLowerCase(),
+      campusId: null, // campuses[0] && campuses[0].name.toLowerCase(),
     }),
     enableReinitialize: true,
     validationSchema: Yup.object().shape({
       query: Yup.string(),
-      campusId: Yup.string(),
       zipCode: Yup.string(),
       useDeviceLocation: Yup.bool(),
     }),
@@ -59,11 +72,13 @@ const enhance = compose(
         }
       }
 
-      query.campus = values.campusId; // NOTE: This is bad
+      if (values.campusId) query.campus = values.campusId; // NOTE: This is bad
       // query.campuses = [values.campusId] || [];
+
       query.zip = (values.zipCode && !query.latitude && !query.longitude) ? values.zipCode : null;
 
-      return props.onSubmit(query);
+      props.onSubmit(query);
+      return setSubmitting(false);
     },
   }),
   setPropTypes({
@@ -91,41 +106,57 @@ export const GroupSearchForm = enhance(({
   isSubmitting,
 }) => (
   <View>
-    <KeywordSelect
-      label="Groups I'm looking for..."
-      keywords={groupAttributes.map(attr => attr.value)}
-      value={values.query}
-      onChangeText={value => setFieldValue('query', value)}
-      onBlur={() => setFieldTouched('query')}
-    />
-    <Inputs.Picker
-      label="Campus"
-      value={values.campusId}
-      displayValue={get(campuses.find(campus => campus.name.toLowerCase() === values.campusId), 'name')}
-      onValueChange={value => setFieldValue('campusId', value)}
-      error={errors.campusId}
-    >
-      {/* NOTE: value should use id but heighliner doesn't support that yet */}
-      {campuses.map(({ name, id }) => (
-        <Inputs.PickerItem label={name} value={name.toLowerCase()} key={id} />
-      ))}
-    </Inputs.Picker>
-    <Inputs.Text
-      label="Zip Code"
-      disabled={values.useDeviceLocation}
-      type="numeric"
-      value={values.zipCode}
-      onChangeText={value => setFieldValue('zipCode', value)}
-      onBlur={() => setFieldTouched('zipCode')}
-      error={touched.zipCode && errors.zipCode}
-    />
-    <Inputs.Switch
-      label="Use my current location"
-      value={values.useDeviceLocation}
-      onValueChange={value => setFieldValue('useDeviceLocation', value)}
-      error={errors.useDeviceLocation}
-    />
-    <Button onPress={handleSubmit} title="Let's Go!" type="primary" disabled={!isValid} loading={isSubmitting} />
+    <TableView>
+      <FormFields>
+        <KeywordSelect
+          label="Groups I'm looking for..."
+          keywords={groupAttributes.map(attr => attr.value)}
+          value={values.query}
+          onChangeText={value => setFieldValue('query', value)}
+          onBlur={() => setFieldTouched('query')}
+        />
+      </FormFields>
+    </TableView>
+    <TableView>
+      <FormFields>
+        <Inputs.Picker
+          label="Campus"
+          value={values.campusId}
+          displayValue={
+            get(campuses.find(campus => campus.name.toLowerCase() === values.campusId), 'name') || 'All Locations'
+          }
+          onValueChange={value => setFieldValue('campusId', value)}
+          error={errors.campusId}
+        >
+          {/* NOTE: value should use id but heighliner doesn't support that yet */}
+          <Inputs.PickerItem label="All Locations" value={null} key={'all'} />
+          {campuses.map(({ name, id }) => (
+            <Inputs.PickerItem label={name} value={name.toLowerCase()} key={id} />
+          ))}
+        </Inputs.Picker>
+        {(!values.useDeviceLocation) ? (
+          <Inputs.Text
+            label="Zip Code"
+            disabled={values.useDeviceLocation}
+            type="numeric"
+            value={values.zipCode}
+            onChangeText={value => setFieldValue('zipCode', value)}
+            onBlur={() => setFieldTouched('zipCode')}
+            error={touched.zipCode && errors.zipCode}
+          />
+        ) : null}
+        <Inputs.Switch
+          prefix={<SwitchIcon enabled={values.useDeviceLocation} name="locate" size={18} />}
+          label="Near my location"
+          value={values.useDeviceLocation}
+          onValueChange={value => setFieldValue('useDeviceLocation', value)}
+          error={errors.useDeviceLocation}
+        />
+      </FormFields>
+    </TableView>
+    <PaddedView vertical={false}>
+      <Button onPress={handleSubmit} title="Let's Go!" type="primary" disabled={!isValid} loading={isSubmitting} />
+    </PaddedView>
   </View>
 ));
 

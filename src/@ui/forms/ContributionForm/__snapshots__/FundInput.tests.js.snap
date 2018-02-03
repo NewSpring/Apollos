@@ -100,10 +100,11 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             onFocus={[Function]}
             placeholder="0.00"
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 32.4,
                 "fontWeight": "700",
                 "height": 40,
@@ -112,6 +113,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               }
             }
             type="numeric"
+            underlineColorAndroid="transparent"
             value=""
           />
         </View>
@@ -130,9 +132,11 @@ exports[`The FrequencyInput component should render correctly 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -154,11 +158,12 @@ exports[`The FrequencyInput component should render correctly 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -294,8 +299,8 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               style={
                 Object {
                   "color": "#6bac43",
-                  "fontFamily": "Colfax-Regular",
-                  "fontSize": 18,
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
                   "height": 40,
                   "lineHeight": 30,
                   "paddingTop": 2.7,
@@ -448,9 +453,11 @@ exports[`The FrequencyInput component should render correctly 1`] = `
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 1,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 1,
@@ -472,11 +479,12 @@ exports[`The FrequencyInput component should render correctly 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -632,10 +640,11 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             onFocus={[Function]}
             placeholder="0.00"
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 32.4,
                 "fontWeight": "700",
                 "height": 40,
@@ -644,6 +653,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               }
             }
             type="numeric"
+            underlineColorAndroid="transparent"
             value=""
           />
         </View>
@@ -662,9 +672,11 @@ exports[`The FrequencyInput component should render correctly as the first fund 
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -686,11 +698,12 @@ exports[`The FrequencyInput component should render correctly as the first fund 
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -826,8 +839,8 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               style={
                 Object {
                   "color": "#6bac43",
-                  "fontFamily": "Colfax-Regular",
-                  "fontSize": 18,
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
                   "height": 40,
                   "lineHeight": 30,
                   "paddingTop": 2.7,
@@ -980,9 +993,11 @@ exports[`The FrequencyInput component should render correctly as the first fund 
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 1,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 1,
@@ -1004,11 +1019,12 @@ exports[`The FrequencyInput component should render correctly as the first fund 
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -1164,10 +1180,11 @@ exports[`The FrequencyInput component should render correctly with initial state
             onFocus={[Function]}
             placeholder="0.00"
             placeholderTextColor="rgba(48, 48, 48, 0.6)"
+            returnKeyType="done"
             style={
               Object {
                 "color": "#303030",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Bold",
                 "fontSize": 32.4,
                 "fontWeight": "700",
                 "height": 40,
@@ -1176,6 +1193,7 @@ exports[`The FrequencyInput component should render correctly with initial state
               }
             }
             type="numeric"
+            underlineColorAndroid="transparent"
             value=""
           />
         </View>
@@ -1194,9 +1212,11 @@ exports[`The FrequencyInput component should render correctly with initial state
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 0.8,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 0.8,
@@ -1218,11 +1238,12 @@ exports[`The FrequencyInput component should render correctly with initial state
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -1358,8 +1379,8 @@ exports[`The FrequencyInput component should render correctly with initial state
               style={
                 Object {
                   "color": "#6bac43",
-                  "fontFamily": "Colfax-Regular",
-                  "fontSize": 18,
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
                   "height": 40,
                   "lineHeight": 30,
                   "paddingTop": 2.7,
@@ -1512,9 +1533,11 @@ exports[`The FrequencyInput component should render correctly with initial state
         pointerEvents="none"
         style={
           Object {
+            "bottom": 0,
             "justifyContent": "center",
             "opacity": 1,
             "position": "absolute",
+            "top": 0,
             "transform": Array [
               Object {
                 "scale": 1,
@@ -1536,11 +1559,12 @@ exports[`The FrequencyInput component should render correctly with initial state
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
