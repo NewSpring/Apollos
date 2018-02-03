@@ -17,11 +17,11 @@ const {
 const exp = './node_modules/exp/bin/exp.js';
 
 const readPackageJSON = () => (
-  JSON.parse(fs.readFileSync('./package.json'))
+  JSON.parse(fs.readFileSync('./app.json'))
 );
 
 const writePackageJSON = (content) => {
-  fs.writeFileSync('./package.json', JSON.stringify(content, null, 2));
+  fs.writeFileSync('./app.json', JSON.stringify(content, null, 2));
 }
 
 const githubOrg = (TRAVIS_REPO_SLUG || '').split('/')[0];
@@ -84,7 +84,7 @@ const spawn = (task, args, onClose) => {
 // Overwrite package.json name
 status({ description: 'Preparing build...' });
 const modifiedPackage = Object.assign({}, package, {
-  name: getExpPublishName(),
+  slug: getExpPublishName(),
   privacy: EXPO_PRIVACY || 'unlisted',
 })
 
