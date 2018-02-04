@@ -28,7 +28,7 @@ const githubOrg = (TRAVIS_REPO_SLUG || '').split('/')[0];
 const githubRepo = (TRAVIS_REPO_SLUG || '').split('/')[1];
 const branchName = TRAVIS_PULL_REQUEST_BRANCH || TRAVIS_BRANCH;
 const package = readPackageJSON();
-const packageName = package.slug;
+const packageName = package.expo.slug;
 
 const getExpPublishName = () => (
   `${packageName}-${branchName}`.replace(/[^a-zA-Z0-9\\-]/, '-')
