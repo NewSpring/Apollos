@@ -84,6 +84,7 @@ const spawn =  (task, args, onClose) => {
 const preDeploy = () => { // Overwrite package.json name
   status({ description: 'Preparing build...' });
   const modifiedPackage = Object.assign({}, package, { expo: {
+    ...package.expo,
     slug: getExpPublishName(),
     privacy: EXPO_PRIVACY || 'unlisted',
   } });
