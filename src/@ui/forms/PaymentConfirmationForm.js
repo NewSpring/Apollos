@@ -10,7 +10,7 @@ import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
 import moment from 'moment';
 
-import { H4, H5, H6, UIText } from '@ui/typography';
+import { H4, H5, H6, UIText, BodyCopy } from '@ui/typography';
 import { FREQUENCY_IDS } from '@ui/forms/ContributionForm/FrequencyInput';
 import { withRouter } from '@ui/NativeWebRouter';
 import withGive from '@data/withGive';
@@ -115,6 +115,12 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
           <H5>$<H4>{this.total.toFixed(2).split('.')[0]}</H4>.{this.total.toFixed(2).split('.')[1]}</H5>
         </Row>
 
+        {(Platform.OS === 'ios') ? (
+          <BodyCopy>
+            {'Due to Apple policies, you\'ll be redirected to Safari to complete this contribution.'}
+          </BodyCopy>
+        ) : null}
+
         <Button
           onPress={this.props.onSubmit}
           title={this.props.submitButtonText}
@@ -155,7 +161,7 @@ const PaymentConfirmationForm = compose(
           Linking.addEventListener('url', handleRedirect);
           const userToken = await AsyncStorage.getItem('authToken');
 
-          const res = await WebBrowser.openBrowserAsync(`${Settings.ROOT_URL || 'http://localhost:3000'}/give/restored-checkout?${stringify({
+          const res = await Linking.openURL(`${Settings.ROOT_URL || 'http://localhost:3000'}/give/restored-checkout?${stringify({
             redirect: `${linkingUri}${props.navigateToOnComplete}`,
             state: JSON.stringify(props.contributions),
             userToken,

@@ -34,7 +34,6 @@ export const RestoredCheckout = (props) => {
   return (
     <PaperView>
       <H4>Secure Web Checkout</H4>
-      <H7>{'Per Apple\'s charitable donations guidelines, we are forced to checkout contributors on web only'}</H7>
       <H7>{'Please review your donation'}</H7>
       <PaymentConfirmationForm
         hideChangePaymentMethodButton

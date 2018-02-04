@@ -24,7 +24,6 @@ class DeepLinking extends Component {
   };
 
   async componentDidMount() {
-    this.push('/give/now');
     Linking.addEventListener('url', this.handleChange);
   }
 
