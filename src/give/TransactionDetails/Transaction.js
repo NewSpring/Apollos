@@ -15,7 +15,7 @@ import Spacer from '@ui/Spacer';
 import { withTheme } from '@ui/theme';
 import ActivityIndicator from '@ui/ActivityIndicator';
 
-import TransactionDetail from './TransactionDetail';
+import TransactionDetail from '../TransactionDetail';
 
 const Row = styled({
   flexDirection: 'row',

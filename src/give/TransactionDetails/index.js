@@ -23,42 +23,6 @@ const Note = styled(({ theme }) => ({
   color: theme.colors.text.secondary,
 }))(BodyCopy);
 
-class TransactionDetails extends PureComponent {
-  static propTypes = {
-    id: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
-  };
-
-  static defaultProps = {
-    id: undefined,
-  };
-
-  render() {
-    return (
-      <BackgroundView>
-        <Header
-          titleText={Platform.OS !== 'web' ? 'Contribution Details' : null}
-          backButton
-          webEnabled
-        />
-        <ScrollView>
-          <PaperView>
-            <Transaction id={this.props.id} />
-            <PaddedView horizontal={false}>
-              <Note>
-                {'Thank you for your contribution to NewSpring Church. Because you are obedient in giving, we\'ll be able to connect more people to Jesus and each other.'}
-              </Note>
-            </PaddedView>
-          </PaperView>
-          <RecentArticles />
-        </ScrollView>
-      </BackgroundView>
-    );
-  }
-}
-
 const enhance = compose(
   withRouter,
   withProps(props => ({
@@ -69,4 +33,32 @@ const enhance = compose(
   })),
 );
 
-export default enhance(TransactionDetails);
+const TransactionDetails = enhance(({ id }) => (
+  <BackgroundView>
+    <Header
+      titleText={Platform.OS !== 'web' ? 'Contribution Details' : null}
+      backButton
+      webEnabled
+    />
+    <ScrollView>
+      <PaperView>
+        <Transaction id={id} />
+        <PaddedView horizontal={false}>
+          <Note>
+            {'Thank you for your contribution to NewSpring Church. Because you are obedient in giving, we\'ll be able to connect more people to Jesus and each other.'}
+          </Note>
+        </PaddedView>
+      </PaperView>
+      <RecentArticles />
+    </ScrollView>
+  </BackgroundView>
+));
+
+TransactionDetails.propTypes = {
+  id: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+};
+
+export default TransactionDetails;

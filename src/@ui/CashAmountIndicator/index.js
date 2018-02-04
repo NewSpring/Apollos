@@ -58,7 +58,7 @@ function CashAmountIndicator(props) {
 }
 
 CashAmountIndicator.propTypes = {
-  amount: PropTypes.number,
+  amount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   size(props, propName, componentName) {
     if (props[propName] > 5) return new Error(`${componentName} ${propName} prop cannot be greater than 5`);
     return null;

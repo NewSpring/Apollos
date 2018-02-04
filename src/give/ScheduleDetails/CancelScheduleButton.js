@@ -16,6 +16,8 @@ const enhance = compose(
         throw err;
       }
     },
+    bordered: true,
+    type: 'alert',
     title: 'Cancel Schedule',
   })),
 );
