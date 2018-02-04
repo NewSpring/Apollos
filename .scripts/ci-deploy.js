@@ -28,7 +28,7 @@ const githubOrg = (TRAVIS_REPO_SLUG || '').split('/')[0];
 const githubRepo = (TRAVIS_REPO_SLUG || '').split('/')[1];
 const branchName = TRAVIS_PULL_REQUEST_BRANCH || TRAVIS_BRANCH;
 const package = readPackageJSON();
-const packageName = package.name;
+const packageName = package.slug;
 
 const getExpPublishName = () => (
   `${packageName}-${branchName}`.replace(/[^a-zA-Z0-9\\-]/, '-')
@@ -83,10 +83,10 @@ const spawn =  (task, args, onClose) => {
 
 const preDeploy = () => { // Overwrite package.json name
   status({ description: 'Preparing build...' });
-  const modifiedPackage = Object.assign({}, package, {
+  const modifiedPackage = Object.assign({}, package, { expo: {
     slug: getExpPublishName(),
     privacy: EXPO_PRIVACY || 'unlisted',
-  })
+  } });
 
   writePackageJSON(modifiedPackage);
 }
