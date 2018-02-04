@@ -48,7 +48,7 @@ const status = ({ state = 'pending', description = '', error } = {}) => {
       context: 'deploy/exponent',
     }
 
-    request.post(
+    return request.post(
       {
         url: statusUrl,
         headers: {
@@ -71,7 +71,7 @@ const status = ({ state = 'pending', description = '', error } = {}) => {
 };
 
 const cwd = __dirname + '/../';
-const spawn = (task, args, onClose) => {
+const spawn =  (task, args, onClose) => {
   const child = childProcess.spawn(task, args, {
     stdio: 'inherit',
     env: process.env,
@@ -81,19 +81,23 @@ const spawn = (task, args, onClose) => {
   child.on('close', code => onClose(code));
 }
 
-// Overwrite package.json name
-status({ description: 'Preparing build...' });
-const modifiedPackage = Object.assign({}, package, {
-  slug: getExpPublishName(),
-  privacy: EXPO_PRIVACY || 'unlisted',
-})
+const preDeploy = () => { // Overwrite package.json name
+  status({ description: 'Preparing build...' });
+  const modifiedPackage = Object.assign({}, package, {
+    slug: getExpPublishName(),
+    privacy: EXPO_PRIVACY || 'unlisted',
+  })
 
-writePackageJSON(modifiedPackage);
+  writePackageJSON(modifiedPackage);
+}
 
 // Start Deploy:
 status({ description: 'Logging into expo...' });
-spawn(exp, ['login', '-u', EXP_USERNAME, '-p', EXP_PASSWORD], (loginError) => {
+spawn(exp, ['login', '-u', EXP_USERNAME, '-p', EXP_PASSWORD, '--non-interactive'], (loginError) => {
   if (loginError) return status({ state: 'error', description: 'Expo Login Failed', error: loginError });
+
+  status({ description: 'Preparing project for publish...' });
+  preDeploy();
 
   status({ description: 'Publishing project to expo...' });
   spawn(exp, ['publish', '--non-interactive'], (publishError) => {
