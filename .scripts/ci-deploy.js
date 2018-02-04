@@ -93,7 +93,7 @@ const preDeploy = () => { // Overwrite package.json name
 
 // Start Deploy:
 status({ description: 'Logging into expo...' });
-spawn(exp, ['login', '-u', EXP_USERNAME, '-p', EXP_PASSWORD], '--non-interactive', (loginError) => {
+spawn(exp, ['login', '-u', EXP_USERNAME, '-p', EXP_PASSWORD, '--non-interactive'], (loginError) => {
   if (loginError) return status({ state: 'error', description: 'Expo Login Failed', error: loginError });
 
   status({ description: 'Preparing project for publish...' });
