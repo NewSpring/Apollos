@@ -1,13 +1,18 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { View } from 'react-native';
+import { Animated } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import Chip from '@ui/Chip';
+import InputWrapper from '../InputWrapper';
+import FloatingLabel from '../FloatingLabel';
+
+const chipStyle = { marginTop: 5 };
 
 class DateInput extends PureComponent {
   static propTypes = {
     label: PropTypes.string,
+    placeholder: PropTypes.string,
     value: PropTypes.any, // eslint-disable-line
     displayValue: PropTypes.string,
     onChange: PropTypes.func,
@@ -39,15 +44,20 @@ class DateInput extends PureComponent {
     let date = this.props.value;
     if (typeof date === 'string') date = moment(date).toDate();
     return (
-      <View>
-        <Chip title={this.props.displayValue || this.props.label} onPress={this.handleOpen} />
+      <InputWrapper>
+        <Chip
+          style={chipStyle}
+          title={this.props.displayValue || this.props.placeholder}
+          onPress={this.handleOpen}
+        />
         <DateTimePicker
           date={date || new Date()}
           isVisible={this.state.isVisible}
           onConfirm={this.handleConfirm}
           onCancel={this.handleClose}
         />
-      </View>
+        <FloatingLabel animation={new Animated.Value(1)}>{this.props.label}</FloatingLabel>
+      </InputWrapper>
     );
   }
 }

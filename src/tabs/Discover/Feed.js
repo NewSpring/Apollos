@@ -2,7 +2,8 @@ import React from 'react';
 import { compose, withProps } from 'recompose';
 import { View, Linking } from 'react-native';
 import FeedView, { defaultFeedItemRenderer } from '@ui/FeedView';
-import { H6, H5, BodyCopy } from '@ui/typography';
+import { H6, H5, BodyText } from '@ui/typography';
+import { ButtonLink } from '@ui/Button';
 import Card, { CardContent } from '@ui/Card';
 import FeedItemCard from '@ui/FeedItemCard';
 import ThumbnailCard from '@ui/ThumbnailCard';
@@ -68,9 +69,9 @@ const Feed = enhance(({
       ListFooterComponent={(
         <FooterCard>
           <CardContent>
-            <BodyCopy>
+            <BodyText>
               Are you looking for{' '}
-              <BodyCopy>
+              <BodyText>
                 {open.map((x, i) => {
                   let delimeter = ', ';
                   if (open[i].id === open[open.length - 1].id) {
@@ -80,16 +81,16 @@ const Feed = enhance(({
                   }
 
                   return (
-                    <BodyCopy key={x.id}>
-                      <BodyLink onPress={() => Linking.openURL(x.meta.urlTitle)}>
+                    <BodyText key={x.id}>
+                      <ButtonLink onPress={() => Linking.openURL(x.meta.urlTitle)}>
                         {x.title}
-                      </BodyLink>
+                      </ButtonLink>
                       {delimeter}
-                    </BodyCopy>
+                    </BodyText>
                   );
                 })}?
-              </BodyCopy>
-            </BodyCopy>
+              </BodyText>
+            </BodyText>
           </CardContent>
         </FooterCard>
       )}

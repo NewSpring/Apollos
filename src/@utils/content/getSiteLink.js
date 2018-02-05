@@ -7,7 +7,7 @@ const getSiteLink = (contentItem) => {
   const { meta } = contentItem;
 
   if (contentItem && contentItem.__typename === 'Group') { // eslint-disable-line
-    return `/groups/${contentItem.id}`;
+    return `https://my.newspring.cc/groups/${contentItem.id}`;
   }
 
   switch (category) {

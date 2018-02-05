@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 import PaddedView from '@ui/PaddedView';
-import { H7, BodyCopy } from '@ui/typography';
+import { H7, BodyText } from '@ui/typography';
 import styled from '@ui/styled';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 import { Link } from '@ui/NativeWebRouter';
@@ -45,7 +45,7 @@ const renderCampus = ({ item: campus }) => (
           );
         })()}
         {campus.services && campus.services.map(x =>
-          (<BodyCopy key={x}>{x}</BodyCopy>))
+          (<BodyText key={x}>{x}</BodyText>))
         }
         <LearnMoreText>Learn More ›</LearnMoreText>
       </PaddedView>

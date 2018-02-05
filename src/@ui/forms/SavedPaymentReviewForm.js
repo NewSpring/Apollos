@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
 
-import { H5, UIText } from '@ui/typography';
+import { H5, H7 } from '@ui/typography';
 import { withRouter } from '@ui/NativeWebRouter';
 import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
@@ -63,22 +63,22 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
 
   renderBankAccount = () => (
     <View>
-      <UIText>{`****${last4(this.props.accountNumber)}`}</UIText>
+      <H7>{`****${last4(this.props.accountNumber)}`}</H7>
       {/* <Icon name="bankAccount" /> */}
-      <UIText>{this.props.routingNumber}</UIText>
-      <UIText>{this.props.savedAccountName}</UIText>
+      <H7>{this.props.routingNumber}</H7>
+      <H7>{this.props.savedAccountName}</H7>
     </View>
   );
 
   renderCreditCard = () => (
     <View>
       <Row>
-        <UIText>{`****${last4(this.props.cardNumber)}`}</UIText>
+        <H7>{`****${last4(this.props.cardNumber)}`}</H7>
         <Icon name="credit" />
       </Row>
-      <UIText>{this.props.expirationDate}</UIText>
-      <UIText>{this.props.cvv}</UIText>
-      <UIText>{this.props.savedAccountName}</UIText>
+      <H7>{this.props.expirationDate}</H7>
+      <H7>{this.props.cvv}</H7>
+      <H7>{this.props.savedAccountName}</H7>
     </View>
   );
 
@@ -95,9 +95,9 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
       <View>
         <InfoBlock>
           <H5>{'Billing Address'}</H5>
-          <UIText>{this.props.street1}</UIText>
-          <UIText>{this.props.street2}</UIText>
-          <UIText>{`${this.props.city}, ${this.props.state}, ${this.props.zipCode}`}</UIText>
+          <H7>{this.props.street1}</H7>
+          <H7>{this.props.street2}</H7>
+          <H7>{`${this.props.city}, ${this.props.state}, ${this.props.zipCode}`}</H7>
         </InfoBlock>
 
         <InfoBlock>

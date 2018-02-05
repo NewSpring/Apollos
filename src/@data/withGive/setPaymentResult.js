@@ -14,6 +14,7 @@ export default graphql(MUTATION, {
         error: props.error,
         success: props.success,
       },
+      refetchQueries: props.refetchQueries ? ['GivingDashboard', 'GetCheckoutData', 'SavedPaymentMethods', 'GetTransactions'] : [],
     })),
   }),
 });
