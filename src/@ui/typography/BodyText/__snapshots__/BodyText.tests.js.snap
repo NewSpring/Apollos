@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the BodyText component should accept additional props 1`] = `
+<Text
+  accessible={false}
+  allowFontScaling={true}
+  bold={false}
+  ellipsizeMode="tail"
+  italic={false}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "DroidSerif-Regular",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
+    }
+  }
+>
+  "True faith means holding nothing back. It means putting every hope in God's fidelity to His Promises." ― Francis Chan
+</Text>
+`;
+
+exports[`the BodyText component should accept and render passed in styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  bold={false}
+  ellipsizeMode="tail"
+  italic={false}
+  style={
+    Object {
+      "color": "salmon",
+      "fontFamily": "DroidSerif-Regular",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
+    }
+  }
+>
+  Salmon text
+</Text>
+`;
+
+exports[`the BodyText component should render as bold 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  bold={true}
+  ellipsizeMode="tail"
+  italic={false}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "DroidSerif-Bold",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
+    }
+  }
+>
+  Bold BodyText text
+</Text>
+`;
+
+exports[`the BodyText component should render as bold italic 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  bold={true}
+  ellipsizeMode="tail"
+  italic={true}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "DroidSerif-BoldItalic",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
+    }
+  }
+>
+  Bold italic BodyText text
+</Text>
+`;
+
+exports[`the BodyText component should render as italic 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  bold={false}
+  ellipsizeMode="tail"
+  italic={true}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "DroidSerif-RegularItalic",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
+    }
+  }
+>
+  Italic BodyText text
+</Text>
+`;
+
+exports[`the BodyText component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  bold={false}
+  ellipsizeMode="tail"
+  italic={false}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "DroidSerif-Regular",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
+    }
+  }
+>
+  Default BodyText text
+</Text>
+`;

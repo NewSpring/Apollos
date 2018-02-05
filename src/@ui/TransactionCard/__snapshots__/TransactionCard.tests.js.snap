@@ -99,9 +99,10 @@ exports[`the TransactionCard component should render Failure 1`] = `
           Object {
             "color": "#303030",
             "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
-            "paddingTop": 2.7,
+            "fontSize": 14,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.35,
           }
         }
       >
@@ -116,9 +117,10 @@ exports[`the TransactionCard component should render Failure 1`] = `
             Object {
               "color": "#303030",
               "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
             }
           }
         >
@@ -290,9 +292,10 @@ exports[`the TransactionCard component should render Success 1`] = `
           Object {
             "color": "#303030",
             "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
-            "paddingTop": 2.7,
+            "fontSize": 14,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.35,
           }
         }
       >
@@ -307,9 +310,10 @@ exports[`the TransactionCard component should render Success 1`] = `
             Object {
               "color": "#303030",
               "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
             }
           }
         >
@@ -324,9 +328,10 @@ exports[`the TransactionCard component should render Success 1`] = `
             Object {
               "color": "#303030",
               "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
             }
           }
         >
@@ -497,9 +502,10 @@ exports[`the TransactionCard component should render scheduled payments 1`] = `
           Object {
             "color": "#303030",
             "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
-            "paddingTop": 2.7,
+            "fontSize": 14,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.35,
           }
         }
       >
@@ -514,9 +520,10 @@ exports[`the TransactionCard component should render scheduled payments 1`] = `
             Object {
               "color": "#303030",
               "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
             }
           }
         >
@@ -532,9 +539,10 @@ exports[`the TransactionCard component should render scheduled payments 1`] = `
             Object {
               "color": "#303030",
               "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
             }
           }
         >

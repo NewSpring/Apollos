@@ -29,6 +29,7 @@ export default gql`
       results {
         id
         name
+        title: name
         entityId
         type
         kidFriendly

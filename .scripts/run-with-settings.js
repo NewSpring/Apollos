@@ -4,13 +4,12 @@ const Path = require('path');
 const mapKeys = require('lodash/mapKeys');
 const dotenv = require('dotenv');
 
-const envFile = '../.env';
+const envFile = Path.resolve(__dirname, '../.env');
 const fileExists = Fs.existsSync(envFile);
-
 let mappedConfig = {};
 
 if (fileExists) {
-  const rawConfig = Fs.readFileSync(Path.resolve(__dirname, envFile), 'utf8');
+  const rawConfig = Fs.readFileSync(envFile, 'utf8');
   const config = dotenv.parse(rawConfig);
   const platformConfigs = {
     native: mapKeys(config, (v, k) => (`REACT_NATIVE_${k}`)),

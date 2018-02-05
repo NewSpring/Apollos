@@ -11,7 +11,7 @@ import { withIsLoading } from '@ui/isLoading';
 import styled from '@ui/styled';
 import Card from '@ui/Card';
 import PaddedView from '@ui/PaddedView';
-import { H5, H6, UIText } from '@ui/typography';
+import { H5, H6, H7 } from '@ui/typography';
 import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
 import Spacer from '@ui/Spacer';
@@ -72,7 +72,7 @@ const TransactionCard = enhance(({
         <H5>{moment(expirationDate, 'MM/YY').format(dateFormat)}</H5>
       </Row>
       <Spacer />
-      <UIText>{`Your saved payment ${name} is expiring soon.`}</UIText>
+      <H7>{`Your saved payment ${name} is expiring soon.`}</H7>
       <Spacer />
       <TouchableWithoutFeedback
         onPress={onPress}
