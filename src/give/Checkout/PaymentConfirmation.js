@@ -21,7 +21,7 @@ export class PaymentConfirmation extends PureComponent {
         <H4>Review Contribution</H4>
         <H6>Step 4 of 4</H6>
         <PaymentConfirmationForm
-          navigateToOnComplete="complete"
+          navigateToOnComplete="/give/checkout/complete"
           onPressChangePaymentMethod={this.props.onPressChangePaymentMethod}
         />
       </PaddedView>

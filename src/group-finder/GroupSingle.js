@@ -18,6 +18,7 @@ import SideBySideView, { ResponsiveSideBySideView, Left, Right } from '@ui/SideB
 import { Link } from '@ui/NativeWebRouter';
 import Settings from '@utils/Settings';
 import MediaQuery from '@ui/MediaQuery';
+import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 
 import Map from './Map';
 
@@ -31,6 +32,11 @@ const enhance = compose(
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withGroupInfo,
 );
+
+const ShareLink = compose(
+  withGroupInfo,
+  mapProps(({ group } = {}) => ({ content: group })),
+)(Share);
 
 const StyledImage = styled({
   width: '100%',
@@ -82,8 +88,8 @@ const isCurrentPersonLeader = (person, leaders) =>
   person && Array.isArray(leaders) && leaders.filter(x => x.person.id === person.id).length;
 
 const GroupSingle = enhance(({
+  id,
   group: {
-    id,
     photo = null,
     name,
     // name
@@ -104,6 +110,7 @@ const GroupSingle = enhance(({
     //   person { id, photo, firstName, nickName, lastName }
     // }
     // groupType
+    isLiked,
   } = {},
   person,
   isLoading,
@@ -226,6 +233,12 @@ const GroupSingle = enhance(({
           </Right>
         </MediaQuery>
       </FlexedSideBySideView>
+      <MediaQuery maxWidth="md">
+        <SecondaryNav>
+          <ShareLink id={id} />
+          <Like id={id} isLiked={isLiked} />
+        </SecondaryNav>
+      </MediaQuery>
     </BackgroundView>
   );
 });

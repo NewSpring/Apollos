@@ -57,8 +57,8 @@ const enhance = compose(
 const defaultItemRenderer = item => (
   <Link to={getLinkPath(item)} key={item.id}>
     <ThumbnailCard
-      title={item.title}
-      category={item.channelName}
+      title={item.title || item.name || ''}
+      category={item.category}
       images={getItemImages(item)}
       isLoading={item.isLoading}
     />
