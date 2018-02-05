@@ -57,7 +57,7 @@ const FundInput = (({
     <H3>{'to '}</H3>
     <View style={{ width: 325, maxWidth: '100%' }}>
       <StyledPicker
-        onValueChange={id => onChange(Object.assign({}, value, funds.find(fund => fund.id === id)))}
+        onValueChange={id => onChange(Object.assign({}, value, funds.find(fund => `${fund.id}` === `${id}`)))}
         value={get(value, 'id')}
         displayValue={get(value, 'name')}
         wrapperStyle={pickerWrapperStyle}
