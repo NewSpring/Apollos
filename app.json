@@ -27,7 +27,7 @@
     },
     "android": {
       "package": "cc.newspring.newspringapp",
-      "versionCode": "600000",
+      "versionCode": 600000,
       "icon": "src/assets/icons/android/icon-192x192-xxxhpdi.png",
       "splash": {
         "resizeMode": "cover",
