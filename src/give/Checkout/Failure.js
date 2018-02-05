@@ -3,7 +3,7 @@ import { Linking } from 'react-native';
 import PaddedView from '@ui/PaddedView';
 import styled from '@ui/styled';
 import { H3, H4, H7 } from '@ui/typography';
-import LinkText from '@ui/LinkText';
+import { ButtonLink } from '@ui/Button';
 import Icon from '@ui/Icon';
 
 const CenteredView = styled({
@@ -30,7 +30,7 @@ const Failure = () => (
     <CenteredH4>Looks like there was a problem processing your contribution.</CenteredH4>
     <CenteredText>
       If you would like a member of our customer support team to follow up with you regarding
-      this error, please <LinkText onPress={() => Linking.openURL('https://rock.newspring.cc/workflows/152?Topic=Stewardship')}>contact us</LinkText>.
+      this error, please <ButtonLink onPress={() => Linking.openURL('https://rock.newspring.cc/workflows/152?Topic=Stewardship')}>contact us</ButtonLink>.
     </CenteredText>
   </CenteredView>
 );

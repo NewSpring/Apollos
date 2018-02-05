@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 import { BodyText } from '@ui/typography';
 import PaddedView from '@ui/PaddedView';
 import Spacer from '@ui/Spacer';
-import styled from '@ui/styled';
 import { Link } from '@ui/NativeWebRouter';
+import { ButtonLink } from '@ui/Button';
 import HistoricalContributionCard from '@ui/HistoricalContributionCard';
-
-const LinkText = styled(({ theme }) => ({ color: theme.colors.primary }))(BodyText);
 
 const ScheduleTransactionHistory = ({
   transactions = [],
@@ -21,9 +19,9 @@ const ScheduleTransactionHistory = ({
         <Spacer byHeight />
         <BodyText italic>
           If you have any questions, please call our Finance Team at 864-965-9990 or{' '}
-          <LinkText italic onPress={() => Linking.openURL('https://rock.newspring.cc/workflows/152?Topic=Stewardship')}>
+          <ButtonLink onPress={() => Linking.openURL('https://rock.newspring.cc/workflows/152?Topic=Stewardship')}>
             Contact Us
-          </LinkText>
+          </ButtonLink>
           {' '}and someone will be happy to assist you.
         </BodyText>
         <Spacer byHeight />

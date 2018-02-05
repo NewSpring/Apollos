@@ -4,15 +4,15 @@ import { View, Text, Linking } from 'react-native';
 import { Parser, DomHandler } from 'htmlparser2';
 import { decodeHTML } from 'entities';
 import { BodyText, H1, H2, H3, H4, H5, H6, H7 } from '@ui/typography';
+import { ButtonLink } from '@ui/Button';
 import ConnectedImage from '@ui/ConnectedImage';
 import Paragraph from '@ui/Paragraph';
 import BlockQuote from '@ui/BlockQuote';
 import BulletListItem from '@ui/BulletListItem';
-import { Link } from './styles';
 
 const LINE_BREAK = '\n';
 
-const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyText, Link];
+const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyText, ButtonLink];
 export const wrapTextChildren = (children) => {
   const newChildren = [];
   let currentTextChildren = [];
@@ -60,7 +60,7 @@ export const defaultRenderer = (node, { children }) => {
       const url = node.attribs && node.attribs.href;
       const onPress = () => Linking.openURL(decodeHTML(url));
       if (url) {
-        return (<Link onPress={onPress}>{children}</Link>);
+        return (<ButtonLink onPress={onPress}>{children}</ButtonLink>);
       }
     }
     // ignoring fallthrough on the next line because of the conditional return above,
