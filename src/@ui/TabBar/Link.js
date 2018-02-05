@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   StyleSheet,
+  Platform,
   View,
 } from 'react-native';
 import { compose, mapProps, setPropTypes, onlyUpdateForPropTypes } from 'recompose';
@@ -17,10 +18,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     height: 50,
+    ...Platform.select({
+      web: {
+        transform: [{ translateZ: [0] }], // web optimization for flexing viewport causing repaint 💥
+      },
+    }),
   },
   largeButton: {
     height: 75,
-    transform: [{ scale: 0.9 }],
+    /* Current design spec requires text smaller than we have components for. This is the easiest
+     * fix until a designer can create a navbar that fits within branding guidelines.
+     */
+    ...(Platform.OS !== 'web' ? { transform: [{ scale: 0.9 }] } : { transform: [{ scale3d: [0.9, 0.9, 1] }] }),
   },
 });
 
