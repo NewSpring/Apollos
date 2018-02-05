@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import UIText from './';
 
-storiesOf('@ui/typography/UIText', module)
+storiesOf('typography/UIText', module)
   .add('Default', () => (
     <UIText>{'"True faith means holding nothing back. It means putting every hope in God\'s fidelity to His Promises." ― Francis Chan'}</UIText>
   ))
