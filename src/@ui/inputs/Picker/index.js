@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Animated, Picker as NativePicker, TouchableOpacity } from 'react-native';
 import styled from '@ui/styled';
 
-import { UIText } from '@ui/typography';
+import { H6 } from '@ui/typography';
 import Icon from '@ui/Icon';
 
 import FloatingLabel from '../FloatingLabel';
@@ -16,10 +16,10 @@ import withInputControlStyles from '../withInputControlStyles';
 
 import PickerList from './PickerList';
 
-const StyledUIText = withInputControlStyles(UIText);
+const StyledH6 = withInputControlStyles(H6);
 const Placeholder = styled(({ theme }) => ({
   color: theme.colors.input.placeholder,
-}), 'Inputs.Picker.Placeholder')(UIText);
+}), 'Inputs.Picker.Placeholder')(H6);
 
 class Picker extends PureComponent {
   static propTypes = {
@@ -72,9 +72,9 @@ class Picker extends PureComponent {
         <TouchableOpacity onPress={this.toggle}>
           <AddonRow>
             <Animated.View style={{ opacity: labelAnimation, flex: 1 }}>
-              <StyledUIText style={style}>
+              <StyledH6 style={style}>
                 {displayValue || (<Placeholder>{placeholder}</Placeholder>)}
-              </StyledUIText>
+              </StyledH6>
             </Animated.View>
             <InputAddon>
               <Animated.View style={{ transform: [{ rotate }] }}>

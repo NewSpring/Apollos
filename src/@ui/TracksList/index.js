@@ -5,7 +5,7 @@ import { times } from 'lodash';
 import FlatList from '@ui/WebCompatibleFlatList';
 import PaddedView from '@ui/PaddedView';
 import Touchable from '@ui/Touchable';
-import { BodyCopy } from '@ui/typography';
+import { H5, BodyText } from '@ui/typography';
 import { Link } from '@ui/NativeWebRouter';
 import styled from '@ui/styled';
 
@@ -19,7 +19,7 @@ const TrackView = styled(({ theme }) => ({
 const Ellipsis = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 4,
   opacity: theme.alpha.medium,
-}))(props => <BodyCopy {...props}>•••</BodyCopy>);
+}))(props => <H5 {...props}>•••</H5>);
 
 const enhance = compose(
   pure,
@@ -57,7 +57,7 @@ class TracksList extends PureComponent {
   renderTrack = ({ item }) => (
     <Touchable onPress={() => this.handleTrackPress(item)}>
       <TrackView>
-        <BodyCopy isLoading={!item.title && this.props.isLoading}>{item.title}</BodyCopy>
+        <BodyText isLoading={!item.title && this.props.isLoading}>{item.title}</BodyText>
         {(this.props.trackEllipsisLink) ? (
           <Link to={this.props.trackEllipsisLink(item)}>
             <Ellipsis />

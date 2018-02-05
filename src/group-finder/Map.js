@@ -56,6 +56,8 @@ class Map extends PureComponent {
 
   static defaultProps = {
     linkToGroup: true,
+    latitude: 34.595413,
+    longitude: -82.6241234,
   };
 
   componentDidUpdate(lastProps) {
