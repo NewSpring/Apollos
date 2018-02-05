@@ -6,9 +6,7 @@ import {
 import PropTypes from 'prop-types';
 import { compose, getContext } from 'recompose';
 import isString from 'lodash/isString';
-import {
-  UIText,
-} from '@ui/typography';
+import { H6 } from '@ui/typography';
 import styled from '@ui/styled';
 import RadioButtonIndicator from './RadioButtonIndicator';
 
@@ -64,7 +62,7 @@ class RadioButton extends PureComponent {
             isSelected={this.props.currentValue === this.props.value}
           />
           {isString(this.props.Label) ?
-            (<UIText>{this.props.Label}</UIText>) : (<this.props.Label />)
+            (<H6>{this.props.Label}</H6>) : (<this.props.Label />)
           }
         </Row>
       </TouchableWithoutFeedback>

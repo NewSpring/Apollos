@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import { padStart } from 'lodash';
 import { compose, getContext } from 'recompose';
-import { UIText } from '@ui/typography';
+import { H7 } from '@ui/typography';
 
 class TimeElapsed extends PureComponent {
   static propTypes = {
@@ -47,9 +47,9 @@ class TimeElapsed extends PureComponent {
     const duration = moment.duration(this.state.value);
     const { positionMillis, ...otherProps } = this.props;
     return (
-      <UIText {...otherProps}>
+      <H7 {...otherProps}>
         {duration.minutes()}:{padStart(duration.seconds(), 2, '0')}
-      </UIText>
+      </H7>
     );
   }
 }

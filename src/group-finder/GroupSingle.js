@@ -9,7 +9,7 @@ import ConnectedImage from '@ui/ConnectedImage';
 import PaddedView from '@ui/PaddedView';
 import BackgroundView from '@ui/BackgroundView';
 import Card from '@ui/Card';
-import { H3, H4, H5, H6, H7, BodyCopy } from '@ui/typography';
+import { H3, H4, H5, H6, H7, BodyText } from '@ui/typography';
 import styled from '@ui/styled';
 import Avatar, { AvatarList } from '@ui/Avatar';
 import Button from '@ui/Button';
@@ -178,7 +178,7 @@ const GroupSingle = enhance(({
                 <H5>More Information</H5>
                 <GroupInfoContainer>
                   <Label>Description</Label>
-                  <BodyCopy>{description}</BodyCopy>
+                  <BodyText>{description}</BodyText>
                 </GroupInfoContainer>
 
                 <GroupInfoContainer>
