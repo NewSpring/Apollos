@@ -1,0 +1,2 @@
+# Make sure ROOT_URL does not have a trailing slash
+ROOT_URL='http://localhost:3000'

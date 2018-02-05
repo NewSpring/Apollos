@@ -20,6 +20,7 @@ import setIsSavingPaymentMethod from './setIsSavingPaymentMethod';
 import setWillSavePaymentMethod from './setWillSavePaymentMethod';
 import setSavedPaymentName from './setSavedPaymentName';
 import setSavedPaymentMethod from './setSavedPaymentMethod';
+import restoreContributions from './restoreContributions';
 
 export default compose(
   addContribution,
@@ -43,4 +44,5 @@ export default compose(
   setWillSavePaymentMethod,
   setSavedPaymentName,
   setSavedPaymentMethod,
+  restoreContributions,
 );
