@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The PaymentConfirmationForm component renders a loading indicator 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
   <ActivityIndicator
     animating={true}
     color="#999999"
@@ -198,6 +204,25 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
       00
     </Text>
   </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    bold={false}
+    ellipsizeMode="tail"
+    italic={false}
+    style={
+      Object {
+        "color": "#303030",
+        "fontFamily": "DroidSerif-Regular",
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
+      }
+    }
+  >
+    Due to Apple policies, you'll be redirected to Safari to complete this contribution.
+  </Text>
   <View
     accessibilityComponentType="button"
     accessibilityLabel={undefined}
@@ -466,6 +491,25 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
       00
     </Text>
   </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    bold={false}
+    ellipsizeMode="tail"
+    italic={false}
+    style={
+      Object {
+        "color": "#303030",
+        "fontFamily": "DroidSerif-Regular",
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
+      }
+    }
+  >
+    Due to Apple policies, you'll be redirected to Safari to complete this contribution.
+  </Text>
   <View
     accessibilityComponentType="button"
     accessibilityLabel={undefined}
@@ -789,6 +833,25 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
       00
     </Text>
   </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    bold={false}
+    ellipsizeMode="tail"
+    italic={false}
+    style={
+      Object {
+        "color": "#303030",
+        "fontFamily": "DroidSerif-Regular",
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
+      }
+    }
+  >
+    Due to Apple policies, you'll be redirected to Safari to complete this contribution.
+  </Text>
   <View
     accessibilityComponentType="button"
     accessibilityLabel={undefined}

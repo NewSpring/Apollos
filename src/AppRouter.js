@@ -4,7 +4,7 @@ import { Platform, View } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
 import { withWindow } from '@ui/MediaQuery';
 import { withTheme } from '@ui/theme';
-import { Router, Route, ProtectedRoute, Redirect, AndroidBackButton, Switch, matchPath, withRouter } from '@ui/NativeWebRouter';
+import { Router, Route, ProtectedRoute, Redirect, AndroidBackButton, Switch, matchPath, withRouter, DeepLinking } from '@ui/NativeWebRouter';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
@@ -131,6 +131,7 @@ class AppRouter extends PureComponent {
       <BackgroundView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         {Platform.OS === 'web' ? this.renderWebRedirects() : null}
+        {Platform.OS !== 'web' ? <DeepLinking /> : null}
         <Player>
           <AppLayout>
             <CardStack
@@ -177,6 +178,7 @@ class AppRouter extends PureComponent {
               <Route path="/give/new-payment-method" cardStackDirection="vertical" component={give.AddAccount} />
               <Route exact path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
+              <Route exact path="/give/restored-checkout" component={give.RestoredCheckout} />
               <Route exact path="/give/history/:id" component={give.TransactionDetails} />
               <Route exact path="/give/schedules/:id" component={give.ScheduleDetails} />
 
