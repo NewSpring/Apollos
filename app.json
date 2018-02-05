@@ -10,7 +10,7 @@
     "scheme": "newspring",
     "ios": {
       "bundleIdentifier": "com.subsplashstudio31.NewSpring-Church",
-      "buildNumber": "600000",
+      "buildNumber": "0",
       "supportsTablet": true,
       "associatedDomains": [
         "applinks:beta.newspring.cc",
