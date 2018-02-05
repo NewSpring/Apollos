@@ -152,9 +152,29 @@ const ProfileDetailsForm = compose(
   withFormik({
     mapPropsToValues,
     validationSchema,
-    handleSubmit: () => ({
-      // todo
-    }),
+    handleSubmit: async (values, { props, setSubmitting }) => {
+      try {
+        console.log({ values, props });
+        setSubmitting(true);
+        await props.updateProfile({
+          nickName: values.nickName,
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          campus: values.campusId,
+        //   birthMonth: values.birthMonth,
+        //   birthDay: values.birthDay,
+        //   birthYear: values.birthYear,
+        });
+      } catch (err) {
+        // TODO: Add space for general errors
+        // and set via setErrors
+        console.log(err);
+        // throw err;
+      } finally {
+        setSubmitting(false);
+      }
+    },
     isInitialValid(props) {
       return validationSchema
         .isValidSync(mapPropsToValues(props));
