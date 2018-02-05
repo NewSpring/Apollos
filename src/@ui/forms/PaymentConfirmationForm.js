@@ -10,7 +10,7 @@ import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
 import moment from 'moment';
 
-import { H4, H5, H6, H7, BodyCopy } from '@ui/typography';
+import { H4, H5, H6, H7, BodyText } from '@ui/typography';
 import { FREQUENCY_IDS } from '@ui/forms/ContributionForm/FrequencyInput';
 import { withRouter } from '@ui/NativeWebRouter';
 import withGive from '@data/withGive';
@@ -116,9 +116,9 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
         </Row>
 
         {(Platform.OS === 'ios') ? (
-          <BodyCopy>
+          <BodyText>
             {'Due to Apple policies, you\'ll be redirected to Safari to complete this contribution.'}
-          </BodyCopy>
+          </BodyText>
         ) : null}
 
         <Button
