@@ -304,7 +304,8 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                   "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
-                  "paddingTop": 2.7,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 2.25,
                   "paddingVertical": 5,
                 }
               }
@@ -316,10 +317,11 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                 style={
                   Object {
                     "color": "#858585",
-                    "fontFamily": "Colfax-Regular",
-                    "fontSize": 18,
-                    "lineHeight": 20,
-                    "paddingTop": 2.7,
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "lineHeight": 17.75,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
                   }
                 }
               />
@@ -398,11 +400,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                   "backgroundColor": "transparent",
                   "borderRadius": 0,
                   "color": "#6bac43",
-                  "fontFamily": "Colfax-Regular",
-                  "fontSize": 18,
-                  "lineHeight": 20,
                   "padding": 0,
-                  "paddingTop": 2.7,
                 }
               }
             >
@@ -845,7 +843,8 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                   "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
-                  "paddingTop": 2.7,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 2.25,
                   "paddingVertical": 5,
                 }
               }
@@ -857,10 +856,11 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                 style={
                   Object {
                     "color": "#858585",
-                    "fontFamily": "Colfax-Regular",
-                    "fontSize": 18,
-                    "lineHeight": 20,
-                    "paddingTop": 2.7,
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "lineHeight": 17.75,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
                   }
                 }
               />
@@ -939,11 +939,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                   "backgroundColor": "transparent",
                   "borderRadius": 0,
                   "color": "#6bac43",
-                  "fontFamily": "Colfax-Regular",
-                  "fontSize": 18,
-                  "lineHeight": 20,
                   "padding": 0,
-                  "paddingTop": 2.7,
                 }
               }
             >
@@ -1386,7 +1382,8 @@ exports[`The FrequencyInput component should render correctly with initial state
                   "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
-                  "paddingTop": 2.7,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 2.25,
                   "paddingVertical": 5,
                 }
               }
@@ -1398,10 +1395,11 @@ exports[`The FrequencyInput component should render correctly with initial state
                 style={
                   Object {
                     "color": "#858585",
-                    "fontFamily": "Colfax-Regular",
-                    "fontSize": 18,
-                    "lineHeight": 20,
-                    "paddingTop": 2.7,
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "lineHeight": 17.75,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
                   }
                 }
               />
@@ -1480,11 +1478,7 @@ exports[`The FrequencyInput component should render correctly with initial state
                   "backgroundColor": "transparent",
                   "borderRadius": 0,
                   "color": "#6bac43",
-                  "fontFamily": "Colfax-Regular",
-                  "fontSize": 18,
-                  "lineHeight": 20,
                   "padding": 0,
-                  "paddingTop": 2.7,
                 }
               }
             >

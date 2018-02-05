@@ -61,7 +61,8 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               "fontSize": 15.75,
               "height": 40,
               "lineHeight": 30,
-              "paddingTop": 2.7,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
               "paddingVertical": 5,
             }
           }
@@ -142,11 +143,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               "backgroundColor": "transparent",
               "borderRadius": 0,
               "color": "#6bac43",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
               "padding": 0,
-              "paddingTop": 2.7,
             }
           }
         >
