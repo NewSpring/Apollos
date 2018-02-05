@@ -8,7 +8,7 @@ import get from 'lodash/get';
 import moment from 'moment';
 import withTransaction from '@data/withTransaction';
 import styled from '@ui/styled';
-import { BodyCopy, H6, H4 } from '@ui/typography';
+import { BodyText, H6, H4 } from '@ui/typography';
 import Icon from '@ui/Icon';
 import last4 from '@utils/last4';
 import Spacer from '@ui/Spacer';
@@ -25,7 +25,7 @@ const Row = styled({
 
 const DateText = styled({
   textAlign: 'center',
-})(BodyCopy);
+})(BodyText);
 
 const StyledH6 = styled(({ theme }) => ({
   textAlign: 'center',

@@ -127,14 +127,13 @@ exports[`the Card component it should render a placeholder 1`] = `
           }
         }
       />
-      <View
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
         style={
           Object {
-            "alignSelf": "stretch",
-            "backgroundColor": "#dddddd",
-            "borderRadius": 6,
-            "height": 38,
-            "width": 80,
+            "color": "#6bac43",
           }
         }
       />
@@ -306,14 +305,7 @@ exports[`the Card component should render 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "backgroundColor": "transparent",
-            "borderRadius": 0,
             "color": "#6bac43",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
-            "padding": 0,
-            "paddingTop": 2.7,
           }
         }
       >
