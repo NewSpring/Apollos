@@ -3,6 +3,8 @@ import { ScrollView } from 'react-native';
 import BackgroundView from '@ui/BackgroundView';
 import { ContributionForm } from '@ui/forms';
 
+import Funds from './Funds';
+
 const Now = () => (
   <BackgroundView>
     <ScrollView>
@@ -15,6 +17,7 @@ const Now = () => (
           return history.push('/give/checkout');
         }}
       />
+      <Funds />
     </ScrollView>
   </BackgroundView>
 );

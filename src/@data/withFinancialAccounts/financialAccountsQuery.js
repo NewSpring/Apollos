@@ -13,8 +13,7 @@ export default gql`
         fileName
         fileType
         fileLabel
-        s3
-        cloudfront
+        url: s3
       }
     }
   }
