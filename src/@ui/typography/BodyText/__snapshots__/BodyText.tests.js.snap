@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the BodyCopy component should accept additional props 1`] = `
+exports[`the BodyText component should accept additional props 1`] = `
 <Text
   accessible={false}
   allowFontScaling={true}
@@ -22,7 +22,7 @@ exports[`the BodyCopy component should accept additional props 1`] = `
 </Text>
 `;
 
-exports[`the BodyCopy component should accept and render passed in styles 1`] = `
+exports[`the BodyText component should accept and render passed in styles 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
@@ -44,7 +44,7 @@ exports[`the BodyCopy component should accept and render passed in styles 1`] = 
 </Text>
 `;
 
-exports[`the BodyCopy component should render as bold 1`] = `
+exports[`the BodyText component should render as bold 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
@@ -62,11 +62,11 @@ exports[`the BodyCopy component should render as bold 1`] = `
     }
   }
 >
-  Bold BodyCopy text
+  Bold BodyText text
 </Text>
 `;
 
-exports[`the BodyCopy component should render as bold italic 1`] = `
+exports[`the BodyText component should render as bold italic 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
@@ -84,11 +84,11 @@ exports[`the BodyCopy component should render as bold italic 1`] = `
     }
   }
 >
-  Bold italic BodyCopy text
+  Bold italic BodyText text
 </Text>
 `;
 
-exports[`the BodyCopy component should render as italic 1`] = `
+exports[`the BodyText component should render as italic 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
@@ -106,11 +106,11 @@ exports[`the BodyCopy component should render as italic 1`] = `
     }
   }
 >
-  Italic BodyCopy text
+  Italic BodyText text
 </Text>
 `;
 
-exports[`the BodyCopy component should render correctly 1`] = `
+exports[`the BodyText component should render correctly 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
@@ -128,6 +128,6 @@ exports[`the BodyCopy component should render correctly 1`] = `
     }
   }
 >
-  Default BodyCopy text
+  Default BodyText text
 </Text>
 `;

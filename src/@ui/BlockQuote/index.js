@@ -5,7 +5,7 @@ import { StyleSheet, View } from 'react-native';
 
 import styled from '@ui/styled';
 import { withThemeMixin } from '@ui/theme';
-import { BodyCopy } from '@ui/typography';
+import { BodyText } from '@ui/typography';
 
 const enhance = compose(
   pure,
@@ -25,11 +25,11 @@ const Block = compose(
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: theme.colors.text.tertiary,
   })),
-  // Forced <BodyCopy> to inherit QuoteText styles.
+  // Forced <BodyText> to inherit QuoteText styles.
   // This is necessary for HTMLView to properly style <blockquote>'s 😥
   withThemeMixin(({ theme }) => ({
     overrides: {
-      BodyCopy: {
+      BodyText: {
         fontFamily: theme.typography.fontFamilySerif.regular.italic,
         textAlign: 'center',
       },
@@ -41,7 +41,7 @@ const BlockQuote = enhance(({
   children,
 }) => (
   <Block>
-    {typeof children === 'string' ? <BodyCopy>{children}</BodyCopy> : children}
+    {typeof children === 'string' ? <BodyText>{children}</BodyText> : children}
   </Block>
 ));
 

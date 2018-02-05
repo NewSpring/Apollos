@@ -34,9 +34,9 @@ const styles = styled(({ theme, bold, italic }) => {
       },
     }),
   });
-}, 'BodyCopy');
+}, 'BodyText');
 
-const BodyCopy = compose(
+const BodyText = compose(
   setPropTypes({
     bold: PropTypes.bool,
     italic: PropTypes.bool,
@@ -52,4 +52,4 @@ const BodyCopy = compose(
   pure,
 )(Text);
 
-export default BodyCopy;
+export default BodyText;

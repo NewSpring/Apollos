@@ -62,7 +62,8 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                 "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
-                "paddingTop": 2.7,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -140,14 +141,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             onPress={[Function]}
             style={
               Object {
-                "backgroundColor": "transparent",
-                "borderRadius": 0,
                 "color": "#6bac43",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "padding": 0,
-                "paddingTop": 2.7,
               }
             }
           >
@@ -1004,7 +998,8 @@ exports[`The PaymentForm component renders correctly 1`] = `
                 "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
-                "paddingTop": 2.7,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -1082,14 +1077,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
             onPress={[Function]}
             style={
               Object {
-                "backgroundColor": "transparent",
-                "borderRadius": 0,
                 "color": "#6bac43",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "padding": 0,
-                "paddingTop": 2.7,
               }
             }
           >
@@ -1946,7 +1934,8 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                 "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
-                "paddingTop": 2.7,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -2024,14 +2013,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             onPress={[Function]}
             style={
               Object {
-                "backgroundColor": "transparent",
-                "borderRadius": 0,
                 "color": "#6bac43",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "padding": 0,
-                "paddingTop": 2.7,
               }
             }
           >
@@ -2878,7 +2860,8 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                 "fontSize": 15.75,
                 "height": 40,
                 "lineHeight": 30,
-                "paddingTop": 2.7,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
                 "paddingVertical": 5,
               }
             }
@@ -2956,14 +2939,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             onPress={[Function]}
             style={
               Object {
-                "backgroundColor": "transparent",
-                "borderRadius": 0,
                 "color": "#6bac43",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
-                "padding": 0,
-                "paddingTop": 2.7,
               }
             }
           >
@@ -3647,7 +3623,8 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                   "fontSize": 15.75,
                   "height": 40,
                   "lineHeight": 30,
-                  "paddingTop": 2.7,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 2.25,
                   "paddingVertical": 5,
                 }
               }
@@ -3725,14 +3702,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
               onPress={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "borderRadius": 0,
                   "color": "#6bac43",
-                  "fontFamily": "Colfax-Regular",
-                  "fontSize": 18,
-                  "lineHeight": 20,
-                  "padding": 0,
-                  "paddingTop": 2.7,
                 }
               }
             >

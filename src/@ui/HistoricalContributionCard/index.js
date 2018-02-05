@@ -10,7 +10,7 @@ import styled from '@ui/styled';
 import Card, { CardContent } from '@ui/Card';
 import SideBySideView from '@ui/SideBySideView';
 import FlexedView from '@ui/FlexedView';
-import { H5, H6, UIText } from '@ui/typography';
+import { H5, H6, BodyText } from '@ui/typography';
 import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
 import CashAmountIndicator from '@ui/CashAmountIndicator';
@@ -64,10 +64,9 @@ const StyledH6 = styled(({ theme }) => ({
   color: theme.colors.text.tertiary,
 }))(H6);
 
-const ItalicText = styled(({ theme }) => ({
+const DateText = styled(({ theme }) => ({
   color: theme.colors.text.tertiary,
-  fontStyle: 'italic',
-}))(UIText);
+}))(BodyText);
 
 const Row = styled({
   flexDirection: 'row',
@@ -99,7 +98,7 @@ const HistoricalContributionCard = enhance(({
         <H5>{startCase(toLower(fundName))}</H5>
         <StyledH6>{startCase(toLower(contributorName))}</StyledH6>
         <Spacer />
-        <ItalicText>{moment(date).utc().format(dateFormat)}</ItalicText>
+        <DateText italic>{moment(date).utc().format(dateFormat)}</DateText>
       </LeftColumn>
 
       <RightColumn>
