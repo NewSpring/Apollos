@@ -32,7 +32,7 @@ export default function identifyCategory(item) {
         ...item,
         // Prevents duplicate letters at end of string
         // this logic exists for articles for some reason
-        category: category.replace(/(.)(?=\1)/g, ''),
+        category: category && category.replace(/(.)(?=\1)/g, ''),
       };
     }
   }

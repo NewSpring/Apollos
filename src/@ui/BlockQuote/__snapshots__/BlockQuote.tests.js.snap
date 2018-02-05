@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the BulletListItem component should render 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "borderBottomWidth": 0.5,
+      "borderColor": "#858585",
+      "borderTopWidth": 0.5,
+      "marginVertical": 40,
+      "paddingHorizontal": 20,
+      "paddingVertical": 30,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    bold={false}
+    ellipsizeMode="tail"
+    italic={false}
+    style={
+      Object {
+        "color": "#303030",
+        "fontFamily": "DroidSerif-RegularItalic",
+        "fontSize": 20.02,
+        "lineHeight": 33.11,
+        "paddingBottom": 2.25,
+        "paddingTop": 1.8,
+        "textAlign": "center",
+      }
+    }
+  >
+    “You are the only Bible some unbelievers will ever read.” – John MacArthur
+  </Text>
+</View>
+`;
+
+exports[`the BulletListItem component should render a loading state 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "borderBottomWidth": 0.5,
+      "borderColor": "#858585",
+      "borderTopWidth": 0.5,
+      "marginVertical": 40,
+      "paddingHorizontal": 20,
+      "paddingVertical": 30,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#dddddd",
+        "borderRadius": 6,
+        "height": 20.02,
+        "marginVertical": 6.545,
+        "width": "100%",
+      }
+    }
+  />
+</View>
+`;

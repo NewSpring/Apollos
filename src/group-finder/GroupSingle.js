@@ -14,9 +14,15 @@ import styled from '@ui/styled';
 import Avatar, { AvatarList } from '@ui/Avatar';
 import Button from '@ui/Button';
 import Chip, { ChipList } from '@ui/Chip';
-import SideBySideView from '@ui/SideBySideView';
+import SideBySideView, { ResponsiveSideBySideView, Left, Right } from '@ui/SideBySideView';
 import { Link } from '@ui/NativeWebRouter';
 import Settings from '@utils/Settings';
+import MediaQuery from '@ui/MediaQuery';
+
+import Map from './Map';
+
+const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
+const FlexedLeft = styled({ flex: 1 })(Left);
 
 const rockUrl = Settings.rockUrl || 'https://rock.newspring.cc/'; // todo
 
@@ -37,19 +43,28 @@ const StyledImage = styled({
   }),
 })(ConnectedImage);
 
-const Label = H7;
-const Info = H6;
+const Label = styled(({ theme }) => ({ color: theme.colors.text.tertiary }))(H7);
+const Info = styled(({ theme }) => ({ color: theme.colors.text.secondary }))(H6);
+const AdTitle = styled({ textAlign: 'center' })(H4);
+
 const GroupInfoContainer = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 2,
 }))(View);
 
 const CenteredSideBySideView = styled({
   alignItems: 'center',
-})(SideBySideView);
+})(ResponsiveSideBySideView);
 
 const GroupFindCTA = styled({
   alignItems: 'center',
 })(PaddedView);
+
+const leadersLoadingState = [{
+  person: {
+    id: 'loading',
+    photo: null,
+  },
+}];
 
 const GroupInfo = ({ label, info }) => (
   <GroupInfoContainer>
@@ -63,13 +78,17 @@ GroupInfo.propTypes = {
   info: PropTypes.string,
 };
 
+const isCurrentPersonLeader = (person, leaders) =>
+  person && Array.isArray(leaders) && leaders.filter(x => x.person.id === person.id).length;
+
 const GroupSingle = enhance(({
   group: {
+    id,
     photo = null,
     name,
     // name
     guid,
-    // entityId
+    entityId,
     type,
     demographic,
     description,
@@ -91,103 +110,122 @@ const GroupSingle = enhance(({
 }) => {
   const leaders = members.filter(x => x.role.toLowerCase() === 'leader');
   const loginParam = person ? person.impersonationParameter : '';
-
+  const isLeader = isCurrentPersonLeader(person, leaders);
   return (
     <BackgroundView>
       <Header titleText="Group Profile" backButton />
-      <ScrollView>
-        <StyledImage source={{ url: photo }} />
-        <Card isLoading={isLoading}>
-          <PaddedView>
-            <H3>{name}</H3>
-            <GroupInfoContainer>
-              <Label>Group Leaders</Label>
-              <H5>{leaders.map(leader => `${leader.person.firstName} ${leader.person.lastName}`).join(', ')}</H5>
-              <AvatarList>
-                {leaders.map(leader => (
-                  <Avatar key={leader.person.id} source={{ url: leader.person.photo }} size="medium" />
-                ))}
-              </AvatarList>
-            </GroupInfoContainer>
-          </PaddedView>
-        </Card>
+      <FlexedSideBySideView>
+        <FlexedLeft>
+          <ScrollView>
+            <StyledImage source={{ url: photo }} />
+            <Card isLoading={isLoading}>
+              <PaddedView>
+                <H3>{name}</H3>
+              </PaddedView>
+              <PaddedView vertical={false}>
+                <Label>Group Leaders</Label>
+                <H5>{leaders.map(leader => `${leader.person.firstName} ${leader.person.lastName}`).join(', ')}</H5>
+                <AvatarList>
+                  {(isLoading ? leadersLoadingState : leaders).map(leader => (
+                    <Avatar key={leader.person.id} source={{ url: leader.person.photo }} size="medium" />
+                  ))}
+                </AvatarList>
+              </PaddedView>
+            </Card>
 
-        <Card isLoading={isLoading}>
-          <PaddedView>
-            <CenteredSideBySideView>
-              <H4>#TheseAreMyPeople</H4>
-              <Button title="Contact" bordered onPress={() => Linking.openURL(`${rockUrl}Workflows/304?Group=${guid}${loginParam}`)} />
-            </CenteredSideBySideView>
-          </PaddedView>
-        </Card>
+            <Card isLoading={isLoading}>
+              <PaddedView>
+                <CenteredSideBySideView>
+                  <AdTitle>#TheseAreMyPeople</AdTitle>
+                  {isLeader ? (
+                    <Button title="Manage" bordered onPress={() => Linking.openURL(`${rockUrl}page/521?GroupId=${entityId}&${loginParam}`)} />
+                  ) : (
+                    <Button title="Contact" bordered onPress={() => Linking.openURL(`${rockUrl}Workflows/304?Group=${guid}${loginParam}`)} />
+                  )}
+                </CenteredSideBySideView>
+              </PaddedView>
+            </Card>
 
-        <Card isLoading={isLoading}>
-          <PaddedView>
-            <H5>Group Details</H5>
-            {(() => {
-              const loc = locations[0];
-              if (!loc) return null;
-              return <GroupInfo label="Address" info={`${loc.location.city}, ${loc.location.state}`} />;
-            })()}
-            {(() => {
-              if (!campus || !campus.name) return null;
-              return <GroupInfo label="Campus" info={campus.name} />;
-            })()}
-            {(() => {
-              let info = kidFriendly ? 'Children Welcome' : 'Adults Only';
-              if (ageRange) info += `, ${ageRange[0]} - ${ageRange[1]}`;
-              return <GroupInfo label="Information" info={info} />;
-            })()}
-          </PaddedView>
-        </Card>
-
-        <Card isLoading={isLoading}>
-          <PaddedView>
-            <H5>More Information</H5>
-            <GroupInfoContainer>
-              <Label>Description</Label>
-              <BodyText>{description}</BodyText>
-            </GroupInfoContainer>
-
-            <GroupInfoContainer>
-              <Label>Members</Label>
-              <AvatarList>
-                {members.filter(x => x.person && x.person.photo).map(member => (
-                  <Avatar key={member.person.id} source={{ url: member.person.photo }} size="small" />
-                ))}
-              </AvatarList>
-            </GroupInfoContainer>
-
-            <GroupInfoContainer>
-              <Label>Tags</Label>
-              <ChipList>
-                {tags.map(tag => (
-                  <Chip key={tag.id} title={tag.value} />
-                ))}
+            <Card isLoading={isLoading}>
+              <PaddedView>
+                <H5>Group Details</H5>
                 {(() => {
-                  if (!type || type === 'Interests') return null;
-                  return <Chip title={type} />;
+                  const loc = locations[0];
+                  if (!loc) return null;
+                  return <GroupInfo label="Address" info={`${loc.location.city}, ${loc.location.state}`} />;
                 })()}
                 {(() => {
-                  if (!kidFriendly) return null;
-                  return <Chip title={'Kid Friendly'} />;
+                  if (!campus || !campus.name) return null;
+                  return <GroupInfo label="Campus" info={campus.name} />;
                 })()}
                 {(() => {
-                  if (!demographic) return null;
-                  return <Chip title={demographic} />;
+                  let info = kidFriendly ? 'Children Welcome' : 'Adults Only';
+                  if (ageRange) info += `, ${ageRange[0]} - ${ageRange[1]}`;
+                  return <GroupInfo label="Information" info={info} />;
                 })()}
-              </ChipList>
-            </GroupInfoContainer>
-          </PaddedView>
-        </Card>
+              </PaddedView>
+            </Card>
 
-        <Card>
-          <GroupFindCTA>
-            <H4>Looking for another group?</H4>
-            <Link component={Button} bordered to="/groups" pop title="Find A Group" type="default" />
-          </GroupFindCTA>
-        </Card>
-      </ScrollView>
+            <Card isLoading={isLoading}>
+              <PaddedView>
+                <H5>More Information</H5>
+                <GroupInfoContainer>
+                  <Label>Description</Label>
+                  <BodyText>{description}</BodyText>
+                </GroupInfoContainer>
+
+                <GroupInfoContainer>
+                  <Label>Members</Label>
+                  <AvatarList>
+                    {members.filter(x => x.person && x.person.photo).map(member => (
+                      <Avatar key={member.person.id} source={{ url: member.person.photo }} size="small" />
+                    ))}
+                  </AvatarList>
+                </GroupInfoContainer>
+
+                <GroupInfoContainer>
+                  <Label>Tags</Label>
+                  <ChipList>
+                    {tags.map(tag => (
+                      <Chip key={tag.id} title={tag.value} />
+                    ))}
+                    {(() => {
+                      if (!type || type === 'Interests') return null;
+                      return <Chip title={type} />;
+                    })()}
+                    {(() => {
+                      if (!kidFriendly) return null;
+                      return <Chip title={'Kid Friendly'} />;
+                    })()}
+                    {(() => {
+                      if (!demographic) return null;
+                      return <Chip title={demographic} />;
+                    })()}
+                  </ChipList>
+                </GroupInfoContainer>
+              </PaddedView>
+            </Card>
+
+            <Card>
+              <GroupFindCTA>
+                <AdTitle>Looking for another group?</AdTitle>
+                <Link component={Button} to="/groups" pop title="Find A Group" type="default" />
+              </GroupFindCTA>
+            </Card>
+          </ScrollView>
+        </FlexedLeft>
+        <MediaQuery minWidth="md">
+          <Right>
+            <Map
+              groups={[{
+                locations,
+                id,
+              }]}
+              linkToGroup={false}
+            />
+          </Right>
+        </MediaQuery>
+      </FlexedSideBySideView>
     </BackgroundView>
   );
 });

@@ -6,6 +6,8 @@ import { decodeHTML } from 'entities';
 import { BodyText, H1, H2, H3, H4, H5, H6, H7 } from '@ui/typography';
 import ConnectedImage from '@ui/ConnectedImage';
 import Paragraph from '@ui/Paragraph';
+import BlockQuote from '@ui/BlockQuote';
+import BulletListItem from '@ui/BulletListItem';
 import { Link } from './styles';
 
 const LINE_BREAK = '\n';
@@ -44,7 +46,7 @@ export const defaultRenderer = (node, { children }) => {
     case 'p': return <Paragraph>{wrapTextChildren(children)}</Paragraph>;
     case 'strong': return <BodyText bold>{children}</BodyText>;
     case 'em': return <BodyText italic>{children}</BodyText>;
-    case 'blockquote': return <Paragraph style={{ paddingHorizontal: 20 }}>{children}</Paragraph>; // todo
+    case 'blockquote': return <BlockQuote>{children}</BlockQuote>;
     case 'h1': return <H1>{children}</H1>;
     case 'h2': return <H2>{children}</H2>;
     case 'h3': return <H3>{children}</H3>;
@@ -53,7 +55,7 @@ export const defaultRenderer = (node, { children }) => {
     case 'h6': return <H6>{children}</H6>;
     case 'h7': return <H7>{children}</H7>;
     case 'ul': return children; // todo
-    case 'li': return <BodyText>• {children}{LINE_BREAK}</BodyText>; // todo
+    case 'li': return <BulletListItem>{children}</BulletListItem>;
     case 'a': {
       const url = node.attribs && node.attribs.href;
       const onPress = () => Linking.openURL(decodeHTML(url));

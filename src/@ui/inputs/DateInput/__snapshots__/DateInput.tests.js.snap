@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The DateInput component should render correctly 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "marginVertical": 20,
+    }
+  }
+>
   <View
     accessibilityComponentType="button"
     accessibilityLabel={undefined}
@@ -42,14 +48,17 @@ exports[`The DateInput component should render correctly 1`] = `
           "borderColor": "#dddddd",
           "borderRadius": 6,
           "borderWidth": 2,
-          "elevation": 4,
+          "elevation": 2,
           "flexDirection": "row",
-          "justifyContent": "flex-end",
+          "height": 40,
+          "justifyContent": "center",
           "marginBottom": 10,
           "marginRight": 10,
+          "marginTop": 5,
           "opacity": 1,
           "overflow": "hidden",
-          "padding": 10,
+          "paddingHorizontal": 5,
+          "paddingVertical": 5,
         }
       }
     />
@@ -274,5 +283,48 @@ exports[`The DateInput component should render correctly 1`] = `
       </View>
     </View>
   </Modal>
+  <View
+    collapsable={undefined}
+    onLayout={[Function]}
+    pointerEvents="none"
+    style={
+      Object {
+        "bottom": 0,
+        "justifyContent": "center",
+        "opacity": 0.8,
+        "position": "absolute",
+        "top": 0,
+        "transform": Array [
+          Object {
+            "scale": 0.8,
+          },
+          Object {
+            "translateX": 0,
+          },
+          Object {
+            "translateY": 0,
+          },
+        ],
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#505050",
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 15.75,
+          "lineHeight": 17.75,
+          "paddingBottom": 1.8,
+          "paddingTop": 2.25,
+          "paddingVertical": 5,
+        }
+      }
+    />
+  </View>
 </View>
 `;

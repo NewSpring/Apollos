@@ -20,6 +20,7 @@ import Series, { Sermon, SeriesSingle, SeriesTrailer } from './series';
 import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
+import Locations from './locations';
 import Live from './live';
 import Auth from './auth';
 import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
@@ -169,16 +170,19 @@ class AppRouter extends PureComponent {
               <Route exact path="/groups/finder" component={GroupFinderResults} />
               <Route exact path="/groups/:id" component={GroupSingle} />
 
-              <Route exact path="/give/methods" component={give.PaymentMethods} />
               <Route exact path="/give/campaign/:slug" component={give.Campaign} />
-              <Route exact path="/give/schedules/:id" component={give.Schedule} />
               <Route exact path="/give/thankyou" component={give.ThankYou} />
 
               <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
               <Route path="/give/new-payment-method" cardStackDirection="vertical" component={give.AddAccount} />
               <Route exact path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
+              <Route exact path="/give/history/:id" component={give.TransactionDetails} />
+              <Route exact path="/give/schedules/:id" component={give.ScheduleDetails} />
+
               <Route path="/give" component={give.GiveRoutes} />
+
+              <Route path="/locations" component={Locations} />
 
               <Route path="/login" component={Auth} cardStackDirection="vertical" />
 

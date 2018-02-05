@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
+import { withRouter } from '@ui/NativeWebRouter';
 import BackgroundView from '@ui/BackgroundView';
 import withTransactions from '@data/withTransactions';
 import ContributionHistoryList from './ContributionHistoryList';
@@ -13,6 +14,7 @@ class ContributionHistory extends PureComponent {
     refetch: ContributionHistoryList.propTypes.refetch,
     transactions: ContributionHistoryList.propTypes.transactions,
     onPressNoDataButton: ContributionHistoryList.propTypes.onPressNoDataButton,
+    onPressContributionCard: ContributionHistoryList.propTypes.onPressContributionCard,
     setFilterDateRange: PropTypes.func,
   };
 
@@ -22,6 +24,7 @@ class ContributionHistory extends PureComponent {
     refetch: ContributionHistoryList.defaultProps.refetch,
     transactions: ContributionHistoryList.defaultProps.transactions,
     onPressNoDataButton: ContributionHistoryList.defaultProps.onPressNoDataButton,
+    onPressContributionCard: ContributionHistoryList.defaultProps.onPressContributionCard,
     setFilterDateRange() {},
   };
 
@@ -41,6 +44,7 @@ class ContributionHistory extends PureComponent {
           refetch={this.props.refetch}
           transactions={this.props.transactions}
           onPressNoDataButton={this.props.onPressNoDataButton}
+          onPressContributionCard={this.props.onPressContributionCard}
           FilterComponent={() => (
             <ContributionHistoryFilter
               onSubmit={this.handleFilter}
@@ -53,6 +57,12 @@ class ContributionHistory extends PureComponent {
 }
 
 const enhance = compose(
+  withRouter,
+  withProps(props => ({
+    onPressContributionCard(id) {
+      props.history.push(`/give/history/${id}`);
+    },
+  })),
   withTransactions,
   withProps(props => ({
     onPressNoDataButton() { props.route.jumpTo('Now'); },

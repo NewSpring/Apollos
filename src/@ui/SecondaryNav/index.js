@@ -1,8 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TabBar, { Link } from '../TabBar';
+import { withProps, compose } from 'recompose';
+import withToggleLike from '@data/likes/withToggleLike';
+import TabBar, { Link } from '@ui/TabBar';
+import { share } from '@utils/content';
 
 export { Link };
+
+export const Share = withProps(({ content }) => ({
+  icon: 'share',
+  onPress: () => share(content),
+}))(Link);
+
+export const Like = compose(
+  withToggleLike,
+  withProps(({ toggleLike, id, isLiked }) => ({
+    onPress: () => toggleLike(id),
+    icon: isLiked ? 'like-solid' : 'like',
+  })),
+)(Link);
 
 const SecondaryNav = ({
   backButton = false,

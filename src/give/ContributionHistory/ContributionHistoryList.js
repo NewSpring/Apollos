@@ -11,6 +11,7 @@ import PaddedView from '@ui/PaddedView';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { BodyText } from '@ui/typography';
 import { ButtonLink } from '@ui/Button';
+import Touchable from '@ui/Touchable';
 import ContributionHistoryHeader from './ContributionHistoryHeader';
 import ContributionHistoryFilter from './ContributionHistoryFilter';
 
@@ -36,6 +37,7 @@ class ContributionHistoryList extends PureComponent {
       }),
     })),
     onPressNoDataButton: PropTypes.func,
+    onPressContributionCard: PropTypes.func,
     FilterComponent: PropTypes.any, // eslint-disable-line
   };
 
@@ -45,6 +47,7 @@ class ContributionHistoryList extends PureComponent {
     refetch() {},
     isLoading: true,
     onPressNoDataButton() {},
+    onPressContributionCard() {},
     FilterComponent: ContributionHistoryFilter,
   };
 
@@ -52,14 +55,18 @@ class ContributionHistoryList extends PureComponent {
     <View>
       <ContributionHistoryHeader year={item.year} />
       {item.transactions.map(transaction => (
-        <HistoricalContributionCard
+        <Touchable
           key={transaction.id}
-          amount={transaction.amount}
-          fundName={transaction.account.name}
-          contributorName={`${transaction.person.firstName} ${transaction.person.lastName}`}
-          date={transaction.date}
-          profileImageUrl={transaction.person.photo}
-        />
+          onPress={() => { this.props.onPressContributionCard(transaction.transactionId); }}
+        >
+          <HistoricalContributionCard
+            amount={transaction.amount}
+            fundName={transaction.account.name}
+            contributorName={`${transaction.person.firstName} ${transaction.person.lastName}`}
+            date={transaction.date}
+            profileImageUrl={transaction.person.photo}
+          />
+        </Touchable>
       ))}
     </View>
   );
@@ -121,5 +128,14 @@ class ContributionHistoryList extends PureComponent {
     );
   }
 }
+
+// const enhance = compose(
+//   withRouter,
+//   withProps(props => ({
+//     onPressContributionCard(id) {
+//       props.history.push(`/give/history/${id}`);
+//     },
+//   })),
+// );
 
 export default ContributionHistoryList;

@@ -2,7 +2,7 @@ import { Location, Permissions } from 'expo';
 
 let locationStatus;
 
-const getLocation = async (...options) => {
+const getLocation = async (options) => {
   if (typeof locationStatus === 'undefined') {
     locationStatus = await Permissions.getAsync(Permissions.LOCATION);
   }
@@ -13,7 +13,9 @@ const getLocation = async (...options) => {
 
   if (locationStatus.status !== 'granted') throw new Error('Location permission not granted');
 
-  return Location.getCurrentPositionAsync(...options);
+  return Location.getCurrentPositionAsync(Object.assign({}, {
+    enableHighAccuracy: false,
+  }, options));
 };
 
 export default getLocation;

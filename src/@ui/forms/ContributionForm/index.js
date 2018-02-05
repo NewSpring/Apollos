@@ -15,6 +15,7 @@ import {
 import { isEmpty, get } from 'lodash';
 import { withFormik } from 'formik';
 import Yup from 'yup';
+import moment from 'moment';
 
 import { withRouter } from '@ui/NativeWebRouter';
 
@@ -190,6 +191,8 @@ export class ContributionFormWithoutData extends Component {
               error={Boolean(touched.frequencyId && errors.frequencyId)}
             />
             <Inputs.DateInput
+              label="Start Date"
+              displayValue={moment(this.props.values.startDate).format('MM/DD/YYYY')}
               value={this.props.values.startDate}
               onChange={value => this.props.setFieldValue('startDate', value)}
               onBlur={() => this.props.setFieldTouched('startDate', true)}
