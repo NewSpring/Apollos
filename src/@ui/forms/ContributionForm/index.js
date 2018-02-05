@@ -15,6 +15,7 @@ import {
 import { isEmpty, get } from 'lodash';
 import { withFormik } from 'formik';
 import Yup from 'yup';
+import moment from 'moment';
 
 import { withRouter } from '@ui/NativeWebRouter';
 
@@ -22,7 +23,7 @@ import withGive from '@data/withGive';
 import withFinancialAccounts from '@data/withFinancialAccounts';
 import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
-import { H3, H2, BodyCopy as P } from '@ui/typography';
+import { H3, H2, BodyText as P } from '@ui/typography';
 import Button from '@ui/Button';
 import * as Inputs from '@ui/inputs';
 import PaddedView from '@ui/PaddedView';
@@ -190,6 +191,8 @@ export class ContributionFormWithoutData extends Component {
               error={Boolean(touched.frequencyId && errors.frequencyId)}
             />
             <Inputs.DateInput
+              label="Start Date"
+              displayValue={moment(this.props.values.startDate).format('MM/DD/YYYY')}
               value={this.props.values.startDate}
               onChange={value => this.props.setFieldValue('startDate', value)}
               onBlur={() => this.props.setFieldTouched('startDate', true)}

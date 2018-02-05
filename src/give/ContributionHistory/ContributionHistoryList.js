@@ -9,8 +9,9 @@ import FlatList from '@ui/WebCompatibleFlatList';
 import FlexedView from '@ui/FlexedView';
 import PaddedView from '@ui/PaddedView';
 import ActivityIndicator from '@ui/ActivityIndicator';
-import { BodyCopy } from '@ui/typography';
+import { BodyText } from '@ui/typography';
 import { ButtonLink } from '@ui/Button';
+import Touchable from '@ui/Touchable';
 import ContributionHistoryHeader from './ContributionHistoryHeader';
 import ContributionHistoryFilter from './ContributionHistoryFilter';
 
@@ -36,6 +37,7 @@ class ContributionHistoryList extends PureComponent {
       }),
     })),
     onPressNoDataButton: PropTypes.func,
+    onPressContributionCard: PropTypes.func,
     FilterComponent: PropTypes.any, // eslint-disable-line
   };
 
@@ -45,6 +47,7 @@ class ContributionHistoryList extends PureComponent {
     refetch() {},
     isLoading: true,
     onPressNoDataButton() {},
+    onPressContributionCard() {},
     FilterComponent: ContributionHistoryFilter,
   };
 
@@ -52,14 +55,18 @@ class ContributionHistoryList extends PureComponent {
     <View>
       <ContributionHistoryHeader year={item.year} />
       {item.transactions.map(transaction => (
-        <HistoricalContributionCard
+        <Touchable
           key={transaction.id}
-          amount={transaction.amount}
-          fundName={transaction.account.name}
-          contributorName={`${transaction.person.firstName} ${transaction.person.lastName}`}
-          date={transaction.date}
-          profileImageUrl={transaction.person.photo}
-        />
+          onPress={() => { this.props.onPressContributionCard(transaction.transactionId); }}
+        >
+          <HistoricalContributionCard
+            amount={transaction.amount}
+            fundName={transaction.account.name}
+            contributorName={`${transaction.person.firstName} ${transaction.person.lastName}`}
+            date={transaction.date}
+            profileImageUrl={transaction.person.photo}
+          />
+        </Touchable>
       ))}
     </View>
   );
@@ -84,20 +91,20 @@ class ContributionHistoryList extends PureComponent {
         <View>
           <this.props.FilterComponent />
           <PaddedView>
-            <BodyCopy>
+            <BodyText>
               {'We didn\'t find any contributions associated with your account. If you would like to start giving, you can '}
               <ButtonLink onPress={this.props.onPressNoDataButton}>
                 {'give now'}
               </ButtonLink>
               {'.'}
-            </BodyCopy>
+            </BodyText>
           </PaddedView>
           <PaddedView>
-            <BodyCopy>
+            <BodyText>
               If you have any questions, please call our Finance Team at 864-965-9990 or
               <ButtonLink onPress={() => Linking.openURL('https://newspring.cc/contact')}> contact us </ButtonLink>
               and someone will be happy to assist you.
-            </BodyCopy>
+            </BodyText>
           </PaddedView>
         </View>
       );
@@ -121,5 +128,14 @@ class ContributionHistoryList extends PureComponent {
     );
   }
 }
+
+// const enhance = compose(
+//   withRouter,
+//   withProps(props => ({
+//     onPressContributionCard(id) {
+//       props.history.push(`/give/history/${id}`);
+//     },
+//   })),
+// );
 
 export default ContributionHistoryList;

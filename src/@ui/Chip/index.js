@@ -31,8 +31,8 @@ const TitleText = styled(({ withIcon = false }) => ({
   paddingHorizontal: 6,
 }))(H6);
 
-const StyledButton = styled(({ theme }) => ({
-  justifyContent: 'flex-end',
+const StyledButton = styled(({ theme, withIcon = false }) => ({
+  justifyContent: withIcon ? 'flex-end' : 'center',
   paddingHorizontal: theme.sizing.baseUnit / 4,
   paddingVertical: theme.sizing.baseUnit / 4,
   height: theme.sizing.baseUnit * 2,
@@ -49,7 +49,7 @@ const Chip = enhance(({
   pill = false,
   ...buttonProps
 }) => (
-  <StyledButton TouchableComponent={TouchableOpacity} pill={pill} {...buttonProps}>
+  <StyledButton withIcon={icon} TouchableComponent={TouchableOpacity} pill={pill} {...buttonProps}>
     {title ? <TitleText withIcon={icon}>{title}</TitleText> : null}
     {icon ? <Icon name={icon} style={iconStyles} size={iconSize} /> : null}
   </StyledButton>
