@@ -398,10 +398,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "padding": 0,
                   }
                 }
               >
@@ -1123,10 +1120,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "padding": 0,
                   }
                 }
               >
@@ -1659,10 +1653,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "padding": 0,
                   }
                 }
               >
@@ -2379,10 +2370,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "padding": 0,
                   }
                 }
               >
@@ -3164,10 +3152,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "padding": 0,
                   }
                 }
               >
@@ -3889,10 +3874,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "padding": 0,
                   }
                 }
               >

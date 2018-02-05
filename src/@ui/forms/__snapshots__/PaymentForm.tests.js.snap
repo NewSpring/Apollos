@@ -141,10 +141,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             onPress={[Function]}
             style={
               Object {
-                "backgroundColor": "transparent",
-                "borderRadius": 0,
                 "color": "#6bac43",
-                "padding": 0,
               }
             }
           >
@@ -1080,10 +1077,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
             onPress={[Function]}
             style={
               Object {
-                "backgroundColor": "transparent",
-                "borderRadius": 0,
                 "color": "#6bac43",
-                "padding": 0,
               }
             }
           >
@@ -2019,10 +2013,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             onPress={[Function]}
             style={
               Object {
-                "backgroundColor": "transparent",
-                "borderRadius": 0,
                 "color": "#6bac43",
-                "padding": 0,
               }
             }
           >
@@ -2948,10 +2939,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             onPress={[Function]}
             style={
               Object {
-                "backgroundColor": "transparent",
-                "borderRadius": 0,
                 "color": "#6bac43",
-                "padding": 0,
               }
             }
           >
@@ -3714,10 +3702,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
               onPress={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "borderRadius": 0,
                   "color": "#6bac43",
-                  "padding": 0,
                 }
               }
             >

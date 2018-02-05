@@ -133,10 +133,7 @@ exports[`the Card component it should render a placeholder 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "backgroundColor": "transparent",
-            "borderRadius": 0,
             "color": "#6bac43",
-            "padding": 0,
           }
         }
       />
@@ -308,10 +305,7 @@ exports[`the Card component should render 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "backgroundColor": "transparent",
-            "borderRadius": 0,
             "color": "#6bac43",
-            "padding": 0,
           }
         }
       >
