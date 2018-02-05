@@ -6,6 +6,10 @@ const getSiteLink = (contentItem) => {
   const category = contentItem.channelName;
   const { meta } = contentItem;
 
+  if (contentItem && contentItem.__typename === 'Group') { // eslint-disable-line
+    return `https://my.newspring.cc/groups/${contentItem.id}`;
+  }
+
   switch (category) {
     case 'series_newspring':
       return `${site}/sermons/${meta.urlTitle}`;
