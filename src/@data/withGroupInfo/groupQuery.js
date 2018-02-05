@@ -11,6 +11,7 @@ export default gql`
     group: node(id: $id) {
       id
       ... on Group {
+        isLiked
         name
         guid
         entityId
