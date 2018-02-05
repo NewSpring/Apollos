@@ -13,7 +13,7 @@ export const MUTATION = gql`
     $birthYear: String,
     $campus: ID
   ) {
-    updateProfile(
+    updateProfile(input: {
       NickName: $nickName
       FirstName: $firstName
       LastName: $lastName
@@ -22,7 +22,7 @@ export const MUTATION = gql`
       BirthDay: $birthDay
       BirthYear: $birthYear
       Campus: $campus
-    )
+    })
   }
 `;
 

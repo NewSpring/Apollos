@@ -10,13 +10,13 @@ export const MUTATION = gql`
     $state: String,
     $postalCode: String
   ) {
-    updateHomeAddress(
+    updateHomeAddress(input: {
       Street1: $street1
       Street2: $street2
       City: $city
       State: $state
       PostalCode: $postalCode
-    )
+    })
   }
 `;
 
