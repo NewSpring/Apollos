@@ -371,3 +371,14 @@ export async function setSavedPaymentMethod(result, variables, { cache }) {
     throw err;
   }
 }
+
+export function restoreContributions(result, variables, { cache }) {
+  cache.writeQuery({
+    query: contributionsQuery,
+    data: {
+      contributions: JSON.parse(variables.state),
+    },
+  });
+  return null;
+}
+

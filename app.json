@@ -9,6 +9,7 @@
     "android": {
       "package": "com.newspring.apollos"
     },
-    "orientation": "portrait"
+    "orientation": "portrait",
+    "scheme": "newspring"
   }
 }
