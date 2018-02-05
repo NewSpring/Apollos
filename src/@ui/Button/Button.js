@@ -120,7 +120,7 @@ Button.propTypes = {
   bordered: PropTypes.bool,
   pill: PropTypes.bool,
   to: PropTypes.string,
-  type: PropTypes.oneOf(['default', 'primary', 'secondary', 'tertiary', 'ghost']), // keys in theme.colors.action
+  type: PropTypes.oneOf(['default', 'primary', 'secondary', 'tertiary', 'ghost', 'alert']), // keys in theme.colors.action
   ...Touchable.propTypes,
 };
 
