@@ -5,7 +5,7 @@ import set from 'lodash/fp/set';
 export default function fetchMoreResolver({ collectionName, mapTo, data } = {}) {
   return () => {
     data.fetchMore({
-      variables: { ...data.variables, skip: get(data, collectionName, []).length },
+      variables: { ...data.variables, skip: (get(data, collectionName) || []).length },
       updateQuery: (previousResult, { fetchMoreResult }) => {
         if (!fetchMoreResult) return previousResult;
         return set(mapTo || collectionName,

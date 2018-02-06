@@ -301,11 +301,11 @@ exports[`The ContributionForm component renders correctly 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Bold",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 15.75,
                     "height": 40,
                     "lineHeight": 30,
-                    "paddingTop": 2.7,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
                     "paddingVertical": 5,
                   }
                 }
@@ -317,10 +317,11 @@ exports[`The ContributionForm component renders correctly 1`] = `
                   style={
                     Object {
                       "color": "#858585",
-                      "fontFamily": "Colfax-Regular",
-                      "fontSize": 18,
-                      "lineHeight": 20,
-                      "paddingTop": 2.7,
+                      "fontFamily": "Colfax-Bold",
+                      "fontSize": 15.75,
+                      "lineHeight": 17.75,
+                      "paddingBottom": 1.8,
+                      "paddingTop": 2.25,
                     }
                   }
                 />
@@ -396,14 +397,8 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
-                    "fontSize": 18,
-                    "lineHeight": 20,
-                    "padding": 0,
-                    "paddingTop": 2.7,
+                    "textDecorationLine": "underline",
                   }
                 }
               >
@@ -1028,11 +1023,11 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Bold",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 15.75,
                     "height": 40,
                     "lineHeight": 30,
-                    "paddingTop": 2.7,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
                     "paddingVertical": 5,
                   }
                 }
@@ -1044,10 +1039,11 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   style={
                     Object {
                       "color": "#858585",
-                      "fontFamily": "Colfax-Regular",
-                      "fontSize": 18,
-                      "lineHeight": 20,
-                      "paddingTop": 2.7,
+                      "fontFamily": "Colfax-Bold",
+                      "fontSize": 15.75,
+                      "lineHeight": 17.75,
+                      "paddingBottom": 1.8,
+                      "paddingTop": 2.25,
                     }
                   }
                 />
@@ -1123,14 +1119,8 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
-                    "fontSize": 18,
-                    "lineHeight": 20,
-                    "padding": 0,
-                    "paddingTop": 2.7,
+                    "textDecorationLine": "underline",
                   }
                 }
               >
@@ -1566,11 +1556,11 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Bold",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 15.75,
                     "height": 40,
                     "lineHeight": 30,
-                    "paddingTop": 2.7,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
                     "paddingVertical": 5,
                   }
                 }
@@ -1582,10 +1572,11 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   style={
                     Object {
                       "color": "#858585",
-                      "fontFamily": "Colfax-Regular",
-                      "fontSize": 18,
-                      "lineHeight": 20,
-                      "paddingTop": 2.7,
+                      "fontFamily": "Colfax-Bold",
+                      "fontSize": 15.75,
+                      "lineHeight": 17.75,
+                      "paddingBottom": 1.8,
+                      "paddingTop": 2.25,
                     }
                   }
                 />
@@ -1661,14 +1652,8 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
-                    "fontSize": 18,
-                    "lineHeight": 20,
-                    "padding": 0,
-                    "paddingTop": 2.7,
+                    "textDecorationLine": "underline",
                   }
                 }
               >
@@ -2288,11 +2273,11 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Bold",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 15.75,
                     "height": 40,
                     "lineHeight": 30,
-                    "paddingTop": 2.7,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
                     "paddingVertical": 5,
                   }
                 }
@@ -2304,10 +2289,11 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                   style={
                     Object {
                       "color": "#858585",
-                      "fontFamily": "Colfax-Regular",
-                      "fontSize": 18,
-                      "lineHeight": 20,
-                      "paddingTop": 2.7,
+                      "fontFamily": "Colfax-Bold",
+                      "fontSize": 15.75,
+                      "lineHeight": 17.75,
+                      "paddingBottom": 1.8,
+                      "paddingTop": 2.25,
                     }
                   }
                 />
@@ -2383,14 +2369,8 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
-                    "fontSize": 18,
-                    "lineHeight": 20,
-                    "padding": 0,
-                    "paddingTop": 2.7,
+                    "textDecorationLine": "underline",
                   }
                 }
               >
@@ -3075,11 +3055,11 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Bold",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 15.75,
                     "height": 40,
                     "lineHeight": 30,
-                    "paddingTop": 2.7,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
                     "paddingVertical": 5,
                   }
                 }
@@ -3091,10 +3071,11 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                   style={
                     Object {
                       "color": "#858585",
-                      "fontFamily": "Colfax-Regular",
-                      "fontSize": 18,
-                      "lineHeight": 20,
-                      "paddingTop": 2.7,
+                      "fontFamily": "Colfax-Bold",
+                      "fontSize": 15.75,
+                      "lineHeight": 17.75,
+                      "paddingBottom": 1.8,
+                      "paddingTop": 2.25,
                     }
                   }
                 />
@@ -3170,14 +3151,8 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
-                    "fontSize": 18,
-                    "lineHeight": 20,
-                    "padding": 0,
-                    "paddingTop": 2.7,
+                    "textDecorationLine": "underline",
                   }
                 }
               >
@@ -3802,11 +3777,11 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                   Object {
                     "color": "#6bac43",
                     "fontFamily": "Colfax-Bold",
-                    "fontSize": 32.4,
-                    "fontWeight": "700",
+                    "fontSize": 15.75,
                     "height": 40,
                     "lineHeight": 30,
-                    "paddingTop": 2.7,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
                     "paddingVertical": 5,
                   }
                 }
@@ -3818,10 +3793,11 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                   style={
                     Object {
                       "color": "#858585",
-                      "fontFamily": "Colfax-Regular",
-                      "fontSize": 18,
-                      "lineHeight": 20,
-                      "paddingTop": 2.7,
+                      "fontFamily": "Colfax-Bold",
+                      "fontSize": 15.75,
+                      "lineHeight": 17.75,
+                      "paddingBottom": 1.8,
+                      "paddingTop": 2.25,
                     }
                   }
                 />
@@ -3897,14 +3873,8 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                 onPress={[Function]}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
                     "color": "#6bac43",
-                    "fontFamily": "Colfax-Regular",
-                    "fontSize": 18,
-                    "lineHeight": 20,
-                    "padding": 0,
-                    "paddingTop": 2.7,
+                    "textDecorationLine": "underline",
                   }
                 }
               >

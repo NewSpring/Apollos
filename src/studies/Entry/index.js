@@ -19,6 +19,7 @@ const enhance = compose(
     const theme = { };
     if (content.colors && content.colors.length) {
       const primary = `#${content.colors[0].value}`;
+
       theme.colors = {
         background: {
           primary,

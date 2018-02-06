@@ -1,22 +1,30 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
-import { Platform, View } from 'react-native';
+import { Platform } from 'react-native';
 import { debounce } from 'lodash';
 import { parse, stringify } from '@utils/queryString';
 import { withRouter } from '@ui/NativeWebRouter';
 import { Text as TextInput } from '@ui/inputs';
+import FlexedView from '@ui/FlexedView';
 import { H7 } from '@ui/typography';
 import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import Icon from '@ui/Icon';
 import LiveNowButton from '@ui/LiveNowButton';
 import styled from '@ui/styled';
+import PaddedView from '@ui/PaddedView';
 
 import Feed from './Feed';
 import Results from './Results';
 
 const CancelText = styled(({ theme }) => ({ paddingHorizontal: theme.sizing.baseUnit / 2 }))(H7);
+
+const WebHeader = styled(({ theme }) => ({
+  backgroundColor: theme.colors.background.paper,
+  borderBottomColor: theme.colors.background.overlay,
+  borderBottomWidth: 1,
+}))(PaddedView);
 
 const enhance = compose(
   withRouter,
@@ -42,7 +50,7 @@ class Discover extends PureComponent {
 
   get searchForm() {
     return (
-      <BackgroundView>
+      <FlexedView>
         <TextInput
           value={this.state.searchText}
           onChangeText={this.handleSearch}
@@ -53,7 +61,7 @@ class Discover extends PureComponent {
           ) : null}
           placeholder="Type your search here"
         />
-      </BackgroundView>
+      </FlexedView>
     );
   }
 
@@ -69,7 +77,7 @@ class Discover extends PureComponent {
   render() {
     return (
       <BackgroundView>
-        {Platform.OS === 'web' ? <View>{this.searchForm}</View> : <Header>{this.searchForm}</Header>}
+        {Platform.OS === 'web' ? <WebHeader>{this.searchForm}</WebHeader> : <Header>{this.searchForm}</Header>}
         <LiveNowButton />
         {(this.props.term && this.props.term.length) ? (
           <Results term={this.props.term} />

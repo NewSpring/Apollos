@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Providers from '@ui/TestProviders';
-import BodyCopy from './';
+import BodyText from './';
 
-describe('the BodyCopy component', () => {
+describe('the BodyText component', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
       <Providers>
-        <BodyCopy>Default BodyCopy text</BodyCopy>
+        <BodyText>Default BodyText text</BodyText>
       </Providers>,
     );
     expect(tree).toMatchSnapshot();
@@ -15,7 +15,7 @@ describe('the BodyCopy component', () => {
   it('should render as bold', () => {
     const tree = renderer.create(
       <Providers>
-        <BodyCopy bold>Bold BodyCopy text</BodyCopy>
+        <BodyText bold>Bold BodyText text</BodyText>
       </Providers>,
     );
     expect(tree).toMatchSnapshot();
@@ -23,7 +23,7 @@ describe('the BodyCopy component', () => {
   it('should render as italic', () => {
     const tree = renderer.create(
       <Providers>
-        <BodyCopy italic>Italic BodyCopy text</BodyCopy>
+        <BodyText italic>Italic BodyText text</BodyText>
       </Providers>,
     );
     expect(tree).toMatchSnapshot();
@@ -31,7 +31,7 @@ describe('the BodyCopy component', () => {
   it('should render as bold italic', () => {
     const tree = renderer.create(
       <Providers>
-        <BodyCopy bold italic>Bold italic BodyCopy text</BodyCopy>
+        <BodyText bold italic>Bold italic BodyText text</BodyText>
       </Providers>,
     );
     expect(tree).toMatchSnapshot();
@@ -40,7 +40,7 @@ describe('the BodyCopy component', () => {
     const salmon = { color: 'salmon' };
     const tree = renderer.create(
       <Providers>
-        <BodyCopy style={salmon}>Salmon text</BodyCopy>
+        <BodyText style={salmon}>Salmon text</BodyText>
       </Providers>,
     );
     expect(tree).toMatchSnapshot();
@@ -48,7 +48,7 @@ describe('the BodyCopy component', () => {
   it('should accept additional props', () => {
     const tree = renderer.create(
       <Providers>
-        <BodyCopy accessible={false}>{'"True faith means holding nothing back. It means putting every hope in God\'s fidelity to His Promises." ― Francis Chan'}</BodyCopy>
+        <BodyText accessible={false}>{'"True faith means holding nothing back. It means putting every hope in God\'s fidelity to His Promises." ― Francis Chan'}</BodyText>
       </Providers>,
     );
     expect(tree).toMatchSnapshot();

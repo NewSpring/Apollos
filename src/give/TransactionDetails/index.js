@@ -8,7 +8,7 @@ import Header from '@ui/Header';
 import BackgroundView from '@ui/BackgroundView';
 import PaddedView from '@ui/PaddedView';
 import styled from '@ui/styled';
-import { BodyCopy } from '@ui/typography';
+import { BodyText } from '@ui/typography';
 import SideBySideView, { Left, Right } from '@ui/SideBySideView';
 import MediaQuery from '@ui/MediaQuery';
 import Hero, { BackgroundImage } from '@ui/Hero';
@@ -28,7 +28,7 @@ const Note = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit * 2,
   textAlign: 'center',
   color: theme.colors.text.secondary,
-}))(BodyCopy);
+}))(BodyText);
 
 const enhance = compose(
   withRouter,

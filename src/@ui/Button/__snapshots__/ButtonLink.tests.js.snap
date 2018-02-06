@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Button component should render 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  onPress={[Function]}
+  style={
+    Object {
+      "color": "#6bac43",
+      "textDecorationLine": "underline",
+    }
+  }
+>
+  Boom
+</Text>
+`;
+
+exports[`The Button component should render inherit typographic styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  bold={false}
+  ellipsizeMode="tail"
+  italic={false}
+  style={
+    Object {
+      "color": "#303030",
+      "fontFamily": "DroidSerif-Regular",
+      "fontSize": 20.02,
+      "lineHeight": 33.11,
+      "paddingBottom": 2.25,
+      "paddingTop": 1.8,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "color": "#6bac43",
+        "textDecorationLine": "underline",
+      }
+    }
+  >
+    Boom
+  </Text>
+</Text>
+`;

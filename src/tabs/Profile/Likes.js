@@ -10,14 +10,14 @@ import FeedView from '@ui/FeedView';
 import MediaQuery from '@ui/MediaQuery';
 import withUser from '@data/withUser';
 import UserAvatarView from '@ui/UserAvatarView';
+import Card, { CardContent } from '@ui/Card';
+import PaddedView from '@ui/PaddedView';
 
 const CurrentUserAvatar = withUser(UserAvatarView);
 
-const asHeaderText = styled(({ theme }) => ({
+const asHeaderText = styled({
   textAlign: 'center',
-  paddingHorizontal: theme.sizing.baseUnit,
-  paddingVertical: theme.sizing.baseUnit,
-}));
+});
 
 const RecentLikesHeaderText = asHeaderText(H7);
 const YourLikesHeaderText = asHeaderText(H5);
@@ -28,9 +28,11 @@ const LikedContent = compose(
 
 const RecentLikes = withRecentLikes(props => (
   <View>
-    <RecentLikesHeaderText>
-      Check out some of the latest things from NewSpring
-    </RecentLikesHeaderText>
+    <PaddedView>
+      <RecentLikesHeaderText>
+        Check out some of the latest things from NewSpring
+      </RecentLikesHeaderText>
+    </PaddedView>
     <LikedContent
       sectionTitle={null}
       {...props}
@@ -41,17 +43,30 @@ const RecentLikes = withRecentLikes(props => (
 const YourLikesHeader = () => (
   <View>
     <MediaQuery maxWidth="md"><CurrentUserAvatar allowProfileImageChange /></MediaQuery>
-    <YourLikesHeaderText>Your Likes</YourLikesHeaderText>
+    <PaddedView><YourLikesHeaderText>Your Likes</YourLikesHeaderText></PaddedView>
   </View>
+);
+
+const EmptyList = () => (
+  <Card>
+    <CardContent>
+      <PaddedView>
+        <RecentLikesHeaderText>
+          {'You don\'t seem to have any likes yet '}😲
+        </RecentLikesHeaderText>
+      </PaddedView>
+    </CardContent>
+  </Card>
 );
 
 const Likes = compose(
   pure,
   withProfileLikes,
-  withProps(({ content = [], isLoading }) => ({
+  withProps(({ content = [] }) => ({
     numColumns: 1,
     ItemComponent: ThumbnailCard,
-    ListHeaderComponent: (content.length || isLoading) ? YourLikesHeader : null,
+    ListHeaderComponent: YourLikesHeader,
+    ListEmptyComponent: EmptyList,
     ListFooterComponent: content.length < 5 ? RecentLikes : null,
   })),
   styled({ paddingVertical: 0 }),
