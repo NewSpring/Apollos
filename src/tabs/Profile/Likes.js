@@ -19,11 +19,6 @@ const asHeaderText = styled({
   textAlign: 'center',
 });
 
-const TextWrapper = styled(({ theme }) => ({
-  paddingHorizontal: theme.sizing.baseUnit,
-  paddingVertical: theme.sizing.baseUnit,
-}))(View);
-
 const RecentLikesHeaderText = asHeaderText(H7);
 const YourLikesHeaderText = asHeaderText(H5);
 
@@ -33,11 +28,11 @@ const LikedContent = compose(
 
 const RecentLikes = withRecentLikes(props => (
   <View>
-    <TextWrapper>
+    <PaddedView>
       <RecentLikesHeaderText>
         Check out some of the latest things from NewSpring
       </RecentLikesHeaderText>
-    </TextWrapper>
+    </PaddedView>
     <LikedContent
       sectionTitle={null}
       {...props}
@@ -48,7 +43,7 @@ const RecentLikes = withRecentLikes(props => (
 const YourLikesHeader = () => (
   <View>
     <MediaQuery maxWidth="md"><CurrentUserAvatar allowProfileImageChange /></MediaQuery>
-    <TextWrapper><YourLikesHeaderText>Your Likes</YourLikesHeaderText></TextWrapper>
+    <PaddedView><YourLikesHeaderText>Your Likes</YourLikesHeaderText></PaddedView>
   </View>
 );
 
