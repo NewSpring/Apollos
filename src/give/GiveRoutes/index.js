@@ -13,6 +13,7 @@ import MediaQuery from '@ui/MediaQuery';
 import { ResponsiveSideBySideView as SideBySideView, Left, Right } from '@ui/SideBySideView';
 import Hero, { BackgroundImage } from '@ui/Hero';
 import styled from '@ui/styled';
+import ContributionsChartHero from '@ui/ContributionsChartHero';
 
 import Dashboard from 'give/Dashboard';
 import Now from 'give/Now';
@@ -115,7 +116,7 @@ class GiveRoutes extends PureComponent {
                   <Hero background={<BackgroundImage source={require('./history.jpg')} />} />
                 </Route>
                 <Route path="/give" exact>
-                  <Hero backgroundColor="green" />
+                  <ContributionsChartHero onViewHistory={() => this.handleOnChangeTab(2)} />
                 </Route>
                 <Route>
                   <Hero

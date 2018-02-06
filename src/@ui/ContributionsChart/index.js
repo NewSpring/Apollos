@@ -25,6 +25,7 @@ export class ContributionsChart extends PureComponent {
     tickLabelFill: PropTypes.string,
     chartHeight: PropTypes.number,
     tickFontSize: PropTypes.number,
+    style: PropTypes.any, // eslint-disable-line
   };
 
   static defaultProps = {
@@ -52,6 +53,7 @@ export class ContributionsChart extends PureComponent {
     tickLabelFill: '#858585',
     chartHeight: 160,
     tickFontSize: 10,
+    style: {},
   };
 
   state = {
@@ -111,6 +113,7 @@ export class ContributionsChart extends PureComponent {
   render() {
     return (
       <View
+        style={this.props.style}
         onLayout={this.setWidth}
       >
         {this.state.width && (
