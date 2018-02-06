@@ -18,10 +18,11 @@ import { withFormik } from 'formik';
 import Yup from 'yup';
 import moment from 'moment';
 
-import { withRouter } from '@ui/NativeWebRouter';
+import { withRouter, withProtectedFunction } from '@ui/NativeWebRouter';
 import Icon from '@ui/Icon';
 import withGive from '@data/withGive';
 import withFinancialAccounts from '@data/withFinancialAccounts';
+import withIsLoggedIn from '@data/withUser/withIsLoggedIn';
 import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { H5, H3, H2, BodyText as P } from '@ui/typography';
@@ -30,6 +31,7 @@ import * as Inputs from '@ui/inputs';
 import PaddedView from '@ui/PaddedView';
 import TableView from '@ui/TableView';
 import styled from '@ui/styled';
+import { enhancer as mediaQuery } from '@ui/MediaQuery';
 
 import FundInput from './FundInput';
 import FrequencyInput, { FREQUENCY_IDS } from './FrequencyInput';
@@ -43,6 +45,15 @@ const LoadingView = styled({
 const ButtonWrapper = Platform.OS === 'web' ? styled({
   alignItems: 'flex-start',
 })(View) : View;
+
+const ButtonRow = mediaQuery(({ md }) => ({ minWidth: md }),
+  styled({ flexDirection: 'row' }),
+)(View);
+
+const ButtonInRow = mediaQuery(({ md }) => ({ maxWidth: md }),
+  styled(({ theme }) => ({ marginBottom: theme.sizing.baseUnit / 2 })),
+  styled(({ theme }) => ({ marginRight: theme.sizing.baseUnit / 2 })),
+)(Button);
 
 const Totals = Platform.OS === 'web' ? styled({
   alignItems: 'flex-start',
@@ -99,6 +110,8 @@ export class ContributionFormWithoutData extends Component {
     isSubmitting: PropTypes.bool,
     isValid: PropTypes.bool,
     recurringPaymentOptionsAvailable: PropTypes.bool,
+    triggerLogin: PropTypes.func,
+    isLoggedIn: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -237,16 +250,33 @@ export class ContributionFormWithoutData extends Component {
 
         <Totals vertical={false}>
           <TotalText>my total is $<H2>{total.split('.')[0]}</H2>.{total.split('.')[1]}</TotalText>
-          <Button
-            onPress={this.props.handleSubmit}
-            disabled={!(this.totalContribution > 0) || !this.props.isValid}
-            loading={this.props.isSubmitting}
-            title="Review Contribution"
-            type="primary"
-          >
-            <H5>Review Contribution</H5>
-            <Icon name="lock" />
-          </Button>
+          {this.props.isLoggedIn ? (
+            <Button
+              onPress={this.props.handleSubmit}
+              disabled={!(this.totalContribution > 0) || !this.props.isValid}
+              loading={this.props.isSubmitting}
+              title="Review Contribution"
+              type="primary"
+            >
+              <H5>Review Contribution</H5>
+              <Icon name="lock" />
+            </Button>
+          ) : (
+            <ButtonRow>
+              <ButtonInRow
+                disabled={!(this.totalContribution > 0) || !this.props.isValid}
+                onPress={this.props.triggerLogin}
+                title="Sign in or create account"
+                type="primary"
+              />
+              <ButtonInRow
+                disabled={!(this.totalContribution > 0) || !this.props.isValid}
+                onPress={this.props.handleSubmit}
+                title="Give as Guest"
+                type="default"
+              />
+            </ButtonRow>
+          )}
         </Totals>
       </PaddedView>
     );
@@ -262,7 +292,9 @@ const ContributionForm = compose(
   }),
   withGive,
   withRouter,
+  withIsLoggedIn,
   withFinancialAccounts,
+  withProtectedFunction(protect => ({ triggerLogin: protect })),
   withCheckout,
   branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withProps(({ accounts, person }) => ({
