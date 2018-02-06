@@ -4,6 +4,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
 <View
   style={
     Object {
+      "alignItems": "center",
       "flexDirection": "row",
       "flexWrap": "wrap",
       "paddingVertical": 20,
@@ -300,7 +301,8 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                 Object {
                   "color": "#6bac43",
                   "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
+                  "fontSize": 32.4,
+                  "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
                   "paddingBottom": 1.8,
@@ -539,6 +541,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
 <View
   style={
     Object {
+      "alignItems": "center",
       "flexDirection": "row",
       "flexWrap": "wrap",
       "paddingVertical": 20,
@@ -835,7 +838,8 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                 Object {
                   "color": "#6bac43",
                   "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
+                  "fontSize": 32.4,
+                  "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
                   "paddingBottom": 1.8,
@@ -1074,6 +1078,7 @@ exports[`The FrequencyInput component should render correctly with initial state
 <View
   style={
     Object {
+      "alignItems": "center",
       "flexDirection": "row",
       "flexWrap": "wrap",
       "paddingVertical": 20,
@@ -1370,7 +1375,8 @@ exports[`The FrequencyInput component should render correctly with initial state
                 Object {
                   "color": "#6bac43",
                   "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
+                  "fontSize": 32.4,
+                  "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
                   "paddingBottom": 1.8,

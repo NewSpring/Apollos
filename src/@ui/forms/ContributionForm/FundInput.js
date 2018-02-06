@@ -10,13 +10,30 @@ import styled from '@ui/styled';
 const StyledTextInput = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(1.8),
   fontWeight: '700',
+  ...Platform.select({
+    android: {
+      paddingTop: 0,
+      paddingBottom: 0,
+    },
+  }),
 }), 'FundInput.TextInput')(Inputs.Text);
 
 const StyledPicker = styled(({ theme }) => ({
   color: theme.colors.primary,
+  ...Platform.select({ // RN android doesn't support setting these values at this time
+    ios: {
+      fontSize: theme.helpers.rem(1.8),
+      fontWeight: '700',
+    },
+    web: {
+      fontSize: theme.helpers.rem(1.8),
+      fontWeight: '700',
+    },
+  }),
 }), 'FundInput.Picker')(Inputs.Picker);
 
 const FundInputWrapper = styled(({ theme }) => ({
+  alignItems: 'center',
   flexDirection: 'row',
   flexWrap: 'wrap',
   paddingVertical: theme.sizing.baseUnit,

@@ -35,6 +35,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
             "flexWrap": "wrap",
             "paddingVertical": 20,
@@ -331,7 +332,8 @@ exports[`The ContributionForm component renders correctly 1`] = `
                       Object {
                         "color": "#6bac43",
                         "fontFamily": "Colfax-Bold",
-                        "fontSize": 15.75,
+                        "fontSize": 32.4,
+                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingBottom": 1.8,
@@ -833,6 +835,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
             "flexWrap": "wrap",
             "paddingVertical": 20,
@@ -1129,7 +1132,8 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                       Object {
                         "color": "#6bac43",
                         "fontFamily": "Colfax-Bold",
-                        "fontSize": 15.75,
+                        "fontSize": 32.4,
+                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingBottom": 1.8,
@@ -1365,6 +1369,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
             "flexWrap": "wrap",
             "paddingVertical": 20,
@@ -1661,7 +1666,8 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                       Object {
                         "color": "#6bac43",
                         "fontFamily": "Colfax-Bold",
-                        "fontSize": 15.75,
+                        "fontSize": 32.4,
+                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingBottom": 1.8,
@@ -2158,6 +2164,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
             "flexWrap": "wrap",
             "paddingVertical": 20,
@@ -2454,7 +2461,8 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                       Object {
                         "color": "#6bac43",
                         "fontFamily": "Colfax-Bold",
-                        "fontSize": 15.75,
+                        "fontSize": 32.4,
+                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingBottom": 1.8,
@@ -3016,6 +3024,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
             "flexWrap": "wrap",
             "paddingVertical": 20,
@@ -3312,7 +3321,8 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                       Object {
                         "color": "#6bac43",
                         "fontFamily": "Colfax-Bold",
-                        "fontSize": 15.75,
+                        "fontSize": 32.4,
+                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingBottom": 1.8,
@@ -3814,6 +3824,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
       <View
         style={
           Object {
+            "alignItems": "center",
             "flexDirection": "row",
             "flexWrap": "wrap",
             "paddingVertical": 20,
@@ -4110,7 +4121,8 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                       Object {
                         "color": "#6bac43",
                         "fontFamily": "Colfax-Bold",
-                        "fontSize": 15.75,
+                        "fontSize": 32.4,
+                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingBottom": 1.8,
