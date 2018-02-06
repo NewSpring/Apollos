@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { compose, setPropTypes } from 'recompose';
 import Placeholder from 'rn-placeholder';
 
@@ -15,9 +15,9 @@ const enhance = compose(
 
 export const ItemWithoutData = enhance(({ query, content: { html = '' } = {}, isLoading }) => (
   <View>
-    <Text> {/* wrapping text element provides unified baseline */}
+    <H4> {/* wrapping text element provides unified baseline */}
       <H4>{query}</H4>{' '}<H7>ESV</H7>
-    </Text>
+    </H4>
     <Placeholder.Paragraph
       lineNumber={5}
       onReady={!isLoading}

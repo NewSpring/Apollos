@@ -397,6 +397,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               style={
                 Object {
                   "color": "#6bac43",
+                  "textDecorationLine": "underline",
                 }
               }
             >
@@ -932,6 +933,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               style={
                 Object {
                   "color": "#6bac43",
+                  "textDecorationLine": "underline",
                 }
               }
             >
@@ -1467,6 +1469,7 @@ exports[`The FrequencyInput component should render correctly with initial state
               style={
                 Object {
                   "color": "#6bac43",
+                  "textDecorationLine": "underline",
                 }
               }
             >
