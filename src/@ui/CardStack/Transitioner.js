@@ -101,6 +101,7 @@ class Transitioner extends PureComponent {
       case PUSH: {
         const routeIndex = findIndex(entries, entry => this.keyForLocation(entry) === toKey);
         if (routeIndex > -1) {
+          entries[routeIndex] = nextProps.location;
           toPosition = routeIndex;
         } else {
           entries.splice(this.state.index + 1, 0, nextProps.location);
@@ -319,7 +320,6 @@ class Transitioner extends PureComponent {
   };
 
   finishNavigationFromPan = (duration) => {
-    this.props.history.goBack();
     Animated.timing(this.animatedPosition, {
       toValue: Math.max(this.state.index - 1, 0),
       duration,
@@ -327,6 +327,7 @@ class Transitioner extends PureComponent {
       useNativeDriver: true,
     }).start(({ finished }) => {
       if (finished) {
+        this.props.history.goBack();
         this.afterNavigate();
         this.afterPan();
       }
