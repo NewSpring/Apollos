@@ -12,7 +12,8 @@ const withStyles = compose(
     backgroundColor: theme.colors.background.primary,
   }), 'TabBar'),
   withTheme(({ theme }) => ({
-    indicatorColor: Color(theme.colors.white).mix(Color(theme.colors.primary)).rgb().string(),
+    indicatorColor: Color(theme.colors.background.paper)
+      .mix(Color(theme.colors.background.primary)).rgb().string(),
   })),
 );
 

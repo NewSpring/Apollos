@@ -21,17 +21,9 @@ const enhance = compose(
     if (content.colors && content.colors.length) {
       const primary = `#${content.colors[0].value}`;
 
-      let secondary = Color(primary);
-      if (content.isLight) {
-        secondary = secondary.darken(0.5).rgb().string();
-      } else {
-        secondary = secondary.mix(Color('white'), 0.5).rgb().string();
-      }
-
       theme.colors = {
         background: {
           primary,
-          secondary,
         },
       };
     }
