@@ -10,6 +10,8 @@ import FeedView from '@ui/FeedView';
 import MediaQuery from '@ui/MediaQuery';
 import withUser from '@data/withUser';
 import UserAvatarView from '@ui/UserAvatarView';
+import Card, { CardContent } from '@ui/Card';
+import PaddedView from '@ui/PaddedView';
 
 const CurrentUserAvatar = withUser(UserAvatarView);
 
@@ -50,13 +52,26 @@ const YourLikesHeader = () => (
   </View>
 );
 
+const EmptyList = () => (
+  <Card>
+    <CardContent>
+      <PaddedView>
+        <RecentLikesHeaderText>
+          {'You don\'t seem to have any likes yet '}😲
+        </RecentLikesHeaderText>
+      </PaddedView>
+    </CardContent>
+  </Card>
+);
+
 const Likes = compose(
   pure,
   withProfileLikes,
-  withProps(({ content = [], isLoading }) => ({
+  withProps(({ content = [] }) => ({
     numColumns: 1,
     ItemComponent: ThumbnailCard,
-    ListHeaderComponent: (content.length || isLoading) ? YourLikesHeader : null,
+    ListHeaderComponent: YourLikesHeader,
+    ListEmptyComponent: EmptyList,
     ListFooterComponent: content.length < 5 ? RecentLikes : null,
   })),
   styled({ paddingVertical: 0 }),
