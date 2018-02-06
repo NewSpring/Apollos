@@ -74,7 +74,7 @@ const SeriesSingle = enhance(({
     <ScrollView>
       <ContentView imageOverlayColor={(!isLoading && colors !== 'undefined') ? `#${colors[0].value}` : ''} {...otherContentProps}>
         {(video && video.embedUrl) ? (
-          <StyledButton onPress={() => history.push(`/series/${id}/trailer`)} type={'ghost'} bordered pill>
+          <StyledButton onPress={() => history.push(`/series/${id}/trailer`)} type={'ghost'} bordered>
             <Icon name="play" size={theme.helpers.rem(0.875)} fill={theme.colors.text.primary} />
             <H6>{' '}Watch The Trailer</H6>{/* NOTE: empty string pads the text from the icon */}
           </StyledButton>
