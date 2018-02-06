@@ -5,9 +5,9 @@ import { compose, pure, setPropTypes } from 'recompose';
 import styled from '@ui/styled';
 import ContentMedia from './ContentMedia';
 
+export { default as HTMLView } from '@ui/HTMLView';
 export { H2 as Title, H4 as SubHeading } from '@ui/typography';
 export { default as ByLine } from './ByLine';
-export { default as HTMLView } from './ContentHTMLView';
 
 const enhance = compose(
   pure,
