@@ -7,6 +7,8 @@ import withForgotPassword from './withForgotPassword';
 import withResetPassword from './withResetPassword';
 import withUser from './withUser';
 import withIsLoggedIn from './withIsLoggedIn';
+import withUpdateHomeAddress from './withUpdateHomeAddress';
+import withUpdateProfile from './withUpdateProfile';
 
 export default compose(
   withLogin,
@@ -17,4 +19,6 @@ export default compose(
   withResetPassword,
   withIsLoggedIn,
   withUser,
+  withUpdateHomeAddress,
+  withUpdateProfile,
 );
