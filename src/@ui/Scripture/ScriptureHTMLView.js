@@ -2,7 +2,7 @@ import React from 'react';
 import { withProps } from 'recompose';
 
 import HTMLView, { defaultRenderer, wrapTextChildren } from '@ui/HTMLView';
-import { Text } from 'react-native';
+import { Platform, Text } from 'react-native';
 import { H7, BodyText } from '@ui/typography';
 import Paragraph from '@ui/Paragraph';
 import styled from '@ui/styled';
@@ -16,13 +16,22 @@ const RedLetters = styled(({ theme }) => ({
   color: theme.colors.wordOfChrist,
 }))(Text);
 
+const NumText = styled(({ theme }) => ({
+  color: theme.colors.text.tertiary,
+  ...Platform.select({
+    android: {
+      lineHeight: theme.helpers.verticalRhythm(1.112, 1.625),
+    },
+  }),
+}))(H7);
+
 const renderer = (node, { children, ...other }) => { // eslint-disable-line
   // the defaultRenderer support several basic elements out of the box,
   // this function only needs to handle the cases that are unique to scripture.
   const className = (node && node.attribs && node.attribs.class) || '';
 
   if (className.includes('chapter-num') || className.includes('verse-num')) {
-    return <H7>{children}</H7>;
+    return <NumText>{children}</NumText>;
   }
 
   if (className.includes('line-group')) {
