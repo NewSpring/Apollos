@@ -149,28 +149,32 @@ exports[`the ScheduleCard component should render 1`] = `
           ellipsizeMode="tail"
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#858585",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
             }
           }
         >
-          Start Date: 
+          Start Date:
         </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={true}
           style={
             Object {
-              "color": "#505050",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "fontStyle": "italic",
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "color": "#303030",
+              "fontFamily": "DroidSerif-RegularItalic",
+              "fontSize": 20.02,
+              "lineHeight": 33.11,
+              "paddingBottom": 2.25,
+              "paddingLeft": 10,
+              "paddingTop": 1.8,
             }
           }
         >

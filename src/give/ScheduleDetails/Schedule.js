@@ -7,7 +7,7 @@ import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
 import withScheduledTransaction from '@data/withScheduledTransaction';
 import styled from '@ui/styled';
-import { UIText, H6, H3, H4, H7, BodyCopy } from '@ui/typography';
+import { H3, H4, H6, H7, BodyText } from '@ui/typography';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import Icon from '@ui/Icon';
 import last4 from '@utils/last4';
@@ -34,7 +34,7 @@ const Note = styled(({ theme }) => ({
   paddingBottom: theme.sizing.baseUnit,
   textAlign: 'center',
   color: theme.colors.text.secondary,
-}))(BodyCopy);
+}))(BodyText);
 
 const Row = styled({
   flexDirection: 'row',
@@ -113,7 +113,7 @@ const Schedule = enhance(({
                 <H4>{get(detail, 'account.name')}</H4>
                 <Row>
                   <Label>Start date: </Label>
-                  <BodyCopy italic>{moment(detail.start).format('MM/DD/YYYY')}</BodyCopy>
+                  <BodyText italic>{moment(detail.start).format('MM/DD/YYYY')}</BodyText>
                 </Row>
               </FlexedView>
               <CashAmountIndicator size={3} amount={detail.amount} />
@@ -124,10 +124,10 @@ const Schedule = enhance(({
 
         <PaddedView>
           {!isActive && (
-            <BodyCopy italic>{'Schedule Inactive'}</BodyCopy>
+            <BodyText italic>{'Schedule Inactive'}</BodyText>
           )}
           {isComplete && (
-            <BodyCopy italic>{'Schedule Completed'}</BodyCopy>
+            <BodyText italic>{'Schedule Completed'}</BodyText>
           )}
           {isCancellable && (
             <CancelScheduleButton

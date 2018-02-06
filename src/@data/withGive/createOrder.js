@@ -15,8 +15,6 @@ export const MUTATION = gql`
   }
 `;
 
-// NOTE: They create order after capturing a billing address
-// Works kind of like a thunk
 export default graphql(MUTATION, {
   props: ({ mutate }) => ({
     createOrder() {

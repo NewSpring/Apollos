@@ -4,7 +4,7 @@ import getContext from 'recompose/getContext';
 import compose from 'recompose/compose';
 import PropTypes from 'prop-types';
 import Seeker from '@ui/Seeker';
-import { UIText } from '@ui/typography';
+import { H7 } from '@ui/typography';
 import styled from '@ui/styled';
 import TimeElapsed from './TimeElapsed';
 
@@ -16,7 +16,7 @@ const Container = styled({
 
 const fixedWidth = styled({ width: 50, textAlign: 'center', alignItems: 'center' });
 const StyledTimeElapsed = fixedWidth(TimeElapsed);
-const DurationText = fixedWidth(UIText);
+const DurationText = fixedWidth(H7);
 
 export class AudioSeeker extends PureComponent {
   static propTypes = {

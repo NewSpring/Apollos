@@ -19,13 +19,13 @@ export const defaultFeedItemRenderer = (CardComponent = FeedItemCard) => ({ item
   <Link to={getLinkPath(item)}>
     <CardComponent
       id={item.id}
-      title={item.title}
+      title={item.title || item.name || ' '}
       category={item.category}
       images={getItemImages(item)}
       backgroundColor={getItemBgColor(item)}
       isLight={getItemIsLight(item)}
       isLoading={item.isLoading}
-      isLiked={get(item, 'content.isLiked', false)}
+      isLiked={item.isLiked || get(item, 'content.isLiked', false)}
     />
   </Link>
 );

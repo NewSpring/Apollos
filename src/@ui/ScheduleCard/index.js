@@ -11,7 +11,7 @@ import { withIsLoading } from '@ui/isLoading';
 import styled from '@ui/styled';
 import Card from '@ui/Card';
 import PaddedView from '@ui/PaddedView';
-import { H5, H6, UIText } from '@ui/typography';
+import { H5, H6, BodyText } from '@ui/typography';
 import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
 import CashAmountIndicator from '@ui/CashAmountIndicator';
@@ -43,19 +43,22 @@ const enhance = compose(
   pure,
 );
 
-const StyledH6 = styled(({ theme }) => ({
-  color: theme.colors.text.link,
-}))(H6);
-
-const ItalicText = styled(({ theme }) => ({
-  color: theme.colors.text.secondary,
-  fontStyle: 'italic',
-}))(UIText);
-
 const Row = styled({
   flexDirection: 'row',
   alignItems: 'center',
 })(View);
+
+const DateText = styled(({ theme }) => ({
+  paddingLeft: theme.sizing.baseUnit / 2,
+}))(BodyText);
+
+const StyledH6 = styled(({ theme }) => ({
+  color: theme.colors.text.tertiary,
+}))(H6);
+
+const LinkText = styled(({ theme }) => ({
+  color: theme.colors.text.link,
+}))(H6);
 
 const StyledIcon = withTheme(({ theme }) => ({
   fill: theme.colors.text.link,
@@ -81,15 +84,15 @@ const ScheduleCard = enhance(({
       <H5>{accountName}</H5>
       <Spacer />
       <Row>
-        <UIText>{'Start Date: '}</UIText>
-        <ItalicText>{moment(startDate).utc().format(dateFormat)}</ItalicText>
+        <StyledH6>{'Start Date:'}</StyledH6>
+        <DateText italic>{moment(startDate).utc().format(dateFormat)}</DateText>
       </Row>
       <Spacer />
       <TouchableWithoutFeedback
         onPress={onPress}
       >
         <Row>
-          <StyledH6>{'View Schedule Details'}</StyledH6>
+          <LinkText>{'View Schedule Details'}</LinkText>
           <StyledIcon name="arrow-next" size={iconSize} />
         </Row>
       </TouchableWithoutFeedback>
