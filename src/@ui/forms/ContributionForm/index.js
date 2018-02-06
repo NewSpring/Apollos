@@ -34,6 +34,11 @@ import styled from '@ui/styled';
 import FundInput from './FundInput';
 import FrequencyInput, { FREQUENCY_IDS } from './FrequencyInput';
 
+const LoadingView = styled({
+  height: 300,
+  width: '100%',
+  position: 'relative',
+})(ActivityIndicator);
 
 const ButtonWrapper = Platform.OS === 'web' ? styled({
   alignItems: 'flex-start',
@@ -259,7 +264,7 @@ const ContributionForm = compose(
   withRouter,
   withFinancialAccounts,
   withCheckout,
-  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
+  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withProps(({ accounts, person }) => ({
     funds: accounts,
     recurringPaymentOptionsAvailable: !!person,

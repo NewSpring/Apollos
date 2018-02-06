@@ -3,7 +3,7 @@ import { compose, mapProps } from 'recompose';
 import styled from '@ui/styled';
 
 const ActivityIndicator = compose(
-  mapProps(() => {}),
+  mapProps(({ style }) => ({ style })),
   styled({
     flex: 1,
     ...StyleSheet.absoluteFillObject,
