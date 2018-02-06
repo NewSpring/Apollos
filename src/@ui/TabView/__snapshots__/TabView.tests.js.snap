@@ -53,7 +53,7 @@ exports[`TabView Component renders 1`] = `
         collapsable={undefined}
         style={
           Object {
-            "backgroundColor": "#1c683e",
+            "backgroundColor": "rgb(181, 214, 161)",
             "bottom": 0,
             "height": 3,
             "left": 0,
