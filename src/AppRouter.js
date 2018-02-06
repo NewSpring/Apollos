@@ -83,8 +83,8 @@ class AppRouter extends PureComponent {
   largeScreenModals = [
     <Route exact path="/sections" key="sections-modal" component={asModal(tabs.Sections)} />,
     <Route path="/give/checkout" key="give-checkout" component={asModal(give.Checkout)} />,
-    <Route path="/give/new-payment-method" key="give-new-payment-method" component={asModal(give.AddAccount)} />,
-    <Route exact path="/give/payment-methods/:id" key="give-payment-method" component={asModal(give.PaymentMethod)} />,
+    <ProtectedRoute path="/give/new-payment-method" key="give-new-payment-method" component={asModal(give.AddAccount)} />,
+    <ProtectedRoute exact path="/give/payment-methods/:id" key="give-payment-method" component={asModal(give.PaymentMethod)} />,
     <Route path="/login" key="login" component={asModal(Auth)} />,
     <Route path="/discover" key="discover" component={asModal(tabs.Discover)} />,
   ];
@@ -175,12 +175,12 @@ class AppRouter extends PureComponent {
               <Route exact path="/give/thankyou" component={give.ThankYou} />
 
               <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
-              <Route path="/give/new-payment-method" cardStackDirection="vertical" component={give.AddAccount} />
-              <Route exact path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
+              <ProtectedRoute path="/give/new-payment-method" cardStackDirection="vertical" component={give.AddAccount} />
+              <ProtectedRoute exact path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
 
               <Route exact path="/give/restored-checkout" component={give.RestoredCheckout} />
-              <Route exact path="/give/history/:id" component={give.TransactionDetails} />
-              <Route exact path="/give/schedules/:id" component={give.ScheduleDetails} />
+              <ProtectedRoute exact path="/give/history/:id" component={give.TransactionDetails} />
+              <ProtectedRoute exact path="/give/schedules/:id" component={give.ScheduleDetails} />
 
               <Route path="/give" component={give.GiveRoutes} />
 

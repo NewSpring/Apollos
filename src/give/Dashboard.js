@@ -18,6 +18,7 @@ import DashboardSubheader from '@ui/DashboardSubheader';
 import ContributionsChartCard from '@ui/ContributionsChartCard';
 import withGivingDashboard from '@data/withGivingDashboard';
 import MediaQuery from '@ui/MediaQuery';
+import LoginPromptCard from '@ui/LoginPromptCard';
 
 export class Dashboard extends PureComponent {
   static propTypes = {
@@ -57,6 +58,8 @@ export class Dashboard extends PureComponent {
     return (
       <BackgroundView>
         <ScrollView>
+          <LoginPromptCard prompt="Login to see your giving history, schedules, and saved payments." />
+
           <DashboardSubheader
             text="Activity"
             buttonText="See All"

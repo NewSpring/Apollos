@@ -12,6 +12,7 @@ import ActivityIndicator from '@ui/ActivityIndicator';
 import { BodyText } from '@ui/typography';
 import { ButtonLink } from '@ui/Button';
 import Touchable from '@ui/Touchable';
+import LoginPromptCard from '@ui/LoginPromptCard';
 import ContributionHistoryHeader from './ContributionHistoryHeader';
 import ContributionHistoryFilter from './ContributionHistoryFilter';
 
@@ -90,6 +91,7 @@ class ContributionHistoryList extends PureComponent {
       Header = (
         <View>
           <this.props.FilterComponent />
+          <LoginPromptCard prompt={'Login to view your contribution history.'} />
           <PaddedView>
             <BodyText>
               {'We didn\'t find any contributions associated with your account. If you would like to start giving, you can '}
