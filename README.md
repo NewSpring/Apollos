@@ -10,7 +10,7 @@ Apollos is a reactive application framework for building react web + react nativ
 
 Browse [the interactive documentation](https://newspring.github.io/Apollos/), check out the `master` branch on [the web](https://apollos.netlify.com/) or on your mobile device with [Expo](https://expo.io/@newspring-builds/apollos-master):
 
-[![Expo QR Code](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=exp://exp.host/@newspring-builds/apollos-master)](https://expo.io/@newspring-builds/apollos-master)
+[![Expo QR Code](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=exp://exp.host/@newspring-builds/newspring-master)](https://expo.io/@newspring-builds/newspring-master)
 
 ## Table of Contents
 
