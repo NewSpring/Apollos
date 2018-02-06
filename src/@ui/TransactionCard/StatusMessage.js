@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
-import { H7 } from '@ui/typography';
+import { BodyText } from '@ui/typography';
+import styled from '@ui/styled';
+
+const StyledText = styled(({ theme }) => ({
+  color: theme.colors.text.secondary,
+}))(BodyText);
 
 // TODO: Missing is expiring soon message
 function StatusMessage(props = {}) {
@@ -17,36 +22,36 @@ function StatusMessage(props = {}) {
 
   if (didPass) {
     return (
-      <H7>
-        Your {isScheduled ? 'scheduled ' : ''}contribution of <H7>{`$${get(details, '0.amount', 0).toFixed(2)} `}</H7>
-        to <H7>{`${get(details, '0.account.name')} `}</H7>
+      <StyledText>
+        Your {isScheduled ? 'scheduled ' : ''}contribution of <StyledText bold>{`$${get(details, '0.amount', 0).toFixed(2)} `}</StyledText>
+        to <StyledText bold>{`${get(details, '0.account.name')} `}</StyledText>
         {details.length > 1 ? details[1].toFixed(2) : null}
         {' '}was successful.
-      </H7>
+      </StyledText>
     );
   }
   if (didFail) {
     return (
-      <H7>
+      <StyledText>
         Your {isScheduled ? 'scheduled ' : ''}contribution to
-        <H7>{` ${get(details, '0.account.name')} `}</H7>
+        <StyledText bold>{` ${get(details, '0.account.name')} `}</StyledText>
         {details.length > 1
-          ? <H7>and<H7>{` ${get(details, '1.name')} `}</H7></H7> : null}
+          ? <StyledText>and<StyledText bold>{` ${get(details, '1.name')} `}</StyledText></StyledText> : null}
         {' '}was unsuccessful.
         {error !== null && error !== ''
           ? ` Unfortunately, ${error}.` : ''}
-      </H7>
+      </StyledText>
     );
   }
   if (isPending) {
     return (
-      <H7>
+      <StyledText>
         Your {isScheduled ? 'scheduled ' : ''}contribution to
-        <H7>{` ${get(details, '0.account.name')} `}</H7>
+        <StyledText bold>{` ${get(details, '0.account.name')} `}</StyledText>
         {details.length > 1
-          ? <H7>and<H7>{` ${get(details, '1.name')} `}</H7></H7> : null}
-        {' '}is <H7>pending</H7>.
-      </H7>
+          ? <StyledText>and<StyledText bold>{` ${get(details, '1.name')} `}</StyledText></StyledText> : null}
+        {' '}is <StyledText>pending</StyledText>.
+      </StyledText>
     );
   }
   return null;
