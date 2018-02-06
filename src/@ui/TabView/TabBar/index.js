@@ -12,7 +12,7 @@ const withStyles = compose(
     backgroundColor: theme.colors.background.primary,
   }), 'TabBar'),
   withTheme(({ theme }) => ({
-    indicatorColor: Color(theme.colors.background.paper)
+    indicatorColor: Color(theme.colors.text.primary)
       .mix(Color(theme.colors.background.primary)).rgb().string(),
   })),
 );
