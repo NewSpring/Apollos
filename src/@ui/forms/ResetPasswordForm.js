@@ -7,10 +7,12 @@ import { compose, mapProps, setPropTypes } from 'recompose';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 
-import withUser from '@data/withUser';
+import { H6 } from '@ui/typography';
+import styled from '@ui/styled';import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
 import Button from '@ui/Button';
 
+const Status = styled({ textAlign: 'center' })(H6);
 const enhance = compose(
   setPropTypes({
     onResetSuccess: PropTypes.func,
@@ -21,14 +23,18 @@ const enhance = compose(
       password: Yup.string().required(),
       token: Yup.string().required(), // todo: Get token from URL flow
     }),
-    handleSubmit: async (values, { props, setFieldError, setSubmitting }) => {
+    handleSubmit: async (values, {
+      props, setFieldError, setSubmitting, setStatus,
+    }) => {
       props.onSubmit(values)
         .catch((...e) => {
+          setStatus('There was an error resetting your password.');
           console.log('Reset password error', e); // eslint-disable-line
           setFieldError('token', true);
           setFieldError('password', true); // todo: show real error message from server
         })
         .then((...args) => {
+          setStatus('Your password was reset');
           if (props.onResetSuccess) props.onResetSuccess(...args);
         })
         .finally(() => setSubmitting(false));
@@ -43,6 +49,7 @@ const enhance = compose(
     handleSubmit: PropTypes.func,
     isSubmitting: PropTypes.bool,
     isValid: PropTypes.bool,
+    status: PropTypes.string,
   }),
 );
 
@@ -55,6 +62,7 @@ export const ChangePasswordFormWithoutData = enhance(({
   handleSubmit,
   isValid,
   isSubmitting,
+  status,
 }) => (
   <View>
     <TextInput
@@ -73,6 +81,9 @@ export const ChangePasswordFormWithoutData = enhance(({
       onBlur={() => setFieldTouched('password', true)}
       error={touched.password && errors.password}
     />
+    {status ? (
+      <Status>{status}</Status>
+    ) : null}
     <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
   </View>
 ));

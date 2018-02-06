@@ -10,6 +10,10 @@ import TableView from '@ui/TableView';
 import PaddedView from '@ui/PaddedView';
 import withUser from '@data/withUser';
 import Button from '@ui/Button';
+import { H6 } from '@ui/typography';
+import styled from '@ui/styled';
+
+const Status = styled({ textAlign: 'center' })(H6);
 
 export const ProfileAddressFormWithoutData = ({
   setFieldValue,
@@ -20,6 +24,7 @@ export const ProfileAddressFormWithoutData = ({
   touched,
   isSubmitting,
   isValid,
+  status,
 }) => (
   <PaddedView horizontal={false}>
     <TableView>
@@ -61,6 +66,9 @@ export const ProfileAddressFormWithoutData = ({
         />
       </PaddedView>
     </TableView>
+    {status ? (
+      <Status>{status}</Status>
+    ) : null}
     <PaddedView>
       <Button onPress={handleSubmit} title="Save" disabled={!isValid} loading={isSubmitting} />
     </PaddedView>
@@ -94,6 +102,7 @@ ProfileAddressFormWithoutData.propTypes = {
   }),
   isSubmitting: PropTypes.bool,
   isValid: PropTypes.bool,
+  status: PropTypes.string,
 };
 
 const validationSchema = Yup.object().shape({
@@ -114,15 +123,20 @@ const ProfileAddressForm = compose(
   withFormik({
     mapPropsToValues,
     validationSchema,
-    handleSubmit: async (values, { props, setSubmitting }) => {
+    handleSubmit: async (values, { props, setSubmitting, setStatus }) => {
       setSubmitting(true);
-      await props.updateHomeAddress({
-        street1: values.street1,
-        street2: values.street2,
-        city: values.city,
-        state: values.state,
-        zip: values.zip,
-      });
+      try {
+        await props.updateHomeAddress({
+          street1: values.street1,
+          street2: values.street2,
+          city: values.city,
+          state: values.state,
+          zip: values.zip,
+        });
+        setStatus('Your address was updated.');
+      } catch (e) {
+        setStatus('There was an error. Please try again.');
+      }
       setSubmitting(false);
     },
     isInitialValid(props) {
