@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import GradientOverlayImage from './';
 
-storiesOf('@ui/GradientOverlayImage', module)
+storiesOf('GradientOverlayImage', module)
   .add('Default', () => (
     <GradientOverlayImage source={'https://picsum.photos/600/400/?random'} />
   ))
