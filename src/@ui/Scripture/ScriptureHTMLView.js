@@ -18,7 +18,6 @@ const RedLetters = styled(({ theme }) => ({
 
 const NumText = styled(({ theme }) => ({
   color: theme.colors.text.tertiary,
-  backgroundColor: 'salmon',
   ...Platform.select({
     android: {
       // taken from BodyText so NumText shares the same baseline.
