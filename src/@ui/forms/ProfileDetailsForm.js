@@ -4,6 +4,7 @@ import { compose, branch, renderComponent } from 'recompose';
 import { get } from 'lodash';
 import Yup from 'yup';
 import { withFormik } from 'formik';
+import moment from 'moment';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import * as Inputs from '@ui/inputs';
 import TableView from '@ui/TableView';
@@ -136,17 +137,23 @@ const validationSchema = Yup.object().shape({
   firstName: Yup.string().required(),
   lastName: Yup.string().required(),
   email: Yup.string().email().required(),
+  birthday: Yup.date().required(),
 });
 
 const mapPropsToValues = props => ({
   ...(props.user || {}),
+  birthday: moment()
+    .year(get(props, 'user.birthYear', moment().year()))
+    .month(get(props, 'user.birthMonth', moment().month() + 1) - 1)
+    .date(get(props, 'user.birthDay', moment().date()))
+    .toDate(),
   campusId: get(props, 'user.campus.id') || null,
 });
 
 const ProfileDetailsForm = compose(
   withCampuses,
   withUser,
-  branch(({ isLoading, user, campuses }) => !user && !campuses && isLoading,
+  branch(({ isLoading }) => isLoading,
     renderComponent(ActivityIndicator),
   ),
   withFormik({
@@ -154,17 +161,18 @@ const ProfileDetailsForm = compose(
     validationSchema,
     handleSubmit: async (values, { props, setSubmitting }) => {
       try {
-        console.log({ values, props });
         setSubmitting(true);
+        const birthMoment = moment(values.birthday);
+
         await props.updateProfile({
           nickName: values.nickName,
           firstName: values.firstName,
           lastName: values.lastName,
           email: values.email,
           campus: values.campusId,
-        //   birthMonth: values.birthMonth,
-        //   birthDay: values.birthDay,
-        //   birthYear: values.birthYear,
+          birthMonth: birthMoment.format('M'),
+          birthDay: birthMoment.format('D'),
+          birthYear: birthMoment.format('YYYY'),
         });
       } catch (err) {
         // TODO: Add space for general errors
