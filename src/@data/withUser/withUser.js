@@ -6,7 +6,6 @@ export const QUERY = gql`
     person: currentPerson {
       id
       age
-      birthDate
       birthDay
       birthMonth
       birthYear
