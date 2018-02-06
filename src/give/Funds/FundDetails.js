@@ -12,6 +12,7 @@ import HTMLView from '@ui/HTMLView';
 import PaddedView from '@ui/PaddedView';
 import { ContributionForm } from '@ui/forms';
 import ConnectedImage from '@ui/ConnectedImage';
+import { H2 } from '@ui/typography';
 
 const enhance = compose(
   withFinancialAccounts,
@@ -55,6 +56,9 @@ const FundDetails = enhance(({
             <StyledImage source={images} />
           </MediaQuery>
           <PaddedView>
+            <MediaQuery maxWidth="md">
+              <H2>{name}</H2>
+            </MediaQuery>
             <HTMLView>
               {description}
             </HTMLView>
