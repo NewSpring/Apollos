@@ -18,8 +18,10 @@ const RedLetters = styled(({ theme }) => ({
 
 const NumText = styled(({ theme }) => ({
   color: theme.colors.text.tertiary,
+  backgroundColor: 'salmon',
   ...Platform.select({
     android: {
+      // taken from BodyText so NumText shares the same baseline.
       lineHeight: theme.helpers.verticalRhythm(1.112, 1.625),
     },
   }),
@@ -31,7 +33,11 @@ const renderer = (node, { children, ...other }) => { // eslint-disable-line
   const className = (node && node.attribs && node.attribs.class) || '';
 
   if (className.includes('chapter-num') || className.includes('verse-num')) {
-    return <NumText>{children}</NumText>;
+    /* TODO: a single space lives here to temporarily space verse numbers when they are not at the
+     * beginning of a sentence or paragraph. It affects all instences (albeit less noticably in
+     * somecases) so a more procise fix in the future is prefered.
+     */
+    return <NumText> {children}</NumText>;
   }
 
   if (className.includes('line-group')) {
