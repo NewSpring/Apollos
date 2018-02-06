@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { uniqBy } from 'lodash';
-import truncate from 'truncate';
 import { compose, withProps } from 'recompose';
 import { Link } from '@ui/NativeWebRouter';
 import withSearch from '@data/withSearch';
@@ -12,7 +11,6 @@ const ResultItem = ({ item }) => (
   <Link to={item.link}>
     <ThumbnailCard
       title={item.title || ' '}
-      description={item.description ? truncate(item.description, 40) : ' '}
       images={item.image || []}
       isLoading={item.isLoading}
     />
