@@ -21,18 +21,11 @@ const RecentLikes = compose(
   }),
 )(FeedView);
 
-// const Title = styled(({ theme }) => ({
-//   paddingHorizontal: theme.sizing.baseUnit / 2,
-//   paddingTop: theme.sizing.baseUnit,
-//   paddingBottom: theme.sizing.baseUnit / 2,
-//   ...(Platform.OS === 'web' ? { textAlign: 'center' } : {}),
-// }))(H5);
-
-const SecondaryTitle = styled(({ theme }) => ({
-  textAlign: 'center',
+const Title = styled(({ theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit / 2,
   paddingTop: theme.sizing.baseUnit,
   paddingBottom: theme.sizing.baseUnit / 2,
+  textAlign: 'center',
 }))(H5);
 
 const FooterCard = styled(({ theme }) => ({
@@ -60,9 +53,9 @@ const Feed = enhance(({
     <RecentLikes
       ListHeaderComponent={(
         <View>
-          <SecondaryTitle>Recommended by NewSpring</SecondaryTitle>
+          <Title>Recommended by NewSpring</Title>
           {featuredCards}
-          <SecondaryTitle>Recently Liked by others</SecondaryTitle>
+          <Title>Recently Liked by others</Title>
         </View>
       )}
       ListFooterComponent={(
