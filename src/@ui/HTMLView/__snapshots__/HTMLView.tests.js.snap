@@ -41,6 +41,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         style={
           Object {
             "color": "#6bac43",
+            "textDecorationLine": "underline",
           }
         }
       >
@@ -309,6 +310,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         style={
           Object {
             "color": "#6bac43",
+            "textDecorationLine": "underline",
           }
         }
       >
@@ -807,6 +809,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         style={
           Object {
             "color": "#6bac43",
+            "textDecorationLine": "underline",
           }
         }
       >
