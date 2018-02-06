@@ -1,6 +1,5 @@
 import React from 'react';
 import { compose, mapProps, pure, withProps } from 'recompose';
-import Color from 'color';
 
 import withStudyEntry from '@data/withStudyEntry';
 import BackgroundView from '@ui/BackgroundView';
