@@ -8,14 +8,14 @@ export const MUTATION = gql`
     $street2: String,
     $city: String,
     $state: String,
-    $postalCode: String
+    $zip: String
   ) {
     updateHomeAddress(input: {
       Street1: $street1
       Street2: $street2
       City: $city
       State: $state
-      PostalCode: $postalCode
+      PostalCode: $zip
     })
   }
 `;
@@ -28,7 +28,7 @@ export default graphql(MUTATION, {
         'street2',
         'city',
         'state',
-        'postalCode',
+        'zip',
       ]),
     })),
   }),

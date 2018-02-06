@@ -3,7 +3,7 @@ import { graphql } from 'react-apollo';
 
 export const QUERY = gql`
   query CurrentPerson {
-    person: currentPerson {
+    user: currentPerson {
       id
       age
       birthDay
@@ -51,8 +51,8 @@ export const QUERY = gql`
 `;
 
 export default graphql(QUERY, {
-  props: ({ ownProps, data: { person, loading, refetch } }) => ({
-    user: person,
+  props: ({ ownProps, data: { user, loading, refetch } }) => ({
+    user,
     isLoading: ownProps.isLoading || loading,
     refetch,
   }),
