@@ -19,13 +19,16 @@ const groupCard = gql`
   fragment GroupCard on Group {
     __typename
     id
+    isLiked
   }
 `;
 
 // TODO: groups cannot be liked yet
+// NOTE: id is the calculated hash of
+// the real ID and the type of object.
 export const MUTATION = gql`
-  mutation ToggleLike($nodeId: String!) {
-    toggleLike(nodeId: $nodeId) {
+  mutation ToggleLike($id: String!) {
+    toggleLike(nodeId: $id) {
       like {
         ... ContentCard
         ... GroupCard
@@ -36,18 +39,19 @@ export const MUTATION = gql`
   ${groupCard}
 `;
 
+// TODO: Need to update optimisticResponse to work with groups
 export default compose(
   graphql(MUTATION, {
     props: ({ mutate }) => ({
-      toggleLike: (nodeId) => {
+      toggleLike: (id) => {
         const state = Client.readFragment({
-          id: `Content:${nodeId}`,
+          id: `Content:${id}`,
           fragment: contentCard,
         });
 
         return mutate({
           variables: {
-            nodeId,
+            id,
           },
           refetchQueries: ['UserLikes', 'RecentlyLiked'],
           optimisticResponse: {
@@ -55,7 +59,7 @@ export default compose(
               __typename: 'LikesMutationResponse',
               like: {
                 __typename: 'Content',
-                id: nodeId,
+                id,
                 content: {
                   __typename: 'ContentData',
                   isLiked: !get(state, 'content.isLiked'),
@@ -68,6 +72,6 @@ export default compose(
     }),
   }),
   withProtectedFunction((protect, { toggleLike }) => ({
-    toggleLike: nodeId => protect(() => toggleLike(nodeId)),
+    toggleLike: id => protect(() => toggleLike(id)),
   })),
 );

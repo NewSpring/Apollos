@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   StyleSheet,
-  Text,
+  Platform,
   View,
 } from 'react-native';
 import { compose, mapProps, setPropTypes, onlyUpdateForPropTypes } from 'recompose';
@@ -11,25 +11,35 @@ import { Link, withRouter, matchLocationToPath } from '@ui/NativeWebRouter';
 import { withTheme } from '@ui/theme';
 import MediaQuery, { enhancer as mediaQuery } from '@ui/MediaQuery';
 import styled from '@ui/styled';
+import { H7 } from '@ui/typography';
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
     height: 50,
+    ...Platform.select({
+      web: {
+        transform: [{ translateZ: [0] }], // web optimization for flexing viewport causing repaint 💥
+      },
+    }),
   },
   largeButton: {
-    height: 80,
+    height: 75,
+    /* Current design spec requires text smaller than we have components for. This is the easiest
+     * fix until a designer can create a navbar that fits within branding guidelines.
+     */
+    ...(Platform.OS !== 'web' ? { transform: [{ scale: 0.9 }] } : { transform: [{ scale3d: [0.9, 0.9, 1] }] }),
   },
 });
 
 // Styled View to wrap icon and label
 const LinkContainer = compose(
-  styled(styles.container, 'TabBar.Link.Container'),
   mediaQuery(({ md }) => ({ minWidth: md }), styled(styles.largeButton, 'TabBar.Link.Container@large')),
+  styled(styles.container, 'TabBar.Link.Container'),
 )(View);
 
-const StyledLinkText = styled({}, 'TabBar.Link.Text')(Text);
+const StyledLinkText = styled({}, 'TabBar.Link.Text')(H7);
 
 // Determine if link should be considered "active"
 const withActiveRoute = compose(

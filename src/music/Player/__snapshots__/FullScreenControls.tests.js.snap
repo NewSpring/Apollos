@@ -295,9 +295,10 @@ exports[`The FullScreenControls component should render 1`] = `
               "alignItems": "center",
               "color": "#ffffff",
               "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
               "textAlign": "center",
               "width": 50,
             }
@@ -416,9 +417,10 @@ exports[`The FullScreenControls component should render 1`] = `
               "alignItems": "center",
               "color": "#ffffff",
               "fontFamily": "Colfax-Regular",
-              "fontSize": 18,
-              "lineHeight": 20,
-              "paddingTop": 2.7,
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
               "textAlign": "center",
               "width": 50,
             }
@@ -581,10 +583,11 @@ exports[`The FullScreenControls component should render 1`] = `
             style={
               Object {
                 "color": "#ffffff",
-                "fontFamily": "Colfax-Regular",
-                "fontSize": 18,
-                "lineHeight": 20,
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 20.02,
+                "lineHeight": 25.33,
                 "opacity": 0.7,
+                "paddingBottom": 3.15,
                 "paddingTop": 2.7,
                 "paddingVertical": 5,
               }

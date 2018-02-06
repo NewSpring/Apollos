@@ -10,7 +10,7 @@ import GradientOverlayImage from '@ui/GradientOverlayImage';
 import Icon from '@ui/Icon';
 import Audio from '@ui/Audio';
 import Touchable from '@ui/Touchable';
-import { UIText, H7, H4 } from '@ui/typography';
+import { H7, H5, H4 } from '@ui/typography';
 import { Link } from '@ui/NativeWebRouter';
 import styled from '@ui/styled';
 
@@ -47,7 +47,7 @@ const Settings = styled({
 const Ellipsis = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 4,
   opacity: theme.alpha.medium,
-}))(props => <UIText {...props}>•••</UIText>);
+}))(props => <H5 {...props}>•••</H5>);
 
 const IconWithActiveOpacity = styled(({ theme, active }) => ({
   opacity: active ? 1 : theme.alpha.low,

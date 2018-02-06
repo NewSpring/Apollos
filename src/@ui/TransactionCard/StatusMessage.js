@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
-import { UIText } from '@ui/typography';
+import { H7 } from '@ui/typography';
 
 // TODO: Missing is expiring soon message
 function StatusMessage(props = {}) {
@@ -17,36 +17,36 @@ function StatusMessage(props = {}) {
 
   if (didPass) {
     return (
-      <UIText>
-        Your {isScheduled ? 'scheduled ' : ''}contribution of <UIText>{`$${get(details, '0.amount', 0).toFixed(2)} `}</UIText>
-        to <UIText>{`${get(details, '0.account.name')} `}</UIText>
+      <H7>
+        Your {isScheduled ? 'scheduled ' : ''}contribution of <H7>{`$${get(details, '0.amount', 0).toFixed(2)} `}</H7>
+        to <H7>{`${get(details, '0.account.name')} `}</H7>
         {details.length > 1 ? details[1].toFixed(2) : null}
         {' '}was successful.
-      </UIText>
+      </H7>
     );
   }
   if (didFail) {
     return (
-      <UIText>
+      <H7>
         Your {isScheduled ? 'scheduled ' : ''}contribution to
-        <UIText>{` ${get(details, '0.account.name')} `}</UIText>
+        <H7>{` ${get(details, '0.account.name')} `}</H7>
         {details.length > 1
-          ? <UIText>and<UIText>{` ${get(details, '1.name')} `}</UIText></UIText> : null}
+          ? <H7>and<H7>{` ${get(details, '1.name')} `}</H7></H7> : null}
         {' '}was unsuccessful.
         {error !== null && error !== ''
           ? ` Unfortunately, ${error}.` : ''}
-      </UIText>
+      </H7>
     );
   }
   if (isPending) {
     return (
-      <UIText>
+      <H7>
         Your {isScheduled ? 'scheduled ' : ''}contribution to
-        <UIText>{` ${get(details, '0.account.name')} `}</UIText>
+        <H7>{` ${get(details, '0.account.name')} `}</H7>
         {details.length > 1
-          ? <UIText>and<UIText>{` ${get(details, '1.name')} `}</UIText></UIText> : null}
-        {' '}is <UIText>pending</UIText>.
-      </UIText>
+          ? <H7>and<H7>{` ${get(details, '1.name')} `}</H7></H7> : null}
+        {' '}is <H7>pending</H7>.
+      </H7>
     );
   }
   return null;
