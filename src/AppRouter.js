@@ -197,7 +197,9 @@ class AppRouter extends PureComponent {
               <Route cardStackKey="tabs" component={this.tabs} />
             </CardStack>
           </AppLayout>
-          {this.isModal ? this.largeScreenModals : null}
+          <Switch>
+            {this.isModal ? this.largeScreenModals : null}
+          </Switch>
         </Player>
       </BackgroundView>
     );

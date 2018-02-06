@@ -13,7 +13,7 @@ const enhance = compose(
   withIsLoggedIn,
   branch(({ isLoading, isLoggedIn }) => (isLoading || isLoggedIn), renderNothing),
   withProtectedFunction(protect => ({
-    triggerLogin: protect,
+    triggerLogin: () => protect(() => {}),
   })),
 );
 
