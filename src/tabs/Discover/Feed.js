@@ -2,7 +2,7 @@ import React from 'react';
 import { compose, withProps } from 'recompose';
 import { View, Linking } from 'react-native';
 import FeedView, { defaultFeedItemRenderer } from '@ui/FeedView';
-import { H6, H5, BodyText } from '@ui/typography';
+import { H5, BodyText } from '@ui/typography';
 import { ButtonLink } from '@ui/Button';
 import Card, { CardContent } from '@ui/Card';
 import FeedItemCard from '@ui/FeedItemCard';
@@ -25,13 +25,7 @@ const Title = styled(({ theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit / 2,
   paddingTop: theme.sizing.baseUnit,
   paddingBottom: theme.sizing.baseUnit / 2,
-}))(H6);
-
-const SecondaryTitle = styled(({ theme }) => ({
   textAlign: 'center',
-  paddingHorizontal: theme.sizing.baseUnit / 2,
-  paddingTop: theme.sizing.baseUnit,
-  paddingBottom: theme.sizing.baseUnit / 2,
 }))(H5);
 
 const FooterCard = styled(({ theme }) => ({
@@ -61,7 +55,7 @@ const Feed = enhance(({
         <View>
           <Title>Recommended by NewSpring</Title>
           {featuredCards}
-          <SecondaryTitle>Recently Liked by others</SecondaryTitle>
+          <Title>Recently Liked by others</Title>
         </View>
       )}
       ListFooterComponent={(
