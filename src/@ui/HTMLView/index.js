@@ -46,7 +46,7 @@ export const defaultRenderer = (node, { children }) => {
     case 'p': return <Paragraph>{wrapTextChildren(children)}</Paragraph>;
     case 'strong': return <BodyText bold>{children}</BodyText>;
     case 'em': return <BodyText italic>{children}</BodyText>;
-    case 'blockquote': return <BlockQuote>{children}</BlockQuote>;
+    case 'blockquote': return <BlockQuote>{wrapTextChildren(children, Text)}</BlockQuote>;
     case 'h1': return <H1>{wrapTextChildren(children, Text)}</H1>;
     case 'h2': return <H2>{wrapTextChildren(children, Text)}</H2>;
     case 'h3': return <H3>{wrapTextChildren(children, Text)}</H3>;
