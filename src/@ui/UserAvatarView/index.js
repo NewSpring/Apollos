@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 import { compose, setPropTypes } from 'recompose';
 import { withThemeMixin } from '@ui/theme';
-import { H4, BodyCopy } from '@ui/typography';
+import { H4, BodyText } from '@ui/typography';
 import Avatar from '@ui/Avatar';
 import BlurView from '@ui/BlurView';
 import PaddedView from '@ui/PaddedView';
@@ -22,7 +22,7 @@ const Content = styled({ alignItems: 'center', justifyContent: 'center' })(Padde
 
 const copyStyles = styled({ backgroundColor: 'transparent', textAlign: 'center' });
 const Name = copyStyles(H4);
-const City = copyStyles(BodyCopy);
+const City = copyStyles(BodyText);
 
 const StyledAvatar = styled(({ theme }) => ({
   marginRight: 0, marginBottom: theme.sizing.baseUnit / 2,

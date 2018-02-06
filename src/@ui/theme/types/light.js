@@ -12,6 +12,7 @@ const light = ({ colors, alpha }) => ({
       default: colors.lightSecondary,
       paper: colors.white,
       primary: colors.primary,
+      secondary: colors.secondary,
       accent: Color(colors.lightTertiary).fade(alpha.high).string(),
       inactive: colors.lightTertiary,
       overlay: Color(colors.darkTertiary).fade(alpha.high).string(),

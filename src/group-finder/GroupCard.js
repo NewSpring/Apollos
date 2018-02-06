@@ -5,7 +5,7 @@ import truncate from 'truncate';
 import { Platform } from 'react-native';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import Card, { CardContent, CardImage } from '@ui/Card';
-import { H5, H6, H7, BodyCopy } from '@ui/typography';
+import { H5, H6, H7, BodyText } from '@ui/typography';
 import Paragraph from '@ui/Paragraph';
 import Chip, { ChipList } from '@ui/Chip';
 import { Link } from '@ui/NativeWebRouter';
@@ -87,9 +87,9 @@ const GroupCard = ({
             <DistanceText>{parseInt(distance, 0)} miles away</DistanceText>
 
             <Paragraph>
-              <BodyCopy numberOfLines={4} ellipsizeMode={'tail'}>
+              <BodyText numberOfLines={4} ellipsizeMode={'tail'}>
                 {Platform.OS === 'web' ? truncate(description, 120) : description}
-              </BodyCopy>
+              </BodyText>
             </Paragraph>
 
             <ChipList>

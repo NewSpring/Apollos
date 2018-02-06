@@ -9,6 +9,10 @@ import { Text as TextInput } from '@ui/inputs';
 import PaddedView from '@ui/PaddedView';
 import TableView from '@ui/TableView';
 import Button from '@ui/Button';
+import { H6 } from '@ui/typography';
+import styled from '@ui/styled';
+
+const Status = styled({ textAlign: 'center' })(H6);
 
 const enhance = compose(
   setPropTypes({
@@ -20,13 +24,15 @@ const enhance = compose(
       newPassword: Yup.string().required(),
       oldPassword: Yup.string().required(),
     }),
-    handleSubmit: async (values, { props, setSubmitting }) => {
+    handleSubmit: async (values, { props, setSubmitting, setStatus }) => {
       props.onSubmit(values)
         .catch((...e) => {
+          setStatus('Please make sure your password is correct and try again');
           console.log('Change Password error', e); // eslint-disable-line
           // todo: show server error messages
         })
         .then((...args) => {
+          setStatus('Your password was updated.');
           if (props.onChangePasswordSuccess) props.onChangePasswordSuccess(...args);
         })
         .finally(() => setSubmitting(false));
@@ -41,6 +47,7 @@ const enhance = compose(
     handleSubmit: PropTypes.func,
     isSubmitting: PropTypes.bool,
     isValid: PropTypes.bool,
+    status: PropTypes.string,
   }),
 );
 
@@ -53,6 +60,7 @@ const ChangePasswordFormWithoutData = enhance(({
   handleSubmit,
   isValid,
   isSubmitting,
+  status,
 }) => (
   <PaddedView horizontal={false}>
     <TableView>
@@ -75,6 +83,9 @@ const ChangePasswordFormWithoutData = enhance(({
         />
       </PaddedView>
     </TableView>
+    {status ? (
+      <Status>{status}</Status>
+    ) : null}
     <PaddedView>
       <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
     </PaddedView>

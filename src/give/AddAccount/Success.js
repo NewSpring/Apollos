@@ -4,7 +4,7 @@ import React from 'react';
 import PaddedView from '@ui/PaddedView';
 import styled from '@ui/styled';
 // import { Link } from '@ui/NativeWebRouter';
-// import { H5, H3, UIText } from '@ui/typography';
+// import { H5, H3, H7 } from '@ui/typography';
 import { H3 } from '@ui/typography';
 import Icon from '@ui/Icon';
 
@@ -16,11 +16,11 @@ const CenteredView = styled({
 // TODO
 // const ScheduleThanks = ({ total, start }) => {
 //   return (
-//     <UIText>
+//     <H7>
 //       Thank you for your contribution of {total}{' '}
 //       starting on {moment(start).format('MMM D, YYYY') }{' '}
 //       to NewSpring Church.
-//     </UIText>
+//     </H7>
 //   );
 // };
 
@@ -31,10 +31,10 @@ const CenteredView = styled({
 
 // const OneTimeThanks = ({ total, email }) => {
 //   return (
-//     <UIText>
+//     <H7>
 //       Thank you for your contribution of {total} to NewSpring Church.
 //       We will email a receipt to {email}
-//     </UIText>
+//     </H7>
 //   );
 // };
 
@@ -48,11 +48,11 @@ const CenteredView = styled({
 // );
 
 // const ContactUs = () => (
-//   <UIText>
+//   <H7>
 //     If you have any questions please call our Finance Team at 864-965-9990 or
 //     <ContactLink />
 //     and someone will be happy to assist you.
-//   </UIText>
+//   </H7>
 // );
 
 const Success = () => (

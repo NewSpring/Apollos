@@ -8,7 +8,7 @@ import { compose } from 'recompose';
 import Card from '@ui/Card';
 import ContributionsChart from '@ui/ContributionsChart';
 import withContributionsChartData from '@data/withContributionsChartData';
-import { UIText, H6 } from '@ui/typography';
+import { BodyText, H6 } from '@ui/typography';
 import CashAmountIndicator from '@ui/CashAmountIndicator';
 import styled from '@ui/styled';
 import Icon from '@ui/Icon';
@@ -16,10 +16,9 @@ import Spacer from '@ui/Spacer';
 import PaddedView from '@ui/PaddedView';
 import { withTheme } from '@ui/theme';
 
-const ItalicText = styled(({ theme }) => ({
-  color: theme.colors.text.secondary,
-  fontStyle: 'italic',
-}))(UIText);
+const StyledBodyText = styled(({ theme }) => ({
+  color: theme.colors.text.teriary,
+}))(BodyText);
 
 const StyledH6 = styled(({ theme }) => ({
   color: theme.colors.text.link,
@@ -51,7 +50,7 @@ export class ContributionsChartCard extends PureComponent {
             size={2}
           />
           <Spacer />
-          <ItalicText>{'Contributed so far this year'}</ItalicText>
+          <StyledBodyText italic>{'Contributed so far this year'}</StyledBodyText>
           <Spacer />
           <TouchableWithoutFeedback
             onPress={() => (null)}

@@ -9,7 +9,7 @@ import styled from '@ui/styled';
 import Card, { CardContent } from '@ui/Card';
 import SideBySideView from '@ui/SideBySideView';
 import FlexedView from '@ui/FlexedView';
-import { H5, BodyCopy } from '@ui/typography';
+import { H5, BodyText } from '@ui/typography';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import CategoryLabel from '@ui/CategoryLabel';
 
@@ -67,7 +67,7 @@ const ThumbnailCard = enhance(({
       <LeftColumn>
         <H5>{startCase(toLower(title))}</H5>
         { description ? (
-          <BodyCopy>{description}</BodyCopy>
+          <BodyText>{description}</BodyText>
         ) : null }
         {children}
         { typeof category !== 'undefined' ? (

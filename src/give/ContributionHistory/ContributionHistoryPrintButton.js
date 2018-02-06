@@ -16,7 +16,7 @@ import withGivingStatementDownloadLink from '@data/withGivingStatementDownloadLi
 import { withTheme } from '@ui/theme';
 
 const CircularView = styled(({ theme }) => ({
-  borderRadius: 9999,
+  borderRadius: theme.sizing.baseUnit * 2,
   height: theme.sizing.baseUnit * 2,
   width: theme.sizing.baseUnit * 2,
   alignItems: 'center',

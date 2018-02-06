@@ -72,7 +72,7 @@ class DateInput extends PureComponent {
     this.setState({ internalDateValue: text });
   }
 
-  parseValue = value => new Date(value);
+  parseValue = value => moment(value, displayFormat).toDate();
 
   render() {
     const {

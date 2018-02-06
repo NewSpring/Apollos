@@ -49,9 +49,10 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
-          "paddingTop": 2.7,
+          "fontSize": 14,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -65,9 +66,10 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
-          "paddingTop": 2.7,
+          "fontSize": 14,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -299,14 +301,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
     onPress={[Function]}
     style={
       Object {
-        "backgroundColor": "transparent",
-        "borderRadius": 0,
         "color": "#6bac43",
-        "fontFamily": "Colfax-Regular",
-        "fontSize": 18,
-        "lineHeight": 20,
-        "padding": 0,
-        "paddingTop": 2.7,
       }
     }
   >
@@ -336,9 +331,10 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
-          "paddingTop": 2.7,
+          "fontSize": 14,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -352,9 +348,10 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
-          "paddingTop": 2.7,
+          "fontSize": 14,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -576,14 +573,7 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
     onPress={[Function]}
     style={
       Object {
-        "backgroundColor": "transparent",
-        "borderRadius": 0,
         "color": "#6bac43",
-        "fontFamily": "Colfax-Regular",
-        "fontSize": 18,
-        "lineHeight": 20,
-        "padding": 0,
-        "paddingTop": 2.7,
       }
     }
   >
@@ -613,9 +603,10 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         Object {
           "color": "#303030",
           "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
-          "paddingTop": 2.7,
+          "fontSize": 14,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -629,9 +620,10 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         Object {
           "color": "#303030",
           "fontFamily": "Colfax-Regular",
-          "fontSize": 18,
-          "lineHeight": 20,
-          "paddingTop": 2.7,
+          "fontSize": 14,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
@@ -740,9 +732,10 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
           Object {
             "color": "#303030",
             "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
-            "paddingTop": 2.7,
+            "fontSize": 14,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.35,
           }
         }
       >
@@ -757,9 +750,10 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
           Object {
             "color": "#303030",
             "fontFamily": "Colfax-Regular",
-            "fontSize": 18,
-            "lineHeight": 20,
-            "paddingTop": 2.7,
+            "fontSize": 14,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.35,
           }
         }
       >
@@ -928,14 +922,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
     onPress={[Function]}
     style={
       Object {
-        "backgroundColor": "transparent",
-        "borderRadius": 0,
         "color": "#6bac43",
-        "fontFamily": "Colfax-Regular",
-        "fontSize": 18,
-        "lineHeight": 20,
-        "padding": 0,
-        "paddingTop": 2.7,
       }
     }
   >
