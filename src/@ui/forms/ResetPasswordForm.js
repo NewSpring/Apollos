@@ -8,7 +8,8 @@ import { withFormik } from 'formik';
 import Yup from 'yup';
 
 import { H6 } from '@ui/typography';
-import styled from '@ui/styled';import withUser from '@data/withUser';
+import styled from '@ui/styled';
+import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
 import Button from '@ui/Button';
 
