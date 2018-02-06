@@ -11,7 +11,6 @@ const ResultItem = ({ item }) => (
   <Link to={item.link}>
     <ThumbnailCard
       title={item.title || ' '}
-      description={item.description ? `${item.description.substr(0, 20)}…` : ' '}
       images={item.image || []}
       isLoading={item.isLoading}
     />
