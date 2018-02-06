@@ -17,6 +17,7 @@ import BackgroundView from '@ui/BackgroundView';
 import DashboardSubheader from '@ui/DashboardSubheader';
 import ContributionsChartCard from '@ui/ContributionsChartCard';
 import withGivingDashboard from '@data/withGivingDashboard';
+import MediaQuery from '@ui/MediaQuery';
 
 export class Dashboard extends PureComponent {
   static propTypes = {
@@ -85,7 +86,10 @@ export class Dashboard extends PureComponent {
               />
             );
           })}
-          <ContributionsChartCard />
+
+          <MediaQuery maxWidth="md">
+            <ContributionsChartCard />
+          </MediaQuery>
 
           <DashboardSubheader
             text="Active Schedules"
