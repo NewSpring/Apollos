@@ -1,8 +1,8 @@
-import fetch from 'isomorphic-fetch';
 import { compose, withProps } from 'recompose';
 import Settings from '@utils/Settings';
 import ImagePicker from '@ui/ImagePicker';
 import withUser from '@data/withUser';
+import fetch from '@utils/fetch';
 
 const UploadProfileImageForm = compose(
   withUser,
