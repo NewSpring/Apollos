@@ -42,6 +42,7 @@ export const colors = {
   transparent: 'transparent',
 
   alert: '#c64f55',
+  wordOfChrist: '#8b0000', // only used in Scripture. TODO: consider theme changes.
 };
 
 // Base Typography sizing and fonts.

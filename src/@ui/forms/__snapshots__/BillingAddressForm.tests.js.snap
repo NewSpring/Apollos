@@ -456,6 +456,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
             style={
               Object {
                 "color": "#6bac43",
+                "textDecorationLine": "underline",
               }
             }
           >
@@ -1426,6 +1427,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
             style={
               Object {
                 "color": "#6bac43",
+                "textDecorationLine": "underline",
               }
             }
           >
@@ -1873,6 +1875,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
             style={
               Object {
                 "color": "#6bac43",
+                "textDecorationLine": "underline",
               }
             }
           >
