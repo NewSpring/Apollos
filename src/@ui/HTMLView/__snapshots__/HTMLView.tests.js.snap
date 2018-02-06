@@ -520,9 +520,27 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
       >
-        Am I putting others before myself right now?
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Am I putting others before myself right now?
+        </Text>
       </Text>
     </View>
   </View>
@@ -570,9 +588,27 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
       >
-        How can I love the people around me if I’m not even paying attention to them?
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          How can I love the people around me if I’m not even paying attention to them?
+        </Text>
       </Text>
     </View>
   </View>
@@ -620,9 +656,27 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
       >
-        What if Jesus wants to speak through me, but I’ve got my nose stuck in my phone? 
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          What if Jesus wants to speak through me, but I’ve got my nose stuck in my phone? 
+        </Text>
       </Text>
     </View>
   </View>
@@ -817,9 +871,27 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
       >
-        Turn your phone off, leave it in the car, or put it in airplane mode. Habitual notification checks can take a break.
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Turn your phone off, leave it in the car, or put it in airplane mode. Habitual notification checks can take a break.
+        </Text>
       </Text>
     </View>
   </View>
@@ -867,9 +939,27 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
       >
-        Talk about something other than yourself. Ask someone else about their life (job, school, kids).
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Talk about something other than yourself. Ask someone else about their life (job, school, kids).
+        </Text>
       </Text>
     </View>
   </View>
@@ -917,9 +1007,27 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
       >
-        Look for opportunities to encourage someone. Ask the Holy Spirit to speak through you and help you love people.
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Look for opportunities to encourage someone. Ask the Holy Spirit to speak through you and help you love people.
+        </Text>
       </Text>
     </View>
   </View>
@@ -967,9 +1075,27 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        bold={false}
         ellipsizeMode="tail"
+        italic={false}
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "DroidSerif-Regular",
+            "fontSize": 20.02,
+            "lineHeight": 33.11,
+            "paddingBottom": 2.25,
+            "paddingTop": 1.8,
+          }
+        }
       >
-        Ask Jesus to keep your heart interested and engaged in what really matters. He wants to help!
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Ask Jesus to keep your heart interested and engaged in what really matters. He wants to help!
+        </Text>
       </Text>
     </View>
   </View>

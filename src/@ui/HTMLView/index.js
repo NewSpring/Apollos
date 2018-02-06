@@ -55,7 +55,7 @@ export const defaultRenderer = (node, { children }) => {
     case 'h6': return <H6>{wrapTextChildren(children, Text)}</H6>;
     case 'h7': return <H7>{wrapTextChildren(children, Text)}</H7>;
     case 'ul': return children; // todo
-    case 'li': return <BulletListItem>{children}</BulletListItem>;
+    case 'li': return <BulletListItem>{wrapTextChildren(children)}</BulletListItem>;
     case 'a': {
       const url = node.attribs && node.attribs.href;
       const onPress = () => Linking.openURL(decodeHTML(url));
