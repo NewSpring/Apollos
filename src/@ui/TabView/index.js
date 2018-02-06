@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Dimensions, Platform } from 'react-native';
 import { TabViewAnimated, SceneMap } from 'react-native-tab-view';
-import { compose, withProps, withState, setPropTypes, defaultProps } from 'recompose';
+import { branch, compose, withProps, withState, setPropTypes, defaultProps } from 'recompose';
 import isFunction from 'lodash/isFunction';
 import { withThemeMixin } from '@ui/theme';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
@@ -53,10 +53,10 @@ const TabView = compose(
     autoHeightEnabled: false,
   }),
   withStyles,
-  withState('index', 'onIndexChange', ({ initialIndex }) => initialIndex),
+  branch(({ index }) => typeof index !== 'number', withState('index', 'onIndexChange', ({ initialIndex }) => initialIndex)),
   withProps((props) => {
     function onIndexChange(index) {
-      props.onIndexChange(index);
+      if (isFunction(props.onIndexChange)) props.onIndexChange(index);
       if (isFunction(props.onChange)) props.onChange(index);
     }
 
@@ -67,7 +67,7 @@ const TabView = compose(
           ...routeProps,
           jumpTo(key) {
             const index = props.routes.findIndex(r => (r.key === key));
-            return props.onIndexChange(index);
+            return onIndexChange(index);
           },
         })),
       },

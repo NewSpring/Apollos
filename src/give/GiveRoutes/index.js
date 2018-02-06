@@ -1,13 +1,18 @@
 import React, { PureComponent } from 'react';
 import {
   Platform,
+  StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { TabViewPagerPan, TabViewPagerAndroid } from 'react-native-tab-view';
-import { matchPath, withRouter } from '@ui/NativeWebRouter';
+import { Link, Switch, Route, matchPath, withRouter } from '@ui/NativeWebRouter';
 import TabView, { SceneMap } from '@ui/TabView';
 import Header from '@ui/Header';
 import BackgroundView from '@ui/BackgroundView';
+import MediaQuery from '@ui/MediaQuery';
+import { ResponsiveSideBySideView as SideBySideView, Left, Right } from '@ui/SideBySideView';
+import Hero, { BackgroundImage } from '@ui/Hero';
+import styled from '@ui/styled';
 
 import Dashboard from 'give/Dashboard';
 import Now from 'give/Now';
@@ -15,6 +20,9 @@ import ContributionHistory from 'give/ContributionHistory';
 
 let TabViewPager = TabViewPagerPan;
 if (Platform.OS === 'android') TabViewPager = TabViewPagerAndroid;
+
+const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
+const FlexedLeft = styled({ flex: 1 })(Left);
 
 class GiveRoutes extends PureComponent {
   static propTypes = {
@@ -29,6 +37,9 @@ class GiveRoutes extends PureComponent {
       path: PropTypes.string.isRequired,
     })),
     scenes: TabView.propTypes.renderScene,
+    history: PropTypes.shape({
+      replace: PropTypes.func,
+    }),
   };
 
   static defaultProps = {
@@ -72,11 +83,8 @@ class GiveRoutes extends PureComponent {
 
   handleOnChangeTab = (routeIndex) => {
     const nextRoute = this.props.routes[routeIndex];
-    if (nextRoute) {
-      // NOTE: It's only actually relevant in web
-      // so we can prevent rerenders by using the History
-      // API directly
-      window.history.replaceState(window.history.state, '', nextRoute.path);
+    if (nextRoute && Platform.OS === 'web') { // we can skip history.replace on native to prevent a re-render
+      this.props.history.replace(nextRoute.path);
     }
   };
 
@@ -84,20 +92,47 @@ class GiveRoutes extends PureComponent {
     if (!this.currentRoute) return null;
     return (
       <BackgroundView>
-        <Header
-          webEnabled
-          backButton={Platform.OS !== 'web'}
-          titleText={'My Giving'}
-        />
-        <TabView
-          initialIndex={this.currentRouteIndex}
-          routes={this.props.routes}
-          renderScene={this.props.scenes}
-          onChange={Platform.OS === 'web' && this.handleOnChangeTab}
-          // NOTE: We need to use TabViewPagerExperimental to be able to return to the
-          // correct index position on native
-          renderPager={props => (<TabViewPager {...props} />)}
-        />
+        <FlexedSideBySideView>
+          <FlexedLeft>
+            <Header
+              webEnabled
+              backButton={Platform.OS !== 'web'}
+              titleText={'My Giving'}
+            />
+            <TabView
+              index={Platform.OS === 'web' ? this.currentRouteIndex || 0 : undefined}
+              initialIndex={Platform.OS !== 'web' ? this.currentRouteIndex || 0 : undefined}
+              routes={this.props.routes}
+              renderScene={this.props.scenes}
+              onChange={Platform.OS === 'web' && this.handleOnChangeTab}
+              renderPager={props => (<TabViewPager {...props} />)}
+            />
+          </FlexedLeft>
+          <MediaQuery minWidth="md">
+            <Right>
+              <Switch style={StyleSheet.absoluteFill}>
+                <Route path="/give/history">
+                  <Hero background={<BackgroundImage source={require('./history.jpg')} />} />
+                </Route>
+                <Route path="/give" exact>
+                  <Hero backgroundColor="green" />
+                </Route>
+                <Route>
+                  <Hero
+                    background={
+                      <Link
+                        onPress={() => this.handleOnChangeTab(0)}
+                        style={StyleSheet.absoluteFill}
+                      >
+                        <BackgroundImage source={require('./schedule-giving.jpg')} />
+                      </Link>
+                    }
+                  />
+                </Route>
+              </Switch>
+            </Right>
+          </MediaQuery>
+        </FlexedSideBySideView>
       </BackgroundView>
     );
   }
