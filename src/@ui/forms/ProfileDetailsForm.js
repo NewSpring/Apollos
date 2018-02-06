@@ -4,13 +4,18 @@ import { compose, branch, renderComponent } from 'recompose';
 import { get } from 'lodash';
 import Yup from 'yup';
 import { withFormik } from 'formik';
+import moment from 'moment';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import * as Inputs from '@ui/inputs';
+import { H6 } from '@ui/typography';
+import styled from '@ui/styled';
 import TableView from '@ui/TableView';
 import PaddedView from '@ui/PaddedView';
 import withCampuses from '@data/withCampuses';
 import withUser from '@data/withUser';
 import Button from '@ui/Button';
+
+const Status = styled({ textAlign: 'center' })(H6);
 
 export const ProfileDetailsFormWithoutData = ({
   setFieldValue,
@@ -22,6 +27,7 @@ export const ProfileDetailsFormWithoutData = ({
   touched,
   isSubmitting,
   isValid,
+  status,
 }) => (
   <PaddedView horizontal={false}>
     <TableView>
@@ -65,6 +71,7 @@ export const ProfileDetailsFormWithoutData = ({
         <Inputs.DateInput
           label="Birthday"
           value={values.birthday}
+          displayValue={moment(values.birthday).format('MM/DD/YYYY')}
           onChange={text => setFieldValue('birthday', text)}
           onBlur={() => setFieldTouched('birthday', true)}
           error={Boolean(touched.birthday && errors.birthday)}
@@ -86,6 +93,9 @@ export const ProfileDetailsFormWithoutData = ({
         </Inputs.Picker>
       </PaddedView>
     </TableView>
+    {status ? (
+      <Status>{status}</Status>
+    ) : null}
     <PaddedView>
       <Button onPress={handleSubmit} title="Save" disabled={!isValid} loading={isSubmitting} />
     </PaddedView>
@@ -100,7 +110,7 @@ ProfileDetailsFormWithoutData.propTypes = {
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     email: PropTypes.string,
-    birthday: PropTypes.string,
+    birthday: PropTypes.object, // eslint-disable-line
     campusId: PropTypes.string,
   }),
   setFieldTouched: PropTypes.func,
@@ -112,6 +122,7 @@ ProfileDetailsFormWithoutData.propTypes = {
     birthday: PropTypes.string,
     campusId: PropTypes.string,
   }),
+  status: PropTypes.string,
   touched: PropTypes.shape({
     nickName: PropTypes.bool,
     firstName: PropTypes.bool,
@@ -136,25 +147,54 @@ const validationSchema = Yup.object().shape({
   firstName: Yup.string().required(),
   lastName: Yup.string().required(),
   email: Yup.string().email().required(),
+  birthday: Yup.date().required(),
 });
 
 const mapPropsToValues = props => ({
   ...(props.user || {}),
+  birthday: moment()
+    .year(get(props, 'user.birthYear') || moment().year())
+    .month((get(props, 'user.birthMonth') || (moment().month() + 1)) - 1)
+    .date(get(props, 'user.birthDay') || moment().date())
+    .toDate(),
   campusId: get(props, 'user.campus.id') || null,
 });
 
 const ProfileDetailsForm = compose(
   withCampuses,
   withUser,
-  branch(({ isLoading, user, campuses }) => !user && !campuses && isLoading,
+  branch(({ isLoading }) => isLoading,
     renderComponent(ActivityIndicator),
   ),
   withFormik({
     mapPropsToValues,
     validationSchema,
-    handleSubmit: () => ({
-      // todo
-    }),
+    handleSubmit: async (values, { props, setSubmitting, setStatus }) => {
+      try {
+        setSubmitting(true);
+        const birthMoment = moment(values.birthday);
+
+        await props.updateProfile({
+          nickName: values.nickName,
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          campus: values.campusId,
+          birthMonth: birthMoment.format('M'),
+          birthDay: birthMoment.format('D'),
+          birthYear: birthMoment.format('YYYY'),
+        });
+        setStatus('Your information was updated');
+      } catch (err) {
+        // TODO: Add space for general errors
+        // and set via setErrors
+        console.log(err);
+        // throw err;
+        setStatus('There was an error updating your information. Please try again.');
+      } finally {
+        setSubmitting(false);
+      }
+    },
     isInitialValid(props) {
       return validationSchema
         .isValidSync(mapPropsToValues(props));

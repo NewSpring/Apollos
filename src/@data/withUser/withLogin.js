@@ -25,7 +25,7 @@ export default graphql(MUTATION, {
             email,
             password,
           },
-          refetchQueries: ['GivingDashboard', 'GetCheckoutData', 'SavedPaymentMethods', 'GetTransactions'],
+          refetchQueries: ['CurrentPerson', 'GivingDashboard', 'GetCheckoutData', 'SavedPaymentMethods', 'GetTransactions'],
           update: async (store, { data: { loginUser } }) => {
             const data = store.readQuery({ query: LOGGED_IN_QUERY });
             data.person = {
