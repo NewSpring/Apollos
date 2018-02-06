@@ -4,7 +4,7 @@ import { Dimensions, Platform } from 'react-native';
 import { TabViewAnimated, SceneMap } from 'react-native-tab-view';
 import { branch, compose, withProps, withState, setPropTypes, defaultProps } from 'recompose';
 import isFunction from 'lodash/isFunction';
-import { withThemeMixin } from '@ui/theme';
+import { withThemeMixin, withTheme } from '@ui/theme';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import styled from '@ui/styled';
 
@@ -28,9 +28,11 @@ const defaultHeaderRenderer = ({ barStyle = 'light-content' }) => (
         },
         background: {
           primary: (mobile) ? theme.colors.background.primary : theme.colors.background.paper,
-          secondary: (mobile) ? theme.colors.background.secondary : theme.colors.background.primary,
         },
       },
+    })),
+    withTheme(({ theme, mobile }) => ({
+      indicatorColor: mobile ? undefined : theme.colors.primary,
     })),
   )(props => <TabBar {...props} />)
 );
