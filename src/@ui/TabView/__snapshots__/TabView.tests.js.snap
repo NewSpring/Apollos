@@ -53,13 +53,11 @@ exports[`TabView Component renders 1`] = `
         collapsable={undefined}
         style={
           Object {
-            "alignItems": "center",
-            "bottom": -16,
-            "height": 16,
+            "backgroundColor": "rgb(181, 214, 161)",
+            "bottom": 0,
+            "height": 3,
             "left": 0,
-            "overflow": "hidden",
             "position": "absolute",
-            "right": 0,
             "transform": Array [
               Object {
                 "translateX": 0,
@@ -68,35 +66,7 @@ exports[`TabView Component renders 1`] = `
             "width": 375,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "transform": Array [
-                Object {
-                  "scaleX": 1.5,
-                },
-              ],
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#6bac43",
-                "height": 16,
-                "marginTop": -10,
-                "transform": Array [
-                  Object {
-                    "rotate": "45deg",
-                  },
-                ],
-                "width": 16,
-              }
-            }
-          />
-        </View>
-      </View>
+      />
     </View>
     <View
       style={
