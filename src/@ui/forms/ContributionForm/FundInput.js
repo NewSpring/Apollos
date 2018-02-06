@@ -13,8 +13,6 @@ const StyledTextInput = styled(({ theme }) => ({
 }), 'FundInput.TextInput')(Inputs.Text);
 
 const StyledPicker = styled(({ theme }) => ({
-  fontSize: theme.helpers.rem(1.8),
-  fontWeight: '700',
   color: theme.colors.primary,
 }), 'FundInput.Picker')(Inputs.Picker);
 

@@ -1,7 +1,26 @@
 import { graphql } from 'react-apollo';
-import campusesQuery from './campusesQuery';
+import gql from 'graphql-tag';
 
-export default graphql(campusesQuery, {
+export const QUERY = gql`
+  query GetCampuses {
+    campuses {
+      id
+      guid
+      name
+      services
+      url
+      location {
+        street1
+        street2
+        city
+        state
+        zip
+      }
+    }
+  }
+`;
+
+export default graphql(QUERY, {
   props: ({ ownProps, data } = {}) => ({
     campuses: data.campuses,
     isLoading: ownProps.isLoading || data.loading,
