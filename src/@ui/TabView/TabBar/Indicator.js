@@ -1,34 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Animated, View } from 'react-native';
-import styled from '@ui/styled';
+import { Animated } from 'react-native';
 
 const wrapperStyles = {
   position: 'absolute',
   left: 0,
-  right: 0,
-  bottom: -16,
-  height: 16,
-  alignItems: 'center',
-  overflow: 'hidden',
+  bottom: 0,
+  height: 3,
 };
-
-const CaretScaled = styled({
-  transform: [{ scaleX: 1.5 }],
-})(View);
-
-const Caret = styled(({ theme }) => ({
-  backgroundColor: theme.colors.background.primary,
-  transform: [{ rotate: '45deg' }],
-  width: 16,
-  height: 16,
-  marginTop: -10,
-}))(View);
 
 const Indicator = ({
   width,
   position,
   navigationState,
+  indicatorColor: backgroundColor,
 }) => {
   const translateX = Animated.multiply(
     position.interpolate({
@@ -39,9 +24,11 @@ const Indicator = ({
     width,
   );
   return (
-    <Animated.View style={{ width, transform: [{ translateX }], ...wrapperStyles }}>
-      <CaretScaled><Caret /></CaretScaled>
-    </Animated.View>
+    <Animated.View
+      style={{
+        width, backgroundColor, transform: [{ translateX }], ...wrapperStyles,
+      }}
+    />
   );
 };
 
@@ -49,6 +36,7 @@ Indicator.propTypes = {
   width: PropTypes.number,
   position: PropTypes.shape({ interpolate: PropTypes.func }),
   navigationState: PropTypes.shape({ routes: PropTypes.array }),
+  indicatorColor: PropTypes.string,
 };
 
 export default Indicator;
