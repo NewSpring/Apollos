@@ -13,8 +13,6 @@ import styled from '@ui/styled';
 
 const FeaturedCard = defaultFeedItemRenderer(FeedItemCard);
 
-const BodyLink = styled(({ theme }) => ({ color: theme.colors.primary }))(BodyCopy);
-
 const RecentLikes = compose(
   withRecentLikes,
   withProps({
