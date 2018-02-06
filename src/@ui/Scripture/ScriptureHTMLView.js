@@ -3,7 +3,7 @@ import { withProps } from 'recompose';
 
 import HTMLView, { defaultRenderer, wrapTextChildren } from '@ui/HTMLView';
 import { Text } from 'react-native';
-import { H7, BodyCopy } from '@ui/typography';
+import { H7, BodyText } from '@ui/typography';
 import Paragraph from '@ui/Paragraph';
 
 const renderer = (node, { children, ...other }) => { // eslint-disable-line
@@ -16,7 +16,7 @@ const renderer = (node, { children, ...other }) => { // eslint-disable-line
   }
 
   if (className.includes('line-group')) {
-    return <BodyCopy>{children}{'\n'}</BodyCopy>;
+    return <BodyText>{children}{'\n'}</BodyText>;
   }
 
   if (className.includes('block-indent')) { // todo
@@ -35,7 +35,7 @@ const renderer = (node, { children, ...other }) => { // eslint-disable-line
     return <Text style={{ color: 'darkred' }}>{children}</Text>;
   }
 
-  if (node.name === 'p') return <Paragraph><BodyCopy>{wrapTextChildren(children)}</BodyCopy></Paragraph>;
+  if (node.name === 'p') return <Paragraph><BodyText>{wrapTextChildren(children)}</BodyText></Paragraph>;
 
   return defaultRenderer(node, { children, ...other });
 };

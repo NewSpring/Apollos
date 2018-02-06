@@ -30,11 +30,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         I sat on my couch next to my high school 
       </Text>
@@ -53,11 +48,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": undefined,
-            }
-          }
         >
           Fuse Group
         </Text>
@@ -66,11 +56,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         , silently fuming at their inability to put their phones down during Bible study. Finally, I spoke up, teasing one of the girls in a tone that clearly said, “I’m not actually kidding.” 
       </Text>
@@ -104,11 +89,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         A few days later, I was in the car with my sister, and as I sat in the passenger seat responding to emails, I heard her laugh and say, “You always mumble when you are typing. Stop doing that.” 
       </Text>
@@ -142,11 +122,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         “Sorry,” I responded. “I just don’t want people to think I’m ignoring them when I’m typing.”
       </Text>
@@ -180,11 +155,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         But the truth is, I am ignoring them! In my head, this behavior is totally acceptable. I tell myself I’m tending to my priorities in order, and in doing so, I send a message to the person in front of me that she is of lesser importance.
       </Text>
@@ -232,11 +202,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": undefined,
-            }
-          }
         >
           My phone is the primary outlet that distracts me from people who need my attention.
         </Text>
@@ -271,11 +236,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         I quickly get frustrated when I am the one on the outside, but how often to I shut others out during my own social media binges or email frenzies? Just like my girls, I’m learning that my phone is the primary outlet that distracts me from people who need my attention.
       </Text>
@@ -305,11 +265,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         Why Being Present Matters
       </Text>
@@ -343,11 +298,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         There is nothing wrong with using our phones — as long as we remember that the best investment we can make is to invest in our relationships with Jesus and each other. We were created for 
       </Text>
@@ -366,11 +316,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": undefined,
-            }
-          }
         >
           community
         </Text>
@@ -379,11 +324,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
          by God, who exists in community as Father, Son, and Holy Spirit (John 1:1-2, Genesis 2:18). 
       </Text>
@@ -417,11 +357,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         Our phones help us stay connected, but they are not the foundation of all connection. If we’re honest, our phones are much quicker to distract and disengage us from the people right in front of us. 
       </Text>
@@ -455,11 +390,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         Jesus said loving God and loving others is greatest of all God’s commandments (Matthew 22:38-40). And, after trying everything the world had to offer, King Solomon reminded his people that their relationships with God and others are the only things that really matter (Ecclesiastes 2:24-26, Ecclesiastes 3:9). 
       </Text>
@@ -507,11 +437,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": undefined,
-            }
-          }
         >
           Greater love has no one than this: to lay down one’s phone for one’s loved ones.
         </Text>
@@ -546,11 +471,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         So the next time we feel like we have to text back immediately or tweet before someone else does, consider: 
       </Text>
@@ -601,11 +521,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         Am I putting others before myself right now?
       </Text>
@@ -656,11 +571,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         How can I love the people around me if I’m not even paying attention to them?
       </Text>
@@ -711,11 +621,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         What if Jesus wants to speak through me, but I’ve got my nose stuck in my phone? 
       </Text>
@@ -749,11 +654,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         The world won’t implode if we don’t reply to every text or email immediately. And that Instagram picture doesn’t need to go up ASAP. If it’s already been a week between posts, what’s a few more hours? We love everyone better — our friends to our coworkers to our social media followers — when we give them the gift of our full attention. 
       </Text>
@@ -787,11 +687,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         I can almost hear Jesus saying, “Greater love has no one than this: to lay down one’s phone for one’s loved ones”  (John 15:13). 
       </Text>
@@ -821,11 +716,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         Four Ways To Stay Away From Your Phone And Be Intentionally Present
       </Text>
@@ -870,11 +760,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          style={
-            Object {
-              "color": undefined,
-            }
-          }
         >
           This holiday season
         </Text>
@@ -883,11 +768,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         , we will have more opportunities to be around friends and family than usual. So let’s make the most of each minute. The following are some tips can help us all be a little more present.  
       </Text>
@@ -938,11 +818,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         Turn your phone off, leave it in the car, or put it in airplane mode. Habitual notification checks can take a break.
       </Text>
@@ -993,11 +868,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         Talk about something other than yourself. Ask someone else about their life (job, school, kids).
       </Text>
@@ -1048,11 +918,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         Look for opportunities to encourage someone. Ask the Holy Spirit to speak through you and help you love people.
       </Text>
@@ -1103,11 +968,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         Ask Jesus to keep your heart interested and engaged in what really matters. He wants to help!
       </Text>
@@ -1141,11 +1001,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         Intentionally taking advantage of time with loved ones sometimes does require sacrificing our own immediate desires or comforts, but that’s what we are commanded to do (Philippians 2:3). 
       </Text>
@@ -1179,11 +1034,6 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
       >
         Take pictures, but don’t let the only memory be a digital one. The positive outcome of interactions should be more than Instagram likes. Unplug from social media, choose to be present, and you will be surprised at the good it does for your heart and the hearts of those around you. 
       </Text>

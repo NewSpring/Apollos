@@ -13,7 +13,7 @@ import BulletListItem from '@ui/BulletListItem';
 const LINE_BREAK = '\n';
 
 const TEXT_TYPES_THAT_SHOULD_WRAP = [Text, BodyText, ButtonLink];
-export const wrapTextChildren = (children, Component = BodyCopy) => {
+export const wrapTextChildren = (children, Component = BodyText) => {
   const newChildren = [];
   let currentTextChildren = [];
   Children.toArray(children).forEach((child, i) => {
@@ -39,9 +39,7 @@ export const wrapTextChildren = (children, Component = BodyCopy) => {
 
 export const defaultRenderer = (node, { children }) => {
   if (node.type === 'text' && node.data && node.data.trim()) {
-    // todo: the color style is needed here to keep color inherited from the parent element
-    // example: <a>text</a> gets rendered like <Link><BodyText>text</BodyText></Link>
-    return <Text style={{ color: undefined }}>{decodeHTML(node.data)}</Text>;
+    return <Text>{decodeHTML(node.data)}</Text>;
   }
 
   switch (node.name) {

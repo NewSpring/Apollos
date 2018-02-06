@@ -73,11 +73,6 @@ exports[`the ContentView component renders 1`] = `
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
           >
             Yo yo
           </Text>
@@ -111,11 +106,6 @@ exports[`the ContentView component renders 1`] = `
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
           >
             this is some cool html
           </Text>
@@ -263,11 +253,6 @@ exports[`the ContentView component renders with images 1`] = `
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
           >
             Yo yo
           </Text>
@@ -301,11 +286,6 @@ exports[`the ContentView component renders with images 1`] = `
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
           >
             this is some cool html
           </Text>
@@ -389,11 +369,6 @@ exports[`the ContentView component renders with video 1`] = `
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
           >
             Yo yo
           </Text>
@@ -427,11 +402,6 @@ exports[`the ContentView component renders with video 1`] = `
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
           >
             this is some cool html
           </Text>
