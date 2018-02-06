@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import PropTypes from 'prop-types';
-import { H4, BodyCopy } from '@ui/typography';
+import { H4, BodyText } from '@ui/typography';
 import { Link } from '@ui/NativeWebRouter';
 import Card, { CardContent, CardImage } from '@ui/Card';
 import { ResponsiveSideBySideView } from '@ui/SideBySideView';
@@ -47,9 +47,9 @@ const FundCard = ({
           <CardContent>
             <H4>{name}</H4>
             <Paragraph>
-              <BodyCopy>
+              <BodyText>
                 {summary}
-              </BodyCopy>
+              </BodyText>
             </Paragraph>
             {Platform.OS === 'web' ? (
               <ButtonWrapper><Button title="Learn More" bordered /></ButtonWrapper>

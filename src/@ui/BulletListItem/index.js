@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import styled from '@ui/styled';
-import { BodyCopy } from '@ui/typography';
+import { BodyText } from '@ui/typography';
 
 const enhance = compose(
   pure,
@@ -38,10 +38,10 @@ const BulletListItem = enhance(({
 }) => (
   <Wrapper>
     <Bullet>
-      <BodyCopy>•</BodyCopy>
+      <BodyText>•</BodyText>
     </Bullet>
     <IosTextWrapFix>
-      {typeof children === 'string' ? <BodyCopy>{children}</BodyCopy> : children}
+      {typeof children === 'string' ? <BodyText>{children}</BodyText> : children}
     </IosTextWrapFix>
   </Wrapper>
 ));
