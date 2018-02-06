@@ -23,8 +23,6 @@ const UploadProfileImageForm = compose(
           body: data,
         }).then(res => res.json());
 
-        console.log(id, props);
-
         await props.attachPhotoIdToUser({
           id,
         });

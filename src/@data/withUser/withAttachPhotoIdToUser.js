@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 export const MUTATION = gql`
-  mutation attachPhotoIdToUser($id: ID) {
+  mutation attachPhotoIdToUser($id: ID!) {
     attachPhotoIdToUser(id: $id)
   }
 `;
