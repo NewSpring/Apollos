@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import BodyText from './';
 
-storiesOf('@ui/typography/BodyText', module)
+storiesOf('typography/BodyText', module)
   .add('Regular', () => (
     <BodyText>{'"True faith means holding nothing back. It means putting every hope in God\'s fidelity to His Promises." ― Francis Chan'}</BodyText>
   ))
