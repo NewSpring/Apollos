@@ -2,7 +2,7 @@ import React from 'react';
 import { compose, withProps } from 'recompose';
 import { View, Linking } from 'react-native';
 import FeedView, { defaultFeedItemRenderer } from '@ui/FeedView';
-import { H6, H5, BodyText } from '@ui/typography';
+import { H5, BodyText } from '@ui/typography';
 import { ButtonLink } from '@ui/Button';
 import Card, { CardContent } from '@ui/Card';
 import FeedItemCard from '@ui/FeedItemCard';
@@ -21,11 +21,12 @@ const RecentLikes = compose(
   }),
 )(FeedView);
 
-const Title = styled(({ theme }) => ({
-  paddingHorizontal: theme.sizing.baseUnit / 2,
-  paddingTop: theme.sizing.baseUnit,
-  paddingBottom: theme.sizing.baseUnit / 2,
-}))(H6);
+// const Title = styled(({ theme }) => ({
+//   paddingHorizontal: theme.sizing.baseUnit / 2,
+//   paddingTop: theme.sizing.baseUnit,
+//   paddingBottom: theme.sizing.baseUnit / 2,
+//   ...(Platform.OS === 'web' ? { textAlign: 'center' } : {}),
+// }))(H5);
 
 const SecondaryTitle = styled(({ theme }) => ({
   textAlign: 'center',
@@ -59,7 +60,7 @@ const Feed = enhance(({
     <RecentLikes
       ListHeaderComponent={(
         <View>
-          <Title>Recommended by NewSpring</Title>
+          <SecondaryTitle>Recommended by NewSpring</SecondaryTitle>
           {featuredCards}
           <SecondaryTitle>Recently Liked by others</SecondaryTitle>
         </View>
