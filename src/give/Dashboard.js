@@ -85,7 +85,7 @@ export class Dashboard extends PureComponent {
                 key={activityItem.id}
                 name={activityItem.name}
                 expirationDate={`${activityItem.expirationMonth}/${activityItem.expirationYear}`}
-                onPress={() => this.props.onPressExpiringAccountCard(activityItem.id)}
+                onPress={() => this.props.onPressExpiringAccountCard(activityItem.entityId)}
               />
             );
           })}
@@ -139,7 +139,7 @@ const enhance = compose(
   withRouter,
   withProps(props => ({
     onPressActivityLink() { props.route.jumpTo('ContributionHistory'); },
-    onPressExpiringAccountCard() { props.route.jumpTo('Now'); },
+    onPressExpiringAccountCard(id) { props.history.push(`/give/payment-methods/${id}`); },
     onPressNewScheduleLink() { props.route.jumpTo('ContributionHistory'); },
     onPressTransactionCard(id) { props.history.push(`/give/history/${id}`); },
     onPressScheduleCard(id) { props.history.push(`/give/schedules/${id}`); },

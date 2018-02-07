@@ -49,6 +49,10 @@ const StyledH6 = styled(({ theme }) => ({
   color: theme.colors.alert,
 }))(H6);
 
+const StyledBodyText = styled(({ theme }) => ({
+  color: theme.colors.text.secondary,
+}))(BodyText);
+
 const Row = styled({
   flexDirection: 'row',
   alignItems: 'center',
@@ -73,7 +77,9 @@ const TransactionCard = enhance(({
           <H5>{moment(expirationDate, 'MM/YY').format(dateFormat)}</H5>
         </Row>
         <Spacer />
-        <BodyText>{`Your saved payment ${name} is expiring soon.`}</BodyText>
+        <StyledBodyText>
+          Your saved payment <StyledBodyText bold>{name}</StyledBodyText> is expiring soon.
+        </StyledBodyText>
         <Spacer />
         <Row>
           <StyledH6>{'Update it Now'}</StyledH6>
