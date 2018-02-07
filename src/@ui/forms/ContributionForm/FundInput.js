@@ -20,14 +20,22 @@ const StyledTextInput = styled(({ theme }) => ({
 
 const StyledPicker = styled(({ theme }) => ({
   color: theme.colors.primary,
-  ...Platform.select({ // RN android doesn't support setting these values at this time
+  /* The styles below are pulled from H3 to match the surrounding text it's layed out with.
+   * TODO: refactor Picker to accept a text component
+   */
+  ...Platform.select({
     ios: {
       fontSize: theme.helpers.rem(1.8),
-      fontWeight: '700',
+      lineHeight: theme.helpers.verticalRhythm(1.8, 1.14),
     },
+    /* RN android doesn't support setting these values at this time
+     * android: {
+     *   lineHeight: theme.helpers.verticalRhythm(1.8, 1.34),
+     * },
+     */
     web: {
       fontSize: theme.helpers.rem(1.8),
-      fontWeight: '700',
+      lineHeight: theme.helpers.verticalRhythm(1.8, 1.15),
     },
   }),
 }), 'FundInput.Picker')(Inputs.Picker);
