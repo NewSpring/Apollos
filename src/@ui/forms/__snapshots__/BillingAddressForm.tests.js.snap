@@ -955,8 +955,34 @@ exports[`The ContributionForm component renders a loading indicator 1`] = `
 <ActivityIndicator
   animating={true}
   color="#999999"
+  countries={
+    Array [
+      Object {
+        "id": "US",
+        "label": "Testing Country",
+      },
+      Object {
+        "id": "FOREIGN",
+        "label": "A foreign country",
+      },
+    ]
+  }
+  errors={Object {}}
   hidesWhenStopped={true}
+  isLoading={true}
+  isSubmitting={false}
+  isValid={true}
+  onSubmit={[Function]}
+  setFieldValue={[Function]}
   size="small"
+  states={
+    Array [
+      Object {
+        "id": "SC",
+        "label": "Testing State",
+      },
+    ]
+  }
   style={
     Object {
       "alignSelf": "center",
@@ -966,6 +992,26 @@ exports[`The ContributionForm component renders a loading indicator 1`] = `
       "position": "absolute",
       "right": 0,
       "top": 0,
+    }
+  }
+  touched={
+    Object {
+      "city": false,
+      "countryId": false,
+      "stateId": false,
+      "street1": false,
+      "street2": false,
+      "zipCode": false,
+    }
+  }
+  values={
+    Object {
+      "city": "My City",
+      "countryId": "US",
+      "stateId": "testState",
+      "street1": "My Street",
+      "street2": "",
+      "zipCode": "12345",
     }
   }
 />

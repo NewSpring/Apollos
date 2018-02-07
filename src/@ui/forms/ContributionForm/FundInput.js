@@ -10,13 +10,38 @@ import styled from '@ui/styled';
 const StyledTextInput = styled(({ theme }) => ({
   fontSize: theme.helpers.rem(1.8),
   fontWeight: '700',
+  ...Platform.select({
+    android: {
+      paddingTop: 0,
+      paddingBottom: 0,
+    },
+  }),
 }), 'FundInput.TextInput')(Inputs.Text);
 
 const StyledPicker = styled(({ theme }) => ({
   color: theme.colors.primary,
+  /* The styles below are pulled from H3 to match the surrounding text it's layed out with.
+   * TODO: refactor Picker to accept a text component
+   */
+  ...Platform.select({
+    ios: {
+      fontSize: theme.helpers.rem(1.8),
+      lineHeight: theme.helpers.verticalRhythm(1.8, 1.14),
+    },
+    /* RN android doesn't support setting these values at this time
+     * android: {
+     *   lineHeight: theme.helpers.verticalRhythm(1.8, 1.34),
+     * },
+     */
+    web: {
+      fontSize: theme.helpers.rem(1.8),
+      lineHeight: theme.helpers.verticalRhythm(1.8, 1.15),
+    },
+  }),
 }), 'FundInput.Picker')(Inputs.Picker);
 
 const FundInputWrapper = styled(({ theme }) => ({
+  alignItems: 'center',
   flexDirection: 'row',
   flexWrap: 'wrap',
   paddingVertical: theme.sizing.baseUnit,
@@ -55,7 +80,7 @@ const FundInput = (({
     <H3>{'to '}</H3>
     <View style={{ width: 325, maxWidth: '100%' }}>
       <StyledPicker
-        onValueChange={id => onChange(Object.assign({}, value, funds.find(fund => fund.id === id)))}
+        onValueChange={id => onChange(Object.assign({}, value, funds.find(fund => `${fund.id}` === `${id}`)))}
         value={get(value, 'id')}
         displayValue={get(value, 'name')}
         wrapperStyle={pickerWrapperStyle}
