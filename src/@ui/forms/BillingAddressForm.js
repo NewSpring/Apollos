@@ -150,27 +150,35 @@ export const BillingAddressFormWithoutData = enhance(({
   );
 });
 
+const validationSchema = Yup.object().shape({
+  street1: Yup.string().required(),
+  street2: Yup.string(),
+  city: Yup.string().required(),
+  stateId: Yup.string(),
+  countryId: Yup.string().required(),
+  zipCode: Yup.string().required(),
+});
+
+const mapPropsToValues = props => ({
+  street1: get(props, 'contributions.street1') || get(props, 'person.home.street1', ''),
+  street2: get(props, 'contributions.street2') || get(props, 'person.home.street2', ''),
+  city: get(props, 'contributions.city') || get(props, 'person.home.city', ''),
+  stateId: get(props, 'contributions.stateId') || get(props, 'person.home.state') || 'SC',
+  countryId: get(props, 'contributions.countryId') || get(props, 'person.home.country') || 'US',
+  zipCode: get(props, 'contributions.zipCode') || get(props, 'person.home.zip', ''),
+});
+
 const BillingAddressForm = compose(
   withGive,
   withCheckout,
   withRouter,
   withFormik({
-    mapPropsToValues: props => ({
-      street1: get(props, 'contributions.street1') || get(props, 'person.home.street1', ''),
-      street2: get(props, 'contributions.street2') || get(props, 'person.home.street2', ''),
-      city: get(props, 'contributions.city') || get(props, 'person.home.city', ''),
-      stateId: get(props, 'contributions.stateId') || get(props, 'person.home.state') || 'SC',
-      countryId: get(props, 'contributions.countryId') || get(props, 'person.home.country') || 'US',
-      zipCode: get(props, 'contributions.zipCode') || get(props, 'person.home.zip', ''),
-    }),
-    validationSchema: Yup.object().shape({
-      street1: Yup.string().required(),
-      street2: Yup.string(),
-      city: Yup.string().required(),
-      stateId: Yup.string(),
-      countryId: Yup.string().required(),
-      zipCode: Yup.string().required(),
-    }),
+    mapPropsToValues,
+    validationSchema,
+    isInitialValid(props) {
+      return validationSchema
+        .isValidSync(mapPropsToValues(props));
+    },
     handleSubmit: async (formValues, { props, setSubmitting }) => {
       try {
         setSubmitting(true);
