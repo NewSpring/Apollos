@@ -3,7 +3,7 @@ import { Linking } from 'react-native';
 import styled from '@ui/styled';
 import PaddedView from '@ui/PaddedView';
 import Icon from '@ui/Icon';
-import { H3, H4, BodyText } from '@ui/typography';
+import { H3, BodyText } from '@ui/typography';
 import { withTheme } from '@ui/theme';
 import { ButtonLink } from '@ui/Button';
 
@@ -18,30 +18,24 @@ const BackgroundView = styled(({ theme }) => ({
 
 const ThemedIcon = withTheme(({ theme }) => ({
   size: theme.sizing.baseUnit * 3,
-  fill: theme.colors.alert,
+  fill: theme.colors.primary,
 }))(Icon);
 
 const Heading = styled(({ theme }) => ({
-  color: theme.colors.alert,
+  color: theme.colors.primary,
+  paddingBottom: theme.sizing.baseUnit,
 }))(H3);
 
-const SubHeading = styled(({ theme }) => ({
-  color: theme.colors.text.secondary,
-  paddingBottom: theme.sizing.baseUnit,
-}))(H4);
-
-const Failure = () => (
+const Success = () => (
   <BackgroundView>
-    <ThemedIcon name="circle-outline-x-mark" />
-    <Heading>Uh Oh!</Heading>
-    <SubHeading>Looks like there was a problem processing your contribution.</SubHeading>
+    <ThemedIcon name="circle-outline-check-mark" />
+    <Heading>Success!</Heading>
     <BodyText italic>
-      If you would like a member of our customer support team to follow up with you regarding
-      this error, please{' '}
+      If you have any questions please call our Finance Team at 864-965-9990 or{' '}
       <ButtonLink onPress={contact}>contact us</ButtonLink>
       {' '}and someone will be happy to assist you.
     </BodyText>
   </BackgroundView>
 );
 
-export default Failure;
+export default Success;
