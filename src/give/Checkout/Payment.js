@@ -1,14 +1,17 @@
 import React from 'react';
 import PaddedView from '@ui/PaddedView';
-import { H4, H6 } from '@ui/typography';
 import { PaymentForm } from '@ui/forms';
+import BackgroundView from '@ui/BackgroundView';
+
+import { Title } from './styles';
 
 const Payment = () => (
-  <PaddedView>
-    <H4>Billing Address</H4>
-    <H6>Step 3 of 4</H6>
+  <BackgroundView>
+    <PaddedView>
+      <Title>Payment Details</Title>
+    </PaddedView>
     <PaymentForm navigateToOnComplete="confirm" />
-  </PaddedView>
+  </BackgroundView>
 );
 
 export default Payment;
