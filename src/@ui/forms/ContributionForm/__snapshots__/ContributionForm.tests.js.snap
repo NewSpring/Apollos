@@ -647,42 +647,93 @@ exports[`The ContributionForm component renders correctly 1`] = `
     }
     vertical={false}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 32.4,
-          "lineHeight": 41.04,
-          "paddingBottom": 2.7,
-          "paddingTop": 5.4,
+          "alignItems": "center",
+          "flexDirection": "row",
         }
       }
     >
-      my total is $
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          my total is 
+        </Text>
+      </View>
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 42.3,
-            "lineHeight": 53.58,
-            "paddingBottom": 3.6,
-            "paddingTop": 6.3,
+            "alignItems": "center",
+            "flexDirection": "row",
           }
         }
       >
-        14
-      </Text>
-      .
-      00
-    </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          $
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 52.2,
+              "lineHeight": 54.81,
+              "paddingTop": 11.7,
+            }
+          }
+        >
+          14
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          .00
+        </Text>
+      </View>
+    </View>
     <View>
       <View
         bordered={false}
@@ -1976,42 +2027,93 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
     }
     vertical={false}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 32.4,
-          "lineHeight": 41.04,
-          "paddingBottom": 2.7,
-          "paddingTop": 5.4,
+          "alignItems": "center",
+          "flexDirection": "row",
         }
       }
     >
-      my total is $
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          my total is 
+        </Text>
+      </View>
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 42.3,
-            "lineHeight": 53.58,
-            "paddingBottom": 3.6,
-            "paddingTop": 6.3,
+            "alignItems": "center",
+            "flexDirection": "row",
           }
         }
       >
-        37
-      </Text>
-      .
-      00
-    </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          $
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 52.2,
+              "lineHeight": 54.81,
+              "paddingTop": 11.7,
+            }
+          }
+        >
+          37
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          .00
+        </Text>
+      </View>
+    </View>
     <View>
       <View
         bordered={false}
@@ -2776,42 +2878,93 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
     }
     vertical={false}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 32.4,
-          "lineHeight": 41.04,
-          "paddingBottom": 2.7,
-          "paddingTop": 5.4,
+          "alignItems": "center",
+          "flexDirection": "row",
         }
       }
     >
-      my total is $
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          my total is 
+        </Text>
+      </View>
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 42.3,
-            "lineHeight": 53.58,
-            "paddingBottom": 3.6,
-            "paddingTop": 6.3,
+            "alignItems": "center",
+            "flexDirection": "row",
           }
         }
       >
-        14
-      </Text>
-      .
-      00
-    </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          $
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 52.2,
+              "lineHeight": 54.81,
+              "paddingTop": 11.7,
+            }
+          }
+        >
+          14
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          .00
+        </Text>
+      </View>
+    </View>
     <View>
       <View
         bordered={false}
@@ -3636,42 +3789,93 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
     }
     vertical={false}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 32.4,
-          "lineHeight": 41.04,
-          "paddingBottom": 2.7,
-          "paddingTop": 5.4,
+          "alignItems": "center",
+          "flexDirection": "row",
         }
       }
     >
-      my total is $
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          my total is 
+        </Text>
+      </View>
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 42.3,
-            "lineHeight": 53.58,
-            "paddingBottom": 3.6,
-            "paddingTop": 6.3,
+            "alignItems": "center",
+            "flexDirection": "row",
           }
         }
       >
-        14
-      </Text>
-      .
-      00
-    </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          $
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 52.2,
+              "lineHeight": 54.81,
+              "paddingTop": 11.7,
+            }
+          }
+        >
+          14
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          .00
+        </Text>
+      </View>
+    </View>
     <View>
       <View
         bordered={false}
@@ -4436,42 +4640,93 @@ exports[`The ContributionForm component shows the second fund 1`] = `
     }
     vertical={false}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 32.4,
-          "lineHeight": 41.04,
-          "paddingBottom": 2.7,
-          "paddingTop": 5.4,
+          "alignItems": "center",
+          "flexDirection": "row",
         }
       }
     >
-      my total is $
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          my total is 
+        </Text>
+      </View>
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 42.3,
-            "lineHeight": 53.58,
-            "paddingBottom": 3.6,
-            "paddingTop": 6.3,
+            "alignItems": "center",
+            "flexDirection": "row",
           }
         }
       >
-        14
-      </Text>
-      .
-      00
-    </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          $
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 52.2,
+              "lineHeight": 54.81,
+              "paddingTop": 11.7,
+            }
+          }
+        >
+          14
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 32.4,
+              "lineHeight": 41.04,
+              "paddingBottom": 2.7,
+              "paddingTop": 5.4,
+            }
+          }
+        >
+          .00
+        </Text>
+      </View>
+    </View>
     <View>
       <View
         bordered={false}

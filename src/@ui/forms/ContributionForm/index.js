@@ -25,7 +25,8 @@ import withFinancialAccounts from '@data/withFinancialAccounts';
 import withIsLoggedIn from '@data/withUser/withIsLoggedIn';
 import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
-import { H5, H3, H2, BodyText as P } from '@ui/typography';
+import { H5, H3, BodyText } from '@ui/typography';
+import CashAmountIndicator from '@ui/CashAmountIndicator';
 import Button from '@ui/Button';
 import * as Inputs from '@ui/inputs';
 import PaddedView from '@ui/PaddedView';
@@ -45,6 +46,11 @@ const LoadingView = styled({
 const ButtonWrapper = Platform.OS === 'web' ? styled({
   alignItems: 'flex-start',
 })(View) : View;
+
+const Row = styled({
+  flexDirection: 'row',
+  alignItems: 'center',
+})(View);
 
 const ButtonRow = mediaQuery(({ md }) => ({ minWidth: md }),
   styled({ flexDirection: 'row' }),
@@ -164,8 +170,8 @@ export class ContributionFormWithoutData extends Component {
     return (
       <View>
         <H3>{this.props.offlineMessageTitle}</H3>
-        <P>{this.props.offlineMessageBody}</P>
-        <P>{`We appreciate your patience. If you have any questions please contact us at ${this.props.offlineContactEmail}`}</P>
+        <BodyText>{this.props.offlineMessageBody}</BodyText>
+        <BodyText>{`We appreciate your patience. If you have any questions please contact us at ${this.props.offlineContactEmail}`}</BodyText>
       </View>
     );
   }
@@ -245,7 +251,10 @@ export class ContributionFormWithoutData extends Component {
         ) : null }
 
         <Totals vertical={false}>
-          <H3>my total is $<H2>{total.split('.')[0]}</H2>.{total.split('.')[1]}</H3>
+          <Row>{/* TODO: refactor CashAmountIndicator to take a pre/post string to wrap amount */}
+            <View><H3>my total is </H3></View>
+            <CashAmountIndicator amount={total} size={1} />
+          </Row>
           {this.props.isLoggedIn ? (
             <Button
               onPress={this.props.handleSubmit}
