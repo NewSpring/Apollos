@@ -65,7 +65,7 @@ class DateInput extends PureComponent {
   handleBlur = () => {
     if (this.props.onBlur) this.props.onBlur();
     if (this.props.onChange) this.props.onChange(this.parseValue(this.state.internalDateValue));
-    if (this.props.onChangeText) this.props.onChangeText(this.setState.internalDateValue);
+    if (this.props.onChangeText) this.props.onChangeText(this.state.internalDateValue);
   }
 
   handleChange = (text) => {

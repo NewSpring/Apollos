@@ -5,7 +5,7 @@ import { BodyText } from '@ui/typography';
 
 import ButtonLink from './ButtonLink';
 
-storiesOf('Button/Link', module)
+storiesOf('Buttons/Link', module)
   .add('default', () => (
     <ButtonLink onPress={() => {}}>Boom</ButtonLink>
   ))

@@ -11,7 +11,7 @@ const enhance = compose(
   setPropTypes({
     children: PropTypes.oneOfType([
       /*
-       * There is no way to type check against none text nodes but expect problems if you try to
+       * There is no way to type check against known text nodes but expect problems if you try to
        * pass something other than a string or text elements (this includes children of children).
        */
       PropTypes.string,

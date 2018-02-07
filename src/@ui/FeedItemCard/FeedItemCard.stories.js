@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import FeedItemCard from './';
 
-storiesOf('@ui/FeedItemCard/Component', module)
+storiesOf('FeedItemCard/Component', module)
   .add('Default', () => {
     const centered = {
       justifyContent: 'center',
