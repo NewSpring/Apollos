@@ -3,491 +3,795 @@
 exports[`The PaymentForm component renders correctly 1`] = `
 <View>
   <View
-    disabled={false}
+    responsive={false}
     style={
       Object {
-        "marginVertical": 20,
+        "backgroundColor": "#ffffff",
+        "borderBottomWidth": 0.5,
+        "borderColor": "rgba(133, 133, 133, 0.30000000000000004)",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopWidth": 0.5,
+        "marginBottom": 20,
       }
     }
   >
     <View
       style={
         Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
+          "paddingBottom": 10,
+          "paddingHorizontal": 20,
+          "paddingTop": 12,
+          "paddingVertical": 20,
         }
       }
     >
       <View
+        disabled={false}
         style={
           Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "flex": 1,
-            "opacity": 1,
-          }
-        }
-      >
-        <TextInput
-          allowFontScaling={true}
-          editable={true}
-          focusAnimationDuration={450}
-          focusAnimationEasing={[Function]}
-          onBlur={[Function]}
-          onChangeText={[Function]}
-          onFocus={[Function]}
-          placeholderTextColor="rgba(48, 48, 48, 0.6)"
-          returnKeyType="done"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 15.75,
-              "height": 40,
-              "lineHeight": 30,
-              "paddingVertical": 5,
-            }
-          }
-          underlineColorAndroid="transparent"
-          value="firstName"
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-    </View>
-    <View
-      collapsable={undefined}
-      onLayout={[Function]}
-      pointerEvents="none"
-      style={
-        Object {
-          "bottom": 0,
-          "justifyContent": "center",
-          "opacity": 0.8,
-          "position": "absolute",
-          "top": 0,
-          "transform": Array [
-            Object {
-              "scale": 0.8,
-            },
-            Object {
-              "translateX": 0,
-            },
-            Object {
-              "translateY": 0,
-            },
-          ],
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#505050",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 15.75,
-            "lineHeight": 17.75,
-            "paddingBottom": 1.8,
-            "paddingTop": 2.25,
-            "paddingVertical": 5,
-          }
-        }
-      >
-        First Name
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "bottom": -0.5,
-            "height": 0.5,
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "right": 0,
-            "transform": Array [
-              Object {
-                "scaleX": 1,
-              },
-            ],
+            "marginVertical": 20,
           }
         }
       >
         <View
-          hasError={false}
           style={
             Object {
-              "backgroundColor": "#6bac43",
-              "bottom": 0,
-              "height": 0.5,
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
-        />
-      </View>
-    </View>
-  </View>
-  <View
-    disabled={false}
-    style={
-      Object {
-        "marginVertical": 20,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "flex": 1,
-            "opacity": 1,
-          }
-        }
-      >
-        <TextInput
-          allowFontScaling={true}
-          editable={true}
-          focusAnimationDuration={450}
-          focusAnimationEasing={[Function]}
-          onBlur={[Function]}
-          onChangeText={[Function]}
-          onFocus={[Function]}
-          placeholderTextColor="rgba(48, 48, 48, 0.6)"
-          returnKeyType="done"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 15.75,
-              "height": 40,
-              "lineHeight": 30,
-              "paddingVertical": 5,
-            }
-          }
-          underlineColorAndroid="transparent"
-          value="lastName"
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-    </View>
-    <View
-      collapsable={undefined}
-      onLayout={[Function]}
-      pointerEvents="none"
-      style={
-        Object {
-          "bottom": 0,
-          "justifyContent": "center",
-          "opacity": 0.8,
-          "position": "absolute",
-          "top": 0,
-          "transform": Array [
-            Object {
-              "scale": 0.8,
-            },
-            Object {
-              "translateX": 0,
-            },
-            Object {
-              "translateY": 0,
-            },
-          ],
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#505050",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 15.75,
-            "lineHeight": 17.75,
-            "paddingBottom": 1.8,
-            "paddingTop": 2.25,
-            "paddingVertical": 5,
-          }
-        }
-      >
-        Last Name
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "bottom": -0.5,
-            "height": 0.5,
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "right": 0,
-            "transform": Array [
+        >
+          <View
+            style={
               Object {
-                "scaleX": 1,
-              },
-            ],
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              editable={true}
+              focusAnimationDuration={450}
+              focusAnimationEasing={[Function]}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "height": 40,
+                  "lineHeight": 30,
+                  "paddingVertical": 5,
+                }
+              }
+              underlineColorAndroid="transparent"
+              value="firstName"
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+        </View>
+        <View
+          collapsable={undefined}
+          onLayout={[Function]}
+          pointerEvents="none"
+          style={
+            Object {
+              "bottom": 0,
+              "justifyContent": "center",
+              "opacity": 0.8,
+              "position": "absolute",
+              "top": 0,
+              "transform": Array [
+                Object {
+                  "scale": 0.8,
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            First Name
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": -0.5,
+                "height": 0.5,
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+                "transform": Array [
+                  Object {
+                    "scaleX": 1,
+                  },
+                ],
+              }
+            }
+          >
+            <View
+              hasError={false}
+              style={
+                Object {
+                  "backgroundColor": "#6bac43",
+                  "bottom": 0,
+                  "height": 0.5,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        disabled={false}
+        style={
+          Object {
+            "marginVertical": 20,
           }
         }
       >
         <View
-          hasError={false}
           style={
             Object {
-              "backgroundColor": "#6bac43",
-              "bottom": 0,
-              "height": 0.5,
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
-        />
-      </View>
-    </View>
-  </View>
-  <View
-    disabled={false}
-    style={
-      Object {
-        "marginVertical": 20,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "flex": 1,
-            "opacity": 1,
-          }
-        }
-      >
-        <TextInput
-          allowFontScaling={true}
-          autoCapitalize="none"
-          autoCorrect={false}
-          editable={true}
-          focusAnimationDuration={450}
-          focusAnimationEasing={[Function]}
-          keyboardType="email-address"
-          onBlur={[Function]}
-          onChangeText={[Function]}
-          onFocus={[Function]}
-          placeholderTextColor="rgba(48, 48, 48, 0.6)"
-          returnKeyType="done"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 15.75,
-              "height": 40,
-              "lineHeight": 30,
-              "paddingVertical": 5,
-            }
-          }
-          type="email"
-          underlineColorAndroid="transparent"
-          value="email@email.com"
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-    </View>
-    <View
-      collapsable={undefined}
-      onLayout={[Function]}
-      pointerEvents="none"
-      style={
-        Object {
-          "bottom": 0,
-          "justifyContent": "center",
-          "opacity": 0.8,
-          "position": "absolute",
-          "top": 0,
-          "transform": Array [
-            Object {
-              "scale": 0.8,
-            },
-            Object {
-              "translateX": 0,
-            },
-            Object {
-              "translateY": 0,
-            },
-          ],
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#505050",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 15.75,
-            "lineHeight": 17.75,
-            "paddingBottom": 1.8,
-            "paddingTop": 2.25,
-            "paddingVertical": 5,
-          }
-        }
-      >
-        Email
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "bottom": -0.5,
-            "height": 0.5,
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "right": 0,
-            "transform": Array [
+        >
+          <View
+            style={
               Object {
-                "scaleX": 1,
-              },
-            ],
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              editable={true}
+              focusAnimationDuration={450}
+              focusAnimationEasing={[Function]}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "height": 40,
+                  "lineHeight": 30,
+                  "paddingVertical": 5,
+                }
+              }
+              underlineColorAndroid="transparent"
+              value="lastName"
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+        </View>
+        <View
+          collapsable={undefined}
+          onLayout={[Function]}
+          pointerEvents="none"
+          style={
+            Object {
+              "bottom": 0,
+              "justifyContent": "center",
+              "opacity": 0.8,
+              "position": "absolute",
+              "top": 0,
+              "transform": Array [
+                Object {
+                  "scale": 0.8,
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            Last Name
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": -0.5,
+                "height": 0.5,
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+                "transform": Array [
+                  Object {
+                    "scaleX": 1,
+                  },
+                ],
+              }
+            }
+          >
+            <View
+              hasError={false}
+              style={
+                Object {
+                  "backgroundColor": "#6bac43",
+                  "bottom": 0,
+                  "height": 0.5,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        disabled={false}
+        style={
+          Object {
+            "marginVertical": 20,
           }
         }
       >
         <View
-          hasError={false}
           style={
             Object {
-              "backgroundColor": "#6bac43",
-              "bottom": 0,
-              "height": 0.5,
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
-        />
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              autoCorrect={false}
+              editable={true}
+              focusAnimationDuration={450}
+              focusAnimationEasing={[Function]}
+              keyboardType="email-address"
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "height": 40,
+                  "lineHeight": 30,
+                  "paddingVertical": 5,
+                }
+              }
+              type="email"
+              underlineColorAndroid="transparent"
+              value="email@email.com"
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+        </View>
+        <View
+          collapsable={undefined}
+          onLayout={[Function]}
+          pointerEvents="none"
+          style={
+            Object {
+              "bottom": 0,
+              "justifyContent": "center",
+              "opacity": 0.8,
+              "position": "absolute",
+              "top": 0,
+              "transform": Array [
+                Object {
+                  "scale": 0.8,
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            Email
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": -0.5,
+                "height": 0.5,
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+                "transform": Array [
+                  Object {
+                    "scaleX": 1,
+                  },
+                ],
+              }
+            }
+          >
+            <View
+              hasError={false}
+              style={
+                Object {
+                  "backgroundColor": "#6bac43",
+                  "bottom": 0,
+                  "height": 0.5,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "marginVertical": 20,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "height": 40,
+                    "lineHeight": 30,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
+                    "paddingVertical": 5,
+                  }
+                }
+              >
+                My campus
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <View
+                collapsable={undefined}
+                style={
+                  Object {
+                    "transform": Array [
+                      Object {
+                        "rotate": "0deg",
+                      },
+                    ],
+                  }
+                }
+              >
+                <Svg
+                  height={18}
+                  viewBox="0 0 24 24"
+                  width={18}
+                >
+                  <Path
+                    d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+                    fill="#303030"
+                  />
+                </Svg>
+              </View>
+            </View>
+          </View>
+        </View>
+        <Modal
+          animationType="slide"
+          hardwareAccelerated={false}
+          onRequestClose={[Function]}
+          transparent={true}
+          visible={false}
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
+                "borderTopWidth": 0.5,
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-end",
+                  "backgroundColor": "rgba(221, 221, 221, 0.09999999999999998)",
+                  "padding": 10,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#6bac43",
+                    "textDecorationLine": "underline",
+                  }
+                }
+              >
+                Done
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#dddddd",
+                  "borderTopWidth": 0.5,
+                }
+              }
+            >
+              <RCTPicker
+                items={
+                  Array [
+                    Object {
+                      "label": "My campus",
+                      "textColor": undefined,
+                      "value": "one",
+                    },
+                  ]
+                }
+                onChange={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                selectedIndex={0}
+                style={
+                  Array [
+                    Object {
+                      "height": 216,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+            </View>
+          </View>
+        </Modal>
+        <View
+          collapsable={undefined}
+          onLayout={[Function]}
+          pointerEvents="none"
+          style={
+            Object {
+              "bottom": 0,
+              "justifyContent": "center",
+              "opacity": 0.8,
+              "position": "absolute",
+              "top": 0,
+              "transform": Array [
+                Object {
+                  "scale": 0.8,
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            Campus
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": -0.5,
+                "height": 0.5,
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+                "transform": Array [
+                  Object {
+                    "scaleX": 0.0001,
+                  },
+                ],
+              }
+            }
+          >
+            <View
+              hasError={false}
+              style={
+                Object {
+                  "backgroundColor": "#6bac43",
+                  "bottom": 0,
+                  "height": 0.5,
+                }
+              }
+            />
+          </View>
+        </View>
       </View>
     </View>
   </View>
   <View
     style={
       Object {
-        "marginVertical": 20,
+        "paddingHorizontal": 20,
+        "paddingVertical": 20,
       }
     }
   >
     <View
-      accessibilityComponentType={undefined}
+      accessibilityComponentType="button"
       accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
+      accessibilityTraits={
+        Array [
+          "button",
+          "disabled",
+        ]
+      }
       accessible={true}
       collapsable={undefined}
       hasTVPreferredFocus={undefined}
@@ -510,313 +814,44 @@ exports[`The PaymentForm component renders correctly 1`] = `
       tvParallaxProperties={undefined}
     >
       <View
+        bordered={false}
+        disabled={true}
+        pill={true}
         style={
           Object {
+            "alignItems": "center",
+            "backgroundColor": "#6bac43",
+            "borderColor": "#6bac43",
+            "borderRadius": 60,
+            "borderWidth": 2,
+            "elevation": 2,
             "flexDirection": "row",
+            "height": 60,
             "justifyContent": "center",
+            "opacity": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 20,
           }
         }
       >
-        <View
-          collapsable={undefined}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
           style={
             Object {
-              "flex": 1,
-              "opacity": 1,
+              "color": "#ffffff",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 15.75,
-                "height": 40,
-                "lineHeight": 30,
-                "paddingBottom": 1.8,
-                "paddingTop": 2.25,
-                "paddingVertical": 5,
-              }
-            }
-          >
-            My campus
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "justifyContent": "center",
-            }
-          }
-        >
-          <View
-            collapsable={undefined}
-            style={
-              Object {
-                "transform": Array [
-                  Object {
-                    "rotate": "0deg",
-                  },
-                ],
-              }
-            }
-          >
-            <Svg
-              height={18}
-              viewBox="0 0 24 24"
-              width={18}
-            >
-              <Path
-                d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-                fill="#303030"
-              />
-            </Svg>
-          </View>
-        </View>
+          Next
+        </Text>
       </View>
-    </View>
-    <Modal
-      animationType="slide"
-      hardwareAccelerated={false}
-      onRequestClose={[Function]}
-      transparent={true}
-      visible={false}
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
-            "borderTopWidth": 0.5,
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "flex-end",
-              "backgroundColor": "rgba(221, 221, 221, 0.09999999999999998)",
-              "padding": 10,
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            onPress={[Function]}
-            style={
-              Object {
-                "color": "#6bac43",
-                "textDecorationLine": "underline",
-              }
-            }
-          >
-            Done
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "borderTopColor": "#dddddd",
-              "borderTopWidth": 0.5,
-            }
-          }
-        >
-          <RCTPicker
-            items={
-              Array [
-                Object {
-                  "label": "My campus",
-                  "textColor": undefined,
-                  "value": "one",
-                },
-              ]
-            }
-            onChange={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            selectedIndex={0}
-            style={
-              Array [
-                Object {
-                  "height": 216,
-                },
-                undefined,
-              ]
-            }
-          />
-        </View>
-      </View>
-    </Modal>
-    <View
-      collapsable={undefined}
-      onLayout={[Function]}
-      pointerEvents="none"
-      style={
-        Object {
-          "bottom": 0,
-          "justifyContent": "center",
-          "opacity": 0.8,
-          "position": "absolute",
-          "top": 0,
-          "transform": Array [
-            Object {
-              "scale": 0.8,
-            },
-            Object {
-              "translateX": 0,
-            },
-            Object {
-              "translateY": 0,
-            },
-          ],
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#505050",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 15.75,
-            "lineHeight": 17.75,
-            "paddingBottom": 1.8,
-            "paddingTop": 2.25,
-            "paddingVertical": 5,
-          }
-        }
-      >
-        Campus
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "bottom": -0.5,
-            "height": 0.5,
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "right": 0,
-            "transform": Array [
-              Object {
-                "scaleX": 0.0001,
-              },
-            ],
-          }
-        }
-      >
-        <View
-          hasError={false}
-          style={
-            Object {
-              "backgroundColor": "#6bac43",
-              "bottom": 0,
-              "height": 0.5,
-            }
-          }
-        />
-      </View>
-    </View>
-  </View>
-  <View
-    accessibilityComponentType="button"
-    accessibilityLabel={undefined}
-    accessibilityTraits={
-      Array [
-        "button",
-        "disabled",
-      ]
-    }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
-  >
-    <View
-      bordered={false}
-      disabled={true}
-      pill={true}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#6bac43",
-          "borderColor": "#6bac43",
-          "borderRadius": 60,
-          "borderWidth": 2,
-          "elevation": 2,
-          "flexDirection": "row",
-          "height": 60,
-          "justifyContent": "center",
-          "opacity": 0.5,
-          "overflow": "hidden",
-          "paddingHorizontal": 20,
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#ffffff",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 20.02,
-            "lineHeight": 25.33,
-            "paddingBottom": 3.15,
-            "paddingTop": 2.7,
-          }
-        }
-      >
-        Next
-      </Text>
     </View>
   </View>
 </View>
@@ -825,491 +860,795 @@ exports[`The PaymentForm component renders correctly 1`] = `
 exports[`The PaymentForm component shows a submitting state 1`] = `
 <View>
   <View
-    disabled={false}
+    responsive={false}
     style={
       Object {
-        "marginVertical": 20,
+        "backgroundColor": "#ffffff",
+        "borderBottomWidth": 0.5,
+        "borderColor": "rgba(133, 133, 133, 0.30000000000000004)",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopWidth": 0.5,
+        "marginBottom": 20,
       }
     }
   >
     <View
       style={
         Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
+          "paddingBottom": 10,
+          "paddingHorizontal": 20,
+          "paddingTop": 12,
+          "paddingVertical": 20,
         }
       }
     >
       <View
+        disabled={false}
         style={
           Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "flex": 1,
-            "opacity": 1,
-          }
-        }
-      >
-        <TextInput
-          allowFontScaling={true}
-          editable={true}
-          focusAnimationDuration={450}
-          focusAnimationEasing={[Function]}
-          onBlur={[Function]}
-          onChangeText={[Function]}
-          onFocus={[Function]}
-          placeholderTextColor="rgba(48, 48, 48, 0.6)"
-          returnKeyType="done"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 15.75,
-              "height": 40,
-              "lineHeight": 30,
-              "paddingVertical": 5,
-            }
-          }
-          underlineColorAndroid="transparent"
-          value="firstName"
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-    </View>
-    <View
-      collapsable={undefined}
-      onLayout={[Function]}
-      pointerEvents="none"
-      style={
-        Object {
-          "bottom": 0,
-          "justifyContent": "center",
-          "opacity": 0.8,
-          "position": "absolute",
-          "top": 0,
-          "transform": Array [
-            Object {
-              "scale": 0.8,
-            },
-            Object {
-              "translateX": 0,
-            },
-            Object {
-              "translateY": 0,
-            },
-          ],
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#505050",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 15.75,
-            "lineHeight": 17.75,
-            "paddingBottom": 1.8,
-            "paddingTop": 2.25,
-            "paddingVertical": 5,
-          }
-        }
-      >
-        First Name
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "bottom": -0.5,
-            "height": 0.5,
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "right": 0,
-            "transform": Array [
-              Object {
-                "scaleX": 1,
-              },
-            ],
+            "marginVertical": 20,
           }
         }
       >
         <View
-          hasError={false}
           style={
             Object {
-              "backgroundColor": "#6bac43",
-              "bottom": 0,
-              "height": 0.5,
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
-        />
-      </View>
-    </View>
-  </View>
-  <View
-    disabled={false}
-    style={
-      Object {
-        "marginVertical": 20,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "flex": 1,
-            "opacity": 1,
-          }
-        }
-      >
-        <TextInput
-          allowFontScaling={true}
-          editable={true}
-          focusAnimationDuration={450}
-          focusAnimationEasing={[Function]}
-          onBlur={[Function]}
-          onChangeText={[Function]}
-          onFocus={[Function]}
-          placeholderTextColor="rgba(48, 48, 48, 0.6)"
-          returnKeyType="done"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 15.75,
-              "height": 40,
-              "lineHeight": 30,
-              "paddingVertical": 5,
-            }
-          }
-          underlineColorAndroid="transparent"
-          value="lastName"
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-    </View>
-    <View
-      collapsable={undefined}
-      onLayout={[Function]}
-      pointerEvents="none"
-      style={
-        Object {
-          "bottom": 0,
-          "justifyContent": "center",
-          "opacity": 0.8,
-          "position": "absolute",
-          "top": 0,
-          "transform": Array [
-            Object {
-              "scale": 0.8,
-            },
-            Object {
-              "translateX": 0,
-            },
-            Object {
-              "translateY": 0,
-            },
-          ],
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#505050",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 15.75,
-            "lineHeight": 17.75,
-            "paddingBottom": 1.8,
-            "paddingTop": 2.25,
-            "paddingVertical": 5,
-          }
-        }
-      >
-        Last Name
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "bottom": -0.5,
-            "height": 0.5,
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "right": 0,
-            "transform": Array [
+        >
+          <View
+            style={
               Object {
-                "scaleX": 1,
-              },
-            ],
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              editable={true}
+              focusAnimationDuration={450}
+              focusAnimationEasing={[Function]}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "height": 40,
+                  "lineHeight": 30,
+                  "paddingVertical": 5,
+                }
+              }
+              underlineColorAndroid="transparent"
+              value="firstName"
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+        </View>
+        <View
+          collapsable={undefined}
+          onLayout={[Function]}
+          pointerEvents="none"
+          style={
+            Object {
+              "bottom": 0,
+              "justifyContent": "center",
+              "opacity": 0.8,
+              "position": "absolute",
+              "top": 0,
+              "transform": Array [
+                Object {
+                  "scale": 0.8,
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            First Name
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": -0.5,
+                "height": 0.5,
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+                "transform": Array [
+                  Object {
+                    "scaleX": 1,
+                  },
+                ],
+              }
+            }
+          >
+            <View
+              hasError={false}
+              style={
+                Object {
+                  "backgroundColor": "#6bac43",
+                  "bottom": 0,
+                  "height": 0.5,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        disabled={false}
+        style={
+          Object {
+            "marginVertical": 20,
           }
         }
       >
         <View
-          hasError={false}
           style={
             Object {
-              "backgroundColor": "#6bac43",
-              "bottom": 0,
-              "height": 0.5,
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
-        />
-      </View>
-    </View>
-  </View>
-  <View
-    disabled={false}
-    style={
-      Object {
-        "marginVertical": 20,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "flex": 1,
-            "opacity": 1,
-          }
-        }
-      >
-        <TextInput
-          allowFontScaling={true}
-          autoCapitalize="none"
-          autoCorrect={false}
-          editable={true}
-          focusAnimationDuration={450}
-          focusAnimationEasing={[Function]}
-          keyboardType="email-address"
-          onBlur={[Function]}
-          onChangeText={[Function]}
-          onFocus={[Function]}
-          placeholderTextColor="rgba(48, 48, 48, 0.6)"
-          returnKeyType="done"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 15.75,
-              "height": 40,
-              "lineHeight": 30,
-              "paddingVertical": 5,
-            }
-          }
-          type="email"
-          underlineColorAndroid="transparent"
-          value="email@email.com"
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-          }
-        }
-      />
-    </View>
-    <View
-      collapsable={undefined}
-      onLayout={[Function]}
-      pointerEvents="none"
-      style={
-        Object {
-          "bottom": 0,
-          "justifyContent": "center",
-          "opacity": 0.8,
-          "position": "absolute",
-          "top": 0,
-          "transform": Array [
-            Object {
-              "scale": 0.8,
-            },
-            Object {
-              "translateX": 0,
-            },
-            Object {
-              "translateY": 0,
-            },
-          ],
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#505050",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 15.75,
-            "lineHeight": 17.75,
-            "paddingBottom": 1.8,
-            "paddingTop": 2.25,
-            "paddingVertical": 5,
-          }
-        }
-      >
-        Email
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "bottom": -0.5,
-            "height": 0.5,
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "right": 0,
-            "transform": Array [
+        >
+          <View
+            style={
               Object {
-                "scaleX": 1,
-              },
-            ],
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              editable={true}
+              focusAnimationDuration={450}
+              focusAnimationEasing={[Function]}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "height": 40,
+                  "lineHeight": 30,
+                  "paddingVertical": 5,
+                }
+              }
+              underlineColorAndroid="transparent"
+              value="lastName"
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+        </View>
+        <View
+          collapsable={undefined}
+          onLayout={[Function]}
+          pointerEvents="none"
+          style={
+            Object {
+              "bottom": 0,
+              "justifyContent": "center",
+              "opacity": 0.8,
+              "position": "absolute",
+              "top": 0,
+              "transform": Array [
+                Object {
+                  "scale": 0.8,
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            Last Name
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": -0.5,
+                "height": 0.5,
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+                "transform": Array [
+                  Object {
+                    "scaleX": 1,
+                  },
+                ],
+              }
+            }
+          >
+            <View
+              hasError={false}
+              style={
+                Object {
+                  "backgroundColor": "#6bac43",
+                  "bottom": 0,
+                  "height": 0.5,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        disabled={false}
+        style={
+          Object {
+            "marginVertical": 20,
           }
         }
       >
         <View
-          hasError={false}
           style={
             Object {
-              "backgroundColor": "#6bac43",
-              "bottom": 0,
-              "height": 0.5,
+              "flexDirection": "row",
+              "justifyContent": "center",
             }
           }
-        />
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              autoCorrect={false}
+              editable={true}
+              focusAnimationDuration={450}
+              focusAnimationEasing={[Function]}
+              keyboardType="email-address"
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              placeholderTextColor="rgba(48, 48, 48, 0.6)"
+              returnKeyType="done"
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "height": 40,
+                  "lineHeight": 30,
+                  "paddingVertical": 5,
+                }
+              }
+              type="email"
+              underlineColorAndroid="transparent"
+              value="email@email.com"
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          />
+        </View>
+        <View
+          collapsable={undefined}
+          onLayout={[Function]}
+          pointerEvents="none"
+          style={
+            Object {
+              "bottom": 0,
+              "justifyContent": "center",
+              "opacity": 0.8,
+              "position": "absolute",
+              "top": 0,
+              "transform": Array [
+                Object {
+                  "scale": 0.8,
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            Email
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": -0.5,
+                "height": 0.5,
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+                "transform": Array [
+                  Object {
+                    "scaleX": 1,
+                  },
+                ],
+              }
+            }
+          >
+            <View
+              hasError={false}
+              style={
+                Object {
+                  "backgroundColor": "#6bac43",
+                  "bottom": 0,
+                  "height": 0.5,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "marginVertical": 20,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "height": 40,
+                    "lineHeight": 30,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
+                    "paddingVertical": 5,
+                  }
+                }
+              >
+                My campus
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <View
+                collapsable={undefined}
+                style={
+                  Object {
+                    "transform": Array [
+                      Object {
+                        "rotate": "0deg",
+                      },
+                    ],
+                  }
+                }
+              >
+                <Svg
+                  height={18}
+                  viewBox="0 0 24 24"
+                  width={18}
+                >
+                  <Path
+                    d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+                    fill="#303030"
+                  />
+                </Svg>
+              </View>
+            </View>
+          </View>
+        </View>
+        <Modal
+          animationType="slide"
+          hardwareAccelerated={false}
+          onRequestClose={[Function]}
+          transparent={true}
+          visible={false}
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
+                "borderTopWidth": 0.5,
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-end",
+                  "backgroundColor": "rgba(221, 221, 221, 0.09999999999999998)",
+                  "padding": 10,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#6bac43",
+                    "textDecorationLine": "underline",
+                  }
+                }
+              >
+                Done
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#dddddd",
+                  "borderTopWidth": 0.5,
+                }
+              }
+            >
+              <RCTPicker
+                items={
+                  Array [
+                    Object {
+                      "label": "My campus",
+                      "textColor": undefined,
+                      "value": "one",
+                    },
+                  ]
+                }
+                onChange={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                selectedIndex={0}
+                style={
+                  Array [
+                    Object {
+                      "height": 216,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+            </View>
+          </View>
+        </Modal>
+        <View
+          collapsable={undefined}
+          onLayout={[Function]}
+          pointerEvents="none"
+          style={
+            Object {
+              "bottom": 0,
+              "justifyContent": "center",
+              "opacity": 0.8,
+              "position": "absolute",
+              "top": 0,
+              "transform": Array [
+                Object {
+                  "scale": 0.8,
+                },
+                Object {
+                  "translateX": 0,
+                },
+                Object {
+                  "translateY": 0,
+                },
+              ],
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+                "paddingVertical": 5,
+              }
+            }
+          >
+            Campus
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": -0.5,
+                "height": 0.5,
+              }
+            }
+          />
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+                "transform": Array [
+                  Object {
+                    "scaleX": 0.0001,
+                  },
+                ],
+              }
+            }
+          >
+            <View
+              hasError={false}
+              style={
+                Object {
+                  "backgroundColor": "#6bac43",
+                  "bottom": 0,
+                  "height": 0.5,
+                }
+              }
+            />
+          </View>
+        </View>
       </View>
     </View>
   </View>
   <View
     style={
       Object {
-        "marginVertical": 20,
+        "paddingHorizontal": 20,
+        "paddingVertical": 20,
       }
     }
   >
     <View
-      accessibilityComponentType={undefined}
+      accessibilityComponentType="button"
       accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
+      accessibilityTraits={
+        Array [
+          "button",
+          "disabled",
+        ]
+      }
       accessible={true}
       collapsable={undefined}
       hasTVPreferredFocus={undefined}
@@ -1332,302 +1671,33 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
       tvParallaxProperties={undefined}
     >
       <View
+        bordered={false}
+        disabled={true}
+        pill={true}
         style={
           Object {
+            "alignItems": "center",
+            "backgroundColor": "#6bac43",
+            "borderColor": "#6bac43",
+            "borderRadius": 60,
+            "borderWidth": 2,
+            "elevation": 2,
             "flexDirection": "row",
+            "height": 60,
             "justifyContent": "center",
+            "opacity": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 20,
           }
         }
       >
-        <View
-          collapsable={undefined}
-          style={
-            Object {
-              "flex": 1,
-              "opacity": 1,
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 15.75,
-                "height": 40,
-                "lineHeight": 30,
-                "paddingBottom": 1.8,
-                "paddingTop": 2.25,
-                "paddingVertical": 5,
-              }
-            }
-          >
-            My campus
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "justifyContent": "center",
-            }
-          }
-        >
-          <View
-            collapsable={undefined}
-            style={
-              Object {
-                "transform": Array [
-                  Object {
-                    "rotate": "0deg",
-                  },
-                ],
-              }
-            }
-          >
-            <Svg
-              height={18}
-              viewBox="0 0 24 24"
-              width={18}
-            >
-              <Path
-                d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
-                fill="#303030"
-              />
-            </Svg>
-          </View>
-        </View>
-      </View>
-    </View>
-    <Modal
-      animationType="slide"
-      hardwareAccelerated={false}
-      onRequestClose={[Function]}
-      transparent={true}
-      visible={false}
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#ffffff",
-            "borderTopColor": "rgba(133, 133, 133, 0.30000000000000004)",
-            "borderTopWidth": 0.5,
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "flex-end",
-              "backgroundColor": "rgba(221, 221, 221, 0.09999999999999998)",
-              "padding": 10,
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            onPress={[Function]}
-            style={
-              Object {
-                "color": "#6bac43",
-                "textDecorationLine": "underline",
-              }
-            }
-          >
-            Done
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "borderTopColor": "#dddddd",
-              "borderTopWidth": 0.5,
-            }
-          }
-        >
-          <RCTPicker
-            items={
-              Array [
-                Object {
-                  "label": "My campus",
-                  "textColor": undefined,
-                  "value": "one",
-                },
-              ]
-            }
-            onChange={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            selectedIndex={0}
-            style={
-              Array [
-                Object {
-                  "height": 216,
-                },
-                undefined,
-              ]
-            }
-          />
-        </View>
-      </View>
-    </Modal>
-    <View
-      collapsable={undefined}
-      onLayout={[Function]}
-      pointerEvents="none"
-      style={
-        Object {
-          "bottom": 0,
-          "justifyContent": "center",
-          "opacity": 0.8,
-          "position": "absolute",
-          "top": 0,
-          "transform": Array [
-            Object {
-              "scale": 0.8,
-            },
-            Object {
-              "translateX": 0,
-            },
-            Object {
-              "translateY": 0,
-            },
-          ],
-        }
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#505050",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 15.75,
-            "lineHeight": 17.75,
-            "paddingBottom": 1.8,
-            "paddingTop": 2.25,
-            "paddingVertical": 5,
-          }
-        }
-      >
-        Campus
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "right": 0,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "bottom": -0.5,
-            "height": 0.5,
-          }
-        }
-      />
-      <View
-        collapsable={undefined}
-        style={
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "right": 0,
-            "transform": Array [
-              Object {
-                "scaleX": 0.0001,
-              },
-            ],
-          }
-        }
-      >
-        <View
-          hasError={false}
-          style={
-            Object {
-              "backgroundColor": "#6bac43",
-              "bottom": 0,
-              "height": 0.5,
-            }
-          }
+        <ActivityIndicator
+          animating={true}
+          color="#ffffff"
+          hidesWhenStopped={true}
+          size="small"
         />
       </View>
-    </View>
-  </View>
-  <View
-    accessibilityComponentType="button"
-    accessibilityLabel={undefined}
-    accessibilityTraits={
-      Array [
-        "button",
-        "disabled",
-      ]
-    }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
-  >
-    <View
-      bordered={false}
-      disabled={true}
-      pill={true}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#6bac43",
-          "borderColor": "#6bac43",
-          "borderRadius": 60,
-          "borderWidth": 2,
-          "elevation": 2,
-          "flexDirection": "row",
-          "height": 60,
-          "justifyContent": "center",
-          "opacity": 0.5,
-          "overflow": "hidden",
-          "paddingHorizontal": 20,
-        }
-      }
-    >
-      <ActivityIndicator
-        animating={true}
-        color="#ffffff"
-        hidesWhenStopped={true}
-        size="small"
-      />
     </View>
   </View>
 </View>
