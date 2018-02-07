@@ -10,26 +10,52 @@ import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
 import moment from 'moment';
 
-import { H4, H5, H6, H7, BodyText } from '@ui/typography';
+import { H5, H7, H6 } from '@ui/typography';
 import { FREQUENCY_IDS } from '@ui/forms/ContributionForm/FrequencyInput';
 import { withRouter } from '@ui/NativeWebRouter';
 import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
-import styled from '@ui/styled';
 import Button, { ButtonLink } from '@ui/Button';
 import WebBrowser from '@ui/WebBrowser';
 import linkingUri from '@utils/linkingUri';
 import { stringify } from '@utils/queryString';
 import FlexedView from '@ui/FlexedView';
+import PaddedView from '@ui/PaddedView';
 import Settings from '@utils/Settings';
+import TableView, { Cell, Divider } from '@ui/TableView';
+import CashAmountIndicator from '@ui/CashAmountIndicator';
+import styled from '@ui/styled';
+import Icon from '@ui/Icon';
+
+const LargeCellText = styled(({ theme }) => ({
+  flexGrow: 1,
+  flexShrink: 1,
+  paddingLeft: theme.sizing.baseUnit / 2,
+  paddingRight: theme.sizing.baseUnit / 2,
+}))(H5);
+
+const LabelText = styled(({ theme }) => ({
+  color: theme.colors.text.tertiary,
+}))(H7);
+
+const SmallValueText = compose(
+  styled(({ theme }) => ({
+    color: theme.colors.text.secondary,
+  })),
+)(H6);
 
 const Row = styled(({ theme }) => ({
-  paddingVertical: theme.sizing.baseUnit / 2,
-  borderBottomWidth: 1,
-  borderBottomColor: theme.colors.background.accent,
   flexDirection: 'row',
-  justifyContent: 'space-between',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+  paddingHorizontal: theme.sizing.baseUnit / 2,
+}))(View);
+
+const ButtonLinkContainer = styled(({ theme }) => ({
+  paddingTop: theme.sizing.baseUnit / 2,
+  alignItems: 'center',
+  justifyContent: 'center',
 }))(View);
 
 export class PaymentConfirmationFormWithoutData extends PureComponent {
@@ -51,6 +77,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
     onSubmit: PropTypes.func,
     onPressChangePaymentMethod: PropTypes.func,
     submitButtonText: PropTypes.string,
+    submitButtonIcon: PropTypes.string,
     hideChangePaymentMethodButton: PropTypes.bool,
   };
 
@@ -83,55 +110,69 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
 
     return (
       <View>
-        <Row>
-          <H7>Campus</H7>
-          <H7>{this.props.campus}</H7>
-        </Row>
+        <TableView>
+          <Cell>
+            <LabelText>Campus:{' '}</LabelText>
+            <SmallValueText>{this.props.campus}</SmallValueText>
+          </Cell>
+          <Divider />
 
-        {this.props.contributions.contributions.map(contribution => (
-          <Row key={contribution.name}>
-            <H5>{contribution.name}</H5>
-            <H6>$<H5>{contribution.amount.toFixed(2).split('.')[0]}</H5>.{contribution.amount.toFixed(2).split('.')[1]}</H6>
-          </Row>
-        ))}
+          {this.props.contributions.contributions.map(contribution => ([
+            <Cell key={contribution.name}>
+              <LargeCellText>{contribution.name}</LargeCellText>
+              <CashAmountIndicator amount={contribution.amount} size={5} />
+            </Cell>,
+            <Divider key={`${contribution.name}-divider`} />,
+          ]))}
 
-        {(this.props.contributions.frequencyId && this.props.contributions.frequencyId !== 'today') ? (
-          <Row>
-            <View>
-              <H5>Schedule Details</H5>
-              <H7>
-                {'Frequency: '}
-                {FREQUENCY_IDS.find(f => f.id === this.props.contributions.frequencyId).label}
-              </H7>
-              <H7>
-                Starting: {moment(this.props.contributions.startDate).format('MM/DD/YYYY')}
-              </H7>
-            </View>
-          </Row>
-        ) : null}
+          {(this.props.contributions.frequencyId && this.props.contributions.frequencyId !== 'today') ? ([
+            <PaddedView horizontal={false} key="view">
+              <LargeCellText>Schedule Details</LargeCellText>
+              <Row>
+                <LabelText>Frequency:{' '}</LabelText>
+                <SmallValueText>
+                  {FREQUENCY_IDS.find(f => f.id === this.props.contributions.frequencyId).label}
+                </SmallValueText>
+              </Row>
+              <Row>
+                <LabelText>Starting:{' '}</LabelText>
+                <SmallValueText>{moment(this.props.contributions.startDate).format('MM/DD/YYYY')}</SmallValueText>
+              </Row>
+            </PaddedView>,
+            <Divider key="divider" />,
+          ]) : null}
 
-        <Row>
-          <H5>Total</H5>
-          <H5>$<H4>{this.total.toFixed(2).split('.')[0]}</H4>.{this.total.toFixed(2).split('.')[1]}</H5>
-        </Row>
+          <Cell>
+            <LargeCellText>Total</LargeCellText>
+            <CashAmountIndicator amount={this.total} size={4} />
+          </Cell>
+        </TableView>
 
         {(Platform.OS === 'ios') ? (
-          <BodyText>
-            {'Due to Apple policies, you\'ll be redirected to Safari to complete this contribution.'}
-          </BodyText>
+          <PaddedView>
+            <H7>
+              {'You\'ll be redirected to Safari to securely complete this contribution.'}
+            </H7>
+          </PaddedView>
         ) : null}
 
-        <Button
-          onPress={this.props.onSubmit}
-          title={this.props.submitButtonText}
-          loading={this.props.contributions.isPaying}
-        />
+        <PaddedView vertical={false}>
+          <Button
+            onPress={this.props.onSubmit}
+            loading={this.props.contributions.isPaying}
+          >
+            <H5>{this.props.submitButtonText}{' '}</H5>
+            <Icon name={this.props.submitButtonIcon} size={24} />
+          </Button>
 
-        {!this.props.hideChangePaymentMethodButton && (
-          <ButtonLink onPress={this.props.onPressChangePaymentMethod}>
-            {'Change Payment Method'}
-          </ButtonLink>
-        )}
+          {!this.props.hideChangePaymentMethodButton && (
+            <ButtonLinkContainer>
+              <ButtonLink onPress={this.props.onPressChangePaymentMethod}>
+                {'Change Payment Method'}
+              </ButtonLink>
+            </ButtonLinkContainer>
+          )}
+        </PaddedView>
       </View>
     );
   }
@@ -155,6 +196,9 @@ const PaymentConfirmationForm = compose(
     });
   }),
   withProps(props => ({
+    savedPaymentMethod: get(props, 'contributions.paymentMethod') === 'savedPaymentMethod' &&
+      get(props, 'savedPaymentMethods', []).find(({ id }) => id === get(props, 'contributions.savedPaymentMethodId')),
+    isScheduled: get(props, 'contributions.frequencyId', 'today') !== 'today',
     onSubmit: async () => {
       try {
         if (Platform.OS === 'ios') {
@@ -221,6 +265,23 @@ const PaymentConfirmationForm = compose(
       }
     },
   })),
+  withProps(({ savedPaymentMethod = {}, isScheduled, contributions = {} }) => {
+    let paymentMethod = savedPaymentMethod;
+    if (!paymentMethod) {
+      paymentMethod = get(contributions, contributions.paymentMethod, {});
+    }
+
+    const verb = isScheduled ? 'Schedule' : 'Give';
+
+    const name = (paymentMethod.accountNumber || paymentMethod.cardNumber || '').replace(/-/g, '').slice(-4);
+
+    const text = `${verb} with ${name}`;
+    const icon = contributions.paymentMethod === 'creditCard' ? 'credit' : 'bank';
+    return {
+      submitButtonText: text,
+      submitButtonIcon: icon,
+    };
+  }),
 )(PaymentConfirmationFormWithoutData);
 
 export default PaymentConfirmationForm;
