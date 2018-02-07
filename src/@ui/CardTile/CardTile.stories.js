@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import CardTile from './';
 
-storiesOf('@ui/CardTile', module)
+storiesOf('CardTile', module)
   .add('Default', () => {
     const container = {
       height: 200,

@@ -157,6 +157,7 @@ exports[`The Picker Input component should render correctly 1`] = `
           style={
             Object {
               "color": "#6bac43",
+              "textDecorationLine": "underline",
             }
           }
         >

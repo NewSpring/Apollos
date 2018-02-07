@@ -5,6 +5,7 @@ import { Platform, Switch, View } from 'react-native';
 import { withTheme } from '@ui/theme';
 import FlexedView from '@ui/FlexedView';
 import styled from '@ui/styled';
+import Touchable from '@ui/Touchable';
 import InputAddon, { AddonRow } from '../InputAddon';
 import { LabelText } from '../FloatingLabel';
 import InputWrapper from '../InputWrapper';
@@ -36,14 +37,22 @@ const Text = enhance(({
   prefix,
   error,
   wrapperStyle,
+  onValueChange,
+  value,
   ...switchProps
 }) => (
   <InputWrapper style={wrapperStyle}>
     <ControlWrapper>
       <AddonRow>
         <InputAddon>{prefix}</InputAddon>
-        <LabelContainer><LabelText>{label}</LabelText></LabelContainer>
-        <InputAddon><Switch {...switchProps} /></InputAddon>
+        <LabelContainer>
+          <Touchable onPress={() => onValueChange(!value)}>
+            <LabelText>{label}</LabelText>
+          </Touchable>
+        </LabelContainer>
+        <InputAddon>
+          <Switch value={value} onValueChange={onValueChange} {...switchProps} />
+        </InputAddon>
       </AddonRow>
     </ControlWrapper>
 

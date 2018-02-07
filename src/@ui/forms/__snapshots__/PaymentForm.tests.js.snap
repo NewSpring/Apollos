@@ -142,6 +142,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
             style={
               Object {
                 "color": "#6bac43",
+                "textDecorationLine": "underline",
               }
             }
           >
@@ -809,25 +810,51 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
               }
             }
           >
-            <Text
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
               accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#505050",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "lineHeight": 17.75,
-                  "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
-                  "paddingVertical": 5,
+                  "opacity": 1,
                 }
               }
+              testID={undefined}
+              tvParallaxProperties={undefined}
             >
-              Save this payment for future contributions
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#505050",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "lineHeight": 17.75,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
+                    "paddingVertical": 5,
+                  }
+                }
+              >
+                Save this payment for future contributions
+              </Text>
+            </View>
           </View>
           <View
             style={
@@ -1078,6 +1105,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
             style={
               Object {
                 "color": "#6bac43",
+                "textDecorationLine": "underline",
               }
             }
           >
@@ -1745,25 +1773,51 @@ exports[`The PaymentForm component renders correctly 1`] = `
               }
             }
           >
-            <Text
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
               accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#505050",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "lineHeight": 17.75,
-                  "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
-                  "paddingVertical": 5,
+                  "opacity": 1,
                 }
               }
+              testID={undefined}
+              tvParallaxProperties={undefined}
             >
-              Save this payment for future contributions
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#505050",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "lineHeight": 17.75,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
+                    "paddingVertical": 5,
+                  }
+                }
+              >
+                Save this payment for future contributions
+              </Text>
+            </View>
           </View>
           <View
             style={
@@ -2014,6 +2068,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             style={
               Object {
                 "color": "#6bac43",
+                "textDecorationLine": "underline",
               }
             }
           >
@@ -2681,25 +2736,51 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
               }
             }
           >
-            <Text
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
               accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#505050",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "lineHeight": 17.75,
-                  "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
-                  "paddingVertical": 5,
+                  "opacity": 1,
                 }
               }
+              testID={undefined}
+              tvParallaxProperties={undefined}
             >
-              Save this payment for future contributions
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#505050",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "lineHeight": 17.75,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
+                    "paddingVertical": 5,
+                  }
+                }
+              >
+                Save this payment for future contributions
+              </Text>
+            </View>
           </View>
           <View
             style={
@@ -2940,6 +3021,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
             style={
               Object {
                 "color": "#6bac43",
+                "textDecorationLine": "underline",
               }
             }
           >
@@ -3703,6 +3785,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
               style={
                 Object {
                   "color": "#6bac43",
+                  "textDecorationLine": "underline",
                 }
               }
             >
@@ -3880,25 +3963,51 @@ exports[`The PaymentForm component shows bank account info 1`] = `
               }
             }
           >
-            <Text
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
               accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#505050",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "lineHeight": 17.75,
-                  "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
-                  "paddingVertical": 5,
+                  "opacity": 1,
                 }
               }
+              testID={undefined}
+              tvParallaxProperties={undefined}
             >
-              Save this payment for future contributions
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "color": "#505050",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "lineHeight": 17.75,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 2.25,
+                    "paddingVertical": 5,
+                  }
+                }
+              >
+                Save this payment for future contributions
+              </Text>
+            </View>
           </View>
           <View
             style={

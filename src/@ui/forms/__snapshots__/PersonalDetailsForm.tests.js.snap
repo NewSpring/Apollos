@@ -617,6 +617,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
             style={
               Object {
                 "color": "#6bac43",
+                "textDecorationLine": "underline",
               }
             }
           >
@@ -1438,6 +1439,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
             style={
               Object {
                 "color": "#6bac43",
+                "textDecorationLine": "underline",
               }
             }
           >

@@ -10,7 +10,7 @@ const containerStyles = {
   backgroundColor: '#f7f7f7',
 };
 
-storiesOf('@ui/ThumbnailCard', module)
+storiesOf('ThumbnailCard', module)
   .add('Default', () => (
     <View style={containerStyles}>
       <ThumbnailCard

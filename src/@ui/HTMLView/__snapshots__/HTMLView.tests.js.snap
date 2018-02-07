@@ -29,19 +29,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         I sat on my couch next to my high school 
       </Text>
@@ -53,25 +41,14 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         style={
           Object {
             "color": "#6bac43",
+            "textDecorationLine": "underline",
           }
         }
       >
         <Text
           accessible={true}
           allowFontScaling={true}
-          bold={false}
           ellipsizeMode="tail"
-          italic={false}
-          style={
-            Object {
-              "color": undefined,
-              "fontFamily": "DroidSerif-Regular",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.8,
-            }
-          }
         >
           Fuse Group
         </Text>
@@ -79,19 +56,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         , silently fuming at their inability to put their phones down during Bible study. Finally, I spoke up, teasing one of the girls in a tone that clearly said, “I’m not actually kidding.” 
       </Text>
@@ -124,19 +89,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         A few days later, I was in the car with my sister, and as I sat in the passenger seat responding to emails, I heard her laugh and say, “You always mumble when you are typing. Stop doing that.” 
       </Text>
@@ -169,19 +122,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         “Sorry,” I responded. “I just don’t want people to think I’m ignoring them when I’m typing.”
       </Text>
@@ -214,19 +155,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         But the truth is, I am ignoring them! In my head, this behavior is totally acceptable. I tell myself I’m tending to my priorities in order, and in doing so, I send a message to the person in front of me that she is of lesser importance.
       </Text>
@@ -273,20 +202,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          bold={false}
           ellipsizeMode="tail"
-          italic={false}
-          style={
-            Object {
-              "color": undefined,
-              "fontFamily": "DroidSerif-RegularItalic",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.8,
-              "textAlign": "center",
-            }
-          }
         >
           My phone is the primary outlet that distracts me from people who need my attention.
         </Text>
@@ -320,19 +236,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         I quickly get frustrated when I am the one on the outside, but how often to I shut others out during my own social media binges or email frenzies? Just like my girls, I’m learning that my phone is the primary outlet that distracts me from people who need my attention.
       </Text>
@@ -356,21 +260,15 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      bold={false}
       ellipsizeMode="tail"
-      italic={false}
-      style={
-        Object {
-          "color": undefined,
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
-        }
-      }
     >
-      Why Being Present Matters
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        Why Being Present Matters
+      </Text>
     </Text>
   </Text>
   <View
@@ -400,19 +298,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         There is nothing wrong with using our phones — as long as we remember that the best investment we can make is to invest in our relationships with Jesus and each other. We were created for 
       </Text>
@@ -424,25 +310,14 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         style={
           Object {
             "color": "#6bac43",
+            "textDecorationLine": "underline",
           }
         }
       >
         <Text
           accessible={true}
           allowFontScaling={true}
-          bold={false}
           ellipsizeMode="tail"
-          italic={false}
-          style={
-            Object {
-              "color": undefined,
-              "fontFamily": "DroidSerif-Regular",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.8,
-            }
-          }
         >
           community
         </Text>
@@ -450,19 +325,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
          by God, who exists in community as Father, Son, and Holy Spirit (John 1:1-2, Genesis 2:18). 
       </Text>
@@ -495,19 +358,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         Our phones help us stay connected, but they are not the foundation of all connection. If we’re honest, our phones are much quicker to distract and disengage us from the people right in front of us. 
       </Text>
@@ -540,19 +391,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         Jesus said loving God and loving others is greatest of all God’s commandments (Matthew 22:38-40). And, after trying everything the world had to offer, King Solomon reminded his people that their relationships with God and others are the only things that really matter (Ecclesiastes 2:24-26, Ecclesiastes 3:9). 
       </Text>
@@ -599,20 +438,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          bold={false}
           ellipsizeMode="tail"
-          italic={false}
-          style={
-            Object {
-              "color": undefined,
-              "fontFamily": "DroidSerif-RegularItalic",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.8,
-              "textAlign": "center",
-            }
-          }
         >
           Greater love has no one than this: to lay down one’s phone for one’s loved ones.
         </Text>
@@ -646,19 +472,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         So the next time we feel like we have to text back immediately or tweet before someone else does, consider: 
       </Text>
@@ -713,7 +527,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         italic={false}
         style={
           Object {
-            "color": undefined,
+            "color": "#303030",
             "fontFamily": "DroidSerif-Regular",
             "fontSize": 20.02,
             "lineHeight": 33.11,
@@ -722,7 +536,13 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           }
         }
       >
-        Am I putting others before myself right now?
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Am I putting others before myself right now?
+        </Text>
       </Text>
     </View>
   </View>
@@ -775,7 +595,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         italic={false}
         style={
           Object {
-            "color": undefined,
+            "color": "#303030",
             "fontFamily": "DroidSerif-Regular",
             "fontSize": 20.02,
             "lineHeight": 33.11,
@@ -784,7 +604,13 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           }
         }
       >
-        How can I love the people around me if I’m not even paying attention to them?
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          How can I love the people around me if I’m not even paying attention to them?
+        </Text>
       </Text>
     </View>
   </View>
@@ -837,7 +663,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         italic={false}
         style={
           Object {
-            "color": undefined,
+            "color": "#303030",
             "fontFamily": "DroidSerif-Regular",
             "fontSize": 20.02,
             "lineHeight": 33.11,
@@ -846,7 +672,13 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           }
         }
       >
-        What if Jesus wants to speak through me, but I’ve got my nose stuck in my phone? 
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          What if Jesus wants to speak through me, but I’ve got my nose stuck in my phone? 
+        </Text>
       </Text>
     </View>
   </View>
@@ -877,19 +709,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         The world won’t implode if we don’t reply to every text or email immediately. And that Instagram picture doesn’t need to go up ASAP. If it’s already been a week between posts, what’s a few more hours? We love everyone better — our friends to our coworkers to our social media followers — when we give them the gift of our full attention. 
       </Text>
@@ -922,19 +742,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         I can almost hear Jesus saying, “Greater love has no one than this: to lay down one’s phone for one’s loved ones”  (John 15:13). 
       </Text>
@@ -958,21 +766,15 @@ exports[`the HTMLView component renders HTML to React 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      bold={false}
       ellipsizeMode="tail"
-      italic={false}
-      style={
-        Object {
-          "color": undefined,
-          "fontFamily": "DroidSerif-Regular",
-          "fontSize": 20.02,
-          "lineHeight": 33.11,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.8,
-        }
-      }
     >
-      Four Ways To Stay Away From Your Phone And Be Intentionally Present
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        Four Ways To Stay Away From Your Phone And Be Intentionally Present
+      </Text>
     </Text>
   </Text>
   <View
@@ -1007,25 +809,14 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         style={
           Object {
             "color": "#6bac43",
+            "textDecorationLine": "underline",
           }
         }
       >
         <Text
           accessible={true}
           allowFontScaling={true}
-          bold={false}
           ellipsizeMode="tail"
-          italic={false}
-          style={
-            Object {
-              "color": undefined,
-              "fontFamily": "DroidSerif-Regular",
-              "fontSize": 20.02,
-              "lineHeight": 33.11,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.8,
-            }
-          }
         >
           This holiday season
         </Text>
@@ -1033,19 +824,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         , we will have more opportunities to be around friends and family than usual. So let’s make the most of each minute. The following are some tips can help us all be a little more present.  
       </Text>
@@ -1100,7 +879,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         italic={false}
         style={
           Object {
-            "color": undefined,
+            "color": "#303030",
             "fontFamily": "DroidSerif-Regular",
             "fontSize": 20.02,
             "lineHeight": 33.11,
@@ -1109,7 +888,13 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           }
         }
       >
-        Turn your phone off, leave it in the car, or put it in airplane mode. Habitual notification checks can take a break.
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Turn your phone off, leave it in the car, or put it in airplane mode. Habitual notification checks can take a break.
+        </Text>
       </Text>
     </View>
   </View>
@@ -1162,7 +947,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         italic={false}
         style={
           Object {
-            "color": undefined,
+            "color": "#303030",
             "fontFamily": "DroidSerif-Regular",
             "fontSize": 20.02,
             "lineHeight": 33.11,
@@ -1171,7 +956,13 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           }
         }
       >
-        Talk about something other than yourself. Ask someone else about their life (job, school, kids).
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Talk about something other than yourself. Ask someone else about their life (job, school, kids).
+        </Text>
       </Text>
     </View>
   </View>
@@ -1224,7 +1015,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         italic={false}
         style={
           Object {
-            "color": undefined,
+            "color": "#303030",
             "fontFamily": "DroidSerif-Regular",
             "fontSize": 20.02,
             "lineHeight": 33.11,
@@ -1233,7 +1024,13 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           }
         }
       >
-        Look for opportunities to encourage someone. Ask the Holy Spirit to speak through you and help you love people.
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Look for opportunities to encourage someone. Ask the Holy Spirit to speak through you and help you love people.
+        </Text>
       </Text>
     </View>
   </View>
@@ -1286,7 +1083,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
         italic={false}
         style={
           Object {
-            "color": undefined,
+            "color": "#303030",
             "fontFamily": "DroidSerif-Regular",
             "fontSize": 20.02,
             "lineHeight": 33.11,
@@ -1295,7 +1092,13 @@ exports[`the HTMLView component renders HTML to React 1`] = `
           }
         }
       >
-        Ask Jesus to keep your heart interested and engaged in what really matters. He wants to help!
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          Ask Jesus to keep your heart interested and engaged in what really matters. He wants to help!
+        </Text>
       </Text>
     </View>
   </View>
@@ -1326,19 +1129,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         Intentionally taking advantage of time with loved ones sometimes does require sacrificing our own immediate desires or comforts, but that’s what we are commanded to do (Philippians 2:3). 
       </Text>
@@ -1371,19 +1162,7 @@ exports[`the HTMLView component renders HTML to React 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        bold={false}
         ellipsizeMode="tail"
-        italic={false}
-        style={
-          Object {
-            "color": undefined,
-            "fontFamily": "DroidSerif-Regular",
-            "fontSize": 20.02,
-            "lineHeight": 33.11,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.8,
-          }
-        }
       >
         Take pictures, but don’t let the only memory be a digital one. The positive outcome of interactions should be more than Instagram likes. Unplug from social media, choose to be present, and you will be surprised at the good it does for your heart and the hearts of those around you. 
       </Text>
