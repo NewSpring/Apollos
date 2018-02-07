@@ -101,12 +101,12 @@ exports[`the ExpiringAccountCard component should render with name, expirationDa
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#303030",
+                "color": "#858585",
                 "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "paddingBottom": 3.15,
-                "paddingTop": 2.7,
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
               }
             }
           >
@@ -129,7 +129,7 @@ exports[`the ExpiringAccountCard component should render with name, expirationDa
           italic={false}
           style={
             Object {
-              "color": "#303030",
+              "color": "#505050",
               "fontFamily": "DroidSerif-Regular",
               "fontSize": 20.02,
               "lineHeight": 33.11,
@@ -138,7 +138,27 @@ exports[`the ExpiringAccountCard component should render with name, expirationDa
             }
           }
         >
-          Your saved payment Bank Account is expiring soon.
+          Your saved payment 
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            bold={true}
+            ellipsizeMode="tail"
+            italic={false}
+            style={
+              Object {
+                "color": "#505050",
+                "fontFamily": "DroidSerif-Bold",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
+              }
+            }
+          >
+            Bank Account
+          </Text>
+           is expiring soon.
         </Text>
         <View
           style={
