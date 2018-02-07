@@ -162,7 +162,9 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
             loading={this.props.contributions.isPaying}
           >
             <H5>{this.props.submitButtonText}{' '}</H5>
-            {this.props.submitButtonIcon ? <Icon name={this.props.submitButtonIcon} size={24} /> : null}
+            {this.props.submitButtonIcon ? (
+              <Icon name={this.props.submitButtonIcon} size={24} />
+            ) : null}
           </Button>
 
           {!this.props.hideChangePaymentMethodButton && (
