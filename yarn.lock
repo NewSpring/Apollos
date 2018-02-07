@@ -9625,9 +9625,9 @@ react-native-web-maps@react-native-web-community/react-native-web-maps:
   dependencies:
     react-google-maps "^7.3.0"
 
-react-native-web@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.3.2.tgz#869de266ab75145229d1df8dfb95d60c1410b986"
+react-native-web@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.4.0.tgz#5c334fb6eba1623886e162d73174b3cc37826e63"
   dependencies:
     array-find-index "^1.0.2"
     create-react-class "^15.6.2"
