@@ -4,6 +4,7 @@ import { Switch, Route, Redirect, withRouter } from '@ui/NativeWebRouter';
 import Header from '@ui/Header';
 import BackgroundView from '@ui/BackgroundView';
 import Progress from '@ui/Progress';
+import ModalView from '@ui/ModalView';
 
 import PersonalDetails from './PersonalDetails';
 import BillingAddress from './BillingAddress';
@@ -20,31 +21,34 @@ function lastDirectory(pathname) {
 const progressForLocation = ({ pathname }) => {
   let step = 0;
   const directory = lastDirectory(pathname);
-  if (directory === 'complete') step = 5;
-  if (directory === 'confirm') step = 4;
-  if (directory === 'payment') step = 3;
-  if (directory === 'address') step = 2;
-  if (directory === 'personal') step = 1;
-  if (directory === 'change-payment-method') step = 4;
-  return step / 5; // 5 steps == start the user with progress
+  switch (directory) {
+    case 'confirm': step = 4; break;
+    case 'payment': step = 3; break;
+    case 'address': step = 2; break;
+    case 'personal': step = 1; break;
+    default: step = 4; break;
+  }
+  return step / 4;
 };
 
 const Checkout = withRouter(({ match, location }) => (
-  <BackgroundView>
-    <Header titleText="My Giving" backButton />
-    <Progress progress={progressForLocation(location)} />
-    <KeyboardAwareScrollView>
-      <Switch>
-        <Route path={`${match.url}/personal`} component={PersonalDetails} />
-        <Route path={`${match.url}/address`} component={BillingAddress} />
-        <Route exact path={`${match.url}/payment`} component={Payment} />
-        <Route exact path={`${match.url}/confirm`} component={PaymentConfirmation} />
-        <Route exact path={`${match.url}/complete`} component={PaymentComplete} />
-        <Route exact path={`${match.url}/change-payment-method`} component={ChangePaymentMethod} />
-        <Redirect to={`${match.url}/personal`} />
-      </Switch>
-    </KeyboardAwareScrollView>
-  </BackgroundView>
+  <ModalView backTo="/give/now" onBackReplace>
+    <BackgroundView>
+      <Header titleText="My Giving" backButton />
+      <Progress progress={progressForLocation(location)} />
+      <KeyboardAwareScrollView>
+        <Switch>
+          <Route path={`${match.url}/personal`} component={PersonalDetails} />
+          <Route path={`${match.url}/address`} component={BillingAddress} />
+          <Route exact path={`${match.url}/payment`} component={Payment} />
+          <Route exact path={`${match.url}/confirm`} component={PaymentConfirmation} />
+          <Route exact path={`${match.url}/complete`} component={PaymentComplete} />
+          <Route exact path={`${match.url}/change-payment-method`} component={ChangePaymentMethod} />
+          <Redirect to={`${match.url}/personal`} />
+        </Switch>
+      </KeyboardAwareScrollView>
+    </BackgroundView>
+  </ModalView>
 ));
 
 export default Checkout;
