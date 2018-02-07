@@ -59,10 +59,6 @@ const Totals = Platform.OS === 'web' ? styled({
   alignItems: 'flex-start',
 })(PaddedView) : PaddedView;
 
-const TotalText = styled({
-  // textAlign: 'center',
-})(H3);
-
 const FundContributionType = {
   id: PropTypes.oneOfType([
     PropTypes.string,
@@ -249,7 +245,7 @@ export class ContributionFormWithoutData extends Component {
         ) : null }
 
         <Totals vertical={false}>
-          <TotalText>my total is $<H2>{total.split('.')[0]}</H2>.{total.split('.')[1]}</TotalText>
+          <H3>my total is $<H2>{total.split('.')[0]}</H2>.{total.split('.')[1]}</H3>
           {this.props.isLoggedIn ? (
             <Button
               onPress={this.props.handleSubmit}
