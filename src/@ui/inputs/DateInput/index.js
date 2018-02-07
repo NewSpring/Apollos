@@ -47,7 +47,7 @@ class DateInput extends PureComponent {
       <InputWrapper>
         <Chip
           style={chipStyle}
-          title={this.props.displayValue || this.props.placeholder}
+          title={this.props.displayValue || this.props.placeholder || this.props.label}
           onPress={this.handleOpen}
         />
         <DateTimePicker
@@ -56,7 +56,9 @@ class DateInput extends PureComponent {
           onConfirm={this.handleConfirm}
           onCancel={this.handleClose}
         />
-        <FloatingLabel animation={new Animated.Value(1)}>{this.props.label}</FloatingLabel>
+        {(this.props.displayValue || this.props.placeholder) ? (
+          <FloatingLabel animation={new Animated.Value(1)}>{this.props.label}</FloatingLabel>
+        ) : null}
       </InputWrapper>
     );
   }
