@@ -10,6 +10,8 @@ import Yup from 'yup';
 import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
 import { withRouter } from '@ui/NativeWebRouter';
+import PaddedView from '@ui/PaddedView';
+import TableView, { FormFields } from '@ui/TableView';
 
 import ActivityIndicator from '@ui/ActivityIndicator';
 
@@ -86,58 +88,64 @@ export const BillingAddressFormWithoutData = enhance(({
   const isUSOrCanada = values.countryId === 'US' || values.countryId === 'CA';
   return (
     <View>
-      <Inputs.Text
-        label="Street Address"
-        value={values.street1}
-        onChangeText={text => setFieldValue('street1', text)}
-        onBlur={() => setFieldTouched('street1', true)}
-        error={Boolean(touched.street1 && errors.street1)}
-      />
-      <Inputs.Text
-        label="Street Address (optional)"
-        value={values.street2}
-        onChangeText={text => setFieldValue('street2', text)}
-        onBlur={() => setFieldTouched('street2', true)}
-        error={Boolean(touched.street2 && errors.street2)}
-      />
-      <Inputs.Picker
-        label="Country"
-        value={values.countryId}
-        displayValue={get(countries.find(country => country.id === values.countryId), 'label')}
-        onValueChange={value => setFieldValue('countryId', value)}
-        error={Boolean(touched.countryId && errors.countryId)}
-      >
-        {countries.map(({ label, id }) => (
-          <Inputs.PickerItem label={label} value={id} key={id} />
-        ))}
-      </Inputs.Picker>
-      <Inputs.Text
-        label="City"
-        value={values.city}
-        onChangeText={text => setFieldValue('city', text)}
-        error={Boolean(touched.city && errors.city)}
-      />
-      {isUSOrCanada &&
-        <Inputs.Picker
-          label="State/Territory"
-          value={values.stateId}
-          displayValue={get(states.find(state => state.id === values.stateId), 'label')}
-          onValueChange={value => setFieldValue('stateId', value)}
-          error={Boolean(touched.stateId && errors.stateId)}
-        >
-          {states.map(({ label, id }) => (
-            <Inputs.PickerItem label={label} value={id} key={id} />
-          ))}
-        </Inputs.Picker>
-      }
-      <Inputs.Text
-        label="Zip/Postal"
-        type="numeric"
-        value={values.zipCode}
-        onChangeText={text => setFieldValue('zipCode', text)}
-        error={Boolean(touched.zipCode && errors.zipCode)}
-      />
-      <Button onPress={handleSubmit} title="Next" disabled={!isValid} loading={isSubmitting} />
+      <TableView responsive={false}>
+        <FormFields>
+          <Inputs.Text
+            label="Street Address"
+            value={values.street1}
+            onChangeText={text => setFieldValue('street1', text)}
+            onBlur={() => setFieldTouched('street1', true)}
+            error={Boolean(touched.street1 && errors.street1)}
+          />
+          <Inputs.Text
+            label="Street Address (optional)"
+            value={values.street2}
+            onChangeText={text => setFieldValue('street2', text)}
+            onBlur={() => setFieldTouched('street2', true)}
+            error={Boolean(touched.street2 && errors.street2)}
+          />
+          <Inputs.Picker
+            label="Country"
+            value={values.countryId}
+            displayValue={get(countries.find(country => country.id === values.countryId), 'label')}
+            onValueChange={value => setFieldValue('countryId', value)}
+            error={Boolean(touched.countryId && errors.countryId)}
+          >
+            {countries.map(({ label, id }) => (
+              <Inputs.PickerItem label={label} value={id} key={id} />
+            ))}
+          </Inputs.Picker>
+          <Inputs.Text
+            label="City"
+            value={values.city}
+            onChangeText={text => setFieldValue('city', text)}
+            error={Boolean(touched.city && errors.city)}
+          />
+          {isUSOrCanada &&
+            <Inputs.Picker
+              label="State/Territory"
+              value={values.stateId}
+              displayValue={get(states.find(state => state.id === values.stateId), 'label')}
+              onValueChange={value => setFieldValue('stateId', value)}
+              error={Boolean(touched.stateId && errors.stateId)}
+            >
+              {states.map(({ label, id }) => (
+                <Inputs.PickerItem label={label} value={id} key={id} />
+              ))}
+            </Inputs.Picker>
+          }
+          <Inputs.Text
+            label="Zip/Postal"
+            type="numeric"
+            value={values.zipCode}
+            onChangeText={text => setFieldValue('zipCode', text)}
+            error={Boolean(touched.zipCode && errors.zipCode)}
+          />
+        </FormFields>
+      </TableView>
+      <PaddedView>
+        <Button onPress={handleSubmit} title="Next" disabled={!isValid} loading={isSubmitting} />
+      </PaddedView>
     </View>
   );
 });
