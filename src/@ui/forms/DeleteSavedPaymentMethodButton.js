@@ -39,6 +39,8 @@ export class DeleteSavedPaymentMethodButton extends PureComponent {
         title="Delete Account"
         disable={this.props.isSubmitting}
         loading={this.props.isSubmitting}
+        type="alert"
+        bordered
       />
     );
   }
