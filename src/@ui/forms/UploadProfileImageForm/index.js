@@ -8,7 +8,6 @@ const UploadProfileImageForm = compose(
   withUser,
   withProps(props => ({
     onSelectFile: async (file) => {
-      // console.log({ file });
       try {
         if (!Settings.ROCK_PUBLIC_TOKEN || !Settings.ROCK_URL) throw new Error('Project is not setup to receive profile images');
 
@@ -22,8 +21,8 @@ const UploadProfileImageForm = compose(
           },
           body: data,
         });
-        // console.log({ res });
-        const id = JSON.parse(res);
+
+        const id = await res.json();
 
         await props.attachPhotoIdToUser({
           id,
@@ -31,7 +30,7 @@ const UploadProfileImageForm = compose(
 
         return true;
       } catch (err) {
-        // console.log(err);
+        console.log(err);
         throw err;
       }
     },
