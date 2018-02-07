@@ -13,7 +13,7 @@ import Button from './';
 const ViewWithMargin = styled({ margin: 10 })(View);
 const ButtonWithMargin = nest(ViewWithMargin, Button);
 
-storiesOf('Button', module)
+storiesOf('Buttons/Pill (default)', module)
   .add('default', () => (
     <FlexedView>
       <ButtonWithMargin
@@ -64,15 +64,6 @@ storiesOf('Button', module)
       />
     </FlexedView>
   ))
-  .add('Pill', () => (
-    <FlexedView>
-      <ButtonWithMargin
-        onPress={() => {}}
-        title="Pill button"
-        pill
-      />
-    </FlexedView>
-  ))
   .add('Ghost', () => (
     <FlexedView>
       <ButtonWithMargin
@@ -83,20 +74,91 @@ storiesOf('Button', module)
       />
     </FlexedView>
   ))
-  .add('Ghost Pill', () => (
+  .add('With Children', () => (
+    <FlexedView>
+      <ButtonWithMargin onPress={() => {}} type="primary">
+        <H4>Non-Text Children</H4>
+        <Icon name="like" />
+      </ButtonWithMargin>
+    </FlexedView>
+  ));
+
+storiesOf('Buttons/Square', module)
+  .add('default', () => (
     <FlexedView>
       <ButtonWithMargin
         onPress={() => {}}
-        title="Ghost Pill"
+        title="Just a plain 'ole Square Button"
+        pill={false}
+      />
+    </FlexedView>
+  ))
+  .add('Types', () => (
+    <FlexedView>
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Default"
+        type="default"
+        pill={false}
+      />
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Primary Action"
+        type="primary"
+        pill={false}
+      />
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Secondary Action"
+        type="secondary"
+        pill={false}
+      />
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Tertiary Action"
+        type="tertiary"
+        pill={false}
+      />
+    </FlexedView>
+  ))
+  .add('Disabled', () => (
+    <FlexedView>
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Disabled Button 😭"
+        disabled
+        pill={false}
+      />
+    </FlexedView>
+  ))
+  .add('Bordered', () => (
+    <FlexedView>
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Bordered Button"
+        bordered
+        pill={false}
+      />
+    </FlexedView>
+  ))
+  .add('Ghost', () => (
+    <FlexedView>
+      <ButtonWithMargin
+        onPress={() => {}}
+        title="Ghost Square"
         type={'ghost'}
         bordered
-        pill
+        pill={false}
       />
     </FlexedView>
   ))
   .add('With Children', () => (
     <FlexedView>
-      <ButtonWithMargin onPress={() => {}} type="primary">
+      <ButtonWithMargin
+        onPress={() => {}}
+        type="primary"
+        pill={false}
+      >
         <H4>Non-Text Children</H4>
         <Icon name="like" />
       </ButtonWithMargin>

@@ -171,7 +171,7 @@ class AppRouter extends PureComponent {
               <Route exact path="/groups/finder" component={GroupFinderResults} />
               <Route exact path="/groups/:id" component={GroupSingle} />
 
-              <Route exact path="/give/campaign/:slug" component={give.Campaign} />
+              <Route exact path="/give/campaign/:id" component={give.FundDetails} />
               <Route exact path="/give/thankyou" component={give.ThankYou} />
 
               <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
