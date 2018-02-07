@@ -9,7 +9,7 @@ import { Link, withRouter, goBackTo } from '@ui/NativeWebRouter';
 import Touchable from '@ui/Touchable';
 import { H7 } from '@ui/typography';
 import withUser from '@data/withUser';
-import ImagePicker from '@ui/ImagePicker';
+import UploadProfileImageForm from '@ui/forms/UploadProfileImageForm';
 
 import Layout from './Layout';
 
@@ -51,12 +51,12 @@ const Settings = () => (
               </Cell>
             </Link>
             <Divider />
-            <ImagePicker>
+            <UploadProfileImageForm>
               <Cell>
                 <CellText>Change Profile Photo</CellText>
                 <Arrow />
               </Cell>
-            </ImagePicker>
+            </UploadProfileImageForm>
             <Divider />
             <Link to="/settings/password">
               <Cell>

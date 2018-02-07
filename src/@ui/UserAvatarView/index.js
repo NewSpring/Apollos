@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet } from 'react-native';
+import { Platform, View, StyleSheet } from 'react-native';
 import { compose, setPropTypes } from 'recompose';
-import { withThemeMixin } from '@ui/theme';
+import { withTheme, withThemeMixin } from '@ui/theme';
 import { H4, BodyText } from '@ui/typography';
 import Avatar from '@ui/Avatar';
 import BlurView from '@ui/BlurView';
 import PaddedView from '@ui/PaddedView';
 import ConnectedImage from '@ui/ConnectedImage';
 import Touchable from '@ui/Touchable';
-import ImagePicker from '@ui/ImagePicker';
+import UploadProfileImageForm from '@ui/forms/UploadProfileImageForm';
 import styled from '@ui/styled';
 
 const Container = styled(({ theme }) => ({
@@ -24,8 +24,19 @@ const copyStyles = styled({ backgroundColor: 'transparent', textAlign: 'center' 
 const Name = copyStyles(H4);
 const City = copyStyles(BodyText);
 
-const StyledAvatar = styled(({ theme }) => ({
-  marginRight: 0, marginBottom: theme.sizing.baseUnit / 2,
+const StyledAvatar = withTheme(({ theme }) => ({
+  containerStyle: {
+    marginRight: 0,
+    marginBottom: theme.sizing.baseUnit / 2,
+    ...Platform.select({
+      web: { // make more responsive on web
+        width: '20vw',
+        height: 0,
+        paddingTop: '100%',
+        borderRadius: '50%',
+      },
+    }),
+  },
 }))(Avatar);
 
 const BlurredImage = styled({
@@ -68,13 +79,13 @@ const UserAvatarView = enhance(({
   ...viewProps
 }) => {
   let ImageContainer = Touchable;
-  if (allowProfileImageChange) ImageContainer = ImagePicker;
+  if (allowProfileImageChange) ImageContainer = UploadProfileImageForm;
   // todo: handle file select stuff
 
   return (
     <Container {...viewProps}>
       <BlurView intensity={blurIntensity} tint="dark" style={StyleSheet.absoluteFill}>
-        <BlurredImage source={photo} resizeMode="cover" />
+        {photo ? <BlurredImage source={photo} resizeMode="cover" /> : null}
       </BlurView>
       <Content>
         <ImageContainer
