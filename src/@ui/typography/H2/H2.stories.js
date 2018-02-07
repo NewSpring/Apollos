@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import H2 from './';
 
-storiesOf('@ui/typography/H2', module)
+storiesOf('typography/H2', module)
   .add('Default', () => (
     <H2>{'"God is most glorified in us when we are most satisfied in Him" ― John Piper'}</H2>
   ))

@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react-native';
 import Icon from '@ui/Icon';
 import CategoryLabel from './';
 
-storiesOf('@ui/CategoryLabel', module)
+storiesOf('CategoryLabel', module)
   .add('Default', () => {
     const centered = {
       justifyContent: 'center',

@@ -430,6 +430,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                     style={
                       Object {
                         "color": "#6bac43",
+                        "textDecorationLine": "underline",
                       }
                     }
                   >
@@ -1230,6 +1231,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     style={
                       Object {
                         "color": "#6bac43",
+                        "textDecorationLine": "underline",
                       }
                     }
                   >
@@ -1764,6 +1766,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     style={
                       Object {
                         "color": "#6bac43",
+                        "textDecorationLine": "underline",
                       }
                     }
                   >
@@ -2559,6 +2562,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                     style={
                       Object {
                         "color": "#6bac43",
+                        "textDecorationLine": "underline",
                       }
                     }
                   >
@@ -3419,6 +3423,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                     style={
                       Object {
                         "color": "#6bac43",
+                        "textDecorationLine": "underline",
                       }
                     }
                   >
@@ -4219,6 +4224,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                     style={
                       Object {
                         "color": "#6bac43",
+                        "textDecorationLine": "underline",
                       }
                     }
                   >
