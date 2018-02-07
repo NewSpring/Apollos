@@ -4,7 +4,6 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
-import get from 'lodash/get';
 import {
   VictoryLine,
   VictoryScatter,
@@ -104,10 +103,8 @@ export class ContributionsChart extends PureComponent {
     };
   }
 
-  setWidth = (e) => {
-    this.setState({
-      width: get(e, 'nativeEvent.layout.width'),
-    });
+  setWidth = ({ nativeEvent: { layout: { width } } }) => {
+    this.setState({ width });
   }
 
   render() {
