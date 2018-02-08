@@ -33,6 +33,7 @@ export class ContributionsChartCard extends PureComponent {
   static propTypes = {
     total: PropTypes.number,
     iconSize: PropTypes.number,
+    iconColor: PropTypes.string,
   };
 
   static defaultProps = {
@@ -57,7 +58,7 @@ export class ContributionsChartCard extends PureComponent {
           >
             <Row>
               <StyledH6>{'View Giving History'}</StyledH6>
-              <Icon name="arrow-next" size={this.props.iconSize} />
+              <Icon name="arrow-next" size={this.props.iconSize} fill={this.props.iconColor} />
             </Row>
           </TouchableWithoutFeedback>
         </PaddedView>
@@ -70,6 +71,7 @@ const enhance = compose(
   withContributionsChartData,
   withTheme(({ theme, ...otherProps }) => ({
     iconSize: otherProps.iconSize || theme.helpers.rem(1),
+    iconColor: theme.colors.primary,
   })),
 );
 

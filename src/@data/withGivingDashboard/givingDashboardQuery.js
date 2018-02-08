@@ -45,6 +45,7 @@ export default gql`
       }
       ... on SavedPayment {
         id
+        entityId
         name
         expirationYear
         expirationMonth
