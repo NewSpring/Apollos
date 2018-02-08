@@ -58,7 +58,7 @@ export class Dashboard extends PureComponent {
     return (
       <BackgroundView>
         <ScrollView>
-          <LoginPromptCard prompt="Login to see your giving history, schedules, and saved payments." />
+          <LoginPromptCard prompt="Sign in to see your giving history, schedules, and saved payments." />
 
           <DashboardSubheader
             text="Activity"
