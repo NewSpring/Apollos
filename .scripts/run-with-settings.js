@@ -7,8 +7,9 @@ const args = process.argv.slice(2);
 
 const [command] = args;
 
-const env = getEnv().raw;
-const config = getConfig(env);
+const appEnv = getEnv().raw;
+
+const config = getConfig(appEnv);
 fs.writeFileSync('./app.json', JSON.stringify(config, null, 2), 'utf8');
 
 spawn(command, {
@@ -16,6 +17,6 @@ spawn(command, {
   shell: true,
   env: {
     ...process.env,
-    ...env,
+    ...appEnv,
   },
 });

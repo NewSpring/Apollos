@@ -43,7 +43,7 @@ module.exports = env => ({
         config: {
           organization: 'differential-cs',
           project: 'newspring-apollos',
-          authToken: env.SENTRY_AUTH,
+          authToken: process.env.SENTRY_AUTH,
         },
       }],
     },
