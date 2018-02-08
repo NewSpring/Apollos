@@ -14,6 +14,7 @@ import orientation from '@utils/orientation';
 import AppRouter from './AppRouter';
 import SentryContext from './SentryContext';
 
+// Sentry.enableInExpoDevelopment = true;
 Sentry.config(Settings.APP_SENTRY_URL).install({
   release: Settings.COMMIT_SHA,
   environment: Settings.APP_SENTRY_ENVIRONMENT || Settings.NODE_ENV,
