@@ -9,15 +9,15 @@ const UploadProfileImageForm = compose(
   withProps(props => ({
     onSelectFile: async (file) => {
       try {
-        if (!Settings.ROCK_PUBLIC_TOKEN || !Settings.ROCK_URL) throw new Error('Project is not setup to receive profile images');
+        if (!Settings.APP_ROCK_PUBLIC_TOKEN || !Settings.APP_ROCK_URL) throw new Error('Project is not setup to receive profile images');
 
         const data = new FormData();
         data.append('file', file);
 
-        const res = await fetch(`${Settings.ROCK_URL}api/BinaryFiles/Upload?binaryFileTypeId=5`, {
+        const res = await fetch(`${Settings.APP_ROCK_URL}api/BinaryFiles/Upload?binaryFileTypeId=5`, {
           method: 'POST',
           headers: {
-            'Authorization-Token': Settings.ROCK_PUBLIC_TOKEN,
+            'Authorization-Token': Settings.APP_ROCK_PUBLIC_TOKEN,
           },
           body: data,
         });

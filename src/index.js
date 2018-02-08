@@ -1,6 +1,10 @@
 import { AppRegistry, Platform } from 'react-native';
 import { ApolloProvider } from 'react-apollo';
 import { nest, withProps } from 'recompose';
+
+import Sentry from '@utils/sentry';
+import Settings from '@utils/Settings';
+
 import { ThemeProvider } from '@ui/theme';
 import FontLoader from '@ui/FontLoader';
 import { ActionSheetProvider } from '@ui/ActionSheet';
@@ -8,6 +12,12 @@ import Client from '@data/Client';
 import orientation from '@utils/orientation';
 
 import AppRouter from './AppRouter';
+
+// Sentry.enableInExpoDevelopment = true;
+Sentry.config(Settings.APP_SENTRY_URL).install({
+  release: Settings.COMMIT_SHA,
+  environment: Settings.APP_SENTRY_ENVIRONMENT || Settings.NODE_ENV,
+});
 
 const App = nest(
   withProps({ client: Client })(ApolloProvider),
