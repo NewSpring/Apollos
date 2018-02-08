@@ -9,6 +9,7 @@ import withUser from './withUser';
 import withIsLoggedIn from './withIsLoggedIn';
 import withUpdateHomeAddress from './withUpdateHomeAddress';
 import withUpdateProfile from './withUpdateProfile';
+import withAttachPhotoIdToUser from './withAttachPhotoIdToUser';
 
 export default compose(
   withLogin,
@@ -21,4 +22,5 @@ export default compose(
   withUser,
   withUpdateHomeAddress,
   withUpdateProfile,
+  withAttachPhotoIdToUser,
 );
