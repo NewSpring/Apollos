@@ -65,9 +65,9 @@ const enhance = compose(
   withState('year', 'setYear', moment().year()),
   withContributionsChartData,
   withTheme(({ theme, ...otherProps }) => ({
-    iconSize: otherProps.iconSize || theme.helpers.rem(1),
+    iconSize: otherProps.iconSize || theme.helpers.rem(1.33),
     backgroundColor: theme.colors.primary,
-    color: theme.colors.white,
+    chartColor: theme.colors.white,
   })),
 );
 
@@ -78,12 +78,13 @@ const contentContainerStyle = {
 
 const ContributionsChartHero = enhance(({
   backgroundColor,
-  color,
+  chartColor,
   total,
   setYear,
   year,
   onViewHistory,
   accounts,
+  iconSize,
 }) => (
   <Heroed backgroundColor={backgroundColor} contentContainerStyle={contentContainerStyle}>
     <Title>Year in Review</Title>
@@ -92,14 +93,19 @@ const ContributionsChartHero = enhance(({
         <PickerItem key={currentYear - i} value={currentYear - i} label={currentYear - i} />
       ))}
     </StyledPicker>
-    <StyledContributionsChart year={year} fill={color} tickLabelFill={color} chartHeight={300} />
+    <StyledContributionsChart
+      year={year}
+      fill={chartColor}
+      tickLabelFill={chartColor}
+      chartHeight={300}
+    />
     <CashAmountIndicator
       amount={total}
       size={2}
     />
     <ButtonWrapper onPress={onViewHistory}>
       <H7>View your giving history</H7>
-      <Icon name="arrow-next" size={24} />
+      <Icon name="arrow-next" size={iconSize} />
     </ButtonWrapper>
     <Title>Fund Breakdown</Title>
     {Object.keys(accounts).map((accountName) => {
