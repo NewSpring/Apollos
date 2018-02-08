@@ -41,7 +41,7 @@ module.exports = env => ({
       postPublish: [{
         file: 'sentry-expo/upload-sourcemaps',
         config: {
-          organization: 'Differential',
+          organization: 'differential-cs',
           project: 'newspring-apollos',
           authToken: env.SENTRY_AUTH,
         },
