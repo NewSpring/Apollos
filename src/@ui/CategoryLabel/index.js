@@ -38,6 +38,10 @@ const PlaceholderWrapper = styled(({ theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit / 2,
 }))(View);
 
+const StyledH7 = styled(({ theme }) => ({
+  color: theme.colors.text.secondary,
+}))(H7);
+
 // TODO: Ideally this should take an the current category and map it against an array of all the
 // categories in Heighliner
 const getIconName = (label, icon) => {
@@ -70,11 +74,11 @@ const CategoryLabel = enhance(({
     <Icon
       name={getIconName(label, icon)}
       size={theme.helpers.rem(1.2)}
-      fill={theme.colors.text.primary}
+      fill={theme.colors.text.secondary}
       isLoading={isLoading}
     />
     <PlaceholderWrapper>
-      <H7>{label}</H7>
+      <StyledH7>{label}</StyledH7>
     </PlaceholderWrapper>
   </Wrapper>
 ));

@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   View,
-  TouchableWithoutFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, defaultProps } from 'recompose';
@@ -11,10 +10,11 @@ import { withIsLoading } from '@ui/isLoading';
 import styled from '@ui/styled';
 import Card from '@ui/Card';
 import PaddedView from '@ui/PaddedView';
-import { H5, H6 } from '@ui/typography';
+import { H6 } from '@ui/typography';
 import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
 import Spacer from '@ui/Spacer';
+import Touchable from '@ui/Touchable';
 import StatusMessage from './StatusMessage';
 
 const enhance = compose(
@@ -40,7 +40,8 @@ const enhance = compose(
   }),
   withIsLoading,
   withTheme(({ theme, ...otherProps }) => ({
-    iconSize: otherProps.iconSize || theme.helpers.rem(1),
+    iconSize: otherProps.iconSize || theme.helpers.rem(1.6),
+    iconColor: theme.colors.primary,
     isErrorColor: theme.colors.alert,
   })),
   pure,
@@ -48,6 +49,10 @@ const enhance = compose(
 
 const StyledH6 = styled(({ theme }) => ({
   color: theme.colors.text.link,
+}))(H6);
+
+const DateText = styled(({ theme }) => ({
+  color: theme.colors.text.tertiary,
 }))(H6);
 
 const Row = styled({
@@ -70,34 +75,33 @@ const TransactionCard = enhance(({
   isScheduled,
   error,
   isErrorColor,
+  iconColor,
   ...otherProps
 }) => {
   const isOk = status === null || status === 'Success' || status === 'Complete' || status === 'Pending';
   return (
     <Card isLoading={isLoading} {...otherProps}>
-      <PaddedView>
-        <Row>
-          {isOk ? <Icon name="circle-outline-check-mark" size={iconSize} /> : <Icon name="circle-outline-x-mark" size={iconSize} fill={isErrorColor} />}
-          <Spacer byWidth />
-          <H5>{moment(date).utc().format(dateFormat)}</H5>
-        </Row>
-        <Spacer />
-        <StatusMessage
-          status={status}
-          details={details}
-          isScheduled={isScheduled}
-          error={error}
-        />
-        <Spacer />
-        <TouchableWithoutFeedback
-          onPress={onPress}
-        >
+      <Touchable onPress={onPress}>
+        <PaddedView>
+          <Row>
+            {isOk ? <Icon name="circle-outline-check-mark" fill={iconColor} size={iconSize} /> : <Icon name="circle-outline-x-mark" size={iconSize} fill={isErrorColor} />}
+            <Spacer byWidth />
+            <DateText>{moment(date).utc().format(dateFormat)}</DateText>
+          </Row>
+          <Spacer />
+          <StatusMessage
+            status={status}
+            details={details}
+            isScheduled={isScheduled}
+            error={error}
+          />
+          <Spacer />
           <Row>
             <StyledH6>{'View Contribution'}</StyledH6>
             <StyledIcon name="arrow-next" size={iconSize} />
           </Row>
-        </TouchableWithoutFeedback>
-      </PaddedView>
+        </PaddedView>
+      </Touchable>
     </Card>
   );
 });

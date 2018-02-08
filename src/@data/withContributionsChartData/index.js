@@ -26,8 +26,8 @@ export default graphql(QUERY, {
   ),
   options: (ownProps = {}) => ({
     variables: {
-      start: ownProps.start || moment().startOf('year').format(),
-      end: ownProps.end || moment().endOf('year').format(),
+      start: ownProps.start || (ownProps.year ? moment().year(ownProps.year) : moment()).startOf('year').format(),
+      end: ownProps.end || (ownProps.year ? moment().year(ownProps.year) : moment()).endOf('year').format(),
     },
   }),
 });

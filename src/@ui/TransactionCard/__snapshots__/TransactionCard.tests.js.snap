@@ -27,166 +27,182 @@ exports[`the TransactionCard component should render Failure 1`] = `
     }
   >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "paddingHorizontal": 20,
-          "paddingVertical": 20,
+          "opacity": 1,
         }
       }
+      testID={undefined}
+      tvParallaxProperties={undefined}
     >
       <View
         style={
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
+            "paddingHorizontal": 20,
+            "paddingVertical": 20,
           }
         }
       >
-        <Svg
-          height={20}
-          viewBox="0 0 60 61"
-          width={20}
-        >
-          <Path
-            d="M30,54.33 L30,54.33 C43.254834,54.33 54,43.584834 54,30.33 C54,17.075166 43.254834,6.33 30,6.33 C16.745166,6.33 6,17.075166 6,30.33 C6,43.584834 16.745166,54.33 30,54.33 L30,54.33 Z M30,60.33 L30,60.33 C13.4314575,60.33 0,46.8985425 0,30.33 C0,13.7614575 13.4314575,0.33 30,0.33 C46.5685425,0.33 60,13.7614575 60,30.33 C60,46.8985425 46.5685425,60.33 30,60.33 L30,60.33 Z"
-            fill="#c64f55"
-          />
-          <Path
-            d="M28.784,33.438 L28.784,33.438 L27.9222343,33.438 L27.7949654,32.5856839 L26.7389654,25.5136839 L26.728,25.366 L26.728,16.502 L26.728,15.502 L27.728,15.502 L32.272,15.502 L33.272,15.502 L33.272,16.502 L33.272,25.366 L33.2610346,25.5136839 L32.2050346,32.5856839 L32.0777657,33.438 L31.216,33.438 L28.784,33.438 Z M26.504,41.662 L26.504,41.662 C26.504,39.6282997 27.9530061,38.166 30,38.166 C32.0469939,38.166 33.496,39.6282997 33.496,41.662 C33.496,43.6957003 32.0469939,45.158 30,45.158 C27.9530061,45.158 26.504,43.6957003 26.504,41.662 L26.504,41.662 Z"
-            fill="#c64f55"
-          />
-        </Svg>
         <View
-          byWidth={true}
           style={
             Object {
-              "height": null,
-              "width": 10,
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Svg
+            height={20}
+            viewBox="0 0 60 61"
+            width={20}
+          >
+            <Path
+              d="M30,54.33 L30,54.33 C43.254834,54.33 54,43.584834 54,30.33 C54,17.075166 43.254834,6.33 30,6.33 C16.745166,6.33 6,17.075166 6,30.33 C6,43.584834 16.745166,54.33 30,54.33 L30,54.33 Z M30,60.33 L30,60.33 C13.4314575,60.33 0,46.8985425 0,30.33 C0,13.7614575 13.4314575,0.33 30,0.33 C46.5685425,0.33 60,13.7614575 60,30.33 C60,46.8985425 46.5685425,60.33 30,60.33 L30,60.33 Z"
+              fill="#c64f55"
+            />
+            <Path
+              d="M28.784,33.438 L28.784,33.438 L27.9222343,33.438 L27.7949654,32.5856839 L26.7389654,25.5136839 L26.728,25.366 L26.728,16.502 L26.728,15.502 L27.728,15.502 L32.272,15.502 L33.272,15.502 L33.272,16.502 L33.272,25.366 L33.2610346,25.5136839 L32.2050346,32.5856839 L32.0777657,33.438 L31.216,33.438 L28.784,33.438 Z M26.504,41.662 L26.504,41.662 C26.504,39.6282997 27.9530061,38.166 30,38.166 C32.0469939,38.166 33.496,39.6282997 33.496,41.662 C33.496,43.6957003 32.0469939,45.158 30,45.158 C27.9530061,45.158 26.504,43.6957003 26.504,41.662 L26.504,41.662 Z"
+              fill="#c64f55"
+            />
+          </Svg>
+          <View
+            byWidth={true}
+            style={
+              Object {
+                "height": null,
+                "width": 10,
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#858585",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+              }
+            }
+          >
+            Jan 17, 2018 12:00 AM
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 10,
+              "width": null,
             }
           }
         />
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
+              "color": "#505050",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 20.02,
-              "lineHeight": 25.33,
-              "paddingBottom": 3.15,
-              "paddingTop": 2.7,
-            }
-          }
-        >
-          Jan 17, 2018 12:00 AM
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "height": 10,
-            "width": null,
-          }
-        }
-      />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 14,
-            "lineHeight": 15.78,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.35,
-          }
-        }
-      >
-        Your 
-        
-        contribution to
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 14,
-              "lineHeight": 15.78,
+              "lineHeight": 33.11,
               "paddingBottom": 2.25,
-              "paddingTop": 1.35,
+              "paddingTop": 1.8,
             }
           }
         >
-           General Fund 
+          Your 
+          
+          contribution to
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            bold={true}
+            ellipsizeMode="tail"
+            italic={false}
+            style={
+              Object {
+                "color": "#505050",
+                "fontFamily": "DroidSerif-Bold",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
+              }
+            }
+          >
+             General Fund 
+          </Text>
+           
+          was unsuccessful.
+           Unfortunately, Unable to process transaction.
         </Text>
-         
-        was unsuccessful.
-         Unfortunately, Unable to process transaction.
-      </Text>
-      <View
-        style={
-          Object {
-            "height": 10,
-            "width": null,
-          }
-        }
-      />
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-          }
-        }
-        testID={undefined}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "color": "#6bac43",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 15.75,
-              "lineHeight": 17.75,
-              "paddingBottom": 1.8,
-              "paddingTop": 2.25,
+              "height": 10,
+              "width": null,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
             }
           }
         >
-          View Contribution
-        </Text>
-        <Svg
-          height={20}
-          viewBox="0 0 24 24"
-          width={20}
-        >
-          <Path
-            d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
-            fill="#6bac43"
-          />
-        </Svg>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#6bac43",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+              }
+            }
+          >
+            View Contribution
+          </Text>
+          <Svg
+            height={20}
+            viewBox="0 0 24 24"
+            width={20}
+          >
+            <Path
+              d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
+              fill="#6bac43"
+            />
+          </Svg>
+        </View>
       </View>
     </View>
   </View>
@@ -220,183 +236,201 @@ exports[`the TransactionCard component should render Success 1`] = `
     }
   >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "paddingHorizontal": 20,
-          "paddingVertical": 20,
+          "opacity": 1,
         }
       }
+      testID={undefined}
+      tvParallaxProperties={undefined}
     >
       <View
         style={
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
+            "paddingHorizontal": 20,
+            "paddingVertical": 20,
           }
         }
       >
-        <Svg
-          height={20}
-          viewBox="0 0 60 61"
-          width={20}
-        >
-          <Polygon
-            fill="#303030"
-            points="25.9570657 39.7210789 26.6666667 40.4357125 27.3762676 39.7210789 40.709601 26.293183 41.4092427 25.5885792 40.709601 24.8839754 38.0429343 22.1983962 37.3333333 21.4837626 36.6237324 22.1983962 25.9570657 32.940713 27.3762676 32.940713 23.3762676 28.9123442 22.6666667 28.1977106 21.9570657 28.9123442 19.290399 31.5979234 18.5907573 32.3025272 19.290399 33.007131"
-          />
-          <Path
-            d="M30,54.903 L30,54.903 C43.254834,54.903 54,44.157834 54,30.903 C54,17.648166 43.254834,6.903 30,6.903 C16.745166,6.903 6,17.648166 6,30.903 C6,44.157834 16.745166,54.903 30,54.903 L30,54.903 Z M30,60.903 L30,60.903 C13.4314575,60.903 0,47.4715425 0,30.903 C0,14.3344575 13.4314575,0.903 30,0.903 C46.5685425,0.903 60,14.3344575 60,30.903 C60,47.4715425 46.5685425,60.903 30,60.903 L30,60.903 Z"
-            fill="#303030"
-          />
-        </Svg>
         <View
-          byWidth={true}
           style={
             Object {
-              "height": null,
-              "width": 10,
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Svg
+            height={20}
+            viewBox="0 0 60 61"
+            width={20}
+          >
+            <Polygon
+              fill="#6bac43"
+              points="25.9570657 39.7210789 26.6666667 40.4357125 27.3762676 39.7210789 40.709601 26.293183 41.4092427 25.5885792 40.709601 24.8839754 38.0429343 22.1983962 37.3333333 21.4837626 36.6237324 22.1983962 25.9570657 32.940713 27.3762676 32.940713 23.3762676 28.9123442 22.6666667 28.1977106 21.9570657 28.9123442 19.290399 31.5979234 18.5907573 32.3025272 19.290399 33.007131"
+            />
+            <Path
+              d="M30,54.903 L30,54.903 C43.254834,54.903 54,44.157834 54,30.903 C54,17.648166 43.254834,6.903 30,6.903 C16.745166,6.903 6,17.648166 6,30.903 C6,44.157834 16.745166,54.903 30,54.903 L30,54.903 Z M30,60.903 L30,60.903 C13.4314575,60.903 0,47.4715425 0,30.903 C0,14.3344575 13.4314575,0.903 30,0.903 C46.5685425,0.903 60,14.3344575 60,30.903 C60,47.4715425 46.5685425,60.903 30,60.903 L30,60.903 Z"
+              fill="#6bac43"
+            />
+          </Svg>
+          <View
+            byWidth={true}
+            style={
+              Object {
+                "height": null,
+                "width": 10,
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#858585",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+              }
+            }
+          >
+            Jan 17, 2018 12:00 AM
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 10,
+              "width": null,
             }
           }
         />
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
+              "color": "#505050",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 20.02,
-              "lineHeight": 25.33,
-              "paddingBottom": 3.15,
-              "paddingTop": 2.7,
-            }
-          }
-        >
-          Jan 17, 2018 12:00 AM
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "height": 10,
-            "width": null,
-          }
-        }
-      />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 14,
-            "lineHeight": 15.78,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.35,
-          }
-        }
-      >
-        Your 
-        scheduled 
-        contribution of 
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 14,
-              "lineHeight": 15.78,
+              "lineHeight": 33.11,
               "paddingBottom": 2.25,
-              "paddingTop": 1.35,
+              "paddingTop": 1.8,
             }
           }
         >
-          $1.00 
+          Your 
+          scheduled 
+          contribution of 
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            bold={true}
+            ellipsizeMode="tail"
+            italic={false}
+            style={
+              Object {
+                "color": "#505050",
+                "fontFamily": "DroidSerif-Bold",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
+              }
+            }
+          >
+            $1.00 
+          </Text>
+          to 
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            bold={true}
+            ellipsizeMode="tail"
+            italic={false}
+            style={
+              Object {
+                "color": "#505050",
+                "fontFamily": "DroidSerif-Bold",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
+              }
+            }
+          >
+            General Fund 
+          </Text>
+           
+          was successful.
         </Text>
-        to 
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 14,
-              "lineHeight": 15.78,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.35,
+              "height": 10,
+              "width": null,
             }
           }
-        >
-          General Fund 
-        </Text>
-         
-        was successful.
-      </Text>
-      <View
-        style={
-          Object {
-            "height": 10,
-            "width": null,
-          }
-        }
-      />
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-          }
-        }
-        testID={undefined}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        />
+        <View
           style={
             Object {
-              "color": "#6bac43",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 15.75,
-              "lineHeight": 17.75,
-              "paddingBottom": 1.8,
-              "paddingTop": 2.25,
+              "alignItems": "center",
+              "flexDirection": "row",
             }
           }
         >
-          View Contribution
-        </Text>
-        <Svg
-          height={20}
-          viewBox="0 0 24 24"
-          width={20}
-        >
-          <Path
-            d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
-            fill="#6bac43"
-          />
-        </Svg>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#6bac43",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+              }
+            }
+          >
+            View Contribution
+          </Text>
+          <Svg
+            height={20}
+            viewBox="0 0 24 24"
+            width={20}
+          >
+            <Path
+              d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
+              fill="#6bac43"
+            />
+          </Svg>
+        </View>
       </View>
     </View>
   </View>
@@ -430,183 +464,201 @@ exports[`the TransactionCard component should render scheduled payments 1`] = `
     }
   >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "paddingHorizontal": 20,
-          "paddingVertical": 20,
+          "opacity": 1,
         }
       }
+      testID={undefined}
+      tvParallaxProperties={undefined}
     >
       <View
         style={
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
+            "paddingHorizontal": 20,
+            "paddingVertical": 20,
           }
         }
       >
-        <Svg
-          height={20}
-          viewBox="0 0 60 61"
-          width={20}
-        >
-          <Polygon
-            fill="#303030"
-            points="25.9570657 39.7210789 26.6666667 40.4357125 27.3762676 39.7210789 40.709601 26.293183 41.4092427 25.5885792 40.709601 24.8839754 38.0429343 22.1983962 37.3333333 21.4837626 36.6237324 22.1983962 25.9570657 32.940713 27.3762676 32.940713 23.3762676 28.9123442 22.6666667 28.1977106 21.9570657 28.9123442 19.290399 31.5979234 18.5907573 32.3025272 19.290399 33.007131"
-          />
-          <Path
-            d="M30,54.903 L30,54.903 C43.254834,54.903 54,44.157834 54,30.903 C54,17.648166 43.254834,6.903 30,6.903 C16.745166,6.903 6,17.648166 6,30.903 C6,44.157834 16.745166,54.903 30,54.903 L30,54.903 Z M30,60.903 L30,60.903 C13.4314575,60.903 0,47.4715425 0,30.903 C0,14.3344575 13.4314575,0.903 30,0.903 C46.5685425,0.903 60,14.3344575 60,30.903 C60,47.4715425 46.5685425,60.903 30,60.903 L30,60.903 Z"
-            fill="#303030"
-          />
-        </Svg>
         <View
-          byWidth={true}
           style={
             Object {
-              "height": null,
-              "width": 10,
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Svg
+            height={20}
+            viewBox="0 0 60 61"
+            width={20}
+          >
+            <Polygon
+              fill="#6bac43"
+              points="25.9570657 39.7210789 26.6666667 40.4357125 27.3762676 39.7210789 40.709601 26.293183 41.4092427 25.5885792 40.709601 24.8839754 38.0429343 22.1983962 37.3333333 21.4837626 36.6237324 22.1983962 25.9570657 32.940713 27.3762676 32.940713 23.3762676 28.9123442 22.6666667 28.1977106 21.9570657 28.9123442 19.290399 31.5979234 18.5907573 32.3025272 19.290399 33.007131"
+            />
+            <Path
+              d="M30,54.903 L30,54.903 C43.254834,54.903 54,44.157834 54,30.903 C54,17.648166 43.254834,6.903 30,6.903 C16.745166,6.903 6,17.648166 6,30.903 C6,44.157834 16.745166,54.903 30,54.903 L30,54.903 Z M30,60.903 L30,60.903 C13.4314575,60.903 0,47.4715425 0,30.903 C0,14.3344575 13.4314575,0.903 30,0.903 C46.5685425,0.903 60,14.3344575 60,30.903 C60,47.4715425 46.5685425,60.903 30,60.903 L30,60.903 Z"
+              fill="#6bac43"
+            />
+          </Svg>
+          <View
+            byWidth={true}
+            style={
+              Object {
+                "height": null,
+                "width": 10,
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#858585",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+              }
+            }
+          >
+            Jan 17, 2018 12:00 AM
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 10,
+              "width": null,
             }
           }
         />
         <Text
           accessible={true}
           allowFontScaling={true}
+          bold={false}
           ellipsizeMode="tail"
+          italic={false}
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
+              "color": "#505050",
+              "fontFamily": "DroidSerif-Regular",
               "fontSize": 20.02,
-              "lineHeight": 25.33,
-              "paddingBottom": 3.15,
-              "paddingTop": 2.7,
-            }
-          }
-        >
-          Jan 17, 2018 12:00 AM
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "height": 10,
-            "width": null,
-          }
-        }
-      />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 14,
-            "lineHeight": 15.78,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.35,
-          }
-        }
-      >
-        Your 
-        scheduled 
-        contribution to
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 14,
-              "lineHeight": 15.78,
+              "lineHeight": 33.11,
               "paddingBottom": 2.25,
-              "paddingTop": 1.35,
+              "paddingTop": 1.8,
             }
           }
         >
-           General Fund 
+          Your 
+          scheduled 
+          contribution to
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            bold={true}
+            ellipsizeMode="tail"
+            italic={false}
+            style={
+              Object {
+                "color": "#505050",
+                "fontFamily": "DroidSerif-Bold",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
+              }
+            }
+          >
+             General Fund 
+          </Text>
+           
+          is 
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            bold={false}
+            ellipsizeMode="tail"
+            italic={false}
+            style={
+              Object {
+                "color": "#505050",
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
+              }
+            }
+          >
+            pending
+          </Text>
+          .
         </Text>
-         
-        is 
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
           style={
             Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Regular",
-              "fontSize": 14,
-              "lineHeight": 15.78,
-              "paddingBottom": 2.25,
-              "paddingTop": 1.35,
+              "height": 10,
+              "width": null,
             }
           }
-        >
-          pending
-        </Text>
-        .
-      </Text>
-      <View
-        style={
-          Object {
-            "height": 10,
-            "width": null,
-          }
-        }
-      />
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-          }
-        }
-        testID={undefined}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        />
+        <View
           style={
             Object {
-              "color": "#6bac43",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 15.75,
-              "lineHeight": 17.75,
-              "paddingBottom": 1.8,
-              "paddingTop": 2.25,
+              "alignItems": "center",
+              "flexDirection": "row",
             }
           }
         >
-          View Contribution
-        </Text>
-        <Svg
-          height={20}
-          viewBox="0 0 24 24"
-          width={20}
-        >
-          <Path
-            d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
-            fill="#6bac43"
-          />
-        </Svg>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#6bac43",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 15.75,
+                "lineHeight": 17.75,
+                "paddingBottom": 1.8,
+                "paddingTop": 2.25,
+              }
+            }
+          >
+            View Contribution
+          </Text>
+          <Svg
+            height={20}
+            viewBox="0 0 24 24"
+            width={20}
+          >
+            <Path
+              d="M9.65 21L8 20.1l7.72-8.1L8 3.9 9.65 3l8.16 8.54c.27.28.27.64 0 .92L9.67 21z"
+              fill="#6bac43"
+            />
+          </Svg>
+        </View>
       </View>
     </View>
   </View>
