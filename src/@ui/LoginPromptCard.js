@@ -29,7 +29,7 @@ const LoginPromptCard = enhance(({
       <PaddedView>
         <Title>{prompt}</Title>
       </PaddedView>
-      <Button onPress={triggerLogin} title="Login or Create Account" />
+      <Button onPress={triggerLogin} title="Sign in or Create Account" />
       <Spacer />
     </StyledCardContent>
   </Card>
