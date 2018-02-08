@@ -1,7 +1,7 @@
 const Path = require('path');
 const FS = require('fs');
 const fetch = require('node-fetch');
-const TOKEN = ''; // Insert Private repository token.
+const TOKEN = process.env.RAW_SETTINGS_TOKEN;
 
 (async () => {
   try {
