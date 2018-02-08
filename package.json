@@ -52,7 +52,8 @@
     "storybook-load-stories": "rnstl",
     "create-app-entrypoint": "node ./.scripts/create-app-entrypoint.js",
     "create-storybook-entrypoint": "node ./.scripts/create-storybook-entrypoint.js",
-    "run-with-settings": "node ./.scripts/run-with-settings.js"
+    "run-with-settings": "node ./.scripts/run-with-settings.js",
+    "create-env-files": "node ./.scripts/generate-env-files.js"
   },
   "jest": {
     "preset": "jest-expo",
@@ -120,6 +121,7 @@
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
+    "node-fetch": "^2.0.0",
     "object-assign": "4.1.1",
     "pluralize": "^7.0.0",
     "postcss-flexbugs-fixes": "3.2.0",
