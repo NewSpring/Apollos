@@ -94,8 +94,8 @@ class ContributionHistoryFilter extends PureComponent {
           <Label>Date Range</Label>
           <ChipList>
             {this.dateRanges.map(({ key, startDate, endDate }) => {
-              const selected = this.props.values.startDate === startDate &&
-                this.props.values.endDate === endDate;
+              const selected = moment(this.props.values.startDate).format('MM/DD/YYYY') === moment(startDate).format('MM/DD/YYYY') &&
+              moment(this.props.values.endDate).format('MM/DD/YYYY') === moment(endDate).format('MM/DD/YYYY');
               return (
                 <Chip
                   key={key}
@@ -180,6 +180,10 @@ const enhance = compose(
     iconSize: otherProps.iconSize || theme.helpers.rem(1),
   })),
   withFormik({
+    mapPropsToValues: ({ startDate, endDate }) => ({
+      startDate: startDate ? moment(startDate, 'MM/DD/YYYY').toDate() : null,
+      endDate: endDate ? moment(endDate, 'MM/DD/YYYY').toDate() : null,
+    }),
     validationSchema: Yup.object().shape({
       startDate: Yup.date(),
       endDate: Yup.date(),

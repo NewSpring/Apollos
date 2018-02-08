@@ -103,9 +103,21 @@ class ConnectedImage extends PureComponent {
 
   updateCache(sources) {
     this.cacheUpdater = makeCanceable(updateCache(sources));
-    this.cacheUpdater.promise.then(() => (
-      this.setState({ source: getCachedSources(sources) })
-    ));
+    this.cacheUpdater.promise.then(() => {
+      const newSource = getCachedSources(sources);
+      const oldSource = this.state.source || [];
+
+      if (newSource.length !== oldSource.length ||
+        newSource.find((source, i) => (
+          !oldSource[i] ||
+          getCacheKey(source) !== getCacheKey(oldSource[i]) ||
+          source.width !== oldSource[i].width ||
+          source.height !== oldSource[i].height
+        ))
+      ) {
+        this.setState({ source: getCachedSources(sources) });
+      }
+    });
   }
 
   render() {

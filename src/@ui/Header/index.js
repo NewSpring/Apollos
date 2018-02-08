@@ -41,9 +41,13 @@ const HeaderContainer = styled(({ theme }) => ({
   }),
 }), 'Header.Container')(SafeAreaView);
 
+const WebHeaderText = styled(({ theme }) => ({
+  color: theme.colors.darkSecondary,
+}), 'Header.WebHeaderText')(H2);
+
 const StyledHeaderText = compose(
   branch(() => Platform.OS === 'web',
-    renderComponent(H2),
+    renderComponent(WebHeaderText),
     styled(({ theme, barStyle }) => ({
       color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
     }), 'Header.Text'),

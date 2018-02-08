@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   View,
-  TouchableWithoutFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, defaultProps } from 'recompose';
@@ -11,10 +10,11 @@ import { withIsLoading } from '@ui/isLoading';
 import styled from '@ui/styled';
 import Card from '@ui/Card';
 import PaddedView from '@ui/PaddedView';
-import { H5, H6, H7 } from '@ui/typography';
+import { H6, BodyText } from '@ui/typography';
 import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
 import Spacer from '@ui/Spacer';
+import Touchable from '@ui/Touchable';
 
 const enhance = compose(
   setPropTypes({
@@ -39,7 +39,7 @@ const enhance = compose(
   }),
   withIsLoading,
   withTheme(({ theme, ...otherProps }) => ({
-    iconSize: otherProps.iconSize || theme.helpers.rem(1),
+    iconSize: otherProps.iconSize || theme.helpers.rem(1.6),
     iconFill: theme.colors.alert,
   })),
   pure,
@@ -48,6 +48,14 @@ const enhance = compose(
 const StyledH6 = styled(({ theme }) => ({
   color: theme.colors.alert,
 }))(H6);
+
+const DateText = styled(({ theme }) => ({
+  color: theme.colors.text.tertiary,
+}))(H6);
+
+const StyledBodyText = styled(({ theme }) => ({
+  color: theme.colors.text.secondary,
+}))(BodyText);
 
 const Row = styled({
   flexDirection: 'row',
@@ -65,24 +73,24 @@ const TransactionCard = enhance(({
   ...otherProps
 }) => (
   <Card isLoading={isLoading} {...otherProps}>
-    <PaddedView>
-      <Row>
-        <Icon name="circle-outline-x-mark" size={iconSize} fill={iconFill} />
-        <Spacer byWidth />
-        <H5>{moment(expirationDate, 'MM/YY').format(dateFormat)}</H5>
-      </Row>
-      <Spacer />
-      <H7>{`Your saved payment ${name} is expiring soon.`}</H7>
-      <Spacer />
-      <TouchableWithoutFeedback
-        onPress={onPress}
-      >
+    <Touchable onPress={onPress}>
+      <PaddedView>
+        <Row>
+          <Icon name="circle-outline-x-mark" size={iconSize} fill={iconFill} />
+          <Spacer byWidth />
+          <DateText>{moment(expirationDate, 'MM/YY').format(dateFormat)}</DateText>
+        </Row>
+        <Spacer />
+        <StyledBodyText>
+          Your saved payment <StyledBodyText bold>{name}</StyledBodyText> is expiring soon.
+        </StyledBodyText>
+        <Spacer />
         <Row>
           <StyledH6>{'Update it Now'}</StyledH6>
           <Icon name="arrow-next" size={iconSize} fill={iconFill} />
         </Row>
-      </TouchableWithoutFeedback>
-    </PaddedView>
+      </PaddedView>
+    </Touchable>
   </Card>
 ));
 

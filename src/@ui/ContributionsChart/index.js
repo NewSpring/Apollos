@@ -4,7 +4,6 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
-import get from 'lodash/get';
 import {
   VictoryLine,
   VictoryScatter,
@@ -25,6 +24,7 @@ export class ContributionsChart extends PureComponent {
     tickLabelFill: PropTypes.string,
     chartHeight: PropTypes.number,
     tickFontSize: PropTypes.number,
+    style: PropTypes.any, // eslint-disable-line
   };
 
   static defaultProps = {
@@ -52,6 +52,7 @@ export class ContributionsChart extends PureComponent {
     tickLabelFill: '#858585',
     chartHeight: 160,
     tickFontSize: 10,
+    style: {},
   };
 
   state = {
@@ -102,15 +103,14 @@ export class ContributionsChart extends PureComponent {
     };
   }
 
-  setWidth = (e) => {
-    this.setState({
-      width: get(e, 'nativeEvent.layout.width'),
-    });
+  setWidth = ({ nativeEvent: { layout: { width } } }) => {
+    this.setState({ width });
   }
 
   render() {
     return (
       <View
+        style={this.props.style}
         onLayout={this.setWidth}
       >
         {this.state.width && (

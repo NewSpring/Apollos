@@ -22,12 +22,18 @@ const Container = styled(({ theme, themeSize }) => ({
 const Image = styled(({ themeSize }) => ({
   width: '100%',
   height: '100%',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
   borderRadius: themeSize / 2,
 }))(ConnectedImage);
 
 const enhance = compose(
   setPropTypes({
     size: PropTypes.oneOf(['small', 'medium', 'large']),
+    containerStyle: PropTypes.any, // eslint-disable-line
     ...ConnectedImage.propTypes,
   }),
   withTheme(({ theme, size }) => ({
@@ -35,9 +41,11 @@ const enhance = compose(
   })),
 );
 
-const Avatar = enhance(({ themeSize, ...imageProps }) => (
-  <Container themeSize={themeSize}>
-    <Image {...imageProps} themeSize={themeSize} />
+const Avatar = enhance(({
+  themeSize, containerStyle, source, ...imageProps
+}) => (
+  <Container style={containerStyle} themeSize={themeSize}>
+    {source ? <Image source={source} {...imageProps} themeSize={themeSize} /> : null}
   </Container>
 ));
 

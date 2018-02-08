@@ -1,2 +1,4 @@
 # Make sure ROOT_URL does not have a trailing slash
 ROOT_URL='http://localhost:3000'
+ROCK_URL='https://rock.com/'
+ROCK_PUBLIC_TOKEN='TOKEN'

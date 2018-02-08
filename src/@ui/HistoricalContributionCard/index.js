@@ -14,7 +14,9 @@ import { H5, H6, BodyText } from '@ui/typography';
 import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
 import CashAmountIndicator from '@ui/CashAmountIndicator';
+import MediaQuery from '@ui/MediaQuery';
 import Spacer from '@ui/Spacer';
+import Avatar from '@ui/Avatar';
 
 const enhance = compose(
   setPropTypes({
@@ -47,10 +49,9 @@ const HorizontalLayout = styled({
 
 const LeftColumn = styled({
   flex: 1.66,
-})(CardContent);
+})(View);
 
-const RightColumn = styled(({ theme }) => ({
-  paddingRight: theme.sizing.baseUnit,
+const RightColumn = styled({
   alignItems: 'flex-end',
   justifyContent: 'center',
   ...Platform.select({
@@ -58,7 +59,7 @@ const RightColumn = styled(({ theme }) => ({
       position: 'relative',
     },
   }),
-}))(FlexedView);
+})(FlexedView);
 
 const StyledH6 = styled(({ theme }) => ({
   color: theme.colors.text.tertiary,
@@ -81,6 +82,10 @@ const StyledCashAmountIndicator = withTheme(({ theme }) => ({
   color: theme.colors.text.tertiary,
 }))(CashAmountIndicator);
 
+const AvatarWrapper = styled(({ theme }) => ({
+  paddingRight: theme.sizing.baseUnit / 3,
+}))(View);
+
 const HistoricalContributionCard = enhance(({
   isLoading,
   iconSize,
@@ -93,22 +98,30 @@ const HistoricalContributionCard = enhance(({
   ...otherProps
 }) => (
   <Card isLoading={isLoading} {...otherProps}>
-    <HorizontalLayout>
-      <LeftColumn>
-        <H5>{startCase(toLower(fundName))}</H5>
-        <StyledH6>{startCase(toLower(contributorName))}</StyledH6>
-        <Spacer />
-        <DateText italic>{moment(date).utc().format(dateFormat)}</DateText>
-      </LeftColumn>
+    <CardContent>
+      <HorizontalLayout>
+        <MediaQuery minWidth="md">
+          {profileImageUrl ? (
+            <AvatarWrapper><Avatar size="small" source={profileImageUrl} /></AvatarWrapper>
+          ) : null}
+        </MediaQuery>
 
-      <RightColumn>
-        <Row>
-          <StyledCashAmountIndicator amount={amount} size={4} />
-          <Spacer byWidth />
-          <StyledIcon name="arrow-next" size={iconSize} />
-        </Row>
-      </RightColumn>
-    </HorizontalLayout>
+        <LeftColumn>
+          <H5>{startCase(toLower(fundName))}</H5>
+          <StyledH6>{startCase(toLower(contributorName))}</StyledH6>
+          <Spacer />
+          <DateText italic>{moment(date).utc().format(dateFormat)}</DateText>
+        </LeftColumn>
+
+        <RightColumn>
+          <Row>
+            <StyledCashAmountIndicator amount={amount} size={4} />
+            <Spacer byWidth />
+            <StyledIcon name="arrow-next" size={iconSize} />
+          </Row>
+        </RightColumn>
+      </HorizontalLayout>
+    </CardContent>
   </Card>
 ));
 

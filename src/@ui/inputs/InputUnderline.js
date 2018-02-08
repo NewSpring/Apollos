@@ -7,13 +7,13 @@ const FocusedUnderline = styled(({ theme, hasError }) => ({
   height: StyleSheet.hairlineWidth,
   backgroundColor: hasError ? theme.colors.alert : theme.colors.background.primary,
   bottom: 0,
-}), 'InputUnderline.blurred')(View);
+}), 'InputUnderline.focused')(View);
 
 const BluredUnderline = styled(({ theme }) => ({
   height: StyleSheet.hairlineWidth,
   backgroundColor: theme.colors.background.inactive,
   bottom: -StyleSheet.hairlineWidth,
-}), 'InputUnderline.focused')(View);
+}), 'InputUnderline.blurred')(View);
 
 const styles = StyleSheet.create({
   wrapper: {

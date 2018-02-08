@@ -16,6 +16,10 @@ class ContributionHistory extends PureComponent {
     onPressNoDataButton: ContributionHistoryList.propTypes.onPressNoDataButton,
     onPressContributionCard: ContributionHistoryList.propTypes.onPressContributionCard,
     setFilterDateRange: PropTypes.func,
+    dateRange: PropTypes.shape({
+      stateDate: PropTypes.string,
+      endDate: PropTypes.string,
+    }),
   };
 
   static defaultProps = {
@@ -47,6 +51,7 @@ class ContributionHistory extends PureComponent {
           onPressContributionCard={this.props.onPressContributionCard}
           FilterComponent={() => (
             <ContributionHistoryFilter
+              {...this.props.dateRange}
               onSubmit={this.handleFilter}
             />
           )}

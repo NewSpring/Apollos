@@ -59,12 +59,13 @@ const Hero = withThemeMixin({ type: 'dark' })(({
   background,
   children,
   style,
+  contentContainerStyle = {},
 }) => (
   <Container style={style}>
     <BackgroundContainer backgroundColor={backgroundColor}>
       <BackgroundFade opacity={backgroundOpacity}>{background}</BackgroundFade>
     </BackgroundContainer>
-    <Content>
+    <Content style={contentContainerStyle}>
       {children}
     </Content>
     <Brand>{brandText}</Brand>
@@ -78,6 +79,7 @@ Hero.propTypes = {
   background: PropTypes.node,
   children: PropTypes.node,
   style: PropTypes.any, // eslint-disable-line
+  contentContainerStyle: PropTypes.any, // eslint-disable-line
 };
 
 export default Hero;
