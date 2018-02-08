@@ -12,6 +12,7 @@ import Client from '@data/Client';
 import orientation from '@utils/orientation';
 
 import AppRouter from './AppRouter';
+import SentryContext from './SentryContext';
 
 // Sentry.enableInExpoDevelopment = true;
 Sentry.config(Settings.APP_SENTRY_URL).install({
@@ -24,6 +25,7 @@ const App = nest(
   ThemeProvider,
   FontLoader,
   ActionSheetProvider,
+  SentryContext,
   AppRouter,
 );
 
