@@ -37,7 +37,6 @@ export const RestoredCheckout = (props) => {
       <H7>{'Please review your donation'}</H7>
       <PaymentConfirmationForm
         hideChangePaymentMethodButton
-        submitButtonText="Give Now"
         onComplete={(error, success) => {
           window.location.href = `${redirect}?${stringify({
             error,

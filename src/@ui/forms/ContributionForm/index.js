@@ -356,14 +356,6 @@ const ContributionForm = compose(
           email: props.person.email,
           campusId: get(props, 'person.campus.id', null),
         });
-        props.setBillingAddress({
-          street1: get(props, 'person.home.street1', ''),
-          street2: get(props, 'person.home.street2', ''),
-          city: get(props, 'person.home.city', ''),
-          stateId: get(props, 'person.home.state'),
-          countryId: get(props, 'person.home.country') || 'US',
-          zipCode: get(props, 'person.home.zip', ''),
-        });
       }
 
       const userHasPaymentMethods = props.savedPaymentMethods.length > 0;

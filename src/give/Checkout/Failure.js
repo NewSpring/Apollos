@@ -10,7 +10,7 @@ import { ButtonLink } from '@ui/Button';
 const contact = () => Linking.openURL('https://rock.newspring.cc/workflows/152?Topic=Stewardship');
 
 const BackgroundView = styled(({ theme }) => ({
-  backgroudColor: theme.colors.background.paper,
+  backgroundColor: theme.colors.background.paper,
   justifyContent: 'center',
   alignItems: 'center',
   paddingTop: theme.sizing.baseUnit * 3,
