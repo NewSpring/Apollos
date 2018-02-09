@@ -14,27 +14,30 @@ const TOKEN = process.env.RAW_SETTINGS_TOKEN;
 
     const localContent = `
 # Make sure ROOT_URL does not have a trailing slash
-ROOT_URL='${settings.local.rootURL}'
-ROCK_URL='${settings.local.rock.baseURL}'
-ROCK_PUBLIC_TOKEN='${settings.local.rock.token}'
-HEIGHLINER_URL='${settings.local.heighliner}'
-SENTRY_URL='${settings.local.sentry}'`;
+APP_ROOT_URL='${settings.local.rootURL}'
+APP_ROCK_URL='${settings.local.rock.baseURL}'
+APP_ROCK_PUBLIC_TOKEN='${settings.local.rock.token}'
+APP_HEIGHLINER_URL='${settings.local.heighliner}'
+APP_SENTRY_URL='${settings.local.sentry}'
+SENTRY_AUTH='${settings.local.sentryAuth}'`;
 
   const testContent = `
 # Make sure ROOT_URL does not have a trailing slash
-ROOT_URL='${settings.test.rootURL}'
-ROCK_URL='${settings.test.rock.baseURL}'
-ROCK_PUBLIC_TOKEN='${settings.test.rock.token}'
-HEIGHLINER_URL='${settings.test.heighliner}'
-SENTRY_URL='${settings.test.sentry}'`;
+APP_ROOT_URL='${settings.test.rootURL}'
+APP_ROCK_URL='${settings.test.rock.baseURL}'
+APP_ROCK_PUBLIC_TOKEN='${settings.test.rock.token}'
+APP_HEIGHLINER_URL='${settings.test.heighliner}'
+APP_SENTRY_URL='${settings.test.sentry}'
+SENTRY_AUTH='${settings.test.sentryAuth}'`;
 
   const productionContent = `
 # Make sure ROOT_URL does not have a trailing slash
-ROOT_URL='${settings.prod.rootURL}'
-ROCK_URL='${settings.prod.rock.baseURL}'
-ROCK_PUBLIC_TOKEN='${settings.prod.rock.token}'
-HEIGHLINER_URL='${settings.prod.heighliner}'
-SENTRY_URL='${settings.prod.sentry}'`;
+APP_ROOT_URL='${settings.prod.rootURL}'
+APP_ROCK_URL='${settings.prod.rock.baseURL}'
+APP_ROCK_PUBLIC_TOKEN='${settings.prod.rock.token}'
+APP_HEIGHLINER_URL='${settings.prod.heighliner}'
+APP_SENTRY_URL='${settings.prod.sentry}'
+SENTRY_AUTH='${settings.prod.sentryAuth}'`;
 
     await FS.appendFile(Path.resolve(__dirname, '../.env.development'), localContent, (err) => {
       if (err) console.log(err);
