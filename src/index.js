@@ -1,6 +1,10 @@
 import { AppRegistry, Platform } from 'react-native';
 import { ApolloProvider } from 'react-apollo';
 import { nest, withProps } from 'recompose';
+
+import Sentry from '@utils/sentry';
+import Settings from '@utils/Settings';
+
 import { ThemeProvider } from '@ui/theme';
 import FontLoader from '@ui/FontLoader';
 import { ActionSheetProvider } from '@ui/ActionSheet';
@@ -8,12 +12,27 @@ import Client from '@data/Client';
 import orientation from '@utils/orientation';
 
 import AppRouter from './AppRouter';
+import SentryContext from './SentryContext';
+
+const sentryEnv = Settings.APP_SENTRY_ENVIRONMENT || Settings.NODE_ENV;
+
+// expo-sentry doesn't consider NODE_ENV when enabling Sentry,
+// however raven-js (sentry's web client) only looks at NODE_ENV when enabling sentry.
+// This makes the behavior consistent between the two platforms,
+// and continues to be disabled by default when running locally.
+Sentry.enableInExpoDevelopment = sentryEnv !== 'development';
+
+Sentry.config(Settings.APP_SENTRY_URL, {
+  release: Settings.COMMIT_SHA,
+  environment: sentryEnv,
+}).install();
 
 const App = nest(
   withProps({ client: Client })(ApolloProvider),
   ThemeProvider,
   FontLoader,
   ActionSheetProvider,
+  SentryContext,
   AppRouter,
 );
 
