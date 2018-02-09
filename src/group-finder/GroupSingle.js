@@ -25,7 +25,7 @@ import Map from './Map';
 const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
 const FlexedLeft = styled({ flex: 1 })(Left);
 
-const rockUrl = Settings.rockUrl || 'https://rock.newspring.cc/'; // todo
+const rockUrl = Settings.APP_ROCK_URL || 'https://rock.newspring.cc/'; // todo
 
 const enhance = compose(
   pure,

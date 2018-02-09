@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   View,
-  TouchableWithoutFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, defaultProps } from 'recompose';
@@ -11,11 +10,12 @@ import { withIsLoading } from '@ui/isLoading';
 import styled from '@ui/styled';
 import Card from '@ui/Card';
 import PaddedView from '@ui/PaddedView';
-import { H5, H6, BodyText } from '@ui/typography';
+import { H5, H6, H7, BodyText } from '@ui/typography';
 import Icon from '@ui/Icon';
 import { withTheme } from '@ui/theme';
 import CashAmountIndicator from '@ui/CashAmountIndicator';
 import Spacer from '@ui/Spacer';
+import Touchable from '@ui/Touchable';
 
 const enhance = compose(
   setPropTypes({
@@ -52,9 +52,9 @@ const DateText = styled(({ theme }) => ({
   paddingLeft: theme.sizing.baseUnit / 2,
 }))(BodyText);
 
-const StyledH6 = styled(({ theme }) => ({
+const StyledH7 = styled(({ theme }) => ({
   color: theme.colors.text.tertiary,
-}))(H6);
+}))(H7);
 
 const LinkText = styled(({ theme }) => ({
   color: theme.colors.text.link,
@@ -76,27 +76,24 @@ const ScheduleCard = enhance(({
   ...otherProps
 }) => (
   <Card isLoading={isLoading} {...otherProps}>
-    <PaddedView>
-      <CashAmountIndicator
-        amount={amount}
-      />
-      <H5>{frequency}</H5>
-      <H5>{accountName}</H5>
-      <Spacer />
-      <Row>
-        <StyledH6>{'Start Date:'}</StyledH6>
-        <DateText italic>{moment(startDate).utc().format(dateFormat)}</DateText>
-      </Row>
-      <Spacer />
-      <TouchableWithoutFeedback
-        onPress={onPress}
-      >
+    <Touchable onPress={onPress}>
+      <PaddedView>
+        <CashAmountIndicator
+          amount={amount}
+        />
+        <H5>{frequency}</H5>
+        <Spacer />
+        <Row>
+          <StyledH7>{'Start Date:'}</StyledH7>
+          <DateText italic>{moment(startDate).utc().format(dateFormat)}</DateText>
+        </Row>
+        <Spacer />
         <Row>
           <LinkText>{'View Schedule Details'}</LinkText>
           <StyledIcon name="arrow-next" size={iconSize} />
         </Row>
-      </TouchableWithoutFeedback>
-    </PaddedView>
+      </PaddedView>
+    </Touchable>
   </Card>
 ));
 

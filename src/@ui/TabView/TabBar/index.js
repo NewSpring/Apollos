@@ -11,9 +11,11 @@ const withStyles = compose(
   styled(({ theme }) => ({
     backgroundColor: theme.colors.background.primary,
   }), 'TabBar'),
-  withTheme(({ theme }) => ({
-    indicatorColor: Color(theme.colors.text.primary)
-      .mix(Color(theme.colors.background.primary)).rgb().string(),
+  withTheme(({ theme, indicatorColor }) => ({
+    indicatorColor: indicatorColor || (
+      Color(theme.colors.text.primary)
+        .mix(Color(theme.colors.background.primary)).rgb().string()
+    ),
   })),
 );
 

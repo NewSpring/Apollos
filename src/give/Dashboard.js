@@ -17,6 +17,8 @@ import BackgroundView from '@ui/BackgroundView';
 import DashboardSubheader from '@ui/DashboardSubheader';
 import ContributionsChartCard from '@ui/ContributionsChartCard';
 import withGivingDashboard from '@data/withGivingDashboard';
+import MediaQuery from '@ui/MediaQuery';
+import LoginPromptCard from '@ui/LoginPromptCard';
 
 export class Dashboard extends PureComponent {
   static propTypes = {
@@ -56,6 +58,8 @@ export class Dashboard extends PureComponent {
     return (
       <BackgroundView>
         <ScrollView>
+          <LoginPromptCard prompt="Sign in to see your giving history, schedules, and saved payments." />
+
           <DashboardSubheader
             text="Activity"
             buttonText="See All"
@@ -81,11 +85,14 @@ export class Dashboard extends PureComponent {
                 key={activityItem.id}
                 name={activityItem.name}
                 expirationDate={`${activityItem.expirationMonth}/${activityItem.expirationYear}`}
-                onPress={() => this.props.onPressExpiringAccountCard(activityItem.id)}
+                onPress={() => this.props.onPressExpiringAccountCard(activityItem.entityId)}
               />
             );
           })}
-          <ContributionsChartCard />
+
+          <MediaQuery maxWidth="md">
+            <ContributionsChartCard />
+          </MediaQuery>
 
           <DashboardSubheader
             text="Active Schedules"
@@ -132,7 +139,7 @@ const enhance = compose(
   withRouter,
   withProps(props => ({
     onPressActivityLink() { props.route.jumpTo('ContributionHistory'); },
-    onPressExpiringAccountCard() { props.route.jumpTo('Now'); },
+    onPressExpiringAccountCard(id) { props.history.push(`/give/payment-methods/${id}`); },
     onPressNewScheduleLink() { props.route.jumpTo('ContributionHistory'); },
     onPressTransactionCard(id) { props.history.push(`/give/history/${id}`); },
     onPressScheduleCard(id) { props.history.push(`/give/schedules/${id}`); },

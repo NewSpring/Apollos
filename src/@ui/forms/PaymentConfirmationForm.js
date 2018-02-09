@@ -161,7 +161,7 @@ const PaymentConfirmationForm = compose(
           Linking.addEventListener('url', handleRedirect);
           const userToken = await AsyncStorage.getItem('authToken');
 
-          const res = await WebBrowser.openBrowserAsync(`${Settings.ROOT_URL || 'http://localhost:3000'}/give/restored-checkout?${stringify({
+          const res = await WebBrowser.openBrowserAsync(`${Settings.APP_ROOT_URL || 'http://localhost:3000'}/give/restored-checkout?${stringify({
             redirect: `${linkingUri}${props.navigateToOnComplete}`,
             state: JSON.stringify(props.contributions),
             userToken,

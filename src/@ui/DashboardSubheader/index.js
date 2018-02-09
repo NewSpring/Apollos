@@ -2,19 +2,26 @@ import React from 'react';
 import {
   View,
 } from 'react-native';
+import { compose } from 'recompose';
 import PropTypes from 'prop-types';
 import { H6, H7 } from '@ui/typography';
 import styled from '@ui/styled';
 import Button from '@ui/Button';
+import { enhancer as mediaQuery } from '@ui/MediaQuery';
 
-const Row = styled(({ theme }) => ({
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  paddingHorizontal: theme.sizing.baseUnit / 2,
-  marginTop: theme.sizing.baseUnit * 2,
-  marginBottom: theme.sizing.baseUnit,
-}))(View);
+const Row = compose(
+  mediaQuery(({ md }) => ({ minWidth: md }), styled(({ theme }) => ({
+    paddingHorizontal: theme.sizing.baseUnit,
+  }))),
+  styled(({ theme }) => ({
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: theme.sizing.baseUnit / 2,
+    marginTop: theme.sizing.baseUnit * 2,
+    marginBottom: theme.sizing.baseUnit / 2,
+  })),
+)(View);
 
 const StyledH6 = styled(({ theme }) => ({
   color: theme.colors.darkTertiary,
@@ -26,8 +33,8 @@ const StyledH7 = styled(({ theme }) => ({
 
 const StyledButton = styled(({ theme }) => ({
   borderColor: theme.colors.darkTertiary,
-  paddingVertical: theme.sizing.baseUnit / 6,
-  paddingHorizontal: theme.sizing.baseUnit,
+  height: theme.sizing.baseUnit * 1.5,
+  paddingHorizontal: theme.sizing.baseUnit * 0.75,
   borderWidth: 1,
 }))(Button);
 
