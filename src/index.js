@@ -20,6 +20,7 @@ const sentryEnv = Settings.APP_SENTRY_ENVIRONMENT || Settings.NODE_ENV;
 // However, this isn't always the case, especially on netlify. So, we use
 // APP_SENTRY_ENVIRONMENT to determine whether Sentry should run
 Sentry.enableInExpoDevelopment = sentryEnv !== 'development';
+
 Sentry.config(Settings.APP_SENTRY_URL, {
   release: Settings.COMMIT_SHA,
   environment: sentryEnv,
