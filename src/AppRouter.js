@@ -57,7 +57,6 @@ class AppRouter extends PureComponent {
     ) {
       previousLocation = this.props.location;
     }
-    throw new Error('app router error test');
   }
 
   get isModal() {

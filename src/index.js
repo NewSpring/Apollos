@@ -24,12 +24,7 @@ Sentry.enableInExpoDevelopment = sentryEnv !== 'development';
 Sentry.config(Settings.APP_SENTRY_URL, {
   release: Settings.COMMIT_SHA,
   environment: sentryEnv,
-  debug: true,
-  logLevel: 2,
 }).install();
-
-if (window) window.Sentry = Sentry;
-if (window) window.Settings = Settings;
 
 const App = nest(
   withProps({ client: Client })(ApolloProvider),
