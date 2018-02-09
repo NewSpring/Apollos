@@ -136,10 +136,11 @@ const enhance = compose(
     }),
     enableReinitialize: true,
     handleSubmit: async (values, { setSubmitting, setErrors, props }) => {
+      let shouldRedirect = false;
       try {
         setSubmitting(true);
         props.setSavedPaymentMethod(values.paymentMethod);
-        props.history.push('/give/checkout/confirm');
+        shouldRedirect = true;
       } catch (err) {
         setErrors({
           general: err.message,
@@ -147,6 +148,7 @@ const enhance = compose(
       } finally {
         setSubmitting(false);
       }
+      if (shouldRedirect) props.history.push('/give/checkout/confirm');
     },
   }),
   mapProps(props => ({
