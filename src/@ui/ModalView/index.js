@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
-import BackgroundView from '@ui/BackgroundView';
+import FlexedView from '@ui/FlexedView';
 import SecondaryNav from '@ui/SecondaryNav';
 import { nest } from 'recompose';
 
@@ -10,12 +10,12 @@ import ModalContainer from './ModalContainer';
 const ModalView = ({
   children, onBackPress, backTo, onBackReplace,
 }) => (
-  <BackgroundView style={StyleSheet.absoluteFill} forceInset={{ vertical: 'always', horizontal: 'always' }}>
+  <FlexedView style={StyleSheet.absoluteFill} forceInset={{ vertical: 'always', horizontal: 'always' }}>
     <ModalContainer>
       {children}
       <SecondaryNav backButton backButtonIcon="close" onBackPress={onBackPress} backTo={backTo} onBackReplace={onBackReplace} />
     </ModalContainer>
-  </BackgroundView>
+  </FlexedView>
 );
 
 ModalView.propTypes = {
