@@ -82,7 +82,7 @@ class AppRouter extends PureComponent {
   // regular pages on small screens.
   largeScreenModals = [
     <Route exact path="/sections" key="sections-modal" component={asModal(tabs.Sections)} />,
-    <Route path="/give/checkout" key="give-checkout" component={asModal(give.Checkout)} />,
+    <Route path="/give/checkout" key="give-checkout" component={give.Checkout} />,
     <ProtectedRoute path="/give/new-payment-method" key="give-new-payment-method" component={asModal(give.AddAccount)} />,
     <ProtectedRoute exact path="/give/payment-methods/:id" key="give-payment-method" component={asModal(give.PaymentMethod)} />,
     <Route path="/login" key="login" component={asModal(Auth)} />,
@@ -127,6 +127,8 @@ class AppRouter extends PureComponent {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
     const AppLayout = Platform.OS === 'web' ? tabs.Layout : BackgroundView;
+    console.log('location', (this.isModal || this.musicPlayerIsOpened) ?
+      previousLocation : this.props.location);
     return (
       <BackgroundView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
