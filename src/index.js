@@ -16,9 +16,10 @@ import SentryContext from './SentryContext';
 
 const sentryEnv = Settings.APP_SENTRY_ENVIRONMENT || Settings.NODE_ENV;
 
-// expo-sentry disables reporting unless the build was built under NODE_ENV=production.
-// However, this isn't always the case, especially on netlify. So, we use
-// APP_SENTRY_ENVIRONMENT to determine whether Sentry should run
+// expo-sentry doesn't consider NODE_ENV when enabling Sentry,
+// however raven-js (sentry's web client) only looks at NODE_ENV when enabling sentry.
+// This makes the behavior consistent between the two platforms,
+// and continues to be disabled by default when running locally.
 Sentry.enableInExpoDevelopment = sentryEnv !== 'development';
 
 Sentry.config(Settings.APP_SENTRY_URL, {
