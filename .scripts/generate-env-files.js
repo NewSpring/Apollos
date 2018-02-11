@@ -10,6 +10,7 @@ const TOKEN = process.env.RAW_SETTINGS_TOKEN;
       '?token=' +
       TOKEN,
     );
+    
     const settings = await response.json();
 
     const localContent = `
