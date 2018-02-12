@@ -73,7 +73,7 @@ const SeriesSingle = enhance(({
       barStyle={isLight ? 'dark-content' : 'light-content'}
     />
     <ScrollView>
-      <ContentView imageOverlayColor={(!isLoading && colors && colors.length) ?`#${get(colors, '[0].value')}` : null} {...otherContentProps}>
+      <ContentView imageOverlayColor={(!isLoading && colors && colors.length) ? `#${get(colors, '[0].value')}` : null} {...otherContentProps}>
         {(video && video.embedUrl) ? (
           <StyledButton onPress={() => history.push(`/series/${id}/trailer`)} type={'ghost'} bordered>
             <Icon name="play" size={theme.helpers.rem(0.875)} fill={theme.colors.text.primary} />

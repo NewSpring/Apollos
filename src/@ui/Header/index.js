@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StatusBar, Platform } from 'react-native';
 import SafeAreaView from '@ui/SafeAreaView';
 import PropTypes from 'prop-types';
-import { compose, setPropTypes, pure, branch, renderNothing, defaultProps, renderComponent } from 'recompose';
+import { compose, setPropTypes, pure, branch, renderNothing, defaultProps } from 'recompose';
 import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import { H2, H6 } from '@ui/typography';
