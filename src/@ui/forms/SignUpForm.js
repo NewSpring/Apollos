@@ -9,7 +9,20 @@ import Yup from 'yup';
 import { withRouter, goBackTo } from '@ui/NativeWebRouter';
 import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
-import Button from '@ui/Button';
+import Button, { ButtonLink } from '@ui/Button';
+
+import Status from './FormStatusText';
+
+const UserExistsStatus = withRouter(({ history }) => (
+  <Status error>
+    {'A user already exists with that email, but the password doesn\'t match. Would you like to '}
+    <ButtonLink onPress={() => history.push('/forgot-password')}>reset your password?</ButtonLink>
+  </Status>
+));
+
+const UnknownErrorStatus = (
+  <Status error>An error occured. Please double check your information and try again later.</Status>
+);
 
 const enhance = compose(
   setPropTypes({
@@ -25,16 +38,35 @@ const enhance = compose(
       password: Yup.string().required(),
       firstName: Yup.string().required(),
       lastName: Yup.string().required(),
+      terms: Yup.boolean().oneOf([true, null], 'You must agree to the terms to create an account').required(),
     }),
-    handleSubmit: async (values, { props, setSubmitting }) => {
+    handleSubmit: async (values, { props, setSubmitting, setStatus }) => {
+      let result = null;
+      let success = false;
       try {
-        const result = await props.onSubmit(values);
-        if (props.onSignupSuccess) props.onSignupSuccess(result);
+        result = await props.onSubmit(values);
+        success = true;
+      } catch (e) {
+        if (e.message.indexOf('User already exists') > -1) {
+          // try to log user in:
+          if (props.login) {
+            try {
+              result = await props.login(values);
+              success = true;
+            } catch (e2) {
+              setStatus(UserExistsStatus);
+            }
+          }
+        } else {
+          setStatus(UnknownErrorStatus);
+        }
+      }
 
+      if (success) {
+        setStatus(null);
+        if (props.onSignupSuccess) props.onSignupSuccess(result);
         const referrer = get(props, 'location.state.referrer');
         if (referrer) return goBackTo({ to: referrer, history: props.history, replace: true });
-      } catch (e) {
-        // todo: show error message from server
       }
 
       return setSubmitting(false);
@@ -61,6 +93,7 @@ const SignUpFormWithoutData = enhance(({
   handleSubmit,
   isValid,
   isSubmitting,
+  status,
 }) => (
   <View>
     <TextInput
@@ -93,6 +126,7 @@ const SignUpFormWithoutData = enhance(({
       onBlur={() => setFieldTouched('lastName', true)}
       error={touched.lastName && errors.lastName}
     />
+    {status ? React.createElement(status) : null}
     <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
   </View>
 ));

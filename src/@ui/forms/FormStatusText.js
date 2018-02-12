@@ -8,5 +8,6 @@ export default styled(({ theme, error, success }) => {
   return ({
     ...statusColor,
     textAlign: 'center',
+    paddingBottom: theme.sizing.baseUnit / 2,
   });
 })(H6);
