@@ -698,8 +698,8 @@ exports[`the Card component should render card details 1`] = `
                     "fontFamily": "Colfax-Regular",
                     "fontSize": 14,
                     "lineHeight": 15.78,
-                    "paddingBottom": 2.25,
-                    "paddingTop": 1.35,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 3.6,
                   }
                 }
               >
@@ -872,8 +872,8 @@ exports[`the Card component should render card details with date 1`] = `
                     "fontFamily": "Colfax-Regular",
                     "fontSize": 14,
                     "lineHeight": 15.78,
-                    "paddingBottom": 2.25,
-                    "paddingTop": 1.35,
+                    "paddingBottom": 1.8,
+                    "paddingTop": 3.6,
                   }
                 }
               >
@@ -891,8 +891,8 @@ exports[`the Card component should render card details with date 1`] = `
                 "fontFamily": "Colfax-Regular",
                 "fontSize": 14,
                 "lineHeight": 15.78,
-                "paddingBottom": 2.25,
-                "paddingTop": 1.35,
+                "paddingBottom": 1.8,
+                "paddingTop": 3.6,
               }
             }
           >
