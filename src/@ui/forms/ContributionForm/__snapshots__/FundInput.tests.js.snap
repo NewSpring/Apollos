@@ -164,7 +164,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               "fontSize": 15.75,
               "lineHeight": 17.75,
               "paddingBottom": 1.8,
-              "paddingTop": 2.25,
+              "paddingTop": 4.5,
               "paddingVertical": 5,
             }
           }
@@ -305,7 +305,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                   "height": 40,
                   "lineHeight": 41.04,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -321,7 +321,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                   }
                 }
               />
@@ -481,7 +481,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               "fontSize": 15.75,
               "lineHeight": 17.75,
               "paddingBottom": 1.8,
-              "paddingTop": 2.25,
+              "paddingTop": 4.5,
               "paddingVertical": 5,
             }
           }
@@ -701,7 +701,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               "fontSize": 15.75,
               "lineHeight": 17.75,
               "paddingBottom": 1.8,
-              "paddingTop": 2.25,
+              "paddingTop": 4.5,
               "paddingVertical": 5,
             }
           }
@@ -842,7 +842,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                   "height": 40,
                   "lineHeight": 41.04,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -858,7 +858,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                   }
                 }
               />
@@ -1018,7 +1018,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
               "fontSize": 15.75,
               "lineHeight": 17.75,
               "paddingBottom": 1.8,
-              "paddingTop": 2.25,
+              "paddingTop": 4.5,
               "paddingVertical": 5,
             }
           }
@@ -1238,7 +1238,7 @@ exports[`The FrequencyInput component should render correctly with initial state
               "fontSize": 15.75,
               "lineHeight": 17.75,
               "paddingBottom": 1.8,
-              "paddingTop": 2.25,
+              "paddingTop": 4.5,
               "paddingVertical": 5,
             }
           }
@@ -1379,7 +1379,7 @@ exports[`The FrequencyInput component should render correctly with initial state
                   "height": 40,
                   "lineHeight": 41.04,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -1395,7 +1395,7 @@ exports[`The FrequencyInput component should render correctly with initial state
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                   }
                 }
               />
@@ -1555,7 +1555,7 @@ exports[`The FrequencyInput component should render correctly with initial state
               "fontSize": 15.75,
               "lineHeight": 17.75,
               "paddingBottom": 1.8,
-              "paddingTop": 2.25,
+              "paddingTop": 4.5,
               "paddingVertical": 5,
             }
           }

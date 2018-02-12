@@ -171,7 +171,7 @@ exports[`The TileFeed component renders correctly 1`] = `
                           "fontSize": 15.75,
                           "lineHeight": 17.75,
                           "paddingBottom": 1.8,
-                          "paddingTop": 2.25,
+                          "paddingTop": 4.5,
                         }
                       }
                     >
@@ -319,7 +319,7 @@ exports[`The TileFeed component renders correctly 1`] = `
                           "fontSize": 15.75,
                           "lineHeight": 17.75,
                           "paddingBottom": 1.8,
-                          "paddingTop": 2.25,
+                          "paddingTop": 4.5,
                         }
                       }
                     >
