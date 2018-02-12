@@ -45,14 +45,12 @@ const WebHeaderText = styled(({ theme }) => ({
   color: theme.colors.darkSecondary,
 }), 'Header.WebHeaderText')(H2);
 
-const StyledHeaderText = compose(
-  branch(() => Platform.OS === 'web',
-    renderComponent(WebHeaderText),
-    styled(({ theme, barStyle }) => ({
-      color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
-    }), 'Header.Text'),
-  ),
-)(H6);
+const StyledHeaderText = Platform.OS === 'web' ?
+  WebHeaderText :
+  styled(({ theme, barStyle }) => ({
+    color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
+    maxWidth: '80%',
+  }), 'Header.Text')(H6);
 
 const RightContainer = styled(({ theme }) => ({
   position: 'absolute',
@@ -110,7 +108,7 @@ const Header = enhance(({
     <StatusBar barStyle={barStyle} />
     <StyledHeaderBar>
       {backButton ? <BackButton color={barStyle === 'dark-content' ? theme.colors.darkPrimary : undefined} /> : null}
-      {titleText ? (<StyledHeaderText barStyle={barStyle}>{titleText}</StyledHeaderText>) : null}
+      {titleText ? (<StyledHeaderText barStyle={barStyle} ellipsizeMode="tail" numberOfLines={1}>{titleText}</StyledHeaderText>) : null}
       {children}
       {right ? <RightContainer>{right}</RightContainer> : null}
     </StyledHeaderBar>
