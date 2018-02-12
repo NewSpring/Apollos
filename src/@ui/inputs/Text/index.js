@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import { compose, withProps, pure } from 'recompose';
-import { Platform, TextInput, Animated } from 'react-native';
+import { View, Platform, TextInput, Animated } from 'react-native';
 import Color from 'color';
 import { withTheme } from '@ui/theme';
 
@@ -76,23 +76,25 @@ const Text = enhance(({
   const focusAnimation = (value || !label) ? new Animated.Value(1) : focusAnimationInput;
   return (
     <InputWrapper style={wrapperStyle} disabled={disabled}>
-      <AddonRow>
-        <InputAddon>{prefix}</InputAddon>
-        <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
-          <Component
-            placeholderTextColor={
-              Color(theme.colors.text.primary).fade(theme.alpha.low).string()
-            }
-            {...textInputProps}
-            editable={!disabled}
-            value={`${value || ''}`}
-          />
-        </Animated.View>
-        <InputAddon>{suffix}</InputAddon>
-      </AddonRow>
+      <View>
+        <AddonRow>
+          <InputAddon>{prefix}</InputAddon>
+          <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
+            <Component
+              placeholderTextColor={
+                Color(theme.colors.text.primary).fade(theme.alpha.low).string()
+              }
+              {...textInputProps}
+              editable={!disabled}
+              value={`${value || ''}`}
+            />
+          </Animated.View>
+          <InputAddon>{suffix}</InputAddon>
+        </AddonRow>
 
-      <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
-      <InputUnderline animation={focusAnimation} hasError={Boolean(error)} />
+        <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
+        <InputUnderline animation={focusAnimation} hasError={Boolean(error)} />
+      </View>
 
       {(error && typeof error === 'string') ? <ErrorText>{error}</ErrorText> : null}
     </InputWrapper>
