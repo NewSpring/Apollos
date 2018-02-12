@@ -12,8 +12,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
         "fontFamily": "Colfax-Bold",
         "fontSize": 25.2,
         "lineHeight": 31.28,
-        "paddingBottom": 2.7,
-        "paddingTop": 4.05,
+        "paddingBottom": 3.71,
+        "paddingTop": 5.04,
       }
     }
   >
@@ -28,8 +28,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     />
@@ -63,8 +63,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -618,8 +618,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -1173,8 +1173,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -1714,8 +1714,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -2269,8 +2269,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -2824,8 +2824,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -3379,8 +3379,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -3948,8 +3948,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -4517,8 +4517,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -5072,8 +5072,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -5649,8 +5649,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -6190,8 +6190,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -6745,8 +6745,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -7286,8 +7286,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -7855,8 +7855,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -8396,8 +8396,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -8951,8 +8951,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -9492,8 +9492,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -10047,8 +10047,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -10630,8 +10630,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -11185,8 +11185,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
@@ -11740,8 +11740,8 @@ exports[`the ScriptureItem component renders scripture html 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 25.2,
           "lineHeight": 31.28,
-          "paddingBottom": 2.7,
-          "paddingTop": 4.05,
+          "paddingBottom": 3.71,
+          "paddingTop": 5.04,
         }
       }
     >
