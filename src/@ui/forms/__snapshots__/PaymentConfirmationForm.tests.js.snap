@@ -98,7 +98,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -131,7 +131,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
-            "paddingTop": 2.7,
+            "paddingTop": 4.5,
           }
         }
       >
@@ -163,7 +163,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -180,7 +180,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -286,7 +286,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
-            "paddingTop": 2.7,
+            "paddingTop": 4.5,
           }
         }
       >
@@ -381,7 +381,7 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -414,7 +414,7 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
-            "paddingTop": 2.7,
+            "paddingTop": 4.5,
           }
         }
       >
@@ -446,7 +446,7 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -463,7 +463,7 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -654,7 +654,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -687,7 +687,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
-            "paddingTop": 2.7,
+            "paddingTop": 4.5,
           }
         }
       >
@@ -720,7 +720,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
-            "paddingTop": 2.7,
+            "paddingTop": 4.5,
           }
         }
       >
@@ -786,7 +786,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -803,7 +803,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -909,7 +909,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
-            "paddingTop": 2.7,
+            "paddingTop": 4.5,
           }
         }
       >

@@ -588,7 +588,7 @@ exports[`The FullScreenControls component should render 1`] = `
                 "lineHeight": 25.33,
                 "opacity": 0.7,
                 "paddingBottom": 3.15,
-                "paddingTop": 2.7,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }

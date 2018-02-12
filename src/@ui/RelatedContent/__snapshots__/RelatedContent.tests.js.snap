@@ -22,7 +22,7 @@ exports[`The RelatedContent component renders correctly 1`] = `
         "marginBottom": 10,
         "paddingBottom": 3.15,
         "paddingHorizontal": 20,
-        "paddingTop": 2.7,
+        "paddingTop": 4.5,
         "textAlign": "center",
       }
     }
@@ -110,7 +110,7 @@ exports[`The RelatedContent component renders correctly 1`] = `
                   "fontSize": 20.02,
                   "lineHeight": 25.33,
                   "paddingBottom": 3.15,
-                  "paddingTop": 2.7,
+                  "paddingTop": 4.5,
                 }
               }
             >
@@ -202,7 +202,7 @@ exports[`The RelatedContent component renders correctly 1`] = `
                   "fontSize": 20.02,
                   "lineHeight": 25.33,
                   "paddingBottom": 3.15,
-                  "paddingTop": 2.7,
+                  "paddingTop": 4.5,
                 }
               }
             >
@@ -341,7 +341,7 @@ exports[`The RelatedContent component renders correctly 1`] = `
                   "fontSize": 20.02,
                   "lineHeight": 25.33,
                   "paddingBottom": 3.15,
-                  "paddingTop": 2.7,
+                  "paddingTop": 4.5,
                 }
               }
             >
@@ -424,7 +424,7 @@ exports[`The RelatedContent component renders empty state 1`] = `
         "marginBottom": 10,
         "paddingBottom": 3.15,
         "paddingHorizontal": 20,
-        "paddingTop": 2.7,
+        "paddingTop": 4.5,
         "textAlign": "center",
       }
     }
