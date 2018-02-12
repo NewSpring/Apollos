@@ -1,6 +1,7 @@
 import React from 'react';
 import { compose, nest } from 'recompose';
-import { ScrollView, Platform } from 'react-native';
+import { Platform } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { TabViewPagerExperimental } from 'react-native-tab-view';
 import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
@@ -45,7 +46,7 @@ const BannerH3 = asBannerText(H3);
 const BannerH7 = asBannerText(H7);
 
 const Auth = enhance(() => (
-  <ScrollView>
+  <KeyboardAwareScrollView enableOnAndroid>
     <Banner>
       <BannerContent>
         <BannerH3>WELCOME TO NEWSPRING</BannerH3>
@@ -57,7 +58,7 @@ const Auth = enhance(() => (
       routes={tabRoutes}
       renderScene={tabSenes}
     />
-  </ScrollView>
+  </KeyboardAwareScrollView>
 ));
 
 export default Auth;

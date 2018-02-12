@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { ScrollView } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 import { debounce } from 'lodash';
@@ -74,7 +74,7 @@ class Locations extends PureComponent {
     return (
       <BackgroundView>
         <Header backButton titleText="Locations" />
-        <ScrollView>
+        <KeyboardAwareScrollView enableOnAndroid>
           <Form>
             <Title>Find Your Closest Campus</Title>
             <TextInput
@@ -96,7 +96,7 @@ class Locations extends PureComponent {
             campuses={this.props.campuses}
             geoElements={this.props.geoElements}
           />
-        </ScrollView>
+        </KeyboardAwareScrollView>
       </BackgroundView>
     );
   }
