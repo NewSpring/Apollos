@@ -31,7 +31,7 @@ const package = readPackageJSON();
 const packageName = package.expo.slug;
 
 const getExpPublishName = () => (
-  `${packageName}-${branchName}`.replace(/[^a-zA-Z0-9\\-]/, '-')
+  `${packageName}-${branchName}`.replace(/\W+/g, '-')
 );
 
 const status = ({ state = 'pending', description = '', error } = {}) => {
