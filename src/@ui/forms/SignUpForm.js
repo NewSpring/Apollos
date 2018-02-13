@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Linking, View } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import { compose, withProps, setPropTypes } from 'recompose';
