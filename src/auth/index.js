@@ -1,7 +1,7 @@
 import React from 'react';
 import { compose, nest } from 'recompose';
 import { Platform } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import { TabViewPagerExperimental } from 'react-native-tab-view';
 import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 import { debounce } from 'lodash';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import { compose, withProps } from 'recompose';
 import withCampuses from '@data/withCampuses';
 import withGroupAttributes from '@data/withGroupAttributes';

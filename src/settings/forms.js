@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import { ProfileDetailsForm, ProfileAddressForm, ChangePasswordForm } from '@ui/forms';
 import Header from '@ui/Header';
 
