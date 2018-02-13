@@ -37,7 +37,7 @@ exports[`the ContentView component renders 1`] = `
           "fontSize": 15.75,
           "lineHeight": 17.75,
           "paddingBottom": 1.8,
-          "paddingTop": 2.25,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -217,7 +217,7 @@ exports[`the ContentView component renders with images 1`] = `
           "fontSize": 15.75,
           "lineHeight": 17.75,
           "paddingBottom": 1.8,
-          "paddingTop": 2.25,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -333,7 +333,7 @@ exports[`the ContentView component renders with video 1`] = `
           "fontSize": 15.75,
           "lineHeight": 17.75,
           "paddingBottom": 1.8,
-          "paddingTop": 2.25,
+          "paddingTop": 4.5,
         }
       }
     >

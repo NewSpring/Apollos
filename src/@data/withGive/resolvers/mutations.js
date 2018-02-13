@@ -193,7 +193,7 @@ export async function postPayment(result, variables, { cache }) {
       query: contributionsQuery,
     });
 
-    const formData = new FormData();
+    let formData = new FormData();
     switch (state.paymentMethod) {
       case 'bankAccount':
         formData.append('billing-account-number', state.bankAccount.accountNumber);
@@ -208,6 +208,7 @@ export async function postPayment(result, variables, { cache }) {
         formData.append('billing-cvv', state.creditCard.cvv);
         break;
       default:
+        formData = null;
         break;
     }
 

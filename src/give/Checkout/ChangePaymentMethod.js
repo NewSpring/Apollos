@@ -1,13 +1,17 @@
 import React from 'react';
 import PaddedView from '@ui/PaddedView';
-import { H4 } from '@ui/typography';
 import { ChangePaymentMethodForm } from '@ui/forms';
+import BackgroundView from '@ui/BackgroundView';
+
+import { Title } from './styles';
 
 const ChangePaymentMethod = () => (
-  <PaddedView>
-    <H4>Change Payment Method</H4>
+  <BackgroundView>
+    <PaddedView>
+      <Title>Change Payment Method</Title>
+    </PaddedView>
     <ChangePaymentMethodForm />
-  </PaddedView>
+  </BackgroundView>
 );
 
 export default ChangePaymentMethod;

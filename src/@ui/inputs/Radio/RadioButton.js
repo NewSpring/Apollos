@@ -11,7 +11,7 @@ import styled from '@ui/styled';
 import RadioButtonIndicator from './RadioButtonIndicator';
 
 const Row = styled(({ theme }) => ({
-  paddingVertical: theme.sizing.baseUnit / 2,
+  padding: theme.sizing.baseUnit / 2,
   borderBottomWidth: 1,
   borderBottomColor: theme.colors.background.accent,
   flexDirection: 'row',

@@ -7,7 +7,7 @@ import Yup from 'yup';
 import { compose, mapProps } from 'recompose';
 import PropTypes from 'prop-types';
 import { get, pick } from 'lodash';
-import { H4, H6 } from '@ui/typography';
+import { H6 } from '@ui/typography';
 import * as Inputs from '@ui/inputs';
 import withSavedPaymentMethod from '@data/withSavedPaymentMethod';
 import ActivityIndicator from '@ui/ActivityIndicator';
@@ -16,6 +16,9 @@ import Icon from '@ui/Icon';
 import Spacer from '@ui/Spacer';
 import last4 from '@utils/last4';
 import styled from '@ui/styled';
+import PaddedView from '@ui/PaddedView';
+import TableView, { FormFields } from '@ui/TableView';
+import DeleteSavedPaymentMethodButton from './DeleteSavedPaymentMethodButton';
 
 const Row = styled(({ theme }) => ({
   paddingVertical: theme.sizing.baseUnit / 2,
@@ -25,6 +28,7 @@ const Row = styled(({ theme }) => ({
 
 export class EditSavedPaymentMethodForm extends PureComponent {
   static propTypes = {
+    id: PropTypes.string,
     accountNumber: PropTypes.string,
     accountType: PropTypes.oneOf(['bankAccount', 'creditCard']),
     values: PropTypes.shape({
@@ -73,25 +77,34 @@ export class EditSavedPaymentMethodForm extends PureComponent {
 
     return (
       <View>
-        <H4>{'Edit Account'}</H4>
-        <Row>
-          {this.props.accountType === 'creditCard' && <Icon name="credit" />}
-          <Spacer byWidth />
-          <H6>{`****${last4(this.props.accountNumber)}`}</H6>
-        </Row>
-        <Inputs.Text
-          label="Saved Account Name"
-          value={this.props.values.accountName}
-          onChangeText={text => this.props.setFieldValue('accountName', text)}
-          onBlur={() => this.props.setFieldTouched('accountName', true)}
-          error={Boolean(this.props.touched.accountName && this.props.errors.accountName)}
-        />
-        <Button
-          onPress={this.props.handleSubmit}
-          title="Save Changes"
-          disabled={this.props.isSubmitting || !this.props.isValid}
-          loading={this.props.isSubmitting}
-        />
+        <PaddedView>
+          <Row>
+            {this.props.accountType === 'creditCard' && <Icon name="credit" />}
+            <Spacer byWidth />
+            <H6>{`****${last4(this.props.accountNumber)}`}</H6>
+          </Row>
+        </PaddedView>
+        <TableView responsive={false}>
+          <FormFields>
+            <Inputs.Text
+              label="Saved Account Name"
+              value={this.props.values.accountName}
+              onChangeText={text => this.props.setFieldValue('accountName', text)}
+              onBlur={() => this.props.setFieldTouched('accountName', true)}
+              error={Boolean(this.props.touched.accountName && this.props.errors.accountName)}
+            />
+          </FormFields>
+        </TableView>
+        <PaddedView>
+          <Button
+            onPress={this.props.handleSubmit}
+            title="Save Changes"
+            disabled={this.props.isSubmitting || !this.props.isValid}
+            loading={this.props.isSubmitting}
+          />
+          <Spacer />
+          <DeleteSavedPaymentMethodButton id={this.props.id} />
+        </PaddedView>
       </View>
     );
   }
