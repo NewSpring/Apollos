@@ -129,7 +129,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -286,7 +286,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -401,7 +401,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
                     "height": 40,
                     "lineHeight": 30,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -563,7 +563,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -720,7 +720,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -879,7 +879,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -975,7 +975,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
-            "paddingTop": 2.7,
+            "paddingTop": 4.5,
           }
         }
       >
@@ -1181,7 +1181,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -1338,7 +1338,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -1453,7 +1453,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                     "height": 40,
                     "lineHeight": 30,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -1615,7 +1615,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -1772,7 +1772,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -1887,7 +1887,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                     "height": 40,
                     "lineHeight": 30,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -1903,7 +1903,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                       "fontSize": 15.75,
                       "lineHeight": 17.75,
                       "paddingBottom": 1.8,
-                      "paddingTop": 2.25,
+                      "paddingTop": 4.5,
                     }
                   }
                 />
@@ -2058,7 +2058,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -2217,7 +2217,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -2313,7 +2313,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
-            "paddingTop": 2.7,
+            "paddingTop": 4.5,
           }
         }
       >

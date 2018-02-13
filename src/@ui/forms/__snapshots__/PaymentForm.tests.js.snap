@@ -87,7 +87,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                     "height": 40,
                     "lineHeight": 30,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -249,7 +249,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -420,7 +420,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -580,7 +580,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -739,7 +739,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -897,7 +897,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                         "fontSize": 15.75,
                         "lineHeight": 17.75,
                         "paddingBottom": 1.8,
-                        "paddingTop": 2.25,
+                        "paddingTop": 4.5,
                         "paddingVertical": 5,
                       }
                     }
@@ -1012,7 +1012,7 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
               "fontSize": 20.02,
               "lineHeight": 25.33,
               "paddingBottom": 3.15,
-              "paddingTop": 2.7,
+              "paddingTop": 4.5,
             }
           }
         >
@@ -1111,7 +1111,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
                     "height": 40,
                     "lineHeight": 30,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -1273,7 +1273,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -1444,7 +1444,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -1604,7 +1604,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -1763,7 +1763,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -1921,7 +1921,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
                         "fontSize": 15.75,
                         "lineHeight": 17.75,
                         "paddingBottom": 1.8,
-                        "paddingTop": 2.25,
+                        "paddingTop": 4.5,
                         "paddingVertical": 5,
                       }
                     }
@@ -2036,7 +2036,7 @@ exports[`The PaymentForm component renders correctly 1`] = `
               "fontSize": 20.02,
               "lineHeight": 25.33,
               "paddingBottom": 3.15,
-              "paddingTop": 2.7,
+              "paddingTop": 4.5,
             }
           }
         >
@@ -2135,7 +2135,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                     "height": 40,
                     "lineHeight": 30,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -2297,7 +2297,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -2468,7 +2468,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -2628,7 +2628,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -2787,7 +2787,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -2945,7 +2945,7 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                         "fontSize": 15.75,
                         "lineHeight": 17.75,
                         "paddingBottom": 1.8,
-                        "paddingTop": 2.25,
+                        "paddingTop": 4.5,
                         "paddingVertical": 5,
                       }
                     }
@@ -3149,7 +3149,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                     "height": 40,
                     "lineHeight": 30,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -3311,7 +3311,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                 "fontSize": 15.75,
                 "lineHeight": 17.75,
                 "paddingBottom": 1.8,
-                "paddingTop": 2.25,
+                "paddingTop": 4.5,
                 "paddingVertical": 5,
               }
             }
@@ -3469,7 +3469,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -3639,7 +3639,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -3798,7 +3798,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -3913,7 +3913,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                       "height": 40,
                       "lineHeight": 30,
                       "paddingBottom": 1.8,
-                      "paddingTop": 2.25,
+                      "paddingTop": 4.5,
                       "paddingVertical": 5,
                     }
                   }
@@ -4075,7 +4075,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                   "fontSize": 15.75,
                   "lineHeight": 17.75,
                   "paddingBottom": 1.8,
-                  "paddingTop": 2.25,
+                  "paddingTop": 4.5,
                   "paddingVertical": 5,
                 }
               }
@@ -4233,7 +4233,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                         "fontSize": 15.75,
                         "lineHeight": 17.75,
                         "paddingBottom": 1.8,
-                        "paddingTop": 2.25,
+                        "paddingTop": 4.5,
                         "paddingVertical": 5,
                       }
                     }
@@ -4348,7 +4348,7 @@ exports[`The PaymentForm component shows bank account info 1`] = `
               "fontSize": 20.02,
               "lineHeight": 25.33,
               "paddingBottom": 3.15,
-              "paddingTop": 2.7,
+              "paddingTop": 4.5,
             }
           }
         >

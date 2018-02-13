@@ -39,7 +39,7 @@ exports[`The Chip component should be selected 1`] = `
         "lineHeight": 17.75,
         "paddingBottom": 1.8,
         "paddingHorizontal": 6,
-        "paddingTop": 2.25,
+        "paddingTop": 4.5,
         "textAlign": "center",
       }
     }
@@ -90,7 +90,7 @@ exports[`The Chip component should render an icon 1`] = `
         "lineHeight": 17.75,
         "paddingBottom": 1.8,
         "paddingHorizontal": 6,
-        "paddingTop": 2.25,
+        "paddingTop": 4.5,
         "textAlign": "center",
       }
     }
@@ -180,7 +180,7 @@ exports[`The Chip component should render correctly 1`] = `
           "lineHeight": 17.75,
           "paddingBottom": 1.8,
           "paddingHorizontal": 6,
-          "paddingTop": 2.25,
+          "paddingTop": 4.5,
           "textAlign": "center",
         }
       }

@@ -62,7 +62,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
               "height": 40,
               "lineHeight": 30,
               "paddingBottom": 1.8,
-              "paddingTop": 2.25,
+              "paddingTop": 4.5,
               "paddingVertical": 5,
             }
           }
@@ -234,7 +234,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
           "fontSize": 15.75,
           "lineHeight": 17.75,
           "paddingBottom": 1.8,
-          "paddingTop": 2.25,
+          "paddingTop": 4.5,
           "paddingVertical": 5,
         }
       }
