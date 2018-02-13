@@ -108,7 +108,7 @@ const Header = enhance(({
     <StatusBar barStyle={barStyle} />
     <StyledHeaderBar>
       {backButton ? <BackButton color={barStyle === 'dark-content' ? theme.colors.darkPrimary : undefined} /> : null}
-      {titleText ? (<StyledHeaderText barStyle={barStyle} ellipsizeMode="tail" numberOfLines={1}>{titleText}</StyledHeaderText>) : null}
+      {titleText ? (<StyledHeaderText barStyle={barStyle} numberOfLines={1}>{titleText}</StyledHeaderText>) : null}
       {children}
       {right ? <RightContainer>{right}</RightContainer> : null}
     </StyledHeaderBar>
