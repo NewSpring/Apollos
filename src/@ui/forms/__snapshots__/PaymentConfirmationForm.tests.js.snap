@@ -33,245 +33,26 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
   <View
     style={
       Object {
-        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 10,
+        "backgroundColor": "#ffffff",
+        "borderBottomWidth": 0.5,
+        "borderColor": "rgba(133, 133, 133, 0.30000000000000004)",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopWidth": 0.5,
+        "marginBottom": 20,
       }
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 14,
-          "lineHeight": 15.78,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.35,
-        }
-      }
-    >
-      Campus
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 14,
-          "lineHeight": 15.78,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.35,
-        }
-      }
-    >
-      web
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 10,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
-          "paddingBottom": 3.15,
-          "paddingTop": 2.7,
-        }
-      }
-    >
-      General
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 15.75,
-          "lineHeight": 17.75,
-          "paddingBottom": 1.8,
-          "paddingTop": 2.25,
-        }
-      }
-    >
-      $
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 20.02,
-            "lineHeight": 25.33,
-            "paddingBottom": 3.15,
-            "paddingTop": 2.7,
-          }
-        }
-      >
-        253
-      </Text>
-      .
-      00
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 10,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
-          "paddingBottom": 3.15,
-          "paddingTop": 2.7,
-        }
-      }
-    >
-      Total
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
-          "paddingBottom": 3.15,
-          "paddingTop": 2.7,
-        }
-      }
-    >
-      $
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
-            "paddingBottom": 2.7,
-            "paddingTop": 4.05,
-          }
-        }
-      >
-        253
-      </Text>
-      .
-      00
-    </Text>
-  </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    bold={false}
-    ellipsizeMode="tail"
-    italic={false}
-    style={
-      Object {
-        "color": "#303030",
-        "fontFamily": "DroidSerif-Regular",
-        "fontSize": 20.02,
-        "lineHeight": 33.11,
-        "paddingBottom": 2.25,
-        "paddingTop": 1.8,
-      }
-    }
-  >
-    Due to Apple policies, you'll be redirected to Safari to complete this contribution.
-  </Text>
-  <View
-    accessibilityComponentType="button"
-    accessibilityLabel={undefined}
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
-      bordered={false}
-      disabled={false}
-      pill={true}
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#6bac43",
-          "borderColor": "#6bac43",
-          "borderRadius": 60,
-          "borderWidth": 2,
-          "elevation": 2,
+          "backgroundColor": "#ffffff",
           "flexDirection": "row",
-          "height": 60,
-          "justifyContent": "center",
-          "opacity": 1,
-          "overflow": "hidden",
-          "paddingHorizontal": 20,
+          "height": 50,
+          "justifyContent": "flex-start",
+          "padding": 10,
+          "paddingLeft": 13.333333333333334,
         }
       }
     >
@@ -281,33 +62,378 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#ffffff",
+            "color": "#858585",
+            "fontFamily": "Colfax-Regular",
+            "fontSize": 14,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingLeft": 0,
+            "paddingTop": 1.35,
+          }
+        }
+      >
+        Campus:
+         
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#505050",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 15.75,
+            "lineHeight": 17.75,
+            "paddingBottom": 1.8,
+            "paddingTop": 2.25,
+          }
+        }
+      >
+        web
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(133, 133, 133, 0.30000000000000004)",
+          "height": 0.5,
+          "marginLeft": 13.333333333333334,
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffffff",
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "flex-start",
+          "padding": 10,
+          "paddingLeft": 13.333333333333334,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "flexGrow": 1,
+            "flexShrink": 1,
             "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
+            "paddingLeft": 0,
+            "paddingRight": 10,
             "paddingTop": 2.7,
           }
         }
       >
-        Complete
+        General
       </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Regular",
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
+            }
+          }
+        >
+          $
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
+            }
+          }
+        >
+          253
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Regular",
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
+            }
+          }
+        >
+          .00
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(133, 133, 133, 0.30000000000000004)",
+          "height": 0.5,
+          "marginLeft": 13.333333333333334,
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffffff",
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "flex-start",
+          "padding": 10,
+          "paddingLeft": 13.333333333333334,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingLeft": 0,
+            "paddingRight": 10,
+            "paddingTop": 2.7,
+          }
+        }
+      >
+        Total
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
+            }
+          }
+        >
+          $
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 25.2,
+              "lineHeight": 31.28,
+              "paddingBottom": 2.7,
+              "paddingTop": 4.05,
+            }
+          }
+        >
+          253
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
+            }
+          }
+        >
+          .00
+        </Text>
+      </View>
     </View>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    onPress={[Function]}
+  <View
     style={
       Object {
-        "color": "#6bac43",
-        "textDecorationLine": "underline",
+        "paddingHorizontal": 20,
+        "paddingVertical": 20,
       }
     }
   >
-    Change Payment Method
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "Colfax-Regular",
+          "fontSize": 14,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
+        }
+      }
+    >
+      You'll be redirected to Safari to securely complete this contribution.
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 20,
+        "paddingVertical": 0,
+      }
+    }
+    vertical={false}
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel={undefined}
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        bordered={false}
+        disabled={false}
+        pill={true}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#6bac43",
+            "borderColor": "#6bac43",
+            "borderRadius": 60,
+            "borderWidth": 2,
+            "elevation": 2,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "center",
+            "opacity": 1,
+            "overflow": "hidden",
+            "paddingHorizontal": 20,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
+            }
+          }
+        >
+          Complete
+           
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "paddingTop": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        onPress={[Function]}
+        style={
+          Object {
+            "color": "#6bac43",
+            "textDecorationLine": "underline",
+          }
+        }
+      >
+        Change Payment Method
+      </Text>
+    </View>
+  </View>
 </View>
 `;
 
@@ -316,93 +442,89 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
   <View
     style={
       Object {
-        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 10,
+        "backgroundColor": "#ffffff",
+        "borderBottomWidth": 0.5,
+        "borderColor": "rgba(133, 133, 133, 0.30000000000000004)",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopWidth": 0.5,
+        "marginBottom": 20,
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 14,
-          "lineHeight": 15.78,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.35,
+          "alignItems": "center",
+          "backgroundColor": "#ffffff",
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "flex-start",
+          "padding": 10,
+          "paddingLeft": 13.333333333333334,
         }
       }
     >
-      Campus
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#858585",
+            "fontFamily": "Colfax-Regular",
+            "fontSize": 14,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingLeft": 0,
+            "paddingTop": 1.35,
+          }
+        }
+      >
+        Campus:
+         
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#505050",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 15.75,
+            "lineHeight": 17.75,
+            "paddingBottom": 1.8,
+            "paddingTop": 2.25,
+          }
+        }
+      >
+        web
+      </Text>
+    </View>
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 14,
-          "lineHeight": 15.78,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.35,
+          "backgroundColor": "rgba(133, 133, 133, 0.30000000000000004)",
+          "height": 0.5,
+          "marginLeft": 13.333333333333334,
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffffff",
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "flex-start",
+          "padding": 10,
+          "paddingLeft": 13.333333333333334,
         }
       }
     >
-      web
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 10,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
-          "paddingBottom": 3.15,
-          "paddingTop": 2.7,
-        }
-      }
-    >
-      General
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 15.75,
-          "lineHeight": 17.75,
-          "paddingBottom": 1.8,
-          "paddingTop": 2.25,
-        }
-      }
-    >
-      $
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -410,64 +532,104 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
         style={
           Object {
             "color": "#303030",
+            "flexGrow": 1,
+            "flexShrink": 1,
             "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
+            "paddingLeft": 0,
+            "paddingRight": 10,
             "paddingTop": 2.7,
           }
         }
       >
-        253
+        General
       </Text>
-      .
-      00
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 10,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Regular",
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
+            }
+          }
+        >
+          $
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
+            }
+          }
+        >
+          253
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Regular",
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
+            }
+          }
+        >
+          .00
+        </Text>
+      </View>
+    </View>
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
-          "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "backgroundColor": "rgba(133, 133, 133, 0.30000000000000004)",
+          "height": 0.5,
+          "marginLeft": 13.333333333333334,
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffffff",
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "flex-start",
+          "padding": 10,
+          "paddingLeft": 13.333333333333334,
         }
       }
     >
-      Total
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
-          "paddingBottom": 3.15,
-          "paddingTop": 2.7,
-        }
-      }
-    >
-      $
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -475,112 +637,201 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
         style={
           Object {
             "color": "#303030",
+            "flexGrow": 1,
+            "flexShrink": 1,
             "fontFamily": "Colfax-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
-            "paddingBottom": 2.7,
-            "paddingTop": 4.05,
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingLeft": 0,
+            "paddingRight": 10,
+            "paddingTop": 2.7,
           }
         }
       >
-        253
+        Total
       </Text>
-      .
-      00
-    </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
+            }
+          }
+        >
+          $
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 25.2,
+              "lineHeight": 31.28,
+              "paddingBottom": 2.7,
+              "paddingTop": 4.05,
+            }
+          }
+        >
+          253
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
+            }
+          }
+        >
+          .00
+        </Text>
+      </View>
+    </View>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    bold={false}
-    ellipsizeMode="tail"
-    italic={false}
-    style={
-      Object {
-        "color": "#303030",
-        "fontFamily": "DroidSerif-Regular",
-        "fontSize": 20.02,
-        "lineHeight": 33.11,
-        "paddingBottom": 2.25,
-        "paddingTop": 1.8,
-      }
-    }
-  >
-    Due to Apple policies, you'll be redirected to Safari to complete this contribution.
-  </Text>
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel={undefined}
-    accessibilityTraits={
-      Array [
-        "button",
-        "disabled",
-      ]
-    }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "paddingHorizontal": 20,
+        "paddingVertical": 20,
       }
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
-      bordered={false}
-      disabled={false}
-      pill={true}
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#6bac43",
-          "borderColor": "#6bac43",
-          "borderRadius": 60,
-          "borderWidth": 2,
-          "elevation": 2,
-          "flexDirection": "row",
-          "height": 60,
-          "justifyContent": "center",
-          "opacity": 1,
-          "overflow": "hidden",
-          "paddingHorizontal": 20,
+          "color": "#303030",
+          "fontFamily": "Colfax-Regular",
+          "fontSize": 14,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
         }
       }
     >
-      <ActivityIndicator
-        animating={true}
-        color="#ffffff"
-        hidesWhenStopped={true}
-        size="small"
-      />
-    </View>
+      You'll be redirected to Safari to securely complete this contribution.
+    </Text>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    onPress={[Function]}
+  <View
     style={
       Object {
-        "color": "#6bac43",
-        "textDecorationLine": "underline",
+        "paddingHorizontal": 20,
+        "paddingVertical": 0,
       }
     }
+    vertical={false}
   >
-    Change Payment Method
-  </Text>
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel={undefined}
+      accessibilityTraits={
+        Array [
+          "button",
+          "disabled",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        bordered={false}
+        disabled={false}
+        pill={true}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#6bac43",
+            "borderColor": "#6bac43",
+            "borderRadius": 60,
+            "borderWidth": 2,
+            "elevation": 2,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "center",
+            "opacity": 1,
+            "overflow": "hidden",
+            "paddingHorizontal": 20,
+          }
+        }
+      >
+        <ActivityIndicator
+          animating={true}
+          color="#ffffff"
+          hidesWhenStopped={true}
+          size="small"
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "paddingTop": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        onPress={[Function]}
+        style={
+          Object {
+            "color": "#6bac43",
+            "textDecorationLine": "underline",
+          }
+        }
+      >
+        Change Payment Method
+      </Text>
+    </View>
+  </View>
 </View>
 `;
 
@@ -589,93 +840,89 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
   <View
     style={
       Object {
-        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 10,
+        "backgroundColor": "#ffffff",
+        "borderBottomWidth": 0.5,
+        "borderColor": "rgba(133, 133, 133, 0.30000000000000004)",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopWidth": 0.5,
+        "marginBottom": 20,
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 14,
-          "lineHeight": 15.78,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.35,
+          "alignItems": "center",
+          "backgroundColor": "#ffffff",
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "flex-start",
+          "padding": 10,
+          "paddingLeft": 13.333333333333334,
         }
       }
     >
-      Campus
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#858585",
+            "fontFamily": "Colfax-Regular",
+            "fontSize": 14,
+            "lineHeight": 15.78,
+            "paddingBottom": 2.25,
+            "paddingLeft": 0,
+            "paddingTop": 1.35,
+          }
+        }
+      >
+        Campus:
+         
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#505050",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 15.75,
+            "lineHeight": 17.75,
+            "paddingBottom": 1.8,
+            "paddingTop": 2.25,
+          }
+        }
+      >
+        web
+      </Text>
+    </View>
+    <View
       style={
         Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Regular",
-          "fontSize": 14,
-          "lineHeight": 15.78,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.35,
+          "backgroundColor": "rgba(133, 133, 133, 0.30000000000000004)",
+          "height": 0.5,
+          "marginLeft": 13.333333333333334,
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffffff",
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "flex-start",
+          "padding": 10,
+          "paddingLeft": 13.333333333333334,
         }
       }
     >
-      web
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 10,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
-          "paddingBottom": 3.15,
-          "paddingTop": 2.7,
-        }
-      }
-    >
-      General
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 15.75,
-          "lineHeight": 17.75,
-          "paddingBottom": 1.8,
-          "paddingTop": 2.25,
-        }
-      }
-    >
-      $
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -683,32 +930,100 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#303030",
+            "flexGrow": 1,
+            "flexShrink": 1,
             "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
+            "paddingLeft": 0,
+            "paddingRight": 10,
             "paddingTop": 2.7,
           }
         }
       >
-        253
+        General
       </Text>
-      .
-      00
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 10,
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Regular",
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
+            }
+          }
+        >
+          $
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
+            }
+          }
+        >
+          253
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Regular",
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
+            }
+          }
+        >
+          .00
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(133, 133, 133, 0.30000000000000004)",
+          "height": 0.5,
+          "marginLeft": 13.333333333333334,
+          "width": "100%",
+        }
       }
-    }
-  >
-    <View>
+    />
+    <View
+      horizontal={false}
+      style={
+        Object {
+          "paddingHorizontal": 0,
+          "paddingVertical": 20,
+        }
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -716,185 +1031,133 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#303030",
+            "flexGrow": 1,
+            "flexShrink": 1,
             "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
+            "paddingLeft": 10,
+            "paddingRight": 10,
             "paddingTop": 2.7,
           }
         }
       >
         Schedule Details
       </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 14,
-            "lineHeight": 15.78,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.35,
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingHorizontal": 10,
           }
         }
       >
-        Frequency: 
-        once a month
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#858585",
+              "fontFamily": "Colfax-Regular",
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
+            }
+          }
+        >
+          Frequency:
+           
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
+            }
+          }
+        >
+          once a month
+        </Text>
+      </View>
+      <View
         style={
           Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Regular",
-            "fontSize": 14,
-            "lineHeight": 15.78,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.35,
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingHorizontal": 10,
           }
         }
       >
-        Starting: 
-        10/20/2120
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#858585",
+              "fontFamily": "Colfax-Regular",
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 2.25,
+              "paddingTop": 1.35,
+            }
+          }
+        >
+          Starting:
+           
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
+            }
+          }
+        >
+          10/20/2120
+        </Text>
+      </View>
     </View>
-  </View>
-  <View
-    style={
-      Object {
-        "borderBottomColor": "rgba(221, 221, 221, 0.09999999999999998)",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingVertical": 10,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
-          "paddingBottom": 3.15,
-          "paddingTop": 2.7,
-        }
-      }
-    >
-      Total
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#303030",
-          "fontFamily": "Colfax-Bold",
-          "fontSize": 20.02,
-          "lineHeight": 25.33,
-          "paddingBottom": 3.15,
-          "paddingTop": 2.7,
-        }
-      }
-    >
-      $
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#303030",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 25.2,
-            "lineHeight": 31.28,
-            "paddingBottom": 2.7,
-            "paddingTop": 4.05,
-          }
-        }
-      >
-        253
-      </Text>
-      .
-      00
-    </Text>
-  </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    bold={false}
-    ellipsizeMode="tail"
-    italic={false}
-    style={
-      Object {
-        "color": "#303030",
-        "fontFamily": "DroidSerif-Regular",
-        "fontSize": 20.02,
-        "lineHeight": 33.11,
-        "paddingBottom": 2.25,
-        "paddingTop": 1.8,
-      }
-    }
-  >
-    Due to Apple policies, you'll be redirected to Safari to complete this contribution.
-  </Text>
-  <View
-    accessibilityComponentType="button"
-    accessibilityLabel={undefined}
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
-  >
     <View
-      bordered={false}
-      disabled={false}
-      pill={true}
+      style={
+        Object {
+          "backgroundColor": "rgba(133, 133, 133, 0.30000000000000004)",
+          "height": 0.5,
+          "marginLeft": 13.333333333333334,
+          "width": "100%",
+        }
+      }
+    />
+    <View
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#6bac43",
-          "borderColor": "#6bac43",
-          "borderRadius": 60,
-          "borderWidth": 2,
-          "elevation": 2,
+          "backgroundColor": "#ffffff",
           "flexDirection": "row",
-          "height": 60,
-          "justifyContent": "center",
-          "opacity": 1,
-          "overflow": "hidden",
-          "paddingHorizontal": 20,
+          "height": 50,
+          "justifyContent": "flex-start",
+          "padding": 10,
+          "paddingLeft": 13.333333333333334,
         }
       }
     >
@@ -904,32 +1167,212 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#ffffff",
+            "color": "#303030",
+            "flexGrow": 1,
+            "flexShrink": 1,
             "fontFamily": "Colfax-Bold",
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
+            "paddingLeft": 0,
+            "paddingRight": 10,
             "paddingTop": 2.7,
           }
         }
       >
-        Complete
+        Total
       </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
+            }
+          }
+        >
+          $
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 25.2,
+              "lineHeight": 31.28,
+              "paddingBottom": 2.7,
+              "paddingTop": 4.05,
+            }
+          }
+        >
+          253
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 15.75,
+              "lineHeight": 17.75,
+              "paddingBottom": 1.8,
+              "paddingTop": 2.25,
+            }
+          }
+        >
+          .00
+        </Text>
+      </View>
     </View>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    onPress={[Function]}
+  <View
     style={
       Object {
-        "color": "#6bac43",
-        "textDecorationLine": "underline",
+        "paddingHorizontal": 20,
+        "paddingVertical": 20,
       }
     }
   >
-    Change Payment Method
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "Colfax-Regular",
+          "fontSize": 14,
+          "lineHeight": 15.78,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.35,
+        }
+      }
+    >
+      You'll be redirected to Safari to securely complete this contribution.
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 20,
+        "paddingVertical": 0,
+      }
+    }
+    vertical={false}
+  >
+    <View
+      accessibilityComponentType="button"
+      accessibilityLabel={undefined}
+      accessibilityTraits={
+        Array [
+          "button",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View
+        bordered={false}
+        disabled={false}
+        pill={true}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#6bac43",
+            "borderColor": "#6bac43",
+            "borderRadius": 60,
+            "borderWidth": 2,
+            "elevation": 2,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "center",
+            "opacity": 1,
+            "overflow": "hidden",
+            "paddingHorizontal": 20,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 2.7,
+            }
+          }
+        >
+          Complete
+           
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "paddingTop": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        onPress={[Function]}
+        style={
+          Object {
+            "color": "#6bac43",
+            "textDecorationLine": "underline",
+          }
+        }
+      >
+        Change Payment Method
+      </Text>
+    </View>
+  </View>
 </View>
 `;

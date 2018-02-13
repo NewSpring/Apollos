@@ -4,6 +4,7 @@ import { Switch, Route, withRouter } from '@ui/NativeWebRouter';
 import Header from '@ui/Header';
 import BackgroundView from '@ui/BackgroundView';
 import Progress from '@ui/Progress';
+import ModalView from '@ui/ModalView';
 
 import BillingAddress from './BillingAddress';
 import PaymentMethod from './PaymentMethod';
@@ -25,18 +26,20 @@ const progressForLocation = ({ pathname }) => {
 };
 
 const Checkout = withRouter(({ match, location }) => (
-  <BackgroundView>
-    <Header titleText="Add Account" backButton />
-    <Progress progress={progressForLocation(location)} />
-    <KeyboardAwareScrollView>
-      <Switch>
-        <Route exact path={`${match.url}/address`} component={BillingAddress} />
-        <Route exact path={`${match.url}/method`} component={PaymentMethod} />
-        <Route exact path={`${match.url}/confirm`} component={PaymentMethodConfirmation} />
-        <Route exact path={`${match.url}/done`} component={Success} />
-      </Switch>
-    </KeyboardAwareScrollView>
-  </BackgroundView>
+  <ModalView backTo="/give" onBackReplace>
+    <BackgroundView>
+      <Header titleText="Add Account" backButton />
+      <Progress progress={progressForLocation(location)} />
+      <KeyboardAwareScrollView enableOnAndroid>
+        <Switch>
+          <Route exact path={`${match.url}/address`} component={BillingAddress} />
+          <Route exact path={`${match.url}/method`} component={PaymentMethod} />
+          <Route exact path={`${match.url}/confirm`} component={PaymentMethodConfirmation} />
+          <Route exact path={`${match.url}/done`} component={Success} />
+        </Switch>
+      </KeyboardAwareScrollView>
+    </BackgroundView>
+  </ModalView>
 ));
 
 export default Checkout;

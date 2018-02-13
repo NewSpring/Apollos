@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import {
-  Text,
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -18,13 +17,20 @@ import withGive from '@data/withGive';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import last4 from '@utils/last4';
 import styled from '@ui/styled';
+import PaddedView from '@ui/PaddedView';
+import TableView, { Divider } from '@ui/TableView';
+import { H6, H7 } from '@ui/typography';
 
 const Row = styled(({ theme }) => ({
-  paddingVertical: theme.sizing.baseUnit / 2,
+  padding: theme.sizing.baseUnit / 2,
   flexDirection: 'row',
   justifyContent: 'space-between',
   flex: 1,
-  paddingLeft: 10,
+}))(View);
+
+const ButtonLinkWrapper = styled(({ theme }) => ({
+  alignItems: 'center',
+  paddingTop: theme.sizing.baseUnit,
 }))(View);
 
 export class ChangePaymentMethodForm extends PureComponent {
@@ -77,36 +83,41 @@ export class ChangePaymentMethodForm extends PureComponent {
     return (
       <View>
         {this.props.errors.general && <ErrorText>{this.props.errors.general}</ErrorText>}
-        <Radio
-          onChange={this.props.handleOnChange}
-          value={this.props.values.paymentMethod}
-        >
-          {this.props.savedPaymentMethods.map(paymentMethod => (
-            <Radio.Button
-              key={paymentMethod.id}
-              value={paymentMethod.id}
-              Label={() => (
-                <Row>
-                  <View>
-                    <Text>{paymentMethod.name}</Text>
-                    <Text>{`****${last4(paymentMethod.accountNumber)}`}</Text>
-                  </View>
-                  {paymentMethod.paymentMethod === 'creditCard' && <Icon name="credit" />}
-                </Row>
-              )}
-            />
-          ))}
-        </Radio>
-
-        <Button
-          onPress={this.props.handleSubmit}
-          title="Save and Continue"
-          loading={this.props.isSubmitting}
-        />
-
-        <ButtonLink onPress={this.props.onPressNewPaymentMethod}>
-          {'Enter New Payment'}
-        </ButtonLink>
+        <TableView>
+          <Radio
+            onChange={this.props.handleOnChange}
+            value={this.props.values.paymentMethod}
+          >
+            {this.props.savedPaymentMethods.map((paymentMethod, i) => ([
+              <Radio.Button
+                key={paymentMethod.id}
+                value={paymentMethod.id}
+                Label={() => (
+                  <Row>
+                    <View>
+                      <H6>{paymentMethod.name}</H6>
+                      <H7>{`****${last4(paymentMethod.accountNumber)}`}</H7>
+                    </View>
+                    {paymentMethod.paymentMethod === 'creditCard' && <Icon name="credit" />}
+                  </Row>
+                )}
+              />,
+              (i !== this.props.savedPaymentMethods.length - 1) ? <Divider key="divider" /> : null,
+            ]))}
+          </Radio>
+        </TableView>
+        <PaddedView>
+          <Button
+            onPress={this.props.handleSubmit}
+            title="Save and Continue"
+            loading={this.props.isSubmitting}
+          />
+          <ButtonLinkWrapper>
+            <ButtonLink onPress={this.props.onPressNewPaymentMethod}>
+              {'Enter New Payment'}
+            </ButtonLink>
+          </ButtonLinkWrapper>
+        </PaddedView>
       </View>
     );
   }
@@ -125,10 +136,11 @@ const enhance = compose(
     }),
     enableReinitialize: true,
     handleSubmit: async (values, { setSubmitting, setErrors, props }) => {
+      let shouldRedirect = false;
       try {
         setSubmitting(true);
         props.setSavedPaymentMethod(values.paymentMethod);
-        props.history.push('/give/checkout/confirm');
+        shouldRedirect = true;
       } catch (err) {
         setErrors({
           general: err.message,
@@ -136,6 +148,7 @@ const enhance = compose(
       } finally {
         setSubmitting(false);
       }
+      if (shouldRedirect) props.history.push('/give/checkout/confirm');
     },
   }),
   mapProps(props => ({

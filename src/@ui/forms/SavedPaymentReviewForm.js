@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
 
-import { H5, H7 } from '@ui/typography';
+import { H5, H6, H7 } from '@ui/typography';
 import { withRouter } from '@ui/NativeWebRouter';
 import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
@@ -13,16 +13,25 @@ import styled from '@ui/styled';
 import Button from '@ui/Button';
 import Icon from '@ui/Icon';
 import last4 from '@utils/last4';
+import TableView, { Cell, Divider } from '@ui/TableView';
+import PaddedView from '@ui/PaddedView';
 
-const InfoBlock = styled(({ theme }) => ({
-  paddingVertical: theme.sizing.baseUnit / 2,
-}))(View);
-
-const Row = styled(({ theme }) => ({
-  paddingVertical: theme.sizing.baseUnit / 2,
+const Row = styled({
   flexDirection: 'row',
+  alignItems: 'center',
   justifyContent: 'space-between',
-}))(View);
+})(View);
+
+const LabelText = styled(({ theme }) => ({
+  color: theme.colors.text.tertiary,
+}))(H7);
+
+const SmallValueText = compose(
+  styled(({ theme }) => ({
+    color: theme.colors.text.secondary,
+  })),
+)(H6);
+
 
 export class PaymentConfirmationFormWithoutData extends PureComponent {
   static propTypes = {
@@ -63,22 +72,49 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
 
   renderBankAccount = () => (
     <View>
-      <H7>{`****${last4(this.props.accountNumber)}`}</H7>
-      {/* <Icon name="bankAccount" /> */}
-      <H7>{this.props.routingNumber}</H7>
-      <H7>{this.props.savedAccountName}</H7>
+      <PaddedView>
+        <Row>
+          <SmallValueText>{`****${last4(this.props.accountNumber)}`}</SmallValueText>
+          <Icon name="bank" />
+        </Row>
+      </PaddedView>
+      <Divider />
+      <PaddedView>
+        <Row>
+          <LabelText>Routing: </LabelText>
+          <SmallValueText>{this.props.routingNumber}</SmallValueText>
+        </Row>
+        <Row>
+          <LabelText>Account Name: </LabelText>
+          <SmallValueText>{this.props.savedAccountName}</SmallValueText>
+        </Row>
+      </PaddedView>
     </View>
   );
 
   renderCreditCard = () => (
     <View>
-      <Row>
-        <H7>{`****${last4(this.props.cardNumber)}`}</H7>
-        <Icon name="credit" />
-      </Row>
-      <H7>{this.props.expirationDate}</H7>
-      <H7>{this.props.cvv}</H7>
-      <H7>{this.props.savedAccountName}</H7>
+      <PaddedView>
+        <Row>
+          <SmallValueText>{`****${last4(this.props.cardNumber)}`}</SmallValueText>
+          <Icon name="credit" />
+        </Row>
+      </PaddedView>
+      <Divider />
+      <PaddedView>
+        <Row>
+          <LabelText>Exp: </LabelText>
+          <SmallValueText>{this.props.expirationDate}</SmallValueText>
+        </Row>
+        <Row>
+          <LabelText>CVV: </LabelText>
+          <SmallValueText>{this.props.cvv}</SmallValueText>
+        </Row>
+        <Row>
+          <LabelText>Accout Name: </LabelText>
+          <SmallValueText>{this.props.savedAccountName}</SmallValueText>
+        </Row>
+      </PaddedView>
     </View>
   );
 
@@ -93,19 +129,29 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
 
     return (
       <View>
-        <InfoBlock>
-          <H5>{'Billing Address'}</H5>
-          <H7>{this.props.street1}</H7>
-          <H7>{this.props.street2}</H7>
-          <H7>{`${this.props.city}, ${this.props.state}, ${this.props.zipCode}`}</H7>
-        </InfoBlock>
+        <TableView>
+          <Cell>
+            <H5>{'Billing Address'}</H5>
+          </Cell>
+          <Divider />
+          <PaddedView>
+            <H7>{this.props.street1}</H7>
+            <H7>{this.props.street2}</H7>
+            <H7>{`${this.props.city}, ${this.props.state}, ${this.props.zipCode}`}</H7>
+          </PaddedView>
+        </TableView>
 
-        <InfoBlock>
-          <H5>{'Account Details'}</H5>
+        <TableView>
+          <Cell>
+            <H5>{'Account Details'}</H5>
+          </Cell>
+          <Divider />
           {this.props.paymentMethod === 'bankAccount' ? this.renderBankAccount() : this.renderCreditCard()}
-        </InfoBlock>
+        </TableView>
 
-        <Button onPress={this.props.onSubmit} title="Create Account" loading={this.props.isSaving} />
+        <PaddedView>
+          <Button onPress={this.props.onSubmit} title="Create Account" loading={this.props.isSaving} />
+        </PaddedView>
       </View>
     );
   }
