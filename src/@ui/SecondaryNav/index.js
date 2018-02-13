@@ -23,12 +23,14 @@ export const Like = compose(
 const SecondaryNav = ({
   backButton = false,
   backButtonIcon = 'arrow-back',
+  backTo,
   onBackPress,
   children,
+  onBackReplace,
 }) => (
   <TabBar>
     {backButton ? (
-      <Link pop icon={backButtonIcon} onPress={onBackPress} />
+      <Link pop to={backTo} icon={backButtonIcon} onPress={onBackPress} replace={onBackReplace} />
     ) : null}
     {children}
   </TabBar>
@@ -39,6 +41,8 @@ SecondaryNav.propTypes = {
   backButtonIcon: PropTypes.string,
   children: PropTypes.node,
   onBackPress: PropTypes.func,
+  backTo: PropTypes.string,
+  onBackReplace: PropTypes.bool,
 };
 
 export default SecondaryNav;
