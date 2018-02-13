@@ -21,9 +21,11 @@ import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
 import { withRouter } from '@ui/NativeWebRouter';
 import Icon from '@ui/Icon';
+import TableView, { FormFields } from '@ui/TableView';
 
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
+import PaddedView from '@ui/PaddedView';
 
 export const PaymentFormWithoutData = ({
   setFieldValue,
@@ -37,117 +39,125 @@ export const PaymentFormWithoutData = ({
   enforceAccountName, // Specific to saving a payment method
 }) => (
   <View>
-    <Inputs.Picker
-      label="Payment Method"
-      value={values.paymentMethod}
-      displayValue={values.paymentMethod === 'creditCard' ? 'Credit Card' : 'Bank Account'}
-      onValueChange={value => setFieldValue('paymentMethod', value)}
-      error={Boolean(touched.paymentMethod && errors.paymentMethod)}
-    >
-      <Inputs.PickerItem label="Credit Card" value={'creditCard'} />
-      <Inputs.PickerItem label="Bank Account" value={'bankAccount'} />
-    </Inputs.Picker>
-
-    {values.paymentMethod === 'bankAccount' ? (
-      <View>
-        <Inputs.Text
-          label="Account Holder Name"
-          value={values.accountName}
-          onChangeText={text => setFieldValue('accountName', text)}
-          onBlur={() => setFieldTouched('accountName', true)}
-          error={Boolean(touched.accountName && errors.accountName)}
-        />
-        <Inputs.Text
-          suffix={<Icon name="bank" />}
-          label="Routing Number"
-          value={values.routingNumber}
-          type="numeric"
-          onChangeText={text => setFieldValue('routingNumber', text)}
-          onBlur={() => setFieldTouched('routingNumber', true)}
-          error={Boolean(touched.routingNumber && errors.routingNumber)}
-        />
-        <Inputs.Text
-          label="Account Number"
-          value={values.accountNumber}
-          type="numeric"
-          onChangeText={text => setFieldValue('accountNumber', text)}
-          onBlur={() => setFieldTouched('accountNumber', true)}
-          error={Boolean(touched.accountNumber && errors.accountNumber)}
-        />
+    <TableView responsive={false}>
+      <FormFields>
         <Inputs.Picker
-          label="Account Type"
-          value={values.accountType}
-          displayValue={values.accountType === 'checking' ? 'Checking' : 'Savings'}
-          onValueChange={value => setFieldValue('accountType', value)}
-          error={Boolean(touched.accountType && errors.accountType)}
+          label="Payment Method"
+          value={values.paymentMethod}
+          displayValue={values.paymentMethod === 'creditCard' ? 'Credit Card' : 'Bank Account'}
+          onValueChange={value => setFieldValue('paymentMethod', value)}
+          error={Boolean(touched.paymentMethod && errors.paymentMethod)}
         >
-          <Inputs.PickerItem label="Checking" value="checking" />
-          <Inputs.PickerItem label="Savings" value="savings" />
+          <Inputs.PickerItem label="Credit Card" value={'creditCard'} />
+          <Inputs.PickerItem label="Bank Account" value={'bankAccount'} />
         </Inputs.Picker>
-      </View>
-    ) : (
-      <View>
-        <Inputs.Text
-          suffix={<Icon name="credit" />}
-          label="Card Number"
-          type="numericKeyboard"
-          value={values.cardNumber}
-          onChangeText={text => setFieldValue('cardNumber', formatCardNumber(text))}
-          onBlur={() => setFieldTouched('cardNumber', true)}
-          error={Boolean(touched.cardNumber && errors.cardNumber)}
-        />
-        <Inputs.Text
-          label="Expiration Date"
-          placeholder="mm/yy"
-          type="numericKeyboard"
-          value={values.expirationDate}
-          onChangeText={text => setFieldValue('expirationDate', formatCardExpiry(text))}
-          onBlur={() => setFieldTouched('expirationDate', true)}
-          error={Boolean(touched.expirationDate && errors.expirationDate)}
-        />
-        <Inputs.Text
-          label="CVV"
-          type="numericKeyboard"
-          value={values.cvv}
-          onChangeText={text => setFieldValue('cvv', text)}
-          onBlur={() => setFieldTouched('cvv', true)}
-          error={Boolean(touched.cvv && errors.cvv)}
-        />
-      </View>
-    )}
 
-    {
-      enforceAccountName ? (
-        <View>
-          <Inputs.Text
-            label="Save Account Name"
-            value={values.savedAccountName}
-            onChangeText={text => setFieldValue('savedAccountName', text)}
-            onBlur={() => setFieldTouched('savedAccountName', true)}
-            error={Boolean(touched.savedAccountName && errors.savedAccountName)}
-          />
-        </View>
-      ) : (
-        <View>
-          <Inputs.Switch
-            value={values.willSavePaymentMethod}
-            onValueChange={r => setFieldValue('willSavePaymentMethod', r)}
-            label="Save this payment for future contributions"
-          />
-          {values.willSavePaymentMethod && (
+        {values.paymentMethod === 'bankAccount' ? (
+          <View>
             <Inputs.Text
-              label="Save Account Name"
-              value={values.savedAccountName}
-              onChangeText={text => setFieldValue('savedAccountName', text)}
-              onBlur={() => setFieldTouched('savedAccountName', true)}
-              error={Boolean(touched.savedAccountName && errors.savedAccountName)}
+              label="Account Holder Name"
+              value={values.accountName}
+              onChangeText={text => setFieldValue('accountName', text)}
+              onBlur={() => setFieldTouched('accountName', true)}
+              error={Boolean(touched.accountName && errors.accountName)}
             />
-          )}
-        </View>
-      )
-    }
-
-    <Button onPress={handleSubmit} title="Next" disabled={!isValid} loading={isSubmitting} />
+            <Inputs.Text
+              suffix={<Icon name="bank" />}
+              label="Routing Number"
+              value={values.routingNumber}
+              type="numeric"
+              onChangeText={text => setFieldValue('routingNumber', text)}
+              onBlur={() => setFieldTouched('routingNumber', true)}
+              error={Boolean(touched.routingNumber && errors.routingNumber)}
+            />
+            <Inputs.Text
+              label="Account Number"
+              value={values.accountNumber}
+              type="numeric"
+              onChangeText={text => setFieldValue('accountNumber', text)}
+              onBlur={() => setFieldTouched('accountNumber', true)}
+              error={Boolean(touched.accountNumber && errors.accountNumber)}
+            />
+            <Inputs.Picker
+              label="Account Type"
+              value={values.accountType}
+              displayValue={values.accountType === 'checking' ? 'Checking' : 'Savings'}
+              onValueChange={value => setFieldValue('accountType', value)}
+              error={Boolean(touched.accountType && errors.accountType)}
+            >
+              <Inputs.PickerItem label="Checking" value="checking" />
+              <Inputs.PickerItem label="Savings" value="savings" />
+            </Inputs.Picker>
+          </View>
+        ) : (
+          <View>
+            <Inputs.Text
+              suffix={<Icon name="credit" />}
+              label="Card Number"
+              type="numericKeyboard"
+              value={values.cardNumber}
+              onChangeText={text => setFieldValue('cardNumber', formatCardNumber(text))}
+              onBlur={() => setFieldTouched('cardNumber', true)}
+              error={Boolean(touched.cardNumber && errors.cardNumber)}
+            />
+            <Inputs.Text
+              label="Expiration Date"
+              placeholder="mm/yy"
+              type="numericKeyboard"
+              value={values.expirationDate}
+              onChangeText={text => setFieldValue('expirationDate', formatCardExpiry(text))}
+              onBlur={() => setFieldTouched('expirationDate', true)}
+              error={Boolean(touched.expirationDate && errors.expirationDate)}
+            />
+            <Inputs.Text
+              label="CVV"
+              type="numericKeyboard"
+              value={values.cvv}
+              onChangeText={text => setFieldValue('cvv', text)}
+              onBlur={() => setFieldTouched('cvv', true)}
+              error={Boolean(touched.cvv && errors.cvv)}
+            />
+          </View>
+        )}
+      </FormFields>
+    </TableView>
+    <TableView responsive={false}>
+      <FormFields>
+        {
+          enforceAccountName ? (
+            <View>
+              <Inputs.Text
+                label="Save Account Name"
+                value={values.savedAccountName}
+                onChangeText={text => setFieldValue('savedAccountName', text)}
+                onBlur={() => setFieldTouched('savedAccountName', true)}
+                error={Boolean(touched.savedAccountName && errors.savedAccountName)}
+              />
+            </View>
+          ) : (
+            <View>
+              <Inputs.Switch
+                value={values.willSavePaymentMethod}
+                onValueChange={r => setFieldValue('willSavePaymentMethod', r)}
+                label="Save this payment for future contributions"
+              />
+              {values.willSavePaymentMethod && (
+                <Inputs.Text
+                  label="Save Account Name"
+                  value={values.savedAccountName}
+                  onChangeText={text => setFieldValue('savedAccountName', text)}
+                  onBlur={() => setFieldTouched('savedAccountName', true)}
+                  error={Boolean(touched.savedAccountName && errors.savedAccountName)}
+                />
+              )}
+            </View>
+          )
+        }
+      </FormFields>
+    </TableView>
+    <PaddedView>
+      <Button onPress={handleSubmit} title="Next" disabled={!isValid} loading={isSubmitting} />
+    </PaddedView>
   </View>
 );
 

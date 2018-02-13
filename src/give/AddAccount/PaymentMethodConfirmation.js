@@ -1,16 +1,19 @@
 import React from 'react';
 import PaddedView from '@ui/PaddedView';
-import { H4, H6 } from '@ui/typography';
+import BackgroundView from '@ui/BackgroundView';
 import SavedPaymentReviewForm from '@ui/forms/SavedPaymentReviewForm';
 
+import { Title } from '../styles';
+
 const PaymentMethodConfirmation = () => (
-  <PaddedView>
-    <H4>Review</H4>
-    <H6>Step 3 of 3</H6>
+  <BackgroundView>
+    <PaddedView>
+      <Title>Review</Title>
+    </PaddedView>
     <SavedPaymentReviewForm
       navigateToOnComplete="done"
     />
-  </PaddedView>
+  </BackgroundView>
 );
 
 export default PaymentMethodConfirmation;
