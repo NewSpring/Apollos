@@ -8,10 +8,17 @@ import Yup from 'yup';
 
 import { withRouter, goBackTo } from '@ui/NativeWebRouter';
 import withUser from '@data/withUser';
-import { Text as TextInput } from '@ui/inputs';
+import { Text as TextInput, Switch } from '@ui/inputs';
+import { LabelText } from '@ui/inputs/FloatingLabel';
 import Button, { ButtonLink } from '@ui/Button';
 
 import Status from './FormStatusText';
+
+const tocLabel = (
+  <LabelText>
+    {'I agree to the '}<ButtonLink onPress={() => Linking.openURL('https://newspring.cc/terms')}>terms of service</ButtonLink>.
+  </LabelText>
+);
 
 const UserExistsStatus = withRouter(({ history }) => (
   <Status error>
@@ -32,7 +39,7 @@ const enhance = compose(
   }),
   withRouter,
   withFormik({
-    mapPropsToValues: ({ email }) => ({ email }),
+    mapPropsToValues: ({ email }) => ({ email, terms: true }),
     validationSchema: Yup.object().shape({
       email: Yup.string().email().required(),
       password: Yup.string().required(),
@@ -125,6 +132,12 @@ const SignUpFormWithoutData = enhance(({
       onChangeText={text => setFieldValue('lastName', text)}
       onBlur={() => setFieldTouched('lastName', true)}
       error={touched.lastName && errors.lastName}
+    />
+    <Switch
+      label={tocLabel}
+      value={values.terms}
+      onValueChange={v => setFieldValue('terms', v)}
+      error={errors.terms}
     />
     {status ? React.createElement(status) : null}
     <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
