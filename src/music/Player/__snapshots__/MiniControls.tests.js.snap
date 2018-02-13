@@ -63,7 +63,7 @@ exports[`The MiniControls component should render 1`] = `
             "lineHeight": 17.75,
             "overflow": "hidden",
             "paddingBottom": 1.8,
-            "paddingTop": 2.25,
+            "paddingTop": 4.5,
           }
         }
       >
@@ -81,8 +81,8 @@ exports[`The MiniControls component should render 1`] = `
             "height": 20,
             "lineHeight": 15.78,
             "overflow": "hidden",
-            "paddingBottom": 2.25,
-            "paddingTop": 1.35,
+            "paddingBottom": 1.8,
+            "paddingTop": 3.6,
           }
         }
       >

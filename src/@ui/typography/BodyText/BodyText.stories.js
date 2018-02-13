@@ -22,7 +22,7 @@ storiesOf('typography/BodyText', module)
 
     return (
       <View>
-        <BodyText style={border}>Body Copy</BodyText>
+        <BodyText style={border}>Body Text</BodyText>
         <BodyText style={border}>{'"True faith means holding nothing\nback. It means putting every\nhope in God\'s fidelity to His Promises." ― Francis Chan'}</BodyText>
       </View>
     );
