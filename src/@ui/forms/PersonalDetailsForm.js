@@ -9,6 +9,8 @@ import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
 import { withRouter } from '@ui/NativeWebRouter';
 import ActivityIndicator from '@ui/ActivityIndicator';
+import PaddedView from '@ui/PaddedView';
+import TableView, { FormFields } from '@ui/TableView';
 
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
@@ -25,40 +27,46 @@ export const PersonalDetailsFormWithoutData = ({
   isValid,
 }) => (
   <View>
-    <Inputs.Text
-      label="First Name"
-      value={values.firstName}
-      onChangeText={text => setFieldValue('firstName', text)}
-      onBlur={() => setFieldTouched('firstName', true)}
-      error={Boolean(touched.firstName && errors.firstName)}
-    />
-    <Inputs.Text
-      label="Last Name"
-      value={values.lastName}
-      onChangeText={text => setFieldValue('lastName', text)}
-      onBlur={() => setFieldTouched('lastName', true)}
-      error={Boolean(touched.lastName && errors.lastName)}
-    />
-    <Inputs.Text
-      label="Email"
-      type="email"
-      value={values.email}
-      onChangeText={text => setFieldValue('email', text)}
-      onBlur={() => setFieldTouched('email', true)}
-      error={Boolean(touched.email && errors.email)}
-    />
-    <Inputs.Picker
-      label="Campus"
-      value={values.campusId}
-      displayValue={get(campuses.find(campus => campus.id === values.campusId), 'label')}
-      onValueChange={value => setFieldValue('campusId', value)}
-      error={errors.campusId}
-    >
-      {campuses.map(({ label, id }) => (
-        <Inputs.PickerItem label={label} value={id} key={id} />
-      ))}
-    </Inputs.Picker>
-    <Button onPress={handleSubmit} title="Next" disabled={!isValid} loading={isSubmitting} />
+    <TableView responsive={false}>
+      <FormFields>
+        <Inputs.Text
+          label="First Name"
+          value={values.firstName}
+          onChangeText={text => setFieldValue('firstName', text)}
+          onBlur={() => setFieldTouched('firstName', true)}
+          error={Boolean(touched.firstName && errors.firstName)}
+        />
+        <Inputs.Text
+          label="Last Name"
+          value={values.lastName}
+          onChangeText={text => setFieldValue('lastName', text)}
+          onBlur={() => setFieldTouched('lastName', true)}
+          error={Boolean(touched.lastName && errors.lastName)}
+        />
+        <Inputs.Text
+          label="Email"
+          type="email"
+          value={values.email}
+          onChangeText={text => setFieldValue('email', text)}
+          onBlur={() => setFieldTouched('email', true)}
+          error={Boolean(touched.email && errors.email)}
+        />
+        <Inputs.Picker
+          label="Campus"
+          value={values.campusId}
+          displayValue={get(campuses.find(campus => campus.id === values.campusId), 'label')}
+          onValueChange={value => setFieldValue('campusId', value)}
+          error={errors.campusId}
+        >
+          {campuses.map(({ label, id }) => (
+            <Inputs.PickerItem label={label} value={id} key={id} />
+          ))}
+        </Inputs.Picker>
+      </FormFields>
+    </TableView>
+    <PaddedView>
+      <Button onPress={handleSubmit} title="Next" disabled={!isValid} loading={isSubmitting} />
+    </PaddedView>
   </View>
 );
 

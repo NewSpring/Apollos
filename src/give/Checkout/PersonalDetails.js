@@ -1,14 +1,17 @@
 import React from 'react';
+import BackgroundView from '@ui/BackgroundView';
 import PaddedView from '@ui/PaddedView';
-import { H4, H6 } from '@ui/typography';
 import { PersonalDetailsForm } from '@ui/forms';
 
+import { Title } from './styles';
+
 const PersonalDetails = () => (
-  <PaddedView>
-    <H4>Personal Details</H4>
-    <H6>Step 1 of 4</H6>
+  <BackgroundView>
+    <PaddedView>
+      <Title>Personal Details</Title>
+    </PaddedView>
     <PersonalDetailsForm navigateToOnComplete="address" />
-  </PaddedView>
+  </BackgroundView>
 );
 
 export default PersonalDetails;

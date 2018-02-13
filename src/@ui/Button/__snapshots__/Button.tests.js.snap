@@ -62,7 +62,7 @@ exports[`The Button component should render 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -134,7 +134,7 @@ exports[`The Button component should render a Tertiary button 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -205,7 +205,7 @@ exports[`The Button component should render a bordered button 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -278,7 +278,7 @@ exports[`The Button component should render a disabled button 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -349,7 +349,7 @@ exports[`The Button component should render a ghost button 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -420,7 +420,7 @@ exports[`The Button component should render a ghost pill button 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -492,7 +492,7 @@ exports[`The Button component should render a pill button 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -564,7 +564,7 @@ exports[`The Button component should render a primary button 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -636,7 +636,7 @@ exports[`The Button component should render a secondary button 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
@@ -708,7 +708,7 @@ exports[`The Button component should render as default type 1`] = `
           "fontSize": 20.02,
           "lineHeight": 25.33,
           "paddingBottom": 3.15,
-          "paddingTop": 2.7,
+          "paddingTop": 4.5,
         }
       }
     >
