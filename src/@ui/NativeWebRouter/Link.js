@@ -70,7 +70,7 @@ export default class Link extends Component {
     }
 
     if (pop) {
-      return goBackTo({ to, history });
+      return goBackTo({ to, history, replace });
     } else if (replace && to) {
       return history.replace(to);
     }

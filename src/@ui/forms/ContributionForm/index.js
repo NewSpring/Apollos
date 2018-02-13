@@ -349,6 +349,15 @@ const ContributionForm = compose(
       props.setContributionFrequency(result.frequencyId);
       props.setContributionStartDate(result.startDate);
 
+      if (props.person) {
+        props.setBillingPerson({
+          firstName: props.person.firstName,
+          lastName: props.person.lastName,
+          email: props.person.email,
+          campusId: get(props, 'person.campus.id', null),
+        });
+      }
+
       const userHasPaymentMethods = props.savedPaymentMethods.length > 0;
       if (userHasPaymentMethods) {
         props.isPayingWithSavedPaymentMethod();

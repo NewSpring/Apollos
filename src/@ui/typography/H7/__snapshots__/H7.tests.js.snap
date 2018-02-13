@@ -11,8 +11,8 @@ exports[`the H7 component should accept additional props 1`] = `
       "fontFamily": "Colfax-Regular",
       "fontSize": 14,
       "lineHeight": 15.78,
-      "paddingBottom": 2.25,
-      "paddingTop": 1.35,
+      "paddingBottom": 1.8,
+      "paddingTop": 3.6,
     }
   }
 >
@@ -31,8 +31,8 @@ exports[`the H7 component should accept and render passed in styles 1`] = `
       "fontFamily": "Colfax-Regular",
       "fontSize": 14,
       "lineHeight": 15.78,
-      "paddingBottom": 2.25,
-      "paddingTop": 1.35,
+      "paddingBottom": 1.8,
+      "paddingTop": 3.6,
     }
   }
 >
@@ -51,8 +51,8 @@ exports[`the H7 component should render correctly 1`] = `
       "fontFamily": "Colfax-Regular",
       "fontSize": 14,
       "lineHeight": 15.78,
-      "paddingBottom": 2.25,
-      "paddingTop": 1.35,
+      "paddingBottom": 1.8,
+      "paddingTop": 3.6,
     }
   }
 >
