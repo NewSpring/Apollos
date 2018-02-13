@@ -106,7 +106,7 @@ exports[`The Text Input component should render as a numeric field 1`] = `
           "fontSize": 15.75,
           "lineHeight": 17.75,
           "paddingBottom": 1.8,
-          "paddingTop": 2.25,
+          "paddingTop": 4.5,
           "paddingVertical": 5,
         }
       }
@@ -281,7 +281,7 @@ exports[`The Text Input component should render as a password field with an icon
           "fontSize": 15.75,
           "lineHeight": 17.75,
           "paddingBottom": 1.8,
-          "paddingTop": 2.25,
+          "paddingTop": 4.5,
           "paddingVertical": 5,
         }
       }
@@ -443,7 +443,7 @@ exports[`The Text Input component should render as a phone number field 1`] = `
           "fontSize": 15.75,
           "lineHeight": 17.75,
           "paddingBottom": 1.8,
-          "paddingTop": 2.25,
+          "paddingTop": 4.5,
           "paddingVertical": 5,
         }
       }
@@ -607,7 +607,7 @@ exports[`The Text Input component should render as an email field 1`] = `
           "fontSize": 15.75,
           "lineHeight": 17.75,
           "paddingBottom": 1.8,
-          "paddingTop": 2.25,
+          "paddingTop": 4.5,
           "paddingVertical": 5,
         }
       }
@@ -767,7 +767,7 @@ exports[`The Text Input component should render correctly 1`] = `
           "fontSize": 15.75,
           "lineHeight": 17.75,
           "paddingBottom": 1.8,
-          "paddingTop": 2.25,
+          "paddingTop": 4.5,
           "paddingVertical": 5,
         }
       }

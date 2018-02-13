@@ -13,6 +13,7 @@ export default class Radio extends Component {
       PropTypes.string,
       PropTypes.number,
     ]),
+    style: PropTypes.any, // eslint-disable-line
   };
 
   static defaultProps = {
@@ -62,7 +63,7 @@ export default class Radio extends Component {
 
   render() {
     return (
-      <View>
+      <View style={this.props.style}>
         {this.props.children}
       </View>
     );

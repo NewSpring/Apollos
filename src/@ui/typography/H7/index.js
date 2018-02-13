@@ -10,16 +10,17 @@ const styles = styled(({ theme }) => ({
   color: theme.colors.text.primary,
   ...Platform.select({
     ios: {
-      paddingTop: theme.helpers.rem(0.075),
-      paddingBottom: theme.helpers.rem(0.125),
+      paddingTop: theme.helpers.rem(0.2),
+      paddingBottom: theme.helpers.rem(0.1),
       lineHeight: theme.helpers.verticalRhythm(0.778, 1.014),
     },
     android: {
+      paddingTop: theme.helpers.rem(0.1),
       lineHeight: theme.helpers.verticalRhythm(0.778, 1.214),
     },
     web: {
-      paddingTop: theme.helpers.rem(0.125),
-      paddingBottom: theme.helpers.rem(0.05),
+      paddingTop: theme.helpers.rem(0.225),
+      paddingBottom: theme.helpers.rem(0.085),
       lineHeight: theme.helpers.verticalRhythm(0.778, 1.05),
     },
   }),
