@@ -4,7 +4,7 @@ export default gql`
   query MediaPlayer {
     mediaPlayer @client {
       isPlaying
-      albumId
+      playlist
       isShuffling
       isRepeating
       currentTrack {

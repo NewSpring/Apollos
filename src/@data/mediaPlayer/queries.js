@@ -2,7 +2,7 @@ export function mediaPlayer() {
   return {
     __typename: 'MediaPlayer',
     isPlaying: false,
-    albumId: null,
+    playlist: null,
     currentTrack: null,
     isShuffling: false,
     isRepeating: false,

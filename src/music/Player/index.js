@@ -5,7 +5,7 @@ import { compose, withProps, withPropsOnChange } from 'recompose';
 import { get, findIndex } from 'lodash';
 import { shuffle } from 'shuffle-seed';
 import Audio from '@ui/Audio';
-import { withMediaPlayerActions, withNowPlaying, withPlaylist } from '@data/mediaPlayer';
+import { withMediaPlayerActions, withNowPlaying } from '@data/mediaPlayer';
 import BackgroundView from '@ui/BackgroundView';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
@@ -25,21 +25,19 @@ const enhance = compose(
   withRouter,
   withMediaPlayerActions,
   withNowPlaying,
-  withProps(({ nowPlaying }) => ({ id: nowPlaying && nowPlaying.albumId })),
-  withPlaylist,
   withPropsOnChange([
-    'nowPlaying', 'content', 'setNowPlaying', 'children',
+    'nowPlaying', 'playlist', 'setNowPlaying', 'children',
   ], ({
-    nowPlaying, content, setNowPlaying, ...otherProps
+    nowPlaying, setNowPlaying, ...otherProps
   }) => ({
     ...otherProps,
-    title: get(content, 'title'),
     ...(nowPlaying || {}),
-    ...get(content, 'content', {}),
+    ...get(nowPlaying, 'playlist', {}),
 
     // todo: these props should probably be moved to the data HOC "withMediaPlayerActions"
     playNextTrack: () => {
-      let tracks = get(content, 'content.tracks', []);
+      const playlist = get(nowPlaying, 'playlist', {});
+      let tracks = get(playlist, 'tracks', []);
       if (!tracks.length) return;
       if (nowPlaying.isShuffling) tracks = shuffle(tracks, nowPlaying.isShuffling);
 
@@ -47,10 +45,11 @@ const enhance = compose(
       const currentTrackIndex = findIndex(tracks, track => track.file === currentTrack);
       const nextTrackIndex = (currentTrackIndex + 1) % tracks.length;
 
-      setNowPlaying({ albumId: nowPlaying.albumId, currentTrack: tracks[nextTrackIndex] });
+      setNowPlaying({ currentTrack: tracks[nextTrackIndex] });
     },
     playPrevTrack: () => {
-      let tracks = get(content, 'content.tracks', []);
+      const playlist = get(nowPlaying, 'playlist', {});
+      let tracks = get(playlist, 'tracks', []);
       if (!tracks.length) return;
       if (nowPlaying.isShuffling) tracks = shuffle(tracks, nowPlaying.isShuffling);
 
@@ -59,7 +58,7 @@ const enhance = compose(
       let nextTrackIndex = (currentTrackIndex - 1);
       if (nextTrackIndex < 0) nextTrackIndex = tracks.length - 1;
 
-      setNowPlaying({ albumId: nowPlaying.albumId, currentTrack: tracks[nextTrackIndex] });
+      setNowPlaying({ currentTrack: tracks[nextTrackIndex] });
     },
   })),
 );
