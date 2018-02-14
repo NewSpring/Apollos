@@ -67,7 +67,7 @@ const ContentMedia = ({
     visual = (
       <VideoWrapper>
         {video.videoUrl ? (
-          <NativeVideoPlayerHeader src={video.videoUrl} />
+          <NativeVideoPlayerHeader src={video.videoUrl} poster={images.length ? images[0] : null} />
         ) : (
           <EmbeddedVideoPlayerHeader src={video.embedUrl} />
         )}

@@ -1,9 +1,8 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
-import EmbeddedVideoPlayer from '@ui/EmbeddedVideoPlayer';
-import FlexedView from '@ui/FlexedView';
+import RotatingVideoPlayer from '@ui/RotatingVideoPlayer';
+import BackgroundView from '@ui/BackgroundView';
 import styled from '@ui/styled';
 
 import withLiveNow from '@data/withLiveNow';
@@ -13,20 +12,20 @@ const enhance = compose(
   withLiveNow,
   setPropTypes({
     isLive: PropTypes.bool,
-    embedUrl: PropTypes.string,
+    videoUrl: PropTypes.string,
   }),
 );
 
-const TheaterMode = styled(
-  StyleSheet.absoluteFill,
-)(EmbeddedVideoPlayer);
+const VideoBackgroundView = styled(({ theme }) => ({
+  backgroundColor: theme.colors.black,
+}))(BackgroundView);
 
 const SeriesTrailer = enhance(({
-  embedUrl,
+  videoUrl,
 }) => (
-  <FlexedView>
-    <TheaterMode src={embedUrl} />
-  </FlexedView>
+  <VideoBackgroundView>
+    <RotatingVideoPlayer src={videoUrl} shouldPlay />
+  </VideoBackgroundView>
 ));
 
 export default SeriesTrailer;

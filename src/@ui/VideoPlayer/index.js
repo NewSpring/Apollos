@@ -4,6 +4,8 @@ import Video from './Video';
 
 const flex = { flex: 1 };
 
+export { Video };
+
 const VideoPlayer = ({ src, videoRef, ...otherProps }) => (
   <Video
     ref={videoRef}

@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, mapProps } from 'recompose';
-import EmbeddedVideoPlayer from '@ui/EmbeddedVideoPlayer';
+import RotatingVideoPlayer from '@ui/RotatingVideoPlayer';
 import BackgroundView from '@ui/BackgroundView';
 import styled from '@ui/styled';
 
@@ -14,14 +13,14 @@ const enhance = compose(
   withSeriesContent,
   setPropTypes({
     video: PropTypes.shape({
-      embedUrl: PropTypes.string,
+      videoUrl: PropTypes.string,
     }),
   }),
 );
 
-const TheaterMode = styled(
-  StyleSheet.absoluteFill,
-)(EmbeddedVideoPlayer);
+const VideoBackgroundView = styled(({ theme }) => ({
+  backgroundColor: theme.colors.black,
+}))(BackgroundView);
 
 const SeriesTrailer = enhance(({
   content: {
@@ -30,9 +29,9 @@ const SeriesTrailer = enhance(({
     } = {},
   } = {},
 }) => (
-  <BackgroundView>
-    <TheaterMode src={video.embedUrl} />
-  </BackgroundView>
+  <VideoBackgroundView>
+    <RotatingVideoPlayer src={video.videoUrl} shouldPlay />
+  </VideoBackgroundView>
 ));
 
 export default SeriesTrailer;
