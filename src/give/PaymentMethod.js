@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import { compose, mapProps } from 'recompose';
 import Header from '@ui/Header';
 import BackgroundView from '@ui/BackgroundView';
@@ -14,7 +14,7 @@ export function PaymentMethod({ id } = {}) {
     <ModalView backTo="/give/now" onBackReplace>
       <BackgroundView>
         <Header titleText="Payment Method" />
-        <KeyboardAwareScrollView enableOnAndroid>
+        <KeyboardAwareScrollView>
           <PaddedView>
             <Title>Edit Account</Title>
           </PaddedView>
