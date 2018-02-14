@@ -104,8 +104,8 @@ exports[`The ContributionForm component renders correctly 1`] = `
                       "fontSize": 25.2,
                       "lineHeight": 31.28,
                       "opacity": 1,
-                      "paddingBottom": 2.7,
-                      "paddingTop": 4.05,
+                      "paddingBottom": 3.71,
+                      "paddingTop": 5.04,
                     }
                   }
                 >
@@ -195,7 +195,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -336,7 +336,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                         "height": 40,
                         "lineHeight": 41.04,
                         "paddingBottom": 1.8,
-                        "paddingTop": 2.25,
+                        "paddingTop": 4.5,
                         "paddingVertical": 5,
                       }
                     }
@@ -352,7 +352,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                           "fontSize": 15.75,
                           "lineHeight": 17.75,
                           "paddingBottom": 1.8,
-                          "paddingTop": 2.25,
+                          "paddingTop": 4.5,
                         }
                       }
                     />
@@ -512,7 +512,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -627,7 +627,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                   "fontSize": 20.02,
                   "lineHeight": 25.33,
                   "paddingBottom": 3.15,
-                  "paddingTop": 2.7,
+                  "paddingTop": 4.5,
                 }
               }
             >
@@ -768,7 +768,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
               "fontSize": 20.02,
               "lineHeight": 25.33,
               "paddingBottom": 3.15,
-              "paddingTop": 2.7,
+              "paddingTop": 4.5,
             }
           }
         >
@@ -838,7 +838,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 "fontSize": 20.02,
                 "lineHeight": 25.33,
                 "paddingBottom": 3.15,
-                "paddingTop": 2.7,
+                "paddingTop": 4.5,
               }
             }
           >
@@ -955,8 +955,8 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                       "fontSize": 25.2,
                       "lineHeight": 31.28,
                       "opacity": 1,
-                      "paddingBottom": 2.7,
-                      "paddingTop": 4.05,
+                      "paddingBottom": 3.71,
+                      "paddingTop": 5.04,
                     }
                   }
                 >
@@ -1046,7 +1046,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -1187,7 +1187,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                         "height": 40,
                         "lineHeight": 41.04,
                         "paddingBottom": 1.8,
-                        "paddingTop": 2.25,
+                        "paddingTop": 4.5,
                         "paddingVertical": 5,
                       }
                     }
@@ -1203,7 +1203,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                           "fontSize": 15.75,
                           "lineHeight": 17.75,
                           "paddingBottom": 1.8,
-                          "paddingTop": 2.25,
+                          "paddingTop": 4.5,
                         }
                       }
                     />
@@ -1363,7 +1363,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -1489,8 +1489,8 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                       "fontSize": 25.2,
                       "lineHeight": 31.28,
                       "opacity": 1,
-                      "paddingBottom": 2.7,
-                      "paddingTop": 4.05,
+                      "paddingBottom": 3.71,
+                      "paddingTop": 5.04,
                     }
                   }
                 >
@@ -1580,7 +1580,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -1721,7 +1721,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                         "height": 40,
                         "lineHeight": 41.04,
                         "paddingBottom": 1.8,
-                        "paddingTop": 2.25,
+                        "paddingTop": 4.5,
                         "paddingVertical": 5,
                       }
                     }
@@ -1737,7 +1737,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                           "fontSize": 15.75,
                           "lineHeight": 17.75,
                           "paddingBottom": 1.8,
-                          "paddingTop": 2.25,
+                          "paddingTop": 4.5,
                         }
                       }
                     />
@@ -1892,7 +1892,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -2007,7 +2007,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   "fontSize": 20.02,
                   "lineHeight": 25.33,
                   "paddingBottom": 3.15,
-                  "paddingTop": 2.7,
+                  "paddingTop": 4.5,
                 }
               }
             >
@@ -2148,7 +2148,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
               "fontSize": 20.02,
               "lineHeight": 25.33,
               "paddingBottom": 3.15,
-              "paddingTop": 2.7,
+              "paddingTop": 4.5,
             }
           }
         >
@@ -2218,7 +2218,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 "fontSize": 20.02,
                 "lineHeight": 25.33,
                 "paddingBottom": 3.15,
-                "paddingTop": 2.7,
+                "paddingTop": 4.5,
               }
             }
           >
@@ -2335,8 +2335,8 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                       "fontSize": 25.2,
                       "lineHeight": 31.28,
                       "opacity": 1,
-                      "paddingBottom": 2.7,
-                      "paddingTop": 4.05,
+                      "paddingBottom": 3.71,
+                      "paddingTop": 5.04,
                     }
                   }
                 >
@@ -2426,7 +2426,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -2567,7 +2567,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                         "height": 40,
                         "lineHeight": 41.04,
                         "paddingBottom": 1.8,
-                        "paddingTop": 2.25,
+                        "paddingTop": 4.5,
                         "paddingVertical": 5,
                       }
                     }
@@ -2583,7 +2583,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                           "fontSize": 15.75,
                           "lineHeight": 17.75,
                           "paddingBottom": 1.8,
-                          "paddingTop": 2.25,
+                          "paddingTop": 4.5,
                         }
                       }
                     />
@@ -2743,7 +2743,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -2858,7 +2858,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                   "fontSize": 20.02,
                   "lineHeight": 25.33,
                   "paddingBottom": 3.15,
-                  "paddingTop": 2.7,
+                  "paddingTop": 4.5,
                 }
               }
             >
@@ -2999,7 +2999,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
               "fontSize": 20.02,
               "lineHeight": 25.33,
               "paddingBottom": 3.15,
-              "paddingTop": 2.7,
+              "paddingTop": 4.5,
             }
           }
         >
@@ -3069,7 +3069,7 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                 "fontSize": 20.02,
                 "lineHeight": 25.33,
                 "paddingBottom": 3.15,
-                "paddingTop": 2.7,
+                "paddingTop": 4.5,
               }
             }
           >
@@ -3246,8 +3246,8 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                       "fontSize": 25.2,
                       "lineHeight": 31.28,
                       "opacity": 1,
-                      "paddingBottom": 2.7,
-                      "paddingTop": 4.05,
+                      "paddingBottom": 3.71,
+                      "paddingTop": 5.04,
                     }
                   }
                 >
@@ -3337,7 +3337,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -3478,7 +3478,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                         "height": 40,
                         "lineHeight": 41.04,
                         "paddingBottom": 1.8,
-                        "paddingTop": 2.25,
+                        "paddingTop": 4.5,
                         "paddingVertical": 5,
                       }
                     }
@@ -3494,7 +3494,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                           "fontSize": 15.75,
                           "lineHeight": 17.75,
                           "paddingBottom": 1.8,
-                          "paddingTop": 2.25,
+                          "paddingTop": 4.5,
                         }
                       }
                     />
@@ -3654,7 +3654,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -3769,7 +3769,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                   "fontSize": 20.02,
                   "lineHeight": 25.33,
                   "paddingBottom": 3.15,
-                  "paddingTop": 2.7,
+                  "paddingTop": 4.5,
                 }
               }
             >
@@ -3910,7 +3910,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
               "fontSize": 20.02,
               "lineHeight": 25.33,
               "paddingBottom": 3.15,
-              "paddingTop": 2.7,
+              "paddingTop": 4.5,
             }
           }
         >
@@ -3980,7 +3980,7 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                 "fontSize": 20.02,
                 "lineHeight": 25.33,
                 "paddingBottom": 3.15,
-                "paddingTop": 2.7,
+                "paddingTop": 4.5,
               }
             }
           >
@@ -4097,8 +4097,8 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                       "fontSize": 25.2,
                       "lineHeight": 31.28,
                       "opacity": 1,
-                      "paddingBottom": 2.7,
-                      "paddingTop": 4.05,
+                      "paddingBottom": 3.71,
+                      "paddingTop": 5.04,
                     }
                   }
                 >
@@ -4188,7 +4188,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -4329,7 +4329,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                         "height": 40,
                         "lineHeight": 41.04,
                         "paddingBottom": 1.8,
-                        "paddingTop": 2.25,
+                        "paddingTop": 4.5,
                         "paddingVertical": 5,
                       }
                     }
@@ -4345,7 +4345,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                           "fontSize": 15.75,
                           "lineHeight": 17.75,
                           "paddingBottom": 1.8,
-                          "paddingTop": 2.25,
+                          "paddingTop": 4.5,
                         }
                       }
                     />
@@ -4505,7 +4505,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                     "fontSize": 15.75,
                     "lineHeight": 17.75,
                     "paddingBottom": 1.8,
-                    "paddingTop": 2.25,
+                    "paddingTop": 4.5,
                     "paddingVertical": 5,
                   }
                 }
@@ -4620,7 +4620,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                   "fontSize": 20.02,
                   "lineHeight": 25.33,
                   "paddingBottom": 3.15,
-                  "paddingTop": 2.7,
+                  "paddingTop": 4.5,
                 }
               }
             >
@@ -4761,7 +4761,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
               "fontSize": 20.02,
               "lineHeight": 25.33,
               "paddingBottom": 3.15,
-              "paddingTop": 2.7,
+              "paddingTop": 4.5,
             }
           }
         >
@@ -4831,7 +4831,7 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                 "fontSize": 20.02,
                 "lineHeight": 25.33,
                 "paddingBottom": 3.15,
-                "paddingTop": 2.7,
+                "paddingTop": 4.5,
               }
             }
           >

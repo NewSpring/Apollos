@@ -59,7 +59,7 @@ exports[`The AlbumView component should render 1`] = `
             "fontSize": 20.02,
             "lineHeight": 25.33,
             "paddingBottom": 3.15,
-            "paddingTop": 2.7,
+            "paddingTop": 4.5,
           }
         }
       >
@@ -77,8 +77,8 @@ exports[`The AlbumView component should render 1`] = `
             "fontFamily": "Colfax-Regular",
             "fontSize": 14,
             "lineHeight": 15.78,
-            "paddingBottom": 2.25,
-            "paddingTop": 1.35,
+            "paddingBottom": 1.8,
+            "paddingTop": 3.6,
           }
         }
       >

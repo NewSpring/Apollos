@@ -39,8 +39,8 @@ exports[`the FeedItemCard CategoryLabel component should render 1`] = `
           "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.78,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.35,
+          "paddingBottom": 1.8,
+          "paddingTop": 3.6,
         }
       }
     >
@@ -89,8 +89,8 @@ exports[`the FeedItemCard CategoryLabel component should render a custom icon 1`
           "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.78,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.35,
+          "paddingBottom": 1.8,
+          "paddingTop": 3.6,
         }
       }
     >
@@ -184,8 +184,8 @@ exports[`the FeedItemCard CategoryLabel component should render as Albums 1`] = 
           "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.78,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.35,
+          "paddingBottom": 1.8,
+          "paddingTop": 3.6,
         }
       }
     >
@@ -234,8 +234,8 @@ exports[`the FeedItemCard CategoryLabel component should render as a Series 1`] 
           "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.78,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.35,
+          "paddingBottom": 1.8,
+          "paddingTop": 3.6,
         }
       }
     >
@@ -284,8 +284,8 @@ exports[`the FeedItemCard CategoryLabel component should render children 1`] = `
           "fontFamily": "Colfax-Regular",
           "fontSize": 14,
           "lineHeight": 15.78,
-          "paddingBottom": 2.25,
-          "paddingTop": 1.35,
+          "paddingBottom": 1.8,
+          "paddingTop": 3.6,
         }
       }
     >
