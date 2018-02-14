@@ -45,7 +45,7 @@ const ImagePicker = compose(
 
           if (onSelectFile) onSelectFile(file);
         } catch (e) {
-          console.log('image error', e);
+          console.log('image error', e); // eslint-disable-line no-console
         }
       });
     },
