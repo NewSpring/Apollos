@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { StyleSheet, Animated, Dimensions, Platform } from 'react-native';
 import PropTypes from 'prop-types';
+import { withMediaPlayerActions } from '@data/mediaPlayer';
 import ScreenOrientation from '@utils/orientation';
 import VideoPlayer, { Video } from '@ui/VideoPlayer';
 import FlexedView from '@ui/FlexedView';
@@ -22,6 +23,12 @@ class RotatingVideoPlayer extends PureComponent {
     if (Platform.OS === 'web') return; // don't care about this stuff on web
     Dimensions.addEventListener('change', this.handleOrientationSwitch);
     ScreenOrientation.allow(ScreenOrientation.Orientation.ALL);
+  }
+
+  componentWillUpdate(_, newState) {
+    if (newState.isPlaying && !this.state.isPlaying) {
+      this.props.pause(); // pauses audio from withMediaPlayerActions
+    }
   }
 
   componentWillUnmount() {
@@ -105,4 +112,4 @@ class RotatingVideoPlayer extends PureComponent {
   }
 }
 
-export default RotatingVideoPlayer;
+export default withMediaPlayerActions(RotatingVideoPlayer);
