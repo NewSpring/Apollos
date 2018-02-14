@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Linking } from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { BodyText } from '@ui/typography';
 import PaddedView from '@ui/PaddedView';
@@ -7,6 +7,7 @@ import Spacer from '@ui/Spacer';
 import { Link } from '@ui/NativeWebRouter';
 import { ButtonLink } from '@ui/Button';
 import HistoricalContributionCard from '@ui/HistoricalContributionCard';
+import WebBrowser from '@ui/WebBrowser';
 
 const ScheduleTransactionHistory = ({
   transactions = [],
@@ -19,7 +20,7 @@ const ScheduleTransactionHistory = ({
         <Spacer byHeight />
         <BodyText italic>
           If you have any questions, please call our Finance Team at 864-965-9990 or{' '}
-          <ButtonLink onPress={() => Linking.openURL('https://rock.newspring.cc/workflows/152?Topic=Stewardship')}>
+          <ButtonLink onPress={() => WebBrowser.openBrowserAsync('https://rock.newspring.cc/workflows/152?Topic=Stewardship')}>
             Contact Us
           </ButtonLink>
           {' '}and someone will be happy to assist you.

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Touchable from '@ui/Touchable';
-import { Linking } from 'react-native';
+import WebBrowser from '@ui/WebBrowser';
+
 import { matchPath } from './';
 
 export const goBackTo = ({ to, history, replace = false }) => {
@@ -66,7 +67,7 @@ export default class Link extends Component {
 
     // handle web links
     if (to && to.indexOf('http') > -1) {
-      return Linking.openURL(to);
+      return WebBrowser.openBrowserAsync(to);
     }
 
     if (pop) {

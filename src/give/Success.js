@@ -1,13 +1,13 @@
 import React from 'react';
-import { Linking } from 'react-native';
 import styled from '@ui/styled';
 import PaddedView from '@ui/PaddedView';
 import Icon from '@ui/Icon';
 import { H3, BodyText } from '@ui/typography';
 import { withTheme } from '@ui/theme';
 import { ButtonLink } from '@ui/Button';
+import WebBrowser from '@ui/WebBrowser';
 
-const contact = () => Linking.openURL('https://rock.newspring.cc/workflows/152?Topic=Stewardship');
+const contact = () => WebBrowser.openBrowserAsync('https://rock.newspring.cc/workflows/152?Topic=Stewardship');
 
 const BackgroundView = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.paper,
