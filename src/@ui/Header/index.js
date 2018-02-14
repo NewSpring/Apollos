@@ -28,8 +28,8 @@ const StyledHeaderBar = styled(({ theme }) => ({
   }),
 }), 'Header.Bar')(View);
 
-const HeaderContainer = styled(({ theme }) => ({
-  backgroundColor: theme.colors.background.primary,
+const HeaderContainer = styled(({ theme, backgroundColor }) => ({
+  backgroundColor: backgroundColor || theme.colors.background.primary,
   ...Platform.select({
     android: {
       paddingTop: 25, // todo: this is currently required as SafeAreaView isn't
@@ -67,6 +67,13 @@ const RightContainer = styled(({ theme }) => ({
   }),
 }), 'Header.RightContainer')(View);
 
+const ColoredBackButton = compose(
+  pure,
+  withTheme(({ theme, barstyle }) => ({
+    color: (barstyle === 'dark-content' ? theme.colors.darkPrimary : undefined),
+  })),
+)(BackButton);
+
 const enhance = compose(
   defaultProps({
     backButton: false,
@@ -90,7 +97,6 @@ const enhance = compose(
       },
     },
   }))),
-  withTheme(),
   pure,
 );
 
@@ -100,15 +106,16 @@ const Header = enhance(({
   backButton = false,
   barStyle = 'light-content',
   style = {},
-  backgroundColor,
+  backgroundColor = null,
   children,
-  theme,
 }) => (
-  <HeaderContainer style={[backgroundColor ? { backgroundColor } : null, style]}>
+  <HeaderContainer backgroundColor={backgroundColor} style={style}>
     <StatusBar barStyle={barStyle} />
     <StyledHeaderBar>
-      {backButton ? <BackButton color={barStyle === 'dark-content' ? theme.colors.darkPrimary : undefined} /> : null}
-      {titleText ? (<StyledHeaderText barStyle={barStyle} numberOfLines={1}>{titleText}</StyledHeaderText>) : null}
+      {backButton ? <ColoredBackButton barStyle={barStyle} /> : null}
+      {titleText ?
+        <StyledHeaderText barStyle={barStyle} numberOfLines={1}>{titleText}</StyledHeaderText>
+        : null}
       {children}
       {right ? <RightContainer>{right}</RightContainer> : null}
     </StyledHeaderBar>
