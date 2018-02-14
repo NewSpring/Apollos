@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import BackgroundView from '@ui/BackgroundView';
 import { ContributionForm } from '@ui/forms';
 
@@ -7,7 +7,7 @@ import Funds from './Funds';
 
 const Now = () => (
   <BackgroundView>
-    <KeyboardAwareScrollView enableOnAndroid>
+    <KeyboardAwareScrollView>
       <ContributionForm
         onComplete={({ history, savedPaymentMethods } = {}) => {
           const userHasPaymentMethods = savedPaymentMethods.length > 0;
