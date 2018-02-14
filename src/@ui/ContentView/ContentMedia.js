@@ -5,6 +5,7 @@ import Color from 'color';
 
 import ConnectedImage from '@ui/ConnectedImage';
 import EmbeddedVideoPlayer from '@ui/EmbeddedVideoPlayer';
+import RotatingVideoPlayer from '@ui/RotatingVideoPlayer';
 import styled from '@ui/styled';
 import LinearGradient from '@ui/LinearGradient';
 
@@ -35,13 +36,16 @@ const ImageHeader = styled({
   }),
 })(ConnectedImage);
 
-const VideoHeader = styled({
+const asVideoHeader = styled({
   width: '100%',
   aspectRatio: 16 / 9,
   ...Platform.select({
     web: StyleSheet.absoluteFillObject,
   }),
-})(EmbeddedVideoPlayer);
+});
+
+const EmbeddedVideoPlayerHeader = asVideoHeader(EmbeddedVideoPlayer);
+const NativeVideoPlayerHeader = asVideoHeader(RotatingVideoPlayer);
 
 const VideoWrapper = styled(Platform.select({
   web: {
@@ -59,10 +63,14 @@ const ContentMedia = ({
   imageOverlayColor,
 }) => {
   let visual = null;
-  if (video && video.embedUrl) {
+  if (video && (video.embedUrl || video.videoUrl)) {
     visual = (
       <VideoWrapper>
-        <VideoHeader src={video.embedUrl} />
+        {video.videoUrl ? (
+          <NativeVideoPlayerHeader src={video.videoUrl} />
+        ) : (
+          <EmbeddedVideoPlayerHeader src={video.embedUrl} />
+        )}
       </VideoWrapper>
     );
   } else if (images && images.length) {
@@ -88,6 +96,7 @@ const ContentMedia = ({
 ContentMedia.propTypes = {
   video: PropTypes.shape({
     embedUrl: PropTypes.string,
+    videoUrl: PropTypes.string,
   }),
   images: PropTypes.any, // eslint-disable-line
   imageOverlayColor: PropTypes.string,

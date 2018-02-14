@@ -18,6 +18,7 @@ const enhance = compose(
     body: PropTypes.string,
     video: PropTypes.shape({
       embedUrl: PropTypes.string,
+      videoUrl: PropTypes.string,
     }),
     images: PropTypes.arrayOf(PropTypes.shape({
       url: PropTypes.string,
