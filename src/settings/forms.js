@@ -8,7 +8,7 @@ import Layout from './Layout';
 const makeFormScreen = (Form, title = 'Title') => props => (
   <Layout>
     <Header webEnabled titleText={title} backButton />
-    <KeyboardAwareScrollView enableOnAndroid>
+    <KeyboardAwareScrollView>
       <Form {...props} />
     </KeyboardAwareScrollView>
   </Layout>

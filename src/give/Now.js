@@ -7,7 +7,7 @@ import Funds from './Funds';
 
 const Now = () => (
   <BackgroundView>
-    <KeyboardAwareScrollView enableOnAndroid>
+    <KeyboardAwareScrollView>
       <ContributionForm
         onComplete={({ history, savedPaymentMethods } = {}) => {
           const userHasPaymentMethods = savedPaymentMethods.length > 0;

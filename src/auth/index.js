@@ -46,7 +46,7 @@ const BannerH3 = asBannerText(H3);
 const BannerH7 = asBannerText(H7);
 
 const Auth = enhance(() => (
-  <KeyboardAwareScrollView enableOnAndroid>
+  <KeyboardAwareScrollView>
     <Banner>
       <BannerContent>
         <BannerH3>WELCOME TO NEWSPRING</BannerH3>

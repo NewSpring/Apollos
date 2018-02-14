@@ -46,7 +46,7 @@ const Groups = withRouter(({
           {Platform.OS === 'web' ? <Instructions /> : null}
         </Header>
         <LiveNowButton />
-        <KeyboardAwareScrollView enableOnAndroid keyboardShouldPersistTaps="handled">
+        <KeyboardAwareScrollView keyboardShouldPersistTaps="handled">
           {Platform.OS !== 'web' ? (
             <PaddedView>
               <H3>Find your people</H3>

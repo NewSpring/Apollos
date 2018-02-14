@@ -36,7 +36,7 @@ const Checkout = withRouter(({ match, location }) => (
     <BackgroundView>
       <Header titleText="My Giving" backButton />
       <Progress progress={progressForLocation(location)} />
-      <KeyboardAwareScrollView enableOnAndroid>
+      <KeyboardAwareScrollView>
         <Switch>
           <Route path={`${match.url}/personal`} component={PersonalDetails} />
           <Route path={`${match.url}/address`} component={BillingAddress} />

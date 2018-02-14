@@ -14,7 +14,7 @@ export function PaymentMethod({ id } = {}) {
     <ModalView backTo="/give/now" onBackReplace>
       <BackgroundView>
         <Header titleText="Payment Method" />
-        <KeyboardAwareScrollView enableOnAndroid>
+        <KeyboardAwareScrollView>
           <PaddedView>
             <Title>Edit Account</Title>
           </PaddedView>

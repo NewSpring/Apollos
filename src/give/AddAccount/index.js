@@ -30,7 +30,7 @@ const Checkout = withRouter(({ match, location }) => (
     <BackgroundView>
       <Header titleText="Add Account" backButton />
       <Progress progress={progressForLocation(location)} />
-      <KeyboardAwareScrollView enableOnAndroid>
+      <KeyboardAwareScrollView>
         <Switch>
           <Route exact path={`${match.url}/address`} component={BillingAddress} />
           <Route exact path={`${match.url}/method`} component={PaymentMethod} />

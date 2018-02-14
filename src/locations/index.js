@@ -74,7 +74,7 @@ class Locations extends PureComponent {
     return (
       <BackgroundView>
         <Header backButton titleText="Locations" />
-        <KeyboardAwareScrollView enableOnAndroid>
+        <KeyboardAwareScrollView>
           <Form>
             <Title>Find Your Closest Campus</Title>
             <TextInput
