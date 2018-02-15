@@ -34,152 +34,154 @@ exports[`The ContributionForm component hides state field for foreign countries 
           }
         }
       >
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-              "justifyContent": "center",
-            }
-          }
-        >
+        <View>
           <View
             style={
               Object {
-                "alignItems": "center",
+                "flexDirection": "row",
                 "justifyContent": "center",
               }
             }
-          />
-          <View
-            collapsable={undefined}
-            style={
-              Object {
-                "flex": 1,
-                "opacity": 1,
-              }
-            }
           >
-            <TextInput
-              allowFontScaling={true}
-              editable={true}
-              focusAnimationDuration={450}
-              focusAnimationEasing={[Function]}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="rgba(48, 48, 48, 0.6)"
-              returnKeyType="done"
+            <View
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "height": 40,
-                  "lineHeight": 30,
-                  "paddingVertical": 5,
+                  "alignItems": "center",
+                  "justifyContent": "center",
                 }
               }
-              underlineColorAndroid="transparent"
-              value="My Street"
+            />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                editable={true}
+                focusAnimationDuration={450}
+                focusAnimationEasing={[Function]}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                returnKeyType="done"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "height": 40,
+                    "lineHeight": 30,
+                    "paddingVertical": 5,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value="My Street"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
             />
           </View>
           <View
-            style={
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              }
-            }
-          />
-        </View>
-        <View
-          collapsable={undefined}
-          onLayout={[Function]}
-          pointerEvents="none"
-          style={
-            Object {
-              "bottom": 0,
-              "justifyContent": "center",
-              "opacity": 0.8,
-              "position": "absolute",
-              "top": 0,
-              "transform": Array [
-                Object {
-                  "scale": 0.8,
-                },
-                Object {
-                  "translateX": 0,
-                },
-                Object {
-                  "translateY": 0,
-                },
-              ],
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#505050",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 15.75,
-                "lineHeight": 17.75,
-                "paddingBottom": 1.8,
-                "paddingTop": 4.5,
-                "paddingVertical": 5,
-              }
-            }
-          >
-            Street Address
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "right": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#dddddd",
-                "bottom": -0.5,
-                "height": 0.5,
-              }
-            }
-          />
-          <View
             collapsable={undefined}
+            onLayout={[Function]}
+            pointerEvents="none"
             style={
               Object {
                 "bottom": 0,
-                "left": 0,
-                "right": 0,
+                "justifyContent": "center",
+                "opacity": 0.8,
+                "position": "absolute",
+                "top": 0,
                 "transform": Array [
                   Object {
-                    "scaleX": 1,
+                    "scale": 0.8,
+                  },
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
                   },
                 ],
               }
             }
           >
-            <View
-              hasError={false}
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "backgroundColor": "#6bac43",
-                  "bottom": 0,
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 4.5,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              Street Address
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#dddddd",
+                  "bottom": -0.5,
                   "height": 0.5,
                 }
               }
             />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "transform": Array [
+                    Object {
+                      "scaleX": 1,
+                    },
+                  ],
+                }
+              }
+            >
+              <View
+                hasError={false}
+                style={
+                  Object {
+                    "backgroundColor": "#6bac43",
+                    "bottom": 0,
+                    "height": 0.5,
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -191,152 +193,154 @@ exports[`The ContributionForm component hides state field for foreign countries 
           }
         }
       >
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-              "justifyContent": "center",
-            }
-          }
-        >
+        <View>
           <View
             style={
               Object {
-                "alignItems": "center",
+                "flexDirection": "row",
                 "justifyContent": "center",
               }
             }
-          />
-          <View
-            collapsable={undefined}
-            style={
-              Object {
-                "flex": 1,
-                "opacity": 0,
-              }
-            }
           >
-            <TextInput
-              allowFontScaling={true}
-              editable={true}
-              focusAnimationDuration={450}
-              focusAnimationEasing={[Function]}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="rgba(48, 48, 48, 0.6)"
-              returnKeyType="done"
+            <View
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "height": 40,
-                  "lineHeight": 30,
-                  "paddingVertical": 5,
+                  "alignItems": "center",
+                  "justifyContent": "center",
                 }
               }
-              underlineColorAndroid="transparent"
-              value=""
+            />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 0,
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                editable={true}
+                focusAnimationDuration={450}
+                focusAnimationEasing={[Function]}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                returnKeyType="done"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "height": 40,
+                    "lineHeight": 30,
+                    "paddingVertical": 5,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
             />
           </View>
           <View
-            style={
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              }
-            }
-          />
-        </View>
-        <View
-          collapsable={undefined}
-          onLayout={[Function]}
-          pointerEvents="none"
-          style={
-            Object {
-              "bottom": 0,
-              "justifyContent": "center",
-              "opacity": 1,
-              "position": "absolute",
-              "top": 0,
-              "transform": Array [
-                Object {
-                  "scale": 1,
-                },
-                Object {
-                  "translateX": 0,
-                },
-                Object {
-                  "translateY": 0,
-                },
-              ],
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#505050",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 15.75,
-                "lineHeight": 17.75,
-                "paddingBottom": 1.8,
-                "paddingTop": 4.5,
-                "paddingVertical": 5,
-              }
-            }
-          >
-            Street Address (optional)
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "right": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#dddddd",
-                "bottom": -0.5,
-                "height": 0.5,
-              }
-            }
-          />
-          <View
             collapsable={undefined}
+            onLayout={[Function]}
+            pointerEvents="none"
             style={
               Object {
                 "bottom": 0,
-                "left": 0,
-                "right": 0,
+                "justifyContent": "center",
+                "opacity": 1,
+                "position": "absolute",
+                "top": 0,
                 "transform": Array [
                   Object {
-                    "scaleX": 0.0001,
+                    "scale": 1,
+                  },
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
                   },
                 ],
               }
             }
           >
-            <View
-              hasError={false}
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "backgroundColor": "#6bac43",
-                  "bottom": 0,
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 4.5,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              Street Address (optional)
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#dddddd",
+                  "bottom": -0.5,
                   "height": 0.5,
                 }
               }
             />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "transform": Array [
+                    Object {
+                      "scaleX": 0.0001,
+                    },
+                  ],
+                }
+              }
+            >
+              <View
+                hasError={false}
+                style={
+                  Object {
+                    "backgroundColor": "#6bac43",
+                    "bottom": 0,
+                    "height": 0.5,
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -625,152 +629,154 @@ exports[`The ContributionForm component hides state field for foreign countries 
           }
         }
       >
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-              "justifyContent": "center",
-            }
-          }
-        >
+        <View>
           <View
             style={
               Object {
-                "alignItems": "center",
+                "flexDirection": "row",
                 "justifyContent": "center",
               }
             }
-          />
-          <View
-            collapsable={undefined}
-            style={
-              Object {
-                "flex": 1,
-                "opacity": 1,
-              }
-            }
           >
-            <TextInput
-              allowFontScaling={true}
-              editable={true}
-              focusAnimationDuration={450}
-              focusAnimationEasing={[Function]}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="rgba(48, 48, 48, 0.6)"
-              returnKeyType="done"
+            <View
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "height": 40,
-                  "lineHeight": 30,
-                  "paddingVertical": 5,
+                  "alignItems": "center",
+                  "justifyContent": "center",
                 }
               }
-              underlineColorAndroid="transparent"
-              value="My City"
+            />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                editable={true}
+                focusAnimationDuration={450}
+                focusAnimationEasing={[Function]}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                returnKeyType="done"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "height": 40,
+                    "lineHeight": 30,
+                    "paddingVertical": 5,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value="My City"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
             />
           </View>
           <View
-            style={
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              }
-            }
-          />
-        </View>
-        <View
-          collapsable={undefined}
-          onLayout={[Function]}
-          pointerEvents="none"
-          style={
-            Object {
-              "bottom": 0,
-              "justifyContent": "center",
-              "opacity": 0.8,
-              "position": "absolute",
-              "top": 0,
-              "transform": Array [
-                Object {
-                  "scale": 0.8,
-                },
-                Object {
-                  "translateX": 0,
-                },
-                Object {
-                  "translateY": 0,
-                },
-              ],
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#505050",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 15.75,
-                "lineHeight": 17.75,
-                "paddingBottom": 1.8,
-                "paddingTop": 4.5,
-                "paddingVertical": 5,
-              }
-            }
-          >
-            City
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "right": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#dddddd",
-                "bottom": -0.5,
-                "height": 0.5,
-              }
-            }
-          />
-          <View
             collapsable={undefined}
+            onLayout={[Function]}
+            pointerEvents="none"
             style={
               Object {
                 "bottom": 0,
-                "left": 0,
-                "right": 0,
+                "justifyContent": "center",
+                "opacity": 0.8,
+                "position": "absolute",
+                "top": 0,
                 "transform": Array [
                   Object {
-                    "scaleX": 1,
+                    "scale": 0.8,
+                  },
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
                   },
                 ],
               }
             }
           >
-            <View
-              hasError={false}
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "backgroundColor": "#6bac43",
-                  "bottom": 0,
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 4.5,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              City
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#dddddd",
+                  "bottom": -0.5,
                   "height": 0.5,
                 }
               }
             />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "transform": Array [
+                    Object {
+                      "scaleX": 1,
+                    },
+                  ],
+                }
+              }
+            >
+              <View
+                hasError={false}
+                style={
+                  Object {
+                    "backgroundColor": "#6bac43",
+                    "bottom": 0,
+                    "height": 0.5,
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -782,154 +788,156 @@ exports[`The ContributionForm component hides state field for foreign countries 
           }
         }
       >
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-              "justifyContent": "center",
-            }
-          }
-        >
+        <View>
           <View
             style={
               Object {
-                "alignItems": "center",
+                "flexDirection": "row",
                 "justifyContent": "center",
               }
             }
-          />
-          <View
-            collapsable={undefined}
-            style={
-              Object {
-                "flex": 1,
-                "opacity": 1,
-              }
-            }
           >
-            <TextInput
-              allowFontScaling={true}
-              editable={true}
-              focusAnimationDuration={450}
-              focusAnimationEasing={[Function]}
-              keyboardType="numeric"
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="rgba(48, 48, 48, 0.6)"
-              returnKeyType="done"
+            <View
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "height": 40,
-                  "lineHeight": 30,
-                  "paddingVertical": 5,
+                  "alignItems": "center",
+                  "justifyContent": "center",
                 }
               }
-              type="numeric"
-              underlineColorAndroid="transparent"
-              value="12345"
+            />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                editable={true}
+                focusAnimationDuration={450}
+                focusAnimationEasing={[Function]}
+                keyboardType="numeric"
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                returnKeyType="done"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "height": 40,
+                    "lineHeight": 30,
+                    "paddingVertical": 5,
+                  }
+                }
+                type="numeric"
+                underlineColorAndroid="transparent"
+                value="12345"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
             />
           </View>
           <View
-            style={
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              }
-            }
-          />
-        </View>
-        <View
-          collapsable={undefined}
-          onLayout={[Function]}
-          pointerEvents="none"
-          style={
-            Object {
-              "bottom": 0,
-              "justifyContent": "center",
-              "opacity": 0.8,
-              "position": "absolute",
-              "top": 0,
-              "transform": Array [
-                Object {
-                  "scale": 0.8,
-                },
-                Object {
-                  "translateX": 0,
-                },
-                Object {
-                  "translateY": 0,
-                },
-              ],
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#505050",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 15.75,
-                "lineHeight": 17.75,
-                "paddingBottom": 1.8,
-                "paddingTop": 4.5,
-                "paddingVertical": 5,
-              }
-            }
-          >
-            Zip/Postal
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "right": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#dddddd",
-                "bottom": -0.5,
-                "height": 0.5,
-              }
-            }
-          />
-          <View
             collapsable={undefined}
+            onLayout={[Function]}
+            pointerEvents="none"
             style={
               Object {
                 "bottom": 0,
-                "left": 0,
-                "right": 0,
+                "justifyContent": "center",
+                "opacity": 0.8,
+                "position": "absolute",
+                "top": 0,
                 "transform": Array [
                   Object {
-                    "scaleX": 1,
+                    "scale": 0.8,
+                  },
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
                   },
                 ],
               }
             }
           >
-            <View
-              hasError={false}
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "backgroundColor": "#6bac43",
-                  "bottom": 0,
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 4.5,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              Zip/Postal
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#dddddd",
+                  "bottom": -0.5,
                   "height": 0.5,
                 }
               }
             />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "transform": Array [
+                    Object {
+                      "scaleX": 1,
+                    },
+                  ],
+                }
+              }
+            >
+              <View
+                hasError={false}
+                style={
+                  Object {
+                    "backgroundColor": "#6bac43",
+                    "bottom": 0,
+                    "height": 0.5,
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -1086,152 +1094,154 @@ exports[`The ContributionForm component renders correctly 1`] = `
           }
         }
       >
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-              "justifyContent": "center",
-            }
-          }
-        >
+        <View>
           <View
             style={
               Object {
-                "alignItems": "center",
+                "flexDirection": "row",
                 "justifyContent": "center",
               }
             }
-          />
-          <View
-            collapsable={undefined}
-            style={
-              Object {
-                "flex": 1,
-                "opacity": 1,
-              }
-            }
           >
-            <TextInput
-              allowFontScaling={true}
-              editable={true}
-              focusAnimationDuration={450}
-              focusAnimationEasing={[Function]}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="rgba(48, 48, 48, 0.6)"
-              returnKeyType="done"
+            <View
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "height": 40,
-                  "lineHeight": 30,
-                  "paddingVertical": 5,
+                  "alignItems": "center",
+                  "justifyContent": "center",
                 }
               }
-              underlineColorAndroid="transparent"
-              value="My Street"
+            />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                editable={true}
+                focusAnimationDuration={450}
+                focusAnimationEasing={[Function]}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                returnKeyType="done"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "height": 40,
+                    "lineHeight": 30,
+                    "paddingVertical": 5,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value="My Street"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
             />
           </View>
           <View
-            style={
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              }
-            }
-          />
-        </View>
-        <View
-          collapsable={undefined}
-          onLayout={[Function]}
-          pointerEvents="none"
-          style={
-            Object {
-              "bottom": 0,
-              "justifyContent": "center",
-              "opacity": 0.8,
-              "position": "absolute",
-              "top": 0,
-              "transform": Array [
-                Object {
-                  "scale": 0.8,
-                },
-                Object {
-                  "translateX": 0,
-                },
-                Object {
-                  "translateY": 0,
-                },
-              ],
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#505050",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 15.75,
-                "lineHeight": 17.75,
-                "paddingBottom": 1.8,
-                "paddingTop": 4.5,
-                "paddingVertical": 5,
-              }
-            }
-          >
-            Street Address
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "right": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#dddddd",
-                "bottom": -0.5,
-                "height": 0.5,
-              }
-            }
-          />
-          <View
             collapsable={undefined}
+            onLayout={[Function]}
+            pointerEvents="none"
             style={
               Object {
                 "bottom": 0,
-                "left": 0,
-                "right": 0,
+                "justifyContent": "center",
+                "opacity": 0.8,
+                "position": "absolute",
+                "top": 0,
                 "transform": Array [
                   Object {
-                    "scaleX": 1,
+                    "scale": 0.8,
+                  },
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
                   },
                 ],
               }
             }
           >
-            <View
-              hasError={false}
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "backgroundColor": "#6bac43",
-                  "bottom": 0,
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 4.5,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              Street Address
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#dddddd",
+                  "bottom": -0.5,
                   "height": 0.5,
                 }
               }
             />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "transform": Array [
+                    Object {
+                      "scaleX": 1,
+                    },
+                  ],
+                }
+              }
+            >
+              <View
+                hasError={false}
+                style={
+                  Object {
+                    "backgroundColor": "#6bac43",
+                    "bottom": 0,
+                    "height": 0.5,
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -1243,152 +1253,154 @@ exports[`The ContributionForm component renders correctly 1`] = `
           }
         }
       >
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-              "justifyContent": "center",
-            }
-          }
-        >
+        <View>
           <View
             style={
               Object {
-                "alignItems": "center",
+                "flexDirection": "row",
                 "justifyContent": "center",
               }
             }
-          />
-          <View
-            collapsable={undefined}
-            style={
-              Object {
-                "flex": 1,
-                "opacity": 0,
-              }
-            }
           >
-            <TextInput
-              allowFontScaling={true}
-              editable={true}
-              focusAnimationDuration={450}
-              focusAnimationEasing={[Function]}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="rgba(48, 48, 48, 0.6)"
-              returnKeyType="done"
+            <View
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "height": 40,
-                  "lineHeight": 30,
-                  "paddingVertical": 5,
+                  "alignItems": "center",
+                  "justifyContent": "center",
                 }
               }
-              underlineColorAndroid="transparent"
-              value=""
+            />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 0,
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                editable={true}
+                focusAnimationDuration={450}
+                focusAnimationEasing={[Function]}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                returnKeyType="done"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "height": 40,
+                    "lineHeight": 30,
+                    "paddingVertical": 5,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
             />
           </View>
           <View
-            style={
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              }
-            }
-          />
-        </View>
-        <View
-          collapsable={undefined}
-          onLayout={[Function]}
-          pointerEvents="none"
-          style={
-            Object {
-              "bottom": 0,
-              "justifyContent": "center",
-              "opacity": 1,
-              "position": "absolute",
-              "top": 0,
-              "transform": Array [
-                Object {
-                  "scale": 1,
-                },
-                Object {
-                  "translateX": 0,
-                },
-                Object {
-                  "translateY": 0,
-                },
-              ],
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#505050",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 15.75,
-                "lineHeight": 17.75,
-                "paddingBottom": 1.8,
-                "paddingTop": 4.5,
-                "paddingVertical": 5,
-              }
-            }
-          >
-            Street Address (optional)
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "right": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#dddddd",
-                "bottom": -0.5,
-                "height": 0.5,
-              }
-            }
-          />
-          <View
             collapsable={undefined}
+            onLayout={[Function]}
+            pointerEvents="none"
             style={
               Object {
                 "bottom": 0,
-                "left": 0,
-                "right": 0,
+                "justifyContent": "center",
+                "opacity": 1,
+                "position": "absolute",
+                "top": 0,
                 "transform": Array [
                   Object {
-                    "scaleX": 0.0001,
+                    "scale": 1,
+                  },
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
                   },
                 ],
               }
             }
           >
-            <View
-              hasError={false}
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "backgroundColor": "#6bac43",
-                  "bottom": 0,
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 4.5,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              Street Address (optional)
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#dddddd",
+                  "bottom": -0.5,
                   "height": 0.5,
                 }
               }
             />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "transform": Array [
+                    Object {
+                      "scaleX": 0.0001,
+                    },
+                  ],
+                }
+              }
+            >
+              <View
+                hasError={false}
+                style={
+                  Object {
+                    "backgroundColor": "#6bac43",
+                    "bottom": 0,
+                    "height": 0.5,
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -1677,152 +1689,154 @@ exports[`The ContributionForm component renders correctly 1`] = `
           }
         }
       >
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-              "justifyContent": "center",
-            }
-          }
-        >
+        <View>
           <View
             style={
               Object {
-                "alignItems": "center",
+                "flexDirection": "row",
                 "justifyContent": "center",
               }
             }
-          />
-          <View
-            collapsable={undefined}
-            style={
-              Object {
-                "flex": 1,
-                "opacity": 1,
-              }
-            }
           >
-            <TextInput
-              allowFontScaling={true}
-              editable={true}
-              focusAnimationDuration={450}
-              focusAnimationEasing={[Function]}
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="rgba(48, 48, 48, 0.6)"
-              returnKeyType="done"
+            <View
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "height": 40,
-                  "lineHeight": 30,
-                  "paddingVertical": 5,
+                  "alignItems": "center",
+                  "justifyContent": "center",
                 }
               }
-              underlineColorAndroid="transparent"
-              value="My City"
+            />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                editable={true}
+                focusAnimationDuration={450}
+                focusAnimationEasing={[Function]}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                returnKeyType="done"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "height": 40,
+                    "lineHeight": 30,
+                    "paddingVertical": 5,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value="My City"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
             />
           </View>
           <View
-            style={
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              }
-            }
-          />
-        </View>
-        <View
-          collapsable={undefined}
-          onLayout={[Function]}
-          pointerEvents="none"
-          style={
-            Object {
-              "bottom": 0,
-              "justifyContent": "center",
-              "opacity": 0.8,
-              "position": "absolute",
-              "top": 0,
-              "transform": Array [
-                Object {
-                  "scale": 0.8,
-                },
-                Object {
-                  "translateX": 0,
-                },
-                Object {
-                  "translateY": 0,
-                },
-              ],
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#505050",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 15.75,
-                "lineHeight": 17.75,
-                "paddingBottom": 1.8,
-                "paddingTop": 4.5,
-                "paddingVertical": 5,
-              }
-            }
-          >
-            City
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "right": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#dddddd",
-                "bottom": -0.5,
-                "height": 0.5,
-              }
-            }
-          />
-          <View
             collapsable={undefined}
+            onLayout={[Function]}
+            pointerEvents="none"
             style={
               Object {
                 "bottom": 0,
-                "left": 0,
-                "right": 0,
+                "justifyContent": "center",
+                "opacity": 0.8,
+                "position": "absolute",
+                "top": 0,
                 "transform": Array [
                   Object {
-                    "scaleX": 1,
+                    "scale": 0.8,
+                  },
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
                   },
                 ],
               }
             }
           >
-            <View
-              hasError={false}
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "backgroundColor": "#6bac43",
-                  "bottom": 0,
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 4.5,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              City
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#dddddd",
+                  "bottom": -0.5,
                   "height": 0.5,
                 }
               }
             />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "transform": Array [
+                    Object {
+                      "scaleX": 1,
+                    },
+                  ],
+                }
+              }
+            >
+              <View
+                hasError={false}
+                style={
+                  Object {
+                    "backgroundColor": "#6bac43",
+                    "bottom": 0,
+                    "height": 0.5,
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -2120,154 +2134,156 @@ exports[`The ContributionForm component renders correctly 1`] = `
           }
         }
       >
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-              "justifyContent": "center",
-            }
-          }
-        >
+        <View>
           <View
             style={
               Object {
-                "alignItems": "center",
+                "flexDirection": "row",
                 "justifyContent": "center",
               }
             }
-          />
-          <View
-            collapsable={undefined}
-            style={
-              Object {
-                "flex": 1,
-                "opacity": 1,
-              }
-            }
           >
-            <TextInput
-              allowFontScaling={true}
-              editable={true}
-              focusAnimationDuration={450}
-              focusAnimationEasing={[Function]}
-              keyboardType="numeric"
-              onBlur={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="rgba(48, 48, 48, 0.6)"
-              returnKeyType="done"
+            <View
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": "Colfax-Bold",
-                  "fontSize": 15.75,
-                  "height": 40,
-                  "lineHeight": 30,
-                  "paddingVertical": 5,
+                  "alignItems": "center",
+                  "justifyContent": "center",
                 }
               }
-              type="numeric"
-              underlineColorAndroid="transparent"
-              value="12345"
+            />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                editable={true}
+                focusAnimationDuration={450}
+                focusAnimationEasing={[Function]}
+                keyboardType="numeric"
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                onFocus={[Function]}
+                placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                returnKeyType="done"
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "Colfax-Bold",
+                    "fontSize": 15.75,
+                    "height": 40,
+                    "lineHeight": 30,
+                    "paddingVertical": 5,
+                  }
+                }
+                type="numeric"
+                underlineColorAndroid="transparent"
+                value="12345"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
             />
           </View>
           <View
-            style={
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              }
-            }
-          />
-        </View>
-        <View
-          collapsable={undefined}
-          onLayout={[Function]}
-          pointerEvents="none"
-          style={
-            Object {
-              "bottom": 0,
-              "justifyContent": "center",
-              "opacity": 0.8,
-              "position": "absolute",
-              "top": 0,
-              "transform": Array [
-                Object {
-                  "scale": 0.8,
-                },
-                Object {
-                  "translateX": 0,
-                },
-                Object {
-                  "translateY": 0,
-                },
-              ],
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "backgroundColor": "transparent",
-                "color": "#505050",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 15.75,
-                "lineHeight": 17.75,
-                "paddingBottom": 1.8,
-                "paddingTop": 4.5,
-                "paddingVertical": 5,
-              }
-            }
-          >
-            Zip/Postal
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "right": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#dddddd",
-                "bottom": -0.5,
-                "height": 0.5,
-              }
-            }
-          />
-          <View
             collapsable={undefined}
+            onLayout={[Function]}
+            pointerEvents="none"
             style={
               Object {
                 "bottom": 0,
-                "left": 0,
-                "right": 0,
+                "justifyContent": "center",
+                "opacity": 0.8,
+                "position": "absolute",
+                "top": 0,
                 "transform": Array [
                   Object {
-                    "scaleX": 1,
+                    "scale": 0.8,
+                  },
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
                   },
                 ],
               }
             }
           >
-            <View
-              hasError={false}
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "backgroundColor": "#6bac43",
-                  "bottom": 0,
+                  "backgroundColor": "transparent",
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingTop": 4.5,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              Zip/Postal
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#dddddd",
+                  "bottom": -0.5,
                   "height": 0.5,
                 }
               }
             />
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "transform": Array [
+                    Object {
+                      "scaleX": 1,
+                    },
+                  ],
+                }
+              }
+            >
+              <View
+                hasError={false}
+                style={
+                  Object {
+                    "backgroundColor": "#6bac43",
+                    "bottom": 0,
+                    "height": 0.5,
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
       </View>

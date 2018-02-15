@@ -1,6 +1,7 @@
 import React from 'react';
 import { compose, nest } from 'recompose';
-import { ScrollView, Platform } from 'react-native';
+import { Platform } from 'react-native';
+import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import { TabViewPagerExperimental } from 'react-native-tab-view';
 import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
@@ -11,6 +12,9 @@ import { asModal } from '@ui/ModalView';
 import TabView, { SceneMap } from '@ui/TabView';
 import styled from '@ui/styled';
 import { H3, H7 } from '@ui/typography';
+
+export { default as ForgotPassword } from './ForgotPassword';
+export { default as ResetPassword } from './ResetPassword';
 
 const enhance = compose(
   mediaQuery(({ md }) => ({ maxWidth: md }), asModal),
@@ -45,7 +49,7 @@ const BannerH3 = asBannerText(H3);
 const BannerH7 = asBannerText(H7);
 
 const Auth = enhance(() => (
-  <ScrollView>
+  <KeyboardAwareScrollView>
     <Banner>
       <BannerContent>
         <BannerH3>WELCOME TO NEWSPRING</BannerH3>
@@ -57,7 +61,7 @@ const Auth = enhance(() => (
       routes={tabRoutes}
       renderScene={tabSenes}
     />
-  </ScrollView>
+  </KeyboardAwareScrollView>
 ));
 
 export default Auth;
