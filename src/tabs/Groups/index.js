@@ -1,5 +1,6 @@
 import React from 'react';
-import { ScrollView, Platform } from 'react-native';
+import { Platform } from 'react-native';
+import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import { compose, withProps } from 'recompose';
 import withCampuses from '@data/withCampuses';
 import withGroupAttributes from '@data/withGroupAttributes';
@@ -45,7 +46,7 @@ const Groups = withRouter(({
           {Platform.OS === 'web' ? <Instructions /> : null}
         </Header>
         <LiveNowButton />
-        <ScrollView keyboardShouldPersistTaps="handled">
+        <KeyboardAwareScrollView keyboardShouldPersistTaps="handled">
           {Platform.OS !== 'web' ? (
             <PaddedView>
               <H3>Find your people</H3>
@@ -61,7 +62,7 @@ const Groups = withRouter(({
           </PaddedView>
           <GroupsILead />
           <GroupStories tagName="community" sectionTitle="You can't do life alone" />
-        </ScrollView>
+        </KeyboardAwareScrollView>
       </FlexedLeft>
       <MediaQuery minWidth="md">
         <Right>

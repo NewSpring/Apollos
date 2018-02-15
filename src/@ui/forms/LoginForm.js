@@ -10,8 +10,19 @@ import Yup from 'yup';
 
 import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
-import Button from '@ui/Button';
+import Button, { ButtonLink } from '@ui/Button';
 import { withRouter, goBackTo } from '@ui/NativeWebRouter';
+import { H7 } from '@ui/typography';
+import styled from '@ui/styled';
+
+const ForgotPasswordText = styled(({ theme }) => ({ textAlign: 'center', paddingBottom: theme.sizing.baseUnit }))(H7);
+const ForgotPasswordLink = withRouter(({ history }) => (
+  <ForgotPasswordText>
+    <ButtonLink onPress={() => history.push('/forgot-password')}>
+      Forgot Password?
+    </ButtonLink>
+  </ForgotPasswordText>
+));
 
 const enhance = compose(
   setPropTypes({
@@ -82,6 +93,7 @@ export const LoginFormWithoutData = enhance(({
       onBlur={() => setFieldTouched('password', true)}
       error={touched.password && errors.password}
     />
+    <ForgotPasswordLink />
     <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
   </View>
 ));
