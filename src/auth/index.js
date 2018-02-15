@@ -13,6 +13,9 @@ import TabView, { SceneMap } from '@ui/TabView';
 import styled from '@ui/styled';
 import { H3, H7 } from '@ui/typography';
 
+export { default as ForgotPassword } from './ForgotPassword';
+export { default as ResetPassword } from './ResetPassword';
+
 const enhance = compose(
   mediaQuery(({ md }) => ({ maxWidth: md }), asModal),
 );
