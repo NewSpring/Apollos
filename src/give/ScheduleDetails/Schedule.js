@@ -86,7 +86,6 @@ const Schedule = enhance(({
   const isCancellable = !isComplete && isActive;
 
   let details = get(transaction, 'details', []);
-  details = [...details, ...details, ...details];
 
   return (
     <View>
