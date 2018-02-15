@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Linking, View } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import { compose, withProps, setPropTypes } from 'recompose';
@@ -8,8 +8,28 @@ import Yup from 'yup';
 
 import { withRouter, goBackTo } from '@ui/NativeWebRouter';
 import withUser from '@data/withUser';
-import { Text as TextInput } from '@ui/inputs';
-import Button from '@ui/Button';
+import { Text as TextInput, Switch } from '@ui/inputs';
+import { LabelText } from '@ui/inputs/FloatingLabel';
+import Button, { ButtonLink } from '@ui/Button';
+
+import Status from './FormStatusText';
+
+const tocLabel = (
+  <LabelText>
+    {'I agree to the '}<ButtonLink onPress={() => Linking.openURL('https://newspring.cc/terms')}>terms of service</ButtonLink>.
+  </LabelText>
+);
+
+const UserExistsStatus = withRouter(({ history }) => (
+  <Status error>
+    {'A user already exists with that email, but the password doesn\'t match. Would you like to '}
+    <ButtonLink onPress={() => history.push('/forgot-password')}>reset your password?</ButtonLink>
+  </Status>
+));
+
+const UnknownErrorStatus = (
+  <Status error>An error occured. Please double check your information and try again later.</Status>
+);
 
 const enhance = compose(
   setPropTypes({
@@ -19,22 +39,41 @@ const enhance = compose(
   }),
   withRouter,
   withFormik({
-    mapPropsToValues: ({ email }) => ({ email }),
+    mapPropsToValues: ({ email }) => ({ email, terms: true }),
     validationSchema: Yup.object().shape({
       email: Yup.string().email().required(),
       password: Yup.string().required(),
       firstName: Yup.string().required(),
       lastName: Yup.string().required(),
+      terms: Yup.boolean().oneOf([true, null], 'You must agree to the terms to create an account').required(),
     }),
-    handleSubmit: async (values, { props, setSubmitting }) => {
+    handleSubmit: async (values, { props, setSubmitting, setStatus }) => {
+      let result = null;
+      let success = false;
       try {
-        const result = await props.onSubmit(values);
-        if (props.onSignupSuccess) props.onSignupSuccess(result);
+        result = await props.onSubmit(values);
+        success = true;
+      } catch (e) {
+        if (e.message.indexOf('User already exists') > -1) {
+          // try to log user in:
+          if (props.login) {
+            try {
+              result = await props.login(values);
+              success = true;
+            } catch (e2) {
+              setStatus(UserExistsStatus);
+            }
+          }
+        } else {
+          setStatus(UnknownErrorStatus);
+        }
+      }
 
+      if (success) {
+        setStatus(null);
+        if (props.onSignupSuccess) props.onSignupSuccess(result);
         const referrer = get(props, 'location.state.referrer');
         if (referrer) return goBackTo({ to: referrer, history: props.history, replace: true });
-      } catch (e) {
-        // todo: show error message from server
       }
 
       return setSubmitting(false);
@@ -61,6 +100,7 @@ const SignUpFormWithoutData = enhance(({
   handleSubmit,
   isValid,
   isSubmitting,
+  status,
 }) => (
   <View>
     <TextInput
@@ -93,6 +133,13 @@ const SignUpFormWithoutData = enhance(({
       onBlur={() => setFieldTouched('lastName', true)}
       error={touched.lastName && errors.lastName}
     />
+    <Switch
+      label={tocLabel}
+      value={values.terms}
+      onValueChange={v => setFieldValue('terms', v)}
+      error={errors.terms}
+    />
+    {status ? React.createElement(status) : null}
     <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
   </View>
 ));
