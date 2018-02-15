@@ -8,6 +8,7 @@ import Yup from 'yup';
 import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
 import Button from '@ui/Button';
+import sentry from '@utils/sentry';
 
 import Status from './FormStatusText';
 
@@ -25,7 +26,7 @@ const enhance = compose(
     }) => {
       props.onSubmit(values)
         .catch((...e) => {
-          console.log('Forgot Password error', e); // eslint-disable-line
+          sentry.captureException(e);
           setStatus(null);
           setFieldError('email', 'Could not find your email'); // todo: show server error messages
         })
