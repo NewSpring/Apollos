@@ -7,15 +7,12 @@ import { withFormik } from 'formik';
 import moment from 'moment';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import * as Inputs from '@ui/inputs';
-import { H6 } from '@ui/typography';
-import styled from '@ui/styled';
 import TableView from '@ui/TableView';
 import PaddedView from '@ui/PaddedView';
 import withCampuses from '@data/withCampuses';
 import withUser from '@data/withUser';
 import Button from '@ui/Button';
-
-const Status = styled({ textAlign: 'center' })(H6);
+import Status from './FormStatusText';
 
 export const ProfileDetailsFormWithoutData = ({
   setFieldValue,
