@@ -11,6 +11,7 @@ import TableView from '@ui/TableView';
 import Button from '@ui/Button';
 import { H6 } from '@ui/typography';
 import styled from '@ui/styled';
+import sentry from '@utils/sentry';
 
 const Status = styled({ textAlign: 'center' })(H6);
 
@@ -28,7 +29,7 @@ const enhance = compose(
       props.onSubmit(values)
         .catch((...e) => {
           setStatus('Please make sure your password is correct and try again');
-          console.log('Change Password error', e); // eslint-disable-line
+          sentry.captureException(e);
           // todo: show server error messages
         })
         .then((...args) => {
