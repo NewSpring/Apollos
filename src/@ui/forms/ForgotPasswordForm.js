@@ -8,6 +8,9 @@ import Yup from 'yup';
 import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
 import Button from '@ui/Button';
+import sentry from '@utils/sentry';
+
+import Status from './FormStatusText';
 
 const enhance = compose(
   setPropTypes({
@@ -18,13 +21,17 @@ const enhance = compose(
     validationSchema: Yup.object().shape({
       email: Yup.string().email().required(),
     }),
-    handleSubmit: async (values, { props, setFieldError, setSubmitting }) => {
+    handleSubmit: async (values, {
+      props, setFieldError, setStatus, setSubmitting,
+    }) => {
       props.onSubmit(values)
         .catch((...e) => {
-          console.log('Forgot Password error', e); // eslint-disable-line
+          sentry.captureException(e);
+          setStatus(null);
           setFieldError('email', 'Could not find your email'); // todo: show server error messages
         })
         .then((...args) => {
+          setStatus(`An email has been sent to ${values.email} with further instructions to reset your password.`);
           if (props.onForgotPasswordSuccess) props.onForgotPasswordSuccess(...args);
         })
         .finally(() => setSubmitting(false));
@@ -51,8 +58,11 @@ const ChangePasswordFormWithoutData = enhance(({
   handleSubmit,
   isValid,
   isSubmitting,
+  status,
 }) => (
   <View>
+    <Status>{'Confirm your email to send the reset link.'}</Status>
+    <Status>{'If you don\'t get a reset email within 5 minutes, please check your spam folders.'}</Status>
     <TextInput
       label="Email"
       type="email"
@@ -61,6 +71,7 @@ const ChangePasswordFormWithoutData = enhance(({
       onBlur={() => setFieldTouched('email', true)}
       error={touched.email && errors.email}
     />
+    {status ? <Status>{status}</Status> : null}
     <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
   </View>
 ));

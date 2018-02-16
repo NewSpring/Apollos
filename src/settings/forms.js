@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import { ProfileDetailsForm, ProfileAddressForm, ChangePasswordForm } from '@ui/forms';
 import Header from '@ui/Header';
 
@@ -8,9 +8,9 @@ import Layout from './Layout';
 const makeFormScreen = (Form, title = 'Title') => props => (
   <Layout>
     <Header webEnabled titleText={title} backButton />
-    <ScrollView>
+    <KeyboardAwareScrollView>
       <Form {...props} />
-    </ScrollView>
+    </KeyboardAwareScrollView>
   </Layout>
 );
 
