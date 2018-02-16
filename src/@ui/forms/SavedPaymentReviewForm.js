@@ -15,6 +15,7 @@ import Icon from '@ui/Icon';
 import last4 from '@utils/last4';
 import TableView, { Cell, Divider } from '@ui/TableView';
 import PaddedView from '@ui/PaddedView';
+import sentry from '@utils/sentry';
 
 const Row = styled({
   flexDirection: 'row',
@@ -201,7 +202,7 @@ const PaymentConfirmationForm = compose(
         });
         return true;
       } catch (err) {
-        console.log('err', err); // eslint-disable-line no-console
+        sentry.captureException(err);
         props.setPaymentResult({
           error: err.message,
         });
