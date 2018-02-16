@@ -5,6 +5,7 @@ import { get } from 'lodash';
 import Yup from 'yup';
 import { withFormik } from 'formik';
 import moment from 'moment';
+
 import ActivityIndicator from '@ui/ActivityIndicator';
 import * as Inputs from '@ui/inputs';
 import TableView from '@ui/TableView';
@@ -12,6 +13,7 @@ import PaddedView from '@ui/PaddedView';
 import withCampuses from '@data/withCampuses';
 import withUser from '@data/withUser';
 import Button from '@ui/Button';
+import sentry from '@utils/sentry';
 import Status from './FormStatusText';
 
 export const ProfileDetailsFormWithoutData = ({
@@ -185,7 +187,7 @@ const ProfileDetailsForm = compose(
       } catch (err) {
         // TODO: Add space for general errors
         // and set via setErrors
-        console.log(err);
+        sentry.captureException(err);
         // throw err;
         setStatus('There was an error updating your information. Please try again.');
       } finally {

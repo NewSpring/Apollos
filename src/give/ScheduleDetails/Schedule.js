@@ -113,7 +113,7 @@ const Schedule = enhance(({
                 <H4>{get(detail, 'account.name')}</H4>
                 <Row>
                   <Label>Start date: </Label>
-                  <BodyText italic>{moment(detail.start).format('MM/DD/YYYY')}</BodyText>
+                  <BodyText italic>{moment(transaction.start).utc().format('MM/DD/YYYY')}</BodyText>
                 </Row>
               </FlexedView>
               <CashAmountIndicator size={3} amount={detail.amount} />

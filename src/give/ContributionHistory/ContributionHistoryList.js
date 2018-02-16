@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
-  View, Linking,
+  View,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { groupBy, map } from 'lodash';
@@ -13,6 +13,7 @@ import { BodyText } from '@ui/typography';
 import { ButtonLink } from '@ui/Button';
 import Touchable from '@ui/Touchable';
 import LoginPromptCard from '@ui/LoginPromptCard';
+import WebBrowser from '@ui/WebBrowser';
 import ContributionHistoryHeader from './ContributionHistoryHeader';
 import ContributionHistoryFilter from './ContributionHistoryFilter';
 
@@ -104,7 +105,7 @@ class ContributionHistoryList extends PureComponent {
           <PaddedView>
             <BodyText>
               If you have any questions, please call our Finance Team at 864-965-9990 or
-              <ButtonLink onPress={() => Linking.openURL('https://newspring.cc/contact')}> contact us </ButtonLink>
+              <ButtonLink onPress={() => WebBrowser.openBrowserAsync('https://newspring.cc/contact')}> contact us </ButtonLink>
               and someone will be happy to assist you.
             </BodyText>
           </PaddedView>

@@ -1,6 +1,6 @@
 import React, { PureComponent, cloneElement, Children } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, Linking } from 'react-native';
+import { View, Text } from 'react-native';
 import { Parser, DomHandler } from 'htmlparser2';
 import { decodeHTML } from 'entities';
 import { BodyText, H1, H2, H3, H4, H5, H6, H7 } from '@ui/typography';
@@ -9,6 +9,7 @@ import ConnectedImage from '@ui/ConnectedImage';
 import Paragraph from '@ui/Paragraph';
 import BlockQuote from '@ui/BlockQuote';
 import BulletListItem from '@ui/BulletListItem';
+import WebBrowser from '@ui/WebBrowser';
 
 const LINE_BREAK = '\n';
 
@@ -58,7 +59,7 @@ export const defaultRenderer = (node, { children }) => {
     case 'li': return <BulletListItem>{wrapTextChildren(children)}</BulletListItem>;
     case 'a': {
       const url = node.attribs && node.attribs.href;
-      const onPress = () => Linking.openURL(decodeHTML(url));
+      const onPress = () => WebBrowser.openBrowserAsync(decodeHTML(url));
       if (url) {
         return (<ButtonLink onPress={onPress}>{children}</ButtonLink>);
       }

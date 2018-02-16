@@ -1,6 +1,6 @@
 import React from 'react';
 import { compose, withProps } from 'recompose';
-import { View, Linking } from 'react-native';
+import { View } from 'react-native';
 import FeedView, { defaultFeedItemRenderer } from '@ui/FeedView';
 import { H5, BodyText } from '@ui/typography';
 import { ButtonLink } from '@ui/Button';
@@ -10,6 +10,7 @@ import ThumbnailCard from '@ui/ThumbnailCard';
 import { withRecentLikes } from '@data/likes';
 import withPromotions from '@data/withPromotions';
 import styled from '@ui/styled';
+import WebBrowser from '@ui/WebBrowser';
 
 const FeaturedCard = defaultFeedItemRenderer(FeedItemCard);
 
@@ -74,7 +75,7 @@ const Feed = enhance(({
 
                   return (
                     <BodyText key={x.id}>
-                      <ButtonLink onPress={() => Linking.openURL(x.meta.urlTitle)}>
+                      <ButtonLink onPress={() => WebBrowser.openBrowserAsync(x.meta.urlTitle)}>
                         {x.title}
                       </ButtonLink>
                       {delimeter}
