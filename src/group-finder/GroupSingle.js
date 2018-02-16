@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Linking, ScrollView, View, Platform } from 'react-native';
+import { ScrollView, View, Platform } from 'react-native';
 import { compose, mapProps, pure } from 'recompose';
 
 import withGroupInfo from '@data/withGroupInfo';
@@ -19,6 +19,7 @@ import { Link } from '@ui/NativeWebRouter';
 import Settings from '@utils/Settings';
 import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
+import WebBrowser from '@ui/WebBrowser';
 
 import Map from './Map';
 
@@ -145,9 +146,9 @@ const GroupSingle = enhance(({
                 <CenteredSideBySideView>
                   <AdTitle>#TheseAreMyPeople</AdTitle>
                   {isLeader ? (
-                    <Button title="Manage" bordered onPress={() => Linking.openURL(`${rockUrl}page/521?GroupId=${entityId}&${loginParam}`)} />
+                    <Button title="Manage" bordered onPress={() => WebBrowser.openBrowserAsync(`${rockUrl}page/521?GroupId=${entityId}&${loginParam}`)} />
                   ) : (
-                    <Button title="Contact" bordered onPress={() => Linking.openURL(`${rockUrl}Workflows/304?Group=${guid}${loginParam}`)} />
+                    <Button title="Contact" bordered onPress={() => WebBrowser.openBrowserAsync(`${rockUrl}Workflows/304?Group=${guid}${loginParam}`)} />
                   )}
                 </CenteredSideBySideView>
               </PaddedView>

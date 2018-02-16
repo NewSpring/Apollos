@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StatusBar, Platform } from 'react-native';
 import SafeAreaView from '@ui/SafeAreaView';
 import PropTypes from 'prop-types';
-import { compose, setPropTypes, pure, branch, renderNothing, defaultProps, renderComponent } from 'recompose';
+import { compose, setPropTypes, pure, branch, renderNothing, defaultProps } from 'recompose';
 import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import { H2, H6 } from '@ui/typography';
@@ -28,8 +28,8 @@ const StyledHeaderBar = styled(({ theme }) => ({
   }),
 }), 'Header.Bar')(View);
 
-const HeaderContainer = styled(({ theme }) => ({
-  backgroundColor: theme.colors.background.primary,
+const HeaderContainer = styled(({ theme, backgroundColor }) => ({
+  backgroundColor: backgroundColor || theme.colors.background.primary,
   ...Platform.select({
     android: {
       paddingTop: 25, // todo: this is currently required as SafeAreaView isn't
@@ -45,14 +45,12 @@ const WebHeaderText = styled(({ theme }) => ({
   color: theme.colors.darkSecondary,
 }), 'Header.WebHeaderText')(H2);
 
-const StyledHeaderText = compose(
-  branch(() => Platform.OS === 'web',
-    renderComponent(WebHeaderText),
-    styled(({ theme, barStyle }) => ({
-      color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
-    }), 'Header.Text'),
-  ),
-)(H6);
+const StyledHeaderText = Platform.OS === 'web' ?
+  WebHeaderText :
+  styled(({ theme, barStyle }) => ({
+    color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
+    maxWidth: '80%',
+  }), 'Header.Text')(H6);
 
 const RightContainer = styled(({ theme }) => ({
   position: 'absolute',
@@ -68,6 +66,13 @@ const RightContainer = styled(({ theme }) => ({
     },
   }),
 }), 'Header.RightContainer')(View);
+
+const ColoredBackButton = compose(
+  pure,
+  withTheme(({ theme, barstyle }) => ({
+    color: (barstyle === 'dark-content' ? theme.colors.darkPrimary : undefined),
+  })),
+)(BackButton);
 
 const enhance = compose(
   defaultProps({
@@ -92,7 +97,6 @@ const enhance = compose(
       },
     },
   }))),
-  withTheme(),
   pure,
 );
 
@@ -102,15 +106,16 @@ const Header = enhance(({
   backButton = false,
   barStyle = 'light-content',
   style = {},
-  backgroundColor,
+  backgroundColor = null,
   children,
-  theme,
 }) => (
-  <HeaderContainer style={[backgroundColor ? { backgroundColor } : null, style]}>
+  <HeaderContainer backgroundColor={backgroundColor} style={style}>
     <StatusBar barStyle={barStyle} />
     <StyledHeaderBar>
-      {backButton ? <BackButton color={barStyle === 'dark-content' ? theme.colors.darkPrimary : undefined} /> : null}
-      {titleText ? (<StyledHeaderText barStyle={barStyle}>{titleText}</StyledHeaderText>) : null}
+      {backButton ? <ColoredBackButton barStyle={barStyle} /> : null}
+      {titleText ?
+        <StyledHeaderText barStyle={barStyle} numberOfLines={1}>{titleText}</StyledHeaderText>
+        : null}
       {children}
       {right ? <RightContainer>{right}</RightContainer> : null}
     </StyledHeaderBar>

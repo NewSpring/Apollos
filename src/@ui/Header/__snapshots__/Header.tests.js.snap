@@ -2,6 +2,7 @@
 
 exports[`The Header component should render correctly 1`] = `
 <RCTSafeAreaView
+  backgroundColor={null}
   style={
     Object {
       "backgroundColor": "#6bac43",
@@ -24,6 +25,7 @@ exports[`The Header component should render correctly 1`] = `
 
 exports[`The Header component should render with a back button correctly 1`] = `
 <RCTSafeAreaView
+  backgroundColor={null}
   style={
     Object {
       "backgroundColor": "#6bac43",
@@ -88,6 +90,7 @@ exports[`The Header component should render with a back button correctly 1`] = `
           }
         >
           <Svg
+            barStyle="light-content"
             color={undefined}
             height={24}
             viewBox="0 0 24 24"
