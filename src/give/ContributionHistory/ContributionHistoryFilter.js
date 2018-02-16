@@ -5,6 +5,7 @@ import { withFormik } from 'formik';
 import moment from 'moment';
 import Yup from 'yup';
 import { compose } from 'recompose';
+
 import { DateInput } from '@ui/inputs';
 import Button from '@ui/Button';
 import { H7 } from '@ui/typography';
@@ -14,6 +15,7 @@ import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
 import Chip, { ChipList } from '@ui/Chip';
 import { withTheme } from '@ui/theme';
 import PaddedView from '@ui/PaddedView';
+import sentry from '@utils/sentry';
 
 const StyledTableView = styled({ marginBottom: 0 })(TableView);
 
@@ -195,7 +197,7 @@ const enhance = compose(
         setSubmitting(false);
       } catch (e) {
         // TODO: If there's an error, we want to stay on this page and display it.
-        console.log(e);
+        sentry.captureException(e);
       }
     },
   }),
