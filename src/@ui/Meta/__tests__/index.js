@@ -1,5 +1,4 @@
 import generateData from '../metadata';
-// import generateData from "../metadata";
 
 describe('Meta', () => {
   it('should have default data if nothing is passed to it', () => {
