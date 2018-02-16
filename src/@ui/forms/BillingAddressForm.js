@@ -1,20 +1,18 @@
 import React from 'react';
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { branch, renderComponent, compose, setPropTypes } from 'recompose';
 import get from 'lodash/get';
 import { withFormik } from 'formik';
 import Yup from 'yup';
+
 import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
 import { withRouter } from '@ui/NativeWebRouter';
 import PaddedView from '@ui/PaddedView';
 import TableView, { FormFields } from '@ui/TableView';
-
 import ActivityIndicator from '@ui/ActivityIndicator';
-
+import sentry from '@utils/sentry';
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
 
@@ -186,8 +184,8 @@ const BillingAddressForm = compose(
         setSubmitting(false);
         if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
       } catch (e) {
-        // todo: If there's an error, we want to stay on this page and display it.
-        console.log(e);
+        // TODO: If there's an error, we want to stay on this page and display it.
+        sentry.captureException(e);
       }
     },
   }),

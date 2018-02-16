@@ -10,6 +10,8 @@ import Yup from 'yup';
 import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
 import Button from '@ui/Button';
+import sentry from '@utils/sentry';
+
 import Status from './FormStatusText';
 
 const enhance = compose(
@@ -22,7 +24,7 @@ const enhance = compose(
     validationSchema: Yup.object().shape({
       password: Yup.string().required(),
       passwordConfirm: Yup.string().oneOf([Yup.ref('password'), null])
-        .required('Password confirm is required'),
+        .required('A password is required'),
     }),
     handleSubmit: async (values, {
       props, setFieldError, setSubmitting, setStatus,
@@ -30,7 +32,7 @@ const enhance = compose(
       props.resetPassword({ token: props.token, newPassword: values.password })
         .catch((...e) => {
           setStatus('There was an error resetting your password.');
-          console.log('Reset password error', e); // eslint-disable-line
+          sentry.captureException(e);
           setFieldError('password', true); // todo: show real error message from server
         })
         .then((...args) => {
