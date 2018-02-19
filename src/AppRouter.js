@@ -10,6 +10,7 @@ import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
 import orientation from '@utils/orientation';
 import BackgroundView from '@ui/BackgroundView';
+import Meta from '@ui/Meta';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -22,7 +23,7 @@ import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
 import Locations from './locations';
 import Live from './live';
-import Auth from './auth';
+import Auth, { ForgotPassword, ResetPassword } from './auth';
 import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
@@ -86,6 +87,7 @@ class AppRouter extends PureComponent {
     <ProtectedRoute path="/give/new-payment-method" key="give-new-payment-method" component={asModal(give.AddAccount)} />,
     <ProtectedRoute exact path="/give/payment-methods/:id" key="give-payment-method" component={asModal(give.PaymentMethod)} />,
     <Route path="/login" key="login" component={asModal(Auth)} />,
+    <Route path="/forgot-password" key="forgot-password" component={ForgotPassword} />,
     <Route path="/discover" key="discover" component={asModal(tabs.Discover)} />,
   ];
 
@@ -132,6 +134,7 @@ class AppRouter extends PureComponent {
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         {Platform.OS === 'web' ? this.renderWebRedirects() : null}
         {Platform.OS !== 'web' ? <DeepLinking /> : null}
+        <Meta />
         <Player>
           <AppLayout>
             <CardStack
@@ -193,6 +196,9 @@ class AppRouter extends PureComponent {
               <ProtectedRoute exact path="/settings/profile" component={ProfileDetails} />
               <ProtectedRoute exact path="/settings/address" component={ProfileAddress} />
               <ProtectedRoute exact path="/settings/password" component={ChangePassword} />
+
+              <Route exact path="/forgot-password" component={ForgotPassword} cardStackDirection="vertical" />
+              <Route exact path="/_/reset-password/:token" component={ResetPassword} />
 
               <Route cardStackKey="tabs" component={this.tabs} />
             </CardStack>

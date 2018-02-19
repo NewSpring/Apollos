@@ -1,11 +1,13 @@
 import React from 'react';
-import { ScrollView, Platform } from 'react-native';
+import { Platform } from 'react-native';
+import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import { compose, withProps } from 'recompose';
 import withCampuses from '@data/withCampuses';
 import withGroupAttributes from '@data/withGroupAttributes';
 import Header from '@ui/Header';
 import BackgroundView from '@ui/BackgroundView';
 import PaddedView from '@ui/PaddedView';
+import Meta from '@ui/Meta';
 import { H3, H7 } from '@ui/typography';
 import { GroupSearchForm } from '@ui/forms';
 import { withRouter } from '@ui/NativeWebRouter';
@@ -39,13 +41,18 @@ const Groups = withRouter(({
   history,
 }) => (
   <BackgroundView>
+    <Meta
+      title="Group Finder"
+      description="Who are your people? We know it's important to be connected, but it's hard to build lasting friendships. What if taking one simple step changed everything? At NewSpring, we’re trying to make it easier for you to find people who share your interests. We know that when you get together with people and have fun, you’ll begin to grow into a strong community that serves and grows together. What if you are one step away from saying, “These are my people”?"
+      image="https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/groups/groups.2x1_2000_1000_90_a789ae07aae81961.jpg"
+    />
     <FlexedSideBySideView>
       <FlexedLeft>
         <Header webEnabled titleText={Platform.OS === 'web' ? 'Find your people' : 'Group Finder'} >
           {Platform.OS === 'web' ? <Instructions /> : null}
         </Header>
         <LiveNowButton />
-        <ScrollView keyboardShouldPersistTaps="handled">
+        <KeyboardAwareScrollView keyboardShouldPersistTaps="handled">
           {Platform.OS !== 'web' ? (
             <PaddedView>
               <H3>Find your people</H3>
@@ -61,7 +68,7 @@ const Groups = withRouter(({
           </PaddedView>
           <GroupsILead />
           <GroupStories tagName="community" sectionTitle="You can't do life alone" />
-        </ScrollView>
+        </KeyboardAwareScrollView>
       </FlexedLeft>
       <MediaQuery minWidth="md">
         <Right>

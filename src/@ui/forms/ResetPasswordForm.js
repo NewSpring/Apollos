@@ -7,31 +7,32 @@ import { compose, mapProps, setPropTypes } from 'recompose';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 
-import { H6 } from '@ui/typography';
-import styled from '@ui/styled';
 import withUser from '@data/withUser';
 import { Text as TextInput } from '@ui/inputs';
 import Button from '@ui/Button';
+import sentry from '@utils/sentry';
 
-const Status = styled({ textAlign: 'center' })(H6);
+import Status from './FormStatusText';
+
 const enhance = compose(
   setPropTypes({
     onResetSuccess: PropTypes.func,
-    onSubmit: PropTypes.func,
+    resetPassword: PropTypes.func,
+    token: PropTypes.string,
   }),
   withFormik({
     validationSchema: Yup.object().shape({
       password: Yup.string().required(),
-      token: Yup.string().required(), // todo: Get token from URL flow
+      passwordConfirm: Yup.string().oneOf([Yup.ref('password'), null])
+        .required('A password is required'),
     }),
     handleSubmit: async (values, {
       props, setFieldError, setSubmitting, setStatus,
     }) => {
-      props.onSubmit(values)
+      props.resetPassword({ token: props.token, newPassword: values.password })
         .catch((...e) => {
           setStatus('There was an error resetting your password.');
-          console.log('Reset password error', e); // eslint-disable-line
-          setFieldError('token', true);
+          sentry.captureException(e);
           setFieldError('password', true); // todo: show real error message from server
         })
         .then((...args) => {
@@ -67,20 +68,20 @@ export const ChangePasswordFormWithoutData = enhance(({
 }) => (
   <View>
     <TextInput
-      label="Token"
-      autoCorrect={false}
-      value={values.token}
-      onChangeText={text => setFieldValue('token', text)}
-      onBlur={() => setFieldTouched('token', true)}
-      error={touched.token && errors.token}
-    />
-    <TextInput
       label="New Password"
       type="password"
       value={values.password}
       onChangeText={text => setFieldValue('password', text)}
       onBlur={() => setFieldTouched('password', true)}
       error={touched.password && errors.password}
+    />
+    <TextInput
+      label="Confirm Password (enter it again)"
+      type="password"
+      value={values.passwordConfirm}
+      onChangeText={text => setFieldValue('passwordConfirm', text)}
+      onBlur={() => setFieldTouched('passwordConfirm', true)}
+      error={touched.passwordConfirm && errors.passwordConfirm}
     />
     {status ? (
       <Status>{status}</Status>

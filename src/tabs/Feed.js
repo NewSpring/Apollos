@@ -10,6 +10,7 @@ import { ResponsiveSideBySideView, Left, Right } from '@ui/SideBySideView';
 import styled from '@ui/styled';
 import MediaQuery from '@ui/MediaQuery';
 import Hero from '@ui/Hero';
+import Meta from '@ui/Meta';
 import { H1 } from '@ui/typography';
 
 const FeedViewWithHomeFeed = withHomeFeed(FeedView);
@@ -33,6 +34,7 @@ const BackgroundVideo = () => (
 
 export const Feed = enhance(() => (
   <BackgroundView>
+    <Meta title="Welcome" />
     <FlexedResponsiveSideBySideView>
       <FlexedLeft>
         <Header titleText="NewSpring Church" />

@@ -140,7 +140,7 @@ const enhance = compose(
   withProps(props => ({
     onPressActivityLink() { props.route.jumpTo('ContributionHistory'); },
     onPressExpiringAccountCard(id) { props.history.push(`/give/payment-methods/${id}`); },
-    onPressNewScheduleLink() { props.route.jumpTo('ContributionHistory'); },
+    onPressNewScheduleLink() { props.route.jumpTo('Now'); },
     onPressTransactionCard(id) { props.history.push(`/give/history/${id}`); },
     onPressScheduleCard(id) { props.history.push(`/give/schedules/${id}`); },
   })),
