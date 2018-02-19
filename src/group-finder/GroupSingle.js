@@ -19,6 +19,7 @@ import { Link } from '@ui/NativeWebRouter';
 import Settings from '@utils/Settings';
 import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
+import Meta from '@ui/Meta';
 import WebBrowser from '@ui/WebBrowser';
 
 import Map from './Map';
@@ -99,7 +100,6 @@ const GroupSingle = enhance(({
     type,
     demographic,
     description,
-    // photo
     kidFriendly,
     ageRange,
     campus = {},
@@ -121,6 +121,7 @@ const GroupSingle = enhance(({
   const isLeader = isCurrentPersonLeader(person, leaders);
   return (
     <BackgroundView>
+      <Meta title={name} image={photo} description={description} id={id} />
       <Header titleText="Group Profile" backButton />
       <FlexedSideBySideView>
         <FlexedLeft>
