@@ -2,7 +2,6 @@ import { Platform, TouchableNativeFeedback, TouchableOpacity } from 'react-nativ
 import { defaultProps } from 'recompose';
 
 const IOSTouchable = defaultProps({
-  delayPressIn: 50,
   activeOpacity: 0.5,
 })(TouchableOpacity);
 
