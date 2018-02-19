@@ -12,6 +12,7 @@ import styled from '@ui/styled';
 import Icon from '@ui/Icon';
 import { Link } from '@ui/NativeWebRouter';
 import { H7 } from '@ui/typography';
+import Meta from '@ui/Meta';
 
 import Topics from './Topics';
 import Likes from './Likes';
@@ -22,12 +23,23 @@ const CurrentUserAvatar = withUser(UserAvatarView);
 const DesktopCurrentUserAvatar = styled({ height: '100vh' })(CurrentUserAvatar);
 const FlexedLeft = styled({ flex: 1 })(Left);
 
+const UserMeta = withUser(({
+  user: {
+    photo,
+    firstName,
+    lastName,
+  } = {},
+}) => (
+  <Meta title={`${firstName} ${lastName}`} photo={photo} />
+));
+
 const tabRoutes = [{ title: 'Likes', key: 'likes' }, { title: 'Topics', key: 'topics' }];
 
 const enhance = shouldUpdate(() => false);
 
 const Profile = enhance(() => (
   <BackgroundView>
+    <UserMeta />
     <FlexedSideBySideView>
       <FlexedLeft>
         <Header

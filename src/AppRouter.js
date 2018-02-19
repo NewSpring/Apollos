@@ -10,6 +10,7 @@ import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
 import orientation from '@utils/orientation';
 import BackgroundView from '@ui/BackgroundView';
+import Meta from '@ui/Meta';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -133,6 +134,7 @@ class AppRouter extends PureComponent {
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         {Platform.OS === 'web' ? this.renderWebRedirects() : null}
         {Platform.OS !== 'web' ? <DeepLinking /> : null}
+        <Meta />
         <Player>
           <AppLayout>
             <CardStack
