@@ -14,6 +14,7 @@ import { ResponsiveSideBySideView as SideBySideView, Left, Right } from '@ui/Sid
 import Hero, { BackgroundImage } from '@ui/Hero';
 import styled from '@ui/styled';
 import ContributionsChartHero from '@ui/ContributionsChartHero';
+import Meta from '@ui/Meta';
 
 import Dashboard from 'give/Dashboard';
 import Now from 'give/Now';
@@ -134,6 +135,17 @@ class GiveRoutes extends PureComponent {
             </Right>
           </MediaQuery>
         </FlexedSideBySideView>
+        <Switch>
+          <Route path="/give/history">
+            <Meta title="Giving History" />
+          </Route>
+          <Route path="/give" exact>
+            <Meta title="Giving Dashboard" />
+          </Route>
+          <Route>
+            <Meta title="Give" image="//s3.amazonaws.com/ns.assets/apollos/you_cant_outgive_god2x1.jpg" />
+          </Route>
+        </Switch>
       </BackgroundView>
     );
   }
