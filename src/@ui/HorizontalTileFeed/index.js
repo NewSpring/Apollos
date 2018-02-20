@@ -34,7 +34,7 @@ const generateLoadingStateData = (numberOfItems = 1) => {
 };
 
 const defaultItemRenderer = (
-  { item, showTileMeta, index }, // eslint-disable-line
+  { item, showTileMeta, index }, // eslint-disable-line react/prop-types
 ) => (
   <Link to={getLinkPath(item)} component={TouchableWithoutFeedback}>
     <CardTile
