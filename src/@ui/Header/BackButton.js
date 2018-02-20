@@ -14,9 +14,11 @@ const Container = styled(
     left: 0,
     top: 0,
     bottom: 0,
+    zIndex: 5, // fixes hitSlop by positiong button above header text
     alignItems: 'center',
     justifyContent: 'center',
     paddingLeft: 4,
+    paddingRight: 100, // adds extra hitSlop space.
     ...Platform.select({
       web: {
         alignItems: 'flex-start',
@@ -31,7 +33,7 @@ const Container = styled(
 
 const BackButton = props => (
   <Container>
-    {/* Mostly arbitrary hitSlop values. Left is taken from and accounts for positioning above */}
+    {/* Mostly arbitrary hitSlop values taken from padding values above */}
     <Link pop hitSlop={{ right: 100, left: 4 }}>
       <Row>
         <Icon name="arrow-back" size={24} {...props} />
