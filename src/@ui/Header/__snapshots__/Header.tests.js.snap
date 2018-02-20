@@ -62,7 +62,12 @@ exports[`The Header component should render with a back button correctly 1`] = `
         accessible={true}
         collapsable={undefined}
         hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
+        hitSlop={
+          Object {
+            "left": 4,
+            "right": 50,
+          }
+        }
         isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}

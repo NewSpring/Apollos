@@ -8,26 +8,30 @@ import styled from '@ui/styled';
 
 const Row = styled({ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' })(View);
 
-const Container = styled(({ theme }) => ({
-  position: 'absolute',
-  left: 4,
-  top: 0,
-  bottom: 0,
-  alignItems: 'center',
-  justifyContent: 'center',
-  ...Platform.select({
-    web: {
-      alignItems: 'flex-start',
-      justifyContent: 'flex-start',
-      left: theme.sizing.baseUnit,
-      top: theme.sizing.baseUnit,
-    },
+const Container = styled(
+  ({ theme }) => ({
+    position: 'absolute',
+    left: 4,
+    top: 0,
+    bottom: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    ...Platform.select({
+      web: {
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        left: theme.sizing.baseUnit,
+        top: theme.sizing.baseUnit,
+      },
+    }),
   }),
-}), 'BackButton.Container')(View);
+  'BackButton.Container',
+)(View);
 
 const BackButton = props => (
   <Container>
-    <Link pop>
+    {/* Mostly arbitrary hitSlop values. Left is taken from and accounts for positioning above */}
+    <Link pop hitSlop={{ right: 50, left: 4 }}>
       <Row>
         <Icon name="arrow-back" size={24} {...props} />
         <MediaQuery minWidth="md">
