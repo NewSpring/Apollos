@@ -11,11 +11,12 @@ const Row = styled({ flexDirection: 'row', alignItems: 'center', justifyContent:
 const Container = styled(
   ({ theme }) => ({
     position: 'absolute',
-    left: 4,
+    left: 0,
     top: 0,
     bottom: 0,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingLeft: 4,
     ...Platform.select({
       web: {
         alignItems: 'flex-start',
@@ -31,7 +32,7 @@ const Container = styled(
 const BackButton = props => (
   <Container>
     {/* Mostly arbitrary hitSlop values. Left is taken from and accounts for positioning above */}
-    <Link pop hitSlop={{ right: 50, left: 4 }}>
+    <Link pop hitSlop={{ right: 100, left: 4 }}>
       <Row>
         <Icon name="arrow-back" size={24} {...props} />
         <MediaQuery minWidth="md">

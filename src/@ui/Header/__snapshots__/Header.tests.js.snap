@@ -49,7 +49,8 @@ exports[`The Header component should render with a back button correctly 1`] = `
           "alignItems": "center",
           "bottom": 0,
           "justifyContent": "center",
-          "left": 4,
+          "left": 0,
+          "paddingLeft": 4,
           "position": "absolute",
           "top": 0,
         }
@@ -65,7 +66,7 @@ exports[`The Header component should render with a back button correctly 1`] = `
         hitSlop={
           Object {
             "left": 4,
-            "right": 50,
+            "right": 100,
           }
         }
         isTVSelectable={true}
