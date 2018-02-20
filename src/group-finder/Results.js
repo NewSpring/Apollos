@@ -11,6 +11,7 @@ import { parse, stringify } from '@utils/queryString';
 import SideBySideView, { Left, Right } from '@ui/SideBySideView';
 import MediaQuery from '@ui/MediaQuery';
 import styled from '@ui/styled';
+import Meta from '@ui/Meta';
 
 import Map from './Map';
 import AdUnit from './AdUnit';
@@ -67,6 +68,11 @@ const filterUpdateHandler = ({ query, location, history }) => (newQuery) => {
 
 const Results = enhance(props => (
   <BackgroundView>
+    <Meta
+      title="Group Finder - Results"
+      description="Who are your people? We know it's important to be connected, but it's hard to build lasting friendships. What if taking one simple step changed everything? At NewSpring, we’re trying to make it easier for you to find people who share your interests. We know that when you get together with people and have fun, you’ll begin to grow into a strong community that serves and grows together. What if you are one step away from saying, “These are my people”?"
+      image="https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/groups/groups.2x1_2000_1000_90_a789ae07aae81961.jpg"
+    />
     <Header titleText="Group Finder" backButton />
     <FlexedSideBySideView>
       <FlexedLeft>

@@ -134,7 +134,15 @@ exports[`The FeedView component renders correctly 1`] = `
             >
               <Image
                 maintainAspectRatio={false}
-                source={Array []}
+                source={
+                  Array [
+                    Object {
+                      "height": 400,
+                      "uri": "https://picsum.photos/600/400/?random",
+                      "width": 600,
+                    },
+                  ]
+                }
                 style={
                   Array [
                     Object {},
@@ -336,7 +344,15 @@ exports[`The FeedView component renders correctly 1`] = `
             >
               <Image
                 maintainAspectRatio={false}
-                source={Array []}
+                source={
+                  Array [
+                    Object {
+                      "height": 400,
+                      "uri": "https://picsum.photos/600/400/?random",
+                      "width": 600,
+                    },
+                  ]
+                }
                 style={
                   Array [
                     Object {},
