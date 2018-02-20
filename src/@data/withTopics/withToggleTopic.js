@@ -17,16 +17,16 @@ export default graphql(MUTATION, {
       },
       update: async (store) => {
         const data = store.readQuery({ query: USER_QUERY });
-        if (data.person) {
-          const followedTopics = [...(data.person.followedTopics || [])];
+        if (data.user) {
+          const followedTopics = [...(data.user.followedTopics || [])];
           const idx = followedTopics.indexOf(topic);
           if (idx !== -1) {
             followedTopics.splice(idx, 1);
           } else {
             followedTopics.push(topic);
           }
-          const person = { ...data.person, followedTopics };
-          store.writeQuery({ query: USER_QUERY, data: { person } });
+          const user = { ...data.user, followedTopics };
+          store.writeQuery({ query: USER_QUERY, data: { user } });
         }
       },
     })),
