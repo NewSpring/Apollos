@@ -1,18 +1,7 @@
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  Platform,
-} from 'react-native';
+import { View, Text, Platform } from 'react-native';
 import PropTypes from 'prop-types';
-import {
-  compose,
-  withProps,
-  branch,
-  renderComponent,
-  setPropTypes,
-  defaultProps,
-} from 'recompose';
+import { compose, withProps, branch, renderComponent, setPropTypes, defaultProps } from 'recompose';
 import { isEmpty, get } from 'lodash';
 import { withFormik } from 'formik';
 import Yup from 'yup';
@@ -43,33 +32,38 @@ const LoadingView = styled({
   position: 'relative',
 })(ActivityIndicator);
 
-const ButtonWrapper = Platform.OS === 'web' ? styled({
-  alignItems: 'flex-start',
-})(View) : View;
+const ButtonWrapper =
+  Platform.OS === 'web'
+    ? styled({
+      alignItems: 'flex-start',
+    })(View)
+    : View;
 
 const Row = styled({
   flexDirection: 'row',
   alignItems: 'center',
+  flexWrap: 'wrap',
 })(View);
 
-const ButtonRow = mediaQuery(({ md }) => ({ minWidth: md }),
-  styled({ flexDirection: 'row' }),
-)(View);
+const ButtonRow = mediaQuery(({ md }) => ({ minWidth: md }), styled({ flexDirection: 'row' }))(
+  View,
+);
 
-const ButtonInRow = mediaQuery(({ md }) => ({ maxWidth: md }),
+const ButtonInRow = mediaQuery(
+  ({ md }) => ({ maxWidth: md }),
   styled(({ theme }) => ({ marginBottom: theme.sizing.baseUnit / 2 })),
   styled(({ theme }) => ({ marginRight: theme.sizing.baseUnit / 2 })),
 )(Button);
 
-const Totals = Platform.OS === 'web' ? styled({
-  alignItems: 'flex-start',
-})(PaddedView) : PaddedView;
+const Totals =
+  Platform.OS === 'web'
+    ? styled({
+      alignItems: 'flex-start',
+    })(PaddedView)
+    : PaddedView;
 
 const FundContributionType = {
-  id: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   amount: PropTypes.oneOfType([
     PropTypes.string, // will get converted to number when submitted
     PropTypes.number,
@@ -121,14 +115,15 @@ export class ContributionFormWithoutData extends Component {
     isOffline: false,
     offlineContactEmail: '',
     offlineMessageTitle: 'Unfortunately our giving service is offline.',
-    offlineMessageBody: 'We are working to resolve this as fast as possible. We are sorry for any inconvience this may have caused.',
+    offlineMessageBody:
+      'We are working to resolve this as fast as possible. We are sorry for any inconvience this may have caused.',
     recurringPaymentOptionsAvailable: false,
   };
 
   state = {
     secondFundVisible: get(this.props.values, 'secondContribution.id'),
     recurringPaymentOptionsVisible: get(this.props.values, 'frequencyId') !== 'today',
-  }
+  };
 
   get totalContribution() {
     const firstContribution = parseFloat(get(this.props.values, 'firstContribution.amount', 0));
@@ -145,12 +140,13 @@ export class ContributionFormWithoutData extends Component {
   handleToggleSecondFund = () => {
     const secondFundVisible = !this.state.secondFundVisible;
 
-    this.props.setFieldValue('secondContribution', secondFundVisible ?
-      this.remainingFunds[0] : null,
+    this.props.setFieldValue(
+      'secondContribution',
+      secondFundVisible ? this.remainingFunds[0] : null,
     );
 
     this.setState({ secondFundVisible });
-  }
+  };
 
   handleToggleRecurringPaymentOptionsVisibility = () => {
     const recurringPaymentOptionsVisible = !this.state.recurringPaymentOptionsVisible;
@@ -164,14 +160,18 @@ export class ContributionFormWithoutData extends Component {
 
     this.props.setFieldValue('frequencyId', frequencyId);
     this.setState({ recurringPaymentOptionsVisible });
-  }
+  };
 
   renderOfflineMessage() {
     return (
       <View>
         <H3>{this.props.offlineMessageTitle}</H3>
         <BodyText>{this.props.offlineMessageBody}</BodyText>
-        <BodyText>{`We appreciate your patience. If you have any questions please contact us at ${this.props.offlineContactEmail}`}</BodyText>
+        <BodyText>
+          {`We appreciate your patience. If you have any questions please contact us at ${
+            this.props.offlineContactEmail
+          }`}
+        </BodyText>
       </View>
     );
   }
@@ -196,7 +196,7 @@ export class ContributionFormWithoutData extends Component {
               onBlur={() => this.props.setFieldTouched('firstContribution', true)}
               error={Boolean(touched.firstContribution && errors.firstContribution)}
             />
-            {this.state.secondFundVisible &&
+            {this.state.secondFundVisible && (
               <FundInput
                 funds={this.remainingFunds}
                 value={this.props.values.secondContribution}
@@ -204,7 +204,7 @@ export class ContributionFormWithoutData extends Component {
                 onBlur={() => this.props.setFieldTouched('secondContribution', true)}
                 error={Boolean(touched.secondContribution && errors.secondContribution)}
               />
-            }
+            )}
 
             <ButtonWrapper>
               <Button
@@ -226,8 +226,8 @@ export class ContributionFormWithoutData extends Component {
           </PaddedView>
         ) : null}
 
-        {(this.props.recurringPaymentOptionsAvailable &&
-        this.state.recurringPaymentOptionsVisible) ? (
+        {this.props.recurringPaymentOptionsAvailable &&
+        this.state.recurringPaymentOptionsVisible ? (
           <TableView responsive={false}>
             <PaddedView>
               <View>
@@ -248,11 +248,12 @@ export class ContributionFormWithoutData extends Component {
               </View>
             </PaddedView>
           </TableView>
-        ) : null }
+        ) : null}
 
         <Totals vertical={false}>
-          <Row>{/* TODO: refactor CashAmountIndicator to take a pre/post string to wrap amount */}
-            <View><H3>my total is </H3></View>
+          <Row>
+            {/* TODO: refactor CashAmountIndicator to take a pre/post string to wrap amount */}
+            <H3>my total is </H3>
             <CashAmountIndicator amount={total} size={1} />
           </Row>
           {this.props.isLoggedIn ? (
@@ -317,17 +318,21 @@ const ContributionForm = compose(
       startDate: new Date(),
     }),
     validationSchema: Yup.object().shape({
-      firstContribution: Yup.object().shape({
-        id: Yup.string(),
-        name: Yup.string(),
-        amount: Yup.number().required(),
-      }).required(),
+      firstContribution: Yup.object()
+        .shape({
+          id: Yup.string(),
+          name: Yup.string(),
+          amount: Yup.number().required(),
+        })
+        .required(),
       frequencyId: Yup.string().oneOf(['today', ...FREQUENCY_IDS.map(f => f.id)]),
-      secondContribution: Yup.object().nullable().shape({
-        id: Yup.string(),
-        name: Yup.string(),
-        amount: Yup.number().required(),
-      }),
+      secondContribution: Yup.object()
+        .nullable()
+        .shape({
+          id: Yup.string(),
+          name: Yup.string(),
+          amount: Yup.number().required(),
+        }),
       startDate: Yup.date().min(new Date()),
     }),
     handleSubmit(values, { props, setSubmitting }) {
