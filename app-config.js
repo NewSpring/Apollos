@@ -22,7 +22,6 @@ module.exports = env => ({
       icon: 'src/assets/icons/ios/icon-1024x1024.png',
       splash: {
         image: 'src/assets/splash/ios/splash-768x1024.png',
-        resizeMode: 'cover',
       },
     },
     android: {
@@ -30,7 +29,6 @@ module.exports = env => ({
       versionCode: 600000,
       icon: 'src/assets/icons/android/icon-192x192-xxxhpdi.png',
       splash: {
-        resizeMode: 'cover',
         mdpi: 'src/assets/splash/android/splash-320x470.png',
         hdpi: 'src/assets/splash/android/splash-480x640.png',
         xhdpi: 'src/assets/splash/android/splash-720x960.png',
@@ -38,18 +36,19 @@ module.exports = env => ({
       },
     },
     hooks: {
-      postPublish: [{
-        file: 'sentry-expo/upload-sourcemaps',
-        config: {
-          organization: 'differential-cs',
-          project: 'newspring-apollos',
-          authToken: process.env.SENTRY_AUTH,
+      postPublish: [
+        {
+          file: 'sentry-expo/upload-sourcemaps',
+          config: {
+            organization: 'differential-cs',
+            project: 'newspring-apollos',
+            authToken: process.env.SENTRY_AUTH,
+          },
         },
-      }],
+      ],
     },
     extra: {
       ...env,
     },
   },
 });
-
