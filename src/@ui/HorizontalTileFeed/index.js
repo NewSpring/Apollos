@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
+import { TouchableWithoutFeedback, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, branch, withProps, setPropTypes, defaultProps } from 'recompose';
 
@@ -33,8 +33,10 @@ const generateLoadingStateData = (numberOfItems = 1) => {
   return loadingStateData;
 };
 
-const defaultItemRenderer = ({ item, showTileMeta, index }) => ( // eslint-disable-line
-  <Link to={getLinkPath(item)}>
+const defaultItemRenderer = (
+  { item, showTileMeta, index }, // eslint-disable-line react/prop-types
+) => (
+  <Link to={getLinkPath(item)} component={TouchableWithoutFeedback}>
     <CardTile
       number={index + 1}
       title={item.title}
@@ -61,10 +63,13 @@ const enhance = compose(
     showTileMeta: false,
     isLoading: false,
   }),
-  branch(({ isLoading, content }) => isLoading && !content.length, withProps({
-    content: generateLoadingStateData(5),
-    fetchMore: false,
-  })),
+  branch(
+    ({ isLoading, content }) => isLoading && !content.length,
+    withProps({
+      content: generateLoadingStateData(5),
+      fetchMore: false,
+    }),
+  ),
   pure,
 );
 
@@ -74,10 +79,7 @@ const getTileWidth = () => {
 };
 
 const HorizontalTileFeed = enhance(({
-  content,
-  isLoading,
-  showTileMeta,
-  ...otherProps
+  content, isLoading, showTileMeta, ...otherProps
 }) => (
   <TileFeed
     renderItem={renderItemProps => defaultItemRenderer({ ...renderItemProps, showTileMeta })}
@@ -92,7 +94,7 @@ const HorizontalTileFeed = enhance(({
      * to fix a shadow clipping bug on Android. `snapToInterval` below is adjusted to account for
      * that padding on each swipe. TODO: find better shadow clipping fix that simplifies this math.
      */
-    snapToInterval={(getTileWidth() - 10)} // passed down to rendered ScrollView.
+    snapToInterval={getTileWidth() - 10} // passed down to rendered ScrollView.
     snapToAlignment={'start'} // passed down to rendered ScrollView
     decelerationRate={'fast'} // passed down to rendered ScrollView
     {...otherProps}

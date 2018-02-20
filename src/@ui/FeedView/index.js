@@ -1,13 +1,8 @@
 import React from 'react';
+import { TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import { Link } from '@ui/NativeWebRouter';
-import {
-  pure,
-  compose,
-  branch,
-  withProps,
-  defaultProps,
-} from 'recompose';
+import { pure, compose, branch, withProps, defaultProps } from 'recompose';
 import { get } from 'lodash';
 
 import { getLinkPath, getItemBgColor, getItemImages, getItemIsLight } from '@utils/content';
@@ -15,8 +10,10 @@ import FeedItemCard from '@ui/FeedItemCard';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import FeedList from './FeedList';
 
-export const defaultFeedItemRenderer = (CardComponent = FeedItemCard) => ({ item }) => ( // eslint-disable-line
-  <Link to={getLinkPath(item)}>
+export const defaultFeedItemRenderer = (CardComponent = FeedItemCard) => (
+  { item }, // eslint-disable-line
+) => (
+  <Link to={getLinkPath(item)} component={TouchableWithoutFeedback}>
     <CardComponent
       id={item.id}
       title={item.title || item.name || ' '}
@@ -56,43 +53,49 @@ const generateLoadingStateData = (numberOfItems = 1) => {
 
 const enhance = compose(
   pure,
-  branch(({ isLoading, content }) => (isLoading && !content.length), withProps({
-    isLoading: true,
-    content: generateLoadingStateData(10),
-    fetchMore: false,
-  })),
-  mediaQuery(({ md }) => ({ maxWidth: md }),
+  branch(
+    ({ isLoading, content }) => isLoading && !content.length,
+    withProps({
+      isLoading: true,
+      content: generateLoadingStateData(10),
+      fetchMore: false,
+    }),
+  ),
+  mediaQuery(
+    ({ md }) => ({ maxWidth: md }),
     defaultProps({ numColumns: 1 }),
     defaultProps({ numColumns: 2 }),
   ),
 );
 
-const FeedView = enhance(({
-  isLoading,
-  refetch,
-  content,
-  fetchMore,
-  numColumns,
-  renderItem,
-  ItemComponent,
-  ...otherProps
-}) => {
-  let itemRenderer = renderItem;
-  if (!itemRenderer) {
-    itemRenderer = defaultFeedItemRenderer(ItemComponent);
-  }
-  return (
-    <FeedList
-      {...otherProps}
-      renderItem={itemRenderer}
-      refreshing={isLoading}
-      onRefresh={refetch}
-      onEndReached={fetchMore}
-      numColumns={numColumns}
-      data={content}
-    />
-  );
-});
+const FeedView = enhance(
+  ({
+    isLoading,
+    refetch,
+    content,
+    fetchMore,
+    numColumns,
+    renderItem,
+    ItemComponent,
+    ...otherProps
+  }) => {
+    let itemRenderer = renderItem;
+    if (!itemRenderer) {
+      itemRenderer = defaultFeedItemRenderer(ItemComponent);
+    }
+    return (
+      <FeedList
+        {...otherProps}
+        renderItem={itemRenderer}
+        refreshing={isLoading}
+        onRefresh={refetch}
+        onEndReached={fetchMore}
+        numColumns={numColumns}
+        data={content}
+      />
+    );
+  },
+);
 
 FeedView.defaultProps = {
   isLoading: false,
