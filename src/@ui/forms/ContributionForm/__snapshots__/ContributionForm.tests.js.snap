@@ -62,7 +62,8 @@ exports[`The ContributionForm component renders correctly 1`] = `
         <View
           style={
             Object {
-              "width": 150,
+              "maxWidth": 250,
+              "width": "85%",
             }
           }
         >
@@ -139,7 +140,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
                         "color": "#303030",
                         "fontFamily": "Colfax-Bold",
                         "fontSize": 32.4,
-                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingVertical": 5,
@@ -654,28 +654,27 @@ exports[`The ContributionForm component renders correctly 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "flexWrap": "wrap",
         }
       }
     >
-      <View>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 32.4,
-              "lineHeight": 41.04,
-              "paddingBottom": 2.7,
-              "paddingTop": 5.4,
-            }
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 32.4,
+            "lineHeight": 41.04,
+            "paddingBottom": 2.7,
+            "paddingTop": 5.4,
           }
-        >
-          my total is 
-        </Text>
-      </View>
+        }
+      >
+        my total is 
+      </Text>
       <View
         style={
           Object {
@@ -915,7 +914,8 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
         <View
           style={
             Object {
-              "width": 150,
+              "maxWidth": 250,
+              "width": "85%",
             }
           }
         >
@@ -992,7 +992,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                         "color": "#303030",
                         "fontFamily": "Colfax-Bold",
                         "fontSize": 32.4,
-                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingVertical": 5,
@@ -1451,7 +1450,8 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
         <View
           style={
             Object {
-              "width": 150,
+              "maxWidth": 250,
+              "width": "85%",
             }
           }
         >
@@ -1528,7 +1528,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                         "color": "#303030",
                         "fontFamily": "Colfax-Bold",
                         "fontSize": 32.4,
-                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingVertical": 5,
@@ -2038,28 +2037,27 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "flexWrap": "wrap",
         }
       }
     >
-      <View>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 32.4,
-              "lineHeight": 41.04,
-              "paddingBottom": 2.7,
-              "paddingTop": 5.4,
-            }
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 32.4,
+            "lineHeight": 41.04,
+            "paddingBottom": 2.7,
+            "paddingTop": 5.4,
           }
-        >
-          my total is 
-        </Text>
-      </View>
+        }
+      >
+        my total is 
+      </Text>
       <View
         style={
           Object {
@@ -2299,7 +2297,8 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
         <View
           style={
             Object {
-              "width": 150,
+              "maxWidth": 250,
+              "width": "85%",
             }
           }
         >
@@ -2376,7 +2375,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                         "color": "#303030",
                         "fontFamily": "Colfax-Bold",
                         "fontSize": 32.4,
-                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingVertical": 5,
@@ -2891,28 +2889,27 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "flexWrap": "wrap",
         }
       }
     >
-      <View>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 32.4,
-              "lineHeight": 41.04,
-              "paddingBottom": 2.7,
-              "paddingTop": 5.4,
-            }
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 32.4,
+            "lineHeight": 41.04,
+            "paddingBottom": 2.7,
+            "paddingTop": 5.4,
           }
-        >
-          my total is 
-        </Text>
-      </View>
+        }
+      >
+        my total is 
+      </Text>
       <View
         style={
           Object {
@@ -3212,7 +3209,8 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
         <View
           style={
             Object {
-              "width": 150,
+              "maxWidth": 250,
+              "width": "85%",
             }
           }
         >
@@ -3289,7 +3287,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                         "color": "#303030",
                         "fontFamily": "Colfax-Bold",
                         "fontSize": 32.4,
-                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingVertical": 5,
@@ -3804,28 +3801,27 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "flexWrap": "wrap",
         }
       }
     >
-      <View>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 32.4,
-              "lineHeight": 41.04,
-              "paddingBottom": 2.7,
-              "paddingTop": 5.4,
-            }
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 32.4,
+            "lineHeight": 41.04,
+            "paddingBottom": 2.7,
+            "paddingTop": 5.4,
           }
-        >
-          my total is 
-        </Text>
-      </View>
+        }
+      >
+        my total is 
+      </Text>
       <View
         style={
           Object {
@@ -4065,7 +4061,8 @@ exports[`The ContributionForm component shows the second fund 1`] = `
         <View
           style={
             Object {
-              "width": 150,
+              "maxWidth": 250,
+              "width": "85%",
             }
           }
         >
@@ -4142,7 +4139,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                         "color": "#303030",
                         "fontFamily": "Colfax-Bold",
                         "fontSize": 32.4,
-                        "fontWeight": "700",
                         "height": 40,
                         "lineHeight": 30,
                         "paddingVertical": 5,
@@ -4657,28 +4653,27 @@ exports[`The ContributionForm component shows the second fund 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "flexWrap": "wrap",
         }
       }
     >
-      <View>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#303030",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 32.4,
-              "lineHeight": 41.04,
-              "paddingBottom": 2.7,
-              "paddingTop": 5.4,
-            }
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 32.4,
+            "lineHeight": 41.04,
+            "paddingBottom": 2.7,
+            "paddingTop": 5.4,
           }
-        >
-          my total is 
-        </Text>
-      </View>
+        }
+      >
+        my total is 
+      </Text>
       <View
         style={
           Object {
