@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Touchable from '@ui/Touchable';
 import WebBrowser from '@ui/WebBrowser';
@@ -10,9 +10,7 @@ export const goBackTo = ({ to, history, replace = false }) => {
   let distance = -1;
 
   if (to && history.entries) {
-    const routeToPopTo = history.entries.findIndex(location =>
-      matchPath(location.pathname, to),
-    );
+    const routeToPopTo = history.entries.findIndex(location => matchPath(location.pathname, to));
     if (routeToPopTo >= 0 && routeToPopTo < history.index) {
       foundMatchingEntry = true;
       distance = routeToPopTo - history.index;
@@ -25,7 +23,7 @@ export const goBackTo = ({ to, history, replace = false }) => {
   return history.replace(to);
 };
 
-export default class Link extends Component {
+export default class Link extends PureComponent {
   static contextTypes = {
     router: PropTypes.shape({
       history: PropTypes.shape({
@@ -43,10 +41,7 @@ export default class Link extends Component {
     component: PropTypes.func,
     replace: PropTypes.bool,
     pop: PropTypes.bool,
-    to: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object,
-    ]),
+    to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   };
 
   static defaultProps = {
@@ -77,15 +72,11 @@ export default class Link extends Component {
     }
 
     return history.push(to);
-  }
+  };
 
   render() {
     const {
-      component: Comp,
-      to,
-      replace,
-      pop,
-      ...rest
+      component: Comp, to, replace, pop, ...rest
     } = this.props;
 
     return <Comp {...rest} onPress={this.handlePress} />;

@@ -61,7 +61,6 @@ const StyledHeaderText =
       ({ theme, barStyle }) => ({
         color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
         maxWidth: '80%',
-        zIndex: 1,
       }),
       'Header.Text',
     )(H6);
