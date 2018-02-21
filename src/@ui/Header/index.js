@@ -12,10 +12,11 @@ import BackButton from './BackButton';
 const StyledHeaderBar = styled(
   ({ theme }) => ({
     height: 50,
-    paddingHorizontal: theme.sizing.baseUnit / 2,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingVertical: 25,
+    paddingHorizontal: theme.sizing.baseUnit / 2,
     ...Platform.select({
       web: {
         height: undefined,
@@ -34,10 +35,9 @@ const StyledHeaderBar = styled(
 const HeaderContainer = styled(
   ({ theme, backgroundColor }) => ({
     backgroundColor: backgroundColor || theme.colors.background.primary,
-    paddingTop: 100,
     ...Platform.select({
       android: {
-        paddingTop: 25, // todo: this is currently required as SafeAreaView isn't
+        // paddingTop: 25, // todo: this is currently required as SafeAreaView isn't
         // properly adding padding on android.
       },
       web: {
