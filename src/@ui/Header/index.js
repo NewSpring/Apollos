@@ -15,7 +15,6 @@ const StyledHeaderBar = styled(
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 25,
     paddingHorizontal: theme.sizing.baseUnit / 2,
     ...Platform.select({
       web: {
@@ -37,7 +36,7 @@ const HeaderContainer = styled(
     backgroundColor: backgroundColor || theme.colors.background.primary,
     ...Platform.select({
       android: {
-        // paddingTop: 25, // todo: this is currently required as SafeAreaView isn't
+        paddingTop: 25, // todo: this is currently required as SafeAreaView isn't
         // properly adding padding on android.
       },
       web: {
@@ -62,6 +61,7 @@ const StyledHeaderText =
       ({ theme, barStyle }) => ({
         color: barStyle === 'dark-content' ? theme.colors.darkPrimary : theme.colors.lightPrimary,
         maxWidth: '80%',
+        zIndex: 1,
       }),
       'Header.Text',
     )(H6);

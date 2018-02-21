@@ -19,6 +19,7 @@ const Container = styled(
     justifyContent: 'center',
     paddingLeft: 4,
     paddingRight: 100, // adds extra hitSlop space.
+    backgroundColor: 'salmon',
     ...Platform.select({
       web: {
         alignItems: 'flex-start',
