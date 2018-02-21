@@ -31,7 +31,8 @@ exports[`The FrequencyInput component should render correctly 1`] = `
   <View
     style={
       Object {
-        "width": 150,
+        "maxWidth": 250,
+        "width": "85%",
       }
     }
   >
@@ -108,7 +109,6 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                   "color": "#303030",
                   "fontFamily": "Colfax-Bold",
                   "fontSize": 32.4,
-                  "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
                   "paddingVertical": 5,
@@ -570,7 +570,8 @@ exports[`The FrequencyInput component should render correctly as the first fund 
   <View
     style={
       Object {
-        "width": 150,
+        "maxWidth": 250,
+        "width": "85%",
       }
     }
   >
@@ -647,7 +648,6 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                   "color": "#303030",
                   "fontFamily": "Colfax-Bold",
                   "fontSize": 32.4,
-                  "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
                   "paddingVertical": 5,
@@ -1109,7 +1109,8 @@ exports[`The FrequencyInput component should render correctly with initial state
   <View
     style={
       Object {
-        "width": 150,
+        "maxWidth": 250,
+        "width": "85%",
       }
     }
   >
@@ -1186,7 +1187,6 @@ exports[`The FrequencyInput component should render correctly with initial state
                   "color": "#303030",
                   "fontFamily": "Colfax-Bold",
                   "fontSize": 32.4,
-                  "fontWeight": "700",
                   "height": 40,
                   "lineHeight": 30,
                   "paddingVertical": 5,
