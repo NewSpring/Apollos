@@ -34,7 +34,7 @@ const StyledHeaderBar = styled(
 const HeaderContainer = styled(
   ({ theme, backgroundColor }) => ({
     backgroundColor: backgroundColor || theme.colors.background.primary,
-    paddingTop: 25,
+    paddingTop: 100,
     ...Platform.select({
       android: {
         paddingTop: 25, // todo: this is currently required as SafeAreaView isn't
