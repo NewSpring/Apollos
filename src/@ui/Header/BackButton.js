@@ -34,7 +34,7 @@ const Container = styled(
 const BackButton = props => (
   <Container>
     {/* Mostly arbitrary hitSlop values taken from padding values above */}
-    <Link pop hitSlop={{ right: 100, left: 4 }}>
+    <Link pop style={{ paddingRight: 100, paddingLeft: 4 }}>
       <Row>
         <Icon name="arrow-back" size={24} {...props} />
         <MediaQuery minWidth="md">
