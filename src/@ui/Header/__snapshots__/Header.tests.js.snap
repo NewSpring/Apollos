@@ -49,9 +49,12 @@ exports[`The Header component should render with a back button correctly 1`] = `
           "alignItems": "center",
           "bottom": 0,
           "justifyContent": "center",
-          "left": 4,
+          "left": 0,
+          "paddingLeft": 4,
+          "paddingRight": 100,
           "position": "absolute",
           "top": 0,
+          "zIndex": 5,
         }
       }
     >
@@ -62,7 +65,7 @@ exports[`The Header component should render with a back button correctly 1`] = `
         accessible={true}
         collapsable={undefined}
         hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
+        hitSlop={null}
         isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
@@ -75,6 +78,8 @@ exports[`The Header component should render with a back button correctly 1`] = `
         style={
           Object {
             "opacity": 1,
+            "paddingLeft": 4,
+            "paddingRight": 100,
           }
         }
         testID={undefined}
