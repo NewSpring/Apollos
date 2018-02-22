@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Platform } from 'react-native';
+import { compose, withProps } from 'recompose';
 import MediaQuery from '@ui/MediaQuery';
 import { Link } from '@ui/NativeWebRouter';
 import { H7 } from '@ui/typography';
@@ -31,17 +32,26 @@ const Container = styled(
   'BackButton.Container',
 )(View);
 
+const LargerTappableLink = compose(
+  withProps({
+    /* Mostly arbitrary padding/hitSlop values taken from padding values above
+     * `SafeAreaView` doesn't appear to like hitSlop so padding is used on iOS.
+     */
+    style: Platform.OS === 'ios' ? { paddingRight: 100, paddingLeft: 4 } : null,
+    hitSlop: Platform.OS === 'android' ? { right: 100, left: 4 } : null,
+  }),
+)(Link);
+
 const BackButton = props => (
   <Container>
-    {/* Mostly arbitrary hitSlop values taken from padding values above */}
-    <Link pop style={{ paddingRight: 100, paddingLeft: 4 }}>
+    <LargerTappableLink pop>
       <Row>
         <Icon name="arrow-back" size={24} {...props} />
         <MediaQuery minWidth="md">
           <H7>Back</H7>
         </MediaQuery>
       </Row>
-    </Link>
+    </LargerTappableLink>
   </Container>
 );
 

@@ -65,12 +65,7 @@ exports[`The Header component should render with a back button correctly 1`] = `
         accessible={true}
         collapsable={undefined}
         hasTVPreferredFocus={undefined}
-        hitSlop={
-          Object {
-            "left": 4,
-            "right": 100,
-          }
-        }
+        hitSlop={null}
         isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
@@ -83,6 +78,8 @@ exports[`The Header component should render with a back button correctly 1`] = `
         style={
           Object {
             "opacity": 1,
+            "paddingLeft": 4,
+            "paddingRight": 100,
           }
         }
         testID={undefined}
