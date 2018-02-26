@@ -3,6 +3,7 @@ import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
+import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 import PaddedView from '@ui/PaddedView';
 import Icon from '@ui/Icon';
@@ -16,6 +17,7 @@ const enhance = compose(
   defaultProps({
     titleText: 'Listen to audio',
   }),
+  withTheme(({ theme: { helpers: { rem = {} } = {} } = {} }) => ({ rem })),
 );
 
 const Banner = styled({
@@ -24,12 +26,12 @@ const Banner = styled({
   alignItems: 'center',
 })(PaddedView);
 
-const AudioBanner = enhance(({ titleText }) => (
+const AudioBanner = enhance(({ titleText, rem }) => (
   <Banner>
     <View>
       <H7>{titleText}</H7>
     </View>
-    <Icon name={'audio'} />
+    <Icon name={'audio'} size={rem(1)} />
   </Banner>
 ));
 
