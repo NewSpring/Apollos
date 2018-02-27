@@ -9,6 +9,7 @@ import ContentView, { Title, SubHeading, HTMLView } from '@ui/ContentView';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import withSermon from '@data/withSermon';
 import { withThemeMixin } from '@ui/theme';
+import AudioBanner from '@ui/AudioBanner';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 
 const enhance = compose(
@@ -16,7 +17,7 @@ const enhance = compose(
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withSermon,
   withThemeMixin(({ content: { parent: { content = {} } = {} } = {} } = {}) => {
-    const theme = { };
+    const theme = {};
     if (content.colors && content.colors.length) {
       const primary = `#${content.colors[0].value}`;
       theme.colors = {
@@ -31,43 +32,65 @@ const enhance = compose(
 
 const ShareLink = withSermon(Share);
 
-const Sermon = enhance(({
-  id,
-  content: {
-    title,
-    parent: {
-      title: parentTitle,
-      content: { isLight = true } = {},
-      children,
-    } = {},
+const Sermon = enhance(
+  ({
+    id,
     content: {
-      isLiked,
-      speaker,
-      description,
-      ...otherContentProps
+      title,
+      parent: {
+        title: parentTitle,
+        content: {
+          isLight = true,
+          images: { fileLabel, url: uri } = {},
+          colors: { value: colorValue } = {},
+        } = {},
+        children,
+      } = {},
+      content: {
+        isLiked,
+        speaker,
+        description,
+        audio: { duration: audioDuration, file: audioFile } = {},
+        ...otherContentProps
+      } = {},
     } = {},
-  } = {},
-  isLoading,
-}) => (
-  <BackgroundView>
-    <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
-    <ScrollView>
-      <ContentView {...otherContentProps}>
-        <Title>{startCase(toLower(title))}</Title>
-        <SubHeading>{startCase(toLower(speaker))}</SubHeading>
-        <HTMLView>{description}</HTMLView>
-      </ContentView>
-      <HorizontalTileFeed
-        content={children}
-        isLoading={isLoading}
-        showTileMeta
+    isLoading,
+  }) => (
+    <BackgroundView>
+      <Header
+        titleText={parentTitle}
+        backButton
+        barStyle={isLight ? 'dark-content' : 'light-content'}
       />
-    </ScrollView>
-    <SecondaryNav>
-      <ShareLink id={id} />
-      <Like id={id} isLiked={isLiked} />
-    </SecondaryNav>
-  </BackgroundView>
-));
+      <ScrollView>
+        <AudioBanner
+          currentTrack={{
+            title,
+            file: audioFile,
+            duration: audioDuration,
+          }}
+          playlist={{
+            title,
+            images: {
+              fileLabel,
+              uri,
+            },
+            colors: [{ value: colorValue }],
+          }}
+        />
+        <ContentView {...otherContentProps}>
+          <Title>{startCase(toLower(title))}</Title>
+          <SubHeading>{startCase(toLower(speaker))}</SubHeading>
+          <HTMLView>{description}</HTMLView>
+        </ContentView>
+        <HorizontalTileFeed content={children} isLoading={isLoading} showTileMeta />
+      </ScrollView>
+      <SecondaryNav>
+        <ShareLink id={id} />
+        <Like id={id} isLiked={isLiked} />
+      </SecondaryNav>
+    </BackgroundView>
+  ),
+);
 
 export default Sermon;
