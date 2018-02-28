@@ -44,7 +44,7 @@ const Banner = styled(({ theme }) => ({
 const AudioBanner = enhance(({
   setNowPlaying, currentTrack, playlist, titleText, rem,
 }) => (
-  <Touchable onPress={setNowPlaying({ currentTrack, playlist })}>
+  <Touchable onPress={() => setNowPlaying({ currentTrack, playlist })}>
     <Banner>
       <View>
         <H7>{titleText}</H7>
