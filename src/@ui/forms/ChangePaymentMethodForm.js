@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { withFormik } from 'formik';
 import Yup from 'yup';
@@ -42,21 +40,17 @@ export class ChangePaymentMethodForm extends PureComponent {
       general: PropTypes.string,
     }),
     values: PropTypes.shape({
-      paymentMethod: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]),
+      paymentMethod: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     }),
     onPressNewPaymentMethod: PropTypes.func,
-    savedPaymentMethods: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-      ]),
-      name: PropTypes.string,
-      paymentMethod: PropTypes.oneOf(['bankAccount', 'creditCard']),
-      accountNumber: PropTypes.string,
-    })),
+    savedPaymentMethods: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+        name: PropTypes.string,
+        paymentMethod: PropTypes.oneOf(['bankAccount', 'creditCard']),
+        accountNumber: PropTypes.string,
+      }),
+    ),
     isLoading: PropTypes.bool,
   };
 
@@ -84,11 +78,8 @@ export class ChangePaymentMethodForm extends PureComponent {
       <View>
         {this.props.errors.general && <ErrorText>{this.props.errors.general}</ErrorText>}
         <TableView>
-          <Radio
-            onChange={this.props.handleOnChange}
-            value={this.props.values.paymentMethod}
-          >
-            {this.props.savedPaymentMethods.map((paymentMethod, i) => ([
+          <Radio onChange={this.props.handleOnChange} value={this.props.values.paymentMethod}>
+            {this.props.savedPaymentMethods.map((paymentMethod, i) => [
               <Radio.Button
                 key={paymentMethod.id}
                 value={paymentMethod.id}
@@ -102,8 +93,8 @@ export class ChangePaymentMethodForm extends PureComponent {
                   </Row>
                 )}
               />,
-              (i !== this.props.savedPaymentMethods.length - 1) ? <Divider key="divider" /> : null,
-            ]))}
+              i !== this.props.savedPaymentMethods.length - 1 ? <Divider key="divider" /> : null,
+            ])}
           </Radio>
         </TableView>
         <PaddedView>
@@ -129,10 +120,11 @@ const enhance = compose(
   withRouter,
   withFormik({
     mapPropsToValues: props => ({
-      paymentMethod: get(props, 'contributions.savedPaymentMethodId') || get(props, 'savedPaymentMethods.0.id'),
+      paymentMethod:
+        get(props, 'contributions.savedPaymentMethodId') || get(props, 'savedPaymentMethods.0.id'),
     }),
     validationSchema: Yup.object().shape({
-      paymentMethod: Yup.mixed().required(),
+      paymentMethod: Yup.mixed().required('Payment method is a required field'),
     }),
     enableReinitialize: true,
     handleSubmit: async (values, { setSubmitting, setErrors, props }) => {
@@ -163,4 +155,3 @@ const enhance = compose(
 );
 
 export default enhance(ChangePaymentMethodForm);
-
