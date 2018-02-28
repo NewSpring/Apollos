@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import get from 'lodash/get';
 import { compose, branch, renderComponent } from 'recompose';
 import withUser from '@data/withUser/withIsLoggedIn';
 import { Route, Redirect } from 'react-router';
@@ -7,11 +8,19 @@ import ActivityIndicator from '@ui/ActivityIndicator';
 import BackgroundView from '@ui/BackgroundView';
 
 const RedirectWithReferrer = ({ path }) => (
-  <Redirect
-    from={path}
-    to={{
-      pathname: '/login',
-      state: { referrer: path },
+  <Route
+    render={(matchProps) => {
+      const currentPath = get(matchProps, 'location.pathname');
+      if (currentPath === '/login') return null;
+      return (
+        <Redirect
+          from={path}
+          to={{
+            pathname: '/login',
+            state: { referrer: path },
+          }}
+        />
+      );
     }}
   />
 );
