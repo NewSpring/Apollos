@@ -2,8 +2,8 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { AsyncStorage } from 'react-native';
 
+import dumpCache from '@utils/dumpCache';
 import { QUERY as USER_QUERY } from './withUser';
-import dumpCache from '../../@utils/dumpCache';
 
 export const MUTATION = gql`
   mutation logoutUser {
