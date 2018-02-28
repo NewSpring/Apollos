@@ -19,8 +19,8 @@ const LogoutTouchable = compose(
   withUser,
   withRouter,
   withProps(({ logout, history }) => ({
-    onPress: () => {
-      logout();
+    async onPress() {
+      await logout();
       goBackTo({ to: '/', history, replace: true });
     },
   })),
