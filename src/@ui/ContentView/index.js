@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { compose, pure, setPropTypes } from 'recompose';
 import styled from '@ui/styled';
 
-import { VideoHeader, ImageHeader } from './Media';
+import { VideoHeader, ImageHeader, AudioBanner } from './Media';
 
 export { default as HTMLView } from '@ui/HTMLView';
 export { H2 as Title, H4 as SubHeading } from '@ui/typography';
@@ -20,6 +20,18 @@ const enhance = compose(
     video: PropTypes.shape({
       embedUrl: PropTypes.string,
     }),
+    audio: PropTypes.arrayOf(
+      PropTypes.shape({
+        duration: PropTypes.string,
+        file: PropTypes.string,
+      }),
+    ),
+    seriesImages: PropTypes.arrayOf(
+      PropTypes.shape({
+        url: PropTypes.string,
+      }),
+    ),
+    seriesColors: PropTypes.arrayOf(PropTypes.shape({ value: PropTypes.string })),
     images: PropTypes.arrayOf(
       PropTypes.shape({
         url: PropTypes.string,
@@ -44,13 +56,44 @@ const renderHeader = (video, images = [], imageOverlayColor) => {
   return headerType;
 };
 
-const ContentView = enhance(({
-  video, images = [], imageOverlayColor = '', children,
-}) => (
-  <View>
-    {renderHeader(video, images, imageOverlayColor)}
-    <ContentWrapper>{children}</ContentWrapper>
-  </View>
-));
+const renderAudioBar = (title, audio, seriesImages, seriesColors) => {
+  let audioComponent = null;
+  if (audio && audio.length) {
+    audioComponent = (
+      <AudioBanner
+        currentTrack={{
+          title,
+          ...audio[0],
+        }}
+        playlist={{
+          title,
+          images: seriesImages,
+          colors: seriesColors,
+        }}
+      />
+    );
+  }
+
+  return audioComponent;
+};
+
+const ContentView = enhance(
+  ({
+    video,
+    images = [],
+    seriesImages = [],
+    seriesColors = [],
+    imageOverlayColor = '',
+    title,
+    audio,
+    children,
+  }) => (
+    <View>
+      {renderHeader(video, images, imageOverlayColor)}
+      {renderAudioBar(title, audio, seriesImages, seriesColors)}
+      <ContentWrapper>{children}</ContentWrapper>
+    </View>
+  ),
+);
 
 export default ContentView;

@@ -16,12 +16,12 @@ const enhance = compose(
   pure,
   setPropTypes({
     titleText: PropTypes.string,
-    currentTrack: PropTypes.objectOf({
+    currentTrack: PropTypes.shape({
       title: PropTypes.string,
       file: PropTypes.string,
       duration: PropTypes.string,
     }),
-    playlist: PropTypes.objectOf({
+    playlist: PropTypes.shape({
       title: PropTypes.string.isRequired,
       images: ConnectedImage.propTypes.source.isRequired,
       colors: PropTypes.arrayOf(PropTypes.shape({ value: PropTypes.string })).isRequired,

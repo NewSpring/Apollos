@@ -9,7 +9,6 @@ import ContentView, { Title, SubHeading, HTMLView } from '@ui/ContentView';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import withSermon from '@data/withSermon';
 import { withThemeMixin } from '@ui/theme';
-import AudioBanner from '@ui/AudioBanner';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 
 const enhance = compose(
@@ -39,19 +38,11 @@ const Sermon = enhance(
       title,
       parent: {
         title: parentTitle,
-        content: {
-          isLight = true,
-          images: { fileLabel, url: uri } = {},
-          colors: { value: colorValue } = {},
-        } = {},
+        content: { isLight = true, images: seriesImages, colors: seriesColors } = {},
         children,
       } = {},
       content: {
-        isLiked,
-        speaker,
-        description,
-        audio: { duration: audioDuration, file: audioFile } = {},
-        ...otherContentProps
+        isLiked, speaker, description, ...otherContentProps
       } = {},
     } = {},
     isLoading,
@@ -63,22 +54,12 @@ const Sermon = enhance(
         barStyle={isLight ? 'dark-content' : 'light-content'}
       />
       <ScrollView>
-        <AudioBanner
-          currentTrack={{
-            title,
-            file: audioFile,
-            duration: audioDuration,
-          }}
-          playlist={{
-            title,
-            images: {
-              fileLabel,
-              uri,
-            },
-            colors: [{ value: colorValue }],
-          }}
-        />
-        <ContentView {...otherContentProps}>
+        <ContentView
+          title={title}
+          seriesImages={seriesImages}
+          seriesColors={seriesColors}
+          {...otherContentProps}
+        >
           <Title>{startCase(toLower(title))}</Title>
           <SubHeading>{startCase(toLower(speaker))}</SubHeading>
           <HTMLView>{description}</HTMLView>
