@@ -34,41 +34,39 @@ export const ProfileAddressFormWithoutData = ({
           value={values.street1}
           onChangeText={text => setFieldValue('street1', text)}
           onBlur={() => setFieldTouched('street1', true)}
-          error={Boolean(touched.street1 && errors.street1)}
+          error={touched.street1 && errors.street1}
         />
         <Inputs.Text
           label="Street 2 (Optional)"
           value={values.street2}
           onChangeText={text => setFieldValue('street2', text)}
           onBlur={() => setFieldTouched('street2', true)}
-          error={Boolean(touched.street2 && errors.street2)}
+          error={touched.street2 && errors.street2}
         />
         <Inputs.Text
           label="City"
           value={values.city}
           onChangeText={text => setFieldValue('city', text)}
           onBlur={() => setFieldTouched('city', true)}
-          error={Boolean(touched.city && errors.city)}
+          error={touched.city && errors.city}
         />
         <Inputs.Text
           label="State"
           value={values.state}
           onChangeText={text => setFieldValue('state', text)}
           onBlur={() => setFieldTouched('state', true)}
-          error={Boolean(touched.state && errors.state)}
+          error={touched.state && errors.state}
         />
         <Inputs.Text
           label="Zip"
           value={values.zip}
           onChangeText={text => setFieldValue('zip', text)}
           onBlur={() => setFieldTouched('zip', true)}
-          error={Boolean(touched.zip && errors.zip)}
+          error={touched.zip && errors.zip}
         />
       </PaddedView>
     </TableView>
-    {status ? (
-      <Status>{status}</Status>
-    ) : null}
+    {status ? <Status>{status}</Status> : null}
     <PaddedView>
       <Button onPress={handleSubmit} title="Save" disabled={!isValid} loading={isSubmitting} />
     </PaddedView>
@@ -107,7 +105,7 @@ ProfileAddressFormWithoutData.propTypes = {
 
 const validationSchema = Yup.object().shape({
   street: Yup.string(),
-  street2: Yup.string(),
+  street2: Yup.string().nullable(),
   city: Yup.string(),
   state: Yup.string(),
   zip: Yup.string(),
@@ -117,9 +115,7 @@ const mapPropsToValues = props => get(props, 'user.home', {});
 
 const ProfileAddressForm = compose(
   withUser,
-  branch(({ isLoading }) => isLoading,
-    renderComponent(ActivityIndicator),
-  ),
+  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
   withFormik({
     mapPropsToValues,
     validationSchema,
@@ -140,8 +136,7 @@ const ProfileAddressForm = compose(
       setSubmitting(false);
     },
     isInitialValid(props) {
-      return validationSchema
-        .isValidSync(mapPropsToValues(props));
+      return validationSchema.isValidSync(mapPropsToValues(props));
     },
   }),
 )(ProfileAddressFormWithoutData);
