@@ -48,7 +48,7 @@ const ContentWrapper = styled(({ theme }) => ({
 const renderHeader = (video, images = [], imageOverlayColor) => {
   let headerType = null;
   if (video && video.embedUrl) {
-    headerType = <VideoHeader source={video.embedUrl} />;
+    headerType = <VideoHeader source={video} />;
   } else if (images && images.length) {
     headerType = <ImageHeader images={images} imageOverlayColor={imageOverlayColor} />;
   }

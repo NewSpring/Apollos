@@ -37,7 +37,7 @@ const VideoWrapper = styled(
 
 const VideoHeader = enhance(({ source }) => (
   <VideoWrapper>
-    <Video src={source} />
+    <Video src={source.embedUrl} />
   </VideoWrapper>
 ));
 
