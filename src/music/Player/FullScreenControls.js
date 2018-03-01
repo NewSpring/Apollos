@@ -71,86 +71,87 @@ const enhance = compose(
     handleShuffle: PropTypes.func,
     handleRepeat: PropTypes.func,
     trackInfoLink: PropTypes.string,
+    playlist: PropTypes.shape({
+      tracks: PropTypes.array,
+    }),
   }),
 );
 
-const FullScreenControls = enhance(({
-  isPlaying,
-  duration,
-  play,
-  pause,
-  next,
-  prev,
-  trackName,
-  trackByLine,
-  albumArt,
-  color,
-  isShuffling,
-  isRepeating,
-  handleShuffle,
-  handleRepeat,
-  trackInfoLink,
-}) => (
-  <Container backgroundColor={color}>
-    <GradientOverlayImage
-      source={albumArt}
-      overlayColor={color}
-    />
-    <PlayerBody>
-      <Titles>
-        <TrackName>{trackName}</TrackName>
-        <ByLine>{trackByLine}</ByLine>
-      </Titles>
-      <Controls>
+const FullScreenControls = enhance(
+  ({
+    isPlaying,
+    duration,
+    play,
+    pause,
+    next,
+    prev,
+    trackName,
+    trackByLine,
+    albumArt,
+    color,
+    isShuffling,
+    isRepeating,
+    handleShuffle,
+    handleRepeat,
+    trackInfoLink,
+    playlist,
+  }) => (
+    <Container backgroundColor={color}>
+      <GradientOverlayImage source={albumArt} overlayColor={color} />
+      <PlayerBody>
+        <Titles>
+          <TrackName>{trackName}</TrackName>
+          <ByLine>{trackByLine}</ByLine>
+        </Titles>
+        <Controls>
+          <PaddedView>
+            <Touchable onPress={prev}>
+              <Icon name="skip-previous" size={32} />
+            </Touchable>
+          </PaddedView>
+          <PaddedView>
+            <Touchable onPress={isPlaying ? pause : play}>
+              <Icon name={isPlaying ? 'pause' : 'play'} size={48} />
+            </Touchable>
+          </PaddedView>
+          <PaddedView>
+            <Touchable onPress={next}>
+              <Icon name="skip-next" size={32} />
+            </Touchable>
+          </PaddedView>
+        </Controls>
         <PaddedView>
-          <Touchable onPress={prev}>
-            <Icon name="skip-previous" size={32} />
-          </Touchable>
+          <Audio.Seeker duration={duration} />
         </PaddedView>
-        <PaddedView>
-          <Touchable onPress={isPlaying ? pause : play}>
-            <Icon name={isPlaying ? 'pause' : 'play'} size={48} />
-          </Touchable>
-        </PaddedView>
-        <PaddedView>
-          <Touchable onPress={next}>
-            <Icon name="skip-next" size={32} />
-          </Touchable>
-        </PaddedView>
-      </Controls>
-      <PaddedView>
-        <Audio.Seeker duration={duration} />
-      </PaddedView>
-      <Settings>
-        <PaddedView>
-          <Touchable onPress={handleShuffle}>
-            <IconWithActiveOpacity
-              active={isShuffling}
-              name="shuffle"
-              size={24}
-            />
-          </Touchable>
-        </PaddedView>
-        <PaddedView>
-          <Touchable onPress={handleRepeat}>
-            <IconWithActiveOpacity
-              active={isRepeating}
-              name="repeat"
-              size={24}
-            />
-          </Touchable>
-        </PaddedView>
-        <PaddedView>
-          <Link to={trackInfoLink}>
-            <Ellipsis />
+        {playlist && playlist.tracks.length > 1 ? (
+          <Settings>
+            <PaddedView>
+              <Touchable onPress={handleShuffle}>
+                <IconWithActiveOpacity active={isShuffling} name="shuffle" size={24} />
+              </Touchable>
+            </PaddedView>
+            <PaddedView>
+              <Touchable onPress={handleRepeat}>
+                <IconWithActiveOpacity active={isRepeating} name="repeat" size={24} />
+              </Touchable>
+            </PaddedView>
+            <PaddedView>
+              <Link to={trackInfoLink}>
+                <Ellipsis />
+              </Link>
+            </PaddedView>
+          </Settings>
+        ) : null}
+        <Controls>
+          <Link pop>
+            <PaddedView>
+              <Icon name="arrow-down" />
+            </PaddedView>
           </Link>
-        </PaddedView>
-      </Settings>
-      <Controls>
-        <Link pop><PaddedView><Icon name="arrow-down" /></PaddedView></Link>
-      </Controls>
-    </PlayerBody>
-  </Container>
-));
+        </Controls>
+      </PlayerBody>
+    </Container>
+  ),
+);
 
 export default FullScreenControls;

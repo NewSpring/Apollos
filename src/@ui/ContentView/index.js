@@ -59,16 +59,19 @@ const renderHeader = (video, images = [], imageOverlayColor) => {
 const renderAudioBar = (title, audio, seriesImages, seriesColors) => {
   let audioComponent = null;
   if (audio && audio.length) {
+    const track = {
+      title,
+      ...audio[0],
+    };
+
     audioComponent = (
       <AudioBanner
-        currentTrack={{
-          title,
-          ...audio[0],
-        }}
+        currentTrack={track}
         playlist={{
           title,
           images: seriesImages,
           colors: seriesColors,
+          tracks: [track],
         }}
       />
     );
