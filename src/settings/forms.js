@@ -2,7 +2,6 @@ import React from 'react';
 import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import { ProfileDetailsForm, ProfileAddressForm, ChangePasswordForm } from '@ui/forms';
 import Header from '@ui/Header';
-import PaddedView from '@ui/PaddedView';
 
 import Layout from './Layout';
 
@@ -10,9 +9,7 @@ const makeFormScreen = (Form, title = 'Title') => props => (
   <Layout>
     <Header webEnabled titleText={title} backButton />
     <KeyboardAwareScrollView>
-      <PaddedView>
-        <Form {...props} />
-      </PaddedView>
+      <Form {...props} />
     </KeyboardAwareScrollView>
   </Layout>
 );

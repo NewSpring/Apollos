@@ -5,6 +5,7 @@ import { branch, renderComponent, compose, setPropTypes } from 'recompose';
 import get from 'lodash/get';
 import { withFormik } from 'formik';
 import Yup from 'yup';
+import styled from '@ui/styled';
 
 import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
@@ -15,6 +16,10 @@ import ActivityIndicator from '@ui/ActivityIndicator';
 import sentry from '@utils/sentry';
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
+
+const StyledActivityIndicator = styled({
+  top: 30,
+})(ActivityIndicator);
 
 const enhance = compose(
   setPropTypes({
@@ -68,7 +73,7 @@ const enhance = compose(
     isSubmitting: PropTypes.bool,
     isValid: PropTypes.bool,
   }),
-  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
+  branch(({ isLoading }) => isLoading, renderComponent(StyledActivityIndicator)),
 );
 
 export const BillingAddressFormWithoutData = enhance(({
