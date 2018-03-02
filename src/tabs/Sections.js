@@ -1,10 +1,11 @@
 import React from 'react';
 import { pure, compose } from 'recompose';
-import BackgroundView from '@ui/BackgroundView';
+// import { View } from 'react-native';
+// import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import Hero from '@ui/Hero';
 import LiveNowButton from '@ui/LiveNowButton';
-import MediaQuery from '@ui/MediaQuery';
+import MediaQuery, { enhancer as mediaQuery } from '@ui/MediaQuery';
 import Meta from '@ui/Meta';
 import styled from '@ui/styled';
 import TileNav from '@ui/TileNav';
@@ -13,7 +14,16 @@ import withSections from '@data/withSections';
 import { ResponsiveSideBySideView, Left, Right } from '@ui/SideBySideView';
 import { H1 } from '@ui/typography';
 
-const FlexedLeft = styled({ flex: 1 })(Left);
+const FixedWidthMenu = styled(({ theme }) => ({
+  maxWidth: theme.breakpoints.sm,
+}));
+
+const Menu = compose(mediaQuery(({ md }) => ({ minWidth: md }), FixedWidthMenu))(Left);
+
+const FlexedRight = styled({
+  flex: 1,
+})(Right);
+
 const FlexedResponsiveSideBySideView = styled({ flex: 1 })(ResponsiveSideBySideView);
 const BackgroundVideo = () => (
   <Video
@@ -36,23 +46,21 @@ const enhance = compose(pure);
 // </BackgroundView>
 
 const Sections = enhance(() => (
-  <BackgroundView>
+  <FlexedResponsiveSideBySideView>
     <Meta title="Sections" />
-    <FlexedResponsiveSideBySideView>
-      <FlexedLeft>
-        <Header titleText="Sections" />
-        <LiveNowButton />
-        <TileNavWithSections />
-      </FlexedLeft>
-      <MediaQuery minWidth="lg">
-        <Right>
-          <Hero background={<BackgroundVideo />}>
-            <H1>Welcome to NewSpring</H1>
-          </Hero>
-        </Right>
-      </MediaQuery>
-    </FlexedResponsiveSideBySideView>
-  </BackgroundView>
+    <Menu>
+      <Header titleText="Sections" />
+      <LiveNowButton />
+      <TileNavWithSections />
+    </Menu>
+    <MediaQuery minWidth={'md'}>
+      <FlexedRight>
+        <Hero background={<BackgroundVideo />}>
+          <H1>Welcome to NewSpring</H1>
+        </Hero>
+      </FlexedRight>
+    </MediaQuery>
+  </FlexedResponsiveSideBySideView>
 ));
 
 export default Sections;
