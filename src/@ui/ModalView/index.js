@@ -10,10 +10,19 @@ import ModalContainer from './ModalContainer';
 const ModalView = ({
   children, onBackPress, backTo, onBackReplace,
 }) => (
-  <FlexedView style={StyleSheet.absoluteFill} forceInset={{ vertical: 'always', horizontal: 'always' }}>
+  <FlexedView
+    style={StyleSheet.absoluteFill}
+    forceInset={{ vertical: 'always', horizontal: 'always' }}
+  >
     <ModalContainer>
-      {children}
-      <SecondaryNav backButton backButtonIcon="close" onBackPress={onBackPress} backTo={backTo} onBackReplace={onBackReplace} />
+      {React.Children.map(children, child => React.cloneElement(child, { isModal: true }))}
+      <SecondaryNav
+        backButton
+        backButtonIcon="close"
+        onBackPress={onBackPress}
+        backTo={backTo}
+        onBackReplace={onBackReplace}
+      />
     </ModalContainer>
   </FlexedView>
 );

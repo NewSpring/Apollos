@@ -1,7 +1,5 @@
 import React from 'react';
 import { pure, compose } from 'recompose';
-// import { View } from 'react-native';
-// import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import Hero from '@ui/Hero';
 import LiveNowButton from '@ui/LiveNowButton';
@@ -16,6 +14,7 @@ import { H1 } from '@ui/typography';
 
 const FixedWidthMenu = styled(({ theme }) => ({
   maxWidth: theme.breakpoints.sm,
+  flex: 1,
 }));
 
 const Menu = compose(mediaQuery(({ md }) => ({ minWidth: md }), FixedWidthMenu))(Left);
@@ -39,13 +38,7 @@ const TileNavWithSections = withSections(TileNav);
 
 const enhance = compose(pure);
 
-// <BackgroundView>
-//   <Header titleText="Sections" />
-//   <LiveNowButton />
-//   <TileNavWithSections />
-// </BackgroundView>
-
-const Sections = enhance(() => (
+const Sections = enhance(({ isModal }) => (
   <FlexedResponsiveSideBySideView>
     <Meta title="Sections" />
     <Menu>
@@ -53,13 +46,15 @@ const Sections = enhance(() => (
       <LiveNowButton />
       <TileNavWithSections />
     </Menu>
-    <MediaQuery minWidth={'md'}>
-      <FlexedRight>
-        <Hero background={<BackgroundVideo />}>
-          <H1>Welcome to NewSpring</H1>
-        </Hero>
-      </FlexedRight>
-    </MediaQuery>
+    {isModal ? null : (
+      <MediaQuery minWidth={'md'}>
+        <FlexedRight>
+          <Hero background={<BackgroundVideo />}>
+            <H1>Welcome to NewSpring</H1>
+          </Hero>
+        </FlexedRight>
+      </MediaQuery>
+    )}
   </FlexedResponsiveSideBySideView>
 ));
 
