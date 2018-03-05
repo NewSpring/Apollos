@@ -15,6 +15,10 @@ import styled from '@ui/styled';
 
 const Status = styled({ textAlign: 'center' })(H6);
 
+const StyledActivityIndicator = styled({
+  top: 30,
+})(ActivityIndicator);
+
 export const ProfileAddressFormWithoutData = ({
   setFieldValue,
   handleSubmit,
@@ -118,7 +122,7 @@ const mapPropsToValues = props => get(props, 'user.home', {});
 const ProfileAddressForm = compose(
   withUser,
   branch(({ isLoading }) => isLoading,
-    renderComponent(ActivityIndicator),
+    renderComponent(StyledActivityIndicator),
   ),
   withFormik({
     mapPropsToValues,
