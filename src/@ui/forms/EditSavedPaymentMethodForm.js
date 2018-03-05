@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 import { compose, mapProps } from 'recompose';
@@ -91,7 +89,7 @@ export class EditSavedPaymentMethodForm extends PureComponent {
               value={this.props.values.accountName}
               onChangeText={text => this.props.setFieldValue('accountName', text)}
               onBlur={() => this.props.setFieldTouched('accountName', true)}
-              error={Boolean(this.props.touched.accountName && this.props.errors.accountName)}
+              error={this.props.touched.accountName && this.props.errors.accountName}
             />
           </FormFields>
         </TableView>
@@ -115,7 +113,7 @@ const mapPropsToValues = props => ({
 });
 
 const validationSchema = Yup.object().shape({
-  accountName: Yup.string().required(),
+  accountName: Yup.string().required('Saved Account Name is a required field'),
 });
 
 const enhance = compose(
@@ -124,19 +122,14 @@ const enhance = compose(
     accountNumber: get(props, 'savedPaymentMethod.accountNumber', ''),
     accountType: get(props, 'savedPaymentMethod.paymentType', ''),
     accountName: get(props, 'savedPaymentMethod.name', ''),
-    ...pick(props, [
-      'isLoading',
-      'id',
-      'updateSavedPaymentMethod',
-    ]),
+    ...pick(props, ['isLoading', 'id', 'updateSavedPaymentMethod']),
   })),
   withFormik({
     mapPropsToValues,
     validationSchema,
     enableReinitialize: true,
     isInitialValid(props) {
-      return validationSchema
-        .isValidSync(mapPropsToValues(props));
+      return validationSchema.isValidSync(mapPropsToValues(props));
     },
     handleSubmit: async (values, { props, setSubmitting, setErrors }) => {
       try {

@@ -22,11 +22,12 @@ const enhance = compose(
   }),
   withFormik({
     validationSchema: Yup.object().shape({
-      newPassword: Yup.string().required(),
-      oldPassword: Yup.string().required(),
+      newPassword: Yup.string().required('New password is a required field'),
+      oldPassword: Yup.string().required('Current password is a required field'),
     }),
     handleSubmit: async (values, { props, setSubmitting, setStatus }) => {
-      props.onSubmit(values)
+      props
+        .onSubmit(values)
         .catch((...e) => {
           setStatus('Please make sure your password is correct and try again');
           sentry.captureException(e);
@@ -52,49 +53,46 @@ const enhance = compose(
   }),
 );
 
-const ChangePasswordFormWithoutData = enhance(({
-  setFieldTouched,
-  setFieldValue,
-  touched,
-  errors,
-  values,
-  handleSubmit,
-  isValid,
-  isSubmitting,
-  status,
-}) => (
-  <PaddedView horizontal={false}>
-    <TableView>
+const ChangePasswordFormWithoutData = enhance(
+  ({
+    setFieldTouched,
+    setFieldValue,
+    touched,
+    errors,
+    values,
+    handleSubmit,
+    isValid,
+    isSubmitting,
+    status,
+  }) => (
+    <PaddedView horizontal={false}>
+      <TableView>
+        <PaddedView>
+          <TextInput
+            label="Current password"
+            type="password"
+            value={values.oldPassword}
+            onChangeText={text => setFieldValue('oldPassword', text)}
+            onBlur={() => setFieldTouched('oldPassword', true)}
+            error={touched.oldPassword && errors.oldPassword}
+          />
+          <TextInput
+            label="New password"
+            type="password"
+            value={values.newPassword}
+            onChangeText={text => setFieldValue('newPassword', text)}
+            onBlur={() => setFieldTouched('newPassword', true)}
+            error={touched.newPassword && errors.newPassword}
+          />
+        </PaddedView>
+      </TableView>
+      {status ? <Status>{status}</Status> : null}
       <PaddedView>
-        <TextInput
-          label="Current password"
-          type="password"
-          value={values.oldPassword}
-          onChangeText={text => setFieldValue('oldPassword', text)}
-          onBlur={() => setFieldTouched('oldPassword', true)}
-          error={touched.oldPassword && errors.oldPassword}
-        />
-        <TextInput
-          label="New password"
-          type="password"
-          value={values.newPassword}
-          onChangeText={text => setFieldValue('newPassword', text)}
-          onBlur={() => setFieldTouched('newPassword', true)}
-          error={touched.newPassword && errors.newPassword}
-        />
+        <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
       </PaddedView>
-    </TableView>
-    {status ? (
-      <Status>{status}</Status>
-    ) : null}
-    <PaddedView>
-      <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
     </PaddedView>
-  </PaddedView>
-));
-
-const withData = compose(
-  withUser,
-  withProps(props => ({ onSubmit: props.changePassword })),
+  ),
 );
+
+const withData = compose(withUser, withProps(props => ({ onSubmit: props.changePassword })));
 export default withData(ChangePasswordFormWithoutData);
