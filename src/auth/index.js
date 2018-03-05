@@ -22,7 +22,7 @@ export { default as ResetPassword } from './ResetPassword';
 const FixedWidthLeftSide = styled(({ theme }) => ({
   maxWidth: theme.breakpoints.sm,
   flex: 1,
-  backgroundColor: '#f7f7f7',
+  backgroundColor: theme.colors.background.default,
 }));
 
 const LeftSide = compose(mediaQuery(({ md }) => ({ minWidth: md }), FixedWidthLeftSide))(Left);
