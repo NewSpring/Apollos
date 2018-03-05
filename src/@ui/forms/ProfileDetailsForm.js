@@ -36,21 +36,21 @@ export const ProfileDetailsFormWithoutData = ({
           value={values.nickName}
           onChangeText={text => setFieldValue('nickName', text)}
           onBlur={() => setFieldTouched('nickName', true)}
-          error={Boolean(touched.nickName && errors.nickName)}
+          error={touched.nickName && errors.nickName}
         />
         <Inputs.Text
           label="First Name"
           value={values.firstName}
           onChangeText={text => setFieldValue('firstName', text)}
           onBlur={() => setFieldTouched('firstName', true)}
-          error={Boolean(touched.firstName && errors.firstName)}
+          error={touched.firstName && errors.firstName}
         />
         <Inputs.Text
           label="Last Name"
           value={values.lastName}
           onChangeText={text => setFieldValue('lastName', text)}
           onBlur={() => setFieldTouched('lastName', true)}
-          error={Boolean(touched.lastName && errors.lastName)}
+          error={touched.lastName && errors.lastName}
         />
       </PaddedView>
     </TableView>
@@ -61,7 +61,7 @@ export const ProfileDetailsFormWithoutData = ({
           value={values.email}
           onChangeText={text => setFieldValue('email', text)}
           onBlur={() => setFieldTouched('email', true)}
-          error={Boolean(touched.email && errors.email)}
+          error={touched.email && errors.email}
         />
       </PaddedView>
     </TableView>
@@ -73,7 +73,7 @@ export const ProfileDetailsFormWithoutData = ({
           displayValue={moment(values.birthday).format('MM/DD/YYYY')}
           onChange={text => setFieldValue('birthday', text)}
           onBlur={() => setFieldTouched('birthday', true)}
-          error={Boolean(touched.birthday && errors.birthday)}
+          error={touched.birthday && errors.birthday}
         />
       </PaddedView>
     </TableView>
@@ -86,15 +86,11 @@ export const ProfileDetailsFormWithoutData = ({
           onValueChange={value => setFieldValue('campusId', value)}
           error={errors.campusId}
         >
-          {campuses.map(({ name, id }) => (
-            <Inputs.PickerItem label={name} value={id} key={id} />
-          ))}
+          {campuses.map(({ name, id }) => <Inputs.PickerItem label={name} value={id} key={id} />)}
         </Inputs.Picker>
       </PaddedView>
     </TableView>
-    {status ? (
-      <Status>{status}</Status>
-    ) : null}
+    {status ? <Status>{status}</Status> : null}
     <PaddedView>
       <Button onPress={handleSubmit} title="Save" disabled={!isValid} loading={isSubmitting} />
     </PaddedView>
@@ -132,28 +128,29 @@ ProfileDetailsFormWithoutData.propTypes = {
   }),
   isSubmitting: PropTypes.bool,
   isValid: PropTypes.bool,
-  campuses: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
-    name: PropTypes.string,
-  })),
+  campuses: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      name: PropTypes.string,
+    }),
+  ),
 };
 
 const validationSchema = Yup.object().shape({
-  nickName: Yup.string().required(),
-  firstName: Yup.string().required(),
-  lastName: Yup.string().required(),
-  email: Yup.string().email().required(),
-  birthday: Yup.date().required(),
+  nickName: Yup.string().required('Nickname is a required field'),
+  firstName: Yup.string().required('First Name is a required field'),
+  lastName: Yup.string().required('Last Name is a required field'),
+  email: Yup.string()
+    .email()
+    .required('Email is a required field'),
+  birthday: Yup.date().required('Birthday is a required field'),
 });
 
 const mapPropsToValues = props => ({
   ...(props.user || {}),
   birthday: moment()
     .year(get(props, 'user.birthYear') || moment().year())
-    .month((get(props, 'user.birthMonth') || (moment().month() + 1)) - 1)
+    .month((get(props, 'user.birthMonth') || moment().month() + 1) - 1)
     .date(get(props, 'user.birthDay') || moment().date())
     .toDate(),
   campusId: get(props, 'user.campus.id') || null,
@@ -162,9 +159,7 @@ const mapPropsToValues = props => ({
 const ProfileDetailsForm = compose(
   withCampuses,
   withUser,
-  branch(({ isLoading }) => isLoading,
-    renderComponent(ActivityIndicator),
-  ),
+  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
   withFormik({
     mapPropsToValues,
     validationSchema,
@@ -195,8 +190,7 @@ const ProfileDetailsForm = compose(
       }
     },
     isInitialValid(props) {
-      return validationSchema
-        .isValidSync(mapPropsToValues(props));
+      return validationSchema.isValidSync(mapPropsToValues(props));
     },
   }),
 )(ProfileDetailsFormWithoutData);
