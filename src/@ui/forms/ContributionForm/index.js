@@ -259,7 +259,7 @@ export class ContributionFormWithoutData extends Component {
           {this.props.isLoggedIn ? (
             <Button
               onPress={this.props.handleSubmit}
-              disabled={!(this.totalContribution > 0) || !this.props.isValid}
+              disabled={!(this.totalContribution >= 1.0) || !this.props.isValid}
               loading={this.props.isSubmitting}
               title="Review Contribution"
               type="primary"
@@ -270,13 +270,13 @@ export class ContributionFormWithoutData extends Component {
           ) : (
             <ButtonRow>
               <ButtonInRow
-                disabled={!(this.totalContribution > 0) || !this.props.isValid}
+                disabled={!(this.totalContribution >= 1.0) || !this.props.isValid}
                 onPress={this.props.triggerLogin}
                 title="Sign in or create account"
                 type="primary"
               />
               <ButtonInRow
-                disabled={!(this.totalContribution > 0) || !this.props.isValid}
+                disabled={!(this.totalContribution >= 1.0) || !this.props.isValid}
                 onPress={this.props.handleSubmit}
                 title="Give as Guest"
                 type="default"
