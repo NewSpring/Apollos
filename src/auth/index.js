@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { compose, nest } from 'recompose';
 import { Platform } from 'react-native';
 import { TabViewPagerExperimental } from 'react-native-tab-view';
@@ -13,6 +14,7 @@ import styled from '@ui/styled';
 import TabView, { SceneMap } from '@ui/TabView';
 import Video from '@ui/VideoPlayer';
 import { asModal } from '@ui/ModalView';
+import { withTheme } from '@ui/theme';
 import { H1, H3, H7 } from '@ui/typography';
 import { ResponsiveSideBySideView, Left, Right } from '@ui/SideBySideView';
 
@@ -37,17 +39,25 @@ const FlexedRight = Flexed(Right);
 
 const FlexedResponsiveSideBySideView = styled({ flex: 1 })(ResponsiveSideBySideView);
 
-const BackgroundVideo = () => (
+const BackgroundVideo = ({ src }) => (
   <Video
-    src="https://s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps.mp4"
+    src={src}
     posterSource="https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/homepage/hero_poster_2x1_1700_850_90_c1.jpg"
     useNativeControls={false}
     shouldPlay
     isLooping
   />
 );
+BackgroundVideo.propTypes = {
+  src: PropTypes.string,
+};
 
-const enhance = compose(mediaQuery(({ md }) => ({ maxWidth: md }), asModal));
+const enhance = compose(
+  mediaQuery(({ md }) => ({ maxWidth: md }), asModal),
+  withTheme(({ theme: { web: { backgroundVideo = {} } = {} } = {} }) => ({
+    webBackgroundSource: backgroundVideo,
+  })),
+);
 
 const tabScenes = SceneMap({
   login: nest(PaddedView, LoginForm),
@@ -77,7 +87,7 @@ const asBannerText = styled(({ theme }) => ({
 const BannerH3 = asBannerText(H3);
 const BannerH7 = asBannerText(H7);
 
-const Auth = enhance(({ isModal }) => (
+const Auth = enhance(({ isModal, webBackgroundSource }) => (
   <FlexedResponsiveSideBySideView>
     <LeftSide>
       <KeyboardAwareScrollView>
@@ -97,7 +107,7 @@ const Auth = enhance(({ isModal }) => (
     {isModal ? null : (
       <MediaQuery minWidth={'md'}>
         <FlexedRight>
-          <Hero background={<BackgroundVideo />}>
+          <Hero background={<BackgroundVideo src={webBackgroundSource} />}>
             <H1>Welcome to NewSpring</H1>
           </Hero>
         </FlexedRight>
@@ -105,5 +115,9 @@ const Auth = enhance(({ isModal }) => (
     )}
   </FlexedResponsiveSideBySideView>
 ));
+
+Auth.propTypes = {
+  webBackgroundSource: PropTypes.string,
+};
 
 export default Auth;

@@ -85,6 +85,12 @@ export const typography = {
   },
 };
 
+// TODO: Is this even the right naming for this? Could it include anything else?
+export const web = {
+  backgroundVideo:
+    'https://s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps.mp4',
+};
+
 // Responsive breakpoints
 export const breakpoints = {
   xs: 320,

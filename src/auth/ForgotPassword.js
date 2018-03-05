@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Header from '@ui/Header';
@@ -10,6 +11,7 @@ import styled from '@ui/styled';
 import Video from '@ui/VideoPlayer';
 import { asModal } from '@ui/ModalView';
 import { ResponsiveSideBySideView, Left, Right } from '@ui/SideBySideView';
+import { withTheme } from '@ui/theme';
 import { H1 } from '@ui/typography';
 
 const FixedWidthLeftSide = styled(({ theme }) => ({
@@ -30,19 +32,27 @@ const FlexedRight = Flexed(Right);
 
 const FlexedResponsiveSideBySideView = styled({ flex: 1 })(ResponsiveSideBySideView);
 
-const BackgroundVideo = () => (
+const BackgroundVideo = ({ src }) => (
   <Video
-    src="https://s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps.mp4"
+    src={src}
     posterSource="https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/homepage/hero_poster_2x1_1700_850_90_c1.jpg"
     useNativeControls={false}
     shouldPlay
     isLooping
   />
 );
+BackgroundVideo.propTypes = {
+  src: PropTypes.string,
+};
 
-const enhance = compose(mediaQuery(({ md }) => ({ maxWidth: md }), asModal));
+const enhance = compose(
+  mediaQuery(({ md }) => ({ maxWidth: md }), asModal),
+  withTheme(({ theme: { web: { backgroundVideo = {} } = {} } = {} }) => ({
+    webBackgroundSource: backgroundVideo,
+  })),
+);
 
-const ForgotPassword = enhance(({ isModal }) => (
+const ForgotPassword = enhance(({ isModal, webBackgroundSource }) => (
   <FlexedResponsiveSideBySideView>
     <LeftSide>
       <Header titleText="Forgot Password" webEnabled />
@@ -55,7 +65,7 @@ const ForgotPassword = enhance(({ isModal }) => (
     {isModal ? null : (
       <MediaQuery minWidth={'md'}>
         <FlexedRight>
-          <Hero background={<BackgroundVideo />}>
+          <Hero background={<BackgroundVideo src={webBackgroundSource} />}>
             <H1>Welcome to NewSpring</H1>
           </Hero>
         </FlexedRight>
@@ -63,5 +73,9 @@ const ForgotPassword = enhance(({ isModal }) => (
     )}
   </FlexedResponsiveSideBySideView>
 ));
+
+ForgotPassword.propTypes = {
+  webBackgroundSource: PropTypes.string,
+};
 
 export default ForgotPassword;
