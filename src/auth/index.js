@@ -25,13 +25,18 @@ const FixedWidthLeftSide = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.default,
 }));
 
-const LeftSide = compose(mediaQuery(({ md }) => ({ minWidth: md }), FixedWidthLeftSide))(Left);
-
-const FlexedRight = styled({
+const Flexed = styled({
   flex: 1,
-})(Right);
+});
+
+const LeftSide = compose(mediaQuery(({ md }) => ({ minWidth: md }), FixedWidthLeftSide, Flexed))(
+  Left,
+);
+
+const FlexedRight = Flexed(Right);
 
 const FlexedResponsiveSideBySideView = styled({ flex: 1 })(ResponsiveSideBySideView);
+
 const BackgroundVideo = () => (
   <Video
     src="https://s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps.mp4"

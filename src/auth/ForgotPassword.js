@@ -18,11 +18,15 @@ const FixedWidthLeftSide = styled(({ theme }) => ({
   backgroundColor: theme.colors.background.default,
 }));
 
-const LeftSide = compose(mediaQuery(({ md }) => ({ minWidth: md }), FixedWidthLeftSide))(Left);
-
-const FlexedRight = styled({
+const Flexed = styled({
   flex: 1,
-})(Right);
+});
+
+const LeftSide = compose(mediaQuery(({ md }) => ({ minWidth: md }), FixedWidthLeftSide, Flexed))(
+  Left,
+);
+
+const FlexedRight = Flexed(Right);
 
 const FlexedResponsiveSideBySideView = styled({ flex: 1 })(ResponsiveSideBySideView);
 
