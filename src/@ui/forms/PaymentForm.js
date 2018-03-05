@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import { withFormik } from 'formik';
@@ -46,7 +44,7 @@ export const PaymentFormWithoutData = ({
           value={values.paymentMethod}
           displayValue={values.paymentMethod === 'creditCard' ? 'Credit Card' : 'Bank Account'}
           onValueChange={value => setFieldValue('paymentMethod', value)}
-          error={Boolean(touched.paymentMethod && errors.paymentMethod)}
+          error={touched.paymentMethod && errors.paymentMethod}
         >
           <Inputs.PickerItem label="Credit Card" value={'creditCard'} />
           <Inputs.PickerItem label="Bank Account" value={'bankAccount'} />
@@ -59,7 +57,7 @@ export const PaymentFormWithoutData = ({
               value={values.accountName}
               onChangeText={text => setFieldValue('accountName', text)}
               onBlur={() => setFieldTouched('accountName', true)}
-              error={Boolean(touched.accountName && errors.accountName)}
+              error={touched.accountName && errors.accountName}
             />
             <Inputs.Text
               suffix={<Icon name="bank" />}
@@ -68,7 +66,7 @@ export const PaymentFormWithoutData = ({
               type="numeric"
               onChangeText={text => setFieldValue('routingNumber', text)}
               onBlur={() => setFieldTouched('routingNumber', true)}
-              error={Boolean(touched.routingNumber && errors.routingNumber)}
+              error={touched.routingNumber && errors.routingNumber}
             />
             <Inputs.Text
               label="Account Number"
@@ -76,14 +74,14 @@ export const PaymentFormWithoutData = ({
               type="numeric"
               onChangeText={text => setFieldValue('accountNumber', text)}
               onBlur={() => setFieldTouched('accountNumber', true)}
-              error={Boolean(touched.accountNumber && errors.accountNumber)}
+              error={touched.accountNumber && errors.accountNumber}
             />
             <Inputs.Picker
               label="Account Type"
               value={values.accountType}
               displayValue={values.accountType === 'checking' ? 'Checking' : 'Savings'}
               onValueChange={value => setFieldValue('accountType', value)}
-              error={Boolean(touched.accountType && errors.accountType)}
+              error={touched.accountType && errors.accountType}
             >
               <Inputs.PickerItem label="Checking" value="checking" />
               <Inputs.PickerItem label="Savings" value="savings" />
@@ -98,7 +96,7 @@ export const PaymentFormWithoutData = ({
               value={values.cardNumber}
               onChangeText={text => setFieldValue('cardNumber', formatCardNumber(text))}
               onBlur={() => setFieldTouched('cardNumber', true)}
-              error={Boolean(touched.cardNumber && errors.cardNumber)}
+              error={touched.cardNumber && errors.cardNumber}
             />
             <Inputs.Text
               label="Expiration Date"
@@ -107,7 +105,7 @@ export const PaymentFormWithoutData = ({
               value={values.expirationDate}
               onChangeText={text => setFieldValue('expirationDate', formatCardExpiry(text))}
               onBlur={() => setFieldTouched('expirationDate', true)}
-              error={Boolean(touched.expirationDate && errors.expirationDate)}
+              error={touched.expirationDate && errors.expirationDate}
             />
             <Inputs.Text
               label="CVV"
@@ -115,7 +113,7 @@ export const PaymentFormWithoutData = ({
               value={values.cvv}
               onChangeText={text => setFieldValue('cvv', text)}
               onBlur={() => setFieldTouched('cvv', true)}
-              error={Boolean(touched.cvv && errors.cvv)}
+              error={touched.cvv && errors.cvv}
             />
           </View>
         )}
@@ -123,36 +121,34 @@ export const PaymentFormWithoutData = ({
     </TableView>
     <TableView responsive={false}>
       <FormFields>
-        {
-          enforceAccountName ? (
-            <View>
+        {enforceAccountName ? (
+          <View>
+            <Inputs.Text
+              label="Save Account Name"
+              value={values.savedAccountName}
+              onChangeText={text => setFieldValue('savedAccountName', text)}
+              onBlur={() => setFieldTouched('savedAccountName', true)}
+              error={touched.savedAccountName && errors.savedAccountName}
+            />
+          </View>
+        ) : (
+          <View>
+            <Inputs.Switch
+              value={values.willSavePaymentMethod}
+              onValueChange={r => setFieldValue('willSavePaymentMethod', r)}
+              label="Save this payment for future contributions"
+            />
+            {values.willSavePaymentMethod && (
               <Inputs.Text
                 label="Save Account Name"
                 value={values.savedAccountName}
                 onChangeText={text => setFieldValue('savedAccountName', text)}
                 onBlur={() => setFieldTouched('savedAccountName', true)}
-                error={Boolean(touched.savedAccountName && errors.savedAccountName)}
+                error={touched.savedAccountName && errors.savedAccountName}
               />
-            </View>
-          ) : (
-            <View>
-              <Inputs.Switch
-                value={values.willSavePaymentMethod}
-                onValueChange={r => setFieldValue('willSavePaymentMethod', r)}
-                label="Save this payment for future contributions"
-              />
-              {values.willSavePaymentMethod && (
-                <Inputs.Text
-                  label="Save Account Name"
-                  value={values.savedAccountName}
-                  onChangeText={text => setFieldValue('savedAccountName', text)}
-                  onBlur={() => setFieldTouched('savedAccountName', true)}
-                  error={Boolean(touched.savedAccountName && errors.savedAccountName)}
-                />
-              )}
-            </View>
-          )
-        }
+            )}
+          </View>
+        )}
       </FormFields>
     </TableView>
     <PaddedView>
@@ -209,62 +205,90 @@ const PaymentForm = compose(
     mapPropsToValues: (props) => {
       const paymentMethod = get(props, 'contributions.paymentMethod', 'creditCard');
       return {
-        paymentMethod: paymentMethod !== 'bankAccount' || paymentMethod !== 'creditCard' ? 'creditCard' : paymentMethod,
+        paymentMethod:
+          paymentMethod !== 'bankAccount' || paymentMethod !== 'creditCard'
+            ? 'creditCard'
+            : paymentMethod,
         willSavePaymentMethod: get(props, 'contributions.willSavePaymentMethod', true),
         ...get(props, 'contributions.bankAccount', { accountType: 'checking' }),
         ...get(props, 'contributions.creditCard', {}),
       };
     },
-    validationSchema: props => Yup.object().shape({
-      paymentMethod: Yup.string().oneOf(['bankAccount', 'creditCard']).required(),
-      cardNumber: Yup.string().when('paymentMethod', {
-        is: 'creditCard',
-        then: Yup.string().test('Credit Card', '${path} is not a valid credit card number', validateCardNumber).required(), // eslint-disable-line
+    validationSchema: props =>
+      Yup.object().shape({
+        paymentMethod: Yup.string()
+          .oneOf(['bankAccount', 'creditCard'])
+          .required(),
+        cardNumber: Yup.string().when('paymentMethod', {
+          is: 'creditCard',
+          then: Yup.string()
+            .test(
+              'Credit Card',
+              'The card number entered is not a valid number',
+              validateCardNumber,
+            ) // eslint-disable-line
+            .required(),
+        }),
+        expirationDate: Yup.string().when('paymentMethod', {
+          is: 'creditCard',
+          then: Yup.string()
+            // eslint-disable-next-line
+            .test('Expiration date', 'The expiration date is not a valid expiry date', value => {
+              if (!value) return false;
+              const { month, year } = parseCardExpiry(value);
+              return validateCardExpiry(month, year);
+            })
+            .required(),
+        }),
+        cvv: Yup.string().when('paymentMethod', {
+          is: 'creditCard',
+          then: Yup.string()
+            .test('CVV', 'The CVV entered is not a valid CVV code', validateCardCVC) // eslint-disable-line
+            .required(),
+        }),
+        accountName: Yup.string().when('paymentMethod', {
+          is: 'bankAccount',
+          then: Yup.string().required('Account Holder Name is a required field'),
+        }),
+        routingNumber: Yup.string().when('paymentMethod', {
+          is: 'bankAccount',
+          then: Yup.string().required('Routing Number is a required field'),
+        }),
+        accountNumber: Yup.string().when('paymentMethod', {
+          is: 'bankAccount',
+          then: Yup.string().required('Account Number is a required field'),
+        }),
+        accountType: Yup.string().oneOf(['checking', 'savings']),
+        willSavePaymentMethod: Yup.boolean(),
+        savedAccountName: props.enforceAccountName
+          ? Yup.string().required()
+          : Yup.string().when('willSavePaymentMethod', {
+            is: true,
+            then: Yup.string().required('Saved Payment Name is a required field'),
+          }),
       }),
-      expirationDate: Yup.string().when('paymentMethod', {
-        is: 'creditCard',
-        then: Yup.string().test('Expiration date', '${path} is not a valid expiry date', (value) => { // eslint-disable-line
-          if (!value) return false;
-          const { month, year } = parseCardExpiry(value);
-          return validateCardExpiry(month, year);
-        }).required(),
-      }),
-      cvv: Yup.string().when('paymentMethod', {
-        is: 'creditCard',
-        then: Yup.string().test('CVV', '${path} is not a valid CVV code', validateCardCVC).required(), // eslint-disable-line
-      }),
-      accountName: Yup.string().when('paymentMethod', {
-        is: 'bankAccount',
-        then: Yup.string().required(),
-      }),
-      routingNumber: Yup.string().when('paymentMethod', {
-        is: 'bankAccount',
-        then: Yup.string().required(),
-      }),
-      accountNumber: Yup.string().when('paymentMethod', {
-        is: 'bankAccount',
-        then: Yup.string().required(),
-      }),
-      accountType: Yup.string().oneOf(['checking', 'savings']),
-      willSavePaymentMethod: Yup.boolean(),
-      savedAccountName: props.enforceAccountName ? Yup.string().required() : Yup.string().when('willSavePaymentMethod', {
-        is: true,
-        then: Yup.string().required(),
-      }),
-    }),
     handleSubmit: (values, { props, setSubmitting }) => {
       setSubmitting(true);
       const formattedValues = { ...values };
-      const selectPaymentType = values.paymentMethod === 'bankAccount' ? props.isPayingWithBankAccount : props.isPayingWithCreditCard;
+      const selectPaymentType =
+        values.paymentMethod === 'bankAccount'
+          ? props.isPayingWithBankAccount
+          : props.isPayingWithCreditCard;
       selectPaymentType();
 
-      if (formattedValues.cardNumber) formattedValues.cardNumber = formattedValues.cardNumber.replace(/\D/g, '');
+      if (formattedValues.cardNumber) {
+        formattedValues.cardNumber = formattedValues.cardNumber.replace(/\D/g, '');
+      }
       if (formattedValues.expirationDate) {
         const { month, year } = parseCardExpiry(formattedValues.expirationDate);
-        formattedValues.expirationDate = moment().month(month - 1).year(year).format('MM/YY');
+        formattedValues.expirationDate = moment()
+          .month(month - 1)
+          .year(year)
+          .format('MM/YY');
       }
 
-      const setAccountDetails = values.paymentMethod === 'bankAccount' ? props.setBankAccount : props.setCreditCard;
+      const setAccountDetails =
+        values.paymentMethod === 'bankAccount' ? props.setBankAccount : props.setCreditCard;
       setAccountDetails(formattedValues);
 
       props.willSavePaymentMethod(formattedValues.willSavePaymentMethod);

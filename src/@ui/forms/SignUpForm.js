@@ -16,13 +16,16 @@ import Status from './FormStatusText';
 
 const tocLabel = (
   <LabelText>
-    {'I agree to the '}<ButtonLink onPress={() => Linking.openURL('https://newspring.cc/terms')}>terms of service</ButtonLink>.
+    {'I agree to the '}
+    <ButtonLink onPress={() => Linking.openURL('https://newspring.cc/terms')}>
+      terms of service
+    </ButtonLink>.
   </LabelText>
 );
 
 const UserExistsStatus = withRouter(({ history }) => (
   <Status error>
-    {'A user already exists with that email, but the password doesn\'t match. Would you like to '}
+    {"A user already exists with that email, but the password doesn't match. Would you like to "}
     <ButtonLink onPress={() => history.push('/forgot-password')}>reset your password?</ButtonLink>
   </Status>
 ));
@@ -41,11 +44,15 @@ const enhance = compose(
   withFormik({
     mapPropsToValues: ({ email }) => ({ email, terms: true }),
     validationSchema: Yup.object().shape({
-      email: Yup.string().email().required(),
-      password: Yup.string().required(),
-      firstName: Yup.string().required(),
-      lastName: Yup.string().required(),
-      terms: Yup.boolean().oneOf([true, null], 'You must agree to the terms to create an account').required(),
+      email: Yup.string()
+        .email()
+        .required('Email is a required field'),
+      password: Yup.string().required('Password is a required field'),
+      firstName: Yup.string().required('First Name is a required field'),
+      lastName: Yup.string().required('Last Name is a required field'),
+      terms: Yup.boolean()
+        .oneOf([true, null], 'You must agree to the terms to create an account')
+        .required(),
     }),
     handleSubmit: async (values, { props, setSubmitting, setStatus }) => {
       let result = null;
@@ -91,61 +98,60 @@ const enhance = compose(
   }),
 );
 
-const SignUpFormWithoutData = enhance(({
-  setFieldTouched,
-  setFieldValue,
-  touched,
-  errors,
-  values,
-  handleSubmit,
-  isValid,
-  isSubmitting,
-  status,
-}) => (
-  <View>
-    <TextInput
-      label="Email"
-      type="email"
-      value={values.email}
-      onChangeText={text => setFieldValue('email', text)}
-      onBlur={() => setFieldTouched('email', true)}
-      error={touched.email && errors.email}
-    />
-    <TextInput
-      label="Password"
-      type="password"
-      value={values.password}
-      onChangeText={text => setFieldValue('password', text)}
-      onBlur={() => setFieldTouched('password', true)}
-      error={touched.password && errors.password}
-    />
-    <TextInput
-      label="First Name"
-      value={values.firstName}
-      onChangeText={text => setFieldValue('firstName', text)}
-      onBlur={() => setFieldTouched('firstName', true)}
-      error={touched.firstName && errors.firstName}
-    />
-    <TextInput
-      label="Last Name"
-      value={values.lastName}
-      onChangeText={text => setFieldValue('lastName', text)}
-      onBlur={() => setFieldTouched('lastName', true)}
-      error={touched.lastName && errors.lastName}
-    />
-    <Switch
-      label={tocLabel}
-      value={values.terms}
-      onValueChange={v => setFieldValue('terms', v)}
-      error={errors.terms}
-    />
-    {status ? React.createElement(status) : null}
-    <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
-  </View>
-));
-
-const withData = compose(
-  withUser,
-  withProps(props => ({ onSubmit: props.register })),
+const SignUpFormWithoutData = enhance(
+  ({
+    setFieldTouched,
+    setFieldValue,
+    touched,
+    errors,
+    values,
+    handleSubmit,
+    isValid,
+    isSubmitting,
+    status,
+  }) => (
+    <View>
+      <TextInput
+        label="Email"
+        type="email"
+        value={values.email}
+        onChangeText={text => setFieldValue('email', text)}
+        onBlur={() => setFieldTouched('email', true)}
+        error={touched.email && errors.email}
+      />
+      <TextInput
+        label="Password"
+        type="password"
+        value={values.password}
+        onChangeText={text => setFieldValue('password', text)}
+        onBlur={() => setFieldTouched('password', true)}
+        error={touched.password && errors.password}
+      />
+      <TextInput
+        label="First Name"
+        value={values.firstName}
+        onChangeText={text => setFieldValue('firstName', text)}
+        onBlur={() => setFieldTouched('firstName', true)}
+        error={touched.firstName && errors.firstName}
+      />
+      <TextInput
+        label="Last Name"
+        value={values.lastName}
+        onChangeText={text => setFieldValue('lastName', text)}
+        onBlur={() => setFieldTouched('lastName', true)}
+        error={touched.lastName && errors.lastName}
+      />
+      <Switch
+        label={tocLabel}
+        value={values.terms}
+        onValueChange={v => setFieldValue('terms', v)}
+        error={errors.terms}
+      />
+      {status ? React.createElement(status) : null}
+      <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
+    </View>
+  ),
 );
+
+const withData = compose(withUser, withProps(props => ({ onSubmit: props.register })));
 export default withData(SignUpFormWithoutData);

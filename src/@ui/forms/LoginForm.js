@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, mapProps, setPropTypes } from 'recompose';
 import { get } from 'lodash';
@@ -15,12 +13,13 @@ import { withRouter, goBackTo } from '@ui/NativeWebRouter';
 import { H7 } from '@ui/typography';
 import styled from '@ui/styled';
 
-const ForgotPasswordText = styled(({ theme }) => ({ textAlign: 'center', paddingBottom: theme.sizing.baseUnit }))(H7);
+const ForgotPasswordText = styled(({ theme }) => ({
+  textAlign: 'center',
+  paddingBottom: theme.sizing.baseUnit,
+}))(H7);
 const ForgotPasswordLink = withRouter(({ history }) => (
   <ForgotPasswordText>
-    <ButtonLink onPress={() => history.push('/forgot-password')}>
-      Forgot Password?
-    </ButtonLink>
+    <ButtonLink onPress={() => history.push('/forgot-password')}>Forgot Password?</ButtonLink>
   </ForgotPasswordText>
 ));
 
@@ -36,8 +35,10 @@ const enhance = compose(
       email,
     }),
     validationSchema: Yup.object().shape({
-      email: Yup.string().email().required(),
-      password: Yup.string().required(),
+      email: Yup.string()
+        .email()
+        .required('Email is a required field'),
+      password: Yup.string().required('Password is a required field'),
     }),
     handleSubmit: async (values, { props, setFieldError, setSubmitting }) => {
       try {
@@ -66,40 +67,39 @@ const enhance = compose(
   }),
 );
 
-export const LoginFormWithoutData = enhance(({
-  setFieldTouched,
-  setFieldValue,
-  touched,
-  errors,
-  values,
-  handleSubmit,
-  isValid,
-  isSubmitting,
-}) => (
-  <View>
-    <TextInput
-      label="Email"
-      type="email"
-      value={values.email}
-      onChangeText={text => setFieldValue('email', text)}
-      onBlur={() => setFieldTouched('email', true)}
-      error={touched.email && errors.email}
-    />
-    <TextInput
-      label="Password"
-      type="password"
-      value={values.password}
-      onChangeText={text => setFieldValue('password', text)}
-      onBlur={() => setFieldTouched('password', true)}
-      error={touched.password && errors.password}
-    />
-    <ForgotPasswordLink />
-    <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
-  </View>
-));
-
-const withData = compose(
-  withUser,
-  mapProps(props => ({ ...props, onSubmit: props.login })),
+export const LoginFormWithoutData = enhance(
+  ({
+    setFieldTouched,
+    setFieldValue,
+    touched,
+    errors,
+    values,
+    handleSubmit,
+    isValid,
+    isSubmitting,
+  }) => (
+    <View>
+      <TextInput
+        label="Email"
+        type="email"
+        value={values.email}
+        onChangeText={text => setFieldValue('email', text)}
+        onBlur={() => setFieldTouched('email', true)}
+        error={touched.email && errors.email}
+      />
+      <TextInput
+        label="Password"
+        type="password"
+        value={values.password}
+        onChangeText={text => setFieldValue('password', text)}
+        onBlur={() => setFieldTouched('password', true)}
+        error={touched.password && errors.password}
+      />
+      <ForgotPasswordLink />
+      <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
+    </View>
+  ),
 );
+
+const withData = compose(withUser, mapProps(props => ({ ...props, onSubmit: props.login })));
 export default withData(LoginFormWithoutData);

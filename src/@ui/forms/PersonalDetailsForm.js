@@ -34,14 +34,14 @@ export const PersonalDetailsFormWithoutData = ({
           value={values.firstName}
           onChangeText={text => setFieldValue('firstName', text)}
           onBlur={() => setFieldTouched('firstName', true)}
-          error={Boolean(touched.firstName && errors.firstName)}
+          error={touched.firstName && errors.firstName}
         />
         <Inputs.Text
           label="Last Name"
           value={values.lastName}
           onChangeText={text => setFieldValue('lastName', text)}
           onBlur={() => setFieldTouched('lastName', true)}
-          error={Boolean(touched.lastName && errors.lastName)}
+          error={touched.lastName && errors.lastName}
         />
         <Inputs.Text
           label="Email"
@@ -49,7 +49,7 @@ export const PersonalDetailsFormWithoutData = ({
           value={values.email}
           onChangeText={text => setFieldValue('email', text)}
           onBlur={() => setFieldTouched('email', true)}
-          error={Boolean(touched.email && errors.email)}
+          error={touched.email && errors.email}
         />
         <Inputs.Picker
           label="Campus"
@@ -58,9 +58,7 @@ export const PersonalDetailsFormWithoutData = ({
           onValueChange={value => setFieldValue('campusId', value)}
           error={errors.campusId}
         >
-          {campuses.map(({ label, id }) => (
-            <Inputs.PickerItem label={label} value={id} key={id} />
-          ))}
+          {campuses.map(({ label, id }) => <Inputs.PickerItem label={label} value={id} key={id} />)}
         </Inputs.Picker>
       </FormFields>
     </TableView>
@@ -74,10 +72,7 @@ PersonalDetailsFormWithoutData.propTypes = {
   setFieldValue: PropTypes.func,
   handleSubmit: PropTypes.func,
   values: PropTypes.shape({
-    campusId: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
+    campusId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     email: PropTypes.string,
@@ -97,27 +92,31 @@ PersonalDetailsFormWithoutData.propTypes = {
   }),
   isSubmitting: PropTypes.bool,
   isValid: PropTypes.bool,
-  campuses: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
-    label: PropTypes.string,
-  })),
+  campuses: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      label: PropTypes.string,
+    }),
+  ),
 };
 
 const validationSchema = Yup.object().shape({
-  firstName: Yup.string().required(),
-  lastName: Yup.string().required(),
-  email: Yup.string().email().required(),
-  campusId: Yup.number().required(),
+  firstName: Yup.string().required('First Name is a required field'),
+  lastName: Yup.string().required('Last Name is a required field'),
+  email: Yup.string()
+    .email()
+    .required('Email is a required field'),
+  campusId: Yup.number().required('Campus is required'),
 });
 
 const mapPropsToValues = props => ({
   firstName: get(props, 'contributions.firstName') || get(props, 'person.firstName'),
   lastName: get(props, 'contributions.lastName') || get(props, 'person.lastName'),
   email: get(props, 'contributions.email') || get(props, 'person.email'),
-  campusId: get(props, 'contributions.campusId') || get(props, 'person.campus.id') || get(props, 'campuses.0.id'),
+  campusId:
+    get(props, 'contributions.campusId') ||
+    get(props, 'person.campus.id') ||
+    get(props, 'campuses.0.id'),
 });
 
 const PersonalDetailsForm = compose(
@@ -128,12 +127,12 @@ const PersonalDetailsForm = compose(
   withFormik({
     mapPropsToValues,
     validationSchema,
-    handleSubmit: (values, { props }) => props.setBillingPerson(values).then(() => {
-      if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
-    }),
+    handleSubmit: (values, { props }) =>
+      props.setBillingPerson(values).then(() => {
+        if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
+      }),
     isInitialValid(props) {
-      return validationSchema
-        .isValidSync(mapPropsToValues(props));
+      return validationSchema.isValidSync(mapPropsToValues(props));
     },
   }),
 )(PersonalDetailsFormWithoutData);
