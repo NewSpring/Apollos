@@ -21,29 +21,21 @@ const enhance = compose(
     isLoading: PropTypes.bool,
     onSubmit: PropTypes.func,
     setFieldValue: PropTypes.func,
-    countries: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]),
-      label: PropTypes.string,
-    })),
-    states: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]),
-      label: PropTypes.string,
-    })),
+    countries: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        label: PropTypes.string,
+      }),
+    ),
+    states: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        label: PropTypes.string,
+      }),
+    ),
     values: PropTypes.shape({
-      countryId: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]),
-      stateId: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]),
+      countryId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      stateId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       street1: PropTypes.string,
       street2: PropTypes.string,
       city: PropTypes.string,
@@ -71,90 +63,97 @@ const enhance = compose(
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
 );
 
-export const BillingAddressFormWithoutData = enhance(({
-  setFieldValue,
-  handleSubmit,
-  values,
-  countries,
-  states,
-  setFieldTouched,
-  touched,
-  errors,
-  isSubmitting,
-  isValid,
-}) => {
-  const isUSOrCanada = values.countryId === 'US' || values.countryId === 'CA';
-  return (
-    <View>
-      <TableView responsive={false}>
-        <FormFields>
-          <Inputs.Text
-            label="Street Address"
-            value={values.street1}
-            onChangeText={text => setFieldValue('street1', text)}
-            onBlur={() => setFieldTouched('street1', true)}
-            error={Boolean(touched.street1 && errors.street1)}
-          />
-          <Inputs.Text
-            label="Street Address (optional)"
-            value={values.street2}
-            onChangeText={text => setFieldValue('street2', text)}
-            onBlur={() => setFieldTouched('street2', true)}
-            error={Boolean(touched.street2 && errors.street2)}
-          />
-          <Inputs.Picker
-            label="Country"
-            value={values.countryId}
-            displayValue={get(countries.find(country => country.id === values.countryId), 'label')}
-            onValueChange={value => setFieldValue('countryId', value)}
-            error={Boolean(touched.countryId && errors.countryId)}
-          >
-            {countries.map(({ label, id }) => (
-              <Inputs.PickerItem label={label} value={id} key={id} />
-            ))}
-          </Inputs.Picker>
-          <Inputs.Text
-            label="City"
-            value={values.city}
-            onChangeText={text => setFieldValue('city', text)}
-            error={Boolean(touched.city && errors.city)}
-          />
-          {isUSOrCanada &&
+export const BillingAddressFormWithoutData = enhance(
+  ({
+    setFieldValue,
+    handleSubmit,
+    values,
+    countries,
+    states,
+    setFieldTouched,
+    touched,
+    errors,
+    isSubmitting,
+    isValid,
+  }) => {
+    const isUSOrCanada = values.countryId === 'US' || values.countryId === 'CA';
+    return (
+      <View>
+        <TableView responsive={false}>
+          <FormFields>
+            <Inputs.Text
+              label="Street Address"
+              value={values.street1}
+              onChangeText={text => setFieldValue('street1', text)}
+              onBlur={() => setFieldTouched('street1', true)}
+              error={touched.street1 && errors.street1}
+            />
+            <Inputs.Text
+              label="Street Address (optional)"
+              value={values.street2}
+              onChangeText={text => setFieldValue('street2', text)}
+              onBlur={() => setFieldTouched('street2', true)}
+              error={touched.street2 && errors.street2}
+            />
             <Inputs.Picker
-              label="State/Territory"
-              value={values.stateId}
-              displayValue={get(states.find(state => state.id === values.stateId), 'label')}
-              onValueChange={value => setFieldValue('stateId', value)}
-              error={Boolean(touched.stateId && errors.stateId)}
+              label="Country"
+              value={values.countryId}
+              displayValue={get(
+                countries.find(country => country.id === values.countryId),
+                'label',
+              )}
+              onValueChange={value => setFieldValue('countryId', value)}
+              error={touched.countryId && errors.countryId}
             >
-              {states.map(({ label, id }) => (
+              {countries.map(({ label, id }) => (
                 <Inputs.PickerItem label={label} value={id} key={id} />
               ))}
             </Inputs.Picker>
-          }
-          <Inputs.Text
-            label="Zip/Postal"
-            type="numeric"
-            value={values.zipCode}
-            onChangeText={text => setFieldValue('zipCode', text)}
-            error={Boolean(touched.zipCode && errors.zipCode)}
-          />
-        </FormFields>
-      </TableView>
-      <PaddedView>
-        <Button onPress={handleSubmit} title="Next" disabled={!isValid} loading={isSubmitting} />
-      </PaddedView>
-    </View>
-  );
-});
+            <Inputs.Text
+              label="City"
+              value={values.city}
+              onChangeText={text => setFieldValue('city', text)}
+              onBlur={() => setFieldTouched('city', true)}
+              error={touched.city && errors.city}
+            />
+            {isUSOrCanada && (
+              <Inputs.Picker
+                label="State/Territory"
+                value={values.stateId}
+                displayValue={get(states.find(state => state.id === values.stateId), 'label')}
+                onValueChange={value => setFieldValue('stateId', value)}
+                error={touched.stateId && errors.stateId}
+              >
+                {states.map(({ label, id }) => (
+                  <Inputs.PickerItem label={label} value={id} key={id} />
+                ))}
+              </Inputs.Picker>
+            )}
+            <Inputs.Text
+              label="Zip/Postal"
+              type="numeric"
+              value={values.zipCode}
+              onChangeText={text => setFieldValue('zipCode', text)}
+              onBlur={() => setFieldTouched('zipCode', true)}
+              error={touched.zipCode && errors.zipCode}
+            />
+          </FormFields>
+        </TableView>
+        <PaddedView>
+          <Button onPress={handleSubmit} title="Next" disabled={!isValid} loading={isSubmitting} />
+        </PaddedView>
+      </View>
+    );
+  },
+);
 
 const validationSchema = Yup.object().shape({
-  street1: Yup.string().required(),
+  street1: Yup.string().required('Street address is a required field'),
   street2: Yup.string(),
-  city: Yup.string().required(),
+  city: Yup.string().required('City is a required field'),
   stateId: Yup.string(),
-  countryId: Yup.string().required(),
-  zipCode: Yup.string().required(),
+  countryId: Yup.string().required('Country is a required field'),
+  zipCode: Yup.string().required('Zip Code is a required field'),
 });
 
 const mapPropsToValues = props => ({
@@ -174,8 +173,7 @@ const BillingAddressForm = compose(
     mapPropsToValues,
     validationSchema,
     isInitialValid(props) {
-      return validationSchema
-        .isValidSync(mapPropsToValues(props));
+      return validationSchema.isValidSync(mapPropsToValues(props));
     },
     handleSubmit: async (formValues, { props, setSubmitting }) => {
       try {
