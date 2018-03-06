@@ -3,7 +3,8 @@ import Settings from '@utils/Settings';
 export default function generateData(newData = {}) {
   const defaultData = {
     title: 'Welcome | NewSpring Church',
-    description: 'NewSpring Church exists to reach people far from God and teach them how to follow Jesus step by step. We currently have 16 campuses across the state of South Carolina.',
+    description:
+      'NewSpring Church exists to connect people to Jesus and each other. We currently have 14 campuses across the state of South Carolina.',
     image: 'http://ns.images.s3.amazonaws.com/newspring/site/empty-tomb.jpg',
   };
 
@@ -22,7 +23,6 @@ export default function generateData(newData = {}) {
   delete data.description;
   delete data.title;
   delete data.image;
-
 
   return {
     ...{
@@ -114,7 +114,7 @@ export default function generateData(newData = {}) {
         },
       ],
       link: [
-      // Google+
+        // Google+
         {
           rel: 'author',
           href: 'https://plus.google.com/+newspringchurch/posts',
