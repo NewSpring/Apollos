@@ -7,7 +7,6 @@ import { Platform } from 'react-native';
 import { withRouter } from '@ui/NativeWebRouter';
 import { parse, stringify } from '@utils/queryString';
 import MediaQuery, { enhancer as mediaQuery } from '@ui/MediaQuery';
-import { asModal } from '@ui/ModalView';
 import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
 import { ResponsiveSideBySideView, Left, Right } from '@ui/SideBySideView';
@@ -29,7 +28,6 @@ const enhance = compose(
   withProps(({ location: { search = '' } = {} }) => ({
     term: parse(search).q,
   })),
-  mediaQuery(({ md }) => ({ maxWidth: md }), asModal),
   withTheme(({ theme: { web: { backgroundVideo, backgroundVideoThumbnail = {} } = {} } = {} }) => ({
     webBackgroundSource: backgroundVideo,
     webBackgroundThumbnail: backgroundVideoThumbnail,
