@@ -25,6 +25,7 @@ export default gql`
         }
         video {
           embedUrl
+          videoUrl
         }
       }
     }

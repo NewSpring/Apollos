@@ -20,6 +20,7 @@ export default gql`
           body
           video {
             embedUrl
+            videoUrl
           }
           tags
           images(sizes: ["large"]) {

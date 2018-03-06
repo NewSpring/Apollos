@@ -69,6 +69,7 @@ export default gql`
           speaker
           video {
             embedUrl
+            videoUrl
           }
         }
       }

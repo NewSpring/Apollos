@@ -28,6 +28,7 @@ export default gql`
           }
           video {
             embedUrl
+            videoUrl
           }
           colors {
             value

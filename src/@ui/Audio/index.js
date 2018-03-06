@@ -166,10 +166,11 @@ export default class Audio extends PureComponent {
       this.soundLoaded = this.sound;
 
       if (sound === this.sound) { // since the above calls are promise base, there's a chance that
-      // the current sound changes before this sound is loaded (pressing skip button quickly).
-      // We don't want to start playing this sound in that scenario :)
+        // the current sound changes before this sound is loaded (pressing skip button quickly).
+        // We don't want to start playing this sound in that scenario :)
         this.duration = soundStatus.durationMillis;
         this.sound.setOnPlaybackStatusUpdate(this.onPlaybackStatusUpdate);
+
         if (this.props.isPlaying) await this.play();
       }
 
