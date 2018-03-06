@@ -1,49 +1,50 @@
 import React from 'react';
-import { pure, compose } from 'recompose';
-import Header from '@ui/Header';
-import Hero from '@ui/Hero';
-import LiveNowButton from '@ui/LiveNowButton';
-import MediaQuery, { enhancer as mediaQuery } from '@ui/MediaQuery';
-import Meta from '@ui/Meta';
+import { compose, pure, setPropTypes } from 'recompose';
+import PropTypes from 'prop-types';
+
+import { withTheme } from '@ui/theme';
 import styled from '@ui/styled';
-import TileNav from '@ui/TileNav';
-import Video from '@ui/VideoPlayer';
-import withSections from '@data/withSections';
 import { Right, Left, ResponsiveSideBySideView } from '@ui/SideBySideView';
+import MediaQuery, { enhancer as mediaQuery } from '@ui/MediaQuery';
+import withSections from '@data/withSections';
+import TileNav from '@ui/TileNav';
+import Header from '@ui/Header';
+import Meta from '@ui/Meta';
+import LiveNowButton from '@ui/LiveNowButton';
+import Hero from '@ui/Hero';
+import Video from '@ui/VideoPlayer';
 import { H1 } from '@ui/typography';
+
+const enhance = compose(
+  pure,
+  setPropTypes({
+    webBackgroundSource: PropTypes.string,
+    webBackgroundThumbnail: PropTypes.string,
+    isModal: PropTypes.bool,
+  }),
+  withTheme(({ theme: { web: { backgroundVideo, backgroundVideoThumbnail = {} } = {} } = {} }) => ({
+    webBackgroundSource: backgroundVideo,
+    webBackgroundThumbnail: backgroundVideoThumbnail,
+  })),
+);
 
 // This series of flexed positioning and mediaQuery styles is incrediblely convoluted.
 // TODO: consider refactor
-const FixedWidthMenu = styled(({ theme }) => ({
+const flexed = styled({
+  flex: 1,
+});
+const FlexedRight = flexed(Right);
+const FlexedResponsiveSideBySideView = flexed(ResponsiveSideBySideView);
+
+const fixedWidthMenu = styled(({ theme }) => ({
   maxWidth: theme.breakpoints.sm,
   flex: 1,
 }));
-
-const Flexed = styled({
-  flex: 1,
-});
-
-const FlexedRight = Flexed(Right);
-
-const Menu = compose(mediaQuery(({ md }) => ({ minWidth: md }), FixedWidthMenu, Flexed))(Left);
-
-const FlexedResponsiveSideBySideView = styled({ flex: 1 })(ResponsiveSideBySideView);
-
-const BackgroundVideo = () => (
-  <Video
-    src="https://s3.amazonaws.com/ns.images/newspring/fpo/HomepageVideo_ForExport_V3-Web_Hero_2_000kbps.mp4"
-    posterSource="https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/homepage/hero_poster_2x1_1700_850_90_c1.jpg"
-    useNativeControls={false}
-    shouldPlay
-    isLooping
-  />
-);
+const Menu = compose(mediaQuery(({ md }) => ({ minWidth: md }), fixedWidthMenu, flexed))(Left);
 
 const TileNavWithSections = withSections(TileNav);
 
-const enhance = compose(pure);
-
-const Sections = enhance(({ isModal }) => (
+const Sections = enhance(({ isModal, webBackgroundSource, webBackgroundThumbnail }) => (
   <FlexedResponsiveSideBySideView>
     <Meta title="Sections" />
     <Menu>
@@ -54,7 +55,17 @@ const Sections = enhance(({ isModal }) => (
     {isModal ? null : (
       <MediaQuery minWidth={'md'}>
         <FlexedRight>
-          <Hero background={<BackgroundVideo />}>
+          <Hero
+            background={
+              <Video
+                src={webBackgroundSource}
+                posterSrc={webBackgroundThumbnail}
+                useNativeControls={false}
+                shouldPlay
+                isLooping
+              />
+            }
+          >
             <H1>Welcome to NewSpring</H1>
           </Hero>
         </FlexedRight>
