@@ -5,7 +5,7 @@ import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
 import Header from '@ui/Header';
 import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
-import { Link, withRouter, goBackTo } from '@ui/NativeWebRouter';
+import { Link, withRouter } from '@ui/NativeWebRouter';
 import Touchable from '@ui/Touchable';
 import { H7 } from '@ui/typography';
 import withUser from '@data/withUser';
@@ -18,13 +18,14 @@ export { ProfileDetails, ProfileAddress, ChangePassword } from './forms';
 const LogoutTouchable = compose(
   withUser,
   withRouter,
-  withProps(({ logout, history }) => ({
+  withProps(({ logout }) => ({
     async onPress() {
       await logout();
       // TODO: There is something wrong with routing
       // at this point. The user is properly logged out
       // and cache is cleared before goBackTo runs
-      goBackTo({ to: '/profile', history, replace: true });
+      // RD: Commenting out the goBackTo per Marcelo comment on Issue #324.
+      // goBackTo({ to: '/profile', history, replace: true });
     },
   })),
 )(Touchable);
