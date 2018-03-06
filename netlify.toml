@@ -1,0 +1,10 @@
+[Settings]
+  ID = "2e89e032-86fd-461e-b581-9851db7afc59"
+
+# Settings in the [build] context are global and are applied to all contexts unless otherwise overridden by more specific contexts.
+
+[build]
+# This is the directory that you are publishing from (relative to root of your repo)
+  publish = "build/"
+# This will be your default build command
+  command = "npm run build"
