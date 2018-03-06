@@ -6,6 +6,7 @@ import { H3, H4, BodyText } from '@ui/typography';
 import { withTheme } from '@ui/theme';
 import { ButtonLink } from '@ui/Button';
 import WebBrowser from '@ui/WebBrowser';
+import Spacer from '@ui/Spacer';
 
 const contact = () => WebBrowser.openBrowserAsync('https://rock.newspring.cc/workflows/152?Topic=Stewardship');
 
@@ -33,6 +34,7 @@ const SubHeading = styled(({ theme }) => ({
 const Failure = () => (
   <BackgroundView>
     <ThemedIcon name="circle-outline-x-mark" />
+    <Spacer />
     <Heading>Uh Oh!</Heading>
     <SubHeading>Looks like there was a problem processing your contribution.</SubHeading>
     <BodyText italic>

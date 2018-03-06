@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styled from '@ui/styled';
-import { H1, H2, H3, H4, H5, H6, H7 } from '@ui/typography';
+import { H1, H2, H3, H4, H5, H6, H7, H7bold } from '@ui/typography';
 
 const Typography = {
   StyledH1: styled(({ theme }) => ({
@@ -33,6 +33,10 @@ const Typography = {
   StyledH7: styled(({ theme }) => ({
     color: theme.colors.text.primary,
   }))(H7),
+
+  StyledH7bold: styled(({ theme }) => ({
+    color: theme.colors.text.primary,
+  }))(H7bold),
 };
 
 const Row = styled({
@@ -44,7 +48,11 @@ function CashAmountIndicator(props) {
   const amountParts = parseFloat(props.amount)
     .toFixed(2)
     .split('.');
-  const SmallType = Typography[`StyledH${props.size + 2}`];
+  let sizeString = `StyledH${props.size + 2}`;
+  if (props.size + 2 === 7) {
+    sizeString = 'StyledH7bold';
+  }
+  const SmallType = Typography[sizeString];
   const LargeType = Typography[`StyledH${props.size}`];
   const styleOverride = props.color ? { color: props.color } : undefined;
   return (
