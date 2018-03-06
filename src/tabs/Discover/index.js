@@ -83,6 +83,7 @@ class Discover extends PureComponent {
       pathname: PropTypes.string,
     }),
     isModal: PropTypes.boolean,
+    isModal: PropTypes.bool,
     webBackgroundSource: PropTypes.string,
   };
 
