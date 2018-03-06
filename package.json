@@ -43,7 +43,7 @@
     "ios": "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts ios'",
     "web": "npm run create-app-entrypoint && NODE_PATH=./src node scripts/start.js",
     "build":
-      "npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
+      "NODE_ENV=production npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
     "build-storybook":
       "npm run create-storybook-entrypoint && npm run storybook-load-stories && NODE_PATH=./src build-storybook -c src/.storybook/web -s ./public",
     "ci-deploy":
