@@ -6,5 +6,17 @@
 [build]
 # This is the directory that you are publishing from (relative to root of your repo)
   publish = "build/"
-# This will be your default build command
+# default build command
   command = "npm run build"
+
+[context.production]
+  command = "npm run build"
+# Specific branch context: Deploys from this branch
+[context.beta]
+  command = "npm run build:beta"
+# Specific branch context: Deploys from this branch
+[context.alpha]
+  command = "npm run build:alpha"
+# Branch Deploy context: All deploys that are not resulting from a Pull/Merge Request and not from the primary, linked branch will inherit these settings.
+[context.deploy-preview]
+  command = "npm run build:alpha"
