@@ -22,19 +22,22 @@ const enhance = compose(
   withLiveNow,
 );
 
-const LiveNowButton = enhance(({
-  isLive,
-  titleText = 'NewSpring Church Live, Watch Now!',
-  liveNowPath = '/live',
-}) => {
-  if (!isLive || Platform.OS === 'web') return null;
-  return (
-    <Link to={liveNowPath}>
-      <Container>
-        <Title>{titleText}</Title>
-      </Container>
-    </Link>
-  );
-});
+const LiveNowButton = enhance(
+  ({
+    isLive,
+    isFuse,
+    titleText = 'NewSpring Church Live, Watch Now!',
+    liveNowPath = isFuse ? 'https://live.newspringfuse.com' : 'https://live.newspring.cc',
+  }) => {
+    if (!isLive || Platform.OS === 'web') return null;
+    return (
+      <Link to={liveNowPath}>
+        <Container>
+          <Title>{titleText}</Title>
+        </Container>
+      </Link>
+    );
+  },
+);
 
 export default LiveNowButton;
