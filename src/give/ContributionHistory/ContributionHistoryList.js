@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { groupBy, map, orderBy } from 'lodash';
+import { groupBy, map } from 'lodash';
 import HistoricalContributionCard from '@ui/HistoricalContributionCard';
 import FlatList from '@ui/WebCompatibleFlatList';
 import FlexedView from '@ui/FlexedView';
@@ -81,14 +81,7 @@ class ContributionHistoryList extends PureComponent {
       );
     }
 
-    const transactionsPerYear = orderBy(
-      map(groupBy(this.props.transactions, 'year'), (transactions, year) => ({
-        year,
-        transactions,
-      })),
-      ['year'],
-      ['desc'],
-    );
+    const transactionsPerYear = map(groupBy(this.props.transactions, 'year'), (transactions, year) => ({ year, transactions }));
     let Header = (
       <View>
         <this.props.FilterComponent />
