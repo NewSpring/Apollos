@@ -128,7 +128,7 @@ class Discover extends PureComponent {
                 background={
                   <Video
                     src={this.props.webBackgroundSource}
-                    posterSource={this.props.webBackgroundThumbnail}
+                    posterSrc={this.props.webBackgroundThumbnail}
                     useNativeControls={false}
                     shouldPlay
                     isLooping

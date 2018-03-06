@@ -61,7 +61,7 @@ const ForgotPassword = enhance(({ isModal, webBackgroundSource, webBackgroundThu
             background={
               <Video
                 src={webBackgroundSource}
-                posterSource={webBackgroundThumbnail}
+                posterSrc={webBackgroundThumbnail}
                 useNativeControls={false}
                 shouldPlay
                 isLooping

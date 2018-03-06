@@ -103,7 +103,7 @@ const Auth = enhance(({ isModal, webBackgroundSource, webBackgroundThumbnail }) 
             background={
               <Video
                 src={webBackgroundSource}
-                posterSource={webBackgroundThumbnail}
+                posterSrc={webBackgroundThumbnail}
                 useNativeControls={false}
                 shouldPlay
                 isLooping
