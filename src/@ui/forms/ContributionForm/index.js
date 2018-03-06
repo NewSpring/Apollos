@@ -322,7 +322,9 @@ const ContributionForm = compose(
         .shape({
           id: Yup.string(),
           name: Yup.string(),
-          amount: Yup.number().required(),
+          amount: Yup.number()
+            .min(1)
+            .required(),
         })
         .required(),
       frequencyId: Yup.string().oneOf(['today', ...FREQUENCY_IDS.map(f => f.id)]),
@@ -331,7 +333,9 @@ const ContributionForm = compose(
         .shape({
           id: Yup.string(),
           name: Yup.string(),
-          amount: Yup.number().required(),
+          amount: Yup.number()
+            .min(1)
+            .required(),
         }),
       startDate: Yup.date().min(new Date()),
     }),
