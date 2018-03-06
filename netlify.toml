@@ -7,7 +7,7 @@
 # This is the directory that you are publishing from (relative to root of your repo)
   publish = "build/"
 # default build command
-  command = "npm run build"
+  command = "npm run build:alpha"
 
 [context.production]
   command = "npm run build"
