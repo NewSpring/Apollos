@@ -1,7 +1,17 @@
 import React from 'react';
+import { compose, pure, setPropTypes } from 'recompose';
 import PropTypes from 'prop-types';
 import styled from '@ui/styled';
 import Video from './Video';
+
+const enhance = compose(
+  pure,
+  setPropTypes({
+    src: PropTypes.string,
+    posterSrc: PropTypes.string,
+    ...Video.propTypes,
+  }),
+);
 
 const StyledVideo = styled(
   {
@@ -10,22 +20,20 @@ const StyledVideo = styled(
   'VideoPlayer',
 )(Video);
 
-const VideoPlayer = ({
+const VideoPlayer = enhance(({
   src, posterSrc, posterSource, ...otherProps
-}) => (
-  <StyledVideo
-    source={{ uri: src }}
-    posterSource={posterSrc ? { uri: posterSrc } : posterSource} // posterSrc is convenience prop
-    usePoster={!!(posterSrc || posterSource)}
-    useNativeControls
-    {...otherProps}
-  />
-);
-
-VideoPlayer.propTypes = {
-  src: PropTypes.string,
-  posterSrc: PropTypes.string,
-  ...Video.propTypes,
-};
+}) => {
+  const videoObject = { uri: src };
+  const posterObject = { uri: posterSrc };
+  return (
+    <StyledVideo
+      source={videoObject}
+      posterSource={posterSrc ? posterObject : posterSource} // posterSrc is convenience prop
+      usePoster={!!(posterSrc || posterSource)}
+      useNativeControls
+      {...otherProps}
+    />
+  );
+});
 
 export default VideoPlayer;
