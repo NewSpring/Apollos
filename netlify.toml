@@ -14,11 +14,11 @@
   command = "npm run build:alpha"
 
 # Specific branch context: Deploys from this branch
-[context.beta]
+[context.BETA]
   command = "npm run build:beta"
 
 # Specific branch context: Deploys from this branch
-[context.alpha]
+[context.ALPHA]
   command = "npm run build:alpha"
 
 # Branch Deploy context: All deploys that are not resulting from a Pull/Merge Request and not from the primary, linked branch will inherit these settings.
