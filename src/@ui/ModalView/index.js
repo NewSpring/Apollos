@@ -3,20 +3,45 @@ import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import FlexedView from '@ui/FlexedView';
 import SecondaryNav from '@ui/SecondaryNav';
-import { nest } from 'recompose';
+import { compose, pure, setPropTypes, nest } from 'recompose';
 
 import ModalContainer from './ModalContainer';
 
-const ModalView = ({
-  children, onBackPress, backTo, onBackReplace,
-}) => (
-  <FlexedView style={StyleSheet.absoluteFill} forceInset={{ vertical: 'always', horizontal: 'always' }}>
-    <ModalContainer>
-      {children}
-      <SecondaryNav backButton backButtonIcon="close" onBackPress={onBackPress} backTo={backTo} onBackReplace={onBackReplace} />
-    </ModalContainer>
-  </FlexedView>
+const enhance = compose(
+  pure,
+  setPropTypes({
+    children: PropTypes.node,
+    onBackPress: PropTypes.func,
+    backTo: PropTypes.string,
+    onBackReplace: PropTypes.bool,
+  }),
 );
+
+const ModalView = enhance(({
+  children, onBackPress, backTo, onBackReplace,
+}) => {
+  const childrenWithProps = React.Children.map(children, child =>
+    React.cloneElement(child, { isModal: true }),
+  );
+
+  return (
+    <FlexedView
+      style={StyleSheet.absoluteFill}
+      forceInset={{ vertical: 'always', horizontal: 'always' }}
+    >
+      <ModalContainer>
+        {childrenWithProps}
+        <SecondaryNav
+          backButton
+          backButtonIcon="close"
+          onBackPress={onBackPress}
+          backTo={backTo}
+          onBackReplace={onBackReplace}
+        />
+      </ModalContainer>
+    </FlexedView>
+  );
+});
 
 ModalView.propTypes = {
   children: PropTypes.node,
