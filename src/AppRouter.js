@@ -4,7 +4,17 @@ import { Platform, View } from 'react-native';
 import { compose, withProps, nest } from 'recompose';
 import { withWindow } from '@ui/MediaQuery';
 import { withTheme } from '@ui/theme';
-import { Router, Route, ProtectedRoute, Redirect, AndroidBackButton, Switch, matchPath, withRouter, DeepLinking } from '@ui/NativeWebRouter';
+import {
+  Router,
+  Route,
+  ProtectedRoute,
+  Redirect,
+  AndroidBackButton,
+  Switch,
+  matchPath,
+  withRouter,
+  DeepLinking,
+} from '@ui/NativeWebRouter';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
@@ -39,7 +49,7 @@ class AppRouter extends PureComponent {
       pathname: PropTypes.string,
     }),
     isLargeScreen: PropTypes.bool,
-  }
+  };
 
   constructor(...args) {
     super(...args);
@@ -51,22 +61,25 @@ class AppRouter extends PureComponent {
   }
 
   componentWillUpdate(nextProps) {
-    if ((nextProps.history.action !== 'POP' &&
-        nextProps.history.action !== 'REPLACE') &&
-        !this.isModal &&
-        !this.musicPlayerIsOpened
+    if (
+      nextProps.history.action !== 'POP' &&
+      nextProps.history.action !== 'REPLACE' &&
+      !this.isModal &&
+      !this.musicPlayerIsOpened
     ) {
       previousLocation = this.props.location;
     }
   }
 
   get isModal() {
-    return this.props.isLargeScreen &&
+    return (
+      this.props.isLargeScreen &&
       previousLocation &&
       previousLocation.pathname !== this.props.location.pathname &&
       this.largeScreenModals.find(route =>
         matchPath(this.props.location.pathname, route.props.path),
-      );
+      )
+    );
   }
 
   get musicPlayerIsOpened() {
@@ -84,14 +97,24 @@ class AppRouter extends PureComponent {
   largeScreenModals = [
     <Route exact path="/sections" key="sections-modal" component={asModal(tabs.Sections)} />,
     <Route path="/give/checkout" key="give-checkout" component={give.Checkout} />,
-    <ProtectedRoute path="/give/new-payment-method" key="give-new-payment-method" component={give.AddAccount} />,
-    <ProtectedRoute exact path="/give/payment-methods/:id" key="give-payment-method" component={give.PaymentMethod} />,
+    <ProtectedRoute
+      path="/give/new-payment-method"
+      key="give-new-payment-method"
+      component={give.AddAccount}
+    />,
+    <ProtectedRoute
+      exact
+      path="/give/payment-methods/:id"
+      key="give-payment-method"
+      component={give.PaymentMethod}
+    />,
     <Route path="/login" key="login" component={asModal(Auth)} />,
-    <Route path="/forgot-password" key="forgot-password" component={ForgotPassword} />,
+    <Route path="/forgot-password" key="forgot-password" component={asModal(ForgotPassword)} />,
     <Route path="/discover" key="discover" component={asModal(tabs.Discover)} />,
   ];
 
-  tabs = () => { // eslint-disable-line
+  tabs = () => {
+    // eslint-disable-line
     // On mobile we render tabs.Layout at this level so that other <Route>s at
     // the root level in the router can render on top of the tabbar
     const Layout = Platform.OS === 'web' ? BackgroundView : tabs.Layout;
@@ -138,15 +161,20 @@ class AppRouter extends PureComponent {
         <Player>
           <AppLayout>
             <CardStack
-              location={(this.isModal || this.musicPlayerIsOpened) ?
-                previousLocation : this.props.location
+              location={
+                this.isModal || this.musicPlayerIsOpened ? previousLocation : this.props.location
               }
             >
               <Redirect from="/sermons" to="/series" />
               <Route exact path="/series" component={Series} />
               <Route exact path="/series/:id" component={SeriesSingle} />
               <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
-              <Route exact path="/series/:id/trailer" component={asModal(SeriesTrailer)} cardStackDirection="vertical" />
+              <Route
+                exact
+                path="/series/:id/trailer"
+                component={asModal(SeriesTrailer)}
+                cardStackDirection="vertical"
+              />
 
               <Route exact path="/studies" component={Studies} />
               <Route exact path="/studies/:id" component={StudiesSingle} />
@@ -158,7 +186,12 @@ class AppRouter extends PureComponent {
 
               <Route exact path="/music" component={Music} />
               <Route exact path="/music/:id" component={Playlist} />
-              <Route exact path="/music/:id/:track" component={TrackContextual} cardStackDirection="vertical" />
+              <Route
+                exact
+                path="/music/:id/:track"
+                component={TrackContextual}
+                cardStackDirection="vertical"
+              />
 
               <Route exact path="/articles" component={Articles} />
               <Route exact path="/articles/:id" component={ArticlesSingle} />
@@ -177,9 +210,22 @@ class AppRouter extends PureComponent {
               <Route exact path="/give/campaign/:id" component={give.FundDetails} />
               <Route exact path="/give/thankyou" component={give.ThankYou} />
 
-              <Route path="/give/checkout" cardStackDirection="vertical" component={give.Checkout} />
-              <ProtectedRoute path="/give/new-payment-method" cardStackDirection="vertical" component={give.AddAccount} />
-              <ProtectedRoute exact path="/give/payment-methods/:id" cardStackDirection="vertical" component={give.PaymentMethod} />
+              <Route
+                path="/give/checkout"
+                cardStackDirection="vertical"
+                component={give.Checkout}
+              />
+              <ProtectedRoute
+                path="/give/new-payment-method"
+                cardStackDirection="vertical"
+                component={give.AddAccount}
+              />
+              <ProtectedRoute
+                exact
+                path="/give/payment-methods/:id"
+                cardStackDirection="vertical"
+                component={give.PaymentMethod}
+              />
 
               <Route exact path="/give/restored-checkout" component={give.RestoredCheckout} />
               <ProtectedRoute exact path="/give/history/:id" component={give.TransactionDetails} />
@@ -197,15 +243,18 @@ class AppRouter extends PureComponent {
               <ProtectedRoute exact path="/settings/address" component={ProfileAddress} />
               <ProtectedRoute exact path="/settings/password" component={ChangePassword} />
 
-              <Route exact path="/forgot-password" component={ForgotPassword} cardStackDirection="vertical" />
+              <Route
+                exact
+                path="/forgot-password"
+                component={ForgotPassword}
+                cardStackDirection="vertical"
+              />
               <Route exact path="/_/reset-password/:token" component={ResetPassword} />
 
               <Route cardStackKey="tabs" component={this.tabs} />
             </CardStack>
           </AppLayout>
-          <Switch>
-            {this.isModal ? this.largeScreenModals : null}
-          </Switch>
+          <Switch>{this.isModal ? this.largeScreenModals : null}</Switch>
         </Player>
       </BackgroundView>
     );
