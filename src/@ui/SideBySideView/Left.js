@@ -4,7 +4,8 @@ import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import styled from '@ui/styled';
 
 export default compose(
-  mediaQuery(({ md }) => ({ minWidth: md }),
+  mediaQuery(
+    ({ md }) => ({ minWidth: md }),
     styled({
       width: `${100 - 41.6666666}%`,
       height: '100%',
