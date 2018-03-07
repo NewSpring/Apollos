@@ -11,7 +11,7 @@
 
 # Production context: All deploys from the Production branch set in your site's deploy settings will inherit these settings.
 [context.production]
-  command = "npm run build:alpha"
+  command = "npm run build"
 
 # Specific branch context: Deploys from this branch
 [context.BETA]
