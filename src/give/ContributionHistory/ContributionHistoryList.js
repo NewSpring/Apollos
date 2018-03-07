@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { groupBy, map } from 'lodash';
+import { groupBy, map, orderBy } from 'lodash';
 import HistoricalContributionCard from '@ui/HistoricalContributionCard';
 import FlatList from '@ui/WebCompatibleFlatList';
 import FlexedView from '@ui/FlexedView';
@@ -81,7 +81,14 @@ class ContributionHistoryList extends PureComponent {
       );
     }
 
-    const transactionsPerYear = map(groupBy(this.props.transactions, 'year'), (transactions, year) => ({ year, transactions }));
+    const transactionsPerYear = orderBy(
+      map(groupBy(this.props.transactions, 'year'), (transactions, year) => ({
+        year,
+        transactions,
+      })),
+      ['year'],
+      ['desc'],
+    );
     let Header = (
       <View>
         <this.props.FilterComponent />
@@ -120,6 +127,7 @@ class ContributionHistoryList extends PureComponent {
     // TODO: this should probably be refactored to use a SectionList eventually.
     // However, SectionList isn't supported on react-native-web, and writing a polyfill
     // would add more debt then worth
+
     return (
       <FlatList
         refreshing={this.props.isLoading}
