@@ -29,6 +29,7 @@ const Heading = styled(({ theme }) => ({
 const SubHeading = styled(({ theme }) => ({
   color: theme.colors.text.secondary,
   paddingBottom: theme.sizing.baseUnit,
+  textAlign: 'center',
 }))(H4);
 
 const Failure = () => (
