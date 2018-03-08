@@ -5,7 +5,6 @@ import { get } from 'lodash';
 import Yup from 'yup';
 import { withFormik } from 'formik';
 import moment from 'moment';
-import styled from '@ui/styled';
 
 import ActivityIndicator from '@ui/ActivityIndicator';
 import * as Inputs from '@ui/inputs';
@@ -157,16 +156,10 @@ const mapPropsToValues = props => ({
   campusId: get(props, 'user.campus.id') || null,
 });
 
-const StyledActivityIndicator = styled({
-  top: 30,
-})(ActivityIndicator);
-
 const ProfileDetailsForm = compose(
   withCampuses,
   withUser,
-  branch(({ isLoading }) => isLoading,
-    renderComponent(StyledActivityIndicator),
-  ),
+  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
   withFormik({
     mapPropsToValues,
     validationSchema,

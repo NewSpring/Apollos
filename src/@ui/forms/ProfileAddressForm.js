@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { compose, branch, renderComponent } from 'recompose';
+// import { Platform } from 'react-native';
+import { compose, branch, renderComponent, pure } from 'recompose';
 import Yup from 'yup';
 import { withFormik } from 'formik';
 import get from 'lodash/get';
@@ -14,10 +15,6 @@ import { H6 } from '@ui/typography';
 import styled from '@ui/styled';
 
 const Status = styled({ textAlign: 'center' })(H6);
-
-const StyledActivityIndicator = styled({
-  top: 30,
-})(ActivityIndicator);
 
 export const ProfileAddressFormWithoutData = ({
   setFieldValue,
@@ -118,10 +115,9 @@ const validationSchema = Yup.object().shape({
 const mapPropsToValues = props => get(props, 'user.home', {});
 
 const ProfileAddressForm = compose(
+  pure,
   withUser,
-  branch(({ isLoading }) => isLoading,
-    renderComponent(StyledActivityIndicator),
-  ),
+  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
   withFormik({
     mapPropsToValues,
     validationSchema,

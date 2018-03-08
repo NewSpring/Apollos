@@ -6,7 +6,6 @@ import get from 'lodash/get';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 
-
 import withGive from '@data/withGive';
 import withCheckout from '@data/withCheckout';
 import { withRouter } from '@ui/NativeWebRouter';
@@ -16,7 +15,6 @@ import ActivityIndicator from '@ui/ActivityIndicator';
 import sentry from '@utils/sentry';
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
-
 
 const enhance = compose(
   setPropTypes({
