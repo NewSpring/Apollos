@@ -31,9 +31,13 @@ const Video = ({
 );
 
 Video.propTypes = {
-  source: PropTypes.shape({ uri: PropTypes.string }),
+  source: PropTypes.shape({
+    uri: PropTypes.string,
+  }),
   type: PropTypes.string,
-  posterSource: PropTypes.string,
+  posterSource: PropTypes.shape({
+    uri: PropTypes.string,
+  }),
   useNativeControls: PropTypes.bool,
   shouldPlay: PropTypes.bool,
   isLooping: PropTypes.bool,
