@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Platform } from 'react-native';
 import { compose, branch, renderComponent, pure } from 'recompose';
 import Yup from 'yup';
 import { withFormik } from 'formik';
