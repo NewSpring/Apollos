@@ -13,17 +13,14 @@ const enhance = compose(
   withLiveNow,
   setPropTypes({
     isLive: PropTypes.bool,
+    isFuse: PropTypes.bool,
     embedUrl: PropTypes.string,
   }),
 );
 
-const TheaterMode = styled(
-  StyleSheet.absoluteFill,
-)(EmbeddedVideoPlayer);
+const TheaterMode = styled(StyleSheet.absoluteFill)(EmbeddedVideoPlayer);
 
-const SeriesTrailer = enhance(({
-  embedUrl,
-}) => (
+const SeriesTrailer = enhance(({ embedUrl }) => (
   <FlexedView>
     <TheaterMode src={embedUrl} />
   </FlexedView>
