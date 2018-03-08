@@ -1,0 +1,7 @@
+# Make sure ROOT_URL does not have a trailing slash
+APP_ROOT_URL='http://192.168.1.40:3000'
+APP_ROCK_URL='https://alpha-rock.newspring.cc/'
+APP_ROCK_PUBLIC_TOKEN='QLTgNQP3fDJIXxohu9RY1CA1'
+APP_SENTRY_URL='https://cd1890247aab4af7a4c19693806a1492@sentry.io/282336'
+APP_SENTRY_ENVIRONMENT='development'
+SENTRY_AUTH=''
