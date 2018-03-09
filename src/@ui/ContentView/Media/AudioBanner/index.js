@@ -15,6 +15,7 @@ import { H7 } from '@ui/typography';
 const enhance = compose(
   pure,
   setPropTypes({
+    mediaId: PropTypes.string,
     titleText: PropTypes.string,
     currentTrack: PropTypes.shape({
       title: PropTypes.string,
@@ -41,17 +42,19 @@ const Banner = styled(({ theme }) => ({
   backgroundColor: theme.colors.lightTertiary, // TODO: move color into theme type
 }))(PaddedView);
 
-const AudioBanner = enhance(({
-  setNowPlaying, currentTrack, playlist, titleText, rem,
-}) => (
-  <Touchable onPress={() => setNowPlaying({ currentTrack, playlist })}>
-    <Banner>
-      <View>
-        <H7>{titleText}</H7>
-      </View>
-      <Icon name={'audio'} size={rem(1)} />
-    </Banner>
-  </Touchable>
-));
+const AudioBanner = enhance(
+  ({
+    mediaId, setNowPlaying, currentTrack, playlist, titleText, rem,
+  }) => (
+    <Touchable onPress={() => setNowPlaying({ id: mediaId, currentTrack, playlist })}>
+      <Banner>
+        <View>
+          <H7>{titleText}</H7>
+        </View>
+        <Icon name={'audio'} size={rem(1)} />
+      </Banner>
+    </Touchable>
+  ),
+);
 
 export default AudioBanner;

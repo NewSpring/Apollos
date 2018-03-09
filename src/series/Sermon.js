@@ -58,6 +58,7 @@ const Sermon = enhance(
           title={title}
           seriesImages={seriesImages}
           seriesColors={seriesColors}
+          contentId={id}
           {...otherContentProps}
         >
           <Title>{startCase(toLower(title))}</Title>
