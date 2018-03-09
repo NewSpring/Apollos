@@ -37,7 +37,7 @@ class ContributionHistory extends PureComponent {
       startDate,
       endDate,
     });
-  }
+  };
 
   render() {
     return (
@@ -50,10 +50,7 @@ class ContributionHistory extends PureComponent {
           onPressNoDataButton={this.props.onPressNoDataButton}
           onPressContributionCard={this.props.onPressContributionCard}
           FilterComponent={() => (
-            <ContributionHistoryFilter
-              {...this.props.dateRange}
-              onSubmit={this.handleFilter}
-            />
+            <ContributionHistoryFilter {...this.props.dateRange} onSubmit={this.handleFilter} />
           )}
         />
       </BackgroundView>
@@ -70,7 +67,9 @@ const enhance = compose(
   })),
   withTransactions,
   withProps(props => ({
-    onPressNoDataButton() { props.route.jumpTo('Now'); },
+    onPressNoDataButton() {
+      props.route.jumpTo('Now');
+    },
   })),
 );
 
