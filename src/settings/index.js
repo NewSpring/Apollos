@@ -21,11 +21,6 @@ const LogoutTouchable = compose(
   withProps(({ logout }) => ({
     async onPress() {
       await logout();
-      // TODO: There is something wrong with routing
-      // at this point. The user is properly logged out
-      // and cache is cleared before goBackTo runs
-      // RD: Commenting out the goBackTo per Marcelo comment on Issue #324.
-      // goBackTo({ to: '/profile', history, replace: true });
     },
   })),
 )(Touchable);
