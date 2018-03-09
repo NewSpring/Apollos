@@ -20,10 +20,11 @@ const play = graphql(playMutation, {
 const setNowPlaying = graphql(nowPlayingMutation, {
   props: ({ mutate }) => ({
     setNowPlaying: ({
+      id,
       playlist,
       currentTrack,
     }) => mutate({
-      variables: { playlist, currentTrack },
+      variables: { id, playlist, currentTrack },
     }),
   }),
 });
