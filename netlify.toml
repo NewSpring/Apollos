@@ -1,0 +1,26 @@
+[Settings]
+  ID = "2e89e032-86fd-461e-b581-9851db7afc59"
+
+# Settings in the [build] context are global and are applied to all contexts unless otherwise overridden by more specific contexts.
+
+[build]
+# This is the directory that you are publishing from (relative to root of your repo)
+  publish = "build/"
+# default build command
+  command = "npm run build:alpha"
+
+# Production context: All deploys from the Production branch set in your site's deploy settings will inherit these settings.
+[context.production]
+  command = "npm run build:alpha"
+
+# Specific branch context: Deploys from this branch
+[context.BETA]
+  command = "npm run build:beta"
+
+# Specific branch context: Deploys from this branch
+[context.ALPHA]
+  command = "npm run build:alpha"
+
+# Branch Deploy context: All deploys that are not resulting from a Pull/Merge Request and not from the primary, linked branch will inherit these settings.
+[context.deploy-preview]
+  command = "npm run build:alpha"
