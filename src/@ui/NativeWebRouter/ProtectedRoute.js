@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import { Route, Redirect } from 'react-router';
 import omit from 'lodash/omit';
+import get from 'lodash/get';
 import withUser from '@data/withUser/withIsLoggedIn';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import BackgroundView from '@ui/BackgroundView';
@@ -29,7 +30,16 @@ class ProtectedRoute extends PureComponent {
     ...Route.defaultProps,
   };
 
+  static contextTypes = {
+    router: PropTypes.shape({
+      history: PropTypes.object.isRequired,
+      route: PropTypes.object.isRequired,
+      staticContext: PropTypes.object,
+    }),
+  };
+
   render() {
+    const currentPath = get(this.context, 'router.history.location.pathname');
     return (
       <Route
         {...omit(this.props, ['render', 'children', 'component'])}
@@ -42,7 +52,7 @@ class ProtectedRoute extends PureComponent {
             );
           }
 
-          if (!this.props.isLoggedIn) {
+          if (!this.props.isLoggedIn && currentPath !== '/login') {
             return (
               <Redirect
                 from={this.props.path}
