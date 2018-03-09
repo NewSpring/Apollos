@@ -4,6 +4,15 @@
 [![Build Status](https://travis-ci.org/NewSpring/Apollos.svg?branch=master)](https://travis-ci.org/NewSpring/Apollos)
 [![Coverage Status](https://coveralls.io/repos/github/NewSpring/Apollos/badge.svg)](https://coveralls.io/github/NewSpring/Apollos)
 
+## Notes to potential Apollos-project partners
+
+This repo is the current React-Native version of the NewSpring app. It is a react-native/react-native-web port of [Holtzman](https://github.com/newspring/holtzman). It's intended to serve as a starting point for the open-source initiative in the larger Apollos project. However, this repo is not necessarilly intended to be forked or directly implemented for other organizations (although you're more then welcome to!). Instead, we plan to rip out the core UI components into a separate UI component library ("apollos-ui"), and also release a (small) set of tooling to facilitate creating an Apollos app. This tooling would likely be based on something like [Create React Native App](https://github.com/react-community/create-react-native-app) and could contain a boilerplate set up with a turn-key "Church app" ready to go for your customization. 
+
+Other relevant projects in the NewSpring ecosystem:
+
+- [Heighliner](https://github.com/newspring/heighliner): The current GraphQL implementation that this project connects to. In the future, we forsee releasing a separate "Apollos Data" project to replace Heighliner.
+- [Holtzman](https://github.com/newspring/holtzman): The existing React / Cordova based NewSpring app. This repo is a direct React-Native / React-Native port of this project.
+
 ## Getting Started
 
 Apollos is a reactive application framework for building react web + react native applications. It is built using [React-Native](https://facebook.github.io/react-native/), [Apollo](https://github.com/apollographql), [React Native Web](https://github.com/necolas/react-native-web), [Create React Native App](https://github.com/react-community/create-react-native-app) and [Create React App](https://github.com/facebookincubator/create-react-app). This repository contains the application framework and instructions for usage.

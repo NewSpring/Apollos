@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styled from '@ui/styled';
@@ -42,9 +40,10 @@ const Row = styled({
   alignItems: 'center',
 })(View);
 
-
 function CashAmountIndicator(props) {
-  const amountParts = parseFloat(props.amount).toFixed(2).split('.');
+  const amountParts = parseFloat(props.amount)
+    .toFixed(2)
+    .split('.');
   const SmallType = Typography[`StyledH${props.size + 2}`];
   const LargeType = Typography[`StyledH${props.size}`];
   const styleOverride = props.color ? { color: props.color } : undefined;
@@ -60,7 +59,9 @@ function CashAmountIndicator(props) {
 CashAmountIndicator.propTypes = {
   amount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   size(props, propName, componentName) {
-    if (props[propName] > 5) return new Error(`${componentName} ${propName} prop cannot be greater than 5`);
+    if (props[propName] > 5) {
+      return new Error(`${componentName} ${propName} prop cannot be greater than 5`);
+    }
     return null;
   },
   color: PropTypes.string,
@@ -70,6 +71,5 @@ CashAmountIndicator.defaultProps = {
   amount: 0,
   size: 1,
 };
-
 
 export default CashAmountIndicator;

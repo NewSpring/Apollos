@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import truncate from 'truncate';
-import { Platform } from 'react-native';
+import { Platform, TouchableWithoutFeedback } from 'react-native';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import Card, { CardContent, CardImage } from '@ui/Card';
 import { H5, H6, H7, BodyText } from '@ui/typography';
@@ -14,7 +14,8 @@ import FlexedView from '@ui/FlexedView';
 import styled from '@ui/styled';
 
 const LeftColumn = compose(
-  mediaQuery(({ md }) => ({ maxWidth: md }),
+  mediaQuery(
+    ({ md }) => ({ maxWidth: md }),
     styled(({ theme }) => ({
       paddingVertical: theme.sizing.baseUnit * 0.75,
     })),
@@ -29,7 +30,8 @@ const LeftColumn = compose(
 const ScheduleText = styled(({ theme }) => ({ color: theme.colors.text.tertiary }))(H6);
 const DistanceText = styled(({ theme }) => ({ color: theme.colors.text.tertiary }))(H7);
 
-const ImageColumn = mediaQuery(({ md }) => ({ minWidth: md }),
+const ImageColumn = mediaQuery(
+  ({ md }) => ({ minWidth: md }),
   styled({
     height: '100%',
     position: 'absolute',
@@ -75,7 +77,9 @@ const GroupCard = ({
   const card = (
     <Card isLoading={isLoading}>
       <ResponsiveSideBySideView reversed>
-        <ImageColumn><GroupCardImage source={{ url: photo }} /></ImageColumn>
+        <ImageColumn>
+          <GroupCardImage source={{ url: photo }} />
+        </ImageColumn>
         <FlexedView>
           <LeftColumn>
             <H5>{name}</H5>
@@ -94,8 +98,10 @@ const GroupCard = ({
 
             <ChipList>
               {tags.map((tag) => {
-                const selected = selectedTags.map(t => t.toLocaleLowerCase())
-                  .indexOf(tag.value.toLocaleLowerCase()) > -1;
+                const selected =
+                  selectedTags
+                    .map(t => t.toLocaleLowerCase())
+                    .indexOf(tag.value.toLocaleLowerCase()) > -1;
                 return (
                   <Chip
                     title={tag.value}
@@ -106,42 +112,60 @@ const GroupCard = ({
                   />
                 );
               })}
-              {(type && type !== 'Interests') ? (() => {
-                const selected = selectedTags.find(t => t === type);
-                return (<Chip
-                  title={type}
-                  onPress={() => onTagPress(type)}
-                  icon={selected ? 'close' : undefined}
-                  selected={selected}
-                />);
-              })() : null}
-              {kidFriendly ? (() => {
-                const selected = selectedTags.find(t => t === 'kid friendly');
-                return (<Chip
-                  title={'kid friendly'}
-                  onPress={() => onTagPress('kid friendly')}
-                  icon={selected ? 'close' : undefined}
-                  selected={selected}
-                />);
-              })() : null}
-              {demographic ? (() => {
-                const selected = selectedTags.find(t => t === demographic);
-                return (<Chip
-                  title={demographic}
-                  onPress={() => onTagPress(demographic)}
-                  icon={selected ? 'close' : undefined}
-                  selected={selected}
-                />);
-              })() : null}
-              {(campus && campus.name) ? (() => {
-                const selected = selectedCampuses.find(t => t === campus.name.toLocaleLowerCase());
-                return (<Chip
-                  title={campus.name}
-                  onPress={() => onSelectCampus(campus.name)}
-                  icon={selected ? 'close' : undefined}
-                  selected={selected}
-                />);
-              })() : null}
+              {type && type !== 'Interests'
+                ? (() => {
+                    const selected = selectedTags.find(t => t === type);
+                    return (
+                      <Chip
+                        title={type}
+                        onPress={() => onTagPress(type)}
+                        icon={selected ? 'close' : undefined}
+                        selected={selected}
+                      />
+                    );
+                  })()
+                : null}
+              {kidFriendly
+                ? (() => {
+                    const selected = selectedTags.find(t => t === 'kid friendly');
+                    return (
+                      <Chip
+                        title={'kid friendly'}
+                        onPress={() => onTagPress('kid friendly')}
+                        icon={selected ? 'close' : undefined}
+                        selected={selected}
+                      />
+                    );
+                  })()
+                : null}
+              {demographic
+                ? (() => {
+                    const selected = selectedTags.find(t => t === demographic);
+                    return (
+                      <Chip
+                        title={demographic}
+                        onPress={() => onTagPress(demographic)}
+                        icon={selected ? 'close' : undefined}
+                        selected={selected}
+                      />
+                    );
+                  })()
+                : null}
+              {campus && campus.name
+                ? (() => {
+                    const selected = selectedCampuses.find(
+                      t => t === campus.name.toLocaleLowerCase(),
+                    );
+                    return (
+                      <Chip
+                        title={campus.name}
+                        onPress={() => onSelectCampus(campus.name)}
+                        icon={selected ? 'close' : undefined}
+                        selected={selected}
+                      />
+                    );
+                  })()
+                : null}
             </ChipList>
           </LeftColumn>
         </FlexedView>
@@ -150,7 +174,11 @@ const GroupCard = ({
   );
 
   if (isLoading) return card;
-  return <Link to={`/groups/${id}`}>{card}</Link>;
+  return (
+    <Link to={`/groups/${id}`} component={TouchableWithoutFeedback}>
+      {card}
+    </Link>
+  );
 };
 
 GroupCard.propTypes = {
@@ -159,10 +187,12 @@ GroupCard.propTypes = {
   photo: PropTypes.string,
   isLoading: PropTypes.bool,
   description: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    value: PropTypes.string,
-  })),
+  tags: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      value: PropTypes.string,
+    }),
+  ),
   selectedTags: PropTypes.arrayOf(PropTypes.string),
   schedule: PropTypes.shape({ description: PropTypes.string }),
   distance: PropTypes.number,

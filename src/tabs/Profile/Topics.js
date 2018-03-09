@@ -13,9 +13,9 @@ import TableView, { Cell, CellText, Divider } from '@ui/TableView';
 const TabInfoText = styled({ textAlign: 'center' })(H7);
 
 const enhance = compose(
-  pure,
   withTopics,
   withUser,
+  pure,
 );
 
 const Topics = enhance(({
