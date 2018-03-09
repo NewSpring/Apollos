@@ -24,7 +24,7 @@ exports[`The MiniControls component should render 1`] = `
     }
   >
     <Image
-      maintainAspectRatio={true}
+      maintainAspectRatio={false}
       source={
         Array [
           Object {
@@ -36,10 +36,10 @@ exports[`The MiniControls component should render 1`] = `
       }
       style={
         Array [
+          Object {},
           Object {
             "aspectRatio": 1,
           },
-          undefined,
         ]
       }
     />
