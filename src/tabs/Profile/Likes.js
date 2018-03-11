@@ -67,7 +67,7 @@ const Likes = compose(
     ItemComponent: ThumbnailCard,
     ListHeaderComponent: YourLikesHeader,
     ListEmptyComponent: EmptyList,
-    ListFooterComponent: content.length < 5 ? RecentLikes : null,
+    ListFooterComponent: (content || []).length < 5 ? RecentLikes : null,
   })),
   styled({ paddingVertical: 0 }),
 )(FeedView);
