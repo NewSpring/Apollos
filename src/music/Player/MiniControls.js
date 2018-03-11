@@ -33,23 +33,35 @@ const FlexRow = styled(({ theme, height }) => ({
   justifyContent: 'flex-start',
 }))(View);
 
-const Container = styled(({ theme }) => ({
-  overflow: 'hidden',
-  backgroundColor: theme.colors.background.default,
-  borderTopColor: Color(theme.colors.background.default).darken(0.2).string(),
-  borderTopWidth: StyleSheet.hairlineWidth,
-}), 'MiniControls')(SafeAreaView);
+const Container = styled(
+  ({ theme }) => ({
+    overflow: 'hidden',
+    backgroundColor: theme.colors.background.default,
+    borderTopColor: Color(theme.colors.background.default)
+      .darken(0.2)
+      .string(),
+    borderTopWidth: StyleSheet.hairlineWidth,
+  }),
+  'MiniControls',
+)(SafeAreaView);
 
-const Controls = styled(({ theme }) => ({
-  flexDirection: 'row',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-  width: theme.sizing.baseUnit * 4,
-  position: 'absolute',
-  right: 0,
-  top: 0,
-  bottom: 0,
-}), 'MiniControls.ControlsContainer')(Container);
+const Thumbnail = styled({
+  aspectRatio: 1,
+})(ConnectedImage);
+
+const Controls = styled(
+  ({ theme }) => ({
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: theme.sizing.baseUnit * 4,
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    bottom: 0,
+  }),
+  'MiniControls.ControlsContainer',
+)(Container);
 
 const enhance = compose(
   setPropTypes({
@@ -64,25 +76,31 @@ const enhance = compose(
   withThemeMixin({ type: 'dark' }),
 );
 
-const MiniControls = enhance(({
-  isPlaying, play, pause, trackName, trackByLine, albumArt, height,
-}) => (
-  <Container>
-    <FlexRow height={height}>
-      <ConnectedImage source={albumArt} maintainAspectRatio />
-      <TrackInfo>
-        <TrackName>{trackName}</TrackName>
-        <TrackLabel>{trackByLine}</TrackLabel>
-      </TrackInfo>
-    </FlexRow>
-    <Controls>
-      {(isPlaying) ? (
-        <Touchable onPress={pause}><Icon name="pause" /></Touchable>
-      ) : (
-        <Touchable onPress={play}><Icon name="play" /></Touchable>
-      )}
-    </Controls>
-  </Container>
-));
+const MiniControls = enhance(
+  ({
+    isPlaying, play, pause, trackName, trackByLine, albumArt, height,
+  }) => (
+    <Container>
+      <FlexRow height={height}>
+        <Thumbnail source={albumArt} />
+        <TrackInfo>
+          <TrackName>{trackName}</TrackName>
+          <TrackLabel>{trackByLine}</TrackLabel>
+        </TrackInfo>
+      </FlexRow>
+      <Controls>
+        {isPlaying ? (
+          <Touchable onPress={pause}>
+            <Icon name="pause" />
+          </Touchable>
+        ) : (
+          <Touchable onPress={play}>
+            <Icon name="play" />
+          </Touchable>
+        )}
+      </Controls>
+    </Container>
+  ),
+);
 
 export default MiniControls;

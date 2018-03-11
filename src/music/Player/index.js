@@ -5,11 +5,12 @@ import { compose, withProps, withPropsOnChange } from 'recompose';
 import { get, findIndex } from 'lodash';
 import { shuffle } from 'shuffle-seed';
 import Audio from '@ui/Audio';
-import { withMediaPlayerActions, withNowPlaying, withPlaylist } from '@data/mediaPlayer';
+import { withMediaPlayerActions, withNowPlaying } from '@data/mediaPlayer';
 import BackgroundView from '@ui/BackgroundView';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import { withRouter, Link, Route } from '@ui/NativeWebRouter';
+import ConnectedImage from '@ui/ConnectedImage';
 import MiniControls from './MiniControls';
 import FullScreenControls from './FullScreenControls';
 import TrackContextual from '../TrackContextual';
@@ -25,43 +26,41 @@ const enhance = compose(
   withRouter,
   withMediaPlayerActions,
   withNowPlaying,
-  withProps(({ nowPlaying }) => ({ id: nowPlaying && nowPlaying.albumId })),
-  withPlaylist,
-  withPropsOnChange([
-    'nowPlaying', 'content', 'setNowPlaying', 'children',
-  ], ({
-    nowPlaying, content, setNowPlaying, ...otherProps
-  }) => ({
-    ...otherProps,
-    title: get(content, 'title'),
-    ...(nowPlaying || {}),
-    ...get(content, 'content', {}),
+  withPropsOnChange(
+    ['nowPlaying', 'playlist', 'setNowPlaying', 'children'],
+    ({ nowPlaying, setNowPlaying, ...otherProps }) => ({
+      ...otherProps,
+      ...(nowPlaying || {}),
+      ...get(nowPlaying, 'playlist', {}),
 
-    // todo: these props should probably be moved to the data HOC "withMediaPlayerActions"
-    playNextTrack: () => {
-      let tracks = get(content, 'content.tracks', []);
-      if (!tracks.length) return;
-      if (nowPlaying.isShuffling) tracks = shuffle(tracks, nowPlaying.isShuffling);
+      // todo: these props should probably be moved to the data HOC "withMediaPlayerActions"
+      playNextTrack: () => {
+        const playlist = get(nowPlaying, 'playlist', {});
+        let tracks = get(playlist, 'tracks', []);
+        if (!tracks.length) return;
+        if (nowPlaying.isShuffling) tracks = shuffle(tracks, nowPlaying.isShuffling);
 
-      const currentTrack = get(nowPlaying, 'currentTrack.file');
-      const currentTrackIndex = findIndex(tracks, track => track.file === currentTrack);
-      const nextTrackIndex = (currentTrackIndex + 1) % tracks.length;
+        const currentTrack = get(nowPlaying, 'currentTrack.file');
+        const currentTrackIndex = findIndex(tracks, track => track.file === currentTrack);
+        const nextTrackIndex = (currentTrackIndex + 1) % tracks.length;
 
-      setNowPlaying({ albumId: nowPlaying.albumId, currentTrack: tracks[nextTrackIndex] });
-    },
-    playPrevTrack: () => {
-      let tracks = get(content, 'content.tracks', []);
-      if (!tracks.length) return;
-      if (nowPlaying.isShuffling) tracks = shuffle(tracks, nowPlaying.isShuffling);
+        setNowPlaying({ id: nowPlaying.id, currentTrack: tracks[nextTrackIndex] });
+      },
+      playPrevTrack: () => {
+        const playlist = get(nowPlaying, 'playlist', {});
+        let tracks = get(playlist, 'tracks', []);
+        if (!tracks.length) return;
+        if (nowPlaying.isShuffling) tracks = shuffle(tracks, nowPlaying.isShuffling);
 
-      const currentTrack = get(nowPlaying, 'currentTrack.file');
-      const currentTrackIndex = findIndex(tracks, track => track.file === currentTrack);
-      let nextTrackIndex = (currentTrackIndex - 1);
-      if (nextTrackIndex < 0) nextTrackIndex = tracks.length - 1;
+        const currentTrack = get(nowPlaying, 'currentTrack.file');
+        const currentTrackIndex = findIndex(tracks, track => track.file === currentTrack);
+        let nextTrackIndex = currentTrackIndex - 1;
+        if (nextTrackIndex < 0) nextTrackIndex = tracks.length - 1;
 
-      setNowPlaying({ albumId: nowPlaying.albumId, currentTrack: tracks[nextTrackIndex] });
-    },
-  })),
+        setNowPlaying({ id: nowPlaying.id, currentTrack: tracks[nextTrackIndex] });
+      },
+    }),
+  ),
 );
 
 const trackType = PropTypes.shape({
@@ -70,7 +69,8 @@ const trackType = PropTypes.shape({
   duration: PropTypes.string,
 });
 
-export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
+export class DockableMediaPlayer extends PureComponent {
+  // eslint-disable-line
   static propTypes = {
     id: PropTypes.string,
     playerPath: PropTypes.string,
@@ -78,6 +78,12 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
     pause: PropTypes.func,
     isPlaying: PropTypes.bool,
     currentTrack: trackType,
+    playlist: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      images: ConnectedImage.propTypes.source.isRequired,
+      colors: PropTypes.arrayOf(PropTypes.shape({ value: PropTypes.string })).isRequired,
+      tracks: PropTypes.arrayOf(trackType),
+    }),
     title: PropTypes.string,
     images: PropTypes.any, // eslint-disable-line
     colors: PropTypes.arrayOf(PropTypes.shape({ value: PropTypes.string })), // eslint-disable-line
@@ -114,7 +120,7 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
   handleEndReached = async (sound) => {
     if (!this.props.isRepeating) return this.props.playNextTrack();
     return sound.replayAsync();
-  }
+  };
 
   renderMiniControls = () => (
     <Link to={this.props.playerPath}>
@@ -150,6 +156,7 @@ export class DockableMediaPlayer extends PureComponent { // eslint-disable-line
       handleRepeat={this.props.repeat}
       handleShuffle={this.props.shuffle}
       trackInfoLink={`player/${this.props.id}/${this.props.currentTrack.title}`}
+      playlist={this.props.playlist}
     />
   );
 

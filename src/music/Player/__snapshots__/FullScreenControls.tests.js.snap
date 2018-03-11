@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The FullScreenControls component should render 1`] = `
+exports[`The FullScreenControls component should hide player settings controls if only playing one track 1`] = `
 <View
   backgroundColor="red"
   style={
@@ -435,9 +435,190 @@ exports[`The FullScreenControls component should render 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "justifyContent": "space-between",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 20,
+              "paddingVertical": 20,
+            }
+          }
+        >
+          <Svg
+            height={32}
+            viewBox="0 0 24 24"
+            width={32}
+          >
+            <Path
+              d="M12 18c-.16 0-.32-.06-.46-.2L3 9.66 3.9 8l8.1 7.72L20.1 8l.9 1.65-8.54 8.16c-.14.15-.3.2-.46.2z"
+              fill="#ffffff"
+            />
+          </Svg>
+        </View>
+      </View>
+    </View>
+  </RCTSafeAreaView>
+</View>
+`;
+
+exports[`The FullScreenControls component should render 1`] = `
+<View
+  backgroundColor="red"
+  style={
+    Object {
+      "backgroundColor": "red",
+      "flex": 1,
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <View>
+    <Image
+      maintainAspectRatio={false}
+      source={
+        Array [
+          Object {
+            "height": 150,
+            "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
+            "width": 150,
+          },
+        ]
+      }
+      style={
+        Array [
+          Object {},
+          Object {
+            "aspectRatio": 1,
+            "resizeMode": "cover",
+            "width": "100%",
+          },
+        ]
+      }
+    />
+    <ExponentLinearGradient
+      colors={
+        Array [
+          16711680,
+          4294901760,
+        ]
+      }
+      endPoint={
+        Array [
+          0,
+          1,
+        ]
+      }
+      locations={
+        Array [
+          0.3,
+          1,
+        ]
+      }
+      startPoint={
+        Array [
+          0,
+          0,
+        ]
+      }
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+  <RCTSafeAreaView
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
           "paddingHorizontal": 20,
-          "paddingVertical": 20,
+          "paddingVertical": 0,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 25.2,
+            "lineHeight": 31.28,
+            "paddingBottom": 3.71,
+            "paddingTop": 5.04,
+            "textAlign": "center",
+          }
+        }
+      >
+        My track
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Colfax-Regular",
+            "fontSize": 14,
+            "lineHeight": 15.78,
+            "paddingBottom": 1.8,
+            "paddingTop": 3.6,
+            "textAlign": "center",
+          }
+        }
+      >
+        My Byline
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
         }
       }
     >
@@ -475,18 +656,12 @@ exports[`The FullScreenControls component should render 1`] = `
           tvParallaxProperties={undefined}
         >
           <Svg
-            active={true}
-            height={24}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            height={32}
             viewBox="0 0 24 24"
-            width={24}
+            width={32}
           >
             <Path
-              d="M18.81 16.6543l-3.0324-3.0325 1.2128-1.2127 3.8464 3.8467.0167-.0156.4454.4778.7214.7215-.0252.0252.028.03-.8566.7986-.359.359-.0125-.0125-3.9745 3.7064-1.1697-1.2544 2.851-2.6588h-3.639c-1.3287 0-2.3808-.7553-3.2627-2.112-.6044-.9298.659-2.4274 1.0328-1.6996.7637 1.487 1.3937 2.0333 2.23 2.0333h3.947zm.1715-10.9927l-2.796-2.7958 1.213-1.2127 3.8463 3.8466.0167-.0155.4455.4777.7215.7216-.0252.0252.028.03-.8566.7986-.359.359-.0125-.0125-3.9746 3.7064-1.1697-1.2544L19.164 7.44h-4.301c-1.2457 0-2.0337 1.2122-3.4872 4.9388-.828 2.123-1.221 3.012-1.8256 3.942-.882 1.3566-1.934 2.112-3.2626 2.112H2v-1.7785h4.2876c1.2456 0 2.0336-1.2122 3.487-4.9388.8282-2.123 1.2212-3.012 1.8257-3.942.882-1.3566 1.934-2.112 3.2626-2.112h4.1184zM6.2875 7.44H2V5.6617h4.2876c1.3286 0 2.3807.7553 3.2626 2.112.6045.9298-.3475 2.6184-.7595 1.8623-.703-1.2902-1.7178-2.196-2.503-2.196z"
+              d="M11.846 4.168v15.67c0 1.238-.772 1.534-1.725.658l-7.4-6.805c-.95-.87-.96-2.3-.01-3.18l7.44-6.97c.95-.88 1.71-.59 1.71.64zm-1.625 0c0-.118-.01-.176 0-.165.07.155.24.328.52.43.28.103.53.09.7.026.02-.01-.04.03-.13.11l-7.44 6.98c-.32.3-.31.78.01 1.08l7.4 6.8c.09.08.14.11.13.11-.162-.06-.41-.07-.68.03-.26.1-.43.27-.5.42-.002.01.008-.05.008-.16V4.17zm11.78 0v15.67c0 1.238-.75 1.523-1.69.633l-7.47-7.12c-.93-.89-.91-2.31.05-3.18l7.38-6.67c.95-.87 1.73-.57 1.73.67zm-1.62 0c0-.115-.01-.17 0-.16.07.148.24.313.49.413.26.1.51.1.67.04.02 0-.03.03-.12.11l-7.38 6.66c-.32.29-.33.78-.012 1.08l7.47 7.13c.09.09.14.12.125.11-.173-.07-.433-.09-.712.02-.274.1-.45.28-.52.44-.004.01.006-.04.006-.16V4.17z"
               fill="#ffffff"
             />
           </Svg>
@@ -526,18 +701,12 @@ exports[`The FullScreenControls component should render 1`] = `
           tvParallaxProperties={undefined}
         >
           <Svg
-            active={true}
-            height={24}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            height={48}
             viewBox="0 0 24 24"
-            width={24}
+            width={48}
           >
             <Path
-              d="M6.22 16.55h11.45l-.3.04c1.32-.5 2.1-1.1 2.52-2 .3-.8.4-1.6.3-2.3l-.1-.2 1.7-.4v.3c.14 1 .05 2.06-.43 3.1-.6 1.33-1.8 2.34-3.56 2.9l-.13.06H6.04l2.9 2.9-1.3 1.3-4.9-4.9.1-.1v-.1l.7-.66v-.1h.1l4.26-3.9 1.22 1.4-2.8 2.62zm11.56-9.1H6.33l.3-.04c-1.32.5-2.1 1.1-2.52 2-.3.8-.4 1.6-.3 2.3l.1.2-1.7.4V12c-.14-1-.05-2.06.43-3.1.6-1.33 1.8-2.34 3.56-2.9l.13-.06H18L15.1 3l1.3-1.3 4.9 4.9-.08.1.08.1-.72.65v.1h-.1l-4.26 3.95-1.25-1.35 2.8-2.62z"
+              d="M7 3h1.67v18H7V3zm8.33 0H17v18h-1.67V3z"
               fill="#ffffff"
             />
           </Svg>
@@ -576,26 +745,178 @@ exports[`The FullScreenControls component should render 1`] = `
           testID={undefined}
           tvParallaxProperties={undefined}
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <Svg
+            height={32}
+            viewBox="0 0 24 24"
+            width={32}
+          >
+            <Path
+              d="M13.78 4.168v15.67c0 .116.01.173.004.16-.07-.15-.238-.318-.502-.42-.265-.1-.512-.09-.678-.03-.013.006.038-.028.127-.11l7.404-6.805c.322-.296.325-.784.006-1.083l-7.437-6.977c-.09-.084-.142-.12-.13-.114.17.062.424.074.697-.028.272-.103.442-.276.514-.43.005-.012-.005.046-.005.164zm-1.626 0c0-1.24.763-1.528 1.707-.642l7.44 6.977c.943.885.935 2.31-.02 3.188l-7.4 6.808c-.952.876-1.724.58-1.724-.657V4.168zM2 4.168c0-1.24.78-1.54 1.737-.674l7.377 6.667c.96.87.978 2.297.048 3.185L3.69 20.47c-.934.89-1.69.606-1.69-.63V4.167zm1.625 0v15.67c0 .12.01.178.005.166-.072-.157-.245-.332-.522-.436-.28-.105-.54-.09-.712-.022-.015.005.036-.03.124-.113l7.472-7.13c.313-.297.306-.784-.017-1.075L2.6 4.56c-.09-.078-.14-.11-.126-.106.164.06.407.066.665-.033.255-.1.42-.262.49-.41.003-.01-.007.045-.007.16z"
+              fill="#ffffff"
+            />
+          </Svg>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 20,
+          "paddingVertical": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "color": "#ffffff",
+              "fontFamily": "Colfax-Regular",
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 1.8,
+              "paddingTop": 3.6,
+              "textAlign": "center",
+              "width": 50,
+            }
+          }
+        >
+          0
+          :
+          00
+        </Text>
+        <View
+          style={
+            Object {
+              "marginHorizontal": 20,
+              "minWidth": "65%",
+              "overflow": "visible",
+              "paddingHorizontal": 10,
+              "paddingVertical": 7,
+            }
+          }
+        >
+          <View
+            onLayout={[Function]}
             style={
               Object {
-                "color": "#ffffff",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "opacity": 0.7,
-                "paddingBottom": 3.15,
-                "paddingTop": 4.5,
-                "paddingVertical": 5,
+                "backgroundColor": "rgba(255, 255, 255, 0.30000000000000004)",
+                "borderRadius": 6,
+                "height": 6,
+                "overflow": "hidden",
               }
             }
           >
-            •••
-          </Text>
+            <View
+              collapsable={undefined}
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                  ],
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            collapsable={undefined}
+            style={
+              Object {
+                "bottom": 0,
+                "overflow": "visible",
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                ],
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              onMoveShouldSetResponder={[Function]}
+              onMoveShouldSetResponderCapture={[Function]}
+              onResponderEnd={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderReject={[Function]}
+              onResponderRelease={[Function]}
+              onResponderStart={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              onStartShouldSetResponderCapture={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                  "borderRadius": 20,
+                  "elevation": 2,
+                  "height": 20,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 20,
+                  "zIndex": 100,
+                }
+              }
+            />
+          </View>
         </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "color": "#ffffff",
+              "fontFamily": "Colfax-Regular",
+              "fontSize": 14,
+              "lineHeight": 15.78,
+              "paddingBottom": 1.8,
+              "paddingTop": 3.6,
+              "textAlign": "center",
+              "width": 50,
+            }
+          }
+        >
+          5:30
+        </Text>
       </View>
     </View>
     <View

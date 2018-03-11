@@ -118,9 +118,7 @@ exports[`The FeedView component renders correctly 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <Image
               maintainAspectRatio={false}
               source={
@@ -316,9 +314,7 @@ exports[`The FeedView component renders correctly 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <Image
               maintainAspectRatio={false}
               source={
@@ -700,9 +696,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <View
               style={
                 Object {
@@ -875,9 +869,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <View
               style={
                 Object {
@@ -1050,9 +1042,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <View
               style={
                 Object {
@@ -1225,9 +1215,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <View
               style={
                 Object {
@@ -1400,9 +1388,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <View
               style={
                 Object {
@@ -1575,9 +1561,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <View
               style={
                 Object {
@@ -1750,9 +1734,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <View
               style={
                 Object {
@@ -1925,9 +1907,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <View
               style={
                 Object {
@@ -2100,9 +2080,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <View
               style={
                 Object {
@@ -2275,9 +2253,7 @@ exports[`The FeedView component renders empty state 1`] = `
             }
           }
         >
-          <View
-            style={Object {}}
-          >
+          <View>
             <View
               style={
                 Object {

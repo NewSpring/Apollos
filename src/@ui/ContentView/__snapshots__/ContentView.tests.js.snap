@@ -118,7 +118,9 @@ exports[`the ContentView component renders 1`] = `
 
 exports[`the ContentView component renders with images 1`] = `
 <View>
-  <View>
+  <View
+    imageComponent={[Function]}
+  >
     <Image
       maintainAspectRatio={false}
       source={
