@@ -33,4 +33,33 @@ describe('The FullScreenControls component', () => {
     );
     expect(tree).toMatchSnapshot();
   });
+  it('should hide player settings controls if only playing one track', () => {
+    const tree = renderer.create(
+      <Providers>
+        <FullScreenControls
+          isPlaying
+          duration={'5:30'}
+          play={() => {}}
+          pause={() => {}}
+          next={() => {}}
+          prev={() => {}}
+          trackName={'My track'}
+          trackByLine={'My Byline'}
+          albumArt={{
+            uri: 'https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084',
+            width: 150,
+            height: 150,
+          }}
+          color={'red'}
+          isShuffling
+          isRepeating
+          handleShuffle={() => {}}
+          handleRepeat={() => {}}
+          trackInfoLink={'/info'}
+          playlist={{ tracks: [] }}
+        />
+      </Providers>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
 });
