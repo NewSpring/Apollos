@@ -34,8 +34,9 @@ export function nowPlaying(result, variables, { cache }) {
       mediaPlayer: {
         ...state,
         isPlaying: true,
-        albumId: variables.albumId,
-        currentTrack: variables.currentTrack,
+        id: variables.id,
+        playlist: variables.playlist || state.playlist,
+        currentTrack: variables.currentTrack || variables.currentTrack,
       },
     },
   });
