@@ -44,7 +44,7 @@ const enhance = compose(
         const currentTrackIndex = findIndex(tracks, track => track.file === currentTrack);
         const nextTrackIndex = (currentTrackIndex + 1) % tracks.length;
 
-        setNowPlaying({ currentTrack: tracks[nextTrackIndex] });
+        setNowPlaying({ id: nowPlaying.id, currentTrack: tracks[nextTrackIndex] });
       },
       playPrevTrack: () => {
         const playlist = get(nowPlaying, 'playlist', {});
@@ -57,7 +57,7 @@ const enhance = compose(
         let nextTrackIndex = currentTrackIndex - 1;
         if (nextTrackIndex < 0) nextTrackIndex = tracks.length - 1;
 
-        setNowPlaying({ currentTrack: tracks[nextTrackIndex] });
+        setNowPlaying({ id: nowPlaying.id, currentTrack: tracks[nextTrackIndex] });
       },
     }),
   ),

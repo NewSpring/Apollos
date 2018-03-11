@@ -13,6 +13,7 @@ export { default as ByLine } from './ByLine';
 const enhance = compose(
   pure,
   setPropTypes({
+    contentId: PropTypes.string,
     authors: PropTypes.arrayOf(PropTypes.string),
     title: PropTypes.string,
     subheading: PropTypes.string,
@@ -56,7 +57,7 @@ const renderHeader = (video, images = [], imageOverlayColor) => {
   return headerType;
 };
 
-const renderAudioBar = (title, audio, seriesImages, seriesColors) => {
+const renderAudioBar = (contentId, title, audio, seriesImages, seriesColors) => {
   let audioComponent = null;
   if (audio && audio.length) {
     const track = {
@@ -66,6 +67,7 @@ const renderAudioBar = (title, audio, seriesImages, seriesColors) => {
 
     audioComponent = (
       <AudioBanner
+        mediaId={contentId}
         currentTrack={track}
         playlist={{
           title,
@@ -82,6 +84,7 @@ const renderAudioBar = (title, audio, seriesImages, seriesColors) => {
 
 const ContentView = enhance(
   ({
+    contentId,
     video,
     images = [],
     seriesImages = [],
@@ -93,7 +96,7 @@ const ContentView = enhance(
   }) => (
     <View>
       {renderHeader(video, images, imageOverlayColor)}
-      {renderAudioBar(title, audio, seriesImages, seriesColors)}
+      {renderAudioBar(contentId, title, audio, seriesImages, seriesColors)}
       <ContentWrapper>{children}</ContentWrapper>
     </View>
   ),
