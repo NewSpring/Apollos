@@ -89,7 +89,7 @@ const RelatedContentWithoutData = enhance(({
 }) => (
   <Wrapper style={style}>
     {sectionTitle ? renderSectionTitle(sectionTitle) : null}
-    {content.map(renderItem)}
+    {(content || []).map(renderItem)}
   </Wrapper>
 ));
 
