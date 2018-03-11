@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { compose, branch, renderComponent } from 'recompose';
+import { compose, branch, renderComponent, pure } from 'recompose';
 import Yup from 'yup';
 import { withFormik } from 'formik';
 import get from 'lodash/get';
@@ -114,6 +114,7 @@ const validationSchema = Yup.object().shape({
 const mapPropsToValues = props => get(props, 'user.home', {});
 
 const ProfileAddressForm = compose(
+  pure,
   withUser,
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
   withFormik({

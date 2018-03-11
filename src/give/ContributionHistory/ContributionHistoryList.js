@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { groupBy, map } from 'lodash';
+import { groupBy, map, orderBy } from 'lodash';
 import HistoricalContributionCard from '@ui/HistoricalContributionCard';
 import FlatList from '@ui/WebCompatibleFlatList';
 import FlexedView from '@ui/FlexedView';
@@ -22,22 +20,21 @@ class ContributionHistoryList extends PureComponent {
     fetchMore: PropTypes.func,
     isLoading: PropTypes.bool,
     refetch: PropTypes.func,
-    transactions: PropTypes.arrayOf(PropTypes.shape({
-      date: PropTypes.string,
-      person: PropTypes.shape({
-        firstName: PropTypes.string,
-        lastName: PropTypes.string,
-        photo: PropTypes.string,
+    transactions: PropTypes.arrayOf(
+      PropTypes.shape({
+        date: PropTypes.string,
+        person: PropTypes.shape({
+          firstName: PropTypes.string,
+          lastName: PropTypes.string,
+          photo: PropTypes.string,
+        }),
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        amount: PropTypes.number,
+        account: PropTypes.shape({
+          name: PropTypes.string,
+        }),
       }),
-      id: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]),
-      amount: PropTypes.number,
-      account: PropTypes.shape({
-        name: PropTypes.string,
-      }),
-    })),
+    ),
     onPressNoDataButton: PropTypes.func,
     onPressContributionCard: PropTypes.func,
     FilterComponent: PropTypes.any, // eslint-disable-line
@@ -59,7 +56,9 @@ class ContributionHistoryList extends PureComponent {
       {item.transactions.map(transaction => (
         <Touchable
           key={transaction.id}
-          onPress={() => { this.props.onPressContributionCard(transaction.transactionId); }}
+          onPress={() => {
+            this.props.onPressContributionCard(transaction.transactionId);
+          }}
         >
           <HistoricalContributionCard
             amount={transaction.amount}
@@ -82,7 +81,14 @@ class ContributionHistoryList extends PureComponent {
       );
     }
 
-    const transactionsPerYear = map(groupBy(this.props.transactions, 'year'), (transactions, year) => ({ year, transactions }));
+    const transactionsPerYear = orderBy(
+      map(groupBy(this.props.transactions, 'year'), (transactions, year) => ({
+        year,
+        transactions,
+      })),
+      ['year'],
+      ['desc'],
+    );
     let Header = (
       <View>
         <this.props.FilterComponent />
@@ -95,17 +101,22 @@ class ContributionHistoryList extends PureComponent {
           <LoginPromptCard prompt={'Login to view your contribution history.'} />
           <PaddedView>
             <BodyText>
-              {'We didn\'t find any contributions associated with your account. If you would like to start giving, you can '}
-              <ButtonLink onPress={this.props.onPressNoDataButton}>
-                {'give now'}
-              </ButtonLink>
+              {
+                "We didn't find any contributions associated with your account. If you would like to start giving, you can "
+              }
+              <ButtonLink onPress={this.props.onPressNoDataButton}>{'give now'}</ButtonLink>
               {'.'}
             </BodyText>
           </PaddedView>
           <PaddedView>
             <BodyText>
               If you have any questions, please call our Finance Team at 864-965-9990 or
-              <ButtonLink onPress={() => WebBrowser.openBrowserAsync('https://newspring.cc/contact')}> contact us </ButtonLink>
+              <ButtonLink
+                onPress={() => WebBrowser.openBrowserAsync('https://newspring.cc/contact')}
+              >
+                {' '}
+                contact us{' '}
+              </ButtonLink>
               and someone will be happy to assist you.
             </BodyText>
           </PaddedView>
@@ -116,6 +127,7 @@ class ContributionHistoryList extends PureComponent {
     // TODO: this should probably be refactored to use a SectionList eventually.
     // However, SectionList isn't supported on react-native-web, and writing a polyfill
     // would add more debt then worth
+
     return (
       <FlatList
         refreshing={this.props.isLoading}

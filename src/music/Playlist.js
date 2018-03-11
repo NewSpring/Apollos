@@ -15,8 +15,12 @@ const enhance = compose(
   withMediaPlayerActions,
   withNowPlaying,
   pure,
-  withProps(({ setNowPlaying, id }) => ({
-    setNowPlaying: track => setNowPlaying({ albumId: id, currentTrack: track }),
+  withProps(({ setNowPlaying, content, id }) => ({
+    setNowPlaying: track => setNowPlaying({
+      id,
+      playlist: { ...content.content, title: content.title },
+      currentTrack: track,
+    }),
   })),
 );
 
