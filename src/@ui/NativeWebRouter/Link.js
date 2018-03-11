@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import get from 'lodash/get';
 import Touchable from '@ui/Touchable';
 import WebBrowser from '@ui/WebBrowser';
 
@@ -9,6 +10,7 @@ export const goBackTo = ({ to, history, replace = false }) => {
   let foundMatchingEntry = false;
   let distance = -1;
 
+  if (get(history, 'location.pathname') === to) return true;
   if (to && history.entries) {
     const routeToPopTo = history.entries.findIndex(location => matchPath(location.pathname, to));
     if (routeToPopTo >= 0 && routeToPopTo < history.index) {

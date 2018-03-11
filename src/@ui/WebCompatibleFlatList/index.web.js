@@ -8,6 +8,7 @@ import { ScrollView, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { mapProps, compose } from 'recompose';
 import ReactList from 'react-list';
+import get from 'lodash/get';
 import styled from '@ui/styled';
 
 const Item = compose(
@@ -26,7 +27,7 @@ const MappedReactList = mapProps(({
   numColumns,
 }) => ({
   itemRenderer: itemRenderer({ data, renderItem, numColumns }),
-  length: data.length,
+  length: (data && data.length) || 0,
 }))(ReactList);
 
 class FlatList extends PureComponent {
@@ -89,7 +90,7 @@ class FlatList extends PureComponent {
         onScroll={this.handleScroll}
       >
         {this.listHeader}
-        {!(this.props.data.length) ? this.listEmpty : null}
+        {!(get(this.props, 'data.length')) ? this.listEmpty : null}
         <MappedReactList {...this.props} />
         {this.listFooter}
       </ScrollView>

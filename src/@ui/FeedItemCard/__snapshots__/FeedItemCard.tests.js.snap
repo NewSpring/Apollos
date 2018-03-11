@@ -28,9 +28,7 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
       }
     }
   >
-    <View
-      style={Object {}}
-    >
+    <View>
       <Image
         maintainAspectRatio={false}
         source={
@@ -247,9 +245,7 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
       }
     }
   >
-    <View
-      style={Object {}}
-    >
+    <View>
       <Image
         maintainAspectRatio={false}
         source={
@@ -429,9 +425,7 @@ exports[`the FeedItemCard component should render 1`] = `
       }
     }
   >
-    <View
-      style={Object {}}
-    >
+    <View>
       <Image
         maintainAspectRatio={false}
         source={
@@ -611,9 +605,7 @@ exports[`the FeedItemCard component should render as liked 1`] = `
       }
     }
   >
-    <View
-      style={Object {}}
-    >
+    <View>
       <Image
         maintainAspectRatio={false}
         source={
@@ -793,9 +785,7 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
       }
     }
   >
-    <View
-      style={Object {}}
-    >
+    <View>
       <Image
         maintainAspectRatio={false}
         source={
@@ -975,9 +965,7 @@ exports[`the FeedItemCard component should render with inverted (light) font col
       }
     }
   >
-    <View
-      style={Object {}}
-    >
+    <View>
       <Image
         maintainAspectRatio={false}
         source={
