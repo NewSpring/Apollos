@@ -23,11 +23,13 @@ const ThemedIcon = withTheme(({ theme }) => ({
 
 const Heading = styled(({ theme }) => ({
   color: theme.colors.alert,
+  paddingTop: theme.sizing.baseUnit,
 }))(H3);
 
 const SubHeading = styled(({ theme }) => ({
   color: theme.colors.text.secondary,
   paddingBottom: theme.sizing.baseUnit,
+  textAlign: 'center',
 }))(H4);
 
 const Failure = () => (
