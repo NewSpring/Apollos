@@ -80,7 +80,7 @@ const MiniControls = enhance(
   }) => (
     <Container>
       <FlexRow height={height}>
-        <MiniControlsThumbnail source={albumArt} />
+        <MiniControlsThumbnail onPress={play} isPlaying={isPlaying} source={albumArt} />
         <TrackInfo>
           <TrackName>{trackName}</TrackName>
           <TrackLabel>{trackByLine}</TrackLabel>
