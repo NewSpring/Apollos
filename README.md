@@ -1,4 +1,5 @@
-# Apollos
+# Apollos test
+
 ![NewSpring Apollos](https://img.shields.io/badge/NEWSPRING_CHURCH-Apollos-6BAC43.svg?style=flat&logoWidth=17&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd%2BUAAAABGdBTUEAALGPC/xhBQAAAeFJREFUSA29lU0rRFEYx%2B81k/eFUpO3hUmREpGEYrKQ2VGslLKwkw/iC/AFbKVsvSTFIMVydsSCGHsvmev3THOv6cy5Z17c66nfnDnP23/Oveecsa0yzHGcYdIWYAo6oQMikIFXuIETOLJt%2B4mxOkNoCdJQrn2RuANDFSlSEIcUVGtZCjchWlKYpARkIAg7p0mLryjBBHxCkHZMs9oiUZzyGINamfqDt3WCf3lnqoA6/8Yx4Ikykd0Ytu2LoC0fKKUZ%2BuS7xpbx3Wv8rkt2Yi9MwCrI%2BdSZg7NNxEZKLK1fV63z0WcMng39VmoonNcVV%2BPjlrmibt1QmxTBaUOCNsQK6mASutUERHfx%2BV1vPSIo92LZhkgDyddwBnfM1zTFDxqfuGIVC1Ikr%2BB3i1vWhnRS7EOZu9OcoN%2BucpPUsUtxNCtz07RJVvhmytDEpKbQcker0GH6LsUZU0LQMRG8DbqpqZ8InpoSgo6J4CFkg27s1y/KQX3kLO2RsOiT1Eo8VhBTd2VEiUtq8f9fvoF7eY8zT%2BV9oQ7ySC1WecGwFapSvrl3hngs9fguYTBM4dwKRYBVvjPMgtz4oZknKAqIvjDMwA7IH%2Bb/GY94FA4gUPPeod9SUGsnloQ5iIMcEaERKrYfBD49JTL9FwYAAAAASUVORK5CYII%3D)
 ![MIT License](https://img.shields.io/github/license/NewSpring/Apollos.svg)
 [![Build Status](https://travis-ci.org/NewSpring/Apollos.svg?branch=master)](https://travis-ci.org/NewSpring/Apollos)
@@ -6,12 +7,12 @@
 
 ## Notes to potential Apollos-project partners
 
-This repo is the current React-Native version of the NewSpring app. It is a react-native/react-native-web port of [Holtzman](https://github.com/newspring/holtzman). It's intended to serve as a starting point for the open-source initiative in the larger Apollos project. However, this repo is not necessarilly intended to be forked or directly implemented for other organizations (although you're more then welcome to!). Instead, we plan to rip out the core UI components into a separate UI component library ("apollos-ui"), and also release a (small) set of tooling to facilitate creating an Apollos app. This tooling would likely be based on something like [Create React Native App](https://github.com/react-community/create-react-native-app) and could contain a boilerplate set up with a turn-key "Church app" ready to go for your customization. 
+This repo is the current React-Native version of the NewSpring app. It is a react-native/react-native-web port of [Holtzman](https://github.com/newspring/holtzman). It's intended to serve as a starting point for the open-source initiative in the larger Apollos project. However, this repo is not necessarilly intended to be forked or directly implemented for other organizations (although you're more then welcome to!). Instead, we plan to rip out the core UI components into a separate UI component library ("apollos-ui"), and also release a (small) set of tooling to facilitate creating an Apollos app. This tooling would likely be based on something like [Create React Native App](https://github.com/react-community/create-react-native-app) and could contain a boilerplate set up with a turn-key "Church app" ready to go for your customization.
 
 Other relevant projects in the NewSpring ecosystem:
 
-- [Heighliner](https://github.com/newspring/heighliner): The current GraphQL implementation that this project connects to. In the future, we forsee releasing a separate "Apollos Data" project to replace Heighliner.
-- [Holtzman](https://github.com/newspring/holtzman): The existing React / Cordova based NewSpring app. This repo is a direct React-Native / React-Native port of this project.
+* [Heighliner](https://github.com/newspring/heighliner): The current GraphQL implementation that this project connects to. In the future, we forsee releasing a separate "Apollos Data" project to replace Heighliner.
+* [Holtzman](https://github.com/newspring/holtzman): The existing React / Cordova based NewSpring app. This repo is a direct React-Native / React-Native port of this project.
 
 ## Getting Started
 
@@ -54,6 +55,7 @@ cd Apollos
 yarn install
 yarn start
 ```
+
 ## Available Scripts
 
 ### `yarn start`
@@ -212,4 +214,3 @@ There are a few steps you may want to take to troubleshoot these kinds of errors
 If you're not able to scan the QR code, make sure your phone's camera is focusing correctly, and also make sure that the contrast on the two colors in your terminal is high enough. For example, WebStorm's default themes may [not have enough contrast](https://github.com/react-community/create-react-native-app/issues/49) for terminal QR codes to be scannable with the system barcode scanners that the Expo app uses.
 
 If this causes problems for you, you may want to try changing your terminal's color theme to have more contrast, or running Create React Native App from a different terminal. You can also manually enter the URL printed by the packager script in the Expo app's search bar to load it manually.
-
