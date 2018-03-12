@@ -27,7 +27,7 @@ const Image = styled({
   aspectRatio: 1,
 })(ConnectedImage);
 
-const MiniPlayerThumbnail = enhance(({ source, isPlaying }) => (
+const MiniControlsThumbnail = enhance(({ source, isPlaying }) => (
   <Wrapper>
     {isPlaying ? (
       <CloseButton>
@@ -38,4 +38,4 @@ const MiniPlayerThumbnail = enhance(({ source, isPlaying }) => (
   </Wrapper>
 ));
 
-export default MiniPlayerThumbnail;
+export default MiniControlsThumbnail;
