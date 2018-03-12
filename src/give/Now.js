@@ -28,15 +28,13 @@ const Now = () => (
       <FooterCard>
         <CardContent>
           <BodyText>
-            {
-              // TODO: Pull this link from Heighliner instead of hard coding
-            }
+            {/* TODO: Pull this link from Heighliner instead of hard coding */}
             {'Trouble giving? Submit a '}
             <ButtonLink
               onPress={() => WebBrowser.openBrowserAsync('https://rock.newspring.cc/workflows/209')}
             >
-              help request.
-            </ButtonLink>
+              help request
+            </ButtonLink>.
           </BodyText>
         </CardContent>
       </FooterCard>
