@@ -75,7 +75,7 @@ exports[`the AccountCard component should render accountType:bankAccount 1`] = `
         >
           <Svg
             height={21.6}
-            viewBox="0 0 24 24"
+            viewBox="0 0 24 17"
             width={21.6}
           >
             <Path
