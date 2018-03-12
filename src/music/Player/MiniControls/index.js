@@ -11,6 +11,8 @@ import { H7, H6 } from '@ui/typography';
 import styled from '@ui/styled';
 import { withThemeMixin } from '@ui/theme';
 
+import MiniPlayerThumbnail from './MiniPlayerThumbnail';
+
 const TrackInfo = styled(({ theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit / 2,
 }))(View);
@@ -45,10 +47,6 @@ const Container = styled(
   'MiniControls',
 )(SafeAreaView);
 
-const Thumbnail = styled({
-  aspectRatio: 1,
-})(ConnectedImage);
-
 const Controls = styled(
   ({ theme }) => ({
     flexDirection: 'row',
@@ -82,7 +80,7 @@ const MiniControls = enhance(
   }) => (
     <Container>
       <FlexRow height={height}>
-        <Thumbnail source={albumArt} />
+        <MiniPlayerThumbnail source={albumArt} />
         <TrackInfo>
           <TrackName>{trackName}</TrackName>
           <TrackLabel>{trackByLine}</TrackLabel>
