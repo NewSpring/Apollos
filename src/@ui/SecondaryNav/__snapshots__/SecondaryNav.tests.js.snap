@@ -93,7 +93,7 @@ exports[`SecondaryNav Component renders correctly with custom links and no back 
     >
       <Svg
         height={32}
-        viewBox="0 0 24 24"
+        viewBox="0 0 24 17"
         width={32}
       >
         <Path
@@ -212,7 +212,7 @@ exports[`SecondaryNav Component renders with custom links 1`] = `
     >
       <Svg
         height={32}
-        viewBox="0 0 24 24"
+        viewBox="0 0 24 17"
         width={32}
       >
         <Path
