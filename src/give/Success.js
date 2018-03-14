@@ -24,6 +24,7 @@ const ThemedIcon = withTheme(({ theme }) => ({
 const Heading = styled(({ theme }) => ({
   color: theme.colors.primary,
   paddingBottom: theme.sizing.baseUnit,
+  paddingTop: theme.sizing.baseUnit,
 }))(H3);
 
 const Success = () => (
