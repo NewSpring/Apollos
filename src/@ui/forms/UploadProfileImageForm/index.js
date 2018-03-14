@@ -30,6 +30,11 @@ const UploadProfileImageForm = compose(
           id,
         });
 
+        // NOTE: Refetch user to update current user state
+        // and trigger any necessary rerenders
+        // (not tested yet @burke)
+        await props.refetch();
+
         return true;
       } catch (err) {
         sentry.captureException(err);
