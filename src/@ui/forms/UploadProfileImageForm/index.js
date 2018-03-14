@@ -1,4 +1,4 @@
-import { compose, withProps } from 'recompose';
+import { compose, withProps, withState } from 'recompose';
 
 import Settings from '@utils/Settings';
 import ImagePicker from '@ui/ImagePicker';
@@ -8,6 +8,7 @@ import sentry from '@utils/sentry';
 
 const UploadProfileImageForm = compose(
   withUser,
+  withState('isUploadingFile', 'setIsUploadingFile', false),
   withProps(props => ({
     onSelectFile: async (file) => {
       try {
@@ -16,6 +17,7 @@ const UploadProfileImageForm = compose(
         const data = new FormData();
         data.append('file', file);
 
+        props.setIsUploadingFile(true);
         const res = await fetch(`${Settings.APP_ROCK_URL}api/BinaryFiles/Upload?binaryFileTypeId=5`, {
           method: 'POST',
           headers: {
@@ -29,6 +31,7 @@ const UploadProfileImageForm = compose(
         await props.attachPhotoIdToUser({
           id,
         });
+        props.setIsUploadingFile(false);
 
         // NOTE: Refetch user to update current user state
         // and trigger any necessary rerenders
