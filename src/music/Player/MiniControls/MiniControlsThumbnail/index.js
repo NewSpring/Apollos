@@ -1,27 +1,37 @@
 import React, { PureComponent } from 'react';
 import { compose, pure } from 'recompose';
-import { View, InteractionManager } from 'react-native';
+import { View, InteractionManager, Animated, Easing } from 'react-native';
 import PropTypes from 'prop-types';
 import Color from 'color';
 
 import styled from '@ui/styled';
 import Touchable from '@ui/Touchable';
-import { withTheme } from '@ui/theme';
+import { withTheme, withThemeMixin } from '@ui/theme';
 import ConnectedImage from '@ui/ConnectedImage';
 import Icon from '@ui/Icon';
 
 const Wrapper = styled(({ theme }) => ({
   height: theme.sizing.baseUnit * 2, // based on MiniControls text sizing
   width: theme.sizing.baseUnit * 2,
+  overflow: 'hidden',
 }))(View);
 
 const CloseButton = styled({
   position: 'absolute',
   zIndex: 2,
-})(View);
+})(Animated.View);
+
+const IconWrapper = compose(
+  withThemeMixin({ type: 'light' }),
+  styled(({ theme }) => ({
+    padding: 7,
+    backgroundColor: Color(theme.colors.background.default).fade(theme.alpha.low),
+  })),
+)(View);
 
 const ThemedIcon = compose(
   pure,
+  withThemeMixin({ type: 'light' }),
   withTheme(
     ({
       theme: {
@@ -29,13 +39,10 @@ const ThemedIcon = compose(
         colors: { text: { primary: primaryTextColor = {} } = {} } = {},
       } = {},
     }) => ({
-      size: baseUnit * 2,
+      size: baseUnit * 1.3,
       fill: primaryTextColor,
     }),
   ),
-  styled(({ theme }) => ({
-    backgroundColor: Color(theme.colors.background.default).fade(theme.alpha.low),
-  })),
 )(Icon);
 
 const Image = styled({
@@ -53,39 +60,38 @@ class MiniControlsThumbnail extends PureComponent {
     isPlaying: false,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      hideButton: this.props.isPlaying,
-    };
+  constructor() {
+    super();
+
+    this.animatedButtonPosition = new Animated.Value(-40);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props === nextProps) {
-      return;
+    if (this.props !== nextProps) {
+      InteractionManager.runAfterInteractions(() => {
+        Animated.timing(this.animatedButtonPosition, {
+          toValue: nextProps.isPlaying ? -40 : 0,
+          duration: 200,
+          delay: nextProps.isPlaying ? 0 : 1500,
+          easing: Easing.out(Easing.ease),
+          useNativeDriver: true,
+        }).start();
+      });
     }
-
-    InteractionManager.runAfterInteractions(() =>
-      setTimeout(
-        () =>
-          this.setState({
-            hideButton: nextProps.isPlaying,
-          }),
-        1000,
-      ),
-    );
   }
 
   render() {
+    const animate = { transform: [{ translateY: this.animatedButtonPosition }] };
+
     return (
       <Wrapper>
-        {this.state.hideButton ? null : (
-          <CloseButton>
-            <Touchable useForeground onPress={this.props.onPress}>
+        <CloseButton style={animate}>
+          <Touchable useForeground onPress={this.props.onPress}>
+            <IconWrapper>
               <ThemedIcon name="close" />
-            </Touchable>
-          </CloseButton>
-        )}
+            </IconWrapper>
+          </Touchable>
+        </CloseButton>
         <Image source={this.props.source} />
       </Wrapper>
     );
