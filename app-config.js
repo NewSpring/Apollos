@@ -30,11 +30,11 @@ module.exports = env => ({
       versionCode: 600000,
       icon: 'src/assets/icons/android/icon-192x192-xxxhpdi.png',
       splash: {
-        backgroundColor: '#1c683e',
-        mdpi: 'src/assets/splash/android/320_470.png',
-        hdpi: 'src/assets/splash/android/480_640.png',
-        xhdpi: 'src/assets/splash/android/720_960.png',
-        xxhdpi: 'src/assets/splash/android/1080_1440.png',
+        mdpi: 'src/assets/splash/android/Spring2018_Splash_320x470.png',
+        hdpi: 'src/assets/splash/android/Spring2018_Splash_480x640.png',
+        xhdpi: 'src/assets/splash/android/Spring2018_Splash_720x960.png',
+        xxhdpi: 'src/assets/splash/android/Spring2018_Splash_1080x1440.png',
+        resizeMode: 'cover',
       },
     },
     hooks: {
