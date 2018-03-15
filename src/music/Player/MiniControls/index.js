@@ -66,6 +66,7 @@ const enhance = compose(
     isPlaying: PropTypes.bool,
     play: PropTypes.func,
     pause: PropTypes.func,
+    dismiss: PropTypes.func,
     trackName: PropTypes.string,
     trackByLine: PropTypes.string,
     albumArt: ConnectedImage.propTypes.source,
@@ -76,11 +77,11 @@ const enhance = compose(
 
 const MiniControls = enhance(
   ({
-    isPlaying, play, pause, trackName, trackByLine, albumArt, height,
+    isPlaying, play, pause, dismiss, trackName, trackByLine, albumArt, height,
   }) => (
     <Container>
       <FlexRow height={height}>
-        <MiniControlsThumbnail onPress={play} isPlaying={isPlaying} source={albumArt} />
+        <MiniControlsThumbnail onPress={dismiss} isPlaying={isPlaying} source={albumArt} />
         <TrackInfo>
           <TrackName>{trackName}</TrackName>
           <TrackLabel>{trackByLine}</TrackLabel>

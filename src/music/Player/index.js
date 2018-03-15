@@ -20,8 +20,6 @@ const PlayerTrackContextual = withProps({
   pathForAlbumId: id => `/player/list/${id}`,
 })(TrackContextual);
 
-const MINI_CONTROL_HEIGHT = 50;
-
 const enhance = compose(
   withRouter,
   withMediaPlayerActions,
@@ -105,6 +103,16 @@ export class DockableMediaPlayer extends PureComponent {
     playerPath: '/player',
   };
 
+  constructor(props) {
+    super(props);
+
+    this.previousLocation = null;
+    this.miniControlHeight = 50;
+    this.state = {
+      showMiniControls: true,
+    };
+  }
+
   componentWillMount() {
     if (!this.previousLocation) this.previousLocation = this.props.location;
   }
@@ -115,28 +123,38 @@ export class DockableMediaPlayer extends PureComponent {
     return `#${colors[0].value}`;
   }
 
-  previousLocation = null;
-
   handleEndReached = async (sound) => {
     if (!this.props.isRepeating) return this.props.playNextTrack();
     return sound.replayAsync();
   };
 
-  renderMiniControls = () => (
-    <Link to={this.props.playerPath}>
-      <View>
-        <MiniControls
-          isPlaying={this.props.isPlaying}
-          play={this.props.play}
-          pause={this.props.pause}
-          trackName={this.props.currentTrack.title}
-          trackByLine={this.props.title}
-          albumArt={this.props.images}
-          height={MINI_CONTROL_HEIGHT}
-        />
-      </View>
-    </Link>
-  );
+  handleMiniPlayerDismiss = () => {
+    this.setState({ showMiniControls: false });
+  };
+
+  renderMiniControls() {
+    let miniControls = null;
+    if (this.state.showMiniControls && this.props.currentTrack) {
+      miniControls = (
+        <Link to={this.props.playerPath}>
+          <View>
+            <MiniControls
+              isPlaying={this.props.isPlaying}
+              play={this.props.play}
+              pause={this.props.pause}
+              dismiss={this.handleMiniPlayerDismiss}
+              trackName={this.props.currentTrack.title}
+              trackByLine={this.props.title}
+              albumArt={this.props.images}
+              height={this.miniControlHeight}
+            />
+          </View>
+        </Link>
+      );
+    }
+
+    return miniControls;
+  }
 
   renderPlayer = () => (
     <FullScreenControls
@@ -172,12 +190,10 @@ export class DockableMediaPlayer extends PureComponent {
           <Route exact path={'/player'} render={this.renderPlayer} />
           <Route exact path={'/player/list/:id'} component={asModal(Playlist)} />
           <Route exact path={'/player/:id/:track'} component={PlayerTrackContextual} />
-          <Route cardStackKey="app">
-            <BackgroundView>
-              {this.props.children}
-              {this.props.currentTrack ? this.renderMiniControls() : null}
-            </BackgroundView>
-          </Route>
+          <BackgroundView>
+            {this.props.children}
+            {this.renderMiniControls()}
+          </BackgroundView>
         </CardStack>
       </Audio>
     );
