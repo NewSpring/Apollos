@@ -21,8 +21,8 @@ module.exports = env => ({
       ],
       icon: 'src/assets/icons/ios/icon-1024x1024.png',
       splash: {
-        image: 'src/assets/splash/ios/768_1024.png',
-        backgroundColor: '#1c683e',
+        image: 'src/assets/splash/ios/splash-1242x2436.png',
+        tabletImage: 'src/assets/splash/ios/splash-2224x2732.png',
       },
     },
     android: {
