@@ -121,6 +121,21 @@ export class DockableMediaPlayer extends PureComponent {
     if (!this.previousLocation) this.previousLocation = this.props.location;
   }
 
+  componentWillReceiveProps(nextProps) {
+    const isPlayingChanged = this.props.isPlaying !== nextProps.isPlaying;
+    const hasTrack = !!nextProps.currentTrack;
+
+    if (isPlayingChanged && hasTrack) {
+      this.setState({
+        showMiniControls: true,
+      });
+    } else if (isPlayingChanged && !hasTrack) {
+      this.setState({
+        showMiniControls: false,
+      });
+    }
+  }
+
   get primaryColor() {
     const { colors } = this.props;
     if (!colors || !colors.length) return null;
@@ -134,7 +149,6 @@ export class DockableMediaPlayer extends PureComponent {
 
   handleMiniPlayerDismiss = () => {
     this.props.stop();
-    this.setState({ showMiniControls: false });
   };
 
   renderMiniControls() {
