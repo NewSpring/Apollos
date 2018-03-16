@@ -126,7 +126,6 @@ export function stop(result, variables, { cache }) {
         ...state,
         isPlaying: false,
         id: null,
-        playlist: null,
         currentTrack: null,
       },
     },
