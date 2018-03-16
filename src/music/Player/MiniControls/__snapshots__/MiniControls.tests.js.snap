@@ -26,6 +26,7 @@ exports[`The MiniControls component should render 1`] = `
     <View
       style={
         Object {
+          "backgroundColor": "#303030",
           "height": 40,
           "overflow": "hidden",
           "width": 40,

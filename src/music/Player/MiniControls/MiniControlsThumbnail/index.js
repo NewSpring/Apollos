@@ -21,6 +21,7 @@ const Wrapper = styled(({ theme }) => ({
   height: theme.sizing.baseUnit * 2, // based on MiniControls text sizing
   width: theme.sizing.baseUnit * 2,
   overflow: 'hidden',
+  backgroundColor: theme.colors.background.default, // fixes Android overflow bug
 }))(View);
 
 const IconWrapper = compose(
