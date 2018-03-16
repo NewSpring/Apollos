@@ -74,6 +74,7 @@ export class DockableMediaPlayer extends PureComponent {
     playerPath: PropTypes.string,
     play: PropTypes.func,
     pause: PropTypes.func,
+    stop: PropTypes.func,
     isPlaying: PropTypes.bool,
     currentTrack: trackType,
     playlist: PropTypes.shape({
@@ -101,6 +102,9 @@ export class DockableMediaPlayer extends PureComponent {
   static defaultProps = {
     artist: 'NewSpring',
     playerPath: '/player',
+    play() {},
+    pause() {},
+    stop() {},
   };
 
   constructor(props) {
@@ -129,6 +133,7 @@ export class DockableMediaPlayer extends PureComponent {
   };
 
   handleMiniPlayerDismiss = () => {
+    this.props.stop();
     this.setState({ showMiniControls: false });
   };
 
