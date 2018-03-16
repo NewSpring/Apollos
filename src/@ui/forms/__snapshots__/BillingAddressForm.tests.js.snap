@@ -1015,8 +1015,8 @@ exports[`The ContributionForm component renders a loading indicator 1`] = `
   isLoading={true}
   isSubmitting={false}
   isValid={true}
-  onSubmit={[Function]}
-  setFieldValue={[Function]}
+  onSubmit={[MockFunction]}
+  setFieldValue={[MockFunction]}
   size="small"
   states={
     Array [
