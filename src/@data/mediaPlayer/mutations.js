@@ -125,9 +125,9 @@ export function stop(result, variables, { cache }) {
       mediaPlayer: {
         ...state,
         isPlaying: false,
-        id: undefined,
-        playlist: [],
-        currentTrack: undefined,
+        id: null,
+        playlist: null,
+        currentTrack: null,
       },
     },
   });
