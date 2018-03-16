@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { compose, pure } from 'recompose';
-import { View, InteractionManager, Animated, Easing } from 'react-native';
+import { View, InteractionManager, Animated, Easing, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import Color from 'color';
 
@@ -10,16 +10,18 @@ import { withTheme, withThemeMixin } from '@ui/theme';
 import ConnectedImage from '@ui/ConnectedImage';
 import Icon from '@ui/Icon';
 
+const styles = StyleSheet.create({
+  closeButton: {
+    position: 'absolute',
+    zIndex: 2,
+  },
+});
+
 const Wrapper = styled(({ theme }) => ({
   height: theme.sizing.baseUnit * 2, // based on MiniControls text sizing
   width: theme.sizing.baseUnit * 2,
   overflow: 'hidden',
 }))(View);
-
-const CloseButton = styled({
-  position: 'absolute',
-  zIndex: 2,
-})(Animated.View);
 
 const IconWrapper = compose(
   withThemeMixin({ type: 'light' }),
@@ -85,13 +87,13 @@ class MiniControlsThumbnail extends PureComponent {
 
     return (
       <Wrapper>
-        <CloseButton style={animate}>
+        <Animated.View style={[animate, styles.closeButton]}>
           <Touchable useForeground onPress={this.props.onPress}>
             <IconWrapper>
               <ThemedIcon name="close" />
             </IconWrapper>
           </Touchable>
-        </CloseButton>
+        </Animated.View>
         <Image source={this.props.source} />
       </Wrapper>
     );
