@@ -19,7 +19,7 @@ jobs:
         - sudo sysctl fs.inotify.max_user_watches=524288
         - sudo sysctl fs.inotify.max_queued_events=524288
         - sudo sysctl -p
-        - travis_wait 30 yarn run ci-deploy
+        - travis_wait yarn run ci-deploy
     - stage: deploy
       # 1: deploy storybook to gh-pages
       script: yarn run build-storybook
@@ -34,4 +34,4 @@ jobs:
         - sudo sysctl fs.inotify.max_user_watches=524288
         - sudo sysctl fs.inotify.max_queued_events=524288
         - sudo sysctl -p
-        - travis_wait 30 yarn run ci-deploy
+        - travis_wait yarn run ci-deploy
