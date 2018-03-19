@@ -26,7 +26,7 @@
     "eslint-plugin-jsx-a11y": "6.0.2",
     "eslint-plugin-react": "7.4.0",
     "exp": "^49.2.2",
-    "jest": "^22.4.2",
+    "jest": "^21.2.1",
     "jest-expo": "^25.1.0",
     "react-native-scripts": "^1.6.0",
     "react-native-storybook-loader": "^1.5.1",
@@ -36,19 +36,28 @@
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts start'",
-    "android": "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts android'",
+    "start":
+      "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts start'",
+    "android":
+      "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts android'",
     "ios": "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts ios'",
     "web": "npm run create-app-entrypoint && NODE_PATH=./src node scripts/start.js",
-    "build": "NODE_ENV=production npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
-    "build:beta": "NODE_ENV=test npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
-    "build:alpha": "NODE_ENV=development npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
-    "build-storybook": "npm run create-storybook-entrypoint && npm run storybook-load-stories && NODE_PATH=./src build-storybook -c src/.storybook/web -s ./public",
-    "ci-deploy": "npm run create-app-entrypoint && NODE_PATH=./src npm run run-with-settings 'node ./.scripts/ci-deploy.js'",
+    "build":
+      "NODE_ENV=production npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
+    "build:beta":
+      "NODE_ENV=test npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
+    "build:alpha":
+      "NODE_ENV=development npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
+    "build-storybook":
+      "npm run create-storybook-entrypoint && npm run storybook-load-stories && NODE_PATH=./src build-storybook -c src/.storybook/web -s ./public",
+    "ci-deploy":
+      "npm run create-app-entrypoint && NODE_PATH=./src npm run run-with-settings 'node ./.scripts/ci-deploy.js'",
     "test": "npm run run-with-settings 'npm run lint && npm run jest'",
     "jest": "./node_modules/.bin/jest",
-    "storybook-native-start": "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybook/native",
-    "storybook-web": "npm run create-storybook-entrypoint && npm run storybook-load-stories && start-storybook -p 9009 -s ./public -c src/.storybook/web",
+    "storybook-native-start":
+      "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybook/native",
+    "storybook-web":
+      "npm run create-storybook-entrypoint && npm run storybook-load-stories && start-storybook -p 9009 -s ./public -c src/.storybook/web",
     "jest-watcher": "node node_modules/jest/bin/jest.js --watch",
     "lint": "./node_modules/.bin/eslint . --ext .js",
     "storybook-ios": "npm run create-storybook-entrypoint && react-native-scripts ios",
@@ -61,10 +70,7 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "setupFiles": [
-      "./.jestrc.js",
-      "<rootDir>/config/polyfills.js"
-    ],
+    "setupFiles": ["./.jestrc.js", "<rootDir>/config/polyfills.js"],
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|rn-*|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|sentry-expo))"
     ],
