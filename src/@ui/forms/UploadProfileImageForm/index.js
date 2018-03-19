@@ -50,8 +50,7 @@ const UploadProfileImageForm = compose(
 
         // NOTE: Refetch user to update current user state
         // and trigger any necessary rerenders
-        // (not tested yet @burke)
-        await props.refetch();
+        props.refetch();
 
         return true;
       } catch (err) {
