@@ -10,7 +10,6 @@ module.exports = env => ({
     scheme: 'newspring',
     splash: {
       image: 'src/assets/splash/splash-1242x2436.png',
-      backgroundColor: '#c7d4e0',
     },
     ios: {
       bundleIdentifier: 'com.subsplashstudio31.NewSpring-Church',
@@ -24,11 +23,17 @@ module.exports = env => ({
         'applinks:rm2y5.app.goo.gl',
       ],
       icon: 'src/assets/icons/ios/icon-1024x1024.png',
+      splash: {
+        backgroundColor: '#c7d4e0',
+      },
     },
     android: {
       package: 'cc.newspring.newspringapp',
       versionCode: 600000,
       icon: 'src/assets/icons/android/icon-192x192-xxxhpdi.png',
+      splash: {
+        backgroundColor: '#D1DCE6',
+      },
     },
     hooks: {
       postPublish: [
