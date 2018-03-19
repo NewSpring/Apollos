@@ -17,32 +17,38 @@ const withRouterGiveResult = compose(
   withRouter,
   withProps((props) => {
     const hasQueryParams = !isEmpty(get(props, 'location.search', ''));
-    const { error, success: _success } = parse(get(props, 'location.search') || {}) || {};
-    const success = _success && JSON.parse(_success);
+    const { error: _error, success: _success } = parse(get(props, 'location.search') || {}) || {};
+    let error = _error && JSON.parse(_error);
+    let success = _success && JSON.parse(_success);
 
-    if (hasQueryParams) {
-      props.setPaymentResult({
-        success,
-        error,
-        // NOTE: We need to refetch to
-        // ensure new payment methods
-        // and transactions are up to date
-        refetchQueries: true,
-      });
+    if (!hasQueryParams) {
+      error = props.paymentFailed || !isEmpty(error);
+      success = props.paymentSuccessful || success;
     }
 
-    return ({
+    // if (hasQueryParams) {
+    props.setPaymentResult({
+      success,
+      error,
+      // NOTE: We need to refetch to
+      // ensure new payment methods
+      // and transactions are up to date
+      refetchQueries: true,
+    });
+    // }
+
+    return {
       paymentFailed: props.paymentFailed || !isEmpty(error),
       paymentFailedMessage: props.paymentFailedMessage || error,
       paymentSuccessful: props.paymentSuccessful || success,
-    });
+    };
   }),
 );
 
 const PaymentComplete = compose(
   withGive,
   withProps(props => ({
-    ...get(props, 'contributions') || {},
+    ...(get(props, 'contributions') || {}),
   })),
   withRouterGiveResult,
   setPropTypes({
