@@ -10,7 +10,7 @@ module.exports = env => ({
     scheme: 'newspring',
     splash: {
       image: 'src/assets/splash/splash-1242x2436.png',
-      backgroundColor: '#D1DCE6',
+      backgroundColor: '#c7d4e0',
     },
     ios: {
       bundleIdentifier: 'com.subsplashstudio31.NewSpring-Church',
