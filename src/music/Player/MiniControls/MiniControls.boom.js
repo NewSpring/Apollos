@@ -1,8 +1,8 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import Providers from '@ui/TestProviders';
-
-import MiniControls from './';
+// import React from 'react';
+// import renderer from 'react-test-renderer';
+// import Providers from '@ui/TestProviders';
+//
+// import MiniControls from './';
 
 // describe('The MiniControls component', () => {
 //   it('should render', () => {
