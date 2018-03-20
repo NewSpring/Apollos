@@ -111,3 +111,25 @@ export function pause(result, variables, { cache }) {
   });
   return null;
 }
+
+export function stop(result, variables, { cache }) {
+  const { mediaPlayer: state } = cache.readQuery({
+    query: mediaPlayerQuery,
+    variables,
+  });
+
+  cache.writeQuery({
+    query: mediaPlayerQuery,
+    variables,
+    data: {
+      mediaPlayer: {
+        ...state,
+        isPlaying: false,
+        id: null,
+        currentTrack: null,
+      },
+    },
+  });
+  return null;
+}
+

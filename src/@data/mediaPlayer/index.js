@@ -4,6 +4,7 @@ import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 import identifyCategory from '@data/utils/identifyCategory';
 import playMutation from './playMutation';
 import pauseMutation from './pauseMutation';
+import stopMutation from './stopMutation';
 import shuffleMutation from './shuffleMutation';
 import repeatMutation from './repeatMutation';
 import nowPlayingMutation from './nowPlayingMutation';
@@ -50,6 +51,12 @@ const pause = graphql(pauseMutation, {
   }),
 });
 
+const stop = graphql(stopMutation, {
+  props: ({ mutate }) => ({
+    stop: () => mutate(),
+  }),
+});
+
 export const withNowPlaying = graphql(mediaPlayerQuery, {
   props: ({ data: { mediaPlayer } }) => ({
     nowPlaying: mediaPlayer,
@@ -81,4 +88,4 @@ export const withPlaylist = graphql(albumQuery, {
   skip: ({ id }) => !id,
 });
 
-export const withMediaPlayerActions = compose(play, pause, shuffle, repeat, setNowPlaying);
+export const withMediaPlayerActions = compose(play, pause, shuffle, repeat, setNowPlaying, stop);
