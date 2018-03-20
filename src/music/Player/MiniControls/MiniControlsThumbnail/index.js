@@ -28,7 +28,9 @@ const IconWrapper = compose(
   withThemeMixin({ type: 'light' }),
   styled(({ theme }) => ({
     padding: 7,
-    backgroundColor: Color(theme.colors.background.default).fade(theme.alpha.low),
+    backgroundColor: Color(theme.colors.background.default)
+      .fade(theme.alpha.low)
+      .string(),
   })),
 )(View);
 

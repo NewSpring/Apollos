@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The MiniControls component should render 1`] = `
+<RCTSafeAreaView
+  style={
+    Object {
+      "backgroundColor": "#303030",
+      "borderTopColor": "hsl(0, 0%, 15.1%)",
+      "borderTopWidth": 0.5,
+      "overflow": "hidden",
+    }
+  }
+>
+  <View
+    height={50}
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "flex-start",
+        "padding": 5,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#303030",
+          "height": 40,
+          "overflow": "hidden",
+          "width": 40,
+        }
+      }
+    >
+      <View
+        collapsable={undefined}
+        style={
+          Object {
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "translateY": -40,
+              },
+            ],
+            "zIndex": 2,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "rgba(247, 247, 247, 0.6)",
+                "padding": 7,
+              }
+            }
+          >
+            <Svg
+              height={26}
+              viewBox="0 0 24 24"
+              width={26}
+            >
+              <Path
+                d="M13.07 12l7.2-7.2.5-.5c.3-.3.3-.78 0-1.08-.3-.3-.76-.3-1.06 0l-.5.5-7.2 7.2-7.2-7.2-.5-.5c-.3-.3-.77-.3-1.07 0-.3.3-.3.77 0 1.07l.5.5 7.2 7.2-7.7 7.7c-.3.3-.3.77 0 1.07.3.3.77.3 1.07 0l7.7-7.7 7.7 7.7c.3.3.78.3 1.08 0 .3-.3.3-.77 0-1.07l-7.7-7.7z"
+                fill="#303030"
+              />
+            </Svg>
+          </View>
+        </View>
+      </View>
+      <Image
+        maintainAspectRatio={false}
+        source={
+          Array [
+            Object {
+              "height": 150,
+              "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
+              "width": 150,
+            },
+          ]
+        }
+        style={
+          Array [
+            Object {},
+            Object {
+              "aspectRatio": 1,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 15.75,
+            "height": 20,
+            "lineHeight": 17.75,
+            "overflow": "hidden",
+            "paddingBottom": 1.8,
+            "paddingTop": 4.5,
+          }
+        }
+      >
+        My track
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Colfax-Regular",
+            "fontSize": 14,
+            "height": 20,
+            "lineHeight": 15.78,
+            "overflow": "hidden",
+            "paddingBottom": 1.8,
+            "paddingTop": 3.6,
+          }
+        }
+      >
+        My Byline
+      </Text>
+    </View>
+  </View>
+  <RCTSafeAreaView
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#303030",
+        "borderTopColor": "hsl(0, 0%, 15.1%)",
+        "borderTopWidth": 0.5,
+        "bottom": 0,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "overflow": "hidden",
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "width": 80,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Svg
+        height={32}
+        viewBox="0 0 24 24"
+        width={32}
+      >
+        <Path
+          d="M7 3h1.67v18H7V3zm8.33 0H17v18h-1.67V3z"
+          fill="#ffffff"
+        />
+      </Svg>
+    </View>
+  </RCTSafeAreaView>
+</RCTSafeAreaView>
+`;
