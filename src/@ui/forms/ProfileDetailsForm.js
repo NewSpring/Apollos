@@ -70,7 +70,10 @@ export const ProfileDetailsFormWithoutData = ({
         <Inputs.DateInput
           label="Birthday"
           value={values.birthday}
-          displayValue={moment(values.birthday).format('MM/DD/YYYY')}
+          placeholder={'mm/dd/yyyy'}
+          displayValue={
+            values.birthday ? moment(values.birthday).format('MM/DD/YYYY') : values.birthDay
+          }
           onChange={text => setFieldValue('birthday', text)}
           onBlur={() => setFieldTouched('birthday', true)}
           error={touched.birthday && errors.birthday}
@@ -105,7 +108,7 @@ ProfileDetailsFormWithoutData.propTypes = {
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     email: PropTypes.string,
-    birthday: PropTypes.object, // eslint-disable-line
+    birthday: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     campusId: PropTypes.string,
   }),
   setFieldTouched: PropTypes.func,
@@ -148,11 +151,14 @@ const validationSchema = Yup.object().shape({
 
 const mapPropsToValues = props => ({
   ...(props.user || {}),
-  birthday: moment()
-    .year(get(props, 'user.birthYear') || moment().year())
-    .month((get(props, 'user.birthMonth') || moment().month() + 1) - 1)
-    .date(get(props, 'user.birthDay') || moment().date())
-    .toDate(),
+  birthday:
+    get(props, 'user.birthYear') && get(props, 'user.birthMonth') && get(props, 'user.birthDay')
+      ? moment()
+        .year(get(props, 'user.birthYear'))
+        .month(get(props, 'user.birthMonth'))
+        .date(get(props, 'user.birthDay'))
+        .toDate()
+      : '',
   campusId: get(props, 'user.campus.id') || null,
 });
 
