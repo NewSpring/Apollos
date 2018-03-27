@@ -203,6 +203,7 @@ const PaymentConfirmationForm = compose(
       get(props, 'savedPaymentMethods', []).find(({ id }) => id === get(props, 'contributions.savedPaymentMethodId')),
     isScheduled: get(props, 'contributions.frequencyId', 'today') !== 'today',
     onSubmit: async () => {
+      // todo: this function is in dire need of refactoring
       try {
         if (Platform.OS === 'ios') {
           Linking.addEventListener('url', handleRedirect);
@@ -229,6 +230,7 @@ const PaymentConfirmationForm = compose(
           props.setPaymentResult({
             success: true,
           });
+          if (props.onComplete) props.onComplete(null, true);
           return true;
         }
 
@@ -244,7 +246,6 @@ const PaymentConfirmationForm = compose(
         });
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
-
 
         props.setPaymentResult({
           success: true,
