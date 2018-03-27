@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Providers from '@ui/TestProviders';
 
-import FullScreenControls from './FullScreenControls';
+import FullScreenControls from './';
 
 describe('The FullScreenControls component', () => {
   it('should render', () => {
