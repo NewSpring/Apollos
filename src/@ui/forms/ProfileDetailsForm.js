@@ -155,7 +155,7 @@ const mapPropsToValues = props => ({
     get(props, 'user.birthYear') && get(props, 'user.birthMonth') && get(props, 'user.birthDay')
       ? moment()
         .year(get(props, 'user.birthYear'))
-        .month(get(props, 'user.birthMonth'))
+        .month(get(props, 'user.birthMonth') - 1) // .month() is zero based 🙃
         .date(get(props, 'user.birthDay'))
         .toDate()
       : '',
