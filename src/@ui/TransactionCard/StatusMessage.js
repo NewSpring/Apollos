@@ -8,6 +8,18 @@ const StyledText = styled(({ theme }) => ({
   color: theme.colors.text.secondary,
 }))(BodyText);
 
+const ContributionAmountNameText = ({ amount = 0, account: { name = '' } = {} }) => (
+  <StyledText>
+    <StyledText bold>{amount.toFixed(2)}</StyledText>{' to '}
+    <StyledText bold>{name}</StyledText>
+  </StyledText>
+);
+
+ContributionAmountNameText.propTypes = {
+  amount: PropTypes.number,
+  account: PropTypes.shape({ name: PropTypes.string }),
+};
+
 // TODO: Missing is expiring soon message
 function StatusMessage(props = {}) {
   const {
@@ -23,10 +35,12 @@ function StatusMessage(props = {}) {
   if (didPass) {
     return (
       <StyledText>
-        Your {isScheduled ? 'scheduled ' : ''}contribution of <StyledText bold>{`$${get(details, '0.amount', 0).toFixed(2)} `}</StyledText>
-        to <StyledText bold>{`${get(details, '0.account.name')} `}</StyledText>
-        {details.length > 1 ? details[1].toFixed(2) : null}
-        {' '}was successful.
+        Your {isScheduled ? 'scheduled ' : ''}{'contribution of '}
+        <ContributionAmountNameText {...get(details, '0')} />
+        {details.length > 1 ? (
+          <StyledText>{' and '}<ContributionAmountNameText {...get(details, '1')} /></StyledText>
+        ) : null}
+        {' was successful.'}
       </StyledText>
     );
   }
