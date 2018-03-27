@@ -26,3 +26,7 @@ coverage/
 
 # generated at runtime
 app.json
+
+# e2e Testing
+
+*.app
