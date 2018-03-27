@@ -10,7 +10,8 @@ const env = process.env.NODE_ENV;
       headers: { Accept: 'application/vnd.github.v3.raw' },
     };
     const response = await fetch(
-      'https://api.github.com/repos/newspring/ops-settings/contents/sites/apollos/settings.json?access_token=81b6e39a0d825dcc7a739c7b93f371c20291eae1',
+      'https://api.github.com/repos/newspring/ops-settings/contents/sites/apollos/settings.json?access_token=' +
+        TOKEN,
       headers,
     );
 
