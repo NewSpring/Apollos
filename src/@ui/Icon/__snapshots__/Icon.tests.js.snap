@@ -68,7 +68,7 @@ exports[`The Audio icon renders correctly 1`] = `
 exports[`The Bank icon renders correctly 1`] = `
 <Svg
   height={32}
-  viewBox="0 0 24 24"
+  viewBox="0 0 24 17"
   width={32}
 >
   <Path

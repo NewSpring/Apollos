@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Providers from '@ui/TestProviders';
 
-import MiniControls from './MiniControls';
+import MiniControls from './';
 
 describe('The MiniControls component', () => {
   it('should render', () => {
@@ -12,6 +12,7 @@ describe('The MiniControls component', () => {
           isPlaying
           play={() => {}}
           pause={() => {}}
+          dismiss={() => {}}
           trackName={'My track'}
           trackByLine={'My Byline'}
           albumArt={{

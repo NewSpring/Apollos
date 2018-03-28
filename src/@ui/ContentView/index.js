@@ -7,7 +7,7 @@ import styled from '@ui/styled';
 import { VideoHeader, ImageHeader, AudioBanner } from './Media';
 
 export { default as HTMLView } from '@ui/HTMLView';
-export { H2 as Title, H4 as SubHeading } from '@ui/typography';
+export { H3 as Title, H4 as SubHeading } from '@ui/typography';
 export { default as ByLine } from './ByLine';
 
 const enhance = compose(

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Platform, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { every } from 'lodash';
-import makeCanceable from '@utils/makeCanceable';
+import makeCancelable from '@utils/makeCancelable';
 
 import SkeletonImage from './SkeletonImage';
 
@@ -102,7 +102,7 @@ class ConnectedImage extends PureComponent {
   }
 
   updateCache(sources) {
-    this.cacheUpdater = makeCanceable(updateCache(sources));
+    this.cacheUpdater = makeCancelable(updateCache(sources));
     this.cacheUpdater.promise.then(() => {
       const newSource = getCachedSources(sources);
       const oldSource = this.state.source || [];
