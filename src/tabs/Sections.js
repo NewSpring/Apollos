@@ -50,7 +50,7 @@ const Sections = enhance(({ isModal, webBackgroundSource, webBackgroundThumbnail
     <Menu>
       <Header titleText="Sections" />
       <LiveNowButton />
-      <TileNavWithSections />
+      <TileNavWithSections testID="tileSection" />
     </Menu>
     {isModal ? null : (
       <MediaQuery minWidth={'md'}>

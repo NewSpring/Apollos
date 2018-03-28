@@ -80,6 +80,7 @@ export const LoginFormWithoutData = enhance(
   }) => (
     <View>
       <TextInput
+        testID="loginEmailInput"
         label="Email"
         type="email"
         value={values.email}
@@ -88,6 +89,7 @@ export const LoginFormWithoutData = enhance(
         error={touched.email && errors.email}
       />
       <TextInput
+        testID="loginPasswordInput"
         label="Password"
         type="password"
         value={values.password}

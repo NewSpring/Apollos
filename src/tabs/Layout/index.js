@@ -31,11 +31,11 @@ class TabBarLayout extends PureComponent {
         <BackgroundView>{this.props.children}</BackgroundView>
         {!this.props.hideTabBar && (
           <TabBar>
-            <Link to="/" icon="logo" label="Home" testID="home" />
-            <Link to="/sections" icon="sections" label="Sections" />
+            <Link to="/" icon="logo" label="Home" testID="homeTab" />
+            <Link to="/sections" icon="sections" label="Sections" testID="sectionTab" />
             <Link to="/groups" icon="groups" label="Groups" />
             <Link to="/discover" icon="search" label="Discover" />
-            <Link to="/profile" icon="profile" label="Profile" />
+            <Link to="/profile" icon="profile" label="Profile" testID="profileTab" />
           </TabBar>
         )}
       </Layout>
