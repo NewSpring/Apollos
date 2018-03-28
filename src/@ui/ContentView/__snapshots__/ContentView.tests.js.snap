@@ -17,10 +17,10 @@ exports[`the ContentView component renders 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "Colfax-Bold",
-          "fontSize": 42.3,
-          "lineHeight": 53.58,
-          "paddingBottom": 3.6,
-          "paddingTop": 6.3,
+          "fontSize": 32.4,
+          "lineHeight": 41.04,
+          "paddingBottom": 2.7,
+          "paddingTop": 5.4,
         }
       }
     >
@@ -36,7 +36,7 @@ exports[`the ContentView component renders 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
           "lineHeight": 17.75,
-          "paddingBottom": 1.8,
+          "paddingBottom": 9,
           "paddingTop": 4.5,
         }
       }
@@ -199,10 +199,10 @@ exports[`the ContentView component renders with images 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "Colfax-Bold",
-          "fontSize": 42.3,
-          "lineHeight": 53.58,
-          "paddingBottom": 3.6,
-          "paddingTop": 6.3,
+          "fontSize": 32.4,
+          "lineHeight": 41.04,
+          "paddingBottom": 2.7,
+          "paddingTop": 5.4,
         }
       }
     >
@@ -218,7 +218,7 @@ exports[`the ContentView component renders with images 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
           "lineHeight": 17.75,
-          "paddingBottom": 1.8,
+          "paddingBottom": 9,
           "paddingTop": 4.5,
         }
       }
@@ -315,10 +315,10 @@ exports[`the ContentView component renders with video 1`] = `
         Object {
           "color": "#303030",
           "fontFamily": "Colfax-Bold",
-          "fontSize": 42.3,
-          "lineHeight": 53.58,
-          "paddingBottom": 3.6,
-          "paddingTop": 6.3,
+          "fontSize": 32.4,
+          "lineHeight": 41.04,
+          "paddingBottom": 2.7,
+          "paddingTop": 5.4,
         }
       }
     >
@@ -334,7 +334,7 @@ exports[`the ContentView component renders with video 1`] = `
           "fontFamily": "Colfax-Bold",
           "fontSize": 15.75,
           "lineHeight": 17.75,
-          "paddingBottom": 1.8,
+          "paddingBottom": 9,
           "paddingTop": 4.5,
         }
       }
