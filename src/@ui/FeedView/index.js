@@ -12,7 +12,7 @@ import FeedList from './FeedList';
 
 export const defaultFeedItemRenderer = (CardComponent = FeedItemCard) => (
   { item }, // eslint-disable-line
-) => (
+) => item && (
   <Link to={getLinkPath(item)} component={TouchableWithoutFeedback}>
     <CardComponent
       id={item.id}
@@ -100,7 +100,7 @@ const FeedView = enhance(
 FeedView.defaultProps = {
   isLoading: false,
   onEndReachedThreshold: 0.7,
-  keyExtractor: item => item.id || item.entryId,
+  keyExtractor: item => item && (item.id || item.entryId),
   content: [],
   refetch: undefined,
   fetchMore: undefined,
