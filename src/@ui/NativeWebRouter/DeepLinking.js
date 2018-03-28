@@ -41,11 +41,16 @@ class DeepLinking extends Component {
     this.push(e.url);
   };
 
-  push = (url) => {
-    const u = new UrlPolyfill(url);
-    let { pathname = null } = u || {};
+  push = (url = '') => {
+    // const u = new UrlPolyfill(url);
+    // let { pathname = null } = u || {};
+    // if (pathname) {
+    //   if (pathname.indexOf('/+') > -1) pathname = pathname.substring(pathname.indexOf('/+') + 2);
+    //   this.context.router.history.push(pathname);
+    // }
+    console.log({ url });
+    const pathname = url.replace(this.baseUrl, '');
     if (pathname) {
-      if (pathname.indexOf('/+') > -1) pathname = pathname.substring(pathname.indexOf('/+') + 2);
       this.context.router.history.push(pathname);
     }
   };
