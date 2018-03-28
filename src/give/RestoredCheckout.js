@@ -6,6 +6,7 @@ import get from 'lodash/get';
 import {
   compose,
   branch,
+  withState,
   renderComponent,
 } from 'recompose';
 import { H4, H7 } from '@ui/typography';
@@ -25,11 +26,28 @@ const PaperView = styled(({ theme }) => ({
 const enhance = compose(
   withoutTabBar,
   withRestoredGive,
+  withState('paymentCompletion', 'setPaymentCompletion', false),
   branch(({ isRestored }) => !isRestored, renderComponent(ActivityIndicator)),
 );
 
-export const RestoredCheckout = (props) => {
+export const RestoredCheckout = enhance((props) => {
   const { redirect } = parse(get(props, 'location.search', {}));
+
+  if (props.paymentCompletion) {
+    return (
+      <PaperView>
+        <H4>
+          {(!props.paymentCompletion.error && props.paymentCompletion.success) ? (
+            'Looking good!'
+          ) : (
+            'Hmm...there might be a problem.'
+          )}
+        </H4>
+        <H7>Redirecting you back to the NewSpring app...</H7>
+        <ActivityIndicator />
+      </PaperView>
+    );
+  }
 
   return (
     <PaperView>
@@ -38,6 +56,7 @@ export const RestoredCheckout = (props) => {
       <PaymentConfirmationForm
         hideChangePaymentMethodButton
         onComplete={(error, success) => {
+          props.setPaymentCompletion({ error, success });
           window.location.href = `${redirect}?${stringify({
             error,
             success,
@@ -46,6 +65,6 @@ export const RestoredCheckout = (props) => {
       />
     </PaperView>
   );
-};
+});
 
-export default enhance(RestoredCheckout);
+export default RestoredCheckout;
