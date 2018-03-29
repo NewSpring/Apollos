@@ -26,7 +26,7 @@ class DeepLinking extends Component {
   };
 
   async componentDidMount() {
-    Linking.getInitialURL().then(this.handleChange);
+    Linking.getInitialURL().then(this.push);
     Linking.addEventListener('url', this.handleChange);
   }
 
@@ -45,7 +45,7 @@ class DeepLinking extends Component {
 
     if (pathname.startsWith('http') && this.props.handleUniversalLink) {
       this.props.handleUniversalLink({ url: pathname });
-    } else if (pathname) {
+    } else if (pathname && pathname.length && pathname !== '/') {
       this.context.router.history.push(pathname);
     }
   };
