@@ -3,15 +3,6 @@ import elements from './elements';
 
 const retrieveElements = async () => elements(element, by);
 
-const navigateToGiving = async ({ homeTab, sectionTab }) => {
-  await waitFor(homeTab)
-    .toBeVisible()
-    .withTimeout(10000);
-  await expect(homeTab).toBeVisible();
-  await sectionTab.tap();
-  // TODO: navigate to giving
-};
-
 const login = async ({
   homeTab,
   loginEmailInput,
