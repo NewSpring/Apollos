@@ -274,7 +274,6 @@ const PaymentConfirmationForm = compose(
     if (!paymentMethod) {
       paymentMethod = get(contributions, contributions.paymentMethod, {});
     }
-    console.log({ paymentMethod });
 
     const verb = isScheduled ? 'Schedule' : 'Give';
 
