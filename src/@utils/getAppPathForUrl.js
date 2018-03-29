@@ -58,7 +58,9 @@ const withQuery = async (path) => {
       break;
   }
 
-  const { data } = await client
+  const {
+    data,
+  } = await client
     .query({
       query: URL_TITLE_QUERY,
       variables: {
@@ -80,7 +82,7 @@ const withQuery = async (path) => {
       if (data.child) {
         return `/${channel}/${data.parent}/entry/${data.child}`;
       }
-      return `/${channel}/${data.parent}`
+      return `/${channel}/${data.parent}`;
     default:
       return `/${channel}/${data.parent}`;
   }
@@ -88,7 +90,9 @@ const withQuery = async (path) => {
 
 export default async (url) => {
   const u = new UrlPolyfill(url);
-  const { pathname = null } = u || {};
+  const {
+    pathname = null,
+  } = u || {};
 
   switch (pathname) {
     case isQueryRoute(pathname):
