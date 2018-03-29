@@ -274,13 +274,14 @@ const PaymentConfirmationForm = compose(
     if (!paymentMethod) {
       paymentMethod = get(contributions, contributions.paymentMethod, {});
     }
+    console.log({ paymentMethod });
 
     const verb = isScheduled ? 'Schedule' : 'Give';
 
     const name = (paymentMethod.accountNumber || paymentMethod.cardNumber || '').replace(/-/g, '').slice(-4);
 
     const text = `${verb} with ${name}`;
-    const icon = contributions.paymentMethod === 'creditCard' ? 'credit' : 'bank';
+    const icon = (paymentMethod.paymentMethod || contributions.paymentMethod) === 'creditCard' ? 'credit' : 'bank';
     return {
       submitButtonText: text,
       submitButtonIcon: icon,
