@@ -90,7 +90,6 @@ const Auth = enhance(({ isModal, webBackgroundSource, webBackgroundThumbnail }) 
           </BannerContent>
         </Banner>
         <TabView
-          testID="authScroll"
           renderPager={Platform.OS === 'android' ? renderPager : undefined}
           routes={tabRoutes}
           renderScene={tabScenes}

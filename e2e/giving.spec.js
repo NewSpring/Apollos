@@ -25,13 +25,13 @@ const login = async () => {
   );
 
   // Check to see if the Password Input is visible, tap it, and type in the password.
-  await expect(element(by.id('loginForm').withDescendant(by.label('Password')))).toBeVisible();
-  await element(by.id('loginForm').withDescendant(by.label('Password'))).tap();
-  await element(by.id('loginForm').withDescendant(by.label('Password'))).typeText('newspring');
+  // await expect(element(by.id('loginForm').withDescendant(by.label('Password')))).toBeVisible();
+  // await element(by.id('loginForm').withDescendant(by.label('Password'))).tap();
+  // await element(by.id('loginForm').withDescendant(by.label('Password'))).typeText('newspring');
 
   // Click the Go button to login
-  await expect(element(by.id('loginForm').withDescendant(by.text('Go')))).toBeVisible();
-  await element(by.id('loginForm').withDescendant(by.text('Go'))).tap();
+  // await expect(element(by.id('loginForm').withDescendant(by.text('Go')))).toBeVisible();
+  // await element(by.id('loginForm').withDescendant(by.text('Go'))).tap();
 };
 
 describe('Giving', () => {
