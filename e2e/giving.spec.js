@@ -6,37 +6,32 @@ const navigateToGiving = async () => {
     .withTimeout(10000);
   await expect(element(by.id('homeTab'))).toBeVisible();
   await element(by.id('sectionTab')).tap();
+  // TODO: navigate to giving
 };
 
 const login = async () => {
+  // Wait for Home tab to display
   await waitFor(element(by.id('homeTab')))
     .toBeVisible()
     .withTimeout(10000);
   await expect(element(by.id('homeTab'))).toBeVisible();
   await element(by.id('profileTab')).tap();
-  await waitFor(element(by.id('loginEmailInput')))
-    .toBeVisible()
-    .withTimeout(5000);
 
-  // try/catch to determine if the element is clickable or not while still passing the test
-  // TODO: Remove the try/catch
-  try {
-    await element(by.id('loginEmailInput')).tap();
-    await element(by.id('loginEmailInput')).typeText('aaron.attendee@newspring.cc');
-    console.log('Email Tappable!');
-  } catch (e) {
-    console.log('Email Not tappable');
-  }
+  // Check to see if the Email Input is visible, tap it, and type in the email address.
+  await expect(element(by.id('loginForm').withDescendant(by.label('Email')))).toBeVisible();
+  await element(by.id('loginForm').withDescendant(by.label('Email'))).tap();
+  await element(by.id('loginForm').withDescendant(by.label('Email'))).typeText(
+    'aaron.attendee@newspring.cc',
+  );
 
-  // try/catch to determine if the element is clickable or not while still passing the test
-  // TODO: Remove the try/catch
-  try {
-    await element(by.id('loginPasswordInput')).tap();
-    await element(by.id('loginPasswordInput')).typeText('newspring');
-    console.log('Password Tappable!');
-  } catch (e) {
-    console.log('Password Not tappable');
-  }
+  // Check to see if the Password Input is visible, tap it, and type in the password.
+  await expect(element(by.id('loginForm').withDescendant(by.label('Password')))).toBeVisible();
+  await element(by.id('loginForm').withDescendant(by.label('Password'))).tap();
+  await element(by.id('loginForm').withDescendant(by.label('Password'))).typeText('newspring');
+
+  // Click the Go button to login
+  await expect(element(by.id('loginForm').withDescendant(by.text('Go')))).toBeVisible();
+  await element(by.id('loginForm').withDescendant(by.text('Go'))).tap();
 };
 
 describe('Giving', () => {
