@@ -1,8 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Linking } from 'react-native';
-// Needed because ReactNative doens't currently support URL
-import UrlPolyfill from 'url-parse';
 
 import linkingUri from '@utils/linkingUri';
 
@@ -12,6 +10,7 @@ class DeepLinking extends Component {
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node,
     ]),
+    handleUniversalLink: PropTypes.func,
   };
 
   static defaultProps = {
@@ -41,16 +40,12 @@ class DeepLinking extends Component {
     this.push(e.url);
   };
 
-  push = (url = '') => {
-    // const u = new UrlPolyfill(url);
-    // let { pathname = null } = u || {};
-    // if (pathname) {
-    //   if (pathname.indexOf('/+') > -1) pathname = pathname.substring(pathname.indexOf('/+') + 2);
-    //   this.context.router.history.push(pathname);
-    // }
-    console.log({ url });
+  push = async (url = '') => {
     const pathname = url.replace(this.baseUrl, '');
-    if (pathname) {
+
+    if (pathname.startsWith('http') && this.props.handleUniversalLink) {
+      this.props.handleUniversalLink({ url: pathname });
+    } else if (pathname) {
       this.context.router.history.push(pathname);
     }
   };
