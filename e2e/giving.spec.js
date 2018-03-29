@@ -1,37 +1,44 @@
-const { reloadApp } = require('detox-expo-helpers');
+import { reloadApp } from 'detox-expo-helpers';
+import elements from './elements';
 
-const navigateToGiving = async () => {
-  await waitFor(element(by.id('homeTab')))
+const retrieveElements = async () => elements(element, by);
+
+const navigateToGiving = async ({ homeTab, sectionTab }) => {
+  await waitFor(homeTab)
     .toBeVisible()
     .withTimeout(10000);
-  await expect(element(by.id('homeTab'))).toBeVisible();
-  await element(by.id('sectionTab')).tap();
+  await expect(homeTab).toBeVisible();
+  await sectionTab.tap();
   // TODO: navigate to giving
 };
 
-const login = async () => {
+const login = async ({
+  homeTab,
+  loginEmailInput,
+  loginPasswordInput,
+  loginFormGoButton,
+  profileTab,
+}) => {
   // Wait for Home tab to display
-  await waitFor(element(by.id('homeTab')))
+  await waitFor(homeTab)
     .toBeVisible()
     .withTimeout(10000);
-  await expect(element(by.id('homeTab'))).toBeVisible();
-  await element(by.id('profileTab')).tap();
+  await expect(homeTab).toBeVisible();
+  await profileTab.tap();
 
-  // Check to see if the Email Input is visible, tap it, and type in the email address.
-  await expect(element(by.id('loginForm').withDescendant(by.label('Email')))).toBeVisible();
-  await element(by.id('loginForm').withDescendant(by.label('Email'))).tap();
-  await element(by.id('loginForm').withDescendant(by.label('Email'))).typeText(
-    'aaron.attendee@newspring.cc',
-  );
+  // // Check to see if the Email Input is visible, tap it, and type in the email address.
+  await expect(loginEmailInput).toBeVisible();
+  await loginEmailInput.tap();
+  await loginEmailInput.typeText('aaron.attendee@newspring.cc');
 
   // Check to see if the Password Input is visible, tap it, and type in the password.
-  // await expect(element(by.id('loginForm').withDescendant(by.label('Password')))).toBeVisible();
-  // await element(by.id('loginForm').withDescendant(by.label('Password'))).tap();
-  // await element(by.id('loginForm').withDescendant(by.label('Password'))).typeText('newspring');
+  await expect(loginPasswordInput).toBeVisible();
+  await loginPasswordInput.tap();
+  await loginPasswordInput.typeText('newspring');
 
   // Click the Go button to login
-  // await expect(element(by.id('loginForm').withDescendant(by.text('Go')))).toBeVisible();
-  // await element(by.id('loginForm').withDescendant(by.text('Go'))).tap();
+  // await expect(loginFormGoButton).toBeVisible();
+  // await loginFormGoButton.tap();
 };
 
 describe('Giving', () => {
@@ -40,12 +47,7 @@ describe('Giving', () => {
   });
 
   it('should load the home screen', async () => {
-    await login();
-    // await navigateToGiving();
+    const el = await retrieveElements();
+    await login(el);
   });
-
-  // it('should navigate to giving', async () => {
-  //   await login();
-  //   await navigateToGiving();
-  // });
 });
