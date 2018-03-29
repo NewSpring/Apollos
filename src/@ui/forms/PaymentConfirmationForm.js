@@ -280,7 +280,7 @@ const PaymentConfirmationForm = compose(
     const name = (paymentMethod.accountNumber || paymentMethod.cardNumber || '').replace(/-/g, '').slice(-4);
 
     const text = `${verb} with ${name}`;
-    const icon = contributions.paymentMethod === 'creditCard' ? 'credit' : 'bank';
+    const icon = (paymentMethod.paymentMethod || contributions.paymentMethod) === 'creditCard' ? 'credit' : 'bank';
     return {
       submitButtonText: text,
       submitButtonIcon: icon,
