@@ -77,6 +77,7 @@ export const BillingAddressFormWithoutData = enhance(
     isValid,
   }) => {
     const isUSOrCanada = values.countryId === 'US' || values.countryId === 'CA';
+
     return (
       <View>
         <TableView responsive={false}>
@@ -149,7 +150,7 @@ export const BillingAddressFormWithoutData = enhance(
 
 const validationSchema = Yup.object().shape({
   street1: Yup.string().required('Street address is a required field'),
-  street2: Yup.string(),
+  street2: Yup.string().nullable(),
   city: Yup.string().required('City is a required field'),
   stateId: Yup.string(),
   countryId: Yup.string().required('Country is a required field'),
