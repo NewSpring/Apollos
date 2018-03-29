@@ -39,7 +39,11 @@ const enhance = compose(
     enableReinitialize: true,
     validationSchema: Yup.object().shape({
       query: Yup.string(),
-      zipCode: Yup.string(),
+      zipCode: Yup.string().when('useDeviceLocation', {
+        is: false,
+        then: Yup.string().required(),
+        else: Yup.string(),
+      }),
       useDeviceLocation: Yup.bool(),
     }),
     isInitialValid: true,
