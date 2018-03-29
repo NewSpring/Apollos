@@ -16,7 +16,7 @@ const login = async ({
   homeTab,
   loginEmailInput,
   loginPasswordInput,
-  loginFormGoButton,
+  // loginFormGoButton,
   profileTab,
 }) => {
   // Wait for Home tab to display
