@@ -1,4 +1,4 @@
-import { AppRegistry, Platform } from 'react-native';
+import { Linking, AppRegistry, Platform } from 'react-native';
 import { ApolloProvider } from 'react-apollo';
 import { nest, withProps } from 'recompose';
 
@@ -15,6 +15,8 @@ import AppRouter from './AppRouter';
 import SentryContext from './SentryContext';
 
 const sentryEnv = Settings.APP_SENTRY_ENVIRONMENT || Settings.NODE_ENV;
+
+Linking.getInitialURL().then(url => console.log({ url }));
 
 // expo-sentry doesn't consider NODE_ENV when enabling Sentry,
 // however raven-js (sentry's web client) only looks at NODE_ENV when enabling sentry.

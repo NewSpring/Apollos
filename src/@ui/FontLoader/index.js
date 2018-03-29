@@ -1,8 +1,9 @@
 import {
   StyleSheet,
 } from 'react-native';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { AppLoading } from 'expo';
 import FONTS from 'assets/fonts';
 import * as Font from './Font';
 
@@ -54,6 +55,6 @@ export default class FontLoader extends Component {
 
   render() {
     const { isLoading } = this.state;
-    return isLoading ? null : this.props.children;
+    return isLoading ? <AppLoading /> : this.props.children;
   }
 }
