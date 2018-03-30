@@ -24,25 +24,21 @@ const withRouterGiveResult = compose(
       props.setPaymentResult({
         success,
         error,
-        // NOTE: We need to refetch to
-        // ensure new payment methods
-        // and transactions are up to date
-        refetchQueries: true,
       });
     }
 
-    return ({
+    return {
       paymentFailed: props.paymentFailed || !isEmpty(error),
       paymentFailedMessage: props.paymentFailedMessage || error,
       paymentSuccessful: props.paymentSuccessful || success,
-    });
+    };
   }),
 );
 
 const PaymentComplete = compose(
   withGive,
   withProps(props => ({
-    ...get(props, 'contributions') || {},
+    ...(get(props, 'contributions') || {}),
   })),
   withRouterGiveResult,
   setPropTypes({
