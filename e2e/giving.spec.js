@@ -1,7 +1,7 @@
 import { reloadApp } from 'detox-expo-helpers';
 import elements from './elements';
 
-const retrieveElements = async () => elements(element, by);
+const retrieveElements = async () => elements(element, by); // eslint-disable-line
 
 const login = async ({
   homeTab,
@@ -12,7 +12,7 @@ const login = async ({
   welcomeBanner,
 }) => {
   // Wait for Home tab to display
-  await waitFor(homeTab)
+  await waitFor(homeTab) // eslint-disable-line
     .toBeVisible()
     .withTimeout(10000);
   await expect(homeTab).toBeVisible();
