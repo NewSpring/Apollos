@@ -60,46 +60,49 @@ const enhance = compose(
   })),
 );
 
-const Text = enhance(({
-  label,
-  prefix,
-  suffix,
-  value,
-  wrapperStyle,
-  error,
-  disabled = false,
-  Component = StyledTextInput,
-  theme,
-  focusAnimation: focusAnimationInput, // from withFocusAnimation
-  ...textInputProps
-}) => {
-  const focusAnimation = (value || !label) ? new Animated.Value(1) : focusAnimationInput;
-  return (
-    <InputWrapper style={wrapperStyle} disabled={disabled}>
-      <View>
-        <AddonRow>
-          <InputAddon>{prefix}</InputAddon>
-          <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
-            <Component
-              placeholderTextColor={
-                Color(theme.colors.text.primary).fade(theme.alpha.low).string()
-              }
-              {...textInputProps}
-              editable={!disabled}
-              value={`${value || ''}`}
-            />
-          </Animated.View>
-          <InputAddon>{suffix}</InputAddon>
-        </AddonRow>
+const Text = enhance(
+  ({
+    label,
+    prefix,
+    suffix,
+    value,
+    wrapperStyle,
+    error,
+    testID,
+    disabled = false,
+    Component = StyledTextInput,
+    theme,
+    focusAnimation: focusAnimationInput, // from withFocusAnimation
+    ...textInputProps
+  }) => {
+    const focusAnimation = value || !label ? new Animated.Value(1) : focusAnimationInput;
+    return (
+      <InputWrapper style={wrapperStyle} disabled={disabled}>
+        <View testID={testID}>
+          <AddonRow>
+            <InputAddon>{prefix}</InputAddon>
+            <Animated.View style={{ opacity: focusAnimation, flex: 1 }}>
+              <Component
+                placeholderTextColor={Color(theme.colors.text.primary)
+                  .fade(theme.alpha.low)
+                  .string()}
+                {...textInputProps}
+                editable={!disabled}
+                value={`${value || ''}`}
+              />
+            </Animated.View>
+            <InputAddon>{suffix}</InputAddon>
+          </AddonRow>
 
-        <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
-        <InputUnderline animation={focusAnimation} hasError={Boolean(error)} />
-      </View>
+          <FloatingLabel animation={focusAnimation}>{label}</FloatingLabel>
+          <InputUnderline animation={focusAnimation} hasError={Boolean(error)} />
+        </View>
 
-      {(error && typeof error === 'string') ? <ErrorText>{error}</ErrorText> : null}
-    </InputWrapper>
-  );
-});
+        {error && typeof error === 'string' ? <ErrorText>{error}</ErrorText> : null}
+      </InputWrapper>
+    );
+  },
+);
 
 Text.defaultProps = {
   returnKeyType: 'done',

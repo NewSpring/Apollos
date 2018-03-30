@@ -85,7 +85,7 @@ const Auth = enhance(({ isModal, webBackgroundSource, webBackgroundThumbnail }) 
       <KeyboardAwareScrollView>
         <Banner>
           <BannerContent>
-            <BannerH3>WELCOME TO NEWSPRING</BannerH3>
+            <BannerH3 testID="welcomeBanner">WELCOME TO NEWSPRING</BannerH3>
             <BannerH7>Sign In or Create your NewSpring account</BannerH7>
           </BannerContent>
         </Banner>

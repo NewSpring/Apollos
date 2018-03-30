@@ -7,8 +7,9 @@ const login = async ({
   homeTab,
   loginEmailInput,
   loginPasswordInput,
-  // loginFormGoButton,
+  loginFormGoButton,
   profileTab,
+  welcomeBanner,
 }) => {
   // Wait for Home tab to display
   await waitFor(homeTab)
@@ -17,7 +18,7 @@ const login = async ({
   await expect(homeTab).toBeVisible();
   await profileTab.tap();
 
-  // // Check to see if the Email Input is visible, tap it, and type in the email address.
+  // Check to see if the Email Input is visible, tap it, and type in the email address.
   await expect(loginEmailInput).toBeVisible();
   await loginEmailInput.tap();
   await loginEmailInput.typeText('aaron.attendee@newspring.cc');
@@ -27,18 +28,33 @@ const login = async ({
   await loginPasswordInput.tap();
   await loginPasswordInput.typeText('newspring');
 
+  // Hide keyboard
+  await expect(welcomeBanner).toBeVisible();
+  await welcomeBanner.tap();
+
   // Click the Go button to login
-  // await expect(loginFormGoButton).toBeVisible();
-  // await loginFormGoButton.tap();
+  await expect(loginFormGoButton).toBeVisible();
+  await loginFormGoButton.tap();
 };
 
-describe('Giving', () => {
+const giveSingleFundWithVisa = async ({ sectionTab }) => {
+  await expect(sectionTab).toBeVisible();
+  await sectionTab.tap();
+};
+
+describe('Giving Flows', () => {
   beforeEach(async () => {
     await reloadApp();
   });
 
-  it('should load the home screen', async () => {
+  it('should login successfully', async () => {
     const el = await retrieveElements();
     await login(el);
+  });
+
+  it('should give to a single fund with a visa', async () => {
+    const el = await retrieveElements();
+    await login(el);
+    await giveSingleFundWithVisa(el);
   });
 });
