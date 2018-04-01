@@ -78,14 +78,32 @@ const slides = [
   },
 ];
 
+const renderDoneButton = () => (
+  <View style={styles.buttonCircle}>
+    <Text style={styles.buttonText}>Done</Text>
+  </View>
+);
+
 const renderNextButton = () => (
   <View style={styles.buttonCircle}>
     <Text style={styles.buttonText}>Next</Text>
   </View>
 );
 
+const renderPrevButton = () => (
+  <View style={styles.buttonCircle}>
+    <Text style={styles.buttonText}>Back</Text>
+  </View>
+);
+
 const Onboarding = enhance(() => (
-  <AppIntroSlider slides={slides} renderNextButton={renderNextButton} />
+  <AppIntroSlider
+    slides={slides}
+    renderDoneButton={renderDoneButton}
+    renderNextButton={renderNextButton}
+    renderPrevButton={renderPrevButton}
+    showPrevButton
+  />
 ));
 
 export default Onboarding;
