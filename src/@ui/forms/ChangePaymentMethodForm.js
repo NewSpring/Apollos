@@ -89,7 +89,7 @@ export class ChangePaymentMethodForm extends PureComponent {
                       <H6>{paymentMethod.name}</H6>
                       <H7>{`****${last4(paymentMethod.accountNumber)}`}</H7>
                     </View>
-                    {paymentMethod.paymentMethod === 'creditCard' && <Icon name="credit" />}
+                    {paymentMethod.paymentMethod === 'creditCard' ? <Icon name="credit" /> : <Icon name="bank" />}
                   </Row>
                 )}
               />,
