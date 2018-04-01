@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import AppIntroSlider from 'react-native-app-intro-slider';
 
@@ -98,11 +98,11 @@ const renderPrevButton = () => (
 
 const Onboarding = enhance(() => (
   <AppIntroSlider
-    slides={slides}
     renderDoneButton={renderDoneButton}
     renderNextButton={renderNextButton}
     renderPrevButton={renderPrevButton}
     showPrevButton
+    slides={slides}
   />
 ));
 
