@@ -8,29 +8,29 @@ import styled from '@ui/styled';
 import LinearGradient from '@ui/LinearGradient';
 import NavItemImage from './NavItemImage';
 
-const CardView = styled(({ theme }) => ({
-  borderRadius: theme.sizing.borderRadius,
-  overflow: 'hidden',
-}), 'TileNav.NavItem')(View);
+const CardView = styled(
+  ({ theme }) => ({
+    borderRadius: theme.sizing.borderRadius,
+    overflow: 'hidden',
+  }),
+  'TileNav.NavItem',
+)(View);
 
-const NavItemText = styled(({ theme }) => ({
-  position: 'absolute',
-  bottom: theme.sizing.baseUnit,
-  left: theme.sizing.baseUnit,
-  backgroundColor: 'transparent',
-  color: theme.colors.lightPrimary,
-}), 'TileNav.NavItem.Text')(H6);
+const NavItemText = styled(
+  ({ theme }) => ({
+    position: 'absolute',
+    bottom: theme.sizing.baseUnit,
+    left: theme.sizing.baseUnit,
+    backgroundColor: 'transparent',
+    color: theme.colors.lightPrimary,
+  }),
+  'TileNav.NavItem.Text',
+)(H6);
 
-const enhance = compose(
-  pure,
-);
+const enhance = compose(pure);
 
-const NavItem = enhance(({
-  image,
-  link,
-  text,
-}) => (
-  <Link to={link}>
+const NavItem = enhance(({ image, link, text }) => (
+  <Link to={link} testID={`navLink${text}`}>
     <CardView>
       <NavItemImage source={image} />
       <LinearGradient

@@ -1,10 +1,5 @@
 import React, { PureComponent } from 'react';
-import {
-  View,
-  Platform,
-  Linking,
-  AsyncStorage,
-} from 'react-native';
+import { View, Platform, Linking, AsyncStorage } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 import get from 'lodash/get';
@@ -62,17 +57,16 @@ const ButtonLinkContainer = styled(({ theme }) => ({
 export class PaymentConfirmationFormWithoutData extends PureComponent {
   static propTypes = {
     isLoading: PropTypes.bool,
-    campus: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
+    campus: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     contributions: PropTypes.shape({
       frequencyId: PropTypes.oneOf(['today', ...FREQUENCY_IDS.map(f => f.id)]),
       startDate: PropTypes.instanceOf(Date),
-      contributions: PropTypes.arrayOf(PropTypes.shape({
-        name: PropTypes.string,
-        amount: PropTypes.number,
-      })),
+      contributions: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          amount: PropTypes.number,
+        }),
+      ),
       isPaying: PropTypes.bool,
     }),
     onSubmit: PropTypes.func,
@@ -96,8 +90,10 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
   };
 
   get total() {
-    return this.props.contributions.contributions
-      .reduce((runningTotal, c) => (runningTotal + c.amount), 0);
+    return this.props.contributions.contributions.reduce(
+      (runningTotal, c) => runningTotal + c.amount,
+      0,
+    );
   }
 
   render() {
@@ -113,35 +109,39 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
       <View>
         <TableView>
           <Cell>
-            <LabelText>Campus:{' '}</LabelText>
+            <LabelText>Campus: </LabelText>
             <SmallValueText>{this.props.campus}</SmallValueText>
           </Cell>
           <Divider />
 
-          {this.props.contributions.contributions.map(contribution => ([
+          {this.props.contributions.contributions.map(contribution => [
             <Cell key={contribution.name}>
               <LargeCellText>{contribution.name}</LargeCellText>
               <CashAmountIndicator amount={contribution.amount} size={5} />
             </Cell>,
             <Divider key={`${contribution.name}-divider`} />,
-          ]))}
+          ])}
 
-          {(this.props.contributions.frequencyId && this.props.contributions.frequencyId !== 'today') ? ([
-            <PaddedView horizontal={false} key="view">
-              <LargeCellText>Schedule Details</LargeCellText>
-              <Row>
-                <LabelText>Frequency:{' '}</LabelText>
-                <SmallValueText>
-                  {FREQUENCY_IDS.find(f => f.id === this.props.contributions.frequencyId).label}
-                </SmallValueText>
-              </Row>
-              <Row>
-                <LabelText>Starting:{' '}</LabelText>
-                <SmallValueText>{moment(this.props.contributions.startDate).format('MM/DD/YYYY')}</SmallValueText>
-              </Row>
-            </PaddedView>,
-            <Divider key="divider" />,
-          ]) : null}
+          {this.props.contributions.frequencyId && this.props.contributions.frequencyId !== 'today'
+            ? [
+              <PaddedView horizontal={false} key="view">
+                <LargeCellText>Schedule Details</LargeCellText>
+                <Row>
+                  <LabelText>Frequency: </LabelText>
+                  <SmallValueText>
+                    {FREQUENCY_IDS.find(f => f.id === this.props.contributions.frequencyId).label}
+                  </SmallValueText>
+                </Row>
+                <Row>
+                  <LabelText>Starting: </LabelText>
+                  <SmallValueText>
+                    {moment(this.props.contributions.startDate).format('MM/DD/YYYY')}
+                  </SmallValueText>
+                </Row>
+              </PaddedView>,
+              <Divider key="divider" />,
+              ]
+            : null}
 
           <Cell>
             <LargeCellText>Total</LargeCellText>
@@ -149,20 +149,19 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
           </Cell>
         </TableView>
 
-        {(Platform.OS === 'ios') ? (
+        {Platform.OS === 'ios' ? (
           <PaddedView>
-            <H7>
-              {'You\'ll be redirected to Safari to securely complete this contribution.'}
-            </H7>
+            <H7>{"You'll be redirected to Safari to securely complete this contribution."}</H7>
           </PaddedView>
         ) : null}
 
         <PaddedView vertical={false}>
           <Button
+            testID="paymentConfirmButton"
             onPress={this.props.onSubmit}
             loading={this.props.contributions.isPaying}
           >
-            <H5>{this.props.submitButtonText}{' '}</H5>
+            <H5>{this.props.submitButtonText} </H5>
             {this.props.submitButtonIcon ? (
               <Icon name={this.props.submitButtonIcon} size={24} />
             ) : null}
@@ -190,17 +189,20 @@ const PaymentConfirmationForm = compose(
   withRouter,
   withCheckout,
   withProps((props) => {
-    const campus = props.campuses && props.campuses
-      .find(c => (c.id === get(props, 'contributions.campusId')));
+    const campus =
+      props.campuses && props.campuses.find(c => c.id === get(props, 'contributions.campusId'));
 
-    return ({
+    return {
       campus: campus && campus.label,
       ...props,
-    });
+    };
   }),
   withProps(props => ({
-    savedPaymentMethod: get(props, 'contributions.paymentMethod') === 'savedPaymentMethod' &&
-      get(props, 'savedPaymentMethods', []).find(({ id }) => id === get(props, 'contributions.savedPaymentMethodId')),
+    savedPaymentMethod:
+      get(props, 'contributions.paymentMethod') === 'savedPaymentMethod' &&
+      get(props, 'savedPaymentMethods', []).find(
+        ({ id }) => id === get(props, 'contributions.savedPaymentMethodId'),
+      ),
     isScheduled: get(props, 'contributions.frequencyId', 'today') !== 'today',
     onSubmit: async () => {
       // todo: this function is in dire need of refactoring
@@ -209,11 +211,15 @@ const PaymentConfirmationForm = compose(
           Linking.addEventListener('url', handleRedirect);
           const userToken = await AsyncStorage.getItem('authToken');
 
-          const res = await Linking.openURL(`${Settings.APP_ROOT_URL || 'http://localhost:3000'}/give/restored-checkout?${stringify({
-            redirect: `${linkingUri}${props.navigateToOnComplete}`,
-            state: JSON.stringify(props.contributions),
-            userToken,
-          })}`);
+          const res = await Linking.openURL(
+            `${Settings.APP_ROOT_URL || 'http://localhost:3000'}/give/restored-checkout?${stringify(
+              {
+                redirect: `${linkingUri}${props.navigateToOnComplete}`,
+                state: JSON.stringify(props.contributions),
+                userToken,
+              },
+            )}`,
+          );
 
           return res;
         }
@@ -241,8 +247,9 @@ const PaymentConfirmationForm = compose(
         await props.postPayment(order.url);
         const completeOrderRes = await props.completeOrder({
           token,
-          name: props.contributions.willSavePaymentMethod ?
-            props.contributions.savedAccountName : null,
+          name: props.contributions.willSavePaymentMethod
+            ? props.contributions.savedAccountName
+            : null,
         });
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
@@ -277,7 +284,9 @@ const PaymentConfirmationForm = compose(
 
     const verb = isScheduled ? 'Schedule' : 'Give';
 
-    const name = (paymentMethod.accountNumber || paymentMethod.cardNumber || '').replace(/-/g, '').slice(-4);
+    const name = (paymentMethod.accountNumber || paymentMethod.cardNumber || '')
+      .replace(/-/g, '')
+      .slice(-4);
 
     const text = `${verb} with ${name}`;
     const icon = (paymentMethod.paymentMethod || contributions.paymentMethod) === 'creditCard' ? 'credit' : 'bank';

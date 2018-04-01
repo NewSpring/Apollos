@@ -15,9 +15,9 @@
     "babel-preset-react-native-stage-0": "^1.0.1",
     "coveralls": "^3.0.0",
     "danger": "^2.0.0-alpha.20",
+    "detox": "^7.3.2",
+    "detox-expo-helpers": "^0.2.0",
     "dotenv": "^4.0.0",
-    "enzyme": "^3.3.0",
-    "enzyme-to-json": "^3.3.1",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-babel-module": "^4.0.0-beta.3",
@@ -53,6 +53,8 @@
     "ci-deploy":
       "npm run create-app-entrypoint && NODE_PATH=./src npm run run-with-settings 'node ./.scripts/ci-deploy.js'",
     "test": "npm run run-with-settings 'npm run lint && npm run jest'",
+    "test:e2e":
+      "cp -R ~/.expo/ios-simulator-app-cache/Exponent-2.3.0.app e2e/ && detox test -c ios.sim.debug",
     "jest": "./node_modules/.bin/jest",
     "storybook-native-start":
       "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybook/native",
@@ -87,6 +89,17 @@
       "searchDir": "./src",
       "outputFile": "./src/.storybook/storyLoader.js",
       "pattern": "**/*.stories.js"
+    }
+  },
+  "detox": {
+    "test-runner": "jest",
+    "runner-config": "e2e/config.json",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "e2e/Exponent-2.3.0.app",
+        "type": "ios.simulator",
+        "name": "iPhone 8"
+      }
     }
   },
   "dependencies": {
