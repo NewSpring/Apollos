@@ -189,6 +189,7 @@ export class ContributionFormWithoutData extends Component {
         <TableView responsive={false}>
           <PaddedView>
             <FundInput
+              testID="firstContributionInput"
               funds={this.props.funds}
               isFirst
               value={this.props.values.firstContribution}
@@ -198,6 +199,7 @@ export class ContributionFormWithoutData extends Component {
             />
             {this.state.secondFundVisible && (
               <FundInput
+                testID="secondContributionInput"
                 funds={this.remainingFunds}
                 value={this.props.values.secondContribution}
                 onChange={value => this.props.setFieldValue('secondContribution', value)}
@@ -258,6 +260,7 @@ export class ContributionFormWithoutData extends Component {
           </Row>
           {this.props.isLoggedIn ? (
             <Button
+              testID="reviewContribution"
               onPress={this.props.handleSubmit}
               disabled={!(this.totalContribution > 0) || !this.props.isValid}
               loading={this.props.isSubmitting}

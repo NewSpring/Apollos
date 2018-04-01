@@ -37,9 +37,41 @@ const login = async ({
   await loginFormGoButton.tap();
 };
 
-const giveSingleFundWithVisa = async ({ sectionTab }) => {
+const giveSingleFundWithVisa = async ({
+  sectionTab,
+  giveSectionLink,
+  firstContributionInput,
+  reviewContributionButton,
+  firstContributionInputLabel,
+  paymentConfirmButton,
+}) => {
   await expect(sectionTab).toBeVisible();
   await sectionTab.tap();
+
+  await expect(giveSectionLink).toBeVisible();
+  await giveSectionLink.tap();
+
+  await expect(firstContributionInput).toBeVisible();
+  await firstContributionInput.tap();
+  await firstContributionInput.typeText('116.87');
+
+  await expect(firstContributionInputLabel).toBeVisible();
+  await firstContributionInputLabel.tap();
+
+  await expect(reviewContributionButton).toBeVisible();
+  await reviewContributionButton.tap();
+
+  await waitFor(paymentConfirmButton) // eslint-disable-line
+    .toBeVisible()
+    .withTimeout(10000);
+  await expect(paymentConfirmButton).toBeVisible();
+  await paymentConfirmButton.tap();
+
+  await waitFor(paymentConfirmButton) // eslint-disable-line
+    .toBeVisible()
+    .withTimeout(10000);
+  await expect(paymentConfirmButton).toBeVisible();
+  await paymentConfirmButton.tap();
 };
 
 describe('Giving Flows', () => {
@@ -47,10 +79,10 @@ describe('Giving Flows', () => {
     await reloadApp();
   });
 
-  it('should login successfully', async () => {
-    const el = await retrieveElements();
-    await login(el);
-  });
+  // it('should login successfully', async () => {
+  //   const el = await retrieveElements();
+  //   await login(el);
+  // });
 
   it('should give to a single fund with a visa', async () => {
     const el = await retrieveElements();

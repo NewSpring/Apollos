@@ -77,7 +77,7 @@ const FundInput = ({
   isFirst = false, funds = [], value = {}, onChange, ...textInputProps
 }) => (
   <FundInputWrapper>
-    <H3>{isFirst ? "I'd like to give " : 'and give '}</H3>
+    <H3 testID="firstContributionInputLabel">{isFirst ? "I'd like to give " : 'and give '}</H3>
     <InputWrapper>
       <StyledTextInput
         placeholder="0.00"

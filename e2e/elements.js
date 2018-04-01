@@ -7,6 +7,13 @@ const elements = (element, by) => {
   const loginEmailInput = element(by.id('email'));
   const loginPasswordInput = element(by.id('password'));
   const loginFormGoButton = element(by.id('go'));
+  const giveSectionLink = element(by.id('navLinkGive'));
+  const firstContributionInput = element(by.id('firstContributionInput'));
+  const secondContributionInput = element(by.id('secondContributionInput'));
+  const giveNowView = element(by.id('giveNowView'));
+  const reviewContributionButton = element(by.id('reviewContribution'));
+  const firstContributionInputLabel = element(by.id('firstContributionInputLabel'));
+  const paymentConfirmButton = element(by.id('paymentConfirmButton'));
 
   return {
     homeTab,
@@ -17,6 +24,13 @@ const elements = (element, by) => {
     loginPasswordInput,
     loginFormGoButton,
     welcomeBanner,
+    giveSectionLink,
+    firstContributionInput,
+    secondContributionInput,
+    giveNowView,
+    reviewContributionButton,
+    firstContributionInputLabel,
+    paymentConfirmButton,
   };
 };
 
