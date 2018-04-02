@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Linking } from 'react-native';
+import UrlPolyfill from 'url-parse';
 
 import linkingUri from '@utils/linkingUri';
 
@@ -41,7 +42,14 @@ class DeepLinking extends Component {
   };
 
   push = async (url = '') => {
-    const pathname = url.replace(this.baseUrl, '');
+    const u = new UrlPolyfill(url);
+    let {
+      pathname = null,
+    } = u || {};
+
+    if (pathname.startsWith('/+')) {
+      pathname = pathname.substr(2);
+    }
 
     if (pathname.startsWith('http') && this.props.handleUniversalLink) {
       this.props.handleUniversalLink({ url: pathname });
