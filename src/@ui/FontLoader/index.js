@@ -1,6 +1,4 @@
-import {
-  StyleSheet,
-} from 'react-native';
+import { StyleSheet } from 'react-native';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { AppLoading } from 'expo';
@@ -39,11 +37,13 @@ export default class FontLoader extends Component {
 
   async loadFonts() {
     try {
-      await Promise.all(FONTS.map(({ name, asset }) => (
-        Font.loadAsync({
-          [name]: asset,
-        })
-      )));
+      await Promise.all(
+        FONTS.map(({ name, asset }) =>
+          Font.loadAsync({
+            [name]: asset,
+          }),
+        ),
+      );
 
       this.setState({
         isLoading: false,
@@ -55,6 +55,10 @@ export default class FontLoader extends Component {
 
   render() {
     const { isLoading } = this.state;
+    /* TODO: in the future consider moving AppLoading to the app's root index so as to block
+     * rendering and to allow better async asset loading. Current not a problem as AppLoading is
+     * only used here.
+     */
     return isLoading ? <AppLoading /> : this.props.children;
   }
 }
