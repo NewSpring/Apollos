@@ -43,13 +43,14 @@ class DeepLinking extends Component {
 
   push = async (url = '') => {
     const u = new UrlPolyfill(url);
-    let {
-      pathname = null,
-    } = u || {};
+    let { pathname = null } = u || {};
+    const { query = null } = u || {};
 
     if (pathname.startsWith('/+')) {
       pathname = pathname.substr(2);
     }
+
+    pathname += query;
 
     if (url.startsWith('http') && this.props.handleUniversalLink) {
       this.props.handleUniversalLink({ url });
