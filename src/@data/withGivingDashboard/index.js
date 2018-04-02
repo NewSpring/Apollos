@@ -7,7 +7,7 @@ export default graphql(givingDashboardQuery, {
     // Setting a websocket connection instead
     // would be awesome so we can trigger changes when changes occur
     // instead and not have to deal with the refetch paradigm
-    pollInterval: 500,
+    pollInterval: 5000,
   },
   props: ({ data, ownProps }) => ({
     isLoading: ownProps.isLoading || data.loading,
