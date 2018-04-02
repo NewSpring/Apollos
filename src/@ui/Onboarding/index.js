@@ -84,18 +84,6 @@ const renderDoneButton = () => (
   </View>
 );
 
-// const renderNextButton = () => (
-//   <View style={styles.buttonCircle}>
-//     <Text style={styles.buttonText}>Next</Text>
-//   </View>
-// );
-//
-// const renderPrevButton = () => (
-//   <View style={styles.buttonCircle}>
-//     <Text style={styles.buttonText}>Back</Text>
-//   </View>
-// );
-
 const Onboarding = enhance(() => (
   <AppIntroSlider hideNextButton renderDoneButton={renderDoneButton} slides={slides} />
 ));
