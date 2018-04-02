@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   buttonCircle: {
     width: 80,
     height: 40,
-    backgroundColor: 'rgba(0, 0, 0, .7)',
+    backgroundColor: 'rgba(0, 0, 0, .5)',
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -30,51 +30,51 @@ const styles = StyleSheet.create({
 const slides = [
   {
     key: 'one',
-    image: require('../../assets/onboarding/onboard-img1.jpg'),
+    image: require('../../assets/onboarding/1-Welcome.jpg'),
     imageStyle: styles.image,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#6bac43',
   },
   {
     key: 'two',
-    image: require('../../assets/onboarding/onboard-img2.jpg'),
+    image: require('../../assets/onboarding/2-Stories.jpg'),
     imageStyle: styles.image,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#6bac43',
   },
   {
     key: 'three',
-    image: require('../../assets/onboarding/onboard-img3.jpg'),
+    image: require('../../assets/onboarding/3-Sermons.jpg'),
     imageStyle: styles.image,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#6bac43',
   },
   {
     key: 'four',
-    image: require('../../assets/onboarding/onboard-img4.jpg'),
+    image: require('../../assets/onboarding/4-Music.jpg'),
     imageStyle: styles.image,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#6bac43',
   },
   {
     key: 'five',
-    image: require('../../assets/onboarding/onboard-img5.jpg'),
+    image: require('../../assets/onboarding/5-Scripture.jpg'),
     imageStyle: styles.image,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#6bac43',
   },
   {
     key: 'six',
-    image: require('../../assets/onboarding/onboard-img6.jpg'),
+    image: require('../../assets/onboarding/6-Favorites.jpg'),
     imageStyle: styles.image,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#6bac43',
   },
   {
     key: 'seven',
-    image: require('../../assets/onboarding/onboard-img7.jpg'),
+    image: require('../../assets/onboarding/7-Campus.jpg'),
     imageStyle: styles.image,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#6bac43',
   },
   {
     key: 'eight',
-    image: require('../../assets/onboarding/onboard-img8.jpg'),
+    image: require('../../assets/onboarding/8-Get-Started.jpg'),
     imageStyle: styles.image,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#6bac43',
   },
 ];
 
@@ -84,26 +84,20 @@ const renderDoneButton = () => (
   </View>
 );
 
-const renderNextButton = () => (
-  <View style={styles.buttonCircle}>
-    <Text style={styles.buttonText}>Next</Text>
-  </View>
-);
-
-const renderPrevButton = () => (
-  <View style={styles.buttonCircle}>
-    <Text style={styles.buttonText}>Back</Text>
-  </View>
-);
+// const renderNextButton = () => (
+//   <View style={styles.buttonCircle}>
+//     <Text style={styles.buttonText}>Next</Text>
+//   </View>
+// );
+//
+// const renderPrevButton = () => (
+//   <View style={styles.buttonCircle}>
+//     <Text style={styles.buttonText}>Back</Text>
+//   </View>
+// );
 
 const Onboarding = enhance(() => (
-  <AppIntroSlider
-    renderDoneButton={renderDoneButton}
-    renderNextButton={renderNextButton}
-    renderPrevButton={renderPrevButton}
-    showPrevButton
-    slides={slides}
-  />
+  <AppIntroSlider hideNextButton renderDoneButton={renderDoneButton} slides={slides} />
 ));
 
 export default Onboarding;
