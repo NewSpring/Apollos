@@ -51,8 +51,8 @@ class DeepLinking extends Component {
       pathname = pathname.substr(2);
     }
 
-    if (pathname.startsWith('http') && this.props.handleUniversalLink) {
-      this.props.handleUniversalLink({ url: pathname });
+    if (url.startsWith('http') && this.props.handleUniversalLink) {
+      this.props.handleUniversalLink({ url });
     } else if (pathname && pathname.length && pathname !== '/') {
       this.context.router.history.push(pathname);
     }
