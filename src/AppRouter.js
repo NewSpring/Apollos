@@ -15,12 +15,14 @@ import {
   withRouter,
   DeepLinking,
 } from '@ui/NativeWebRouter';
+import ActivityIndicator from '@ui/ActivityIndicator';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
 import DebugView from '@ui/DebugView';
 import orientation from '@utils/orientation';
 import BackgroundView from '@ui/BackgroundView';
 import Meta from '@ui/Meta';
+import getAppPathForUrl from '@utils/getAppPathForUrl';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -48,6 +50,9 @@ class AppRouter extends PureComponent {
       state: PropTypes.any, // eslint-disable-line
       pathname: PropTypes.string,
     }),
+    history: PropTypes.shape({
+      push: PropTypes.func,
+    }),
     isLargeScreen: PropTypes.bool,
   };
 
@@ -55,6 +60,10 @@ class AppRouter extends PureComponent {
     super(...args);
     orientation.allow(orientation.Orientation.PORTRAIT_UP);
   }
+
+  state = {
+    universalLinkLoading: false,
+  };
 
   componentWillMount() {
     if (!previousLocation) previousLocation = this.props.location;
@@ -131,6 +140,19 @@ class AppRouter extends PureComponent {
     );
   };
 
+  go = (...args) => {
+    this.setState({ universalLinkLoading: false });
+    this.props.history.push(...args);
+  }
+
+  handleUniversalLink = async ({ url }) => {
+    this.setState({ universalLinkLoading: true });
+    const realUrl = (await fetch(url)).url;
+    const path = await getAppPathForUrl(realUrl);
+    this.setState({ universalLinkLoading: false });
+    if (path) this.props.history.push(path);
+  };
+
   renderWebRedirects = () => (
     <View>
       <Route path="/about" component={() => redirectToNewspring('about')} />
@@ -152,11 +174,14 @@ class AppRouter extends PureComponent {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
     const AppLayout = Platform.OS === 'web' ? tabs.Layout : BackgroundView;
+
+    if (this.state.universalLinkLoading) return <ActivityIndicator />;
+
     return (
       <BackgroundView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         {Platform.OS === 'web' ? this.renderWebRedirects() : null}
-        {Platform.OS !== 'web' ? <DeepLinking /> : null}
+        {Platform.OS !== 'web' ? <DeepLinking handleUniversalLink={this.handleUniversalLink} /> : null}
         <Meta />
         <Player>
           <AppLayout>
