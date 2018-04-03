@@ -84,8 +84,17 @@ const renderDoneButton = () => (
   </View>
 );
 
+const onDone = () => {
+  // do something when the user taps the Done button.
+};
+
 const Onboarding = enhance(() => (
-  <AppIntroSlider hideNextButton renderDoneButton={renderDoneButton} slides={slides} />
+  <AppIntroSlider
+    hideNextButton
+    onDone={onDone}
+    renderDoneButton={renderDoneButton}
+    slides={slides}
+  />
 ));
 
 export default Onboarding;
