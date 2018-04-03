@@ -86,6 +86,8 @@ const renderDoneButton = () => (
 
 const onDone = () => {
   // do something when the user taps the Done button.
+  // Maybe this gets passed in as a prop from the onboarding modal and does that
+  // async storage work?
 };
 
 const Onboarding = enhance(() => (
