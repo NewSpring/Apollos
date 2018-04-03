@@ -34,7 +34,7 @@ const StorySingle = enhance(({
   isLoading,
 }) => (
   <BackgroundView>
-    <Header titleText="News" backButton />
+    <Header titleText="Story" backButton />
     <ScrollView>
       <ContentView {...otherContentProps}>
         <Title>{startCase(toLower(title))}</Title>
