@@ -26,7 +26,7 @@ class DeepLinking extends Component {
     }).isRequired,
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     Linking.getInitialURL().then(this.push);
     Linking.addEventListener('url', this.handleChange);
   }

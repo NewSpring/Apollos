@@ -175,112 +175,112 @@ class AppRouter extends PureComponent {
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
     const AppLayout = Platform.OS === 'web' ? tabs.Layout : BackgroundView;
 
-    if (this.state.universalLinkLoading) return <ActivityIndicator />;
-
     return (
       <BackgroundView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         {Platform.OS === 'web' ? this.renderWebRedirects() : null}
         {Platform.OS !== 'web' ? <DeepLinking handleUniversalLink={this.handleUniversalLink} /> : null}
         <Meta />
-        <Player>
-          <AppLayout>
-            <CardStack
-              location={
-                this.isModal || this.musicPlayerIsOpened ? previousLocation : this.props.location
-              }
-            >
-              <Redirect from="/sermons" to="/series" />
-              <Route exact path="/series" component={Series} />
-              <Route exact path="/series/:id" component={SeriesSingle} />
-              <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
-              <Route
-                exact
-                path="/series/:id/trailer"
-                component={asModal(SeriesTrailer)}
-                cardStackDirection="vertical"
-              />
+        {this.state.universalLinkLoading ? <ActivityIndicator /> : (
+          <Player>
+            <AppLayout>
+              <CardStack
+                location={
+                  this.isModal || this.musicPlayerIsOpened ? previousLocation : this.props.location
+                }
+              >
+                <Redirect from="/sermons" to="/series" />
+                <Route exact path="/series" component={Series} />
+                <Route exact path="/series/:id" component={SeriesSingle} />
+                <Route exact path="/series/:seriesId/sermon/:id" component={Sermon} />
+                <Route
+                  exact
+                  path="/series/:id/trailer"
+                  component={asModal(SeriesTrailer)}
+                  cardStackDirection="vertical"
+                />
 
-              <Route exact path="/studies" component={Studies} />
-              <Route exact path="/studies/:id" component={StudiesSingle} />
-              <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
+                <Route exact path="/studies" component={Studies} />
+                <Route exact path="/studies/:id" component={StudiesSingle} />
+                <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
 
-              <Redirect from="/devotionals" to="/studies" />
-              <Redirect from="/devotions" to="/studies" />
-              <Route exact path="/devotions/:id" component={DebugView} />
+                <Redirect from="/devotionals" to="/studies" />
+                <Redirect from="/devotions" to="/studies" />
+                <Route exact path="/devotions/:id" component={DebugView} />
 
-              <Route exact path="/music" component={Music} />
-              <Route exact path="/music/:id" component={Playlist} />
-              <Route
-                exact
-                path="/music/:id/:track"
-                component={TrackContextual}
-                cardStackDirection="vertical"
-              />
+                <Route exact path="/music" component={Music} />
+                <Route exact path="/music/:id" component={Playlist} />
+                <Route
+                  exact
+                  path="/music/:id/:track"
+                  component={TrackContextual}
+                  cardStackDirection="vertical"
+                />
 
-              <Route exact path="/articles" component={Articles} />
-              <Route exact path="/articles/:id" component={ArticlesSingle} />
+                <Route exact path="/articles" component={Articles} />
+                <Route exact path="/articles/:id" component={ArticlesSingle} />
 
-              <Route exact path="/stories" component={Stories} />
-              <Route exact path="/stories/:id" component={StoriesSingle} />
+                <Route exact path="/stories" component={Stories} />
+                <Route exact path="/stories/:id" component={StoriesSingle} />
 
-              <Route exact path="/news" component={News} />
-              <Route exact path="/news/:id" component={NewsSingle} />
+                <Route exact path="/news" component={News} />
+                <Route exact path="/news/:id" component={NewsSingle} />
 
-              <Route exact path="/events/:id" component={DebugView} />
+                <Route exact path="/events/:id" component={DebugView} />
 
-              <Route exact path="/groups/finder" component={GroupFinderResults} />
-              <Route exact path="/groups/:id" component={GroupSingle} />
+                <Route exact path="/groups/finder" component={GroupFinderResults} />
+                <Route exact path="/groups/:id" component={GroupSingle} />
 
-              <Route exact path="/give/campaign/:id" component={give.FundDetails} />
-              <Route exact path="/give/thankyou" component={give.ThankYou} />
+                <Route exact path="/give/campaign/:id" component={give.FundDetails} />
+                <Route exact path="/give/thankyou" component={give.ThankYou} />
 
-              <Route
-                path="/give/checkout"
-                cardStackDirection="vertical"
-                component={give.Checkout}
-              />
-              <ProtectedRoute
-                path="/give/new-payment-method"
-                cardStackDirection="vertical"
-                component={give.AddAccount}
-              />
-              <ProtectedRoute
-                exact
-                path="/give/payment-methods/:id"
-                cardStackDirection="vertical"
-                component={give.PaymentMethod}
-              />
+                <Route
+                  path="/give/checkout"
+                  cardStackDirection="vertical"
+                  component={give.Checkout}
+                />
+                <ProtectedRoute
+                  path="/give/new-payment-method"
+                  cardStackDirection="vertical"
+                  component={give.AddAccount}
+                />
+                <ProtectedRoute
+                  exact
+                  path="/give/payment-methods/:id"
+                  cardStackDirection="vertical"
+                  component={give.PaymentMethod}
+                />
 
-              <Route exact path="/give/restored-checkout" component={give.RestoredCheckout} />
-              <ProtectedRoute exact path="/give/history/:id" component={give.TransactionDetails} />
-              <ProtectedRoute exact path="/give/schedules/:id" component={give.ScheduleDetails} />
+                <Route exact path="/give/restored-checkout" component={give.RestoredCheckout} />
+                <ProtectedRoute exact path="/give/history/:id" component={give.TransactionDetails} />
+                <ProtectedRoute exact path="/give/schedules/:id" component={give.ScheduleDetails} />
 
-              <Route path="/give" component={give.GiveRoutes} />
+                <Route path="/give" component={give.GiveRoutes} />
 
-              <Route path="/locations" component={Locations} />
+                <Route path="/locations" component={Locations} />
 
-              <Route path="/login" component={Auth} cardStackDirection="vertical" />
+                <Route path="/login" component={Auth} cardStackDirection="vertical" />
 
-              <Route exact path="/live" component={asModal(Live)} cardStackDirection="vertical" />
-              <ProtectedRoute exact path="/settings" component={Settings} />
-              <ProtectedRoute exact path="/settings/profile" component={ProfileDetails} />
-              <ProtectedRoute exact path="/settings/address" component={ProfileAddress} />
-              <ProtectedRoute exact path="/settings/password" component={ChangePassword} />
+                <Route exact path="/live" component={asModal(Live)} cardStackDirection="vertical" />
+                <ProtectedRoute exact path="/settings" component={Settings} />
+                <ProtectedRoute exact path="/settings/profile" component={ProfileDetails} />
+                <ProtectedRoute exact path="/settings/address" component={ProfileAddress} />
+                <ProtectedRoute exact path="/settings/password" component={ChangePassword} />
 
-              <Route
-                exact
-                path="/forgot-password"
-                component={ForgotPassword}
-                cardStackDirection="vertical"
-              />
-              <Route exact path="/_/reset-password/:token" component={ResetPassword} />
+                <Route
+                  exact
+                  path="/forgot-password"
+                  component={ForgotPassword}
+                  cardStackDirection="vertical"
+                />
+                <Route exact path="/_/reset-password/:token" component={ResetPassword} />
 
-              <Route cardStackKey="tabs" component={this.tabs} />
-            </CardStack>
-          </AppLayout>
-          <Switch>{this.isModal ? this.largeScreenModals : null}</Switch>
-        </Player>
+                <Route cardStackKey="tabs" component={this.tabs} />
+              </CardStack>
+            </AppLayout>
+            <Switch>{this.isModal ? this.largeScreenModals : null}</Switch>
+          </Player>
+        )}
       </BackgroundView>
     );
   }
