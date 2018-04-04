@@ -39,6 +39,7 @@ import Auth, { ForgotPassword, ResetPassword } from './auth';
 import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
+import { withPageTracking } from './analytics';
 
 const redirectToNewspring = path => window.location.replace(`https://newspring.cc/${path}`);
 
@@ -288,6 +289,7 @@ class AppRouter extends PureComponent {
 
 const enhance = compose(
   withRouter,
+  withPageTracking,
   withWindow,
   withTheme(),
   withProps(({ theme, window }) => ({
