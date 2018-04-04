@@ -23,6 +23,7 @@ import orientation from '@utils/orientation';
 import BackgroundView from '@ui/BackgroundView';
 import Meta from '@ui/Meta';
 import getAppPathForUrl from '@utils/getAppPathForUrl';
+import { withPageTracking } from '@utils/analytics';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -39,7 +40,6 @@ import Auth, { ForgotPassword, ResetPassword } from './auth';
 import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
 
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
-import { withPageTracking } from './analytics';
 
 const redirectToNewspring = path => window.location.replace(`https://newspring.cc/${path}`);
 
