@@ -44,6 +44,12 @@ const redirectToNewspring = path => window.location.replace(`https://newspring.c
 
 let previousLocation;
 
+const universalLinksToHandle = [
+  'beta.newspring.cc',
+  'newspring.cc',
+  'rm2y5.app.goo.gl',
+];
+
 class AppRouter extends PureComponent {
   static propTypes = {
     location: PropTypes.shape({
@@ -146,11 +152,13 @@ class AppRouter extends PureComponent {
   }
 
   handleUniversalLink = async ({ url }) => {
-    this.setState({ universalLinkLoading: true });
-    const realUrl = (await fetch(url)).url;
-    const path = await getAppPathForUrl(realUrl);
-    this.setState({ universalLinkLoading: false });
-    if (path) this.props.history.push(path);
+    if (universalLinksToHandle.find(link => url.includes(link))) {
+      this.setState({ universalLinkLoading: true });
+      const realUrl = (await fetch(url)).url;
+      const path = await getAppPathForUrl(realUrl);
+      this.setState({ universalLinkLoading: false });
+      if (path) this.props.history.push(path);
+    }
   };
 
   renderWebRedirects = () => (

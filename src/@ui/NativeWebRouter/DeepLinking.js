@@ -35,24 +35,23 @@ class DeepLinking extends Component {
     Linking.removeEventListener('url', this.handleChange);
   }
 
-  baseUrl = linkingUri;
-
   handleChange = (e) => {
+    Alert('handleChange', e.url);
     this.push(e.url);
   };
 
   push = async (url = '') => {
-    let pathname = url.replace(this.baseUrl, '');
+    let pathname = url.replace(linkingUri, '');
 
     if (pathname.startsWith('/+')) {
       pathname = pathname.substr(2);
     }
 
-    console.log({ pathname, url, baseUrl: this.baseUrl });
+    console.log({ pathname, url, linkingUri });
 
-    Alert.alert('push', JSON.stringify({ pathname, url }));
+    Alert.alert('push', JSON.stringify({ pathname, url, linkingUri }));
 
-    if (!url.startsWith(this.baseUrl) && this.props.handleUniversalLink) {
+    if (!url.startsWith(linkingUri) && this.props.handleUniversalLink) {
       console.log('handleUniversalLink.start');
       this.props.handleUniversalLink({ url });
     } else if (pathname && pathname.length && pathname !== '/') {
