@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Linking } from 'react-native';
-import UrlPolyfill from 'url-parse';
+import { Linking } from 'react-native';
 
 import linkingUri from '@utils/linkingUri';
 
@@ -27,7 +26,7 @@ class DeepLinking extends Component {
   };
 
   componentDidMount() {
-    Linking.getInitialURL().then(this.push);
+    Linking.getInitialURL().then(url => this.push(url));
     Linking.addEventListener('url', this.handleChange);
   }
 
@@ -36,7 +35,6 @@ class DeepLinking extends Component {
   }
 
   handleChange = (e) => {
-    Alert('handleChange', e.url);
     this.push(e.url);
   };
 
@@ -47,15 +45,9 @@ class DeepLinking extends Component {
       pathname = pathname.substr(2);
     }
 
-    console.log({ pathname, url, linkingUri });
-
-    Alert.alert('push', JSON.stringify({ pathname, url, linkingUri }));
-
     if (!url.startsWith(linkingUri) && this.props.handleUniversalLink) {
-      console.log('handleUniversalLink.start');
       this.props.handleUniversalLink({ url });
     } else if (pathname && pathname.length && pathname !== '/') {
-      console.log('history.push');
       this.context.router.history.push(pathname);
     }
   };
