@@ -39,7 +39,15 @@ class DeepLinking extends Component {
   };
 
   push = async (url = '') => {
-    let pathname = url.replace(linkingUri, '');
+    // Currently, on android, expo has this weird bug where the app will open with he `initialURL`
+    // set to the linkingUrl without `/+`. So we handle that here by making sure we remove `/+`
+    // from both the linkingUri, and the url given to this method so that the two are consistent.
+    let baseUrl = linkingUri;
+    if (baseUrl.endsWith('/+')) {
+      baseUrl = baseUrl.slice(0, -2);
+    }
+
+    let pathname = url.replace(baseUrl, '');
 
     if (pathname.startsWith('/+')) {
       pathname = pathname.substr(2);
