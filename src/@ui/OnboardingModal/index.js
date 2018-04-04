@@ -1,13 +1,23 @@
 import React from 'react';
-import { Modal } from 'react-native';
+import { AsyncStorage, Modal } from 'react-native';
 import { compose, pure, setPropTypes } from 'recompose';
 import Onboarding from '../Onboarding';
 
 const enhance = compose(pure, setPropTypes({}));
 
-const showModal = () => {
+const showModal = async () => {
   // Read from AsyncStorage (https://facebook.github.io/react-native/docs/asyncstorage.html).
   // If there is a value in there for this user then do not show the modal.
+  try {
+    const value = await AsyncStorage.getItem('@Apollos:onboarded');
+    if (value === null) {
+      // There is no value in AsyncStorage for this. Show the onboarding modal.
+      return true;
+    }
+  } catch (error) {
+    // Error retrieving data
+  }
+  return false;
 };
 
 const closeModal = () => {
