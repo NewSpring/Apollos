@@ -17,6 +17,7 @@ export default gql`
           fileLabel
           url
         }
+        isLiked
       }
     }
   }
