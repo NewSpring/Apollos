@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import AppIntroSlider from 'react-native-app-intro-slider';
 
-const enhance = compose(pure, setPropTypes({}));
+const enhance = compose(pure, setPropTypes({ closeModal: PropTypes.func }));
 
 const styles = StyleSheet.create({
   buttonCircle: {
@@ -84,19 +84,23 @@ const renderDoneButton = () => (
   </View>
 );
 
-const onDone = () => {
-  // do something when the user taps the Done button.
-  // Maybe this gets passed in as a prop from the onboarding modal and does that
-  // async storage work?
-};
+// const onDone = () => {
+// do something when the user taps the Done button.
+// Maybe this gets passed in as a prop from the onboarding modal and does that
+// async storage work?
+// };
 
-const Onboarding = enhance(() => (
+const Onboarding = enhance(({ closeModal }) => (
   <AppIntroSlider
     hideNextButton
-    onDone={onDone}
+    onDone={closeModal}
     renderDoneButton={renderDoneButton}
     slides={slides}
   />
 ));
+
+Onboarding.propTypes = {
+  closeModal: PropTypes.func,
+};
 
 export default Onboarding;
