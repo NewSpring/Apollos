@@ -34,6 +34,12 @@ module.exports = env => ({
       splash: {
         backgroundColor: '#D1DCE6',
       },
+      config: {
+        fabric: {
+          apiKey: process.env.FABRIC_KEY,
+          buildSecret: process.env.FABRIC_SECRET,
+        },
+      },
     },
     hooks: {
       postPublish: [
