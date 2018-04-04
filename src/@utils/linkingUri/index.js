@@ -1,5 +1,3 @@
 import { Constants } from 'expo';
 
-const { linkingUri } = Constants;
-
-export default linkingUri;
+export default Constants.linkingUri.endsWith('+') ? Constants.linkingUri : `${Constants.linkingUri}+`;
