@@ -6,7 +6,7 @@ const link = onError(({
   networkError,
 }) => {
   if (graphQLErrors) {
-    graphQLErrors.map(({
+    graphQLErrors.forEach(({
       message,
       locations,
       path,
