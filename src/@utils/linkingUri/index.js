@@ -1,3 +1,10 @@
 import { Constants } from 'expo';
 
-export default Constants.linkingUri.endsWith('+') ? Constants.linkingUri : `${Constants.linkingUri}+`;
+let { linkingUri } = Constants;
+
+if (linkingUri.endsWith('/+')) {
+  linkingUri = linkingUri.slice(0, -2);
+}
+
+const linkingUrlToExport = linkingUri;
+export default linkingUrlToExport;
