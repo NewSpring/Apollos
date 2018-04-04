@@ -9,13 +9,14 @@ const showModal = async () => {
   // Read from AsyncStorage (https://facebook.github.io/react-native/docs/asyncstorage.html).
   // If there is a value in there for this user then do not show the modal.
   try {
-    const value = await AsyncStorage.getItem('@Apollos:onboarded');
+    const value = await AsyncStorage.getItem('onboarded');
     if (value === null) {
       // There is no value in AsyncStorage for this. Show the onboarding modal.
       return true;
     }
   } catch (error) {
     // Error retrieving data
+    console.log("Couldn't pull onboarding data from AsyncStorage", error);
   }
   return false;
 };
