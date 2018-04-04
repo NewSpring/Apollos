@@ -9,6 +9,7 @@ import { Link, withRouter } from '@ui/NativeWebRouter';
 import Touchable from '@ui/Touchable';
 import { H7 } from '@ui/typography';
 import withUser from '@data/withUser';
+import { withShowOnboarding } from '@data/withOnboarding';
 import UploadProfileImageForm from '@ui/forms/UploadProfileImageForm';
 
 import Layout from './Layout';
@@ -23,6 +24,11 @@ const LogoutTouchable = compose(
       await logout();
     },
   })),
+)(Touchable);
+
+const ShowOnboardingTouchable = compose(
+  withShowOnboarding,
+  withProps(({ showOnboarding }) => ({ onPress: showOnboarding })),
 )(Touchable);
 
 const Arrow = withProps({
@@ -111,6 +117,13 @@ const Settings = () => (
           </TableView>
 
           <TableView>
+            <ShowOnboardingTouchable>
+              <Cell>
+                <CellText>Show Onboarding</CellText>
+                <Arrow />
+              </Cell>
+            </ShowOnboardingTouchable>
+            <Divider />
             <LogoutTouchable>
               <Cell>
                 <CellText>Logout</CellText>

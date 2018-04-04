@@ -1,40 +1,36 @@
 import React from 'react';
-import { AsyncStorage, Modal } from 'react-native';
-import { compose, pure, setPropTypes } from 'recompose';
+import PropTypes from 'prop-types';
+import { compose, setPropTypes } from 'recompose';
+import { Modal } from 'react-native';
+import { AppLoading } from 'expo';
+import BackgroundView from '@ui/BackgroundView';
+import withOnboarding from '@data/withOnboarding';
+
 import Onboarding from '../Onboarding';
 
-const enhance = compose(pure, setPropTypes({}));
+const enhance = compose(
+  withOnboarding,
+  setPropTypes({
+    isLoading: PropTypes.bool,
+    onboarded: PropTypes.bool,
+    didOnboard: PropTypes.func,
+    children: PropTypes.node,
+  }),
+);
 
-const showModal = async () => {
-  try {
-    // Read from AsyncStorage (https://facebook.github.io/react-native/docs/asyncstorage.html).
-    const value = await AsyncStorage.getItem('onboarded');
-    if (value === null) {
-      // There is no value in AsyncStorage for this. Show the onboarding modal.
-      return true;
-    }
-  } catch (error) {
-    // Error retrieving data
-    console.log("Couldn't read the onboarding data from AsyncStorage", error);
-  }
-  return false;
-};
+const OnboardingModal = enhance(({
+  isLoading, onboarded, didOnboard, children,
+}) => {
+  if (isLoading) return <AppLoading />;
 
-const closeModal = async () => {
-  // Write the value to AsyncStorage and close the modal.
-  try {
-    await AsyncStorage.setItem('onboarded', true);
-  } catch (error) {
-    // Error saving data
-    console.log("Couldn't save the onboarded data to AsyncStorage", error);
-  }
-  showModal();
-};
-
-const OnboardingModal = enhance(() => (
-  <Modal visible={showModal} onDismiss={closeModal} animationType="slide">
-    <Onboarding closeModal={closeModal} />
-  </Modal>
-));
+  return (
+    <BackgroundView>
+      {children}
+      <Modal visible={!onboarded} onDismiss={didOnboard} animationType="slide">
+        <Onboarding closeModal={didOnboard} />
+      </Modal>
+    </BackgroundView>
+  );
+});
 
 export default OnboardingModal;

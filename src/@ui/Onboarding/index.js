@@ -1,29 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import AppIntroSlider from 'react-native-app-intro-slider';
+import Button from '@ui/Button';
 
 const enhance = compose(pure, setPropTypes({ closeModal: PropTypes.func }));
 
 const styles = StyleSheet.create({
-  buttonCircle: {
-    width: 80,
-    height: 40,
-    backgroundColor: 'rgba(0, 0, 0, .5)',
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#FFFFFF',
-  },
   image: {
     width: '100%',
     height: '100%',
-    position: 'absolute',
-    top: 0,
-    left: 0,
+    resizeMode: 'contain',
   },
 });
 
@@ -79,9 +67,7 @@ const slides = [
 ];
 
 const renderDoneButton = () => (
-  <View style={styles.buttonCircle}>
-    <Text style={styles.buttonText}>Done</Text>
-  </View>
+  <Button title="Done" type="secondary" />
 );
 
 // const onDone = () => {
