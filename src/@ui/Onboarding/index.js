@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import Button from '@ui/Button';
+import Chip from '@ui/Chip';
 
 const enhance = compose(pure, setPropTypes({ closeModal: PropTypes.func }));
 
@@ -66,15 +66,7 @@ const slides = [
   },
 ];
 
-const renderDoneButton = () => (
-  <Button title="Done" type="secondary" />
-);
-
-// const onDone = () => {
-// do something when the user taps the Done button.
-// Maybe this gets passed in as a prop from the onboarding modal and does that
-// async storage work?
-// };
+const renderDoneButton = () => <Chip pill title="Done" type="secondary" />;
 
 const Onboarding = enhance(({ closeModal }) => (
   <AppIntroSlider
