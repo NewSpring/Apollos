@@ -40,8 +40,8 @@ module.exports = env => ({
         {
           file: 'sentry-expo/upload-sourcemaps',
           config: {
-            organization: 'differential-cs',
-            project: 'newspring-apollos',
+            organization: 'newspring-church',
+            project: 'app',
             authToken: process.env.SENTRY_AUTH,
           },
         },
