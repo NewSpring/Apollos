@@ -39,13 +39,12 @@ const enhance = compose(
     enableReinitialize: true,
     validationSchema: Yup.object().shape({
       query: Yup.string(),
-      zipCode: Yup.string().when('useDeviceLocation', {
-        is: false,
-        then: Yup.string().required(),
-        else: Yup.string(),
-      }),
+      zipCode: Yup.string(),
+      campusId: Yup.string(),
       useDeviceLocation: Yup.bool(),
-    }),
+    }).test('at-least-one-input', 'You must provide at least one input', value =>
+      !!(value.query || value.zipCode || value.useDeviceLocation || value.campusId),
+    ),
     isInitialValid: true,
     handleSubmit: async (values, { props, setFieldError, setSubmitting }) => {
       const tags = [];
@@ -159,7 +158,13 @@ export const GroupSearchForm = enhance(({
       </FormFields>
     </TableView>
     <PaddedView vertical={false}>
-      <Button onPress={handleSubmit} title="Let's Go!" type="primary" disabled={!isValid} loading={isSubmitting} />
+      <Button
+        onPress={handleSubmit}
+        title="Let's Go!"
+        type="primary"
+        disabled={!isValid}
+        loading={isSubmitting}
+      />
     </PaddedView>
   </View>
 ));
