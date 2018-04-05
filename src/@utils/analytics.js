@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import { Platform } from 'react-native';
 import PropTypes from 'prop-types';
-import {
-  Analytics,
-  Hits as GAHits,
-} from 'react-native-google-analytics';
+import { Analytics, Hits as GAHits } from 'react-native-google-analytics';
 import Settings from '@utils/Settings';
 
-const analytics = new Analytics('UA-7130289-25', null, Settings.COMMIT_SHA, `${Platform.OS} ${Platform.Version}`);
+const analytics = new Analytics(
+  'UA-7130289-39',
+  null,
+  Settings.COMMIT_SHA,
+  `${Platform.OS} ${Platform.Version}`,
+);
 export default analytics;
 
 export const withPageTracking = (WrappedComponent) => {
   const trackPage = (page) => {
-    const screenView = new GAHits.ScreenView(
-      'NewSpring',
-      page,
-    );
+    const screenView = new GAHits.ScreenView('NewSpring', page);
     analytics.send(screenView);
   };
 
