@@ -1,9 +1,7 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import get from 'lodash/get';
-import {
-  AsyncStorage,
-} from 'react-native';
+import { AsyncStorage } from 'react-native';
 
 export const MUTATION = gql`
   mutation resetUserPassword($token: String!, $newPassword: String!) {
