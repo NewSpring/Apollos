@@ -1,81 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`the GradientOverlayImage component should render 1`] = `
-<View>
-  <Image
-    maintainAspectRatio={false}
-    source={
-      Array [
-        Object {
-          "height": 400,
-          "uri": "https://picsum.photos/600/400/?random",
-          "width": 600,
-        },
-      ]
+<View
+  style={
+    Object {
+      "aspectRatio": 1,
+      "width": "100%",
     }
-    style={
-      Array [
-        Object {},
-        Object {
-          "aspectRatio": 1,
-          "resizeMode": "cover",
-          "width": "100%",
-        },
-      ]
-    }
-  />
-</View>
-`;
-
-exports[`the GradientOverlayImage component should render with an overlayColor 1`] = `
-<View>
-  <Image
-    maintainAspectRatio={false}
-    source={
-      Array [
-        Object {
-          "height": 400,
-          "uri": "https://picsum.photos/600/400/?random",
-          "width": 600,
-        },
-      ]
-    }
-    style={
-      Array [
-        Object {},
-        Object {
-          "aspectRatio": 1,
-          "resizeMode": "cover",
-          "width": "100%",
-        },
-      ]
-    }
-  />
-  <ExponentLinearGradient
-    colors={
-      Array [
-        16416882,
-        4294606962,
-      ]
-    }
-    endPoint={
-      Array [
-        0,
-        1,
-      ]
-    }
-    locations={
-      Array [
-        0.3,
-        1,
-      ]
-    }
-    startPoint={
-      Array [
-        0,
-        0,
-      ]
-    }
+  }
+>
+  <View
     style={
       Object {
         "bottom": 0,
@@ -85,6 +19,112 @@ exports[`the GradientOverlayImage component should render with an overlayColor 1
         "top": 0,
       }
     }
-  />
+  >
+    <Image
+      collapsable={undefined}
+      maintainAspectRatio={false}
+      onLoad={[Function]}
+      source={
+        Array [
+          Object {
+            "height": 400,
+            "uri": "https://picsum.photos/600/400/?random",
+            "width": 600,
+          },
+        ]
+      }
+      style={
+        Object {
+          "backgroundColor": "#dddddd",
+          "height": "100%",
+          "opacity": 0,
+          "resizeMode": "cover",
+          "width": "100%",
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`the GradientOverlayImage component should render with an overlayColor 1`] = `
+<View
+  style={
+    Object {
+      "aspectRatio": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Image
+      collapsable={undefined}
+      maintainAspectRatio={false}
+      onLoad={[Function]}
+      source={
+        Array [
+          Object {
+            "height": 400,
+            "uri": "https://picsum.photos/600/400/?random",
+            "width": 600,
+          },
+        ]
+      }
+      style={
+        Object {
+          "backgroundColor": "#dddddd",
+          "height": "100%",
+          "opacity": 0,
+          "resizeMode": "cover",
+          "width": "100%",
+        }
+      }
+    />
+    <ExponentLinearGradient
+      colors={
+        Array [
+          16416882,
+          4294606962,
+        ]
+      }
+      endPoint={
+        Array [
+          0,
+          1,
+        ]
+      }
+      locations={
+        Array [
+          0.3,
+          1,
+        ]
+      }
+      startPoint={
+        Array [
+          0,
+          0,
+        ]
+      }
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
 </View>
 `;

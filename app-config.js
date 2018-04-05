@@ -24,8 +24,9 @@ module.exports = env => ({
       ],
       icon: 'src/assets/icons/ios/icon-1024x1024.png',
       splash: {
-        backgroundColor: '#c7d4e0',
+        backgroundColor: '#D1DCE6',
       },
+      loadJSInBackgroundExperimental: true,
     },
     android: {
       package: 'cc.newspring.newspringapp',
@@ -46,8 +47,8 @@ module.exports = env => ({
         {
           file: 'sentry-expo/upload-sourcemaps',
           config: {
-            organization: 'differential-cs',
-            project: 'newspring-apollos',
+            organization: 'newspring-church',
+            project: 'app',
             authToken: process.env.SENTRY_AUTH,
           },
         },

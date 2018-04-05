@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query getSeries($limit: Int!, $skip: Int!){
@@ -16,12 +17,7 @@ export default gql`
       }
       content {
         isLiked
-        images(sizes: ["large"]) {
-          fileName
-          fileType
-          fileLabel
-          url
-        }
+        ...ContentDataImagesFragment
         isLight
         colors {
           value
@@ -30,4 +26,5 @@ export default gql`
       }
     }
   }
+  ${contentDataImagesFragment}
 `;

@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query GetNews($limit: Int!, $skip: Int!) {
@@ -17,16 +18,17 @@ export default gql`
       content {
         isLiked
         body
-        images(sizes: ["large"]) {
-          fileName
-          fileType
-          fileLabel
-          url
-        }
+        ...ContentDataImagesFragment
         video {
           embedUrl
+        }
+        isLight
+        colors {
+          value
+          description
         }
       }
     }
   }
+  ${contentDataImagesFragment}
 `;
