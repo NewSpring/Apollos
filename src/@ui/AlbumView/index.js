@@ -16,35 +16,22 @@ const InfoWrapper = styled({
   flexDirection: 'row', alignItems: 'stretch',
 }, 'AlbumView.InfoWrapper')(PaddedView);
 
-const AlbumArt = compose(
-  styled({
-    position: 'relative',
-    width: '33%',
-    aspectRatio: 1,
-    ...Platform.select({
-      web: {
-        height: 0,
-        paddingTop: '100%',
-      },
-    }),
-  }, 'AlbumView.AlbumArt'),
-  mapProps(({ style, ...otherProps }) => ({
-    containerStyle: style,
-    ...otherProps,
-  })),
-)(ProgressiveImage);
+const AlbumArt = styled({
+  position: 'relative',
+  width: '33%',
+  aspectRatio: 1,
+  ...Platform.select({
+    web: {
+      height: 0,
+      paddingTop: '100%',
+    },
+  }),
+}, 'AlbumView.AlbumArt')(ProgressiveImage);
 
-const BlurredImage = compose(
-  styled(({ theme }) => ({
-    ...StyleSheet.absoluteFillObject,
-    opacity: theme.alpha.low,
-  }), 'AlbumView.BlurredImage'),
-  mapProps(({ style, ...otherProps }) => ({
-    containerStyle: style,
-    blurRadius: 25,
-    ...otherProps,
-  })),
-)(ProgressiveImage);
+const BlurredImage = styled(({ theme }) => ({
+  ...StyleSheet.absoluteFillObject,
+  opacity: theme.alpha.low,
+}), 'AlbumView.BlurredImage')(ProgressiveImage);
 
 const TitleWrapper = styled({
   width: '66%',

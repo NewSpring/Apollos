@@ -5,9 +5,8 @@ import styled from '@ui/styled';
 import ConnectedImage from '@ui/ConnectedImage';
 
 const Wrapper = styled(({ theme }) => ({
-  ...StyleSheet.absoluteFillObject,
   width: '100%',
-  height: '100%',
+  aspectRatio: 1,
   backgroundColor: theme.colors.background.inactive,
 }))(View);
 
@@ -29,7 +28,7 @@ class ProgressiveImage extends PureComponent {
     thumbnailBlurRadius: PropTypes.number,
     onLoadThumbnail: PropTypes.func,
     onLoadImage: PropTypes.func,
-    containerStyle: PropTypes.any, // eslint-disable-line
+    imageStyle: PropTypes.any, // eslint-disable-line
     ...ConnectedImage.propTypes,
   }
 
@@ -69,25 +68,25 @@ class ProgressiveImage extends PureComponent {
       thumbnailBlurRadius,
       onLoadThumbnail,
       onLoadImage,
+      imageStyle,
       style,
-      containerStyle,
       ...imageProps
     } = this.props;
     return (
-      <Wrapper style={containerStyle}>
+      <Wrapper style={style}>
         {(thumbnail) ? (
           <ConnectedImage
             ImageComponent={Animated.Image}
             {...imageProps}
             onLoad={this.onLoadThumbnail}
-            style={[styles.imageStyles, { opacity: this.thumbnailOpacity }, style]}
+            style={[styles.imageStyles, { opacity: this.thumbnailOpacity }, imageStyle]}
             source={thumbnail}
           />
         ) : null}
         <ConnectedImage
           ImageComponent={Animated.Image}
           {...imageProps}
-          style={[styles.imageStyles, { opacity: this.imageOpacity }, style]}
+          style={[styles.imageStyles, { opacity: this.imageOpacity }, imageStyle]}
           onLoad={this.onLoadImage}
           source={source}
         />
