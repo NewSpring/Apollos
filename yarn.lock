@@ -77,13 +77,22 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@expo/json-file@^5.2.0", "@expo/json-file@^5.3.0":
+"@expo/json-file@^5.3.0":
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@expo/json-file/-/json-file-5.3.0.tgz#9274fd22e68cfdcae1f06aed8d2d1f953a4f7168"
   dependencies:
     json5 "^0.5.0"
     lodash "^4.6.1"
     mz "^2.6.0"
+
+"@expo/json-file@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@expo/json-file/-/json-file-7.0.0.tgz#828e421427d3c1d2990caa469eb9ac969495b43f"
+  dependencies:
+    json5 "^1.0.1"
+    lodash "^4.17.4"
+    util.promisify "^1.0.0"
+    write-file-atomic "^2.3.0"
 
 "@expo/ngrok-bin-darwin-ia32@2.2.8":
   version "2.2.8"
@@ -206,13 +215,13 @@
   dependencies:
     cross-spawn "^5.1.0"
 
-"@expo/traveling-fastlane-darwin@1.4.6":
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/@expo/traveling-fastlane-darwin/-/traveling-fastlane-darwin-1.4.6.tgz#471c408850de4f4bc67af28877f685d26d89f786"
+"@expo/traveling-fastlane-darwin@1.4.7":
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/@expo/traveling-fastlane-darwin/-/traveling-fastlane-darwin-1.4.7.tgz#f18fce83159ee6f554cd0dcb4cda2fb324887478"
 
-"@expo/traveling-fastlane-linux@1.4.6":
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/@expo/traveling-fastlane-linux/-/traveling-fastlane-linux-1.4.6.tgz#fb8b7044d451fb3a4ae318a3f8e529f0e37452e8"
+"@expo/traveling-fastlane-linux@1.4.7":
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/@expo/traveling-fastlane-linux/-/traveling-fastlane-linux-1.4.7.tgz#c5ea23ff36789e8b3c72e9eb381235a703dc1717"
 
 "@expo/vector-icons@^6.2.0":
   version "6.2.2"
@@ -475,6 +484,10 @@
   version "9.4.6"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.6.tgz#d8176d864ee48753d053783e4e463aec86b8d82e"
 
+"@types/node@^9.4.6":
+  version "9.6.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.2.tgz#e49ac1adb458835e95ca6487bc20f916b37aff23"
+
 "@types/react@^16.0.18":
   version "16.0.35"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.35.tgz#7ce8a83cad9690fd965551fc513217a74fc9e079"
@@ -730,6 +743,12 @@ apollo-link-dedup@^1.0.0:
   dependencies:
     apollo-link "^1.0.7"
 
+apollo-link-error@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/apollo-link-error/-/apollo-link-error-1.0.7.tgz#df6d7b13e9b73f9a615547b65ec9a4c930ca7f18"
+  dependencies:
+    apollo-link "^1.2.1"
+
 apollo-link-http@^1.1.0:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/apollo-link-http/-/apollo-link-http-1.3.2.tgz#63537ee5ecf9c004efb0317f1222b7dbc6f21559"
@@ -756,6 +775,14 @@ apollo-link@^1.0.0, apollo-link@^1.0.6, apollo-link@^1.0.7:
     "@types/zen-observable" "0.5.3"
     apollo-utilities "^1.0.0"
     zen-observable "^0.6.0"
+
+apollo-link@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.2.1.tgz#c120b16059f9bd93401b9f72b94d2f80f3f305d2"
+  dependencies:
+    "@types/node" "^9.4.6"
+    apollo-utilities "^1.0.0"
+    zen-observable-ts "^0.8.6"
 
 apollo-utilities@^1.0.0, apollo-utilities@^1.0.1, apollo-utilities@^1.0.3, apollo-utilities@^1.0.4:
   version "1.0.4"
@@ -4637,12 +4664,12 @@ exit@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
 
-exp@^50.0.5:
-  version "50.0.5"
-  resolved "https://registry.yarnpkg.com/exp/-/exp-50.0.5.tgz#98c409bdde305cd26360292be34730e820f4adfd"
+exp@^51.4.0:
+  version "51.4.0"
+  resolved "https://registry.yarnpkg.com/exp/-/exp-51.4.0.tgz#763e533db21180ab46963275d1b522b2a8b4bdbb"
   dependencies:
     "@expo/bunyan" "^1.8.10"
-    "@expo/json-file" "^5.2.0"
+    "@expo/json-file" "^7.0.0"
     "@expo/simple-spinner" "^1.0.2"
     babel-runtime "^6.9.2"
     chalk "^2.0.1"
@@ -4657,6 +4684,7 @@ exp@^50.0.5:
     inquirer "^5.0.1"
     lodash "^4.17.4"
     match-require "^2.1.0"
+    mkdirp "^0.5.1"
     mz "^2.6.0"
     ora "^1.3.0"
     progress "^2.0.0"
@@ -4665,10 +4693,10 @@ exp@^50.0.5:
     slash "^1.0.0"
     source-map-support "^0.4.1"
     untildify "^3.0.2"
-    xdl "48.0.8"
+    xdl "48.3.0"
   optionalDependencies:
-    "@expo/traveling-fastlane-darwin" "1.4.6"
-    "@expo/traveling-fastlane-linux" "1.4.6"
+    "@expo/traveling-fastlane-darwin" "1.4.7"
+    "@expo/traveling-fastlane-linux" "1.4.7"
 
 expand-brackets@^0.1.4:
   version "0.1.5"
@@ -5122,11 +5150,13 @@ formidable@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.1.1.tgz#96b8886f7c3c3508b932d6bd70c4d3a88f35f1a9"
 
-formik@^0.10.5:
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/formik/-/formik-0.10.5.tgz#6984d2f22e918c6d2264a3cb86b8582f7277faca"
+formik@^0.11.11:
+  version "0.11.11"
+  resolved "https://registry.yarnpkg.com/formik/-/formik-0.11.11.tgz#4b02838133c0196b1ef443aa973766cd097ec4a5"
   dependencies:
+    lodash.clonedeep "^4.5.0"
     lodash.isequal "4.5.0"
+    lodash.topath "4.5.2"
     prop-types "^15.5.10"
     warning "^3.0.0"
 
@@ -7239,6 +7269,12 @@ json5@^0.5.0, json5@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
 
+json5@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.1.tgz#779fb0018604fa854eacbf6252180d83543e3dbe"
+  dependencies:
+    minimist "^1.2.0"
+
 jsonfile@^2.1.0, jsonfile@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-2.4.0.tgz#3736a2b428b87bbda0cc83b53fa3d633a35c2ae8"
@@ -7488,6 +7524,10 @@ lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
 
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+
 lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.cond/-/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
@@ -7635,6 +7675,10 @@ lodash.templatesettings@^4.0.0:
 lodash.throttle@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+
+lodash.topath@4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/lodash.topath/-/lodash.topath-4.5.2.tgz#3616351f3bba61994a0931989660bd03254fd009"
 
 lodash.uniq@^4.5.0:
   version "4.5.0"
@@ -12447,7 +12491,7 @@ write-file-atomic@^1.1.2, write-file-atomic@^1.2.0:
     imurmurhash "^0.1.4"
     slide "^1.1.5"
 
-write-file-atomic@^2.0.0, write-file-atomic@^2.1.0:
+write-file-atomic@^2.0.0, write-file-atomic@^2.1.0, write-file-atomic@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-2.3.0.tgz#1ff61575c2e2a4e8e510d6fa4e243cce183999ab"
   dependencies:
@@ -12591,12 +12635,12 @@ xdl@48.0.2:
     xmldom "^0.1.27"
     yesno "^0.0.1"
 
-xdl@48.0.8:
-  version "48.0.8"
-  resolved "https://registry.yarnpkg.com/xdl/-/xdl-48.0.8.tgz#83c9921ca00695d0acd7df50e9af1274e5a8e2a4"
+xdl@48.3.0:
+  version "48.3.0"
+  resolved "https://registry.yarnpkg.com/xdl/-/xdl-48.3.0.tgz#ccfa3849e6c53642f80a77e8f3cdeb3d496e4ef3"
   dependencies:
     "@expo/bunyan" "^1.8.10"
-    "@expo/json-file" "^5.3.0"
+    "@expo/json-file" "^7.0.0"
     "@expo/ngrok" "2.4.2"
     "@expo/osascript" "^1.8.0"
     "@expo/schemer" "1.1.0"
@@ -12875,6 +12919,12 @@ yup@^0.23.0:
     synchronous-promise "^1.0.18"
     toposort "^0.2.10"
     type-name "^2.0.1"
+
+zen-observable-ts@^0.8.6:
+  version "0.8.8"
+  resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-0.8.8.tgz#1a586dc204fa5632a88057f879500e0d2ba06869"
+  dependencies:
+    zen-observable "^0.7.0"
 
 zen-observable@^0.6.0:
   version "0.6.1"

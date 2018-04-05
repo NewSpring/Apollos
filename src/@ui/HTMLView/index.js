@@ -58,7 +58,10 @@ export const defaultRenderer = (node, { children }) => {
     case 'ul': return children; // todo
     case 'li': return <BulletListItem>{wrapTextChildren(children)}</BulletListItem>;
     case 'a': {
-      const url = node.attribs && node.attribs.href;
+      let url = node.attribs && node.attribs.href;
+      if (url && url.startsWith('//')) {
+        url = `http:${url}`;
+      }
       const onPress = () => WebBrowser.openBrowserAsync(decodeHTML(url));
       if (url) {
         return (<ButtonLink onPress={onPress}>{children}</ButtonLink>);
