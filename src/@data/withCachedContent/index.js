@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { merge } from 'lodash';
+import { contentDataImagesFragment } from '@data/fragments';
 
 const cachedContentQuery = gql`
   query getCachedContent($id: ID!) {
@@ -12,12 +13,7 @@ const cachedContentQuery = gql`
         content {
           isLiked
           isLight
-          images(sizes: ["large"]) {
-            fileName
-            fileType
-            fileLabel
-            url
-          }
+          ...ContentDataImagesFragment
           colors {
             value
             description
@@ -26,6 +22,7 @@ const cachedContentQuery = gql`
       }
     }
   }
+  ${contentDataImagesFragment}
 `;
 
 const cachedContentParentQuery = gql`
@@ -36,12 +33,7 @@ const cachedContentParentQuery = gql`
         parent {
           content {
             isLight
-            images(sizes: ["large"]) {
-              fileName
-              fileType
-              fileLabel
-              url
-            }
+            ...ContentDataImagesFragment
             colors {
               value
               description
@@ -51,6 +43,7 @@ const cachedContentParentQuery = gql`
       }
     }
   }
+  ${contentDataImagesFragment}
 `;
 
 const withQuery = query => graphql(query, {

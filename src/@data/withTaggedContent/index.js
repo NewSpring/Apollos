@@ -1,6 +1,7 @@
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import identifyCategory from '@data/utils/identifyCategory';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export const QUERY = gql`
   query GetTaggedContent {
@@ -20,15 +21,11 @@ export const QUERY = gql`
       }
       content {
         isLiked
-        images(sizes: ["large"]) {
-          fileName
-          fileType
-          fileLabel
-          url
-        }
+        ...ContentDataImagesFragment
       }
     }
   }
+  ${contentDataImagesFragment}
 `;
 
 export default graphql(QUERY, {

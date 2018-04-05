@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query GetPromotions($setName: String!) {
@@ -12,11 +13,7 @@ export default gql`
         date
       }
       content {
-        images(sizes: ["large"]) {
-          fileName
-          fileLabel
-          url
-        }
+        ...ContentDataImagesFragment
         isLiked
         colors {
           value
@@ -26,4 +23,5 @@ export default gql`
       }
     }
   }
+  ${contentDataImagesFragment}
 `;

@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export const contentCard = gql`
   fragment ContentCard on Content {
@@ -13,17 +14,12 @@ export const contentCard = gql`
         urlTitle
       }
       content {
-        images(sizes: ["large"]) {
-          fileName
-          fileType
-          fileLabel
-          url
-        }
         isLight
         colors {
           value
           description
         }
+        ...ContentDataImagesFragment
       }
     }
     meta {
@@ -32,18 +28,14 @@ export const contentCard = gql`
     content {
       isLiked
       isLight
-      images(sizes: ["large"]) {
-        fileName
-        fileType
-        fileLabel
-        url
-      }
       colors {
         value
         description
       }
+      ...ContentDataImagesFragment
     }
   }
+  ${contentDataImagesFragment}
 `;
 
 export const groupCard = gql`
