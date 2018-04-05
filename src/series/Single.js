@@ -17,11 +17,13 @@ import styled from '@ui/styled';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 import RelatedContent from '@ui/RelatedContent';
 import { withRouter } from '@ui/NativeWebRouter';
+import withCachedContent from '@data/withCachedContent';
 
 const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withSeriesContent,
+  withCachedContent,
   withRouter,
   withThemeMixin(({ content: { content = {} } = {} } = {}) => {
     const theme = {
@@ -73,7 +75,11 @@ const SeriesSingle = enhance(({
       barStyle={isLight ? 'dark-content' : 'light-content'}
     />
     <ScrollView>
-      <ContentView imageOverlayColor={(!isLoading && colors && colors.length) ? `#${get(colors, '[0].value')}` : null} {...otherContentProps}>
+      <ContentView
+        isLoading={isLoading}
+        imageOverlayColor={(colors && colors.length) ? `#${get(colors, '[0].value')}` : null}
+        {...otherContentProps}
+      >
         {(video && video.embedUrl) ? (
           <StyledButton onPress={() => history.push(`/series/${id}/trailer`)} type={'ghost'} bordered>
             <Icon name="play" size={theme.helpers.rem(0.875)} fill={theme.colors.text.primary} />

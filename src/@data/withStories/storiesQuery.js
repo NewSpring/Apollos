@@ -26,6 +26,11 @@ export default gql`
         video {
           embedUrl
         }
+        colors {
+          value
+          description
+        }
+        isLight
       }
     }
   }

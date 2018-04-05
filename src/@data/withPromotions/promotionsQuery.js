@@ -18,6 +18,11 @@ export default gql`
           url
         }
         isLiked
+        colors {
+          value
+          description
+        }
+        isLight
       }
     }
   }

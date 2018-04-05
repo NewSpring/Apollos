@@ -47,6 +47,11 @@ export default gql`
           }
           content {
             speaker
+            colors {
+              value
+              description
+            }
+            isLight
           }
         }
       }

@@ -11,11 +11,13 @@ import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import { withThemeMixin } from '@ui/theme';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
 import RelatedContent from '@ui/RelatedContent';
+import withCachedContent from '@data/withCachedContent';
 
 const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withStudy,
+  withCachedContent,
   withThemeMixin(({ content: { content = {} } = {} } = {}) => {
     const theme = {
       type: content.isLight ? 'light' : 'dark',

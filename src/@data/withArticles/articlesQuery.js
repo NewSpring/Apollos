@@ -26,6 +26,11 @@ export default gql`
           fileLabel
           url
         }
+        isLight
+        colors {
+          value
+          description
+        }
       }
     }
   }

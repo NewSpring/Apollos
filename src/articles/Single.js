@@ -3,6 +3,7 @@ import { ScrollView } from 'react-native';
 import { compose, mapProps, pure } from 'recompose';
 
 import withArticle from '@data/withArticle';
+import withCachedContent from '@data/withCachedContent';
 import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import ContentView, { Title, ByLine, HTMLView } from '@ui/ContentView';
@@ -14,6 +15,7 @@ const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withArticle,
+  withCachedContent,
 );
 
 const ShareLink = withArticle(Share);

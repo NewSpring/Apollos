@@ -17,6 +17,11 @@ export default gql`
             fileLabel
             id
           }
+          colors {
+            value
+            description
+          }
+          isLight
         }
         meta {
           urlTitle
@@ -32,6 +37,11 @@ export default gql`
           fileLabel
           id
         }
+        colors {
+          value
+          description
+        }
+        isLight
       }
     }
   }

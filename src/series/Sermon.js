@@ -10,11 +10,14 @@ import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import withSermon from '@data/withSermon';
 import { withThemeMixin } from '@ui/theme';
 import HorizontalTileFeed from '@ui/HorizontalTileFeed';
+import withCachedContent, { withCachedParentContent } from '@data/withCachedContent';
 
 const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withSermon,
+  withCachedContent,
+  withCachedParentContent,
   withThemeMixin(({ content: { parent: { content = {} } = {} } = {} } = {}) => {
     const theme = {};
     if (content.colors && content.colors.length) {
