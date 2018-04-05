@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 import { withFormik } from 'formik';
 import { compose, mapProps } from 'recompose';
 import PropTypes from 'prop-types';
