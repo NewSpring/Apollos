@@ -23,6 +23,7 @@ import orientation from '@utils/orientation';
 import BackgroundView from '@ui/BackgroundView';
 import Meta from '@ui/Meta';
 import getAppPathForUrl from '@utils/getAppPathForUrl';
+import { withPageTracking } from '@utils/analytics';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -296,6 +297,7 @@ class AppRouter extends PureComponent {
 
 const enhance = compose(
   withRouter,
+  withPageTracking,
   withWindow,
   withTheme(),
   withProps(({ theme, window }) => ({
