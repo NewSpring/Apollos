@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { compose, pure, setPropTypes, mapProps } from 'recompose';
+import { compose, pure, setPropTypes } from 'recompose';
 import { View, Platform, StyleSheet } from 'react-native';
 import PaddedView from '@ui/PaddedView';
 import ProgressiveImage from '@ui/ProgressiveImage';

@@ -111,8 +111,12 @@ const ContentView = enhance(
     children,
   }) => (
     <View>
-      {renderHeader({ video, images, thumbnailImage, imageOverlayColor })}
-      {renderAudioBar({ contentId, title, audio, seriesImages, seriesColors })}
+      {renderHeader({
+ video, images, thumbnailImage, imageOverlayColor,
+})}
+      {renderAudioBar({
+ contentId, title, audio, seriesImages, seriesColors,
+})}
       <ContentWrapper>{children}</ContentWrapper>
     </View>
   ),
