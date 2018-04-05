@@ -60,7 +60,11 @@ const Study = enhance(({
       barStyle={isLight ? 'dark-content' : 'light-content'}
     />
     <ScrollView>
-      <ContentView imageOverlayColor={(!isLoading && colors && colors.length) ? `#${colors[0].value}` : ''} {...otherContentProps}>
+      <ContentView
+        isLoading={isLoading}
+        imageOverlayColor={(!isLoading && colors && colors.length) ? `#${colors[0].value}` : ''}
+        {...otherContentProps}
+      >
         <Title>{startCase(toLower(title))}</Title>
         <HTMLView>{description}</HTMLView>
       </ContentView>

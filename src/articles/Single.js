@@ -37,7 +37,7 @@ const ArticleSingle = enhance(({
   <BackgroundView>
     <Header titleText="Article" backButton />
     <ScrollView>
-      <ContentView {...otherContentProps}>
+      <ContentView isLoading={isLoading} {...otherContentProps}>
         <Title>{title}</Title>
         <ByLine authors={authors} />
         <HTMLView>{body}</HTMLView>

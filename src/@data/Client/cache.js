@@ -1,5 +1,4 @@
 import { InMemoryCache, IntrospectionFragmentMatcher, defaultDataIdFromObject } from 'apollo-cache-inmemory';
-import { toIdValue } from 'apollo-utilities';
 
 const cache = new InMemoryCache({
   dataIdFromObject(obj) {
@@ -14,7 +13,7 @@ const cache = new InMemoryCache({
   }),
   cacheRedirects: {
     Query: {
-      node: (_, args) => toIdValue(cache.config.dataIdFromObject({ __typename: 'Content', id: args.id })),
+      node: (_, { id }, { getCacheKey }) => getCacheKey({ __typename: 'Content', id }),
     },
   },
 });

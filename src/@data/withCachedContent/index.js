@@ -8,7 +8,6 @@ const cachedContentQuery = gql`
       id
       ... on Content {
         title
-        status
         channelName
         content {
           isLiked
@@ -36,6 +35,7 @@ const cachedContentParentQuery = gql`
       ... on Content {
         parent {
           content {
+            isLight
             images(sizes: ["large"]) {
               fileName
               fileType

@@ -58,6 +58,7 @@ const Sermon = enhance(
       />
       <ScrollView>
         <ContentView
+          isLoading={isLoading}
           title={title}
           seriesImages={seriesImages}
           seriesColors={seriesColors}

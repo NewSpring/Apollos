@@ -38,13 +38,12 @@ const StorySingle = enhance(({
   <BackgroundView>
     <Header titleText="Story" backButton />
     <ScrollView>
-      <ContentView {...otherContentProps}>
+      <ContentView isLoading={isLoading} {...otherContentProps}>
         <Title>{startCase(toLower(title))}</Title>
         <ByLine authors={authors} />
         <HTMLView>{body}</HTMLView>
       </ContentView>
-      { // Don't render till data is ready. Consider adding placeholder views for the content above.
-        !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
+      <RelatedContent tags={tags} excludedIds={[id]} />
     </ScrollView>
     <MediaQuery maxWidth="md">
       <SecondaryNav>

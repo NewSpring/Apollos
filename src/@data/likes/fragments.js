@@ -13,11 +13,16 @@ export const contentCard = gql`
         urlTitle
       }
       content {
-        images(sizes: ["medium"]) {
-          url
-          label
+        images(sizes: ["large"]) {
+          fileName
+          fileType
           fileLabel
-          id
+          url
+        }
+        isLight
+        colors {
+          value
+          description
         }
       }
     }
@@ -26,11 +31,16 @@ export const contentCard = gql`
     }
     content {
       isLiked
-      images(sizes: ["medium"]) {
-        url
-        label
+      isLight
+      images(sizes: ["large"]) {
+        fileName
+        fileType
         fileLabel
-        id
+        url
+      }
+      colors {
+        value
+        description
       }
     }
   }

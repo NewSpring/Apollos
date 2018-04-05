@@ -31,11 +31,12 @@ const NewsSingle = enhance(({
       ...otherContentProps
     } = {},
   } = { },
+  isLoading,
 }) => (
   <BackgroundView>
     <Header titleText="News" backButton />
     <ScrollView>
-      <ContentView {...otherContentProps}>
+      <ContentView isLoading={isLoading} {...otherContentProps}>
         <Title>{startCase(toLower(title))}</Title>
         <ByLine authors={authors} />
         <HTMLView>{body}</HTMLView>
