@@ -8,20 +8,23 @@ import styled from '@ui/styled';
 import ConnectedImage from '@ui/ConnectedImage';
 import LinearGradient from '@ui/LinearGradient';
 
+const source = PropTypes.oneOfType([
+  PropTypes.arrayOf(
+    PropTypes.shape({
+      uri: PropTypes.string,
+      label: PropTypes.string,
+      width: PropTypes.number,
+      height: PropTypes.number,
+    }),
+  ),
+  PropTypes.string,
+]);
+
 const enhance = compose(
   pure,
   setPropTypes({
-    source: PropTypes.oneOfType([
-      PropTypes.arrayOf(
-        PropTypes.shape({
-          uri: PropTypes.string,
-          label: PropTypes.string,
-          width: PropTypes.number,
-          height: PropTypes.number,
-        }),
-      ),
-      PropTypes.string,
-    ]),
+    source,
+    thumbnail: source,
     overlayColor: PropTypes.string,
     ImageComponent: PropTypes.func,
   }),
@@ -45,10 +48,9 @@ const getGradientValues = (overlayColor) => {
   return values;
 };
 
-const DefaultImageComponent = styled({
+const Container = styled({
   width: '100%',
   aspectRatio: 1,
-  resizeMode: 'cover',
   ...Platform.select({
     web: {
       // web doesn't support aspectRatio, this hacks it:
@@ -56,6 +58,12 @@ const DefaultImageComponent = styled({
       paddingTop: '100%',
     },
   }),
+})(View);
+
+const DefaultImageComponent = styled({
+  width: '100%',
+  height: '100%',
+  resizeMode: 'cover',
 })(ConnectedImage);
 
 const GradientOverlayImage = enhance(
@@ -64,8 +72,8 @@ const GradientOverlayImage = enhance(
   }) => {
     const Component = ComponentProp || DefaultImageComponent;
     return (
-      <View {...otherProps}>
-        <Component source={imageSource} />
+      <Container>
+        <Component source={imageSource} {...otherProps} />
         {overlayColor ? (
           <Overlay
             colors={getGradientValues(overlayColor).colors}
@@ -74,7 +82,7 @@ const GradientOverlayImage = enhance(
             locations={getGradientValues(overlayColor).locations}
           />
         ) : null}
-      </View>
+      </Container>
     );
   },
 );

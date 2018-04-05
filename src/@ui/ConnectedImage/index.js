@@ -135,7 +135,11 @@ class ConnectedImage extends PureComponent {
 
     return (
       <SkeletonImage onReady={!this.isLoading}>
-        <ImageComponent {...otherProps} source={source} style={[this.aspectRatio, style]} />
+        <ImageComponent
+          {...otherProps}
+          source={source}
+          style={[this.aspectRatio, style]}
+        />
       </SkeletonImage>
     );
   }

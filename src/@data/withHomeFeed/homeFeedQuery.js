@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 const contentFragment = gql`
   fragment ContentForFeed on Content {
@@ -19,6 +20,7 @@ const contentFragment = gql`
       }
       content {
         isLight
+        ...ContentDataImagesFragment
         colors {
           value
           description
@@ -27,13 +29,7 @@ const contentFragment = gql`
     }
     content {
       isLiked
-      images(sizes: ["large"]) {
-        fileName
-        fileType
-        fileLabel
-        url
-        size
-      }
+      ...ContentDataImagesFragment
       isLight
       colors {
         value
@@ -41,6 +37,7 @@ const contentFragment = gql`
       }
     }
   }
+  ${contentDataImagesFragment}
 `;
 
 export default gql`

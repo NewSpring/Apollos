@@ -38,6 +38,11 @@ const enhance = compose(
         url: PropTypes.string,
       }),
     ),
+    thumbnail: PropTypes.arrayOf(
+      PropTypes.shape({
+        url: PropTypes.string,
+      }),
+    ),
     imageOverlayColor: PropTypes.string,
   }),
 );
@@ -46,18 +51,28 @@ const ContentWrapper = styled(({ theme }) => ({
   padding: theme.sizing.baseUnit,
 }))(View);
 
-const renderHeader = (video, images = [], imageOverlayColor) => {
+const renderHeader = ({
+  video, images = [], thumbnailImage, imageOverlayColor,
+}) => {
   let headerType = null;
   if (video && video.embedUrl) {
     headerType = <VideoHeader source={video} />;
   } else if (images && images.length) {
-    headerType = <ImageHeader images={images} imageOverlayColor={imageOverlayColor} />;
+    headerType = (
+      <ImageHeader
+        images={images}
+        thumbnail={thumbnailImage}
+        imageOverlayColor={imageOverlayColor}
+      />
+    );
   }
 
   return headerType;
 };
 
-const renderAudioBar = (contentId, title, audio, seriesImages, seriesColors) => {
+const renderAudioBar = ({
+  contentId, title, audio, seriesImages, seriesColors,
+}) => {
   let audioComponent = null;
   if (audio && audio.length) {
     const track = {
@@ -87,6 +102,7 @@ const ContentView = enhance(
     contentId,
     video,
     images = [],
+    thumbnailImage,
     seriesImages = [],
     seriesColors = [],
     imageOverlayColor = '',
@@ -95,8 +111,8 @@ const ContentView = enhance(
     children,
   }) => (
     <View>
-      {renderHeader(video, images, imageOverlayColor)}
-      {renderAudioBar(contentId, title, audio, seriesImages, seriesColors)}
+      {renderHeader({ video, images, thumbnailImage, imageOverlayColor })}
+      {renderAudioBar({ contentId, title, audio, seriesImages, seriesColors })}
       <ContentWrapper>{children}</ContentWrapper>
     </View>
   ),
