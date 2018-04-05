@@ -21,6 +21,11 @@ export default gql`
           book
           passage
         }
+        isLight
+        colors {
+          value
+          description
+        }
         ...ContentDataImagesFragment
       }
     }

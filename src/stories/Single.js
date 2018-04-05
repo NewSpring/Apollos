@@ -10,11 +10,13 @@ import ContentView, { ByLine, Title, HTMLView } from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import RelatedContent from '@ui/RelatedContent';
+import withCachedContent from '@data/withCachedContent';
 
 const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withStory,
+  withCachedContent,
 );
 
 const ShareLink = withStory(Share);
@@ -36,13 +38,12 @@ const StorySingle = enhance(({
   <BackgroundView>
     <Header titleText="Story" backButton />
     <ScrollView>
-      <ContentView {...otherContentProps}>
+      <ContentView isLoading={isLoading} {...otherContentProps}>
         <Title>{startCase(toLower(title))}</Title>
         <ByLine authors={authors} />
         <HTMLView>{body}</HTMLView>
       </ContentView>
-      { // Don't render till data is ready. Consider adding placeholder views for the content above.
-        !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
+      <RelatedContent tags={tags} excludedIds={[id]} />
     </ScrollView>
     <MediaQuery maxWidth="md">
       <SecondaryNav>

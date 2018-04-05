@@ -152,7 +152,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
         {(Platform.OS === 'ios') ? (
           <PaddedView>
             <H7>
-              {'You\'ll be redirected to Safari to securely complete this contribution.'}
+              {'To finish giving, you\'ll be redirected to Safari to securely complete this contribution.'}
             </H7>
           </PaddedView>
         ) : null}
@@ -282,8 +282,8 @@ const PaymentConfirmationForm = compose(
     const text = `${verb} with ${name}`;
     const icon = (paymentMethod.paymentMethod || contributions.paymentMethod) === 'creditCard' ? 'credit' : 'bank';
     return {
-      submitButtonText: text,
-      submitButtonIcon: icon,
+      submitButtonText: Platform.OS === 'ios' ? 'Continue in Safari' : text,
+      submitButtonIcon: Platform.OS === 'ios' ? null : icon,
     };
   }),
 )(PaymentConfirmationFormWithoutData);

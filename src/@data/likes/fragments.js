@@ -14,6 +14,11 @@ export const contentCard = gql`
         urlTitle
       }
       content {
+        isLight
+        colors {
+          value
+          description
+        }
         ...ContentDataImagesFragment
       }
     }
@@ -22,6 +27,11 @@ export const contentCard = gql`
     }
     content {
       isLiked
+      isLight
+      colors {
+        value
+        description
+      }
       ...ContentDataImagesFragment
     }
   }
