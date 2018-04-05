@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query GetRelatedContent($tags: [String], $includeChannels: [String], $limit: Int, $excludedIds: [String]) {
@@ -11,12 +12,7 @@ export default gql`
       parent {
         entryId: id
         content {
-          images(sizes: ["medium"]) {
-            url
-            label
-            fileLabel
-            id
-          }
+          ...ContentDataImagesFragment
         }
         meta {
           urlTitle
@@ -26,13 +22,9 @@ export default gql`
         urlTitle
       }
       content {
-        images(sizes: ["medium"]) {
-          url
-          label
-          fileLabel
-          id
-        }
+        ...ContentDataImagesFragment
       }
     }
   }
+  ${contentDataImagesFragment}
 `;

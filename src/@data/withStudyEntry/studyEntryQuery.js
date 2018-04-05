@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query GetStudyEntry($id: ID!) {
@@ -28,12 +29,7 @@ export default gql`
               value
               description
             }
-            images(sizes: ["large", "medium"]) {
-              fileName
-              fileType
-              fileLabel
-              url
-            }
+            ...ContentDataImagesFragment
           }
           children(channels: ["study_entries"]) {
             id
@@ -53,13 +49,7 @@ export default gql`
             duration
             file: s3
           }
-          images(sizes: ["large", "medium"]) {
-            fileName
-            fileType
-            fileLabel
-            url
-            size
-          }
+          ...ContentDataImagesFragment
           scripture {
             book
             passage
@@ -74,4 +64,5 @@ export default gql`
       }
     }
   }
+  ${contentDataImagesFragment}
 `;
