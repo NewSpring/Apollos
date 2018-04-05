@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { compose, pure, setPropTypes } from 'recompose';
 import styled from '@ui/styled';
+import Placeholder from '@ui/Placeholder';
 
 import { VideoHeader, ImageHeader, AudioBanner } from './Media';
 
@@ -109,15 +110,19 @@ const ContentView = enhance(
     title,
     audio,
     children,
+    isLoading,
   }) => (
     <View>
       {renderHeader({
- video, images, thumbnailImage, imageOverlayColor,
-})}
+        video, images, thumbnailImage, imageOverlayColor,
+      })}
       {renderAudioBar({
- contentId, title, audio, seriesImages, seriesColors,
-})}
-      <ContentWrapper>{children}</ContentWrapper>
+        contentId, title, audio, seriesImages, seriesColors,
+      })}
+      <ContentWrapper>
+        {children}
+        {isLoading ? <Placeholder.Paragraph /> : null}
+      </ContentWrapper>
     </View>
   ),
 );
