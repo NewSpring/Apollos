@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import {
-  Platform,
-} from 'react-native';
-import {
-  Router,
-} from 'react-router';
+import { Platform } from 'react-native';
+import { Router } from 'react-router';
 import PropTypes from 'prop-types';
 import createBrowserHistory from 'history/createBrowserHistory';
 import createMemoryHistory from 'history/createMemoryHistory';

@@ -12,6 +12,4 @@ const stringify = (object, opts = {}) => (
   queryString.stringify(object, { ...defaultOptions, ...opts })
 );
 
-export {
-  parse, stringify,
-};
+export { parse, stringify };

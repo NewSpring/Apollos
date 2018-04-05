@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 import { compose } from 'recompose';
 import PropTypes from 'prop-types';
 import { H6, H7 } from '@ui/typography';
