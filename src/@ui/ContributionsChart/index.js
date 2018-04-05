@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import {
