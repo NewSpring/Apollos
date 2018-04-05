@@ -28,54 +28,15 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
       }
     }
   >
-    <View>
-      <Image
-        maintainAspectRatio={false}
-        source={
-          Array [
-            Object {
-              "height": 400,
-              "uri": "https://picsum.photos/600/400/?random",
-              "width": 600,
-            },
-          ]
+    <View
+      style={
+        Object {
+          "aspectRatio": 1,
+          "width": "100%",
         }
-        style={
-          Array [
-            Object {},
-            Object {
-              "aspectRatio": 1,
-              "resizeMode": "cover",
-              "width": "100%",
-            },
-          ]
-        }
-      />
-      <ExponentLinearGradient
-        colors={
-          Array [
-            16416882,
-            4294606962,
-          ]
-        }
-        endPoint={
-          Array [
-            0,
-            1,
-          ]
-        }
-        locations={
-          Array [
-            0.3,
-            1,
-          ]
-        }
-        startPoint={
-          Array [
-            0,
-            0,
-          ]
-        }
+      }
+    >
+      <View
         style={
           Object {
             "bottom": 0,
@@ -85,7 +46,81 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
             "top": 0,
           }
         }
-      />
+      >
+        <View
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "#dddddd",
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            collapsable={undefined}
+            maintainAspectRatio={false}
+            onLoad={[Function]}
+            source={
+              Array [
+                Object {
+                  "height": 400,
+                  "uri": "https://picsum.photos/600/400/?random",
+                  "width": 600,
+                },
+              ]
+            }
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": 0,
+                "height": "100%",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "resizeMode": "cover",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </View>
+        <ExponentLinearGradient
+          colors={
+            Array [
+              16416882,
+              4294606962,
+            ]
+          }
+          endPoint={
+            Array [
+              0,
+              1,
+            ]
+          }
+          locations={
+            Array [
+              0.3,
+              1,
+            ]
+          }
+          startPoint={
+            Array [
+              0,
+              0,
+            ]
+          }
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </View>
     </View>
     <View
       style={
@@ -245,29 +280,64 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
       }
     }
   >
-    <View>
-      <Image
-        maintainAspectRatio={false}
-        source={
-          Array [
-            Object {
-              "height": 400,
-              "uri": "https://picsum.photos/600/400/?random",
-              "width": 600,
-            },
-          ]
+    <View
+      style={
+        Object {
+          "aspectRatio": 1,
+          "width": "100%",
         }
+      }
+    >
+      <View
         style={
-          Array [
-            Object {},
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
             Object {
               "aspectRatio": 1,
-              "resizeMode": "cover",
+              "backgroundColor": "#dddddd",
               "width": "100%",
-            },
-          ]
-        }
-      />
+            }
+          }
+        >
+          <Image
+            collapsable={undefined}
+            maintainAspectRatio={false}
+            onLoad={[Function]}
+            source={
+              Array [
+                Object {
+                  "height": 400,
+                  "uri": "https://picsum.photos/600/400/?random",
+                  "width": 600,
+                },
+              ]
+            }
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": 0,
+                "height": "100%",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "resizeMode": "cover",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </View>
+      </View>
     </View>
     <View
       style={
@@ -425,29 +495,64 @@ exports[`the FeedItemCard component should render 1`] = `
       }
     }
   >
-    <View>
-      <Image
-        maintainAspectRatio={false}
-        source={
-          Array [
-            Object {
-              "height": 400,
-              "uri": "https://picsum.photos/600/400/?random",
-              "width": 600,
-            },
-          ]
+    <View
+      style={
+        Object {
+          "aspectRatio": 1,
+          "width": "100%",
         }
+      }
+    >
+      <View
         style={
-          Array [
-            Object {},
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
             Object {
               "aspectRatio": 1,
-              "resizeMode": "cover",
+              "backgroundColor": "#dddddd",
               "width": "100%",
-            },
-          ]
-        }
-      />
+            }
+          }
+        >
+          <Image
+            collapsable={undefined}
+            maintainAspectRatio={false}
+            onLoad={[Function]}
+            source={
+              Array [
+                Object {
+                  "height": 400,
+                  "uri": "https://picsum.photos/600/400/?random",
+                  "width": 600,
+                },
+              ]
+            }
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": 0,
+                "height": "100%",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "resizeMode": "cover",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </View>
+      </View>
     </View>
     <View
       style={
@@ -605,29 +710,64 @@ exports[`the FeedItemCard component should render as liked 1`] = `
       }
     }
   >
-    <View>
-      <Image
-        maintainAspectRatio={false}
-        source={
-          Array [
-            Object {
-              "height": 400,
-              "uri": "https://picsum.photos/600/400/?random",
-              "width": 600,
-            },
-          ]
+    <View
+      style={
+        Object {
+          "aspectRatio": 1,
+          "width": "100%",
         }
+      }
+    >
+      <View
         style={
-          Array [
-            Object {},
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
             Object {
               "aspectRatio": 1,
-              "resizeMode": "cover",
+              "backgroundColor": "#dddddd",
               "width": "100%",
-            },
-          ]
-        }
-      />
+            }
+          }
+        >
+          <Image
+            collapsable={undefined}
+            maintainAspectRatio={false}
+            onLoad={[Function]}
+            source={
+              Array [
+                Object {
+                  "height": 400,
+                  "uri": "https://picsum.photos/600/400/?random",
+                  "width": 600,
+                },
+              ]
+            }
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": 0,
+                "height": "100%",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "resizeMode": "cover",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </View>
+      </View>
     </View>
     <View
       style={
@@ -785,29 +925,64 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
       }
     }
   >
-    <View>
-      <Image
-        maintainAspectRatio={false}
-        source={
-          Array [
-            Object {
-              "height": 400,
-              "uri": "https://picsum.photos/600/400/?random",
-              "width": 600,
-            },
-          ]
+    <View
+      style={
+        Object {
+          "aspectRatio": 1,
+          "width": "100%",
         }
+      }
+    >
+      <View
         style={
-          Array [
-            Object {},
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
             Object {
               "aspectRatio": 1,
-              "resizeMode": "cover",
+              "backgroundColor": "#dddddd",
               "width": "100%",
-            },
-          ]
-        }
-      />
+            }
+          }
+        >
+          <Image
+            collapsable={undefined}
+            maintainAspectRatio={false}
+            onLoad={[Function]}
+            source={
+              Array [
+                Object {
+                  "height": 400,
+                  "uri": "https://picsum.photos/600/400/?random",
+                  "width": 600,
+                },
+              ]
+            }
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "bottom": 0,
+                "height": "100%",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "resizeMode": "cover",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </View>
+      </View>
     </View>
     <View
       style={
@@ -965,29 +1140,64 @@ exports[`the FeedItemCard component should render with inverted (light) font col
       }
     }
   >
-    <View>
-      <Image
-        maintainAspectRatio={false}
-        source={
-          Array [
-            Object {
-              "height": 400,
-              "uri": "https://picsum.photos/600/400/?random",
-              "width": 600,
-            },
-          ]
+    <View
+      style={
+        Object {
+          "aspectRatio": 1,
+          "width": "100%",
         }
+      }
+    >
+      <View
         style={
-          Array [
-            Object {},
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
             Object {
               "aspectRatio": 1,
-              "resizeMode": "cover",
+              "backgroundColor": "#858585",
               "width": "100%",
-            },
-          ]
-        }
-      />
+            }
+          }
+        >
+          <Image
+            collapsable={undefined}
+            maintainAspectRatio={false}
+            onLoad={[Function]}
+            source={
+              Array [
+                Object {
+                  "height": 400,
+                  "uri": "https://picsum.photos/600/400/?random",
+                  "width": 600,
+                },
+              ]
+            }
+            style={
+              Object {
+                "backgroundColor": "#858585",
+                "bottom": 0,
+                "height": "100%",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "resizeMode": "cover",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </View>
+      </View>
     </View>
     <View
       style={

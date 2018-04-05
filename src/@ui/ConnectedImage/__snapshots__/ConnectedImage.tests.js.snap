@@ -2,7 +2,9 @@
 
 exports[`the ConnectedImage component should maintain aspect ratio 1`] = `
 <Image
+  collapsable={undefined}
   maintainAspectRatio={true}
+  onLoad={[Function]}
   source={
     Array [
       Object {
@@ -13,19 +15,20 @@ exports[`the ConnectedImage component should maintain aspect ratio 1`] = `
     ]
   }
   style={
-    Array [
-      Object {
-        "aspectRatio": 1,
-      },
-      undefined,
-    ]
+    Object {
+      "aspectRatio": 1,
+      "backgroundColor": "#dddddd",
+      "opacity": 0,
+    }
   }
 />
 `;
 
 exports[`the ConnectedImage component should render immediately with a network image with a known width and height 1`] = `
 <Image
+  collapsable={undefined}
   maintainAspectRatio={false}
+  onLoad={[Function]}
   source={
     Array [
       Object {
@@ -36,10 +39,10 @@ exports[`the ConnectedImage component should render immediately with a network i
     ]
   }
   style={
-    Array [
-      Object {},
-      undefined,
-    ]
+    Object {
+      "backgroundColor": "#dddddd",
+      "opacity": 0,
+    }
   }
 />
 `;

@@ -10,10 +10,22 @@ import GradientOverlayImage from '@ui/GradientOverlayImage';
 import Card, { CardContent, CardActions } from '@ui/Card';
 import { H4 } from '@ui/typography';
 import styled from '@ui/styled';
+import ProgressiveImage from '@ui/ProgressiveImage';
 
 import LikeButton from './LikeButton';
 
 const StyledCardContent = styled({ paddingBottom: 0 })(CardContent);
+
+const sourcePropType = PropTypes.oneOfType([
+  PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      value: PropTypes.string,
+      description: PropTypes.string,
+    }),
+  ),
+  PropTypes.string,
+]);
 
 const enhance = compose(
   pure,
@@ -26,16 +38,8 @@ const enhance = compose(
   withTheme(),
   setPropTypes({
     title: PropTypes.string.isRequired,
-    images: PropTypes.oneOfType([
-      PropTypes.arrayOf(
-        PropTypes.shape({
-          id: PropTypes.number,
-          value: PropTypes.string,
-          description: PropTypes.string,
-        }),
-      ),
-      PropTypes.string,
-    ]),
+    images: sourcePropType,
+    thumbnail: sourcePropType,
     category: PropTypes.string.isRequired,
     isLoading: PropTypes.bool,
     isLiked: PropTypes.bool,
@@ -47,10 +51,24 @@ const enhance = compose(
 
 const FeedItemCard = enhance(
   ({
-    images, title, category, isLoading, isLiked, backgroundColor, theme, id, ...otherProps
+    images,
+    thumbnail,
+    title,
+    category,
+    isLoading,
+    isLiked,
+    backgroundColor,
+    theme,
+    id,
+    ...otherProps
   }) => (
     <Card isLoading={isLoading} cardColor={backgroundColor} {...otherProps}>
-      <GradientOverlayImage source={images} overlayColor={backgroundColor} />
+      <GradientOverlayImage
+        ImageComponent={ProgressiveImage}
+        source={images}
+        thumbnail={thumbnail}
+        overlayColor={backgroundColor}
+      />
       <StyledCardContent>
         <H4>{startCase(toLower(title))}</H4>
       </StyledCardContent>
