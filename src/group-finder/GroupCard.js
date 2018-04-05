@@ -52,7 +52,6 @@ const ImageColumn = mediaQuery(
 
 const GroupCardImage = styled({
   width: '100%',
-  resizeMode: 'cover',
   aspectRatio: 1.5,
 })(CardImage);
 

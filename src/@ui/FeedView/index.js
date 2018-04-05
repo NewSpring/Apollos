@@ -5,7 +5,7 @@ import { Link } from '@ui/NativeWebRouter';
 import { pure, compose, branch, withProps, defaultProps } from 'recompose';
 import { get } from 'lodash';
 
-import { getLinkPath, getItemBgColor, getItemImages, getItemIsLight } from '@utils/content';
+import { getLinkPath, getItemBgColor, getItemImages, getItemIsLight, getItemThumbnail } from '@utils/content';
 import FeedItemCard from '@ui/FeedItemCard';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import FeedList from './FeedList';
@@ -19,6 +19,7 @@ export const defaultFeedItemRenderer = (CardComponent = FeedItemCard) => (
       title={item.title || item.name || ' '}
       category={item.category}
       images={getItemImages(item)}
+      thumbnail={getItemThumbnail(item)}
       backgroundColor={getItemBgColor(item)}
       isLight={getItemIsLight(item)}
       isLoading={item.isLoading}

@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query getSeriesSingle($id: ID!) {
@@ -20,12 +21,7 @@ export default gql`
           description
           tags
           isLight
-          images(sizes: ["large"]) {
-            fileName
-            fileType
-            fileLabel
-            url
-          }
+          ...ContentDataImagesFragment
           video {
             embedUrl
           }
@@ -52,4 +48,5 @@ export default gql`
       }
     }
   }
+  ${contentDataImagesFragment}
 `;
