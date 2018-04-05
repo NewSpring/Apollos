@@ -66,7 +66,7 @@ const slides = [
   },
 ];
 
-const renderDoneButton = () => <Chip pill title="Done" type="secondary" />;
+const renderDoneButton = () => <Chip pill title="Go" type="secondary" />;
 
 const Onboarding = enhance(({ closeModal }) => (
   <AppIntroSlider
