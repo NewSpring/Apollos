@@ -12,6 +12,11 @@ export default gql`
       parent {
         entryId: id
         content {
+          colors {
+            value
+            description
+          }
+          isLight
           ...ContentDataImagesFragment
         }
         meta {
@@ -22,6 +27,11 @@ export default gql`
         urlTitle
       }
       content {
+        colors {
+          value
+          description
+        }
+        isLight
         ...ContentDataImagesFragment
       }
     }
