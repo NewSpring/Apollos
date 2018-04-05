@@ -13,7 +13,7 @@ module.exports = env => ({
     },
     ios: {
       bundleIdentifier: 'com.subsplashstudio31.NewSpring-Church',
-      buildNumber: '0',
+      buildNumber: '19',
       supportsTablet: true,
       associatedDomains: [
         'applinks:beta.newspring.cc',
@@ -30,7 +30,7 @@ module.exports = env => ({
     },
     android: {
       package: 'cc.newspring.newspringapp',
-      versionCode: 600000,
+      versionCode: 600012,
       icon: 'src/assets/icons/android/icon-192x192-xxxhpdi.png',
       splash: {
         backgroundColor: '#D1DCE6',
