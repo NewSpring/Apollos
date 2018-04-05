@@ -15,6 +15,11 @@ export default gql`
       content {
         ...ContentDataImagesFragment
         isLiked
+        colors {
+          value
+          description
+        }
+        isLight
       }
     }
   }

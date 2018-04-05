@@ -9,11 +9,13 @@ import ContentView, { Title, ByLine, HTMLView } from '@ui/ContentView';
 import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import withNewsStory from '@data/withNewsStory';
+import withCachedContent from '@data/withCachedContent';
 
 const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withNewsStory,
+  withCachedContent,
 );
 
 const ShareLink = withNewsStory(Share);
@@ -29,11 +31,12 @@ const NewsSingle = enhance(({
       ...otherContentProps
     } = {},
   } = { },
+  isLoading,
 }) => (
   <BackgroundView>
     <Header titleText="News" backButton />
     <ScrollView>
-      <ContentView {...otherContentProps}>
+      <ContentView isLoading={isLoading} {...otherContentProps}>
         <Title>{startCase(toLower(title))}</Title>
         <ByLine authors={authors} />
         <HTMLView>{body}</HTMLView>
