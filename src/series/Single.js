@@ -4,7 +4,6 @@ import { ScrollView } from 'react-native';
 import { get } from 'lodash';
 
 import withSeriesContent from '@data/withSeriesContent';
-import { withIsLoading } from '@ui/isLoading';
 import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import ContentView, { HTMLView } from '@ui/ContentView';
@@ -41,7 +40,6 @@ const enhance = compose(
     return theme;
   }),
   withTheme(),
-  withIsLoading,
 );
 
 const ShareLink = withSeriesContent(Share);
