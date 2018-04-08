@@ -7,6 +7,7 @@ import Header from '@ui/Header';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import TabView, { SceneMap } from '@ui/TabView';
 import { withThemeMixin } from '@ui/theme';
+import withCachedContent, { withCachedParentContent } from '@data/withCachedContent';
 
 import ScriptureTab from './ScriptureTab';
 import DevotionalTab from './DevotionalTab';
@@ -15,6 +16,8 @@ const enhance = compose(
   pure,
   mapProps(({ match: { params: { id } } }) => ({ id })),
   withStudyEntry,
+  withCachedContent,
+  withCachedParentContent,
   withThemeMixin(({ content: { parent: { content = {} } = {} } = {} } = {}) => {
     const theme = { };
     if (content.colors && content.colors.length) {

@@ -11,54 +11,15 @@ exports[`The FullScreenControls component should hide player settings controls i
     }
   }
 >
-  <View>
-    <Image
-      maintainAspectRatio={false}
-      source={
-        Array [
-          Object {
-            "height": 150,
-            "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
-            "width": 150,
-          },
-        ]
+  <View
+    style={
+      Object {
+        "aspectRatio": 1,
+        "width": "100%",
       }
-      style={
-        Array [
-          Object {},
-          Object {
-            "aspectRatio": 1,
-            "resizeMode": "cover",
-            "width": "100%",
-          },
-        ]
-      }
-    />
-    <ExponentLinearGradient
-      colors={
-        Array [
-          16711680,
-          4294901760,
-        ]
-      }
-      endPoint={
-        Array [
-          0,
-          1,
-        ]
-      }
-      locations={
-        Array [
-          0.3,
-          1,
-        ]
-      }
-      startPoint={
-        Array [
-          0,
-          0,
-        ]
-      }
+    }
+  >
+    <View
       style={
         Object {
           "bottom": 0,
@@ -68,7 +29,66 @@ exports[`The FullScreenControls component should hide player settings controls i
           "top": 0,
         }
       }
-    />
+    >
+      <Image
+        collapsable={undefined}
+        maintainAspectRatio={false}
+        onLoad={[Function]}
+        source={
+          Array [
+            Object {
+              "height": 150,
+              "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
+              "width": 150,
+            },
+          ]
+        }
+        style={
+          Object {
+            "backgroundColor": "#858585",
+            "height": "100%",
+            "opacity": 0,
+            "resizeMode": "cover",
+            "width": "100%",
+          }
+        }
+      />
+      <ExponentLinearGradient
+        colors={
+          Array [
+            16711680,
+            4294901760,
+          ]
+        }
+        endPoint={
+          Array [
+            0,
+            1,
+          ]
+        }
+        locations={
+          Array [
+            0.3,
+            1,
+          ]
+        }
+        startPoint={
+          Array [
+            0,
+            0,
+          ]
+        }
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
   </View>
   <RCTSafeAreaView
     style={
@@ -500,54 +520,15 @@ exports[`The FullScreenControls component should render 1`] = `
     }
   }
 >
-  <View>
-    <Image
-      maintainAspectRatio={false}
-      source={
-        Array [
-          Object {
-            "height": 150,
-            "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
-            "width": 150,
-          },
-        ]
+  <View
+    style={
+      Object {
+        "aspectRatio": 1,
+        "width": "100%",
       }
-      style={
-        Array [
-          Object {},
-          Object {
-            "aspectRatio": 1,
-            "resizeMode": "cover",
-            "width": "100%",
-          },
-        ]
-      }
-    />
-    <ExponentLinearGradient
-      colors={
-        Array [
-          16711680,
-          4294901760,
-        ]
-      }
-      endPoint={
-        Array [
-          0,
-          1,
-        ]
-      }
-      locations={
-        Array [
-          0.3,
-          1,
-        ]
-      }
-      startPoint={
-        Array [
-          0,
-          0,
-        ]
-      }
+    }
+  >
+    <View
       style={
         Object {
           "bottom": 0,
@@ -557,7 +538,66 @@ exports[`The FullScreenControls component should render 1`] = `
           "top": 0,
         }
       }
-    />
+    >
+      <Image
+        collapsable={undefined}
+        maintainAspectRatio={false}
+        onLoad={[Function]}
+        source={
+          Array [
+            Object {
+              "height": 150,
+              "uri": "https://placeholdit.co/i/150x150?bg=eeeeee&fc=577084",
+              "width": 150,
+            },
+          ]
+        }
+        style={
+          Object {
+            "backgroundColor": "#858585",
+            "height": "100%",
+            "opacity": 0,
+            "resizeMode": "cover",
+            "width": "100%",
+          }
+        }
+      />
+      <ExponentLinearGradient
+        colors={
+          Array [
+            16711680,
+            4294901760,
+          ]
+        }
+        endPoint={
+          Array [
+            0,
+            1,
+          ]
+        }
+        locations={
+          Array [
+            0.3,
+            1,
+          ]
+        }
+        startPoint={
+          Array [
+            0,
+            0,
+          ]
+        }
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
   </View>
   <RCTSafeAreaView
     style={

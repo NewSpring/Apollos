@@ -1,16 +1,12 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Linking } from 'react-native';
-import UrlPolyfill from 'url-parse';
 
 import linkingUri from '@utils/linkingUri';
 
 class DeepLinking extends Component {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node,
-    ]),
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
     handleUniversalLink: PropTypes.func,
   };
 
@@ -26,8 +22,8 @@ class DeepLinking extends Component {
     }).isRequired,
   };
 
-  async componentDidMount() {
-    Linking.getInitialURL().then(this.push);
+  componentDidMount() {
+    Linking.getInitialURL().then(url => this.push(url));
     Linking.addEventListener('url', this.handleChange);
   }
 
@@ -35,23 +31,26 @@ class DeepLinking extends Component {
     Linking.removeEventListener('url', this.handleChange);
   }
 
-  baseUrl = linkingUri;
-
   handleChange = (e) => {
     this.push(e.url);
   };
 
   push = async (url = '') => {
-    const u = new UrlPolyfill(url);
-    let {
-      pathname = null,
-    } = u || {};
+    // Currently, on android, expo has this weird bug where the app will open with he `initialURL`
+    // set to the linkingUrl without `/+`. So we handle that here by making sure we remove `/+`
+    // from both the linkingUri, and the url given to this method so that the two are consistent.
+    let baseUrl = linkingUri;
+    if (baseUrl.endsWith('/+')) {
+      baseUrl = baseUrl.slice(0, -2);
+    }
+
+    let pathname = url.replace(baseUrl, '');
 
     if (pathname.startsWith('/+')) {
       pathname = pathname.substr(2);
     }
 
-    if (url.startsWith('http') && this.props.handleUniversalLink) {
+    if (!url.startsWith(linkingUri) && this.props.handleUniversalLink) {
       this.props.handleUniversalLink({ url });
     } else if (pathname && pathname.length && pathname !== '/') {
       this.context.router.history.push(pathname);

@@ -38,7 +38,7 @@ const EntryList = enhance(({
   isLoading,
 }) => (
   <Wrapper>
-    <Title>{title}</Title>
+    <Title isLoading={false}>{title}</Title>
     <HorizontalTileFeed
       content={entries}
       isLoading={isLoading}

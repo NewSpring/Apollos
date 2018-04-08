@@ -16,6 +16,7 @@ import styled from '@ui/styled';
 
 import getLocation from '@utils/getLocation';
 
+import FormStatusText from '../FormStatusText';
 import KeywordSelect, { keywordIsInQuery, stripKeywordFromQuery } from './KeywordSelect';
 
 const SwitchIcon = compose(
@@ -27,22 +28,30 @@ const SwitchIcon = compose(
   })),
 )(Icon);
 
+const validationSchema = Yup.object().shape({
+  query: Yup.string(),
+  zipCode: Yup.string(),
+  campusId: Yup.string().nullable(),
+  useDeviceLocation: Yup.bool(),
+}).test('at-least-one-input', 'You must provide at least one input', value =>
+  !!(value.query || value.zipCode || value.useDeviceLocation || value.campusId),
+);
+
+const mapPropsToValues = () => ({
+  useDeviceLocation: true,
+  campusId: null, // campuses[0] && campuses[0].name.toLowerCase(),
+});
+
 const enhance = compose(
   setPropTypes({
     onSubmit: PropTypes.func,
   }),
   withFormik({
-    mapPropsToValues: () => ({
-      useDeviceLocation: true,
-      campusId: null, // campuses[0] && campuses[0].name.toLowerCase(),
-    }),
-    enableReinitialize: true,
-    validationSchema: Yup.object().shape({
-      query: Yup.string(),
-      zipCode: Yup.string(),
-      useDeviceLocation: Yup.bool(),
-    }),
-    isInitialValid: true,
+    mapPropsToValues,
+    validationSchema,
+    isInitialValid(props) {
+      return validationSchema.isValidSync(mapPropsToValues(props));
+    },
     handleSubmit: async (values, { props, setFieldError, setSubmitting }) => {
       const tags = [];
       let q = values.query || '';
@@ -155,7 +164,14 @@ export const GroupSearchForm = enhance(({
       </FormFields>
     </TableView>
     <PaddedView vertical={false}>
-      <Button onPress={handleSubmit} title="Let's Go!" type="primary" disabled={!isValid} loading={isSubmitting} />
+      <Button
+        onPress={handleSubmit}
+        title="Let's Go!"
+        type="primary"
+        disabled={!isValid}
+        loading={isSubmitting}
+      />
+      {errors.undefined ? (<FormStatusText error>{errors.undefined}</FormStatusText>) : null}
     </PaddedView>
   </View>
 ));
