@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { compose } from 'recompose';
 
 import styled from '@ui/styled';
-import ConnectedImage from '@ui/ConnectedImage';
+import ProgressiveImage from '@ui/ProgressiveImage';
 import { getIsLoading } from '@ui/isLoading';
 
 const Image = compose(
@@ -11,10 +11,9 @@ const Image = compose(
     ...StyleSheet.absoluteFillObject,
     width: '100%',
     height: '100%',
-    resizeMode: 'cover',
   }, 'Card.Image'),
-)(ConnectedImage);
+)(ProgressiveImage);
 
-Image.propTypes = ConnectedImage.propTypes;
+Image.propTypes = ProgressiveImage.propTypes;
 
 export default Image;

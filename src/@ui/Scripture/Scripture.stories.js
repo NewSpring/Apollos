@@ -16,9 +16,12 @@ const references = [
   'Proverbs 24:23-24',
   'Jeremiah 23:33-40',
   'Psalm 105:1-4',
+  'Song of Solomon 1:1-4',
 ];
 
-const ScriptureStory = ({ reference }) => ( // eslint-disable-line
+const ScriptureStory = (
+  { reference }, // eslint-disable-line
+) => (
   <ScrollView style={StyleSheet.absoluteFill}>
     <PaddedView>
       <Scripture references={[reference]} />
@@ -28,9 +31,9 @@ const ScriptureStory = ({ reference }) => ( // eslint-disable-line
 
 const stories = storiesOf('Scripture', module);
 
-references.forEach(reference => (
-  stories.add(reference, () => <ScriptureStory reference={reference} />)
-));
+references.forEach(reference =>
+  stories.add(reference, () => <ScriptureStory reference={reference} />),
+);
 
 stories.add('Loading State', () => (
   <PaddedView>

@@ -42,7 +42,7 @@ const FundCard = ({
   <Link to={`/give/campaign/${id}`} key={id}>
     <Card isLoading={isLoading}>
       <ResponsiveSideBySideView>
-        <ImageColumn><CardImage style={{ height: '100%', resizeMode: 'cover' }} source={images} /></ImageColumn>
+        <ImageColumn><CardImage style={{ height: '100%' }} source={images} /></ImageColumn>
         <ContentColumn>
           <CardContent>
             <H4>{name}</H4>

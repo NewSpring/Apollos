@@ -1,8 +1,6 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
-import {
-  AsyncStorage,
-} from 'react-native';
+import { AsyncStorage } from 'react-native';
 import get from 'lodash/get';
 
 import { QUERY as LOGGED_IN_QUERY } from './withIsLoggedIn';

@@ -30,7 +30,7 @@ const UserExistsStatus = withRouter(({ history }) => (
   </Status>
 ));
 
-const UnknownErrorStatus = (
+const UnknownErrorStatus = () => (
   <Status error>An error occured. Please double check your information and try again later.</Status>
 );
 

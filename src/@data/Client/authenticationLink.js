@@ -1,6 +1,4 @@
-import {
-  AsyncStorage,
-} from 'react-native';
+import { AsyncStorage } from 'react-native';
 import { setContext } from 'apollo-link-context';
 
 export default setContext(async (_, { headers }) => {

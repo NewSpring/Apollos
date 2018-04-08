@@ -152,7 +152,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
         {(Platform.OS === 'ios') ? (
           <PaddedView>
             <H7>
-              {'You\'ll be redirected to Safari to securely complete this contribution.'}
+              {'To finish giving, you\'ll be redirected to Safari to securely complete this contribution.'}
             </H7>
           </PaddedView>
         ) : null}
@@ -203,12 +203,13 @@ const PaymentConfirmationForm = compose(
       get(props, 'savedPaymentMethods', []).find(({ id }) => id === get(props, 'contributions.savedPaymentMethodId')),
     isScheduled: get(props, 'contributions.frequencyId', 'today') !== 'today',
     onSubmit: async () => {
+      // todo: this function is in dire need of refactoring
       try {
         if (Platform.OS === 'ios') {
           Linking.addEventListener('url', handleRedirect);
           const userToken = await AsyncStorage.getItem('authToken');
 
-          const res = await WebBrowser.openBrowserAsync(`${Settings.APP_ROOT_URL || 'http://localhost:3000'}/give/restored-checkout?${stringify({
+          const res = await Linking.openURL(`${Settings.APP_ROOT_URL || 'http://localhost:3000'}/give/restored-checkout?${stringify({
             redirect: `${linkingUri}${props.navigateToOnComplete}`,
             state: JSON.stringify(props.contributions),
             userToken,
@@ -229,6 +230,7 @@ const PaymentConfirmationForm = compose(
           props.setPaymentResult({
             success: true,
           });
+          if (props.onComplete) props.onComplete(null, true);
           return true;
         }
 
@@ -244,7 +246,6 @@ const PaymentConfirmationForm = compose(
         });
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
-
 
         props.setPaymentResult({
           success: true,
@@ -279,10 +280,10 @@ const PaymentConfirmationForm = compose(
     const name = (paymentMethod.accountNumber || paymentMethod.cardNumber || '').replace(/-/g, '').slice(-4);
 
     const text = `${verb} with ${name}`;
-    const icon = contributions.paymentMethod === 'creditCard' ? 'credit' : 'bank';
+    const icon = (paymentMethod.paymentMethod || contributions.paymentMethod) === 'creditCard' ? 'credit' : 'bank';
     return {
-      submitButtonText: text,
-      submitButtonIcon: icon,
+      submitButtonText: Platform.OS === 'ios' ? 'Continue in Safari' : text,
+      submitButtonIcon: Platform.OS === 'ios' ? null : icon,
     };
   }),
 )(PaymentConfirmationFormWithoutData);
