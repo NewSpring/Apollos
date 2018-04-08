@@ -34,11 +34,13 @@ export class ContributionsChartCard extends PureComponent {
     total: PropTypes.number,
     iconSize: PropTypes.number,
     iconColor: PropTypes.string,
+    onPressHistory: PropTypes.func,
   };
 
   static defaultProps = {
     total: 0,
     iconSize: undefined,
+    onPressHistory: () => {},
   };
 
   render() {
@@ -54,7 +56,7 @@ export class ContributionsChartCard extends PureComponent {
           <StyledBodyText italic>{'Contributed so far this year'}</StyledBodyText>
           <Spacer />
           <TouchableWithoutFeedback
-            onPress={() => (null)}
+            onPress={this.props.onPressHistory}
           >
             <Row>
               <StyledH6>{'View Giving History'}</StyledH6>

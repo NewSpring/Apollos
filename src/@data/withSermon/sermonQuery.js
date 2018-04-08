@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query getSermon($id: ID!) {
@@ -21,12 +22,7 @@ export default gql`
               value
               description
             }
-            images(sizes: ["large", "medium"]) {
-              fileName
-              fileType
-              fileLabel
-              url
-            }
+            ...ContentDataImagesFragment
           }
           children(channels: ["sermons"]) {
             id
@@ -37,6 +33,11 @@ export default gql`
             }
             content {
               speaker
+              colors {
+                value
+                description
+              }
+              isLight
             }
           }
         }
@@ -62,4 +63,5 @@ export default gql`
       }
     }
   }
+  ${contentDataImagesFragment}
 `;

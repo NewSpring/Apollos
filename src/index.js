@@ -9,6 +9,7 @@ import { ThemeProvider } from '@ui/theme';
 import FontLoader from '@ui/FontLoader';
 import { ActionSheetProvider } from '@ui/ActionSheet';
 import Client from '@data/Client';
+import OnboardingModal from '@ui/OnboardingModal';
 import orientation from '@utils/orientation';
 
 import AppRouter from './AppRouter';
@@ -33,6 +34,7 @@ const App = nest(
   FontLoader,
   ActionSheetProvider,
   SentryContext,
+  OnboardingModal,
   AppRouter,
 );
 

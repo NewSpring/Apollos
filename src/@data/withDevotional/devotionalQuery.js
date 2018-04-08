@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query getDevotional($id: ID!) {
@@ -23,14 +24,10 @@ export default gql`
             book
             passage
           }
-          images(sizes: ["large"]) {
-            fileName
-            fileType
-            fileLabel
-            url
-          }
+          ...ContentDataImagesFragment
         }
       }
     }
   }
+  ${contentDataImagesFragment}
 `;

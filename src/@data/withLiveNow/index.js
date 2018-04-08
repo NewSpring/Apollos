@@ -18,6 +18,7 @@ export default graphql(QUERY, {
     embedUrl: live.embedUrl,
   }),
   options: () => ({
+    errorPolicy: 'ignore',
     fetchPolicy: 'cache-and-network',
     pollInterval: 60000,
   }),
