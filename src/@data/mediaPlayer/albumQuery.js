@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query getAlbum($id: ID!) {
@@ -22,13 +23,7 @@ export default gql`
             duration
             file: s3
           }
-          images(sizes: ["large", "medium", "small", "xsmall"]) {
-            fileName
-            fileType
-            fileLabel
-            size
-            url
-          }
+          ...ContentDataImagesFragment
           colors {
             value
             description
@@ -38,4 +33,5 @@ export default gql`
       }
     }
   }
+  ${contentDataImagesFragment}
 `;

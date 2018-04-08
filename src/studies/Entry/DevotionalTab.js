@@ -25,7 +25,7 @@ const DevotionalTab = enhance(({
   isLoading,
 }) => (
   <ScrollView>
-    <ContentView {...otherContentProps} >
+    <ContentView isLoading={isLoading} {...otherContentProps} >
       <Title>{titleCase(title)}</Title>
       <HTMLView>{body}</HTMLView>
     </ContentView>

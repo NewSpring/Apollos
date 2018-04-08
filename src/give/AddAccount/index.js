@@ -11,7 +11,7 @@ import PaymentMethod from './PaymentMethod';
 import PaymentMethodConfirmation from './PaymentMethodConfirmation';
 import Success from './Success';
 
-function lastDirectory(pathname) {
+function lastDirectory(pathname = '') {
   const pathParts = pathname.split('/');
   return pathParts.slice(pathParts.length - 1)[0];
 }

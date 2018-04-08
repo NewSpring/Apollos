@@ -28,11 +28,6 @@ const enhance = compose(
     }) => {
       props
         .onSubmit(values)
-        .catch((...e) => {
-          sentry.captureException(e);
-          setStatus(null);
-          setFieldError('email', 'Could not find your email'); // todo: show server error messages
-        })
         .then((...args) => {
           setStatus(
             `An email has been sent to ${
@@ -40,6 +35,11 @@ const enhance = compose(
             } with further instructions to reset your password.`,
           );
           if (props.onForgotPasswordSuccess) props.onForgotPasswordSuccess(...args);
+        })
+        .catch((...e) => {
+          sentry.captureException(e);
+          setStatus(null);
+          setFieldError('email', 'Could not find your email'); // todo: show server error messages
         })
         .finally(() => setSubmitting(false));
     },

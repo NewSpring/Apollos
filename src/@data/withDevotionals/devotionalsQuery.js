@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query getDevotionals($limit: Int!, $skip: Int!) {
@@ -17,13 +18,10 @@ export default gql`
       content {
         isLiked
         body
-        images(sizes: ["large"]) {
-          fileName
-          fileType
-          fileLabel
-          url
-        }
+        ...ContentDataImagesFragment
+
       }
     }
   }
+  ${contentDataImagesFragment}
 `;

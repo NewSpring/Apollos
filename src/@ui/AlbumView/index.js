@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
 import { View, Platform, StyleSheet } from 'react-native';
 import PaddedView from '@ui/PaddedView';
-import ConnectedImage from '@ui/ConnectedImage';
+import ProgressiveImage from '@ui/ProgressiveImage';
 import { H5, H7 } from '@ui/typography';
 import { withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
@@ -17,6 +17,7 @@ const InfoWrapper = styled({
 }, 'AlbumView.InfoWrapper')(PaddedView);
 
 const AlbumArt = styled({
+  position: 'relative',
   width: '33%',
   aspectRatio: 1,
   ...Platform.select({
@@ -25,12 +26,12 @@ const AlbumArt = styled({
       paddingTop: '100%',
     },
   }),
-}, 'AlbumView.AlbumArt')(ConnectedImage);
+}, 'AlbumView.AlbumArt')(ProgressiveImage);
 
 const BlurredImage = styled(({ theme }) => ({
   ...StyleSheet.absoluteFillObject,
   opacity: theme.alpha.low,
-}), 'AlbumView.BlurredImage')(ConnectedImage);
+}), 'AlbumView.BlurredImage')(ProgressiveImage);
 
 const TitleWrapper = styled({
   width: '66%',
@@ -53,8 +54,8 @@ const enhance = compose(
   setPropTypes({
     title: PropTypes.string,
     artist: PropTypes.string,
-    blurredImage: ConnectedImage.propTypes.source,
-    albumImage: ConnectedImage.propTypes.source,
+    blurredImage: ProgressiveImage.propTypes.source,
+    albumImage: ProgressiveImage.propTypes.source,
     isLoading: PropTypes.bool,
   }),
 );

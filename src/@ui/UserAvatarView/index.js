@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Platform, View, StyleSheet } from 'react-native';
-import { compose, setPropTypes } from 'recompose';
+import { compose, pure, setPropTypes, withState } from 'recompose';
 import { withTheme, withThemeMixin } from '@ui/theme';
 import { H4, BodyText } from '@ui/typography';
 import Avatar from '@ui/Avatar';
@@ -29,7 +29,8 @@ const StyledAvatar = withTheme(({ theme }) => ({
     marginRight: 0,
     marginBottom: theme.sizing.baseUnit / 2,
     ...Platform.select({
-      web: { // make more responsive on web
+      web: {
+        // make more responsive on web
         width: '20vw',
         height: 0,
         paddingTop: '100%',
@@ -45,6 +46,7 @@ const BlurredImage = styled({
 })(ConnectedImage);
 
 const enhance = compose(
+  pure,
   setPropTypes({
     user: PropTypes.shape({
       photo: ConnectedImage.propTypes.source,
@@ -62,44 +64,52 @@ const enhance = compose(
     ...View.propTypes,
   }),
   withThemeMixin({ type: 'dark' }),
+  withState('isUploadingFile', 'setIsUploadingFile', false),
 );
 
-const UserAvatarView = enhance(({
-  user: {
-    photo,
-    firstName,
-    lastName,
-    home = {},
-  } = {},
-  isLoading,
-  refetch,
-  onPhotoPress,
-  blurIntensity = 100,
-  allowProfileImageChange = false,
-  ...viewProps
-}) => {
-  let ImageContainer = Touchable;
-  if (allowProfileImageChange) ImageContainer = UploadProfileImageForm;
-  // todo: handle file select stuff
+const UserAvatarView = enhance(
+  ({
+    user: {
+      photo, firstName, lastName, home = {},
+    } = {},
+    isLoading,
+    refetch,
+    onPhotoPress,
+    blurIntensity = 100,
+    allowProfileImageChange = false,
+    setIsUploadingFile,
+    isUploadingFile,
+    ...viewProps
+  }) => {
+    let ImageContainer = Touchable;
+    if (allowProfileImageChange) ImageContainer = UploadProfileImageForm;
+    // todo: handle file select stuff
 
-  return (
-    <Container {...viewProps}>
-      <BlurView intensity={blurIntensity} tint="dark" style={StyleSheet.absoluteFill}>
-        {photo ? <BlurredImage source={photo} resizeMode="cover" /> : null}
-      </BlurView>
-      <Content>
-        <ImageContainer
-          onPress={onPhotoPress}
-          disabled={!allowProfileImageChange && !onPhotoPress}
-          webWrapperStyle={{ alignItems: 'center' }}
-        >
-          <StyledAvatar source={photo} size="large" />
-        </ImageContainer>
-        <Name>{firstName} {lastName}</Name>
-        {home ? (<City>{home.city}</City>) : null}
-      </Content>
-    </Container>
-  );
-});
+    return (
+      <Container {...viewProps}>
+        <BlurView intensity={blurIntensity} tint="dark" style={StyleSheet.absoluteFill}>
+          {photo ? (
+            <BlurredImage source={photo} resizeMode="cover" isLoading={isUploadingFile} />
+          ) : null}
+        </BlurView>
+        <Content>
+          <ImageContainer
+            onPress={onPhotoPress}
+            disabled={!allowProfileImageChange && !onPhotoPress}
+            webWrapperStyle={{ alignItems: 'center' }}
+            onUploadStarted={() => setIsUploadingFile(true)}
+            onUploadEnded={() => setIsUploadingFile(false)}
+          >
+            <StyledAvatar source={photo} size="large" isLoading={isUploadingFile} />
+          </ImageContainer>
+          <Name>
+            {firstName} {lastName}
+          </Name>
+          {home ? <City>{home.city}</City> : null}
+        </Content>
+      </Container>
+    );
+  },
+);
 
 export default UserAvatarView;

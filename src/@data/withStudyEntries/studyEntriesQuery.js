@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query GetEntriesFromStudy($id: ID!) {
@@ -22,12 +23,7 @@ export default gql`
                 value
                 description
               }
-              images(sizes: ["large", "medium"]) {
-                fileName
-                fileType
-                fileLabel
-                url
-              }
+              ...ContentDataImagesFragment
             }
           }
           meta {
@@ -44,4 +40,5 @@ export default gql`
       }
     }
   }
+  ${contentDataImagesFragment}
 `;

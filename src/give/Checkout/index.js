@@ -13,7 +13,7 @@ import PaymentConfirmation from './PaymentConfirmation';
 import PaymentComplete from './PaymentComplete';
 import ChangePaymentMethod from './ChangePaymentMethod';
 
-function lastDirectory(pathname) {
+function lastDirectory(pathname = '') {
   const pathParts = pathname.split('/');
   return pathParts.slice(pathParts.length - 1)[0];
 }
