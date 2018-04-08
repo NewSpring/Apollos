@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
-import { Platform, Image } from 'react-native';
+import { Animated, Platform, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { every } from 'lodash';
-import makeCanceable from '@utils/makeCanceable';
+import makeCancelable from '@utils/makeCancelable';
+import styled from '@ui/styled';
 
 import SkeletonImage from './SkeletonImage';
 
@@ -53,6 +54,10 @@ export const updateCache = sources => Promise.all(getCachedSources(sources).map(
   });
 }));
 
+const withBackgroundColor = styled(({ theme }) => ({
+  backgroundColor: theme.colors.background.inactive,
+}));
+
 class ConnectedImage extends PureComponent {
   static propTypes = {
     source: PropTypes.oneOfType([
@@ -62,11 +67,12 @@ class ConnectedImage extends PureComponent {
     ImageComponent: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     maintainAspectRatio: PropTypes.bool,
     isLoading: PropTypes.bool,
+    onLoad: PropTypes.func,
     style: PropTypes.any, // eslint-disable-line
   }
 
   static defaultProps = {
-    ImageComponent: Image,
+    ImageComponent: Animated.Image,
     maintainAspectRatio: false,
   }
 
@@ -79,6 +85,14 @@ class ConnectedImage extends PureComponent {
 
   componentWillUnmount() {
     if (this.cacheUpdater) this.cacheUpdater.cancel();
+  }
+
+  onLoad = (...args) => {
+    Animated.timing(this.imageOpacity, {
+      toValue: 1,
+      duration: 250,
+    }).start();
+    if (this.props.onLoad) this.props.onLoad(...args);
   }
 
   get aspectRatio() {
@@ -101,8 +115,10 @@ class ConnectedImage extends PureComponent {
     return this.props.isLoading || !every(this.state.source, image => image.width && image.height);
   }
 
+  imageOpacity = new Animated.Value(0);
+
   updateCache(sources) {
-    this.cacheUpdater = makeCanceable(updateCache(sources));
+    this.cacheUpdater = makeCancelable(updateCache(sources));
     this.cacheUpdater.promise.then(() => {
       const newSource = getCachedSources(sources);
       const oldSource = this.state.source || [];
@@ -130,15 +146,22 @@ class ConnectedImage extends PureComponent {
     }
 
     const {
-      ImageComponent = Image, style, isLoading, ...otherProps
+      ImageComponent = Animated.Image, style, isLoading, ...otherProps
     } = this.props;
 
     return (
       <SkeletonImage onReady={!this.isLoading}>
-        <ImageComponent {...otherProps} source={source} style={[this.aspectRatio, style]} />
+        <ImageComponent
+          {...otherProps}
+          source={source}
+          onLoad={this.onLoad}
+          style={[this.aspectRatio, { opacity: this.imageOpacity }, style]}
+        />
       </SkeletonImage>
     );
   }
 }
 
-export default ConnectedImage;
+const enhanced = withBackgroundColor(ConnectedImage);
+enhanced.propTypes = ConnectedImage.propTypes;
+export default enhanced;

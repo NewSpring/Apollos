@@ -8,9 +8,12 @@ module.exports = env => ({
     slug: 'newspring',
     orientation: 'portrait',
     scheme: 'newspring',
+    splash: {
+      image: 'src/assets/splash/splash-1242x2436.png',
+    },
     ios: {
       bundleIdentifier: 'com.subsplashstudio31.NewSpring-Church',
-      buildNumber: '0',
+      buildNumber: '19',
       supportsTablet: true,
       associatedDomains: [
         'applinks:beta.newspring.cc',
@@ -21,20 +24,16 @@ module.exports = env => ({
       ],
       icon: 'src/assets/icons/ios/icon-1024x1024.png',
       splash: {
-        image: 'src/assets/splash/ios/768_1024.png',
-        backgroundColor: '#1c683e',
+        backgroundColor: '#D1DCE6',
       },
+      loadJSInBackgroundExperimental: true,
     },
     android: {
       package: 'cc.newspring.newspringapp',
-      versionCode: 600000,
+      versionCode: 600012,
       icon: 'src/assets/icons/android/icon-192x192-xxxhpdi.png',
       splash: {
-        backgroundColor: '#1c683e',
-        mdpi: 'src/assets/splash/android/320_470.png',
-        hdpi: 'src/assets/splash/android/480_640.png',
-        xhdpi: 'src/assets/splash/android/720_960.png',
-        xxhdpi: 'src/assets/splash/android/1080_1440.png',
+        backgroundColor: '#D1DCE6',
       },
     },
     hooks: {
@@ -42,8 +41,8 @@ module.exports = env => ({
         {
           file: 'sentry-expo/upload-sourcemaps',
           config: {
-            organization: 'differential-cs',
-            project: 'newspring-apollos',
+            organization: 'newspring-church',
+            project: 'app',
             authToken: process.env.SENTRY_AUTH,
           },
         },

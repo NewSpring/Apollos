@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
-import {
-  AsyncStorage,
-} from 'react-native';
+import { AsyncStorage } from 'react-native';
 import get from 'lodash/get';
 import withGive from '@data/withGive';
 import { withRouter } from '@ui/NativeWebRouter';

@@ -1,0 +1,858 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Onboarding should render 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    bounces={false}
+    data={
+      Array [
+        Object {
+          "backgroundColor": "#6bac43",
+          "image": 1,
+          "imageStyle": Object {
+            "height": "100%",
+            "resizeMode": "contain",
+            "width": "100%",
+          },
+          "key": "one",
+        },
+        Object {
+          "backgroundColor": "#6bac43",
+          "image": 1,
+          "imageStyle": Object {
+            "height": "100%",
+            "resizeMode": "contain",
+            "width": "100%",
+          },
+          "key": "two",
+        },
+        Object {
+          "backgroundColor": "#6bac43",
+          "image": 1,
+          "imageStyle": Object {
+            "height": "100%",
+            "resizeMode": "contain",
+            "width": "100%",
+          },
+          "key": "three",
+        },
+        Object {
+          "backgroundColor": "#6bac43",
+          "image": 1,
+          "imageStyle": Object {
+            "height": "100%",
+            "resizeMode": "contain",
+            "width": "100%",
+          },
+          "key": "four",
+        },
+        Object {
+          "backgroundColor": "#6bac43",
+          "image": 1,
+          "imageStyle": Object {
+            "height": "100%",
+            "resizeMode": "contain",
+            "width": "100%",
+          },
+          "key": "five",
+        },
+        Object {
+          "backgroundColor": "#6bac43",
+          "image": 1,
+          "imageStyle": Object {
+            "height": "100%",
+            "resizeMode": "contain",
+            "width": "100%",
+          },
+          "key": "six",
+        },
+        Object {
+          "backgroundColor": "#6bac43",
+          "image": 1,
+          "imageStyle": Object {
+            "height": "100%",
+            "resizeMode": "contain",
+            "width": "100%",
+          },
+          "key": "seven",
+        },
+        Object {
+          "backgroundColor": "#6bac43",
+          "image": 1,
+          "imageStyle": Object {
+            "height": "100%",
+            "resizeMode": "contain",
+            "width": "100%",
+          },
+          "key": "eight",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    extraData={750}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={true}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    pagingEnabled={true}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    showsHorizontalScrollIndicator={false}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "space-around",
+              },
+              Object {
+                "backgroundColor": "#6bac43",
+                "height": 1334,
+                "paddingBottom": 64,
+                "paddingTop": 20,
+                "width": 750,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 26,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          />
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": "100%",
+                "resizeMode": "contain",
+                "width": "100%",
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 16,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "space-around",
+              },
+              Object {
+                "backgroundColor": "#6bac43",
+                "height": 1334,
+                "paddingBottom": 64,
+                "paddingTop": 20,
+                "width": 750,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 26,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          />
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": "100%",
+                "resizeMode": "contain",
+                "width": "100%",
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 16,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "space-around",
+              },
+              Object {
+                "backgroundColor": "#6bac43",
+                "height": 1334,
+                "paddingBottom": 64,
+                "paddingTop": 20,
+                "width": 750,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 26,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          />
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": "100%",
+                "resizeMode": "contain",
+                "width": "100%",
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 16,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "space-around",
+              },
+              Object {
+                "backgroundColor": "#6bac43",
+                "height": 1334,
+                "paddingBottom": 64,
+                "paddingTop": 20,
+                "width": 750,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 26,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          />
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": "100%",
+                "resizeMode": "contain",
+                "width": "100%",
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 16,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "space-around",
+              },
+              Object {
+                "backgroundColor": "#6bac43",
+                "height": 1334,
+                "paddingBottom": 64,
+                "paddingTop": 20,
+                "width": 750,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 26,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          />
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": "100%",
+                "resizeMode": "contain",
+                "width": "100%",
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 16,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "space-around",
+              },
+              Object {
+                "backgroundColor": "#6bac43",
+                "height": 1334,
+                "paddingBottom": 64,
+                "paddingTop": 20,
+                "width": 750,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 26,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          />
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": "100%",
+                "resizeMode": "contain",
+                "width": "100%",
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 16,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "space-around",
+              },
+              Object {
+                "backgroundColor": "#6bac43",
+                "height": 1334,
+                "paddingBottom": 64,
+                "paddingTop": 20,
+                "width": 750,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 26,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          />
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": "100%",
+                "resizeMode": "contain",
+                "width": "100%",
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 16,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "space-around",
+              },
+              Object {
+                "backgroundColor": "#6bac43",
+                "height": 1334,
+                "paddingBottom": 64,
+                "paddingTop": 20,
+                "width": 750,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 26,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          />
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": "100%",
+                "resizeMode": "contain",
+                "width": "100%",
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(255, 255, 255, .7)",
+                  "fontSize": 16,
+                  "fontWeight": "300",
+                  "paddingHorizontal": 16,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      Object {
+        "bottom": 16,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 16,
+          "justifyContent": "center",
+          "margin": 16,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, .9)",
+            },
+            Object {
+              "borderRadius": 5,
+              "height": 10,
+              "marginHorizontal": 4,
+              "width": 10,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, .2)",
+            },
+            Object {
+              "borderRadius": 5,
+              "height": 10,
+              "marginHorizontal": 4,
+              "width": 10,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, .2)",
+            },
+            Object {
+              "borderRadius": 5,
+              "height": 10,
+              "marginHorizontal": 4,
+              "width": 10,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, .2)",
+            },
+            Object {
+              "borderRadius": 5,
+              "height": 10,
+              "marginHorizontal": 4,
+              "width": 10,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, .2)",
+            },
+            Object {
+              "borderRadius": 5,
+              "height": 10,
+              "marginHorizontal": 4,
+              "width": 10,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, .2)",
+            },
+            Object {
+              "borderRadius": 5,
+              "height": 10,
+              "marginHorizontal": 4,
+              "width": 10,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, .2)",
+            },
+            Object {
+              "borderRadius": 5,
+              "height": 10,
+              "marginHorizontal": 4,
+              "width": 10,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, .2)",
+            },
+            Object {
+              "borderRadius": 5,
+              "height": 10,
+              "marginHorizontal": 4,
+              "width": 10,
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

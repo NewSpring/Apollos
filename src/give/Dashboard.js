@@ -91,7 +91,7 @@ export class Dashboard extends PureComponent {
           })}
 
           <MediaQuery maxWidth="md">
-            <ContributionsChartCard />
+            <ContributionsChartCard onPressHistory={this.props.onPressActivityLink} />
           </MediaQuery>
 
           <DashboardSubheader
