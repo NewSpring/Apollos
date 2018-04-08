@@ -6,10 +6,14 @@ const env = process.env.NODE_ENV;
 
 (async () => {
   try {
+    const headers = {
+      headers: { Accept: 'application/vnd.github.v3.raw' },
+    };
+
     const response = await fetch(
-      'https://raw.githubusercontent.com/NewSpring/ops-settings/master/sites/apollos/settings.json' +
-        '?token=' +
+      'https://api.github.com/repos/newspring/ops-settings/contents/sites/apollos/settings.json?access_token=' +
         TOKEN,
+      headers,
     );
 
     const settings = await response.json();
@@ -44,10 +48,7 @@ SENTRY_AUTH='${settings.prod.sentryAuth}'`;
     const envContent =
       env === 'production' ? productionContent : env === 'test' ? testContent : localContent;
 
-    await FS.appendFile(Path.resolve(__dirname, '../.env'), envContent, err => {
-      if (err) console.log(err);
-      console.log('Local environment settings created.');
-    });
+    await FS.writeFileSync(Path.resolve(__dirname, '../.env'), envContent);
   } catch (e) {
     console.log(e);
   }

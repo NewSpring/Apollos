@@ -5,10 +5,11 @@ import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
 import Header from '@ui/Header';
 import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
-import { Link, withRouter, goBackTo } from '@ui/NativeWebRouter';
+import { Link, withRouter } from '@ui/NativeWebRouter';
 import Touchable from '@ui/Touchable';
 import { H7 } from '@ui/typography';
 import withUser from '@data/withUser';
+import { withShowOnboarding } from '@data/withOnboarding';
 import UploadProfileImageForm from '@ui/forms/UploadProfileImageForm';
 
 import Layout from './Layout';
@@ -18,12 +19,16 @@ export { ProfileDetails, ProfileAddress, ChangePassword } from './forms';
 const LogoutTouchable = compose(
   withUser,
   withRouter,
-  withProps(({ logout, history }) => ({
-    onPress: () => {
-      logout();
-      goBackTo({ to: '/', history, replace: true });
+  withProps(({ logout }) => ({
+    async onPress() {
+      await logout();
     },
   })),
+)(Touchable);
+
+const ShowOnboardingTouchable = compose(
+  withShowOnboarding,
+  withProps(({ showOnboarding }) => ({ onPress: showOnboarding })),
 )(Touchable);
 
 const Arrow = withProps({
@@ -112,6 +117,13 @@ const Settings = () => (
           </TableView>
 
           <TableView>
+            <ShowOnboardingTouchable>
+              <Cell>
+                <CellText>Show Onboarding</CellText>
+                <Arrow />
+              </Cell>
+            </ShowOnboardingTouchable>
+            <Divider />
             <LogoutTouchable>
               <Cell>
                 <CellText>Logout</CellText>

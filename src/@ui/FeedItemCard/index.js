@@ -1,29 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Platform } from 'react-native';
 import { compose, pure, setPropTypes, defaultProps } from 'recompose';
 import { startCase, toLower } from 'lodash';
 
 import { withThemeMixin, withTheme } from '@ui/theme';
 import Icon from '@ui/Icon';
 import CategoryLabel from '@ui/CategoryLabel';
-import CardImage from '@ui/GradientOverlayImage';
+import GradientOverlayImage from '@ui/GradientOverlayImage';
 import Card, { CardContent, CardActions } from '@ui/Card';
 import { H4 } from '@ui/typography';
 import styled from '@ui/styled';
+import ProgressiveImage from '@ui/ProgressiveImage';
 
 import LikeButton from './LikeButton';
 
 const StyledCardContent = styled({ paddingBottom: 0 })(CardContent);
 
-const CardImageWithBorderFix = styled(({ theme }) => ({
-  ...Platform.select({
-    android: { // fixes android borderRadius overflow display issue
-      borderTopRightRadius: theme.sizing.borderRadius,
-      borderTopLeftRadius: theme.sizing.borderRadius,
-    },
-  }),
-}))(CardImage);
+const sourcePropType = PropTypes.oneOfType([
+  PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      value: PropTypes.string,
+      description: PropTypes.string,
+    }),
+  ),
+  PropTypes.string,
+]);
 
 const enhance = compose(
   pure,
@@ -36,14 +38,8 @@ const enhance = compose(
   withTheme(),
   setPropTypes({
     title: PropTypes.string.isRequired,
-    images: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number,
-        value: PropTypes.string,
-        description: PropTypes.string,
-      })),
-      PropTypes.string,
-    ]),
+    images: sourcePropType,
+    thumbnail: sourcePropType,
     category: PropTypes.string.isRequired,
     isLoading: PropTypes.bool,
     isLiked: PropTypes.bool,
@@ -53,38 +49,42 @@ const enhance = compose(
   }),
 );
 
-const FeedItemCard = enhance(({
-  images,
-  title,
-  category,
-  isLoading,
-  isLiked,
-  backgroundColor,
-  theme,
-  id,
-  ...otherProps
-}) => (
-  <Card isLoading={isLoading} cardColor={backgroundColor} {...otherProps}>
-    <CardImageWithBorderFix source={images} overlayColor={backgroundColor} />
-    <StyledCardContent>
-      <H4>{startCase(toLower(title))}</H4>
-    </StyledCardContent>
-    <CardActions>
-      <CategoryLabel
-        label={startCase(toLower(category))}
-        isLoading={isLoading}
-        withFlex
+const FeedItemCard = enhance(
+  ({
+    images,
+    thumbnail,
+    title,
+    category,
+    isLoading,
+    isLiked,
+    backgroundColor,
+    theme,
+    id,
+    ...otherProps
+  }) => (
+    <Card isLoading={isLoading} cardColor={backgroundColor} {...otherProps}>
+      <GradientOverlayImage
+        ImageComponent={ProgressiveImage}
+        source={images}
+        thumbnail={thumbnail}
+        overlayColor={backgroundColor}
       />
-      <LikeButton id={id}>
-        <Icon
-          name={isLiked ? 'like-solid' : 'like'}
-          size={theme.helpers.rem(1.2)}
-          fill={theme.colors.text.primary}
-          isLoading={isLoading}
-        />
-      </LikeButton>
-    </CardActions>
-  </Card>
-));
+      <StyledCardContent>
+        <H4>{startCase(toLower(title))}</H4>
+      </StyledCardContent>
+      <CardActions>
+        <CategoryLabel label={startCase(toLower(category))} isLoading={isLoading} withFlex />
+        <LikeButton id={id}>
+          <Icon
+            name={isLiked ? 'like-solid' : 'like'}
+            size={theme.helpers.rem(1.2)}
+            fill={theme.colors.text.primary}
+            isLoading={isLoading}
+          />
+        </LikeButton>
+      </CardActions>
+    </Card>
+  ),
+);
 
 export default FeedItemCard;

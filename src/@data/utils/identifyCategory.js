@@ -1,4 +1,5 @@
 export default function identifyCategory(item) {
+  if (!item) return item;
   const category = item.channelName;
 
   if (item && item.__typename === 'Group') { // eslint-disable-line

@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query getContent($id: ID!) {
@@ -22,12 +23,7 @@ export default gql`
             embedUrl
           }
           tags
-          images(sizes: ["large"]) {
-            fileName
-            fileType
-            fileLabel
-            url
-          }
+          ...ContentDataImagesFragment
         }
       }
     }
@@ -36,4 +32,5 @@ export default gql`
       embedCode
     }
   }
+  ${contentDataImagesFragment}
 `;

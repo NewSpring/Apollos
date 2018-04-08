@@ -5,7 +5,7 @@ import { compose, mapProps, pure } from 'recompose';
 
 import withGroupInfo from '@data/withGroupInfo';
 import Header from '@ui/Header';
-import ConnectedImage from '@ui/ConnectedImage';
+import ProgressiveImage from '@ui/ProgressiveImage';
 import PaddedView from '@ui/PaddedView';
 import BackgroundView from '@ui/BackgroundView';
 import Card from '@ui/Card';
@@ -49,7 +49,7 @@ const StyledImage = styled({
       paddingTop: '50%',
     },
   }),
-})(ConnectedImage);
+})(ProgressiveImage);
 
 const Label = styled(({ theme }) => ({ color: theme.colors.text.tertiary }))(H7);
 const Info = styled(({ theme }) => ({ color: theme.colors.text.secondary }))(H6);

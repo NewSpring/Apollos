@@ -4,6 +4,7 @@ import fetchMoreResolver from '@data/utils/fetchMoreResolver';
 import identifyCategory from '@data/utils/identifyCategory';
 import playMutation from './playMutation';
 import pauseMutation from './pauseMutation';
+import stopMutation from './stopMutation';
 import shuffleMutation from './shuffleMutation';
 import repeatMutation from './repeatMutation';
 import nowPlayingMutation from './nowPlayingMutation';
@@ -13,40 +14,46 @@ import albumsQuery from './albumsQuery';
 
 const play = graphql(playMutation, {
   props: ({ mutate }) => ({
-    play: () => (mutate()),
+    play: () => mutate(),
   }),
 });
 
 const setNowPlaying = graphql(nowPlayingMutation, {
   props: ({ mutate }) => ({
-    setNowPlaying: ({
-      albumId,
-      currentTrack,
-    }) => mutate({
-      variables: { albumId, currentTrack },
-    }),
+    setNowPlaying: ({ id, playlist, currentTrack }) =>
+      mutate({
+        variables: { id, playlist, currentTrack },
+      }),
   }),
 });
 
 const shuffle = graphql(shuffleMutation, {
   props: ({ mutate }) => ({
-    shuffle: ({ isShuffling }) => mutate({
-      variables: { isShuffling },
-    }),
+    shuffle: ({ isShuffling }) =>
+      mutate({
+        variables: { isShuffling },
+      }),
   }),
 });
 
 const repeat = graphql(repeatMutation, {
   props: ({ mutate }) => ({
-    repeat: ({ isRepeating }) => mutate({
-      variables: { isRepeating },
-    }),
+    repeat: ({ isRepeating }) =>
+      mutate({
+        variables: { isRepeating },
+      }),
   }),
 });
 
 const pause = graphql(pauseMutation, {
   props: ({ mutate }) => ({
-    pause: () => (mutate()),
+    pause: () => mutate(),
+  }),
+});
+
+const stop = graphql(stopMutation, {
+  props: ({ mutate }) => ({
+    stop: () => mutate(),
   }),
 });
 
@@ -81,10 +88,4 @@ export const withPlaylist = graphql(albumQuery, {
   skip: ({ id }) => !id,
 });
 
-export const withMediaPlayerActions = compose(
-  play,
-  pause,
-  shuffle,
-  repeat,
-  setNowPlaying,
-);
+export const withMediaPlayerActions = compose(play, pause, shuffle, repeat, setNowPlaying, stop);

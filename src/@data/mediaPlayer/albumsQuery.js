@@ -1,9 +1,9 @@
 import gql from 'graphql-tag';
+import { contentDataImagesFragment } from '@data/fragments';
 
 export default gql`
   query getAlbums($limit: Int!, $skip: Int!) {
     library: content(channel: "newspring_albums", limit: $limit, skip: $skip) {
-      id
       id
       title
       status
@@ -16,16 +16,12 @@ export default gql`
       }
       content {
         isLiked
-        images(sizes: ["large"]) {
-          fileName
-          fileType
-          fileLabel
-          url
-        }
+        ...ContentDataImagesFragment
         tracks {
           file: s3
         }
       }
     }
   }
+  ${contentDataImagesFragment}
 `;

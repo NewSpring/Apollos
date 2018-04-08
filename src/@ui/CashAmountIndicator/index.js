@@ -32,6 +32,7 @@ const Typography = {
 
   StyledH7: styled(({ theme }) => ({
     color: theme.colors.text.primary,
+    fontFamily: theme.typography.fontFamilySans.bold.default,
   }))(H7),
 };
 

@@ -34,8 +34,9 @@ export function nowPlaying(result, variables, { cache }) {
       mediaPlayer: {
         ...state,
         isPlaying: true,
-        albumId: variables.albumId,
-        currentTrack: variables.currentTrack,
+        id: variables.id,
+        playlist: variables.playlist || state.playlist,
+        currentTrack: variables.currentTrack || variables.currentTrack,
       },
     },
   });
@@ -110,3 +111,25 @@ export function pause(result, variables, { cache }) {
   });
   return null;
 }
+
+export function stop(result, variables, { cache }) {
+  const { mediaPlayer: state } = cache.readQuery({
+    query: mediaPlayerQuery,
+    variables,
+  });
+
+  cache.writeQuery({
+    query: mediaPlayerQuery,
+    variables,
+    data: {
+      mediaPlayer: {
+        ...state,
+        isPlaying: false,
+        id: null,
+        currentTrack: null,
+      },
+    },
+  });
+  return null;
+}
+

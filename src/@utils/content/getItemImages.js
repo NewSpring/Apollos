@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import { get, filter } from 'lodash';
 
 const getItemImages = (item) => {
   let images = item.photo || get(item, 'content.images', []);
@@ -14,6 +14,12 @@ const getItemImages = (item) => {
     if (b && b.fileLabel === '1:1') return 1;
     return 0;
   });
+  // TODO: this is some stop-gap logic to make sure we prioritize showing square images.
+  // Even though we sort 1:1 images to the front above, sometimes React-Native likes to show
+  // other formats based on screen resolution.
+  if (images.find(({ fileLabel }) => fileLabel === '1:1')) {
+    images = filter(images, ({ fileLabel }) => fileLabel === '1:1');
+  }
   return images;
 };
 
