@@ -31,7 +31,11 @@ module.exports = env => ({
       versionCode: 600012,
       icon: 'src/assets/icons/android/icon-192x192-xxxhpdi.png',
       splash: {
-        image: 'src/assets/splash/splash-1242x2436.png',
+        mdpi: 'src/assets/splash/splash-1242x2436.png',
+        hdpi: 'src/assets/splash/splash-1242x2436.png',
+        xhdpi: 'src/assets/splash/splash-1242x2436.png',
+        xxhdpi: 'src/assets/splash/splash-1242x2436.png',
+        xxxhdpi: 'src/assets/splash/splash-1242x2436.png',
         backgroundColor: '#D1DCE6',
       },
     },
