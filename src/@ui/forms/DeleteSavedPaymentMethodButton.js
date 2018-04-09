@@ -4,7 +4,7 @@ import { withFormik } from 'formik';
 import { compose, mapProps } from 'recompose';
 import PropTypes from 'prop-types';
 import { pick } from 'lodash';
-import { withRouter } from '@ui/NativeWebRouter';
+import { withRouter, goBackTo } from '@ui/NativeWebRouter';
 import withSavedPaymentMethod from '@data/withSavedPaymentMethod';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import Button from '@ui/Button';
@@ -60,7 +60,7 @@ const enhance = compose(
       try {
         setSubmitting(true);
         await props.removeSavedPaymentMethod(props.id);
-        props.history.replace('/give');
+        goBackTo({ to: '/give', history: props.history, replace: true });
       } catch (err) {
         // Ignore
       } finally {
