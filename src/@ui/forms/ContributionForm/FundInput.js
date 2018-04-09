@@ -33,7 +33,7 @@ const StyledPicker = styled(
    */
     ...Platform.select({
       ios: {
-        fontSize: theme.helpers.rem(1.8),
+        fontSize: theme.helpers.rem(1.6),
         lineHeight: theme.helpers.verticalRhythm(1.8, 1.14),
       },
       /* RN android doesn't support setting these values at this time
@@ -42,7 +42,7 @@ const StyledPicker = styled(
      * },
      */
       web: {
-        fontSize: theme.helpers.rem(1.8),
+        fontSize: theme.helpers.rem(1.6),
         lineHeight: theme.helpers.verticalRhythm(1.8, 1.15),
       },
     }),
