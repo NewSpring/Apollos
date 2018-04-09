@@ -301,7 +301,7 @@ const PaymentConfirmationForm = compose(
           : 'bank';
       return {
         submitButtonText: hideChangePaymentMethodButton ? 'Submit' : text,
-        submitButtonIcon: icon,
+        submitButtonIcon: hideChangePaymentMethodButton ? null : icon,
       };
     },
   ),
