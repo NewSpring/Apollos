@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Platform, Animated, StyleSheet, View, Easing, PanResponder } from 'react-native';
+import { Alert, Platform, Animated, StyleSheet, View, Easing, PanResponder } from 'react-native';
 import { clamp, get, findIndex } from 'lodash';
 import styled from '@ui/styled';
 
@@ -113,6 +113,7 @@ class Transitioner extends PureComponent {
       case POP:
         toPosition = findIndex(entries, ({ key }) => key === nextProps.location.key);
         if (toPosition < 0) {
+          Alert.alert('DEBUG', 'Popping to unfound entry');
           entries = [nextProps.location, ...entries];
           toPosition = 0;
         }
