@@ -197,76 +197,79 @@ PaymentFormWithoutData.propTypes = {
   enforceAccountName: PropTypes.bool,
 };
 
+const mapPropsToValues = (props) => {
+  const paymentMethod = get(props, 'contributions.paymentMethod', 'creditCard');
+  return {
+    paymentMethod:
+      paymentMethod !== 'bankAccount' || paymentMethod !== 'creditCard'
+        ? 'creditCard'
+        : paymentMethod,
+    willSavePaymentMethod: get(props, 'contributions.willSavePaymentMethod', true),
+    ...get(props, 'contributions.bankAccount', { accountType: 'checking' }),
+    ...get(props, 'contributions.creditCard', {}),
+  };
+};
+
+const validationSchema = props =>
+  Yup.object().shape({
+    paymentMethod: Yup.string()
+      .oneOf(['bankAccount', 'creditCard'])
+      .required(),
+    cardNumber: Yup.string().when('paymentMethod', {
+      is: 'creditCard',
+      then: Yup.string()
+        .test('Credit Card', 'The card number entered is not a valid number', validateCardNumber) // eslint-disable-line
+        .required(),
+    }),
+    expirationDate: Yup.string().when('paymentMethod', {
+      is: 'creditCard',
+      then: Yup.string()
+        // eslint-disable-next-line
+        .test('Expiration date', 'The expiration date is not a valid expiry date', value => {
+          if (!value) return false;
+          const { month, year } = parseCardExpiry(value);
+          return validateCardExpiry(month, year);
+        })
+        .required(),
+    }),
+    cvv: Yup.string().when('paymentMethod', {
+      is: 'creditCard',
+      then: Yup.string()
+        .test('CVV', 'The CVV entered is not a valid CVV code', validateCardCVC) // eslint-disable-line
+        .required(),
+    }),
+    accountName: Yup.string().when('paymentMethod', {
+      is: 'bankAccount',
+      then: Yup.string().required('Account Holder Name is a required field'),
+    }),
+    routingNumber: Yup.string().when('paymentMethod', {
+      is: 'bankAccount',
+      then: Yup.string().required('Routing Number is a required field'),
+    }),
+    accountNumber: Yup.string().when('paymentMethod', {
+      is: 'bankAccount',
+      then: Yup.string().required('Account Number is a required field'),
+    }),
+    accountType: Yup.string().oneOf(['checking', 'savings']),
+    willSavePaymentMethod: Yup.boolean(),
+    savedAccountName: props.enforceAccountName
+      ? Yup.string().required()
+      : Yup.string().when('willSavePaymentMethod', {
+        is: true,
+        then: Yup.string().required('Saved Payment Name is a required field'),
+      }),
+  });
+
 const PaymentForm = compose(
   withGive,
   withCheckout,
   withRouter,
   withFormik({
-    mapPropsToValues: (props) => {
-      const paymentMethod = get(props, 'contributions.paymentMethod', 'creditCard');
-      return {
-        paymentMethod:
-          paymentMethod !== 'bankAccount' || paymentMethod !== 'creditCard'
-            ? 'creditCard'
-            : paymentMethod,
-        willSavePaymentMethod: get(props, 'contributions.willSavePaymentMethod', true),
-        ...get(props, 'contributions.bankAccount', { accountType: 'checking' }),
-        ...get(props, 'contributions.creditCard', {}),
-      };
+    mapPropsToValues,
+    validationSchema,
+    isInitialValid(props) {
+      return validationSchema(props).isValidSync(mapPropsToValues(props));
     },
-    validationSchema: props =>
-      Yup.object().shape({
-        paymentMethod: Yup.string()
-          .oneOf(['bankAccount', 'creditCard'])
-          .required(),
-        cardNumber: Yup.string().when('paymentMethod', {
-          is: 'creditCard',
-          then: Yup.string()
-            .test(
-              'Credit Card',
-              'The card number entered is not a valid number',
-              validateCardNumber,
-            ) // eslint-disable-line
-            .required(),
-        }),
-        expirationDate: Yup.string().when('paymentMethod', {
-          is: 'creditCard',
-          then: Yup.string()
-            // eslint-disable-next-line
-            .test('Expiration date', 'The expiration date is not a valid expiry date', value => {
-              if (!value) return false;
-              const { month, year } = parseCardExpiry(value);
-              return validateCardExpiry(month, year);
-            })
-            .required(),
-        }),
-        cvv: Yup.string().when('paymentMethod', {
-          is: 'creditCard',
-          then: Yup.string()
-            .test('CVV', 'The CVV entered is not a valid CVV code', validateCardCVC) // eslint-disable-line
-            .required(),
-        }),
-        accountName: Yup.string().when('paymentMethod', {
-          is: 'bankAccount',
-          then: Yup.string().required('Account Holder Name is a required field'),
-        }),
-        routingNumber: Yup.string().when('paymentMethod', {
-          is: 'bankAccount',
-          then: Yup.string().required('Routing Number is a required field'),
-        }),
-        accountNumber: Yup.string().when('paymentMethod', {
-          is: 'bankAccount',
-          then: Yup.string().required('Account Number is a required field'),
-        }),
-        accountType: Yup.string().oneOf(['checking', 'savings']),
-        willSavePaymentMethod: Yup.boolean(),
-        savedAccountName: props.enforceAccountName
-          ? Yup.string().required()
-          : Yup.string().when('willSavePaymentMethod', {
-            is: true,
-            then: Yup.string().required('Saved Payment Name is a required field'),
-          }),
-      }),
     handleSubmit: (values, { props, setSubmitting }) => {
       setSubmitting(true);
       const formattedValues = { ...values };
