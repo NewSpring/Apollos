@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Linking } from 'react-native';
+import { Linking } from 'react-native';
 
 import linkingUri from '@utils/linkingUri';
 
@@ -36,7 +36,6 @@ class DeepLinking extends Component {
   };
 
   push = async (url = '') => {
-    Alert.alert('DEBUG: Trying to push URL', url);
     // Currently, on android, expo has this weird bug where the app will open with he `initialURL`
     // set to the linkingUrl without `/+`. So we handle that here by making sure we remove `/+`
     // from both the linkingUri, and the url given to this method so that the two are consistent.
