@@ -8,6 +8,10 @@ module.exports = env => ({
     slug: 'newspring',
     orientation: 'portrait',
     scheme: 'newspring',
+    updates: {
+      enabled: true,
+      fallbackToCacheTimeout: 0,
+    },
     ios: {
       bundleIdentifier: 'com.subsplashstudio31.NewSpring-Church',
       buildNumber: '19',
@@ -24,7 +28,6 @@ module.exports = env => ({
         image: 'src/assets/splash/splash-1242x2436.png',
         backgroundColor: '#D1DCE6',
       },
-      loadJSInBackgroundExperimental: true,
     },
     android: {
       package: 'cc.newspring.newspringapp',
