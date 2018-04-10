@@ -735,7 +735,13 @@ exports[`The ContributionForm component renders correctly 1`] = `
         </Text>
       </View>
     </View>
-    <View>
+    <View
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
+    >
       <View
         bordered={false}
         disabled={true}
@@ -776,75 +782,84 @@ exports[`The ContributionForm component renders correctly 1`] = `
           Sign in or create account
         </Text>
       </View>
-      <View
-        accessibilityComponentType="button"
-        accessibilityLabel={undefined}
-        accessibilityTraits={
-          Array [
-            "button",
-            "disabled",
-          ]
-        }
-        accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
+      <View>
         <View
-          bordered={false}
-          disabled={true}
-          pill={true}
+          accessibilityComponentType="button"
+          accessibilityLabel={undefined}
+          accessibilityTraits={
+            Array [
+              "button",
+              "disabled",
+            ]
+          }
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "#dddddd",
-              "borderColor": "#dddddd",
-              "borderRadius": 60,
-              "borderWidth": 2,
-              "elevation": 2,
-              "flexDirection": "row",
-              "height": 60,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "opacity": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 20,
+              "opacity": 1,
             }
           }
+          testID={undefined}
+          tvParallaxProperties={undefined}
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <View
+            bordered={false}
+            disabled={true}
+            pill={true}
             style={
               Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "paddingBottom": 3.15,
-                "paddingTop": 4.5,
+                "alignItems": "center",
+                "backgroundColor": "#dddddd",
+                "borderColor": "#dddddd",
+                "borderRadius": 60,
+                "borderWidth": 2,
+                "elevation": 2,
+                "flexDirection": "row",
+                "height": 40,
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "marginRight": 10,
+                "opacity": 0.5,
+                "overflow": "hidden",
+                "paddingHorizontal": 5,
+                "paddingVertical": 5,
               }
             }
           >
-            Give as Guest
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "justifyContent": "center",
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingHorizontal": 6,
+                  "paddingTop": 4.5,
+                  "textAlign": "center",
+                }
+              }
+              withIcon={undefined}
+            >
+              Give as Guest
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -2118,7 +2133,13 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
         </Text>
       </View>
     </View>
-    <View>
+    <View
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
+    >
       <View
         bordered={false}
         disabled={true}
@@ -2159,75 +2180,84 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
           Sign in or create account
         </Text>
       </View>
-      <View
-        accessibilityComponentType="button"
-        accessibilityLabel={undefined}
-        accessibilityTraits={
-          Array [
-            "button",
-            "disabled",
-          ]
-        }
-        accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
+      <View>
         <View
-          bordered={false}
-          disabled={true}
-          pill={true}
+          accessibilityComponentType="button"
+          accessibilityLabel={undefined}
+          accessibilityTraits={
+            Array [
+              "button",
+              "disabled",
+            ]
+          }
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "#dddddd",
-              "borderColor": "#dddddd",
-              "borderRadius": 60,
-              "borderWidth": 2,
-              "elevation": 2,
-              "flexDirection": "row",
-              "height": 60,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "opacity": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 20,
+              "opacity": 1,
             }
           }
+          testID={undefined}
+          tvParallaxProperties={undefined}
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <View
+            bordered={false}
+            disabled={true}
+            pill={true}
             style={
               Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "paddingBottom": 3.15,
-                "paddingTop": 4.5,
+                "alignItems": "center",
+                "backgroundColor": "#dddddd",
+                "borderColor": "#dddddd",
+                "borderRadius": 60,
+                "borderWidth": 2,
+                "elevation": 2,
+                "flexDirection": "row",
+                "height": 40,
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "marginRight": 10,
+                "opacity": 0.5,
+                "overflow": "hidden",
+                "paddingHorizontal": 5,
+                "paddingVertical": 5,
               }
             }
           >
-            Give as Guest
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "justifyContent": "center",
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingHorizontal": 6,
+                  "paddingTop": 4.5,
+                  "textAlign": "center",
+                }
+              }
+              withIcon={undefined}
+            >
+              Give as Guest
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -2970,7 +3000,13 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
         </Text>
       </View>
     </View>
-    <View>
+    <View
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
+    >
       <View
         bordered={false}
         disabled={true}
@@ -3011,75 +3047,84 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
           Sign in or create account
         </Text>
       </View>
-      <View
-        accessibilityComponentType="button"
-        accessibilityLabel={undefined}
-        accessibilityTraits={
-          Array [
-            "button",
-            "disabled",
-          ]
-        }
-        accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
+      <View>
         <View
-          bordered={false}
-          disabled={true}
-          pill={true}
+          accessibilityComponentType="button"
+          accessibilityLabel={undefined}
+          accessibilityTraits={
+            Array [
+              "button",
+              "disabled",
+            ]
+          }
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "#dddddd",
-              "borderColor": "#dddddd",
-              "borderRadius": 60,
-              "borderWidth": 2,
-              "elevation": 2,
-              "flexDirection": "row",
-              "height": 60,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "opacity": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 20,
+              "opacity": 1,
             }
           }
+          testID={undefined}
+          tvParallaxProperties={undefined}
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <View
+            bordered={false}
+            disabled={true}
+            pill={true}
             style={
               Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "paddingBottom": 3.15,
-                "paddingTop": 4.5,
+                "alignItems": "center",
+                "backgroundColor": "#dddddd",
+                "borderColor": "#dddddd",
+                "borderRadius": 60,
+                "borderWidth": 2,
+                "elevation": 2,
+                "flexDirection": "row",
+                "height": 40,
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "marginRight": 10,
+                "opacity": 0.5,
+                "overflow": "hidden",
+                "paddingHorizontal": 5,
+                "paddingVertical": 5,
               }
             }
           >
-            Give as Guest
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "justifyContent": "center",
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingHorizontal": 6,
+                  "paddingTop": 4.5,
+                  "textAlign": "center",
+                }
+              }
+              withIcon={undefined}
+            >
+              Give as Guest
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -3882,7 +3927,13 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
         </Text>
       </View>
     </View>
-    <View>
+    <View
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
+    >
       <View
         bordered={false}
         disabled={true}
@@ -3923,75 +3974,84 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
           Sign in or create account
         </Text>
       </View>
-      <View
-        accessibilityComponentType="button"
-        accessibilityLabel={undefined}
-        accessibilityTraits={
-          Array [
-            "button",
-            "disabled",
-          ]
-        }
-        accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
+      <View>
         <View
-          bordered={false}
-          disabled={true}
-          pill={true}
+          accessibilityComponentType="button"
+          accessibilityLabel={undefined}
+          accessibilityTraits={
+            Array [
+              "button",
+              "disabled",
+            ]
+          }
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "#dddddd",
-              "borderColor": "#dddddd",
-              "borderRadius": 60,
-              "borderWidth": 2,
-              "elevation": 2,
-              "flexDirection": "row",
-              "height": 60,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "opacity": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 20,
+              "opacity": 1,
             }
           }
+          testID={undefined}
+          tvParallaxProperties={undefined}
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <View
+            bordered={false}
+            disabled={true}
+            pill={true}
             style={
               Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "paddingBottom": 3.15,
-                "paddingTop": 4.5,
+                "alignItems": "center",
+                "backgroundColor": "#dddddd",
+                "borderColor": "#dddddd",
+                "borderRadius": 60,
+                "borderWidth": 2,
+                "elevation": 2,
+                "flexDirection": "row",
+                "height": 40,
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "marginRight": 10,
+                "opacity": 0.5,
+                "overflow": "hidden",
+                "paddingHorizontal": 5,
+                "paddingVertical": 5,
               }
             }
           >
-            Give as Guest
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "justifyContent": "center",
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingHorizontal": 6,
+                  "paddingTop": 4.5,
+                  "textAlign": "center",
+                }
+              }
+              withIcon={undefined}
+            >
+              Give as Guest
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -4734,7 +4794,13 @@ exports[`The ContributionForm component shows the second fund 1`] = `
         </Text>
       </View>
     </View>
-    <View>
+    <View
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
+    >
       <View
         bordered={false}
         disabled={true}
@@ -4775,75 +4841,84 @@ exports[`The ContributionForm component shows the second fund 1`] = `
           Sign in or create account
         </Text>
       </View>
-      <View
-        accessibilityComponentType="button"
-        accessibilityLabel={undefined}
-        accessibilityTraits={
-          Array [
-            "button",
-            "disabled",
-          ]
-        }
-        accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
+      <View>
         <View
-          bordered={false}
-          disabled={true}
-          pill={true}
+          accessibilityComponentType="button"
+          accessibilityLabel={undefined}
+          accessibilityTraits={
+            Array [
+              "button",
+              "disabled",
+            ]
+          }
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "#dddddd",
-              "borderColor": "#dddddd",
-              "borderRadius": 60,
-              "borderWidth": 2,
-              "elevation": 2,
-              "flexDirection": "row",
-              "height": 60,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "opacity": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 20,
+              "opacity": 1,
             }
           }
+          testID={undefined}
+          tvParallaxProperties={undefined}
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <View
+            bordered={false}
+            disabled={true}
+            pill={true}
             style={
               Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "paddingBottom": 3.15,
-                "paddingTop": 4.5,
+                "alignItems": "center",
+                "backgroundColor": "#dddddd",
+                "borderColor": "#dddddd",
+                "borderRadius": 60,
+                "borderWidth": 2,
+                "elevation": 2,
+                "flexDirection": "row",
+                "height": 40,
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "marginRight": 10,
+                "opacity": 0.5,
+                "overflow": "hidden",
+                "paddingHorizontal": 5,
+                "paddingVertical": 5,
               }
             }
           >
-            Give as Guest
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 15.75,
+                  "justifyContent": "center",
+                  "lineHeight": 17.75,
+                  "paddingBottom": 1.8,
+                  "paddingHorizontal": 6,
+                  "paddingTop": 4.5,
+                  "textAlign": "center",
+                }
+              }
+              withIcon={undefined}
+            >
+              Give as Guest
+            </Text>
+          </View>
         </View>
       </View>
     </View>

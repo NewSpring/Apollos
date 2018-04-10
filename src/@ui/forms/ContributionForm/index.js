@@ -40,6 +40,13 @@ const ButtonWrapper =
     })(View)
     : View;
 
+const GuestButtonWrapper =
+  Platform.OS === 'web'
+    ? styled({
+      alignItems: 'center',
+    })(View)
+    : View;
+
 const Row = styled({
   flexDirection: 'row',
   alignItems: 'center',
@@ -284,13 +291,15 @@ export class ContributionFormWithoutData extends Component {
                 title="Sign in or create account"
                 type="primary"
               />
-              <GuestButtonInRow
-                pill
-                disabled={!(this.totalContribution > 0) || !this.props.isValid}
-                onPress={this.props.handleSubmit}
-                title="Give as Guest"
-                type="default"
-              />
+              <GuestButtonWrapper>
+                <GuestButtonInRow
+                  pill
+                  disabled={!(this.totalContribution > 0) || !this.props.isValid}
+                  onPress={this.props.handleSubmit}
+                  title="Give as Guest"
+                  type="default"
+                />
+              </GuestButtonWrapper>
             </ButtonColumn>
           )}
         </Totals>
