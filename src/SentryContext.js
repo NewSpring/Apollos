@@ -1,4 +1,5 @@
 import Sentry from '@utils/sentry';
+import Analytics from '@utils/analytics';
 import withUser from '@data/withUser/withUser';
 
 const SentryContext = withUser(({
@@ -9,6 +10,7 @@ const SentryContext = withUser(({
   children,
 }) => {
   Sentry.setUserContext(id ? { id, email } : null);
+  Analytics.setUserId(id || null);
   return children;
 });
 
