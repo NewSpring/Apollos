@@ -22,6 +22,7 @@ import PaddedView from '@ui/PaddedView';
 import TableView from '@ui/TableView';
 import styled from '@ui/styled';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
+import Chip from '@ui/Chip';
 
 import FundInput from './FundInput';
 import FrequencyInput, { FREQUENCY_IDS } from './FrequencyInput';
@@ -45,15 +46,23 @@ const Row = styled({
   flexWrap: 'wrap',
 })(View);
 
-const ButtonRow = mediaQuery(({ md }) => ({ minWidth: md }), styled({ flexDirection: 'row' }))(
-  View,
-);
+const ButtonColumn = mediaQuery(
+  ({ sm }) => ({ minWidth: sm }),
+  styled({ flexDirection: 'column' }),
+)(View);
 
 const ButtonInRow = mediaQuery(
-  ({ md }) => ({ maxWidth: md }),
+  ({ sm }) => ({ minWidth: sm }),
   styled(({ theme }) => ({ marginBottom: theme.sizing.baseUnit / 2 })),
   styled(({ theme }) => ({ marginRight: theme.sizing.baseUnit / 2 })),
 )(Button);
+
+const GuestButtonInRow = mediaQuery(
+  ({ sm }) => ({ minWidth: sm }),
+  styled(({ theme }) => ({ marginBottom: theme.sizing.baseUnit / 2 })),
+  styled(({ theme }) => ({ marginRight: theme.sizing.baseUnit / 2 })),
+  styled(({ theme }) => ({ paddingVertical: theme.sizing.baseUnit })),
+)(Chip);
 
 const Totals =
   Platform.OS === 'web'
@@ -268,20 +277,21 @@ export class ContributionFormWithoutData extends Component {
               <Icon name="lock" />
             </Button>
           ) : (
-            <ButtonRow>
+            <ButtonColumn>
               <ButtonInRow
                 disabled={!(this.totalContribution > 0) || !this.props.isValid}
                 onPress={this.props.triggerLogin}
                 title="Sign in or create account"
                 type="primary"
               />
-              <ButtonInRow
+              <GuestButtonInRow
+                pill
                 disabled={!(this.totalContribution > 0) || !this.props.isValid}
                 onPress={this.props.handleSubmit}
                 title="Give as Guest"
                 type="default"
               />
-            </ButtonRow>
+            </ButtonColumn>
           )}
         </Totals>
       </PaddedView>
