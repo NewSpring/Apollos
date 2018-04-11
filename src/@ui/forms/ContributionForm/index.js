@@ -48,7 +48,6 @@ const GuestButton = styled(
   ({ theme, disabled }) => ({
     paddingTop: theme.sizing.baseUnit * 0.75,
     opacity: disabled ? 0.5 : 1,
-    cursor: disabled ? 'default' : 'pointer',
   }),
   'Guest.Button',
 )(ButtonLink);
