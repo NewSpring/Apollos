@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { get, without } from 'lodash';
 import { compose, withProps } from 'recompose';
 
@@ -106,15 +106,17 @@ const Results = enhance(props => (
           }
         />
       </FlexedLeft>
-      <MediaQuery minWidth="md">
-        <Right>
-          <Map
-            latitude={parseFloat(props.query.latitude)}
-            longitude={parseFloat(props.query.longitude)}
-            groups={get(props, 'content.results', [])}
-          />
-        </Right>
-      </MediaQuery>
+      {Platform.OS === 'web' ? (
+        <MediaQuery minWidth="md">
+          <Right>
+            <Map
+              latitude={parseFloat(props.query.latitude)}
+              longitude={parseFloat(props.query.longitude)}
+              groups={get(props, 'content.results', [])}
+            />
+          </Right>
+        </MediaQuery>
+      ) : null}
     </FlexedSideBySideView>
   </BackgroundView>
 ));
