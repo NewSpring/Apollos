@@ -16,13 +16,11 @@ import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { H5, H3, BodyText } from '@ui/typography';
 import CashAmountIndicator from '@ui/CashAmountIndicator';
-import Button from '@ui/Button';
+import Button, { ButtonLink } from '@ui/Button';
 import * as Inputs from '@ui/inputs';
 import PaddedView from '@ui/PaddedView';
 import TableView from '@ui/TableView';
 import styled from '@ui/styled';
-import { enhancer as mediaQuery } from '@ui/MediaQuery';
-import Chip from '@ui/Chip';
 
 import FundInput from './FundInput';
 import FrequencyInput, { FREQUENCY_IDS } from './FrequencyInput';
@@ -40,36 +38,25 @@ const ButtonWrapper =
     })(View)
     : View;
 
-const GuestButtonWrapper =
-  Platform.OS === 'web'
-    ? styled({
-      alignItems: 'center',
-    })(View)
-    : View;
-
 const Row = styled({
   flexDirection: 'row',
   alignItems: 'center',
   flexWrap: 'wrap',
 })(View);
 
-const ButtonColumn = mediaQuery(
-  ({ sm }) => ({ minWidth: sm }),
-  styled({ flexDirection: 'column' }),
-)(View);
+const GuestButton = styled(
+  ({ theme, disabled }) => ({
+    paddingTop: theme.sizing.baseUnit * 0.75,
+    opacity: disabled ? 0.5 : 1,
+    cursor: disabled ? 'default' : 'pointer',
+  }),
+  'Guest.Button',
+)(ButtonLink);
 
-const ButtonInRow = mediaQuery(
-  ({ sm }) => ({ minWidth: sm }),
-  styled(({ theme }) => ({ marginBottom: theme.sizing.baseUnit / 2 })),
-  styled(({ theme }) => ({ marginRight: theme.sizing.baseUnit / 2 })),
-)(Button);
-
-const GuestButtonInRow = mediaQuery(
-  ({ sm }) => ({ minWidth: sm }),
-  styled(({ theme }) => ({ marginBottom: theme.sizing.baseUnit / 2 })),
-  styled(({ theme }) => ({ marginRight: theme.sizing.baseUnit / 2 })),
-  styled(({ theme }) => ({ paddingVertical: theme.sizing.baseUnit })),
-)(Chip);
+const ButtonContainer = styled({
+  flexDirection: 'column',
+  alignItems: 'center',
+})(View);
 
 const Totals =
   Platform.OS === 'web'
@@ -284,23 +271,21 @@ export class ContributionFormWithoutData extends Component {
               <Icon name="lock" />
             </Button>
           ) : (
-            <ButtonColumn>
-              <ButtonInRow
+            <ButtonContainer>
+              <Button
                 disabled={!(this.totalContribution > 0) || !this.props.isValid}
                 onPress={this.props.triggerLogin}
                 title="Sign in or create account"
                 type="primary"
               />
-              <GuestButtonWrapper>
-                <GuestButtonInRow
-                  pill
-                  disabled={!(this.totalContribution > 0) || !this.props.isValid}
-                  onPress={this.props.handleSubmit}
-                  title="Give as Guest"
-                  type="default"
-                />
-              </GuestButtonWrapper>
-            </ButtonColumn>
+              <GuestButton
+                disabled={!(this.totalContribution > 0) || !this.props.isValid}
+                onPress={this.props.handleSubmit}
+                type="default"
+              >
+                Give as Guest
+              </GuestButton>
+            </ButtonContainer>
           )}
         </Totals>
       </PaddedView>
