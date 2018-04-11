@@ -100,6 +100,7 @@ exports[`Onboarding should render 1`] = `
     getItemCount={[Function]}
     horizontal={true}
     initialNumToRender={10}
+    invertStickyHeaders={undefined}
     keyExtractor={[Function]}
     maxToRenderPerBatch={10}
     numColumns={1}

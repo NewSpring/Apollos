@@ -1,6 +1,6 @@
 module.exports = env => ({
   expo: {
-    sdkVersion: '25.0.0',
+    sdkVersion: '26.0.0',
     name: 'NewSpring',
     version: '6.0.0',
     description: 'The official NewSpring mobile app.',
@@ -8,9 +8,13 @@ module.exports = env => ({
     slug: 'newspring',
     orientation: 'portrait',
     scheme: 'newspring',
+    updates: {
+      enabled: true,
+      fallbackToCacheTimeout: 0,
+    },
     ios: {
       bundleIdentifier: 'com.subsplashstudio31.NewSpring-Church',
-      buildNumber: '19',
+      buildNumber: '21',
       supportsTablet: true,
       associatedDomains: [
         'applinks:beta.newspring.cc',
@@ -24,11 +28,13 @@ module.exports = env => ({
         image: 'src/assets/splash/splash-1242x2436.png',
         backgroundColor: '#D1DCE6',
       },
-      loadJSInBackgroundExperimental: true,
+      config: {
+        usesNonExemptEncryption: false,
+      },
     },
     android: {
       package: 'cc.newspring.newspringapp',
-      versionCode: 600012,
+      versionCode: 600013,
       icon: 'src/assets/icons/android/icon-192x192-xxxhpdi.png',
       splash: {
         mdpi: 'src/assets/splash/splash-1242x2436.png',
