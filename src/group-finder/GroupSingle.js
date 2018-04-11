@@ -223,17 +223,19 @@ const GroupSingle = enhance(({
             </Card>
           </ScrollView>
         </FlexedLeft>
-        <MediaQuery minWidth="md">
-          <Right>
-            <Map
-              groups={[{
-                locations,
-                id,
-              }]}
-              linkToGroup={false}
-            />
-          </Right>
-        </MediaQuery>
+        {Platform.OS === 'web' ? (
+          <MediaQuery minWidth="md">
+            <Right>
+              <Map
+                groups={[{
+                  locations,
+                  id,
+                }]}
+                linkToGroup={false}
+              />
+            </Right>
+          </MediaQuery>
+        ) : null}
       </FlexedSideBySideView>
       <MediaQuery maxWidth="md">
         <SecondaryNav>
