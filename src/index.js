@@ -13,7 +13,6 @@ import OnboardingModal from '@ui/OnboardingModal';
 import orientation from '@utils/orientation';
 
 import AppRouter from './AppRouter';
-import AppRoutes from './AppRoutes';
 import SentryContext from './SentryContext';
 
 const sentryEnv = Settings.APP_SENTRY_ENVIRONMENT || Settings.NODE_ENV;
@@ -33,11 +32,10 @@ const App = nest(
   withProps({ client: Client })(ApolloProvider),
   ThemeProvider,
   FontLoader,
-  AppRouter,
   ActionSheetProvider,
   SentryContext,
   OnboardingModal,
-  AppRoutes,
+  AppRouter,
 );
 
 orientation.allow(orientation.Orientation.PORTRAIT_UP);
