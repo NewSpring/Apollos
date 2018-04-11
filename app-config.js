@@ -14,7 +14,7 @@ module.exports = env => ({
     },
     ios: {
       bundleIdentifier: 'com.subsplashstudio31.NewSpring-Church',
-      buildNumber: '20',
+      buildNumber: '21',
       supportsTablet: true,
       associatedDomains: [
         'applinks:beta.newspring.cc',
@@ -27,6 +27,9 @@ module.exports = env => ({
       splash: {
         image: 'src/assets/splash/splash-1242x2436.png',
         backgroundColor: '#D1DCE6',
+      },
+      config: {
+        usesNonExemptEncryption: false,
       },
     },
     android: {
