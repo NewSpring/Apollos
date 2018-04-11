@@ -54,6 +54,30 @@ const ButtonLinkContainer = styled(({ theme }) => ({
   justifyContent: 'center',
 }))(View);
 
+const BigButtonLink = compose(
+  withProps({
+    zIndex: 100,
+    style:
+      Platform.OS === 'android'
+        ? {
+          paddingRight: 10,
+          paddingLeft: 10,
+          paddingTop: 10,
+          paddingBottom: 10,
+        }
+        : null,
+    hitSlop:
+      Platform.OS === 'android'
+        ? {
+          right: 10,
+          left: 10,
+          top: 10,
+          bottom: 10,
+        }
+        : null,
+  }),
+)(ButtonLink);
+
 export class PaymentConfirmationFormWithoutData extends PureComponent {
   static propTypes = {
     isLoading: PropTypes.bool,
@@ -169,9 +193,9 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
 
           {!this.props.hideChangePaymentMethodButton && (
             <ButtonLinkContainer>
-              <ButtonLink onPress={this.props.onPressChangePaymentMethod}>
+              <BigButtonLink onPress={this.props.onPressChangePaymentMethod}>
                 {'Change Payment Method'}
-              </ButtonLink>
+              </BigButtonLink>
             </ButtonLinkContainer>
           )}
         </PaddedView>
