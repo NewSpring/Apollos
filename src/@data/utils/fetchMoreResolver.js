@@ -38,8 +38,8 @@ export default function fetchMoreResolver({ collectionName, mapTo, data } = {}) 
         if (!fetchMoreResult) return previousResult;
         return set(mapTo || collectionName,
           [
-            ...get(previousResult, collectionName),
-            ...get(fetchMoreResult, collectionName),
+            ...(get(previousResult, collectionName) || []),
+            ...(get(fetchMoreResult, collectionName) || []),
           ],
           { ...previousResult },
         );
