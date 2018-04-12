@@ -122,4 +122,3 @@ fastlane/readme.md
 .idea
 .idea/*
 android/.idea/workspace.xml
-android/app/src/main/java/host/exp/exponent/generated/*
