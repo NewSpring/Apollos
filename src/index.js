@@ -11,6 +11,7 @@ import { ActionSheetProvider } from '@ui/ActionSheet';
 import Client from '@data/Client';
 import OnboardingModal from '@ui/OnboardingModal';
 import orientation from '@utils/orientation';
+import trackAppState from '@utils/trackAppState';
 
 import AppRouter from './AppRouter';
 import SentryContext from './SentryContext';
@@ -39,6 +40,8 @@ const App = nest(
 );
 
 orientation.allow(orientation.Orientation.PORTRAIT_UP);
+
+trackAppState();
 
 export default App;
 
