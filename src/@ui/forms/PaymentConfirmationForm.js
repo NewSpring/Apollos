@@ -48,35 +48,15 @@ const Row = styled(({ theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit / 2,
 }))(View);
 
-const ButtonLinkContainer = styled(({ theme }) => ({
-  paddingTop: theme.sizing.baseUnit / 2,
+const ButtonLinkContainer = styled(() => ({
   alignItems: 'center',
   justifyContent: 'center',
 }))(View);
 
-const BigButtonLink = compose(
-  withProps({
-    zIndex: 100,
-    style:
-      Platform.OS === 'android'
-        ? {
-          paddingRight: 10,
-          paddingLeft: 10,
-          paddingTop: 10,
-          paddingBottom: 10,
-        }
-        : null,
-    hitSlop:
-      Platform.OS === 'android'
-        ? {
-          right: 10,
-          left: 10,
-          top: 10,
-          bottom: 10,
-        }
-        : null,
-  }),
-)(ButtonLink);
+const BigButtonLink = styled(({ theme }) => ({
+  padding: 10,
+  paddingTop: theme.sizing.baseUnit / 2,
+}))(ButtonLink);
 
 export class PaymentConfirmationFormWithoutData extends PureComponent {
   static propTypes = {
