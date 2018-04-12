@@ -44,11 +44,7 @@ const redirectToNewspring = path => window.location.replace(`https://newspring.c
 
 let previousLocation;
 
-const universalLinksToHandle = [
-  'beta.newspring.cc',
-  'newspring.cc',
-  'rm2y5.app.goo.gl',
-];
+const universalLinksToHandle = ['beta.newspring.cc', 'newspring.cc', 'rm2y5.app.goo.gl'];
 
 class AppRouter extends PureComponent {
   static propTypes = {
@@ -149,7 +145,7 @@ class AppRouter extends PureComponent {
   go = (...args) => {
     this.setState({ universalLinkLoading: false });
     this.props.history.push(...args);
-  }
+  };
 
   handleUniversalLink = async ({ url }) => {
     if (universalLinksToHandle.find(link => url.includes(link))) {
@@ -187,9 +183,13 @@ class AppRouter extends PureComponent {
       <BackgroundView>
         {Platform.OS === 'android' ? <AndroidBackButton /> : null}
         {Platform.OS === 'web' ? this.renderWebRedirects() : null}
-        {Platform.OS !== 'web' ? <DeepLinking handleUniversalLink={this.handleUniversalLink} /> : null}
+        {Platform.OS !== 'web' ? (
+          <DeepLinking handleUniversalLink={this.handleUniversalLink} />
+        ) : null}
         <Meta />
-        {this.state.universalLinkLoading ? <ActivityIndicator /> : (
+        {this.state.universalLinkLoading ? (
+          <ActivityIndicator />
+        ) : (
           <Player>
             <AppLayout>
               <CardStack
@@ -260,7 +260,11 @@ class AppRouter extends PureComponent {
                 />
 
                 <Route exact path="/give/restored-checkout" component={give.RestoredCheckout} />
-                <ProtectedRoute exact path="/give/history/:id" component={give.TransactionDetails} />
+                <ProtectedRoute
+                  exact
+                  path="/give/history/:id"
+                  component={give.TransactionDetails}
+                />
                 <ProtectedRoute exact path="/give/schedules/:id" component={give.ScheduleDetails} />
 
                 <Route path="/give" component={give.GiveRoutes} />

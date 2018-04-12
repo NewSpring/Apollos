@@ -8,12 +8,9 @@ module.exports = env => ({
     slug: 'newspring',
     orientation: 'portrait',
     scheme: 'newspring',
-    splash: {
-      image: 'src/assets/splash/splash-1242x2436.png',
-    },
     ios: {
       bundleIdentifier: 'com.subsplashstudio31.NewSpring-Church',
-      buildNumber: '0',
+      buildNumber: '19',
       supportsTablet: true,
       associatedDomains: [
         'applinks:beta.newspring.cc',
@@ -24,15 +21,21 @@ module.exports = env => ({
       ],
       icon: 'src/assets/icons/ios/icon-1024x1024.png',
       splash: {
+        image: 'src/assets/splash/splash-1242x2436.png',
         backgroundColor: '#D1DCE6',
       },
       loadJSInBackgroundExperimental: true,
     },
     android: {
       package: 'cc.newspring.newspringapp',
-      versionCode: 600000,
+      versionCode: 600012,
       icon: 'src/assets/icons/android/icon-192x192-xxxhpdi.png',
       splash: {
+        mdpi: 'src/assets/splash/splash-1242x2436.png',
+        hdpi: 'src/assets/splash/splash-1242x2436.png',
+        xhdpi: 'src/assets/splash/splash-1242x2436.png',
+        xxhdpi: 'src/assets/splash/splash-1242x2436.png',
+        xxxhdpi: 'src/assets/splash/splash-1242x2436.png',
         backgroundColor: '#D1DCE6',
       },
     },

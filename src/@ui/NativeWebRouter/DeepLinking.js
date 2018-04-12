@@ -6,10 +6,7 @@ import linkingUri from '@utils/linkingUri';
 
 class DeepLinking extends Component {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node,
-    ]),
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
     handleUniversalLink: PropTypes.func,
   };
 
