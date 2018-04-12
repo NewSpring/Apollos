@@ -1,4 +1,5 @@
 import { Platform } from 'react-native';
+import Settings from '@utils/Settings';
 import instance from './instance';
 
 // Events
@@ -41,6 +42,7 @@ const nativeOnlyEvents = {
 // thin wrappers over our client events so we have a consistent API
 // if we want to move away from Amplitude in the future:
 export const track = (eventName, properties) => {
+  if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
   if (Platform.OS === 'web' && nativeOnlyEvents[eventName]) return;
   if (properties) {
     instance.logEventWithProperties(eventName, properties);
@@ -50,6 +52,7 @@ export const track = (eventName, properties) => {
 };
 
 export const identify = (userId, userProperties) => {
+  if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
   instance.setUserId(userId);
   if (userProperties) instance.setUserProperties(userProperties);
 };
