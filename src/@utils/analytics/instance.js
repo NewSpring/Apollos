@@ -4,4 +4,3 @@ import { Amplitude } from 'expo';
 Amplitude.initialize('7e894613d70d91cda3b2d868248028ea');
 
 export default Amplitude;
-
