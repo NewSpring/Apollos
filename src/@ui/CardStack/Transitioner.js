@@ -377,7 +377,7 @@ class Transitioner extends PureComponent {
   )
 
   render() {
-    const panProps = Platform.OS !== 'Android' ? this.panResponder.panHandlers : {};
+    const panProps = Platform.OS !== 'android' ? this.panResponder.panHandlers : {};
     return (
       <View
         style={this.props.style}
