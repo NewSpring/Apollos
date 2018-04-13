@@ -9,12 +9,14 @@ export const MUTATION = gql`
 
 export default graphql(MUTATION, {
   props: ({ mutate }) => ({
-    setPaymentResult: props => (mutate({
-      variables: {
-        error: props.error,
-        success: props.success,
-      },
-      refetchQueries: ['GivingDashboard', 'GetCheckoutData', 'SavedPaymentMethods', 'GetTransactions'],
-    })),
+    setPaymentResult: (props) => {
+      mutate({
+        variables: {
+          error: props.error,
+          success: props.success,
+        },
+        refetchQueries: ['GivingDashboard', 'GetCheckoutData', 'SavedPaymentMethods', 'GetTransactions'],
+      });
+    },
   }),
 });
