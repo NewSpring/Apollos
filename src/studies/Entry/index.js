@@ -21,9 +21,9 @@ const enhance = compose(
   withCachedParentContent,
   withProps(({ content }) => {
     let colors = get(content, 'content.colors');
-    if (!colors) colors = get(content, 'parent.content.colors');
+    if (!colors || !colors.length) colors = get(content, 'parent.content.colors');
     if (!colors) colors = [];
-    return colors;
+    return { colors };
   }),
   withThemeMixin(({ colors }) => {
     const theme = { };
