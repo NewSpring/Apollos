@@ -242,8 +242,8 @@
     <!-- ADD FABRIC CONFIG HERE -->
     <!-- BEGIN FABRIC CONFIG -->
     <meta-data
-      android:name="io.fabric.ApiKey"
-      android:value="a25fafe9f9edee11a9882b32e0cd7a26df6e2c42"/>
+        android:name="io.fabric.ApiKey"
+        android:value="832b942c034afd6e4772120ba045e88211a693ba" />
     <!-- END FABRIC CONFIG -->
 
     <!-- ADD GOOGLE MAPS CONFIG HERE -->
