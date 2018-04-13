@@ -22,6 +22,7 @@ import PaddedView from '@ui/PaddedView';
 import TableView from '@ui/TableView';
 import styled from '@ui/styled';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
+import ErrorCard from '@ui/ErrorCard';
 
 import FundInput from './FundInput';
 import FrequencyInput, { FREQUENCY_IDS } from './FrequencyInput';
@@ -177,7 +178,7 @@ export class ContributionFormWithoutData extends Component {
   }
 
   render() {
-    if (this.props.funds.length === 0) return <Text>{'There are no funds to contribute to!'}</Text>;
+    if (this.props.funds.length === 0) return <ErrorCard error={'We\'re having trouble loading funds right now, please try again later.'} />;
     if (this.props.isOffline) return this.renderOfflineMessage();
 
     const total = (parseFloat(this.totalContribution || 0) || 0).toFixed(2);

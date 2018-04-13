@@ -12,7 +12,8 @@ export const QUERY = gql`
 `;
 
 export default graphql(QUERY, {
-  props: ({ data: { live = {} } = {} }) => ({
+  props: ({ data: { error, live = {} } = {} }) => ({
+    error,
     isLive: live.live,
     isFuse: live.fuse,
     embedUrl: live.embedUrl,

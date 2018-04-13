@@ -2,7 +2,8 @@ import { graphql } from 'react-apollo';
 import articleQuery from './articleQuery';
 
 export default graphql(articleQuery, {
-  props: ({ data: { content, loading }, ownProps }) => ({
+  props: ({ data: { error, content, loading }, ownProps }) => ({
+    error,
     content,
     isLoading: ownProps.isLoading || loading,
   }),

@@ -4,6 +4,7 @@ import groupAttributesQuery from './groupAttributesQuery';
 
 export default graphql(groupAttributesQuery, {
   props: ({ ownProps, data } = {}) => ({
+    error: data.error,
     groupAttributes: data.groupAttributes,
     isLoading: ownProps.isLoading || data.loading,
   }),

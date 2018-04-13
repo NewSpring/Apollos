@@ -26,6 +26,7 @@ const getDay = (schedule) => {
 
 export default graphql(groupsQuery, {
   props: ({ ownProps, data } = {}) => ({
+    error: data.error,
     content: data.content,
     isLoading: ownProps.isLoading || data.loading,
     refetch: data.refetch,

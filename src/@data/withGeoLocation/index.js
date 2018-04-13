@@ -31,6 +31,7 @@ export default graphql(geoQuery, {
     skip: !(ownProps.origin && ownProps.destinations),
   }),
   props: ({ ownProps, data } = {}) => ({
+    error: data.error,
     geoElements: get(data, 'geolocate.rows[0].elements') || [],
     isLoading: ownProps.isLoading || data.loading,
     refetch: data.refetch,

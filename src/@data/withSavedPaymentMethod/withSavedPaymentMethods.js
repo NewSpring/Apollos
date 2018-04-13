@@ -15,8 +15,9 @@ export const QUERY = gql`
 `;
 
 export default graphql(QUERY, {
-  props: ({ ownProps, data, data: { savedPaymentMethods, loading } }) => ({
+  props: ({ ownProps, data, data: { error, savedPaymentMethods, loading } }) => ({
     ...data,
+    error,
     savedPaymentMethods: (savedPaymentMethods || []).map(pm => ({
       ...pm,
       paymentMethod: pm.payment.paymentType === 'ACH' ? 'bankAccount' : 'creditCard',

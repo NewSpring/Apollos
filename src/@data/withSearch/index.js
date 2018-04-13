@@ -35,6 +35,7 @@ export default graphql(searchQuery, {
     total: data.content && data.content.total,
     isLoading: data.loading,
     refetch: data.refetch,
+    error: data.error,
     fetchMore: fetchMoreResolver({
       collectionName: 'content.items',
       data,

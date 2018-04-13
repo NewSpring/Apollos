@@ -58,7 +58,8 @@ const stop = graphql(stopMutation, {
 });
 
 export const withNowPlaying = graphql(mediaPlayerQuery, {
-  props: ({ data: { mediaPlayer } }) => ({
+  props: ({ data: { error, mediaPlayer } }) => ({
+    error,
     nowPlaying: mediaPlayer,
   }),
 });
@@ -82,7 +83,8 @@ export const withPlaylist = graphql(albumQuery, {
       id: ownProps.id,
     },
   }),
-  props: ({ data: { playlist } }) => ({
+  props: ({ data: { error, playlist } }) => ({
+    error,
     content: playlist,
   }),
   skip: ({ id }) => !id,

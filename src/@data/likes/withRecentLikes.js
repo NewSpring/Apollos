@@ -16,6 +16,7 @@ export const recentLikesQuery = gql`
 
 export default graphql(recentLikesQuery, {
   props: ({ data } = {}) => ({
+    error: data.error,
     content: data.recentlyLiked && data.recentlyLiked.map(identifyCategory),
     isLoading: data.loading,
     refetch: data.refetch,

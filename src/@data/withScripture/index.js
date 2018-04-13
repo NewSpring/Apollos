@@ -16,6 +16,7 @@ export default graphql(scriptureQuery, {
     },
   }),
   props: ({ ownProps, data } = {}) => ({
+    error: data.error,
     content: data.scripture,
     isLoading: ownProps.isLoading || data.loading,
   }),

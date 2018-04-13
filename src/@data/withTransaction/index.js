@@ -40,7 +40,8 @@ export const QUERY = gql`
 `;
 
 export default graphql(QUERY, {
-  props: ({ data: { transaction, loading } }) => ({
+  props: ({ data: { error, transaction, loading } }) => ({
+    error,
     isLoading: loading,
     transaction: {
       ...transaction,

@@ -10,7 +10,8 @@ export const QUERY = gql`
 `;
 
 export default graphql(QUERY, {
-  props: ({ data: { person, loading, refetch }, ownProps }) => ({
+  props: ({ data: { error, person, loading, refetch }, ownProps }) => ({
+    error,
     isLoggedIn: person && Boolean(person.id),
     isLoading: ownProps.isLoading || loading,
     refetch,
