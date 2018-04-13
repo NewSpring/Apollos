@@ -209,10 +209,12 @@ export class DockableMediaPlayer extends PureComponent {
           <Route exact path={'/player'} render={this.renderPlayer} />
           <Route exact path={'/player/list/:id'} component={asModal(Playlist)} />
           <Route exact path={'/player/:id/:track'} component={PlayerTrackContextual} />
-          <BackgroundView>
-            {this.props.children}
-            {this.renderMiniControls()}
-          </BackgroundView>
+          <Route cardStackKey="app">
+            <BackgroundView>
+              {this.props.children}
+              {this.renderMiniControls()}
+            </BackgroundView>
+          </Route>
         </CardStack>
       </Audio>
     );
