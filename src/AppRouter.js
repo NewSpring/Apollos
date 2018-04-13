@@ -23,6 +23,7 @@ import orientation from '@utils/orientation';
 import BackgroundView from '@ui/BackgroundView';
 import Meta from '@ui/Meta';
 import getAppPathForUrl from '@utils/getAppPathForUrl';
+import { trackScreen } from '@utils/analytics';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -68,10 +69,12 @@ class AppRouter extends PureComponent {
   };
 
   componentWillMount() {
+    this.trackScreen(this.props);
     if (!previousLocation) previousLocation = this.props.location;
   }
 
   componentWillUpdate(nextProps) {
+    this.trackScreen(nextProps);
     if (
       nextProps.history.action !== 'POP' &&
       nextProps.history.action !== 'REPLACE' &&
@@ -95,6 +98,15 @@ class AppRouter extends PureComponent {
 
   get musicPlayerIsOpened() {
     return matchPath(this.props.location.pathname, '/player');
+  }
+
+  trackScreen = ({ location, history }) => {
+    if (location !== previousLocation) {
+      trackScreen(location.pathname, {
+        ...location,
+        sizeOfHistory: history.entries ? history.entries.length : null,
+      });
+    }
   }
 
   // On large screens we render modals on top of the previous route.

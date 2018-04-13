@@ -376,7 +376,7 @@ const ContributionForm = compose(
         props.isPayingWithCreditCard();
       }
 
-      props.onComplete(props);
+      props.onComplete({ ...props, result });
       setSubmitting(false);
     },
   }),

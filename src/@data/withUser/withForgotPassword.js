@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import { track, events } from '@utils/analytics';
 
 export const MUTATION = gql`
   mutation forgotUserPassword($email: String!, $sourceURL: String) {
@@ -14,6 +15,8 @@ export default graphql(MUTATION, {
         email,
         sourceURL = '',
       } = params;
+
+      track(events.ForgotPassword, { email });
 
       return mutate({
         variables: {

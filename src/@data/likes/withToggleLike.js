@@ -4,6 +4,7 @@ import { compose } from 'recompose';
 import get from 'lodash/get';
 import Client from '@data/Client';
 import { withProtectedFunction } from '@ui/NativeWebRouter';
+import { track, events } from '@utils/analytics';
 
 const contentCard = gql`
   fragment ContentCard on Content {
@@ -49,6 +50,10 @@ export default compose(
           fragment: contentCard,
         });
 
+        const isLiked = !get(state, 'content.isLiked');
+
+        track(events.Liked, { isLiked, id });
+
         return mutate({
           variables: {
             id,
@@ -62,7 +67,7 @@ export default compose(
                 id,
                 content: {
                   __typename: 'ContentData',
-                  isLiked: !get(state, 'content.isLiked'),
+                  isLiked,
                 },
               },
             },
