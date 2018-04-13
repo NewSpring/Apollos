@@ -54,8 +54,7 @@ const ButtonLinkContainer = styled(() => ({
 }))(View);
 
 const BigButtonLink = styled(({ theme }) => ({
-  padding: 10,
-  paddingTop: theme.sizing.baseUnit / 2,
+  padding: theme.sizing.baseUnit / 2,
 }))(ButtonLink);
 
 export class PaymentConfirmationFormWithoutData extends PureComponent {
