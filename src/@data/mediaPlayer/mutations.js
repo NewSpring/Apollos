@@ -1,3 +1,4 @@
+import { track, events } from '@utils/analytics';
 import mediaPlayerQuery from './mediaPlayerQuery';
 
 export function play(result, variables, { cache }) {
@@ -7,6 +8,8 @@ export function play(result, variables, { cache }) {
   });
 
   if (!state.currentTrack) return null;
+
+  track(events.AudioPlayed, state);
 
   cache.writeQuery({
     query: mediaPlayerQuery,
@@ -27,17 +30,21 @@ export function nowPlaying(result, variables, { cache }) {
     variables,
   });
 
+  const mediaPlayer = {
+    ...state,
+    isPlaying: true,
+    id: variables.id,
+    playlist: variables.playlist || state.playlist,
+    currentTrack: variables.currentTrack || variables.currentTrack,
+  };
+
+  track(events.AudioPlayed, mediaPlayer);
+
   cache.writeQuery({
     query: mediaPlayerQuery,
     variables,
     data: {
-      mediaPlayer: {
-        ...state,
-        isPlaying: true,
-        id: variables.id,
-        playlist: variables.playlist || state.playlist,
-        currentTrack: variables.currentTrack || variables.currentTrack,
-      },
+      mediaPlayer,
     },
   });
   return null;
@@ -98,6 +105,8 @@ export function pause(result, variables, { cache }) {
     query: mediaPlayerQuery,
     variables,
   });
+
+  track(events.AudioPaused, state);
 
   cache.writeQuery({
     query: mediaPlayerQuery,
