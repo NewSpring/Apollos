@@ -14,7 +14,7 @@ export default graphql(relatedContentQuery, {
   },
   props({ ownProps, data: { error, content, loading } } = {}) {
     return {
-      error,
+      error: error || ownProps.error,
       isLoading: ownProps.isLoading || loading,
       content,
     };

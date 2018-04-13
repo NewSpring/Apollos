@@ -3,7 +3,7 @@ import seriesContentQuery from './seriesContentQuery';
 
 export default graphql(seriesContentQuery, {
   props: ({ ownProps, data: { error, content, loading } }) => ({
-    error,
+    error: error || ownProps.error,
     content,
     isLoading: ownProps.isLoading || loading,
   }),

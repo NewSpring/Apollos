@@ -30,12 +30,12 @@ export default graphql(searchQuery, {
       site: ownProps.site || 'https://newspring.cc',
     },
   }),
-  props: ({ data } = {}) => ({
+  props: ({ data, ownProps } = {}) => ({
     content: (data.content && data.content.items) || [],
     total: data.content && data.content.total,
-    isLoading: data.loading,
+    isLoading: data.loading || ownProps.isLoading,
     refetch: data.refetch,
-    error: data.error,
+    error: data.error || ownProps.error,
     fetchMore: fetchMoreResolver({
       collectionName: 'content.items',
       data,

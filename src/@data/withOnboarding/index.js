@@ -29,7 +29,7 @@ export const withShowOnboarding = graphql(showOnboarding, {
 
 const withOnboarding = graphql(query, {
   props: ({ data: { error, onboarded, loading }, ownProps = {} }) => ({
-    error,
+    error: error || ownProps.error,
     onboarded,
     isLoading: loading || ownProps.isLoading,
   }),

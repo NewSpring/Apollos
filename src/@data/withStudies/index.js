@@ -11,7 +11,7 @@ export default graphql(studiesQuery, {
     },
   }),
   props: ({ ownProps, data } = {}) => ({
-    error: data.error,
+    error: data.error || ownProps.error,
     content: data.content && data.content.map(identifyCategory),
     isLoading: ownProps.isLoading || data.loading,
     fetchMore: fetchMoreResolver({

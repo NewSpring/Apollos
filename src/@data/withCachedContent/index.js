@@ -48,7 +48,7 @@ const cachedContentParentQuery = gql`
 
 const withQuery = query => graphql(query, {
   props: ({ data: { error, content, loading }, ownProps }) => ({
-    error,
+    error: error || ownProps.error,
     content: merge({}, (content || {}), (ownProps.content || {})),
     isLoading: ownProps.isLoading || loading,
   }),

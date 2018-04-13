@@ -56,7 +56,7 @@ export default graphql(QUERY, {
       error, user, loading, refetch,
     },
   }) => ({
-    error,
+    error: error || ownProps.error,
     user: user || {},
     isLoading: ownProps.isLoading || loading,
     refetch,

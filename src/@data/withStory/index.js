@@ -3,7 +3,7 @@ import storyQuery from './storyQuery';
 
 export default graphql(storyQuery, {
   props: ({ data: { error, content, loading }, ownProps }) => ({
-    error,
+    error: error || ownProps.error,
     content,
     isLoading: ownProps.isLoading || loading,
   }),

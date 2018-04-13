@@ -3,7 +3,7 @@ import financialAccountsQuery from './financialAccountsQuery';
 
 export default graphql(financialAccountsQuery, {
   props: ({ ownProps, data }) => ({
-    error: data.error,
+    error: data.error || ownProps.error,
     accounts: data.accounts,
     isLoading: ownProps.isLoading || data.loading,
   }),

@@ -22,7 +22,7 @@ export const QUERY = gql`
 
 export default graphql(QUERY, {
   props: ({ ownProps, data } = {}) => ({
-    error: data.error,
+    error: data.error || ownProps.error,
     campuses: data.campuses,
     isLoading: ownProps.isLoading || data.loading,
   }),

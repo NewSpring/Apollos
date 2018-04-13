@@ -16,7 +16,7 @@ export const QUERY = gql`
 
 export default graphql(QUERY, {
   props: ({ ownProps, data } = {}) => ({
-    error: data.error,
+    error: data.error || ownProps.error,
     content: data.userFeed && data.userFeed.map(identifyCategory),
     isLoading: ownProps.isLoading || data.loading,
     refetch: data.refetch,

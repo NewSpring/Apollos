@@ -3,7 +3,7 @@ import studyEntryQuery from './studyEntryQuery';
 
 export default graphql(studyEntryQuery, {
   props: ({ ownProps, data: { error, content, loading } }) => ({
-    error,
+    error: error || ownProps.error,
     content,
     isLoading: ownProps.isLoading || loading,
   }),

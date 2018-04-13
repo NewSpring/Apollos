@@ -34,7 +34,7 @@ export default graphql(QUERY, {
       error, entries, loading, refetch,
     }, ownProps,
   }) => ({
-    error,
+    error: error || ownProps.error,
     content: entries && entries.map(identifyCategory),
     isLoading: ownProps.isLoading || loading,
     refetch,
