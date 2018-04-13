@@ -272,6 +272,7 @@ const PaymentConfirmationForm = compose(
         return null;
       } finally {
         props.isPaying(false);
+
         if (Platform.OS === 'ios') {
           Linking.removeEventListener('url', handleRedirect);
         } else if (props.navigateToOnComplete) {
