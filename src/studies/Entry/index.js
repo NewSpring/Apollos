@@ -1,5 +1,6 @@
 import React from 'react';
 import { compose, mapProps, pure, withProps } from 'recompose';
+import { get } from 'lodash';
 
 import withStudyEntry from '@data/withStudyEntry';
 import BackgroundView from '@ui/BackgroundView';
@@ -18,11 +19,16 @@ const enhance = compose(
   withStudyEntry,
   withCachedContent,
   withCachedParentContent,
-  withThemeMixin(({ content: { parent: { content = {} } = {} } = {} } = {}) => {
+  withProps(({ content }) => {
+    let colors = get(content, 'content.colors');
+    if (!colors) colors = get(content, 'parent.content.colors');
+    if (!colors) colors = [];
+    return colors;
+  }),
+  withThemeMixin(({ colors }) => {
     const theme = { };
-    if (content.colors && content.colors.length) {
-      const primary = `#${content.colors[0].value}`;
-
+    if (colors && colors.length) {
+      const primary = `#${colors[0].value}`;
       theme.colors = {
         background: {
           primary,
@@ -39,11 +45,7 @@ const Study = enhance(({
   id,
   content: {
     title,
-    parent: {
-      title: parentTitle,
-      content: { isLight = true } = {},
-      children,
-    } = {},
+    parent = {},
     content: {
       isLiked,
       body,
@@ -57,9 +59,15 @@ const Study = enhance(({
   const tabRoutes = [{ title: 'Devotional', key: 'devotional' }];
   if (hasScripture) tabRoutes.push({ title: 'Scripture', key: 'scripture' });
 
+  const {
+    title: parentTitle,
+    content: { isLight = false } = {},
+    children = [],
+  } = parent || {};
+
   return (
     <BackgroundView>
-      <Header titleText={parentTitle} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
+      <Header titleText={parentTitle || 'Devotional'} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
       <TabView
         barStyle={isLight ? 'dark-content' : 'light-content'}
         routes={tabRoutes}
