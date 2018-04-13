@@ -413,7 +413,6 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
         Object {
           "alignItems": "center",
           "justifyContent": "center",
-          "paddingTop": 10,
         }
       }
     >
@@ -425,6 +424,7 @@ exports[`The PaymentConfirmationForm component renders correctly 1`] = `
         style={
           Object {
             "color": "#6bac43",
+            "padding": 10,
             "textDecorationLine": "underline",
           }
         }
@@ -810,7 +810,6 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
         Object {
           "alignItems": "center",
           "justifyContent": "center",
-          "paddingTop": 10,
         }
       }
     >
@@ -822,6 +821,7 @@ exports[`The PaymentConfirmationForm component shows a paying state 1`] = `
         style={
           Object {
             "color": "#6bac43",
+            "padding": 10,
             "textDecorationLine": "underline",
           }
         }
@@ -1349,7 +1349,6 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         Object {
           "alignItems": "center",
           "justifyContent": "center",
-          "paddingTop": 10,
         }
       }
     >
@@ -1361,6 +1360,7 @@ exports[`The PaymentConfirmationForm component shows a scheduled contribution 1`
         style={
           Object {
             "color": "#6bac43",
+            "padding": 10,
             "textDecorationLine": "underline",
           }
         }
