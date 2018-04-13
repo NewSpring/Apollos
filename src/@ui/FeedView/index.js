@@ -73,12 +73,16 @@ const enhance = compose(
   ),
 );
 
-const refetchHandler = ({ isLoading, refetch }) => (...args) => !isLoading && (
-  refetch(...args)
+const refetchHandler = ({ isLoading, refetch }) => refetch && (
+  (...args) => !isLoading && (
+    refetch(...args)
+  )
 );
 
-const fetchMoreHandler = ({ fetchMore, error, isLoading }) => (...args) => !isLoading && !error && (
-  fetchMore(...args)
+const fetchMoreHandler = ({ fetchMore, error, isLoading }) => fetchMore && (
+  (...args) => !isLoading && !error && (
+    fetchMore(...args)
+  )
 );
 
 const FeedView = enhance(
