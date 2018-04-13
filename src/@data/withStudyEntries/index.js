@@ -2,7 +2,8 @@ import { graphql } from 'react-apollo';
 import studyEntriesQuery from './studyEntriesQuery';
 
 export default graphql(studyEntriesQuery, {
-  props: ({ data: { content } }) => ({
+  props: ({ data: { error, content } }) => ({
+    error,
     content,
   }),
   options: (ownProps = {}) => ({

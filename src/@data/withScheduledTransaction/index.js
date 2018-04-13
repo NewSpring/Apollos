@@ -62,7 +62,8 @@ export default graphql(QUERY, {
       id: ownProps.id,
     },
   }),
-  props: ({ data: { transaction, loading } }) => ({
+  props: ({ data: { error, transaction, loading } }) => ({
+    error,
     transaction,
     isLoading: loading,
   }),

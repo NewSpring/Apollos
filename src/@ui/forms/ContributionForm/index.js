@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Platform } from 'react-native';
+import { View, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withProps, branch, renderComponent, setPropTypes, defaultProps } from 'recompose';
 import { isEmpty, get } from 'lodash';
@@ -21,6 +21,7 @@ import * as Inputs from '@ui/inputs';
 import PaddedView from '@ui/PaddedView';
 import TableView from '@ui/TableView';
 import styled from '@ui/styled';
+import ErrorCard from '@ui/ErrorCard';
 
 import FundInput from './FundInput';
 import FrequencyInput, { FREQUENCY_IDS } from './FrequencyInput';
@@ -179,7 +180,7 @@ export class ContributionFormWithoutData extends Component {
   }
 
   render() {
-    if (this.props.funds.length === 0) return <Text>{'There are no funds to contribute to!'}</Text>;
+    if (this.props.funds.length === 0) return <ErrorCard error={'We\'re having trouble loading funds right now, please try again later.'} />;
     if (this.props.isOffline) return this.renderOfflineMessage();
 
     const total = (parseFloat(this.totalContribution || 0) || 0).toFixed(2);

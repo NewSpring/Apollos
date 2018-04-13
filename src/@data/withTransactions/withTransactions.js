@@ -52,6 +52,7 @@ export default graphql(QUERY, {
   }),
   props: ({ ownProps, data } = {}) => ({
     // NOTE: This should happen in Heighliner
+    error: data.error || ownProps.error,
     transactions:
       data.transactions &&
       flatten(
