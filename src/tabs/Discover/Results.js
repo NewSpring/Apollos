@@ -45,10 +45,12 @@ class ItemLink extends Component {
   render() {
     return (
       <Touchable onPress={this.handlePress}>
-        {this.props.children}
-        {(this.state.isLoading) ? (
-          <Overlay><ActivityIndicator /></Overlay>
-        ) : null}
+        <View>
+          {this.props.children}
+          {(this.state.isLoading) ? (
+            <Overlay><ActivityIndicator /></Overlay>
+          ) : null}
+        </View>
       </Touchable>
     );
   }
