@@ -9,6 +9,7 @@ import styled from '@ui/styled';
 import withTopics from '@data/withTopics';
 import withUser from '@data/withUser';
 import TableView, { Cell, CellText, Divider } from '@ui/TableView';
+import ErrorCard from '@ui/ErrorCard';
 
 const TabInfoText = styled({ textAlign: 'center' })(H7);
 
@@ -20,10 +21,12 @@ const enhance = compose(
 
 const Topics = enhance(({
   topics = [],
+  error,
   user: { followedTopics = [] } = {},
   toggleTopic,
 }) => (
   <ScrollView>
+    {error ? <ErrorCard error={error} /> : null}
     <PaddedView>
       <TabInfoText>
         Personalize your NewSpring Home and follow the types of content you care about.

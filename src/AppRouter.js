@@ -18,11 +18,11 @@ import {
 import ActivityIndicator from '@ui/ActivityIndicator';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
-import DebugView from '@ui/DebugView';
 import orientation from '@utils/orientation';
 import BackgroundView from '@ui/BackgroundView';
 import Meta from '@ui/Meta';
 import getAppPathForUrl from '@utils/getAppPathForUrl';
+import { trackScreen } from '@utils/analytics';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -68,10 +68,12 @@ class AppRouter extends PureComponent {
   };
 
   componentWillMount() {
+    this.trackScreen(this.props);
     if (!previousLocation) previousLocation = this.props.location;
   }
 
   componentWillUpdate(nextProps) {
+    this.trackScreen(nextProps);
     if (
       nextProps.history.action !== 'POP' &&
       nextProps.history.action !== 'REPLACE' &&
@@ -95,6 +97,15 @@ class AppRouter extends PureComponent {
 
   get musicPlayerIsOpened() {
     return matchPath(this.props.location.pathname, '/player');
+  }
+
+  trackScreen = ({ location, history }) => {
+    if (location !== previousLocation) {
+      trackScreen(location.pathname, {
+        ...location,
+        sizeOfHistory: history.entries ? history.entries.length : null,
+      });
+    }
   }
 
   // On large screens we render modals on top of the previous route.
@@ -212,9 +223,10 @@ class AppRouter extends PureComponent {
                 <Route exact path="/studies/:id" component={StudiesSingle} />
                 <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
 
+                <Route exact from="/devotionals/:id" component={StudiesEntry} />
+                <Route exact path="/devotions/:id" component={StudiesEntry} />
                 <Redirect from="/devotionals" to="/studies" />
                 <Redirect from="/devotions" to="/studies" />
-                <Route exact path="/devotions/:id" component={DebugView} />
 
                 <Route exact path="/music" component={Music} />
                 <Route exact path="/music/:id" component={Playlist} />
@@ -233,8 +245,6 @@ class AppRouter extends PureComponent {
 
                 <Route exact path="/news" component={News} />
                 <Route exact path="/news/:id" component={NewsSingle} />
-
-                <Route exact path="/events/:id" component={DebugView} />
 
                 <Route exact path="/groups/finder" component={GroupFinderResults} />
                 <Route exact path="/groups/:id" component={GroupSingle} />

@@ -10,6 +10,7 @@ import { withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
 import { H5 } from '@ui/typography';
 import ThumbnailCard from '@ui/ThumbnailCard';
+import ErrorCard from '@ui/ErrorCard';
 
 const generateLoadingStateData = (numberOfItems = 1) => {
   const itemData = () => ({
@@ -85,10 +86,12 @@ const RelatedContentWithoutData = enhance(({
   sectionTitle,
   renderItem = defaultItemRenderer,
   content,
+  error,
   style,
 }) => (
   <Wrapper style={style}>
     {sectionTitle ? renderSectionTitle(sectionTitle) : null}
+    {error ? <ErrorCard error={error} /> : null}
     {(content || []).map(renderItem)}
   </Wrapper>
 ));

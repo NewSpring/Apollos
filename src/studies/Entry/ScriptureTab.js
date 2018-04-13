@@ -28,7 +28,7 @@ const ScriptureTab = enhance(({ scripture, entryData, isLoading }) => (
     <PaddedView>
       <Scripture references={bibleData(scripture)} />
     </PaddedView>
-    <EntryList entries={entryData} isLoading={isLoading} />
+    {entryData && entryData.length ? <EntryList entries={entryData} isLoading={isLoading} /> : null}
   </ScrollView>
 ));
 

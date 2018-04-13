@@ -2,6 +2,7 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import get from 'lodash/get';
 import { AsyncStorage } from 'react-native';
+import { track, events } from '@utils/analytics';
 
 import { QUERY as LOGGED_IN_QUERY } from './withIsLoggedIn';
 
@@ -39,6 +40,8 @@ export default graphql(MUTATION, {
               id: registerUser.id,
             };
             store.writeQuery({ query: LOGGED_IN_QUERY, data });
+            track(events.Login);
+            track(events.Register);
             await AsyncStorage.setItem('authToken', get(registerUser, 'token'));
           },
         });

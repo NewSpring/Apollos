@@ -29,7 +29,7 @@ const DevotionalTab = enhance(({
       <Title>{titleCase(title)}</Title>
       <HTMLView>{body}</HTMLView>
     </ContentView>
-    <EntryList entries={entryData} isLoading={isLoading} />
+    {entryData && entryData.length ? <EntryList entries={entryData} isLoading={isLoading} /> : null}
   </ScrollView>
 ));
 

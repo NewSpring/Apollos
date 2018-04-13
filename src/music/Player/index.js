@@ -151,6 +151,10 @@ export class DockableMediaPlayer extends PureComponent {
     this.props.stop();
   };
 
+  handlePlayerError = () => {
+    this.props.pause(); // todo: show some UI indication, this is likely a network error
+  }
+
   renderMiniControls() {
     let miniControls = null;
     if (this.state.showMiniControls && this.props.currentTrack) {
@@ -203,16 +207,19 @@ export class DockableMediaPlayer extends PureComponent {
         source={this.props.currentTrack && this.props.currentTrack.file}
         isPlaying={this.props.isPlaying}
         onPlaybackReachedEnd={this.handleEndReached}
+        onError={this.handlePlayerError}
         style={StyleSheet.absoluteFill}
       >
         <CardStack direction="vertical">
           <Route exact path={'/player'} render={this.renderPlayer} />
           <Route exact path={'/player/list/:id'} component={asModal(Playlist)} />
           <Route exact path={'/player/:id/:track'} component={PlayerTrackContextual} />
-          <BackgroundView>
-            {this.props.children}
-            {this.renderMiniControls()}
-          </BackgroundView>
+          <Route cardStackKey="app">
+            <BackgroundView>
+              {this.props.children}
+              {this.renderMiniControls()}
+            </BackgroundView>
+          </Route>
         </CardStack>
       </Audio>
     );

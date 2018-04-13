@@ -8,25 +8,29 @@ import { get } from 'lodash';
 import { getLinkPath, getItemBgColor, getItemImages, getItemIsLight, getItemThumbnail } from '@utils/content';
 import FeedItemCard from '@ui/FeedItemCard';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
+import ErrorCard from '@ui/ErrorCard';
 import FeedList from './FeedList';
 
 export const defaultFeedItemRenderer = (CardComponent = FeedItemCard) => (
   { item }, // eslint-disable-line
-) => item && (
-  <Link to={getLinkPath(item)} component={TouchableWithoutFeedback}>
-    <CardComponent
-      id={item.id}
-      title={item.title || item.name || ' '}
-      category={item.category}
-      images={getItemImages(item)}
-      thumbnail={getItemThumbnail(item)}
-      backgroundColor={getItemBgColor(item)}
-      isLight={getItemIsLight(item)}
-      isLoading={item.isLoading}
-      isLiked={item.isLiked || get(item, 'content.isLiked', false)}
-    />
-  </Link>
-);
+) => {
+  if (!item) return null;
+  return (
+    <Link to={getLinkPath(item)} component={TouchableWithoutFeedback}>
+      <CardComponent
+        id={item.id}
+        title={item.title || item.name || ' '}
+        category={item.category}
+        images={getItemImages(item)}
+        thumbnail={getItemThumbnail(item)}
+        backgroundColor={getItemBgColor(item)}
+        isLight={getItemIsLight(item)}
+        isLoading={item.isLoading}
+        isLiked={item.isLiked || get(item, 'content.isLiked', false)}
+      />
+    </Link>
+  );
+};
 
 const generateLoadingStateData = (numberOfItems = 1) => {
   const itemData = () => ({
@@ -69,15 +73,29 @@ const enhance = compose(
   ),
 );
 
+const refetchHandler = ({ isLoading, refetch }) => refetch && (
+  (...args) => !isLoading && (
+    refetch(...args)
+  )
+);
+
+const fetchMoreHandler = ({ fetchMore, error, isLoading }) => fetchMore && (
+  (...args) => !isLoading && !error && (
+    fetchMore(...args)
+  )
+);
+
 const FeedView = enhance(
   ({
     isLoading,
     refetch,
     content,
+    error,
     fetchMore,
     numColumns,
     renderItem,
     ItemComponent,
+    ListEmptyComponent,
     ...otherProps
   }) => {
     let itemRenderer = renderItem;
@@ -89,10 +107,13 @@ const FeedView = enhance(
         {...otherProps}
         renderItem={itemRenderer}
         refreshing={isLoading}
-        onRefresh={refetch}
-        onEndReached={fetchMore}
+        onRefresh={refetchHandler({ isLoading, refetch })}
+        onEndReached={fetchMoreHandler({ fetchMore, error, isLoading })}
         numColumns={numColumns}
         data={content}
+        ListEmptyComponent={error && !isLoading && (!content || !content.length) ? (
+          <ErrorCard error={error} />
+        ) : ListEmptyComponent}
       />
     );
   },

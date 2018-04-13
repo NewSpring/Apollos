@@ -11,6 +11,7 @@ export default graphql(seriesQuery, {
     },
   }),
   props: ({ ownProps, data } = {}) => ({
+    error: data.error || ownProps.error,
     content: data.content && data.content.map(identifyCategory),
     isLoading: ownProps.isLoading || data.loading,
     refetch: data.refetch,

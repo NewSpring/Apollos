@@ -9,6 +9,7 @@ export default graphql(promotionsQuery, {
     },
   }),
   props: ({ data } = {}) => ({
+    error: data.error,
     content: data.content && data.content.map(identifyCategory),
     isLoading: data.loading,
     refetch: data.refetch,
