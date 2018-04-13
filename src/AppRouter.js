@@ -18,7 +18,6 @@ import {
 import ActivityIndicator from '@ui/ActivityIndicator';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
-import DebugView from '@ui/DebugView';
 import orientation from '@utils/orientation';
 import BackgroundView from '@ui/BackgroundView';
 import Meta from '@ui/Meta';
@@ -214,7 +213,6 @@ class AppRouter extends PureComponent {
 
                 <Redirect from="/devotionals" to="/studies" />
                 <Redirect from="/devotions" to="/studies" />
-                <Route exact path="/devotions/:id" component={DebugView} />
 
                 <Route exact path="/music" component={Music} />
                 <Route exact path="/music/:id" component={Playlist} />
@@ -233,8 +231,6 @@ class AppRouter extends PureComponent {
 
                 <Route exact path="/news" component={News} />
                 <Route exact path="/news/:id" component={NewsSingle} />
-
-                <Route exact path="/events/:id" component={DebugView} />
 
                 <Route exact path="/groups/finder" component={GroupFinderResults} />
                 <Route exact path="/groups/:id" component={GroupSingle} />
