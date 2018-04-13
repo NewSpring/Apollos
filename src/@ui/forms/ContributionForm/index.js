@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Platform } from 'react-native';
+import { View, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withProps, branch, renderComponent, setPropTypes, defaultProps } from 'recompose';
 import { isEmpty, get } from 'lodash';
@@ -16,12 +16,12 @@ import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { H5, H3, BodyText } from '@ui/typography';
 import CashAmountIndicator from '@ui/CashAmountIndicator';
-import Button from '@ui/Button';
+import Button, { ButtonLink } from '@ui/Button';
 import * as Inputs from '@ui/inputs';
 import PaddedView from '@ui/PaddedView';
 import TableView from '@ui/TableView';
 import styled from '@ui/styled';
-import { enhancer as mediaQuery } from '@ui/MediaQuery';
+import ErrorCard from '@ui/ErrorCard';
 
 import FundInput from './FundInput';
 import FrequencyInput, { FREQUENCY_IDS } from './FrequencyInput';
@@ -45,15 +45,18 @@ const Row = styled({
   flexWrap: 'wrap',
 })(View);
 
-const ButtonRow = mediaQuery(({ md }) => ({ minWidth: md }), styled({ flexDirection: 'row' }))(
-  View,
-);
+const GuestButton = styled(
+  ({ theme, disabled }) => ({
+    paddingTop: theme.sizing.baseUnit * 0.75,
+    opacity: disabled ? 0.5 : 1,
+  }),
+  'Guest.Button',
+)(ButtonLink);
 
-const ButtonInRow = mediaQuery(
-  ({ md }) => ({ maxWidth: md }),
-  styled(({ theme }) => ({ marginBottom: theme.sizing.baseUnit / 2 })),
-  styled(({ theme }) => ({ marginRight: theme.sizing.baseUnit / 2 })),
-)(Button);
+const ButtonContainer = styled({
+  flexDirection: 'column',
+  alignItems: 'center',
+})(View);
 
 const Totals =
   Platform.OS === 'web'
@@ -177,7 +180,7 @@ export class ContributionFormWithoutData extends Component {
   }
 
   render() {
-    if (this.props.funds.length === 0) return <Text>{'There are no funds to contribute to!'}</Text>;
+    if (this.props.funds.length === 0) return <ErrorCard error={'We\'re having trouble loading funds right now, please try again later.'} />;
     if (this.props.isOffline) return this.renderOfflineMessage();
 
     const total = (parseFloat(this.totalContribution || 0) || 0).toFixed(2);
@@ -268,20 +271,21 @@ export class ContributionFormWithoutData extends Component {
               <Icon name="lock" />
             </Button>
           ) : (
-            <ButtonRow>
-              <ButtonInRow
+            <ButtonContainer>
+              <Button
                 disabled={!(this.totalContribution > 0) || !this.props.isValid}
                 onPress={this.props.triggerLogin}
                 title="Sign in or create account"
                 type="primary"
               />
-              <ButtonInRow
+              <GuestButton
                 disabled={!(this.totalContribution > 0) || !this.props.isValid}
                 onPress={this.props.handleSubmit}
-                title="Give as Guest"
                 type="default"
-              />
-            </ButtonRow>
+              >
+                Give as Guest
+              </GuestButton>
+            </ButtonContainer>
           )}
         </Totals>
       </PaddedView>

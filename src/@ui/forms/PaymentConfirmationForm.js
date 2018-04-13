@@ -48,11 +48,14 @@ const Row = styled(({ theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit / 2,
 }))(View);
 
-const ButtonLinkContainer = styled(({ theme }) => ({
-  paddingTop: theme.sizing.baseUnit / 2,
+const ButtonLinkContainer = styled(() => ({
   alignItems: 'center',
   justifyContent: 'center',
 }))(View);
+
+const BigButtonLink = styled(({ theme }) => ({
+  padding: theme.sizing.baseUnit / 2,
+}))(ButtonLink);
 
 export class PaymentConfirmationFormWithoutData extends PureComponent {
   static propTypes = {
@@ -169,9 +172,9 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
 
           {!this.props.hideChangePaymentMethodButton && (
             <ButtonLinkContainer>
-              <ButtonLink onPress={this.props.onPressChangePaymentMethod}>
+              <BigButtonLink onPress={this.props.onPressChangePaymentMethod}>
                 {'Change Payment Method'}
-              </ButtonLink>
+              </BigButtonLink>
             </ButtonLinkContainer>
           )}
         </PaddedView>

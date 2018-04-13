@@ -1,6 +1,7 @@
 import { get } from 'lodash';
 
 const getLinkPath = (contentItem) => {
+  if (!contentItem || typeof contentItem !== 'object') return '#';
   const id = contentItem.id || contentItem.id;
   const category = contentItem.channelName;
   const seriesId = contentItem.parent && (contentItem.parent.id || contentItem.parent.id);

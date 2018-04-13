@@ -8,7 +8,6 @@ const isQueryRoute = (path) => {
   const queryRoutes = [
     '/articles/',
     '/sermons/',
-    '/devotionals/',
     '/studies/',
     '/stories/',
     '/news/',
@@ -72,6 +71,8 @@ const withQuery = async (path) => {
       },
     });
 
+  if (!data.parent) return null;
+
   switch (channel) {
     case 'sermons':
       if (data.child) {
@@ -103,8 +104,6 @@ export default async (url) => {
       return '/series';
     case '/series':
     case '/studies':
-    case '/devotionals':
-    case '/devotions':
     case '/music':
     case '/articles':
     case '/stories':
