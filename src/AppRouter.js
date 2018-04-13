@@ -223,6 +223,8 @@ class AppRouter extends PureComponent {
                 <Route exact path="/studies/:id" component={StudiesSingle} />
                 <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
 
+                <Route exact from="/devotionals/:id" component={StudiesEntry} />
+                <Route exact path="/devotions/:id" component={StudiesEntry} />
                 <Redirect from="/devotionals" to="/studies" />
                 <Redirect from="/devotions" to="/studies" />
 
