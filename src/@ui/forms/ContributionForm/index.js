@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Platform } from 'react-native';
+import { View, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withProps, branch, renderComponent, setPropTypes, defaultProps } from 'recompose';
 import { isEmpty, get } from 'lodash';
