@@ -17,9 +17,7 @@ const SentryContext = withUser(({
 }) => {
   Sentry.setUserContext(id ? { id, email } : null);
 
-  if (!id) {
-    Analytics.identify(null);
-  } else {
+  if (id) {
     Analytics.identify(id, {
       age,
       campusId: get(campus, 'id'),
