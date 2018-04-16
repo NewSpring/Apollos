@@ -11,12 +11,12 @@ import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import ErrorCard from '@ui/ErrorCard';
 import FeedList from './FeedList';
 
-export const defaultFeedItemRenderer = (CardComponent = FeedItemCard) => (
+export const defaultFeedItemRenderer = (CardComponent = FeedItemCard, LinkComponent = Link) => (
   { item }, // eslint-disable-line
 ) => {
   if (!item) return null;
   return (
-    <Link to={getLinkPath(item)} component={TouchableWithoutFeedback}>
+    <LinkComponent to={getLinkPath(item)} component={TouchableWithoutFeedback}>
       <CardComponent
         id={item.id}
         title={item.title || item.name || ' '}
@@ -28,7 +28,7 @@ export const defaultFeedItemRenderer = (CardComponent = FeedItemCard) => (
         isLoading={item.isLoading}
         isLiked={item.isLiked || get(item, 'content.isLiked', false)}
       />
-    </Link>
+    </LinkComponent>
   );
 };
 

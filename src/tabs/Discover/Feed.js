@@ -12,7 +12,9 @@ import withPromotions from '@data/withPromotions';
 import styled from '@ui/styled';
 import WebBrowser from '@ui/WebBrowser';
 
-const FeaturedCard = defaultFeedItemRenderer(FeedItemCard);
+import ItemLink from './ItemLink';
+
+const FeaturedCard = defaultFeedItemRenderer(FeedItemCard, ItemLink);
 
 const RecentLikes = compose(
   withRecentLikes,
