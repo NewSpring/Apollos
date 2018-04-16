@@ -16,7 +16,7 @@ import withCheckout from '@data/withCheckout';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { H5, H3, BodyText } from '@ui/typography';
 import CashAmountIndicator from '@ui/CashAmountIndicator';
-import Button, { ButtonLink } from '@ui/Button';
+import Button from '@ui/Button';
 import * as Inputs from '@ui/inputs';
 import PaddedView from '@ui/PaddedView';
 import TableView from '@ui/TableView';
@@ -43,19 +43,6 @@ const Row = styled({
   flexDirection: 'row',
   alignItems: 'center',
   flexWrap: 'wrap',
-})(View);
-
-const GuestButton = styled(
-  ({ theme, disabled }) => ({
-    paddingTop: theme.sizing.baseUnit * 0.75,
-    opacity: disabled ? 0.5 : 1,
-  }),
-  'Guest.Button',
-)(ButtonLink);
-
-const ButtonContainer = styled({
-  flexDirection: 'column',
-  alignItems: 'center',
 })(View);
 
 const Totals =
@@ -271,21 +258,12 @@ export class ContributionFormWithoutData extends Component {
               <Icon name="lock" />
             </Button>
           ) : (
-            <ButtonContainer>
-              <Button
-                disabled={!(this.totalContribution > 0) || !this.props.isValid}
-                onPress={this.props.triggerLogin}
-                title="Sign in or create account"
-                type="primary"
-              />
-              <GuestButton
-                disabled={!(this.totalContribution > 0) || !this.props.isValid}
-                onPress={this.props.handleSubmit}
-                type="default"
-              >
-                Give as Guest
-              </GuestButton>
-            </ButtonContainer>
+            <Button
+              disabled={!(this.totalContribution > 0) || !this.props.isValid}
+              onPress={this.props.triggerLogin}
+              title="Sign in or create account"
+              type="primary"
+            />
           )}
         </Totals>
       </PaddedView>
