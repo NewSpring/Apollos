@@ -34,7 +34,6 @@ import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
 import Locations from './locations';
-import Live from './live';
 import Auth, { ForgotPassword, ResetPassword } from './auth';
 import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
 
@@ -283,7 +282,6 @@ class AppRouter extends PureComponent {
 
                 <Route path="/login" component={Auth} cardStackDirection="vertical" />
 
-                <Route exact path="/live" component={asModal(Live)} cardStackDirection="vertical" />
                 <ProtectedRoute exact path="/settings" component={Settings} />
                 <ProtectedRoute exact path="/settings/profile" component={ProfileDetails} />
                 <ProtectedRoute exact path="/settings/address" component={ProfileAddress} />
