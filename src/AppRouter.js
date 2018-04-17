@@ -34,7 +34,6 @@ import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
 import Locations from './locations';
-import Live from './live';
 import Auth, { ForgotPassword, ResetPassword } from './auth';
 import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
 
@@ -44,7 +43,8 @@ const redirectToNewspring = path => window.location.replace(`https://newspring.c
 
 let previousLocation;
 
-const universalLinksToHandle = ['beta.newspring.cc', 'newspring.cc', 'rm2y5.app.goo.gl'];
+const universalLinksToHandle = ['newspring.cc', 'rm2y5.app.goo.gl'];
+const universalLinksToFetch = ['rm2y5.app.goo.gl'];
 
 class AppRouter extends PureComponent {
   static propTypes = {
@@ -158,13 +158,23 @@ class AppRouter extends PureComponent {
     this.props.history.push(...args);
   };
 
-  handleUniversalLink = async ({ url }) => {
+  handleUniversalLink = async ({ url: _url }) => {
+    let url = _url;
+    if (url.startsWith('exp')) url = `http${url.substr(3)}`; // handle weird expo bug
     if (universalLinksToHandle.find(link => url.includes(link))) {
       this.setState({ universalLinkLoading: true });
-      const realUrl = (await fetch(url)).url;
-      const path = await getAppPathForUrl(realUrl);
-      this.setState({ universalLinkLoading: false });
-      if (path) this.props.history.push(path);
+      try {
+        let realUrl = url;
+        if (universalLinksToFetch.find(link => url.includes(link))) {
+          realUrl = (await fetch(url)).url;
+        }
+
+        const path = await getAppPathForUrl(realUrl);
+        this.setState({ universalLinkLoading: false });
+        if (path) this.props.history.push(path);
+      } catch (e) {
+        this.setState({ universalLinkLoading: false });
+      }
     }
   };
 
@@ -283,7 +293,6 @@ class AppRouter extends PureComponent {
 
                 <Route path="/login" component={Auth} cardStackDirection="vertical" />
 
-                <Route exact path="/live" component={asModal(Live)} cardStackDirection="vertical" />
                 <ProtectedRoute exact path="/settings" component={Settings} />
                 <ProtectedRoute exact path="/settings/profile" component={ProfileDetails} />
                 <ProtectedRoute exact path="/settings/address" component={ProfileAddress} />

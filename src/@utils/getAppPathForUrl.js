@@ -9,6 +9,7 @@ const isQueryRoute = (path) => {
     '/articles/',
     '/sermons/',
     '/studies/',
+    '/devotionals/',
     '/stories/',
     '/news/',
   ];
@@ -104,6 +105,8 @@ export default async (url) => {
       return '/series';
     case '/series':
     case '/studies':
+    case '/devotionals':
+    case '/devotions':
     case '/music':
     case '/articles':
     case '/stories':
