@@ -24,12 +24,13 @@ const enhance = compose(
 
 const LiveNowButton = enhance(
   ({
+    error,
     isLive,
     isFuse,
     titleText = 'NewSpring Church Live, Watch Now!',
     liveNowPath = isFuse ? 'https://live.newspringfuse.com' : 'https://live.newspring.cc',
   }) => {
-    if (!isLive || Platform.OS === 'web') return null;
+    if (error || !isLive || Platform.OS === 'web') return null;
     return (
       <Link to={liveNowPath}>
         <Container>
