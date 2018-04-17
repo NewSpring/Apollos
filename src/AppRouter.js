@@ -44,7 +44,8 @@ const redirectToNewspring = path => window.location.replace(`https://newspring.c
 
 let previousLocation;
 
-const universalLinksToHandle = ['beta.newspring.cc', 'newspring.cc', 'rm2y5.app.goo.gl'];
+const universalLinksToHandle = ['newspring.cc', 'rm2y5.app.goo.gl'];
+const universalLinksToFetch = ['rm2y5.app.goo.gl'];
 
 class AppRouter extends PureComponent {
   static propTypes = {
@@ -158,13 +159,23 @@ class AppRouter extends PureComponent {
     this.props.history.push(...args);
   };
 
-  handleUniversalLink = async ({ url }) => {
+  handleUniversalLink = async ({ url: _url }) => {
+    let url = _url;
+    if (url.startsWith('exp')) url = `http${url.substr(3)}`; // handle weird expo bug
     if (universalLinksToHandle.find(link => url.includes(link))) {
       this.setState({ universalLinkLoading: true });
-      const realUrl = (await fetch(url)).url;
-      const path = await getAppPathForUrl(realUrl);
-      this.setState({ universalLinkLoading: false });
-      if (path) this.props.history.push(path);
+      try {
+        let realUrl = url;
+        if (universalLinksToFetch.find(link => url.includes(link))) {
+          realUrl = (await fetch(url)).url;
+        }
+
+        const path = await getAppPathForUrl(realUrl);
+        this.setState({ universalLinkLoading: false });
+        if (path) this.props.history.push(path);
+      } catch (e) {
+        this.setState({ universalLinkLoading: false });
+      }
     }
   };
 
