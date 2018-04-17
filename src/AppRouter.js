@@ -18,11 +18,11 @@ import {
 import ActivityIndicator from '@ui/ActivityIndicator';
 import CardStack from '@ui/CardStack';
 import { asModal } from '@ui/ModalView';
-import DebugView from '@ui/DebugView';
 import orientation from '@utils/orientation';
 import BackgroundView from '@ui/BackgroundView';
 import Meta from '@ui/Meta';
 import getAppPathForUrl from '@utils/getAppPathForUrl';
+import { trackScreen } from '@utils/analytics';
 
 import * as tabs from './tabs';
 import * as give from './give';
@@ -34,7 +34,6 @@ import Studies, { StudiesSingle, StudiesEntry } from './studies';
 import News, { NewsSingle } from './news';
 import Music, { Playlist, Player, TrackContextual } from './music';
 import Locations from './locations';
-import Live from './live';
 import Auth, { ForgotPassword, ResetPassword } from './auth';
 import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './settings';
 
@@ -44,7 +43,8 @@ const redirectToNewspring = path => window.location.replace(`https://newspring.c
 
 let previousLocation;
 
-const universalLinksToHandle = ['beta.newspring.cc', 'newspring.cc', 'rm2y5.app.goo.gl'];
+const universalLinksToHandle = ['newspring.cc', 'rm2y5.app.goo.gl'];
+const universalLinksToFetch = ['rm2y5.app.goo.gl'];
 
 class AppRouter extends PureComponent {
   static propTypes = {
@@ -68,10 +68,12 @@ class AppRouter extends PureComponent {
   };
 
   componentWillMount() {
+    this.trackScreen(this.props);
     if (!previousLocation) previousLocation = this.props.location;
   }
 
   componentWillUpdate(nextProps) {
+    this.trackScreen(nextProps);
     if (
       nextProps.history.action !== 'POP' &&
       nextProps.history.action !== 'REPLACE' &&
@@ -95,6 +97,15 @@ class AppRouter extends PureComponent {
 
   get musicPlayerIsOpened() {
     return matchPath(this.props.location.pathname, '/player');
+  }
+
+  trackScreen = ({ location, history }) => {
+    if (location !== previousLocation) {
+      trackScreen(location.pathname, {
+        ...location,
+        sizeOfHistory: history.entries ? history.entries.length : null,
+      });
+    }
   }
 
   // On large screens we render modals on top of the previous route.
@@ -147,13 +158,23 @@ class AppRouter extends PureComponent {
     this.props.history.push(...args);
   };
 
-  handleUniversalLink = async ({ url }) => {
+  handleUniversalLink = async ({ url: _url }) => {
+    let url = _url;
+    if (url.startsWith('exp')) url = `http${url.substr(3)}`; // handle weird expo bug
     if (universalLinksToHandle.find(link => url.includes(link))) {
       this.setState({ universalLinkLoading: true });
-      const realUrl = (await fetch(url)).url;
-      const path = await getAppPathForUrl(realUrl);
-      this.setState({ universalLinkLoading: false });
-      if (path) this.props.history.push(path);
+      try {
+        let realUrl = url;
+        if (universalLinksToFetch.find(link => url.includes(link))) {
+          realUrl = (await fetch(url)).url;
+        }
+
+        const path = await getAppPathForUrl(realUrl);
+        this.setState({ universalLinkLoading: false });
+        if (path) this.props.history.push(path);
+      } catch (e) {
+        this.setState({ universalLinkLoading: false });
+      }
     }
   };
 
@@ -212,9 +233,10 @@ class AppRouter extends PureComponent {
                 <Route exact path="/studies/:id" component={StudiesSingle} />
                 <Route exact path="/studies/:seriesId/entry/:id" component={StudiesEntry} />
 
+                <Route exact from="/devotionals/:id" component={StudiesEntry} />
+                <Route exact path="/devotions/:id" component={StudiesEntry} />
                 <Redirect from="/devotionals" to="/studies" />
                 <Redirect from="/devotions" to="/studies" />
-                <Route exact path="/devotions/:id" component={DebugView} />
 
                 <Route exact path="/music" component={Music} />
                 <Route exact path="/music/:id" component={Playlist} />
@@ -233,8 +255,6 @@ class AppRouter extends PureComponent {
 
                 <Route exact path="/news" component={News} />
                 <Route exact path="/news/:id" component={NewsSingle} />
-
-                <Route exact path="/events/:id" component={DebugView} />
 
                 <Route exact path="/groups/finder" component={GroupFinderResults} />
                 <Route exact path="/groups/:id" component={GroupSingle} />
@@ -273,7 +293,6 @@ class AppRouter extends PureComponent {
 
                 <Route path="/login" component={Auth} cardStackDirection="vertical" />
 
-                <Route exact path="/live" component={asModal(Live)} cardStackDirection="vertical" />
                 <ProtectedRoute exact path="/settings" component={Settings} />
                 <ProtectedRoute exact path="/settings/profile" component={ProfileDetails} />
                 <ProtectedRoute exact path="/settings/address" component={ProfileAddress} />

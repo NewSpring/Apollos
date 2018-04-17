@@ -8,8 +8,8 @@ const isQueryRoute = (path) => {
   const queryRoutes = [
     '/articles/',
     '/sermons/',
-    '/devotionals/',
     '/studies/',
+    '/devotionals/',
     '/stories/',
     '/news/',
   ];
@@ -71,6 +71,8 @@ const withQuery = async (path) => {
         hasChild: parent,
       },
     });
+
+  if (!data.parent) return null;
 
   switch (channel) {
     case 'sermons':

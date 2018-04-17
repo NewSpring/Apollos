@@ -735,118 +735,44 @@ exports[`The ContributionForm component renders correctly 1`] = `
         </Text>
       </View>
     </View>
-    <View>
-      <View
-        bordered={false}
-        disabled={true}
-        pill={true}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#6bac43",
-            "borderColor": "#6bac43",
-            "borderRadius": 60,
-            "borderWidth": 2,
-            "elevation": 2,
-            "flexDirection": "row",
-            "height": 60,
-            "justifyContent": "center",
-            "marginBottom": 10,
-            "opacity": 0.5,
-            "overflow": "hidden",
-            "paddingHorizontal": 20,
-          }
+    <View
+      bordered={false}
+      disabled={true}
+      pill={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 60,
+          "borderWidth": 2,
+          "elevation": 2,
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "center",
+          "opacity": 0.5,
+          "overflow": "hidden",
+          "paddingHorizontal": 20,
         }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#ffffff",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 20.02,
-              "lineHeight": 25.33,
-              "paddingBottom": 3.15,
-              "paddingTop": 4.5,
-            }
-          }
-        >
-          Sign in or create account
-        </Text>
-      </View>
-      <View
-        accessibilityComponentType="button"
-        accessibilityLabel={undefined}
-        accessibilityTraits={
-          Array [
-            "button",
-            "disabled",
-          ]
-        }
+      }
+    >
+      <Text
         accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
         style={
           Object {
-            "opacity": 1,
+            "color": "#ffffff",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 4.5,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
-        <View
-          bordered={false}
-          disabled={true}
-          pill={true}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#dddddd",
-              "borderColor": "#dddddd",
-              "borderRadius": 60,
-              "borderWidth": 2,
-              "elevation": 2,
-              "flexDirection": "row",
-              "height": 60,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "opacity": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 20,
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "paddingBottom": 3.15,
-                "paddingTop": 4.5,
-              }
-            }
-          >
-            Give as Guest
-          </Text>
-        </View>
-      </View>
+        Sign in or create account
+      </Text>
     </View>
   </View>
 </View>
@@ -2118,118 +2044,44 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
         </Text>
       </View>
     </View>
-    <View>
-      <View
-        bordered={false}
-        disabled={true}
-        pill={true}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#6bac43",
-            "borderColor": "#6bac43",
-            "borderRadius": 60,
-            "borderWidth": 2,
-            "elevation": 2,
-            "flexDirection": "row",
-            "height": 60,
-            "justifyContent": "center",
-            "marginBottom": 10,
-            "opacity": 0.5,
-            "overflow": "hidden",
-            "paddingHorizontal": 20,
-          }
+    <View
+      bordered={false}
+      disabled={true}
+      pill={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 60,
+          "borderWidth": 2,
+          "elevation": 2,
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "center",
+          "opacity": 0.5,
+          "overflow": "hidden",
+          "paddingHorizontal": 20,
         }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#ffffff",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 20.02,
-              "lineHeight": 25.33,
-              "paddingBottom": 3.15,
-              "paddingTop": 4.5,
-            }
-          }
-        >
-          Sign in or create account
-        </Text>
-      </View>
-      <View
-        accessibilityComponentType="button"
-        accessibilityLabel={undefined}
-        accessibilityTraits={
-          Array [
-            "button",
-            "disabled",
-          ]
-        }
+      }
+    >
+      <Text
         accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
         style={
           Object {
-            "opacity": 1,
+            "color": "#ffffff",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 4.5,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
-        <View
-          bordered={false}
-          disabled={true}
-          pill={true}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#dddddd",
-              "borderColor": "#dddddd",
-              "borderRadius": 60,
-              "borderWidth": 2,
-              "elevation": 2,
-              "flexDirection": "row",
-              "height": 60,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "opacity": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 20,
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "paddingBottom": 3.15,
-                "paddingTop": 4.5,
-              }
-            }
-          >
-            Give as Guest
-          </Text>
-        </View>
-      </View>
+        Sign in or create account
+      </Text>
     </View>
   </View>
 </View>
@@ -2970,118 +2822,44 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
         </Text>
       </View>
     </View>
-    <View>
-      <View
-        bordered={false}
-        disabled={true}
-        pill={true}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#6bac43",
-            "borderColor": "#6bac43",
-            "borderRadius": 60,
-            "borderWidth": 2,
-            "elevation": 2,
-            "flexDirection": "row",
-            "height": 60,
-            "justifyContent": "center",
-            "marginBottom": 10,
-            "opacity": 0.5,
-            "overflow": "hidden",
-            "paddingHorizontal": 20,
-          }
+    <View
+      bordered={false}
+      disabled={true}
+      pill={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 60,
+          "borderWidth": 2,
+          "elevation": 2,
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "center",
+          "opacity": 0.5,
+          "overflow": "hidden",
+          "paddingHorizontal": 20,
         }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#ffffff",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 20.02,
-              "lineHeight": 25.33,
-              "paddingBottom": 3.15,
-              "paddingTop": 4.5,
-            }
-          }
-        >
-          Sign in or create account
-        </Text>
-      </View>
-      <View
-        accessibilityComponentType="button"
-        accessibilityLabel={undefined}
-        accessibilityTraits={
-          Array [
-            "button",
-            "disabled",
-          ]
-        }
+      }
+    >
+      <Text
         accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
         style={
           Object {
-            "opacity": 1,
+            "color": "#ffffff",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 4.5,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
-        <View
-          bordered={false}
-          disabled={true}
-          pill={true}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#dddddd",
-              "borderColor": "#dddddd",
-              "borderRadius": 60,
-              "borderWidth": 2,
-              "elevation": 2,
-              "flexDirection": "row",
-              "height": 60,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "opacity": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 20,
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "paddingBottom": 3.15,
-                "paddingTop": 4.5,
-              }
-            }
-          >
-            Give as Guest
-          </Text>
-        </View>
-      </View>
+        Sign in or create account
+      </Text>
     </View>
   </View>
 </View>
@@ -3882,118 +3660,44 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
         </Text>
       </View>
     </View>
-    <View>
-      <View
-        bordered={false}
-        disabled={true}
-        pill={true}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#6bac43",
-            "borderColor": "#6bac43",
-            "borderRadius": 60,
-            "borderWidth": 2,
-            "elevation": 2,
-            "flexDirection": "row",
-            "height": 60,
-            "justifyContent": "center",
-            "marginBottom": 10,
-            "opacity": 0.5,
-            "overflow": "hidden",
-            "paddingHorizontal": 20,
-          }
+    <View
+      bordered={false}
+      disabled={true}
+      pill={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 60,
+          "borderWidth": 2,
+          "elevation": 2,
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "center",
+          "opacity": 0.5,
+          "overflow": "hidden",
+          "paddingHorizontal": 20,
         }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#ffffff",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 20.02,
-              "lineHeight": 25.33,
-              "paddingBottom": 3.15,
-              "paddingTop": 4.5,
-            }
-          }
-        >
-          Sign in or create account
-        </Text>
-      </View>
-      <View
-        accessibilityComponentType="button"
-        accessibilityLabel={undefined}
-        accessibilityTraits={
-          Array [
-            "button",
-            "disabled",
-          ]
-        }
+      }
+    >
+      <Text
         accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
         style={
           Object {
-            "opacity": 1,
+            "color": "#ffffff",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 4.5,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
-        <View
-          bordered={false}
-          disabled={true}
-          pill={true}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#dddddd",
-              "borderColor": "#dddddd",
-              "borderRadius": 60,
-              "borderWidth": 2,
-              "elevation": 2,
-              "flexDirection": "row",
-              "height": 60,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "opacity": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 20,
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "paddingBottom": 3.15,
-                "paddingTop": 4.5,
-              }
-            }
-          >
-            Give as Guest
-          </Text>
-        </View>
-      </View>
+        Sign in or create account
+      </Text>
     </View>
   </View>
 </View>
@@ -4734,118 +4438,44 @@ exports[`The ContributionForm component shows the second fund 1`] = `
         </Text>
       </View>
     </View>
-    <View>
-      <View
-        bordered={false}
-        disabled={true}
-        pill={true}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#6bac43",
-            "borderColor": "#6bac43",
-            "borderRadius": 60,
-            "borderWidth": 2,
-            "elevation": 2,
-            "flexDirection": "row",
-            "height": 60,
-            "justifyContent": "center",
-            "marginBottom": 10,
-            "opacity": 0.5,
-            "overflow": "hidden",
-            "paddingHorizontal": 20,
-          }
+    <View
+      bordered={false}
+      disabled={true}
+      pill={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#6bac43",
+          "borderColor": "#6bac43",
+          "borderRadius": 60,
+          "borderWidth": 2,
+          "elevation": 2,
+          "flexDirection": "row",
+          "height": 60,
+          "justifyContent": "center",
+          "opacity": 0.5,
+          "overflow": "hidden",
+          "paddingHorizontal": 20,
         }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#ffffff",
-              "fontFamily": "Colfax-Bold",
-              "fontSize": 20.02,
-              "lineHeight": 25.33,
-              "paddingBottom": 3.15,
-              "paddingTop": 4.5,
-            }
-          }
-        >
-          Sign in or create account
-        </Text>
-      </View>
-      <View
-        accessibilityComponentType="button"
-        accessibilityLabel={undefined}
-        accessibilityTraits={
-          Array [
-            "button",
-            "disabled",
-          ]
-        }
+      }
+    >
+      <Text
         accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
         style={
           Object {
-            "opacity": 1,
+            "color": "#ffffff",
+            "fontFamily": "Colfax-Bold",
+            "fontSize": 20.02,
+            "lineHeight": 25.33,
+            "paddingBottom": 3.15,
+            "paddingTop": 4.5,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
-        <View
-          bordered={false}
-          disabled={true}
-          pill={true}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#dddddd",
-              "borderColor": "#dddddd",
-              "borderRadius": 60,
-              "borderWidth": 2,
-              "elevation": 2,
-              "flexDirection": "row",
-              "height": 60,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "opacity": 0.5,
-              "overflow": "hidden",
-              "paddingHorizontal": 20,
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#303030",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 20.02,
-                "lineHeight": 25.33,
-                "paddingBottom": 3.15,
-                "paddingTop": 4.5,
-              }
-            }
-          >
-            Give as Guest
-          </Text>
-        </View>
-      </View>
+        Sign in or create account
+      </Text>
     </View>
   </View>
 </View>

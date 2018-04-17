@@ -6,13 +6,13 @@ export const QUERY = gql`
     live {
       live
       fuse
-      embedUrl
     }
   }
 `;
 
 export default graphql(QUERY, {
-  props: ({ data: { live = {} } = {} }) => ({
+  props: ({ data: { error, live = {} } = {} }) => ({
+    error,
     isLive: live.live,
     isFuse: live.fuse,
     embedUrl: live.embedUrl,

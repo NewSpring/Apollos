@@ -38,7 +38,8 @@ export const QUERY = gql`
 `;
 
 export default graphql(QUERY, {
-  props: ({ data: { schedules } }) => ({
+  props: ({ data: { error, schedules } }) => ({
+    error,
     schedules,
   }),
 });

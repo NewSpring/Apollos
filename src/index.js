@@ -1,3 +1,4 @@
+import setprototypeof from 'setprototypeof';
 import { AppRegistry, Platform } from 'react-native';
 import { ApolloProvider } from 'react-apollo';
 import { nest, withProps } from 'recompose';
@@ -11,11 +12,14 @@ import { ActionSheetProvider } from '@ui/ActionSheet';
 import Client from '@data/Client';
 import OnboardingModal from '@ui/OnboardingModal';
 import orientation from '@utils/orientation';
+import trackAppState from '@utils/trackAppState';
 
 import AppRouter from './AppRouter';
 import SentryContext from './SentryContext';
 
 const sentryEnv = Settings.APP_SENTRY_ENVIRONMENT || Settings.NODE_ENV;
+
+if (!Object.setPrototypeOf) Object.setPrototypeOf = setprototypeof;
 
 // expo-sentry doesn't consider NODE_ENV when enabling Sentry,
 // however raven-js (sentry's web client) only looks at NODE_ENV when enabling sentry.
@@ -39,6 +43,8 @@ const App = nest(
 );
 
 orientation.allow(orientation.Orientation.PORTRAIT_UP);
+
+trackAppState();
 
 export default App;
 

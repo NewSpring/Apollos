@@ -29,7 +29,12 @@ export const QUERY = gql`
 `;
 
 export default graphql(QUERY, {
-  props: ({ data: { entries, loading, refetch }, ownProps }) => ({
+  props: ({
+    data: {
+      error, entries, loading, refetch,
+    }, ownProps,
+  }) => ({
+    error: error || ownProps.error,
     content: entries && entries.map(identifyCategory),
     isLoading: ownProps.isLoading || loading,
     refetch,

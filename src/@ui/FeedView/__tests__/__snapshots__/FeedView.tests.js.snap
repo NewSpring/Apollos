@@ -2,6 +2,7 @@
 
 exports[`The FeedView component renders correctly 1`] = `
 <RCTScrollView
+  ListEmptyComponent={undefined}
   data={
     Array [
       Object {
@@ -618,6 +619,7 @@ exports[`The FeedView component renders correctly 1`] = `
 
 exports[`The FeedView component renders empty state 1`] = `
 <RCTScrollView
+  ListEmptyComponent={undefined}
   data={
     Array [
       Object {

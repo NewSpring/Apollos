@@ -12,7 +12,9 @@ import withPromotions from '@data/withPromotions';
 import styled from '@ui/styled';
 import WebBrowser from '@ui/WebBrowser';
 
-const FeaturedCard = defaultFeedItemRenderer(FeedItemCard);
+import ItemLink from './ItemLink';
+
+const FeaturedCard = defaultFeedItemRenderer(FeedItemCard, ItemLink);
 
 const RecentLikes = compose(
   withRecentLikes,
@@ -54,12 +56,16 @@ const Feed = enhance(({
     <RecentLikes
       ListHeaderComponent={(
         <View>
-          <Title>Recommended by NewSpring</Title>
-          {featuredCards}
+          {featuredCards.length ? (
+            <View>
+              <Title>Recommended by NewSpring</Title>
+              {featuredCards}
+            </View>
+          ) : null}
           <Title>Recently Liked by others</Title>
         </View>
       )}
-      ListFooterComponent={(
+      ListFooterComponent={open.length ? (
         <FooterCard>
           <CardContent>
             <BodyText>
@@ -86,7 +92,7 @@ const Feed = enhance(({
             </BodyText>
           </CardContent>
         </FooterCard>
-      )}
+      ) : null}
     />
   );
 });

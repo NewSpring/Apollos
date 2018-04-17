@@ -1,4 +1,5 @@
 import { ApolloClient } from 'apollo-client';
+import { ApolloLink } from 'apollo-link';
 
 import authenticationLink from './authenticationLink';
 import httpLink from './httpLink';
@@ -7,11 +8,15 @@ import errorLink from './errorLink';
 
 import cache from './cache';
 
+const link = ApolloLink.from([
+  clientStateLink,
+  authenticationLink,
+  errorLink,
+  httpLink,
+]);
+
 export default new ApolloClient({
-  link: errorLink.concat(
-    clientStateLink.concat(
-      authenticationLink.concat(httpLink),
-    ),
-  ),
+  link,
   cache,
+  queryDeduplication: true,
 });

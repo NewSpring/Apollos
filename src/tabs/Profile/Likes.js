@@ -62,12 +62,12 @@ const EmptyList = () => (
 const Likes = compose(
   pure,
   withProfileLikes,
-  withProps(({ content = [] }) => ({
+  withProps(({ content = [], error }) => ({
     numColumns: 1,
     ItemComponent: ThumbnailCard,
     ListHeaderComponent: YourLikesHeader,
     ListEmptyComponent: EmptyList,
-    ListFooterComponent: (content || []).length < 5 ? RecentLikes : null,
+    ListFooterComponent: !error && (content || []).length < 5 ? RecentLikes : null,
   })),
   styled({ paddingVertical: 0 }),
 )(FeedView);

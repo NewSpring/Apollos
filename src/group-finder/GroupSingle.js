@@ -21,6 +21,7 @@ import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import Meta from '@ui/Meta';
 import WebBrowser from '@ui/WebBrowser';
+import { track, events } from '@utils/analytics';
 
 import Map from './Map';
 
@@ -73,6 +74,11 @@ const leadersLoadingState = [{
     photo: null,
   },
 }];
+
+const handleGroupContact = ({ guid, loginParam }) => {
+  WebBrowser.openBrowserAsync(`${rockUrl}Workflows/304?Group=${guid}${loginParam}`);
+  track(events.ContactedGroup, { guid });
+};
 
 const GroupInfo = ({ label, info }) => (
   <GroupInfoContainer>
@@ -149,7 +155,7 @@ const GroupSingle = enhance(({
                   {isLeader ? (
                     <Button title="Manage" bordered onPress={() => WebBrowser.openBrowserAsync(`${rockUrl}page/521?GroupId=${entityId}&${loginParam}`)} />
                   ) : (
-                    <Button title="Contact" bordered onPress={() => WebBrowser.openBrowserAsync(`${rockUrl}Workflows/304?Group=${guid}${loginParam}`)} />
+                    <Button title="Contact" bordered onPress={() => handleGroupContact({ guid, loginParam })} />
                   )}
                 </CenteredSideBySideView>
               </PaddedView>
@@ -223,17 +229,19 @@ const GroupSingle = enhance(({
             </Card>
           </ScrollView>
         </FlexedLeft>
-        <MediaQuery minWidth="md">
-          <Right>
-            <Map
-              groups={[{
-                locations,
-                id,
-              }]}
-              linkToGroup={false}
-            />
-          </Right>
-        </MediaQuery>
+        {Platform.OS === 'web' ? (
+          <MediaQuery minWidth="md">
+            <Right>
+              <Map
+                groups={[{
+                  locations,
+                  id,
+                }]}
+                linkToGroup={false}
+              />
+            </Right>
+          </MediaQuery>
+        ) : null}
       </FlexedSideBySideView>
       <MediaQuery maxWidth="md">
         <SecondaryNav>

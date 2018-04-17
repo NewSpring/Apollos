@@ -12,8 +12,9 @@ export default graphql(relatedContentQuery, {
       },
     };
   },
-  props({ ownProps, data: { content, loading } } = {}) {
+  props({ ownProps, data: { error, content, loading } } = {}) {
     return {
+      error: error || ownProps.error,
       isLoading: ownProps.isLoading || loading,
       content,
     };
