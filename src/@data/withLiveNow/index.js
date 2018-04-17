@@ -6,7 +6,6 @@ export const QUERY = gql`
     live {
       live
       fuse
-      embedUrl
     }
   }
 `;
