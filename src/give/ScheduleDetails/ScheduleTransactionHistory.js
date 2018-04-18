@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
+import get from 'lodash/get';
 import { BodyText } from '@ui/typography';
 import PaddedView from '@ui/PaddedView';
 import Spacer from '@ui/Spacer';
@@ -9,21 +10,24 @@ import { ButtonLink } from '@ui/Button';
 import HistoricalContributionCard from '@ui/HistoricalContributionCard';
 import WebBrowser from '@ui/WebBrowser';
 
-const ScheduleTransactionHistory = ({
-  transactions = [],
-  isLoading = false,
-}) => (
+const ScheduleTransactionHistory = ({ transactions = [], isLoading = false }) => (
   <View>
     {!isLoading && !transactions.length ? (
       <PaddedView>
-        <BodyText>{'We didn\'t find any contributions associated with this schedule.'}</BodyText>
+        <BodyText>{"We didn't find any contributions associated with this schedule."}</BodyText>
         <Spacer byHeight />
         <BodyText italic>
           If you have any questions, please call our Finance Team at 864-965-9990 or{' '}
-          <ButtonLink onPress={() => WebBrowser.openBrowserAsync('https://rock.newspring.cc/workflows/152?Topic=Stewardship')}>
+          <ButtonLink
+            onPress={() =>
+              WebBrowser.openBrowserAsync(
+                'https://rock.newspring.cc/workflows/152?Topic=Stewardship',
+              )
+            }
+          >
             Contact Us
-          </ButtonLink>
-          {' '}and someone will be happy to assist you.
+          </ButtonLink>{' '}
+          and someone will be happy to assist you.
         </BodyText>
         <Spacer byHeight />
         <BodyText italic>
@@ -34,8 +38,8 @@ const ScheduleTransactionHistory = ({
     {transactions.map(transaction => (
       <Link to={`/give/history/${transaction.id}`}>
         <HistoricalContributionCard
-          amount={transaction.details.amount}
-          fundName={transaction.details.account.name}
+          fundName={get(transaction, 'details.0.account.name')}
+          amount={get(transaction, 'details.0.amount')}
           contributorName={`${transaction.person.firstName} ${transaction.person.lastName}`}
           date={transaction.date}
           profileImageUrl={transaction.person.photo}
@@ -46,9 +50,7 @@ const ScheduleTransactionHistory = ({
 );
 
 ScheduleTransactionHistory.propTypes = {
-  transactions: PropTypes.arrayOf(PropTypes.shape({
-
-  })),
+  transactions: PropTypes.arrayOf(),
   isLoading: PropTypes.bool,
 };
 
