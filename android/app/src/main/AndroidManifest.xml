@@ -51,7 +51,7 @@
     <activity
         android:name=".LauncherActivity"
         android:exported="true"
-        android:launchMode="singleTask"
+        android:launchMode="singleInstance"
         android:screenOrientation="portrait"
         android:theme="@android:style/Theme.Translucent.NoTitleBar">
 
@@ -68,20 +68,22 @@
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
 
-        <data
-            android:scheme="http"
-            android:host="newspring.cc" />
+        <data android:scheme="http" android:host="newspring.cc" android:pathPrefix="/series" />
+        <data android:scheme="https" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/series" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/devotion" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/sermon" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/studies" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/stories" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/news" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/music" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/live" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/settings" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/articles" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/groups" />
+        <data android:scheme="https" android:host="newspring.cc" android:pathPrefix="/give" />
       </intent-filter>
-      <intent-filter android:autoVerify="true">
-        <action android:name="android.intent.action.VIEW" />
 
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
-
-        <data
-            android:scheme="https"
-            android:host="newspring.cc" />
-      </intent-filter>
       <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.VIEW" />
 
@@ -112,7 +114,7 @@
 
     <activity
         android:name=".MainActivity"
-        android:launchMode="singleTask"
+        android:launchMode="singleInstance"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
         android:theme="@style/Theme.Exponent.Splash"
         android:windowSoftInputMode="adjustResize">
