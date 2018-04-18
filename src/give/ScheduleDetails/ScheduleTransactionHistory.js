@@ -35,7 +35,7 @@ const ScheduleTransactionHistory = ({
       <Link to={`/give/history/${transaction.id}`}>
         <HistoricalContributionCard
           amount={transaction.details.amount}
-          fundName={transaction.details.account.name}
+          fundName={transaction.account.name}
           contributorName={`${transaction.person.firstName} ${transaction.person.lastName}`}
           date={transaction.date}
           profileImageUrl={transaction.person.photo}
