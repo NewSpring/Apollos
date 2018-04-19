@@ -180,6 +180,15 @@ const PaymentConfirmationForm = compose(
     onSubmit: async () => {
       try {
         props.isSavingPaymentMethod(true);
+        if (props.person) {
+          await props.setBillingPerson({
+            firstName: props.person.firstName,
+            lastName: props.person.lastName,
+            email: props.person.email,
+            campusId: get(props, 'person.campus.id', null),
+          });
+        }
+
         if (props.contributions.paymentMethod === 'creditCard') {
           await props.validateSingleCardTransaction(); // This seems unnecessary
         }
