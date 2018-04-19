@@ -357,6 +357,11 @@ export async function setSavedPaymentMethod(result, variables, { cache }) {
       data: {
         contributions: {
           ...state,
+          paymentMethod: 'savedPaymentMethod',
+          creditCard: { ...INITIAL_STATE.creditCard },
+          bankAccount: { ...INITIAL_STATE.bankAccount },
+          willSavePaymentMethod: false,
+          savedAccountName: '',
           savedPaymentMethodId: variables.id,
         },
       },
