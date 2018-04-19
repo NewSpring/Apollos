@@ -39,7 +39,7 @@ const Failure = ({ paymentFailedMessage }) => (
   <BackgroundView>
     <ThemedIcon name="circle-outline-x-mark" />
     <Heading>Uh Oh!</Heading>
-    <SubHeading>Looks like there was a problem adding your card.</SubHeading>
+    <SubHeading>Looks like there was a problem adding your payment method.</SubHeading>
     {paymentFailedMessage ? (
       <Paragraph><BodyText>{paymentFailedMessage}</BodyText></Paragraph>
     ) : null}
