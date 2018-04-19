@@ -26,16 +26,11 @@ export function addContribution(result, variables, { cache }) {
 }
 
 export function resetContributions(result, variables, { cache }) {
-  const { contributions: state } = cache.readQuery({
-    query: contributionsQuery,
-  });
-
   cache.writeQuery({
     query: contributionsQuery,
     data: {
       contributions: {
-        ...state,
-        contributions: [],
+        ...INITIAL_STATE,
       },
     },
   });
