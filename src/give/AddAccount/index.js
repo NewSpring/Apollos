@@ -9,7 +9,7 @@ import ModalView from '@ui/ModalView';
 import BillingAddress from './BillingAddress';
 import PaymentMethod from './PaymentMethod';
 import PaymentMethodConfirmation from './PaymentMethodConfirmation';
-import Success from './Success';
+import Complete from './Complete';
 
 function lastDirectory(pathname = '') {
   const pathParts = pathname.split('/');
@@ -35,7 +35,7 @@ const Checkout = withRouter(({ match, location }) => (
           <Route exact path={`${match.url}/address`} component={BillingAddress} />
           <Route exact path={`${match.url}/method`} component={PaymentMethod} />
           <Route exact path={`${match.url}/confirm`} component={PaymentMethodConfirmation} />
-          <Route exact path={`${match.url}/done`} component={Success} />
+          <Route exact path={`${match.url}/done`} component={Complete} />
         </Switch>
       </KeyboardAwareScrollView>
     </BackgroundView>

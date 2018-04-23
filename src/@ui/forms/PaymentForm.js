@@ -204,7 +204,7 @@ const mapPropsToValues = (props) => {
       paymentMethod !== 'bankAccount' || paymentMethod !== 'creditCard'
         ? 'creditCard'
         : paymentMethod,
-    willSavePaymentMethod: get(props, 'contributions.willSavePaymentMethod', true),
+    willSavePaymentMethod: get(props, 'enforceAccountName') ? true : get(props, 'contributions.willSavePaymentMethod', true),
     ...get(props, 'contributions.bankAccount', { accountType: 'checking' }),
     ...get(props, 'contributions.creditCard', {}),
   };
