@@ -6,6 +6,7 @@ import instance from './instance';
 const AppBecameInactive = 'AppBecameInactive';
 const AppBecameActive = 'AppBecameActive';
 const AppBecameBackgrounded = 'AppBecameBackgrounded';
+const OutboundLink = 'OutboundLink';
 const ScreenView = 'ScreenView';
 const Liked = 'Liked';
 const Shared = 'Shared';
@@ -21,6 +22,7 @@ export const events = {
   AppBecameInactive,
   AppBecameActive,
   AppBecameBackgrounded,
+  OutboundLink,
   ScreenView,
   Liked,
   Shared,

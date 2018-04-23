@@ -35,7 +35,7 @@ export const INITIAL_STATE = {
   paymentFailedMessage: '',
   paymentSuccessful: false,
   isSavingPaymentMethod: false,
-  willSavePaymentMethod: true,
+  willSavePaymentMethod: false,
   savedAccountName: '',
   savedPaymentMethodId: null,
 };
