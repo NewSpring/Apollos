@@ -26,16 +26,11 @@ export function addContribution(result, variables, { cache }) {
 }
 
 export function resetContributions(result, variables, { cache }) {
-  const { contributions: state } = cache.readQuery({
-    query: contributionsQuery,
-  });
-
   cache.writeQuery({
     query: contributionsQuery,
     data: {
       contributions: {
-        ...state,
-        contributions: [],
+        ...INITIAL_STATE,
       },
     },
   });
@@ -362,6 +357,11 @@ export async function setSavedPaymentMethod(result, variables, { cache }) {
       data: {
         contributions: {
           ...state,
+          paymentMethod: 'savedPaymentMethod',
+          creditCard: { ...INITIAL_STATE.creditCard },
+          bankAccount: { ...INITIAL_STATE.bankAccount },
+          willSavePaymentMethod: false,
+          savedAccountName: '',
           savedPaymentMethodId: variables.id,
         },
       },
