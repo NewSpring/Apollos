@@ -1,9 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { PureComponent } from 'react';
-import {
-  ScrollView,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import { ScrollView, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, branch, renderComponent, withProps } from 'recompose';
 import get from 'lodash/get';
@@ -22,15 +19,14 @@ import LoginPromptCard from '@ui/LoginPromptCard';
 
 export class Dashboard extends PureComponent {
   static propTypes = {
-    savedPaymentMethods: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-      ]),
-      name: PropTypes.string,
-      paymentMethod: PropTypes.oneOf(['bankAccount', 'creditCard']),
-      accountNumber: PropTypes.string,
-    })),
+    savedPaymentMethods: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+        name: PropTypes.string,
+        paymentMethod: PropTypes.oneOf(['bankAccount', 'creditCard']),
+        accountNumber: PropTypes.string,
+      }),
+    ),
     activityItems: PropTypes.arrayOf(PropTypes.shape({})), // One of many :'(
     history: PropTypes.shape({
       push: PropTypes.func,
@@ -76,7 +72,9 @@ export class Dashboard extends PureComponent {
                   isScheduled={activityItem.scheduled}
                   amount={activityItem.amount}
                   error={activityItem.statusMessage}
-                  onPress={() => { this.props.onPressTransactionCard(activityItem.id); }}
+                  onPress={() => {
+                    this.props.onPressTransactionCard(activityItem.id);
+                  }}
                 />
               );
             }
@@ -103,10 +101,14 @@ export class Dashboard extends PureComponent {
             <ScheduleCard
               key={scheduledTransaction.id}
               accountName={get(scheduledTransaction, 'details.0.account.name')}
-              amount={get(scheduledTransaction, 'details.0.amount')}
+              amount={get(scheduledTransaction, 'details')
+                .reduce((i, { amount = 0 } = {}) => i + amount, 0)
+                .toFixed(2)}
               frequency={get(scheduledTransaction, 'schedule.description')}
               startDate={get(scheduledTransaction, 'start')}
-              onPress={() => { this.props.onPressScheduleCard(scheduledTransaction.id); }}
+              onPress={() => {
+                this.props.onPressScheduleCard(scheduledTransaction.id);
+              }}
             />
           ))}
 
@@ -138,11 +140,21 @@ const enhance = compose(
   withGivingDashboard,
   withRouter,
   withProps(props => ({
-    onPressActivityLink() { props.route.jumpTo('ContributionHistory'); },
-    onPressExpiringAccountCard(id) { props.history.push(`/give/payment-methods/${id}`); },
-    onPressNewScheduleLink() { props.route.jumpTo('Now'); },
-    onPressTransactionCard(id) { props.history.push(`/give/history/${id}`); },
-    onPressScheduleCard(id) { props.history.push(`/give/schedules/${id}`); },
+    onPressActivityLink() {
+      props.route.jumpTo('ContributionHistory');
+    },
+    onPressExpiringAccountCard(id) {
+      props.history.push(`/give/payment-methods/${id}`);
+    },
+    onPressNewScheduleLink() {
+      props.route.jumpTo('Now');
+    },
+    onPressTransactionCard(id) {
+      props.history.push(`/give/history/${id}`);
+    },
+    onPressScheduleCard(id) {
+      props.history.push(`/give/schedules/${id}`);
+    },
   })),
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
 );

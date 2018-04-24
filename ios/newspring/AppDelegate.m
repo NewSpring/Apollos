@@ -1,6 +1,9 @@
 // Copyright 2015-present 650 Industries. All rights reserved.
 
 #import "AppDelegate.h"
+#import <Branch/Branch.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 #import "ExpoKit.h"
 #import "EXViewController.h"
 
@@ -14,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Fabric with:@[[Crashlytics class], [Branch class]]];
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.backgroundColor = [UIColor whiteColor];
     [[ExpoKit sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];

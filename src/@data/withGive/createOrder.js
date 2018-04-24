@@ -22,6 +22,7 @@ export default graphql(MUTATION, {
         query: contributionsQuery,
       });
       const orderDetails = getOrderDetails(state);
+      if (orderDetails.savedAccount) delete orderDetails.billing;
       const data = JSON.stringify(orderDetails);
 
       const isInstant = state.paymentMethod === 'savedPaymentMethod' && state.frequencyId !== 'today';
