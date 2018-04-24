@@ -1202,13 +1202,7 @@ exports[`the HTMLView component strips out badly formatted links 1`] = `
         allowFontScaling={true}
         ellipsizeMode="tail"
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        >
-          Bad link
-        </Text>
+        Bad link
       </Text>
     </Text>
   </View>

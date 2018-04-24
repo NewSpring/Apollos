@@ -66,7 +66,7 @@ export const defaultRenderer = (node, { children }) => {
       }
       if (!url.startsWith('http')) {
         // we can't currently handle non web-links, so just return regular text instead:
-        return (<Text>{children}</Text>);
+        return children;
       }
       const onPress = () => WebBrowser.openBrowserAsync(url);
       if (url) {
