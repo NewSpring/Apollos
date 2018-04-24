@@ -10,14 +10,14 @@ export default function getOrderDetails(state) {
   // here we format data for the NMI processing
   const joinedData = removeUndefined({
     billing: {
-      'first-name': state.firstName,
-      'last-name': state.lastName,
-      email: state.email,
-      address1: state.street1,
-      address2: state.street2,
-      city: state.city,
-      state: state.state,
-      postal: state.zipCode,
+      'first-name': isEmpty(state.firstName) ? undefined : state.firstName,
+      'last-name': isEmpty(state.lastName) ? undefined : state.lastName,
+      email: isEmpty(state.email) ? undefined : state.email,
+      address1: isEmpty(state.street1) ? undefined : state.street1,
+      address2: isEmpty(state.street2) ? undefined : state.street2,
+      city: isEmpty(state.city) ? undefined : state.city,
+      state: isEmpty(state.state) ? undefined : state.state,
+      postal: isEmpty(state.zipCode) ? undefined : state.zipCode,
     },
     'merchant-defined-field-2': isEmpty(state.campusId) ? undefined : state.campusId,
   });

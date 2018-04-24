@@ -75,6 +75,7 @@ const Study = enhance(({
           devotional: withProps({
             title,
             body,
+            scripture,
             otherContentProps,
             entryData: children,
             isLoading,
