@@ -59,10 +59,16 @@ export const defaultRenderer = (node, { children }) => {
     case 'li': return <BulletListItem>{wrapTextChildren(children)}</BulletListItem>;
     case 'a': {
       let url = node.attribs && node.attribs.href;
+      url = decodeHTML(url);
+
       if (url && url.startsWith('//')) {
         url = `http:${url}`;
       }
-      const onPress = () => WebBrowser.openBrowserAsync(decodeHTML(url));
+      if (!url.startsWith('http')) {
+        // we can't currently handle non web-links, so just return regular text instead:
+        return children;
+      }
+      const onPress = () => WebBrowser.openBrowserAsync(url);
       if (url) {
         return (<ButtonLink onPress={onPress}>{children}</ButtonLink>);
       }
