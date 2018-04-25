@@ -192,7 +192,7 @@ const PaymentConfirmationForm = compose(
         if (props.contributions.paymentMethod === 'creditCard') {
           await props.validateSingleCardTransaction(); // This seems unnecessary
         }
-        const createOrderResponse = await props.createOrder();
+        const createOrderResponse = await props.createSavePaymentOrder();
         const order = get(createOrderResponse, 'data.order', {});
         const token = order.url.split('/').pop();
         await props.postPayment(order.url);

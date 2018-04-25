@@ -7,6 +7,7 @@ import setBillingPerson from './setBillingPerson';
 import setBillingAddress from './setBillingAddress';
 import withContributions from './withContributions';
 import createOrder from './createOrder';
+import createSavedPaymentOrder from './createSavePaymentOrder';
 import setCreditCard from './setCreditCard';
 import setBankAccount from './setBankAccount';
 import setPaymentMethod from './setPaymentMethod';
@@ -30,6 +31,7 @@ export default compose(
   setBillingPerson,
   setBillingAddress,
   createOrder,
+  createSavedPaymentOrder,
   setCreditCard,
   setBankAccount,
   setPaymentMethod,
