@@ -1170,3 +1170,41 @@ exports[`the HTMLView component renders HTML to React 1`] = `
   </View>
 </View>
 `;
+
+exports[`the HTMLView component strips out badly formatted links 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "paddingVertical": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      bold={false}
+      ellipsizeMode="tail"
+      italic={false}
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "DroidSerif-Regular",
+          "fontSize": 20.02,
+          "lineHeight": 33.11,
+          "paddingBottom": 2.25,
+          "paddingTop": 1.8,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        Bad link
+      </Text>
+    </Text>
+  </View>
+</View>
+`;
