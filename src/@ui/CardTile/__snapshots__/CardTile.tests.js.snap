@@ -896,7 +896,7 @@ exports[`the Card component should render card details with date 1`] = `
               }
             }
           >
-            32y
+            33y
           </Text>
         </View>
       </View>
