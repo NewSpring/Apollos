@@ -12,8 +12,8 @@ import withInputControlStyles from '../withInputControlStyles';
 const StyledNativePicker = compose(
   withInputControlStyles,
   styled({
-    background: 'none',
-    border: 'none',
+    backgroundColor: 'transparent',
+    borderWidth: 0,
     borderRadius: 0,
     outline: 'none',
   }),

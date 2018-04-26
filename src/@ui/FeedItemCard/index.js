@@ -56,6 +56,7 @@ const FeedItemCard = enhance(
     title,
     category,
     isLoading,
+    isLight,
     isLiked,
     backgroundColor,
     theme,

@@ -146,7 +146,7 @@ class ConnectedImage extends PureComponent {
     }
 
     const {
-      ImageComponent = Animated.Image, style, isLoading, ...otherProps
+      ImageComponent = Animated.Image, style, isLoading, maintainAspectRatio, ...otherProps
     } = this.props;
 
     return (
