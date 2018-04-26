@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose } from 'recompose';
+import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
 import { withTheme, withThemeMixin } from '@ui/theme';
 import styled from '@ui/styled';
@@ -9,6 +9,7 @@ import Touchable from '@ui/Touchable';
 import { H5 } from '@ui/typography';
 import { InlineActivityIndicator } from '@ui/ActivityIndicator';
 import { withPlaceholder, Line } from '@ui/Placeholder';
+import sentry from '@utils/sentry';
 
 const ButtonStyles = styled(({
   theme,
@@ -42,6 +43,14 @@ const ButtonPlaceholder = styled(({ theme }) => ({
 
 export const withButtonPlaceholder = withPlaceholder(ButtonPlaceholder);
 
+const trackButton = (props) => {
+  sentry.captureBreadcrumb({
+    message: 'ButtonPress',
+    data: { ...props },
+    level: 'info',
+  });
+};
+
 const enhance = compose(
   withButtonPlaceholder,
   withTheme(({ theme, type = 'default' }) => ({
@@ -55,6 +64,9 @@ const enhance = compose(
       text: { primary: bordered ? fill : accent },
       background: { default: fill, screen: fill },
     },
+  })),
+  withProps(({ onPress, ...otherProps }) => ({
+    onPress: (...args) => onPress(...args) && trackButton(otherProps),
   })),
 );
 
