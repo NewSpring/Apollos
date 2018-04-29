@@ -720,26 +720,56 @@ exports[`The Button component should render as default type 1`] = `
 
 exports[`The Button component should render with children 1`] = `
 <View
-  bordered={false}
-  disabled={false}
-  pill={true}
+  accessibilityComponentType="button"
+  accessibilityLabel={undefined}
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#6bac43",
-      "borderColor": "#6bac43",
-      "borderRadius": 60,
-      "borderWidth": 2,
-      "elevation": 2,
-      "flexDirection": "row",
-      "height": 60,
-      "justifyContent": "center",
       "opacity": 1,
-      "overflow": "hidden",
-      "paddingHorizontal": 20,
     }
   }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
-  <View />
+  <View
+    bordered={false}
+    disabled={false}
+    pill={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#6bac43",
+        "borderColor": "#6bac43",
+        "borderRadius": 60,
+        "borderWidth": 2,
+        "elevation": 2,
+        "flexDirection": "row",
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "overflow": "hidden",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <View />
+  </View>
 </View>
 `;
