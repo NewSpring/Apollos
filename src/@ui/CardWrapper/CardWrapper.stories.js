@@ -41,7 +41,7 @@ storiesOf('CardWrapper', module)
 
     return (
       <View style={centered}>
-        <CardWrapper style={cardDimensions} backgroundColor={'salmon'}>
+        <CardWrapper style={cardDimensions} cardColor={'salmon'}>
           <Text>Boom!</Text>
         </CardWrapper>
       </View>

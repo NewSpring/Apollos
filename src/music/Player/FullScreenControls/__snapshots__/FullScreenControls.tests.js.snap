@@ -32,7 +32,6 @@ exports[`The FullScreenControls component should hide player settings controls i
     >
       <Image
         collapsable={undefined}
-        maintainAspectRatio={false}
         onLoad={[Function]}
         source={
           Array [
@@ -541,7 +540,6 @@ exports[`The FullScreenControls component should render 1`] = `
     >
       <Image
         collapsable={undefined}
-        maintainAspectRatio={false}
         onLoad={[Function]}
         source={
           Array [

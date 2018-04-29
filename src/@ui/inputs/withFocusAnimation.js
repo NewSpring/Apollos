@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 const withFocusAnimation = Component => (
   class WrappedInput extends PureComponent {
     static propTypes = {
-      label: PropTypes.string,
       focusAnimationDuration: PropTypes.number,
       focusAnimationEasing: PropTypes.func,
       onFocus: PropTypes.func,
@@ -43,9 +42,10 @@ const withFocusAnimation = Component => (
     }
 
     render() {
+      const { focusAnimationDuration, focusAnimationEasing, ...otherProps } = this.props;
       return (
         <Component
-          {...this.props}
+          {...otherProps}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           focusAnimation={this.focusAnimation}

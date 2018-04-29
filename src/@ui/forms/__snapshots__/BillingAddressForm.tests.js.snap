@@ -63,8 +63,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
               <TextInput
                 allowFontScaling={true}
                 editable={true}
-                focusAnimationDuration={450}
-                focusAnimationEasing={[Function]}
                 onBlur={[Function]}
                 onChangeText={[Function]}
                 onFocus={[Function]}
@@ -222,8 +220,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
               <TextInput
                 allowFontScaling={true}
                 editable={true}
-                focusAnimationDuration={450}
-                focusAnimationEasing={[Function]}
                 onBlur={[Function]}
                 onChangeText={[Function]}
                 onFocus={[Function]}
@@ -658,8 +654,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
               <TextInput
                 allowFontScaling={true}
                 editable={true}
-                focusAnimationDuration={450}
-                focusAnimationEasing={[Function]}
                 onBlur={[Function]}
                 onChangeText={[Function]}
                 onFocus={[Function]}
@@ -817,8 +811,6 @@ exports[`The ContributionForm component hides state field for foreign countries 
               <TextInput
                 allowFontScaling={true}
                 editable={true}
-                focusAnimationDuration={450}
-                focusAnimationEasing={[Function]}
                 keyboardType="numeric"
                 onBlur={[Function]}
                 onChangeText={[Function]}
@@ -1153,8 +1145,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
               <TextInput
                 allowFontScaling={true}
                 editable={true}
-                focusAnimationDuration={450}
-                focusAnimationEasing={[Function]}
                 onBlur={[Function]}
                 onChangeText={[Function]}
                 onFocus={[Function]}
@@ -1312,8 +1302,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
               <TextInput
                 allowFontScaling={true}
                 editable={true}
-                focusAnimationDuration={450}
-                focusAnimationEasing={[Function]}
                 onBlur={[Function]}
                 onChangeText={[Function]}
                 onFocus={[Function]}
@@ -1748,8 +1736,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
               <TextInput
                 allowFontScaling={true}
                 editable={true}
-                focusAnimationDuration={450}
-                focusAnimationEasing={[Function]}
                 onBlur={[Function]}
                 onChangeText={[Function]}
                 onFocus={[Function]}
@@ -2193,8 +2179,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
               <TextInput
                 allowFontScaling={true}
                 editable={true}
-                focusAnimationDuration={450}
-                focusAnimationEasing={[Function]}
                 keyboardType="numeric"
                 onBlur={[Function]}
                 onChangeText={[Function]}

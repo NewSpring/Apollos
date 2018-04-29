@@ -32,7 +32,6 @@ const GroupSearchFormWithData = compose(
 const Instructions = compose(
   styled(({ theme }) => ({ color: theme.colors.text.tertiary })),
   withProps({
-    italic: true,
     children: 'Select your interests, campus and location to search for groups near you.',
   }),
 )(H7);

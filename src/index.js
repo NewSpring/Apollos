@@ -1,5 +1,5 @@
 import setprototypeof from 'setprototypeof';
-import { AppRegistry, Platform } from 'react-native';
+import { AppRegistry, Platform, StyleSheet, View } from 'react-native';
 import { ApolloProvider } from 'react-apollo';
 import { nest, withProps } from 'recompose';
 
@@ -13,6 +13,7 @@ import Client from '@data/Client';
 import OnboardingModal from '@ui/OnboardingModal';
 import orientation from '@utils/orientation';
 import trackAppState from '@utils/trackAppState';
+import styled from '@ui/styled';
 
 import AppRouter from './AppRouter';
 import SentryContext from './SentryContext';
@@ -32,7 +33,18 @@ Sentry.config(Settings.APP_SENTRY_URL, {
   environment: sentryEnv,
 }).install();
 
+const WebLayoutFix = styled({
+  ...StyleSheet.absoluteFillObject,
+  ...Platform.select({
+    web: {
+      width: '100vw',
+      height: '100vh',
+    },
+  }),
+})(View);
+
 const App = nest(
+  WebLayoutFix,
   withProps({ client: Client })(ApolloProvider),
   ThemeProvider,
   FontLoader,
