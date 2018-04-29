@@ -38,8 +38,6 @@ exports[`The Text Input component should render as a numeric field 1`] = `
         <TextInput
           allowFontScaling={true}
           editable={true}
-          focusAnimationDuration={450}
-          focusAnimationEasing={[Function]}
           keyboardType="numeric"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -204,8 +202,6 @@ exports[`The Text Input component should render as a password field with an icon
           autoCapitalize="none"
           autoCorrect={false}
           editable={true}
-          focusAnimationDuration={450}
-          focusAnimationEasing={[Function]}
           onBlur={[Function]}
           onFocus={[Function]}
           placeholder="Some placeholder"
@@ -379,8 +375,6 @@ exports[`The Text Input component should render as a phone number field 1`] = `
         <TextInput
           allowFontScaling={true}
           editable={true}
-          focusAnimationDuration={450}
-          focusAnimationEasing={[Function]}
           keyboardType="phone-pad"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -545,8 +539,6 @@ exports[`The Text Input component should render as an email field 1`] = `
           autoCapitalize="none"
           autoCorrect={false}
           editable={true}
-          focusAnimationDuration={450}
-          focusAnimationEasing={[Function]}
           keyboardType="email-address"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -709,8 +701,6 @@ exports[`The Text Input component should render correctly 1`] = `
         <TextInput
           allowFontScaling={true}
           editable={true}
-          focusAnimationDuration={450}
-          focusAnimationEasing={[Function]}
           onBlur={[Function]}
           onFocus={[Function]}
           placeholder="Some placeholder"

@@ -95,8 +95,6 @@ exports[`The FrequencyInput component should render correctly 1`] = `
             <TextInput
               allowFontScaling={true}
               editable={true}
-              focusAnimationDuration={450}
-              focusAnimationEasing={[Function]}
               keyboardType="numeric"
               onBlur={[Function]}
               onChangeText={[Function]}
@@ -634,8 +632,6 @@ exports[`The FrequencyInput component should render correctly as the first fund 
             <TextInput
               allowFontScaling={true}
               editable={true}
-              focusAnimationDuration={450}
-              focusAnimationEasing={[Function]}
               keyboardType="numeric"
               onBlur={[Function]}
               onChangeText={[Function]}
@@ -1173,8 +1169,6 @@ exports[`The FrequencyInput component should render correctly with initial state
             <TextInput
               allowFontScaling={true}
               editable={true}
-              focusAnimationDuration={450}
-              focusAnimationEasing={[Function]}
               keyboardType="numeric"
               onBlur={[Function]}
               onChangeText={[Function]}

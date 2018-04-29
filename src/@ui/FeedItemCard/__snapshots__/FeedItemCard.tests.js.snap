@@ -3,7 +3,6 @@
 exports[`the FeedItemCard component should accept a different backgroundColor 1`] = `
 <View
   cardColor="salmon"
-  isLight={true}
   style={
     Object {
       "backgroundColor": "salmon",
@@ -58,7 +57,6 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
         >
           <Image
             collapsable={undefined}
-            maintainAspectRatio={false}
             onLoad={[Function]}
             source={
               Array [
@@ -253,7 +251,6 @@ exports[`the FeedItemCard component should accept a different backgroundColor 1`
 exports[`the FeedItemCard component should accept and render passed in styles 1`] = `
 <View
   cardColor={undefined}
-  isLight={true}
   style={
     Object {
       "backgroundColor": "#ffffff",
@@ -310,7 +307,6 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
         >
           <Image
             collapsable={undefined}
-            maintainAspectRatio={false}
             onLoad={[Function]}
             source={
               Array [
@@ -470,7 +466,6 @@ exports[`the FeedItemCard component should accept and render passed in styles 1`
 exports[`the FeedItemCard component should render 1`] = `
 <View
   cardColor={undefined}
-  isLight={true}
   style={
     Object {
       "backgroundColor": "#ffffff",
@@ -525,7 +520,6 @@ exports[`the FeedItemCard component should render 1`] = `
         >
           <Image
             collapsable={undefined}
-            maintainAspectRatio={false}
             onLoad={[Function]}
             source={
               Array [
@@ -685,7 +679,6 @@ exports[`the FeedItemCard component should render 1`] = `
 exports[`the FeedItemCard component should render as liked 1`] = `
 <View
   cardColor={undefined}
-  isLight={true}
   style={
     Object {
       "backgroundColor": "#ffffff",
@@ -740,7 +733,6 @@ exports[`the FeedItemCard component should render as liked 1`] = `
         >
           <Image
             collapsable={undefined}
-            maintainAspectRatio={false}
             onLoad={[Function]}
             source={
               Array [
@@ -900,7 +892,6 @@ exports[`the FeedItemCard component should render as liked 1`] = `
 exports[`the FeedItemCard component should render text correctly with isLight 1`] = `
 <View
   cardColor={undefined}
-  isLight={true}
   style={
     Object {
       "backgroundColor": "#ffffff",
@@ -955,7 +946,6 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
         >
           <Image
             collapsable={undefined}
-            maintainAspectRatio={false}
             onLoad={[Function]}
             source={
               Array [
@@ -1115,7 +1105,6 @@ exports[`the FeedItemCard component should render text correctly with isLight 1`
 exports[`the FeedItemCard component should render with inverted (light) font colors 1`] = `
 <View
   cardColor={undefined}
-  isLight={false}
   style={
     Object {
       "backgroundColor": "#505050",
@@ -1170,7 +1159,6 @@ exports[`the FeedItemCard component should render with inverted (light) font col
         >
           <Image
             collapsable={undefined}
-            maintainAspectRatio={false}
             onLoad={[Function]}
             source={
               Array [

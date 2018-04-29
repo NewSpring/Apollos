@@ -27,7 +27,6 @@ const ModalView = enhance(({
   return (
     <FlexedView
       style={StyleSheet.absoluteFill}
-      forceInset={{ vertical: 'always', horizontal: 'always' }}
     >
       <ModalContainer>
         {childrenWithProps}
