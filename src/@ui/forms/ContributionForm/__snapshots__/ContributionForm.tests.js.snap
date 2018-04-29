@@ -126,8 +126,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}
@@ -904,8 +902,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}
@@ -1440,8 +1436,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}
@@ -2213,8 +2207,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}
@@ -3051,8 +3043,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}
@@ -3829,8 +3819,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}

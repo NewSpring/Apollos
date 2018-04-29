@@ -341,8 +341,6 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   keyboardType="numeric"
                   onBlur={[Function]}
                   onChangeText={[Function]}
@@ -513,8 +511,6 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   keyboardType="numeric"
                   onBlur={[Function]}
                   onChangeText={[Function]}
@@ -675,8 +671,6 @@ exports[`The PaymentForm component renders a loading indicator 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   keyboardType="numeric"
                   onBlur={[Function]}
                   onChangeText={[Function]}
@@ -1371,8 +1365,6 @@ exports[`The PaymentForm component renders correctly 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   keyboardType="numeric"
                   onBlur={[Function]}
                   onChangeText={[Function]}
@@ -1543,8 +1535,6 @@ exports[`The PaymentForm component renders correctly 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   keyboardType="numeric"
                   onBlur={[Function]}
                   onChangeText={[Function]}
@@ -1705,8 +1695,6 @@ exports[`The PaymentForm component renders correctly 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   keyboardType="numeric"
                   onBlur={[Function]}
                   onChangeText={[Function]}
@@ -2401,8 +2389,6 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   keyboardType="numeric"
                   onBlur={[Function]}
                   onChangeText={[Function]}
@@ -2573,8 +2559,6 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   keyboardType="numeric"
                   onBlur={[Function]}
                   onChangeText={[Function]}
@@ -2735,8 +2719,6 @@ exports[`The PaymentForm component shows a submitting state 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   keyboardType="numeric"
                   onBlur={[Function]}
                   onChangeText={[Function]}
@@ -3421,8 +3403,6 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   onBlur={[Function]}
                   onChangeText={[Function]}
                   onFocus={[Function]}
@@ -3580,8 +3560,6 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   keyboardType="numeric"
                   onBlur={[Function]}
                   onChangeText={[Function]}
@@ -3752,8 +3730,6 @@ exports[`The PaymentForm component shows bank account info 1`] = `
                 <TextInput
                   allowFontScaling={true}
                   editable={true}
-                  focusAnimationDuration={450}
-                  focusAnimationEasing={[Function]}
                   keyboardType="numeric"
                   onBlur={[Function]}
                   onChangeText={[Function]}

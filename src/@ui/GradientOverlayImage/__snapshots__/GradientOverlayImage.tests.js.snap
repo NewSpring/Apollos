@@ -22,7 +22,6 @@ exports[`the GradientOverlayImage component should render 1`] = `
   >
     <Image
       collapsable={undefined}
-      maintainAspectRatio={false}
       onLoad={[Function]}
       source={
         Array [
@@ -69,7 +68,6 @@ exports[`the GradientOverlayImage component should render with an overlayColor 1
   >
     <Image
       collapsable={undefined}
-      maintainAspectRatio={false}
       onLoad={[Function]}
       source={
         Array [
