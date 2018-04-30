@@ -105,7 +105,8 @@ const GroupSingle = enhance(
       ageRange,
       campus = {},
       tags = [],
-      locations = [], // schedule { description } // { location { city, state, latitude, longitude } }
+      locations = [], // schedule { description }
+      // { location { city, state, latitude, longitude } }
       members = [], //   role // {
       //   person { id, photo, firstName, nickName, lastName }
       // }

@@ -89,7 +89,8 @@ const SeriesSingle = enhance(
           <HTMLView>{description}</HTMLView>
         </ContentView>
         <HorizontalTileFeed content={children} isLoading={isLoading} showTileMeta />
-        {// Don't render till data is ready. Consider adding placeholder views for the content above.
+        {// Don't render till data is ready.
+        // Consider adding placeholder views for the content above.
         !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
       </ScrollView>
       <SecondaryNav isLoading={isLoading}>
