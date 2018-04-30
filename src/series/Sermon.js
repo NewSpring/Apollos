@@ -71,7 +71,7 @@ const Sermon = enhance(
         </ContentView>
         <HorizontalTileFeed content={children} isLoading={isLoading} showTileMeta />
       </ScrollView>
-      <SecondaryNav>
+      <SecondaryNav isLoading={isLoading}>
         <ShareLink id={id} />
         <Like id={id} isLiked={isLiked} />
       </SecondaryNav>

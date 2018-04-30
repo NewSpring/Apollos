@@ -37,46 +37,39 @@ const enhance = compose(
 
 const ShareLink = withStudy(Share);
 
-const Study = enhance(({
-  id,
-  content: {
-    title,
+const Study = enhance(
+  ({
+    id,
     content: {
-      isLiked,
-      isLight = true,
-      description,
-      tags,
-      colors,
-      ...otherContentProps
+      title,
+      content: {
+        isLiked, isLight = true, description, tags, colors, ...otherContentProps
+      } = {},
+      children,
     } = {},
-    children,
-  } = { },
-  isLoading,
-}) => (
-  <BackgroundView>
-    <Header
-      titleText={title}
-      backButton
-      barStyle={isLight ? 'dark-content' : 'light-content'}
-    />
-    <ScrollView>
-      <ContentView
-        isLoading={isLoading}
-        imageOverlayColor={(!isLoading && colors && colors.length) ? `#${colors[0].value}` : ''}
-        {...otherContentProps}
-      >
-        <Title>{startCase(toLower(title))}</Title>
-        <HTMLView>{description}</HTMLView>
-      </ContentView>
-      <HorizontalTileFeed content={children} isLoading={isLoading} />
-      { // Don't render till data is ready. Consider adding placeholder views for the content above.
+    isLoading,
+  }) => (
+    <BackgroundView>
+      <Header titleText={title} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
+      <ScrollView>
+        <ContentView
+          isLoading={isLoading}
+          imageOverlayColor={!isLoading && colors && colors.length ? `#${colors[0].value}` : ''}
+          {...otherContentProps}
+        >
+          <Title>{startCase(toLower(title))}</Title>
+          <HTMLView>{description}</HTMLView>
+        </ContentView>
+        <HorizontalTileFeed content={children} isLoading={isLoading} />
+        {// Don't render till data is ready. Consider adding placeholder views for the content above.
         !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
-    </ScrollView>
-    <SecondaryNav>
-      <ShareLink id={id} />
-      <Like id={id} isLiked={isLiked} />
-    </SecondaryNav>
-  </BackgroundView>
-));
+      </ScrollView>
+      <SecondaryNav isLoading={isLoading}>
+        <ShareLink id={id} />
+        <Like id={id} isLiked={isLiked} />
+      </SecondaryNav>
+    </BackgroundView>
+  ),
+);
 
 export default Study;

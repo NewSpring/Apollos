@@ -48,56 +48,55 @@ const StyledButton = styled(({ theme }) => ({
   marginBottom: theme.sizing.baseUnit,
 }))(Button);
 
-const SeriesSingle = enhance(({
-  content: {
+const SeriesSingle = enhance(
+  ({
     content: {
-      isLiked,
-      video,
-      isLight = true,
-      description,
-      tags,
-      colors,
-      ...otherContentProps
+      content: {
+        isLiked,
+        video,
+        isLight = true,
+        description,
+        tags,
+        colors,
+        ...otherContentProps
+      } = {},
+      children,
     } = {},
-    children,
-  } = { },
-  id,
-  history,
-  isLoading,
-  theme,
-}) => (
-  <BackgroundView>
-    <Header
-      titleText="Series"
-      backButton
-      barStyle={isLight ? 'dark-content' : 'light-content'}
-    />
-    <ScrollView>
-      <ContentView
-        isLoading={isLoading}
-        imageOverlayColor={(colors && colors.length) ? `#${get(colors, '[0].value')}` : null}
-        {...otherContentProps}
-      >
-        {(video && video.embedUrl) ? (
-          <StyledButton onPress={() => history.push(`/series/${id}/trailer`)} type={'ghost'} bordered>
-            <Icon name="play" size={theme.helpers.rem(0.875)} fill={theme.colors.text.primary} />
-            <H6>{' '}Watch The Trailer</H6>{/* NOTE: empty string pads the text from the icon */}
-          </StyledButton>
-        ) : null}
-        <HTMLView>{description}</HTMLView>
-      </ContentView>
-      <HorizontalTileFeed
-        content={children}
-        isLoading={isLoading}
-        showTileMeta
-      />
-      { // Don't render till data is ready. Consider adding placeholder views for the content above.
+    id,
+    history,
+    isLoading,
+    theme,
+  }) => (
+    <BackgroundView>
+      <Header titleText="Series" backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
+      <ScrollView>
+        <ContentView
+          isLoading={isLoading}
+          imageOverlayColor={colors && colors.length ? `#${get(colors, '[0].value')}` : null}
+          {...otherContentProps}
+        >
+          {video && video.embedUrl ? (
+            <StyledButton
+              onPress={() => history.push(`/series/${id}/trailer`)}
+              type={'ghost'}
+              bordered
+            >
+              <Icon name="play" size={theme.helpers.rem(0.875)} fill={theme.colors.text.primary} />
+              <H6> Watch The Trailer</H6>
+              {/* NOTE: empty string pads the text from the icon */}
+            </StyledButton>
+          ) : null}
+          <HTMLView>{description}</HTMLView>
+        </ContentView>
+        <HorizontalTileFeed content={children} isLoading={isLoading} showTileMeta />
+        {// Don't render till data is ready. Consider adding placeholder views for the content above.
         !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
-    </ScrollView>
-    <SecondaryNav>
-      <ShareLink id={id} />
-      <Like id={id} isLiked={isLiked} />
-    </SecondaryNav>
-  </BackgroundView>
-));
+      </ScrollView>
+      <SecondaryNav isLoading={isLoading}>
+        <ShareLink id={id} />
+        <Like id={id} isLiked={isLiked} />
+      </SecondaryNav>
+    </BackgroundView>
+  ),
+);
 export default SeriesSingle;

@@ -16,52 +16,48 @@ const enhance = compose(
   withNowPlaying,
   pure,
   withProps(({ setNowPlaying, content, id }) => ({
-    setNowPlaying: track => setNowPlaying({
-      id,
-      playlist: { ...content.content, title: content.title },
-      currentTrack: track,
-    }),
+    setNowPlaying: track =>
+      setNowPlaying({
+        id,
+        playlist: { ...content.content, title: content.title },
+        currentTrack: track,
+      }),
   })),
 );
 
 const ShareLink = withPlaylist(Share);
 
-const Playlist = enhance(({
-  id,
-  content: {
-    title,
-    content: {
-      isLiked,
-      images = [],
-      tracks = [],
-    } = {},
-  } = { },
-  isLoading,
-  setNowPlaying,
-}) => (
-  <BackgroundView>
-    <Header titleText="Music" backButton />
-    <TracksList
-      isLoading={isLoading}
-      tracks={tracks}
-      onTrackPress={setNowPlaying}
-      trackEllipsisLink={({ title: track }) => `/music/${id}/${encodeURIComponent(track)}`}
-      ListHeaderComponent={
-        <AlbumView
-          isLoading={isLoading}
-          title={title}
-          artist="NewSpring"
-          albumImage={getAlbumImageSource(images)}
-          blurredImage={getBlurredImageSource(images)}
-        />
-      }
-    />
-    <MediaQuery maxWidth="md">
-      <SecondaryNav>
-        <ShareLink id={id} />
-        <Like id={id} isLiked={isLiked} />
-      </SecondaryNav>
-    </MediaQuery>
-  </BackgroundView>
-));
+const Playlist = enhance(
+  ({
+    id,
+    content: { title, content: { isLiked, images = [], tracks = [] } = {} } = {},
+    isLoading,
+    setNowPlaying,
+  }) => (
+    <BackgroundView>
+      <Header titleText="Music" backButton />
+      <TracksList
+        isLoading={isLoading}
+        tracks={tracks}
+        onTrackPress={setNowPlaying}
+        trackEllipsisLink={({ title: track }) => `/music/${id}/${encodeURIComponent(track)}`}
+        ListHeaderComponent={
+          <AlbumView
+            isLoading={isLoading}
+            title={title}
+            artist="NewSpring"
+            albumImage={getAlbumImageSource(images)}
+            blurredImage={getBlurredImageSource(images)}
+          />
+        }
+      />
+      <MediaQuery maxWidth="md">
+        <SecondaryNav isLoading={isLoading}>
+          <ShareLink id={id} />
+          <Like id={id} isLiked={isLiked} />
+        </SecondaryNav>
+      </MediaQuery>
+    </BackgroundView>
+  ),
+);
 export default Playlist;
