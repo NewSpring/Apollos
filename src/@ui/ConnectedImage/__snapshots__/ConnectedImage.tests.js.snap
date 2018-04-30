@@ -3,7 +3,6 @@
 exports[`the ConnectedImage component should maintain aspect ratio 1`] = `
 <Image
   collapsable={undefined}
-  maintainAspectRatio={true}
   onLoad={[Function]}
   source={
     Array [
@@ -27,7 +26,6 @@ exports[`the ConnectedImage component should maintain aspect ratio 1`] = `
 exports[`the ConnectedImage component should render immediately with a network image with a known width and height 1`] = `
 <Image
   collapsable={undefined}
-  maintainAspectRatio={false}
   onLoad={[Function]}
   source={
     Array [

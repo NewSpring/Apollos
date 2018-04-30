@@ -126,8 +126,6 @@ exports[`The ContributionForm component renders correctly 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}
@@ -736,43 +734,74 @@ exports[`The ContributionForm component renders correctly 1`] = `
       </View>
     </View>
     <View
-      bordered={false}
-      disabled={true}
-      pill={true}
+      accessibilityComponentType="button"
+      accessibilityLabel={undefined}
+      accessibilityTraits={
+        Array [
+          "button",
+          "disabled",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#6bac43",
-          "borderColor": "#6bac43",
-          "borderRadius": 60,
-          "borderWidth": 2,
-          "elevation": 2,
-          "flexDirection": "row",
-          "height": 60,
-          "justifyContent": "center",
-          "opacity": 0.5,
-          "overflow": "hidden",
-          "paddingHorizontal": 20,
+          "opacity": 1,
         }
       }
+      testID={undefined}
+      tvParallaxProperties={undefined}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
+        bordered={false}
+        disabled={true}
+        pill={true}
         style={
           Object {
-            "color": "#ffffff",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 20.02,
-            "lineHeight": 25.33,
-            "paddingBottom": 3.15,
-            "paddingTop": 4.5,
+            "alignItems": "center",
+            "backgroundColor": "#6bac43",
+            "borderColor": "#6bac43",
+            "borderRadius": 60,
+            "borderWidth": 2,
+            "elevation": 2,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "center",
+            "opacity": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 20,
           }
         }
       >
-        Sign in or create account
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 4.5,
+            }
+          }
+        >
+          Sign in or create account
+        </Text>
+      </View>
     </View>
   </View>
 </View>
@@ -904,8 +933,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}
@@ -1440,8 +1467,6 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}
@@ -2045,43 +2070,74 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
       </View>
     </View>
     <View
-      bordered={false}
-      disabled={true}
-      pill={true}
+      accessibilityComponentType="button"
+      accessibilityLabel={undefined}
+      accessibilityTraits={
+        Array [
+          "button",
+          "disabled",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#6bac43",
-          "borderColor": "#6bac43",
-          "borderRadius": 60,
-          "borderWidth": 2,
-          "elevation": 2,
-          "flexDirection": "row",
-          "height": 60,
-          "justifyContent": "center",
-          "opacity": 0.5,
-          "overflow": "hidden",
-          "paddingHorizontal": 20,
+          "opacity": 1,
         }
       }
+      testID={undefined}
+      tvParallaxProperties={undefined}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
+        bordered={false}
+        disabled={true}
+        pill={true}
         style={
           Object {
-            "color": "#ffffff",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 20.02,
-            "lineHeight": 25.33,
-            "paddingBottom": 3.15,
-            "paddingTop": 4.5,
+            "alignItems": "center",
+            "backgroundColor": "#6bac43",
+            "borderColor": "#6bac43",
+            "borderRadius": 60,
+            "borderWidth": 2,
+            "elevation": 2,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "center",
+            "opacity": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 20,
           }
         }
       >
-        Sign in or create account
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 4.5,
+            }
+          }
+        >
+          Sign in or create account
+        </Text>
+      </View>
     </View>
   </View>
 </View>
@@ -2213,8 +2269,6 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}
@@ -2823,43 +2877,74 @@ exports[`The ContributionForm component shows an error with no funds 1`] = `
       </View>
     </View>
     <View
-      bordered={false}
-      disabled={true}
-      pill={true}
+      accessibilityComponentType="button"
+      accessibilityLabel={undefined}
+      accessibilityTraits={
+        Array [
+          "button",
+          "disabled",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#6bac43",
-          "borderColor": "#6bac43",
-          "borderRadius": 60,
-          "borderWidth": 2,
-          "elevation": 2,
-          "flexDirection": "row",
-          "height": 60,
-          "justifyContent": "center",
-          "opacity": 0.5,
-          "overflow": "hidden",
-          "paddingHorizontal": 20,
+          "opacity": 1,
         }
       }
+      testID={undefined}
+      tvParallaxProperties={undefined}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
+        bordered={false}
+        disabled={true}
+        pill={true}
         style={
           Object {
-            "color": "#ffffff",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 20.02,
-            "lineHeight": 25.33,
-            "paddingBottom": 3.15,
-            "paddingTop": 4.5,
+            "alignItems": "center",
+            "backgroundColor": "#6bac43",
+            "borderColor": "#6bac43",
+            "borderRadius": 60,
+            "borderWidth": 2,
+            "elevation": 2,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "center",
+            "opacity": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 20,
           }
         }
       >
-        Sign in or create account
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 4.5,
+            }
+          }
+        >
+          Sign in or create account
+        </Text>
+      </View>
     </View>
   </View>
 </View>
@@ -3051,8 +3136,6 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}
@@ -3661,43 +3744,74 @@ exports[`The ContributionForm component shows the recurring options 1`] = `
       </View>
     </View>
     <View
-      bordered={false}
-      disabled={true}
-      pill={true}
+      accessibilityComponentType="button"
+      accessibilityLabel={undefined}
+      accessibilityTraits={
+        Array [
+          "button",
+          "disabled",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#6bac43",
-          "borderColor": "#6bac43",
-          "borderRadius": 60,
-          "borderWidth": 2,
-          "elevation": 2,
-          "flexDirection": "row",
-          "height": 60,
-          "justifyContent": "center",
-          "opacity": 0.5,
-          "overflow": "hidden",
-          "paddingHorizontal": 20,
+          "opacity": 1,
         }
       }
+      testID={undefined}
+      tvParallaxProperties={undefined}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
+        bordered={false}
+        disabled={true}
+        pill={true}
         style={
           Object {
-            "color": "#ffffff",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 20.02,
-            "lineHeight": 25.33,
-            "paddingBottom": 3.15,
-            "paddingTop": 4.5,
+            "alignItems": "center",
+            "backgroundColor": "#6bac43",
+            "borderColor": "#6bac43",
+            "borderRadius": 60,
+            "borderWidth": 2,
+            "elevation": 2,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "center",
+            "opacity": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 20,
           }
         }
       >
-        Sign in or create account
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 4.5,
+            }
+          }
+        >
+          Sign in or create account
+        </Text>
+      </View>
     </View>
   </View>
 </View>
@@ -3829,8 +3943,6 @@ exports[`The ContributionForm component shows the second fund 1`] = `
                   <TextInput
                     allowFontScaling={true}
                     editable={true}
-                    focusAnimationDuration={450}
-                    focusAnimationEasing={[Function]}
                     keyboardType="numeric"
                     onBlur={[Function]}
                     onChangeText={[Function]}
@@ -4439,43 +4551,74 @@ exports[`The ContributionForm component shows the second fund 1`] = `
       </View>
     </View>
     <View
-      bordered={false}
-      disabled={true}
-      pill={true}
+      accessibilityComponentType="button"
+      accessibilityLabel={undefined}
+      accessibilityTraits={
+        Array [
+          "button",
+          "disabled",
+        ]
+      }
+      accessible={true}
+      collapsable={undefined}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#6bac43",
-          "borderColor": "#6bac43",
-          "borderRadius": 60,
-          "borderWidth": 2,
-          "elevation": 2,
-          "flexDirection": "row",
-          "height": 60,
-          "justifyContent": "center",
-          "opacity": 0.5,
-          "overflow": "hidden",
-          "paddingHorizontal": 20,
+          "opacity": 1,
         }
       }
+      testID={undefined}
+      tvParallaxProperties={undefined}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
+        bordered={false}
+        disabled={true}
+        pill={true}
         style={
           Object {
-            "color": "#ffffff",
-            "fontFamily": "Colfax-Bold",
-            "fontSize": 20.02,
-            "lineHeight": 25.33,
-            "paddingBottom": 3.15,
-            "paddingTop": 4.5,
+            "alignItems": "center",
+            "backgroundColor": "#6bac43",
+            "borderColor": "#6bac43",
+            "borderRadius": 60,
+            "borderWidth": 2,
+            "elevation": 2,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "center",
+            "opacity": 0.5,
+            "overflow": "hidden",
+            "paddingHorizontal": 20,
           }
         }
       >
-        Sign in or create account
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 4.5,
+            }
+          }
+        >
+          Sign in or create account
+        </Text>
+      </View>
     </View>
   </View>
 </View>

@@ -1,6 +1,7 @@
 import { Platform } from 'react-native';
 import Settings from '@utils/Settings';
 import instance from './instance';
+import sentry from '../sentry';
 
 // Events
 const AppBecameInactive = 'AppBecameInactive';
@@ -63,6 +64,11 @@ export const trackScreen = (screenName, screenProperties) => {
   track(events.ScreenView, {
     screen: screenName,
     ...screenProperties,
+  });
+  sentry.captureBreadcrumb({
+    message: 'ScreenView',
+    data: { screenName },
+    level: 'info',
   });
 };
 
