@@ -62,46 +62,61 @@ const StyledIcon = withTheme(({ theme }) => ({
   fill: theme.colors.text.link,
 }))(Icon);
 
-const TransactionCard = enhance(({
-  isLoading,
-  iconSize,
-  date,
-  dateFormat,
-  onPress,
-  status,
-  details,
-  isScheduled,
-  error,
-  isErrorColor,
-  iconColor,
-  ...otherProps
-}) => {
-  const isOk = status === null || status === 'Success' || status === 'Complete' || status === 'Pending';
-  return (
-    <Card isLoading={isLoading} {...otherProps}>
-      <Touchable onPress={onPress}>
-        <PaddedView>
-          <Row>
-            {isOk ? <Icon name="circle-outline-check-mark" fill={iconColor} size={iconSize} /> : <Icon name="circle-outline-x-mark" size={iconSize} fill={isErrorColor} />}
-            <Spacer byWidth />
-            <DateText>{moment(date).utc().format(dateFormat)}</DateText>
-          </Row>
-          <Spacer />
-          <StatusMessage
-            status={status}
-            details={details}
-            isScheduled={isScheduled}
-            error={error}
-          />
-          <Spacer />
-          <Row>
-            <StyledH6>{'View Contribution'}</StyledH6>
-            <StyledIcon name="arrow-next" size={iconSize} />
-          </Row>
-        </PaddedView>
-      </Touchable>
-    </Card>
-  );
-});
+const TransactionCard = enhance(
+  ({
+    isLoading,
+    iconSize,
+    date,
+    dateFormat,
+    onPress,
+    status,
+    details,
+    isScheduled,
+    error,
+    isErrorColor,
+    iconColor,
+    ...otherProps
+  }) => {
+    const isOk =
+      status === null ||
+      status === 'Success' ||
+      status === 'Complete' ||
+      status === 'Pending' ||
+      status === 'Pendingsettlement';
+    return (
+      <Card isLoading={isLoading} {...otherProps}>
+        <Touchable onPress={onPress}>
+          <PaddedView>
+            <Row>
+              {isOk ? (
+                <Icon name="circle-outline-check-mark" fill={iconColor} size={iconSize} />
+              ) : (
+                <Icon name="circle-outline-x-mark" size={iconSize} fill={isErrorColor} />
+              )}
+              <Spacer byWidth />
+              <DateText>
+                {moment(date)
+                  .utc()
+                  .format(dateFormat)}
+              </DateText>
+            </Row>
+            <Spacer />
+            <StatusMessage
+              status={status}
+              details={details}
+              isScheduled={isScheduled}
+              error={error}
+            />
+            <Spacer />
+            <Row>
+              <StyledH6>{'View Contribution'}</StyledH6>
+              <StyledIcon name="arrow-next" size={iconSize} />
+            </Row>
+          </PaddedView>
+        </Touchable>
+      </Card>
+    );
+  },
+);
 
 export default TransactionCard;
