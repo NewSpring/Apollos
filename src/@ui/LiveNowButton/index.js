@@ -27,7 +27,7 @@ const LiveNowButton = enhance(
     error,
     isLive,
     isFuse,
-    titleText = 'NewSpring Church Live, Watch Now!',
+    titleText = 'NewSpring Church Live. Watch Now!',
     liveNowPath = isFuse ? 'https://live.newspringfuse.com' : 'https://live.newspring.cc',
   }) => {
     if (error || !isLive || Platform.OS === 'web') return null;
