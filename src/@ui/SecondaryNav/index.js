@@ -29,14 +29,14 @@ const SecondaryNav = ({
   onBackReplace,
   isLoading = false,
 }) =>
-  !isLoading && (
+  (!isLoading ? (
     <TabBar>
       {backButton ? (
         <Link pop to={backTo} icon={backButtonIcon} onPress={onBackPress} replace={onBackReplace} />
       ) : null}
       {children}
     </TabBar>
-  );
+  ) : null);
 
 SecondaryNav.propTypes = {
   backButton: PropTypes.bool,
