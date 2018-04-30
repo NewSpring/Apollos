@@ -31,7 +31,6 @@ const NativeMappedDateInput = compose(
         borderWidth: 0,
         boxSizing: 'border-box',
         color: 'inherit',
-        font: 'inherit',
         padding: 0,
         resize: 'none',
       },
