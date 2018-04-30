@@ -95,7 +95,6 @@ exports[`The MiniControls component should render 1`] = `
       </View>
       <Image
         collapsable={undefined}
-        maintainAspectRatio={false}
         onLoad={[Function]}
         source={
           Array [
