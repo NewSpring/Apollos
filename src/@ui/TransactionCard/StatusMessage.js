@@ -10,7 +10,8 @@ const StyledText = styled(({ theme }) => ({
 
 const ContributionAmountNameText = ({ amount = 0, account: { name = '' } = {} }) => (
   <StyledText>
-    <StyledText bold>{amount.toFixed(2)}</StyledText>{' to '}
+    <StyledText bold>{amount.toFixed(2)}</StyledText>
+    {' to '}
     <StyledText bold>{name}</StyledText>
   </StyledText>
 );
@@ -23,22 +24,23 @@ ContributionAmountNameText.propTypes = {
 // TODO: Missing is expiring soon message
 function StatusMessage(props = {}) {
   const {
-    status,
-    details,
-    isScheduled,
-    error,
+    status, details, isScheduled, error,
   } = props;
   const didPass = status === null || status === 'Success' || status === 'Complete';
   const didFail = status === 'Failed';
-  const isPending = status === 'Pending';
+  const isPending = status === 'Pending' || status === 'Pendingsettlement';
 
   if (didPass) {
     return (
       <StyledText>
-        Your {isScheduled ? 'scheduled ' : ''}{'contribution of '}
+        Your {isScheduled ? 'scheduled ' : ''}
+        {'contribution of '}
         <ContributionAmountNameText {...get(details, '0')} />
         {details.length > 1 ? (
-          <StyledText>{' and '}<ContributionAmountNameText {...get(details, '1')} /></StyledText>
+          <StyledText>
+            {' and '}
+            <ContributionAmountNameText {...get(details, '1')} />
+          </StyledText>
         ) : null}
         {' was successful.'}
       </StyledText>
@@ -49,11 +51,13 @@ function StatusMessage(props = {}) {
       <StyledText>
         Your {isScheduled ? 'scheduled ' : ''}contribution to
         <StyledText bold>{` ${get(details, '0.account.name')} `}</StyledText>
-        {details.length > 1
-          ? <StyledText>and<StyledText bold>{` ${get(details, '1.name')} `}</StyledText></StyledText> : null}
-        {' '}was unsuccessful.
-        {error !== null && error !== ''
-          ? ` Unfortunately, ${error}.` : ''}
+        {details.length > 1 ? (
+          <StyledText>
+            and<StyledText bold>{` ${get(details, '1.account.name')} `}</StyledText>
+          </StyledText>
+        ) : null}{' '}
+        was unsuccessful.
+        {error !== null && error !== '' ? ` Unfortunately, ${error}.` : ''}
       </StyledText>
     );
   }
@@ -62,9 +66,12 @@ function StatusMessage(props = {}) {
       <StyledText>
         Your {isScheduled ? 'scheduled ' : ''}contribution to
         <StyledText bold>{` ${get(details, '0.account.name')} `}</StyledText>
-        {details.length > 1
-          ? <StyledText>and<StyledText bold>{` ${get(details, '1.name')} `}</StyledText></StyledText> : null}
-        {' '}is <StyledText>pending</StyledText>.
+        {details.length > 1 ? (
+          <StyledText>
+            and<StyledText bold>{` ${get(details, '1.account.name')} `}</StyledText>
+          </StyledText>
+        ) : null}{' '}
+        is <StyledText>pending</StyledText>.
       </StyledText>
     );
   }
