@@ -116,23 +116,32 @@ const Settings = () => (
             </Link>
           </TableView>
 
-          <TableView>
-            {Platform.OS !== 'web' ? (
+          {Platform.OS !== 'web' ? (
+            <TableView>
               <ShowOnboardingTouchable>
                 <Cell>
                   <CellText>Show Onboarding</CellText>
                   <Arrow />
                 </Cell>
-                <Divider />
               </ShowOnboardingTouchable>
-            ) : null}
-            <LogoutTouchable>
-              <Cell>
-                <CellText>Logout</CellText>
-                <Arrow />
-              </Cell>
-            </LogoutTouchable>
-          </TableView>
+              <Divider />
+              <LogoutTouchable>
+                <Cell>
+                  <CellText>Logout</CellText>
+                  <Arrow />
+                </Cell>
+              </LogoutTouchable>
+            </TableView>
+          ) : (
+            <TableView>
+              <LogoutTouchable>
+                <Cell>
+                  <CellText>Logout</CellText>
+                  <Arrow />
+                </Cell>
+              </LogoutTouchable>
+            </TableView>
+          )}
 
           {process.env.APP_VERSION && (
             <H7>

@@ -65,9 +65,14 @@ const enhance = compose(
       background: { default: fill, screen: fill },
     },
   })),
-  withProps(({ onPress, ...otherProps }) => ({
-    onPress: (...args) => onPress(...args) && trackButton(otherProps),
-  })),
+  withProps(({ onPress, ...otherProps }) => {
+    if (!onPress) return {};
+    const onPressAndTrack = (...args) => {
+      if (onPress) onPress(...args);
+      trackButton(otherProps);
+    };
+    return { onPress: onPressAndTrack };
+  }),
 );
 
 // API-Compatible to React-Native's base <Button> component,
