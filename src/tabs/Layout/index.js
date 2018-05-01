@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Platform } from 'react-native';
 import {
   withContext,
   compose,
@@ -34,7 +35,7 @@ class TabBarLayout extends PureComponent {
         </BackgroundView>
         {!this.props.hideTabBar && (
           <TabBar>
-            <Link to="/" icon="logo" label="Home" />
+            <Link to={Platform.OS === 'web' ? '/give' : '/'} icon="logo" label="Home" />
             <Link to="/sections" icon="sections" label="Sections" />
             <Link to="/groups" icon="groups" label="Groups" />
             <Link to="/discover" icon="search" label="Discover" />
