@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Linking } from 'react-native';
+import { ScrollView, Linking, Platform } from 'react-native';
 import { withProps, compose } from 'recompose';
 import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
@@ -117,13 +117,15 @@ const Settings = () => (
           </TableView>
 
           <TableView>
-            <ShowOnboardingTouchable>
-              <Cell>
-                <CellText>Show Onboarding</CellText>
-                <Arrow />
-              </Cell>
-            </ShowOnboardingTouchable>
-            <Divider />
+            {Platform.OS !== 'web' ? (
+              <ShowOnboardingTouchable>
+                <Cell>
+                  <CellText>Show Onboarding</CellText>
+                  <Arrow />
+                </Cell>
+                <Divider />
+              </ShowOnboardingTouchable>
+            ) : null}
             <LogoutTouchable>
               <Cell>
                 <CellText>Logout</CellText>
