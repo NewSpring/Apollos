@@ -21,36 +21,35 @@ const enhance = compose(
 
 const ShareLink = withStory(Share);
 
-const StorySingle = enhance(({
-  content: {
-    authors = [],
-    title = '',
+const StorySingle = enhance(
+  ({
     content: {
-      isLiked,
-      body,
-      tags,
-      ...otherContentProps
+      authors = [],
+      title = '',
+      content: {
+        isLiked, body, tags, ...otherContentProps
+      } = {},
     } = {},
-  } = { },
-  id,
-  isLoading,
-}) => (
-  <BackgroundView>
-    <Header titleText="Story" backButton />
-    <ScrollView>
-      <ContentView isLoading={isLoading} {...otherContentProps}>
-        <Title>{startCase(toLower(title))}</Title>
-        <ByLine authors={authors} />
-        <HTMLView>{body}</HTMLView>
-      </ContentView>
-      <RelatedContent tags={tags} excludedIds={[id]} />
-    </ScrollView>
-    <MediaQuery maxWidth="md">
-      <SecondaryNav>
-        <ShareLink id={id} />
-        <Like id={id} isLiked={isLiked} />
-      </SecondaryNav>
-    </MediaQuery>
-  </BackgroundView>
-));
+    id,
+    isLoading,
+  }) => (
+    <BackgroundView>
+      <Header titleText="Story" backButton />
+      <ScrollView>
+        <ContentView isLoading={isLoading} {...otherContentProps}>
+          <Title>{startCase(toLower(title))}</Title>
+          <ByLine authors={authors} />
+          <HTMLView>{body}</HTMLView>
+        </ContentView>
+        <RelatedContent tags={tags} excludedIds={[id]} />
+      </ScrollView>
+      <MediaQuery maxWidth="md">
+        <SecondaryNav isLoading={isLoading}>
+          <ShareLink id={id} />
+          <Like id={id} isLiked={isLiked} />
+        </SecondaryNav>
+      </MediaQuery>
+    </BackgroundView>
+  ),
+);
 export default StorySingle;
