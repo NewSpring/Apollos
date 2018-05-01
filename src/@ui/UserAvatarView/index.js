@@ -42,7 +42,8 @@ const StyledAvatar = withTheme(({ theme }) => ({
 
 const BlurredImage = styled({
   resizeMode: 'cover',
-  ...StyleSheet.absoluteFillObject,
+  width: '100%',
+  height: '100%',
 })(ConnectedImage);
 
 const enhance = compose(

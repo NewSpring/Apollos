@@ -1,6 +1,7 @@
+
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet, Platform } from 'react-native';
+import { Platform, View, StyleSheet } from 'react-native';
 import styled from '@ui/styled';
 import ConnectedImage from '@ui/ConnectedImage';
 
@@ -8,20 +9,21 @@ const Wrapper = styled(({ theme }) => ({
   width: '100%',
   aspectRatio: 1,
   backgroundColor: theme.colors.background.inactive,
+  ...Platform.select({
+    web: {
+      height: 0,
+      paddingTop: '100%',
+    },
+  }),
 }))(View);
+
+const WebWrapperImageSizeFix = styled(StyleSheet.absoluteFill)(View);
 
 const styles = StyleSheet.create({
   imageStyles: {
-    ...StyleSheet.absoluteFillObject,
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
-    ...Platform.select({
-      web: {
-        height: 0,
-        paddingTop: '100%',
-      },
-    }),
   },
 });
 
@@ -54,18 +56,22 @@ class ProgressiveImage extends PureComponent {
     return (
       <Wrapper style={style}>
         {(thumbnail) ? (
+          <WebWrapperImageSizeFix>
+            <ConnectedImage
+              {...imageProps}
+              blurRadius={thumbnailBlurRadius}
+              style={[styles.imageStyles, imageStyle]}
+              source={thumbnail}
+            />
+          </WebWrapperImageSizeFix>
+        ) : null}
+        <WebWrapperImageSizeFix>
           <ConnectedImage
             {...imageProps}
-            blurRadius={thumbnailBlurRadius}
             style={[styles.imageStyles, imageStyle]}
-            source={thumbnail}
+            source={source}
           />
-        ) : null}
-        <ConnectedImage
-          {...imageProps}
-          style={[styles.imageStyles, imageStyle]}
-          source={source}
-        />
+        </WebWrapperImageSizeFix>
       </Wrapper>
     );
   }
