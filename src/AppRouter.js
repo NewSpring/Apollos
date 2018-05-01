@@ -180,6 +180,7 @@ class AppRouter extends PureComponent {
 
   renderWebRedirects = () => (
     <View>
+      <Redirect from="/" to="/give" />
       <Route path="/about" component={() => redirectToNewspring('about')} />
       <Route path="/locations" component={() => redirectToNewspring('locations')} />
       <Route path="/sermons" component={() => redirectToNewspring('sermons')} />
