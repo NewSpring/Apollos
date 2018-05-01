@@ -19,6 +19,7 @@ const StyledTextInput = styled(
       android: {
         paddingTop: 0,
         paddingBottom: 0,
+        lineHeight: 40,
       },
     }),
   }),
