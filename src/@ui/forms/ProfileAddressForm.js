@@ -78,7 +78,6 @@ export const ProfileAddressFormWithoutData = enhance(
     status,
   }) => {
     const isUSOrCanada = values.countryId === 'US' || values.countryId === 'CA';
-
     return (
       <PaddedView horizontal={false}>
         <TableView>
@@ -159,12 +158,12 @@ const validationSchema = Yup.object().shape({
 });
 
 const mapPropsToValues = props => ({
-  street1: get(props, 'user.street1') || get(props, 'person.home.street1', ''),
-  street2: get(props, 'user.street2') || get(props, 'person.home.street2', ''),
-  city: get(props, 'user.city') || get(props, 'person.home.city', ''),
-  stateId: get(props, 'user.stateId') || get(props, 'person.home.state') || 'SC',
-  countryId: get(props, 'user.countryId') || get(props, 'person.home.country') || 'US',
-  zipCode: get(props, 'user.zipCode') || get(props, 'person.home.zip', ''),
+  street1: get(props, 'person.home.street1', ''),
+  street2: get(props, 'person.home.street2', ''),
+  city: get(props, 'person.home.city', ''),
+  stateId: get(props, 'person.home.state') || 'SC',
+  countryId: get(props, 'person.home.country') || 'US',
+  zip: get(props, 'person.home.zip', ''),
 });
 
 const ProfileAddressForm = compose(
