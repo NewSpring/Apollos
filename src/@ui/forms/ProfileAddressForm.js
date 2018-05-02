@@ -178,6 +178,7 @@ const ProfileAddressForm = compose(
       setSubmitting(true);
       try {
         await props.updateHomeAddress({
+          id: props.person.home.id,
           street1: values.street1,
           street2: values.street2,
           countryId: values.countryId,

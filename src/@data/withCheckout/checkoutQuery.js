@@ -17,9 +17,9 @@ export default gql`
       lastName
       email
       campus { name, id: entityId }
-      home { street1, street2, city, state, zip, country }
+      home { id, street1, street2, city, state, zip, country }
     }
-    savedPaymentMethods: savedPayments(cache: false){
+    savedPaymentMethods: savedPayments(cache: false) {
       id: entityId
       name
       payment {

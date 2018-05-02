@@ -27,6 +27,18 @@ export default graphql(MUTATION, {
     updateHomeAddress: (params = {}) =>
       mutate({
         variables: pick(params, ['street1', 'street2', 'city', 'stateId', 'zip']),
+        optimisticResponse: {
+          __typename: 'Mutation',
+          updateHomeAddress: {
+            id: params.id,
+            __typename: 'Location',
+            street1: params.street1,
+            street2: params.street2,
+            city: params.city,
+            stateId: params.stateId,
+            zip: params.zip,
+          },
+        },
       }),
   }),
 });
