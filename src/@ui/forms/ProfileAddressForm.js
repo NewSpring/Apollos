@@ -9,7 +9,6 @@ import * as Inputs from '@ui/inputs';
 import TableView from '@ui/TableView';
 import PaddedView from '@ui/PaddedView';
 import withUser from '@data/withUser';
-import withCheckout from '@data/withCheckout';
 import Button from '@ui/Button';
 import { H6 } from '@ui/typography';
 import styled from '@ui/styled';
@@ -158,18 +157,17 @@ const validationSchema = Yup.object().shape({
 });
 
 const mapPropsToValues = props => ({
-  street1: get(props, 'person.home.street1', ''),
-  street2: get(props, 'person.home.street2', ''),
-  city: get(props, 'person.home.city', ''),
-  stateId: get(props, 'person.home.state') || 'SC',
-  countryId: get(props, 'person.home.country') || 'US',
-  zip: get(props, 'person.home.zip', ''),
+  street1: get(props, 'user.home.street1', ''),
+  street2: get(props, 'user.home.street2', ''),
+  city: get(props, 'user.home.city', ''),
+  stateId: get(props, 'user.home.state') || 'SC',
+  countryId: get(props, 'user.home.country') || 'US',
+  zip: get(props, 'user.home.zip', ''),
 });
 
 const ProfileAddressForm = compose(
   pure,
   withUser,
-  withCheckout,
   branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
   withFormik({
     mapPropsToValues,

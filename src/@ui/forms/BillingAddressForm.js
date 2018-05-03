@@ -159,12 +159,12 @@ const validationSchema = Yup.object().shape({
 });
 
 const mapPropsToValues = props => ({
-  street1: get(props, 'contributions.street1') || get(props, 'user.home.street1', ''),
-  street2: get(props, 'contributions.street2') || get(props, 'user.home.street2', ''),
-  city: get(props, 'contributions.city') || get(props, 'user.home.city', ''),
-  stateId: get(props, 'contributions.stateId') || get(props, 'user.home.state') || 'SC',
-  countryId: get(props, 'contributions.countryId') || get(props, 'user.home.country') || 'US',
-  zipCode: get(props, 'contributions.zipCode') || get(props, 'user.home.zip', ''),
+  street1: get(props, 'user.home.street1', ''),
+  street2: get(props, 'user.home.street2', ''),
+  city: get(props, 'user.home.city', ''),
+  stateId: get(props, 'user.home.state') || 'SC',
+  countryId: get(props, 'user.home.country') || 'US',
+  zipCode: get(props, 'user.home.zip', ''),
 });
 
 const BillingAddressForm = compose(
