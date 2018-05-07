@@ -13,6 +13,8 @@ import { H6 } from '@ui/typography';
 import styled from '@ui/styled';
 import sentry from '@utils/sentry';
 
+import { withFieldValueSetter, withFieldTouchedSetter } from './formikSetters';
+
 const Status = styled({ textAlign: 'center' })(H6);
 
 const enhance = compose(
@@ -40,9 +42,11 @@ const enhance = compose(
         .finally(() => setSubmitting(false));
     },
   }),
+  withFieldValueSetter,
+  withFieldTouchedSetter,
   setPropTypes({
-    setFieldValue: PropTypes.func,
-    setFieldTouched: PropTypes.func,
+    fieldValueSetter: PropTypes.func,
+    fieldTouchedSetter: PropTypes.func,
     touched: PropTypes.shape({}),
     errors: PropTypes.shape({}),
     values: PropTypes.shape({}),
@@ -55,8 +59,8 @@ const enhance = compose(
 
 const ChangePasswordFormWithoutData = enhance(
   ({
-    setFieldTouched,
-    setFieldValue,
+    fieldValueSetter,
+    fieldTouchedSetter,
     touched,
     errors,
     values,
@@ -72,16 +76,16 @@ const ChangePasswordFormWithoutData = enhance(
             label="Current password"
             type="password"
             value={values.oldPassword}
-            onChangeText={text => setFieldValue('oldPassword', text)}
-            onBlur={() => setFieldTouched('oldPassword', true)}
+            onChangeText={fieldValueSetter('oldPassword')}
+            onBlur={fieldTouchedSetter('oldPassword')}
             error={touched.oldPassword && errors.oldPassword}
           />
           <TextInput
             label="New password"
             type="password"
             value={values.newPassword}
-            onChangeText={text => setFieldValue('newPassword', text)}
-            onBlur={() => setFieldTouched('newPassword', true)}
+            onChangeText={fieldValueSetter('newPassword')}
+            onBlur={fieldTouchedSetter('newPassword')}
             error={touched.newPassword && errors.newPassword}
           />
         </PaddedView>

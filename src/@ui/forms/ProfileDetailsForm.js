@@ -15,13 +15,14 @@ import withUser from '@data/withUser';
 import Button from '@ui/Button';
 import sentry from '@utils/sentry';
 import Status from './FormStatusText';
+import { withFieldValueSetter, withFieldTouchedSetter } from './formikSetters';
 
 export const ProfileDetailsFormWithoutData = ({
-  setFieldValue,
+  fieldValueSetter,
   handleSubmit,
   values,
   campuses = [],
-  setFieldTouched,
+  fieldTouchedSetter,
   errors,
   touched,
   isSubmitting,
@@ -34,22 +35,22 @@ export const ProfileDetailsFormWithoutData = ({
         <Inputs.Text
           label="Nickname"
           value={values.nickName}
-          onChangeText={text => setFieldValue('nickName', text)}
-          onBlur={() => setFieldTouched('nickName', true)}
+          onChangeText={fieldValueSetter('nickName')}
+          onBlur={fieldTouchedSetter('nickName')}
           error={touched.nickName && errors.nickName}
         />
         <Inputs.Text
           label="First Name"
           value={values.firstName}
-          onChangeText={text => setFieldValue('firstName', text)}
-          onBlur={() => setFieldTouched('firstName', true)}
+          onChangeText={fieldValueSetter('firstName')}
+          onBlur={fieldTouchedSetter('firstName')}
           error={touched.firstName && errors.firstName}
         />
         <Inputs.Text
           label="Last Name"
           value={values.lastName}
-          onChangeText={text => setFieldValue('lastName', text)}
-          onBlur={() => setFieldTouched('lastName', true)}
+          onChangeText={fieldValueSetter('lastName')}
+          onBlur={fieldTouchedSetter('lastName')}
           error={touched.lastName && errors.lastName}
         />
       </PaddedView>
@@ -59,8 +60,8 @@ export const ProfileDetailsFormWithoutData = ({
         <Inputs.Text
           label="Email"
           value={values.email}
-          onChangeText={text => setFieldValue('email', text)}
-          onBlur={() => setFieldTouched('email', true)}
+          onChangeText={fieldValueSetter('email')}
+          onBlur={fieldTouchedSetter('email')}
           error={touched.email && errors.email}
         />
       </PaddedView>
@@ -74,8 +75,8 @@ export const ProfileDetailsFormWithoutData = ({
           displayValue={
             values.birthday ? moment(values.birthday).format('MM/DD/YYYY') : values.birthDay
           }
-          onChange={text => setFieldValue('birthday', text)}
-          onBlur={() => setFieldTouched('birthday', true)}
+          onChange={fieldValueSetter('birthday')}
+          onBlur={fieldTouchedSetter('birthday')}
           error={touched.birthday && errors.birthday}
         />
       </PaddedView>
@@ -86,7 +87,7 @@ export const ProfileDetailsFormWithoutData = ({
           label="Campus"
           value={values.campusId}
           displayValue={get(campuses.find(campus => campus.id === values.campusId), 'name')}
-          onValueChange={value => setFieldValue('campusId', value)}
+          onValueChange={fieldValueSetter('campusId')}
           error={errors.campusId}
         >
           {campuses.map(({ name, id }) => <Inputs.PickerItem label={name} value={id} key={id} />)}
@@ -101,7 +102,7 @@ export const ProfileDetailsFormWithoutData = ({
 );
 
 ProfileDetailsFormWithoutData.propTypes = {
-  setFieldValue: PropTypes.func,
+  fieldValueSetter: PropTypes.func,
   handleSubmit: PropTypes.func,
   values: PropTypes.shape({
     nickName: PropTypes.string,
@@ -111,7 +112,7 @@ ProfileDetailsFormWithoutData.propTypes = {
     birthday: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     campusId: PropTypes.string,
   }),
-  setFieldTouched: PropTypes.func,
+  fieldTouchedSetter: PropTypes.func,
   errors: PropTypes.shape({
     nickName: PropTypes.string,
     firstName: PropTypes.string,
@@ -199,6 +200,8 @@ const ProfileDetailsForm = compose(
       return validationSchema.isValidSync(mapPropsToValues(props));
     },
   }),
+  withFieldValueSetter,
+  withFieldTouchedSetter,
 )(ProfileDetailsFormWithoutData);
 
 export default ProfileDetailsForm;

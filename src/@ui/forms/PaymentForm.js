@@ -25,11 +25,13 @@ import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
 import PaddedView from '@ui/PaddedView';
 
+import { withFieldValueSetter, withFieldTouchedSetter } from './formikSetters';
+
 export const PaymentFormWithoutData = ({
-  setFieldValue,
+  fieldValueSetter,
+  fieldTouchedSetter,
   handleSubmit,
   values,
-  setFieldTouched,
   touched,
   errors,
   isSubmitting,
@@ -43,7 +45,7 @@ export const PaymentFormWithoutData = ({
           label="Payment Method"
           value={values.paymentMethod}
           displayValue={values.paymentMethod === 'creditCard' ? 'Credit Card' : 'Bank Account'}
-          onValueChange={value => setFieldValue('paymentMethod', value)}
+          onValueChange={fieldValueSetter('paymentMethod')}
           error={touched.paymentMethod && errors.paymentMethod}
         >
           <Inputs.PickerItem label="Credit Card" value={'creditCard'} />
@@ -55,8 +57,8 @@ export const PaymentFormWithoutData = ({
             <Inputs.Text
               label="Account Holder Name"
               value={values.accountName}
-              onChangeText={text => setFieldValue('accountName', text)}
-              onBlur={() => setFieldTouched('accountName', true)}
+              onChangeText={fieldValueSetter('accountName')}
+              onBlur={fieldTouchedSetter('accountName')}
               error={touched.accountName && errors.accountName}
             />
             <Inputs.Text
@@ -64,23 +66,23 @@ export const PaymentFormWithoutData = ({
               label="Routing Number"
               value={values.routingNumber}
               type="numeric"
-              onChangeText={text => setFieldValue('routingNumber', text)}
-              onBlur={() => setFieldTouched('routingNumber', true)}
+              onChangeText={fieldValueSetter('routingNumber')}
+              onBlur={fieldTouchedSetter('routingNumber')}
               error={touched.routingNumber && errors.routingNumber}
             />
             <Inputs.Text
               label="Account Number"
               value={values.accountNumber}
               type="numeric"
-              onChangeText={text => setFieldValue('accountNumber', text)}
-              onBlur={() => setFieldTouched('accountNumber', true)}
+              onChangeText={fieldValueSetter('accountNumber')}
+              onBlur={fieldTouchedSetter('accountNumber')}
               error={touched.accountNumber && errors.accountNumber}
             />
             <Inputs.Picker
               label="Account Type"
               value={values.accountType}
               displayValue={values.accountType === 'checking' ? 'Checking' : 'Savings'}
-              onValueChange={value => setFieldValue('accountType', value)}
+              onValueChange={fieldValueSetter('accountType')}
               error={touched.accountType && errors.accountType}
             >
               <Inputs.PickerItem label="Checking" value="checking" />
@@ -94,8 +96,8 @@ export const PaymentFormWithoutData = ({
               label="Card Number"
               type="numericKeyboard"
               value={values.cardNumber}
-              onChangeText={text => setFieldValue('cardNumber', formatCardNumber(text))}
-              onBlur={() => setFieldTouched('cardNumber', true)}
+              onChangeText={fieldValueSetter('cardNumber', formatCardNumber)}
+              onBlur={fieldTouchedSetter('cardNumber')}
               error={touched.cardNumber && errors.cardNumber}
             />
             <Inputs.Text
@@ -103,16 +105,16 @@ export const PaymentFormWithoutData = ({
               placeholder="mm/yy"
               type="numericKeyboard"
               value={values.expirationDate}
-              onChangeText={text => setFieldValue('expirationDate', formatCardExpiry(text))}
-              onBlur={() => setFieldTouched('expirationDate', true)}
+              onChangeText={fieldValueSetter('expirationDate', formatCardExpiry)}
+              onBlur={fieldTouchedSetter('expirationDate')}
               error={touched.expirationDate && errors.expirationDate}
             />
             <Inputs.Text
               label="CVV"
               type="numericKeyboard"
               value={values.cvv}
-              onChangeText={text => setFieldValue('cvv', text)}
-              onBlur={() => setFieldTouched('cvv', true)}
+              onChangeText={fieldValueSetter('cvv')}
+              onBlur={fieldTouchedSetter('cvv')}
               error={touched.cvv && errors.cvv}
             />
           </View>
@@ -126,8 +128,8 @@ export const PaymentFormWithoutData = ({
             <Inputs.Text
               label="Save Account Name"
               value={values.savedAccountName}
-              onChangeText={text => setFieldValue('savedAccountName', text)}
-              onBlur={() => setFieldTouched('savedAccountName', true)}
+              onChangeText={fieldValueSetter('savedAccountName')}
+              onBlur={fieldTouchedSetter('savedAccountName')}
               error={touched.savedAccountName && errors.savedAccountName}
             />
           </View>
@@ -135,15 +137,15 @@ export const PaymentFormWithoutData = ({
           <View>
             <Inputs.Switch
               value={values.willSavePaymentMethod}
-              onValueChange={r => setFieldValue('willSavePaymentMethod', r)}
+              onValueChange={fieldValueSetter('willSavePaymentMethod')}
               label="Save this payment for future contributions"
             />
             {values.willSavePaymentMethod && (
               <Inputs.Text
                 label="Save Account Name"
                 value={values.savedAccountName}
-                onChangeText={text => setFieldValue('savedAccountName', text)}
-                onBlur={() => setFieldTouched('savedAccountName', true)}
+                onChangeText={fieldValueSetter('savedAccountName')}
+                onBlur={fieldTouchedSetter('savedAccountName')}
                 error={touched.savedAccountName && errors.savedAccountName}
               />
             )}
@@ -158,7 +160,7 @@ export const PaymentFormWithoutData = ({
 );
 
 PaymentFormWithoutData.propTypes = {
-  setFieldValue: PropTypes.func,
+  fieldValueSetter: PropTypes.func,
   handleSubmit: PropTypes.func,
   values: PropTypes.shape({
     paymentMethod: PropTypes.oneOf(['creditCard', 'bankAccount']),
@@ -171,7 +173,7 @@ PaymentFormWithoutData.propTypes = {
     cvv: PropTypes.string,
     willSavePaymentMethod: PropTypes.bool,
   }),
-  setFieldTouched: PropTypes.func,
+  fieldTouchedSetter: PropTypes.func,
   touched: PropTypes.shape({
     paymentMethod: PropTypes.bool,
     routingNumber: PropTypes.bool,
@@ -204,7 +206,7 @@ const mapPropsToValues = (props) => {
       paymentMethod !== 'bankAccount' || paymentMethod !== 'creditCard'
         ? 'creditCard'
         : paymentMethod,
-    willSavePaymentMethod: get(props, 'enforceAccountName') ? true : get(props, 'contributions.willSavePaymentMethod', true),
+    willSavePaymentMethod: get(props, 'enforceAccountName') ? true : get(props, 'contributions.willSavePaymentMethod'),
     ...get(props, 'contributions.bankAccount', { accountType: 'checking' }),
     ...get(props, 'contributions.creditCard', {}),
   };
@@ -225,7 +227,7 @@ const validationSchema = props =>
       is: 'creditCard',
       then: Yup.string()
         // eslint-disable-next-line
-        .test('Expiration date', 'The expiration date is not a valid expiry date', value => {
+        .test('Expiration date', 'The expiration date is not a valid expiry date', (value) => {
           if (!value) return false;
           const { month, year } = parseCardExpiry(value);
           return validateCardExpiry(month, year);
@@ -302,6 +304,8 @@ const PaymentForm = compose(
       if (props.navigateToOnComplete) props.history.push(props.navigateToOnComplete);
     },
   }),
+  withFieldValueSetter,
+  withFieldTouchedSetter,
 )(PaymentFormWithoutData);
 
 export default PaymentForm;

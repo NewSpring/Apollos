@@ -10,9 +10,9 @@ const createSetter = (getSetter, name) => (WrapperComponent) => {
   class FormikSetter extends Component {
     setters = {};
 
-    getSetter = (fieldName) => {
+    getSetter = (fieldName, ...otherArgs) => {
       if (!this.setters[fieldName]) {
-        this.setters[fieldName] = getSetter(fieldName, { ...this.props });
+        this.setters[fieldName] = getSetter(fieldName, { ...this.props }, ...otherArgs);
       }
       return this.setters[fieldName];
     }
@@ -35,9 +35,11 @@ const createSetter = (getSetter, name) => (WrapperComponent) => {
     <Input label="Email" onChangeText={fieldValueSetter('email')} />
   ));
  */
-const withFieldValueSetter = createSetter((fieldName, { setFieldValue }) => value => (
-  setFieldValue(fieldName, value)
-), 'fieldValueSetter');
+const withFieldValueSetter = createSetter((fieldName, { setFieldValue }, transform) => (value) => {
+  let valueToSet = value;
+  if (transform) valueToSet = transform(valueToSet);
+  return setFieldValue(fieldName, valueToSet);
+}, 'fieldValueSetter');
 
 // withFieldTouchedSetter
 // usage:

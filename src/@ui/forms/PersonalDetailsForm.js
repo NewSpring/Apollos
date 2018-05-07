@@ -14,13 +14,14 @@ import TableView, { FormFields } from '@ui/TableView';
 
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
+import { withFieldValueSetter, withFieldTouchedSetter } from './formikSetters';
 
 export const PersonalDetailsFormWithoutData = ({
-  setFieldValue,
+  fieldValueSetter,
   handleSubmit,
   values,
   campuses,
-  setFieldTouched,
+  fieldTouchedSetter,
   errors,
   touched,
   isSubmitting,
@@ -32,30 +33,30 @@ export const PersonalDetailsFormWithoutData = ({
         <Inputs.Text
           label="First Name"
           value={values.firstName}
-          onChangeText={text => setFieldValue('firstName', text)}
-          onBlur={() => setFieldTouched('firstName', true)}
+          onChangeText={fieldValueSetter('firstName')}
+          onBlur={fieldTouchedSetter('firstName', true)}
           error={touched.firstName && errors.firstName}
         />
         <Inputs.Text
           label="Last Name"
           value={values.lastName}
-          onChangeText={text => setFieldValue('lastName', text)}
-          onBlur={() => setFieldTouched('lastName', true)}
+          onChangeText={fieldValueSetter('lastName')}
+          onBlur={fieldTouchedSetter('lastName', true)}
           error={touched.lastName && errors.lastName}
         />
         <Inputs.Text
           label="Email"
           type="email"
           value={values.email}
-          onChangeText={text => setFieldValue('email', text)}
-          onBlur={() => setFieldTouched('email', true)}
+          onChangeText={fieldValueSetter('email')}
+          onBlur={fieldTouchedSetter('email', true)}
           error={touched.email && errors.email}
         />
         <Inputs.Picker
           label="Campus"
           value={values.campusId}
           displayValue={get(campuses.find(campus => campus.id === values.campusId), 'label')}
-          onValueChange={value => setFieldValue('campusId', value)}
+          onValueChange={fieldValueSetter('campusId')}
           error={errors.campusId}
         >
           {campuses.map(({ label, id }) => <Inputs.PickerItem label={label} value={id} key={id} />)}
@@ -69,7 +70,7 @@ export const PersonalDetailsFormWithoutData = ({
 );
 
 PersonalDetailsFormWithoutData.propTypes = {
-  setFieldValue: PropTypes.func,
+  fieldValueSetter: PropTypes.func,
   handleSubmit: PropTypes.func,
   values: PropTypes.shape({
     campusId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -77,7 +78,7 @@ PersonalDetailsFormWithoutData.propTypes = {
     lastName: PropTypes.string,
     email: PropTypes.string,
   }),
-  setFieldTouched: PropTypes.func,
+  fieldTouchedSetter: PropTypes.func,
   errors: PropTypes.shape({
     campusId: PropTypes.string,
     firstName: PropTypes.string,
@@ -135,6 +136,8 @@ const PersonalDetailsForm = compose(
       return validationSchema.isValidSync(mapPropsToValues(props));
     },
   }),
+  withFieldValueSetter,
+  withFieldTouchedSetter,
 )(PersonalDetailsFormWithoutData);
 
 export default PersonalDetailsForm;

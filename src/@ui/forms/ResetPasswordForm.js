@@ -11,6 +11,7 @@ import Button from '@ui/Button';
 import sentry from '@utils/sentry';
 
 import Status from './FormStatusText';
+import { withFieldValueSetter, withFieldTouchedSetter } from './formikSetters';
 
 const enhance = compose(
   setPropTypes({
@@ -40,9 +41,11 @@ const enhance = compose(
         .finally(() => setSubmitting(false));
     },
   }),
+  withFieldValueSetter,
+  withFieldTouchedSetter,
   setPropTypes({
-    setFieldValue: PropTypes.func,
-    setFieldTouched: PropTypes.func,
+    fieldValueSetter: PropTypes.func,
+    fieldTouchedSetter: PropTypes.func,
     touched: PropTypes.shape({}),
     errors: PropTypes.shape({}),
     values: PropTypes.shape({}),
@@ -54,8 +57,8 @@ const enhance = compose(
 );
 
 export const ChangePasswordFormWithoutData = enhance(({
-  setFieldTouched,
-  setFieldValue,
+  fieldValueSetter,
+  fieldTouchedSetter,
   touched,
   errors,
   values,
@@ -69,16 +72,16 @@ export const ChangePasswordFormWithoutData = enhance(({
       label="New Password"
       type="password"
       value={values.password}
-      onChangeText={text => setFieldValue('password', text)}
-      onBlur={() => setFieldTouched('password', true)}
+      onChangeText={fieldValueSetter('password')}
+      onBlur={fieldTouchedSetter('password')}
       error={touched.password && errors.password}
     />
     <TextInput
       label="Confirm Password (enter it again)"
       type="password"
       value={values.passwordConfirm}
-      onChangeText={text => setFieldValue('passwordConfirm', text)}
-      onBlur={() => setFieldTouched('passwordConfirm', true)}
+      onChangeText={fieldValueSetter('passwordConfirm')}
+      onBlur={fieldTouchedSetter('passwordConfirm')}
       error={touched.passwordConfirm && errors.passwordConfirm}
     />
     {status ? (
