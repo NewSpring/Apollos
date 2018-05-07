@@ -9,8 +9,10 @@ const Image = compose(
   getIsLoading,
   styled({
     ...StyleSheet.absoluteFillObject,
-    width: '100%',
     height: '100%',
+    paddingTop: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
   }, 'Card.Image'),
 )(ProgressiveImage);
 

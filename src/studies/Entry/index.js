@@ -26,7 +26,7 @@ const enhance = compose(
     return { colors };
   }),
   withThemeMixin(({ colors }) => {
-    const theme = { };
+    const theme = {};
     if (colors && colors.length) {
       const primary = `#${colors[0].value}`;
       theme.colors = {
@@ -41,58 +41,57 @@ const enhance = compose(
 
 const ShareLink = withStudyEntry(Share);
 
-const Study = enhance(({
-  id,
-  content: {
-    title,
-    parent = {},
+const Study = enhance(
+  ({
+    id,
     content: {
-      isLiked,
-      body,
-      scripture = [],
-      ...otherContentProps
+      title,
+      parent = {},
+      content: {
+        isLiked, body, scripture = [], ...otherContentProps
+      } = {},
     } = {},
-  } = {},
-  isLoading,
-}) => {
-  const hasScripture = isLoading || scripture.length;
-  const tabRoutes = [{ title: 'Devotional', key: 'devotional' }];
-  if (hasScripture) tabRoutes.push({ title: 'Scripture', key: 'scripture' });
+    isLoading,
+  }) => {
+    const hasScripture = isLoading || scripture.length;
+    const tabRoutes = [{ title: 'Devotional', key: 'devotional' }];
+    if (hasScripture) tabRoutes.push({ title: 'Scripture', key: 'scripture' });
 
-  const {
-    title: parentTitle,
-    content: { isLight = false } = {},
-    children = [],
-  } = parent || {};
+    const { title: parentTitle, content: { isLight = false } = {}, children = [] } = parent || {};
 
-  return (
-    <BackgroundView>
-      <Header titleText={parentTitle || 'Devotional'} backButton barStyle={isLight ? 'dark-content' : 'light-content'} />
-      <TabView
-        barStyle={isLight ? 'dark-content' : 'light-content'}
-        routes={tabRoutes}
-        renderScene={SceneMap({
-          devotional: withProps({
-            title,
-            body,
-            scripture,
-            otherContentProps,
-            entryData: children,
-            isLoading,
-          })(DevotionalTab),
-          scripture: withProps({
-            scripture,
-            entryData: children,
-            isLoading,
-          })(ScriptureTab),
-        })}
-      />
-      <SecondaryNav>
-        <ShareLink id={id} />
-        <Like id={id} isLiked={isLiked} />
-      </SecondaryNav>
-    </BackgroundView>
-  );
-});
+    return (
+      <BackgroundView>
+        <Header
+          titleText={parentTitle || 'Devotional'}
+          backButton
+          barStyle={isLight ? 'dark-content' : 'light-content'}
+        />
+        <TabView
+          barStyle={isLight ? 'dark-content' : 'light-content'}
+          routes={tabRoutes}
+          renderScene={SceneMap({
+            devotional: withProps({
+              title,
+              body,
+              scripture,
+              otherContentProps,
+              entryData: children,
+              isLoading,
+            })(DevotionalTab),
+            scripture: withProps({
+              scripture,
+              entryData: children,
+              isLoading,
+            })(ScriptureTab),
+          })}
+        />
+        <SecondaryNav isLoading={isLoading}>
+          <ShareLink id={id} />
+          <Like id={id} isLiked={isLiked} />
+        </SecondaryNav>
+      </BackgroundView>
+    );
+  },
+);
 
 export default Study;

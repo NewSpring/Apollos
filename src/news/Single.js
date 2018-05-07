@@ -20,35 +20,33 @@ const enhance = compose(
 
 const ShareLink = withNewsStory(Share);
 
-const NewsSingle = enhance(({
-  id,
-  content: {
-    authors = [],
-    title = '',
+const NewsSingle = enhance(
+  ({
+    id,
     content: {
-      isLiked,
-      body,
-      ...otherContentProps
+      authors = [],
+      title = '',
+      content: { isLiked, body, ...otherContentProps } = {},
     } = {},
-  } = { },
-  isLoading,
-}) => (
-  <BackgroundView>
-    <Header titleText="News" backButton />
-    <ScrollView>
-      <ContentView isLoading={isLoading} {...otherContentProps}>
-        <Title>{startCase(toLower(title))}</Title>
-        <ByLine authors={authors} />
-        <HTMLView>{body}</HTMLView>
-      </ContentView>
-    </ScrollView>
-    <MediaQuery maxWidth="md">
-      <SecondaryNav>
-        <ShareLink id={id} />
-        <Like id={id} isLiked={isLiked} />
-      </SecondaryNav>
-    </MediaQuery>
-  </BackgroundView>
-));
+    isLoading,
+  }) => (
+    <BackgroundView>
+      <Header titleText="News" backButton />
+      <ScrollView>
+        <ContentView isLoading={isLoading} {...otherContentProps}>
+          <Title>{startCase(toLower(title))}</Title>
+          <ByLine authors={authors} />
+          <HTMLView>{body}</HTMLView>
+        </ContentView>
+      </ScrollView>
+      <MediaQuery maxWidth="md">
+        <SecondaryNav isLoading={isLoading}>
+          <ShareLink id={id} />
+          <Like id={id} isLiked={isLiked} />
+        </SecondaryNav>
+      </MediaQuery>
+    </BackgroundView>
+  ),
+);
 
 export default NewsSingle;

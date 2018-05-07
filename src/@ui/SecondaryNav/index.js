@@ -27,14 +27,16 @@ const SecondaryNav = ({
   onBackPress,
   children,
   onBackReplace,
-}) => (
-  <TabBar>
-    {backButton ? (
-      <Link pop to={backTo} icon={backButtonIcon} onPress={onBackPress} replace={onBackReplace} />
-    ) : null}
-    {children}
-  </TabBar>
-);
+  isLoading = false,
+}) =>
+  (!isLoading ? (
+    <TabBar>
+      {backButton ? (
+        <Link pop to={backTo} icon={backButtonIcon} onPress={onBackPress} replace={onBackReplace} />
+      ) : null}
+      {children}
+    </TabBar>
+  ) : null);
 
 SecondaryNav.propTypes = {
   backButton: PropTypes.bool,
@@ -43,6 +45,7 @@ SecondaryNav.propTypes = {
   onBackPress: PropTypes.func,
   backTo: PropTypes.string,
   onBackReplace: PropTypes.bool,
+  isLoading: PropTypes.bool,
 };
 
 export default SecondaryNav;
