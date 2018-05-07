@@ -14,14 +14,14 @@ import TableView, { FormFields } from '@ui/TableView';
 
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
-import { withFieldValueSetter, withFieldTouchedSetter } from './formikSetters';
+import { withFieldValueHandler, withFieldTouchedHandler } from './formikSetters';
 
 export const PersonalDetailsFormWithoutData = ({
-  fieldValueSetter,
+  createFieldValueHandler,
   handleSubmit,
   values,
   campuses,
-  fieldTouchedSetter,
+  createFieldTouchedHandler,
   errors,
   touched,
   isSubmitting,
@@ -33,30 +33,30 @@ export const PersonalDetailsFormWithoutData = ({
         <Inputs.Text
           label="First Name"
           value={values.firstName}
-          onChangeText={fieldValueSetter('firstName')}
-          onBlur={fieldTouchedSetter('firstName', true)}
+          onChangeText={createFieldValueHandler('firstName')}
+          onBlur={createFieldTouchedHandler('firstName', true)}
           error={touched.firstName && errors.firstName}
         />
         <Inputs.Text
           label="Last Name"
           value={values.lastName}
-          onChangeText={fieldValueSetter('lastName')}
-          onBlur={fieldTouchedSetter('lastName', true)}
+          onChangeText={createFieldValueHandler('lastName')}
+          onBlur={createFieldTouchedHandler('lastName', true)}
           error={touched.lastName && errors.lastName}
         />
         <Inputs.Text
           label="Email"
           type="email"
           value={values.email}
-          onChangeText={fieldValueSetter('email')}
-          onBlur={fieldTouchedSetter('email', true)}
+          onChangeText={createFieldValueHandler('email')}
+          onBlur={createFieldTouchedHandler('email', true)}
           error={touched.email && errors.email}
         />
         <Inputs.Picker
           label="Campus"
           value={values.campusId}
           displayValue={get(campuses.find(campus => campus.id === values.campusId), 'label')}
-          onValueChange={fieldValueSetter('campusId')}
+          onValueChange={createFieldValueHandler('campusId')}
           error={errors.campusId}
         >
           {campuses.map(({ label, id }) => <Inputs.PickerItem label={label} value={id} key={id} />)}
@@ -70,7 +70,7 @@ export const PersonalDetailsFormWithoutData = ({
 );
 
 PersonalDetailsFormWithoutData.propTypes = {
-  fieldValueSetter: PropTypes.func,
+  createFieldValueHandler: PropTypes.func,
   handleSubmit: PropTypes.func,
   values: PropTypes.shape({
     campusId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -78,7 +78,7 @@ PersonalDetailsFormWithoutData.propTypes = {
     lastName: PropTypes.string,
     email: PropTypes.string,
   }),
-  fieldTouchedSetter: PropTypes.func,
+  createFieldTouchedHandler: PropTypes.func,
   errors: PropTypes.shape({
     campusId: PropTypes.string,
     firstName: PropTypes.string,
@@ -136,8 +136,8 @@ const PersonalDetailsForm = compose(
       return validationSchema.isValidSync(mapPropsToValues(props));
     },
   }),
-  withFieldValueSetter,
-  withFieldTouchedSetter,
+  withFieldValueHandler,
+  withFieldTouchedHandler,
 )(PersonalDetailsFormWithoutData);
 
 export default PersonalDetailsForm;

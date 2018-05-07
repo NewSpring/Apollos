@@ -12,15 +12,15 @@ import withUser from '@data/withUser';
 import Button from '@ui/Button';
 import { H6 } from '@ui/typography';
 import styled from '@ui/styled';
-import { withFieldValueSetter, withFieldTouchedSetter } from './formikSetters';
+import { withFieldValueHandler, withFieldTouchedHandler } from './formikSetters';
 
 const Status = styled({ textAlign: 'center' })(H6);
 
 export const ProfileAddressFormWithoutData = ({
-  fieldValueSetter,
+  createFieldValueHandler,
   handleSubmit,
   values,
-  fieldTouchedSetter,
+  createFieldTouchedHandler,
   errors,
   touched,
   isSubmitting,
@@ -33,36 +33,36 @@ export const ProfileAddressFormWithoutData = ({
         <Inputs.Text
           label="Street"
           value={values.street1}
-          onChangeText={fieldValueSetter('street1')}
-          onBlur={fieldTouchedSetter('street1')}
+          onChangeText={createFieldValueHandler('street1')}
+          onBlur={createFieldTouchedHandler('street1')}
           error={touched.street1 && errors.street1}
         />
         <Inputs.Text
           label="Street 2 (Optional)"
           value={values.street2}
-          onChangeText={fieldValueSetter('street2')}
-          onBlur={fieldTouchedSetter('street2')}
+          onChangeText={createFieldValueHandler('street2')}
+          onBlur={createFieldTouchedHandler('street2')}
           error={touched.street2 && errors.street2}
         />
         <Inputs.Text
           label="City"
           value={values.city}
-          onChangeText={fieldValueSetter('city')}
-          onBlur={fieldTouchedSetter('city')}
+          onChangeText={createFieldValueHandler('city')}
+          onBlur={createFieldTouchedHandler('city')}
           error={touched.city && errors.city}
         />
         <Inputs.Text
           label="State"
           value={values.state}
-          onChangeText={fieldValueSetter('state')}
-          onBlur={fieldTouchedSetter('state')}
+          onChangeText={createFieldValueHandler('state')}
+          onBlur={createFieldTouchedHandler('state')}
           error={touched.state && errors.state}
         />
         <Inputs.Text
           label="Zip"
           value={values.zip}
-          onChangeText={fieldValueSetter('zip')}
-          onBlur={fieldTouchedSetter('zip')}
+          onChangeText={createFieldValueHandler('zip')}
+          onBlur={createFieldTouchedHandler('zip')}
           error={touched.zip && errors.zip}
         />
       </PaddedView>
@@ -75,7 +75,7 @@ export const ProfileAddressFormWithoutData = ({
 );
 
 ProfileAddressFormWithoutData.propTypes = {
-  fieldValueSetter: PropTypes.func,
+  createFieldValueHandler: PropTypes.func,
   handleSubmit: PropTypes.func,
   values: PropTypes.shape({
     street1: PropTypes.string,
@@ -84,7 +84,7 @@ ProfileAddressFormWithoutData.propTypes = {
     state: PropTypes.string,
     zip: PropTypes.string,
   }),
-  fieldTouchedSetter: PropTypes.func,
+  createFieldTouchedHandler: PropTypes.func,
   errors: PropTypes.shape({
     street1: PropTypes.string,
     street2: PropTypes.string,
@@ -141,8 +141,8 @@ const ProfileAddressForm = compose(
       return validationSchema.isValidSync(mapPropsToValues(props));
     },
   }),
-  withFieldValueSetter,
-  withFieldTouchedSetter,
+  withFieldValueHandler,
+  withFieldTouchedHandler,
 )(ProfileAddressFormWithoutData);
 
 export default ProfileAddressForm;

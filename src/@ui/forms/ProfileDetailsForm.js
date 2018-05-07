@@ -15,14 +15,14 @@ import withUser from '@data/withUser';
 import Button from '@ui/Button';
 import sentry from '@utils/sentry';
 import Status from './FormStatusText';
-import { withFieldValueSetter, withFieldTouchedSetter } from './formikSetters';
+import { withFieldValueHandler, withFieldTouchedHandler } from './formikSetters';
 
 export const ProfileDetailsFormWithoutData = ({
-  fieldValueSetter,
+  createFieldValueHandler,
   handleSubmit,
   values,
   campuses = [],
-  fieldTouchedSetter,
+  createFieldTouchedHandler,
   errors,
   touched,
   isSubmitting,
@@ -35,22 +35,22 @@ export const ProfileDetailsFormWithoutData = ({
         <Inputs.Text
           label="Nickname"
           value={values.nickName}
-          onChangeText={fieldValueSetter('nickName')}
-          onBlur={fieldTouchedSetter('nickName')}
+          onChangeText={createFieldValueHandler('nickName')}
+          onBlur={createFieldTouchedHandler('nickName')}
           error={touched.nickName && errors.nickName}
         />
         <Inputs.Text
           label="First Name"
           value={values.firstName}
-          onChangeText={fieldValueSetter('firstName')}
-          onBlur={fieldTouchedSetter('firstName')}
+          onChangeText={createFieldValueHandler('firstName')}
+          onBlur={createFieldTouchedHandler('firstName')}
           error={touched.firstName && errors.firstName}
         />
         <Inputs.Text
           label="Last Name"
           value={values.lastName}
-          onChangeText={fieldValueSetter('lastName')}
-          onBlur={fieldTouchedSetter('lastName')}
+          onChangeText={createFieldValueHandler('lastName')}
+          onBlur={createFieldTouchedHandler('lastName')}
           error={touched.lastName && errors.lastName}
         />
       </PaddedView>
@@ -60,8 +60,8 @@ export const ProfileDetailsFormWithoutData = ({
         <Inputs.Text
           label="Email"
           value={values.email}
-          onChangeText={fieldValueSetter('email')}
-          onBlur={fieldTouchedSetter('email')}
+          onChangeText={createFieldValueHandler('email')}
+          onBlur={createFieldTouchedHandler('email')}
           error={touched.email && errors.email}
         />
       </PaddedView>
@@ -75,8 +75,8 @@ export const ProfileDetailsFormWithoutData = ({
           displayValue={
             values.birthday ? moment(values.birthday).format('MM/DD/YYYY') : values.birthDay
           }
-          onChange={fieldValueSetter('birthday')}
-          onBlur={fieldTouchedSetter('birthday')}
+          onChange={createFieldValueHandler('birthday')}
+          onBlur={createFieldTouchedHandler('birthday')}
           error={touched.birthday && errors.birthday}
         />
       </PaddedView>
@@ -87,7 +87,7 @@ export const ProfileDetailsFormWithoutData = ({
           label="Campus"
           value={values.campusId}
           displayValue={get(campuses.find(campus => campus.id === values.campusId), 'name')}
-          onValueChange={fieldValueSetter('campusId')}
+          onValueChange={createFieldValueHandler('campusId')}
           error={errors.campusId}
         >
           {campuses.map(({ name, id }) => <Inputs.PickerItem label={name} value={id} key={id} />)}
@@ -102,7 +102,7 @@ export const ProfileDetailsFormWithoutData = ({
 );
 
 ProfileDetailsFormWithoutData.propTypes = {
-  fieldValueSetter: PropTypes.func,
+  createFieldValueHandler: PropTypes.func,
   handleSubmit: PropTypes.func,
   values: PropTypes.shape({
     nickName: PropTypes.string,
@@ -112,7 +112,7 @@ ProfileDetailsFormWithoutData.propTypes = {
     birthday: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     campusId: PropTypes.string,
   }),
-  fieldTouchedSetter: PropTypes.func,
+  createFieldTouchedHandler: PropTypes.func,
   errors: PropTypes.shape({
     nickName: PropTypes.string,
     firstName: PropTypes.string,
@@ -200,8 +200,8 @@ const ProfileDetailsForm = compose(
       return validationSchema.isValidSync(mapPropsToValues(props));
     },
   }),
-  withFieldValueSetter,
-  withFieldTouchedSetter,
+  withFieldValueHandler,
+  withFieldTouchedHandler,
 )(ProfileDetailsFormWithoutData);
 
 export default ProfileDetailsForm;

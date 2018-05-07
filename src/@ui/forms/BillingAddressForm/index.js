@@ -16,7 +16,7 @@ import sentry from '@utils/sentry';
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
 
-import { withFieldValueSetter, withFieldTouchedSetter } from '../formikSetters';
+import { withFieldValueHandler, withFieldTouchedHandler } from '../formikSetters';
 
 import GeographicPicker from './GeographicPicker';
 
@@ -24,8 +24,8 @@ const enhance = compose(
   setPropTypes({
     isLoading: PropTypes.bool,
     onSubmit: PropTypes.func,
-    fieldValueSetter: PropTypes.func,
-    fieldTouchedSetter: PropTypes.func,
+    createFieldValueHandler: PropTypes.func,
+    createFieldTouchedHandler: PropTypes.func,
     countries: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -70,8 +70,8 @@ const enhance = compose(
 
 export const BillingAddressFormWithoutData = enhance(
   ({
-    fieldValueSetter,
-    fieldTouchedSetter,
+    createFieldValueHandler,
+    createFieldTouchedHandler,
     handleSubmit,
     values = {},
     countries = [],
@@ -89,29 +89,29 @@ export const BillingAddressFormWithoutData = enhance(
             <Inputs.Text
               label="Street Address"
               value={values.street1}
-              onChangeText={fieldValueSetter('street1')}
-              onBlur={fieldTouchedSetter('street1')}
+              onChangeText={createFieldValueHandler('street1')}
+              onBlur={createFieldTouchedHandler('street1')}
               error={touched.street1 && errors.street1}
             />
             <Inputs.Text
               label="Street Address (optional)"
               value={values.street2}
-              onChangeText={fieldValueSetter('street2')}
-              onBlur={fieldTouchedSetter('street2')}
+              onChangeText={createFieldValueHandler('street2')}
+              onBlur={createFieldTouchedHandler('street2')}
               error={touched.street2 && errors.street2}
             />
             <GeographicPicker
               label="Country"
               value={values.countryId}
               options={countries}
-              onValueChange={fieldValueSetter('countryId')}
+              onValueChange={createFieldValueHandler('countryId')}
               error={touched.countryId && errors.countryId}
             />
             <Inputs.Text
               label="City"
               value={values.city}
-              onChangeText={fieldValueSetter('city')}
-              onBlur={fieldTouchedSetter('city')}
+              onChangeText={createFieldValueHandler('city')}
+              onBlur={createFieldTouchedHandler('city')}
               error={touched.city && errors.city}
             />
             {isUSOrCanada && (
@@ -119,7 +119,7 @@ export const BillingAddressFormWithoutData = enhance(
                 label="State/Territory"
                 value={values.stateId}
                 options={states}
-                onValueChange={fieldValueSetter('stateId')}
+                onValueChange={createFieldValueHandler('stateId')}
                 error={touched.stateId && errors.stateId}
               />
             )}
@@ -127,8 +127,8 @@ export const BillingAddressFormWithoutData = enhance(
               label="Zip/Postal"
               type="numeric"
               value={values.zipCode}
-              onChangeText={fieldValueSetter('zipCode')}
-              onBlur={fieldTouchedSetter('zipCode')}
+              onChangeText={createFieldValueHandler('zipCode')}
+              onBlur={createFieldTouchedHandler('zipCode')}
               error={touched.zipCode && errors.zipCode}
             />
           </FormFields>
@@ -181,8 +181,8 @@ const BillingAddressForm = compose(
       }
     },
   }),
-  withFieldValueSetter,
-  withFieldTouchedSetter,
+  withFieldValueHandler,
+  withFieldTouchedHandler,
 )(BillingAddressFormWithoutData);
 
 export default BillingAddressForm;

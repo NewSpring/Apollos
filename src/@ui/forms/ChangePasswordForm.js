@@ -13,7 +13,7 @@ import { H6 } from '@ui/typography';
 import styled from '@ui/styled';
 import sentry from '@utils/sentry';
 
-import { withFieldValueSetter, withFieldTouchedSetter } from './formikSetters';
+import { withFieldValueHandler, withFieldTouchedHandler } from './formikSetters';
 
 const Status = styled({ textAlign: 'center' })(H6);
 
@@ -42,11 +42,11 @@ const enhance = compose(
         .finally(() => setSubmitting(false));
     },
   }),
-  withFieldValueSetter,
-  withFieldTouchedSetter,
+  withFieldValueHandler,
+  withFieldTouchedHandler,
   setPropTypes({
-    fieldValueSetter: PropTypes.func,
-    fieldTouchedSetter: PropTypes.func,
+    createFieldValueHandler: PropTypes.func,
+    createFieldTouchedHandler: PropTypes.func,
     touched: PropTypes.shape({}),
     errors: PropTypes.shape({}),
     values: PropTypes.shape({}),
@@ -59,8 +59,8 @@ const enhance = compose(
 
 const ChangePasswordFormWithoutData = enhance(
   ({
-    fieldValueSetter,
-    fieldTouchedSetter,
+    createFieldValueHandler,
+    createFieldTouchedHandler,
     touched,
     errors,
     values,
@@ -76,16 +76,16 @@ const ChangePasswordFormWithoutData = enhance(
             label="Current password"
             type="password"
             value={values.oldPassword}
-            onChangeText={fieldValueSetter('oldPassword')}
-            onBlur={fieldTouchedSetter('oldPassword')}
+            onChangeText={createFieldValueHandler('oldPassword')}
+            onBlur={createFieldTouchedHandler('oldPassword')}
             error={touched.oldPassword && errors.oldPassword}
           />
           <TextInput
             label="New password"
             type="password"
             value={values.newPassword}
-            onChangeText={fieldValueSetter('newPassword')}
-            onBlur={fieldTouchedSetter('newPassword')}
+            onChangeText={createFieldValueHandler('newPassword')}
+            onBlur={createFieldTouchedHandler('newPassword')}
             error={touched.newPassword && errors.newPassword}
           />
         </PaddedView>

@@ -17,7 +17,7 @@ import styled from '@ui/styled';
 import getLocation from '@utils/getLocation';
 
 import FormStatusText from '../FormStatusText';
-import { withFieldValueSetter, withFieldTouchedSetter } from '../formikSetters';
+import { withFieldValueHandler, withFieldTouchedHandler } from '../formikSetters';
 
 import KeywordSelect, { keywordIsInQuery, stripKeywordFromQuery } from './KeywordSelect';
 
@@ -92,11 +92,11 @@ const enhance = compose(
       return setSubmitting(false);
     },
   }),
-  withFieldValueSetter,
-  withFieldTouchedSetter,
+  withFieldValueHandler,
+  withFieldTouchedHandler,
   setPropTypes({
-    fieldValueSetter: PropTypes.func,
-    fieldTouchedSetter: PropTypes.func,
+    createFieldValueHandler: PropTypes.func,
+    createFieldTouchedHandler: PropTypes.func,
     touched: PropTypes.shape({}),
     errors: PropTypes.shape({}),
     values: PropTypes.shape({}),
@@ -107,8 +107,8 @@ const enhance = compose(
 );
 
 export const GroupSearchForm = enhance(({
-  fieldTouchedSetter,
-  fieldValueSetter,
+  createFieldTouchedHandler,
+  createFieldValueHandler,
   touched,
   errors,
   values,
@@ -125,8 +125,8 @@ export const GroupSearchForm = enhance(({
           label="Groups I'm looking for..."
           keywords={groupAttributes.map(attr => attr.value)}
           value={values.query}
-          onChangeText={fieldValueSetter('query')}
-          onBlur={fieldTouchedSetter('query')}
+          onChangeText={createFieldValueHandler('query')}
+          onBlur={createFieldTouchedHandler('query')}
         />
       </FormFields>
     </TableView>
@@ -138,7 +138,7 @@ export const GroupSearchForm = enhance(({
           displayValue={
             get(campuses.find(campus => campus.name.toLowerCase() === values.campusId), 'name') || 'All Locations'
           }
-          onValueChange={fieldValueSetter('campusId')}
+          onValueChange={createFieldValueHandler('campusId')}
           error={errors.campusId}
         >
           {/* NOTE: value should use id but heighliner doesn't support that yet */}
@@ -153,8 +153,8 @@ export const GroupSearchForm = enhance(({
             disabled={values.useDeviceLocation}
             type="numeric"
             value={values.zipCode}
-            onChangeText={fieldValueSetter('zipCode')}
-            onBlur={fieldTouchedSetter('zipCode')}
+            onChangeText={createFieldValueHandler('zipCode')}
+            onBlur={createFieldTouchedHandler('zipCode')}
             error={touched.zipCode && errors.zipCode}
           />
         ) : null}
@@ -162,7 +162,7 @@ export const GroupSearchForm = enhance(({
           prefix={<SwitchIcon enabled={values.useDeviceLocation} name="locate" size={18} />}
           label="Near my location"
           value={values.useDeviceLocation}
-          onValueChange={fieldValueSetter('useDeviceLocation')}
+          onValueChange={createFieldValueHandler('useDeviceLocation')}
           error={errors.useDeviceLocation}
         />
       </FormFields>

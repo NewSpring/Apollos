@@ -30,29 +30,29 @@ const createSetter = (getSetter, name) => (WrapperComponent) => {
 /**
   const MyForm = compose(
     formik(...),
-    withFieldValueSetter,
-  )(({ fieldValueSetter }) => (
-    <Input label="Email" onChangeText={fieldValueSetter('email')} />
+    withFieldValueHandler,
+  )(({ createFieldValueHandler }) => (
+    <Input label="Email" onChangeText={createFieldValueHandler('email')} />
   ));
  */
-const withFieldValueSetter = createSetter((fieldName, { setFieldValue }, transform) => (value) => {
+const withFieldValueHandler = createSetter((fieldName, { setFieldValue }, transform) => (value) => {
   let valueToSet = value;
   if (transform) valueToSet = transform(valueToSet);
   return setFieldValue(fieldName, valueToSet);
-}, 'fieldValueSetter');
+}, 'createFieldValueHandler');
 
-// withFieldTouchedSetter
+// withFieldTouchedHandler
 // usage:
 /**
   const MyForm = compose(
     formik(...),
-    withFieldTouchedSetter,
-  )(({ fieldTouchedSetter }) => (
-    <Input label="Email" onBlur={fieldTouchedSetter('email')} />
+    withFieldTouchedHandler,
+  )(({ createFieldTouchedHandler }) => (
+    <Input label="Email" onBlur={createFieldTouchedHandler('email')} />
   ));
  */
-const withFieldTouchedSetter = createSetter((fieldName, { setFieldTouched }) => () => (
+const withFieldTouchedHandler = createSetter((fieldName, { setFieldTouched }) => () => (
   setFieldTouched(fieldName, true)
-), 'fieldTouchedSetter');
+), 'createFieldTouchedHandler');
 
-export { withFieldValueSetter, withFieldTouchedSetter };
+export { withFieldValueHandler, withFieldTouchedHandler };

@@ -13,7 +13,7 @@ import { withRouter, goBackTo } from '@ui/NativeWebRouter';
 import { H7 } from '@ui/typography';
 import styled from '@ui/styled';
 
-import { withFieldValueSetter, withFieldTouchedSetter } from './formikSetters';
+import { withFieldValueHandler, withFieldTouchedHandler } from './formikSetters';
 
 
 const ForgotPasswordText = styled(({ theme }) => ({
@@ -58,8 +58,8 @@ const enhance = compose(
       return setSubmitting(false);
     },
   }),
-  withFieldValueSetter,
-  withFieldTouchedSetter,
+  withFieldValueHandler,
+  withFieldTouchedHandler,
   setPropTypes({
     setFieldValue: PropTypes.func,
     setFieldTouched: PropTypes.func,
@@ -74,8 +74,8 @@ const enhance = compose(
 
 export const LoginFormWithoutData = enhance(
   ({
-    fieldTouchedSetter,
-    fieldValueSetter,
+    createFieldTouchedHandler,
+    createFieldValueHandler,
     touched,
     errors,
     values,
@@ -88,16 +88,16 @@ export const LoginFormWithoutData = enhance(
         label="Email"
         type="email"
         value={values.email}
-        onChangeText={fieldValueSetter('email')}
-        onBlur={fieldTouchedSetter('email')}
+        onChangeText={createFieldValueHandler('email')}
+        onBlur={createFieldTouchedHandler('email')}
         error={touched.email && errors.email}
       />
       <TextInput
         label="Password"
         type="password"
         value={values.password}
-        onChangeText={fieldValueSetter('password')}
-        onBlur={fieldTouchedSetter('password')}
+        onChangeText={createFieldValueHandler('password')}
+        onBlur={createFieldTouchedHandler('password')}
         error={touched.password && errors.password}
       />
       <ForgotPasswordLink />
