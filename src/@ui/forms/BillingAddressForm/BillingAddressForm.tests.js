@@ -7,7 +7,8 @@ import { BillingAddressFormWithoutData } from './';
 const createTestData = () => ({
   isLoading: false,
   onSubmit: jest.fn(),
-  setFieldValue: jest.fn(),
+  createFieldValueHandler: jest.fn(),
+  createFieldTouchedHandler: jest.fn(),
   countries: [
     {
       id: 'US',
