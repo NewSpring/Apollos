@@ -146,67 +146,53 @@ exports[`The FeedView component renders correctly 1`] = `
                   }
                 }
               >
-                <View
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
                   style={
                     Object {
+                      "backgroundColor": "#dddddd",
                       "bottom": 0,
+                      "height": "100%",
                       "left": 0,
+                      "opacity": 0,
                       "position": "absolute",
+                      "resizeMode": "cover",
                       "right": 0,
                       "top": 0,
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
+                />
+                <Image
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={
+                    Array [
                       Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
+                        "height": 400,
+                        "uri": "https://picsum.photos/600/400/?random",
+                        "width": 600,
+                      },
+                    ]
+                  }
                   style={
                     Object {
+                      "backgroundColor": "#dddddd",
                       "bottom": 0,
+                      "height": "100%",
                       "left": 0,
+                      "opacity": 0,
                       "position": "absolute",
+                      "resizeMode": "cover",
                       "right": 0,
                       "top": 0,
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={
-                      Array [
-                        Object {
-                          "height": 400,
-                          "uri": "https://picsum.photos/600/400/?random",
-                          "width": 600,
-                        },
-                      ]
-                    }
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -234,7 +220,7 @@ exports[`The FeedView component renders correctly 1`] = `
                 }
               }
             >
-              hi
+              Hi
             </Text>
           </View>
           <View
@@ -409,67 +395,53 @@ exports[`The FeedView component renders correctly 1`] = `
                   }
                 }
               >
-                <View
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
                   style={
                     Object {
+                      "backgroundColor": "#dddddd",
                       "bottom": 0,
+                      "height": "100%",
                       "left": 0,
+                      "opacity": 0,
                       "position": "absolute",
+                      "resizeMode": "cover",
                       "right": 0,
                       "top": 0,
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
+                />
+                <Image
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={
+                    Array [
                       Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
+                        "height": 400,
+                        "uri": "https://picsum.photos/600/400/?random",
+                        "width": 600,
+                      },
+                    ]
+                  }
                   style={
                     Object {
+                      "backgroundColor": "#dddddd",
                       "bottom": 0,
+                      "height": "100%",
                       "left": 0,
+                      "opacity": 0,
                       "position": "absolute",
+                      "resizeMode": "cover",
                       "right": 0,
                       "top": 0,
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={
-                      Array [
-                        Object {
-                          "height": 400,
-                          "uri": "https://picsum.photos/600/400/?random",
-                          "width": 600,
-                        },
-                      ]
-                    }
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
               <ExponentLinearGradient
                 colors={
@@ -532,7 +504,7 @@ exports[`The FeedView component renders correctly 1`] = `
                 }
               }
             >
-              hi 2
+              Hi 2
             </Text>
           </View>
           <View
@@ -859,54 +831,35 @@ exports[`The FeedView component renders empty state 1`] = `
                   }
                 }
               >
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
+                  style={
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "bottom": 0,
+                      "height": "100%",
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "resizeMode": "cover",
+                      "right": 0,
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                />
                 <View
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "aspectRatio": 1,
+                      "backgroundColor": "#dddddd",
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#dddddd",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -1099,54 +1052,35 @@ exports[`The FeedView component renders empty state 1`] = `
                   }
                 }
               >
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
+                  style={
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "bottom": 0,
+                      "height": "100%",
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "resizeMode": "cover",
+                      "right": 0,
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                />
                 <View
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "aspectRatio": 1,
+                      "backgroundColor": "#dddddd",
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#dddddd",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -1339,54 +1273,35 @@ exports[`The FeedView component renders empty state 1`] = `
                   }
                 }
               >
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
+                  style={
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "bottom": 0,
+                      "height": "100%",
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "resizeMode": "cover",
+                      "right": 0,
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                />
                 <View
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "aspectRatio": 1,
+                      "backgroundColor": "#dddddd",
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#dddddd",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -1579,54 +1494,35 @@ exports[`The FeedView component renders empty state 1`] = `
                   }
                 }
               >
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
+                  style={
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "bottom": 0,
+                      "height": "100%",
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "resizeMode": "cover",
+                      "right": 0,
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                />
                 <View
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "aspectRatio": 1,
+                      "backgroundColor": "#dddddd",
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#dddddd",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -1819,54 +1715,35 @@ exports[`The FeedView component renders empty state 1`] = `
                   }
                 }
               >
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
+                  style={
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "bottom": 0,
+                      "height": "100%",
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "resizeMode": "cover",
+                      "right": 0,
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                />
                 <View
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "aspectRatio": 1,
+                      "backgroundColor": "#dddddd",
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#dddddd",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -2059,54 +1936,35 @@ exports[`The FeedView component renders empty state 1`] = `
                   }
                 }
               >
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
+                  style={
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "bottom": 0,
+                      "height": "100%",
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "resizeMode": "cover",
+                      "right": 0,
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                />
                 <View
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "aspectRatio": 1,
+                      "backgroundColor": "#dddddd",
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#dddddd",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -2299,54 +2157,35 @@ exports[`The FeedView component renders empty state 1`] = `
                   }
                 }
               >
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
+                  style={
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "bottom": 0,
+                      "height": "100%",
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "resizeMode": "cover",
+                      "right": 0,
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                />
                 <View
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "aspectRatio": 1,
+                      "backgroundColor": "#dddddd",
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#dddddd",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -2539,54 +2378,35 @@ exports[`The FeedView component renders empty state 1`] = `
                   }
                 }
               >
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
+                  style={
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "bottom": 0,
+                      "height": "100%",
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "resizeMode": "cover",
+                      "right": 0,
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                />
                 <View
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "aspectRatio": 1,
+                      "backgroundColor": "#dddddd",
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#dddddd",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -2779,54 +2599,35 @@ exports[`The FeedView component renders empty state 1`] = `
                   }
                 }
               >
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
+                  style={
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "bottom": 0,
+                      "height": "100%",
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "resizeMode": "cover",
+                      "right": 0,
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                />
                 <View
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "aspectRatio": 1,
+                      "backgroundColor": "#dddddd",
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#dddddd",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>
@@ -3019,54 +2820,35 @@ exports[`The FeedView component renders empty state 1`] = `
                   }
                 }
               >
+                <Image
+                  blurRadius={2}
+                  collapsable={undefined}
+                  onLoad={[Function]}
+                  source={Array []}
+                  style={
+                    Object {
+                      "backgroundColor": "#dddddd",
+                      "bottom": 0,
+                      "height": "100%",
+                      "left": 0,
+                      "opacity": 0,
+                      "position": "absolute",
+                      "resizeMode": "cover",
+                      "right": 0,
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                />
                 <View
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "aspectRatio": 1,
+                      "backgroundColor": "#dddddd",
+                      "width": "100%",
                     }
                   }
-                >
-                  <Image
-                    blurRadius={2}
-                    collapsable={undefined}
-                    onLoad={[Function]}
-                    source={Array []}
-                    style={
-                      Object {
-                        "backgroundColor": "#dddddd",
-                        "height": "100%",
-                        "opacity": 0,
-                        "resizeMode": "cover",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
-                <View
-                  style={
-                    Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "aspectRatio": 1,
-                        "backgroundColor": "#dddddd",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>

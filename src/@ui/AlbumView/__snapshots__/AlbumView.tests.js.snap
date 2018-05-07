@@ -26,24 +26,12 @@ exports[`The AlbumView component should render 1`] = `
     <View
       style={
         Object {
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
+          "aspectRatio": 1,
+          "backgroundColor": "#858585",
+          "width": "100%",
         }
       }
-    >
-      <View
-        style={
-          Object {
-            "aspectRatio": 1,
-            "backgroundColor": "#858585",
-            "width": "100%",
-          }
-        }
-      />
-    </View>
+    />
   </View>
   <View
     style={
@@ -68,24 +56,12 @@ exports[`The AlbumView component should render 1`] = `
       <View
         style={
           Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
+            "aspectRatio": 1,
+            "backgroundColor": "#858585",
+            "width": "100%",
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "aspectRatio": 1,
-              "backgroundColor": "#858585",
-              "width": "100%",
-            }
-          }
-        />
-      </View>
+      />
     </View>
     <View
       style={

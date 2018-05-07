@@ -181,14 +181,11 @@ exports[`the ThumbnailCard component should render a loading state 1`] = `
         <View
           style={
             Object {
-              "alignItems": "center",
               "aspectRatio": 1,
               "backgroundColor": "#dddddd",
               "bottom": 0,
               "height": "100%",
-              "justifyContent": "center",
               "left": 0,
-              "paddingTop": 0,
               "position": "absolute",
               "right": 0,
               "top": 0,
@@ -199,24 +196,12 @@ exports[`the ThumbnailCard component should render a loading state 1`] = `
           <View
             style={
               Object {
-                "bottom": 0,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "aspectRatio": 1,
+                "backgroundColor": "#dddddd",
+                "width": "100%",
               }
             }
-          >
-            <View
-              style={
-                Object {
-                  "aspectRatio": 1,
-                  "backgroundColor": "#dddddd",
-                  "width": "100%",
-                }
-              }
-            />
-          </View>
+          />
         </View>
       </View>
     </View>
@@ -462,14 +447,11 @@ exports[`the ThumbnailCard component should render with a category and images 1`
         <View
           style={
             Object {
-              "alignItems": "center",
               "aspectRatio": 1,
               "backgroundColor": "#dddddd",
               "bottom": 0,
               "height": "100%",
-              "justifyContent": "center",
               "left": 0,
-              "paddingTop": 0,
               "position": "absolute",
               "right": 0,
               "top": 0,
@@ -480,24 +462,12 @@ exports[`the ThumbnailCard component should render with a category and images 1`
           <View
             style={
               Object {
-                "bottom": 0,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "aspectRatio": 1,
+                "backgroundColor": "#dddddd",
+                "width": "100%",
               }
             }
-          >
-            <View
-              style={
-                Object {
-                  "aspectRatio": 1,
-                  "backgroundColor": "#dddddd",
-                  "width": "100%",
-                }
-              }
-            />
-          </View>
+          />
         </View>
       </View>
     </View>
@@ -580,14 +550,11 @@ exports[`the ThumbnailCard component should render with an images 1`] = `
         <View
           style={
             Object {
-              "alignItems": "center",
               "aspectRatio": 1,
               "backgroundColor": "#dddddd",
               "bottom": 0,
               "height": "100%",
-              "justifyContent": "center",
               "left": 0,
-              "paddingTop": 0,
               "position": "absolute",
               "right": 0,
               "top": 0,
@@ -598,24 +565,12 @@ exports[`the ThumbnailCard component should render with an images 1`] = `
           <View
             style={
               Object {
-                "bottom": 0,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "aspectRatio": 1,
+                "backgroundColor": "#dddddd",
+                "width": "100%",
               }
             }
-          >
-            <View
-              style={
-                Object {
-                  "aspectRatio": 1,
-                  "backgroundColor": "#dddddd",
-                  "width": "100%",
-                }
-              }
-            />
-          </View>
+          />
         </View>
       </View>
     </View>
