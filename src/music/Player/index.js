@@ -86,6 +86,7 @@ export class DockableMediaPlayer extends PureComponent {
     title: PropTypes.string,
     images: PropTypes.any, // eslint-disable-line
     colors: PropTypes.arrayOf(PropTypes.shape({ value: PropTypes.string })), // eslint-disable-line
+    isLight: PropTypes.bool,
     children: PropTypes.node,
     playNextTrack: PropTypes.func,
     playPrevTrack: PropTypes.func,
@@ -153,7 +154,7 @@ export class DockableMediaPlayer extends PureComponent {
 
   handlePlayerError = () => {
     this.props.pause(); // todo: show some UI indication, this is likely a network error
-  }
+  };
 
   renderMiniControls() {
     let miniControls = null;
@@ -190,6 +191,7 @@ export class DockableMediaPlayer extends PureComponent {
       trackByLine={`${this.props.artist} - ${this.props.title}`}
       albumArt={this.props.images}
       color={this.primaryColor}
+      isLight={this.props.isLight}
       handleClose={this.contract}
       duration={this.props.currentTrack.duration}
       isRepeating={this.props.isRepeating}
