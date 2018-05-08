@@ -10,7 +10,7 @@ jobs:
   include:
     - stage: test
       script:
-        - yarn run test
+        - yarn run ci-test
         - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
     -
       if: type IN (pull_request)
