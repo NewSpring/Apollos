@@ -10,7 +10,7 @@ jobs:
   include:
     - stage: test
       script:
-        - travis_wait yarn run test
+        - yarn run test
         - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
     -
       if: type IN (pull_request)
