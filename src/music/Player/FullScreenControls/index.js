@@ -54,7 +54,7 @@ const IconWithActiveOpacity = styled(({ theme, active }) => ({
 }))(Icon);
 
 const enhance = compose(
-  withThemeMixin({ type: 'dark' }),
+  withThemeMixin(({ isLight }) => ({ type: isLight ? 'light' : 'dark' })),
   setPropTypes({
     isPlaying: PropTypes.bool,
     duration: PropTypes.string,
@@ -66,6 +66,7 @@ const enhance = compose(
     trackByLine: PropTypes.string,
     albumArt: PropTypes.any, // eslint-disable-line
     color: PropTypes.string,
+    isLight: PropTypes.bool,
     isShuffling: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
     isRepeating: PropTypes.bool,
     handleShuffle: PropTypes.func,
