@@ -85,7 +85,7 @@ const Study = enhance(
             })(ScriptureTab),
           })}
         />
-        <SecondaryNav isLoading={isLoading}>
+        <SecondaryNav isLoading={isLoading} fullWidth>
           <ShareLink id={id} />
           <Like id={id} isLiked={isLiked} />
         </SecondaryNav>
