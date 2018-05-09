@@ -49,7 +49,7 @@ export default graphql(QUERY, {
     return {
       isLoading: ownProps.isLoading || loading,
       countries: (countries || []).map(c => ({ label: c.description, id: c.value })),
-      states: (states || []).map(s => ({ label: s.description, id: s.value })),
+      states: (states || []).map(s => ({ label: s.description, id: s.value, idNumber: s._id })), // eslint-disable-line
       person,
     };
   },
