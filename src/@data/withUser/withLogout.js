@@ -16,7 +16,7 @@ export default graphql(MUTATION, {
       try {
         const r = await mutate();
         await AsyncStorage.removeItem('authToken');
-        await clearCache();
+        clearCache();
         return r;
       } catch (err) {
         throw err;
