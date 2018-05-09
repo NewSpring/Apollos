@@ -27,6 +27,7 @@ const enhance = compose(
     ),
     states: PropTypes.arrayOf(
       PropTypes.shape({
+        _id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         label: PropTypes.string,
       }),
@@ -76,7 +77,9 @@ export const ProfileAddressFormWithoutData = enhance(
     isValid,
     status,
   }) => {
-    const isUSOrCanada = values.countryId === 'US' || values.countryId === 'CA';
+    // const isUSOrCanada = values.countryId === 'US' || values.countryId === 'CA';
+    const isUSA = values.countryId === 'US';
+    const isCanada = values.countryId === 'CA';
     return (
       <PaddedView horizontal={false}>
         <TableView>
@@ -116,17 +119,30 @@ export const ProfileAddressFormWithoutData = enhance(
               onBlur={() => setFieldTouched('city', true)}
               error={touched.city && errors.city}
             />
-            {isUSOrCanada && (
+            {isUSA && (
               <Inputs.Picker
-                label="State/Territory"
+                label="State"
                 value={values.stateId}
                 displayValue={get(states.find(state => state.id === values.stateId), 'label')}
                 onValueChange={value => setFieldValue('stateId', value)}
                 error={touched.stateId && errors.stateId}
               >
-                {states.map(({ label, id }) => (
-                  <Inputs.PickerItem label={label} value={id} key={id} />
-                ))}
+                {states
+                  .filter(state => state.idNumber >= 69 && state.idNumber <= 127)
+                  .map(({ label, id }) => <Inputs.PickerItem label={label} value={id} key={id} />)}
+              </Inputs.Picker>
+            )}
+            {isCanada && (
+              <Inputs.Picker
+                label="Territory"
+                value={values.stateId}
+                displayValue={get(states.find(state => state.id === values.stateId), 'label')}
+                onValueChange={value => setFieldValue('stateId', value)}
+                error={touched.stateId && errors.stateId}
+              >
+                {states
+                  .filter(state => state.idNumber >= 246 && state.idNumber <= 258)
+                  .map(({ label, id }) => <Inputs.PickerItem label={label} value={id} key={id} />)}
               </Inputs.Picker>
             )}
             <Inputs.Text
