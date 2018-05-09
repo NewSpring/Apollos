@@ -3,7 +3,6 @@ import { ScrollView, Linking, Platform } from 'react-native';
 import { withProps, compose } from 'recompose';
 import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
-import Header from '@ui/Header';
 import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
 import { Link, withRouter } from '@ui/NativeWebRouter';
 import Touchable from '@ui/Touchable';
@@ -37,7 +36,6 @@ const Arrow = withProps({
 
 const Settings = () => (
   <Layout>
-    <Header webEnabled titleText="Settings" backButton />
     <ScrollView>
       <SafeAreaView>
         <PaddedView horizontal={false}>

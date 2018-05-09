@@ -6,7 +6,6 @@ import withUser from '@data/withUser';
 import UserAvatarView from '@ui/UserAvatarView';
 import MediaQuery from '@ui/MediaQuery';
 import styled from '@ui/styled';
-import Header from '@ui/Header';
 
 export { ProfileDetails, ProfileAddress, ChangePassword } from './forms';
 
@@ -17,7 +16,6 @@ const FlexedLeft = styled({ flex: 1 })(Left);
 
 const Layout = ({ children }) => (
   <BackgroundView>
-    <Header webEnabled titleText="Settings" backButton />
     <FlexedSideBySideView>
       <FlexedLeft>{children}</FlexedLeft>
       <MediaQuery minWidth="md">
