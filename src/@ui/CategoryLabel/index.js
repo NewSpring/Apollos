@@ -49,6 +49,8 @@ const getIconName = (label, icon) => {
     switch (label) {
       case 'Series':
         return 'video';
+      case 'Sermons':
+        return 'video';
       case 'Albums':
         return 'audio';
       case 'Need To Know':
@@ -64,11 +66,7 @@ const getIconName = (label, icon) => {
 };
 
 const CategoryLabel = enhance(({
-  label,
-  icon,
-  withFlex,
-  isLoading,
-  theme,
+  label, icon, withFlex, isLoading, theme,
 }) => (
   <Wrapper flexed={withFlex}>
     <Icon
