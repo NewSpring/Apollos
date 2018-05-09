@@ -77,7 +77,6 @@ export const ProfileAddressFormWithoutData = enhance(
     isValid,
     status,
   }) => {
-    // const isUSOrCanada = values.countryId === 'US' || values.countryId === 'CA';
     const isUSA = values.countryId === 'US';
     const isCanada = values.countryId === 'CA';
     return (
