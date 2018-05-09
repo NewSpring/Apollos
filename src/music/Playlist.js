@@ -4,7 +4,6 @@ import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import TracksList from '@ui/TracksList';
 import AlbumView from '@ui/AlbumView';
-import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import { withPlaylist, withMediaPlayerActions, withNowPlaying } from '@data/mediaPlayer';
 import { getBlurredImageSource, getAlbumImageSource } from '@utils/content';
@@ -51,12 +50,10 @@ const Playlist = enhance(
           />
         }
       />
-      <MediaQuery maxWidth="md">
-        <SecondaryNav isLoading={isLoading}>
-          <ShareLink id={id} />
-          <Like id={id} isLiked={isLiked} />
-        </SecondaryNav>
-      </MediaQuery>
+      <SecondaryNav isLoading={isLoading} fullWidth>
+        <ShareLink id={id} />
+        <Like id={id} isLiked={isLiked} />
+      </SecondaryNav>
     </BackgroundView>
   ),
 );
