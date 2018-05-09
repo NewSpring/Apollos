@@ -27,7 +27,7 @@ const enhance = compose(
     ),
     states: PropTypes.arrayOf(
       PropTypes.shape({
-        _id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        idNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         label: PropTypes.string,
       }),
