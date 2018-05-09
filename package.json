@@ -53,9 +53,7 @@
       "npm run create-storybook-entrypoint && npm run storybook-load-stories && NODE_PATH=./src build-storybook -c src/.storybook/web -s ./public",
     "ci-deploy":
       "npm run create-app-entrypoint && NODE_PATH=./src npm run run-with-settings 'node ./.scripts/ci-deploy.js'",
-    "ci-test":
-      "npm run run-with-settings 'npm run lint && ./node_modules/.bin/jest --maxWorkers=2'",
-    "test": "npm run run-with-settings 'npm run lint && npm run jest'",
+    "test": "bash ./.scripts/test-script.sh",
     "jest": "./node_modules/.bin/jest",
     "storybook-native-start":
       "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybook/native",
