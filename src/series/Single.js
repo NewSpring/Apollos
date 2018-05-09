@@ -93,7 +93,7 @@ const SeriesSingle = enhance(
         // Consider adding placeholder views for the content above.
         !isLoading && <RelatedContent tags={tags} excludedIds={[id]} />}
       </ScrollView>
-      <SecondaryNav isLoading={isLoading}>
+      <SecondaryNav isLoading={isLoading} fullWidth>
         <ShareLink id={id} />
         <Like id={id} isLiked={isLiked} />
       </SecondaryNav>

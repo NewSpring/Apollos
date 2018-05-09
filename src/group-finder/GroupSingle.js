@@ -268,12 +268,10 @@ const GroupSingle = enhance(
             </MediaQuery>
           ) : null}
         </FlexedSideBySideView>
-        <MediaQuery maxWidth="md">
-          <SecondaryNav isLoading={isLoading}>
-            <ShareLink id={id} />
-            <Like id={id} isLiked={isLiked} />
-          </SecondaryNav>
-        </MediaQuery>
+        <SecondaryNav isLoading={isLoading} fullWidth>
+          <ShareLink id={id} />
+          <Like id={id} isLiked={isLiked} />
+        </SecondaryNav>
       </BackgroundView>
     );
   },

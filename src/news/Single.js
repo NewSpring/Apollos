@@ -6,7 +6,6 @@ import { startCase, toLower } from 'lodash';
 import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import ContentView, { Title, ByLine, HTMLView } from '@ui/ContentView';
-import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import withNewsStory from '@data/withNewsStory';
 import withCachedContent from '@data/withCachedContent';
@@ -39,12 +38,10 @@ const NewsSingle = enhance(
           <HTMLView>{body}</HTMLView>
         </ContentView>
       </ScrollView>
-      <MediaQuery maxWidth="md">
-        <SecondaryNav isLoading={isLoading}>
-          <ShareLink id={id} />
-          <Like id={id} isLiked={isLiked} />
-        </SecondaryNav>
-      </MediaQuery>
+      <SecondaryNav isLoading={isLoading} fullWidth>
+        <ShareLink id={id} />
+        <Like id={id} isLiked={isLiked} />
+      </SecondaryNav>
     </BackgroundView>
   ),
 );
