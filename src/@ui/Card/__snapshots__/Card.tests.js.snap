@@ -181,12 +181,24 @@ exports[`the Card component should render 1`] = `
       <View
         style={
           Object {
-            "aspectRatio": 1,
-            "backgroundColor": "#dddddd",
-            "width": "100%",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
           }
         }
-      />
+      >
+        <View
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "#dddddd",
+              "width": "100%",
+            }
+          }
+        />
+      </View>
     </View>
     <View
       style={
