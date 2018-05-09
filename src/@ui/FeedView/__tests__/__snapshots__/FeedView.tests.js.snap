@@ -234,7 +234,7 @@ exports[`The FeedView component renders correctly 1`] = `
                 }
               }
             >
-              Hi
+              hi
             </Text>
           </View>
           <View
@@ -532,7 +532,7 @@ exports[`The FeedView component renders correctly 1`] = `
                 }
               }
             >
-              Hi 2
+              hi 2
             </Text>
           </View>
           <View
