@@ -18,10 +18,13 @@ const createTestData = () => ({
       label: 'A foreign country',
     },
   ],
-  states: [{
-    id: 'SC',
-    label: 'Testing State',
-  }],
+  states: [
+    {
+      idNumber: 116,
+      id: 'SC',
+      label: 'Testing State',
+    },
+  ],
   values: {
     countryId: 'US',
     stateId: 'testState',
@@ -32,7 +35,7 @@ const createTestData = () => ({
   },
   isSubmitting: false,
   isValid: true,
-  errors: { },
+  errors: {},
   touched: {
     countryId: false,
     stateId: false,
