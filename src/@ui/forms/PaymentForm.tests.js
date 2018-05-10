@@ -5,7 +5,7 @@ import Providers from '@ui/TestProviders';
 import { PaymentFormWithoutData } from './PaymentForm';
 
 const createTestData = () => ({
-  setFieldValue: jest.fn(),
+  createFieldValueHandler: jest.fn(),
   handleSubmit: jest.fn(),
   values: {
     paymentMethod: 'creditCard',
@@ -17,7 +17,7 @@ const createTestData = () => ({
     expirationDate: '10/32',
     cvv: '123',
   },
-  setFieldTouched: jest.fn(),
+  createFieldTouchedHandler: jest.fn(),
   touched: {
     paymentMethod: false,
     routingNumber: false,

@@ -11,7 +11,7 @@ const createTestData = () => ({
   offlineContactEmail: 'offline@contact.email',
   offlineMessageBody: 'offline message body',
   offlineMessageTitle: 'offline message title',
-  setFieldValue: jest.fn(),
+  createFieldValueHandler: jest.fn(),
   handleSubmit: jest.fn(),
   values: {
     secondFundVisible: false,
@@ -37,7 +37,7 @@ const createTestData = () => ({
     frequencyId: null,
     startDate: null,
   },
-  setFieldTouched: jest.fn(),
+  createFieldTouchedHandler: jest.fn(),
   isSubmitting: false,
   isValid: false,
 });
