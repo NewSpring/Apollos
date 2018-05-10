@@ -34,22 +34,22 @@ const enhance = shouldUpdate(() => false);
 const Profile = enhance(() => (
   <BackgroundView>
     <UserMeta />
-    <Header
-      webEnabled
-      titleText="Profile"
-      right={
-        <Link to="/settings">
-          <SideBySideView stretched={false}>
-            <Icon name="settings" size={24} />
-            <MediaQuery minWidth="md">
-              <H7>Settings</H7>
-            </MediaQuery>
-          </SideBySideView>
-        </Link>
-      }
-    />
     <FlexedSideBySideView>
       <FlexedLeft>
+        <Header
+          webEnabled
+          titleText="Profile"
+          right={
+            <Link to="/settings">
+              <SideBySideView stretched={false}>
+                <Icon name="settings" size={24} />
+                <MediaQuery minWidth="md">
+                  <H7>Settings</H7>
+                </MediaQuery>
+              </SideBySideView>
+            </Link>
+          }
+        />
         <TabView
           routes={tabRoutes}
           renderScene={SceneMap({
