@@ -6,7 +6,6 @@ import withUser from '@data/withUser';
 import UserAvatarView from '@ui/UserAvatarView';
 import MediaQuery from '@ui/MediaQuery';
 import styled from '@ui/styled';
-import Header from '@ui/Header';
 
 export { ProfileDetails, ProfileAddress, ChangePassword } from './forms';
 
@@ -15,9 +14,8 @@ const DesktopCurrentUserAvatar = styled({ height: '100%' })(CurrentUserAvatar);
 const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
 const FlexedLeft = styled({ flex: 1 })(Left);
 
-const Layout = ({ children, title }) => (
+const Layout = ({ children }) => (
   <BackgroundView>
-    <Header webEnabled titleText={title} backButton />
     <FlexedSideBySideView>
       <FlexedLeft>{children}</FlexedLeft>
       <MediaQuery minWidth="md">
@@ -31,7 +29,6 @@ const Layout = ({ children, title }) => (
 
 Layout.propTypes = {
   children: PropTypes.node,
-  title: PropTypes.string,
 };
 
 export default Layout;
