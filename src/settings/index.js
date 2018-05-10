@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, Linking, Platform } from 'react-native';
 import { withProps, compose } from 'recompose';
+import reload from '@utils/reload';
 import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
 import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
@@ -21,6 +22,7 @@ const LogoutTouchable = compose(
   withProps(({ logout }) => ({
     async onPress() {
       await logout();
+      if (Platform.OS === 'web') reload();
     },
   })),
 )(Touchable);
