@@ -143,11 +143,12 @@ class AppRouter extends PureComponent {
     return (
       <Layout>
         <Switch>
-          <Route exact path="/" component={tabs.Feed} />
           <Route exact path="/sections" component={tabs.Sections} />
           <Route exact path="/groups" component={tabs.Groups} />
           <Route exact path="/discover" component={tabs.Discover} />
           <ProtectedRoute exact path="/profile" component={tabs.Profile} />
+          {Platform.OS === 'web' ? <Redirect to="/give/now" /> : null}
+          <Route exact component={tabs.Feed} />
         </Switch>
       </Layout>
     );
@@ -180,7 +181,6 @@ class AppRouter extends PureComponent {
 
   renderWebRedirects = () => (
     <View>
-      <Redirect from="/" to="/give" />
       <Route path="/about" component={() => redirectToNewspring('about')} />
       <Route path="/locations" component={() => redirectToNewspring('locations')} />
       <Route path="/sermons" component={() => redirectToNewspring('sermons')} />
