@@ -161,8 +161,8 @@ const mapPropsToValues = props => ({
   street1: get(props, 'contributions.street1') || get(props, 'person.home.street1', ''),
   street2: get(props, 'contributions.street2') || get(props, 'person.home.street2', ''),
   city: get(props, 'contributions.city') || get(props, 'person.home.city', ''),
-  stateId: get(props, 'contributions.stateId') || get(props, 'person.home.state') || 'SC',
-  countryId: get(props, 'contributions.countryId') || get(props, 'person.home.country') || 'US',
+  stateId: get(props, 'contributions.stateId') || get(props, 'person.home.stateId') || 'SC',
+  countryId: get(props, 'contributions.countryId') || get(props, 'person.home.countryId') || 'US',
   zipCode: get(props, 'contributions.zipCode') || get(props, 'person.home.zip', ''),
 });
 
