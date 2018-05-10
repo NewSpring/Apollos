@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import { pure } from 'recompose';
 
@@ -21,5 +22,13 @@ const GeographicPicker = enhance(({
     ))}
   </Inputs.Picker>
 ));
+
+GeographicPicker.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  })),
+  ...Inputs.Picker.propTypes,
+};
 
 export default GeographicPicker;
