@@ -20,8 +20,7 @@ describe('The withFieldValueHandler HOC', () => {
       return null;
     };
     const EnhancedTestComponent = withFieldValueHandler(TestComponent);
-    const tree = renderer.create(<EnhancedTestComponent setFieldValue={setter} />);
-    expect(tree).toMatchSnapshot();
+    renderer.create(<EnhancedTestComponent setFieldValue={setter} />);
   });
   it('allows you to pass in a transform function', () => {
     const setter = jest.fn();
@@ -37,8 +36,7 @@ describe('The withFieldValueHandler HOC', () => {
       return null;
     };
     const EnhancedTestComponent = withFieldValueHandler(TestComponent);
-    const tree = renderer.create(<EnhancedTestComponent setFieldValue={setter} />);
-    expect(tree).toMatchSnapshot();
+    renderer.create(<EnhancedTestComponent setFieldValue={setter} />);
   });
 });
 
@@ -59,6 +57,5 @@ describe('The withFieldTouchedHandler HOC', () => {
     };
     const EnhancedTestComponent = withFieldTouchedHandler(withFieldValueHandler(TestComponent));
     const tree = renderer.create(<EnhancedTestComponent setFieldTouched={setter} />);
-    expect(tree).toMatchSnapshot();
   });
 });

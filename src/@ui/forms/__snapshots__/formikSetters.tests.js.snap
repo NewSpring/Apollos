@@ -6,14 +6,8 @@ exports[`The withFieldTouchedHandler HOC passes in a createFieldTouchedHandler f
 />
 `;
 
-exports[`The withFieldTouchedHandler HOC to create a handler that calls setFieldTouched 1`] = `null`;
-
-exports[`The withFieldValueHandler HOC allows you to pass in a transform function 1`] = `null`;
-
 exports[`The withFieldValueHandler HOC passes in a createFieldValueHandler function 1`] = `
 <View
   createFieldValueHandler={[Function]}
 />
 `;
-
-exports[`The withFieldValueHandler HOC to create a handler that calls setFieldValue 1`] = `null`;
