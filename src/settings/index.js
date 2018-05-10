@@ -37,7 +37,7 @@ const Arrow = withProps({
 })(CellIcon);
 
 const Settings = () => (
-  <Layout>
+  <Layout title="Settings">
     <ScrollView>
       <SafeAreaView>
         <PaddedView horizontal={false}>

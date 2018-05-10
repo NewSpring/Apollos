@@ -15,9 +15,9 @@ const DesktopCurrentUserAvatar = styled({ height: '100%' })(CurrentUserAvatar);
 const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
 const FlexedLeft = styled({ flex: 1 })(Left);
 
-const Layout = ({ children }) => (
+const Layout = ({ children, title }) => (
   <BackgroundView>
-    <Header webEnabled titleText="Settings" backButton />
+    <Header webEnabled titleText={title} backButton />
     <FlexedSideBySideView>
       <FlexedLeft>{children}</FlexedLeft>
       <MediaQuery minWidth="md">
@@ -31,6 +31,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node,
+  title: PropTypes.string,
 };
 
 export default Layout;
