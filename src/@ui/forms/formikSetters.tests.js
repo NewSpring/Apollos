@@ -56,6 +56,6 @@ describe('The withFieldTouchedHandler HOC', () => {
       return null;
     };
     const EnhancedTestComponent = withFieldTouchedHandler(withFieldValueHandler(TestComponent));
-    const tree = renderer.create(<EnhancedTestComponent setFieldTouched={setter} />);
+    renderer.create(<EnhancedTestComponent setFieldTouched={setter} />);
   });
 });
