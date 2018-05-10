@@ -32,17 +32,14 @@ const Block = compose(
       BodyText: {
         fontFamily: theme.typography.fontFamilySerif.regular.italic,
         textAlign: 'center',
+        color: theme.colors.text.primary,
       },
     },
   })),
 )(View);
 
-const BlockQuote = enhance(({
-  children,
-}) => (
-  <Block>
-    {typeof children === 'string' ? <BodyText>{children}</BodyText> : children}
-  </Block>
+const BlockQuote = enhance(({ children }) => (
+  <Block>{typeof children === 'string' ? <BodyText>{children}</BodyText> : children}</Block>
 ));
 
 export default BlockQuote;

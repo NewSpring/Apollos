@@ -1,4 +1,5 @@
 import { compose } from 'recompose';
+import withAddressState from './withAddressState';
 import withLogin from './withLogin';
 import withLogout from './withLogout';
 import withRegister from './withRegister';
@@ -12,6 +13,7 @@ import withUpdateProfile from './withUpdateProfile';
 import withAttachPhotoIdToUser from './withAttachPhotoIdToUser';
 
 export default compose(
+  withAddressState,
   withLogin,
   withLogout,
   withRegister,
