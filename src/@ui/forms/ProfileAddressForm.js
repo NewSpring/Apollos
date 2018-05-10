@@ -18,7 +18,7 @@ const Status = styled({ textAlign: 'center' })(H6);
 
 const enhance = compose(
   setPropTypes({
-    setFieldValue: PropTypes.func,
+    createFieldTouchedHandler: PropTypes.func,
     handleSubmit: PropTypes.func,
     countries: PropTypes.arrayOf(
       PropTypes.shape({
@@ -40,7 +40,7 @@ const enhance = compose(
       stateId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       zip: PropTypes.string,
     }),
-    setFieldTouched: PropTypes.func,
+    createFieldValueHandler: PropTypes.func,
     errors: PropTypes.shape({
       street1: PropTypes.string,
       street2: PropTypes.string,

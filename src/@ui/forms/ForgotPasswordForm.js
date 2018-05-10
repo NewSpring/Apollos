@@ -49,8 +49,8 @@ const enhance = compose(
   withFieldValueHandler,
   withFieldTouchedHandler,
   setPropTypes({
-    setFieldValue: PropTypes.func,
-    setFieldTouched: PropTypes.func,
+    createFieldTouchedHandler: PropTypes.func,
+    createFieldValueHandler: PropTypes.func,
     touched: PropTypes.shape({}),
     errors: PropTypes.shape({}),
     values: PropTypes.shape({}),
