@@ -12,12 +12,13 @@ import withUser from '@data/withUser';
 import Button from '@ui/Button';
 import { H6 } from '@ui/typography';
 import styled from '@ui/styled';
+import { withFieldValueHandler, withFieldTouchedHandler } from './formikSetters';
 
 const Status = styled({ textAlign: 'center' })(H6);
 
 const enhance = compose(
   setPropTypes({
-    setFieldValue: PropTypes.func,
+    createFieldTouchedHandler: PropTypes.func,
     handleSubmit: PropTypes.func,
     countries: PropTypes.arrayOf(
       PropTypes.shape({
@@ -39,7 +40,7 @@ const enhance = compose(
       stateId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       zip: PropTypes.string,
     }),
-    setFieldTouched: PropTypes.func,
+    createFieldValueHandler: PropTypes.func,
     errors: PropTypes.shape({
       street1: PropTypes.string,
       street2: PropTypes.string,
@@ -64,12 +65,12 @@ const enhance = compose(
 
 export const ProfileAddressFormWithoutData = enhance(
   ({
-    setFieldValue,
+    createFieldTouchedHandler,
     handleSubmit,
     values,
     countries,
     states,
-    setFieldTouched,
+    createFieldValueHandler,
     errors,
     touched,
     isSubmitting,
@@ -84,15 +85,15 @@ export const ProfileAddressFormWithoutData = enhance(
             <Inputs.Text
               label="Street"
               value={values.street1}
-              onChangeText={text => setFieldValue('street1', text)}
-              onBlur={() => setFieldTouched('street1', true)}
+              onChangeText={createFieldValueHandler('street1')}
+              onBlur={createFieldTouchedHandler('street1')}
               error={touched.street1 && errors.street1}
             />
             <Inputs.Text
               label="Street 2 (Optional)"
               value={values.street2}
-              onChangeText={text => setFieldValue('street2', text)}
-              onBlur={() => setFieldTouched('street2', true)}
+              onChangeText={createFieldValueHandler('street2')}
+              onBlur={createFieldTouchedHandler('street2')}
               error={touched.street2 && errors.street2}
             />
             <Inputs.Picker
@@ -102,7 +103,7 @@ export const ProfileAddressFormWithoutData = enhance(
                 countries.find(country => country.id === values.countryId),
                 'label',
               )}
-              onValueChange={value => setFieldValue('countryId', value)}
+              onValueChange={createFieldValueHandler('countryId')}
               error={touched.countryId && errors.countryId}
             >
               {countries.map(({ label, id }) => (
@@ -112,8 +113,8 @@ export const ProfileAddressFormWithoutData = enhance(
             <Inputs.Text
               label="City"
               value={values.city}
-              onChangeText={text => setFieldValue('city', text)}
-              onBlur={() => setFieldTouched('city', true)}
+              onChangeText={createFieldValueHandler('city')}
+              onBlur={createFieldTouchedHandler('city')}
               error={touched.city && errors.city}
             />
             {isUSOrCanada && (
@@ -121,7 +122,7 @@ export const ProfileAddressFormWithoutData = enhance(
                 label="State/Territory"
                 value={values.stateId}
                 displayValue={get(states.find(state => state.id === values.stateId), 'label')}
-                onValueChange={value => setFieldValue('stateId', value)}
+                onValueChange={createFieldValueHandler('stateId')}
                 error={touched.stateId && errors.stateId}
               >
                 {states.map(({ label, id }) => (
@@ -132,8 +133,8 @@ export const ProfileAddressFormWithoutData = enhance(
             <Inputs.Text
               label="Zip"
               value={values.zip}
-              onChangeText={text => setFieldValue('zip', text)}
-              onBlur={() => setFieldTouched('zip', true)}
+              onChangeText={createFieldValueHandler('zip')}
+              onBlur={createFieldTouchedHandler('zip')}
               error={touched.zip && errors.zip}
             />
           </PaddedView>
@@ -194,6 +195,8 @@ const ProfileAddressForm = compose(
       return validationSchema.isValidSync(mapPropsToValues(props));
     },
   }),
+  withFieldValueHandler,
+  withFieldTouchedHandler,
 )(ProfileAddressFormWithoutData);
 
 export default ProfileAddressForm;
