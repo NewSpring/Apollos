@@ -1,50 +1,41 @@
 import React from 'react';
 import { View } from 'react-native';
 import get from 'lodash/get';
-import {
-  compose,
-  branch,
-  withState,
-  renderComponent,
-} from 'recompose';
+import { compose } from 'recompose';
 import { H4, H7 } from '@ui/typography';
-import ActivityIndicator from '@ui/ActivityIndicator';
 import { parse, stringify } from '@utils/queryString';
+import ActivityIndicator from '@ui/ActivityIndicator';
 import withRestoredGive from '@data/withRestoredGive';
 import { PaymentConfirmationForm } from '@ui/forms';
 import styled from '@ui/styled';
 import { withoutTabBar } from 'tabs/Layout';
 
-const PaperView = styled(({ theme }) => ({
-  flex: 1,
-  backgroundColor: theme.colors.background.paper,
-  padding: theme.sizing.baseUnit,
-}), 'PaperView')(View);
+const PaperView = styled(
+  ({ theme }) => ({
+    flex: 1,
+    backgroundColor: theme.colors.background.paper,
+    padding: theme.sizing.baseUnit,
+  }),
+  'PaperView',
+)(View);
 
-const enhance = compose(
-  withoutTabBar,
-  withRestoredGive,
-  withState('paymentCompletion', 'setPaymentCompletion', false),
-  branch(({ isRestored }) => !isRestored, renderComponent(ActivityIndicator)),
-);
+const enhance = compose(withoutTabBar, withRestoredGive);
 
 export const RestoredCheckout = enhance((props) => {
-  const { redirect } = parse(get(props, 'location.search', {}));
+  const { redirect, didGive } = parse(get(props, 'location.search', {}));
 
-  if (props.paymentCompletion) {
+  if (didGive) {
     return (
       <PaperView>
-        <H4>
-          {(!props.paymentCompletion.error && props.paymentCompletion.success) ? (
-            'Looking good!'
-          ) : (
-            'Hmm...there might be a problem.'
-          )}
-        </H4>
-        <H7>Redirecting you back to the NewSpring app...</H7>
-        <ActivityIndicator />
+        <H4>Giving confirmation</H4>
+        <H7>{"We're redirecting you back to the NewSpring app."}</H7>
+        <H7>Feel free to close this tab or checkout our website.</H7>
       </PaperView>
     );
+  }
+
+  if (!props.isRestored) {
+    return <ActivityIndicator />;
   }
 
   return (
@@ -54,7 +45,7 @@ export const RestoredCheckout = enhance((props) => {
       <PaymentConfirmationForm
         hideChangePaymentMethodButton
         onComplete={(error, success) => {
-          props.setPaymentCompletion({ error, success });
+          props.history.replace(`${props.location.pathname}?didGive=1`);
           window.location.href = `${redirect}?${stringify({
             error,
             success,
