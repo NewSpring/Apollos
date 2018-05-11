@@ -98,5 +98,8 @@ class Picker extends PureComponent {
   }
 }
 
-export default withFocusAnimation(Picker);
+const EnhancedComponent = withFocusAnimation(Picker);
+EnhancedComponent.propTypes = Picker.propTypes;
+
+export default EnhancedComponent;
 export const { Item } = NativePicker;

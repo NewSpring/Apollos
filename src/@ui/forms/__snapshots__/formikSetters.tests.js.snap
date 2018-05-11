@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The withFieldTouchedHandler HOC passes in a createFieldTouchedHandler function 1`] = `
+<View
+  createFieldTouchedHandler={[Function]}
+/>
+`;
+
+exports[`The withFieldValueHandler HOC passes in a createFieldValueHandler function 1`] = `
+<View
+  createFieldValueHandler={[Function]}
+/>
+`;
