@@ -64,7 +64,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
                 allowFontScaling={true}
                 editable={true}
                 onBlur={[Function]}
-                onChangeText={[Function]}
+                onChangeText={undefined}
                 onFocus={[Function]}
                 placeholderTextColor="rgba(48, 48, 48, 0.6)"
                 returnKeyType="done"
@@ -221,7 +221,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
                 allowFontScaling={true}
                 editable={true}
                 onBlur={[Function]}
-                onChangeText={[Function]}
+                onChangeText={undefined}
                 onFocus={[Function]}
                 placeholderTextColor="rgba(48, 48, 48, 0.6)"
                 returnKeyType="done"
@@ -655,7 +655,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
                 allowFontScaling={true}
                 editable={true}
                 onBlur={[Function]}
-                onChangeText={[Function]}
+                onChangeText={undefined}
                 onFocus={[Function]}
                 placeholderTextColor="rgba(48, 48, 48, 0.6)"
                 returnKeyType="done"
@@ -813,7 +813,7 @@ exports[`The ContributionForm component hides state field for foreign countries 
                 editable={true}
                 keyboardType="numeric"
                 onBlur={[Function]}
-                onChangeText={[Function]}
+                onChangeText={undefined}
                 onFocus={[Function]}
                 placeholderTextColor="rgba(48, 48, 48, 0.6)"
                 returnKeyType="done"
@@ -1002,13 +1002,14 @@ exports[`The ContributionForm component renders a loading indicator 1`] = `
       },
     ]
   }
+  createFieldTouchedHandler={[Function]}
+  createFieldValueHandler={[Function]}
   errors={Object {}}
   hidesWhenStopped={true}
   isLoading={true}
   isSubmitting={false}
   isValid={true}
   onSubmit={[Function]}
-  setFieldValue={[Function]}
   size="small"
   states={
     Array [
@@ -1116,7 +1117,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 allowFontScaling={true}
                 editable={true}
                 onBlur={[Function]}
-                onChangeText={[Function]}
+                onChangeText={undefined}
                 onFocus={[Function]}
                 placeholderTextColor="rgba(48, 48, 48, 0.6)"
                 returnKeyType="done"
@@ -1273,7 +1274,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 allowFontScaling={true}
                 editable={true}
                 onBlur={[Function]}
-                onChangeText={[Function]}
+                onChangeText={undefined}
                 onFocus={[Function]}
                 placeholderTextColor="rgba(48, 48, 48, 0.6)"
                 returnKeyType="done"
@@ -1707,7 +1708,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 allowFontScaling={true}
                 editable={true}
                 onBlur={[Function]}
-                onChangeText={[Function]}
+                onChangeText={undefined}
                 onFocus={[Function]}
                 placeholderTextColor="rgba(48, 48, 48, 0.6)"
                 returnKeyType="done"
@@ -2151,7 +2152,7 @@ exports[`The ContributionForm component renders correctly 1`] = `
                 editable={true}
                 keyboardType="numeric"
                 onBlur={[Function]}
-                onChangeText={[Function]}
+                onChangeText={undefined}
                 onFocus={[Function]}
                 placeholderTextColor="rgba(48, 48, 48, 0.6)"
                 returnKeyType="done"
