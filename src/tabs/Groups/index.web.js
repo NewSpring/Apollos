@@ -7,7 +7,7 @@ import Header from '@ui/Header';
 import BackgroundView from '@ui/BackgroundView';
 import PaddedView from '@ui/PaddedView';
 import Meta from '@ui/Meta';
-import { H3, H7 } from '@ui/typography';
+import { H7 } from '@ui/typography';
 import { GroupSearchForm } from '@ui/forms';
 import { withRouter } from '@ui/NativeWebRouter';
 import LiveNowButton from '@ui/LiveNowButton';
@@ -41,15 +41,13 @@ const Groups = withRouter(({ history }) => (
       description="Who are your people? We know it's important to be connected, but it's hard to build lasting friendships. What if taking one simple step changed everything? At NewSpring, we’re trying to make it easier for you to find people who share your interests. We know that when you get together with people and have fun, you’ll begin to grow into a strong community that serves and grows together. What if you are one step away from saying, “These are my people”?"
       image={image}
     />
-    <Header webEnabled titleText={'Group Finder'} />
-    <LiveNowButton />
     <FlexedSideBySideView>
       <FlexedLeft>
+        <Header webEnabled titleText={'Find your people'}>
+          <Instructions />
+        </Header>
+        <LiveNowButton />
         <KeyboardAwareScrollView keyboardShouldPersistTaps="handled">
-          <PaddedView>
-            <H3>Find your people</H3>
-            <Instructions />
-          </PaddedView>
           <PaddedView horizontal={false}>
             <GroupSearchFormWithData
               onSubmit={(data) => {

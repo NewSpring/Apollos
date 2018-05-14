@@ -26,11 +26,7 @@ const withSearchProps = withProps(({ location: { search = '' } = {} }) => ({
   query: parse(search),
 }));
 
-const enhance = compose(
-  withSearchProps,
-  withProps(({ query }) => query),
-  withGroupFinderResults,
-);
+const enhance = compose(withSearchProps, withProps(({ query }) => query), withGroupFinderResults);
 
 const tagPressHandler = ({ query, location, history }) => (value) => {
   const sanitizedValue = value.toLowerCase();
@@ -40,10 +36,12 @@ const tagPressHandler = ({ query, location, history }) => (value) => {
   } else {
     replaceTags.push(sanitizedValue);
   }
-  history.replace(`${location.pathname}?${stringify({
-    ...query,
-    tags: replaceTags,
-  })}`);
+  history.replace(
+    `${location.pathname}?${stringify({
+      ...query,
+      tags: replaceTags,
+    })}`,
+  );
 };
 
 const campusSelectHandler = ({ query, location, history }) => (campus) => {
