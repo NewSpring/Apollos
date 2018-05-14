@@ -12,9 +12,7 @@ import { GroupSearchForm } from '@ui/forms';
 import { withRouter } from '@ui/NativeWebRouter';
 import LiveNowButton from '@ui/LiveNowButton';
 import { stringify } from '@utils/queryString';
-import MediaQuery from '@ui/MediaQuery';
-import { ResponsiveSideBySideView as SideBySideView, Left, Right } from '@ui/SideBySideView';
-import Hero, { BackgroundImage } from '@ui/Hero';
+import { ResponsiveSideBySideView as SideBySideView, Left } from '@ui/SideBySideView';
 import styled from '@ui/styled';
 
 import GroupStories from './GroupStories';
@@ -61,11 +59,6 @@ const Groups = withRouter(({ history }) => (
           <GroupStories tagName="community" sectionTitle="You can't do life alone" />
         </KeyboardAwareScrollView>
       </FlexedLeft>
-      <MediaQuery minWidth="md">
-        <Right>
-          <Hero background={<BackgroundImage source={image} />} />
-        </Right>
-      </MediaQuery>
     </FlexedSideBySideView>
   </BackgroundView>
 ));
