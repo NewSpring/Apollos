@@ -7,7 +7,6 @@ import withStory from '@data/withStory';
 import BackgroundView from '@ui/BackgroundView';
 import Header from '@ui/Header';
 import ContentView, { ByLine, Title, HTMLView } from '@ui/ContentView';
-import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import RelatedContent from '@ui/RelatedContent';
 import withCachedContent from '@data/withCachedContent';
@@ -21,36 +20,33 @@ const enhance = compose(
 
 const ShareLink = withStory(Share);
 
-const StorySingle = enhance(({
-  content: {
-    authors = [],
-    title = '',
+const StorySingle = enhance(
+  ({
     content: {
-      isLiked,
-      body,
-      tags,
-      ...otherContentProps
+      authors = [],
+      title = '',
+      content: {
+        isLiked, body, tags, ...otherContentProps
+      } = {},
     } = {},
-  } = { },
-  id,
-  isLoading,
-}) => (
-  <BackgroundView>
-    <Header titleText="Story" backButton />
-    <ScrollView>
-      <ContentView isLoading={isLoading} {...otherContentProps}>
-        <Title>{startCase(toLower(title))}</Title>
-        <ByLine authors={authors} />
-        <HTMLView>{body}</HTMLView>
-      </ContentView>
-      <RelatedContent tags={tags} excludedIds={[id]} />
-    </ScrollView>
-    <MediaQuery maxWidth="md">
-      <SecondaryNav>
+    id,
+    isLoading,
+  }) => (
+    <BackgroundView>
+      <Header titleText="Story" backButton />
+      <ScrollView>
+        <ContentView isLoading={isLoading} {...otherContentProps}>
+          <Title>{startCase(toLower(title))}</Title>
+          <ByLine authors={authors} />
+          <HTMLView>{body}</HTMLView>
+        </ContentView>
+        <RelatedContent tags={tags} excludedIds={[id]} />
+      </ScrollView>
+      <SecondaryNav isLoading={isLoading} fullWidth>
         <ShareLink id={id} />
         <Like id={id} isLiked={isLiked} />
       </SecondaryNav>
-    </MediaQuery>
-  </BackgroundView>
-));
+    </BackgroundView>
+  ),
+);
 export default StorySingle;

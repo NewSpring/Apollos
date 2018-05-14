@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, pure, setPropTypes } from 'recompose';
-import { Platform } from 'react-native';
 import { startCase, toLower } from 'lodash';
 
 import { withIsLoading } from '@ui/isLoading';
@@ -46,11 +45,6 @@ const LeftColumn = compose(
 
 const RightColumn = styled({
   alignSelf: 'stretch',
-  ...Platform.select({
-    web: {
-      position: 'relative',
-    },
-  }),
 })(FlexedView);
 
 const ThumbnailCard = enhance(({

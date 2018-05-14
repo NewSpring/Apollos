@@ -13,6 +13,7 @@ import { LabelText } from '@ui/inputs/FloatingLabel';
 import Button, { ButtonLink } from '@ui/Button';
 
 import Status from './FormStatusText';
+import { withFieldValueHandler, withFieldTouchedHandler } from './formikSetters';
 
 const tocLabel = (
   <LabelText>
@@ -86,9 +87,11 @@ const enhance = compose(
       return setSubmitting(false);
     },
   }),
+  withFieldValueHandler,
+  withFieldTouchedHandler,
   setPropTypes({
-    setFieldValue: PropTypes.func,
-    setFieldTouched: PropTypes.func,
+    createFieldValueHandler: PropTypes.func,
+    createFieldTouchedHandler: PropTypes.func,
     touched: PropTypes.shape({}),
     errors: PropTypes.shape({}),
     values: PropTypes.shape({}),
@@ -100,8 +103,8 @@ const enhance = compose(
 
 const SignUpFormWithoutData = enhance(
   ({
-    setFieldTouched,
-    setFieldValue,
+    createFieldValueHandler,
+    createFieldTouchedHandler,
     touched,
     errors,
     values,
@@ -115,36 +118,36 @@ const SignUpFormWithoutData = enhance(
         label="Email"
         type="email"
         value={values.email}
-        onChangeText={text => setFieldValue('email', text)}
-        onBlur={() => setFieldTouched('email', true)}
+        onChangeText={createFieldValueHandler('email')}
+        onBlur={createFieldTouchedHandler('email')}
         error={touched.email && errors.email}
       />
       <TextInput
         label="Password"
         type="password"
         value={values.password}
-        onChangeText={text => setFieldValue('password', text)}
-        onBlur={() => setFieldTouched('password', true)}
+        onChangeText={createFieldValueHandler('password')}
+        onBlur={createFieldTouchedHandler('password')}
         error={touched.password && errors.password}
       />
       <TextInput
         label="First Name"
         value={values.firstName}
-        onChangeText={text => setFieldValue('firstName', text)}
-        onBlur={() => setFieldTouched('firstName', true)}
+        onChangeText={createFieldValueHandler('firstName')}
+        onBlur={createFieldTouchedHandler('firstName')}
         error={touched.firstName && errors.firstName}
       />
       <TextInput
         label="Last Name"
         value={values.lastName}
-        onChangeText={text => setFieldValue('lastName', text)}
-        onBlur={() => setFieldTouched('lastName', true)}
+        onChangeText={createFieldValueHandler('lastName')}
+        onBlur={createFieldTouchedHandler('lastName')}
         error={touched.lastName && errors.lastName}
       />
       <Switch
         label={tocLabel}
         value={values.terms}
-        onValueChange={v => setFieldValue('terms', v)}
+        onValueChange={createFieldValueHandler('terms')}
         error={errors.terms}
       />
       {status ? React.createElement(status) : null}

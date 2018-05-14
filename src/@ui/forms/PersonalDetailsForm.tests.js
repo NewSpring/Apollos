@@ -5,7 +5,7 @@ import Providers from '@ui/TestProviders';
 import { PersonalDetailsFormWithoutData } from './PersonalDetailsForm';
 
 const createTestData = () => ({
-  setFieldValue: jest.fn(),
+  createFieldValueHandler: jest.fn(),
   handleSubmit: jest.fn(),
   values: {
     campusId: 'one',
@@ -13,7 +13,7 @@ const createTestData = () => ({
     lastName: 'lastName',
     email: 'email@email.com',
   },
-  setFieldTouched: jest.fn(),
+  createFieldTouchedHandler: jest.fn(),
   errors: {
     campusId: null,
     firstName: null,

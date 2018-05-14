@@ -71,7 +71,7 @@ const FeedItemCard = enhance(
         overlayColor={backgroundColor}
       />
       <StyledCardContent>
-        <H4>{startCase(toLower(title))}</H4>
+        <H4>{title}</H4>
       </StyledCardContent>
       <CardActions>
         <CategoryLabel label={startCase(toLower(category))} isLoading={isLoading} withFlex />

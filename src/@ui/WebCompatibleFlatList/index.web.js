@@ -28,6 +28,9 @@ const MappedReactList = mapProps(({
 }) => ({
   itemRenderer: itemRenderer({ data, renderItem, numColumns }),
   length: (data && data.length) || 0,
+  type: 'simple',
+  pageSize: 20,
+  useTranslate3d: true,
 }))(ReactList);
 
 class FlatList extends PureComponent {

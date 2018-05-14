@@ -16,11 +16,16 @@ import sentry from '@utils/sentry';
 import * as Inputs from '@ui/inputs';
 import Button from '@ui/Button';
 
+import { withFieldValueHandler, withFieldTouchedHandler } from '../formikSetters';
+
+import GeographicPicker from './GeographicPicker';
+
 const enhance = compose(
   setPropTypes({
     isLoading: PropTypes.bool,
     onSubmit: PropTypes.func,
-    setFieldValue: PropTypes.func,
+    createFieldValueHandler: PropTypes.func,
+    createFieldTouchedHandler: PropTypes.func,
     countries: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -65,19 +70,18 @@ const enhance = compose(
 
 export const BillingAddressFormWithoutData = enhance(
   ({
-    setFieldValue,
+    createFieldValueHandler,
+    createFieldTouchedHandler,
     handleSubmit,
-    values,
-    countries,
-    states,
-    setFieldTouched,
-    touched,
-    errors,
+    values = {},
+    countries = [],
+    states = [],
+    touched = {},
+    errors = {},
     isSubmitting,
     isValid,
   }) => {
     const isUSOrCanada = values.countryId === 'US' || values.countryId === 'CA';
-
     return (
       <View>
         <TableView responsive={false}>
@@ -85,57 +89,46 @@ export const BillingAddressFormWithoutData = enhance(
             <Inputs.Text
               label="Street Address"
               value={values.street1}
-              onChangeText={text => setFieldValue('street1', text)}
-              onBlur={() => setFieldTouched('street1', true)}
+              onChangeText={createFieldValueHandler('street1')}
+              onBlur={createFieldTouchedHandler('street1')}
               error={touched.street1 && errors.street1}
             />
             <Inputs.Text
               label="Street Address (optional)"
               value={values.street2}
-              onChangeText={text => setFieldValue('street2', text)}
-              onBlur={() => setFieldTouched('street2', true)}
+              onChangeText={createFieldValueHandler('street2')}
+              onBlur={createFieldTouchedHandler('street2')}
               error={touched.street2 && errors.street2}
             />
-            <Inputs.Picker
+            <GeographicPicker
               label="Country"
               value={values.countryId}
-              displayValue={get(
-                countries.find(country => country.id === values.countryId),
-                'label',
-              )}
-              onValueChange={value => setFieldValue('countryId', value)}
+              options={countries}
+              onValueChange={createFieldValueHandler('countryId')}
               error={touched.countryId && errors.countryId}
-            >
-              {countries.map(({ label, id }) => (
-                <Inputs.PickerItem label={label} value={id} key={id} />
-              ))}
-            </Inputs.Picker>
+            />
             <Inputs.Text
               label="City"
               value={values.city}
-              onChangeText={text => setFieldValue('city', text)}
-              onBlur={() => setFieldTouched('city', true)}
+              onChangeText={createFieldValueHandler('city')}
+              onBlur={createFieldTouchedHandler('city')}
               error={touched.city && errors.city}
             />
             {isUSOrCanada && (
-              <Inputs.Picker
+              <GeographicPicker
                 label="State/Territory"
                 value={values.stateId}
-                displayValue={get(states.find(state => state.id === values.stateId), 'label')}
-                onValueChange={value => setFieldValue('stateId', value)}
+                options={states}
+                onValueChange={createFieldValueHandler('stateId')}
                 error={touched.stateId && errors.stateId}
-              >
-                {states.map(({ label, id }) => (
-                  <Inputs.PickerItem label={label} value={id} key={id} />
-                ))}
-              </Inputs.Picker>
+              />
             )}
             <Inputs.Text
               label="Zip/Postal"
               type="numeric"
               value={values.zipCode}
-              onChangeText={text => setFieldValue('zipCode', text)}
-              onBlur={() => setFieldTouched('zipCode', true)}
+              onChangeText={createFieldValueHandler('zipCode')}
+              onBlur={createFieldTouchedHandler('zipCode')}
               error={touched.zipCode && errors.zipCode}
             />
           </FormFields>
@@ -161,8 +154,8 @@ const mapPropsToValues = props => ({
   street1: get(props, 'contributions.street1') || get(props, 'person.home.street1', ''),
   street2: get(props, 'contributions.street2') || get(props, 'person.home.street2', ''),
   city: get(props, 'contributions.city') || get(props, 'person.home.city', ''),
-  stateId: get(props, 'contributions.stateId') || get(props, 'person.home.state') || 'SC',
-  countryId: get(props, 'contributions.countryId') || get(props, 'person.home.country') || 'US',
+  stateId: get(props, 'contributions.stateId') || get(props, 'person.home.stateId') || 'SC',
+  countryId: get(props, 'contributions.countryId') || get(props, 'person.home.countryId') || 'US',
   zipCode: get(props, 'contributions.zipCode') || get(props, 'person.home.zip', ''),
 });
 
@@ -188,6 +181,8 @@ const BillingAddressForm = compose(
       }
     },
   }),
+  withFieldValueHandler,
+  withFieldTouchedHandler,
 )(BillingAddressFormWithoutData);
 
 export default BillingAddressForm;

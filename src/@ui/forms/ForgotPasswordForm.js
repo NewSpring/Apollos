@@ -10,6 +10,8 @@ import { Text as TextInput } from '@ui/inputs';
 import Button from '@ui/Button';
 import sentry from '@utils/sentry';
 
+import { withFieldValueHandler, withFieldTouchedHandler } from './formikSetters';
+
 import Status from './FormStatusText';
 
 const enhance = compose(
@@ -44,9 +46,11 @@ const enhance = compose(
         .finally(() => setSubmitting(false));
     },
   }),
+  withFieldValueHandler,
+  withFieldTouchedHandler,
   setPropTypes({
-    setFieldValue: PropTypes.func,
-    setFieldTouched: PropTypes.func,
+    createFieldTouchedHandler: PropTypes.func,
+    createFieldValueHandler: PropTypes.func,
     touched: PropTypes.shape({}),
     errors: PropTypes.shape({}),
     values: PropTypes.shape({}),
@@ -58,8 +62,8 @@ const enhance = compose(
 
 const ChangePasswordFormWithoutData = enhance(
   ({
-    setFieldTouched,
-    setFieldValue,
+    createFieldTouchedHandler,
+    createFieldValueHandler,
     touched,
     errors,
     values,
@@ -77,8 +81,8 @@ const ChangePasswordFormWithoutData = enhance(
         label="Email"
         type="email"
         value={values.email}
-        onChangeText={text => setFieldValue('email', text)}
-        onBlur={() => setFieldTouched('email', true)}
+        onChangeText={createFieldValueHandler('email')}
+        onBlur={createFieldTouchedHandler('email')}
         error={touched.email && errors.email}
       />
       {status ? <Status>{status}</Status> : null}

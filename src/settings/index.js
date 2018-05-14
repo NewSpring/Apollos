@@ -1,9 +1,9 @@
 import React from 'react';
 import { ScrollView, Linking, Platform } from 'react-native';
 import { withProps, compose } from 'recompose';
+import reload from '@utils/reload';
 import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
-import Header from '@ui/Header';
 import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
 import { Link, withRouter } from '@ui/NativeWebRouter';
 import Touchable from '@ui/Touchable';
@@ -22,6 +22,7 @@ const LogoutTouchable = compose(
   withProps(({ logout }) => ({
     async onPress() {
       await logout();
+      if (Platform.OS === 'web') reload();
     },
   })),
 )(Touchable);
@@ -36,8 +37,7 @@ const Arrow = withProps({
 })(CellIcon);
 
 const Settings = () => (
-  <Layout>
-    <Header webEnabled titleText="Settings" backButton />
+  <Layout title="Settings">
     <ScrollView>
       <SafeAreaView>
         <PaddedView horizontal={false}>

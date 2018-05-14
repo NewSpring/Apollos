@@ -2,7 +2,6 @@ import React from 'react';
 
 import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import { ProfileDetailsForm, ProfileAddressForm, ChangePasswordForm } from '@ui/forms';
-import Header from '@ui/Header';
 
 import Layout from './Layout';
 
@@ -10,8 +9,7 @@ const makeFormScreen = (Form, title = 'Title') => (props) => {
   const minFill = { minHeight: '100%' };
 
   return (
-    <Layout>
-      <Header webEnabled titleText={title} backButton />
+    <Layout title={title}>
       <KeyboardAwareScrollView contentContainerStyle={minFill}>
         <Form {...props} />
       </KeyboardAwareScrollView>
