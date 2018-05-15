@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react';
 import { ScrollView, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, branch, renderComponent, withProps } from 'recompose';
+import { compose, withPropsOnChange, onlyUpdateForKeys } from 'recompose';
 import get from 'lodash/get';
 import ActivityIndicator from '@ui/ActivityIndicator';
 import { withRouter } from '@ui/NativeWebRouter';
@@ -37,6 +37,7 @@ export class Dashboard extends PureComponent {
     onPressNewScheduleLink: PropTypes.func,
     onPressTransactionCard: PropTypes.func,
     onPressScheduleCard: PropTypes.func,
+    isLoading: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -48,9 +49,11 @@ export class Dashboard extends PureComponent {
     onPressNewScheduleLink() {},
     onPressTransactionCard() {},
     onPressScheduleCard() {},
+    isLoading: false,
   };
 
   render() {
+    if (this.props.isLoading) return <ActivityIndicator />;
     return (
       <BackgroundView>
         <ScrollView>
@@ -139,7 +142,8 @@ export class Dashboard extends PureComponent {
 const enhance = compose(
   withGivingDashboard,
   withRouter,
-  withProps(props => ({
+  onlyUpdateForKeys(['isLoading', 'scheduledTransactions', 'activityItems', 'savedPaymentMethods']),
+  withPropsOnChange(['route', 'history'], props => ({
     onPressActivityLink() {
       props.route.jumpTo('ContributionHistory');
     },
@@ -156,7 +160,6 @@ const enhance = compose(
       props.history.push(`/give/schedules/${id}`);
     },
   })),
-  branch(({ isLoading }) => isLoading, renderComponent(ActivityIndicator)),
 );
 
 export default enhance(Dashboard);
