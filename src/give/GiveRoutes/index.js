@@ -1,16 +1,11 @@
 import React, { PureComponent } from 'react';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { TabViewPagerPan, TabViewPagerAndroid } from 'react-native-tab-view';
-import { Link, Switch, Route, matchPath, withRouter } from '@ui/NativeWebRouter';
+import { Switch, Route, matchPath, withRouter } from '@ui/NativeWebRouter';
 import TabView, { SceneMap } from '@ui/TabView';
 import Header from '@ui/Header';
 import BackgroundView from '@ui/BackgroundView';
-import MediaQuery from '@ui/MediaQuery';
-import { ResponsiveSideBySideView as SideBySideView, Left, Right } from '@ui/SideBySideView';
-import Hero, { BackgroundImage } from '@ui/Hero';
-import styled from '@ui/styled';
-import ContributionsChartHero from '@ui/ContributionsChartHero';
 import Meta from '@ui/Meta';
 
 import Dashboard from 'give/Dashboard';
@@ -19,14 +14,6 @@ import ContributionHistory from 'give/ContributionHistory';
 
 let TabViewPager = TabViewPagerPan;
 if (Platform.OS === 'android') TabViewPager = TabViewPagerAndroid;
-
-const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
-const FlexedLeft = styled({ flex: 1 })(Left);
-
-const historyImage =
-  'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/NScollege-cip-0033_1700_1133_90_c1.jpg';
-const scheduleImage =
-  'https://s3.amazonaws.com/ns.images/newspring/give/42835.marketing.cen.webad.scheduleyourgiving_1x2.jpg';
 
 class GiveRoutes extends PureComponent {
   static propTypes = {
@@ -89,49 +76,17 @@ class GiveRoutes extends PureComponent {
     return this.props.routes[this.currentRouteIndex];
   }
 
-  handleOnChangeTab = (routeIndex) => {
-    const nextRoute = this.props.routes[routeIndex];
-  };
-
   render() {
     if (!this.currentRoute) return null;
     return (
       <BackgroundView>
         <Header webEnabled backButton titleText={'My Giving'} />
-        {/* <FlexedSideBySideView>
-          <FlexedLeft> */}
         <TabView
           initialIndex={this.currentRouteIndex || 0}
           routes={this.props.routes}
           renderScene={this.props.scenes}
           renderPager={props => <TabViewPager {...props} />}
         />
-        {/* </FlexedLeft>
-          <MediaQuery minWidth="md">
-            <Right>
-              <Switch style={StyleSheet.absoluteFill}>
-                <Route path="/give/history">
-                  <Hero background={<BackgroundImage source={historyImage} />} />
-                </Route>
-                <Route path="/give" exact>
-                  <ContributionsChartHero onViewHistory={() => this.handleOnChangeTab(2)} />
-                </Route>
-                <Route>
-                  <Hero
-                    background={
-                      <Link
-                        onPress={() => this.handleOnChangeTab(0)}
-                        style={StyleSheet.absoluteFill}
-                      >
-                        <BackgroundImage source={scheduleImage} />
-                      </Link>
-                    }
-                  />
-                </Route>
-              </Switch>
-            </Right>
-          </MediaQuery>
-        </FlexedSideBySideView> */}
         <Switch>
           <Route path="/give/history">
             <Meta title="Giving History" />
