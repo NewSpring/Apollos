@@ -16,7 +16,7 @@ export default function getOrderDetails(state) {
       address1: isEmpty(state.street1) ? undefined : state.street1,
       address2: isEmpty(state.street2) ? undefined : state.street2,
       city: isEmpty(state.city) ? undefined : state.city,
-      state: isEmpty(state.state) ? undefined : state.state,
+      state: isEmpty(state.stateId) ? undefined : state.stateId,
       postal: isEmpty(state.zipCode) ? undefined : state.zipCode,
     },
     'merchant-defined-field-2': isEmpty(state.campusId) ? undefined : state.campusId,
@@ -50,7 +50,9 @@ export default function getOrderDetails(state) {
 
     joinedData['start-date'] = state.start
       ? moment(state.start).format('YYYYMMDD')
-      : moment().add(1, 'days').format('YYYYMMDD');
+      : moment()
+        .add(1, 'days')
+        .format('YYYYMMDD');
     joinedData['merchant-defined-field-3'] = joinedData['start-date'];
 
     // This isn't super well organized
@@ -58,17 +60,15 @@ export default function getOrderDetails(state) {
     // on a schedule
     // now we do but we have to support existing builds so
     // we create a comma sep string and split on heighliner
-    joinedData['merchant-defined-field-1'] = state.contributions
-      .map(({ id }) => (id))
-      .join(',');
+    joinedData['merchant-defined-field-1'] = state.contributions.map(({ id }) => id).join(',');
 
     // in order to line up the amounts with the funds, we store the amounts
     // in a matching comma sep string
     joinedData['merchant-defined-field-4'] = state.contributions
-      .map(({ amount }) => (amount))
+      .map(({ amount }) => amount)
       .join(',');
 
-  // SINGLE
+    // SINGLE
   } else if (state.contributions.length > 0) {
     joinedData.amount = total;
     joinedData.product = state.contributions.map(contribution => ({
