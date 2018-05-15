@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { TabViewPagerPan, TabViewPagerAndroid } from 'react-native-tab-view';
+import { TabViewPagerPan } from 'react-native-tab-view';
 import { Link, Switch, Route, matchPath, withRouter } from '@ui/NativeWebRouter';
 import TabView, { SceneMap } from '@ui/TabView';
 import Header from '@ui/Header';
@@ -17,8 +17,7 @@ import Dashboard from 'give/Dashboard';
 import Now from 'give/Now';
 import ContributionHistory from 'give/ContributionHistory';
 
-let TabViewPager = TabViewPagerPan;
-if (Platform.OS === 'android') TabViewPager = TabViewPagerAndroid;
+const TabViewPager = TabViewPagerPan;
 
 const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
 const FlexedLeft = styled({ flex: 1 })(Left);
@@ -91,22 +90,27 @@ class GiveRoutes extends PureComponent {
 
   handleOnChangeTab = (routeIndex) => {
     const nextRoute = this.props.routes[routeIndex];
+    if (nextRoute) {
+      // we can skip history.replace on native to prevent a re-render
+      this.props.history.replace(nextRoute.path);
+    }
   };
 
   render() {
     if (!this.currentRoute) return null;
     return (
       <BackgroundView>
-        <Header webEnabled backButton titleText={'My Giving'} />
-        {/* <FlexedSideBySideView>
-          <FlexedLeft> */}
-        <TabView
-          initialIndex={this.currentRouteIndex || 0}
-          routes={this.props.routes}
-          renderScene={this.props.scenes}
-          renderPager={props => <TabViewPager {...props} />}
-        />
-        {/* </FlexedLeft>
+        <FlexedSideBySideView>
+          <FlexedLeft>
+            <Header webEnabled titleText={'My Giving'} />
+            <TabView
+              index={this.currentRouteIndex || 0}
+              routes={this.props.routes}
+              renderScene={this.props.scenes}
+              onChange={this.handleOnChangeTab}
+              renderPager={props => <TabViewPager {...props} />}
+            />
+          </FlexedLeft>
           <MediaQuery minWidth="md">
             <Right>
               <Switch style={StyleSheet.absoluteFill}>
@@ -131,7 +135,7 @@ class GiveRoutes extends PureComponent {
               </Switch>
             </Right>
           </MediaQuery>
-        </FlexedSideBySideView> */}
+        </FlexedSideBySideView>
         <Switch>
           <Route path="/give/history">
             <Meta title="Giving History" />
