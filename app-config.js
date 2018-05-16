@@ -2,7 +2,7 @@ module.exports = env => ({
   expo: {
     sdkVersion: '25.0.0',
     name: 'NewSpring',
-    version: '6.0.2',
+    version: '6.0.3',
     description: 'The official NewSpring mobile app.',
     primaryColor: '#6bac43',
     slug: 'newspring',
@@ -29,7 +29,7 @@ module.exports = env => ({
     },
     android: {
       package: 'cc.newspring.newspringapp',
-      versionCode: 600021,
+      versionCode: 600022,
       icon: 'src/assets/icons/android/icon-192x192-xxxhpdi.png',
       splash: {
         mdpi: 'src/assets/splash/splash-1242x2436.png',
