@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { PureComponent } from 'react';
-import { ScrollView, TouchableWithoutFeedback } from 'react-native';
+import { Platform, ScrollView, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import { compose, withPropsOnChange, onlyUpdateForKeys } from 'recompose';
 import get from 'lodash/get';
@@ -91,9 +91,13 @@ export class Dashboard extends PureComponent {
             );
           })}
 
-          <MediaQuery maxWidth="md">
+          {Platform.OS !== 'web' ? (
             <ContributionsChartCard onPressHistory={this.props.onPressActivityLink} />
-          </MediaQuery>
+          ) : (
+            <MediaQuery maxWidth="md">
+              <ContributionsChartCard onPressHistory={this.props.onPressActivityLink} />
+            </MediaQuery>
+          )}
 
           <DashboardSubheader
             text="Active Schedules"
