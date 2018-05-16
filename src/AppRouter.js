@@ -200,7 +200,6 @@ class AppRouter extends PureComponent {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
     const AppLayout = Platform.OS === 'web' ? tabs.Layout : BackgroundView;
-    const NavigatorStack = Platform.OS === 'web' ? Switch : CardStack;
 
     return (
       <BackgroundView>
@@ -215,7 +214,7 @@ class AppRouter extends PureComponent {
         ) : (
           <Player>
             <AppLayout>
-              <NavigatorStack
+              <CardStack
                 location={
                   this.isModal || this.musicPlayerIsOpened ? previousLocation : this.props.location
                 }
@@ -309,7 +308,7 @@ class AppRouter extends PureComponent {
                 <Route exact path="/_/reset-password/:token" component={ResetPassword} />
 
                 <Route cardStackKey="tabs" component={this.tabs} />
-              </NavigatorStack>
+              </CardStack>
             </AppLayout>
             <Switch>{this.isModal ? this.largeScreenModals : null}</Switch>
           </Player>
