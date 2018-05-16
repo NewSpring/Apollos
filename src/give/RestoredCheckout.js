@@ -1,7 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 import get from 'lodash/get';
-import { compose } from 'recompose';
+import {
+  compose,
+  mapProps,
+  pure,
+} from 'recompose';
 import { H4, H7 } from '@ui/typography';
 import { parse, stringify } from '@utils/queryString';
 import ActivityIndicator from '@ui/ActivityIndicator';
@@ -19,7 +23,12 @@ const PaperView = styled(
   'PaperView',
 )(View);
 
-const enhance = compose(withoutTabBar, withRestoredGive);
+const enhance = compose(
+  mapProps(() => ({})),
+  pure,
+  withoutTabBar,
+  withRestoredGive,
+);
 
 export const RestoredCheckout = enhance((props) => {
   const {
