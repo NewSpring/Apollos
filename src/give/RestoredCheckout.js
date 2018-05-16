@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { View } from 'react-native';
 import get from 'lodash/get';
@@ -6,6 +7,8 @@ import {
   branch,
   withState,
   renderComponent,
+  mapProps,
+  pure,
 } from 'recompose';
 import { H4, H7 } from '@ui/typography';
 import ActivityIndicator from '@ui/ActivityIndicator';
@@ -22,10 +25,15 @@ const PaperView = styled(({ theme }) => ({
 }), 'PaperView')(View);
 
 const enhance = compose(
+  mapProps(() => ({})),
+  pure,
   withoutTabBar,
   withRestoredGive,
   withState('paymentCompletion', 'setPaymentCompletion', false),
-  branch(({ isRestored }) => !isRestored, renderComponent(ActivityIndicator)),
+  branch(
+    ({ isRestored, contributions }) => !isRestored || !contributions,
+    renderComponent(ActivityIndicator),
+  ),
 );
 
 export const RestoredCheckout = enhance((props) => {
