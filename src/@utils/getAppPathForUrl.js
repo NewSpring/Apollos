@@ -1,5 +1,6 @@
 // This does one thing:
 // map website urls to in-app paths
+import { Platform } from 'react-native';
 import UrlPolyfill from 'url-parse';
 import gql from 'graphql-tag';
 import client from '@data/Client';
@@ -91,6 +92,7 @@ const withQuery = async (path) => {
 };
 
 export default async (url) => {
+  if (Platform.OS === 'web') return null; // currently on web we _always_ redirect to the external site.
   const u = new UrlPolyfill(url);
   const {
     pathname = null,
