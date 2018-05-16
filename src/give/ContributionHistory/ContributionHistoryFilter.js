@@ -61,32 +61,51 @@ class ContributionHistoryFilter extends PureComponent {
     this.setState({
       isVisible: !this.state.isVisible,
     });
-  }
+  };
 
-  dateRanges = ([
+  dateRanges = [
     {
-      key: moment().subtract(1, 'year').get('year'),
-      startDate: moment().subtract(1, 'year').startOf('year').toDate(),
-      endDate: moment().subtract(1, 'year').endOf('year').toDate(),
-    }, {
-      key: 'Last Month',
-      startDate: moment().subtract(1, 'month').startOf('month').toDate(),
-      endDate: moment().subtract(1, 'month').endOf('month').toDate(),
-    }, {
-      key: 'Year to Date',
-      startDate: moment().startOf('year').toDate(),
-      endDate: moment().toDate(),
-    }, {
-      key: 'All Time',
-      startDate: null,
-      endDate: null,
+      key: moment()
+        .subtract(1, 'year')
+        .get('year'),
+      startDate: moment()
+        .subtract(1, 'year')
+        .startOf('year')
+        .toDate(),
+      endDate: moment()
+        .subtract(1, 'year')
+        .endOf('year')
+        .toDate(),
     },
-  ]);
+    {
+      key: 'Last Month',
+      startDate: moment()
+        .subtract(1, 'month')
+        .startOf('month')
+        .toDate(),
+      endDate: moment()
+        .subtract(1, 'month')
+        .endOf('month')
+        .toDate(),
+    },
+    {
+      key: 'Year to Date',
+      startDate: moment()
+        .startOf('year')
+        .toDate(),
+      endDate: moment().toDate(),
+    },
+    {
+      key: 'All Time',
+      startDate: '',
+      endDate: '',
+    },
+  ];
 
   clear = () => {
-    this.props.setFieldValue('startDate', undefined);
-    this.props.setFieldValue('endDate', undefined);
-  }
+    this.props.setFieldValue('startDate', '');
+    this.props.setFieldValue('endDate', '');
+  };
 
   renderFilters = () => {
     if (!this.state.isVisible) return null;
@@ -96,8 +115,11 @@ class ContributionHistoryFilter extends PureComponent {
           <Label>Date Range</Label>
           <ChipList>
             {this.dateRanges.map(({ key, startDate, endDate }) => {
-              const selected = moment(this.props.values.startDate).format('MM/DD/YYYY') === moment(startDate).format('MM/DD/YYYY') &&
-              moment(this.props.values.endDate).format('MM/DD/YYYY') === moment(endDate).format('MM/DD/YYYY');
+              const selected =
+                moment(this.props.values.startDate).format('MM/DD/YYYY') ===
+                  moment(startDate).format('MM/DD/YYYY') &&
+                moment(this.props.values.endDate).format('MM/DD/YYYY') ===
+                  moment(endDate).format('MM/DD/YYYY');
               return (
                 <Chip
                   key={key}
@@ -123,7 +145,9 @@ class ContributionHistoryFilter extends PureComponent {
             <DateInput
               label="Start Date"
               displayValue={
-                this.props.values.startDate ? moment(this.props.values.startDate).format('MM/DD/YYYY') : null
+                this.props.values.startDate
+                  ? moment(this.props.values.startDate).format('MM/DD/YYYY')
+                  : null
               }
               value={this.props.values.startDate}
               onChange={t => this.props.setFieldValue('startDate', t)}
@@ -132,13 +156,15 @@ class ContributionHistoryFilter extends PureComponent {
             <DateInput
               label="End Date"
               displayValue={
-                this.props.values.endDate ? moment(this.props.values.endDate).format('MM/DD/YYYY') : null
+                this.props.values.endDate
+                  ? moment(this.props.values.endDate).format('MM/DD/YYYY')
+                  : null
               }
               value={this.props.values.endDate}
               onChange={t => this.props.setFieldValue('endDate', t)}
               onBlur={() => this.props.setFieldTouched('endDate', true)}
             />
-            {(this.props.values.startDate || this.props.values.endDate) ? (
+            {this.props.values.startDate || this.props.values.endDate ? (
               <Chip onPress={this.clear} icon="close" />
             ) : null}
           </ChipList>
@@ -159,11 +185,11 @@ class ContributionHistoryFilter extends PureComponent {
   render() {
     return (
       <StyledTableView responsive={false}>
-        <Touchable
-          onPress={this.toggle}
-        >
+        <Touchable onPress={this.toggle}>
           <Cell>
-            <CellText><StyledH7>{'Filter Transactions'}</StyledH7></CellText>
+            <CellText>
+              <StyledH7>{'Filter Transactions'}</StyledH7>
+            </CellText>
             <StyledIcon
               name={this.state.isVisible ? 'close' : 'filter'}
               size={this.props.iconSize}
