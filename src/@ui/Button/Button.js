@@ -46,7 +46,9 @@ export const withButtonPlaceholder = withPlaceholder(ButtonPlaceholder);
 const trackButton = (props) => {
   sentry.captureBreadcrumb({
     message: 'ButtonPress',
-    data: { ...props },
+    data: {
+      title: props.title,
+    },
     level: 'info',
   });
 };
