@@ -9,9 +9,7 @@ import BackgroundView from '@ui/BackgroundView';
 import PaddedView from '@ui/PaddedView';
 import styled from '@ui/styled';
 import { BodyText } from '@ui/typography';
-import SideBySideView, { Left, Right } from '@ui/SideBySideView';
-import MediaQuery from '@ui/MediaQuery';
-import Hero, { BackgroundImage } from '@ui/Hero';
+import SideBySideView, { Left } from '@ui/SideBySideView';
 
 import RecentArticles from 'give/RecentArticles';
 import Transaction from './Transaction';
