@@ -50,7 +50,19 @@ const ScheduleTransactionHistory = ({ transactions = [], isLoading = false }) =>
 );
 
 ScheduleTransactionHistory.propTypes = {
-  transactions: PropTypes.arrayOf(),
+  transactions: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.any, // eslint-disable-line
+    details: PropTypes.arrayOf(PropTypes.shape({
+      amount: PropTypes.number,
+      account: PropTypes.shape({ name: PropTypes.string }),
+    })),
+    person: PropTypes.shape({
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      photo: PropTypes.string,
+    }),
+    date: PropTypes.string,
+  })),
   isLoading: PropTypes.bool,
 };
 

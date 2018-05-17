@@ -9,7 +9,9 @@ import BackgroundView from '@ui/BackgroundView';
 import PaddedView from '@ui/PaddedView';
 import styled from '@ui/styled';
 import { BodyText } from '@ui/typography';
-import SideBySideView, { Left } from '@ui/SideBySideView';
+import SideBySideView, { Left, Right } from '@ui/SideBySideView';
+import MediaQuery from '@ui/MediaQuery';
+import Hero, { BackgroundImage } from '@ui/Hero';
 
 import RecentArticles from 'give/RecentArticles';
 import Transaction from './Transaction';
@@ -37,11 +39,14 @@ const enhance = compose(
   })),
 );
 
+const image =
+  'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/all/heroes/newspring/campuses/Florence.1.2x1_1700_850_90_c1.jpg';
+
 const TransactionDetails = enhance(({ id }) => (
   <BackgroundView>
-    <Header titleText={'Contribution Details'} backButton webEnabled />
     <FlexedSideBySideView>
       <FlexedLeft>
+        <Header backButton webEnabled />
         <ScrollView>
           <PaperView>
             <Transaction id={id} />
@@ -56,6 +61,11 @@ const TransactionDetails = enhance(({ id }) => (
           <RecentArticles />
         </ScrollView>
       </FlexedLeft>
+      <MediaQuery minWidth="md">
+        <Right>
+          <Hero background={<BackgroundImage source={image} />} />
+        </Right>
+      </MediaQuery>
     </FlexedSideBySideView>
   </BackgroundView>
 ));

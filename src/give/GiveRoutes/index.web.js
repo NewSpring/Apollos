@@ -1,0 +1,158 @@
+import React, { PureComponent } from 'react';
+import { StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
+import { TabViewPagerPan } from 'react-native-tab-view';
+import { Link, Switch, Route, matchPath, withRouter } from '@ui/NativeWebRouter';
+import TabView, { SceneMap } from '@ui/TabView';
+import Header from '@ui/Header';
+import BackgroundView from '@ui/BackgroundView';
+import MediaQuery from '@ui/MediaQuery';
+import { ResponsiveSideBySideView as SideBySideView, Left, Right } from '@ui/SideBySideView';
+import Hero, { BackgroundImage } from '@ui/Hero';
+import styled from '@ui/styled';
+import ContributionsChartHero from '@ui/ContributionsChartHero';
+import Meta from '@ui/Meta';
+
+import Dashboard from 'give/Dashboard';
+import Now from 'give/Now';
+import ContributionHistory from 'give/ContributionHistory';
+
+const TabViewPager = TabViewPagerPan;
+
+const FlexedSideBySideView = styled({ flex: 1 })(SideBySideView);
+const FlexedLeft = styled({ flex: 1 })(Left);
+
+const historyImage =
+  'https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/NScollege-cip-0033_1700_1133_90_c1.jpg';
+const scheduleImage =
+  'https://s3.amazonaws.com/ns.images/newspring/give/42835.marketing.cen.webad.scheduleyourgiving_1x2.jpg';
+
+class GiveRoutes extends PureComponent {
+  static propTypes = {
+    Header: TabView.propTypes.renderHeader,
+    location: PropTypes.shape({
+      pathname: PropTypes.string,
+    }),
+    routes: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        headerTitle: PropTypes.string,
+        key: PropTypes.string.isRequired,
+        path: PropTypes.string.isRequired,
+      }),
+    ),
+    scenes: TabView.propTypes.renderScene,
+    history: PropTypes.shape({
+      replace: PropTypes.func,
+    }),
+  };
+
+  static defaultProps = {
+    routes: [
+      {
+        title: 'Dashboard',
+        headerTitle: 'My Giving',
+        key: 'Dashboard',
+        path: '/give',
+      },
+      {
+        title: 'Give Now',
+        headerTitle: 'My Giving',
+        key: 'Now',
+        path: '/give/now',
+      },
+      {
+        title: 'History',
+        headerTitle: 'My Giving',
+        key: 'ContributionHistory',
+        path: '/give/history',
+      },
+    ],
+    scenes: SceneMap({
+      Dashboard,
+      Now,
+      ContributionHistory,
+    }),
+  };
+
+  get currentRouteIndex() {
+    return this.props.routes.findIndex(route =>
+      matchPath(this.props.location.pathname, {
+        path: route.path,
+        exact: true,
+      }),
+    );
+  }
+
+  get currentRoute() {
+    return this.props.routes[this.currentRouteIndex];
+  }
+
+  handleOnChangeTab = (routeIndex) => {
+    const nextRoute = this.props.routes[routeIndex];
+    if (nextRoute) {
+      // we can skip history.replace on native to prevent a re-render
+      this.props.history.replace(nextRoute.path);
+    }
+  };
+
+  render() {
+    if (!this.currentRoute) return null;
+    return (
+      <BackgroundView>
+        <FlexedSideBySideView>
+          <FlexedLeft>
+            <Header webEnabled titleText={'My Giving'} />
+            <TabView
+              index={this.currentRouteIndex || 0}
+              routes={this.props.routes}
+              renderScene={this.props.scenes}
+              onChange={this.handleOnChangeTab}
+              renderPager={props => <TabViewPager {...props} />}
+            />
+          </FlexedLeft>
+          <MediaQuery minWidth="md">
+            <Right>
+              <Switch style={StyleSheet.absoluteFill}>
+                <Route path="/give/history">
+                  <Hero background={<BackgroundImage source={historyImage} />} />
+                </Route>
+                <Route path="/give" exact>
+                  <ContributionsChartHero onViewHistory={() => this.handleOnChangeTab(2)} />
+                </Route>
+                <Route>
+                  <Hero
+                    background={
+                      <Link
+                        onPress={() => this.handleOnChangeTab(0)}
+                        style={StyleSheet.absoluteFill}
+                      >
+                        <BackgroundImage source={scheduleImage} />
+                      </Link>
+                    }
+                  />
+                </Route>
+              </Switch>
+            </Right>
+          </MediaQuery>
+        </FlexedSideBySideView>
+        <Switch>
+          <Route path="/give/history">
+            <Meta title="Giving History" />
+          </Route>
+          <Route path="/give" exact>
+            <Meta title="Giving Dashboard" />
+          </Route>
+          <Route>
+            <Meta
+              title="Give"
+              image="//s3.amazonaws.com/ns.assets/apollos/you_cant_outgive_god2x1.jpg"
+            />
+          </Route>
+        </Switch>
+      </BackgroundView>
+    );
+  }
+}
+
+export default withRouter(GiveRoutes);
