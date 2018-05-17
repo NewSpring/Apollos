@@ -23,6 +23,8 @@ const styles = styled(
         paddingTop: theme.helpers.rem(0.3),
         paddingBottom: theme.helpers.rem(0.075),
         lineHeight: theme.helpers.verticalRhythm(0.875, 1.05),
+        '-webkit-font-smoothing': 'antialiased',
+        '-moz-osx-font-smoothing': 'grayscale',
       },
     }),
   }),
