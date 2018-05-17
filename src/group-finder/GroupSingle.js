@@ -135,7 +135,7 @@ const GroupSingle = enhance(
                   <Label>Group Leaders</Label>
                   <H5>
                     {leaders
-                      .map(leader => `${leader.person.firstName} ${leader.person.lastName}`)
+                      .map(leader => `${leader.person.nickName} ${leader.person.lastName}`)
                       .join(', ')}
                   </H5>
                   <AvatarList>
