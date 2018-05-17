@@ -22,7 +22,6 @@ import TableView, { Cell, Divider } from '@ui/TableView';
 import CashAmountIndicator from '@ui/CashAmountIndicator';
 import styled from '@ui/styled';
 import Icon from '@ui/Icon';
-import sentry from '@utils/sentry';
 
 const LargeCellText = styled(({ theme }) => ({
   flexGrow: 1,
@@ -263,7 +262,6 @@ const PaymentConfirmationForm = compose(
         if (props.onComplete) props.onComplete(null, true);
         return true;
       } catch (err) {
-        sentry.captureException(err);
         props.setPaymentResult({
           error: err.message,
         });
