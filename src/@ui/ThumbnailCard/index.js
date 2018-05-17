@@ -9,6 +9,7 @@ import Card, { CardContent } from '@ui/Card';
 import SideBySideView from '@ui/SideBySideView';
 import FlexedView from '@ui/FlexedView';
 import { H5, BodyText } from '@ui/typography';
+import Paragraph from '@ui/Paragraph';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import CategoryLabel from '@ui/CategoryLabel';
 
@@ -32,7 +33,8 @@ const HorizontalLayout = styled({
 
 const LeftColumn = compose(
   styled({ flex: 1.66 }),
-  mediaQuery(({ md }) => ({ maxWidth: md }),
+  mediaQuery(
+    ({ md }) => ({ maxWidth: md }),
     styled(({ theme }) => ({
       paddingVertical: theme.sizing.baseUnit * 0.75,
     })),
@@ -47,35 +49,37 @@ const RightColumn = styled({
   alignSelf: 'stretch',
 })(FlexedView);
 
-const ThumbnailCard = enhance(({
-  title,
-  description,
-  images,
-  thumbnailImage,
-  category,
-  isLoading,
-  children,
-  ...otherProps
-}) => (
-  <Card isLoading={isLoading} {...otherProps}>
-    <HorizontalLayout>
-      <LeftColumn>
-        <H5>{startCase(toLower(title))}</H5>
-        { description ? (
-          <BodyText>{description}</BodyText>
-        ) : null }
-        {children}
-        { typeof category !== 'undefined' ? (
-          <CategoryLabel label={startCase(toLower(category))} isLoading={isLoading} />
-        ) : null }
-      </LeftColumn>
-      { images ? (
-        <RightColumn>
-          <Thumbnail source={images} thumbnail={thumbnailImage} />
-        </RightColumn>
-      ) : null }
-    </HorizontalLayout>
-  </Card>
-));
+const ThumbnailCard = enhance(
+  ({
+    title,
+    description,
+    images,
+    thumbnailImage,
+    category,
+    isLoading,
+    children,
+    ...otherProps
+  }) => (
+    <Card isLoading={isLoading} {...otherProps}>
+      <HorizontalLayout>
+        <LeftColumn>
+          <H5>{startCase(toLower(title))}</H5>
+          {description ? <BodyText>{description}</BodyText> : null}
+          <Paragraph>
+            <BodyText>{children}</BodyText>
+          </Paragraph>
+          {typeof category !== 'undefined' ? (
+            <CategoryLabel label={startCase(toLower(category))} isLoading={isLoading} />
+          ) : null}
+        </LeftColumn>
+        {images ? (
+          <RightColumn>
+            <Thumbnail source={images} thumbnail={thumbnailImage} />
+          </RightColumn>
+        ) : null}
+      </HorizontalLayout>
+    </Card>
+  ),
+);
 
 export default ThumbnailCard;
