@@ -4,27 +4,32 @@ import { compose, pure, setPropTypes } from 'recompose';
 import styled from '@ui/styled';
 import { withPlaceholder, Typography } from '@ui/Placeholder';
 
-const styles = styled(({ theme }) => ({
-  fontSize: theme.helpers.rem(1.112),
-  fontFamily: theme.typography.fontFamilySans.bold.default,
-  color: theme.colors.text.primary,
-  ...Platform.select({
-    ios: {
-      paddingTop: theme.helpers.rem(0.25),
-      paddingBottom: theme.helpers.rem(0.175),
-      lineHeight: theme.helpers.verticalRhythm(1.112, 1.13889),
-    },
-    android: {
-      paddingTop: theme.helpers.rem(0.1),
-      lineHeight: theme.helpers.verticalRhythm(1.112, 1.34),
-    },
-    web: {
-      paddingTop: theme.helpers.rem(0.325),
-      paddingBottom: theme.helpers.rem(0.1),
-      lineHeight: theme.helpers.verticalRhythm(1.112, 1.13889),
-    },
+const styles = styled(
+  ({ theme }) => ({
+    fontSize: theme.helpers.rem(1.112),
+    fontFamily: theme.typography.fontFamilySans.bold.default,
+    color: theme.colors.text.primary,
+    ...Platform.select({
+      ios: {
+        paddingTop: theme.helpers.rem(0.25),
+        paddingBottom: theme.helpers.rem(0.175),
+        lineHeight: theme.helpers.verticalRhythm(1.112, 1.13889),
+      },
+      android: {
+        paddingTop: theme.helpers.rem(0.1),
+        lineHeight: theme.helpers.verticalRhythm(1.112, 1.34),
+      },
+      web: {
+        paddingTop: theme.helpers.rem(0.325),
+        paddingBottom: theme.helpers.rem(0.1),
+        lineHeight: theme.helpers.verticalRhythm(1.112, 1.13889),
+        '-webkit-font-smoothing': 'antialiased',
+        '-moz-osx-font-smoothing': 'grayscale',
+      },
+    }),
   }),
-}), 'H5');
+  'H5',
+);
 
 const H5 = compose(
   setPropTypes({
