@@ -19,10 +19,13 @@ export { ProfileDetails, ProfileAddress, ChangePassword } from './forms';
 const LogoutTouchable = compose(
   withUser,
   withRouter,
-  withProps(({ logout }) => ({
+  withProps(({ logout, history }) => ({
     async onPress() {
       await logout();
-      if (Platform.OS === 'web') reload();
+      if (Platform.OS === 'web') {
+        history.push('/give/now'); // redirect to home page
+        reload();
+      }
     },
   })),
 )(Touchable);
