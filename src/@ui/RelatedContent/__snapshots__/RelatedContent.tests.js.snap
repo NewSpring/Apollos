@@ -116,6 +116,31 @@ exports[`The RelatedContent component renders correctly 1`] = `
             >
               Hi
             </Text>
+            <View
+              style={
+                Object {
+                  "paddingVertical": 10,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                bold={false}
+                ellipsizeMode="tail"
+                italic={false}
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "DroidSerif-Regular",
+                    "fontSize": 20.02,
+                    "lineHeight": 33.11,
+                    "paddingBottom": 2.25,
+                    "paddingTop": 1.8,
+                  }
+                }
+              />
+            </View>
           </View>
           <View
             style={
@@ -270,6 +295,31 @@ exports[`The RelatedContent component renders correctly 1`] = `
             >
               Hi 2
             </Text>
+            <View
+              style={
+                Object {
+                  "paddingVertical": 10,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                bold={false}
+                ellipsizeMode="tail"
+                italic={false}
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "DroidSerif-Regular",
+                    "fontSize": 20.02,
+                    "lineHeight": 33.11,
+                    "paddingBottom": 2.25,
+                    "paddingTop": 1.8,
+                  }
+                }
+              />
+            </View>
             <View
               flexed={false}
               style={
@@ -471,6 +521,31 @@ exports[`The RelatedContent component renders correctly 1`] = `
             >
               Hi 3
             </Text>
+            <View
+              style={
+                Object {
+                  "paddingVertical": 10,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                bold={false}
+                ellipsizeMode="tail"
+                italic={false}
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "DroidSerif-Regular",
+                    "fontSize": 20.02,
+                    "lineHeight": 33.11,
+                    "paddingBottom": 2.25,
+                    "paddingTop": 1.8,
+                  }
+                }
+              />
+            </View>
             <View
               flexed={false}
               style={
@@ -699,6 +774,50 @@ exports[`The RelatedContent component renders empty state 1`] = `
                 }
               }
             />
+            <View
+              style={
+                Object {
+                  "paddingVertical": 10,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 18,
+                    "marginVertical": 4,
+                    "width": "85%",
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 18,
+                    "marginVertical": 4,
+                    "width": "100%",
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 18,
+                    "marginVertical": 4,
+                    "width": "75%",
+                  }
+                }
+              />
+            </View>
           </View>
           <View
             style={
@@ -835,6 +954,50 @@ exports[`The RelatedContent component renders empty state 1`] = `
                 }
               }
             />
+            <View
+              style={
+                Object {
+                  "paddingVertical": 10,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 18,
+                    "marginVertical": 4,
+                    "width": "85%",
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 18,
+                    "marginVertical": 4,
+                    "width": "100%",
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 18,
+                    "marginVertical": 4,
+                    "width": "75%",
+                  }
+                }
+              />
+            </View>
           </View>
           <View
             style={
@@ -971,6 +1134,50 @@ exports[`The RelatedContent component renders empty state 1`] = `
                 }
               }
             />
+            <View
+              style={
+                Object {
+                  "paddingVertical": 10,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 18,
+                    "marginVertical": 4,
+                    "width": "85%",
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 18,
+                    "marginVertical": 4,
+                    "width": "100%",
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "alignSelf": "stretch",
+                    "backgroundColor": "#dddddd",
+                    "borderRadius": 6,
+                    "height": 18,
+                    "marginVertical": 4,
+                    "width": "75%",
+                  }
+                }
+              />
+            </View>
           </View>
           <View
             style={

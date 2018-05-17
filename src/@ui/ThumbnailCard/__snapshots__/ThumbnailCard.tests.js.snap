@@ -63,6 +63,31 @@ exports[`the ThumbnailCard component should render 1`] = `
         >
           Why Jesus Is Timeless
         </Text>
+        <View
+          style={
+            Object {
+              "paddingVertical": 10,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            bold={false}
+            ellipsizeMode="tail"
+            italic={false}
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
+              }
+            }
+          />
+        </View>
       </View>
     </View>
   </View>
@@ -127,6 +152,50 @@ exports[`the ThumbnailCard component should render a loading state 1`] = `
             }
           }
         />
+        <View
+          style={
+            Object {
+              "paddingVertical": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignSelf": "stretch",
+                "backgroundColor": "#dddddd",
+                "borderRadius": 6,
+                "height": 18,
+                "marginVertical": 4,
+                "width": "85%",
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "alignSelf": "stretch",
+                "backgroundColor": "#dddddd",
+                "borderRadius": 6,
+                "height": 18,
+                "marginVertical": 4,
+                "width": "100%",
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "alignSelf": "stretch",
+                "backgroundColor": "#dddddd",
+                "borderRadius": 6,
+                "height": 18,
+                "marginVertical": 4,
+                "width": "75%",
+              }
+            }
+          />
+        </View>
         <View
           flexed={false}
           style={
@@ -288,6 +357,31 @@ exports[`the ThumbnailCard component should render with a category 1`] = `
           Why Jesus Is Timeless
         </Text>
         <View
+          style={
+            Object {
+              "paddingVertical": 10,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            bold={false}
+            ellipsizeMode="tail"
+            italic={false}
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
+              }
+            }
+          />
+        </View>
+        <View
           flexed={false}
           style={
             Object {
@@ -403,6 +497,31 @@ exports[`the ThumbnailCard component should render with a category and images 1`
         >
           Why Jesus Is Timeless
         </Text>
+        <View
+          style={
+            Object {
+              "paddingVertical": 10,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            bold={false}
+            ellipsizeMode="tail"
+            italic={false}
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
+              }
+            }
+          />
+        </View>
         <View
           flexed={false}
           style={
@@ -568,6 +687,31 @@ exports[`the ThumbnailCard component should render with an images 1`] = `
         >
           Why Jesus Is Timeless
         </Text>
+        <View
+          style={
+            Object {
+              "paddingVertical": 10,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            bold={false}
+            ellipsizeMode="tail"
+            italic={false}
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
+              }
+            }
+          />
+        </View>
       </View>
       <View
         style={
