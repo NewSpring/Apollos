@@ -49,6 +49,7 @@ export default graphql(QUERY, {
         ? get(ownProps, 'dateRange.endDate')
         : undefined,
     },
+    fetchPolicy: 'cache-and-network',
   }),
   props: ({ ownProps, data } = {}) => ({
     // NOTE: This should happen in Heighliner

@@ -19,7 +19,7 @@ export const MUTATION = gql`
 export default graphql(MUTATION, {
   props: ({ mutate }) => ({
     cancelSchedule: id => (mutate({
-      refetchQueries: ['GivingDashboard'],
+      refetchQueries: ['GivingDashboard', 'GetTransactions'],
       variables: {
         id,
       },

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { compose, withProps } from 'recompose';
+import { compose, withProps, onlyUpdateForKeys } from 'recompose';
 import { withRouter } from '@ui/NativeWebRouter';
 import BackgroundView from '@ui/BackgroundView';
 import withTransactions from '@data/withTransactions';
@@ -60,6 +60,7 @@ class ContributionHistory extends PureComponent {
 
 const enhance = compose(
   withRouter,
+  onlyUpdateForKeys([]),
   withProps(props => ({
     onPressContributionCard(id) {
       props.history.push(`/give/history/${id}`);
