@@ -16,6 +16,16 @@ import Layout from './Layout';
 
 export { ProfileDetails, ProfileAddress, ChangePassword } from './forms';
 
+const feedbackLink = 'mailto:web.helpdesk@newspring.cc';
+const handleFeedback = () => {
+  if (Platform.OS === 'web') {
+    window.location.href = feedbackLink;
+  } else {
+    Linking.openURL(feedbackLink);
+  }
+};
+
+
 const LogoutTouchable = compose(
   withUser,
   withRouter,
@@ -71,7 +81,7 @@ const Settings = () => (
             </Link>
           </TableView>
           <TableView>
-            <Touchable onPress={() => Linking.openURL('mailto:web.helpdesk@newspring.cc')}>
+            <Touchable onPress={handleFeedback}>
               <Cell>
                 <CellText>Give Feedback</CellText>
                 <Arrow />
