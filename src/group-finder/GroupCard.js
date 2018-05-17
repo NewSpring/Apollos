@@ -88,7 +88,7 @@ const GroupCard = ({
               <ScheduleText>{schedule.description}</ScheduleText>
             ) : null}
 
-            <DistanceText>{parseInt(distance, 0)} miles away</DistanceText>
+            <DistanceText>{parseFloat(distance).toFixed(2)} miles away</DistanceText>
 
             <Paragraph>
               <BodyText numberOfLines={4} ellipsizeMode={'tail'}>
