@@ -65,9 +65,11 @@ const ThumbnailCard = enhance(
         <LeftColumn>
           <H5>{startCase(toLower(title))}</H5>
           {description ? <BodyText>{description}</BodyText> : null}
-          <Paragraph>
-            <BodyText>{children}</BodyText>
-          </Paragraph>
+          {children ? (
+            <Paragraph>
+              <BodyText>{children}</BodyText>
+            </Paragraph>
+          ) : null}
           {typeof category !== 'undefined' ? (
             <CategoryLabel label={startCase(toLower(category))} isLoading={isLoading} />
           ) : null}
