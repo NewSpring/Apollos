@@ -63,7 +63,7 @@ const ThumbnailCard = enhance(
     <Card isLoading={isLoading} {...otherProps}>
       <HorizontalLayout>
         <LeftColumn>
-          <H5>{startCase(toLower(title))}</H5>
+          <H5>{title}</H5>
           {description ? <BodyText>{description}</BodyText> : null}
           {children ? (
             <Paragraph>
