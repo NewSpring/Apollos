@@ -114,7 +114,7 @@ exports[`The RelatedContent component renders correctly 1`] = `
                 }
               }
             >
-              Hi
+              hi
             </Text>
           </View>
           <View
@@ -268,7 +268,7 @@ exports[`The RelatedContent component renders correctly 1`] = `
                 }
               }
             >
-              Hi 2
+              hi 2
             </Text>
             <View
               flexed={false}
@@ -469,7 +469,7 @@ exports[`The RelatedContent component renders correctly 1`] = `
                 }
               }
             >
-              Hi 3
+              hi 3
             </Text>
             <View
               flexed={false}
