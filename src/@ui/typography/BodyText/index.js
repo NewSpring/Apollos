@@ -14,7 +14,7 @@ const styles = styled(({ theme, bold, italic }) => {
     fontStack = theme.typography.fontFamilySerif.regular.italic;
   }
 
-  return ({
+  return {
     fontSize: theme.helpers.rem(1.112),
     fontFamily: fontStack,
     color: theme.colors.text.primary,
@@ -31,9 +31,11 @@ const styles = styled(({ theme, bold, italic }) => {
         paddingTop: theme.helpers.rem(0.125),
         paddingBottom: theme.helpers.rem(0.1),
         lineHeight: theme.helpers.verticalRhythm(1.112, 1.4889),
+        '-webkit-font-smoothing': 'antialiased',
+        '-moz-osx-font-smoothing': 'grayscale',
       },
     }),
-  });
+  };
 }, 'BodyText');
 
 const BodyText = compose(
