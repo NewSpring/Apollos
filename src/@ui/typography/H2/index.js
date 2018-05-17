@@ -4,26 +4,31 @@ import { compose, pure, setPropTypes } from 'recompose';
 import styled from '@ui/styled';
 import { withPlaceholder, Typography } from '@ui/Placeholder';
 
-const styles = styled(({ theme }) => ({
-  fontSize: theme.helpers.rem(2.35),
-  fontFamily: theme.typography.fontFamilySans.bold.default,
-  color: theme.colors.text.primary,
-  ...Platform.select({
-    ios: {
-      paddingTop: theme.helpers.rem(0.35),
-      paddingBottom: theme.helpers.rem(0.2),
-      lineHeight: theme.helpers.verticalRhythm(2.35, 1.14),
-    },
-    android: {
-      lineHeight: theme.helpers.verticalRhythm(2.35, 1.34),
-    },
-    web: {
-      paddingTop: theme.helpers.rem(0.4),
-      paddingBottom: theme.helpers.rem(0.15),
-      lineHeight: theme.helpers.verticalRhythm(2.35, 1.15),
-    },
+const styles = styled(
+  ({ theme }) => ({
+    fontSize: theme.helpers.rem(2.35),
+    fontFamily: theme.typography.fontFamilySans.bold.default,
+    color: theme.colors.text.primary,
+    ...Platform.select({
+      ios: {
+        paddingTop: theme.helpers.rem(0.35),
+        paddingBottom: theme.helpers.rem(0.2),
+        lineHeight: theme.helpers.verticalRhythm(2.35, 1.14),
+      },
+      android: {
+        lineHeight: theme.helpers.verticalRhythm(2.35, 1.34),
+      },
+      web: {
+        paddingTop: theme.helpers.rem(0.4),
+        paddingBottom: theme.helpers.rem(0.15),
+        lineHeight: theme.helpers.verticalRhythm(2.35, 1.15),
+        '-webkit-font-smoothing': 'antialiased',
+        '-moz-osx-font-smoothing': 'grayscale',
+      },
+    }),
   }),
-}), 'H2');
+  'H2',
+);
 
 const H2 = compose(
   setPropTypes({
