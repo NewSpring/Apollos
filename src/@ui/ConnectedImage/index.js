@@ -133,6 +133,14 @@ class ConnectedImage extends PureComponent {
       ) {
         this.setState({ source: getCachedSources(sources) });
       }
+    }).catch(() => {
+      // todo: Right now, if there's an error on connected image that means one of two things:
+      // 1) the image component was unmounted before load...we should do nothing
+      // 2) the image failed to load. Our "empty" state for images is a graybox.
+      //    We could make this better by showing an alert icon or something on error,
+      //    But a gray box is better then nothing. so, we do nothing currently :)
+      //    However, we still need this empty catch function as uncaught promise errors
+      //    will throw an error up the food chain.
     });
   }
 
