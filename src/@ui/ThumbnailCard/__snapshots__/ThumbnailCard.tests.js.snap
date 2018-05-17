@@ -61,7 +61,7 @@ exports[`the ThumbnailCard component should render 1`] = `
             }
           }
         >
-          Why Jesus Is Timeless
+          Why Jesus is Timeless
         </Text>
       </View>
     </View>
@@ -285,7 +285,7 @@ exports[`the ThumbnailCard component should render with a category 1`] = `
             }
           }
         >
-          Why Jesus Is Timeless
+          Why Jesus is Timeless
         </Text>
         <View
           flexed={false}
@@ -401,7 +401,7 @@ exports[`the ThumbnailCard component should render with a category and images 1`
             }
           }
         >
-          Why Jesus Is Timeless
+          Why Jesus is Timeless
         </Text>
         <View
           flexed={false}
@@ -566,7 +566,7 @@ exports[`the ThumbnailCard component should render with an images 1`] = `
             }
           }
         >
-          Why Jesus Is Timeless
+          Why Jesus is Timeless
         </Text>
       </View>
       <View

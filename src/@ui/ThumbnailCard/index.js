@@ -32,7 +32,8 @@ const HorizontalLayout = styled({
 
 const LeftColumn = compose(
   styled({ flex: 1.66 }),
-  mediaQuery(({ md }) => ({ maxWidth: md }),
+  mediaQuery(
+    ({ md }) => ({ maxWidth: md }),
     styled(({ theme }) => ({
       paddingVertical: theme.sizing.baseUnit * 0.75,
     })),
@@ -47,35 +48,35 @@ const RightColumn = styled({
   alignSelf: 'stretch',
 })(FlexedView);
 
-const ThumbnailCard = enhance(({
-  title,
-  description,
-  images,
-  thumbnailImage,
-  category,
-  isLoading,
-  children,
-  ...otherProps
-}) => (
-  <Card isLoading={isLoading} {...otherProps}>
-    <HorizontalLayout>
-      <LeftColumn>
-        <H5>{startCase(toLower(title))}</H5>
-        { description ? (
-          <BodyText>{description}</BodyText>
-        ) : null }
-        {children}
-        { typeof category !== 'undefined' ? (
-          <CategoryLabel label={startCase(toLower(category))} isLoading={isLoading} />
-        ) : null }
-      </LeftColumn>
-      { images ? (
-        <RightColumn>
-          <Thumbnail source={images} thumbnail={thumbnailImage} />
-        </RightColumn>
-      ) : null }
-    </HorizontalLayout>
-  </Card>
-));
+const ThumbnailCard = enhance(
+  ({
+    title,
+    description,
+    images,
+    thumbnailImage,
+    category,
+    isLoading,
+    children,
+    ...otherProps
+  }) => (
+    <Card isLoading={isLoading} {...otherProps}>
+      <HorizontalLayout>
+        <LeftColumn>
+          <H5>{title}</H5>
+          {description ? <BodyText>{description}</BodyText> : null}
+          {children}
+          {typeof category !== 'undefined' ? (
+            <CategoryLabel label={startCase(toLower(category))} isLoading={isLoading} />
+          ) : null}
+        </LeftColumn>
+        {images ? (
+          <RightColumn>
+            <Thumbnail source={images} thumbnail={thumbnailImage} />
+          </RightColumn>
+        ) : null}
+      </HorizontalLayout>
+    </Card>
+  ),
+);
 
 export default ThumbnailCard;
