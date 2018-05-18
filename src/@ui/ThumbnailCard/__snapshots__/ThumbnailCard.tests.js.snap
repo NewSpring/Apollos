@@ -505,6 +505,102 @@ exports[`the ThumbnailCard component should render with a category and images 1`
 </View>
 `;
 
+exports[`the ThumbnailCard component should render with a description 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 6,
+      "marginHorizontal": 10,
+      "marginVertical": 5,
+      "shadowColor": "rgba(133, 133, 133, 0.30000000000000004)",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 3,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 6,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "nowrap",
+          "justifyContent": "space-between",
+          "minHeight": 110,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1.66,
+            "paddingHorizontal": 20,
+            "paddingVertical": 15,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 20.02,
+              "lineHeight": 25.33,
+              "paddingBottom": 3.15,
+              "paddingTop": 4.5,
+            }
+          }
+        >
+          Why Jesus is Timeless
+        </Text>
+        <View
+          style={
+            Object {
+              "paddingVertical": 10,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            bold={false}
+            ellipsizeMode="tail"
+            italic={false}
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "DroidSerif-Regular",
+                "fontSize": 20.02,
+                "lineHeight": 33.11,
+                "paddingBottom": 2.25,
+                "paddingTop": 1.8,
+              }
+            }
+          >
+            This is the story of a God, who made a flood and drowned the whole world. He gave up His son for everybody, and we absolutely love Him, all the time.
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`the ThumbnailCard component should render with an images 1`] = `
 <View
   style={
