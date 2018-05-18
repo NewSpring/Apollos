@@ -18,6 +18,7 @@ import Thumbnail from './Thumbnail';
 const enhance = compose(
   setPropTypes({
     title: PropTypes.string.isRequired,
+    description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     images: Thumbnail.propTypes.source,
     category: PropTypes.string,
     isLoading: PropTypes.bool,
@@ -51,23 +52,15 @@ const RightColumn = styled({
 
 const ThumbnailCard = enhance(
   ({
-    title,
-    description,
-    images,
-    thumbnailImage,
-    category,
-    isLoading,
-    children,
-    ...otherProps
+    title, description, images, thumbnailImage, category, isLoading, ...otherProps
   }) => (
     <Card isLoading={isLoading} {...otherProps}>
       <HorizontalLayout>
         <LeftColumn>
           <H5>{title}</H5>
-          {description ? <BodyText>{description}</BodyText> : null}
-          {children ? (
+          {description ? (
             <Paragraph>
-              <BodyText>{children}</BodyText>
+              <BodyText>{description}</BodyText>
             </Paragraph>
           ) : null}
           {typeof category !== 'undefined' ? (
