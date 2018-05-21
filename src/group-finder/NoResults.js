@@ -13,9 +13,15 @@ const AdUnit = () => (
     <CardContent>
       <PaddedView>
         <StyledBodyText italic>
-          {'Unfortunately, we didn\'t find any groups matching your search. Gather some friends, and '}
-          <ButtonLink onPress={() => WebBrowser.openBrowserAsync('https://rock.newspring.cc/workflows/81')}>start your own group</ButtonLink>
-          {' !'}
+          {
+            "Unfortunately, we didn't find any groups matching your search. Gather some friends, and "
+          }
+          <ButtonLink
+            onPress={() => WebBrowser.openBrowserAsync('https://rock.newspring.cc/workflows/81')}
+          >
+            start your own group
+          </ButtonLink>
+          {'!'}
         </StyledBodyText>
       </PaddedView>
     </CardContent>
