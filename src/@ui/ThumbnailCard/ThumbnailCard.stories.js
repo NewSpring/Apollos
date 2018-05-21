@@ -13,8 +13,16 @@ const containerStyles = {
 storiesOf('ThumbnailCard', module)
   .add('Default', () => (
     <View style={containerStyles}>
+      <ThumbnailCard title={'Why Jesus is Timeless'} />
+    </View>
+  ))
+  .add('With Description', () => (
+    <View style={containerStyles}>
       <ThumbnailCard
         title={'Why Jesus is Timeless'}
+        description={
+          'This is the story of a God, who made a flood and drowned the whole world. He gave up His son for everybody, and we absolutely love Him, all the time.'
+        }
       />
     </View>
   ))
@@ -28,10 +36,7 @@ storiesOf('ThumbnailCard', module)
   ))
   .add('With Category', () => (
     <View style={containerStyles}>
-      <ThumbnailCard
-        title={'Why Jesus is Timeless'}
-        category={'Time Travel'}
-      />
+      <ThumbnailCard title={'Why Jesus is Timeless'} category={'Time Travel'} />
     </View>
   ))
   .add('With Category and images', () => (

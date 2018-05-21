@@ -9,6 +9,7 @@ import Card, { CardContent } from '@ui/Card';
 import SideBySideView from '@ui/SideBySideView';
 import FlexedView from '@ui/FlexedView';
 import { H5, BodyText } from '@ui/typography';
+import Paragraph from '@ui/Paragraph';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import CategoryLabel from '@ui/CategoryLabel';
 
@@ -17,6 +18,7 @@ import Thumbnail from './Thumbnail';
 const enhance = compose(
   setPropTypes({
     title: PropTypes.string.isRequired,
+    description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     images: Thumbnail.propTypes.source,
     category: PropTypes.string,
     isLoading: PropTypes.bool,
@@ -50,21 +52,17 @@ const RightColumn = styled({
 
 const ThumbnailCard = enhance(
   ({
-    title,
-    description,
-    images,
-    thumbnailImage,
-    category,
-    isLoading,
-    children,
-    ...otherProps
+    title, description, images, thumbnailImage, category, isLoading, ...otherProps
   }) => (
     <Card isLoading={isLoading} {...otherProps}>
       <HorizontalLayout>
         <LeftColumn>
           <H5>{title}</H5>
-          {description ? <BodyText>{description}</BodyText> : null}
-          {children}
+          {description ? (
+            <Paragraph>
+              <BodyText>{description}</BodyText>
+            </Paragraph>
+          ) : null}
           {typeof category !== 'undefined' ? (
             <CategoryLabel label={startCase(toLower(category))} isLoading={isLoading} />
           ) : null}

@@ -37,24 +37,25 @@ const renderWebItem = item => (
   <Link to={getLinkPath(item)} key={item.id}>
     <ThumbnailCard
       title={item.title}
+      description={<HTMLView>{get(item, 'meta.summary', '')}</HTMLView>}
       category={item.channelName}
       images={getItemImages(item)}
       isLoading={item.isLoading}
-    >
-      <HTMLView>{get(item, 'meta.summary', '')}</HTMLView>
-    </ThumbnailCard>
+    />
   </Link>
 );
-
 
 const TaggedContent = compose(
   withTaggedContent,
   withProps(({ sectionTitle }) => ({
     sectionTitle: (
-      <PaddedView><Title>{sectionTitle}</Title></PaddedView>
+      <PaddedView>
+        <Title>{sectionTitle}</Title>
+      </PaddedView>
     ),
   })),
-  mediaQuery(({ md }) => ({ maxWidth: md }),
+  mediaQuery(
+    ({ md }) => ({ maxWidth: md }),
     withProps({ renderItem: renderMobileItem }),
     withProps({ renderItem: renderWebItem }),
   ),
