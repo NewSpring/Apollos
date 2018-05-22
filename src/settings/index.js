@@ -1,7 +1,6 @@
 import React from 'react';
 import { ScrollView, Linking, Platform } from 'react-native';
 import { withProps, compose } from 'recompose';
-import reload from '@utils/reload';
 import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
 import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
@@ -16,13 +15,25 @@ import Layout from './Layout';
 
 export { ProfileDetails, ProfileAddress, ChangePassword } from './forms';
 
+const feedbackLink = 'mailto:web.helpdesk@newspring.cc';
+const handleFeedback = () => {
+  if (Platform.OS === 'web') {
+    window.location.href = feedbackLink;
+  } else {
+    Linking.openURL(feedbackLink);
+  }
+};
+
+
 const LogoutTouchable = compose(
   withUser,
   withRouter,
-  withProps(({ logout }) => ({
+  withProps(({ logout, history }) => ({
     async onPress() {
+      if (Platform.OS === 'web') {
+        history.push('/give/now'); // redirect to home page
+      }
       await logout();
-      if (Platform.OS === 'web') reload();
     },
   })),
 )(Touchable);
@@ -71,7 +82,7 @@ const Settings = () => (
             </Link>
           </TableView>
           <TableView>
-            <Touchable onPress={() => Linking.openURL('mailto:web.helpdesk@newspring.cc')}>
+            <Touchable onPress={handleFeedback}>
               <Cell>
                 <CellText>Give Feedback</CellText>
                 <Arrow />

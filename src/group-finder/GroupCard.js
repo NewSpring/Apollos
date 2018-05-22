@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import truncate from 'truncate';
 import { Platform, TouchableWithoutFeedback } from 'react-native';
+import { round } from 'lodash';
 import { enhancer as mediaQuery } from '@ui/MediaQuery';
 import Card, { CardContent, CardImage } from '@ui/Card';
 import { H5, H6, H7, BodyText } from '@ui/typography';
@@ -88,7 +89,7 @@ const GroupCard = ({
               <ScheduleText>{schedule.description}</ScheduleText>
             ) : null}
 
-            <DistanceText>{parseInt(distance, 0)} miles away</DistanceText>
+            <DistanceText>{round(distance || 0, 2)} miles away</DistanceText>
 
             <Paragraph>
               <BodyText numberOfLines={4} ellipsizeMode={'tail'}>
