@@ -20,21 +20,23 @@ const createStyleSheet = (stylesToGenerate) => {
     }
   });
 
-  // Generate the new stylesheet
-  const generatedStyleSheet = StyleSheet.create(styleSheet);
+  if (Object.keys(styleSheet).length) {
+    // Generate the new stylesheet
+    const generatedStyleSheet = StyleSheet.create(styleSheet);
 
-  // Process the generated stylesheet
-  Object.keys(generatedStyleSheet).forEach((key) => {
-    const index = parseInt(key, 0);
-    const generatedStyle = generatedStyleSheet[key];
-    const hash = styleHasher(styles[index]);
+    // Process the generated stylesheet
+    Object.keys(generatedStyleSheet).forEach((key) => {
+      const index = parseInt(key, 0);
+      const generatedStyle = generatedStyleSheet[key];
+      const hash = styleHasher(styles[index]);
 
-    // add generated style to cache
-    cachedStyles[hash] = generatedStyle;
+      // add generated style to cache
+      cachedStyles[hash] = generatedStyle;
 
-    // swap generated style into result list
-    styles[index] = generatedStyle;
-  });
+      // swap generated style into result list
+      styles[index] = generatedStyle;
+    });
+  }
 
   if (styles.length === 1) styles = styles[0]; // eslint-disable-line
   return styles;

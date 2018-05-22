@@ -3,48 +3,57 @@ import { View } from 'react-native';
 import get from 'lodash/get';
 import {
   compose,
-  branch,
-  withState,
-  renderComponent,
+  mapProps,
+  pure,
 } from 'recompose';
 import { H4, H7 } from '@ui/typography';
-import ActivityIndicator from '@ui/ActivityIndicator';
 import { parse, stringify } from '@utils/queryString';
+import ActivityIndicator from '@ui/ActivityIndicator';
 import withRestoredGive from '@data/withRestoredGive';
 import { PaymentConfirmationForm } from '@ui/forms';
 import styled from '@ui/styled';
 import { withoutTabBar } from 'tabs/Layout';
 
-const PaperView = styled(({ theme }) => ({
-  flex: 1,
-  backgroundColor: theme.colors.background.paper,
-  padding: theme.sizing.baseUnit,
-}), 'PaperView')(View);
+const PaperView = styled(
+  ({ theme }) => ({
+    flex: 1,
+    backgroundColor: theme.colors.background.paper,
+    padding: theme.sizing.baseUnit,
+  }),
+  'PaperView',
+)(View);
 
 const enhance = compose(
+  mapProps(() => ({})),
+  pure,
   withoutTabBar,
   withRestoredGive,
-  withState('paymentCompletion', 'setPaymentCompletion', false),
-  branch(({ isRestored }) => !isRestored, renderComponent(ActivityIndicator)),
 );
 
 export const RestoredCheckout = enhance((props) => {
-  const { redirect } = parse(get(props, 'location.search', {}));
+  const {
+    redirect, didGive, error, success,
+  } = parse(get(props, 'location.search', {}));
 
-  if (props.paymentCompletion) {
+  if (didGive) {
+    if (redirect) {
+      window.location.href = `${redirect}?${stringify({
+        error,
+        success,
+      })}`;
+    }
+
     return (
       <PaperView>
-        <H4>
-          {(!props.paymentCompletion.error && props.paymentCompletion.success) ? (
-            'Looking good!'
-          ) : (
-            'Hmm...there might be a problem.'
-          )}
-        </H4>
-        <H7>Redirecting you back to the NewSpring app...</H7>
-        <ActivityIndicator />
+        <H4>Giving confirmation</H4>
+        <H7>{"We're redirecting you back to the NewSpring app."}</H7>
+        <H7>If you come back to this screen later, feel free to close this tab.</H7>
       </PaperView>
     );
+  }
+
+  if (!props.isRestored) {
+    return <ActivityIndicator />;
   }
 
   return (
@@ -53,12 +62,13 @@ export const RestoredCheckout = enhance((props) => {
       <H7>{'Please review your donation'}</H7>
       <PaymentConfirmationForm
         hideChangePaymentMethodButton
-        onComplete={(error, success) => {
-          props.setPaymentCompletion({ error, success });
-          window.location.href = `${redirect}?${stringify({
-            error,
-            success,
-          })}`;
+        onComplete={(completionError, completionSuccess) => {
+          props.history.replace(`${props.location.pathname}?${stringify({
+            error: completionError,
+            success: completionSuccess,
+            didGive: 1,
+            redirect,
+          })}`);
         }}
       />
     </PaperView>

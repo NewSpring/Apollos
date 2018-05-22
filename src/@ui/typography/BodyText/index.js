@@ -6,15 +6,19 @@ import { withPlaceholder, Typography } from '@ui/Placeholder';
 
 const styles = styled(({ theme, bold, italic }) => {
   let fontStack = theme.typography.fontFamilySerif.regular.default;
+  let fontStyle = null;
+
   if (bold && italic) {
     fontStack = theme.typography.fontFamilySerif.bold.italic;
+    fontStyle = 'italic';
   } else if (bold) {
     fontStack = theme.typography.fontFamilySerif.bold.default;
   } else if (italic) {
     fontStack = theme.typography.fontFamilySerif.regular.italic;
+    fontStyle = 'italic';
   }
 
-  return ({
+  return {
     fontSize: theme.helpers.rem(1.112),
     fontFamily: fontStack,
     color: theme.colors.text.primary,
@@ -31,9 +35,12 @@ const styles = styled(({ theme, bold, italic }) => {
         paddingTop: theme.helpers.rem(0.125),
         paddingBottom: theme.helpers.rem(0.1),
         lineHeight: theme.helpers.verticalRhythm(1.112, 1.4889),
+        fontStyle: fontStyle, // eslint-disable-line
+        '-webkit-font-smoothing': 'antialiased',
+        '-moz-osx-font-smoothing': 'grayscale',
       },
     }),
-  });
+  };
 }, 'BodyText');
 
 const BodyText = compose(

@@ -135,7 +135,7 @@ const GroupSingle = enhance(
                   <Label>Group Leaders</Label>
                   <H5>
                     {leaders
-                      .map(leader => `${leader.person.firstName} ${leader.person.lastName}`)
+                      .map(leader => `${leader.person.nickName} ${leader.person.lastName}`)
                       .join(', ')}
                   </H5>
                   <AvatarList>
@@ -268,10 +268,12 @@ const GroupSingle = enhance(
             </MediaQuery>
           ) : null}
         </FlexedSideBySideView>
-        <SecondaryNav isLoading={isLoading} fullWidth>
-          <ShareLink id={id} />
-          <Like id={id} isLiked={isLiked} />
-        </SecondaryNav>
+        {Platform.OS !== 'web' ? (
+          <SecondaryNav isLoading={isLoading} fullWidth>
+            <ShareLink id={id} />
+            <Like id={id} isLiked={isLiked} />
+          </SecondaryNav>
+        ) : null}
       </BackgroundView>
     );
   },
