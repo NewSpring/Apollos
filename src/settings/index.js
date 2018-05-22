@@ -1,7 +1,6 @@
 import React from 'react';
 import { ScrollView, Linking, Platform } from 'react-native';
 import { withProps, compose } from 'recompose';
-import reload from '@utils/reload';
 import SafeAreaView from '@ui/SafeAreaView';
 import PaddedView from '@ui/PaddedView';
 import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
@@ -29,10 +28,12 @@ const handleFeedback = () => {
 const LogoutTouchable = compose(
   withUser,
   withRouter,
-  withProps(({ logout }) => ({
+  withProps(({ logout, history }) => ({
     async onPress() {
+      if (Platform.OS === 'web') {
+        history.push('/give/now'); // redirect to home page
+      }
       await logout();
-      if (Platform.OS === 'web') reload();
     },
   })),
 )(Touchable);
