@@ -9,6 +9,8 @@ import ActivityIndicator from '@ui/ActivityIndicator';
 import BackgroundView from '@ui/BackgroundView';
 import pickProps from '@utils/pickProps';
 
+import matchLocationToPath from './matchLocationToPath';
+
 const enhance = compose(
   withUser,
   // NOTE: This removes all the props noise
@@ -52,7 +54,12 @@ class ProtectedRoute extends PureComponent {
             );
           }
 
-          if (!this.props.isLoggedIn && currentPath !== '/login') {
+          const currentPathMatchesProtectedRoute = matchLocationToPath(
+            currentPath,
+            { pathname: this.props.path },
+          );
+
+          if (!this.props.isLoggedIn && currentPathMatchesProtectedRoute) {
             return (
               <Redirect
                 from={this.props.path}
