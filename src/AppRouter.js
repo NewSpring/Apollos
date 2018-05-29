@@ -40,6 +40,7 @@ import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './sett
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
 
 const redirectToNewspring = path => window.location.replace(`https://newspring.cc/${path}`);
+const redirectToMyDot = path => window.location.replace(`https://my.newspring.cc/${path}`);
 
 let previousLocation;
 
@@ -106,7 +107,7 @@ class AppRouter extends PureComponent {
         sizeOfHistory: history.entries ? history.entries.length : null,
       });
     }
-  }
+  };
 
   // On large screens we render modals on top of the previous route.
   // These routes should also exist elsewhere in the routing stack, which
@@ -193,6 +194,7 @@ class AppRouter extends PureComponent {
       <Route path="/live" component={() => redirectToNewspring('live')} />
       <Route path="/watchandread" component={() => redirectToNewspring('watchandread')} />
       <Route path="/nextsteps" component={() => redirectToNewspring('nextsteps')} />
+      <Route path="/signup" component={() => redirectToMyDot('login')} />
     </View>
   );
 
