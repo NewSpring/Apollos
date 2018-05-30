@@ -85,9 +85,6 @@ class AppRouter extends PureComponent {
   }
 
   get isModal() {
-    if (this.props.location.pathname === '/signup') {
-      return false;
-    }
     return (
       this.props.isLargeScreen &&
       previousLocation &&
