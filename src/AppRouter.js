@@ -197,8 +197,6 @@ class AppRouter extends PureComponent {
     </View>
   );
 
-  // const redirectToMyDot = path => window.location.replace(`https://my.newspring.cc/${path}`);
-
   render() {
     // On Web we render the tab layout at this level as tabs are visible in all app routes
     // On mobile, use a CardStack component for animated transitions and swipe to go back.
