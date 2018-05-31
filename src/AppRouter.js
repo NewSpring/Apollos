@@ -40,7 +40,6 @@ import Settings, { ProfileDetails, ProfileAddress, ChangePassword } from './sett
 import { Results as GroupFinderResults, GroupSingle } from './group-finder';
 
 const redirectToNewspring = path => window.location.replace(`https://newspring.cc/${path}`);
-const redirectToMyDot = path => window.location.replace(`https://my.newspring.cc/${path}`);
 
 let previousLocation;
 
@@ -90,6 +89,7 @@ class AppRouter extends PureComponent {
       this.props.isLargeScreen &&
       previousLocation &&
       previousLocation.pathname !== this.props.location.pathname &&
+      previousLocation.pathname !== '/signup' &&
       this.largeScreenModals.find(route =>
         matchPath(this.props.location.pathname, route.props.path),
       )
@@ -194,7 +194,6 @@ class AppRouter extends PureComponent {
       <Route path="/live" component={() => redirectToNewspring('live')} />
       <Route path="/watchandread" component={() => redirectToNewspring('watchandread')} />
       <Route path="/nextsteps" component={() => redirectToNewspring('nextsteps')} />
-      <Route path="/signup" component={() => redirectToMyDot('login')} />
     </View>
   );
 
@@ -221,6 +220,7 @@ class AppRouter extends PureComponent {
                   this.isModal || this.musicPlayerIsOpened ? previousLocation : this.props.location
                 }
               >
+                <Redirect from="/signup" to="/profile" />
                 <Redirect from="/sermons" to="/series" />
                 <Route exact path="/series" component={Series} />
                 <Route exact path="/series/:id" component={SeriesSingle} />
