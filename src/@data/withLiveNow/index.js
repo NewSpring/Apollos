@@ -5,7 +5,6 @@ export const QUERY = gql`
   query Live {
     live {
       live
-      fuse
     }
   }
 `;
@@ -14,7 +13,6 @@ export default graphql(QUERY, {
   props: ({ data: { error, live = {} } = {} }) => ({
     error,
     isLive: live.live,
-    isFuse: live.fuse,
     embedUrl: live.embedUrl,
   }),
   options: () => ({
