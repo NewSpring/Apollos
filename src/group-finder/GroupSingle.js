@@ -77,7 +77,7 @@ const handleGroupContact = ({ guid, loginParam }) => {
     newLoginParam = `&${loginParam}`;
   }
 
-  WebBrowser.openBrowserAsync(`${rockUrl}Workflows/304?Group=${guid}&${newLoginParam}`);
+  WebBrowser.openBrowserAsync(`${rockUrl}Workflows/304?Group=${guid}${newLoginParam}`);
   track(events.ContactedGroup, { guid });
 };
 
