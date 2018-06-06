@@ -71,7 +71,13 @@ const leadersLoadingState = [
 ];
 
 const handleGroupContact = ({ guid, loginParam }) => {
-  WebBrowser.openBrowserAsync(`${rockUrl}Workflows/304?Group=${guid}&${loginParam}`);
+  let newLoginParam = loginParam;
+
+  if (loginParam) {
+    newLoginParam = `&${loginParam}`;
+  }
+
+  WebBrowser.openBrowserAsync(`${rockUrl}Workflows/304?Group=${guid}&${newLoginParam}`);
   track(events.ContactedGroup, { guid });
 };
 
