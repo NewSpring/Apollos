@@ -1,6 +1,7 @@
 import pick from 'lodash/pick';
 import { QUERY as contributionsQuery } from '@data/withGive/withContributions';
 import { INITIAL_STATE } from './queries';
+import sentry from '@utils/sentry';
 
 export function addContribution(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
@@ -81,12 +82,7 @@ export function setBillingPerson(result, variables, { cache }) {
     data: {
       contributions: {
         ...state,
-        ...pick(variables, [
-          'firstName',
-          'lastName',
-          'email',
-          'campusId',
-        ]),
+        ...pick(variables, ['firstName', 'lastName', 'email', 'campusId']),
       },
     },
   });
@@ -104,14 +100,7 @@ export function setBillingAddress(result, variables, { cache }) {
     data: {
       contributions: {
         ...state,
-        ...pick(variables, [
-          'street1',
-          'street2',
-          'countryId',
-          'city',
-          'stateId',
-          'zipCode',
-        ]),
+        ...pick(variables, ['street1', 'street2', 'countryId', 'city', 'stateId', 'zipCode']),
       },
     },
   });
@@ -374,6 +363,13 @@ export async function setSavedPaymentMethod(result, variables, { cache }) {
 }
 
 export function restoreContributions(result, variables, { cache }) {
+  let stateVariables;
+  try {
+    stateVariables = JSON.parse(variables.state);
+  } catch (e) {
+    sentry.captureException(e);
+  }
+
   cache.writeQuery({
     query: contributionsQuery,
     data: {
@@ -382,4 +378,3 @@ export function restoreContributions(result, variables, { cache }) {
   });
   return null;
 }
-
