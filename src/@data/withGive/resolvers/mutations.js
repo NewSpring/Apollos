@@ -1,7 +1,7 @@
 import pick from 'lodash/pick';
 import { QUERY as contributionsQuery } from '@data/withGive/withContributions';
-import { INITIAL_STATE } from './queries';
 import sentry from '@utils/sentry';
+import { INITIAL_STATE } from './queries';
 
 export function addContribution(result, variables, { cache }) {
   const { contributions: state } = cache.readQuery({
