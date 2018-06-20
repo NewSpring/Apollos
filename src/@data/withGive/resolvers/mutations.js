@@ -363,7 +363,7 @@ export async function setSavedPaymentMethod(result, variables, { cache }) {
 }
 
 export function restoreContributions(result, variables, { cache }) {
-  let stateVariables;
+  let stateVariables = {};
   try {
     stateVariables = JSON.parse(variables.state);
   } catch (e) {

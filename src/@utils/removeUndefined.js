@@ -3,7 +3,7 @@
 import sentry from '@utils/sentry';
 
 export default function (obj) {
-  let returnValue;
+  let returnValue = {};
   try {
     returnValue = JSON.parse(JSON.stringify(obj));
   } catch (e) {
