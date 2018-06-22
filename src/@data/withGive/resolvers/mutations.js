@@ -368,10 +368,7 @@ export function restoreContributions(result, variables, { cache }) {
     stateVariables = JSON.parse(variables.state);
   } catch (e) {
     sentry.captureException(e, {
-      extra: {
-        result,
-        variables,
-      },
+      extra: { stateVariables: variables.state },
     });
   }
 
