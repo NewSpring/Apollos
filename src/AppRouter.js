@@ -89,6 +89,7 @@ class AppRouter extends PureComponent {
       this.props.isLargeScreen &&
       previousLocation &&
       previousLocation.pathname !== this.props.location.pathname &&
+      previousLocation.pathname !== '/signup' &&
       this.largeScreenModals.find(route =>
         matchPath(this.props.location.pathname, route.props.path),
       )
@@ -106,7 +107,7 @@ class AppRouter extends PureComponent {
         sizeOfHistory: history.entries ? history.entries.length : null,
       });
     }
-  }
+  };
 
   // On large screens we render modals on top of the previous route.
   // These routes should also exist elsewhere in the routing stack, which
@@ -219,6 +220,7 @@ class AppRouter extends PureComponent {
                   this.isModal || this.musicPlayerIsOpened ? previousLocation : this.props.location
                 }
               >
+                <Redirect from="/signup" to="/profile" />
                 <Redirect from="/sermons" to="/series" />
                 <Route exact path="/series" component={Series} />
                 <Route exact path="/series/:id" component={SeriesSingle} />

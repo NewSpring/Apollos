@@ -48,8 +48,8 @@ export default function getOrderDetails(state) {
         break;
     }
 
-    joinedData['start-date'] = state.start
-      ? moment(state.start).format('YYYYMMDD')
+    joinedData['start-date'] = state.startDate
+      ? moment(state.startDate).format('YYYYMMDD')
       : moment()
         .add(1, 'days')
         .format('YYYYMMDD');
