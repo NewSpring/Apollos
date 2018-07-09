@@ -1,5 +1,6 @@
 export const INITIAL_STATE = {
   // Create Order Forms
+  id: 'GiveContributions',
   __typename: 'GiveContributions',
   contributions: [],
   frequencyId: 'today',
@@ -17,12 +18,14 @@ export const INITIAL_STATE = {
 
   // Make payment
   creditCard: {
+    id: 'CreditCard',
     __typename: 'CreditCard',
     cardNumber: '',
     expirationDate: '',
     cvv: '',
   },
   bankAccount: {
+    id: 'BankAccount',
     __typename: 'BankAccount',
     accountNumber: '',
     routingNumber: '',
