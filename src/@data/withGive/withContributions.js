@@ -4,6 +4,7 @@ import { graphql } from 'react-apollo';
 export const QUERY = gql`
   query Give {
     contributions @client {
+      id
       contributions
       frequencyId
       startDate
@@ -18,11 +19,13 @@ export const QUERY = gql`
       stateId
       zipCode
       creditCard {
+        id
         cardNumber
         expirationDate
         cvv
       }
       bankAccount {
+        id
         accountNumber
         routingNumber
         accountName
