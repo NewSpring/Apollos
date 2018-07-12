@@ -13,47 +13,45 @@ const enhance = compose(
 );
 
 // TODO: Create a fetcher decorator instead using this logic
-export default Component => enhance(class withRestoredGive extends PureComponent {
-  static propTypes = {
-    restoreContributions: PropTypes.func,
-    location: PropTypes.shape({
-      search: PropTypes.string,
-    }),
-  };
+export default Component =>
+  enhance(
+    class withRestoredGive extends PureComponent {
+      static propTypes = {
+        restoreContributions: PropTypes.func,
+        location: PropTypes.shape({
+          search: PropTypes.string,
+        }),
+      };
 
-  static defaultProps = {
-    restoreContributions() {},
-    location: {},
-  };
+      static defaultProps = {
+        restoreContributions() {},
+        location: {},
+      };
 
-  state = {
-    isRestored: false,
-  };
+      state = {
+        isRestored: false,
+      };
 
-  async componentWillMount() {
-    try {
-      const { state, userToken } = this.queryParams;
-      await this.props.restoreContributions(state);
-      await AsyncStorage.setItem('authToken', userToken);
+      async componentWillMount() {
+        try {
+          const { state, userToken } = this.queryParams;
+          if (state) await this.props.restoreContributions(state);
+          if (userToken) await AsyncStorage.setItem('authToken', userToken);
 
-      this.setState({
-        isRestored: true,
-      });
-    } catch (err) {
-      throw err;
-    }
-  }
+          this.setState({
+            isRestored: true,
+          });
+        } catch (err) {
+          throw err;
+        }
+      }
 
-  get queryParams() {
-    return parse(get(this.props, 'location.search', {}));
-  }
+      get queryParams() {
+        return parse(get(this.props, 'location.search', {}));
+      }
 
-  render() {
-    return (
-      <Component
-        isRestored={this.state.isRestored}
-        {...this.props}
-      />
-    );
-  }
-});
+      render() {
+        return <Component isRestored={this.state.isRestored} {...this.props} />;
+      }
+    },
+  );
