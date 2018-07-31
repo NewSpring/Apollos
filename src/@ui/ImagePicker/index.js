@@ -16,39 +16,44 @@ const ImagePicker = compose(
     onPress: async () => {
       const options = ['Take Photo', 'Choose from Library', 'Cancel'];
       const cancelButtonIndex = 2;
-      showActionSheetWithOptions({
-        options,
-        cancelButtonIndex,
-      }, async (buttonIndex) => {
-        let result;
-        try {
-          if (buttonIndex === 0) {
-            result = await ExpoImagePicker.launchCameraAsync({
-              mediaTypes: ['Images'],
-              allowsEditing: true,
-            });
-          }
-          if (buttonIndex === 1) {
-            result = await ExpoImagePicker.launchImageLibraryAsync({
-              allowsEditing: true,
-            });
-          }
+      showActionSheetWithOptions(
+        {
+          options,
+          cancelButtonIndex,
+        },
+        async (buttonIndex) => {
+          let result;
+          try {
+            if (buttonIndex === 0) {
+              result = await ExpoImagePicker.launchCameraAsync({
+                mediaTypes: ['Images'],
+                allowsEditing: true,
+              });
+            }
+            if (buttonIndex === 1) {
+              result = await ExpoImagePicker.launchImageLibraryAsync({
+                allowsEditing: true,
+              });
+            }
 
-          // NOTE: React Native is able to polyfill
-          // FormData as long as we stick to this:
-          // https://github.com/facebook/react-native/blob/v0.45.1/Libraries/Network/FormData.js#L34
-          // extract-files helps deal with that spec
-          const file = new ReactNativeFile({
-            uri: result.uri,
-            type: 'image/jpeg',
-            name: result.uri.split('/').pop(),
-          });
+            // NOTE: React Native is able to polyfill
+            // FormData as long as we stick to this:
+            // https://github.com/facebook/react-native/blob/v0.45.1/Libraries/Network/FormData.js#L34
+            // extract-files helps deal with that spec
+            if (result.uri) {
+              const file = new ReactNativeFile({
+                uri: result.uri,
+                type: 'image/jpeg',
+                name: result.uri.split('/').pop(),
+              });
 
-          if (onSelectFile) onSelectFile(file);
-        } catch (e) {
-          sentry.captureException(e);
-        }
-      });
+              if (onSelectFile) onSelectFile(file);
+            }
+          } catch (e) {
+            sentry.captureException(e);
+          }
+        },
+      );
     },
   })),
 )(Touchable);
