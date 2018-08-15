@@ -19,7 +19,7 @@ class DateInput extends PureComponent {
     onChangeText: PropTypes.func,
     onBlur: PropTypes.func,
     error: PropTypes.any, // eslint-disable-line
-  }
+  };
 
   state = {
     isVisible: false,
@@ -30,7 +30,7 @@ class DateInput extends PureComponent {
   handleClose = () => {
     this.setState({ isVisible: false });
     if (this.props.onBlur) this.props.onBlur();
-  }
+  };
 
   handleConfirm = (value) => {
     if (this.props.onChange) this.props.onChange(value);
@@ -38,7 +38,7 @@ class DateInput extends PureComponent {
       this.props.onChangeText(moment(value).format('MM/DD/YYYY'));
     }
     this.handleClose();
-  }
+  };
 
   render() {
     let date = this.props.value;
@@ -55,8 +55,11 @@ class DateInput extends PureComponent {
           isVisible={this.state.isVisible}
           onConfirm={this.handleConfirm}
           onCancel={this.handleClose}
+          minimumDate={moment()
+            .add(1, 'days')
+            .toDate()}
         />
-        {(this.props.displayValue || this.props.placeholder) ? (
+        {this.props.displayValue || this.props.placeholder ? (
           <FloatingLabel animation={new Animated.Value(1)}>{this.props.label}</FloatingLabel>
         ) : null}
       </InputWrapper>

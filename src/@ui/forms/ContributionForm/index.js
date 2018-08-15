@@ -167,7 +167,13 @@ export class ContributionFormWithoutData extends Component {
   }
 
   render() {
-    if (this.props.funds.length === 0) return <ErrorCard error={'We\'re having trouble loading funds right now, please try again later.'} />;
+    if (this.props.funds.length === 0) {
+      return (
+        <ErrorCard
+          error={"We're having trouble loading funds right now, please try again later."}
+        />
+      );
+    }
     if (this.props.isOffline) return this.renderOfflineMessage();
 
     const total = (parseFloat(this.totalContribution || 0) || 0).toFixed(2);
@@ -271,6 +277,10 @@ export class ContributionFormWithoutData extends Component {
   }
 }
 
+const initialStartDate = moment(new Date())
+  .add(1, 'days')
+  .toDate();
+
 const ContributionForm = compose(
   setPropTypes({
     onComplete: PropTypes.func,
@@ -297,7 +307,7 @@ const ContributionForm = compose(
       },
       frequencyId: 'today',
       secondContribution: null,
-      startDate: new Date(),
+      startDate: initialStartDate,
     }),
     validationSchema: Yup.object().shape({
       firstContribution: Yup.object()
@@ -319,7 +329,11 @@ const ContributionForm = compose(
             .min(1)
             .required(),
         }),
-      startDate: Yup.date().min(new Date()),
+      startDate: Yup.date().min(
+        moment()
+          .endOf('day')
+          .toDate(),
+      ),
     }),
     handleSubmit(values, { props, setSubmitting }) {
       const result = { ...values };

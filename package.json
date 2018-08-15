@@ -38,27 +38,19 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "npm run create-app-entrypoint && npm run run-with-settings 'exp start'",
-    "start-crna":
-      "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts start'",
+    "start-crna": "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts start'",
     "android": "npm run create-app-entrypoint && npm run run-with-settings 'exp android'",
     "ios": "npm run create-app-entrypoint && npm run run-with-settings 'exp ios'",
-    "build":
-      "NODE_ENV=production npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
+    "build": "NODE_ENV=production npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
     "web": "npm run create-app-entrypoint && NODE_PATH=./src node scripts/start.js",
-    "build:beta":
-      "NODE_ENV=test npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
-    "build:alpha":
-      "NODE_ENV=development npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
-    "build-storybook":
-      "npm run create-storybook-entrypoint && npm run storybook-load-stories && NODE_PATH=./src build-storybook -c src/.storybook/web -s ./public",
-    "ci-deploy":
-      "npm run create-app-entrypoint && NODE_PATH=./src npm run run-with-settings 'node ./.scripts/ci-deploy.js'",
+    "build:beta": "NODE_ENV=test npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
+    "build:alpha": "NODE_ENV=development npm run create-env-files && npm run create-app-entrypoint && NODE_PATH=./src node scripts/build.js",
+    "build-storybook": "npm run create-storybook-entrypoint && npm run storybook-load-stories && NODE_PATH=./src build-storybook -c src/.storybook/web -s ./public",
+    "ci-deploy": "npm run create-app-entrypoint && NODE_PATH=./src npm run run-with-settings 'node ./.scripts/ci-deploy.js'",
     "test": "bash ./.scripts/test-script.sh",
     "jest": "./node_modules/.bin/jest",
-    "storybook-native-start":
-      "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybook/native",
-    "storybook-web":
-      "npm run create-storybook-entrypoint && npm run storybook-load-stories && start-storybook -p 9009 -s ./public -c src/.storybook/web",
+    "storybook-native-start": "npm run create-storybook-entrypoint && npm run storybook-load-stories && storybook start -p 7007 -c src/.storybook/native",
+    "storybook-web": "npm run create-storybook-entrypoint && npm run storybook-load-stories && start-storybook -p 9009 -s ./public -c src/.storybook/web",
     "jest-watcher": "node node_modules/jest/bin/jest.js --watch",
     "lint": "./node_modules/.bin/eslint . --ext .js",
     "storybook-ios": "npm run create-storybook-entrypoint && react-native-scripts ios",
@@ -71,7 +63,10 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "setupFiles": ["./.jestrc.js", "<rootDir>/config/polyfills.js"],
+    "setupFiles": [
+      "./.jestrc.js",
+      "<rootDir>/config/polyfills.js"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|rn-*|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|sentry-expo))"
     ],
@@ -155,7 +150,7 @@
     "react-list": "^0.8.8",
     "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
     "react-native-keyboard-aware-scroll-view": "^0.4.1",
-    "react-native-modal-datetime-picker": "^4.13.0",
+    "react-native-modal-datetime-picker": "^6.0.0",
     "react-native-tab-view": "^0.0.74",
     "react-native-web": "^0.6.1",
     "react-native-web-maps": "react-native-web-community/react-native-web-maps",
