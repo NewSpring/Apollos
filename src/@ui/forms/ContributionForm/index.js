@@ -239,7 +239,7 @@ export class ContributionFormWithoutData extends Component {
                   value={this.props.values.startDate}
                   onChange={value => this.props.setFieldValue('startDate', value)}
                   onBlur={() => this.props.setFieldTouched('startDate', true)}
-                  error={Boolean(touched.startDate && errors.startDate)}
+                  error={touched.startDate && errors.startDate}
                 />
               </View>
             </PaddedView>
@@ -329,10 +329,11 @@ const ContributionForm = compose(
             .min(1)
             .required(),
         }),
-      startDate: Yup.date().min(
+      startDate: Yup.date('This message').min(
         moment()
           .endOf('day')
           .toDate(),
+        'Start Date must be a future date',
       ),
     }),
     handleSubmit(values, { props, setSubmitting }) {

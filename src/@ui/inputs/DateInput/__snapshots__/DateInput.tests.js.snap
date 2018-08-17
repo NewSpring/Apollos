@@ -66,8 +66,19 @@ exports[`The DateInput component should render 1`] = `
   <Modal
     animationType="none"
     hardwareAccelerated={false}
+    hideModalContentWhileAnimating={false}
     onModalHide={[Function]}
     onRequestClose={[Function]}
+    scrollOffset={0}
+    scrollOffsetMax={0}
+    scrollTo={null}
+    supportedOrientations={
+      Array [
+        "portrait",
+        "landscape",
+      ]
+    }
+    swipeThreshold={100}
     transparent={true}
     visible={false}
   >
@@ -103,8 +114,12 @@ exports[`The DateInput component should render 1`] = `
     />
     <View
       collapsable={undefined}
+      hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       pointerEvents="box-none"
+      scrollOffset={0}
+      scrollOffsetMax={0}
+      scrollTo={null}
       style={
         Object {
           "flex": 1,
@@ -117,6 +132,13 @@ exports[`The DateInput component should render 1`] = `
           ],
         }
       }
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
+      }
+      swipeThreshold={100}
     >
       <View
         style={
@@ -169,8 +191,8 @@ exports[`The DateInput component should render 1`] = `
               date={1420070400000}
               locale={undefined}
               maximumDate={undefined}
-              minimumDate={undefined}
-              minuteInterval={undefined}
+              minimumDate={1534602241998}
+              minuteInterval={1}
               mode="date"
               onChange={[Function]}
               onResponderTerminationRequest={[Function]}
@@ -255,6 +277,7 @@ exports[`The DateInput component should render 1`] = `
             "borderRadius": 13,
             "height": 57,
             "justifyContent": "center",
+            "marginBottom": 0,
           }
         }
         testID={undefined}
@@ -375,8 +398,19 @@ exports[`The DateInput component should render with a displayValue 1`] = `
   <Modal
     animationType="none"
     hardwareAccelerated={false}
+    hideModalContentWhileAnimating={false}
     onModalHide={[Function]}
     onRequestClose={[Function]}
+    scrollOffset={0}
+    scrollOffsetMax={0}
+    scrollTo={null}
+    supportedOrientations={
+      Array [
+        "portrait",
+        "landscape",
+      ]
+    }
+    swipeThreshold={100}
     transparent={true}
     visible={false}
   >
@@ -412,8 +446,12 @@ exports[`The DateInput component should render with a displayValue 1`] = `
     />
     <View
       collapsable={undefined}
+      hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       pointerEvents="box-none"
+      scrollOffset={0}
+      scrollOffsetMax={0}
+      scrollTo={null}
       style={
         Object {
           "flex": 1,
@@ -426,6 +464,13 @@ exports[`The DateInput component should render with a displayValue 1`] = `
           ],
         }
       }
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
+      }
+      swipeThreshold={100}
     >
       <View
         style={
@@ -478,8 +523,8 @@ exports[`The DateInput component should render with a displayValue 1`] = `
               date={1420070400000}
               locale={undefined}
               maximumDate={undefined}
-              minimumDate={undefined}
-              minuteInterval={undefined}
+              minimumDate={1534602242066}
+              minuteInterval={1}
               mode="date"
               onChange={[Function]}
               onResponderTerminationRequest={[Function]}
@@ -564,6 +609,7 @@ exports[`The DateInput component should render with a displayValue 1`] = `
             "borderRadius": 13,
             "height": 57,
             "justifyContent": "center",
+            "marginBottom": 0,
           }
         }
         testID={undefined}
@@ -727,8 +773,19 @@ exports[`The DateInput component should render with a label 1`] = `
   <Modal
     animationType="none"
     hardwareAccelerated={false}
+    hideModalContentWhileAnimating={false}
     onModalHide={[Function]}
     onRequestClose={[Function]}
+    scrollOffset={0}
+    scrollOffsetMax={0}
+    scrollTo={null}
+    supportedOrientations={
+      Array [
+        "portrait",
+        "landscape",
+      ]
+    }
+    swipeThreshold={100}
     transparent={true}
     visible={false}
   >
@@ -764,8 +821,12 @@ exports[`The DateInput component should render with a label 1`] = `
     />
     <View
       collapsable={undefined}
+      hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       pointerEvents="box-none"
+      scrollOffset={0}
+      scrollOffsetMax={0}
+      scrollTo={null}
       style={
         Object {
           "flex": 1,
@@ -778,6 +839,13 @@ exports[`The DateInput component should render with a label 1`] = `
           ],
         }
       }
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
+      }
+      swipeThreshold={100}
     >
       <View
         style={
@@ -830,8 +898,8 @@ exports[`The DateInput component should render with a label 1`] = `
               date={1420070400000}
               locale={undefined}
               maximumDate={undefined}
-              minimumDate={undefined}
-              minuteInterval={undefined}
+              minimumDate={1534602242119}
+              minuteInterval={1}
               mode="date"
               onChange={[Function]}
               onResponderTerminationRequest={[Function]}
@@ -916,6 +984,7 @@ exports[`The DateInput component should render with a label 1`] = `
             "borderRadius": 13,
             "height": 57,
             "justifyContent": "center",
+            "marginBottom": 0,
           }
         }
         testID={undefined}
@@ -1081,8 +1150,19 @@ exports[`The DateInput component should render with a placeholder 1`] = `
   <Modal
     animationType="none"
     hardwareAccelerated={false}
+    hideModalContentWhileAnimating={false}
     onModalHide={[Function]}
     onRequestClose={[Function]}
+    scrollOffset={0}
+    scrollOffsetMax={0}
+    scrollTo={null}
+    supportedOrientations={
+      Array [
+        "portrait",
+        "landscape",
+      ]
+    }
+    swipeThreshold={100}
     transparent={true}
     visible={false}
   >
@@ -1118,8 +1198,12 @@ exports[`The DateInput component should render with a placeholder 1`] = `
     />
     <View
       collapsable={undefined}
+      hideModalContentWhileAnimating={false}
       onModalHide={[Function]}
       pointerEvents="box-none"
+      scrollOffset={0}
+      scrollOffsetMax={0}
+      scrollTo={null}
       style={
         Object {
           "flex": 1,
@@ -1132,6 +1216,13 @@ exports[`The DateInput component should render with a placeholder 1`] = `
           ],
         }
       }
+      supportedOrientations={
+        Array [
+          "portrait",
+          "landscape",
+        ]
+      }
+      swipeThreshold={100}
     >
       <View
         style={
@@ -1184,8 +1275,8 @@ exports[`The DateInput component should render with a placeholder 1`] = `
               date={1420070400000}
               locale={undefined}
               maximumDate={undefined}
-              minimumDate={undefined}
-              minuteInterval={undefined}
+              minimumDate={1534602242093}
+              minuteInterval={1}
               mode="date"
               onChange={[Function]}
               onResponderTerminationRequest={[Function]}
@@ -1270,6 +1361,7 @@ exports[`The DateInput component should render with a placeholder 1`] = `
             "borderRadius": 13,
             "height": 57,
             "justifyContent": "center",
+            "marginBottom": 0,
           }
         }
         testID={undefined}
