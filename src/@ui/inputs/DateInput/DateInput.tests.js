@@ -9,7 +9,14 @@ describe('The DateInput component', () => {
   it('should render', () => {
     const tree = renderer.create(
       <Providers>
-        <DateInput value={moment.utc('1/1/2015').toDate()} />
+        <DateInput
+          value={moment.utc('1/1/2015').toDate()}
+          minimumDate={moment
+            .utc('1/1/2015')
+            .startOf('day')
+            .add(1, 'days')
+            .toDate()}
+        />
       </Providers>,
     );
     expect(tree).toMatchSnapshot();
@@ -20,6 +27,11 @@ describe('The DateInput component', () => {
         <DateInput
           value={moment.utc('1/1/2015').toDate()}
           displayValue={moment.utc('1/1/2015').format('YYYY/MM/DD')}
+          minimumDate={moment
+            .utc('1/1/2015')
+            .startOf('day')
+            .add(1, 'days')
+            .toDate()}
         />
       </Providers>,
     );
@@ -28,7 +40,15 @@ describe('The DateInput component', () => {
   it('should render with a placeholder', () => {
     const tree = renderer.create(
       <Providers>
-        <DateInput placeholder={'mm/dd/yyyy'} value={moment.utc('1/1/2015').toDate()} />
+        <DateInput
+          placeholder={'mm/dd/yyyy'}
+          value={moment.utc('1/1/2015').toDate()}
+          minimumDate={moment
+            .utc('1/1/2015')
+            .startOf('day')
+            .add(1, 'days')
+            .toDate()}
+        />
       </Providers>,
     );
     expect(tree).toMatchSnapshot();
@@ -39,6 +59,11 @@ describe('The DateInput component', () => {
         <DateInput
           value={moment.utc('1/1/2015').toDate()}
           displayValue={moment.utc('1/1/2015').format('YYYY/MM/DD')}
+          minimumDate={moment
+            .utc('1/1/2015')
+            .startOf('day')
+            .add(1, 'days')
+            .toDate()}
           label={'Date Label'}
         />
       </Providers>,
