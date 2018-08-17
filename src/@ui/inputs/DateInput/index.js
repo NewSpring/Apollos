@@ -56,6 +56,7 @@ class DateInput extends PureComponent {
           onConfirm={this.handleConfirm}
           onCancel={this.handleClose}
           minimumDate={moment()
+            .startOf('day')
             .add(1, 'days')
             .toDate()}
         />
