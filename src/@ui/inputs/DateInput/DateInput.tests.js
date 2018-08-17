@@ -11,8 +11,7 @@ describe('The DateInput component', () => {
       <Providers>
         <DateInput
           value={moment.utc('1/1/2015').toDate()}
-          minimumDate={moment
-            .utc('12/31/2014')
+          minimumDate={moment()
             .startOf('day')
             .add(1, 'days')
             .toDate()}
@@ -27,8 +26,7 @@ describe('The DateInput component', () => {
         <DateInput
           value={moment.utc('1/1/2015').toDate()}
           displayValue={moment.utc('1/1/2015').format('YYYY/MM/DD')}
-          minimumDate={moment
-            .utc('12/31/2014')
+          minimumDate={moment()
             .startOf('day')
             .add(1, 'days')
             .toDate()}
@@ -43,8 +41,7 @@ describe('The DateInput component', () => {
         <DateInput
           placeholder={'mm/dd/yyyy'}
           value={moment.utc('1/1/2015').toDate()}
-          minimumDate={moment
-            .utc('12/31/2014')
+          minimumDate={moment()
             .startOf('day')
             .add(1, 'days')
             .toDate()}
@@ -59,8 +56,7 @@ describe('The DateInput component', () => {
         <DateInput
           value={moment.utc('1/1/2015').toDate()}
           displayValue={moment.utc('1/1/2015').format('YYYY/MM/DD')}
-          minimumDate={moment
-            .utc('12/31/2014')
+          minimumDate={moment()
             .startOf('day')
             .add(1, 'days')
             .toDate()}
