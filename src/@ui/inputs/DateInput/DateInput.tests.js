@@ -14,6 +14,7 @@ describe('The DateInput component', () => {
           minimumDate={moment
             .utc('1/2/2015')
             .startOf('day')
+            .add(1, 'days')
             .toDate()}
         />
       </Providers>,
@@ -29,6 +30,7 @@ describe('The DateInput component', () => {
           minimumDate={moment
             .utc('1/2/2015')
             .startOf('day')
+            .add(1, 'days')
             .toDate()}
         />
       </Providers>,
@@ -44,6 +46,7 @@ describe('The DateInput component', () => {
           minimumDate={moment
             .utc('1/2/2015')
             .startOf('day')
+            .add(1, 'days')
             .toDate()}
         />
       </Providers>,
@@ -59,6 +62,7 @@ describe('The DateInput component', () => {
           minimumDate={moment
             .utc('1/2/2015')
             .startOf('day')
+            .add(1, 'days')
             .toDate()}
           label={'Date Label'}
         />
