@@ -329,7 +329,7 @@ const ContributionForm = compose(
             .min(1)
             .required(),
         }),
-      startDate: Yup.date('This message').min(
+      startDate: Yup.date().min(
         moment()
           .endOf('day')
           .toDate(),

@@ -19,7 +19,7 @@ class DateInput extends PureComponent {
     onChangeText: PropTypes.func,
     onBlur: PropTypes.func,
     error: PropTypes.any, // eslint-disable-line
-    minimumDate: PropTypes.any, // eslint-disable-line
+    minimumDate: PropTypes.instanceOf(Date),
   };
 
   state = {
