@@ -19,7 +19,8 @@ class DateInput extends PureComponent {
     onChangeText: PropTypes.func,
     onBlur: PropTypes.func,
     error: PropTypes.any, // eslint-disable-line
-  }
+    minimumDate: PropTypes.instanceOf(Date),
+  };
 
   state = {
     isVisible: false,
@@ -30,7 +31,7 @@ class DateInput extends PureComponent {
   handleClose = () => {
     this.setState({ isVisible: false });
     if (this.props.onBlur) this.props.onBlur();
-  }
+  };
 
   handleConfirm = (value) => {
     if (this.props.onChange) this.props.onChange(value);
@@ -38,11 +39,16 @@ class DateInput extends PureComponent {
       this.props.onChangeText(moment(value).format('MM/DD/YYYY'));
     }
     this.handleClose();
-  }
+  };
 
   render() {
     let date = this.props.value;
     if (typeof date === 'string') date = moment(date).toDate();
+    const minimumDate =
+      this.props.minimumDate ||
+      moment()
+        .add(1, 'days')
+        .toDate();
     return (
       <InputWrapper>
         <Chip
@@ -55,8 +61,9 @@ class DateInput extends PureComponent {
           isVisible={this.state.isVisible}
           onConfirm={this.handleConfirm}
           onCancel={this.handleClose}
+          minimumDate={minimumDate}
         />
-        {(this.props.displayValue || this.props.placeholder) ? (
+        {this.props.displayValue || this.props.placeholder ? (
           <FloatingLabel animation={new Animated.Value(1)}>{this.props.label}</FloatingLabel>
         ) : null}
       </InputWrapper>
