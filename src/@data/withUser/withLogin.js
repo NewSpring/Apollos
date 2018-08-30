@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { AsyncStorage } from 'react-native';
 import get from 'lodash/get';
-import { track, events } from '@utils/analytics';
+import { track, events, categories } from '@utils/analytics';
 
 import { QUERY as LOGGED_IN_QUERY } from './withIsLoggedIn';
 
@@ -24,7 +24,14 @@ export default graphql(MUTATION, {
             email,
             password,
           },
-          refetchQueries: ['CurrentPerson', 'GivingDashboard', 'GetCheckoutData', 'SavedPaymentMethods', 'GetTransactions', 'HomeFeed'],
+          refetchQueries: [
+            'CurrentPerson',
+            'GivingDashboard',
+            'GetCheckoutData',
+            'SavedPaymentMethods',
+            'GetTransactions',
+            'HomeFeed',
+          ],
           update: async (store, { data: { loginUser } }) => {
             const data = store.readQuery({ query: LOGGED_IN_QUERY });
             data.person = {
@@ -32,7 +39,7 @@ export default graphql(MUTATION, {
               id: loginUser.id,
             };
             store.writeQuery({ query: LOGGED_IN_QUERY, data });
-            track(events.Login);
+            track(events.Login, {}, categories.Account, { data }.data.person.id);
             await AsyncStorage.setItem('authToken', get(loginUser, 'token'));
           },
         });

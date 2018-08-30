@@ -8,7 +8,7 @@ import { ButtonLink } from '@ui/Button';
 import Card, { CardContent } from '@ui/Card';
 import styled from '@ui/styled';
 import WebBrowser from '@ui/WebBrowser';
-import { track, events } from '@utils/analytics';
+import { track, events, categories } from '@utils/analytics';
 import Funds from './Funds';
 
 const FooterCard = styled(({ theme }) => ({
@@ -22,11 +22,17 @@ const Now = () => (
         onComplete={({ history, savedPaymentMethods, result } = {}) => {
           const userHasPaymentMethods = savedPaymentMethods.length > 0;
 
-          track(events.GivingStarted, {
-            userHasPaymentMethods,
-            ...result,
-            total: get(result, 'firstContribution.amount', 0) + get(result, 'secondContribution.amount', 0),
-          });
+          track(
+            events.GivingStarted,
+            {
+              userHasPaymentMethods,
+              ...result,
+              total:
+                get(result, 'firstContribution.amount', 0) +
+                get(result, 'secondContribution.amount', 0),
+            },
+            categories.Give,
+          );
 
           if (userHasPaymentMethods) {
             return history.push('/give/checkout/confirm');

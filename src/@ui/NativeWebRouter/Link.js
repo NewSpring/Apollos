@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import Touchable from '@ui/Touchable';
 import WebBrowser from '@ui/WebBrowser';
-import { track, events } from '@utils/analytics';
+import { track, events, categories } from '@utils/analytics';
 
 import { matchPath } from './';
 
@@ -65,7 +65,7 @@ export default class Link extends PureComponent {
 
     // handle web links
     if (to && to.indexOf('http') > -1) {
-      track(events.OutboundLink, { to });
+      track(events.OutboundLink, { to }, categories.Content, { to }.to);
       return WebBrowser.openBrowserAsync(to);
     }
 

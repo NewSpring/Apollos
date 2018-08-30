@@ -21,7 +21,7 @@ import MediaQuery from '@ui/MediaQuery';
 import SecondaryNav, { Like, Share } from '@ui/SecondaryNav';
 import Meta from '@ui/Meta';
 import WebBrowser from '@ui/WebBrowser';
-import { track, events } from '@utils/analytics';
+import { track, events, categories } from '@utils/analytics';
 
 import Map from './Map';
 
@@ -30,9 +30,16 @@ const FlexedLeft = styled({ flex: 1 })(Left);
 
 const rockUrl = Settings.APP_ROCK_URL || 'https://rock.newspring.cc/'; // todo
 
-const enhance = compose(pure, mapProps(({ match: { params: { id } } }) => ({ id })), withGroupInfo);
+const enhance = compose(
+  pure,
+  mapProps(({ match: { params: { id } } }) => ({ id })),
+  withGroupInfo,
+);
 
-const ShareLink = compose(withGroupInfo, mapProps(({ group } = {}) => ({ content: group })))(Share);
+const ShareLink = compose(
+  withGroupInfo,
+  mapProps(({ group } = {}) => ({ content: group })),
+)(Share);
 
 const StyledImage = styled({
   width: '100%',
@@ -78,7 +85,7 @@ const handleGroupContact = ({ guid, loginParam }) => {
   }
 
   WebBrowser.openBrowserAsync(`${rockUrl}Workflows/304?Group=${guid}${newLoginParam}`);
-  track(events.ContactedGroup, { guid });
+  track(events.ContactedGroup, { guid }, categories.Account);
 };
 
 const GroupInfo = ({ label, info }) => (

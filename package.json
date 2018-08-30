@@ -114,6 +114,7 @@
     "eslint-plugin-react": "7.4.0",
     "events": "^1.1.1",
     "expo": "^25.0.0",
+    "expo-analytics": "^1.0.7",
     "extract-files": "^3.1.0",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
