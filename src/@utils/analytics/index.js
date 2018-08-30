@@ -60,7 +60,7 @@ const nativeOnlyEvents = {
 // thin wrappers over our client events so we have a consistent API
 // if we want to move away from Amplitude in the future:
 export const track = (eventName, properties, categoryName, label) => {
-  // if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
+  if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
   if (Platform.OS === 'web' && nativeOnlyEvents[eventName]) return;
   if (properties || eventName) {
     instance.logEventWithProperties(eventName, properties);
