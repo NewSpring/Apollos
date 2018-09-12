@@ -5,7 +5,9 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
+		8095D94B1C924859835053E4 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53E4FC6E59924E76A498FD45 /* AppCenter-Config.plist */; };
 		B501732B1DC01252003445D9 /* EXShell.plist in Resources */ = {isa = PBXBuildFile; fileRef = B501732A1DC01252003445D9 /* EXShell.plist */; };
 		B56386491DB9693800A0598C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B56386481DB9693800A0598C /* AppDelegate.m */; };
 		B56386511DB9693800A0598C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B56386501DB9693800A0598C /* Assets.xcassets */; };
@@ -20,7 +22,6 @@
 		B5DB04811F3A684600E91581 /* shell-app.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5DB047F1F3A684600E91581 /* shell-app.bundle */; };
 		EBB8117C1BFA0514F79CAF74 /* libPods-newspring.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A88D15726AD99E8A257BC7 /* libPods-newspring.a */; };
 		F3A06D814AB5467A85FD4729 /* libAppCenterReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E24ADF8A092B4592B2364E94 /* libAppCenterReactNative.a */; };
-		8095D94B1C924859835053E4 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53E4FC6E59924E76A498FD45 /* AppCenter-Config.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +36,10 @@
 
 /* Begin PBXFileReference section */
 		2C1548D9E4CB1AEFA5CCAE6D /* Pods-newspring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspring.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newspring/Pods-newspring.debug.xcconfig"; sourceTree = "<group>"; };
+		53E4FC6E59924E76A498FD45 /* AppCenter-Config.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "AppCenter-Config.plist"; path = "newspring/AppCenter-Config.plist"; sourceTree = "<group>"; };
 		785B66C2C690485A8DC1DB7B /* AppCenterReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNative.xcodeproj; path = ../node_modules/appcenter/ios/AppCenterReactNative.xcodeproj; sourceTree = "<group>"; };
 		79F2DD84207ED1BE000EF297 /* newspring.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = newspring.entitlements; sourceTree = "<group>"; };
+		84BB7E6F2149BB100075B27F /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47FE4D7F70906B7DC8CE39B /* Pods-newspring.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspring.release.xcconfig"; path = "Pods/Target Support Files/Pods-newspring/Pods-newspring.release.xcconfig"; sourceTree = "<group>"; };
 		B501732A1DC01252003445D9 /* EXShell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EXShell.plist; sourceTree = "<group>"; };
 		B56386411DB9693800A0598C /* newspring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newspring.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,7 +58,6 @@
 		B5DB047F1F3A684600E91581 /* shell-app.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "shell-app.bundle"; sourceTree = "<group>"; };
 		C4A88D15726AD99E8A257BC7 /* libPods-newspring.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newspring.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24ADF8A092B4592B2364E94 /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
-		53E4FC6E59924E76A498FD45 /* AppCenter-Config.plist */ = {isa = PBXFileReference; name = "AppCenter-Config.plist"; path = "newspring/AppCenter-Config.plist"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.xml; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		1A42804E64B7E9E0AB8B6799 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84BB7E6F2149BB100075B27F /* libReact.a */,
 				C4A88D15726AD99E8A257BC7 /* libPods-newspring.a */,
 			);
 			name = Frameworks;
@@ -177,6 +180,7 @@
 				B563863F1DB9693800A0598C /* Resources */,
 				AA38385B7D8D0854176B72FC /* [CP] Copy Pods Resources */,
 				792C66482088F8E1003E55EC /* ShellScript */,
+				8FEF88F82FC2303849A79A87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +298,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 832b942c034afd6e4772120ba045e88211a693ba 042d41e897f444a5d31c47d933496f142302ee4cf6aa1f6a1897b2f12ced6f5f";
+		};
+		8FEF88F82FC2303849A79A87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-newspring/Pods-newspring-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		AA38385B7D8D0854176B72FC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
