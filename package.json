@@ -65,7 +65,8 @@
     "preset": "jest-expo",
     "setupFiles": [
       "./.jestrc.js",
-      "<rootDir>/config/polyfills.js"
+      "<rootDir>/config/polyfills.js",
+      "<rootDir>/node_modules/appcenter/test/AppCenterMock.js"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|rn-*|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|sentry-expo))"
@@ -95,6 +96,7 @@
     "apollo-link-http": "^1.1.0",
     "apollo-link-schema": "^1.0.2",
     "apollo-link-state": "^0.4.1",
+    "appcenter": "^1.8.1",
     "autoprefixer": "7.1.6",
     "babel-core": "^6.26.0",
     "babel-jest": "^21.2.0",
