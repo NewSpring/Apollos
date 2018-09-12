@@ -129,7 +129,7 @@
 			buildConfigurationList = B56386581DB9693800A0598C /* Build configuration list for PBXNativeTarget "newspring" */;
 			buildPhases = (
 				23539343DCC44EF8449429EE /* [CP] Check Pods Manifest.lock */,
-				B5722AD01DFB7E3F0084848F /* Prepare Expo */,
+				/*	B5722AD01DFB7E3F0084848F  Prepare Expo */,
 				B563863D1DB9693800A0598C /* Sources */,
 				B563863E1DB9693800A0598C /* Frameworks */,
 				B563863F1DB9693800A0598C /* Resources */,
