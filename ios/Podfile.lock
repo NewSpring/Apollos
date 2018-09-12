@@ -163,20 +163,47 @@ DEPENDENCIES:
   - React/RCTWebSocket (from `../node_modules/react-native`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Amplitude-iOS
+    - Analytics
+    - AppAuth
+    - Bolts
+    - boost
+    - Branch
+    - CocoaLumberjack
+    - Crashlytics
+    - Fabric
+    - FBAudienceNetwork
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - FBSDKShareKit
+    - Google-Mobile-Ads-SDK
+    - GoogleAppUtilities
+    - GoogleAuthUtilities
+    - GoogleMaps
+    - GoogleNetworkingUtilities
+    - GoogleSignIn
+    - GoogleSymbolUtilities
+    - GoogleUtilities
+    - GPUImage
+    - JKBigInteger2
+    - lottie-ios
+
 EXTERNAL SOURCES:
   DoubleConversion:
-    :podspec: ../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec
+    :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   ExpoKit:
     :git: http://github.com/expo/expo.git
     :tag: ios/2.3.3
   Folly:
-    :podspec: ../node_modules/react-native/third-party-podspecs/Folly.podspec
+    :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
   GLog:
-    :podspec: ../node_modules/react-native/third-party-podspecs/GLog.podspec
+    :podspec: "../node_modules/react-native/third-party-podspecs/GLog.podspec"
   React:
-    :path: ../node_modules/react-native
+    :path: "../node_modules/react-native"
   yoga:
-    :path: ../node_modules/react-native/ReactCommon/yoga
+    :path: "../node_modules/react-native/ReactCommon/yoga"
 
 CHECKOUT OPTIONS:
   ExpoKit:
@@ -217,4 +244,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d2ab6925422b4f7e6e856f5e72041483c262f975
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
