@@ -24,7 +24,6 @@ Thumbs.db
 coverage/
 
 # generated at runtime
-app.json
 ios/newspring/Supporting/EXBuildConstants.json
 ios/newspring/Supporting/EXBuildConstants.plist
 ios/newspring/Supporting/EXBuildConstants.plist.bak
