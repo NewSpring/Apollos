@@ -59,7 +59,7 @@ const nativeOnlyEvents = {
 // thin wrappers over our client events so we have a consistent API
 // if we want to move away from Amplitude in the future:
 export const track = (eventName, properties, categoryName, label) => {
-  // if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
+  if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
   if (Platform.OS === 'web' && nativeOnlyEvents[eventName]) return;
   if (properties || eventName) {
     instance.logEventWithProperties(eventName, properties);
@@ -67,6 +67,7 @@ export const track = (eventName, properties, categoryName, label) => {
       .analyticsEvent({ categoryName, eventName, label })
       .then(() => console.log('Success'))
       .catch(e => console.log(e.message));
+    console.log(google.analyticsEvent({ categoryName, eventName, label }));
   } else {
     instance.logEvent(eventName);
   }
@@ -87,10 +88,10 @@ export const trackScreen = (screenName, screenProperties) => {
     },
     events.ScreenView,
   );
-  google
-    .analyticsScreen({ screenName })
-    .then(() => console.log('success'))
-    .catch(e => console.log(e.message));
+  // google
+  //  .analyticsScreen({ screenName })
+  //  .then(() => console.log('success'))
+  //  .catch(e => console.log(e.message));
   sentry.captureBreadcrumb({
     message: 'ScreenView',
     data: { screenName },
