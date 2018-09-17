@@ -88,10 +88,10 @@ export const trackScreen = (screenName, screenProperties) => {
     },
     events.ScreenView,
   );
-  // google
-  //  .analyticsScreen({ screenName })
-  //  .then(() => console.log('success'))
-  //  .catch(e => console.log(e.message));
+  google
+    .analyticsScreen({ screenName })
+    .then(() => console.log('success'))
+    .catch(e => console.log(e.message));
   sentry.captureBreadcrumb({
     message: 'ScreenView',
     data: { screenName },
