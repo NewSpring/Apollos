@@ -63,10 +63,7 @@ export const track = (eventName, properties, categoryName, label) => {
   if (Platform.OS === 'web' && nativeOnlyEvents[eventName]) return;
   if (properties || eventName) {
     instance.logEventWithProperties(eventName, properties);
-    google
-      .analyticsEvent({ categoryName, eventName, label })
-      .then(() => console.log('Success'))
-      .catch(e => console.log(e.message));
+    google.analyticsEvent({ categoryName, eventName, label });
     console.log(google.analyticsEvent({ categoryName, eventName, label }));
   } else {
     instance.logEvent(eventName);
@@ -88,10 +85,7 @@ export const trackScreen = (screenName, screenProperties) => {
     },
     events.ScreenView,
   );
-  google
-    .analyticsScreen({ screenName })
-    .then(() => console.log('success'))
-    .catch(e => console.log(e.message));
+  google.analyticsScreen({ screenName });
   sentry.captureBreadcrumb({
     message: 'ScreenView',
     data: { screenName },
