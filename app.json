@@ -53,7 +53,12 @@
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "1633a38ab6d773137ae373f8344c87ce54a82621"
+      "COMMIT_SHA": "3cd1b3ac0355ef3ce3ae567103fb8b7a1e54d836",
+      "APP_ROOT_URL": "https://my.newspring.cc",
+      "APP_ROCK_URL": "https://rock.newspring.cc/",
+      "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
+      "APP_HEIGHLINER_URL": "https://apollos-api.newspring.cc/graphql",
+      "APP_SENTRY_URL": "https://39cb6523762d4a94a8a26006bddbdfa0@sentry.io/1187506"
     },
     "isDetached": true,
     "detach": {
