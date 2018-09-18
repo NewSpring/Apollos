@@ -22,8 +22,8 @@ android {
   defaultConfig {
     applicationId 'cc.newspring.newspringapp'
     targetSdkVersion 25
-    versionCode 600012
-    versionName '6.0.0'
+    versionCode 600027
+    versionName '6.1.0'
     ndk {
       abiFilters 'armeabi-v7a', 'x86'
     }
@@ -88,7 +88,6 @@ android {
 //   }
 // }
 
-
 task exponentPrebuildStep(type: Exec) {
   workingDir '../'
   if (System.getProperty('os.name').toLowerCase().contains('windows')) {
@@ -98,7 +97,6 @@ task exponentPrebuildStep(type: Exec) {
   }
 }
 preBuild.dependsOn exponentPrebuildStep
-
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -163,7 +161,6 @@ dependencies {
   androidTestCompile 'com.google.code.findbugs:jsr305:3.0.0'
   androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
   androidTestCompile 'com.azimolabs.conditionwatcher:conditionwatcher:0.2'
-
 
 
   compile('host.exp.exponent:expoview:25.0.0@aar') {

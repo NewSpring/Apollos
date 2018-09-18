@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8095D94B1C924859835053E4 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53E4FC6E59924E76A498FD45 /* AppCenter-Config.plist */; };
 		B501732B1DC01252003445D9 /* EXShell.plist in Resources */ = {isa = PBXBuildFile; fileRef = B501732A1DC01252003445D9 /* EXShell.plist */; };
 		B56386491DB9693800A0598C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B56386481DB9693800A0598C /* AppDelegate.m */; };
 		B56386511DB9693800A0598C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B56386501DB9693800A0598C /* Assets.xcassets */; };
@@ -22,9 +23,22 @@
 		EBB8117C1BFA0514F79CAF74 /* libPods-newspring.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A88D15726AD99E8A257BC7 /* libPods-newspring.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		84BB7E682149B0BA0075B27F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 785B66C2C690485A8DC1DB7B /* AppCenterReactNative.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C35AEC211EF91F9300931F0C;
+			remoteInfo = AppCenterReactNative;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2C1548D9E4CB1AEFA5CCAE6D /* Pods-newspring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspring.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newspring/Pods-newspring.debug.xcconfig"; sourceTree = "<group>"; };
+		53E4FC6E59924E76A498FD45 /* AppCenter-Config.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "AppCenter-Config.plist"; path = "newspring/AppCenter-Config.plist"; sourceTree = "<group>"; };
+		785B66C2C690485A8DC1DB7B /* AppCenterReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNative.xcodeproj; path = ../node_modules/appcenter/ios/AppCenterReactNative.xcodeproj; sourceTree = "<group>"; };
 		79F2DD84207ED1BE000EF297 /* newspring.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = newspring.entitlements; sourceTree = "<group>"; };
+		84BB7E6F2149BB100075B27F /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47FE4D7F70906B7DC8CE39B /* Pods-newspring.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspring.release.xcconfig"; path = "Pods/Target Support Files/Pods-newspring/Pods-newspring.release.xcconfig"; sourceTree = "<group>"; };
 		B501732A1DC01252003445D9 /* EXShell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EXShell.plist; sourceTree = "<group>"; };
 		B56386411DB9693800A0598C /* newspring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newspring.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +56,7 @@
 		B5DB047F1F3A684600E91581 /* shell-app.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "shell-app.bundle"; sourceTree = "<group>"; };
 		C4A88D15726AD99E8A257BC7 /* libPods-newspring.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newspring.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA3B8B62140764F0068B3F1 /* splash-1242x2436.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash-1242x2436.png"; path = "../../../src/assets/splash/splash-1242x2436.png"; sourceTree = "<group>"; };
+		E24ADF8A092B4592B2364E94 /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +74,7 @@
 		1A42804E64B7E9E0AB8B6799 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84BB7E6F2149BB100075B27F /* libReact.a */,
 				C4A88D15726AD99E8A257BC7 /* libPods-newspring.a */,
 			);
 			name = Frameworks;
@@ -73,6 +89,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		84BB7E642149B0B90075B27F /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				E24ADF8A092B4592B2364E94 /* libAppCenterReactNative.a */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		84BB7E652149B0BA0075B27F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84BB7E692149B0BA0075B27F /* libAppCenterReactNative.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B538E56076F04D35A8C1B2AB /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				785B66C2C690485A8DC1DB7B /* AppCenterReactNative.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		B56386381DB9693800A0598C = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +120,9 @@
 				B56386421DB9693800A0598C /* Products */,
 				5B29BC350A332C58878A9F13 /* Pods */,
 				1A42804E64B7E9E0AB8B6799 /* Frameworks */,
+				B538E56076F04D35A8C1B2AB /* Libraries */,
+				84BB7E642149B0B90075B27F /* Recovered References */,
+				53E4FC6E59924E76A498FD45 /* AppCenter-Config.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,9 +176,9 @@
 				B563863D1DB9693800A0598C /* Sources */,
 				B563863E1DB9693800A0598C /* Frameworks */,
 				B563863F1DB9693800A0598C /* Resources */,
-				8D34C7FE3D99F20E5EA1B18A /* [CP] Embed Pods Frameworks */,
 				AA38385B7D8D0854176B72FC /* [CP] Copy Pods Resources */,
 				792C66482088F8E1003E55EC /* ShellScript */,
+				8FEF88F82FC2303849A79A87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,12 +221,28 @@
 			mainGroup = B56386381DB9693800A0598C;
 			productRefGroup = B56386421DB9693800A0598C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 84BB7E652149B0BA0075B27F /* Products */;
+					ProjectRef = 785B66C2C690485A8DC1DB7B /* AppCenterReactNative.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B56386401DB9693800A0598C /* newspring */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		84BB7E692149B0BA0075B27F /* libAppCenterReactNative.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAppCenterReactNative.a;
+			remoteRef = 84BB7E682149B0BA0075B27F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B563863F1DB9693800A0598C /* Resources */ = {
@@ -200,6 +259,7 @@
 				B5DB04811F3A684600E91581 /* shell-app.bundle in Resources */,
 				B56386511DB9693800A0598C /* Assets.xcassets in Resources */,
 				DCA3B8B72140764F0068B3F1 /* splash-1242x2436.png in Resources */,
+				8095D94B1C924859835053E4 /* AppCenter-Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +297,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 832b942c034afd6e4772120ba045e88211a693ba 042d41e897f444a5d31c47d933496f142302ee4cf6aa1f6a1897b2f12ced6f5f";
 		};
-		8D34C7FE3D99F20E5EA1B18A /* [CP] Embed Pods Frameworks */ = {
+		8FEF88F82FC2303849A79A87 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -438,6 +498,11 @@
 				DEVELOPMENT_TEAM = 7TM8C6252Z;
 				INFOPLIST_FILE = "$(SRCROOT)/newspring/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.subsplashstudio31.NewSpring-Church";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -453,6 +518,11 @@
 				DEVELOPMENT_TEAM = 7TM8C6252Z;
 				INFOPLIST_FILE = "$(SRCROOT)/newspring/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.subsplashstudio31.NewSpring-Church";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
