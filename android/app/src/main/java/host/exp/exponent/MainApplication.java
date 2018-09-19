@@ -23,7 +23,7 @@ public class MainApplication extends ExpoApplication {
         // TODO: add native modules!
 
         // Needed for `react-native link`
-        // new MainReactPackage()
+        // new MainReactPackage(),
     );
   }
 
