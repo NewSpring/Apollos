@@ -1,13 +1,21 @@
-import { Share } from 'react-native';
+import { Share, Platform } from 'react-native';
 import { get } from 'lodash';
 import { track, events } from '@utils/analytics';
 import getSiteLink from './getSiteLink';
 
 const share = (content) => {
   Share.share({
-    title: content.title || content.name,
-    message: content.title || content.name,
-    url: getSiteLink(content),
+    ...Platform.select({
+      ios: {
+        title: content.title || content.name,
+        message: content.title || content.name,
+        url: getSiteLink(content),
+      },
+      android: {
+        title: content.title || content.name,
+        message: `${content.title} ${getSiteLink(content)}` || content.name,
+      },
+    }),
   });
 
   track(events.Shared, {
