@@ -1,6 +1,5 @@
 import { Platform } from 'react-native';
 import Settings from '@utils/Settings';
-import instance from './instance';
 import sentry from '../sentry';
 import google from './google';
 
@@ -62,17 +61,8 @@ export const track = (eventName, properties, categoryName, label) => {
   if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
   if (Platform.OS === 'web' && nativeOnlyEvents[eventName]) return;
   if (properties || eventName) {
-    instance.logEventWithProperties(eventName, properties);
     google.analyticsEvent({ categoryName, eventName, label });
-  } else {
-    instance.logEvent(eventName);
   }
-};
-
-export const identify = (userId, userProperties) => {
-  if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
-  instance.setUserId(userId);
-  if (userProperties) instance.setUserProperties(userProperties);
 };
 
 export const trackScreen = (screenName, screenProperties) => {
@@ -95,7 +85,6 @@ export const trackScreen = (screenName, screenProperties) => {
 const Analytics = {
   track,
   trackScreen,
-  identify,
 };
 
 export default Analytics;
