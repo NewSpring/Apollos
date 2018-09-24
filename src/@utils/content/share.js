@@ -1,4 +1,4 @@
-import { Share } from 'react-native';
+import { Share, Platform } from 'react-native';
 import { track, events, categories } from '@utils/analytics';
 import getSiteLink from './getSiteLink';
 
