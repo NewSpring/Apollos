@@ -1,5 +1,4 @@
 import React from 'react';
-import { get } from 'lodash';
 import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import BackgroundView from '@ui/BackgroundView';
 import { ContributionForm } from '@ui/forms';
