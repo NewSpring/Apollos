@@ -60,9 +60,12 @@ const nativeOnlyEvents = {
 export const track = (eventName, properties, categoryName, label) => {
   if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
   if (Platform.OS === 'web' && nativeOnlyEvents[eventName]) return;
-  if (properties || eventName) {
-    google.analyticsEvent({ categoryName, eventName, label });
-  }
+  google.analyticsEvent({ categoryName, eventName, label });
+};
+
+export const identify = (userId) => {
+  if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
+  google.setUserId(userId);
 };
 
 export const trackScreen = (screenName, screenProperties) => {
@@ -85,6 +88,7 @@ export const trackScreen = (screenName, screenProperties) => {
 const Analytics = {
   track,
   trackScreen,
+  identify,
 };
 
 export default Analytics;
