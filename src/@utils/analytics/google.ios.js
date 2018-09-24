@@ -13,7 +13,7 @@ const analyticsScreen = ({ screenName }) =>
     .then(() => console.log('Success'))
     .catch(e => console.log(e.message));
 
-const setUserId = userId => new Analytics('UA-7130289-39', { userId });
+const setUserId = userId => new Analytics('UA-7130289-39', userId);
 
 const googleAnalytics = {
   analytics,

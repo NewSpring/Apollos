@@ -17,7 +17,7 @@ const share = (content) => {
     }),
   });
 
-  track(events.Shared, categories.Content);
+  track(events.Shared, categories.Content, content.id);
 };
 
 export default share;

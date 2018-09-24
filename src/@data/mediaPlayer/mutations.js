@@ -9,7 +9,7 @@ export function play(result, variables, { cache }) {
 
   if (!state.currentTrack) return null;
 
-  track(events.AudioPlayed, state, categories.Audio, state.currentTrack.title);
+  track(events.AudioPlayed, categories.Audio, state.currentTrack.title);
 
   cache.writeQuery({
     query: mediaPlayerQuery,
@@ -106,7 +106,7 @@ export function pause(result, variables, { cache }) {
     variables,
   });
 
-  track(events.AudioPaused, state, categories.Audio, state.currentTrack.title);
+  track(events.AudioPaused, categories.Audio, state.currentTrack.title);
 
   cache.writeQuery({
     query: mediaPlayerQuery,
