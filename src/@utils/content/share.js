@@ -4,9 +4,17 @@ import getSiteLink from './getSiteLink';
 
 const share = (content) => {
   Share.share({
-    title: content.title || content.name,
-    message: content.title || content.name,
-    url: getSiteLink(content),
+    ...Platform.select({
+      ios: {
+        title: content.title || content.name,
+        message: content.title || content.name,
+        url: getSiteLink(content),
+      },
+      android: {
+        title: content.title || content.name,
+        message: `${content.title} ${getSiteLink(content)}` || content.name,
+      },
+    }),
   });
 
   track(events.Shared, categories.Content);
