@@ -38,7 +38,7 @@ export function nowPlaying(result, variables, { cache }) {
     currentTrack: variables.currentTrack || variables.currentTrack,
   };
 
-  track(events.AudioPlayed, mediaPlayer, categories.Audio, variables.currentTrack.title);
+  track(events.AudioPlayed, categories.Audio, variables.currentTrack.title);
 
   cache.writeQuery({
     query: mediaPlayerQuery,

@@ -19,20 +19,10 @@ const Now = () => (
   <BackgroundView>
     <KeyboardAwareScrollView>
       <ContributionForm
-        onComplete={({ history, savedPaymentMethods, result } = {}) => {
+        onComplete={({ history, savedPaymentMethods } = {}) => {
           const userHasPaymentMethods = savedPaymentMethods.length > 0;
 
-          track(
-            events.GivingStarted,
-            {
-              userHasPaymentMethods,
-              ...result,
-              total:
-                get(result, 'firstContribution.amount', 0) +
-                get(result, 'secondContribution.amount', 0),
-            },
-            categories.Give,
-          );
+          track(events.GivingStarted, categories.Give);
 
           if (userHasPaymentMethods) {
             return history.push('/give/checkout/confirm');

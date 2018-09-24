@@ -1,5 +1,4 @@
 import { Share } from 'react-native';
-import { get } from 'lodash';
 import { track, events, categories } from '@utils/analytics';
 import getSiteLink from './getSiteLink';
 
@@ -10,17 +9,7 @@ const share = (content) => {
     url: getSiteLink(content),
   });
 
-  track(
-    events.Shared,
-    {
-      channel: get(content, 'channelName'),
-      isLiked: get(content, 'content.isLiked'),
-      contentId: get(content, 'id'),
-      meta: get(content, 'meta'),
-      title: content.title || content.name,
-    },
-    categories.Content,
-  );
+  track(events.Shared, categories.Content);
 };
 
 export default share;

@@ -52,7 +52,7 @@ export default compose(
 
         const isLiked = !get(state, 'content.isLiked');
 
-        track(events.Liked, { isLiked, id }, categories.Content, id);
+        track(events.Liked, categories.Content, id);
 
         return mutate({
           variables: {

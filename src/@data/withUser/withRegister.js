@@ -42,8 +42,8 @@ export default graphql(MUTATION, {
               id: registerUser.id,
             };
             store.writeQuery({ query: LOGGED_IN_QUERY, data });
-            track(events.Login, '', categories.Account, { data }.person.id);
-            track(events.Register, '', categories.Account, { data }.person.id);
+            track(events.Login, categories.Account, { data }.person.id);
+            track(events.Register, categories.Account, { data }.person.id);
             await AsyncStorage.setItem('authToken', get(registerUser, 'token'));
           },
         });

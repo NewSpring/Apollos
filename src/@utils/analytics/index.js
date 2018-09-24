@@ -57,7 +57,7 @@ const nativeOnlyEvents = {
 
 // thin wrappers over our client events so we have a consistent API
 // if we want to move away from Amplitude in the future:
-export const track = (eventName, properties, categoryName, label) => {
+export const track = (eventName, categoryName, label) => {
   if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
   if (Platform.OS === 'web' && nativeOnlyEvents[eventName]) return;
   google.analyticsEvent({ categoryName, eventName, label });
@@ -68,15 +68,7 @@ export const identify = (userId) => {
   google.setUserId(userId);
 };
 
-export const trackScreen = (screenName, screenProperties) => {
-  track(
-    events.ScreenView,
-    {
-      screen: screenName,
-      ...screenProperties,
-    },
-    events.ScreenView,
-  );
+export const trackScreen = (screenName) => {
   google.analyticsScreen({ screenName });
   sentry.captureBreadcrumb({
     message: 'ScreenView',
