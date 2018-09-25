@@ -7,7 +7,7 @@ const analyticsEvent = ({ categoryName, eventName, label }) =>
 
 const analyticsScreen = ({ screenName }) => ReactGA.pageview(screenName);
 
-const setUserId = ({ userId }) => ReactGA.set({ uid: userId });
+const setUserId = ({ userId }) => ReactGA.ga('set', 'userId', userId);
 
 const googleAnalytics = {
   analyticsEvent,
