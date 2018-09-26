@@ -13,7 +13,7 @@ export default graphql(MUTATION, {
     forgotPassword: (params = {}) => {
       const { email, sourceURL = '' } = params;
 
-      track(events.ForgotPassword, categories.Account, { email }.email);
+      track(events.ForgotPassword, categories.Account, params.email);
 
       return mutate({
         variables: {
