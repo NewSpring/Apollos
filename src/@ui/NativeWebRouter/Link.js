@@ -65,7 +65,7 @@ export default class Link extends PureComponent {
 
     // handle web links
     if (to && to.indexOf('http') > -1) {
-      track(events.OutboundLink, categories.Content, { to }.to);
+      track(events.OutboundLink, categories.Content, to);
       return WebBrowser.openBrowserAsync(to);
     }
 
