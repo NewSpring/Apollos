@@ -1,6 +1,6 @@
 import { Analytics, Event, PageHit } from 'expo-analytics';
 
-const analytics = new Analytics('UA-7130289-39');
+const analytics = new Analytics('UA-7130289-39', { uid: 'userId' });
 const analyticsEvent = ({ categoryName, eventName, label }) =>
   analytics
     .event(new Event(categoryName, eventName, label))
@@ -13,7 +13,7 @@ const analyticsScreen = ({ screenName }) =>
     .then(() => console.log('Success'))
     .catch(e => console.log(e.message));
 
-const setUserId = userId => new Analytics('UA-7130289-39', { userId });
+const setUserId = userId => new Analytics('UA-7130289-39', userId);
 
 const googleAnalytics = {
   analytics,
