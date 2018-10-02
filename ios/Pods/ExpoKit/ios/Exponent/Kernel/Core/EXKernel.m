@@ -34,6 +34,15 @@ NSString * const EXKernelDisableNuxDefaultsKey = @"EXKernelDisableNuxDefaultsKey
 
 @end
 
+// Protocol that should be implemented by all versions of EXAppState class.
+@protocol EXAppStateProtocol
+
+@property (nonatomic, strong, readonly) NSString *lastKnownState;
+
+- (void)setState:(NSString *)state;
+
+@end
+
 @implementation EXKernel
 
 + (instancetype)sharedInstance
@@ -272,15 +281,19 @@ NSString * const EXKernelDisableNuxDefaultsKey = @"EXKernelDisableNuxDefaultsKey
   } else {
     if (appManagerToBackground) {
       [self _postNotificationName:kEXKernelBridgeDidBackgroundNotification onAbstractBridge:appManagerToBackground.reactBridge];
-      id appStateModule = [self nativeModuleForAppManager:appManagerToBackground named:@"AppState"];
-      if ([appStateModule respondsToSelector:@selector(setState:)]) {
+      //id appStateModule = [self nativeModuleForAppManager:appManagerToBackground named:@"AppState"];
+      //if ([appStateModule respondsToSelector:@selector(setState:)]) {
+      id<EXAppStateProtocol> appStateModule = [self nativeModuleForAppManager:appManagerToBackground named:@"AppState"];
+      if (appStateModule != nil) {
         [appStateModule setState:@"background"];
       }
     }
     if (appManagerToForeground) {
       [self _postNotificationName:kEXKernelBridgeDidForegroundNotification onAbstractBridge:appManagerToForeground.reactBridge];
-      id appStateModule = [self nativeModuleForAppManager:appManagerToForeground named:@"AppState"];
-      if ([appStateModule respondsToSelector:@selector(setState:)]) {
+      //id appStateModule = [self nativeModuleForAppManager:appManagerToForeground named:@"AppState"];
+      //if ([appStateModule respondsToSelector:@selector(setState:)]) {
+      id<EXAppStateProtocol> appStateModule = [self nativeModuleForAppManager:appManagerToForeground named:@"AppState"];
+      if (appStateModule != nil) {
         [appStateModule setState:@"active"];
       }
       _bridgeRegistry.lastKnownForegroundBridge = appManagerToForeground.reactBridge;
@@ -316,12 +329,12 @@ NSString * const EXKernelDisableNuxDefaultsKey = @"EXKernelDisableNuxDefaultsKey
   
   if (_bridgeRegistry.lastKnownForegroundBridge) {
     EXReactAppManager *appManager = [_bridgeRegistry lastKnownForegroundAppManager];
-    id appStateModule = [self nativeModuleForAppManager:appManager named:@"AppState"];
+    //id appStateModule = [self nativeModuleForAppManager:appManager named:@"AppState"];
+    id<EXAppStateProtocol> appStateModule = [self nativeModuleForAppManager:appManager named:@"AppState"];
     NSString *lastKnownState;
-    if ([appStateModule respondsToSelector:@selector(lastKnownState)]) {
+    //if ([appStateModule respondsToSelector:@selector(lastKnownState)]) {
+    if (appStateModule != nil) {
       lastKnownState = [appStateModule lastKnownState];
-    }
-    if ([appStateModule respondsToSelector:@selector(setState:)]) {
       [appStateModule setState:newState];
     }
     if (!lastKnownState || ![newState isEqualToString:lastKnownState]) {
