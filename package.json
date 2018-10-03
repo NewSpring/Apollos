@@ -37,7 +37,7 @@
   },
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "npm run create-app-entrypoint && npm run run-with-settings 'exp start'",
+    "start": "exp prepare-detached-build && npm run create-app-entrypoint && npm run run-with-settings 'exp start'",
     "start-crna": "npm run create-app-entrypoint && npm run run-with-settings 'react-native-scripts start'",
     "android": "npm run create-app-entrypoint && npm run run-with-settings 'exp android'",
     "ios": "npm run create-app-entrypoint && npm run run-with-settings 'exp ios'",
