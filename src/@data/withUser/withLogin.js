@@ -40,7 +40,6 @@ export default graphql(MUTATION, {
             };
             store.writeQuery({ query: LOGGED_IN_QUERY, data });
             track(events.Login, categories.Account, data.person.id);
-            identify(data.person.id);
             await AsyncStorage.setItem('authToken', get(loginUser, 'token'));
           },
         });
