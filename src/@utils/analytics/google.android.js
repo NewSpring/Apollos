@@ -1,6 +1,6 @@
 import { Analytics, Event, PageHit } from 'expo-analytics';
 
-const analytics = new Analytics('UA-7130289-39', { uid: 'userId' });
+const analytics = new Analytics('UA-7130289-39');
 const analyticsEvent = ({ categoryName, eventName, label }) =>
   analytics
     .event(new Event(categoryName, eventName, label))
