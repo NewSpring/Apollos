@@ -1,4 +1,4 @@
-import { track, events } from '@utils/analytics';
+import { track, events, categories } from '@utils/analytics';
 import mediaPlayerQuery from './mediaPlayerQuery';
 
 export function play(result, variables, { cache }) {
@@ -9,7 +9,7 @@ export function play(result, variables, { cache }) {
 
   if (!state.currentTrack) return null;
 
-  track(events.AudioPlayed, state);
+  track(events.AudioPlayed, categories.Audio, state.currentTrack.title);
 
   cache.writeQuery({
     query: mediaPlayerQuery,
@@ -38,7 +38,7 @@ export function nowPlaying(result, variables, { cache }) {
     currentTrack: variables.currentTrack || variables.currentTrack,
   };
 
-  track(events.AudioPlayed, mediaPlayer);
+  track(events.AudioPlayed, categories.Audio, variables.currentTrack.title);
 
   cache.writeQuery({
     query: mediaPlayerQuery,
@@ -106,7 +106,7 @@ export function pause(result, variables, { cache }) {
     variables,
   });
 
-  track(events.AudioPaused, state);
+  track(events.AudioPaused, categories.Audio, state.currentTrack.title);
 
   cache.writeQuery({
     query: mediaPlayerQuery,
@@ -141,4 +141,3 @@ export function stop(result, variables, { cache }) {
   });
   return null;
 }
-

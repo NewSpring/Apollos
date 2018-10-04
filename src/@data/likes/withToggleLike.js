@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 import get from 'lodash/get';
 import Client from '@data/Client';
 import { withProtectedFunction } from '@ui/NativeWebRouter';
-import { track, events } from '@utils/analytics';
+import { track, events, categories } from '@utils/analytics';
 
 const contentCard = gql`
   fragment ContentCard on Content {
@@ -31,8 +31,8 @@ export const MUTATION = gql`
   mutation ToggleLike($id: String!) {
     toggleLike(nodeId: $id) {
       like {
-        ... ContentCard
-        ... GroupCard
+        ...ContentCard
+        ...GroupCard
       }
     }
   }
@@ -52,7 +52,7 @@ export default compose(
 
         const isLiked = !get(state, 'content.isLiked');
 
-        track(events.Liked, { isLiked, id });
+        track(events.Liked, categories.Content, id);
 
         return mutate({
           variables: {

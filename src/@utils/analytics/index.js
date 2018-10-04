@@ -1,12 +1,8 @@
-import { Platform } from 'react-native';
 import Settings from '@utils/Settings';
-import instance from './instance';
 import sentry from '../sentry';
+import google from './google';
 
 // Events
-const AppBecameInactive = 'AppBecameInactive';
-const AppBecameActive = 'AppBecameActive';
-const AppBecameBackgrounded = 'AppBecameBackgrounded';
 const OutboundLink = 'OutboundLink';
 const ScreenView = 'ScreenView';
 const Liked = 'Liked';
@@ -18,11 +14,13 @@ const ContactedGroup = 'ContactedGroup';
 const GivingStarted = 'GivingStarted';
 const AudioPlayed = 'AudioPlayed';
 const AudioPaused = 'AudioPaused';
+const Audio = 'Audio';
+const Video = 'Video';
+const Content = 'Content';
+const Account = 'Account';
+const Give = 'Give';
 
 export const events = {
-  AppBecameInactive,
-  AppBecameActive,
-  AppBecameBackgrounded,
   OutboundLink,
   ScreenView,
   Liked,
@@ -36,42 +34,34 @@ export const events = {
   AudioPaused,
 };
 
-const nativeOnlyEvents = {
-  AppBecameInactive,
-  AppBecameActive,
-  AppBecameBackgrounded,
+export const categories = {
+  Audio,
+  Video,
+  Content,
+  Account,
+  Give,
 };
 
 // thin wrappers over our client events so we have a consistent API
 // if we want to move away from Amplitude in the future:
-export const track = (eventName, properties) => {
+export const track = (eventName, categoryName, label) => {
   if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
-  if (Platform.OS === 'web' && nativeOnlyEvents[eventName]) return;
-  if (properties) {
-    instance.logEventWithProperties(eventName, properties);
-  } else {
-    instance.logEvent(eventName);
-  }
+  google.analyticsEvent({ categoryName, eventName, label });
 };
 
-export const identify = (userId, userProperties) => {
+export const identify = (userId) => {
   if (Settings.NODE_ENV === 'development' || Settings.NODE_ENV === 'testing') return;
-  instance.setUserId(userId);
-  if (userProperties) instance.setUserProperties(userProperties);
+  google.setUserId({ userId });
 };
 
-export const trackScreen = (screenName, screenProperties) => {
-  track(events.ScreenView, {
-    screen: screenName,
-    ...screenProperties,
-  });
+export const trackScreen = (screenName) => {
+  google.analyticsScreen({ screenName });
   sentry.captureBreadcrumb({
     message: 'ScreenView',
     data: { screenName },
     level: 'info',
   });
 };
-
 
 const Analytics = {
   track,
