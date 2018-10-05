@@ -1,6 +1,5 @@
 package host.exp.exponent.generated;
 
-// this file goes in android/app/src/main/java/host/exp/exponent/generated/
 // This file is auto-generated. Please don't rename!
 public class DetachBuildConstants {
 

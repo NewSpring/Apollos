@@ -23,13 +23,6 @@ Thumbs.db
 
 coverage/
 
-# generated at runtime
-app.json
-ios/newspring/Supporting/EXBuildConstants.json
-ios/newspring/Supporting/EXBuildConstants.plist
-ios/newspring/Supporting/EXBuildConstants.plist.bak
-android/app/src/main/java/host/exp/exponent/generated/*
-
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
