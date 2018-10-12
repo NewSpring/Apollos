@@ -23,7 +23,7 @@ const enhance = compose(
     validationSchema: Yup.object().shape({
       password: Yup.string().required(),
       passwordConfirm: Yup.string()
-        .oneOf([Yup.ref('password'), null])
+        .oneOf([Yup.ref('password'), null], "Passwords don't match.")
         .required('A password is required'),
     }),
     handleSubmit: async (values, {
