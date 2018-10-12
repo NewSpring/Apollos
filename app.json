@@ -46,16 +46,15 @@
           "file": "sentry-expo/upload-sourcemaps",
           "config": {
             "organization": "newspring-church",
-            "project": "app",
-            "authToken": "571cef2c6c50465cae6c87e7cfb1455f7a6edfe2a64a47f9b78d3727bfc17c3b"
+            "project": "app"
           }
         }
       ]
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "7615a28f15008e1b6fcc5935d2f669dfb4755c82",
-      "APP_ROOT_URL": "http://localhost:3000",
+      "COMMIT_SHA": "3458178a28bce716bcfaa354088c73d8fec6f527",
+      "APP_ROOT_URL": "https://my.newspring.cc",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
       "APP_HEIGHLINER_URL": "https://apollos-api.newspring.cc/graphql",
@@ -64,8 +63,10 @@
     "isDetached": true,
     "detach": {
       "scheme": "expba3ad9e96a6043fc95726c73cb381a27",
-      "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v2.3.3-sdk25.0.0-e7a4361a-631d-4caf-9692-1880d71c394a.tar.gz",
-      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.3.0-sdk25.0.0-0c32461b-a7c6-4ddc-b85b-32a80c4f18d9.tar.gz"
+      "iosExpoViewUrl":
+        "https://s3.amazonaws.com/exp-exponent-view-code/ios-v2.3.3-sdk25.0.0-e7a4361a-631d-4caf-9692-1880d71c394a.tar.gz",
+      "androidExpoViewUrl":
+        "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.3.0-sdk25.0.0-0c32461b-a7c6-4ddc-b85b-32a80c4f18d9.tar.gz"
     }
   }
 }
