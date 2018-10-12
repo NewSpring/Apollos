@@ -12,6 +12,8 @@ export const MUTATION = gql`
 export default graphql(MUTATION, {
   props: ({ mutate }) => ({
     forgotPassword: (params = {}) => {
+      // pull app domain from environment variables
+      // if there isn't one set, use the expo default dev url
       const { email, sourceURL = `${Settings.APP_ROOT_URL || 'http://localhost:3000'}` } = params;
 
       track(events.ForgotPassword, categories.Account, params.email);
