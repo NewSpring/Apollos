@@ -11,7 +11,7 @@ export const MUTATION = gql`
 export default graphql(MUTATION, {
   props: ({ mutate }) => ({
     forgotPassword: (params = {}) => {
-      const { email, sourceURL = '' } = params;
+      const { email, sourceURL = 'https://my.newspring.cc/_' } = params;
 
       track(events.ForgotPassword, categories.Account, params.email);
 

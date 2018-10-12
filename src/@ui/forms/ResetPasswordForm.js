@@ -22,13 +22,15 @@ const enhance = compose(
   withFormik({
     validationSchema: Yup.object().shape({
       password: Yup.string().required(),
-      passwordConfirm: Yup.string().oneOf([Yup.ref('password'), null])
+      passwordConfirm: Yup.string()
+        .oneOf([Yup.ref('password'), null])
         .required('A password is required'),
     }),
     handleSubmit: async (values, {
       props, setFieldError, setSubmitting, setStatus,
     }) => {
-      props.resetPassword({ token: props.token, newPassword: values.password })
+      props
+        .resetPassword({ token: props.token, newPassword: values.password })
         .catch((...e) => {
           setStatus('There was an error resetting your password.');
           sentry.captureException(e);
@@ -56,40 +58,40 @@ const enhance = compose(
   }),
 );
 
-export const ChangePasswordFormWithoutData = enhance(({
-  createFieldValueHandler,
-  createFieldTouchedHandler,
-  touched,
-  errors,
-  values,
-  handleSubmit,
-  isValid,
-  isSubmitting,
-  status,
-}) => (
-  <View>
-    <TextInput
-      label="New Password"
-      type="password"
-      value={values.password}
-      onChangeText={createFieldValueHandler('password')}
-      onBlur={createFieldTouchedHandler('password')}
-      error={touched.password && errors.password}
-    />
-    <TextInput
-      label="Confirm Password (enter it again)"
-      type="password"
-      value={values.passwordConfirm}
-      onChangeText={createFieldValueHandler('passwordConfirm')}
-      onBlur={createFieldTouchedHandler('passwordConfirm')}
-      error={touched.passwordConfirm && errors.passwordConfirm}
-    />
-    {status ? (
-      <Status>{status}</Status>
-    ) : null}
-    <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
-  </View>
-));
+export const ChangePasswordFormWithoutData = enhance(
+  ({
+    createFieldValueHandler,
+    createFieldTouchedHandler,
+    touched,
+    errors,
+    values,
+    handleSubmit,
+    isValid,
+    isSubmitting,
+    status,
+  }) => (
+    <View>
+      <TextInput
+        label="New Password"
+        type="password"
+        value={values.password}
+        onChangeText={createFieldValueHandler('password')}
+        onBlur={createFieldTouchedHandler('password')}
+        error={touched.password && errors.password}
+      />
+      <TextInput
+        label="Confirm Password (enter it again)"
+        type="password"
+        value={values.passwordConfirm}
+        onChangeText={createFieldValueHandler('passwordConfirm')}
+        onBlur={createFieldTouchedHandler('passwordConfirm')}
+        error={touched.passwordConfirm && errors.passwordConfirm}
+      />
+      {status ? <Status>{status}</Status> : null}
+      <Button onPress={handleSubmit} title="Go" disabled={!isValid} loading={isSubmitting} />
+    </View>
+  ),
+);
 
 const withData = compose(
   withUser,
