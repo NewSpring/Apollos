@@ -15,7 +15,7 @@ public class AppConstants {
   public static String INITIAL_URL = "exp://exp.host/@newspring-builds/newspring";
   public static final boolean IS_DETACHED = true;
   public static final String SHELL_APP_SCHEME = "newspring";
-  public static final String RELEASE_CHANNEL = "v6.0.3";
+  public static final String RELEASE_CHANNEL = "v6.1.0";
   public static boolean SHOW_LOADING_VIEW_IN_SHELL_APP = false;
   public static final List<Constants.EmbeddedResponse> EMBEDDED_RESPONSES;
 
