@@ -17,12 +17,12 @@ repositories {
 
 android {
   compileSdkVersion 26
-  buildToolsVersion '26.0.1'
+  buildToolsVersion '27.0.3'
 
   defaultConfig {
     applicationId 'cc.newspring.newspringapp'
-    targetSdkVersion 25
-    versionCode 600027
+    targetSdkVersion 26
+    versionCode 600030
     versionName '6.1.0'
     ndk {
       abiFilters 'armeabi-v7a', 'x86'
@@ -161,6 +161,9 @@ dependencies {
   androidTestCompile 'com.google.code.findbugs:jsr305:3.0.0'
   androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
   androidTestCompile 'com.azimolabs.conditionwatcher:conditionwatcher:0.2'
+
+
+
 
 
   compile('host.exp.exponent:expoview:25.0.0@aar') {

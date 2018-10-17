@@ -1,5 +1,4 @@
 import React from 'react';
-import { get } from 'lodash';
 import KeyboardAwareScrollView from '@ui/KeyboardAwareScrollView';
 import BackgroundView from '@ui/BackgroundView';
 import { ContributionForm } from '@ui/forms';
@@ -8,7 +7,7 @@ import { ButtonLink } from '@ui/Button';
 import Card, { CardContent } from '@ui/Card';
 import styled from '@ui/styled';
 import WebBrowser from '@ui/WebBrowser';
-import { track, events } from '@utils/analytics';
+import { track, events, categories } from '@utils/analytics';
 import Funds from './Funds';
 
 const FooterCard = styled(({ theme }) => ({
@@ -19,14 +18,10 @@ const Now = () => (
   <BackgroundView>
     <KeyboardAwareScrollView>
       <ContributionForm
-        onComplete={({ history, savedPaymentMethods, result } = {}) => {
+        onComplete={({ history, savedPaymentMethods } = {}) => {
           const userHasPaymentMethods = savedPaymentMethods.length > 0;
 
-          track(events.GivingStarted, {
-            userHasPaymentMethods,
-            ...result,
-            total: get(result, 'firstContribution.amount', 0) + get(result, 'secondContribution.amount', 0),
-          });
+          track(events.GivingStarted, categories.Give);
 
           if (userHasPaymentMethods) {
             return history.push('/give/checkout/confirm');

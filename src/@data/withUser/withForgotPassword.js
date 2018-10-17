@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
-import { track, events } from '@utils/analytics';
+import { track, events, categories } from '@utils/analytics';
+import Settings from '@utils/Settings';
 
 export const MUTATION = gql`
   mutation forgotUserPassword($email: String!, $sourceURL: String) {
@@ -11,12 +12,11 @@ export const MUTATION = gql`
 export default graphql(MUTATION, {
   props: ({ mutate }) => ({
     forgotPassword: (params = {}) => {
-      const {
-        email,
-        sourceURL = '',
-      } = params;
+      // pull app domain from environment variables
+      // if there isn't one set, use the expo default dev url
+      const { email, sourceURL = `${Settings.APP_ROOT_URL || 'http://localhost:3000'}` } = params;
 
-      track(events.ForgotPassword, { email });
+      track(events.ForgotPassword, categories.Account, params.email);
 
       return mutate({
         variables: {
