@@ -307,7 +307,7 @@ class AppRouter extends PureComponent {
                   component={ForgotPassword}
                   cardStackDirection="vertical"
                 />
-                <Route exact path="/_/reset-password/:token" component={ResetPassword} />
+                <Route exact path="/reset-password/:token" component={ResetPassword} />
 
                 <Route cardStackKey="tabs" component={this.tabs} />
               </CardStack>
