@@ -33,7 +33,6 @@ const SmallValueText = compose(
   })),
 )(H6);
 
-
 export class PaymentConfirmationFormWithoutData extends PureComponent {
   static propTypes = {
     isLoading: PropTypes.bool,
@@ -112,7 +111,7 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
           <SmallValueText>{this.props.cvv}</SmallValueText>
         </Row>
         <Row>
-          <LabelText>Accout Name: </LabelText>
+          <LabelText>Account Name: </LabelText>
           <SmallValueText>{this.props.savedAccountName}</SmallValueText>
         </Row>
       </PaddedView>
@@ -147,11 +146,17 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
             <H5>{'Account Details'}</H5>
           </Cell>
           <Divider />
-          {this.props.paymentMethod === 'bankAccount' ? this.renderBankAccount() : this.renderCreditCard()}
+          {this.props.paymentMethod === 'bankAccount'
+            ? this.renderBankAccount()
+            : this.renderCreditCard()}
         </TableView>
 
         <PaddedView>
-          <Button onPress={this.props.onSubmit} title="Create Account" loading={this.props.isSaving} />
+          <Button
+            onPress={this.props.onSubmit}
+            title="Create Account"
+            loading={this.props.isSaving}
+          />
         </PaddedView>
       </View>
     );
