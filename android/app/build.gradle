@@ -121,22 +121,22 @@ dependencies {
 
   // I'm going to force these but hopefully when we upgrade ExpoKit, this will be unnecessary and we can revert
   compile ('com.google.android.gms:play-services-gcm:10.2.1') {
-    force = true;
+    force = true
   }
   compile ('com.google.android.gms:play-services-analytics:10.2.1') {
-    force = true;
+    force = true
   }
   compile ('com.google.android.gms:play-services-maps:10.2.1') {
-    force = true;
+    force = true
   }
   compile ('com.google.android.gms:play-services-auth:10.2.1') {
-    force = true;
+    force = true
   }
   compile ('com.google.android.gms:play-services-location:10.2.1') {
-    force = true;
+    force = true
   }
   compile ('com.google.android.gms:play-services-ads:10.2.1') {
-    force = true;
+    force = true
   }
 
   apt 'com.raizlabs.android:DBFlow-Compiler:2.2.1'
@@ -181,8 +181,9 @@ dependencies {
 
 
 
-  compile('host.exp.exponent:expoview:25.0.0@aar') {
+  compile ('host.exp.exponent:expoview:25.0.0@aar') {
     transitive = true
+    exclude group: 'com.google.android.gms'
   }
 
 
