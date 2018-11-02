@@ -31,6 +31,7 @@ export default graphql(MUTATION, {
             'SavedPaymentMethods',
             'GetTransactions',
             'HomeFeed',
+            'GiveContributions',
           ],
           update: async (store, { data: { loginUser } }) => {
             const data = store.readQuery({ query: LOGGED_IN_QUERY });

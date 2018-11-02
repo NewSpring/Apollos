@@ -266,7 +266,7 @@ export class ContributionFormWithoutData extends Component {
           ) : (
             <Button
               disabled={!(this.totalContribution > 0) || !this.props.isValid}
-              onPress={this.props.triggerLogin}
+              onPress={this.props.handleSubmit && this.props.triggerLogin}
               title="Sign in or create account"
               type="primary"
             />
