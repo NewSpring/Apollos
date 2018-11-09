@@ -138,7 +138,9 @@ export class ContributionFormWithoutData extends Component {
     this.setState({ secondFundVisible });
   };
 
+
   handleToggleRecurringPaymentOptionsVisibility = () => {
+    console.log('handlethis');
     const recurringPaymentOptionsVisible = !this.state.recurringPaymentOptionsVisible;
 
     let frequencyId = FREQUENCY_IDS[0].id;
@@ -179,80 +181,80 @@ export class ContributionFormWithoutData extends Component {
     const total = (parseFloat(this.totalContribution || 0) || 0).toFixed(2);
 
     const { touched, errors } = this.props;
+    if (this.props.isLoggedIn) {
+      return (
 
-    return (
-      <PaddedView horizontal={false}>
-        <TableView responsive={false}>
-          <PaddedView>
-            <FundInput
-              funds={this.props.funds}
-              isFirst
-              value={this.props.values.firstContribution}
-              onChange={value => this.props.setFieldValue('firstContribution', value)}
-              onBlur={() => this.props.setFieldTouched('firstContribution', true)}
-              error={Boolean(touched.firstContribution && errors.firstContribution)}
-            />
-            {this.state.secondFundVisible && (
-              <FundInput
-                funds={this.remainingFunds}
-                value={this.props.values.secondContribution}
-                onChange={value => this.props.setFieldValue('secondContribution', value)}
-                onBlur={() => this.props.setFieldTouched('secondContribution', true)}
-                error={Boolean(touched.secondContribution && errors.secondContribution)}
-              />
-            )}
-
-            <ButtonWrapper>
-              <Button
-                onPress={this.handleToggleSecondFund}
-                bordered
-                title={this.state.secondFundVisible ? 'Remove Fund' : 'Add Another Fund'}
-              />
-            </ButtonWrapper>
-          </PaddedView>
-        </TableView>
-
-        {this.props.recurringPaymentOptionsAvailable ? (
-          <PaddedView vertical={false}>
-            <Inputs.Switch
-              value={!!this.state.recurringPaymentOptionsVisible}
-              onValueChange={this.handleToggleRecurringPaymentOptionsVisibility}
-              label="Schedule Contribution"
-            />
-          </PaddedView>
-        ) : null}
-
-        {this.props.recurringPaymentOptionsAvailable &&
-        this.state.recurringPaymentOptionsVisible ? (
+        <PaddedView horizontal={false}>
           <TableView responsive={false}>
             <PaddedView>
-              <View>
-                <FrequencyInput
-                  value={this.props.values.frequencyId}
-                  onChange={value => this.props.setFieldValue('frequencyId', value)}
-                  onBlur={() => this.props.setFieldTouched('frequencyId', true)}
-                  error={Boolean(touched.frequencyId && errors.frequencyId)}
+              <FundInput
+                funds={this.props.funds}
+                isFirst
+                value={this.props.values.firstContribution}
+                onChange={value => this.props.setFieldValue('firstContribution', value)}
+                onBlur={() => this.props.setFieldTouched('firstContribution', true)}
+                error={Boolean(touched.firstContribution && errors.firstContribution)}
+              />
+              {this.state.secondFundVisible && (
+                <FundInput
+                  funds={this.remainingFunds}
+                  value={this.props.values.secondContribution}
+                  onChange={value => this.props.setFieldValue('secondContribution', value)}
+                  onBlur={() => this.props.setFieldTouched('secondContribution', true)}
+                  error={Boolean(touched.secondContribution && errors.secondContribution)}
                 />
-                <Inputs.DateInput
-                  label="Start Date"
-                  displayValue={moment(this.props.values.startDate).format('MM/DD/YYYY')}
-                  value={this.props.values.startDate}
-                  onChange={value => this.props.setFieldValue('startDate', value)}
-                  onBlur={() => this.props.setFieldTouched('startDate', true)}
-                  error={touched.startDate && errors.startDate}
+              )}
+
+              <ButtonWrapper>
+                <Button
+                  onPress={this.handleToggleSecondFund}
+                  bordered
+                  title={this.state.secondFundVisible ? 'Remove Fund' : 'Add Another Fund'}
                 />
-              </View>
+              </ButtonWrapper>
             </PaddedView>
           </TableView>
-        ) : null}
 
-        <Totals vertical={false}>
-          <Row>
-            {/* TODO: refactor CashAmountIndicator to take a pre/post string to wrap amount */}
-            <H3>my total is </H3>
-            <CashAmountIndicator amount={total} size={1} />
-          </Row>
-          {this.props.isLoggedIn ? (
+          {this.props.recurringPaymentOptionsAvailable ? (
+            <PaddedView vertical={false}>
+              <Inputs.Switch
+                value={!!this.state.recurringPaymentOptionsVisible}
+                onValueChange={this.handleToggleRecurringPaymentOptionsVisibility}
+                label="Schedule Contribution"
+              />
+            </PaddedView>
+          ) : null}
+
+          {this.props.recurringPaymentOptionsAvailable &&
+          this.state.recurringPaymentOptionsVisible ? (
+            <TableView responsive={false}>
+              <PaddedView>
+                <View>
+                  <FrequencyInput
+                    value={this.props.values.frequencyId}
+                    onChange={value => this.props.setFieldValue('frequencyId', value)}
+                    onBlur={() => this.props.setFieldTouched('frequencyId', true)}
+                    error={Boolean(touched.frequencyId && errors.frequencyId)}
+                  />
+                  <Inputs.DateInput
+                    label="Start Date"
+                    displayValue={moment(this.props.values.startDate).format('MM/DD/YYYY')}
+                    value={this.props.values.startDate}
+                    onChange={value => this.props.setFieldValue('startDate', value)}
+                    onBlur={() => this.props.setFieldTouched('startDate', true)}
+                    error={touched.startDate && errors.startDate}
+                  />
+                </View>
+              </PaddedView>
+            </TableView>
+          ) : null}
+
+          <Totals vertical={false}>
+            <Row>
+              {/* TODO: refactor CashAmountIndicator to take a pre/post string to wrap amount */}
+              <H3>my total is </H3>
+              <CashAmountIndicator amount={total} size={1} />
+            </Row>
             <Button
               onPress={this.props.handleSubmit}
               disabled={!(this.totalContribution > 0) || !this.props.isValid}
@@ -263,15 +265,17 @@ export class ContributionFormWithoutData extends Component {
               <H5>Review Contribution</H5>
               <Icon name="lock" />
             </Button>
-          ) : (
-            <Button
-              disabled={!(this.totalContribution > 0) || !this.props.isValid}
-              onPress={this.props.triggerLogin}
-              title="Sign in or create account"
-              type="primary"
-            />
-          )}
-        </Totals>
+          </Totals>
+        </PaddedView>
+      );
+    }
+    return (
+      <PaddedView>
+        <Button
+          onPress={this.props.triggerLogin}
+          title="Sign in or create account"
+          type="primary"
+        />
       </PaddedView>
     );
   }
@@ -294,7 +298,6 @@ const ContributionForm = compose(
   withFinancialAccounts,
   withProtectedFunction(protect => ({ triggerLogin: protect })),
   withCheckout,
-  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withProps(({ accounts, person }) => ({
     funds: accounts,
     recurringPaymentOptionsAvailable: !!person,
@@ -337,6 +340,7 @@ const ContributionForm = compose(
       ),
     }),
     handleSubmit(values, { props, setSubmitting }) {
+      console.log('handleSubmit');
       const result = { ...values };
       if (get(result, 'firstContribution.amount')) {
         result.firstContribution.amount = parseFloat(result.firstContribution.amount);
@@ -376,6 +380,7 @@ const ContributionForm = compose(
       setSubmitting(false);
     },
   }),
+  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
 )(ContributionFormWithoutData);
 
 export default ContributionForm;
