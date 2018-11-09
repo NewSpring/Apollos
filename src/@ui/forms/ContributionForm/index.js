@@ -140,7 +140,6 @@ export class ContributionFormWithoutData extends Component {
 
 
   handleToggleRecurringPaymentOptionsVisibility = () => {
-    console.log('handlethis');
     const recurringPaymentOptionsVisible = !this.state.recurringPaymentOptionsVisible;
 
     let frequencyId = FREQUENCY_IDS[0].id;
@@ -340,7 +339,6 @@ const ContributionForm = compose(
       ),
     }),
     handleSubmit(values, { props, setSubmitting }) {
-      console.log('handleSubmit');
       const result = { ...values };
       if (get(result, 'firstContribution.amount')) {
         result.firstContribution.amount = parseFloat(result.firstContribution.amount);
