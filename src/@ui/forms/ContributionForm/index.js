@@ -297,6 +297,7 @@ const ContributionForm = compose(
   withFinancialAccounts,
   withProtectedFunction(protect => ({ triggerLogin: protect })),
   withCheckout,
+  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withProps(({ accounts, person }) => ({
     funds: accounts,
     recurringPaymentOptionsAvailable: !!person,
@@ -378,7 +379,6 @@ const ContributionForm = compose(
       setSubmitting(false);
     },
   }),
-  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
 )(ContributionFormWithoutData);
 
 export default ContributionForm;
