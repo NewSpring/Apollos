@@ -252,6 +252,7 @@ const PaymentConfirmationForm = compose(
           name: props.contributions.willSavePaymentMethod
             ? props.contributions.savedAccountName
             : null,
+          platform: Platform.OS || 'web',
         });
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
