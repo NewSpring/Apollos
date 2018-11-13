@@ -225,6 +225,7 @@ const PaymentConfirmationForm = compose(
 
           return res;
         }
+
         props.isPaying(true);
         if (props.contributions.paymentMethod === 'creditCard') {
           await props.validateSingleCardTransaction(); // This seems unnecessary
@@ -245,6 +246,8 @@ const PaymentConfirmationForm = compose(
         const createOrderResponse = await props.createOrder();
         const order = get(createOrderResponse, 'data.order', {});
         const token = order.url.split('/').pop();
+        /* eslint-disable-next-line */
+        const platform = Platform.OS ? Platform.OS : props.fromIos ? 'ios' : 'web';
 
         await props.postPayment(order.url);
         const completeOrderRes = await props.completeOrder({
@@ -252,7 +255,7 @@ const PaymentConfirmationForm = compose(
           name: props.contributions.willSavePaymentMethod
             ? props.contributions.savedAccountName
             : null,
-          platform: Platform.OS || 'web',
+          platform,
         });
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
