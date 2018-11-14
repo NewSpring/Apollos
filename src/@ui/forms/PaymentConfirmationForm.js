@@ -246,8 +246,6 @@ const PaymentConfirmationForm = compose(
         const createOrderResponse = await props.createOrder();
         const order = get(createOrderResponse, 'data.order', {});
         const token = order.url.split('/').pop();
-        /* eslint-disable-next-line */
-        
 
         await props.postPayment(order.url);
         const completeOrderRes = await props.completeOrder({
