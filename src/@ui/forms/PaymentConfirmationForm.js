@@ -247,7 +247,7 @@ const PaymentConfirmationForm = compose(
         const order = get(createOrderResponse, 'data.order', {});
         const token = order.url.split('/').pop();
         /* eslint-disable-next-line */
-        const platform = Platform.OS ? Platform.OS : props.fromIos ? 'ios' : 'web';
+        
 
         await props.postPayment(order.url);
         const completeOrderRes = await props.completeOrder({
@@ -255,7 +255,7 @@ const PaymentConfirmationForm = compose(
           name: props.contributions.willSavePaymentMethod
             ? props.contributions.savedAccountName
             : null,
-          platform,
+          platform: props.fromIos ? 'ios' : Platform.OS,
         });
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
