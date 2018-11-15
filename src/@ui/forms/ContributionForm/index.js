@@ -288,6 +288,7 @@ const ContributionForm = compose(
   defaultProps({
     onComplete() {},
   }),
+  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withGive,
   withRouter,
   withIsLoggedIn,
@@ -375,7 +376,6 @@ const ContributionForm = compose(
       setSubmitting(false);
     },
   }),
-  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
 )(ContributionFormWithoutData);
 
 export default ContributionForm;
