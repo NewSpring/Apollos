@@ -288,11 +288,11 @@ const ContributionForm = compose(
   defaultProps({
     onComplete() {},
   }),
-  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withGive,
   withRouter,
   withIsLoggedIn,
   withFinancialAccounts,
+  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withProtectedFunction(protect => ({ triggerLogin: protect })),
   withCheckout,
   withProps(({ accounts, person }) => ({
