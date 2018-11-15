@@ -26,7 +26,8 @@ APP_ROCK_PUBLIC_TOKEN='${settings.local.rock.token}'
 APP_HEIGHLINER_URL='${settings.local.heighliner}'
 APP_SENTRY_URL='${settings.local.sentry}'
 SENTRY_AUTH='${settings.local.sentryAuth}'
-AMPLITUDE_KEY='${settings.local.amplitude}'`;
+AMPLITUDE_KEY='${settings.local.amplitude}'
+APP_VERSION='HOLLA'`;
 
     const testContent = `
 # Make sure ROOT_URL does not have a trailing slash
