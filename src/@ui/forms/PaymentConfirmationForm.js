@@ -225,6 +225,7 @@ const PaymentConfirmationForm = compose(
 
           return res;
         }
+
         props.isPaying(true);
         if (props.contributions.paymentMethod === 'creditCard') {
           await props.validateSingleCardTransaction(); // This seems unnecessary
@@ -252,6 +253,7 @@ const PaymentConfirmationForm = compose(
           name: props.contributions.willSavePaymentMethod
             ? props.contributions.savedAccountName
             : null,
+          platform: props.fromIos ? 'ios' : Platform.OS,
         });
         const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
         if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);

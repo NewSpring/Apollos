@@ -4,8 +4,8 @@ import get from 'lodash/get';
 import pushNewPaymentMethod from '@data/withGivingDashboard/pushNewPaymentMethod';
 
 export const MUTATION = gql`
-  mutation completeOrder($token: ID!, $name: String, $id: ID) {
-    response: completeOrder(token: $token, accountName: $name, scheduleId: $id) {
+  mutation completeOrder($token: ID!, $name: String, $id: ID, $platform: String) {
+    response: completeOrder(token: $token, accountName: $name, scheduleId: $id, platform: $platform) {
       error
       success
       code
