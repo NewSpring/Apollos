@@ -36,8 +36,8 @@ const styles = styled(({ theme, bold, italic }) => {
         paddingBottom: theme.helpers.rem(0.1),
         lineHeight: theme.helpers.verticalRhythm(1.112, 1.4889),
         fontStyle: fontStyle, // eslint-disable-line
-        '-webkit-font-smoothing': 'antialiased',
-        '-moz-osx-font-smoothing': 'grayscale',
+        WebkitFontSmoothing: 'antialiased',
+        MozOsxFontSmoothing: 'grayscale',
       },
     }),
   };
