@@ -298,6 +298,7 @@ const ContributionForm = compose(
     funds: accounts,
     recurringPaymentOptionsAvailable: !!person,
   })),
+  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withFormik({
     mapPropsToValues: props => ({
       firstContribution: {
@@ -375,7 +376,6 @@ const ContributionForm = compose(
       setSubmitting(false);
     },
   }),
-  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
 )(ContributionFormWithoutData);
 
 export default ContributionForm;
