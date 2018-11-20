@@ -294,11 +294,11 @@ const ContributionForm = compose(
   withFinancialAccounts,
   withProtectedFunction(protect => ({ triggerLogin: protect })),
   withCheckout,
-  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withProps(({ accounts, person }) => ({
     funds: accounts,
     recurringPaymentOptionsAvailable: !!person,
   })),
+  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withFormik({
     mapPropsToValues: props => ({
       firstContribution: {
