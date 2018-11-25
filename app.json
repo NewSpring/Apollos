@@ -53,7 +53,7 @@
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "059f53b3e92863324c285a22a2444bce1860915a",
+      "COMMIT_SHA": "944cd769bc97a73cc62853997a5b4f8fb4176cc7",
       "APP_ROOT_URL": "http://localhost:3000",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
