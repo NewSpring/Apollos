@@ -1,6 +1,7 @@
 const Path = require('path');
 const FS = require('fs');
 const fetch = require('node-fetch');
+
 const TOKEN = process.env.RAW_SETTINGS_TOKEN;
 const env = process.env.NODE_ENV;
 
@@ -11,8 +12,7 @@ const env = process.env.NODE_ENV;
     };
 
     const response = await fetch(
-      'https://api.github.com/repos/newspring/ops-settings/contents/sites/apollos/settings.json?access_token=' +
-        TOKEN,
+      `https://api.github.com/repos/newspring/ops-settings/contents/sites/apollos/settings.json?access_token=${TOKEN}`,
       headers,
     );
 
@@ -26,8 +26,7 @@ APP_ROCK_PUBLIC_TOKEN='${settings.local.rock.token}'
 APP_HEIGHLINER_URL='${settings.local.heighliner}'
 APP_SENTRY_URL='${settings.local.sentry}'
 SENTRY_AUTH='${settings.local.sentryAuth}'
-AMPLITUDE_KEY='${settings.local.amplitude}'
-APP_VERSION='HOLLA'`;
+AMPLITUDE_KEY='${settings.local.amplitude}'`;
 
     const testContent = `
 # Make sure ROOT_URL does not have a trailing slash
@@ -50,7 +49,11 @@ SENTRY_AUTH='${settings.prod.sentryAuth}'
 AMPLITUDE_KEY='${settings.prod.amplitude}'`;
 
     const envContent =
-      env === 'production' ? productionContent : env === 'test' ? testContent : localContent;
+      env === 'production'
+        ? productionContent
+        : env === 'test'
+          ? testContent
+          : localContent;
 
     await FS.writeFileSync(Path.resolve(__dirname, '../.env'), envContent);
   } catch (e) {
