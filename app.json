@@ -55,7 +55,7 @@
     "extra": {
       "NODE_ENV": "development",
       "COMMIT_SHA": "0470f809f974c76943e4f8d401fd8c5967f9b70b",
-      "APP_ROOT_URL": "http://localhost:3000",
+      "APP_ROOT_URL": "https://my.newspring.cc",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
       "APP_HEIGHLINER_URL": "https://apollos-api.newspring.cc/graphql",
