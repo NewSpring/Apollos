@@ -46,18 +46,19 @@
           "file": "sentry-expo/upload-sourcemaps",
           "config": {
             "organization": "newspring-church",
-            "project": "app"
+            "project": "app",
+            "authToken": "571cef2c6c50465cae6c87e7cfb1455f7a6edfe2a64a47f9b78d3727bfc17c3b"
           }
         }
       ]
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "059f53b3e92863324c285a22a2444bce1860915a",
+      "COMMIT_SHA": "0470f809f974c76943e4f8d401fd8c5967f9b70b",
       "APP_ROOT_URL": "http://localhost:3000",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
-      "APP_HEIGHLINER_URL": "https://alpha-api.newspring.cc/graphql",
+      "APP_HEIGHLINER_URL": "https://apollos-api.newspring.cc/graphql",
       "APP_SENTRY_URL": "https://39cb6523762d4a94a8a26006bddbdfa0@sentry.io/1187506"
     },
     "isDetached": true,

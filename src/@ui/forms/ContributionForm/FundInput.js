@@ -29,22 +29,19 @@ const StyledTextInput = styled(
 const StyledPicker = styled(
   ({ theme }) => ({
     color: theme.colors.primary,
-    /* The styles below are pulled from H3 to match the surrounding text it's layed out with.
-   * TODO: refactor Picker to accept a text component
-   */
     ...Platform.select({
       ios: {
-        fontSize: theme.helpers.rem(1.8),
+        fontSize: theme.helpers.rem(1.4),
         lineHeight: theme.helpers.verticalRhythm(1.8, 1.14),
       },
-      /* RN android doesn't support setting these values at this time
-     * android: {
-     *   lineHeight: theme.helpers.verticalRhythm(1.8, 1.34),
-     * },
-     */
+      // TODO: android isn't working...
+      // android: {
+      // height: theme.helpers.rem(1.6),
+      // maxHeight: theme.helpers.verticalRhythm(1.8, 1.14),
+      // },
       web: {
-        fontSize: theme.helpers.rem(1.8),
-        lineHeight: theme.helpers.verticalRhythm(1.8, 1.15),
+        fontSize: theme.helpers.rem(1.4),
+        lineHeight: theme.helpers.verticalRhythm(1.8, 1.14),
       },
     }),
   }),
@@ -75,7 +72,11 @@ const pickerWrapperStyle = {
 };
 
 const FundInput = ({
-  isFirst = false, funds = [], value = {}, onChange, ...textInputProps
+  isFirst = false,
+  funds = [],
+  value = {},
+  onChange,
+  ...textInputProps
 }) => (
   <FundInputWrapper>
     <H3>{isFirst ? "I'd like to give " : 'and give '}</H3>
@@ -94,13 +95,21 @@ const FundInput = ({
     <View style={{ width: 325, maxWidth: '100%' }}>
       <StyledPicker
         onValueChange={id =>
-          onChange(Object.assign({}, value, funds.find(fund => `${fund.id}` === `${id}`)))
+          onChange(
+            Object.assign(
+              {},
+              value,
+              funds.find(fund => `${fund.id}` === `${id}`),
+            ),
+          )
         }
         value={get(value, 'id')}
         displayValue={get(value, 'name')}
         wrapperStyle={pickerWrapperStyle}
       >
-        {funds.map(({ name, id }) => <Inputs.PickerItem label={name} value={id} key={id} />)}
+        {funds.map(({ name, id }) => (
+          <Inputs.PickerItem label={name} value={id} key={id} />
+        ))}
       </StyledPicker>
     </View>
   </FundInputWrapper>
