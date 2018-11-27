@@ -9,24 +9,6 @@
     "orientation": "portrait",
     "scheme": "newspring",
     "icon": "src/assets/icons/ios/icon-1024x1024.png",
-    "ios": {
-      "bundleIdentifier": "com.subsplashstudio31.NewSpring-Church",
-      "buildNumber": "1",
-      "supportsTablet": true,
-      "associatedDomains": [
-        "applinks:beta.newspring.cc",
-        "applinks:newspring.cc",
-        "applinks:beta-my.newspring.cc",
-        "applinks:my.newspring.cc",
-        "applinks:rm2y5.app.goo.gl"
-      ],
-      "icon": "src/assets/icons/ios/icon-1024x1024.png",
-      "splash": {
-        "image": "src/assets/splash/splash-1242x2436.png",
-        "backgroundColor": "#D1DCE6"
-      },
-      "loadJSInBackgroundExperimental": true
-    },
     "android": {
       "package": "cc.newspring.newspringapp",
       "versionCode": 600025,
@@ -54,8 +36,8 @@
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "0470f809f974c76943e4f8d401fd8c5967f9b70b",
-      "APP_ROOT_URL": "https://my.newspring.cc",
+      "COMMIT_SHA": "d013b0acacb545b5c8f417d29547351f842808ee",
+      "APP_ROOT_URL": "http://localhost:3000",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
       "APP_HEIGHLINER_URL": "https://apollos-api.newspring.cc/graphql",
