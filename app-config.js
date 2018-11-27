@@ -19,6 +19,7 @@ module.exports = env => ({
         'applinks:beta-my.newspring.cc',
         'applinks:my.newspring.cc',
         'applinks:rm2y5.app.goo.gl',
+        'applinks:newspring.page.link',
       ],
       icon: 'src/assets/icons/ios/icon-1024x1024.png',
       splash: {
