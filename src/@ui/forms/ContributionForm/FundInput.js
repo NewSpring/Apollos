@@ -29,6 +29,21 @@ const StyledTextInput = styled(
 const StyledPicker = styled(
   ({ theme }) => ({
     color: theme.colors.primary,
+    ...Platform.select({
+      ios: {
+        fontSize: theme.helpers.rem(1.4),
+        lineHeight: theme.helpers.verticalRhythm(1.8, 1.14),
+      },
+      // TODO: android isn't working...
+      // android: {
+      // height: theme.helpers.rem(1.6),
+      // maxHeight: theme.helpers.verticalRhythm(1.8, 1.14),
+      // },
+      web: {
+        fontSize: theme.helpers.rem(1.4),
+        lineHeight: theme.helpers.verticalRhythm(1.8, 1.14),
+      },
+    }),
   }),
   'FundInput.Picker',
 )(Inputs.Picker);
