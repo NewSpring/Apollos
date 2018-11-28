@@ -7,7 +7,6 @@ module.exports = env => ({
     primaryColor: '#6bac43',
     slug: 'newspring',
     orientation: 'portrait',
-    scheme: 'newspring',
     android: {
       package: 'cc.newspring.newspringapp',
       versionCode: 600025,
