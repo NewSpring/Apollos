@@ -2,7 +2,6 @@ module.exports = env => ({
   expo: {
     sdkVersion: '25.0.0',
     name: 'NewSpring',
-    primaryColor: '#6bac43',
     slug: 'newspring',
     android: {
       package: 'cc.newspring.newspringapp',
