@@ -8,7 +8,6 @@ module.exports = env => ({
     slug: 'newspring',
     orientation: 'portrait',
     scheme: 'newspring',
-    icon: 'src/assets/icons/ios/icon-1024x1024.png',
     android: {
       package: 'cc.newspring.newspringapp',
       versionCode: 600025,
