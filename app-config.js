@@ -2,7 +2,7 @@ module.exports = env => ({
   expo: {
     sdkVersion: '25.0.0',
     name: 'NewSpring',
-    version: '6.1.2',
+    version: '6.1.3',
     description: 'The official NewSpring mobile app.',
     primaryColor: '#6bac43',
     slug: 'newspring',
