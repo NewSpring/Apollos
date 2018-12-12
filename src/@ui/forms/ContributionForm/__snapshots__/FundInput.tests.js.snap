@@ -301,7 +301,7 @@ exports[`The FrequencyInput component should render correctly 1`] = `
                 Object {
                   "color": "#6bac43",
                   "fontFamily": "Colfax-Bold",
-                  "fontSize": 32.4,
+                  "fontSize": 25.2,
                   "height": 40,
                   "lineHeight": 41.04,
                   "paddingBottom": 1.8,
@@ -838,7 +838,7 @@ exports[`The FrequencyInput component should render correctly as the first fund 
                 Object {
                   "color": "#6bac43",
                   "fontFamily": "Colfax-Bold",
-                  "fontSize": 32.4,
+                  "fontSize": 25.2,
                   "height": 40,
                   "lineHeight": 41.04,
                   "paddingBottom": 1.8,
@@ -1375,7 +1375,7 @@ exports[`The FrequencyInput component should render correctly with initial state
                 Object {
                   "color": "#6bac43",
                   "fontFamily": "Colfax-Bold",
-                  "fontSize": 32.4,
+                  "fontSize": 25.2,
                   "height": 40,
                   "lineHeight": 41.04,
                   "paddingBottom": 1.8,

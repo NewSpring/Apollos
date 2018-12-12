@@ -62,6 +62,7 @@ export const RestoredCheckout = enhance((props) => {
       <H7>{'Please review your donation'}</H7>
       <PaymentConfirmationForm
         hideChangePaymentMethodButton
+        fromIos
         onComplete={(completionError, completionSuccess) => {
           props.history.replace(`${props.location.pathname}?${stringify({
             error: completionError,

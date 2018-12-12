@@ -152,6 +152,7 @@ class ContributionHistoryFilter extends PureComponent {
               value={this.props.values.startDate}
               onChange={t => this.props.setFieldValue('startDate', t)}
               onBlur={() => this.props.setFieldTouched('startDate', true)}
+              minimumDate={moment.utc('1/1/2000').toDate()}
             />
             <DateInput
               label="End Date"
@@ -163,6 +164,7 @@ class ContributionHistoryFilter extends PureComponent {
               value={this.props.values.endDate}
               onChange={t => this.props.setFieldValue('endDate', t)}
               onBlur={() => this.props.setFieldTouched('endDate', true)}
+              minimumDate={moment.utc('1/1/2000').toDate()}
             />
             {this.props.values.startDate || this.props.values.endDate ? (
               <Chip onPress={this.clear} icon="close" />
