@@ -59,7 +59,8 @@
     "create-app-entrypoint": "node ./.scripts/create-app-entrypoint.js",
     "create-storybook-entrypoint": "node ./.scripts/create-storybook-entrypoint.js",
     "run-with-settings": "node ./.scripts/run-with-settings.js",
-    "create-env-files": "node ./.scripts/generate-env-files.js"
+    "create-env-files": "node ./.scripts/generate-env-files.js",
+    "bump": "python ./scripts/bump_version.py"
   },
   "jest": {
     "preset": "jest-expo",
