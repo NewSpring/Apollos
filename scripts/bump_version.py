@@ -6,8 +6,8 @@ def _getArgs():
     """Get arguments from command line."""
 
     parser = argparse.ArgumentParser(
-        description="This will bump the version numbers for NS Apollos")
-    parser.add_argument("version", help="version string to be copied in")
+        description="This will bump the version numbers for NS Apollos files.")
+    parser.add_argument("version", help="Version string to be copied in")
     args = parser.parse_args()
     return args
 
