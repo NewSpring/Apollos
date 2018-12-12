@@ -56,5 +56,6 @@ if __name__ == "__main__":
 
     # publish to Expo
     if args.ota:
-        os.system("NODE_ENV=production yarn run-with-settings \"yarn run exp publish --release-channel v" + args.version + "beta\"")
+        os.system("NODE_ENV=production yarn run-with-settings \"yarn run exp publish --release-channel v" + args.version + "\"")
+        print "NODE_ENV=production yarn run-with-settings \"yarn run exp publish --release-channel v" + args.version + "\"" 
  
