@@ -8,6 +8,7 @@ def _getArgs():
     parser = argparse.ArgumentParser(
         description="This will bump the version numbers for NS Apollos files.")
     parser.add_argument("version", help="Version string to be copied in")
+    parser.add_argument("--ota", action="store_true", help="This will publish the bundle to Expo")
     args = parser.parse_args()
     return args
 
@@ -52,4 +53,8 @@ if __name__ == "__main__":
     # write over iOS files
     _replaceLine("./ios/newspring/Supporting/Info.plist", "CFBundleShortVersionString", "	<string>" + version + "</string>", 1) 
     _replaceLine("./ios/newspring/Supporting/EXShell.plist", "releaseChannel", "	<string>v" + version + "</string>", 1) 
+
+    # publish to Expo
+    if args.ota:
+        os.system("NODE_ENV=production yarn run-with-settings \"yarn run exp publish --release-channel v" + args.version + "beta\"")
  
