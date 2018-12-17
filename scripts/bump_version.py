@@ -1,6 +1,7 @@
 #! usr/bin/python
 
 import argparse
+import os
 
 def _getArgs():
     """Get arguments from command line."""
