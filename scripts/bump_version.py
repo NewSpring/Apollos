@@ -8,7 +8,7 @@ def _getArgs():
 
     parser = argparse.ArgumentParser(
         description="This will bump the version numbers for NS Apollos files.")
-    parser.add_argument("version", help="Version string to be copied in")
+    parser.add_argument("version", help="Version number to update to")
     parser.add_argument("--ota", action="store_true", help="This will publish the bundle to Expo")
     args = parser.parse_args()
     return args
