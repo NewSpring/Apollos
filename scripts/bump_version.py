@@ -46,6 +46,7 @@ if __name__ == "__main__":
     
     # write over JS files
     _replaceLine("./app-config.js", "version:", "    version: '" + version + "',") 
+    _replaceLine("./package.json", "version:", "  \"version\": \"" + version + "\",") 
     
     # write over Android files
     _replaceLine("./android/app/build.gradle", "versionName", "    versionName '" + version + "'")
@@ -58,5 +59,4 @@ if __name__ == "__main__":
     # publish to Expo
     if args.ota:
         os.system("NODE_ENV=production yarn run-with-settings \"yarn run exp publish --release-channel v" + args.version + "\"")
-        print "NODE_ENV=production yarn run-with-settings \"yarn run exp publish --release-channel v" + args.version + "\"" 
  
