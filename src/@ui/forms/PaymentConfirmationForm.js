@@ -234,7 +234,10 @@ const PaymentConfirmationForm = compose(
         const isSavedPaymentMethod = props.contributions.paymentMethod === 'savedPaymentMethod';
         const isScheduled = props.contributions.frequencyId !== 'today';
         if (isSavedPaymentMethod && isScheduled) {
-          await props.createOrder();
+          const createOrderResponse = await props.createOrder();
+          console.log("get(createOrderResponse, 'data')", get(createOrderResponse, 'data'));
+          const unableToCreateOrderError = get(createOrderResponse, 'data.response.error');
+          if (unableToCreateOrderError) throw new Error(unableToCreateOrderError);
 
           props.setPaymentResult({
             success: true,
