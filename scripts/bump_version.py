@@ -6,18 +6,13 @@ import sys
 import json
 import logging
 
-def _getArgs(noArgs = False):
+def _getArgs():
     """Get arguments from command line."""
 
     parser = argparse.ArgumentParser(
         description="This will bump the version numbers for NS Apollos files.")
     parser.add_argument("-v", "--version", help="Version number to update to")
     parser.add_argument("--ota", action="store_true", help="This will publish the bundle to Expo")
-
-    if noArgs:
-        parser.print_help()
-        return 0
-
     args = parser.parse_args()
     return args
 
@@ -58,9 +53,10 @@ def _replaceLine(textFile, lineSearch, newLine, lineOffset = 0):
                 
 if __name__ == "__main__":
 
-    # if no args, print help menu and exit
+    # all arguments are optional since --ota can be called without version number
+    # if no args, warn user and exit 
     if len(sys.argv) == 1:
-        _getArgs(True)
+        logging.warn("No arguments specified. Use -h flag for usage info.")
         sys.exit(1)
     
     # get command line arguments
