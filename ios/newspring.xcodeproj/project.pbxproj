@@ -366,7 +366,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "# this is used so appcenter doesn't need expo to build\n# if APPCENTER is set to false, skip this section\nif [ -z \"$APPCENTER\" ]\nthen\n    set -eo pipefail\n\n    pushd ${SRCROOT}/..\n    value=$(cat ~/.expo/PATH)\n    PATH=\"$PATH:$value\" exp prepare-detached-build --platform ios\n    popd\nfi\n";
+			shellScript = "# this is used so appcenter doesn't need expo to build\n# if APPCENTER variable is not set, skip this section\n# NOTE: if for some reason this env variable does get loaded in, this app will not find Expo\n# if so, use \"$APPCENTER != \"true\"\nif [ -z \"$APPCENTER\" ]\nthen\n    set -eo pipefail\n\n    pushd ${SRCROOT}/..\n    value=$(cat ~/.expo/PATH)\n    PATH=\"$PATH:$value\" exp prepare-detached-build --platform ios\n    popd\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
