@@ -3,7 +3,6 @@
     "sdkVersion": "25.0.0",
     "name": "NewSpring",
     "slug": "newspring",
-    "scheme": "newspring",
     "icon": "src/assets/icons/ios/icon-1024x1024.png",
     "ios": {
       "bundleIdentifier": "com.subsplashstudio31.NewSpring-Church",
@@ -50,7 +49,7 @@
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "86e279eb093e069c27a895ef89f396422c1f86e9",
+      "COMMIT_SHA": "45d1f77a6deef25b4e6d779dc1bd40814ac973fd",
       "APP_ROOT_URL": "https://my.newspring.cc",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",

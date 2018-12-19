@@ -3,7 +3,6 @@ module.exports = env => ({
     sdkVersion: '25.0.0',
     name: 'NewSpring',
     slug: 'newspring',
-    scheme: 'newspring',
     icon: 'src/assets/icons/ios/icon-1024x1024.png',
     ios: {
       bundleIdentifier: 'com.subsplashstudio31.NewSpring-Church',
