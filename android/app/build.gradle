@@ -88,15 +88,18 @@ android {
 //   }
 // }
 
-task exponentPrebuildStep(type: Exec) {
-  workingDir '../'
-  if (System.getProperty('os.name').toLowerCase().contains('windows')) {
-    commandLine 'cmd', '/c', '.\\detach-scripts\\prepare-detached-build.bat'
-  } else {
-    commandLine './detach-scripts/prepare-detached-build.sh'
+// adding this if statement so appcenter doesn't try to use expo
+if ( System.getenv("APPCENTER") != "true") {
+  task exponentPrebuildStep(type: Exec) {
+    workingDir '../'
+    if (System.getProperty('os.name').toLowerCase().contains('windows')) {
+      commandLine 'cmd', '/c', '.\\detach-scripts\\prepare-detached-build.bat'
+    } else {
+      commandLine './detach-scripts/prepare-detached-build.sh'
+    }
   }
+  preBuild.dependsOn exponentPrebuildStep
 }
-preBuild.dependsOn exponentPrebuildStep
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
