@@ -3,6 +3,7 @@
 .env
 .env.*
 .*.md
+app.json
 
 # storybook
 storyLoader.js
