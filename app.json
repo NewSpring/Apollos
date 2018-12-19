@@ -2,9 +2,6 @@
   "expo": {
     "sdkVersion": "25.0.0",
     "name": "NewSpring",
-    "version": "6.1.3",
-    "description": "The official NewSpring mobile app.",
-    "primaryColor": "#6bac43",
     "slug": "newspring",
     "orientation": "portrait",
     "scheme": "newspring",
@@ -54,7 +51,7 @@
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "72a490399259ba1f87c7b3d6aabd1464cc52a2c5",
+      "COMMIT_SHA": "fd9866f5ba2f741e076c27cdac6400f946a2c795",
       "APP_ROOT_URL": "https://my.newspring.cc",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
