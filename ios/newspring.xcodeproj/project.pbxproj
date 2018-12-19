@@ -366,7 +366,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "set -eo pipefail\n\npushd ${SRCROOT}/..\nvalue=$(cat ~/.expo/PATH)\nPATH=\"$PATH:$value\" exp prepare-detached-build --platform ios\npopd\n";
+			shellScript = "if [ $APPCENTER -ne \"true\"]\nthen\n    set -eo pipefail\n\n    pushd ${SRCROOT}/..\n    value=$(cat ~/.expo/PATH)\n    PATH=\"$PATH:$value\" exp prepare-detached-build --platform ios\n    popd\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
