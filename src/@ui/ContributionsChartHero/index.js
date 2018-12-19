@@ -87,7 +87,11 @@ const ContributionsChartHero = enhance(
     accounts,
     iconSize,
   }) => (
-    <ScrollView>
+    <ScrollView
+      contentContainerStyle={{
+      flexGrow: 1,
+      }}
+    >
       <Heroed
         backgroundColor={backgroundColor}
         contentContainerStyle={contentContainerStyle}

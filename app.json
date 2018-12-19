@@ -2,7 +2,7 @@
   "expo": {
     "sdkVersion": "25.0.0",
     "name": "NewSpring",
-    "version": "6.1.2",
+    "version": "6.1.3",
     "description": "The official NewSpring mobile app.",
     "primaryColor": "#6bac43",
     "slug": "newspring",
@@ -46,15 +46,16 @@
           "file": "sentry-expo/upload-sourcemaps",
           "config": {
             "organization": "newspring-church",
-            "project": "app"
+            "project": "app",
+            "authToken": "571cef2c6c50465cae6c87e7cfb1455f7a6edfe2a64a47f9b78d3727bfc17c3b"
           }
         }
       ]
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "059f53b3e92863324c285a22a2444bce1860915a",
-      "APP_ROOT_URL": "http://localhost:3000",
+      "COMMIT_SHA": "72a490399259ba1f87c7b3d6aabd1464cc52a2c5",
+      "APP_ROOT_URL": "https://my.newspring.cc",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
       "APP_HEIGHLINER_URL": "https://alpha-api.newspring.cc/graphql",
