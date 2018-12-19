@@ -3,7 +3,6 @@
     "sdkVersion": "25.0.0",
     "name": "NewSpring",
     "slug": "newspring",
-    "orientation": "portrait",
     "scheme": "newspring",
     "icon": "src/assets/icons/ios/icon-1024x1024.png",
     "ios": {
@@ -51,7 +50,7 @@
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "fd9866f5ba2f741e076c27cdac6400f946a2c795",
+      "COMMIT_SHA": "86e279eb093e069c27a895ef89f396422c1f86e9",
       "APP_ROOT_URL": "https://my.newspring.cc",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
