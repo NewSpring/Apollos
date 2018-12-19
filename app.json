@@ -4,37 +4,6 @@
     "name": "NewSpring",
     "slug": "newspring",
     "icon": "src/assets/icons/ios/icon-1024x1024.png",
-    "ios": {
-      "bundleIdentifier": "com.subsplashstudio31.NewSpring-Church",
-      "buildNumber": "1",
-      "supportsTablet": true,
-      "associatedDomains": [
-        "applinks:beta.newspring.cc",
-        "applinks:newspring.cc",
-        "applinks:beta-my.newspring.cc",
-        "applinks:my.newspring.cc",
-        "applinks:rm2y5.app.goo.gl"
-      ],
-      "icon": "src/assets/icons/ios/icon-1024x1024.png",
-      "splash": {
-        "image": "src/assets/splash/splash-1242x2436.png",
-        "backgroundColor": "#D1DCE6"
-      },
-      "loadJSInBackgroundExperimental": true
-    },
-    "android": {
-      "package": "cc.newspring.newspringapp",
-      "versionCode": 600025,
-      "icon": "src/assets/icons/android/icon-192x192-xxxhpdi.png",
-      "splash": {
-        "mdpi": "src/assets/splash/splash-1242x2436.png",
-        "hdpi": "src/assets/splash/splash-1242x2436.png",
-        "xhdpi": "src/assets/splash/splash-1242x2436.png",
-        "xxhdpi": "src/assets/splash/splash-1242x2436.png",
-        "xxxhdpi": "src/assets/splash/splash-1242x2436.png",
-        "backgroundColor": "#D1DCE6"
-      }
-    },
     "hooks": {
       "postPublish": [
         {
@@ -49,7 +18,7 @@
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "45d1f77a6deef25b4e6d779dc1bd40814ac973fd",
+      "COMMIT_SHA": "c5804243d5c9e8d1ebab282b4f7a9902695ff586",
       "APP_ROOT_URL": "https://my.newspring.cc",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
