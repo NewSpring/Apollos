@@ -9,8 +9,8 @@ sudo installer -store -pkg "$HOME/Downloads/node-installer.pkg" -target "/"
 # comment out expo stuff in build processes
 #
 # iOS
-sed -i -e 's/PATH=\\"$PATH:$value\\" exp prepare-detached-build --platform ios/\#PATH=\\"$PATH:$value\\" exp prepare-detached-build --platform ios/g' ios/newspring.xcodeproj/project.pbxproj
-sed -i -e 's/value=$(cat ~\/.expo\/PATH)/\#value=$(cat ~\/.expo\/PATH)/g' ios/newspring.xcodeproj/project.pbxproj
+sed -i .bak 's/PATH=\\"$PATH:$value\\" exp prepare-detached-build --platform ios/\#PATH=\\"$PATH:$value\\" exp prepare-detached-build --platform ios/g' ios/newspring.xcodeproj/project.pbxproj
+sed -i .bak 's/value=$(cat ~\/.expo\/PATH)/\#value=$(cat ~\/.expo\/PATH)/g' ios/newspring.xcodeproj/project.pbxproj
 
 # Android
-sed -i -e 's/preBuild.dependsOn exponentPrebuildStep/\/\/preBuild.dependsOn exponentPrebuildStep/g'
+sed -i .bak 's/preBuild.dependsOn exponentPrebuildStep/\/\/preBuild.dependsOn exponentPrebuildStep/g'
