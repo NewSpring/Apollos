@@ -13,4 +13,4 @@ sed -i .bak 's/PATH=\\"$PATH:$value\\" exp prepare-detached-build --platform ios
 sed -i .bak 's/value=$(cat ~\/.expo\/PATH)/\#value=$(cat ~\/.expo\/PATH)/g' ios/newspring.xcodeproj/project.pbxproj
 
 # Android
-sed -i .bak 's/preBuild.dependsOn exponentPrebuildStep/\/\/preBuild.dependsOn exponentPrebuildStep/g'
+sed -i .bak 's/preBuild.dependsOn exponentPrebuildStep/\/\/preBuild.dependsOn exponentPrebuildStep/g' android/app/build.gradle
