@@ -1,3 +1,6 @@
+# python files
+*.pyc
+
 # create react native app
 .expo/
 .env
