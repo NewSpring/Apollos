@@ -46,15 +46,14 @@
           "file": "sentry-expo/upload-sourcemaps",
           "config": {
             "organization": "newspring-church",
-            "project": "app",
-            "authToken": "571cef2c6c50465cae6c87e7cfb1455f7a6edfe2a64a47f9b78d3727bfc17c3b"
+            "project": "app"
           }
         }
       ]
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "72a490399259ba1f87c7b3d6aabd1464cc52a2c5",
+      "COMMIT_SHA": "ec4f0df7b14ac9de856843f162b5f46040e15e4a",
       "APP_ROOT_URL": "https://my.newspring.cc",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
