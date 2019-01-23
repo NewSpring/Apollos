@@ -20,6 +20,7 @@
     "enzyme-to-json": "^3.3.1",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^3.6.0",
     "eslint-import-resolver-babel-module": "^4.0.0-beta.3",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "21.2.0",
