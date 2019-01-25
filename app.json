@@ -18,7 +18,8 @@
         "applinks:newspring.cc",
         "applinks:beta-my.newspring.cc",
         "applinks:my.newspring.cc",
-        "applinks:rm2y5.app.goo.gl"
+        "applinks:rm2y5.app.goo.gl",
+        "applinks:newspring.page.link"
       ],
       "icon": "src/assets/icons/ios/icon-1024x1024.png",
       "splash": {
@@ -54,11 +55,11 @@
     },
     "extra": {
       "NODE_ENV": "development",
-      "COMMIT_SHA": "72a490399259ba1f87c7b3d6aabd1464cc52a2c5",
+      "COMMIT_SHA": "bf95653ff908076293de834cbfcdccb54dcd1cf3",
       "APP_ROOT_URL": "https://my.newspring.cc",
       "APP_ROCK_URL": "https://rock.newspring.cc/",
       "APP_ROCK_PUBLIC_TOKEN": "QLTgNQP3fDJIXxohu9RY1CA1",
-      "APP_HEIGHLINER_URL": "https://alpha-api.newspring.cc/graphql",
+      "APP_HEIGHLINER_URL": "https://apollos-api.newspring.cc/graphql",
       "APP_SENTRY_URL": "https://39cb6523762d4a94a8a26006bddbdfa0@sentry.io/1187506"
     },
     "isDetached": true,
