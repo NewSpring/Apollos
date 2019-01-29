@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DEFAULT_API_KEYS</key>
+	<dict>
+		<key>AMPLITUDE_KEY</key>
+		<string></string>
+		<key>GOOGLE_MAPS_IOS_API_KEY</key>
+		<string></string>
+	</dict>
+	<key>EXPO_RUNTIME_VERSION</key>
+	<string></string>
+	<key>developmentUrl</key>
+	<string></string>
+</dict>
+</plist>
