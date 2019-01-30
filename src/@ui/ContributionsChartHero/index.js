@@ -89,7 +89,7 @@ const ContributionsChartHero = enhance(
   }) => (
     <ScrollView
       contentContainerStyle={{
-      flexGrow: 1,
+        flexGrow: 1,
       }}
     >
       <Heroed
@@ -107,6 +107,7 @@ const ContributionsChartHero = enhance(
               key={currentYear - i}
               value={currentYear - i}
               label={currentYear - i}
+              color="black"
             />
           ))}
         </StyledPicker>
