@@ -92,7 +92,7 @@
 
         <data
             android:scheme="https"
-            android:host="rm2y5.app.goo.gl" />
+            android:host="newspring.page.link" />
       </intent-filter>
       <intent-filter>
         <action android:name="android.intent.action.VIEW" />
@@ -102,7 +102,7 @@
 
         <data
             android:scheme="http"
-            android:host="rm2y5.app.goo.gl" />
+            android:host="newspring.page.link" />
       </intent-filter>
     </activity>
 

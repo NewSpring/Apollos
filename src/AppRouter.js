@@ -48,8 +48,8 @@ const redirectToNewspring = path =>
 
 let previousLocation;
 
-const universalLinksToHandle = ['newspring.cc', 'rm2y5.app.goo.gl'];
-const universalLinksToFetch = ['rm2y5.app.goo.gl'];
+const universalLinksToHandle = ['newspring.cc', 'rm2y5.app.goo.gl', 'newspring.page.link'];
+const universalLinksToFetch = ['rm2y5.app.goo.gl', 'newspring.page.link'];
 
 class AppRouter extends PureComponent {
   static propTypes = {
