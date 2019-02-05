@@ -194,7 +194,7 @@ export class ContributionFormWithoutData extends Component {
             />
             {this.state.secondFundVisible && (
               <FundInput
-                funds={this.remainingFunds}
+                funds={this.props.funds}
                 value={this.props.values.secondContribution}
                 onChange={value => this.props.setFieldValue('secondContribution', value)}
                 onBlur={() => this.props.setFieldTouched('secondContribution', true)}
