@@ -1758,6 +1758,11 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     items={
                       Array [
                         Object {
+                          "label": "sterling",
+                          "textColor": undefined,
+                          "value": "one",
+                        },
+                        Object {
                           "label": "platinum",
                           "textColor": undefined,
                           "value": "two",
@@ -1767,7 +1772,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     onChange={[Function]}
                     onResponderTerminationRequest={[Function]}
                     onStartShouldSetResponder={[Function]}
-                    selectedIndex={0}
+                    selectedIndex={1}
                     style={
                       Array [
                         Object {
