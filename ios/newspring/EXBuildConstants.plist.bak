@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- this file is just used so Xcode works in AppCenter -->
 <plist version="1.0">
 <dict>
 	<key>DEFAULT_API_KEYS</key>
 	<dict>
 		<key>AMPLITUDE_KEY</key>
-		<string>1e246ef3dacaabe8648768d7c35fceb1</string>
+		<string></string>
 		<key>GOOGLE_MAPS_IOS_API_KEY</key>
 		<string></string>
 	</dict>
 	<key>EXPO_RUNTIME_VERSION</key>
-	<string>2.3.3</string>
+	<string></string>
 	<key>developmentUrl</key>
-	<string>expba3ad9e96a6043fc95726c73cb381a27://10.0.200.192:19000</string>
+	<string></string>
 </dict>
 </plist>
