@@ -73,14 +73,6 @@ class ContributionHistoryList extends PureComponent {
   );
 
   render() {
-    if (this.props.isLoading) {
-      return (
-        <FlexedView>
-          <ActivityIndicator />
-        </FlexedView>
-      );
-    }
-
     const transactionsPerYear = orderBy(
       map(groupBy(this.props.transactions, 'year'), (transactions, year) => ({
         year,
@@ -89,6 +81,15 @@ class ContributionHistoryList extends PureComponent {
       ['year'],
       ['desc'],
     );
+
+    if (this.props.isLoading && transactionsPerYear.length === 0) {
+      return (
+        <FlexedView>
+          <ActivityIndicator />
+        </FlexedView>
+      );
+    }
+
     let Header = (
       <View>
         <this.props.FilterComponent />

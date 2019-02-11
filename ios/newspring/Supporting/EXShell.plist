@@ -9,6 +9,10 @@
 	<key>manifestUrl</key>
 	<string>exp://exp.host/@newspring-builds/newspring</string>
 	<key>releaseChannel</key>
+<<<<<<< HEAD
 	<string>v6.1.1</string>
+=======
+	<string>v6.1.4</string>
+>>>>>>> f739e8d382e4954d41891a927783893bbce74f48
 </dict>
 </plist>

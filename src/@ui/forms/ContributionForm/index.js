@@ -183,7 +183,54 @@ export class ContributionFormWithoutData extends Component {
     if (this.props.isLoggedIn) {
       return (
 
+<<<<<<< HEAD
         <PaddedView horizontal={false}>
+=======
+    return (
+      <PaddedView horizontal={false}>
+        <TableView responsive={false}>
+          <PaddedView>
+            <FundInput
+              funds={this.props.funds}
+              isFirst
+              value={this.props.values.firstContribution}
+              onChange={value => this.props.setFieldValue('firstContribution', value)}
+              onBlur={() => this.props.setFieldTouched('firstContribution', true)}
+              error={Boolean(touched.firstContribution && errors.firstContribution)}
+            />
+            {this.state.secondFundVisible && (
+              <FundInput
+                funds={this.props.funds}
+                value={this.props.values.secondContribution}
+                onChange={value => this.props.setFieldValue('secondContribution', value)}
+                onBlur={() => this.props.setFieldTouched('secondContribution', true)}
+                error={Boolean(touched.secondContribution && errors.secondContribution)}
+              />
+            )}
+
+            <ButtonWrapper>
+              <Button
+                onPress={this.handleToggleSecondFund}
+                bordered
+                title={this.state.secondFundVisible ? 'Remove Fund' : 'Add Another Fund'}
+              />
+            </ButtonWrapper>
+          </PaddedView>
+        </TableView>
+
+        {this.props.recurringPaymentOptionsAvailable ? (
+          <PaddedView vertical={false}>
+            <Inputs.Switch
+              value={!!this.state.recurringPaymentOptionsVisible}
+              onValueChange={this.handleToggleRecurringPaymentOptionsVisibility}
+              label="Schedule Contribution"
+            />
+          </PaddedView>
+        ) : null}
+
+        {this.props.recurringPaymentOptionsAvailable &&
+        this.state.recurringPaymentOptionsVisible ? (
+>>>>>>> f739e8d382e4954d41891a927783893bbce74f48
           <TableView responsive={false}>
             <PaddedView>
               <FundInput
@@ -297,11 +344,11 @@ const ContributionForm = compose(
   withFinancialAccounts,
   withProtectedFunction(protect => ({ triggerLogin: protect })),
   withCheckout,
-  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withProps(({ accounts, person }) => ({
     funds: accounts,
     recurringPaymentOptionsAvailable: !!person,
   })),
+  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
   withFormik({
     mapPropsToValues: props => ({
       firstContribution: {

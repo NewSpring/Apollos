@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,39 +15,35 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fall.2018.appsplash-NEW-03.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bsh-cT-K4l" userLabel="Background Image View">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="g6l-cP-5Ll" userLabel="Icon Image View">
-                    <rect key="frame" x="123.5" y="269.5" width="128" height="128"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launch_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="g6l-cP-5Ll" userLabel="Icon Image View">
+                    <rect key="frame" x="134" y="288" width="128" height="128"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="128" id="fjm-AJ-FS8"/>
                         <constraint firstAttribute="width" constant="128" id="gAL-Wy-loA"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ns-logo-1024-1024" translatesAutoresizingMaskIntoConstraints="NO" id="cii-OF-4ix">
+                    <rect key="frame" x="87" y="282" width="222" height="102"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.82850116491317749" green="0.86201953887939453" blue="0.89804583787918091" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" red="0.18821519613265991" green="0.18824818730354309" blue="0.18820798397064209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Bsh-cT-K4l" secondAttribute="trailing" id="4Bz-Vy-RfD"/>
-                <constraint firstItem="Bsh-cT-K4l" firstAttribute="top" secondItem="OfY-5Y-tS4" secondAttribute="top" id="5FF-OI-m4s"/>
                 <constraint firstAttribute="centerX" secondItem="g6l-cP-5Ll" secondAttribute="centerX" id="9G9-hV-oVV"/>
                 <constraint firstItem="g6l-cP-5Ll" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OfY-5Y-tS4" secondAttribute="leading" id="JQM-pd-zJi"/>
                 <constraint firstItem="g6l-cP-5Ll" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OfY-5Y-tS4" secondAttribute="top" id="SxB-Cd-7Gy"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="g6l-cP-5Ll" secondAttribute="trailing" id="VDa-AF-XEa"/>
-                <constraint firstItem="Bsh-cT-K4l" firstAttribute="leading" secondItem="OfY-5Y-tS4" secondAttribute="leading" id="ZLr-Ag-Lsg"/>
                 <constraint firstAttribute="top" secondItem="g6l-cP-5Ll" secondAttribute="bottom" constant="10" id="cuH-ve-e1H"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="g6l-cP-5Ll" secondAttribute="bottom" id="fbb-we-kfv"/>
                 <constraint firstItem="g6l-cP-5Ll" firstAttribute="centerY" secondItem="OfY-5Y-tS4" secondAttribute="centerY" id="hI6-Px-LsN"/>
                 <constraint firstItem="g6l-cP-5Ll" firstAttribute="centerX" secondItem="OfY-5Y-tS4" secondAttribute="centerX" id="hV2-Y5-obV"/>
-                <constraint firstAttribute="bottom" secondItem="Bsh-cT-K4l" secondAttribute="bottom" id="xDi-Tc-3P0"/>
             </constraints>
-            <point key="canvasLocation" x="201" y="453"/>
+            <point key="canvasLocation" x="200.80000000000001" y="452.92353823088462"/>
         </view>
     </objects>
     <resources>
-        <image name="fall.2018.appsplash-NEW-03.png" width="2160" height="4096"/>
         <image name="launch_icon.png" width="64" height="64"/>
+        <image name="ns-logo-1024-1024" width="1024" height="1024"/>
     </resources>
 </document>

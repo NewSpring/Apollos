@@ -1,8 +1,12 @@
+# python files
+*.pyc
+
 # create react native app
 .expo/
 .env
 .env.*
 .*.md
+app.json
 
 # storybook
 storyLoader.js
