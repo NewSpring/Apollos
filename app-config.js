@@ -3,7 +3,11 @@ module.exports = env => ({
     sdkVersion: '25.0.0',
     name: 'NewSpring',
 <<<<<<< HEAD
+<<<<<<< HEAD
     version: '6.1.1',
+=======
+    version: '6.1.2',
+>>>>>>> 036310e741071e73bab48720facd6857adf4bbf3
     description: 'The official NewSpring mobile app.',
     primaryColor: '#6bac43',
 =======

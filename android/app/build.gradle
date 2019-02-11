@@ -24,10 +24,14 @@ android {
     targetSdkVersion 26
     versionCode 600030
 <<<<<<< HEAD
+<<<<<<< HEAD
     versionName '6.1.1'
 =======
     versionName '6.1.4'
 >>>>>>> f739e8d382e4954d41891a927783893bbce74f48
+=======
+    versionName '6.1.2'
+>>>>>>> 036310e741071e73bab48720facd6857adf4bbf3
     ndk {
       abiFilters 'armeabi-v7a', 'x86'
     }

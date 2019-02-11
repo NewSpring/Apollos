@@ -10,9 +10,13 @@
 	<string>exp://exp.host/@newspring-builds/newspring</string>
 	<key>releaseChannel</key>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<string>v6.1.1</string>
 =======
 	<string>v6.1.4</string>
 >>>>>>> f739e8d382e4954d41891a927783893bbce74f48
+=======
+	<string>v6.1.2</string>
+>>>>>>> 036310e741071e73bab48720facd6857adf4bbf3
 </dict>
 </plist>

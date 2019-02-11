@@ -426,6 +426,7 @@ const ContributionForm = compose(
       setSubmitting(false);
     },
   }),
+  branch(({ isLoading }) => isLoading, renderComponent(LoadingView)),
 )(ContributionFormWithoutData);
 
 export default ContributionForm;
