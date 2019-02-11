@@ -49,6 +49,16 @@
       android:largeHeap="true">
 
     <activity
+        android:name=".SplashActivity"
+        android:theme="@style/SplashTheme"
+        android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+
+    <activity
         android:name=".LauncherActivity"
         android:exported="true"
         android:launchMode="singleInstance"
@@ -103,26 +113,6 @@
         <data
             android:scheme="http"
             android:host="rm2y5.app.goo.gl" />
-          </intent-filter>
-          <intent-filter android:autoVerify="true">
-        <action android:name="android.intent.action.VIEW" />
-
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
-
-        <data
-            android:scheme="https"
-            android:host="newspring.page.link" />
-      </intent-filter>
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
-
-        <data
-            android:scheme="http"
-            android:host="newspring.page.link" />
       </intent-filter>
     </activity>
 
@@ -134,10 +124,12 @@
 
     <activity
         android:name=".MainActivity"
+        android:label="@string/app_name"
         android:launchMode="singleInstance"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
         android:theme="@style/Theme.Exponent.Splash"
-        android:windowSoftInputMode="adjustResize">
+        android:windowSoftInputMode="adjustResize"
+        android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
