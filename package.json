@@ -1,6 +1,10 @@
 {
   "name": "apollos",
+<<<<<<< HEAD
   "version": "6.1.4",
+=======
+  "version": "6.1.2",
+>>>>>>> 036310e741071e73bab48720facd6857adf4bbf3
   "repository": "https://github.com/NewSpring/Apollos.git",
   "author": "NewSpring",
   "license": "MIT",
