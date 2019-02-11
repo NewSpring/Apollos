@@ -124,20 +124,27 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
             <Divider key={`${contribution.name}-divider`} />,
           ])}
 
-          {this.props.contributions.frequencyId && this.props.contributions.frequencyId !== 'today'
+          {this.props.contributions.frequencyId &&
+          this.props.contributions.frequencyId !== 'today'
             ? [
               <PaddedView horizontal={false} key="view">
                 <LargeCellText>Schedule Details</LargeCellText>
                 <Row>
                   <LabelText>Frequency: </LabelText>
                   <SmallValueText>
-                    {FREQUENCY_IDS.find(f => f.id === this.props.contributions.frequencyId).label}
+                    {
+                        FREQUENCY_IDS.find(
+                          f => f.id === this.props.contributions.frequencyId,
+                        ).label
+                      }
                   </SmallValueText>
                 </Row>
                 <Row>
                   <LabelText>Starting: </LabelText>
                   <SmallValueText>
-                    {moment(this.props.contributions.startDate).format('MM/DD/YYYY')}
+                    {moment(this.props.contributions.startDate).format(
+                        'MM/DD/YYYY',
+                      )}
                   </SmallValueText>
                 </Row>
               </PaddedView>,
@@ -162,7 +169,10 @@ export class PaymentConfirmationFormWithoutData extends PureComponent {
         ) : null}
 
         <PaddedView vertical={false}>
-          <Button onPress={this.props.onSubmit} loading={this.props.contributions.isPaying}>
+          <Button
+            onPress={this.props.onSubmit}
+            loading={this.props.contributions.isPaying}
+          >
             <H5>{this.props.submitButtonText} </H5>
             {this.props.submitButtonIcon ? (
               <Icon name={this.props.submitButtonIcon} size={24} />
@@ -192,7 +202,8 @@ const PaymentConfirmationForm = compose(
   withCheckout,
   withProps((props) => {
     const campus =
-      props.campuses && props.campuses.find(c => c.id === get(props, 'contributions.campusId'));
+      props.campuses &&
+      props.campuses.find(c => c.id === get(props, 'contributions.campusId'));
 
     return {
       campus: campus && campus.label,
@@ -214,26 +225,36 @@ const PaymentConfirmationForm = compose(
           const userToken = await AsyncStorage.getItem('authToken');
 
           const res = await Linking.openURL(
-            `${Settings.APP_ROOT_URL || 'http://localhost:3000'}/give/restored-checkout?${stringify(
-              {
-                redirect: `${linkingUri}${props.navigateToOnComplete}`,
-                state: JSON.stringify(props.contributions),
-                userToken,
-              },
-            )}`,
+            `${Settings.APP_ROOT_URL ||
+              'http://localhost:3000'}/give/restored-checkout?${stringify({
+              redirect: `${linkingUri}${props.navigateToOnComplete}`,
+              state: JSON.stringify(props.contributions),
+              userToken,
+            })}`,
           );
 
           return res;
         }
+
         props.isPaying(true);
         if (props.contributions.paymentMethod === 'creditCard') {
           await props.validateSingleCardTransaction(); // This seems unnecessary
         }
 
-        const isSavedPaymentMethod = props.contributions.paymentMethod === 'savedPaymentMethod';
+        const isSavedPaymentMethod =
+          props.contributions.paymentMethod === 'savedPaymentMethod';
         const isScheduled = props.contributions.frequencyId !== 'today';
         if (isSavedPaymentMethod && isScheduled) {
-          await props.createOrder();
+          const createOrderResponse = await props.createOrder();
+          const unableToCreateOrderError = get(
+            createOrderResponse,
+            'data.order.error',
+          );
+          if (unableToCreateOrderError) {
+            throw new Error(
+              'Unable to process schedule with this account. Please use a different payment method.',
+            );
+          }
 
           props.setPaymentResult({
             success: true,
@@ -252,9 +273,15 @@ const PaymentConfirmationForm = compose(
           name: props.contributions.willSavePaymentMethod
             ? props.contributions.savedAccountName
             : null,
+          platform: props.fromIos ? 'ios' : Platform.OS,
         });
-        const unableToCompleteOrderError = get(completeOrderRes, 'data.response.error');
-        if (unableToCompleteOrderError) throw new Error(unableToCompleteOrderError);
+        const unableToCompleteOrderError = get(
+          completeOrderRes,
+          'data.response.error',
+        );
+        if (unableToCompleteOrderError) {
+          throw new Error(unableToCompleteOrderError);
+        }
 
         props.setPaymentResult({
           success: true,
@@ -292,13 +319,18 @@ const PaymentConfirmationForm = compose(
 
       const verb = isScheduled ? 'Schedule' : 'Give';
 
-      const name = (paymentMethod.accountNumber || paymentMethod.cardNumber || '')
+      const name = (
+        paymentMethod.accountNumber ||
+        paymentMethod.cardNumber ||
+        ''
+      )
         .replace(/-/g, '')
         .slice(-4);
 
       const text = `${verb} with ${name}`;
       const icon =
-        (paymentMethod.paymentMethod || contributions.paymentMethod) === 'creditCard'
+        (paymentMethod.paymentMethod || contributions.paymentMethod) ===
+        'creditCard'
           ? 'credit'
           : 'bank';
       return {

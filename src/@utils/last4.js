@@ -1,3 +1,5 @@
 export default function (str = '') {
-  return str.slice(str.length - 4, str.length);
+  // even though it's initialized, it can still be passed in as null
+  const safeStr = str || '';
+  return safeStr.slice(safeStr.length - 4, safeStr.length);
 }
