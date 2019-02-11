@@ -32,6 +32,15 @@ const LoadingView = styled({
   position: 'relative',
 })(ActivityIndicator);
 
+const LoginPaddedView = styled({
+  alignItems: 'center',
+  justifyContent: 'center',
+})(PaddedView);
+
+const LoginButton = styled({
+  maxWidth: 400,
+})(Button);
+
 const ButtonWrapper =
   Platform.OS === 'web'
     ? styled({
@@ -179,100 +188,110 @@ export class ContributionFormWithoutData extends Component {
     const total = (parseFloat(this.totalContribution || 0) || 0).toFixed(2);
 
     const { touched, errors } = this.props;
-
-    return (
-      <PaddedView horizontal={false}>
-        <TableView responsive={false}>
-          <PaddedView>
-            <FundInput
-              funds={this.props.funds}
-              isFirst
-              value={this.props.values.firstContribution}
-              onChange={value => this.props.setFieldValue('firstContribution', value)}
-              onBlur={() => this.props.setFieldTouched('firstContribution', true)}
-              error={Boolean(touched.firstContribution && errors.firstContribution)}
-            />
-            {this.state.secondFundVisible && (
-              <FundInput
-                funds={this.props.funds}
-                value={this.props.values.secondContribution}
-                onChange={value => this.props.setFieldValue('secondContribution', value)}
-                onBlur={() => this.props.setFieldTouched('secondContribution', true)}
-                error={Boolean(touched.secondContribution && errors.secondContribution)}
-              />
-            )}
-
-            <ButtonWrapper>
-              <Button
-                onPress={this.handleToggleSecondFund}
-                bordered
-                title={this.state.secondFundVisible ? 'Remove Fund' : 'Add Another Fund'}
-              />
-            </ButtonWrapper>
-          </PaddedView>
-        </TableView>
-
-        {this.props.recurringPaymentOptionsAvailable ? (
-          <PaddedView vertical={false}>
-            <Inputs.Switch
-              value={!!this.state.recurringPaymentOptionsVisible}
-              onValueChange={this.handleToggleRecurringPaymentOptionsVisibility}
-              label="Schedule Contribution"
-            />
-          </PaddedView>
-        ) : null}
-
-        {this.props.recurringPaymentOptionsAvailable &&
-        this.state.recurringPaymentOptionsVisible ? (
+    if (this.props.isLoggedIn) {
+      return (
+        <PaddedView horizontal={false}>
           <TableView responsive={false}>
             <PaddedView>
-              <View>
-                <FrequencyInput
-                  value={this.props.values.frequencyId}
-                  onChange={value => this.props.setFieldValue('frequencyId', value)}
-                  onBlur={() => this.props.setFieldTouched('frequencyId', true)}
-                  error={Boolean(touched.frequencyId && errors.frequencyId)}
+              <FundInput
+                funds={this.props.funds}
+                isFirst
+                value={this.props.values.firstContribution}
+                onChange={value => this.props.setFieldValue('firstContribution', value)}
+                onBlur={() => this.props.setFieldTouched('firstContribution', true)}
+                error={Boolean(touched.firstContribution && errors.firstContribution)}
+              />
+              {this.state.secondFundVisible && (
+                <FundInput
+                  funds={this.props.funds}
+                  value={this.props.values.secondContribution}
+                  onChange={value => this.props.setFieldValue('secondContribution', value)}
+                  onBlur={() => this.props.setFieldTouched('secondContribution', true)}
+                  error={Boolean(touched.secondContribution && errors.secondContribution)}
                 />
-                <Inputs.DateInput
-                  label="Start Date"
-                  displayValue={moment(this.props.values.startDate).format('MM/DD/YYYY')}
-                  value={this.props.values.startDate}
-                  onChange={value => this.props.setFieldValue('startDate', value)}
-                  onBlur={() => this.props.setFieldTouched('startDate', true)}
-                  error={touched.startDate && errors.startDate}
+              )}
+
+              <ButtonWrapper>
+                <Button
+                  onPress={this.handleToggleSecondFund}
+                  bordered
+                  title={this.state.secondFundVisible ? 'Remove Fund' : 'Add Another Fund'}
                 />
-              </View>
+              </ButtonWrapper>
             </PaddedView>
           </TableView>
-        ) : null}
 
-        <Totals vertical={false}>
-          <Row>
-            {/* TODO: refactor CashAmountIndicator to take a pre/post string to wrap amount */}
-            <H3>my total is </H3>
-            <CashAmountIndicator amount={total} size={1} />
-          </Row>
-          {this.props.isLoggedIn ? (
-            <Button
-              onPress={this.props.handleSubmit}
-              disabled={!(this.totalContribution > 0) || !this.props.isValid}
-              loading={this.props.isSubmitting}
-              title="Review Contribution"
-              type="primary"
-            >
-              <H5>Review Contribution</H5>
-              <Icon name="lock" />
-            </Button>
-          ) : (
-            <Button
-              disabled={!(this.totalContribution > 0) || !this.props.isValid}
-              onPress={this.props.triggerLogin}
-              title="Sign in or create account"
-              type="primary"
-            />
-          )}
-        </Totals>
-      </PaddedView>
+          {this.props.recurringPaymentOptionsAvailable ? (
+            <PaddedView vertical={false}>
+              <Inputs.Switch
+                value={!!this.state.recurringPaymentOptionsVisible}
+                onValueChange={this.handleToggleRecurringPaymentOptionsVisibility}
+                label="Schedule Contribution"
+              />
+            </PaddedView>
+          ) : null}
+
+          {this.props.recurringPaymentOptionsAvailable &&
+          this.state.recurringPaymentOptionsVisible ? (
+            <TableView responsive={false}>
+              <PaddedView>
+                <View>
+                  <FrequencyInput
+                    value={this.props.values.frequencyId}
+                    onChange={value => this.props.setFieldValue('frequencyId', value)}
+                    onBlur={() => this.props.setFieldTouched('frequencyId', true)}
+                    error={Boolean(touched.frequencyId && errors.frequencyId)}
+                  />
+                  <Inputs.DateInput
+                    label="Start Date"
+                    displayValue={moment(this.props.values.startDate).format('MM/DD/YYYY')}
+                    value={this.props.values.startDate}
+                    onChange={value => this.props.setFieldValue('startDate', value)}
+                    onBlur={() => this.props.setFieldTouched('startDate', true)}
+                    error={touched.startDate && errors.startDate}
+                  />
+                </View>
+              </PaddedView>
+            </TableView>
+          ) : null}
+
+          <Totals vertical={false}>
+            <Row>
+              {/* TODO: refactor CashAmountIndicator to take a pre/post string to wrap amount */}
+              <H3>my total is </H3>
+              <CashAmountIndicator amount={total} size={1} />
+            </Row>
+            {this.props.isLoggedIn ? (
+              <Button
+                onPress={this.props.handleSubmit}
+                disabled={!(this.totalContribution > 0) || !this.props.isValid}
+                loading={this.props.isSubmitting}
+                title="Review Contribution"
+                type="primary"
+              >
+                <H5>Review Contribution</H5>
+                <Icon name="lock" />
+              </Button>
+            ) : (
+              <Button
+                disabled={!(this.totalContribution > 0) || !this.props.isValid}
+                onPress={this.props.triggerLogin}
+                title="Sign in or create account"
+                type="primary"
+              />
+            )}
+          </Totals>
+        </PaddedView>
+      );
+    }
+    return (
+      <LoginPaddedView>
+        <LoginButton
+          onPress={this.props.triggerLogin}
+          title="Sign in or create account"
+          type="primary"
+        />
+      </LoginPaddedView>
     );
   }
 }
