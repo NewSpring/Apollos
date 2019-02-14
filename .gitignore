@@ -30,7 +30,8 @@ coverage/
 # generated at runtime
 ios/newspring/Supporting/EXBuildConstants.json
 ios/newspring/Supporting/EXBuildConstants.plist
-android/app/src/main/java/host/exp/exponent/generated/*
+ios/newspring/Supporting/EXBuildConstants.plist.bak
+android/app/src/main/java/host/exp/exponent/generated/DetachBuildConstants.java
 
 # Xcode
 #

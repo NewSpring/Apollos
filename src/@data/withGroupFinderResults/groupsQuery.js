@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 
+// NOTE: I'm removing ageRange from the query for now, until the resolver fix makes it to production
 export default gql`
   query GroupFinder(
     $query: String
@@ -36,7 +37,6 @@ export default gql`
         demographic
         description
         photo
-        ageRange
         distance
         schedule {
           description

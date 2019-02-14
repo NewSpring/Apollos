@@ -4,6 +4,8 @@
 ![MIT License](https://img.shields.io/github/license/NewSpring/Apollos.svg)
 [![Build Status](https://travis-ci.org/NewSpring/Apollos.svg?branch=master)](https://travis-ci.org/NewSpring/Apollos)
 [![Coverage Status](https://coveralls.io/repos/github/NewSpring/Apollos/badge.svg)](https://coveralls.io/github/NewSpring/Apollos)
+[![AppCenter (iOS)](https://build.appcenter.ms/v0.1/apps/faaf4456-1a3f-485f-be8e-33e23ff14aa2/branches/beta/badge)](https://appcenter.ms)
+[![AppCenter (Android)](https://build.appcenter.ms/v0.1/apps/fb41facf-4074-499b-987b-69d8586c6da6/branches/beta/badge)](https://appcenter.ms)
 
 ## Notes to potential Apollos-project partners
 
