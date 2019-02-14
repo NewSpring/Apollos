@@ -15,3 +15,5 @@ mv ios/newspring/EXBuildConstants.plist.bak ios/newspring/Supporting/EXBuildCons
 
 # Android
 sed -i .bak 's/preBuild.dependsOn exponentPrebuildStep/\/\/preBuild.dependsOn exponentPrebuildStep/g' android/app/build.gradle
+sed -i .bak 's/import host.exp.exponent.generated.DetachBuildConstants;/\/\/import host.exp.exponent.generated.DetachBuildConstants;/g' android/app/src/main/java/host/exp/exponent/MainActivity.java
+sed -i .bak 's/return DetachBuildConstants.DEVELOPMENT_URL;/return "fakeStringForAppCenter";/g' android/app/src/main/java/host/exp/exponent/MainActivity.java
