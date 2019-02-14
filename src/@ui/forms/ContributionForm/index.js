@@ -98,6 +98,7 @@ export class ContributionFormWithoutData extends Component {
     recurringPaymentOptionsAvailable: PropTypes.bool,
     triggerLogin: PropTypes.func,
     isLoggedIn: PropTypes.bool,
+    preselection: PropTypes.integer,
   };
 
   static defaultProps = {
@@ -184,10 +185,13 @@ export class ContributionFormWithoutData extends Component {
       <PaddedView horizontal={false}>
         <TableView responsive={false}>
           <PaddedView>
+            {console.log('this.props.preselection = ', this.props.preselection)}
+            {console.log('this.props.values.firstContribution = ', this.props.values.firstContribution)}
+            {console.log('this.props.preselection || this.props.values.firstContribution = ', this.props.preselection || this.props.values.firstContribution)}
             <FundInput
               funds={this.props.funds}
               isFirst
-              value={this.props.values.firstContribution}
+              value={this.props.preselection || this.props.values.firstContribution}
               onChange={value => this.props.setFieldValue('firstContribution', value)}
               onBlur={() => this.props.setFieldTouched('firstContribution', true)}
               error={Boolean(touched.firstContribution && errors.firstContribution)}

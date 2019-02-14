@@ -39,6 +39,7 @@ const StyledImage = styled({
 const FundDetails = enhance(({
   fund: {
     name,
+    id,
     images,
     description,
   } = {},
@@ -71,6 +72,7 @@ const FundDetails = enhance(({
               }
               return history.push('/give/checkout');
             }}
+            preselection={{ id, name }}
           />
         </ScrollView>
       </FlexedLeft>
