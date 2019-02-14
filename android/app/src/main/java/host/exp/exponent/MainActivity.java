@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//import host.exp.exponent.generated.DetachBuildConstants;
+import host.exp.exponent.generated.DetachBuildConstants;
 import host.exp.exponent.experience.DetachActivity;
 
 public class MainActivity extends DetachActivity {
@@ -20,7 +20,7 @@ public class MainActivity extends DetachActivity {
 
   @Override
   public String developmentUrl() {
-    return "fakeStringForAppCenter";
+    return DetachBuildConstants.DEVELOPMENT_URL;
   }
 
   @Override
