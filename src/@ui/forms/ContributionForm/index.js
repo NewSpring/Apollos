@@ -185,9 +185,6 @@ export class ContributionFormWithoutData extends Component {
       <PaddedView horizontal={false}>
         <TableView responsive={false}>
           <PaddedView>
-            {console.log('this.props.preselection = ', this.props.preselection)}
-            {console.log('this.props.values.firstContribution = ', this.props.values.firstContribution)}
-            {console.log('this.props.preselection || this.props.values.firstContribution = ', this.props.preselection || this.props.values.firstContribution)}
             <FundInput
               funds={this.props.funds}
               isFirst
