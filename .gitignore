@@ -1,8 +1,12 @@
+# python files
+*.pyc
+
 # create react native app
 .expo/
 .env
 .env.*
 .*.md
+app.json
 
 # storybook
 storyLoader.js
@@ -27,7 +31,7 @@ coverage/
 ios/newspring/Supporting/EXBuildConstants.json
 ios/newspring/Supporting/EXBuildConstants.plist
 ios/newspring/Supporting/EXBuildConstants.plist.bak
-android/app/src/main/java/host/exp/exponent/generated/*
+android/app/src/main/java/host/exp/exponent/generated/DetachBuildConstants.java
 
 # Xcode
 #

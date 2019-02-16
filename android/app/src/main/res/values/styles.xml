@@ -16,6 +16,16 @@
     <item name="android:windowBackground">@color/colorPrimary</item>
   </style>
 
+  <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@drawable/splash_background</item>
+    <item name="android:statusBarColor">@color/colorAccentDark</item>
+  </style>
+
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="android:statusBarColor">@color/colorAccentDark</item>
+  </style>
+
   <style name="ExponentCheckBox">
     <item name="android:theme">@style/DevAppTheme</item>
   </style>

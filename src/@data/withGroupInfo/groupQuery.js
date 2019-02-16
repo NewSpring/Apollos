@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 
+// NOTE: removing ageRange for now
 export default gql`
   query GetGroup($id: ID!) {
     person: currentPerson {
@@ -20,7 +21,6 @@ export default gql`
         description
         photo
         kidFriendly
-        ageRange
         campus { name }
         tags { id, value }
         locations { location { city, state, latitude, longitude } }
