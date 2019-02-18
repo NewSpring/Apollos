@@ -29,9 +29,8 @@ export default graphql(MUTATION, {
           .utc()
           .year(year)
           .endOf('year')
-          .format('MM/DD/YYYY'),
+          .format('MM/DD/YYYY 23:59:59'),
       },
     }),
   }),
 });
-
