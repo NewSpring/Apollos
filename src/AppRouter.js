@@ -252,7 +252,6 @@ class AppRouter extends PureComponent {
                     : this.props.location
                 }
               >
-                <Redirect from="/signup/" to="/login" />
                 <Redirect from="/signup" to="/profile" />
                 <Redirect from="/sermons" to="/series" />
                 <Route exact path="/series" component={Series} />
@@ -387,7 +386,6 @@ class AppRouter extends PureComponent {
                 />
 
                 <Route cardStackKey="tabs" component={this.tabs} />
-
               </CardStack>
             </AppLayout>
             <Switch>{this.isModal ? this.largeScreenModals : null}</Switch>
