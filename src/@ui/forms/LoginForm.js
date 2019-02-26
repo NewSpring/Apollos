@@ -50,6 +50,7 @@ const enhance = compose(
 
         const referrer = get(props, 'location.state.referrer');
         if (referrer) return goBackTo({ to: referrer, history: props.history, replace: true });
+        return goBackTo({ to: '/give/now', history: props.history });
       } catch (e) {
         setFieldError('email', true);
         setFieldError('password', 'Your email or password is incorrect'); // todo: show real error message from server
