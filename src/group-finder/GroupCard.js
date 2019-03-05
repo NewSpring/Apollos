@@ -12,6 +12,7 @@ import Chip, { ChipList } from '@ui/Chip';
 import { Link } from '@ui/NativeWebRouter';
 import { ResponsiveSideBySideView } from '@ui/SideBySideView';
 import FlexedView from '@ui/FlexedView';
+import PaddedView from '@ui/PaddedView';
 import styled from '@ui/styled';
 
 const LeftColumn = compose(
@@ -78,9 +79,11 @@ const GroupCard = ({
   const card = (
     <Card isLoading={isLoading}>
       <ResponsiveSideBySideView reversed>
-        <ImageColumn>
-          <GroupCardImage source={{ url: photo }} />
-        </ImageColumn>
+        <PaddedView>
+          <ImageColumn>
+            <GroupCardImage source={{ url: photo }} />
+          </ImageColumn>
+        </PaddedView>
         <FlexedView>
           <LeftColumn>
             <H5>{name}</H5>
