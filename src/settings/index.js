@@ -24,7 +24,6 @@ const handleFeedback = () => {
   }
 };
 
-
 const LogoutTouchable = compose(
   withUser,
   withRouter,
@@ -154,11 +153,11 @@ const Settings = () => (
             </TableView>
           )}
 
-          {process.env.APP_VERSION && (
-            <H7>
-              {process.env.APP_VERSION} - {process.env.APP_BUILD}
-            </H7>
-          )}
+          <TableView>
+            <Cell>
+              <CellText>Version 6.1.5</CellText>
+            </Cell>
+          </TableView>
         </PaddedView>
       </SafeAreaView>
     </ScrollView>
