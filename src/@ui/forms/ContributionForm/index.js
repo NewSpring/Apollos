@@ -196,9 +196,6 @@ export class ContributionFormWithoutData extends Component {
 
     const { touched, errors } = this.props;
 
-    console.log(this.props);
-    console.log(this.props.preselection);
-    console.log(this.props);
     return (
       <PaddedView horizontal={false}>
         <TableView responsive={false}>
