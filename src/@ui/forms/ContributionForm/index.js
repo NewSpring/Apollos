@@ -207,7 +207,6 @@ export class ContributionFormWithoutData extends Component {
               funds={this.props.funds}
               isFirst
               value={
-                // this.props.preselection || this.props.values.firstContribution
                 this.props.values.firstContribution
               }
               onChange={value =>
