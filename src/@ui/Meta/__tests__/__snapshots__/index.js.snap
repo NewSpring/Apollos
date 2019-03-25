@@ -75,7 +75,7 @@ Object {
       "name": "og:image",
     },
     Object {
-      "content": "https://my.newspring.cc",
+      "content": "http://localhost:3000",
       "name": "og:url",
     },
     Object {
@@ -191,7 +191,7 @@ Object {
       "name": "og:image",
     },
     Object {
-      "content": "https://my.newspring.cc",
+      "content": "http://localhost:3000",
       "name": "og:url",
     },
     Object {
@@ -285,7 +285,7 @@ Object {
       "name": "og:image",
     },
     Object {
-      "content": "https://my.newspring.cc",
+      "content": "http://localhost:3000",
       "name": "og:url",
     },
     Object {
@@ -379,7 +379,7 @@ Object {
       "name": "og:image",
     },
     Object {
-      "content": "https://my.newspring.cc",
+      "content": "http://localhost:3000",
       "name": "og:url",
     },
     Object {
