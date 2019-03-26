@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import { View, Platform } from 'react-native';
 import PropTypes from 'prop-types';
-import { compose, withProps, branch, renderComponent, setPropTypes, defaultProps } from 'recompose';
+import {
+  compose,
+  withProps,
+  branch,
+  renderComponent,
+  setPropTypes,
+  defaultProps,
+} from 'recompose';
 import { isEmpty, get } from 'lodash';
 import { withFormik } from 'formik';
 import Yup from 'yup';
@@ -113,12 +120,17 @@ export class ContributionFormWithoutData extends Component {
 
   state = {
     secondFundVisible: get(this.props.values, 'secondContribution.id'),
-    recurringPaymentOptionsVisible: get(this.props.values, 'frequencyId') !== 'today',
+    recurringPaymentOptionsVisible:
+      get(this.props.values, 'frequencyId') !== 'today',
   };
 
   get totalContribution() {
-    const firstContribution = parseFloat(get(this.props.values, 'firstContribution.amount', 0));
-    const secondContribution = parseFloat(get(this.props.values, 'secondContribution.amount', 0));
+    const firstContribution = parseFloat(
+      get(this.props.values, 'firstContribution.amount', 0),
+    );
+    const secondContribution = parseFloat(
+      get(this.props.values, 'secondContribution.amount', 0),
+    );
     return firstContribution + secondContribution;
   }
 
@@ -140,7 +152,8 @@ export class ContributionFormWithoutData extends Component {
   };
 
   handleToggleRecurringPaymentOptionsVisibility = () => {
-    const recurringPaymentOptionsVisible = !this.state.recurringPaymentOptionsVisible;
+    const recurringPaymentOptionsVisible = !this.state
+      .recurringPaymentOptionsVisible;
 
     let frequencyId = FREQUENCY_IDS[0].id;
     if (recurringPaymentOptionsVisible) {
@@ -171,7 +184,9 @@ export class ContributionFormWithoutData extends Component {
     if (this.props.funds.length === 0) {
       return (
         <ErrorCard
-          error={"We're having trouble loading funds right now, please try again later."}
+          error={
+            "We're having trouble loading funds right now, please try again later."
+          }
         />
       );
     }
@@ -186,20 +201,37 @@ export class ContributionFormWithoutData extends Component {
         <TableView responsive={false}>
           <PaddedView>
             <FundInput
+              preselection={
+                this.props.preselection || this.props.values.firstContribution
+              }
               funds={this.props.funds}
               isFirst
-              value={this.props.preselection || this.props.values.firstContribution}
-              onChange={value => this.props.setFieldValue('firstContribution', value)}
-              onBlur={() => this.props.setFieldTouched('firstContribution', true)}
-              error={Boolean(touched.firstContribution && errors.firstContribution)}
+              value={
+                this.props.values.firstContribution
+              }
+              onChange={value =>
+                this.props.setFieldValue('firstContribution', value)
+              }
+              onBlur={() =>
+                this.props.setFieldTouched('firstContribution', true)
+              }
+              error={Boolean(
+                touched.firstContribution && errors.firstContribution,
+              )}
             />
             {this.state.secondFundVisible && (
               <FundInput
                 funds={this.props.funds}
                 value={this.props.values.secondContribution}
-                onChange={value => this.props.setFieldValue('secondContribution', value)}
-                onBlur={() => this.props.setFieldTouched('secondContribution', true)}
-                error={Boolean(touched.secondContribution && errors.secondContribution)}
+                onChange={value =>
+                  this.props.setFieldValue('secondContribution', value)
+                }
+                onBlur={() =>
+                  this.props.setFieldTouched('secondContribution', true)
+                }
+                error={Boolean(
+                  touched.secondContribution && errors.secondContribution,
+                )}
               />
             )}
 
@@ -207,7 +239,11 @@ export class ContributionFormWithoutData extends Component {
               <Button
                 onPress={this.handleToggleSecondFund}
                 bordered
-                title={this.state.secondFundVisible ? 'Remove Fund' : 'Add Another Fund'}
+                title={
+                  this.state.secondFundVisible
+                    ? 'Remove Fund'
+                    : 'Add Another Fund'
+                }
               />
             </ButtonWrapper>
           </PaddedView>
@@ -230,15 +266,21 @@ export class ContributionFormWithoutData extends Component {
               <View>
                 <FrequencyInput
                   value={this.props.values.frequencyId}
-                  onChange={value => this.props.setFieldValue('frequencyId', value)}
+                  onChange={value =>
+                    this.props.setFieldValue('frequencyId', value)
+                  }
                   onBlur={() => this.props.setFieldTouched('frequencyId', true)}
                   error={Boolean(touched.frequencyId && errors.frequencyId)}
                 />
                 <Inputs.DateInput
                   label="Start Date"
-                  displayValue={moment(this.props.values.startDate).format('MM/DD/YYYY')}
+                  displayValue={moment(this.props.values.startDate).format(
+                    'MM/DD/YYYY',
+                  )}
                   value={this.props.values.startDate}
-                  onChange={value => this.props.setFieldValue('startDate', value)}
+                  onChange={value =>
+                    this.props.setFieldValue('startDate', value)
+                  }
                   onBlur={() => this.props.setFieldTouched('startDate', true)}
                   error={touched.startDate && errors.startDate}
                 />
@@ -320,7 +362,10 @@ const ContributionForm = compose(
             .required(),
         })
         .required(),
-      frequencyId: Yup.string().oneOf(['today', ...FREQUENCY_IDS.map(f => f.id)]),
+      frequencyId: Yup.string().oneOf([
+        'today',
+        ...FREQUENCY_IDS.map(f => f.id),
+      ]),
       secondContribution: Yup.object()
         .nullable()
         .shape({
@@ -340,11 +385,15 @@ const ContributionForm = compose(
     handleSubmit(values, { props, setSubmitting }) {
       const result = { ...values };
       if (get(result, 'firstContribution.amount')) {
-        result.firstContribution.amount = parseFloat(result.firstContribution.amount);
+        result.firstContribution.amount = parseFloat(
+          result.firstContribution.amount,
+        );
       }
 
       if (get(result, 'secondContribution.amount')) {
-        result.secondContribution.amount = parseFloat(result.secondContribution.amount);
+        result.secondContribution.amount = parseFloat(
+          result.secondContribution.amount,
+        );
       }
 
       props.resetContributions();
