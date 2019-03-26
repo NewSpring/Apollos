@@ -73,6 +73,7 @@ const pickerWrapperStyle = {
 
 const FundInput = ({
   isFirst = false,
+  preselection = {},
   funds = [],
   value = {},
   onChange,
@@ -98,13 +99,13 @@ const FundInput = ({
           onChange(
             Object.assign(
               {},
-              value,
+              preselection,
               funds.find(fund => `${fund.id}` === `${id}`),
             ),
           )
         }
-        value={get(value, 'id')}
-        displayValue={get(value, 'name')}
+        value={get(preselection, 'id')}
+        displayValue={get(preselection, 'name')}
         wrapperStyle={pickerWrapperStyle}
       >
         {funds.map(({ name, id }) => (
@@ -116,6 +117,10 @@ const FundInput = ({
 );
 
 FundInput.propTypes = {
+  preselection: PropTypes.shape({
+    name: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }),
   funds: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,

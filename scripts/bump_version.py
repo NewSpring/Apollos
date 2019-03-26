@@ -72,6 +72,7 @@ if __name__ == "__main__":
     # write over JS files
     _replaceLine("./app-config.js", "version:", "    version: '" + version + "',") 
     _replaceLine("./package.json", "version\":", "  \"version\": \"" + version + "\",") 
+    _replaceLine("./src/settings/index.js", "Version", "              <CellText>Version " +  version + "</CellText>") 
     
     # write over Android files
     _replaceLine("./android/app/build.gradle", "versionName", "    versionName '" + version + "'")
