@@ -1630,7 +1630,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                   style={
                     Object {
                       "flex": 1,
-                      "opacity": 1,
+                      "opacity": 0,
                     }
                   }
                 >
@@ -1772,7 +1772,7 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                     onChange={[Function]}
                     onResponderTerminationRequest={[Function]}
                     onStartShouldSetResponder={[Function]}
-                    selectedIndex={1}
+                    selectedIndex={0}
                     style={
                       Array [
                         Object {
@@ -1793,12 +1793,12 @@ exports[`The ContributionForm component shows a second contribution 1`] = `
                 Object {
                   "bottom": 0,
                   "justifyContent": "center",
-                  "opacity": 0.8,
+                  "opacity": 1,
                   "position": "absolute",
                   "top": 0,
                   "transform": Array [
                     Object {
-                      "scale": 0.8,
+                      "scale": 1,
                     },
                     Object {
                       "translateX": 0,

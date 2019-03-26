@@ -6,7 +6,6 @@ import PaddedView from '@ui/PaddedView';
 import TableView, { Cell, CellText, CellIcon, Divider } from '@ui/TableView';
 import { Link, withRouter } from '@ui/NativeWebRouter';
 import Touchable from '@ui/Touchable';
-import { H7 } from '@ui/typography';
 import withUser from '@data/withUser';
 import { withShowOnboarding } from '@data/withOnboarding';
 import UploadProfileImageForm from '@ui/forms/UploadProfileImageForm';
@@ -23,7 +22,6 @@ const handleFeedback = () => {
     Linking.openURL(feedbackLink);
   }
 };
-
 
 const LogoutTouchable = compose(
   withUser,
@@ -154,11 +152,11 @@ const Settings = () => (
             </TableView>
           )}
 
-          {process.env.APP_VERSION && (
-            <H7>
-              {process.env.APP_VERSION} - {process.env.APP_BUILD}
-            </H7>
-          )}
+          <TableView>
+            <Cell>
+              <CellText>Version 6.1.5</CellText>
+            </Cell>
+          </TableView>
         </PaddedView>
       </SafeAreaView>
     </ScrollView>
