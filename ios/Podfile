@@ -4,10 +4,11 @@ platform :ios, '9.0'
 target 'newspring' do
   pod 'ExpoKit',
     :git => "http://github.com/expo/expo.git",
-    :tag => "ios/2.3.3",
+    :tag => "ios/2.4.4",
     :subspecs => [
       "Core",
-      "CPP"
+      "CPP",
+      "GL"
     ]
 
   pod 'React',
@@ -35,8 +36,8 @@ target 'newspring' do
   pod 'Folly',
     :podspec => "../node_modules/react-native/third-party-podspecs/Folly.podspec",
     :inhibit_warnings => true
-  pod 'GLog',
-    :podspec => "../node_modules/react-native/third-party-podspecs/GLog.podspec",
+  pod 'glog',
+    :podspec => "../node_modules/react-native/third-party-podspecs/glog.podspec",
     :inhibit_warnings => true
 
 
@@ -50,7 +51,7 @@ target 'newspring' do
       target.native_target.build_configurations.each do |config|
         config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
         config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'EX_DETACHED=1'
-        
+
         # needed for GoogleMaps 2.x
         config.build_settings['FRAMEWORK_SEARCH_PATHS'] ||= []
         config.build_settings['FRAMEWORK_SEARCH_PATHS'] << '${PODS_ROOT}/GoogleMaps/Base/Frameworks'
