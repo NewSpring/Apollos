@@ -173,7 +173,7 @@ const GroupSingle = enhance(
                         bordered
                         onPress={() =>
                           WebBrowser.openBrowserAsync(
-                            `${rockUrl}page/521?GroupId=${entityId}&${loginParam}`,
+                            `${rockUrl}page/365?GroupId=${entityId}&${loginParam}`,
                           )
                         }
                       />
