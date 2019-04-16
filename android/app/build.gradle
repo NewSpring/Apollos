@@ -17,7 +17,7 @@ repositories {
 
 android {
   compileSdkVersion 26
-  buildToolsVersion '27.0.3'
+  buildToolsVersion '26.0.1'
 
   defaultConfig {
     applicationId 'cc.newspring.newspringapp'
@@ -77,6 +77,9 @@ android {
   lintOptions {
     abortOnError false
   }
+  packagingOptions {
+    pickFirst "**"
+  }
 }
 
 // Don't use modern jsc-android since it still has some critical bugs that
@@ -119,7 +122,8 @@ dependencies {
   compile 'com.amplitude:android-sdk:2.9.2' // Be careful when upgrading! Upgrading might break experience scoping. Check with Jesse. See Analytics.resetAmplitudeDatabaseHelper
   compile 'com.squareup.picasso:picasso:2.5.2'
 
-  // I'm going to force these but hopefully when we upgrade ExpoKit, this will be unnecessary and we can revert
+  // TODO: I'm going to force these but hopefully when we upgrade ExpoKit, this will be unnecessary and we can revert
+  // try to put them back to 9.8.0 with no force
   compile ('com.google.android.gms:play-services-gcm:10.2.1') {
     force = true
   }
@@ -183,7 +187,8 @@ dependencies {
 
   compile ('host.exp.exponent:expoview:26.0.0@aar') {
     transitive = true
-    exclude group: 'com.google.android.gms'
+    exclude group: 'com.google.android.gms' // TODO: maybe don't need this
+    compile project(path: ':expoview')
   }
 
 
