@@ -6,6 +6,7 @@
 #import "EXContactsRequester.h"
 #import "EXLocationRequester.h"
 #import "EXPermissions.h"
+#import "EXLocalNotificationRequester.h"
 #import "EXRemindersRequester.h"
 #import "EXRemoteNotificationRequester.h"
 #import "EXCameraRollRequester.h"
@@ -45,8 +46,10 @@ RCT_REMAP_METHOD(getAsync,
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
-  if ([type isEqualToString:@"remoteNotifications"]) {
+  if ([type isEqualToString:@"notifications"]) {
     resolve([EXRemoteNotificationRequester permissions]);
+  } else if ([type isEqualToString:@"userFacingNotifications"]) {
+    resolve([EXLocalNotificationRequester permissions]);
   } else if ([type isEqualToString:@"location"]) {
     resolve([EXLocationRequester permissions]);
   } else if ([type isEqualToString:@"camera"]) {
@@ -79,8 +82,10 @@ RCT_REMAP_METHOD(askAsync,
       resolve(result);
     } else {
       NSObject<EXPermissionRequester> *requester;
-      if ([type isEqualToString:@"remoteNotifications"]) {
+      if ([type isEqualToString:@"notifications"]) {
         requester = [[EXRemoteNotificationRequester alloc] init];
+      } else if ([type isEqualToString:@"userFacingNotifications"]) {
+        requester = [[EXLocalNotificationRequester alloc] init];
       } else if ([type isEqualToString:@"location"]) {
         requester = [[EXLocationRequester alloc] init];
       } else if ([type isEqualToString:@"camera"]) {

@@ -417,7 +417,7 @@ NSString *const EXAVPlayerDataObserverPlaybackBufferEmptyKeyPath = @"playbackBuf
     // Only available after iOS 10
     isBuffering = _player.timeControlStatus == AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate;
   } else {
-    isBuffering = _player.currentItem.isPlaybackBufferEmpty;
+    isBuffering = !_player.currentItem.isPlaybackLikelyToKeepUp && _player.currentItem.isPlaybackBufferEmpty;
   }
   
   // TODO : react-native-video includes the iOS-only keys seekableDuration and canReverse (etc) flags.
@@ -563,29 +563,14 @@ NSString *const EXAVPlayerDataObserverPlaybackBufferEmptyKeyPath = @"playbackBuf
 
         if (strongSelfInner) {
           [strongSelfInner _callStatusUpdateCallbackWithExtraFields:@{EXAVPlayerDataStatusDidJustFinishKeyPath: @(YES)}];
-          AVPlayerItem *playerItem = strongSelfInner.player.currentItem;
-          [strongSelfInner _removeObserversForPlayerItem:playerItem];
           // If the player is looping, we would only like to advance to next item (which is handled by actionAtItemEnd)
           if (!strongSelfInner.isLooping) {
             [strongSelfInner.player pause];
-            strongSelfInner.currentPosition = kCMTimeZero; // We keep track of _currentPosition to reset the AVPlayer in handleMediaServicesReset.
-            [strongSelfInner.player seekToTime:kCMTimeZero completionHandler:^(BOOL finished) {
-              __strong EXAVPlayerData *strongSelfInnerInner = weakSelf;
-              __strong EXAV *strongEXAVInnerInner = strongSelfInnerInner ? strongSelfInnerInner.exAV : nil;
-              if (strongEXAVInnerInner) {
-                dispatch_async(strongEXAVInnerInner.methodQueue, ^{
-                  __strong EXAVPlayerData *strongSelfInnerInnerInner = weakSelf;
-                  if (strongSelfInnerInnerInner) {
-                    [strongSelfInnerInnerInner.player advanceToNextItem];
-
-                    __strong EXAV *strongEXAVInnerInnerInner = strongSelfInnerInnerInner.exAV;
-                    if (strongEXAVInnerInnerInner) {
-                      [strongEXAVInnerInnerInner demoteAudioSessionIfPossible];
-                    }
-                  }
-                });
-              }
-            }];
+            strongSelfInner.shouldPlay = NO;
+            __strong EXAV *strongEXAVInner = strongSelfInner.exAV;
+            if (strongEXAVInner) {
+              [strongEXAVInner demoteAudioSessionIfPossible];
+            }
           }
         }
       });
@@ -608,6 +593,7 @@ NSString *const EXAVPlayerDataObserverPlaybackBufferEmptyKeyPath = @"playbackBuf
                                                  object:[_player currentItem]
                                                   queue:nil
                                              usingBlock:playbackStalledObserverBlock];
+  [self _tryRemoveObserver:playerItem forKeyPath:EXAVPlayerDataObserverPlaybackBufferEmptyKeyPath];
   [playerItem addObserver:self forKeyPath:EXAVPlayerDataObserverPlaybackBufferEmptyKeyPath options:0 context:nil];
   
   [self _tryRemoveObserver:playerItem forKeyPath:EXAVPlayerDataObserverStatusKeyPath];
@@ -688,7 +674,7 @@ NSString *const EXAVPlayerDataObserverPlaybackBufferEmptyKeyPath = @"playbackBuf
               break;
             case AVPlayerStatusFailed: {
               strongSelf.isLoaded = NO;
-              NSString *errorMessage = [NSString stringWithFormat:@"The AVPlayer instance has failed with the error code %li and domain \"%@\".", _player.error.code, _player.error.domain];
+              NSString *errorMessage = [NSString stringWithFormat:@"The AVPlayer instance has failed with the error code %i and domain \"%@\".", _player.error.code, _player.error.domain];
               if (strongSelf.player.error.localizedFailureReason) {
                 NSString *reasonMessage = [strongSelf.player.error.localizedFailureReason stringByAppendingString:@" - "];
                 errorMessage = [reasonMessage stringByAppendingString:errorMessage];
@@ -766,7 +752,7 @@ NSString *const EXAVPlayerDataObserverPlaybackBufferEmptyKeyPath = @"playbackBuf
               }
               break;
             case AVPlayerItemStatusFailed: {
-              NSString *errorMessage = [NSString stringWithFormat:@"The AVPlayerItem instance has failed with the error code %li and domain \"%@\".", strongSelf.player.currentItem.error.code, strongSelf.player.currentItem.error.domain];
+              NSString *errorMessage = [NSString stringWithFormat:@"The AVPlayerItem instance has failed with the error code %i and domain \"%@\".", strongSelf.player.currentItem.error.code, strongSelf.player.currentItem.error.domain];
               if (strongSelf.player.currentItem.error.localizedFailureReason) {
                 NSString *reasonMessage = [strongSelf.player.currentItem.error.localizedFailureReason stringByAppendingString:@" - "];
                 errorMessage = [reasonMessage stringByAppendingString:errorMessage];

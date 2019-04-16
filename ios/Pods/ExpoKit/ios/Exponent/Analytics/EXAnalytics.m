@@ -2,7 +2,9 @@
 
 #import "EXAnalytics.h"
 #import "EXBuildConstants.h"
+#import "EXKernel.h"
 #import "ExpoKit.h"
+#import "EXShellManager.h"
 
 #import "Amplitude.h"
 
@@ -83,23 +85,45 @@ NSString * const kEXAnalyticsDisabledConfigKey = @"EXAnalyticsDisabled";
   }
   NSMutableDictionary *mutableProps = (properties) ? [properties mutableCopy] : [NSMutableDictionary dictionary];
   [mutableProps setObject:url.absoluteString forKey:@"MANIFEST_URL"];
-  [[Amplitude instance] logEvent:eventIdentifier withEventProperties:mutableProps];
+  [self _logEvent:eventIdentifier withEventProperties:mutableProps];
 }
 
-- (void)logForegroundEventForRoute:(EXKernelRoute)route fromJS:(BOOL)isFromJS
+- (void)logErrorVisibleEvent
 {
   if (_isDisabled) {
     return;
   }
-  self.visibleRoute = route;
-  if (route < kEXKernelRouteUndefined) {
-    NSArray *eventIdentifiers = @[ @"HOME_APPEARED", @"EXPERIENCE_APPEARED", @"ERROR_APPEARED" ];
-    NSDictionary *eventProperties = @{ @"SOURCE": (isFromJS) ? @"JS" : @"SYSTEM" };
-    [[Amplitude instance] logEvent:eventIdentifiers[route] withEventProperties:eventProperties];
+  NSString *eventIdentifier = @"ERROR_APPEARED";
+  NSDictionary *eventProperties = @{ @"SOURCE": @"SYSTEM" };
+  [self _logEvent:eventIdentifier withEventProperties:eventProperties];
+}
+
+- (void)logAppVisibleEvent
+{
+  if (_isDisabled) {
+    return;
   }
+  EXKernelAppRecord *visibleApp = [EXKernel sharedInstance].visibleApp;
+  NSString *eventIdentifier = (visibleApp == [EXKernel sharedInstance].appRegistry.homeAppRecord)
+    ? @"HOME_APPEARED"
+    : @"EXPERIENCE_APPEARED";
+  NSDictionary *eventProperties = @{ @"SOURCE": @"SYSTEM" };
+  [self _logEvent:eventIdentifier withEventProperties:eventProperties];
 }
 
 #pragma mark - Internal
+
+- (void)_logEvent:(NSString *)eventId withEventProperties:(NSDictionary *)props
+{
+  // hack owls
+  // 🦉🦉🦉
+  //             🦉
+  if (![EXShellManager sharedInstance].isShell && ![eventId isEqualToString:@"LOAD_EXPERIENCE"]) {
+    // if not a shell, and some other event besides LOAD_EXPERIENCE, omit
+    return;
+  }
+  [[Amplitude instance] logEvent:eventId withEventProperties:props];
+}
 
 - (void)setVisibleRoute:(EXKernelRoute)route
 {
@@ -108,7 +132,7 @@ NSString * const kEXAnalyticsDisabledConfigKey = @"EXAnalyticsDisabled";
 
 - (void)_onApplicationEnterForeground
 {
-  [self logForegroundEventForRoute:_visibleRoute fromJS:NO];
+  [self logAppVisibleEvent];
 }
 
 @end

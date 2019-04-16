@@ -6,26 +6,13 @@
 #import "EXReactAppManager.h"
 #import "EXUtil.h"
 
-@interface EXKernelLinkingManager : NSObject
-  <EXLinkingManagerScopedModuleDelegate, EXUtilScopedModuleDelegate>
+@interface EXKernelLinkingManager : NSObject <EXLinkingManagerScopedModuleDelegate>
 
 /**
  *  Either opens the url on an existing bridge, or sends it to the kernel
  *  for opening on a new bridge.
  */
 - (void)openUrl:(NSString *)urlString isUniversalLink:(BOOL)isUniversalLink;
-
-/**
- *  Called by Util.reload() to rerequest the foreground tasks's manifest
- *  and reload the bundle url it contains.
- */
-- (void)refreshForegroundTask;
-
-/**
- *  Flagged when `refreshForegroundTask` is called. After the manifest round trip is complete,
- *  the kernel may need to disambiguate loading a new app from refreshing the existing app.
- */
-- (BOOL)isRefreshExpectedForAppManager:(EXReactAppManager *)manager;
 
 /**
  *  Returns the deep link prefix for a given experience uri.
@@ -37,6 +24,8 @@
  *  standalone-app-specific deep link formatting.
  */
 + (NSURL *)uriTransformedForLinking:(NSURL *)uri isUniversalLink:(BOOL)isUniversalLink;
+
++ (NSString *)stringByRemovingDeepLink:(NSString *)path;
 
 # pragma mark - app-wide linking handlers
 

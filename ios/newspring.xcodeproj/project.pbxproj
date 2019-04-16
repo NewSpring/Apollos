@@ -175,7 +175,6 @@
 				B563863F1DB9693800A0598C /* Resources */,
 				AA38385B7D8D0854176B72FC /* [CP] Copy Pods Resources */,
 				792C66482088F8E1003E55EC /* ShellScript */,
-				8FEF88F82FC2303849A79A87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,21 +291,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 832b942c034afd6e4772120ba045e88211a693ba 042d41e897f444a5d31c47d933496f142302ee4cf6aa1f6a1897b2f12ced6f5f";
-		};
-		8FEF88F82FC2303849A79A87 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-newspring/Pods-newspring-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		AA38385B7D8D0854176B72FC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

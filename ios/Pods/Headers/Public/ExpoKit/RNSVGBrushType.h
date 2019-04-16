@@ -1,1 +1,1 @@
-../../../ExpoKit/ios/Exponent/Versioned/Core/Api/Components/Svg/RNSVGBrushType.h
+../../../ExpoKit/ios/Exponent/Versioned/Core/Api/Components/Svg/Brushes/RNSVGBrushType.h

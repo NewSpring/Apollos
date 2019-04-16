@@ -2,35 +2,34 @@
 
 The Expo client app for Android and iOS.
 
-To develop or run Expo experiences on your device, download Expo [for Android 4.4+ from the Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent) or [for iOS 9+ from the App Store](https://itunes.com/apps/exponent). [Click here for instructions to install the app on an iOS simulator or Android emulator](https://docs.expo.io/versions/latest/introduction/installation.html).
-
 [Click here to view our documentation](https://docs.expo.io) for developing on Expo.
 
 ## Introduction
 
-This is the source code for the Expo client app used to view experiences published to the Expo service. **Most people will not need to build the Expo clients from source**.
+This is the source code for the Expo client app used to view experiences published to the Expo service. If you want to build and install the Expo client directly onto a device, you're in the right place. Note that if you just want to install the Expo client app on a simulator, you do not need to build it from source. Instead, you should [follow the instructions here](https://docs.expo.io/versions/latest/introduction/installation.html).
+
+To build the Expo client app, follow the instructions in the [Set Up](#set-up) section below. You'll be able to use [XDE](https://github.com/expo/xde) or [exp](https://github.com/expo/exp) and the rest of Expo's infrastructure with the app you build.
+
+Please ask us on the [forums](https://forums.expo.io/) if you get stuck.
+
+**Disclaimers:**
 
 If you want to build a standalone app that has a custom icon and name, see [our documentation here](https://docs.expo.io/versions/latest/guides/building-standalone-apps.html). You're in the wrong place, you shouldn't need to build the Expo clients from source.
 
 If you need to make native code changes to your Expo project, such as adding custom native modules, we can [generate a native project for you](https://docs.expo.io/versions/latest/guides/changing-native-code.html). You're in the wrong place, you shouldn't need to build the Expo clients from source.
 
-If you want to build the Expo client apps for some reason, there are a few steps to getting this working:
-- Join us on Slack at https://slack.expo.io/. The code base and build process is complicated so please ask us if you get stuck.
-- Get the iOS and Android clients building on your machine using the [Set Up](#set-up) section below.
-- Make your native changes and test. You can still use [XDE](https://github.com/expo/xde) or [exp](https://github.com/expo/exp) and the rest of Expo's infrastructure.
-
 ## Set Up
 
-**These instructions are different if you are using Expo's internal monorepo.** In that case, read the `__internal__` instructions instead.
+Please use Node 8+ and npm 4. We recommend installing Node using [nvm](https://github.com/creationix/nvm). We support building the clients only on macOS.
 
-Please use Node 7 and npm 4. We recommend installing Node using [nvm](https://github.com/creationix/nvm). We support building the clients only on macOS.
-
-- Install [the Gulp CLI](http://gulpjs.com/) globally: `npm i gulp-cli -g`.
-- Clone [xdl](https://github.com/expo/xdl), run `npm install` in the xdl directory and then run
-`gulp build`. Next, run `npm link` in the xdl directory.
+- Install [the Gulp CLI](http://gulpjs.com/) globally: `npm install gulp-cli -g`.
 - Run `npm install` in the `js` and `tools-public` directories.
-- Run `npm link xdl` in the `tools-public` directory.
-- If you don't have it yet, install [exp](https://github.com/expo/exp), the Expo cli.
+
+#### iOS
+- Make sure you have latest non-beta Xcode installed.
+- Install [Cocoapods](https://cocoapods.org/): `gem install cocoapods --no-ri --no-rdoc`
+- Run `pod install` in the `ios` directory.
+- Open and run `ios/Exponent.xcworkspace` in Xcode.
 
 #### Android
 - Make sure you have Android Studio 2 and the [Android NDK](https://facebook.github.io/react-native/docs/android-building-from-source.html#download-links-for-android-ndk) version `r10e` installed.
@@ -38,15 +37,23 @@ Please use Node 7 and npm 4. We recommend installing Node using [nvm](https://gi
 
 If you are running on an phone with Android 5 you might have to use `./run.sh installDev19Debug`. There is a bug running multidex applications in debug mode on Android 5 devices: https://code.google.com/p/android/issues/detail?id=79826.
 
-#### iOS
-- Make sure you have latest non-beta Xcode installed.
-- Install [Cocoapods](https://cocoapods.org/): `gem install cocoapods --no-ri --no-rdoc`
-- Make sure you have a JS packager for the root Expo project already running
-- `cd tools-public; ./generate-files-ios.sh; cd ..`
-- `cd ios; pod install; cd ..`
-- Run `ios/Exponent.xcworkspace` in Xcode.
+**These instructions are different if you are using Expo's internal monorepo.** In that case, read the `__internal__` instructions instead.
 
-Note: If you have the Expo client app from the Play Store or the App Store you will have to uninstall those before installing this client.
+## Running on a Device
+
+### iOS
+- In Xcode's menu bar, open the **Xcode** drop-down menu, and select **Preferences**.  Then in the **Accounts** tab of the preferences menu, add add your personal or team apple developer account.
+- Connect your test device to your computer with a USB cable.
+- In Xcode's menu bar, open the **Product** drop-down menu, select **Destination**, then in the _Device_ grouping select your device.
+- In the project navigator, select the **Exponent** project to bring up the project's settings, and then:
+  - In the **General** tab, in the **Identity** section, put in a unique Bundle Identifier.
+  - Also in the **General** tab, in the **Signing** section, select your personal or team apple developer account as your **Team**, and create a new signing certificate by clicking **Fix Issue**.
+- Finally, run the build
+
+### Android
+- If the Play Store version of the Expo Client App is installed on your test device, uninstall it.
+- Connect your test device to your computer with a USB cable.
+- Run `cd android; ./run.sh`, or alternately open the `android` directory in Android Studio, start it, and in the **Select Deployment Target** dialog, select your device.
 
 ## Standalone Apps
 
@@ -74,20 +81,17 @@ Here are the steps to build a standalone iOS app:
 - `cd tools-public`.
 - `gulp ios-shell-app --action build --type [simulator or archive] --configuration [Debug or Release]`
 - The resulting archive will be created at `../shellAppBase-[type]`.
-- `gulp ios-shell-app --url [the published experience url] --action configure --type [simulator or archive] --archivePath [path to Exponent.app] --sdkVersion [sdk version of your experience] --output your-app.tar.gz`
+- `gulp ios-shell-app --url [the published experience url] --action configure --type [simulator or archive] --archivePath [path to ExpoKitApp.app] --sdkVersion [sdk version of your experience] --output your-app.tar.gz`
 - This bundle is not signed and cannot be submitted to iTunes Connect as-is; you'll need to manually sign it if you'd like to submit it to Apple. [Fastlane](https://fastlane.tools/) is a good option for this. Also, [Expo will do this for you](https://docs.expo.io/versions/latest/guides/building-standalone-apps.html) if you don't need to build this project from source.
 - If you created a simulator build in the first step, unpack the tar.gz using `tar -xvzf your-app.tar.gz`. Then you can run this on iPhone Simulator using `xcrun simctl install booted <app path>` and `xcrun simctl launch booted <app identifier>`. Another alternative which some people prefer is to install the [ios-sim](https://github.com/phonegap/ios-sim) tool and then use `ios-sim launch <app path>`.
 - There are a few more optional flags you can pass to this script. They are all documented in the block comment for `createIOSShellAppAsync()` inside `ios-shell-app.js`.
 
 ## Modifying JS Code
-The Expo client apps run a root Expo project in addition to native
-code. By default this will use a published version of the project, so any changes
-made in the `js` directory will not show up without some extra work.
+The Expo client apps run a root Expo project in addition to native code. By default this will use a published version of the project, so any changes made in the `js` directory will not show up without some extra work.
 
-Serve this project locally by running `exp start` from the `js` directory.
-The native Android Studio and XCode projects have a build hook which
-will find this if `exp start` is running. Keep this running and rebuild the
-app on each platform.
+Serve this project locally by running `exp start` from the `js` directory. On iOS, you'll additionally need to set `DEV_KERNEL_SOURCE` to `LOCAL` in `EXBuildConstants.plist` (the default is `PUBLISHED`).
+
+The native Android Studio and XCode projects have a build hook which will find this if `exp start` is running. Keep this running and rebuild the app on each platform.
 
 ## Project Layout
 

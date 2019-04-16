@@ -1,1 +1,1 @@
-../../../ExpoKit/ios/Exponent/Versioned/Core/Api/Components/Svg/RNSVGTSpanManager.h
+../../../ExpoKit/ios/Exponent/Versioned/Core/Api/Components/Svg/ViewManagers/RNSVGTSpanManager.h

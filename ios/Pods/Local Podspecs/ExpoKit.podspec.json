@@ -1,6 +1,6 @@
 {
   "name": "ExpoKit",
-  "version": "2.3.3",
+  "version": "2.4.4",
   "summary": "ExpoKit",
   "description": "ExpoKit allows native projects to integrate with the Expo SDK.",
   "homepage": "http://docs.expo.io",
@@ -23,8 +23,6 @@
       ],
       "preserve_paths": "ios/Exponent/**/*.{h,m}",
       "exclude_files": [
-        "ios/Exponent/EXAppDelegate.*",
-        "ios/Exponent/EXRootViewController.*",
         "ios/Exponent/Supporting/**",
         "ios/Exponent/Versioned/Optional/**/*.{h,m}"
       ],
@@ -92,7 +90,18 @@
       "source_files": [
         "cpp/*.{h,c,cpp,m,mm}",
         "cpp/**/*.{h,c,cpp,m,mm}"
-      ]
+      ],
+      "exclude_files": "cpp/UEXGL.*"
+    },
+    {
+      "name": "GL",
+      "dependencies": {
+        "ExpoKit/CPP": [
+
+        ]
+      },
+      "source_files": "cpp/UEXGL.*",
+      "compiler_flags": "-x objective-c++"
     },
     {
       "name": "Payments",

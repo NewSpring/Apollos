@@ -26,6 +26,11 @@ RCT_EXPORT_MODULE(ExponentGLViewManager);
   return self;
 }
 
++ (BOOL)requiresMainQueueSetup
+{
+  return NO;
+}
+
 - (UIView *)view
 {
   return [[EXGLView alloc] initWithManager:self];

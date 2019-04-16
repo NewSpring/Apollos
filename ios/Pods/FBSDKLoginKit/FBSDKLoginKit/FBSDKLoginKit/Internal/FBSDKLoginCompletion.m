@@ -46,7 +46,7 @@ static void FBSDKLoginRequestMeAndPermissions(FBSDKLoginCompletionParameters *pa
   [connection addRequest:userIDRequest completionHandler:^(FBSDKGraphRequestConnection *requestConnection,
                                                            id result,
                                                            NSError *error) {
-    parameters.userID = [result objectForKey:@"id"];
+    parameters.userID = result[@"id"];
     if (error) {
       parameters.error = error;
     }
@@ -104,13 +104,8 @@ static void FBSDKLoginRequestMeAndPermissions(FBSDKLoginCompletionParameters *pa
 @implementation FBSDKLoginURLCompleter
 {
   FBSDKLoginCompletionParameters *_parameters;
-  id<NSObject> _observer
-  ;  BOOL _performExplicitFallback;
-}
-
-- (instancetype)init NS_UNAVAILABLE
-{
-  assert(0);
+  id<NSObject> _observer;
+  BOOL _performExplicitFallback;
 }
 
 - (instancetype)initWithURLParameters:(NSDictionary *)parameters appID:(NSString *)appID
@@ -132,28 +127,10 @@ static void FBSDKLoginRequestMeAndPermissions(FBSDKLoginCompletionParameters *pa
 
 - (void)completeLogIn:(FBSDKLoginManager *)loginManager withHandler:(void(^)(FBSDKLoginCompletionParameters *parameters))handler
 {
-  if (_performExplicitFallback && loginManager.loginBehavior == FBSDKLoginBehaviorNative) {
-    // UIKit and iOS don't like an application opening a URL during a URL open callback, so
-    // we need to wait until *at least* the next turn of the run loop to open the URL to
-    // perform the browser log in behavior. However we also need to wait for the application
-    // to become active so FBSDKApplicationDelegate doesn't erroneously call back the URL
-    // opener before the URL has been opened.
-    if ([FBSDKApplicationDelegate sharedInstance].isActive) {
-      // The application is active so there's no need to wait.
-      [loginManager logInWithBehavior:FBSDKLoginBehaviorBrowser];
-    } else {
-      // use the block version to guarantee there's a strong reference to self
-      _observer = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidBecomeActiveNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^ (NSNotification *notification) {
-        [self attemptBrowserLogIn:loginManager];
-      }];
-    }
-    return;
-  }
-
   if (_parameters.accessTokenString && !_parameters.userID) {
     void(^handlerCopy)(FBSDKLoginCompletionParameters *) = [handler copy];
     FBSDKLoginRequestMeAndPermissions(_parameters, ^{
-      handlerCopy(_parameters);
+      handlerCopy(self->_parameters);
     });
     return;
   }
@@ -187,12 +164,18 @@ static void FBSDKLoginRequestMeAndPermissions(FBSDKLoginCompletionParameters *pa
 
   NSString *expirationDateString = parameters[@"expires"] ?: parameters[@"expires_at"];
   NSDate *expirationDate = [NSDate distantFuture];
-  if (expirationDateString && [expirationDateString doubleValue] > 0) {
-    expirationDate = [NSDate dateWithTimeIntervalSince1970:[expirationDateString doubleValue]];
+  if (expirationDateString && expirationDateString.doubleValue > 0) {
+    expirationDate = [NSDate dateWithTimeIntervalSince1970:expirationDateString.doubleValue];
   } else if (parameters[@"expires_in"] && [parameters[@"expires_in"] integerValue] > 0) {
     expirationDate = [NSDate dateWithTimeIntervalSinceNow:[parameters[@"expires_in"] integerValue]];
   }
   _parameters.expirationDate = expirationDate;
+
+  NSDate *dataAccessExpirationDate = [NSDate distantFuture];
+  if (parameters[@"data_access_expiration_time"] && [parameters[@"data_access_expiration_time"] integerValue] > 0) {
+    dataAccessExpirationDate = [NSDate dateWithTimeIntervalSince1970:[parameters[@"data_access_expiration_time"] integerValue]];
+  }
+  _parameters.dataAccessExpirationDate = dataAccessExpirationDate;
 
   NSError *error = nil;
   NSDictionary *state = [FBSDKInternalUtility objectForJSONString:parameters[@"state"] error:&error];
@@ -210,7 +193,7 @@ static void FBSDKLoginRequestMeAndPermissions(FBSDKLoginCompletionParameters *pa
 
   // if error is nil, then this should be processed as a cancellation unless
   // _performExplicitFallback is set to YES and the log in behavior is Native.
-  _parameters.error = [FBSDKLoginError errorFromReturnURLParameters:parameters];
+  _parameters.error = [NSError fbErrorFromReturnURLParameters:parameters];
 }
 
 - (void)attemptBrowserLogIn:(FBSDKLoginManager *)loginManager {
@@ -219,7 +202,7 @@ static void FBSDKLoginRequestMeAndPermissions(FBSDKLoginCompletionParameters *pa
     _observer = nil;
   }
 
-  if ([FBSDKApplicationDelegate sharedInstance].isActive) {
+  if ([FBSDKBridgeAPI sharedInstance].isActive) {
     [loginManager logInWithBehavior:FBSDKLoginBehaviorBrowser];
   } else {
     // The application is active but due to notification ordering the FBSDKApplicationDelegate
@@ -228,99 +211,6 @@ static void FBSDKLoginRequestMeAndPermissions(FBSDKLoginCompletionParameters *pa
       [self attemptBrowserLogIn:loginManager];
     });
   }
-}
-
-@end
-
-@implementation FBSDKLoginSystemAccountCompleter
-{
-  FBSDKLoginCompletionParameters *_parameters;
-}
-
-- (instancetype)init NS_UNAVAILABLE
-{
-  assert(0);
-}
-
-- (instancetype)initWithTokenString:(NSString *)tokenString appID:(NSString *)appID
-{
-  if ((self = [super init]) != nil) {
-    _parameters = [[FBSDKLoginCompletionParameters alloc] init];
-
-    _parameters.accessTokenString = tokenString;
-    _parameters.appID = appID;
-
-    _parameters.systemAccount = YES;
-  }
-  return self;
-}
-
-- (void)completeLogIn:(FBSDKLoginManager *)loginManager withHandler:(void(^)(FBSDKLoginCompletionParameters *parameters))handler
-{
-  void(^handlerCopy)(FBSDKLoginCompletionParameters *) = [handler copy];
-  FBSDKLoginRequestMeAndPermissions(_parameters, ^{
-    // Transform the FBSDKCoreKit error in to an FBSDKLoginKit error, if necessary. This specializes
-    // the graph errors in to User Checkpointed, Password Changed or Unconfirmed User.
-    //
-    // It's possible the graph error has a value set for NSRecoveryAttempterErrorKey but we don't
-    // have any login-specific attempter to provide since system auth succeeded and the error is a
-    // graph API error.
-    NSError *serverError = _parameters.error;
-    NSError *error = [FBSDKLoginError errorFromServerError:serverError];
-    if (error != nil) {
-      // In the event the user's password changed the Accounts framework will still return
-      // an access token but API calls will fail. Clear the access token from the result
-      // and use the special-case System Password changed error, which has different text
-      // to display to the user.
-      if (error.code == FBSDKLoginPasswordChangedErrorCode) {
-        [FBSDKSystemAccountStoreAdapter sharedInstance].forceBlockingRenew = YES;
-
-        _parameters.accessTokenString = nil;
-        _parameters.appID = nil;
-
-        error = [FBSDKLoginError errorForSystemPasswordChange:serverError];
-      }
-
-      _parameters.error = error;
-    }
-
-    handlerCopy(_parameters);
-  });
-}
-
-@end
-
-@implementation FBSDKLoginSystemAccountErrorCompleter
-{
-  FBSDKLoginCompletionParameters *_parameters;
-}
-
-- (instancetype)init NS_UNAVAILABLE
-{
-  assert(0);
-}
-
-- (instancetype)initWithError:(NSError *)accountStoreError permissions:(NSSet *)permissions
-{
-  if ((self = [super init]) != nil) {
-    _parameters = [[FBSDKLoginCompletionParameters alloc] init];
-
-    NSError *error = [FBSDKLoginError errorForSystemAccountStoreError:accountStoreError];
-    if (error != nil) {
-      _parameters.error = error;
-    } else {
-      // The lack of an error indicates the user declined permissions
-      _parameters.declinedPermissions = permissions;
-    }
-
-    _parameters.systemAccount = YES;
-  }
-  return self;
-}
-
-- (void)completeLogIn:(FBSDKLoginManager *)loginManager withHandler:(void(^)(FBSDKLoginCompletionParameters *parameters))handler
-{
-  handler(_parameters);
 }
 
 @end

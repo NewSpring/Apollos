@@ -18,6 +18,8 @@
 
 #import "FBSDKSharePhotoContent.h"
 
+#import <Photos/Photos.h>
+
 #import "FBSDKCoreKit+Internal.h"
 #import "FBSDKHashtag.h"
 #import "FBSDKSharePhoto.h"
@@ -73,19 +75,87 @@
   }
 }
 
+#pragma mark - FBSDKSharingContent
+
+- (void)addToParameters:(NSMutableDictionary<NSString *, id> *)parameters
+          bridgeOptions:(FBSDKShareBridgeOptions)bridgeOptions
+{
+  [parameters addEntriesFromDictionary:[self addParameters:parameters bridgeOptions:bridgeOptions]];
+}
+
+- (NSDictionary<NSString *, id> *)addParameters:(NSDictionary<NSString *, id> *)existingParameters
+                                  bridgeOptions:(FBSDKShareBridgeOptions)bridgeOptions
+{
+  NSMutableDictionary<NSString *, id> *updatedParameters = [NSMutableDictionary dictionaryWithDictionary:existingParameters];
+
+  NSMutableArray<UIImage *> *images = [[NSMutableArray alloc] init];
+  for (FBSDKSharePhoto *photo in _photos) {
+    if (photo.photoAsset) {
+      // load the asset and bridge the image
+      PHImageRequestOptions *imageRequestOptions = [[PHImageRequestOptions alloc] init];
+      imageRequestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
+      imageRequestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+      imageRequestOptions.synchronous = YES;
+      [[PHImageManager defaultManager]
+       requestImageForAsset:photo.photoAsset
+       targetSize:PHImageManagerMaximumSize
+       contentMode:PHImageContentModeDefault
+       options:imageRequestOptions
+       resultHandler:^(UIImage *image, NSDictionary<NSString *, id> *info) {
+         if (image) {
+           [images addObject:image];
+         }
+       }];
+    } else if (photo.imageURL) {
+      if (photo.imageURL.isFileURL) {
+        // load the contents of the file and bridge the image
+        UIImage *image = [UIImage imageWithContentsOfFile:photo.imageURL.path];
+        if (image) {
+          [images addObject:image];
+        }
+      }
+    } else if (photo.image) {
+      // bridge the image
+      [images addObject:photo.image];
+    }
+  }
+  if (images.count > 0) {
+    [FBSDKInternalUtility dictionary:updatedParameters
+                           setObject:images
+                              forKey:@"photos"];
+  }
+
+  return updatedParameters;
+}
+
+#pragma mark - FBSDKSharingValidation
+
+- (BOOL)validateWithOptions:(FBSDKShareBridgeOptions)bridgeOptions error:(NSError *__autoreleasing *)errorRef
+{
+  if (![FBSDKShareUtility validateArray:_photos minCount:1 maxCount:6 name:@"photos" error:errorRef]) {
+    return NO;
+  }
+  for (FBSDKSharePhoto *photo in _photos) {
+    if (![photo validateWithOptions:bridgeOptions error:errorRef]) {
+      return NO;
+    }
+  }
+  return YES;
+}
+
 #pragma mark - Equality
 
 - (NSUInteger)hash
 {
   NSUInteger subhashes[] = {
-    [_contentURL hash],
-    [_hashtag hash],
-    [_peopleIDs hash],
-    [_photos hash],
-    [_placeID hash],
-    [_ref hash],
-    [_pageID hash],
-    [_shareUUID hash],
+    _contentURL.hash,
+    _hashtag.hash,
+    _peopleIDs.hash,
+    _photos.hash,
+    _placeID.hash,
+    _ref.hash,
+    _pageID.hash,
+    _shareUUID.hash,
   };
   return [FBSDKMath hashWithIntegerArray:subhashes count:sizeof(subhashes) / sizeof(subhashes[0])];
 }
@@ -121,7 +191,7 @@
   return YES;
 }
 
-- (id)initWithCoder:(NSCoder *)decoder
+- (instancetype)initWithCoder:(NSCoder *)decoder
 {
   if ((self = [self init])) {
     _contentURL = [decoder decodeObjectOfClass:[NSURL class] forKey:FBSDK_SHARE_PHOTO_CONTENT_CONTENT_URL_KEY];

@@ -1,1 +1,1 @@
-../../../ExpoKit/ios/Exponent/Versioned/Core/Api/Components/Svg/RNSVGDefsManager.h
+../../../ExpoKit/ios/Exponent/Versioned/Core/Api/Components/Svg/ViewManagers/RNSVGDefsManager.h

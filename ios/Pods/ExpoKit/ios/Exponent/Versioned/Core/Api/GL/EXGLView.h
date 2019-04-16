@@ -7,6 +7,8 @@
 @interface EXGLView : UIView
 
 - (instancetype)initWithManager:(EXGLViewManager *)mgr;
+- (void)runOnGLThreadAsync:(void(^)(void))callback;
+- (void)takeSnapshotWithOptions:(nonnull NSDictionary *)options callback:(void(^)(NSMutableDictionary *))callback;
 
 @property (nonatomic, copy) RCTDirectEventBlock onSurfaceCreate;
 
@@ -22,6 +24,7 @@
 
 // "protected"
 @property (nonatomic, strong) EAGLContext *eaglCtx;
+@property (nonatomic, strong) EAGLContext *uiEaglCtx;
 @property (nonatomic, assign) UEXGLContextId exglCtxId;
 
 @end

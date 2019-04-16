@@ -126,6 +126,11 @@ FB_CLASS_EXPORT FB_SUBCLASSING_RESTRICTED
 @property (class, nonatomic, copy, readonly) NSString *bidderToken;
 
 /**
+ Generates routing token needed for requests routing in reverse-proxy, since we don't have cookies in app environments.
+ */
+@property (class, nonatomic, copy, readonly) NSString *routingToken;
+
+/**
  Returns test mode on/off.
  */
 + (BOOL)isTestMode;

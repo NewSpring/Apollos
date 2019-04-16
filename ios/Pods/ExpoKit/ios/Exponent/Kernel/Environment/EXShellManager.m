@@ -70,8 +70,7 @@ NSString * const kEXShellManifestResourceName = @"shell-app-manifest";
   _isShell = NO;
   _shellManifestUrl = nil;
   _urlScheme = nil;
-  _isRemoteJSEnabled = YES;
-  _loadJSInBackgroundExperimental = NO;
+  _areRemoteUpdatesEnabled = YES;
   _allManifestUrls = @[];
 }
 
@@ -90,6 +89,8 @@ NSString * const kEXShellManifestResourceName = @"shell-app-manifest";
 
   if (shellConfig) {
     _isShell = [shellConfig[@"isShell"] boolValue];
+    _testEnvironment = [EXTest testEnvironmentFromString:shellConfig[@"testEnvironment"]];
+
     if (_isShell) {
       // configure published shell url
       [self _loadProductionUrlFromConfig:shellConfig];
@@ -179,13 +180,9 @@ NSString * const kEXShellManifestResourceName = @"shell-app-manifest";
 - (void)_loadMiscShellPropertiesWithConfig:(NSDictionary *)shellConfig
 {
   _isManifestVerificationBypassed = [shellConfig[@"isManifestVerificationBypassed"] boolValue];
-  _isRemoteJSEnabled = (shellConfig[@"isRemoteJSEnabled"] == nil)
+  _areRemoteUpdatesEnabled = (shellConfig[@"areRemoteUpdatesEnabled"] == nil)
     ? YES
-    : [shellConfig[@"isRemoteJSEnabled"] boolValue];
-  _loadJSInBackgroundExperimental = (shellConfig[@"loadJSInBackgroundExperimental"] == nil)
-    ? NO
-    : [shellConfig[@"loadJSInBackgroundExperimental"] boolValue];
-  _testEnvironment = [EXTest testEnvironmentFromString:shellConfig[@"testEnvironment"]];
+    : [shellConfig[@"areRemoteUpdatesEnabled"] boolValue];
   _isSplashScreenDisabled = ([shellConfig[@"isSplashScreenDisabled"] boolValue]); // we can remove this when the old loading api is dead.
   _releaseChannel = (shellConfig[@"releaseChannel"] == nil) ? @"default" : shellConfig[@"releaseChannel"];
   // other shell config goes here
@@ -196,7 +193,9 @@ NSString * const kEXShellManifestResourceName = @"shell-app-manifest";
   [[EXAnalytics sharedInstance] setUserProperties:@{ @"INITIAL_URL": _shellManifestUrl }];
   [CrashlyticsKit setObjectValue:_shellManifestUrl forKey:@"initial_url"];
   if (self.isDetached) {
+#ifndef EX_DETACHED_SERVICE
     [[EXAnalytics sharedInstance] setUserProperties:@{ @"IS_DETACHED": @YES }];
+#endif
   }
 }
 
