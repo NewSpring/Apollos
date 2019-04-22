@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { AppLoading } from 'expo';
+import { AppLoading, Font } from 'expo';
 import FONTS from 'assets/fonts';
-import * as Font from './Font';
+// import * as Font from './Font';
 
 export default class FontLoader extends Component {
   static propTypes = {
@@ -30,7 +30,10 @@ export default class FontLoader extends Component {
 
     // eslint-disable-next-line no-console
     console.disableYellowBox = true;
-    StyleSheet.setStyleAttributePreprocessor('fontFamily', Font.processFontFamily);
+    StyleSheet.setStyleAttributePreprocessor(
+      'fontFamily',
+      Font.processFontFamily,
+    );
     // eslint-disable-next-line no-console
     console.disableYellowBox = false;
   }
@@ -59,6 +62,7 @@ export default class FontLoader extends Component {
      * rendering and to allow better async asset loading. Current not a problem as AppLoading is
      * only used here.
      */
+    console.warn(isLoading);
     return isLoading ? <AppLoading /> : this.props.children;
   }
 }
