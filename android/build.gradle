@@ -2,26 +2,30 @@
 
 buildscript {
   repositories {
+    google()
     jcenter()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.3.3'
+    classpath 'com.android.tools.build:gradle:3.3.2'
     classpath 'com.google.gms:google-services:3.2.0'
     classpath 'de.undercouch:gradle-download-task:2.0.0'
-    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    //classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
   }
 }
 
 allprojects {
   repositories {
     maven { url "$rootDir/../node_modules/expokit/maven" }
+    /* NOTE: for non-detach
     maven {
       url "$rootDir/maven"
     }
+    */
     maven {
       // We use a modified build of com.android.support.test:runner:1.0.1. Explanation in maven-test/README
       url "$rootDir/maven-test"
     }
+    google()
     jcenter()
     maven {
       // Local Maven repo containing AARs with JSC built for Android
