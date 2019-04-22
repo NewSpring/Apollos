@@ -91,7 +91,7 @@ android {
 //   }
 // }
 
-task exponentPrebuildStep(type: Exec) {
+/*task exponentPrebuildStep(type: Exec) {
   workingDir '../'
   if (System.getProperty('os.name').toLowerCase().contains('windows')) {
     commandLine 'cmd', '/c', '.\\detach-scripts\\prepare-detached-build.bat'
@@ -99,7 +99,7 @@ task exponentPrebuildStep(type: Exec) {
     commandLine './detach-scripts/prepare-detached-build.sh'
   }
 }
-preBuild.dependsOn exponentPrebuildStep
+preBuild.dependsOn exponentPrebuildStep*/
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
