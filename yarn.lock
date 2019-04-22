@@ -7766,6 +7766,11 @@ expo@^29.0.0:
     react-native-svg "6.2.2"
     uuid-js "^0.7.5"
 
+expokit@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/expokit/-/expokit-1.5.0.tgz#268a030286df15205164658c8dc7b67513f4cae1"
+  integrity sha512-uCUeyqy7TD8wCKNF/cWfLq/AVpo4f39TiM9RRoerA5JtDSJQuEcXowcFepoMeqWPi8mj46A89CVVX22SiZqPkQ==
+
 express@4.16.4, express@^4.16.2:
   version "4.16.4"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.4.tgz#fddef61926109e24c515ea97fd2f1bdbf62df12e"
