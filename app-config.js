@@ -1,6 +1,6 @@
 module.exports = env => ({
   expo: {
-    sdkVersion: '26.0.0',
+    sdkVersion: '27.0.0',
     name: 'NewSpring',
     slug: 'newspring',
     hooks: {
