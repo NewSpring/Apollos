@@ -94,9 +94,9 @@ android {
 /*task exponentPrebuildStep(type: Exec) {
   workingDir '../'
   if (System.getProperty('os.name').toLowerCase().contains('windows')) {
-    commandLine 'cmd', '/c', '.\\detach-scripts\\prepare-detached-build.bat'
+    commandLine 'cmd', '/c', '..\\node_modules\\expokit\\detach-scripts\\prepare-detached-build.bat'
   } else {
-    commandLine './detach-scripts/prepare-detached-build.sh'
+    commandLine '../node_modules/expokit/detach-scripts/prepare-detached-build.sh'
   }
 }
 preBuild.dependsOn exponentPrebuildStep*/
@@ -173,8 +173,10 @@ dependencies {
 
 
 
-  compile ('host.exp.exponent:expoview:28.0.0@aar') {
+  compile ('host.exp.exponent:expoview:29.0.0@aar') {
     transitive = true
+    exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    exclude group: 'com.squareup.okhttp3', module: 'okhttp-urlconnection'
     //exclude group: 'com.google.android.gms' // TODO: maybe don't need this
     //compile project(path: ':expoview')
   }
