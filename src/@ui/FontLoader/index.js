@@ -62,7 +62,6 @@ export default class FontLoader extends Component {
      * rendering and to allow better async asset loading. Current not a problem as AppLoading is
      * only used here.
      */
-    console.warn(isLoading);
     return isLoading ? <AppLoading /> : this.props.children;
   }
 }
