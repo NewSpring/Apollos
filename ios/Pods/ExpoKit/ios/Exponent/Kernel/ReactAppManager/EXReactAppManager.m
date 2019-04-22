@@ -3,7 +3,7 @@
 #import "EXBuildConstants.h"
 #import "EXErrorRecoveryManager.h"
 #import "EXKernel.h"
-#import "EXKernelAppLoader.h"
+#import "EXAppLoader.h"
 #import "EXKernelDevKeyCommands.h"
 #import "EXKernelLinkingManager.h"
 #import "EXKernelServiceRegistry.h"
@@ -167,7 +167,7 @@ typedef void (^SDK21RCTSourceLoadBlock)(NSError *error, NSData *source, int64_t 
 - (BOOL)isReadyToLoad
 {
   if (_appRecord) {
-    return (_appRecord.appLoader.status == kEXKernelAppLoaderStatusHasManifest || _appRecord.appLoader.status == kEXKernelAppLoaderStatusHasManifestAndBundle);
+    return (_appRecord.appLoader.status == kEXAppLoaderStatusHasManifest || _appRecord.appLoader.status == kEXAppLoaderStatusHasManifestAndBundle);
   }
   return NO;
 }
@@ -187,19 +187,19 @@ typedef void (^SDK21RCTSourceLoadBlock)(NSError *error, NSData *source, int64_t 
   [_versionManager bridgeDidBackground];
 }
 
-#pragma mark - EXKernelAppLoaderDataSource
+#pragma mark - EXAppFetcherDataSource
 
-- (NSString *)bundleResourceNameForAppLoader:(EXKernelAppLoader *)appLoader
+- (NSString *)bundleResourceNameForAppFetcher:(EXAppFetcher *)appFetcher withManifest:(nonnull NSDictionary *)manifest
 {
   if ([EXShellManager sharedInstance].isShell) {
     NSLog(@"Standalone bundle remote url is %@", [EXShellManager sharedInstance].shellManifestUrl);
     return kEXShellBundleResourceName;
   } else {
-    return appLoader.manifest[@"id"];
+    return manifest[@"id"];
   }
 }
 
-- (BOOL)appLoaderShouldInvalidateBundleCache:(EXKernelAppLoader *)appLoader
+- (BOOL)appFetcherShouldInvalidateBundleCache:(EXAppFetcher *)appFetcher
 {
   return NO;
 }
@@ -219,11 +219,15 @@ typedef void (^SDK21RCTSourceLoadBlock)(NSError *error, NSData *source, int64_t 
   [self _startObservingBridgeNotificationsForBridge:bridge];
   
   if ([self enablesDeveloperTools]) {
-    [_appRecord.appLoader forceBundleReload];
+    if ([_appRecord.appLoader supportsBundleReload]) {
+      [_appRecord.appLoader forceBundleReload];
+    } else {
+      [[EXKernel sharedInstance] reloadAppWithExperienceId:_appRecord.experienceId];
+    }
   }
   
   _loadCallback = loadCallback;
-  if (_appRecord.appLoader.status == kEXKernelAppLoaderStatusHasManifestAndBundle) {
+  if (_appRecord.appLoader.status == kEXAppLoaderStatusHasManifestAndBundle) {
     // finish loading immediately (app loader won't call this since it's already done)
     [self appLoaderFinished];
   } else {
@@ -242,14 +246,14 @@ typedef void (^SDK21RCTSourceLoadBlock)(NSError *error, NSData *source, int64_t 
   NSDictionary *params = @{
                            @"manifest": _appRecord.appLoader.manifest,
                            @"constants": @{
-                               @"linkingUri": [EXKernelLinkingManager linkingUriForExperienceUri:_appRecord.appLoader.manifestUrl],
+                               @"linkingUri": RCTNullIfNil([EXKernelLinkingManager linkingUriForExperienceUri:_appRecord.appLoader.manifestUrl useLegacy:[self _compareVersionTo:27] == NSOrderedAscending]),
                                @"deviceId": [EXKernel deviceInstallUUID],
                                @"expoRuntimeVersion": [EXBuildConstants sharedInstance].expoRuntimeVersion,
                                @"manifest": _appRecord.appLoader.manifest,
                                @"appOwnership": [self _appOwnership],
                              },
                            @"exceptionsManagerDelegate": _exceptionHandler,
-                           @"initialUri": [EXKernelLinkingManager uriTransformedForLinking:_appRecord.appLoader.manifestUrl isUniversalLink:NO],
+                           @"initialUri": RCTNullIfNil([EXKernelLinkingManager initialUriWithManifestUrl:_appRecord.appLoader.manifestUrl]),
                            @"isDeveloper": @([self enablesDeveloperTools]),
                            @"isStandardDevMenuAllowed": @(isStandardDevMenuAllowed),
                            @"testEnvironment": @([EXShellManager sharedInstance].testEnvironment),

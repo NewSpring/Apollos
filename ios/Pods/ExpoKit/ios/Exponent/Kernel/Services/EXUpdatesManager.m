@@ -1,7 +1,7 @@
 // Copyright 2015-present 650 Industries. All rights reserved.
 
 #import "EXKernel.h"
-#import "EXKernelAppLoader+Updates.h"
+#import "EXAppLoader+Updates.h"
 #import "EXKernelAppRecord.h"
 #import "EXReactAppManager.h"
 #import "EXScopedModuleRegistry.h"
@@ -13,7 +13,7 @@
 
 @interface EXUpdatesManager ()
 
-@property (nonatomic, strong) EXKernelAppLoader *appLoader;
+@property (nonatomic, strong) EXAppLoader *appLoader;
 
 @end
 
@@ -52,7 +52,7 @@ ofDownloadWithManifest:(NSDictionary * _Nullable)manifest
 
 # pragma mark - internal
 
-- (EXKernelAppLoader *)_appLoaderWithScopedModule:(id)scopedModule
+- (EXAppLoader *)_appLoaderWithScopedModule:(id)scopedModule
 {
   NSString *experienceId = ((EXScopedBridgeModule *)scopedModule).experienceId;
   EXKernelAppRecord *appRecord = [[EXKernel sharedInstance].appRegistry newestRecordWithExperienceId:experienceId];
@@ -67,6 +67,12 @@ ofDownloadWithManifest:(NSDictionary * _Nullable)manifest
   [[EXKernel sharedInstance] reloadAppWithExperienceId:experienceId];
 }
 
+- (void)updatesModuleDidSelectReloadFromCache:(id)scopedModule
+{
+  NSString *experienceId = ((EXScopedBridgeModule *)scopedModule).experienceId;
+  [[EXKernel sharedInstance] reloadAppFromCacheWithExperienceId:experienceId];
+}
+
 - (void)updatesModule:(id)scopedModule
 didRequestManifestWithCacheBehavior:(EXCachedResourceBehavior)cacheBehavior
               success:(void (^)(NSDictionary * _Nonnull))success
@@ -76,7 +82,7 @@ didRequestManifestWithCacheBehavior:(EXCachedResourceBehavior)cacheBehavior
     failure(RCTErrorWithMessage(@"Remote updates are disabled in app.json"));
     return;
   }
-  EXKernelAppLoader *appLoader = [self _appLoaderWithScopedModule:scopedModule];
+  EXAppLoader *appLoader = [self _appLoaderWithScopedModule:scopedModule];
   [appLoader fetchManifestWithCacheBehavior:cacheBehavior success:success failure:failure];
 }
 
@@ -97,7 +103,7 @@ didRequestBundleWithManifest:(NSDictionary *)manifest
                     @"total": progress.total
                     });
   };
-  EXKernelAppLoader *appLoader = [self _appLoaderWithScopedModule:scopedModule];
+  EXAppLoader *appLoader = [self _appLoaderWithScopedModule:scopedModule];
   [appLoader fetchJSBundleWithManifest:manifest
                          cacheBehavior:EXCachedResourceWriteToCache
                        timeoutInterval:kEXJSBundleTimeout

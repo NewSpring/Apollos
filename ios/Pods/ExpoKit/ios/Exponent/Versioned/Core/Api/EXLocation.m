@@ -2,6 +2,8 @@
 
 #import "EXLocation.h"
 #import "EXUnversioned.h"
+#import "EXScopedModuleRegistry.h"
+#import "EXPermissions.h"
 
 #import <CoreLocation/CLLocationManager.h>
 #import <CoreLocation/CLLocationManagerDelegate.h>
@@ -76,17 +78,19 @@ NSString * const EXHeadingChangedEventName = @"Exponent.headingChanged";
 @interface EXLocation ()
 
 @property (nonatomic, strong) NSMutableDictionary<NSNumber *, EXLocationDelegate*> *delegates;
-@property (nonatomic, strong) CLGeocoder *geocoder;
 @property (nonatomic, assign, getter=isPaused) BOOL paused;
+@property (nonatomic, weak) id kernelPermissionsServiceDelegate;
 
 @end
 
 @implementation EXLocation
 
-RCT_EXPORT_MODULE(ExponentLocation)
+EX_EXPORT_SCOPED_MODULE(ExponentLocation, PermissionsManager);
 
-- (instancetype)init {
-  if ((self = [super init])) {
+- (instancetype)initWithExperienceId:(NSString *)experienceId kernelServiceDelegate:(id)kernelServiceInstance params:(NSDictionary *)params
+{
+  if (self = [super initWithExperienceId:experienceId kernelServiceDelegate:kernelServiceInstance params:params]) {
+    _kernelPermissionsServiceDelegate = kernelServiceInstance;
     _delegates = [NSMutableDictionary dictionary];
   }
   return self;
@@ -151,7 +155,8 @@ RCT_REMAP_METHOD(watchPositionImplAsync,
     reject(@"E_LOCATION_SERVICES_DISABLED", @"Location services are disabled", nil);
     return;
   }
-  if (!([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse)) {
+  if (!([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) ||
+        ![_kernelPermissionsServiceDelegate hasGrantedPermission:@"location" forExperience:self.experienceId]) {
     reject(@"E_LOCATION_UNAUTHORIZED", @"Not authorized to use location services", nil);
     return;
   }
@@ -202,6 +207,12 @@ RCT_REMAP_METHOD(watchDeviceHeading,
                  watchId:(nonnull NSNumber *)watchId
                  watchDeviceHeading_resolver:(RCTPromiseResolveBlock)resolve
                  watchDeviceHeading_rejecter:(RCTPromiseRejectBlock)reject) {
+  if (!([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse ||
+        [_kernelPermissionsServiceDelegate hasGrantedPermission:@"location" forExperience:self.experienceId])) {
+    reject(@"E_LOCATION_UNAUTHORIZED", @"Not authorized to use location services", nil);
+    return;
+  }
+
   __weak typeof(self) weakSelf = self;
   dispatch_async(dispatch_get_main_queue(), ^{
     CLLocationManager *locMgr = [[CLLocationManager alloc] init];
@@ -272,11 +283,9 @@ RCT_REMAP_METHOD(geocodeAsync,
     return;
   }
   
-  if (!_geocoder) {
-    _geocoder = [[CLGeocoder alloc] init];
-  }
+  CLGeocoder *geocoder = [[CLGeocoder alloc] init];
 
-  [_geocoder geocodeAddressString:address completionHandler:^(NSArray* placemarks, NSError* error){
+  [geocoder geocodeAddressString:address completionHandler:^(NSArray* placemarks, NSError* error){
     if (!error) {
       NSMutableArray *results = [NSMutableArray arrayWithCapacity:placemarks.count];
       for (CLPlacemark* placemark in placemarks)
@@ -309,13 +318,10 @@ RCT_REMAP_METHOD(reverseGeocodeAsync,
     return;
   }
   
-  if (!_geocoder) {
-    _geocoder = [[CLGeocoder alloc] init];
-  }
-
+  CLGeocoder *geocoder = [[CLGeocoder alloc] init];
   CLLocation *location = [[CLLocation alloc] initWithLatitude:[locationMap[@"latitude"] floatValue] longitude:[locationMap[@"longitude"] floatValue]];
 
-  [_geocoder reverseGeocodeLocation:location completionHandler:^(NSArray* placemarks, NSError* error){
+  [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray* placemarks, NSError* error){
     if (!error) {
       NSMutableArray *results = [NSMutableArray arrayWithCapacity:placemarks.count];
       for (CLPlacemark* placemark in placemarks)
@@ -350,7 +356,7 @@ RCT_REMAP_METHOD(reverseGeocodeAsync,
 
 - (void)bridgeDidBackground:(NSNotification *)notification
 {
-  if (_geocoder) {
+  if (![self isPaused]) {
     [self setPaused:YES];
   }
 }

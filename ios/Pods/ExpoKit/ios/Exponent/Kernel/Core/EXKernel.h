@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXPORT NSString *kEXKernelErrorDomain;
+FOUNDATION_EXPORT const NSUInteger kEXErrorCodeAppForbidden;
+
 typedef NS_ENUM(NSInteger, EXKernelErrorCode) {
   EXKernelErrorCodeModuleDeallocated,
 };
@@ -29,7 +31,8 @@ FOUNDATION_EXPORT NSString * const kEXKernelClearJSCacheUserDefaultsKey;
 
 - (EXKernelAppRecord *)createNewAppWithUrl:(NSURL *)url initialProps:(nullable NSDictionary *)initialProps;
 - (void)switchTasks;
-- (void)reloadAppWithExperienceId:(NSString *)experienceId; // called by Util.reload
+- (void)reloadAppWithExperienceId:(NSString *)experienceId; // called by Updates.reload
+- (void)reloadAppFromCacheWithExperienceId:(NSString *)experienceId; // called by Updates.reloadFromCache
 
 /**
  *  Send a notification to a given experience id.
@@ -38,6 +41,11 @@ FOUNDATION_EXPORT NSString * const kEXKernelClearJSCacheUserDefaultsKey;
       toExperienceWithId: (NSString *)experienceId
           fromBackground: (BOOL)isFromBackground
                 isRemote: (BOOL)isRemote;
+
+/**
+ *  Initial props to pass to an app based on LaunchOptions from UIApplicationDelegate.
+ */
+- (NSDictionary *)initialAppPropsFromLaunchOptions:(NSDictionary *)launchOptions;
 
 /**
  *  Find and return the (potentially versioned) native module instance belonging to the

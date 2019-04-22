@@ -1,14 +1,18 @@
 // Copyright 2015-present 650 Industries. All rights reserved.
 
 #import "EXKernel.h"
-#import "EXKernelAppLoader.h"
+#import "EXAppLoader.h"
 #import "EXKernelLinkingManager.h"
+#import "ExpoKit.h"
 #import "EXReactAppManager.h"
 #import "EXShellManager.h"
 #import "EXVersions.h"
 
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <React/RCTBridge+Private.h>
+
+NSString *kEXExpoDeepLinkSeparator = @"--/";
+NSString *kEXExpoLegacyDeepLinkSeparator = @"+";
 
 @interface EXKernelLinkingManager ()
 
@@ -27,23 +31,27 @@
   }
   EXKernelAppRegistry *appRegistry = [EXKernel sharedInstance].appRegistry;
   EXKernelAppRecord *destinationApp = nil;
-  NSURL *urlToRoute = nil;
+  NSURL *urlToRoute = url;
 
   if (isUniversalLink && [EXShellManager sharedInstance].isShell) {
     destinationApp = [EXKernel sharedInstance].appRegistry.standaloneAppRecord;
   } else {
     urlToRoute = [[self class] uriTransformedForLinking:url isUniversalLink:isUniversalLink];
 
-    for (NSString *recordId in [appRegistry appEnumerator]) {
-      EXKernelAppRecord *appRecord = [appRegistry recordForId:recordId];
-      if (!appRecord || appRecord.status != kEXKernelAppRecordStatusRunning) {
-        continue;
-      }
-      if (appRecord.appLoader.manifestUrl && [urlToRoute.absoluteString hasPrefix:[[self class] linkingUriForExperienceUri:appRecord.appLoader.manifestUrl]]) {
-        // this is a link into a bridge we already have running.
-        // use this bridge as the link's destination instead of the kernel.
-        destinationApp = appRecord;
-        break;
+    if (appRegistry.standaloneAppRecord) {
+      destinationApp = appRegistry.standaloneAppRecord;
+    } else {
+      for (NSString *recordId in [appRegistry appEnumerator]) {
+        EXKernelAppRecord *appRecord = [appRegistry recordForId:recordId];
+        if (!appRecord || appRecord.status != kEXKernelAppRecordStatusRunning) {
+          continue;
+        }
+        if (appRecord.appLoader.manifestUrl && [[self class] _isUrl:urlToRoute deepLinkIntoAppWithManifestUrl:appRecord.appLoader.manifestUrl]) {
+          // this is a link into a bridge we already have running.
+          // use this bridge as the link's destination instead of the kernel.
+          destinationApp = appRecord;
+          break;
+        }
       }
     }
   }
@@ -82,8 +90,7 @@
   if (components) {
     return ([components.scheme isEqualToString:@"exp"] ||
             [components.scheme isEqualToString:@"exps"] ||
-            [components.host isEqualToString:@"exp.host"] ||
-            [components.host hasSuffix:@".exp.host"]
+            [[self class] _isExpoHostedUrlComponents:components]
             );
   }
   return NO;
@@ -93,7 +100,7 @@
 
 #pragma mark - static link transforming logic
 
-+ (NSString *)linkingUriForExperienceUri:(NSURL *)uri
++ (NSString *)linkingUriForExperienceUri:(NSURL *)uri useLegacy:(BOOL)useLegacy
 {
   uri = [self uriTransformedForLinking:uri isUniversalLink:NO];
   if (!uri) {
@@ -102,10 +109,14 @@
   NSURLComponents *components = [NSURLComponents componentsWithURL:uri resolvingAgainstBaseURL:YES];
 
   // if the provided uri is the shell app manifest uri,
-  // this should have been transformed into customscheme://+deep-link
-  // and then all we do here is strip off the deep-link part, leaving +.
+  // this should have been transformed into customscheme://deep-link
+  // and then all we do here is strip off the deep-link part.
   if ([EXShellManager sharedInstance].isShell && [[EXShellManager sharedInstance] isShellUrlScheme:components.scheme]) {
-    return [NSString stringWithFormat:@"%@://+", components.scheme];
+    if (useLegacy) {
+      return [NSString stringWithFormat:@"%@://%@", components.scheme, kEXExpoLegacyDeepLinkSeparator];
+    } else {
+      return [NSString stringWithFormat:@"%@://", components.scheme];
+    }
   }
 
   NSMutableString* path = [NSMutableString stringWithString:components.path];
@@ -116,7 +127,12 @@
   if (path.length == 0 || [path characterAtIndex:path.length - 1] != '/') {
     [path appendString:@"/"];
   }
-  [path appendString:@"+"];
+  // since this is used in a few places we need to keep the legacy option around for compat
+  if (useLegacy) {
+    [path appendString:kEXExpoLegacyDeepLinkSeparator];
+  } else if ([[self class] _isExpoHostedUrlComponents:components]) {
+    [path appendString:kEXExpoDeepLinkSeparator];
+  }
   components.path = path;
 
   components.query = nil;
@@ -126,9 +142,14 @@
 
 + (NSString *)stringByRemovingDeepLink:(NSString *)path
 {
-  NSRange deepLinkRange = [path rangeOfString:@"+"];
+  NSRange deepLinkRange = [path rangeOfString:kEXExpoDeepLinkSeparator];
+  // deprecated but we still need to support these links
+  // TODO: remove this
+  NSRange deepLinkRangeLegacy = [path rangeOfString:kEXExpoLegacyDeepLinkSeparator];
   if (deepLinkRange.length > 0) {
     path = [path substringToIndex:deepLinkRange.location];
+  } else if (deepLinkRangeLegacy.length > 0) {
+    path = [path substringToIndex:deepLinkRangeLegacy.location];
   }
   return path;
 }
@@ -148,19 +169,37 @@
 
   if ([EXShellManager sharedInstance].isShell && [EXShellManager sharedInstance].hasUrlScheme) {
     // if the provided uri is the shell app manifest uri,
-    // transform this into customscheme://+deep-link
+    // transform this into customscheme://deep-link
     if ([self _isShellManifestUrl:normalizedUri]) {
       NSString *uriString = normalizedUri.absoluteString;
-      NSRange deepLinkRange = [uriString rangeOfString:@"+"];
+      NSRange deepLinkRange = [uriString rangeOfString:kEXExpoDeepLinkSeparator];
+      // deprecated but we still need to support these links
+      // TODO: remove this
+      NSRange deepLinkRangeLegacy = [uriString rangeOfString:kEXExpoLegacyDeepLinkSeparator];
       NSString *deepLink = @"";
-      if (deepLinkRange.length > 0) {
-        deepLink = [uriString substringFromIndex:deepLinkRange.location];
+      if (deepLinkRange.length > 0 && [[self class] _isExpoHostedUrl:normalizedUri]) {
+        deepLink = [uriString substringFromIndex:deepLinkRange.location + kEXExpoDeepLinkSeparator.length];
+      } else if (deepLinkRangeLegacy.length > 0) {
+        deepLink = [uriString substringFromIndex:deepLinkRangeLegacy.location + kEXExpoLegacyDeepLinkSeparator.length];
       }
       NSString *result = [NSString stringWithFormat:@"%@://%@", [EXShellManager sharedInstance].urlScheme, deepLink];
       return [NSURL URLWithString:result];
     }
   }
   return normalizedUri;
+}
+
++ (NSURL *)initialUriWithManifestUrl:(NSURL *)manifestUrl
+{
+  NSURL *urlToTransform = manifestUrl;
+  if ([EXShellManager sharedInstance].isShell) {
+    NSDictionary *launchOptions = [ExpoKit sharedInstance].launchOptions;
+    NSURL *launchOptionsUrl = [[self class] initialUrlFromLaunchOptions:launchOptions];
+    if (launchOptionsUrl) {
+      urlToTransform = launchOptionsUrl;
+    }
+  }
+  return [[self class] uriTransformedForLinking:urlToTransform isUniversalLink:NO];
 }
 
 + (NSURL *)_uriNormalizedForLinking: (NSURL *)uri
@@ -196,6 +235,76 @@
     }
   }
   return NO;
+}
+
++ (BOOL)_isExpoHostedUrl: (NSURL *)url
+{
+  return [[self class] _isExpoHostedUrlComponents:[NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES]];
+}
+
++ (BOOL)_isExpoHostedUrlComponents: (NSURLComponents *)components
+{
+  if (components.host) {
+    return [components.host isEqualToString:@"exp.host"] ||
+      [components.host isEqualToString:@"expo.io"] ||
+      [components.host isEqualToString:@"exp.direct"] ||
+      [components.host isEqualToString:@"expo.test"] ||
+      [components.host hasSuffix:@".exp.host"] ||
+      [components.host hasSuffix:@".expo.io"] ||
+      [components.host hasSuffix:@".exp.direct"] ||
+      [components.host hasSuffix:@".expo.test"];
+  }
+  return NO;
+}
+
++ (BOOL)_isUrl:(NSURL *)urlToRoute deepLinkIntoAppWithManifestUrl:(NSURL *)manifestUrl
+{
+  NSURLComponents *urlToRouteComponents = [NSURLComponents componentsWithURL:urlToRoute resolvingAgainstBaseURL:YES];
+  NSURLComponents *manifestUrlComponents = [NSURLComponents componentsWithURL:[self uriTransformedForLinking:manifestUrl isUniversalLink:NO] resolvingAgainstBaseURL:YES];
+
+  if (urlToRouteComponents.host && manifestUrlComponents.host && [urlToRouteComponents.host isEqualToString:manifestUrlComponents.host]) {
+    if ((!urlToRouteComponents.port && !manifestUrlComponents.port) || (urlToRouteComponents.port && [urlToRouteComponents.port isEqualToNumber:manifestUrlComponents.port])) {
+      NSString *urlToRouteBasePath = [[self class] _normalizePath:urlToRouteComponents.path];
+      NSString *manifestUrlBasePath = [[self class] _normalizePath:manifestUrlComponents.path];
+
+      if ([urlToRouteBasePath isEqualToString:manifestUrlBasePath]) {
+        // release-channel is a special query parameter that we treat as a separate app, so we need to check that here
+        NSString *manifestUrlReleaseChannel = [[self class] _releaseChannelWithUrlComponents:manifestUrlComponents];
+        NSString *urlToRouteReleaseChannel = [[self class] _releaseChannelWithUrlComponents:urlToRouteComponents];
+        if ([manifestUrlReleaseChannel isEqualToString:urlToRouteReleaseChannel]) {
+          return YES;
+        }
+      }
+    }
+  }
+  return NO;
+}
+
++ (NSString *)_normalizePath:(NSString *)path
+{
+  if (!path) {
+    return @"/";
+  }
+  NSString *basePath = [[self class] stringByRemovingDeepLink:path];
+  NSMutableString *mutablePath = [basePath mutableCopy];
+  if (mutablePath.length == 0 || [mutablePath characterAtIndex:mutablePath.length - 1] != '/') {
+    [mutablePath appendString:@"/"];
+  }
+  return mutablePath;
+}
+
++ (NSString *)_releaseChannelWithUrlComponents:(NSURLComponents *)urlComponents
+{
+  NSString *releaseChannel = @"default";
+  NSArray<NSURLQueryItem *> *queryItems = urlComponents.queryItems;
+  if (queryItems) {
+    for (NSURLQueryItem *item in queryItems) {
+      if ([item.name isEqualToString:@"release-channel"]) {
+        releaseChannel = item.value;
+      }
+    }
+  }
+  return releaseChannel;
 }
 
 #pragma mark - UIApplication hooks

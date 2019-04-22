@@ -2,29 +2,32 @@
 #import <React/RCTBridge.h>
 #import <UEXGL.h>
 
+#import "EXGLContext.h"
 #import "EXGLViewManager.h"
 
-@interface EXGLView : UIView
+NS_ASSUME_NONNULL_BEGIN
+
+@interface EXGLView : UIView <EXGLContextDelegate>
 
 - (instancetype)initWithManager:(EXGLViewManager *)mgr;
-- (void)runOnGLThreadAsync:(void(^)(void))callback;
-- (void)takeSnapshotWithOptions:(nonnull NSDictionary *)options callback:(void(^)(NSMutableDictionary *))callback;
+- (UEXGLContextId)exglCtxId;
 
-@property (nonatomic, copy) RCTDirectEventBlock onSurfaceCreate;
+@property (nonatomic, copy, nullable) RCTDirectEventBlock onSurfaceCreate;
 
-- (NSDictionary *)maybeStartARSession;
+- (nonnull NSDictionary *)maybeStartARSession;
 - (void)maybeStopARSession;
-- (NSDictionary *)arMatricesForViewportSize:(CGSize)viewportSize zNear:(CGFloat)zNear zFar:(CGFloat)zFar;
-- (NSDictionary *)arLightEstimation;
-- (NSDictionary *)rawFeaturePoints;
-- (NSDictionary *)planes;
+- (nullable NSDictionary *)arMatricesForViewportSize:(CGSize)viewportSize zNear:(CGFloat)zNear zFar:(CGFloat)zFar;
+- (nullable NSDictionary *)arLightEstimation;
+- (nullable NSDictionary *)rawFeaturePoints;
+- (nullable NSDictionary *)planes;
 - (void)setIsPlaneDetectionEnabled:(BOOL)planeDetectionEnabled;
 - (void)setIsLightEstimationEnabled:(BOOL)lightEstimationEnabled;
 - (void)setWorldAlignment:(NSInteger)worldAlignment;
 
 // "protected"
-@property (nonatomic, strong) EAGLContext *eaglCtx;
-@property (nonatomic, strong) EAGLContext *uiEaglCtx;
-@property (nonatomic, assign) UEXGLContextId exglCtxId;
+@property (nonatomic, strong, nullable) EXGLContext *glContext;
+@property (nonatomic, strong, nullable) EAGLContext *uiEaglCtx;
 
 @end
+
+NS_ASSUME_NONNULL_END

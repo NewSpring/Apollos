@@ -2,7 +2,7 @@
 
 #import "EXErrorView.h"
 #import "EXKernel.h"
-#import "EXKernelAppLoader.h"
+#import "EXAppLoader.h"
 #import "EXKernelAppRecord.h"
 #import "EXShellManager.h"
 #import "EXUtil.h"
@@ -82,7 +82,7 @@
     if (_appRecord == [EXKernel sharedInstance].appRegistry.homeAppRecord) {
       appOwnerName = @"Expo";
     } else if (_appRecord.appLoader.manifest && _appRecord.appLoader.manifest[@"name"]) {
-        appOwnerName = _appRecord.appLoader.manifest[@"name"];
+      appOwnerName = [NSString stringWithFormat:@"\"%@\"", _appRecord.appLoader.manifest[@"name"]];
     }
   }
 
@@ -91,6 +91,8 @@
       _lblError.text = [NSString stringWithFormat:@"There was a problem loading %@.", appOwnerName];
       if (_error.code == kCFURLErrorNotConnectedToInternet) {
         _lblError.text = [NSString stringWithFormat:@"%@ Make sure you're connected to the internet.", _lblError.text];
+      } else if (_error.code == kEXErrorCodeAppForbidden) {
+        _lblError.text = [NSString stringWithFormat:@"Sorry, you are not allowed to load %@.", appOwnerName];
       } else if (_appRecord.appLoader.manifestUrl) {
         NSString *url = _appRecord.appLoader.manifestUrl.absoluteString;
         if ([self _urlLooksLikeLAN:url]) {
@@ -191,10 +193,7 @@
 
 - (BOOL)_isDevDetached
 {
-#if DEBUG
-  return [EXShellManager sharedInstance].isDetached;
-#endif
-  return NO;
+  return [EXShellManager sharedInstance].isDetached && [EXShellManager sharedInstance].isDebugXCodeScheme;
 }
 
 @end

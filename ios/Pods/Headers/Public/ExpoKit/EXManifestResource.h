@@ -1,1 +1,1 @@
-../../../ExpoKit/ios/Exponent/Kernel/AppLoader/EXManifestResource.h
+../../../ExpoKit/ios/Exponent/Kernel/AppLoader/CachedResource/EXManifestResource.h

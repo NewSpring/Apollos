@@ -1,6 +1,6 @@
 {
   "name": "ExpoKit",
-  "version": "2.4.8",
+  "version": "2.5.10",
   "summary": "ExpoKit",
   "description": "ExpoKit allows native projects to integrate with the Expo SDK.",
   "homepage": "http://docs.expo.io",
@@ -61,7 +61,10 @@
           "~> 3.0"
         ],
         "GoogleMaps": [
-          "~> 2.2.0"
+          "~> 2.5.0"
+        ],
+        "Google-Maps-iOS-Utils": [
+          "~> 2.1.0"
         ],
         "lottie-ios": [
           "~> 2.1.3"
