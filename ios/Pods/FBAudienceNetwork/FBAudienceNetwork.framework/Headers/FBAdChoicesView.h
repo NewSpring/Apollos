@@ -19,12 +19,11 @@
 #import <UIKit/UIKit.h>
 
 #import <FBAudienceNetwork/FBAdDefines.h>
-#import <FBAudienceNetwork/UIView+FBNativeAdViewTag.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class FBAdImage;
-@class FBNativeAdBase;
+@class FBNativeAd;
 @class FBNativeAdViewAttributes;
 
 /**
@@ -51,7 +50,7 @@ FB_CLASS_EXPORT FB_SUBCLASSING_RESTRICTED
 /**
   The native ad that provides AdChoices info, such as the image url, and click url. Setting this updates the nativeAd.
  */
-@property (nonatomic, weak, readwrite, nullable) FBNativeAdBase *nativeAd;
+@property (nonatomic, weak, readwrite, nullable) FBNativeAd *nativeAd;
 
 /**
   Affects background mask rendering. Setting this property updates the rendering.
@@ -59,26 +58,16 @@ FB_CLASS_EXPORT FB_SUBCLASSING_RESTRICTED
 @property (nonatomic, assign, readwrite) UIRectCorner corner;
 
 /**
- Affects background mask rendering. Setting this property updates the rendering.
- */
-@property (nonatomic, assign, readwrite) UIEdgeInsets insets;
-
-/**
   The view controller to present the ad choices info from. If nil, the top view controller is used.
  */
 @property (nonatomic, weak, readwrite, null_resettable) UIViewController *rootViewController;
-
-/**
- The tag for AdChoices view. It always returns FBNativeAdViewTagChoicesIcon.
- */
-@property (nonatomic, assign, readonly) FBNativeAdViewTag nativeAdViewTag;
 
 /**
   Initialize this view with a given native ad. Configuration is pulled from the native ad.
 
  - Parameter nativeAd: The native ad to initialize with.
  */
-- (instancetype)initWithNativeAd:(FBNativeAdBase *)nativeAd;
+- (instancetype)initWithNativeAd:(FBNativeAd *)nativeAd;
 
 /**
   Initialize this view with a given native ad. Configuration is pulled from the native ad.
@@ -86,7 +75,7 @@ FB_CLASS_EXPORT FB_SUBCLASSING_RESTRICTED
  - Parameter nativeAd: The native ad to initialize with.
  - Parameter expandable: Controls whether view defaults to expanded or not, see property documentation
  */
-- (instancetype)initWithNativeAd:(FBNativeAdBase *)nativeAd
+- (instancetype)initWithNativeAd:(FBNativeAd *)nativeAd
                       expandable:(BOOL)expandable;
 
 /**
@@ -96,7 +85,7 @@ FB_CLASS_EXPORT FB_SUBCLASSING_RESTRICTED
  - Parameter expandable: Controls whether view defaults to expanded or not, see property documentation
  - Parameter attributes: Attributes to configure look and feel.
  */
-- (instancetype)initWithNativeAd:(FBNativeAdBase *)nativeAd
+- (instancetype)initWithNativeAd:(FBNativeAd *)nativeAd
                       expandable:(BOOL)expandable
                       attributes:(nullable FBNativeAdViewAttributes *)attributes;
 

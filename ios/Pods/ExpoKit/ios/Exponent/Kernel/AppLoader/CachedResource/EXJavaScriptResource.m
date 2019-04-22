@@ -1,8 +1,9 @@
 // Copyright 2015-present 650 Industries. All rights reserved.
 
+#import "EXApiUtil.h"
+#import "EXEnvironment.h"
 #import "EXJavaScriptResource.h"
 #import "EXKernelUtil.h"
-#import "EXShellManager.h"
 
 #import <React/RCTJavaScriptLoader.h>
 
@@ -100,6 +101,19 @@
                       progressBlock:progressBlock
                        successBlock:successBlock
                          errorBlock:errorBlock];
+  }
+}
+
+- (BOOL)isUsingEmbeddedResource
+{
+  // if the URL of our request matches the remote URL of the embedded JS bundle,
+  // skip checking any caches and just immediately open the NSBundle copy
+  if ([EXEnvironment sharedEnvironment].isDetached &&
+      [EXEnvironment sharedEnvironment].embeddedBundleUrl &&
+      [self.remoteUrl isEqual:[EXApiUtil encodedUrlFromString:[EXEnvironment sharedEnvironment].embeddedBundleUrl]]) {
+    return YES;
+  } else {
+    return [super isUsingEmbeddedResource];
   }
 }
 

@@ -11,6 +11,8 @@
 #import <OpenGLES/EAGL.h>
 #import "EXGLObjectManager.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class EXGLContext;
 
 @protocol EXGLContextDelegate <NSObject>
@@ -24,8 +26,8 @@
 
 @interface EXGLContext : NSObject
 
-- (instancetype)initWithDelegate:(id<EXGLContextDelegate>)delegate andManager:(nonnull EXGLObjectManager *)manager;
-- (void)initialize:(void(^)(BOOL))callback;
+- (instancetype)initWithDelegate:(nullable id<EXGLContextDelegate>)delegate andManager:(nonnull EXGLObjectManager *)manager;
+- (void)initialize:(void(^ _Nullable)(BOOL))callback;
 - (BOOL)isInitialized;
 - (EAGLContext *)createSharedEAGLContext;
 - (void)runAsync:(void(^)(void))callback;
@@ -39,3 +41,5 @@
 @property (nonatomic, weak, nullable) id <EXGLContextDelegate> delegate;
 
 @end
+
+NS_ASSUME_NONNULL_END

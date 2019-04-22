@@ -84,7 +84,7 @@ Here are the steps to build a standalone iOS app:
 - `gulp ios-shell-app --url [the published experience url] --action configure --type [simulator or archive] --archivePath [path to ExpoKitApp.app] --sdkVersion [sdk version of your experience] --output your-app.tar.gz`
 - This bundle is not signed and cannot be submitted to iTunes Connect as-is; you'll need to manually sign it if you'd like to submit it to Apple. [Fastlane](https://fastlane.tools/) is a good option for this. Also, [Expo will do this for you](https://docs.expo.io/versions/latest/guides/building-standalone-apps.html) if you don't need to build this project from source.
 - If you created a simulator build in the first step, unpack the tar.gz using `tar -xvzf your-app.tar.gz`. Then you can run this on iPhone Simulator using `xcrun simctl install booted <app path>` and `xcrun simctl launch booted <app identifier>`. Another alternative which some people prefer is to install the [ios-sim](https://github.com/phonegap/ios-sim) tool and then use `ios-sim launch <app path>`.
-- There are a few more optional flags you can pass to this script. They are all documented in the block comment for `createIOSShellAppAsync()` inside `xdl/src/detach/IosShellApp.js`.
+- There are a few more optional flags you can pass to this script. They are all documented in the block comments inside `xdl/src/detach/IosShellApp.js`.
 
 ## Modifying JS Code
 The Expo client apps run a root Expo project in addition to native code. By default this will use a published version of the project, so any changes made in the `js` directory will not show up without some extra work.
@@ -107,9 +107,12 @@ The native Android Studio and XCode projects have a build hook which will find t
 
 ### iOS
 
-Press Command+U in XCode to build and test the `ExponentIntegrationTests` unit test target. Most of the tests are normal XCTests.
+For native XCTest unit tests:
 
-One test in particular, `testDoesTestSuiteAppPassAllJSTests`, requires you to configure `EXTestEnvironment.plist` with a key `testSuiteUrl` whose value is the url to load some version of Expo's [test-suite](https://github.com/expo/test-suite) app. This will run a bunch of Jasmine tests against the Expo SDK.
+- Press Command+U in XCode to build and test the `Tests` unit test target.
+- Alternatively, run `fastlane ios test` from the parent directory of `ios`.
+
+For JS integration tests, test the `ExponentIntegrationTests` target (not included in the default test scheme). This target requires you to configure `EXTestEnvironment.plist` with a key `testSuiteUrl` whose value is the url to load some version of Expo's [test-suite](https://github.com/expo/test-suite) app. This will run a bunch of Jasmine tests against the Expo SDK.
 
 ## Contributing
 Please check with us before putting work into a Pull Request! It is often harder to maintain code than it is to write it. The best place to talk to us is on Slack at https://slack.expo.io.

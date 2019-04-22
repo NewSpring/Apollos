@@ -1,5 +1,6 @@
 // Copyright 2015-present 650 Industries. All rights reserved.
 
+#import "EXEnvironment.h"
 #import "EXErrorRecoveryManager.h"
 #import "EXFileDownloader.h"
 #import "EXKernel.h"
@@ -12,7 +13,6 @@
 #import "EXKernelAppRegistry.h"
 #import "EXKernelLinkingManager.h"
 #import "EXManifestResource.h"
-#import "EXShellManager.h"
 
 #import <React/RCTUtils.h>
 
@@ -177,7 +177,7 @@ NSTimeInterval const kEXJSBundleTimeout = 60 * 5;
 {
   // if we're in dev mode, don't try loading cached manifest
   if ([_httpManifestUrl.host isEqualToString:@"localhost"]
-      || ([EXShellManager sharedInstance].isShell && [EXShellManager sharedInstance].isDebugXCodeScheme)) {
+      || ([EXEnvironment sharedEnvironment].isDetached && [EXEnvironment sharedEnvironment].isDebugXCodeScheme)) {
     // we can't pre-detect if this person is using a developer tool, but using localhost is a pretty solid indicator.
     [self _startAppFetcher:[[EXAppFetcherDevelopmentMode alloc] initWithAppLoader:self]];
   } else {
@@ -188,7 +188,7 @@ NSTimeInterval const kEXJSBundleTimeout = 60 * 5;
 - (void)_fetchCachedManifest
 {
   [self fetchManifestWithCacheBehavior:EXCachedResourceOnlyCache success:^(NSDictionary * cachedManifest) {
-    _cachedManifest = cachedManifest;
+    self.cachedManifest = cachedManifest;
     [self _fetchBundleWithManifest:cachedManifest];
   } failure:^(NSError * error) {
     [self _startAppFetcher:[[EXAppFetcherWithTimeout alloc] initWithAppLoader:self timeout:kEXAppLoaderDefaultTimeout]];
@@ -229,8 +229,8 @@ NSTimeInterval const kEXJSBundleTimeout = 60 * 5;
     }
   }
 
-  // only support checkAutomatically: ON_ERROR_RECOVERY in shell & detached apps
-  if (![EXShellManager sharedInstance].isShell) {
+  // only support checkAutomatically: ON_ERROR_RECOVERY in detached apps
+  if (![EXEnvironment sharedEnvironment].isDetached) {
     shouldCheckForUpdate = YES;
   }
 
@@ -242,7 +242,8 @@ NSTimeInterval const kEXJSBundleTimeout = 60 * 5;
 
   // if remote updates are disabled, or we're using `reloadFromCache`, don't check for an update.
   // these checks need to be here because they need to happen after the dev mode check above.
-  if (_shouldUseCacheOnly || ([EXShellManager sharedInstance].isShell && ![EXShellManager sharedInstance].areRemoteUpdatesEnabled)) {
+  if (_shouldUseCacheOnly ||
+      ([EXEnvironment sharedEnvironment].isDetached && ![EXEnvironment sharedEnvironment].areRemoteUpdatesEnabled)) {
     shouldCheckForUpdate = NO;
   }
 
@@ -316,8 +317,8 @@ NSTimeInterval const kEXJSBundleTimeout = 60 * 5;
 
 - (void)appFetcher:(EXAppFetcher *)appFetcher didFailWithError:(NSError *)error
 {
+  // don't nullify appFetcher - we need to use its state to record the circumstances of the error
   _error = error;
-  _appFetcher = nil;
   if (_delegate) {
     [_delegate appLoader:self didFailWithError:error];
   }
@@ -391,7 +392,7 @@ NSTimeInterval const kEXJSBundleTimeout = 60 * 5;
     success([NSDictionary dictionaryWithDictionary:mutableManifest]);
   } errorBlock:^(NSError * _Nonnull error) {
 #if DEBUG
-    if ([EXShellManager sharedInstance].isShell && error &&
+    if ([EXEnvironment sharedEnvironment].isDetached && error &&
         (error.code == 404 || error.domain == EXNetworkErrorDomain)) {
       NSString *message = error.localizedDescription;
       message = [NSString stringWithFormat:@"Make sure you are serving your project from XDE or exp (%@)", message];

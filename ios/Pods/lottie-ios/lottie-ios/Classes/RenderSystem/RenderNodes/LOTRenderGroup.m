@@ -30,7 +30,7 @@
   LOTBezierPath *_localPath;
   BOOL _rootNodeHasUpdate;
   LOTNumberInterpolator *_opacityInterpolator;
-  LOTTransformInterpolator *_transformInterolator;
+  LOTTransformInterpolator *_transformInterpolator;
 }
 
 - (instancetype _Nonnull)initWithInputNode:(LOTAnimatorNode * _Nullable)inputNode
@@ -47,12 +47,19 @@
 }
 
 - (NSDictionary *)valueInterpolators {
-  if (_opacityInterpolator && _transformInterolator) {
-    return @{@"Transform.Opacity" : _opacityInterpolator,
-             @"Transform.Position" : _transformInterolator.positionInterpolator,
-             @"Transform.Scale" : _transformInterolator.scaleInterpolator,
-             @"Transform.Rotation" : _transformInterolator.scaleInterpolator,
-             @"Transform.Anchor Point" : _transformInterolator.anchorInterpolator};
+  if (_opacityInterpolator && _transformInterpolator) {
+    return @{@"Opacity" : _opacityInterpolator,
+             @"Position" : _transformInterpolator.positionInterpolator,
+             @"Scale" : _transformInterpolator.scaleInterpolator,
+             @"Rotation" : _transformInterpolator.scaleInterpolator,
+             @"Anchor Point" : _transformInterpolator.anchorInterpolator,
+             // Deprecated
+             @"Transform.Opacity" : _opacityInterpolator,
+             @"Transform.Position" : _transformInterpolator.positionInterpolator,
+             @"Transform.Scale" : _transformInterpolator.scaleInterpolator,
+             @"Transform.Rotation" : _transformInterpolator.scaleInterpolator,
+             @"Transform.Anchor Point" : _transformInterpolator.anchorInterpolator
+             };
   }
   return nil;
 }
@@ -115,7 +122,7 @@
   }
   if (transform) {
     _opacityInterpolator = [[LOTNumberInterpolator alloc] initWithKeyframes:transform.opacity.keyframes];
-    _transformInterolator = [[LOTTransformInterpolator alloc] initWithPosition:transform.position.keyframes
+    _transformInterpolator = [[LOTTransformInterpolator alloc] initWithPosition:transform.position.keyframes
                                                                       rotation:transform.rotation.keyframes
                                                                         anchor:transform.anchor.keyframes
                                                                          scale:transform.scale.keyframes];
@@ -125,7 +132,7 @@
 
 - (BOOL)needsUpdateForFrame:(NSNumber *)frame {
   return ([_opacityInterpolator hasUpdateForFrame:frame] ||
-          [_transformInterolator hasUpdateForFrame:frame] ||
+          [_transformInterpolator hasUpdateForFrame:frame] ||
           _rootNodeHasUpdate);
 
 }
@@ -142,8 +149,8 @@
   if (_opacityInterpolator) {
     self.containerLayer.opacity = [_opacityInterpolator floatValueForFrame:self.currentFrame];
   }
-  if (_transformInterolator) {
-    CATransform3D xform = [_transformInterolator transformForFrame:self.currentFrame];
+  if (_transformInterpolator) {
+    CATransform3D xform = [_transformInterpolator transformForFrame:self.currentFrame];
     self.containerLayer.transform = xform;
     
     CGAffineTransform appliedXform = CATransform3DGetAffineTransform(xform);
@@ -176,29 +183,55 @@
   return _outputPath;
 }
 
-- (BOOL)setInterpolatorValue:(id)value
-                      forKey:(NSString *)key
-                    forFrame:(NSNumber *)frame {
-  BOOL interpolatorsSet = [super setInterpolatorValue:value forKey:key forFrame:frame];
-  if (interpolatorsSet) {
-    return YES;
+- (void)searchNodesForKeypath:(LOTKeypath * _Nonnull)keypath {
+  [self.inputNode searchNodesForKeypath:keypath];
+  if ([keypath pushKey:self.keyname]) {
+    // Matches self. Dig deeper.
+    // Check interpolators
+
+    if ([keypath pushKey:@"Transform"]) {
+      // Matches a Transform interpolator!
+      if (self.valueInterpolators[keypath.currentKey] != nil) {
+        [keypath pushKey:keypath.currentKey];
+        [keypath addSearchResultForCurrentPath:self];
+        [keypath popKey];
+      }
+      [keypath popKey];
+    }
+
+    if (keypath.endOfKeypath) {
+      // We have a match!
+      [keypath addSearchResultForCurrentPath:self];
+    }
+    // Check child nodes
+    [_rootNode searchNodesForKeypath:keypath];
+    [keypath popKey];
   }
-  return [_rootNode setValue:value forKeyAtPath:key forFrame:frame];
 }
 
-- (void)logHierarchyKeypathsWithParent:(NSString * _Nullable)parent {
-  NSString *keypath = self.keyname;
-  if (parent && self.keyname) {
-    keypath = [NSString stringWithFormat:@"%@.%@", parent, self.keyname];
-  }
-  if (keypath) {
-    for (NSString *interpolator in self.valueInterpolators.allKeys) {
-      [self logString:[NSString stringWithFormat:@"%@.%@", keypath, interpolator]];
+- (void)setValueDelegate:(id<LOTValueDelegate> _Nonnull)delegate
+              forKeypath:(LOTKeypath * _Nonnull)keypath {
+  if ([keypath pushKey:self.keyname]) {
+    // Matches self. Dig deeper.
+    // Check interpolators
+    if ([keypath pushKey:@"Transform"]) {
+      // Matches a Transform interpolator!
+      LOTValueInterpolator *interpolator = self.valueInterpolators[keypath.currentKey];
+      if (interpolator) {
+        // We have a match!
+        [interpolator setValueDelegate:delegate];
+      }
+      [keypath popKey];
     }
-    [_rootNode logHierarchyKeypathsWithParent:keypath];
+
+    // Check child nodes
+    [_rootNode setValueDelegate:delegate forKeypath:keypath];
+
+    [keypath popKey];
   }
-  
-  [self.inputNode logHierarchyKeypathsWithParent:parent];
+
+  // Check upstream
+  [self.inputNode setValueDelegate:delegate forKeypath:keypath];
 }
 
 @end

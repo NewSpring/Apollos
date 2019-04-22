@@ -2,9 +2,9 @@
 #import "EXGLContext.h"
 #import "EXFileSystem.h"
 
+#include <OpenGLES/ES2/glext.h>
 #include <OpenGLES/ES3/gl.h>
 #include <OpenGLES/ES3/glext.h>
-#import <ARKit/ARKit.h>
 
 #import <React/RCTBridgeModule.h>
 #import <React/RCTUtils.h>
@@ -41,7 +41,7 @@
 @property (nonatomic, assign) BOOL renderbufferPresented;
 @property (nonatomic, assign) CGSize viewBuffersSize;
 
-@property (nonatomic, strong) id arSessionManager;
+@property (nonatomic, weak) id arSessionManager;
 
 @end
 
@@ -135,7 +135,7 @@ RCT_NOT_IMPLEMENTED(- (instancetype)init);
 - (void)runOnUIThread:(void(^)(void))callback
 {
   dispatch_sync(dispatch_get_main_queue(), ^{
-    [_glContext runInEAGLContext:_uiEaglCtx callback:callback];
+    [self->_glContext runInEAGLContext:self->_uiEaglCtx callback:callback];
   });
 }
 
@@ -182,7 +182,7 @@ RCT_NOT_IMPLEMENTED(- (instancetype)init);
     GLint prevRenderbuffer;
     glGetIntegerv(GL_FRAMEBUFFER_BINDING, &prevFramebuffer);
     glGetIntegerv(GL_RENDERBUFFER_BINDING, &prevRenderbuffer);
-    if (prevFramebuffer == _viewFramebuffer) {
+    if (prevFramebuffer == self->_viewFramebuffer) {
       prevFramebuffer = 0;
     }
     
@@ -190,46 +190,46 @@ RCT_NOT_IMPLEMENTED(- (instancetype)init);
     [self deleteViewBuffers];
     
     // Set up view framebuffer
-    glGenFramebuffers(1, &_viewFramebuffer);
-    glBindFramebuffer(GL_FRAMEBUFFER, _viewFramebuffer);
+    glGenFramebuffers(1, &(self->_viewFramebuffer));
+    glBindFramebuffer(GL_FRAMEBUFFER, self->_viewFramebuffer);
     
     // Set up new color renderbuffer
-    glGenRenderbuffers(1, &_viewColorbuffer);
-    glBindRenderbuffer(GL_RENDERBUFFER, _viewColorbuffer);
+    glGenRenderbuffers(1, &(self->_viewColorbuffer));
+    glBindRenderbuffer(GL_RENDERBUFFER, self->_viewColorbuffer);
     
     [self runOnUIThread:^{
-      glBindRenderbuffer(GL_RENDERBUFFER, _viewColorbuffer);
-      [_uiEaglCtx renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer *)self.layer];
+      glBindRenderbuffer(GL_RENDERBUFFER, self->_viewColorbuffer);
+      [self->_uiEaglCtx renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer *)self.layer];
     }];
     
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
-                              GL_RENDERBUFFER, _viewColorbuffer);
-    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &_layerWidth);
-    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &_layerHeight);
+                              GL_RENDERBUFFER, self->_viewColorbuffer);
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &(self->_layerWidth));
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &(self->_layerHeight));
     
     // Set up MSAA framebuffer/renderbuffer
-    glGenFramebuffers(1, &_msaaFramebuffer);
-    glGenRenderbuffers(1, &_msaaRenderbuffer);
-    glBindFramebuffer(GL_FRAMEBUFFER, _msaaFramebuffer);
-    glBindRenderbuffer(GL_RENDERBUFFER, _msaaRenderbuffer);
+    glGenFramebuffers(1, &(self->_msaaFramebuffer));
+    glGenRenderbuffers(1, &(self->_msaaRenderbuffer));
+    glBindFramebuffer(GL_FRAMEBUFFER, self->_msaaFramebuffer);
+    glBindRenderbuffer(GL_RENDERBUFFER, self->_msaaRenderbuffer);
     glRenderbufferStorageMultisample(GL_RENDERBUFFER, self.msaaSamples.intValue, GL_RGBA8,
-                                     _layerWidth, _layerHeight);
+                                     self->_layerWidth, self->_layerHeight);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
-                              GL_RENDERBUFFER, _msaaRenderbuffer);
+                              GL_RENDERBUFFER, self->_msaaRenderbuffer);
 
-    if (_glContext.isInitialized) {
-      UEXGLContextSetDefaultFramebuffer(_glContext.contextId, _msaaFramebuffer);
+    if (self->_glContext.isInitialized) {
+      UEXGLContextSetDefaultFramebuffer(self->_glContext.contextId, self->_msaaFramebuffer);
     }
     
     // Set up new depth+stencil renderbuffer
-    glGenRenderbuffers(1, &_viewDepthStencilbuffer);
-    glBindRenderbuffer(GL_RENDERBUFFER, _viewDepthStencilbuffer);
+    glGenRenderbuffers(1, &(self->_viewDepthStencilbuffer));
+    glBindRenderbuffer(GL_RENDERBUFFER, self->_viewDepthStencilbuffer);
     glRenderbufferStorageMultisample(GL_RENDERBUFFER, self.msaaSamples.intValue, GL_DEPTH24_STENCIL8,
-                                     _layerWidth, _layerHeight);
+                                     self->_layerWidth, self->_layerHeight);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT,
-                              GL_RENDERBUFFER, _viewDepthStencilbuffer);
+                              GL_RENDERBUFFER, self->_viewDepthStencilbuffer);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_STENCIL_ATTACHMENT,
-                              GL_RENDERBUFFER, _viewDepthStencilbuffer);
+                              GL_RENDERBUFFER, self->_viewDepthStencilbuffer);
     
     // Resize viewport
     glViewport(0, 0, width, height);
@@ -267,19 +267,14 @@ RCT_NOT_IMPLEMENTED(- (instancetype)init);
   // framebuffer to create is unknown. In this case we have nowhere to render to so we skip
   // this frame (the GL work to run remains on the queue for next time).
 
-  if (_glContext.isInitialized && _viewFramebuffer != 0) {
-    // Update AR stuff if we have an AR session running
-    if (_arSessionManager) {
-      [_arSessionManager updateARCamTexture];
-    }
-    
+  if (_glContext.isInitialized && _viewFramebuffer != 0) {    
     // Present current state of view buffers
     // This happens exactly at `gl.endFrameEXP()` in the queue
     if (_viewColorbuffer != 0 && !_renderbufferPresented) {
       // bind renderbuffer and present it on the layer
       [_glContext runInEAGLContext:_uiEaglCtx callback:^{
-        glBindRenderbuffer(GL_RENDERBUFFER, _viewColorbuffer);
-        [_uiEaglCtx presentRenderbuffer:GL_RENDERBUFFER];
+        glBindRenderbuffer(GL_RENDERBUFFER, self->_viewColorbuffer);
+        [self->_uiEaglCtx presentRenderbuffer:GL_RENDERBUFFER];
       }];
       
       // mark renderbuffer as presented
@@ -303,7 +298,13 @@ RCT_NOT_IMPLEMENTED(- (instancetype)init);
     // Resolve multisampling and present
     glBindFramebuffer(GL_READ_FRAMEBUFFER, _msaaFramebuffer);
     glBindFramebuffer(GL_DRAW_FRAMEBUFFER, _viewFramebuffer);
-    glBlitFramebuffer(0,0,_layerWidth,_layerHeight, 0,0,_layerWidth,_layerHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+    
+    // glBlitFramebuffer works only on OpenGL ES 3.0, so we need a fallback to Apple's extension for OpenGL ES 2.0
+    if (_glContext.eaglCtx.API == kEAGLRenderingAPIOpenGLES3) {
+      glBlitFramebuffer(0, 0, _layerWidth, _layerHeight, 0, 0, _layerWidth, _layerHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+    } else {
+      glResolveMultisampleFramebufferAPPLE();
+    }
     
     // Restore surrounding framebuffer
     if (prevFramebuffer != 0) {
@@ -352,75 +353,15 @@ RCT_NOT_IMPLEMENTED(- (instancetype)init);
 
 #pragma mark - maybe AR
 
-- (NSDictionary *)maybeStartARSession
-{
-  Class sessionManagerClass = NSClassFromString(@"EXGLARSessionManager");
-  if (sessionManagerClass) {
-    _arSessionManager = [[sessionManagerClass alloc] init];
-  } else {
-    return @{ @"error": @"AR capabilities were not included with this build." };
-  }
-  return [_arSessionManager startARSessionWithGLView:self];
+- (void)setArSessionManager:(id)arSessionManager {
+  _arSessionManager = arSessionManager;
 }
 
 - (void)maybeStopARSession
 {
   if (_arSessionManager) {
-    [_arSessionManager stopARSession];
+    [_arSessionManager stop];
     _arSessionManager = nil;
-  }
-}
-
-- (NSDictionary *)arMatricesForViewportSize:(CGSize)viewportSize zNear:(CGFloat)zNear zFar:(CGFloat)zFar
-{
-  if (_arSessionManager) {
-    return [_arSessionManager arMatricesForViewportSize:viewportSize zNear:zNear zFar:zFar];
-  }
-  return @{};
-}
-
-- (NSDictionary *)arLightEstimation
-{
-  if (_arSessionManager) {
-    return [_arSessionManager arLightEstimation];
-  }
-  return @{};
-}
-
-- (NSDictionary *)rawFeaturePoints
-{
-  if (_arSessionManager) {
-    return [_arSessionManager rawFeaturePoints];
-  }
-  return @{};
-}
-
-- (NSDictionary *)planes
-{
-  if (_arSessionManager) {
-    return [_arSessionManager planes];
-  }
-  return @{};
-}
-
-- (void)setIsPlaneDetectionEnabled:(BOOL)planeDetectionEnabled
-{
-  if (_arSessionManager) {
-    [_arSessionManager setIsPlaneDetectionEnabled:planeDetectionEnabled];
-  }
-}
-
-- (void)setIsLightEstimationEnabled:(BOOL)lightEstimationEnabled
-{
-  if (_arSessionManager) {
-    [_arSessionManager setIsLightEstimationEnabled:lightEstimationEnabled];
-  }
-}
-
-- (void)setWorldAlignment:(NSInteger)worldAlignment
-{
-  if (_arSessionManager) {
-    [_arSessionManager setWorldAlignment:worldAlignment];
   }
 }
 

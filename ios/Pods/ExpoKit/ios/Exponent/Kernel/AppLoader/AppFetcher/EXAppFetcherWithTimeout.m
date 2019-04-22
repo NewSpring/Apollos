@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
   [self.appLoader fetchManifestWithCacheBehavior:EXCachedResourceWriteToCache success:^(NSDictionary * _Nonnull manifest) {
     self.manifest = manifest;
-    if ([[self class] areDevToolsEnabledWithManifest:manifest] && _timer) {
+    if ([[self class] areDevToolsEnabledWithManifest:manifest] && self.timer) {
       // make sure we never time out in dev mode
       // this can happen because there is no cached manifest & therefore we fall back to default behavior w/ timer
       [self _stopTimer];
@@ -111,6 +111,7 @@ NS_ASSUME_NONNULL_BEGIN
     // we don't have a bundle but need to finish,
     // try to grab a cache, using self.appLoader.manifest, which at this point is the cachedManifest
     [self fetchJSBundleWithManifest:self.appLoader.manifest cacheBehavior:EXCachedResourceFallBackToNetwork timeoutInterval:kEXJSBundleTimeout progress:nil success:^(NSData * _Nonnull data) {
+      self.manifest = self.appLoader.manifest;
       self.bundle = data;
       [self.delegate appFetcher:self didFinishLoadingManifest:self.appLoader.manifest bundle:self.bundle];
     } error:^(NSError * _Nonnull error) {

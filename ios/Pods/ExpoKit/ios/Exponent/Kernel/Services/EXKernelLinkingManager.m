@@ -1,12 +1,11 @@
 // Copyright 2015-present 650 Industries. All rights reserved.
 
-#import "EXKernel.h"
 #import "EXAppLoader.h"
+#import "EXEnvironment.h"
+#import "EXKernel.h"
 #import "EXKernelLinkingManager.h"
 #import "ExpoKit.h"
 #import "EXReactAppManager.h"
-#import "EXShellManager.h"
-#import "EXVersions.h"
 
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <React/RCTBridge+Private.h>
@@ -33,7 +32,7 @@ NSString *kEXExpoLegacyDeepLinkSeparator = @"+";
   EXKernelAppRecord *destinationApp = nil;
   NSURL *urlToRoute = url;
 
-  if (isUniversalLink && [EXShellManager sharedInstance].isShell) {
+  if (isUniversalLink && [EXEnvironment sharedEnvironment].isDetached) {
     destinationApp = [EXKernel sharedInstance].appRegistry.standaloneAppRecord;
   } else {
     urlToRoute = [[self class] uriTransformedForLinking:url isUniversalLink:isUniversalLink];
@@ -59,7 +58,7 @@ NSString *kEXExpoLegacyDeepLinkSeparator = @"+";
   if (destinationApp) {
     [[EXKernel sharedInstance] sendUrl:urlToRoute.absoluteString toAppRecord:destinationApp];
   } else {
-    if (![EXShellManager sharedInstance].isShell
+    if (![EXEnvironment sharedEnvironment].isDetached
         && [EXKernel sharedInstance].appRegistry.homeAppRecord
         && [EXKernel sharedInstance].appRegistry.homeAppRecord.appManager.status == kEXReactAppManagerStatusRunning) {
       // if Home is present and running, open a new app with this url.
@@ -78,13 +77,12 @@ NSString *kEXExpoLegacyDeepLinkSeparator = @"+";
 
 - (BOOL)linkingModule:(__unused id)linkingModule shouldOpenExpoUrl:(NSURL *)url
 {
-  // do not attempt to route internal exponent links at all if we're in a detached exponent app.
-  NSDictionary *versionsConfig = [EXVersions sharedInstance].versions;
-  if (versionsConfig && versionsConfig[@"detachedNativeVersions"]) {
+  // do not attempt to route internal exponent links at all if we're in a detached app.
+  if ([EXEnvironment sharedEnvironment].isDetached) {
     return NO;
   }
   
-  // we don't need to explicitly include a shell app custom URL scheme here
+  // we don't need to explicitly include a standalone app custom URL scheme here
   // because the default iOS linking behavior will still hand those links back to Exponent.
   NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
   if (components) {
@@ -108,10 +106,10 @@ NSString *kEXExpoLegacyDeepLinkSeparator = @"+";
   }
   NSURLComponents *components = [NSURLComponents componentsWithURL:uri resolvingAgainstBaseURL:YES];
 
-  // if the provided uri is the shell app manifest uri,
+  // if the provided uri is the standalone app manifest uri,
   // this should have been transformed into customscheme://deep-link
   // and then all we do here is strip off the deep-link part.
-  if ([EXShellManager sharedInstance].isShell && [[EXShellManager sharedInstance] isShellUrlScheme:components.scheme]) {
+  if ([EXEnvironment sharedEnvironment].isDetached && [[EXEnvironment sharedEnvironment] isStandaloneUrlScheme:components.scheme]) {
     if (useLegacy) {
       return [NSString stringWithFormat:@"%@://%@", components.scheme, kEXExpoLegacyDeepLinkSeparator];
     } else {
@@ -160,17 +158,17 @@ NSString *kEXExpoLegacyDeepLinkSeparator = @"+";
     return nil;
   }
   
-  // If the initial uri is a universal link in a shell app don't touch it.
-  if ([EXShellManager sharedInstance].isShell && isUniversalLink) {
+  // If the initial uri is a universal link in a standalone app don't touch it.
+  if ([EXEnvironment sharedEnvironment].isDetached && isUniversalLink) {
     return uri;
   }
 
   NSURL *normalizedUri = [self _uriNormalizedForLinking:uri];
 
-  if ([EXShellManager sharedInstance].isShell && [EXShellManager sharedInstance].hasUrlScheme) {
-    // if the provided uri is the shell app manifest uri,
+  if ([EXEnvironment sharedEnvironment].isDetached && [EXEnvironment sharedEnvironment].hasUrlScheme) {
+    // if the provided uri is the standalone app manifest uri,
     // transform this into customscheme://deep-link
-    if ([self _isShellManifestUrl:normalizedUri]) {
+    if ([self _isStandaloneManifestUrl:normalizedUri]) {
       NSString *uriString = normalizedUri.absoluteString;
       NSRange deepLinkRange = [uriString rangeOfString:kEXExpoDeepLinkSeparator];
       // deprecated but we still need to support these links
@@ -182,7 +180,7 @@ NSString *kEXExpoLegacyDeepLinkSeparator = @"+";
       } else if (deepLinkRangeLegacy.length > 0) {
         deepLink = [uriString substringFromIndex:deepLinkRangeLegacy.location + kEXExpoLegacyDeepLinkSeparator.length];
       }
-      NSString *result = [NSString stringWithFormat:@"%@://%@", [EXShellManager sharedInstance].urlScheme, deepLink];
+      NSString *result = [NSString stringWithFormat:@"%@://%@", [EXEnvironment sharedEnvironment].urlScheme, deepLink];
       return [NSURL URLWithString:result];
     }
   }
@@ -192,7 +190,7 @@ NSString *kEXExpoLegacyDeepLinkSeparator = @"+";
 + (NSURL *)initialUriWithManifestUrl:(NSURL *)manifestUrl
 {
   NSURL *urlToTransform = manifestUrl;
-  if ([EXShellManager sharedInstance].isShell) {
+  if ([EXEnvironment sharedEnvironment].isDetached) {
     NSDictionary *launchOptions = [ExpoKit sharedInstance].launchOptions;
     NSURL *launchOptionsUrl = [[self class] initialUrlFromLaunchOptions:launchOptions];
     if (launchOptionsUrl) {
@@ -206,8 +204,8 @@ NSString *kEXExpoLegacyDeepLinkSeparator = @"+";
 {
   NSURLComponents *components = [NSURLComponents componentsWithURL:uri resolvingAgainstBaseURL:YES];
 
-  if ([EXShellManager sharedInstance].isShell && [[EXShellManager sharedInstance] isShellUrlScheme:components.scheme]) {
-    // if we're a shell and this uri had the shell scheme, leave it alone.
+  if ([EXEnvironment sharedEnvironment].isDetached && [[EXEnvironment sharedEnvironment] isStandaloneUrlScheme:components.scheme]) {
+    // if we're standalone and this uri had the standalone scheme, leave it alone.
   } else {
     if ([components.scheme isEqualToString:@"https"]) {
       components.scheme = @"exps";
@@ -225,12 +223,12 @@ NSString *kEXExpoLegacyDeepLinkSeparator = @"+";
   return [components URL];
 }
 
-+ (BOOL)_isShellManifestUrl: (NSURL *)normalizedUri
++ (BOOL)_isStandaloneManifestUrl: (NSURL *)normalizedUri
 {
   NSString *uriString = normalizedUri.absoluteString;
-  for (NSString *shellManifestUrl in [EXShellManager sharedInstance].allManifestUrls) {
-    NSURL *normalizedShellManifestURL = [self _uriNormalizedForLinking:[NSURL URLWithString:shellManifestUrl]];
-    if ([normalizedShellManifestURL.absoluteString isEqualToString:uriString]) {
+  for (NSString *manifestUrl in [EXEnvironment sharedEnvironment].allManifestUrls) {
+    NSURL *normalizedManifestURL = [self _uriNormalizedForLinking:[NSURL URLWithString:manifestUrl]];
+    if ([normalizedManifestURL.absoluteString isEqualToString:uriString]) {
       return YES;
     }
   }
@@ -250,7 +248,6 @@ NSString *kEXExpoLegacyDeepLinkSeparator = @"+";
       [components.host isEqualToString:@"exp.direct"] ||
       [components.host isEqualToString:@"expo.test"] ||
       [components.host hasSuffix:@".exp.host"] ||
-      [components.host hasSuffix:@".expo.io"] ||
       [components.host hasSuffix:@".exp.direct"] ||
       [components.host hasSuffix:@".expo.test"];
   }

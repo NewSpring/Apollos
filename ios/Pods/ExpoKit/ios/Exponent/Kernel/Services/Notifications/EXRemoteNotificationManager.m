@@ -1,10 +1,10 @@
 // Copyright 2015-present 650 Industries. All rights reserved.
 
 #import "EXApiV2Client+EXRemoteNotifications.h"
+#import "EXEnvironment.h"
 #import "EXKernel.h"
 #import "EXProvisioningProfile.h"
 #import "EXRemoteNotificationManager.h"
-#import "EXShellManager.h"
 #import "NSData+EXRemoteNotifications.h"
 
 #import <React/RCTUtils.h>
@@ -125,16 +125,16 @@ typedef void(^EXRemoteNotificationAPNSTokenHandler)(NSData * _Nullable apnsToken
       return;
     }
     
-    if (_currentAPNSToken) {
+    if (self->_currentAPNSToken) {
       NSString *experienceId = ((EXScopedBridgeModule *)scopedModule).experienceId;
       [[EXApiV2Client sharedClient] getExpoPushTokenForExperience:experienceId
-                                                      deviceToken:_currentAPNSToken
+                                                      deviceToken:self->_currentAPNSToken
                                                 completionHandler:handler];
       return;
     }
     
     // When we receive the APNS token, register it with our server and receive an Expo push token
-    [_apnsTokenHandlers addObject:^(NSData * _Nullable apnsToken, NSError * _Nullable registrationError) {
+    [self->_apnsTokenHandlers addObject:^(NSData * _Nullable apnsToken, NSError * _Nullable registrationError) {
       __strong id strongScopedModule = weakScopedModule;
       if (!strongScopedModule) {
         NSError *error = [NSError errorWithDomain:kEXKernelErrorDomain
@@ -193,13 +193,13 @@ typedef void(^EXRemoteNotificationAPNSTokenHandler)(NSData * _Nullable apnsToken
   
   _isPostingCurrentToken = YES;
   [[EXApiV2Client sharedClient] updateDeviceToken:currentToken completionHandler:^(NSError * _Nullable error) {
-    dispatch_async(_queue, ^{
+    dispatch_async(self->_queue, ^{
       if (error) {
         DDLogWarn(@"Failed to send the APNS token to the Expo server: %@", error);
       }
       
-      if ([currentToken isEqualToData:_currentAPNSToken]) {
-        _isPostingCurrentToken = NO;
+      if ([currentToken isEqualToData:self->_currentAPNSToken]) {
+        self->_isPostingCurrentToken = NO;
         if (!error) {
           [NSUserDefaults.standardUserDefaults setObject:currentToken forKey:kEXCurrentAPNSTokenDefaultsKey];
         }
@@ -228,7 +228,7 @@ typedef void(^EXRemoteNotificationAPNSTokenHandler)(NSData * _Nullable apnsToken
 
 - (BOOL)_supportsCurrentRuntimeEnvironment
 {
-  if (![EXShellManager sharedInstance].isDetached) {
+  if (![EXEnvironment sharedEnvironment].isDetached) {
     return YES;
   }
   

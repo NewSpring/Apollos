@@ -4,7 +4,7 @@ platform :ios, '10.0'
 target 'newspring' do
   pod 'ExpoKit',
     :git => "http://github.com/expo/expo.git",
-    :tag => "ios/2.5.10",
+    :tag => "ios/2.6.8",
     :subspecs => [
       "Core",
       "CPP",

@@ -1,4 +1,5 @@
 #import "RNGestureHandlerState.h"
+#import "RNGestureHandlerDirection.h"
 #import "RNGestureHandlerEvents.h"
 
 #import <Foundation/Foundation.h>
@@ -65,7 +66,7 @@ if (value != nil) recognizer.prop = [RCTConvert type:value]; \
 - (void)reset;
 - (void)sendEventsInState:(RNGestureHandlerState)state
            forViewWithTag:(nonnull NSNumber *)reactTag
-            withExtraData:(RNGestureHandlerEventExtraData *)extraData;
+            withExtraData:(nonnull RNGestureHandlerEventExtraData *)extraData;
 
 @end
 

@@ -3,17 +3,17 @@
 @import UIKit;
 
 #import "EXAnalytics.h"
-#import "EXAppLoadingView.h"
-#import "EXErrorRecoveryManager.h"
-#import "EXFileDownloader.h"
-#import "EXAppViewController.h"
-#import "EXReactAppManager.h"
-#import "EXErrorView.h"
-#import "EXKernel.h"
 #import "EXAppLoader.h"
+#import "EXAppLoadingView.h"
+#import "EXAppViewController.h"
+#import "EXEnvironment.h"
+#import "EXErrorRecoveryManager.h"
+#import "EXErrorView.h"
+#import "EXFileDownloader.h"
+#import "EXKernel.h"
 #import "EXKernelUtil.h"
+#import "EXReactAppManager.h"
 #import "EXScreenOrientationManager.h"
-#import "EXShellManager.h"
 #import "EXUpdatesManager.h"
 
 #import <React/RCTUtils.h>
@@ -42,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) UIInterfaceOrientationMask supportedInterfaceOrientations; // override super
 @property (nonatomic, strong) NSTimer *tmrAutoReloadDebounce;
 @property (nonatomic, strong) NSDate *dtmLastFatalErrorShown;
+@property (nonatomic, strong) NSMutableArray<UIViewController *> *backgroundedControllers;
 
 @end
 
@@ -177,10 +178,40 @@ NS_ASSUME_NONNULL_BEGIN
   if (!self.isBridgeAlreadyLoading) {
     self.isBridgeAlreadyLoading = YES;
     dispatch_async(dispatch_get_main_queue(), ^{
-      _loadingView.manifest = manifest;
+      self->_loadingView.manifest = manifest;
       [self _enforceDesiredDeviceOrientation];
       [self _rebuildBridge];
     });
+  }
+}
+
+- (void)foregroundControllers
+{
+  if (_backgroundedControllers != nil) {
+    __block UIViewController *parentController = self;
+    
+    [_backgroundedControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull viewController, NSUInteger idx, BOOL * _Nonnull stop) {
+      [parentController presentViewController:viewController animated:NO completion:nil];
+      parentController = viewController;
+    }];
+    
+    _backgroundedControllers = nil;
+  }
+}
+
+- (void)backgroundControllers
+{
+  UIViewController *childController = [self presentedViewController];
+  
+  if (childController != nil) {
+    if (_backgroundedControllers == nil) {
+      _backgroundedControllers = [NSMutableArray new];
+    }
+    
+    while (childController != nil) {
+      [_backgroundedControllers addObject:childController];
+      childController = childController.presentedViewController;
+    }
   }
 }
 
@@ -199,7 +230,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)appLoader:(EXAppLoader *)appLoader didLoadBundleWithProgress:(EXLoadingProgress *)progress
 {
   dispatch_async(dispatch_get_main_queue(), ^{
-    [_loadingView updateStatusWithProgress:progress];
+    [self->_loadingView updateStatusWithProgress:progress];
   });
 }
 
@@ -207,8 +238,8 @@ NS_ASSUME_NONNULL_BEGIN
 {
   [self _whenManifestIsValidToOpen:manifest performBlock:^{
     [self _rebuildBridgeWithLoadingViewManifest:manifest];
-    if (_appRecord.appManager.status == kEXReactAppManagerStatusBridgeLoading) {
-      [_appRecord.appManager appLoaderFinished];
+    if (self->_appRecord.appManager.status == kEXReactAppManagerStatusBridgeLoading) {
+      [self->_appRecord.appManager appLoaderFinished];
     }
   }];
 }
@@ -424,9 +455,9 @@ NS_ASSUME_NONNULL_BEGIN
       if (isValid) {
         block();
       } else {
-        [self appLoader:_appRecord.appLoader didFailWithError:[NSError errorWithDomain:EXNetworkErrorDomain
-                                                                                  code:kEXErrorCodeAppForbidden
-                                                                              userInfo:@{ NSLocalizedDescriptionKey: @"Expo Client can only be used to view your own projects. To view this project, please ensure you are signed in to the same Expo account that created it." }]];
+        [self appLoader:self->_appRecord.appLoader didFailWithError:[NSError errorWithDomain:EXNetworkErrorDomain
+                                                                                        code:kEXErrorCodeAppForbidden
+                                                                                    userInfo:@{ NSLocalizedDescriptionKey: @"Expo Client can only be used to view your own projects. To view this project, please ensure you are signed in to the same Expo account that created it." }]];
       }
     }];
   } else {
