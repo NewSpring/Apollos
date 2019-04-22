@@ -23,7 +23,7 @@ PODS:
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - DoubleConversion (1.1.5)
-  - ExpoKit/Core (2.4.4):
+  - ExpoKit/Core (2.4.8):
     - Amplitude-iOS (~> 3.8)
     - Analytics (~> 3.5)
     - AppAuth (~> 0.4)
@@ -41,9 +41,10 @@ PODS:
     - GPUImage (~> 0.1.7)
     - JKBigInteger2 (= 0.0.5)
     - lottie-ios (~> 2.1.3)
-  - ExpoKit/CPP (2.4.4):
+    - React
+  - ExpoKit/CPP (2.4.8):
     - ExpoKit/Core
-  - ExpoKit/GL (2.4.4):
+  - ExpoKit/GL (2.4.8):
     - ExpoKit/CPP
   - Fabric (1.9.0)
   - FBAudienceNetwork (4.99.3)
@@ -82,6 +83,8 @@ PODS:
   - GPUImage (0.1.7)
   - JKBigInteger2 (0.0.5)
   - lottie-ios (2.1.5)
+  - React (0.54.2):
+    - React/Core (= 0.54.2)
   - React/ART (0.54.2):
     - React/Core
   - React/Core (0.54.2):
@@ -132,9 +135,9 @@ PODS:
 
 DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
-  - ExpoKit/Core (from `http://github.com/expo/expo.git`, tag `ios/2.4.4`)
-  - ExpoKit/CPP (from `http://github.com/expo/expo.git`, tag `ios/2.4.4`)
-  - ExpoKit/GL (from `http://github.com/expo/expo.git`, tag `ios/2.4.4`)
+  - ExpoKit/Core (from `http://github.com/expo/expo.git`, tag `ios/2.4.8`)
+  - ExpoKit/CPP (from `http://github.com/expo/expo.git`, tag `ios/2.4.8`)
+  - ExpoKit/GL (from `http://github.com/expo/expo.git`, tag `ios/2.4.8`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - React/ART (from `../node_modules/react-native`)
@@ -184,7 +187,7 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   ExpoKit:
     :git: http://github.com/expo/expo.git
-    :tag: ios/2.4.4
+    :tag: ios/2.4.8
   Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
   glog:
@@ -197,7 +200,7 @@ EXTERNAL SOURCES:
 CHECKOUT OPTIONS:
   ExpoKit:
     :git: http://github.com/expo/expo.git
-    :tag: ios/2.4.4
+    :tag: ios/2.4.8
 
 SPEC CHECKSUMS:
   Amplitude-iOS: 4a3c8807b2ea5369dc11e87e23825bff01e5a922
@@ -209,7 +212,7 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 2800c03334042fe80589423c8d80e582dcaec482
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   DoubleConversion: ebb6747c5b66026ad4f97b789c3ceac6f18e57a6
-  ExpoKit: e74388fc0f2b86d8989537194bebe435e9452a9e
+  ExpoKit: 385a89141ce953ce0a9dffeea964df1c437b8649
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   FBAudienceNetwork: 4db9db11614ea1a165c05233183b7fdf741db55e
   FBSDKCoreKit: a823ae35bdb60ebb8d7a7e51abe7c5d87d2bfced
@@ -231,6 +234,6 @@ SPEC CHECKSUMS:
   React: c237e42de9c70e5cac6eeb52b4cfd3a0910c1f00
   yoga: 55da126afc384965b96bff46652464373b330add
 
-PODFILE CHECKSUM: 093af3ab55550ae64b51cc3df38caa95ed911dd3
+PODFILE CHECKSUM: 658c38fd3f04efbd9bbdff6595581b00d82b409d
 
 COCOAPODS: 1.5.3

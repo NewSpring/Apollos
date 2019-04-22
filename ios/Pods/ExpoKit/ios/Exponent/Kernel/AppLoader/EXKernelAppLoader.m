@@ -1,5 +1,6 @@
 // Copyright 2015-present 650 Industries. All rights reserved.
 
+#import "EXApiUtil.h"
 #import "EXErrorRecoveryManager.h"
 #import "EXFileDownloader.h"
 #import "EXJavaScriptResource.h"
@@ -158,10 +159,7 @@ NSTimeInterval const kEXJSBundleTimeout = 60 * 5;
 {
   _confirmedManifest = _localManifest;
   _optimisticManifest = _localManifest;
-  [self _fetchRemoteJSBundleInProductionWithOptimisticManifest];
-  if (_delegate) {
-    [_delegate appLoader:self didLoadOptimisticManifest:_optimisticManifest];
-  }
+  [self _fetchCachedManifest];
 }
 
 - (void)_beginRequestWithRemoteManifest
@@ -172,7 +170,11 @@ NSTimeInterval const kEXJSBundleTimeout = 60 * 5;
     [self _resolveManifestAndBundleWithTimeout:NO length:0];
     return;
   }
-  
+  [self _fetchCachedManifest];
+}
+
+- (void)_fetchCachedManifest
+{
   // first get cached manifest
   // then try to fetch new one over network
   [self fetchManifestWithCacheBehavior:EXCachedResourceOnlyCache success:^(NSDictionary * cachedManifest) {
@@ -389,6 +391,12 @@ NSTimeInterval const kEXJSBundleTimeout = 60 * 5;
                                  userInfo:nil];
   }
   
+  // if we're using a localManifest, just return it immediately
+  if (_localManifest) {
+    success(_localManifest);
+    return;
+  }
+
   if (!([_httpManifestUrl.scheme isEqualToString:@"http"] || [_httpManifestUrl.scheme isEqualToString:@"https"])) {
     NSURLComponents *components = [NSURLComponents componentsWithURL:_httpManifestUrl resolvingAgainstBaseURL:NO];
     components.scheme = @"http";
@@ -442,7 +450,7 @@ NSTimeInterval const kEXJSBundleTimeout = 60 * 5;
                              error:(void (^)(NSError *))errorBlock
 {
   EXJavaScriptResource *jsResource = [[EXJavaScriptResource alloc] initWithBundleName:[_dataSource bundleResourceNameForAppLoader:self]
-                                                                            remoteUrl:[self _bundleUrlWithManifest:manifest]
+                                                                            remoteUrl:[EXApiUtil bundleUrlFromManifest:manifest]
                                                                       devToolsEnabled:[self _areDevToolsEnabledWithManifest:manifest]];
   jsResource.abiVersion = [[EXVersions sharedInstance] availableSdkVersionForManifest:manifest];
   jsResource.requestTimeoutInterval = timeoutInterval;
@@ -468,16 +476,6 @@ NSTimeInterval const kEXJSBundleTimeout = 60 * 5;
   if (experienceIdJsonValue) {
     RCTAssert([experienceIdJsonValue isKindOfClass:[NSString class]], @"Manifest contains an id which is not a string: %@", experienceIdJsonValue);
     return experienceIdJsonValue;
-  }
-  return nil;
-}
-
-- (NSURL *)_bundleUrlWithManifest:(NSDictionary *)manifest
-{
-  id bundleUrlJsonValue = manifest[@"bundleUrl"];
-  if (bundleUrlJsonValue) {
-    RCTAssert([bundleUrlJsonValue isKindOfClass:[NSString class]], @"Manifest contains a bundleUrl which is not a string: %@", bundleUrlJsonValue);
-    return [NSURL URLWithString:bundleUrlJsonValue relativeToURL:_httpManifestUrl];
   }
   return nil;
 }

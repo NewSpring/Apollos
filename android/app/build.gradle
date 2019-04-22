@@ -188,7 +188,7 @@ dependencies {
   compile ('host.exp.exponent:expoview:26.0.0@aar') {
     transitive = true
     exclude group: 'com.google.android.gms' // TODO: maybe don't need this
-    compile project(path: ':expoview')
+    //compile project(path: ':expoview')
   }
 
 
