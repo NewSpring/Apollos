@@ -4,7 +4,7 @@ platform :ios, '9.0'
 target 'newspring' do
   pod 'ExpoKit',
     :git => "http://github.com/expo/expo.git",
-    :tag => "ios/2.7.0",
+    :tag => "ios/2.8.4",
     :subspecs => [
       "Core"
     ],
@@ -57,6 +57,33 @@ target 'newspring' do
   pod 'EXGL-CPP',
     :path => "../node_modules/expo-gl-cpp/cpp",
     :inhibit_warnings => true
+  pod 'EXAdsAdMob',
+    :path => "../node_modules/expo-ads-admob/ios"
+  pod 'EXBarCodeScanner',
+    :path => "../node_modules/expo-barcode-scanner/ios"
+  pod 'EXBarCodeScannerInterface',
+    :path => "../node_modules/expo-barcode-scanner-interface/ios"
+  pod 'EXContacts',
+    :path => "../node_modules/expo-contacts/ios"
+  pod 'EXFont',
+    :path => "../node_modules/expo-font/ios"
+  pod 'EXFontInterface',
+    :path => "../node_modules/expo-font-interface/ios"
+  pod 'EXImageLoaderInterface',
+    :path => "../node_modules/expo-image-loader-interface/ios"
+  pod 'EXLocalAuthentication',
+    :path => "../node_modules/expo-local-authentication/ios"
+  pod 'EXLocation',
+    :path => "../node_modules/expo-location/ios"
+  pod 'EXMediaLibrary',
+    :path => "../node_modules/expo-media-library/ios"
+  # Optional
+  # pod 'EXPaymentsStripe',
+  #   :path => "../node_modules/expo-payments-stripe/ios"
+  pod 'EXPrint',
+    :path => "../node_modules/expo-print/ios"
+  pod 'EXSegment',
+    :path => "../node_modules/expo-analytics-segment/ios"
 
   pod 'React',
     :path => "../node_modules/react-native",

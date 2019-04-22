@@ -28,7 +28,6 @@
 
 #import <EXCore/EXModuleRegistry.h>
 #import <EXCore/EXModuleRegistryDelegate.h>
-#import <EXCore/EXSingletonModule.h>
 #import <EXReactNativeAdapter/EXNativeModulesProxy.h>
 #import "EXScopedModuleRegistryAdapter.h"
 #import "EXScopedModuleRegistryDelegate.h"
@@ -276,11 +275,12 @@ void EXRegisterScopedModule(Class moduleClass, ...)
   NSString *experienceId = manifest[@"id"];
   NSDictionary *services = params[@"services"];
   NSString *localStorageDirectory = [[EXFileSystem documentDirectoryForExperienceId:experienceId] stringByAppendingPathComponent:EX_UNVERSIONED(@"RCTAsyncLocalStorage")];
+  BOOL isOpeningHomeInProductionMode = params[@"browserModuleClass"] && params[@"releaseChannel"];
 
   NSMutableArray *extraModules = [NSMutableArray arrayWithArray:
                                   @[
                                     [[EXAppState alloc] init],
-                                    [[EXDevSettings alloc] initWithExperienceId:experienceId isDevelopment:isDeveloper],
+                                    [[EXDevSettings alloc] initWithExperienceId:experienceId isDevelopment:(!isOpeningHomeInProductionMode && isDeveloper)],
                                     [[EXDisabledDevLoadingView alloc] init],
                                     [[EXStatusBarManager alloc] init],
                                     [[RCTAsyncLocalStorage alloc] initWithStorageDirectory:localStorageDirectory],
@@ -324,20 +324,8 @@ void EXRegisterScopedModule(Class moduleClass, ...)
     // additionally disable RCTRedBox
     [extraModules addObject:[[EXDisabledRedBox alloc] init]];
   }
-  
-  // TODO: clean this up
-  // right now some subset of our kernel services subclass EXSingletonModule
-  // which allows unimodules to access unversioned/singleton instances of these services.
-  // this is a bridge to allow both systems to coexist for now.
-  // see also: https://github.com/expo/universe/issues/2796
-  NSMutableSet *singletonModuleClasses = [NSMutableSet set];
-  for (NSString *serviceName in services.allKeys) {
-    id service = services[serviceName];
-    if ([[service class] isSubclassOfClass:[EXSingletonModule class]]) {
-      [singletonModuleClasses addObject:[service class]];
-    }
-  }
-  EXModuleRegistryProvider *moduleRegistryProvider = [[EXModuleRegistryProvider alloc] initWithSingletonModuleClasses:singletonModuleClasses];
+
+  EXModuleRegistryProvider *moduleRegistryProvider = [[EXModuleRegistryProvider alloc] initWithSingletonModules:params[@"singletonModules"]];
 
   Class resolverClass = [EXScopedModuleRegistryDelegate class];
   if (params[@"moduleRegistryDelegateClass"] && params[@"moduleRegistryDelegateClass"] != [NSNull null]) {
