@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import { BlurView as ExpoBlurView } from 'expo';
 import styled from '@ui/styled';
 
@@ -16,7 +16,7 @@ const BlurView = ({
 
 BlurView.propTypes = {
   ...ExpoBlurView.propTypes,
-  ...View.propTypes,
+  ...ViewPropTypes,
 };
 
 export default BlurView;

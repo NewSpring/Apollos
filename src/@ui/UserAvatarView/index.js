@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Platform, View, StyleSheet } from 'react-native';
+import { Platform, View, StyleSheet, ViewPropTypes } from 'react-native';
 import { compose, pure, setPropTypes, withState } from 'recompose';
 import { withTheme, withThemeMixin } from '@ui/theme';
 import { H4, BodyText } from '@ui/typography';
@@ -18,9 +18,14 @@ const Container = styled(({ theme }) => ({
   overflow: 'hidden',
   backgroundColor: theme.colors.darkSecondary,
 }))(View);
-const Content = styled({ alignItems: 'center', justifyContent: 'center' })(PaddedView);
+const Content = styled({ alignItems: 'center', justifyContent: 'center' })(
+  PaddedView,
+);
 
-const copyStyles = styled({ backgroundColor: 'transparent', textAlign: 'center' });
+const copyStyles = styled({
+  backgroundColor: 'transparent',
+  textAlign: 'center',
+});
 const Name = copyStyles(H4);
 const City = copyStyles(BodyText);
 
@@ -62,7 +67,7 @@ const enhance = compose(
     onPhotoPress: PropTypes.func,
     blurIntensity: PropTypes.number,
     allowProfileImageChange: PropTypes.bool,
-    ...View.propTypes,
+    ...ViewPropTypes,
   }),
   withThemeMixin({ type: 'dark' }),
   withState('isUploadingFile', 'setIsUploadingFile', false),
@@ -88,9 +93,17 @@ const UserAvatarView = enhance(
 
     return (
       <Container {...viewProps}>
-        <BlurView intensity={blurIntensity} tint="dark" style={StyleSheet.absoluteFill}>
+        <BlurView
+          intensity={blurIntensity}
+          tint="dark"
+          style={StyleSheet.absoluteFill}
+        >
           {photo ? (
-            <BlurredImage source={photo} resizeMode="cover" isLoading={isUploadingFile} />
+            <BlurredImage
+              source={photo}
+              resizeMode="cover"
+              isLoading={isUploadingFile}
+            />
           ) : null}
         </BlurView>
         <Content>
@@ -101,7 +114,11 @@ const UserAvatarView = enhance(
             onUploadStarted={() => setIsUploadingFile(true)}
             onUploadEnded={() => setIsUploadingFile(false)}
           >
-            <StyledAvatar source={photo} size="large" isLoading={isUploadingFile} />
+            <StyledAvatar
+              source={photo}
+              size="large"
+              isLoading={isUploadingFile}
+            />
           </ImageContainer>
           <Name>
             {firstName} {lastName}
