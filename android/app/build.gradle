@@ -16,8 +16,8 @@ repositories {
 }
 
 android {
-  compileSdkVersion 26
-  buildToolsVersion '26.0.1'
+  compileSdkVersion 27
+  buildToolsVersion '27.0.3'
 
   defaultConfig {
     applicationId 'cc.newspring.newspringapp'
@@ -107,11 +107,11 @@ dependencies {
   compile 'com.android.support:multidex:1.0.1'
 
   // Our dependencies
-  compile 'com.android.support:appcompat-v7:26.0.1'
+  compile 'com.android.support:appcompat-v7:27.1.1'
 
   // Our dependencies from ExpoView
   // DON'T ADD ANYTHING HERE THAT ISN'T IN EXPOVIEW. ONLY COPY THINGS FROM EXPOVIEW TO HERE.
-  compile 'com.android.support:appcompat-v7:26.0.1'
+  compile 'com.android.support:appcompat-v7:27.1.1'
   compile 'com.facebook.android:facebook-android-sdk:4.7.0'
   compile('com.facebook.android:audience-network-sdk:4.22.1') {
     exclude module: 'play-services-ads'
@@ -124,24 +124,12 @@ dependencies {
 
   // TODO: I'm going to force these but hopefully when we upgrade ExpoKit, this will be unnecessary and we can revert
   // try to put them back to 9.8.0 with no force
-  compile ('com.google.android.gms:play-services-gcm:10.2.1') {
-    force = true
-  }
-  compile ('com.google.android.gms:play-services-analytics:10.2.1') {
-    force = true
-  }
-  compile ('com.google.android.gms:play-services-maps:10.2.1') {
-    force = true
-  }
-  compile ('com.google.android.gms:play-services-auth:10.2.1') {
-    force = true
-  }
-  compile ('com.google.android.gms:play-services-location:10.2.1') {
-    force = true
-  }
-  compile ('com.google.android.gms:play-services-ads:10.2.1') {
-    force = true
-  }
+  compile ('com.google.android.gms:play-services-gcm:12.0.1')
+  compile ('com.google.android.gms:play-services-analytics:12.0.1')
+  compile ('com.google.android.gms:play-services-maps:12.0.1')
+  compile ('com.google.android.gms:play-services-auth:12.0.1')
+  compile ('com.google.android.gms:play-services-location:12.0.1')
+  compile ('com.google.android.gms:play-services-ads:12.0.1')
 
   apt 'com.raizlabs.android:DBFlow-Compiler:2.2.1'
   compile "com.raizlabs.android:DBFlow-Core:2.2.1"
@@ -166,7 +154,7 @@ dependencies {
   compile('io.nlopez.smartlocation:library:3.2.11') {
     transitive = false
   }
-  compile 'com.android.support:exifinterface:26.0.1'
+  compile 'com.android.support:exifinterface:27.1.1'
   compile 'com.squareup.okhttp3:okhttp:3.4.1'
   compile 'com.squareup.okhttp3:okhttp-urlconnection:3.4.1'
   compile 'com.squareup.okhttp3:okhttp-ws:3.4.1'
@@ -185,9 +173,9 @@ dependencies {
 
 
 
-  compile ('host.exp.exponent:expoview:27.0.0@aar') {
+  compile ('host.exp.exponent:expoview:28.0.0@aar') {
     transitive = true
-    exclude group: 'com.google.android.gms' // TODO: maybe don't need this
+    //exclude group: 'com.google.android.gms' // TODO: maybe don't need this
     //compile project(path: ':expoview')
   }
 
