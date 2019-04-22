@@ -1,12 +1,12 @@
 /* eslint-disable */
-'use strict';
+"use strict";
 
-import { NativeModules, PixelRatio, Platform } from 'react-native';
-import AssetRegistry from 'react-native/Libraries/Image/AssetRegistry';
-import AssetSourceResolver from 'react-native/Libraries/Image/AssetSourceResolver';
-import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
+import { NativeModules, PixelRatio, Platform } from "react-native";
+import AssetRegistry from "react-native/Libraries/Image/AssetRegistry";
+import AssetSourceResolver from "react-native/Libraries/Image/AssetSourceResolver";
+import resolveAssetSource from "react-native/Libraries/Image/resolveAssetSource";
 
-import Constants from 'expo/src/Constants';
+import { Constants } from "expo";
 
 const FS = NativeModules.ExponentFileSystem;
 
@@ -17,26 +17,28 @@ const pickScale = meta => {
   // Expo
 
   const scale =
-    meta.scales.length > 1 ? AssetSourceResolver.pickScale(meta.scales, PixelRatio.get()) : 1;
+    meta.scales.length > 1
+      ? AssetSourceResolver.pickScale(meta.scales, PixelRatio.get())
+      : 1;
   const index = meta.scales.findIndex(s => s === scale);
   const hash = meta.fileHashes[index] || meta.fileHashes[0];
 
   const suffix =
-    '/' +
+    "/" +
     meta.name +
-    (scale === 1 ? '' : '@' + scale + 'x') +
-    '.' +
+    (scale === 1 ? "" : "@" + scale + "x") +
+    "." +
     meta.type +
-    '?platform=' +
+    "?platform=" +
     Platform.OS +
-    '&hash=' +
+    "&hash=" +
     meta.hash;
 
   // Allow asset processors to directly provide the URL that will be loaded
   if (meta.uri) {
     return {
       uri: meta.uri,
-      hash,
+      hash
     };
   }
 
@@ -45,7 +47,7 @@ const pickScale = meta => {
     // This usually means Asset is on a different server, and the URL is present in the bundle
     return {
       uri: meta.httpServerLocation + suffix,
-      hash,
+      hash
     };
   }
 
@@ -54,16 +56,16 @@ const pickScale = meta => {
     return {
       uri:
         Constants.manifest.bundleUrl.match(/^https?:\/\/.*?\//)[0] +
-        meta.httpServerLocation.replace(/^\/?/, '') +
+        meta.httpServerLocation.replace(/^\/?/, "") +
         suffix,
-      hash,
+      hash
     };
   }
 
   // CDN URI is based directly on the hash
   return {
-    uri: 'https://d1wp6m56sqw74a.cloudfront.net/~assets/' + hash,
-    hash,
+    uri: "https://d1wp6m56sqw74a.cloudfront.net/~assets/" + hash,
+    hash
   };
 };
 
@@ -75,10 +77,10 @@ export default class Asset {
     this.type = type;
     this.hash = hash;
     this.uri = uri;
-    if (typeof width === 'number') {
+    if (typeof width === "number") {
       this.width = width;
     }
-    if (typeof height === 'number') {
+    if (typeof height === "number") {
       this.height = height;
     }
 
@@ -88,7 +90,7 @@ export default class Asset {
   }
 
   static loadAsync(moduleId) {
-    let moduleIds = typeof moduleId === 'number' ? [moduleId] : moduleId;
+    let moduleIds = typeof moduleId === "number" ? [moduleId] : moduleId;
     return Promise.all(moduleIds.map(m => Asset.fromModule(m).downloadAsync()));
   }
 
@@ -108,7 +110,7 @@ export default class Asset {
       hash,
       uri,
       width: meta.width,
-      height: meta.height,
+      height: meta.height
     });
     Asset.byModule[moduleId] = asset;
     return asset;
@@ -119,13 +121,13 @@ export default class Asset {
       return Asset.byModule[uri];
     }
 
-    const uriParts = uri.split('.');
+    const uriParts = uri.split(".");
     const extension = uriParts.pop();
-    const uriWithoutExtension = uriParts.join('').replace(/(\/|:|\.)/g, '');
+    const uriWithoutExtension = uriParts.join("").replace(/(\/|:|\.)/g, "");
     const asset = new Asset({
       name: uriWithoutExtension,
       type: extension,
-      uri,
+      uri
     });
     Asset.byModule[uri] = asset;
     return asset;
@@ -136,23 +138,26 @@ export default class Asset {
       return;
     }
     if (this.downloading) {
-      await new Promise((resolve, reject) => this.downloadCallbacks.push({ resolve, reject }));
+      await new Promise((resolve, reject) =>
+        this.downloadCallbacks.push({ resolve, reject })
+      );
       return;
     }
     this.downloading = true;
 
     try {
-      const localUri = `${FS.cacheDirectory}ExponentAsset-${this.hash || this.name}.${this.type}`;
+      const localUri = `${FS.cacheDirectory}ExponentAsset-${this.hash ||
+        this.name}.${this.type}`;
       let exists, md5;
       ({ exists, md5 } = await FS.getInfoAsync(localUri, {
         cache: true,
-        md5: true,
+        md5: true
       }));
       if (!exists || md5 !== this.hash) {
         const hasHash = !!this.hash;
         ({ md5 } = await FS.downloadAsync(this.uri, localUri, {
           cache: true,
-          md5: hasHash,
+          md5: hasHash
         }));
         if (hasHash && md5 !== this.hash) {
           throw new Error(

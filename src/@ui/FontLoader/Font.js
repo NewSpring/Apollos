@@ -1,11 +1,11 @@
 // @flow
 /* eslint-disable */
 
-import invariant from 'invariant';
-import { NativeModules } from 'react-native';
+import invariant from "invariant";
+import { NativeModules } from "react-native";
 
-import Asset from './PatchedAssetFromExpo';
-import Constants from 'expo/src/Constants';
+import Asset from "./PatchedAssetFromExpo";
+import { Constants } from "expo";
 
 type FontSource = string | number | Asset;
 
@@ -13,7 +13,7 @@ const loaded: { [name: string]: boolean } = {};
 const loadPromises: { [name: string]: Promise<void> } = {};
 
 export function processFontFamily(name: ?string): ?string {
-  if (!name || Constants.systemFonts.includes(name) || name === 'System') {
+  if (!name || Constants.systemFonts.includes(name) || name === "System") {
     return name;
   }
 
@@ -41,7 +41,7 @@ export function processFontFamily(name: ?string): ?string {
       }
     }
 
-    return 'System';
+    return "System";
   }
 
   return `ExponentFont-${_getNativeFontName(name)}`;
@@ -56,7 +56,10 @@ export function isLoading(name: string): boolean {
 }
 
 export async function loadAsync(
-  nameOrMap: string | { [string]: FontSource } | Array<{ [string]: FontSource }>,
+  nameOrMap:
+    | string
+    | { [string]: FontSource }
+    | Array<{ [string]: FontSource }>,
   uriOrModuleOrAsset?: FontSource
 ): Promise<void> {
   if (Array.isArray(nameOrMap)) {
@@ -65,7 +68,7 @@ export async function loadAsync(
     );
     await Promise.all(nameOrMap.map(loadAsync));
     return;
-  } else if (typeof nameOrMap === 'object') {
+  } else if (typeof nameOrMap === "object") {
     const fontMap = nameOrMap;
     const names = Object.keys(fontMap);
     await Promise.all(names.map(name => loadAsync(name, fontMap[name])));
@@ -102,11 +105,11 @@ export async function loadAsync(
 }
 
 function _getAssetForSource(uriOrModuleOrAsset: FontSource): Asset {
-  if (typeof uriOrModuleOrAsset === 'string') {
+  if (typeof uriOrModuleOrAsset === "string") {
     return Asset.fromUri(uriOrModuleOrAsset);
   }
 
-  if (typeof uriOrModuleOrAsset === 'number') {
+  if (typeof uriOrModuleOrAsset === "number") {
     return Asset.fromModule(uriOrModuleOrAsset);
   }
 
@@ -118,7 +121,10 @@ async function _loadSingleFontAsync(name: string, asset: Asset): Promise<void> {
   if (!asset.downloaded) {
     throw new Error(`Failed to download asset for font "${name}"`);
   }
-  await NativeModules.ExponentFontLoader.loadAsync(_getNativeFontName(name), asset.localUri);
+  await NativeModules.ExponentFontLoader.loadAsync(
+    _getNativeFontName(name),
+    asset.localUri
+  );
 }
 
 function _getNativeFontName(name: string): string {
