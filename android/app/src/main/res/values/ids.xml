@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="cc_card" type="id"/>
+    <item name="cc_ccv" type="id"/>
+    <item name="cc_entry" type="id"/>
+    <item name="cc_entry_internal" type="id"/>
+    <item name="cc_exp" type="id"/>
+    <item name="cc_form_layout" type="id"/>
+    <item name="cc_four_digits" type="id"/>
+    <item name="cc_zip" type="id"/>
+    <item name="text_helper" type="id"/>
+</resources>
