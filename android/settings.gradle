@@ -1,1 +1,5 @@
-include ':app'
+include ':app', ':expoview'
+project(':expoview').projectDir = new File(rootDir, 'expoview')
+include ':tools'
+include ':ReactAndroid'
+project(':ReactAndroid').projectDir = new File(rootDir, 'ReactAndroid')

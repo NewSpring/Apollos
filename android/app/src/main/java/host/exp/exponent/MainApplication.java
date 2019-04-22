@@ -32,8 +32,10 @@ public class MainApplication extends ExpoApplication {
     return getString(R.string.gcm_defaultSenderId);
   }
 
+
   @Override
   public boolean shouldUseInternetKernel() {
-    return BuildVariantConstants.USE_INTERNET_KERNEL;
+    //return BuildVariantConstants.USE_INTERNET_KERNEL;
+    return false;
   }
 }

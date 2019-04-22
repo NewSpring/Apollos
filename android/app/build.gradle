@@ -184,7 +184,7 @@ dependencies {
     transitive = true
     exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     exclude group: 'com.squareup.okhttp3', module: 'okhttp-urlconnection'
-    //exclude group: 'com.github.thefuntasty', module: 'CreditCardEntry' // add this line
+    exclude group: 'com.github.thefuntasty', module: 'CreditCardEntry' // add this line
   }
   //END UNCOMMENT WHEN DISTRIBUTING
   /* WHEN_DISTRIBUTING_REMOVE_FROM_HERE
