@@ -6,8 +6,8 @@
 #import "EXDisabledDevMenu.h"
 #import "EXDisabledRedBox.h"
 #import "EXFileSystem.h"
-#import "EXHomeModule.h"
 #import "EXVersionManager.h"
+#import "EXScopedBridgeModule.h"
 #import "EXStatusBarManager.h"
 #import "EXUnversioned.h"
 #import "EXTest.h"
@@ -26,7 +26,12 @@
 
 #import <objc/message.h>
 
-static NSNumber *EXVersionManagerIsFirstLoad;
+#import <EXCore/EXModuleRegistry.h>
+#import <EXCore/EXModuleRegistryDelegate.h>
+#import <EXCore/EXSingletonModule.h>
+#import <EXReactNativeAdapter/EXNativeModulesProxy.h>
+#import "EXScopedModuleRegistryAdapter.h"
+#import "EXScopedModuleRegistryDelegate.h"
 
 // used for initializing scoped modules which don't tie in to any kernel service.
 #define EX_KERNEL_SERVICE_NONE @"EXKernelServiceNone"
@@ -96,31 +101,6 @@ void EXRegisterScopedModule(Class moduleClass, ...)
 }
 
 - (void)bridgeFinishedLoading
-{
-
-}
-
-- (void)bridgeDidForeground
-{
-  if (_isFirstLoad) {
-    _isFirstLoad = NO; // in case the same VersionManager instance is used between multiple bridge loads
-  } else {
-    // some state is shared between bridges, for example status bar
-    [self resetSharedState];
-  }
-}
-
-- (void)bridgeDidBackground
-{
-  [self saveSharedState];
-}
-
-- (void)saveSharedState
-{
-
-}
-
-- (void)resetSharedState
 {
 
 }
@@ -269,11 +249,6 @@ void EXRegisterScopedModule(Class moduleClass, ...)
                          logFunction:(void (^)(NSInteger, NSInteger, NSString *, NSNumber *, NSString *))logFunction
                         logThreshold:(NSInteger)threshold
 {
-  if (EXVersionManagerIsFirstLoad == nil) {
-    // first time initializing this RN version at runtime
-    _isFirstLoad = YES;
-  }
-  EXVersionManagerIsFirstLoad = @(NO);
   RCTSetFatalHandler(fatalHandler);
   RCTSetLogThreshold(threshold);
   RCTSetLogFunction(logFunction);
@@ -330,8 +305,9 @@ void EXRegisterScopedModule(Class moduleClass, ...)
     }
   }
   
-  if (params[@"kernel"]) {
-    EXHomeModule *homeModule = [[EXHomeModule alloc] initWithExperienceId:experienceId
+  if (params[@"browserModuleClass"]) {
+    Class browserModuleClass = params[@"browserModuleClass"];
+    id homeModule = [[browserModuleClass alloc] initWithExperienceId:experienceId
                                                     kernelServiceDelegate:services[EX_UNVERSIONED(@"EXHomeModuleManager")]
                                                                    params:params];
     [extraModules addObject:homeModule];
@@ -348,6 +324,35 @@ void EXRegisterScopedModule(Class moduleClass, ...)
     // additionally disable RCTRedBox
     [extraModules addObject:[[EXDisabledRedBox alloc] init]];
   }
+  
+  // TODO: clean this up
+  // right now some subset of our kernel services subclass EXSingletonModule
+  // which allows unimodules to access unversioned/singleton instances of these services.
+  // this is a bridge to allow both systems to coexist for now.
+  // see also: https://github.com/expo/universe/issues/2796
+  NSMutableSet *singletonModuleClasses = [NSMutableSet set];
+  for (NSString *serviceName in services.allKeys) {
+    id service = services[serviceName];
+    if ([[service class] isSubclassOfClass:[EXSingletonModule class]]) {
+      [singletonModuleClasses addObject:[service class]];
+    }
+  }
+  EXModuleRegistryProvider *moduleRegistryProvider = [[EXModuleRegistryProvider alloc] initWithSingletonModuleClasses:singletonModuleClasses];
+
+  Class resolverClass = [EXScopedModuleRegistryDelegate class];
+  if (params[@"moduleRegistryDelegateClass"] && params[@"moduleRegistryDelegateClass"] != [NSNull null]) {
+    resolverClass = params[@"moduleRegistryDelegateClass"];
+  }
+
+  id<EXModuleRegistryDelegate> moduleRegistryDelegate = [[resolverClass alloc] initWithParams:params];
+  [moduleRegistryProvider setModuleRegistryDelegate:moduleRegistryDelegate];
+
+  EXScopedModuleRegistryAdapter *moduleRegistryAdapter = [[EXScopedModuleRegistryAdapter alloc] initWithModuleRegistryProvider:moduleRegistryProvider];
+
+  NSArray<id<RCTBridgeModule>> *expoModules = [moduleRegistryAdapter extraModulesForParams:params andExperience:experienceId withScopedModulesArray:extraModules withKernelServices:services];
+
+  [extraModules addObjectsFromArray:expoModules];
+
   return extraModules;
 }
 

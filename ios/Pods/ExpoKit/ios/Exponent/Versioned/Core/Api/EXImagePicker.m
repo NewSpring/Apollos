@@ -4,12 +4,14 @@
 #import <React/RCTUtils.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
-#import "EXFileSystem.h"
+#import <EXFileSystemInterface/EXFileSystemInterface.h>
+#import <EXPermissions/EXPermissions.h>
+#import <EXCore/EXUtilitiesInterface.h>
+
+#import "EXModuleRegistryBinding.h"
 #import "EXCameraPermissionRequester.h"
 #import "EXCameraRollRequester.h"
-#import "EXPermissions.h"
 #import "EXScopedModuleRegistry.h"
-#import "EXUtil.h"
 
 @import MobileCoreServices;
 @import Photos;
@@ -141,7 +143,8 @@ RCT_EXPORT_METHOD(launchImageLibraryAsync:(NSDictionary *)options
   self.picker.delegate = self;
 
   dispatch_async(dispatch_get_main_queue(), ^{
-    [self.bridge.scopedModules.util.currentViewController presentViewController:self.picker animated:YES completion:nil];
+    id<EXUtilitiesInterface> utils = [self->_bridge.scopedModules.moduleRegistry getModuleImplementingProtocol:@protocol(EXUtilitiesInterface)];
+    [utils.currentViewController presentViewController:self.picker animated:YES completion:nil];
   });
 }
 
@@ -151,7 +154,12 @@ RCT_EXPORT_METHOD(launchImageLibraryAsync:(NSDictionary *)options
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     NSMutableDictionary *response = [[NSMutableDictionary alloc] init];
     response[@"cancelled"] = @NO;
-    NSString *directory = [self.bridge.scopedModules.fileSystem.cachesDirectory stringByAppendingPathComponent:@"ImagePicker"];
+    id<EXFileSystemInterface> fileSystem = [self.bridge.scopedModules.moduleRegistry getModuleImplementingProtocol:@protocol(EXFileSystemInterface)];
+    if (!fileSystem) {
+      self.reject(@"E_MISSING_MODULE", @"No FileSystem module", nil);
+      return;
+    }
+    NSString *directory = [fileSystem.cachesDirectory stringByAppendingPathComponent:@"ImagePicker"];
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
       [self handleImageWithInfo:info saveAt:directory updateResponse:response completionHandler:^{
         self.resolve(response);
@@ -194,7 +202,12 @@ RCT_EXPORT_METHOD(launchImageLibraryAsync:(NSDictionary *)options
     RCTLogWarn(@"Unsupported format of the picked image. Using JPEG instead.");
   }
 
-  NSString *path = [EXFileSystem generatePathInDirectory:directory withExtension:extension];
+  id<EXFileSystemInterface> fileSystem = [self.bridge.scopedModules.moduleRegistry getModuleImplementingProtocol:@protocol(EXFileSystemInterface)];
+  if (!fileSystem) {
+    self.reject(@"E_NO_MODULE", @"No FileSystem module.", nil);
+    return;
+  }
+  NSString *path = [fileSystem generatePathInDirectory:directory withExtension:extension];
   [data writeToFile:path atomically:YES];
   NSURL *fileURL = [NSURL fileURLWithPath:path];
   NSString *filePath = [fileURL absoluteString];
@@ -251,7 +264,12 @@ RCT_EXPORT_METHOD(launchImageLibraryAsync:(NSDictionary *)options
   
   response[@"type"] = @"video";
   NSError *error = nil;
-  NSString *path = [EXFileSystem generatePathInDirectory:directory withExtension:@".mov"];
+  id<EXFileSystemInterface> fileSystem = [self.bridge.scopedModules.moduleRegistry getModuleImplementingProtocol:@protocol(EXFileSystemInterface)];
+  if (!fileSystem) {
+    self.reject(@"E_NO_MODULE", @"No FileSystem module.", nil);
+    return;
+  }
+  NSString *path = [fileSystem generatePathInDirectory:directory withExtension:@".mov"];
   [[NSFileManager defaultManager] moveItemAtURL:videoURL
                                           toURL:[NSURL fileURLWithPath:path]
                                           error:&error];

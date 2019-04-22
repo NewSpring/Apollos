@@ -9,8 +9,11 @@
 #import "EXPrint.h"
 #import "EXScopedModuleRegistry.h"
 #import "EXUtil.h"
-#import "EXFileSystem.h"
+#import "EXModuleRegistryBinding.h"
 #import "EXPrintPDFRenderTask.h"
+
+#import <EXCore/EXUtilitiesInterface.h>
+#import <EXFileSystemInterface/EXFileSystemInterface.h>
 
 #import <React/RCTConvert.h>
 #import <React/RCTUtils.h>
@@ -190,6 +193,10 @@ RCT_REMAP_METHOD(printToFileAsync,
   [renderTask renderWithOptions:options completionHandler:^(NSData *pdfData) {
     if (pdfData != nil) {
       NSString *filePath = [self _generatePath];
+      if (!filePath) {
+        reject(@"E_PRINT_SAVING_ERROR", @"Error occurred while generating path for PDF: generated path empty, is FileSystem module present?", nil);
+        return;
+      }
       NSString *uri = [[NSURL fileURLWithPath:filePath] absoluteString];
       
       NSError *error;
@@ -217,14 +224,16 @@ RCT_REMAP_METHOD(printToFileAsync,
 
 - (UIViewController *)printInteractionControllerParentViewController:(UIPrintInteractionController *)printInteractionController
 {
-  return _bridge.scopedModules.util.currentViewController;
+  id<EXUtilitiesInterface> utils = [_bridge.scopedModules.moduleRegistry getModuleImplementingProtocol:@protocol(EXUtilitiesInterface)];
+  return utils.currentViewController;
 }
 
 #pragma mark - UIPrinterPickerControllerDelegate
 
 - (UIViewController *)printerPickerControllerParentViewController:(UIPrinterPickerController *)printerPickerController
 {
-  return _bridge.scopedModules.util.currentViewController;
+  id<EXUtilitiesInterface> utils = [_bridge.scopedModules.moduleRegistry getModuleImplementingProtocol:@protocol(EXUtilitiesInterface)];
+  return utils.currentViewController;
 }
 
 #pragma mark - internal
@@ -314,9 +323,13 @@ RCT_REMAP_METHOD(printToFileAsync,
 
 - (NSString *)_generatePath
 {
-  NSString *directory = [_bridge.scopedModules.fileSystem.cachesDirectory stringByAppendingPathComponent:@"Print"];
+  id<EXFileSystemInterface> fileSystem = [_bridge.scopedModules.moduleRegistry getModuleImplementingProtocol:@protocol(EXFileSystemInterface)];
+  if (!fileSystem) {
+    return nil;
+  }
+  NSString *directory = [fileSystem.cachesDirectory stringByAppendingPathComponent:@"Print"];
   NSString *fileName = [[[NSUUID UUID] UUIDString] stringByAppendingString:@".pdf"];
-  [EXFileSystem ensureDirExistsWithPath:directory];
+  [fileSystem ensureDirExistsWithPath:directory];
   
   return [directory stringByAppendingPathComponent:fileName];
 }

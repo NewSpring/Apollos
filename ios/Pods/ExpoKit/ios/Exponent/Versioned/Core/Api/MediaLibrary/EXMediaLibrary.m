@@ -7,11 +7,12 @@
 //
 
 #import "EXMediaLibrary.h"
-#import "EXFileSystem.h"
-#import "EXPermissions.h"
+#import "EXModuleRegistryBinding.h"
 #import "EXScopedModuleRegistry.h"
 #import "EXCameraRollRequester.h"
 
+#import <EXFileSystemInterface/EXFileSystemInterface.h>
+#import <EXPermissions/EXPermissions.h>
 #import <Photos/Photos.h>
 #import <React/RCTUIManager.h>
 #import <MobileCoreServices/MobileCoreServices.h>
@@ -32,8 +33,6 @@ NSString *const EXMediaLibraryDidChangeEvent = @"mediaLibraryDidChange";
 @end
 
 @implementation EXMediaLibrary
-
-@synthesize bridge = _bridge;
 
 EX_EXPORT_SCOPED_MODULE(ExponentMediaLibrary, PermissionsManager);
 
@@ -106,7 +105,8 @@ RCT_REMAP_METHOD(createAssetAsync,
     reject(@"E_INVALID_URI", @"Provided localUri is not a valid URI", nil);
     return;
   }
-  if (!([_bridge.scopedModules.fileSystem permissionsForURI:assetUrl] & EXFileSystemPermissionRead)) {
+  id<EXFileSystemInterface> fileSystem = [self.bridge.scopedModules.moduleRegistry getModuleImplementingProtocol:@protocol(EXFileSystemInterface)];
+  if (!([fileSystem permissionsForURI:assetUrl] & EXFileSystemPermissionRead)) {
     reject(@"E_FILESYSTEM_PERMISSIONS", [NSString stringWithFormat:@"File '%@' isn't readable.", assetUrl], nil);
     return;
   }
@@ -303,7 +303,7 @@ RCT_REMAP_METHOD(getAssetInfoAsync,
       resolve(result);
     }];
   } else {
-    resolve(nil);
+    resolve([NSNull null]);
   }
 }
 
@@ -611,7 +611,7 @@ RCT_REMAP_METHOD(getAssetsAsync,
              @"locationNames": collection.localizedLocationNames,
              };
   }
-  return nil;
+  return [NSNull null];
 }
 
 + (NSArray *)_exportCollections:(PHFetchResult *)collections

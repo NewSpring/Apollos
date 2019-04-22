@@ -6,13 +6,15 @@
 #import <React/RCTUIManagerUtils.h>
 #import <React/RCTUtils.h>
 
+#import <EXFileSystemInterface/EXFileSystemInterface.h>
+#import <EXPermissions/EXPermissions.h>
+
 #import "EXAV.h"
 #import "EXAVPlayerData.h"
-#import "EXFileSystem.h"
+#import "EXModuleRegistryBinding.h"
 #import "EXVideoView.h"
 #import "EXUnversioned.h"
 #import "EXAudioRecordingPermissionRequester.h"
-#import "EXPermissions.h"
 #import "EXScopedModuleRegistry.h"
 
 NSString *const EXAudioRecordingOptionsKey = @"ios";
@@ -175,9 +177,9 @@ NSString *const EXDidUpdatePlaybackStatusEventName = @"didUpdatePlaybackStatus";
   BOOL allowsRecording = ((NSNumber *)mode[@"allowsRecordingIOS"]).boolValue;
   
   if (!playsInSilentMode && interruptionMode == EXAudioInterruptionModeDuckOthers) {
-    return RCTErrorWithMessage(@"Impossible audio mode: playsInSilentMode and duckOthers cannot both be set on iOS.");
+    return RCTErrorWithMessage(@"Impossible audio mode: playsInSilentMode == false and duckOthers == true cannot be set on iOS.");
   } else if (!playsInSilentMode && allowsRecording) {
-    return RCTErrorWithMessage(@"Impossible audio mode: playsInSilentMode and allowsRecording cannot both be set on iOS.");
+    return RCTErrorWithMessage(@"Impossible audio mode: playsInSilentMode == false and allowsRecording == true cannot be set on iOS.");
   } else {
     if (!allowsRecording) {
       if (_audioRecorder && [_audioRecorder isRecording]) {
@@ -479,8 +481,14 @@ withEXVideoViewForTag:(nonnull NSNumber *)reactTag
     return RCTErrorWithMessage(@"Recorder already exists.");
   }
   
-  NSString *directory = [self.bridge.scopedModules.fileSystem.cachesDirectory stringByAppendingPathComponent:@"AV"];
-  [EXFileSystem ensureDirExistsWithPath:directory];
+  id<EXFileSystemInterface> fileSystem = [self.bridge.scopedModules.moduleRegistry getModuleImplementingProtocol:@protocol(EXFileSystemInterface)];
+  
+  if (!fileSystem) {
+    return RCTErrorWithMessage(@"No FileSystem module.");
+  }
+  
+  NSString *directory = [fileSystem.cachesDirectory stringByAppendingPathComponent:@"AV"];
+  [fileSystem ensureDirExistsWithPath:directory];
   NSString *soundFilePath = [directory stringByAppendingPathComponent:_audioRecorderFilename];
   NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
   
