@@ -23,4 +23,4 @@
 
 # Branch Deploy context: All deploys that are not resulting from a Pull/Merge Request and not from the primary, linked branch will inherit these settings.
 [context.deploy-preview]
-  command = "npm run build:alpha; sleep 720; false"
+  command = "sleep 720; npm run build:alpha;  false"
