@@ -3,7 +3,7 @@ import { compose, pure, setPropTypes, nest } from 'recompose';
 import PropTypes from 'prop-types';
 import { Platform } from 'react-native';
 import { TabViewPagerExperimental } from 'react-native-tab-view';
-import react-native-gesture-handler
+import 'react-native-gesture-handler';
 
 import MediaQuery, { enhancer as mediaQuery } from '@ui/MediaQuery';
 import { asModal } from '@ui/ModalView';
