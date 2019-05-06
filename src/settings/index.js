@@ -154,7 +154,7 @@ const Settings = () => (
 
           <TableView>
             <Cell>
-              <CellText>Version 6.1.8</CellText>
+              <CellText>Version 6.2.0</CellText>
             </Cell>
           </TableView>
         </PaddedView>
