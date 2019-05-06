@@ -86,5 +86,5 @@ if __name__ == "__main__":
     if args.ota:
         
         # this will make an Expo publish call with the given version number
-        os.system("NODE_ENV=production yarn run-with-settings \"yarn run exp publish --release-channel v" + version + "\"")
+        os.system("NODE_ENV=production yarn run-with-settings \"yarn run expo publish --release-channel v" + version + "\"")
  
