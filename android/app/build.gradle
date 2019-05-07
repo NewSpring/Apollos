@@ -22,7 +22,7 @@ android {
   defaultConfig {
     applicationId 'cc.newspring.newspringapp'
     targetSdkVersion 26
-    versionCode 1555001088
+    versionCode 1555001089
     versionName '6.2.0'
     ndk {
       abiFilters 'armeabi-v7a', 'x86'
