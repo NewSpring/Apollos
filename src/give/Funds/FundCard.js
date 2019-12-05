@@ -39,7 +39,7 @@ const ContentColumn = styled(({ theme }) =>
 const FundCard = ({
   id, name, summary, images, isLoading,
 }) => (
-  <Link to={`/give/campaign/${id}`} key={id}>
+  <Link to={'/give/now'} key={id}>
     <Card isLoading={isLoading}>
       <ResponsiveSideBySideView>
         <ImageColumn>
